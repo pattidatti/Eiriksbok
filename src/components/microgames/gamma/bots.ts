@@ -1,9 +1,9 @@
-// Robotene. De bruker de samme grepene som eleven (gå og hold i game.ts) og ser bare det
+// Robotene. De bruker de samme grepene som eleven (gå og leggPå i game.ts) og ser bare det
 // eleven ser: båten, lyset, varmen (rimet), stabelen og haugene. Ikke når neste båt kommer.
 
 import type { PlaytestBot } from '../playtest';
 import type { Rng } from '../sim';
-import { gå, hold, type Game } from './game';
+import { gå, leggPå, type Game } from './game';
 import { inne, stormIgjen } from './rules';
 import { TUNING } from './tuning';
 
@@ -52,15 +52,14 @@ function vett(v: Vett) {
                 const kanFyre = !(fare && v.røykVett && stormIgjen(g) < 4) && g.stabel > 0;
                 if (fyrer && kanFyre) {
                     gå(g, 0);
-                    hold(g, true);
+                    // Én kubbe om gangen: legg på når den forrige nesten har brent ut.
+                    if (g.bål < 0.25) leggPå(g);
                     return;
                 }
-                hold(g, false);
                 const ut = g.stabel < v.vedUnder && !(fare && v.lysVett);
                 gå(g, ut ? 1 : 0);
                 return;
             }
-            hold(g, false);
             if (fare && v.lysVett) return gå(g, -1);
             if (g.fang > 0) return gå(g, -1);
             // Kaldt og ved i stabelen: gå inn og fyr før neste tur.
@@ -99,7 +98,7 @@ export const BOTS: Record<string, BotDef> = {
         beskrivelse: 'Går og fyrer tilfeldig uten å se på båten, lyset eller varmen.',
         make: (rng) => (g) => {
             if (rng() < 0.3) gå(g, rng() < 0.5 ? -1 : rng() < 0.5 ? 0 : 1);
-            if (rng() < 0.3) hold(g, rng() < 0.5);
+            if (rng() < 0.3) leggPå(g);
         },
     },
 };

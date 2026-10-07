@@ -6,7 +6,7 @@ export const MÅL = 'Hold familien varm til hjelpen kommer i februar 1945 - uten
 
 export const REGLER = [
     'Gå med piltastene eller A/D. Hent ved nede i bjørkeskogen.',
-    'Hold mellomrom inne i gamma for å fyre. Da blir det varmt, men det stiger røyk.',
+    'Trykk mellomrom inne i gamma for å legge en kubbe på bålet. Den gir varme, men det stiger røyk - og den brenner ferdig.',
     'Ser lyset fra båten røyken eller deg, blir dere funnet.',
 ];
 
@@ -17,7 +17,7 @@ export const TAP_TITTEL: Record<Årsak, string> = {
 
 export const TIPS: Record<Årsak, string> = {
     funnet:
-        'Tyskerne lette langs kysten etter folk som hadde gjemt seg, og sendte dem sørover med tvang. Slipp fyringen når du hører båten - røyken henger igjen en stund.',
+        'Tyskerne lette langs kysten etter folk som hadde gjemt seg, og sendte dem sørover med tvang. Ikke legg på ved når du hører båten - kubben brenner ferdig, og røyken henger igjen en stund.',
     frosset:
         'Vinteren i Finnmark er mørk og kald, og de som gjemte seg, hadde bare det de kunne bære. Hent ved mens båten er langt unna, og fyr jevnt.',
 };

@@ -45,7 +45,7 @@ export interface TegneValg {
     lapper: Lapp[];
     klokke: number;
     /** Vis tastetegningene (første sekunder av runden). */
-    hint: { gå: boolean; hold: boolean };
+    hint: { gå: boolean; legg: boolean };
 }
 
 function tegnBakke(ctx: CanvasRenderingContext2D) {
@@ -87,10 +87,11 @@ function tegnHauger(ctx: CanvasRenderingContext2D, g: Game) {
 function tegnGamma(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
     const y = bakke(G);
     const varm = g.varme / T.varme.maks;
+    const fyrNå = g.bål > 0;
     // Gløden ut over snøen.
-    const r = 40 + 90 * varm + (g.input.hold && inne(g) && g.stabel > 0 ? 8 * Math.sin(klokke * 20) : 0);
+    const r = 40 + 100 * varm + (fyrNå ? 8 * Math.sin(klokke * 20) : 0);
     const grad = ctx.createRadialGradient(G, y - 20, 4, G, y - 20, r);
-    grad.addColorStop(0, `rgba(227,165,43,${0.25 + 0.5 * varm})`);
+    grad.addColorStop(0, `rgba(227,165,43,${0.2 + 0.55 * varm})`);
     grad.addColorStop(1, 'rgba(227,165,43,0)');
     ctx.fillStyle = grad;
     ctx.fillRect(G - r, y - 20 - r, r * 2, r * 2);
@@ -99,26 +100,99 @@ function tegnGamma(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
     ctx.strokeStyle = P.svart;
     ctx.lineWidth = 3;
     ctx.beginPath();
-    ctx.ellipse(G, y, 46, 40, 0, Math.PI, 0);
+    ctx.ellipse(G, y, 58, 50, 0, Math.PI, 0);
     ctx.fill();
     ctx.stroke();
-    ctx.fillStyle = `rgb(${40 + 150 * varm},${30 + 90 * varm},${20 + 20 * varm})`;
+    ctx.fillStyle = `rgb(${30 + 120 * varm},${30 + 70 * varm},${40 + 10 * varm})`;
     ctx.beginPath();
-    ctx.ellipse(G, y, 36, 30, 0, Math.PI, 0);
+    ctx.ellipse(G, y, 47, 40, 0, Math.PI, 0);
     ctx.fill();
-    // Familien: tre runde former. Rimet legger seg som blått når det blir kaldt.
-    const kald = Math.max(0, 1 - g.varme / 55);
-    for (let k = 0; k < 3; k++) {
-        const fx = G - 22 + k * 14;
-        ctx.fillStyle = `rgb(${120 - 60 * kald},${80 + 40 * kald},${60 + 140 * kald})`;
+    // Bålet midt i gamma: flammen er varmen. Liten og blå-rød glo når det er kaldt.
+    const fl = 4 + 26 * varm + (fyrNå ? 6 + 3 * Math.sin(klokke * 25) : 1.5 * Math.sin(klokke * 8));
+    ctx.fillStyle = '#4a4a4a';
+    ctx.fillRect(G - 9, y - 4, 18, 4);
+    // Kubbene som ligger på bålet.
+    const påBålet = Math.ceil(g.bål / T.varme.perKubbe - 1e-6);
+    for (let k = 0; k < påBålet; k++) {
+        ctx.fillStyle = P.ved;
+        ctx.fillRect(G - 10 + (k % 2) * 6, y - 8 - k * 4, 14, 4);
+    }
+    ctx.fillStyle = varm < 0.25 ? P.fare : P.glød;
+    ctx.beginPath();
+    ctx.moveTo(G - 8, y - 4);
+    ctx.quadraticCurveTo(G - 6, y - 4 - fl * 0.6, G, y - 4 - fl);
+    ctx.quadraticCurveTo(G + 6, y - 4 - fl * 0.6, G + 8, y - 4);
+    ctx.closePath();
+    ctx.fill();
+    if (varm > 0.3) {
+        ctx.fillStyle = '#fff2b0';
         ctx.beginPath();
-        ctx.arc(fx, y - 8 - (k === 1 ? 4 : 0), 6 + (k === 1 ? 2 : 0), 0, Math.PI * 2);
+        ctx.moveTo(G - 3, y - 4);
+        ctx.quadraticCurveTo(G, y - 4 - fl * 0.7, G + 3, y - 4);
         ctx.fill();
     }
-    // Stabelen ved døra.
+    // Familien rundt bålet. Blir blå og skjelver når det er kaldt.
+    const kald = Math.max(0, 1 - g.varme / 55);
+    const skjelv = g.varme < T.varme.rim ? Math.sin(klokke * 40) * 1.5 : 0;
+    const plass: [number, number][] = [[-32, 8], [-20, 10], [22, 7]];
+    plass.forEach(([dx, rr], k) => {
+        ctx.fillStyle = `rgb(${130 - 70 * kald},${85 + 45 * kald},${60 + 150 * kald})`;
+        ctx.beginPath();
+        ctx.arc(G + dx + (k % 2 ? skjelv : -skjelv), y - rr - 2, rr, 0, Math.PI * 2);
+        ctx.fill();
+    });
+    // Stabelen ved døra - eller et tomt merke når den er tom.
+    const sx = G + 36;
+    if (g.stabel === 0) {
+        ctx.setLineDash([3, 3]);
+        ctx.strokeStyle = P.fare;
+        ctx.lineWidth = 2;
+        ctx.strokeRect(sx - 2, y - 20, 25, 18);
+        ctx.setLineDash([]);
+    }
     for (let k = 0; k < g.stabel; k++) {
         ctx.fillStyle = P.ved;
-        ctx.fillRect(G + 30 + (k % 3) * 7, y - 6 - Math.floor(k / 3) * 6, 6, 5);
+        ctx.fillRect(sx + (k % 3) * 8, y - 7 - Math.floor(k / 3) * 6, 7, 5);
+    }
+    tegnMåler(ctx, g, klokke);
+}
+
+/** Varmemåleren ved gamma: snøfnugg nede, flamme oppe. Blinker rødt når det blir kaldt. */
+function tegnMåler(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
+    const x = G - 92;
+    const topp = bakke(G) - 120;
+    const h = 96;
+    const varm = Math.max(0, g.varme / T.varme.maks);
+    const kaldt = g.varme < T.varme.rim;
+    const blink = kaldt && Math.sin(klokke * 10) > 0;
+    ctx.fillStyle = '#0a1224';
+    ctx.fillRect(x - 9, topp, 18, h);
+    const grad = ctx.createLinearGradient(0, topp + h, 0, topp);
+    grad.addColorStop(0, '#6fa8dc');
+    grad.addColorStop(0.4, P.glød);
+    grad.addColorStop(1, '#ff7a2b');
+    ctx.fillStyle = kaldt ? P.fare : grad;
+    ctx.fillRect(x - 7, topp + h * (1 - varm), 14, h * varm);
+    ctx.strokeStyle = blink ? P.fare : '#f1ead9';
+    ctx.lineWidth = blink ? 4 : 2;
+    ctx.strokeRect(x - 9, topp, 18, h);
+    // Linja for en varm natt.
+    const gy = topp + h * (1 - T.varme.god / T.varme.maks);
+    ctx.strokeStyle = '#f1ead9';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x - 13, gy);
+    ctx.lineTo(x + 13, gy);
+    ctx.stroke();
+    ctx.font = '18px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#f1ead9';
+    ctx.fillText('🔥', x, topp - 6);
+    ctx.fillText('❄', x, topp + h + 20);
+    if (kaldt) {
+        ctx.font = 'bold 15px system-ui, sans-serif';
+        ctx.fillStyle = blink ? P.fare : '#f1ead9';
+        ctx.fillText('KALDT', x, topp + h + 40);
     }
 }
 
@@ -210,7 +284,7 @@ function tegnHint(ctx: CanvasRenderingContext2D, g: Game, valg: TegneValg) {
         ctx.fillText(tekst, x, y + 1);
     };
     if (valg.hint.gå) kort('← →  gå', g.x + 70, bakke(g.x) - 50);
-    if (valg.hint.hold) kort('hold MELLOMROM', G, bakke(G) - 70);
+    if (valg.hint.legg) kort('MELLOMROM = legg på ved', G, bakke(G) - 70);
     for (const l of valg.lapper) kort(l.tekst, l.x, l.y);
 }
 

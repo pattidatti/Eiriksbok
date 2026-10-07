@@ -8,7 +8,7 @@ export interface Brett {
 }
 
 export const BRETT: Brett[] = [
-    { fra: 0, tittel: '10. november 1944', nytt: 'Hent ved. Hold inne i gamma for å fyre.' },
+    { fra: 0, tittel: '10. november 1944', nytt: 'Hent ved. Trykk mellomrom i gamma for å legge på.' },
     { fra: 10, tittel: 'En båt i fjorden', nytt: 'Lyset ser røyken.' },
     { fra: 21, tittel: 'Desember', nytt: 'Kaldere. Båten kommer oftere.' },
     { fra: 44, tittel: 'Julenatt', nytt: 'Ingen båt i julenatta.' },

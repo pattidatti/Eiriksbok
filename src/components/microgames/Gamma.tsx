@@ -16,12 +16,12 @@ import { useArcadeSave } from './arcade/save';
 import { createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest } from './playtest';
-import { gå, hold, newGame, update, type Game, type Årsak } from './gamma/game';
+import { gå, leggPå, newGame, update, type Game, type Årsak } from './gamma/game';
 import { BOTS } from './gamma/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './gamma/sim';
 import { P, skala, tegn, type Lapp, type Skala } from './gamma/draw';
 import { BRETT, dato } from './gamma/levels';
-import { dagNå, nesteRang, rang } from './gamma/rules';
+import { bakke, dagNå, inne, nesteRang, rang } from './gamma/rules';
 import { TUNING } from './gamma/tuning';
 import { LÆRDOM, MÅL, REGLER, SKJEDDE, TAP_TITTEL, TIPS } from './gamma/texts';
 
@@ -80,8 +80,9 @@ export default function Gamma({ onComplete }: MicroGameProps) {
     const skalaRef = useRef<Skala>(skala(960, 540));
     const lapper = useRef<Lapp[]>([]);
     const klokke = useRef(0);
-    const hint = useRef({ gå: true, hold: true, gikk: 0, fyrte: 0 });
+    const hint = useRef({ gå: true, legg: true, gikk: 0, lagt: 0 });
     const vent = useRef<number | null>(null);
+    const varsle = useRef(0);
     const slutt = useRef(0);
     const taster = useRef({ v: false, h: false });
 
@@ -141,20 +142,42 @@ export default function Gamma({ onComplete }: MicroGameProps) {
                     if (h.type === 'brett') {
                         const b = BRETT[h.brett];
                         text.banner(b.tittel, P.glød);
-                        if (b.nytt) lapp(b.nytt, 480, 96, 4.5);
+                        if (b.nytt) lapp(b.nytt, 540, 175, 4.5);
                     }
                     if (h.type === 'båt') {
-                        lapp('En båt! Slipp fyringen og gå inn.', 760, 380, 3);
+                        lapp('En båt! Ikke legg på mer ved - gå inn.', 760, 380, 3);
                         synth.noise(1.6, 0.12, 110);
                     }
                     if (h.type === 'lys') synth.tone(880, 660, 0.25, 'square', 0.06);
                     if (h.type === 'plukk') synth.tone(220, 180, 0.06, 'triangle', 0.15);
+                    if (h.type === 'legg') {
+                        hint.current.lagt++;
+                        synth.tone(140, 90, 0.08, 'triangle', 0.25);
+                        synth.noise(0.35, 0.08, 900, 0.05);
+                    }
+                    if (h.type === 'tom' && varsle.current <= 1) {
+                        const vedX = TUNING.verden.gammaX + 48;
+                        lapp('Tom for ved! Hent mer nede i skogen.', vedX + 60, bakke(vedX) - 80, 2.5);
+                        synth.tone(200, 120, 0.12, 'square', 0.08);
+                        varsle.current = 3;
+                    }
                 }
                 g.hendelser.length = 0;
+                // Si fra når bålet ikke kan fyres, eller holder på å gå ut.
+                varsle.current -= dt;
+                if (varsle.current <= 0 && g.mode === 'play') {
+                    if (g.varme < TUNING.varme.rim && g.stabel > 0 && g.bål === 0) {
+                        lapp('Bålet holder på å gå ut - legg på ved!', TUNING.verden.gammaX + 40, bakke(TUNING.verden.gammaX) - 90, 2.5);
+                        varsle.current = 6;
+                    } else if (g.varme < TUNING.varme.rim && g.stabel === 0 && g.fang === 0) {
+                        lapp('Kaldt, og ingen ved - skynd deg!', TUNING.verden.gammaX + 60, bakke(TUNING.verden.gammaX) - 90, 2.5);
+                        varsle.current = 6;
+                    }
+                }
                 if (g.input.dir !== 0) hint.current.gikk += dt;
-                if (g.input.hold) hint.current.fyrte += dt;
+
                 hint.current.gå = hint.current.gikk < 1.5 && g.t < 20;
-                hint.current.hold = hint.current.fyrte < 1.5 && g.t < 25 && g.x < TUNING.verden.gammaX + 60;
+                hint.current.legg = hint.current.lagt < 3 && g.t < 25 && inne(g);
                 if (g.mode !== 'play') {
                     vent.current ??= 1.0;
                     vent.current -= dt;
@@ -172,7 +195,7 @@ export default function Gamma({ onComplete }: MicroGameProps) {
                 meny: m === 'menu',
                 lapper: m === 'play' ? lapper.current : [],
                 klokke: klokke.current,
-                hint: m === 'play' ? hint.current : { gå: false, hold: false },
+                hint: m === 'play' ? hint.current : { gå: false, legg: false },
             });
         },
         onHidden: () => {
@@ -185,17 +208,17 @@ export default function Gamma({ onComplete }: MicroGameProps) {
         gameRef.current = newGame(Math.floor(Math.random() * 1e9));
         vent.current = null;
         lapper.current = [];
-        hint.current = { gå: true, hold: true, gikk: 0, fyrte: 0 };
+        varsle.current = 0;
+        hint.current = { gå: true, legg: true, gikk: 0, lagt: 0 };
         taster.current = { v: false, h: false };
         setResultat(null);
         text.resetRun();
         setModeBoth('play');
         text.banner(BRETT[0].tittel, P.glød);
-        lapp(BRETT[0].nytt ?? '', 480, 96, 5);
+        lapp(BRETT[0].nytt ?? '', 540, 175, 5);
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
-        hold(gameRef.current, false);
         gå(gameRef.current, 0);
         setModeBoth('paused');
     };
@@ -213,7 +236,7 @@ export default function Gamma({ onComplete }: MicroGameProps) {
         setMuted(synth.isMuted());
     };
 
-    // Tastatur: piler/A-D går, mellomrom holder (fyrer). Esc/P pause.
+    // Tastatur: piler/A-D går, mellomrom legger en kubbe på bålet. Esc/P pause.
     useEffect(() => {
         const retning = () => {
             const t = taster.current;
@@ -244,7 +267,7 @@ export default function Gamma({ onComplete }: MicroGameProps) {
                 return;
             }
             if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW') {
-                hold(gameRef.current, true);
+                if (!e.repeat) leggPå(gameRef.current);
                 e.preventDefault();
             }
             if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
@@ -259,8 +282,6 @@ export default function Gamma({ onComplete }: MicroGameProps) {
             }
         };
         const opp = (e: KeyboardEvent) => {
-            if (e.code === 'Space' || e.code === 'ArrowUp' || e.code === 'KeyW')
-                hold(gameRef.current, false);
             if (e.code === 'ArrowLeft' || e.code === 'KeyA') taster.current.v = false;
             if (e.code === 'ArrowRight' || e.code === 'KeyD') taster.current.h = false;
             if (modeRef.current === 'play') retning();
@@ -275,7 +296,7 @@ export default function Gamma({ onComplete }: MicroGameProps) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    // Mus/trykk: hold på gamma = fyr, hold ellers = gå mot det stedet.
+    // Mus/trykk: trykk på gamma = legg på ved (går inn først), hold ellers = gå mot det stedet.
     const pekerX = useRef<number | null>(null);
     const onPointer = (e: React.PointerEvent<HTMLCanvasElement>) => {
         if (modeRef.current !== 'play') return;
@@ -287,15 +308,12 @@ export default function Gamma({ onComplete }: MicroGameProps) {
             synth.unlock();
             e.currentTarget.setPointerCapture?.(e.pointerId);
             if (Math.abs(fx - TUNING.verden.gammaX) < 60) {
-                gå(g, g.x > TUNING.verden.gammaX + 20 ? -1 : 0);
-                hold(g, true);
-                pekerX.current = TUNING.verden.gammaX;
+                if (!leggPå(g)) pekerX.current = TUNING.verden.gammaX;
             } else pekerX.current = fx;
         } else if (e.type === 'pointermove' && pekerX.current !== null) {
             if (pekerX.current !== TUNING.verden.gammaX) pekerX.current = fx;
         } else if (e.type !== 'pointermove') {
             pekerX.current = null;
-            hold(g, false);
             gå(g, 0);
         }
     };

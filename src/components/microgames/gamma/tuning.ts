@@ -39,10 +39,11 @@ export const TUNING = {
         /** Fall per sekund i starten og ved slutten av runden. */
         fallFra: 2.5,
         fallTil: 4.0,
-        /** Varme per sekund mens du fyrer. */
-        fyr: 20,
-        /** Sekunder per kubbe mens du fyrer. */
-        perKubbe: 0.5,
+        /** Varme per sekund mens en kubbe brenner. */
+        fyr: 10,
+        /** Sekunder én kubbe brenner (varme og røyk), og hvor mange som får plass på bålet. */
+        perKubbe: 1.0,
+        bålMaks: 3,
         /** Under denne er rimet tydelig (bare bilde). */
         rim: 30,
         /** En natt med minst så mye varme er en varm natt (poengene). */

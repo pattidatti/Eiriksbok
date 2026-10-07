@@ -200,3 +200,19 @@ Eieren valgte Gamma i chat 2026-10-07.
 - Stormen (dag 58-64) skjuler røyken, men varmen faller 1,8 ganger så fort. Snøfokket tynnes ut de
   siste 4 sekundene, så eleven ser at den slutter.
 - Venter på at eieren spiller første minutt (interaktiv økt, godkjenning 2).
+
+### Etter eierens første spilletest (chat 2026-10-07)
+
+Eieren: «Stilig, litt uklart når ovnen går tom og hva som indikerer det» og «holde inne knapper er
+ikke så gøy (med mindre man skyter), artigere å trykke hver gang man ligger på ved».
+
+- **Trykk i stedet for hold:** hvert trykk på mellomrom (eller på gamma) legger én kubbe på bålet.
+  Den brenner i 1 s (+10 varme, røyk) og kan ikke tas av igjen - legger du på rett før båten, brenner
+  den ferdig og røyker. Maks 3 kubber på bålet. Robotene legger på når forrige nesten har brent ut.
+- **Varmen synes:** bål med flamme og kubber midt i gamma (flammen krymper og blir rød når det er
+  kaldt), varmemåler ved døra (snøfnugg nede, flamme oppe, strek for «varm natt», blinker rødt og
+  «KALDT» under 30), familien skjelver, og et rødt stiplet felt der stabelen var når den er tom.
+- **Lapper:** «Tom for ved! Hent mer nede i skogen.» når du trykker uten ved, «Bålet holder på å gå
+  ut - legg på ved!» når det er kaldt og du har ved.
+- Simuleringen etter endringen: seende 85 %, halvgod 81 %, taperne 0-3 %; trapp 51 < 81 < 99;
+  30,9 valg/min (før 24,6).

@@ -40,8 +40,8 @@ export const mellomrom = (g: Game) =>
 export const varsel = (g: Game) => lerp(T.patrulje.varsel, T.patrulje.varselTil, andel(g));
 export const sveipFart = (g: Game) => lerp(T.patrulje.sveipFra, T.patrulje.sveipTil, andel(g));
 
-/** Fyrer Inga akkurat nå? Bare inne, med ved i stabelen, mens hun holder. */
-export const fyrer = (g: Game) => g.input.hold && inne(g) && g.stabel > 0;
+/** Brenner bålet akkurat nå (en kubbe er lagt på)? */
+export const fyrer = (g: Game) => g.bål > 0;
 
 /** Røyken synes for lyset (stormen skjuler den). */
 export const røykSynes = (g: Game) => g.røyk > T.røyk.synlig && !stormNå(g);

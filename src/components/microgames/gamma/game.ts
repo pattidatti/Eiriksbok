@@ -39,6 +39,8 @@ export interface Patrulje {
 export type Hendelse =
     | { type: 'brett'; brett: number }
     | { type: 'plukk'; x: number }
+    | { type: 'legg' }
+    | { type: 'tom' }
     | { type: 'lever'; kubber: number }
     | { type: 'båt' }
     | { type: 'lys' }
@@ -58,13 +60,13 @@ export interface Game {
     haug: number[];
     varme: number;
     røyk: number;
-    /** Sekunder igjen til neste kubbe brenner opp mens du fyrer. */
-    brenn: number;
+    /** Sekunder bålet brenner før det trenger en ny kubbe (kubbene som er lagt på). */
+    bål: number;
     patrulje: Patrulje | null;
     nesteBåt: number;
     båter: number;
     brett: number;
-    input: { dir: -1 | 0 | 1; hold: boolean };
+    input: { dir: -1 | 0 | 1 };
     /** Spillfølelse: beslutninger tatt. */
     valg: number;
     /** Poengene: netter familien hadde det varmt. */
@@ -98,12 +100,12 @@ export function newGame(seed: number): Game {
         haug: T.haug.map((h) => h.kubber),
         varme: T.varme.start,
         røyk: 0,
-        brenn: T.varme.perKubbe,
+        bål: 0,
         patrulje: null,
         nesteBåt: T.patrulje.førsteDag * T.dag,
         båter: 0,
         brett: 0,
-        input: { dir: 0, hold: false },
+        input: { dir: 0 },
         valg: 0,
         varmeNetter: 0,
         dag: 0,
@@ -113,18 +115,29 @@ export function newGame(seed: number): Game {
     };
 }
 
-/** Grepene: gå (venstre/høyre/stå) og hold for å fyre. Samme for elev og robot. */
+/** Grepene: gå (venstre/høyre/stå) og legg en kubbe på bålet. Samme for elev og robot. */
 export function gå(g: Game, dir: -1 | 0 | 1) {
     g.input.dir = dir;
 }
-export function hold(g: Game, på: boolean) {
-    g.input.hold = på;
+/** Ett trykk = én kubbe på bålet (bare inne, med ved i stabelen). Den kan ikke tas av igjen. */
+export function leggPå(g: Game): boolean {
+    if (g.mode !== 'play' || !inne(g)) return false;
+    if (g.stabel === 0) {
+        g.hendelser.push({ type: 'tom' });
+        return false;
+    }
+    if (g.bål > (T.varme.bålMaks - 1) * T.varme.perKubbe) return false;
+    g.stabel--;
+    g.bål += T.varme.perKubbe;
+    g.valg++;
+    g.hendelser.push({ type: 'legg' });
+    return true;
 }
 
 function tap(g: Game, årsak: Årsak) {
     g.mode = 'lost';
     g.årsak = årsak;
-    g.input = { dir: 0, hold: false };
+    g.input = { dir: 0 };
     g.hendelser.push({ type: 'tap', årsak });
 }
 
@@ -159,16 +172,11 @@ function fyring(g: Game, dt: number) {
     if (på) {
         g.varme = Math.min(T.varme.maks, g.varme + T.varme.fyr * dt);
         g.røyk = Math.min(1, g.røyk + T.røyk.opp * dt);
-        g.brenn -= dt;
-        if (g.brenn <= 0) {
-            g.stabel--;
-            g.brenn += T.varme.perKubbe;
-        }
+        g.bål = Math.max(0, g.bål - dt);
     } else {
         g.varme -= fall(g) * dt;
         g.røyk = Math.max(0, g.røyk - T.røyk.ned * dt);
     }
-    if (på !== g.sist.fyrer) g.valg++;
     if (g.input.dir !== g.sist.dir && g.input.dir !== 0) g.valg++;
     g.sist = { dir: g.input.dir, fyrer: på };
 }
