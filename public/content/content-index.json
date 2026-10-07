@@ -1,5 +1,5 @@
 {
-  "buildId": 159294826967582,
+  "buildId": 201824029840114,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2037,6 +2037,9 @@
     ],
     "andre-verdenskrig-bakgrunn": [
       "content/historie/andre-verdenskrig/bakgrunn.json"
+    ],
+    "brenningen-av-finnmark": [
+      "content/historie/andre-verdenskrig/brenningen-av-finnmark.json"
     ],
     "d-dagen": [
       "content/historie/andre-verdenskrig/d-dagen.json"
@@ -5532,6 +5535,7 @@
     "historie/afrikanske-riker/stor-zimbabwe": "content/historie/afrikanske-riker/stor-zimbabwe.json",
     "historie/afrikanske-riker/swahili-kysten": "content/historie/afrikanske-riker/swahili-kysten.json",
     "historie/andre-verdenskrig/bakgrunn": "content/historie/andre-verdenskrig/bakgrunn.json",
+    "historie/andre-verdenskrig/brenningen-av-finnmark": "content/historie/andre-verdenskrig/brenningen-av-finnmark.json",
     "historie/andre-verdenskrig/d-dagen": "content/historie/andre-verdenskrig/d-dagen.json",
     "historie/andre-verdenskrig/konsekvenser": "content/historie/andre-verdenskrig/konsekvenser.json",
     "historie/andre-verdenskrig/konsentrasjonsleirene": "content/historie/andre-verdenskrig/konsentrasjonsleirene.json",
