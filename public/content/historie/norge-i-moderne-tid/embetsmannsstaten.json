@@ -5,7 +5,7 @@
   "year": "1814-1884",
   "category": "Norge",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/norge-i-moderne-tid/embetsmannsstaten-hero.webp",
   "details": [
     "Fra 1814 til 1884 satt embetsmenn i alle plassene i regjeringen og i mange av plassene på Stortinget",
     "En embetsmann var en utdannet tjenestemann i staten, for eksempel en prest, en dommer eller en offiser",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/embetsmannsstaten-01.webp",
       "alt": "Bønder i vadmel og embetsmenn i uniform i stortingssalen 1833",
       "caption": "I 1833 satt det for første gang flere bønder enn embetsmenn på Stortinget."
     },
@@ -120,7 +120,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/embetsmannsstaten-02.webp",
       "alt": "Bondeleder Ole Gabriel Ueland taler i Stortinget",
       "caption": "Ole Gabriel Ueland ledet bøndene på Stortinget i over 20 år."
     },
@@ -158,7 +158,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/embetsmannsstaten-03.webp",
       "alt": "Folkemøte med Johan Sverdrup på 1880-tallet",
       "caption": "På 1870- og 1880-tallet samlet Johan Sverdrup en bred opposisjon mot embetsmennenes styre."
     },
