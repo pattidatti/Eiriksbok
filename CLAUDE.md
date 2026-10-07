@@ -438,7 +438,7 @@ Interactive components in articles are referenced by string name in JSON and res
 | `TimelineComponent` | Compact inline timeline |
 | `FactBox` | Info callout box |
 | `QuoteBlock` | Styled quote |
-| `Kildeliste` | Kollapsbar APA-kildeliste (`props.sources`: array av ferdigformaterte APA-strenger, støtter `*kursiv*` og `[tekst](url)`) — plasseres som siste content-block, etter Quiz |
+| `Kildeliste` | Kollapsbar APA-kildeliste (`props.sources`: array av ferdigformaterte APA-strenger, støtter `*kursiv*` og `[tekst](url)`) - plasseres rett før Oppgaver; vises alltid før «Jobb med stoffet» (rendreren flytter den fram om den står sist) |
 | `Gallery` | Image gallery |
 | `GlossaryTooltip` | Concept tooltip |
 | `HanseaticTradeMap` | Hansa-handelsrutekart med byer/varer |

@@ -188,15 +188,21 @@ const RevealBlock: React.FC<{ imageOnly?: boolean; children: React.ReactNode }> 
 // Sluttsonen «Jobb med stoffet»: den sammenhengende halen av etterarbeid-blokker
 // (Oppgaver, Quiz, Kildeliste) får en felles seksjonsskillelinje, slik at
 // overgangen fra brødtekst til etterarbeid blir tydelig i stedet for at kortene
-// flyter rett ut av artikkelen.
+// flyter rett ut av artikkelen. Kildelista hører til artikkelen, ikke til
+// etterarbeidet: den vises rett før skillelinja, uansett hvor i halen den står
+// i JSON-en.
 const ETTERARBEID_NAVN = new Set(['Oppgaver', 'Quiz', 'Kildeliste']);
-const isEtterarbeidBlock = (block: ContentBlock): boolean => {
+const blockName = (block: ContentBlock): string | undefined => {
     const b = block as { type?: string; name?: string; component?: string };
     const type = b.type || b.name;
-    if (type === 'quiz') return true;
-    const name = type === 'component' ? b.name || b.component : type;
+    return type === 'component' ? b.name || b.component : type;
+};
+const isEtterarbeidBlock = (block: ContentBlock): boolean => {
+    const name = blockName(block);
+    if (name === 'quiz') return true;
     return name !== undefined && ETTERARBEID_NAVN.has(name);
 };
+const isKildeliste = (block: ContentBlock): boolean => blockName(block) === 'Kildeliste';
 
 interface ArticleContentProps {
     content: ContentBlock[];
@@ -258,9 +264,23 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
         etterarbeidStart = -1;
     }
 
+    // Visningsrekkefølgen: Kildeliste i halen flyttes fram foran resten av
+    // etterarbeidet. Blokkene beholder sin opprinnelige indeks (TOC-ankere,
+    // activeBlockIndex og onBlockClick er nøklet på den).
+    const renderOrder = displayContent.map((_, i) => i);
+    let skillelinjeIndex = -1;
+    if (etterarbeidStart !== -1) {
+        const hale = renderOrder.slice(etterarbeidStart);
+        const kilder = hale.filter((i) => isKildeliste(displayContent[i]));
+        const resten = hale.filter((i) => !isKildeliste(displayContent[i]));
+        renderOrder.splice(etterarbeidStart, hale.length, ...kilder, ...resten);
+        skillelinjeIndex = resten.length > 0 ? resten[0] : -1;
+    }
+
     return (
         <div className={`article-content min-w-0 ${isTool ? 'w-full max-w-none' : 'max-w-5xl mx-auto'}`}>
-            {displayContent.map((block, index) => {
+            {renderOrder.map((index) => {
+                const block = displayContent[index];
                 const rendered = ((): React.ReactNode => {
                 // ... (rest of the mapping using mergedConcepts instead of concepts)
                 // Handle 'type' (standard), 'name' (legacy), and '__typename' (GraphQL)
@@ -709,7 +729,7 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                 const isImageBlock = (blockKind.type || blockKind.name) === 'image';
                 return (
                     <React.Fragment key={index}>
-                        {index === etterarbeidStart && (
+                        {index === skillelinjeIndex && (
                             <div className="mt-16 mb-2 flex items-center gap-4">
                                 <div className="h-px flex-1 bg-gradient-to-r from-transparent to-slate-300" />
                                 <span className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">

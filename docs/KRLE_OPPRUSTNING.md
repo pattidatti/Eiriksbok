@@ -22,7 +22,7 @@ Destillert fra `.agent/workflows/plan_article.md`. En artikkel er ferdig når al
 - [ ] **Én ny signaturkomponent**, unik for artikkelen, plassert tidlig. «Standard: lag ny komponent. I tvil - lag ny.»
 - [ ] **3D-mikrospill kun hvis temaet er romlig** - se §2.1. For per-religion-artiklene er svaret nei.
 - [ ] `heroImage` + **3 inline bilder**: etter åpningen, ved vendepunktet, før avslutningen
-- [ ] Fast hale: **`Oppgaver` → `Quiz` → `Kildeliste`** som de tre siste blokkene
+- [ ] Fast hale: **`Kildeliste` → `Oppgaver` → `Quiz`** som de tre siste blokkene
 - [ ] `Oppgaver` med Bloom-trapp: `forstaa` 3-4, `reflekter` 3-4, `gaaVidere` 2-3
 - [ ] `Quiz` med 3-5 spørsmål
 - [ ] `Kildeliste` med minst 3 kilder i APA, husets stil, med hentedato og `(u.å.)` der årstall mangler

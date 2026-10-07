@@ -201,7 +201,7 @@ Gjør endringene fra Jobb 1 direkte i artikkel-JSON-en. Regler:
   `(Etternavn, År)` for én forfatter, `(Etternavn & Etternavn, År)` for to. Narrativt: "Ifølge
   Brazier (2026) ...". Samme forfatter + samme år på to ulike kilder → `2026a`, `2026b` (bokstav
   tildeles alfabetisk etter tittel).
-- **Kildeliste som aller siste blokk** (etter Quiz hvis den finnes):
+- **Kildeliste rett før Oppgaver** (eller før Quiz hvis Oppgaver mangler), så kildene står før «Jobb med stoffet»:
   ```json
   { "type": "component", "name": "Kildeliste", "props": { "sources": [ "...", "...", "..." ] } }
   ```
@@ -279,7 +279,7 @@ while True:
     if any(3 <= len(r) <= 4 for r in runs): intext += 1
     pos = close + 1
 errors = []
-if not kl: errors.append('Kildeliste mangler (skal vaere aller siste blokk)')
+if not kl: errors.append('Kildeliste mangler (skal staa rett foer Oppgaver)')
 if len(sources) < 3: errors.append('For faa kilder: ' + str(len(sources)))
 if intext < 2: errors.append('For faa in-text-henvisninger: ' + str(intext))
 if errors: print('FEIL:', errors); sys.exit(1)
