@@ -5,7 +5,7 @@
   "year": "1944-1945",
   "category": "Norge",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/andre-verdenskrig/brenningen-av-finnmark-hero.webp",
   "details": [
     "28. oktober 1944 ga Hitler ordre om at alle øst for Lyngen skulle flyttes med tvang og alle hus brennes",
     "Rundt 50 000 mennesker ble tvangsevakuert, mens rundt 23 000 gjemte seg i huler og gammer",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/brenningen-av-finnmark-01.webp",
       "alt": "Fiskevær i Finnmark i flammer, folk på kaia",
       "caption": "Høsten 1944 brente tyske soldater bygd etter bygd i Finnmark og Nord-Troms."
     },
@@ -124,7 +124,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/brenningen-av-finnmark-02.webp",
       "alt": "Familie utenfor en torvgamme i snødekt landskap",
       "caption": "Rundt 23 000 mennesker i Finnmark gjemte seg i huler og gammer vinteren 1944-1945."
     },
@@ -146,7 +146,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/andre-verdenskrig/brenningen-av-finnmark-03.webp",
       "alt": "Nye trehus bygges på brente tomter i Finnmark",
       "caption": "Etter krigen bygde folk opp igjen bygdene, ofte på de samme tomtene som før."
     },
