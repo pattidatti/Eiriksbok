@@ -23,7 +23,7 @@ Fullfør jobbene i rekkefølge. Avslutt ALDRI uten Jobb 6 (rapporten). Jobb 5 og
 ## Jobb 0: Oppsett
 
 ```bash
-date +"%Y-%m-%d %H:%M"
+date -u +"%Y-%m-%d %H:%M UTC" | tee /tmp/start.txt
 git fetch origin main && git checkout -B work origin/main
 npm ci 2>&1 | tail -3
 npx playwright install --with-deps chromium 2>&1 | tail -2 || npx playwright install chromium 2>&1 | tail -2
@@ -330,7 +330,7 @@ flere runder bare støy (natt etter natt 01.-07.10 gikk summen 17-19-18 uten at 
 Da gjør én siste forbedrer de to viktigste grepene, og spillet leveres med én gang.
 
 **Natta ender alltid med levering.** Etter fjerde vurderingsrunde (eller tidligere hvis kvoten
-eller tiden går mot slutten - se på klokka før hver ny runde, og start ingen runde etter 06:30 UTC):
+eller tiden går mot slutten - se på klokka før hver ny runde, og start ingen runde mer enn 4 timer etter at kjøringen startet (starttida står i `/tmp/start.txt`)):
 
 - **Terskelen nådd:** vanlig PR (Jobb 5).
 - **Under terskelen:** én siste forbedrer gjør de to viktigste forbedringene fra siste vurdering
