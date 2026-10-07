@@ -2,7 +2,7 @@
 // spillet og hendelsene, lager partikler og lyd. Ingen spillregler her.
 
 import { bakke } from './terrain';
-import { blink, rist, slipp, type Fx } from './fx';
+import { blink, rist, slipp, stopp, type Fx } from './fx';
 import { iBåndet, klaring } from './rules';
 import type { Lyd } from './sound';
 import type { Game, Hendelse } from './state';
@@ -55,10 +55,11 @@ export function juice(g: Game, fx: Fx, j: Juice, lyd: Lyd, dt: number, landet: n
         slipp(fx, 'glo', BX + r(-4, 4), y - 30, { vx: r(-30, 10), vy: r(-40, -10), maks: 0.5 });
     }
 
-    // Kongens gave: gullmynter drysser rundt ballongen mens sparingen er doblet.
-    if (g.gave > 0 && Math.random() < dt * 12) {
-        slipp(fx, 'mynt', BX + r(-30, 30), y - r(40, 100), { vx: r(-40, 40), vy: r(-60, 20), maks: 0.6 });
+    // Roret: ballongen dykker - vindstriper over silken, så styringen kjennes.
+    if (g.ror && Math.random() < 0.8) {
+        slipp(fx, 'gnist', BX + r(-30, 30), y - r(90, 130), { vx: r(-120, -40), vy: r(-420, -300), maks: 0.22, str: 1.1 });
     }
+
     // Ueland over ×5: fartsstriper bak ballongen.
     if (g.ganger > 5 && Math.random() < 0.6) {
         slipp(fx, 'gnist', BX - 30, y - r(10, 90), { vx: r(-700, -500), vy: r(-10, 10), maks: 0.25, str: 1.4 });
@@ -132,6 +133,7 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
             if (h.ganger > h.fra) {
                 fx.gangerSprett = 1;
                 lyd.ganger(h.ganger);
+                if (h.ganger === 5 || h.ganger === TUNING.ganger.maks) stopp(fx, 0.06);
                 if (h.ganger > 5) {
                     lyd.under();
                     rist(fx, 3);
@@ -173,6 +175,7 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                 });
             break;
         case 'funn':
+            stopp(fx, 0.08);
             lyd.funn();
             blink(fx, 0.35);
             fx.sprett = 1;
@@ -181,7 +184,12 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                 slipp(fx, 'papir', BX + 10, y - 20, { vx: r(-120, 120), vy: r(-160, -40), maks: 1 });
             break;
         case 'veiskille':
-            if (h.vei === 'under' && h.konge) {
+            if (h.vei === 'under') {
+                stopp(fx, h.port ? 0.12 : 0.06);
+                if (h.port) {
+                    rist(fx, 6);
+                    blink(fx, 0.35, P.silke);
+                }
                 lyd.under();
                 for (let i = 0; i < 10; i++)
                     slipp(fx, 'gnist', BX + r(-20, 20), y - 70, {
@@ -190,11 +198,6 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                         maks: 0.4,
                         str: 1.2,
                     });
-            }
-            if (h.hatt) {
-                lyd.hatt();
-                rist(fx, 4);
-                slipp(fx, 'hatt', BX + 60, y - 110, { vx: -90, vy: 80, maks: 0.6, vr: 5 });
             }
             break;
         case 'krasj':
@@ -226,6 +229,7 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                 });
             break;
         case 'stemme':
+            stopp(fx, 0.07);
             lyd.ganger(5);
             fx.gangerSprett = 1;
             for (let i = 0; i < 5; i++)
@@ -239,10 +243,6 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
             fx.sprett = 1;
             for (let i = 0; i < 12; i++)
                 slipp(fx, 'mynt', BX + r(-10, 10), y - 30, { maks: r(0.6, 0.9), mål: TELLER });
-            break;
-        case 'brent':
-            for (let i = 0; i < 6; i++)
-                slipp(fx, 'gnist', BX + r(-10, 10), y, { vx: r(-160, 160), vy: r(-200, -40), maks: 0.35 });
             break;
         case 'roret':
             lyd.funn();

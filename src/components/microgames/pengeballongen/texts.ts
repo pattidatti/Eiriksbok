@@ -6,9 +6,9 @@ import type { Årsak } from './state';
 export const MÅL = 'Få ballongen fra 1815 til 1884. Bruk så lite penger som mulig.';
 
 export const REGLER = [
-    'Hold MELLOMROM eller musa: du betaler, og ballongen stiger. Styre kan du ikke - det gjør kongen.',
+    'Hold MELLOMROM eller musa: du betaler, og ballongen stiger. Styre får du først i 1884.',
     'Budsjettet til valget må holde. Bruker du for mye, stemmer bøndene deg ut.',
-    'Gli tett over fjellet: Ueland sparer opptil ×10. Fyrer du tett over en rygg, faller han ett trinn.',
+    'Gli tett over fjellet uten å fyre: Ueland sparer opptil ×10.',
 ];
 
 /** Om sjansene, i menyen og på slutt-skjermen. */
@@ -21,9 +21,9 @@ export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
     grense: 'Over streken = bøndene stemmer deg ut',
     ganger: 'Gli tett, men fyr før ryggen',
-    bom: 'Over: gave ×2 nå, dyrere siden',
+    banen: 'Jernbanen: lang stigning - fyr tidlig!',
     vinker: 'Bøndene stemmer ennå på embetsmenn',
-    ror: 'Pil NED eller trykk lavt: styr ned',
+    ror: 'Pil NED: dykk under fjellet!',
     ola: 'Ola-boka: ta den!',
 };
 
@@ -38,7 +38,7 @@ export const BEAT = {
     },
     roret: {
         tittel: 'Riksretten 1884',
-        tekst: 'Statsrådene er dømt. Nå styrer Stortinget kursen: trykk pil ned for å styre ned til stemmene.',
+        tekst: 'Statsrådene er dømt. Nå styrer Stortinget: dykk under fjellene med pil ned i stedet for å betale deg over.',
     },
 };
 
@@ -59,10 +59,9 @@ export const SKJEDDE = {
         `Du brukte ${brukt} Spd. før valget i ${år}. Bøndene stemte på bønder som ville spare, og du mistet plassen.`,
     krasj: (år: number) =>
         `I ${år} fikk ikke staten betalt det den måtte: prester, dommere og veier. Fjellene var de faste utgiftene.`,
-    kongevei: (n: number) =>
-        `Du tok kongeveien ${n} ${n === 1 ? 'gang' : 'ganger'}. Hver gang ble embetsverket større, og alt ble dyrere.`,
-    under: (n: number) =>
-        `Du smatt under kongens bom ${n} ${n === 1 ? 'gang' : 'ganger'} og sparte, slik Ueland gjorde.`,
+    porter: (n: number) =>
+        `Med roret dykket du under ${n} ${n === 1 ? 'fjell' : 'fjell'} du før måtte betale deg over.`,
+    baner: 'Fra 1854 bygde staten jernbaner. Stortinget måtte spare før for å ha råd til de lange stigningene.',
     seier: (spart: number) =>
         `Du kom fram til 1884 og sparte ${spart} Spd. Da måtte kongen la Sverdrup styre: regjeringen måtte ha Stortinget med seg.`,
 };

@@ -58,8 +58,9 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             break;
         }
         case 'veiskille':
-            if (h.konge && h.vei === 'under') ved('Under bommen! Ueland +1', -110, P.silke, true);
-            else if (h.hatt) ved('Kongeveien: gave ×2, men +1 embetsmann', -125, P.silke, true, 3);
+            if (h.port && h.vei === 'under') ved('Under fjellet! Gratis', -110, P.silke, true);
+            else if (h.port) ved('Over fjellet: dyrt', -110, P.karmin, false, 1.2);
+            else if (h.vei === 'under') ved('Under knausen! Ueland +1', -110, P.silke, true);
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
@@ -89,9 +90,6 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
         case 'bondeting':
             text.banner('BONDETINGET 1833', P.silke);
             ved(`Bøndene har flertall: brenneren ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 5);
-            break;
-        case 'brent':
-            ved(`Fyrte tett over fjellet: Ueland ×${h.ganger}`, -60, P.karmin, false, 1.1);
             break;
         case 'stemme':
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
@@ -150,16 +148,15 @@ export function coach(g: Game, c: Coach) {
         c.lapp('Ole Gabriel Ueland: bondeleder som hatet sløsing', BX + 70, g.y - 150, P.silke, false, 4);
         c.lapp(LAPP.ganger, BX + 70, g.y + 10, P.silke, false, 3);
     }
-    if (!sagt.has('bom')) {
-        const k = g.ter.knauser.find((kn) => kn.konge && kn.x0 - g.x < 560 && kn.x0 > g.x);
-        if (k) {
-            sagt.add('bom');
-            text.point('bom', LAPP.bom, c.vedVerden((k.x0 + k.x1) / 2, k.bunn + 40), {
-                seconds: 4,
-            });
+    // Jernbanen (fra 1854): ny form midt i runden. Varsle i god tid, så eleven fyrer tidlig.
+    if (!sagt.has('banen')) {
+        const b = g.ter.baner.find((bn) => bn.x0 - g.x < 620 && bn.x0 > g.x);
+        if (b) {
+            sagt.add('banen');
+            c.lapp(LAPP.banen, BX + 70, g.y - 60, P.silke, true, 3.5);
         }
     }
-    if (!sagt.has('sverdrup') && g.år >= TUNING.veiskille.åpenFra + 0.6) {
+    if (!sagt.has('sverdrup') && g.år >= TUNING.veiskille.riksrett + 0.6) {
         sagt.add('sverdrup');
         text.banner('Sverdrup om bord', P.silke);
     }

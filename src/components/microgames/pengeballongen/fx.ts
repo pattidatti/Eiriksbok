@@ -51,6 +51,8 @@ export interface Fx {
     stabelBlink: number;
     /** Tid siden start (ekte sekunder) - til animasjon. */
     klokke: number;
+    /** Hit-stop: spillet fryser så mange ekte sekunder ved et treff (funn, stemme, port). */
+    stopp: number;
 }
 
 export const nyFx = (): Fx => ({
@@ -63,6 +65,7 @@ export const nyFx = (): Fx => ({
     gangerSprett: 0,
     stabelBlink: 0,
     klokke: 0,
+    stopp: 0,
 });
 
 const MAKS = 260;
@@ -73,6 +76,12 @@ export function nullstillFx(fx: Fx) {
     fx.lapper.length = 0;
     fx.rist = 0;
     fx.blink = 0;
+    fx.stopp = 0;
+}
+
+/** Et kort frys ved treff (hit-stop): treffet kjennes i stedet for å gli forbi. */
+export function stopp(fx: Fx, sek: number) {
+    fx.stopp = Math.max(fx.stopp, sek);
 }
 
 export function slipp(

@@ -6,7 +6,16 @@ import { P } from './art';
 import { tegnBallong, tegnSpøkelse } from './figures';
 import { tegnFx, tegnLapper, type Fx } from './fx';
 import { tegnHud, tegnRamme } from './hud';
-import { FONT, tegnBakgrunn, tegnBånd, tegnForgrunn, tegnGlød, tegnHimmel, tegnHindre } from './scene';
+import {
+    FONT,
+    tegnBakgrunn,
+    tegnBaner,
+    tegnBånd,
+    tegnForgrunn,
+    tegnGlød,
+    tegnHimmel,
+    tegnHindre,
+} from './scene';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -60,6 +69,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
     tegnHimmel(ctx, g, tid);
     tegnBakgrunn(ctx, g);
     tegnForgrunn(ctx, g, tid);
+    tegnBaner(ctx, g, tid);
     tegnGlød(ctx, g);
     tegnBånd(ctx, g, tid);
     tegnHindre(ctx, g, tid);
@@ -74,7 +84,7 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, valg: TegneValg) {
         hold: g.hold,
         hatter: g.hatter,
         ueland: g.år >= TUNING.ganger.fra,
-        sverdrup: g.år >= TUNING.veiskille.åpenFra + 0.6,
+        sverdrup: g.år >= TUNING.veiskille.riksrett + 0.6,
         ganger: g.ganger,
         tid,
         vy: g.vy,

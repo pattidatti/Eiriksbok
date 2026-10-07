@@ -107,25 +107,34 @@ export function brettFor(år: number): number {
 export const SLETTE = { fra: 1831.4, til: 1832.7, y: 335 };
 
 /**
- * Hver valgperiode fra 1833 har sin egen form, i denne rekkefølgen:
- * tind = høy topp (dyr), skrapedal = lang flat dal (Ueland-gangeren),
- * veiskille = kam med knaus over (lav smal åpning eller kongeveien over).
- * Tre perioder er ca. 15 s, så et veiskille kommer ca. hvert 15. sekund.
+ * Hver valgperiode fra 1833 har sin egen form:
+ * tind = høy topp (dyr), skrapedal = bølgende åser (Ueland-gangeren),
+ * banen = jernbanen (fra 1854): en lang stigning opp til en stasjon - fyr tidlig og jevnt.
+ * Før 1854 veksler tind og skrapedal. Fra 1854 kommer en bane hver tredje periode, så
+ * midten av runden får noe nytt å spille på.
  */
-export type Form = 'tind' | 'skrapedal' | 'veiskille';
-export const FORMER: Form[] = ['tind', 'skrapedal', 'veiskille'];
+export type Form = 'tind' | 'skrapedal' | 'banen';
+export function formFor(p: number, år0: number, banenFra: number): Form {
+    if (år0 < banenFra) return p % 2 === 0 ? 'tind' : 'skrapedal';
+    const q = Math.round((år0 - banenFra) / 3) % 3;
+    return q === 0 ? 'banen' : q === 1 ? 'tind' : 'skrapedal';
+}
 
-/**
- * Veiskillene etter riksretten: knaus over en åpen dal. (Før 1882 står kongens veiskiller
- * midt i hver veiskille-periode, se FORMER.)
- */
+/** Jernbanene: navnet på skiltet ved stasjonen, etter året perioden starter. */
+export const BANER: { år: number; navn: string }[] = [
+    { år: 1854, navn: 'Hovedbanen 1854' },
+    { år: 1863, navn: 'Kongsvingerbanen 1862' },
+    { år: 1872, navn: 'Drammenbanen 1872' },
+];
+
+/** Knausene i lufta etter riksretten (1882): åpne, uten kongens bom. */
 export const ÅPNE_VEISKILLER = [1882.2, 1883.1];
 
 /** Kongens navngitte utgifter: en brå spiss på tinden i perioden. */
 export const UTGIFTER: { år: number; navn: string }[] = [
-    { år: 1843.5, navn: 'Ny festning' },
-    { år: 1852.5, navn: 'Hovedbanen' },
-    { år: 1861.5, navn: 'Embetskontor' },
+    { år: 1840.5, navn: 'Ny festning' },
+    { år: 1846.5, navn: 'Embetskontor' },
+    { år: 1858.5, navn: 'Telegrafen' },
 ];
 
 export type FunnId = 'olaboka' | 'jordskatten' | 'formannskap' | 'hovedbanen' | 'ibsen' | 'roret';

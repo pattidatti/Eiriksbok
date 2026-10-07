@@ -149,18 +149,16 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
         const nyRekord = !øving && spart > prev.rekord && prev.runder > 0;
         const nyeFunn = g.funn.filter((f) => !prev.funn.includes(f));
         const år = Math.floor(g.år);
-        const kongevei = g.ter.knauser.filter((k) => k.konge && k.valgt === 'over').length;
-        const under = g.ter.knauser.filter(
-            (k) => k.konge && k.valgt === 'under' && k.x1 > (øving ? g.start : 0)
-        ).length;
+        const porter = g.ter.knauser.filter((k) => k.port && k.valgt === 'under').length;
+        const baner = g.ter.baner.filter((b) => b.x2 < g.x).length;
         if (g.årsak === 'fjell') text.lesson('krasj', SKJEDDE.krasj(år), 4);
         if (g.årsak === 'valg') {
             const p = g.perioder[g.perioder.length - 1];
             text.lesson('stemtUt', SKJEDDE.stemtUt(p?.år ?? år, Math.round(p?.brukt ?? 0)), 4);
         }
         if (vant) text.lesson('seier', SKJEDDE.seier(spart), 4);
-        if (kongevei) text.lesson('kongevei', SKJEDDE.kongevei(kongevei), 2.6);
-        else if (under) text.lesson('under', SKJEDDE.under(under), 2.4);
+        if (porter) text.lesson('porter', SKJEDDE.porter(porter), 2.6);
+        else if (baner) text.lesson('baner', SKJEDDE.baner, 2.4);
         text.lesson('styre', LÆRDOM.styre, 2.5);
         if (vant) text.lesson('ror', LÆRDOM.ror, 3);
         if (g.olaboka && !øving) text.lesson('ola', LÆRDOM.ola, 2.2);
@@ -195,7 +193,10 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
             const m = modeRef.current;
             let scroll = 0;
             let spillDt = 0;
-            if (m === 'play') {
+            if (m === 'play' && fx.stopp > 0) {
+                // Hit-stop: verden står stille et øyeblikk etter et treff.
+                fx.stopp = Math.max(0, fx.stopp - dt);
+            } else if (m === 'play') {
                 spillDt = g.mode === 'play' ? dt * text.timeScale() : dt;
                 const x0 = g.x;
                 update(g, spillDt);
@@ -219,7 +220,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
             if (m === 'play') {
                 if (g.mode === 'play') juice(g, fx, juiceRef.current, lyd, spillDt, landet);
                 else {
-                    vent.current ??= g.mode === 'won' ? 0.9 : 0.5;
+                    vent.current ??= g.mode === 'won' ? 0.6 : 0.35;
                     vent.current -= dt;
                     if (vent.current <= 0) {
                         vent.current = null;

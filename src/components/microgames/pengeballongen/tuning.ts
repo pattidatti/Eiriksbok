@@ -21,10 +21,16 @@ export const TUNING = {
         rorTempo: 30,
     },
 
-    // Roret etter riksretten: pil ned / S / trykk lavt styrer ballongen ned, gratis.
+    // Roret etter riksretten: nå styrer du helt. Hold = opp, pil ned / S / trykk lavt = ned,
+    // ingen av dem = rett fram. Fjellene i rorstrekket har en port under som bare roret når.
     ror: {
         /** Fart ned når eleven styrer (px/s). */
-        synk: 340,
+        synk: 230,
+        /** Fart opp når eleven holder (px/s). */
+        stig: 230,
+        /** Pil ned styrer mot så mange px over den høyeste bakken så langt foran (px). */
+        over: 38,
+        foran: 120,
         /** Brenneren svarer raskere når Stortinget styrer (s, mot `løft.varmeTau`). */
         varmeTau: 0.07,
         /** Hvor fort farten følger roret og brenneren i rorstrekket (px/s²): Stortinget styrer. */
@@ -32,11 +38,13 @@ export const TUNING = {
         /** Stemmene i dalene: verdt så mye ganger Ueland-gangeren. */
         stemme: 40,
         /** Dalene i rorstrekket: antall, dybde (px under kammen) og kammen. */
-        daler: 5,
+        daler: 3,
         kamY: 360,
         dalY: 490,
         /** Fra kanten av kammen til bunnen av dalen (px vei): bratt. */
-        bratt: 90,
+        bratt: 200,
+        /** Den flate dalbunnen der porten står (px vei). */
+        bunn: 320,
         /** Stemmen henger så høyt over dalbunnen. */
         stemmeOver: 40,
     },
@@ -71,11 +79,12 @@ export const TUNING = {
     // Løftet. Hold = brenneren varmes; varmen kommer og går med en liten forsinkelse.
     løft: {
         /** Sekunder før varmen i ballongen følger knappen (treghet). */
-        varmeTau: 0.18,
+        varmeTau: 0.22,
         /** Hvor fort farten nærmer seg målet når ballongen skal opp (px/s²). */
-        akselerasjon: 650,
-        /** ... og når den allerede faller og faller fortere. Lufta kjøles sakte (lett å fjære). */
-        akselerasjonNed: 350,
+        akselerasjon: 600,
+        /** ... og når den allerede faller og faller fortere. Lufta kjøles sakte, så et sent
+         * trykk er ikke krasj: ballongen faller mykt. */
+        akselerasjonNed: 150,
         /** Stigefart med full varme helt nede (px/s). */
         stigLav: 330,
         /** Stigefart med full varme helt oppe. Tynn luft: høyt oppe koster det mer å holde seg. */
@@ -83,8 +92,8 @@ export const TUNING = {
         /** Hvor brått løftet faller med høyden (1 = jevnt, høyere = mest høyt oppe). */
         tynnLuft: 1.6,
         /** Synkefart uten varme i 1815 og 1880 (før flosshattene). */
-        synkFra: 110,
-        synkTil: 150,
+        synkFra: 85,
+        synkTil: 115,
         /** Hver flosshatt som klatrer om bord gjør ballongen tyngre (px/s ekstra synk). */
         perHatt: 0.6,
         /** De første sekundene synker ballongen sakte, så eleven rekker å se hva som skjer. */
@@ -96,7 +105,7 @@ export const TUNING = {
 
     // Pengene.
     penger: {
-        /** Spesidaler per sekund du holder (før kongeveiens flosshatter gjør brenneren dyrere). */
+        /** Spesidaler per sekund du holder. */
         perSek: 10,
         /** Før Bondetinget i 1833 bestemte embetsmennene: brenneren koster mer (Spd/s). */
         førBonde: 14,
@@ -125,7 +134,7 @@ export const TUNING = {
     ganger: {
         fra: 1833,
         /** Nær-båndet: under så mange px over bakken vokser gangeren. */
-        nær: 50,
+        nær: 70,
         /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */
         vindu: [-90, 30] as [number, number],
         /** Sekunder sammenhengende i båndet per trinn opp. */
@@ -133,24 +142,12 @@ export const TUNING = {
         /** Over båndet faller gangeren ett trinn per så mange sekunder. */
         fall: 1.5,
         maks: 10,
-        /** Trykk i båndet innen så mange sekunder etter et trinn-tap koster ikke et nytt trinn. */
-        fjær: 1.5,
-        /** Kongens gave: så mange sekunder med dobbel sparing etter kongeveien. */
-        gave: 5,
     },
 
     // Formene i hver valgperiode fra 1833 (rekkefølgen står i levels.ts).
     form: {
         /** Høyden på tinden over dalen ved første valgperiode. */
         tind: 120,
-        /** Høyden på kammen under knausen ved veiskillene. */
-        kam: 60,
-        /** Kammen blir aldri høyere enn dette (ellers blir kongeveien klemt mot taket). */
-        kamMaks: 105,
-        /** Kammen varierer litt fra runde til runde (ganges med kam). */
-        kamSpenn: [0.8, 1.2] as [number, number],
-        /** Skråningen opp til og ned fra kammen (px vei). */
-        skrå: 170,
         /** Hver valgperiode blir tinden og kammen så mye høyere (andel av starthøyden). */
         økning: 0.045,
         /** Skrapedalen er åser som bølger: høyden på hver ås (px), og antall åser. */
@@ -161,24 +158,41 @@ export const TUNING = {
     // Funn som henger lavt i en dal: avstand fra kurven som teller som tatt.
     funn: { radius: 26, overBakken: 24 },
 
-    // Veiskillene: en fjellknaus i lufta. Under = billig, trang åpning. Over = kongeveien:
-    // dyrt og åpent, og en flosshatt ekstra.
+    // Jernbanene fra 1854 (Hovedbanen): en lang stigning opp til en stasjon. Ballongen må
+    // fyre tidlig og jevnt langs skinnene - å vente til bakken er der, koster dobbelt i tynn luft.
+    banen: {
+        /** Fra dette året erstatter banen den tredje formen i hver runde av former. */
+        fra: 1854,
+        /** Høyden på stasjonen over dalen (ganges med økningen per periode). */
+        høyde: 150,
+        /** Stigningen starter og slutter (andel av perioden), stasjonen er flat til `stasjon`. */
+        opp: [0.06, 0.6] as [number, number],
+        stasjon: 0.76,
+        /** Toget kjører oppover skinnene med denne farten (px/s, saktere enn ballongen). */
+        tog: 70,
+    },
+
+    // Knausene i lufta etter riksretten 1882-1884. Under = Ueland +1.
     veiskille: {
         bredde: 260,
-        /** Flat kam før og etter knausen. */
-        flate: 90,
-        /** Luft fra kammen til undersiden av knausen før 1882 (1,6 ballonghøyder). */
-        gapLav: 150,
-        /** Luft under knausen etter 1882 (fra dalbunnen). */
+        /** Luft under knausen (fra dalbunnen). */
         gap: 175,
-        /** Kongeveien over knausen: en flosshatt klatrer om bord, og hver slik hatt gjør
-         * brenneren så mye dyrere resten av runden. Til gjengjeld: kongens gave, dobbel sparing i `ganger.gave` s. */
-        kongeveiKostnad: 0.15,
         /** Tykkelsen på knausen. */
         tykkelse: 24,
         dalY: 474,
-        /** Fra dette året er bommen borte (riksretten). */
-        åpenFra: 1882,
+        /** Riksretten: fra dette året er kongens bommer borte, og Sverdrup kommer om bord. */
+        riksrett: 1882,
+    },
+
+    // Rorstrekket: fjell med en port under. Før roret kunne du bare betale deg over;
+    // med roret dykker du under fjellet og henter stemmene.
+    port: {
+        /** Luft under fjellet over dalbunnen (ballongen er 94 px høy). */
+        gap: 180,
+        /** Toppen av fjellet (skjerm-y): over himmelen, så det går ikke an å fly over. */
+        topp: -40,
+        /** Bredden på fjellet over porten (px vei). */
+        bredde: 130,
     },
 
     // Presset (0-1) som selvspillet måler.
@@ -187,11 +201,11 @@ export const TUNING = {
     // Rangtrinn etter sparte spesidaler (stigende).
     ranger: [
         [0, 'Vararepresentant'],
-        [700, 'Bonderepresentant'],
-        [1600, 'Sparebonde'],
-        [2700, 'Ueland-elev'],
-        [3900, 'Dalanes stolthet'],
-        [5400, 'Ueland selv'],
+        [500, 'Bonderepresentant'],
+        [1100, 'Sparebonde'],
+        [1800, 'Ueland-elev'],
+        [2500, 'Dalanes stolthet'],
+        [3200, 'Ueland selv'],
     ] as [number, string][],
 };
 

@@ -49,11 +49,36 @@ export interface Flukt {
  * riksretten) følger ballongen deg raskt, og roret alene styrer den ned. Brukes av spillet og
  * av robotene som spår.
  */
-export function fly(f: Flukt, holdPå: boolean, rorPå: boolean, harRor: boolean, sy: number, dt: number) {
+/**
+ * Dit roret styrer: et stykke over den høyeste bakken rett foran. Holder du pil ned for
+ * lenge, legger ballongen seg langs dalen i stedet for å krasje - roret er tilgivende.
+ */
+export function rorMål(ter: Game['ter'], x: number): number {
+    let min = 540;
+    for (let dx = -B.kurvHalv; dx <= T.ror.foran; dx += 10) min = Math.min(min, bakke(ter, x + dx));
+    return min - T.ror.over;
+}
+
+export function fly(
+    f: Flukt,
+    holdPå: boolean,
+    rorPå: boolean,
+    harRor: boolean,
+    sy: number,
+    dt: number,
+    mål_ = Infinity
+) {
     const l = T.løft;
     const tau = harRor ? T.ror.varmeTau : l.varmeTau;
     f.varme += ((holdPå ? 1 : 0) - f.varme) * (1 - Math.exp(-dt / tau));
-    const mål = rorPå && !holdPå ? T.ror.synk : -stig(f.y) * f.varme + sy * (1 - f.varme);
+    // Med roret styrer du helt: hold = opp, pil ned = ned mot dalen (`mål_`), ingen = rett fram.
+    const mål = harRor
+        ? holdPå
+            ? -T.ror.stig
+            : rorPå
+              ? Math.max(-T.ror.stig, Math.min(T.ror.synk, (mål_ - f.y) * 5))
+              : 0
+        : -stig(f.y) * f.varme + sy * (1 - f.varme);
     const a = harRor
         ? T.ror.akselerasjon
         : mål > f.vy && f.vy >= 0
@@ -82,20 +107,15 @@ export function nærhet(ter: Game['ter'], x: number, y: number): number {
 export const iBåndet = (g: Game) =>
     g.år >= T.ganger.fra && nærhet(g.ter, g.x, g.y) < T.ganger.nær;
 
-/**
- * Hva brenneren koster nå (Spd/s): hver flosshatt fra kongeveien gjør den dyrere, Ola-boka
- * (bondeflertallet) gjør den billigere.
- */
+/** Hva brenneren koster nå (Spd/s): Ola-boka (bondeflertallet) gjør den billigere. */
 export const kostnad = (g: Game) =>
     (g.år < T.penger.førsteEkteValg ? T.penger.førBonde : T.penger.perSek) *
-    (1 + T.veiskille.kongeveiKostnad * g.kongeHatter) *
     (g.olaboka ? 1 - T.penger.olaboka : 1);
 
 /** Spart per sekund når du slipper: lite høyt oppe, mye tett over fjellet. */
 export function sparing(g: Game): number {
     if (g.år < T.ganger.fra) return T.penger.førUeland;
-    const gave = g.gave > 0 ? 2 : 1;
-    return (iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor) * gave;
+    return iBåndet(g) ? T.penger.perSek * g.ganger : T.penger.utenfor;
 }
 
 /** Treffer ballongen fjellet eller en knaus? */

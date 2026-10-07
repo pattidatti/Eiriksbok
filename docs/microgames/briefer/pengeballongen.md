@@ -566,3 +566,54 @@ Kjente svakheter: (1) Sverdrup-venner/riksrett-port er fortsatt ikke bygd. (2) M
 fortsatt lik (samme bakkebølge). (3) Nybegynner og flink er langt fra hverandre (480 mot 5364).
 (4) Pekerne fra arkadeskallet (hold, Ola-boka, bommen, roret) står fortsatt ved det de peker på.
 (5) Selvspill, scene-audit og likhet er kjørt etter denne teksten; tallene står i commit-rapporten.
+
+### Natt 2, forbedring 1 (etter vurdering: Gøy 3 i fire runder, CI-selvspillet rødt)
+
+Fjernet før lagt til. Reglene eleven må holde i hodet var blitt sju (hold, fjell, budsjett, Ueland,
+trykk-straff i båndet, kongeveien med gave ×2 og +1 embetsmann, roret). Nå er de tre fagreglene
+igjen (hold = penger, fjellet = faste utgifter, budsjettet ved valget) pluss Ueland som poeng, og
+roret i 1884.
+(1) Kontrollen tåler en ujevn tommel. Mykere fall: synk 110/150 -> 85/115 px/s, akselerasjon nedover
+350 -> 150 px/s², varmeTau 0,18 -> 0,22 (mer treghet), nær-båndet 50 -> 70 px. Trykk-straffen
+(`brent`) er fjernet. Flink-roboten ser på tilstanden: den planlegger som om neste grep kommer
+først om 0,75 s (`vent`) og krever mer luft jo fortere den faller (`fartMargin` 0,2 s × fart ned).
+Jitter-skript (/tmp, ikke committet), 60 seeds per variant, grep hvert 0,2/0,25/0,33/0,5 s og
+0/5/10/20 % grep forsinket 0,1-0,4 s: flink vinner 92-100 % i alle 16 variantene (laveste: 0,33 s
+uten forsinkelse, 5 av 60 stemt ut i 1875). Før: 0 av 40 med grep hvert 0,25 s.
+(2) Midten: jernbanen. Fra 1854 erstatter banen kongens veiskille hver tredje periode (Hovedbanen
+1854, Kongsvingerbanen 1862, Drammenbanen 1872): en lang, jevn stigning opp til en stasjon med
+navneskilt og et tog som puffer opp skinnene. Den koster mest av budsjettet (flink ca. 21 av 26
+Spd., tind 19, skrapeåser 15), så den må planlegges: spar før, fyr tidlig og jevnt langs skinnene i
+stedet for å hoppe. Lapp «Jernbanen: lang stigning - fyr tidlig!» første gang. Kongeveien er borte.
+Kongens utgifter står nå på tindene (Ny festning 1840, Embetskontor 1846, Telegrafen 1858).
+(3) Sverdrup og riksretten er spill. Fra 1884 styrer du helt: hold = opp, pil ned = ned mot dalen
+(roret legger ballongen 38 px over bakken foran, så å holde for lenge er ikke krasj), ingen av dem =
+rett fram. Rorstrekket har tre daler med en fjellvegg som henger ned fra himmelen og en port under,
+med en stemme i porten (40 × Ueland). Fjellveggen går over himmelen: det du før måtte betale deg
+over, dykker du nå under, og uten roret går det ikke. Porten lyser og en stiplet pil viser dykket.
+Under porten: hit-stop, risting, gnister og «Under fjellet! Gratis». «Dette skjedde»: «Med roret
+dykket du under 3 fjell du før måtte betale deg over.»
+
+Feel-lista. Før: 2 (Hårfint/nesten-bom), 3 (funn og mynter flyr inn/ut), 4 (teller spretter og
+låter) var på plass; 1 manglet hit-stop. Etter: hit-stop (`stopp()` i fx.ts) ved funn, stemme,
+porten og Ueland ×5/×10, og vindstriper når roret dykker. Alle fire på plass.
+
+Simulering (200 runder): grønn. flink 100 %, median 2147 (p10 1974, p90 2482); nybegynner 98 %,
+median 1701; sløseren 0 % (stemt ut 1830), gniten/passiv 21, tilfeldig 49. 34,7 valg per minutt,
+press 0,26 -> 0,45 -> 0,57. Selvspill --fart 4 --cover: flink vant med 2821, alle porter grønne,
+Chromebook p95 13,3 ms. Med --maks-tid 60 (som CI): grønn. Scene-audit ren. Likhet: petisjonen-3d
+0,50 (på grensen). Rangene er senket (500/1100/1800/2500/3200) fordi poengene falt.
+
+Prøvd som IKKE virket: (a) bare mykere fysikk med samme robot - flink krasjet fortsatt i 1839 under
+knausen; (b) `vent` 0,9 s - trygg, men sto aldri i nær-båndet (snitt 260 poeng) og ble stemt ut i
+1875; (c) fartMargin 0,35 - vant alt, men med 245 poeng; (d) rorstrekket som ren fart (pil ned =
+230 px/s ned) - med et grep som kommer 0,75 s for sent dykker ballongen 170 px og krasjer, så
+porten var umulig for en ujevn tommel. Løst med at roret styrer mot en høyde over bakken.
+(e) Porter med fem daler og 90 px bratt kant - for kort til å rekke ned; nå tre daler, 200 px kant,
+320 px dalbunn og 180 px port.
+
+Kjente svakheter: (1) Nybegynner vinner 98 % og ligger nær flink (1701 mot 2147): spillet er nå
+tilgivende, og mye av poengene kommer fra stemmene i portene. (2) Portene er obligatoriske: en elev
+som ikke skjønner roret, krasjer og spoles tilbake til 1881 (tre sjanser). Pila, lappen og
+lærings-øyeblikket peker på pil ned. (3) Likheten 0,50 er på grensen. (4) Flink står sjeldnere i
+nær-båndet enn før (snitt-ganger 2,7 mot 7,5), så Ueland ×10 er sjeldnere å se på filmen.

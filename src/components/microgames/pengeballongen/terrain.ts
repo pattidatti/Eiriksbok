@@ -2,9 +2,10 @@
 // nettleser får samme fjell. Ingen spillregler her - bare geometri og oppslag.
 
 import {
+    BANER,
     BRETT,
     brettFor,
-    FORMER,
+    formFor,
     FUNN,
     SLETTE,
     UTGIFTER,
@@ -70,8 +71,8 @@ export interface Knaus {
     topp: number;
     bunn: number;
     år: number;
-    /** Kongens veiskille (før 1882): kam under, kongeveien over gir en flosshatt. */
-    konge: boolean;
+    /** Fjellet i rorstrekket med en port under (bare roret når ned i tide). */
+    port: boolean;
     /** Hvilken vei ballongen tok (settes når den er forbi midten). */
     valgt: 'over' | 'under' | null;
 }
@@ -96,6 +97,16 @@ export interface Stemme {
     tatt: boolean;
 }
 
+/** En jernbane fra 1854: skinner fra dalen (x0, y0) opp til stasjonen (x1-x2, y1). */
+export interface Bane {
+    x0: number;
+    y0: number;
+    x1: number;
+    x2: number;
+    y1: number;
+    navn: string;
+}
+
 export interface Valgsted {
     år: number;
     x: number;
@@ -111,6 +122,7 @@ export interface Terreng {
     utgifter: Utgift[];
     valg: Valgsted[];
     stemmer: Stemme[];
+    baner: Bane[];
     /** Steder der eleven får et nytt valg (rygger, valg, funn, veiskiller). */
     valgpunkter: number[];
     lengde: number;
@@ -126,6 +138,7 @@ export function lagTerreng(rng: Rng): Terreng {
     const utgifter: Utgift[] = [];
     const knauser: Knaus[] = [];
     const stemmer: Stemme[] = [];
+    const baner: Bane[] = [];
     const lengde = veiForÅr(Å.slutt) + 1200;
     const punkt = (x: number, y: number) => {
         xs.push(x);
@@ -134,6 +147,7 @@ export function lagTerreng(rng: Rng): Terreng {
     const slette = { x0: veiForÅr(SLETTE.fra), x1: veiForÅr(SLETTE.til) };
     const vs = T.veiskille;
     const F = T.form;
+    const BN = T.banen;
     const x33 = veiForÅr(Å.skifte);
 
     // Rolig start: ballongen henger over en flat dal i ca. 3 sekunder.
@@ -207,7 +221,7 @@ export function lagTerreng(rng: Rng): Terreng {
                     bunn,
                     topp: bunn - vs.tykkelse,
                     år,
-                    konge: false,
+                    port: false,
                     valgt: null,
                 });
                 valgpunkter.push(cx - vs.bredde / 2);
@@ -217,7 +231,7 @@ export function lagTerreng(rng: Rng): Terreng {
             const R = T.ror;
             const xr = veiForÅr(Å.rorFra);
             const xl = veiForÅr(Å.slutt);
-            const x1 = xr + 200;
+            const x1 = xr + 420;
             const w = (xl - 160 - x1) / R.daler;
             punkt(xr - 20, dy);
             for (let i = 0; i <= R.daler; i++) {
@@ -225,12 +239,24 @@ export function lagTerreng(rng: Rng): Terreng {
                 punkt(xk - 40, R.kamY);
                 punkt(xk + 40, R.kamY);
                 if (i < R.daler) {
-                    // Bratt ned rett etter kammen, slakt opp igjen: stemmen henger tett under
-                    // kanten, så bare den som styrer ned med roret når den.
+                    // Bratt ned rett etter kammen, slakt opp igjen. Over dalen henger et fjell
+                    // med en port under: før roret måtte du betale deg over fjellene, nå dykker
+                    // du under og henter stemmen i porten.
                     const xd = xk + 40 + R.bratt;
                     punkt(xd, R.dalY);
-                    punkt(xd + 30, R.dalY);
-                    stemmer.push({ x: xd + 10, y: R.dalY - R.stemmeOver, tatt: false });
+                    punkt(xd + R.bunn, R.dalY);
+                    const pc = xd + R.bunn / 2;
+                    stemmer.push({ x: pc, y: R.dalY - R.stemmeOver, tatt: false });
+                    const PT = T.port;
+                    knauser.push({
+                        x0: pc - PT.bredde / 2,
+                        x1: pc + PT.bredde / 2,
+                        bunn: R.dalY - PT.gap,
+                        topp: PT.topp,
+                        år: årFor(tidForVei(pc)),
+                        port: true,
+                        valgt: null,
+                    });
                     valgpunkter.push(xk);
                 }
             }
@@ -240,7 +266,7 @@ export function lagTerreng(rng: Rng): Terreng {
             break;
         }
 
-        const form = FORMER[p % FORMER.length];
+        const form = formFor(p, år0, BN.fra);
         if (form === 'tind') {
             const top = dalY - F.tind * f * (0.92 + 0.16 * rng());
             const nv = UTGIFTER.find((u) => u.år >= år0 && u.år < år0 + T.penger.hvert);
@@ -273,26 +299,19 @@ export function lagTerreng(rng: Rng): Terreng {
                 if (ås) valgpunkter.push(xa + (W * i) / n);
             }
         } else {
-            // Kongens veiskille: kam med en knaus over. Under = lav, smal og billig.
-            // Over = kongeveien: trygg, men dyr, og en flosshatt til.
-            const cx = (xa + xe) / 2;
-            const kamY = dalY - Math.min(F.kamMaks, F.kam * f * mellom(rng, F.kamSpenn));
-            const halv = vs.bredde / 2 + vs.flate;
-            punkt(cx - halv - F.skrå, dalY);
-            punkt(cx - halv, kamY);
-            punkt(cx + halv, kamY);
-            punkt(cx + halv + F.skrå, dalY);
-            const bunn = kamY - vs.gapLav;
-            knauser.push({
-                x0: cx - vs.bredde / 2,
-                x1: cx + vs.bredde / 2,
-                bunn,
-                topp: bunn - vs.tykkelse,
-                år: årFor(tidForVei(cx)),
-                konge: true,
-                valgt: null,
-            });
-            valgpunkter.push(cx - halv - F.skrå, cx - vs.bredde / 2);
+            // Jernbanen: en lang, jevn stigning opp til stasjonen, så bratt ned. Mange små
+            // punkter, så skinnene blir en nesten rett linje (bakke() er myk mellom punktene).
+            const y1 = dalY - BN.høyde * f * (0.95 + 0.1 * rng());
+            const x0 = xa + W * BN.opp[0];
+            const x1 = xa + W * BN.opp[1];
+            const x2 = xa + W * BN.stasjon;
+            const n = 10;
+            for (let i = 0; i <= n; i++) punkt(x0 + ((x1 - x0) * i) / n, dalY + ((y1 - dalY) * i) / n);
+            punkt(x2, y1);
+            punkt(xa + W * 0.95, dalY);
+            const navn = [...BANER].reverse().find((b) => b.år <= år0 + 0.5)?.navn ?? BANER[0].navn;
+            baner.push({ x0, y0: dalY, x1, x2, y1, navn });
+            valgpunkter.push(x0, (x0 + x1) / 2, x1);
         }
         x = xe;
     }
@@ -316,6 +335,7 @@ export function lagTerreng(rng: Rng): Terreng {
         utgifter,
         valg: [],
         stemmer,
+        baner,
         valgpunkter,
         lengde,
     };

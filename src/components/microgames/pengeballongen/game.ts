@@ -2,7 +2,7 @@
 // valgene og krasj. Tallene står i tuning.ts, fagreglene i rules.ts.
 
 import { brettFor } from './levels';
-import { fly, iBåndet, kostnad, krasjer, sparing, synk } from './rules';
+import { fly, iBåndet, kostnad, krasjer, rorMål, sparing, synk } from './rules';
 import { bakke, årFor, veiVed } from './terrain';
 import type { Game, Årsak } from './state';
 import { TUNING } from './tuning';
@@ -26,7 +26,6 @@ function lagreSjekk(g: Game) {
         nesteValg: g.nesteValg,
         nesteVp: g.nesteVp,
         hatter: g.hatter,
-        kongeHatter: g.kongeHatter,
         spart: g.spart,
         brukt: g.brukt,
         perioder: g.perioder.length,
@@ -53,7 +52,6 @@ function slutt(g: Game, årsak: Årsak, brukt?: number) {
         g.nesteValg = s.nesteValg;
         g.nesteVp = s.nesteVp;
         g.hatter = s.hatter;
-        g.kongeHatter = s.kongeHatter;
         g.spart = s.spart - straff;
         g.brukt = s.brukt;
         g.periode = 0;
@@ -62,9 +60,6 @@ function slutt(g: Game, årsak: Årsak, brukt?: number) {
         g.ganger = 1;
         g.gangerTid = 0;
         g.fallTid = 0;
-        g.gave = 0;
-        g.holdFør = false;
-        g.brentT = -9;
         g.rolig = g.t - T.løft.rolig.sekunder;
         g.harRor = g.år >= T.år.rorFra;
         g.ror = false;
@@ -105,7 +100,7 @@ export function update(g: Game, dt: number) {
         g.harRor = true;
         g.hendelser.push({ slag: 'roret' });
     }
-    fly(g, g.hold, g.ror, g.harRor, synk(g), dt);
+    fly(g, g.hold, g.ror, g.harRor, synk(g), dt, g.ror ? rorMål(g.ter, g.x) : Infinity);
 
     // Pengene: hold = bruk, slipp = spar (ganger Ueland).
     if (!g.stabel && g.år >= T.penger.stabelFra) {
@@ -122,14 +117,6 @@ export function update(g: Game, dt: number) {
     // den ett trinn om gangen.
     if (g.år >= T.ganger.fra) {
         const G = T.ganger;
-        // Et nytt trykk på brenneren tett over fjellet koster ett trinn: risiko i hvert trykk.
-        // Fjæring over samme rygg teller som ett trykk (`G.fjær` s).
-        if (g.hold && !g.holdFør && iBåndet(g) && g.ganger > 1 && g.t - g.brentT > G.fjær) {
-            g.brentT = g.t;
-            settGanger(g, g.ganger - 1);
-            g.gangerTid = 0;
-            g.hendelser.push({ slag: 'brent', ganger: g.ganger });
-        }
         if (iBåndet(g)) {
             g.fallTid = 0;
             g.gangerTid += dt;
@@ -151,24 +138,14 @@ export function update(g: Game, dt: number) {
         g.gangerTidSum += dt;
     }
 
-    g.holdFør = g.hold;
-    if (g.gave > 0) g.gave = Math.max(0, g.gave - dt);
-
     // Veiskillene: forbi midten av knausen avgjøres hvilken vei du tok.
     for (const k of g.ter.knauser) {
         if (k.valgt || g.x < (k.x0 + k.x1) / 2) continue;
         k.valgt = g.y <= k.topp ? 'over' : 'under';
-        const hatt = k.konge && k.valgt === 'over';
-        if (hatt) {
-            // Kongeveien: trygg, og kongens gave dobler sparingen en stund. Men en embetsmann
-            // til, og brenneren blir dyrere for godt.
-            g.hatter++;
-            g.kongeHatter++;
-            g.gave = T.ganger.gave;
-        } else if (k.valgt === 'under' && g.år >= T.ganger.fra) {
+        // Under fjellet (bare mulig med roret): Ueland +1. Over koster bare brensel.
+        if (k.valgt === 'under' && g.år >= T.ganger.fra)
             settGanger(g, Math.min(T.ganger.maks, g.ganger + 1));
-        }
-        g.hendelser.push({ slag: 'veiskille', vei: k.valgt, hatt, konge: k.konge });
+        g.hendelser.push({ slag: 'veiskille', vei: k.valgt, port: k.port });
     }
 
     // Funn som henger lavt.

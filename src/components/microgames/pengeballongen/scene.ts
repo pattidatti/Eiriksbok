@@ -350,7 +350,11 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
     for (const kn of ter.knauser) {
         const a = kn.x0 - x0;
         const b = kn.x1 - x0;
-        if (b < -40 || a > 1000) continue;
+        if (b < -160 || a > 1120) continue;
+        if (kn.port) {
+            tegnPort(ctx, kn, a, b, k.korn, x0, tid);
+            continue;
+        }
         // Fjellhammeren: kornet kritt med takket underkant og snø på toppen.
         ctx.beginPath();
         ctx.moveTo(a - 6, kn.topp + 8);
@@ -375,36 +379,9 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         }
         ctx.fillStyle = P.hvit;
         ctx.fillRect(a, kn.topp - 3, b - a, 4);
-        // Kronen: kongens veiskille. Etter riksretten faller kronene én etter én.
+        // Etter riksretten faller kongens kroner av knausene én etter én.
         const cx = (a + b) / 2;
-        if (kn.konge) {
-            ctx.strokeStyle = P.kritt;
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.moveTo(cx, kn.topp - 2);
-            ctx.lineTo(cx, kn.topp - 26);
-            ctx.stroke();
-            krone(ctx, cx, kn.topp - 32, 1.1);
-            // Skiltet: solid papir, mørk tekst (ikke blek kursiv mot himmelen).
-            // Både gaven (gull) og prisen (karmin) står på skiltet, så det er et ekte valg.
-            const gave = 'Kongeveien: gave ×2';
-            const pris = ', men +1 embetsmann';
-            ctx.font = `bold 14px ${FONT}`;
-            const gw = ctx.measureText(gave).width;
-            const sw = gw + ctx.measureText(pris).width + 14;
-            ctx.fillStyle = '#f8f4e8';
-            ctx.fillRect(cx - sw / 2, kn.topp - 66, sw, 22);
-            ctx.strokeStyle = P.karmin;
-            ctx.lineWidth = 1.5;
-            ctx.strokeRect(cx - sw / 2, kn.topp - 66, sw, 22);
-            ctx.fillStyle = P.silke;
-            ctx.fillRect(cx - sw / 2, kn.topp - 66, 5, 22);
-            ctx.textAlign = 'left';
-            ctx.fillStyle = P.silkeMørk;
-            ctx.fillText(gave, cx - sw / 2 + 7, kn.topp - 50);
-            ctx.fillStyle = P.karmin;
-            ctx.fillText(pris, cx - sw / 2 + 7 + gw, kn.topp - 50);
-        } else {
+        if (!kn.port) {
             const fall = Math.max(0, (g.x - (kn.x0 - 520)) / 220);
             if (fall < 2.2) {
                 ctx.save();
@@ -414,13 +391,20 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
                 krone(ctx, 0, 0, 1.1);
                 ctx.restore();
             }
-        }
-        // Valgt vei: et lite merke når ballongen er forbi.
-        if (kn.valgt && kn.konge) {
-            ctx.fillStyle = kn.valgt === 'under' ? P.silke : P.karmin;
-            ctx.font = `italic 14px ${FONT}`;
-            ctx.textAlign = 'center';
-            ctx.fillText(kn.valgt === 'under' ? 'Under bommen' : 'Kongeveien', cx, kn.bunn + 18);
+        } else if (!kn.valgt) {
+            // Porten under fjellet: en pil som peker ned og inn, så eleven ser at det går an.
+            const puls = 0.6 + 0.4 * Math.sin(tid * 6);
+            ctx.save();
+            ctx.globalAlpha = puls;
+            ctx.strokeStyle = P.silke;
+            ctx.lineWidth = 3;
+            ctx.setLineDash([6, 6]);
+            ctx.beginPath();
+            ctx.moveTo(a - 70, kn.bunn - 40);
+            ctx.quadraticCurveTo(a - 20, kn.bunn + 50, cx, kn.bunn + 60);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.restore();
         }
     }
     ctx.textAlign = 'center';
@@ -469,5 +453,169 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         const sx = f.x - x0;
         if (sx < -30 || sx > 990) continue;
         tegnFunn(ctx, sx, f.y, tid);
+    }
+}
+
+/**
+ * Jernbanene fra 1854: skinner opp stigningen, et tog som puffer oppover og stasjonen med
+ * navneskilt. Bare bilde - stigningen selv er terrenget.
+ */
+export function tegnBaner(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
+    const x0 = g.x - B.skjermX;
+    for (const b of g.ter.baner) {
+        if (b.x2 + 120 - x0 < 0 || b.x0 - x0 > 1000) continue;
+        // Skinnene: to streker og sviller langs bakken.
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 2;
+        for (const dy of [-3, -7]) {
+            ctx.beginPath();
+            for (let wx = b.x0; wx <= b.x2; wx += 8) {
+                const y = bakke(g.ter, wx) + dy;
+                if (wx === b.x0) ctx.moveTo(wx - x0, y);
+                else ctx.lineTo(wx - x0, y);
+            }
+            ctx.stroke();
+        }
+        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = '#5a4a3a';
+        ctx.beginPath();
+        for (let wx = b.x0; wx <= b.x2; wx += 14) {
+            const y = bakke(g.ter, wx);
+            ctx.moveTo(wx - x0 - 3, y - 1);
+            ctx.lineTo(wx - x0 + 3, y - 9);
+        }
+        ctx.stroke();
+
+        // Stasjonen på toppen, med navneskilt på solid papir.
+        const sx = b.x2 - 70 - x0;
+        ctx.fillStyle = '#8a4b2c';
+        ctx.fillRect(sx - 26, b.y1 - 30, 52, 24);
+        ctx.fillStyle = P.kritt;
+        ctx.beginPath();
+        ctx.moveTo(sx - 32, b.y1 - 30);
+        ctx.lineTo(sx, b.y1 - 46);
+        ctx.lineTo(sx + 32, b.y1 - 30);
+        ctx.closePath();
+        ctx.fill();
+        ctx.font = `bold 14px ${FONT}`;
+        ctx.textAlign = 'center';
+        const tw = ctx.measureText(b.navn).width + 14;
+        ctx.fillStyle = '#f8f4e8';
+        ctx.fillRect(sx - tw / 2, b.y1 - 76, tw, 22);
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(sx - tw / 2, b.y1 - 76, tw, 22);
+        ctx.fillStyle = P.kritt;
+        ctx.fillText(b.navn, sx, b.y1 - 60);
+
+        // Toget: kjører opp stigningen mens ballongen nærmer seg, og røyken stiger.
+        const u = Math.min(1, Math.max(0, (g.x - (b.x0 - 900)) / (b.x2 - b.x0 + 900)));
+        const tx = b.x0 + 30 + u * (b.x2 - b.x0 - 140);
+        for (let i = 2; i >= 0; i--) {
+            const wx = tx - i * 30;
+            const y = bakke(g.ter, wx) - 8;
+            const yb = bakke(g.ter, wx - 12) - 8;
+            const vinkel = Math.atan2(y - yb, 12);
+            ctx.save();
+            ctx.translate(wx - x0, y);
+            ctx.rotate(vinkel);
+            ctx.fillStyle = i === 0 ? P.kritt : '#6b3a26';
+            ctx.fillRect(-13, -15, 26, 13);
+            if (i === 0) {
+                ctx.fillRect(6, -24, 6, 10);
+                ctx.fillStyle = P.silke;
+                ctx.fillRect(-12, -13, 7, 6);
+            } else {
+                ctx.fillStyle = P.hvit;
+                ctx.fillRect(-9, -12, 6, 5);
+                ctx.fillRect(3, -12, 6, 5);
+            }
+            ctx.fillStyle = P.kritt;
+            for (const hx of [-8, 8]) {
+                ctx.beginPath();
+                ctx.arc(hx, -1, 3.5, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            ctx.restore();
+        }
+        const ry = bakke(g.ter, tx) - 34;
+        for (let i = 0; i < 5; i++) {
+            const f = (tid * 0.8 + i / 5) % 1;
+            ctx.globalAlpha = 0.55 * (1 - f);
+            ctx.fillStyle = '#e9e6dc';
+            ctx.beginPath();
+            ctx.arc(tx - x0 + 10 - f * 60, ry - f * 50, 6 + f * 14, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        ctx.globalAlpha = 1;
+    }
+}
+
+/**
+ * Fjellet over porten i rorstrekket: en tung fjellvegg som henger ned fra himmelen og
+ * blir bredere oppover, med istapper i underkanten. Bare roret når under den.
+ */
+function tegnPort(
+    ctx: CanvasRenderingContext2D,
+    kn: Game['ter']['knauser'][number],
+    a: number,
+    b: number,
+    korn: CanvasPattern | null,
+    x0: number,
+    tid: number
+) {
+    const topp = -10;
+    const bunn = kn.bunn;
+    const vid = 90;
+    ctx.beginPath();
+    ctx.moveTo(a - vid, topp);
+    // Venstre side: takket, smalner nedover.
+    for (let i = 1; i <= 8; i++) {
+        const u = i / 8;
+        const y = topp + (bunn - topp) * u;
+        ctx.lineTo(a - vid * (1 - u) - hash(i + kn.x0) * 10, y);
+    }
+    // Underkanten med istapper.
+    const n = 10;
+    for (let i = 0; i <= n; i++) {
+        const x = a + ((b - a) * i) / n;
+        const istapp = i % 2 === 1 ? 6 + hash(i * 5 + kn.x0) * 10 : 0;
+        ctx.lineTo(x, bunn - 2 + istapp);
+    }
+    for (let i = 8; i >= 1; i--) {
+        const u = i / 8;
+        const y = topp + (bunn - topp) * u;
+        ctx.lineTo(b + vid * (1 - u) + hash(i * 3 + kn.x0) * 10, y);
+    }
+    ctx.lineTo(b + vid, topp);
+    ctx.closePath();
+    ctx.fillStyle = '#353a37';
+    ctx.fill();
+    if (korn) {
+        flyttMønster(korn, -x0);
+        ctx.fillStyle = korn;
+        ctx.fill();
+    }
+    // Snøstriper i fjellveggen.
+    ctx.strokeStyle = P.hvit;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 3;
+    for (let i = 0; i < 5; i++) {
+        const sx = a - 50 + i * ((b - a + 100) / 4);
+        const sy = 30 + hash(i + kn.x0) * 120;
+        ctx.beginPath();
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(sx + 14, sy + 30 + hash(i * 7) * 30);
+        ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    // Skimmer av lys i porten mens den er foran deg: her er det åpent.
+    if (!kn.valgt) {
+        const puls = 0.25 + 0.2 * Math.sin(tid * 5);
+        const gr = ctx.createLinearGradient(0, bunn, 0, bunn + 150);
+        gr.addColorStop(0, `rgba(240,200,120,${puls.toFixed(3)})`);
+        gr.addColorStop(1, 'rgba(240,200,120,0)');
+        ctx.fillStyle = gr;
+        ctx.fillRect(a, bunn + 4, b - a, 150);
     }
 }

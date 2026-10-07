@@ -293,8 +293,8 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     const s = (0.6 + 0.4 * inn) * (1 + fx.gangerSprett * 0.25);
     ctx.globalAlpha = inn;
     kort(ctx, 16, 14, 160, 98);
-    // Kongens gave: kortet får en blinkende gullkant så lenge sparingen er doblet.
-    if (g.gave > 0) {
+    // Full fart (over ×5): kortet får en blinkende gullkant.
+    if (g.ganger > 5) {
         ctx.strokeStyle = P.silke;
         ctx.lineWidth = 3 + 2 * Math.sin(tid * 9) ** 2;
         ctx.strokeRect(12, 10, 168, 106);
@@ -366,10 +366,6 @@ function portrett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     ctx.fillStyle = P.kritt;
     ctx.fillText('Ueland', cx + 70, cy + 24);
     ctx.font = `italic 13px ${FONT}`;
-    if (g.gave > 0) {
-        ctx.fillStyle = P.silkeMørk;
-        ctx.font = `bold 13px ${FONT}`;
-        ctx.fillText(`gave ×2: ${Math.ceil(g.gave)} s`, cx + 70, cy + 40);
-    } else ctx.fillText(g.ganger > 1 ? 'sparer mer' : 'gli tett!', cx + 70, cy + 40);
+    ctx.fillText(g.ganger > 1 ? 'sparer mer' : 'gli tett!', cx + 70, cy + 40);
     ctx.globalAlpha = 1;
 }

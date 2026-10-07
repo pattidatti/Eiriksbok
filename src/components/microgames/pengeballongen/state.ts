@@ -12,13 +12,12 @@ export type Hendelse =
     | { slag: 'stemtUt'; år: number; brukt: number }
     | { slag: 'funn'; id: FunnId }
     | { slag: 'ganger'; ganger: number; fra: number }
-    | { slag: 'veiskille'; vei: 'over' | 'under'; hatt: boolean; konge: boolean }
+    | { slag: 'veiskille'; vei: 'over' | 'under'; port: boolean }
     | { slag: 'krasj' }
     | { slag: 'sjanse'; årsak: Årsak; år: number; tilbake: number; straff: number }
     | { slag: 'stemme'; verdi: number }
     | { slag: 'roret' }
     | { slag: 'bondeting' }
-    | { slag: 'brent'; ganger: number }
     | { slag: 'landet' };
 
 /** Det som lagres ved hvert valgflagg fra 1833, så en ny sjanse starter der. */
@@ -29,7 +28,6 @@ export interface Sjekkpunkt {
     nesteValg: number;
     nesteVp: number;
     hatter: number;
-    kongeHatter: number;
     spart: number;
     brukt: number;
     perioder: number;
@@ -83,16 +81,8 @@ export interface Game {
     gangerTidSum: number;
     /** Alle flosshatter om bord (tyngden). */
     hatter: number;
-    /** Hattene fra kongeveien: hver gjør brenneren dyrere. */
-    kongeHatter: number;
     /** Sekunder over båndet siden gangeren sist falt et trinn. */
     fallTid: number;
-    /** Holdt eleven inne forrige ramme? (et nytt trykk i båndet koster et trinn) */
-    holdFør: boolean;
-    /** Spilltid for siste trykk som kostet et trinn. */
-    brentT: number;
-    /** Kongens gave: sekunder igjen med dobbel sparing etter kongeveien. */
-    gave: number;
     /** Brukt i hver ekte valgperiode (til analysen og «Dette skjedde»). */
     perioder: { år: number; brukt: number }[];
     /** Neste valg i ter.valg. */
@@ -177,11 +167,7 @@ function lagGame(seed: number): Game {
         gangerSum: 0,
         gangerTidSum: 0,
         hatter: 0,
-        kongeHatter: 0,
         fallTid: 0,
-        holdFør: false,
-        brentT: -9,
-        gave: 0,
         perioder: [],
         nesteValg: 0,
         nesteVp: 0,

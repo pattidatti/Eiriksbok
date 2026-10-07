@@ -44,7 +44,7 @@ export function analyser(runder = 100) {
                 update(g, PLAYTEST_DT);
                 klokke += PLAYTEST_DT;
                 for (const h of g.hendelser)
-                    if (h.slag === 'veiskille' && h.konge) {
+                    if (h.slag === 'veiskille' && h.port) {
                         knauser++;
                         if (h.vei === 'under') lave++;
                     }
