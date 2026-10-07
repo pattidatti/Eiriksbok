@@ -1,14 +1,14 @@
 # Pengeballongen - kart over mappa
 
-Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp; natt 3 forbedring 2: nei ved porten lønner seg, Ueland kommer ved første port, faste utgifter på fjellene, gjenvalg som flaggrykk; natt 3 forbedring 3: porten som veiskille med to løp, første port Hovedbanen 1854, Ueland alene 1844, lapper ved tingen, én himmel per tiår). Brief: `docs/microgames/briefer/pengeballongen.md`.
-Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1870, selvspill).
+Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp; natt 3 forbedring 2: nei ved porten lønner seg, Ueland kommer ved første port, faste utgifter på fjellene, gjenvalg som flaggrykk; natt 3 forbedring 3: porten som veiskille med to løp, første port Hovedbanen 1854, Ueland alene 1844, lapper ved tingen, én himmel per tiår; natt 3 forbedring 4: Ueland alene 1840,5 før skrapeåsene, første port Kongsvingerbanen ca. 72 s, Telegrafen-porten i 80 s-bildet, valgbar med mynter og forklaring, låst ror i HUD-en). Brief: `docs/microgames/briefer/pengeballongen.md`.
+Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1868, selvspill).
 
 | Fil | Hva den gjør |
 | --- | --- |
 | `tuning.ts` | Alle tallene: år, fart, ballong, løft (varme, akselerasjon, tynn luft, synk, flosshatter, rolig start), roret (`synk`, `stig`, `over`, dalene), penger (pris, sparing før/utenfor/i båndet, grense, valgår), Ueland-gangeren (nær-bånd, vindu, trinn, fall), formene, `banen`, knausene 1882, `port`, press, ranger, `øvFra`. |
 | `levels.ts` | `UTGIFTER`/`BANER` med `bevilg: true` (portene), `RIKSRETT` (årene for de tre stemmene) og `REGJERING` (klippa). Brettene (bildetekst, banner, terreng før 1833), sletta før 1833, `formFor()` per valgperiode (tind / skrapeåser, fra 1854 også banen), `BANER`, finalen, kongens utgifter, funnene med fagsetning. |
 | `terrain.ts` | Tid <-> år <-> vei, `lagTerreng(rng)` (også `baner` og portene i rorstrekket), oppslag `bakke`, `fastTopp`, `knausVed`. |
-| `state.ts` | Typene og `newGame(seed, fraÅr?)` (øving hopper til 1870 med alt før lagt inn). |
+| `state.ts` | Typene og `newGame(seed, fraÅr?)` (øving hopper til 1868 med alt før lagt inn). |
 | `rules.ts` | Fagkjernen: `hold()`, `ror()`, `fly()` (fysikksteget, delt med robotene), `rorMål()`, `synk()`, `stig()`, `klaring()`, `nærhet()`, `iBåndet()`, `kostnad()`, `sparing()`, `krasjer()`, `press()`, `rang()`. |
 | `game.ts` | Kjerneløkka `update(g, dt)`: varme og løft, penger og sparing, gangeren, veiskillene, funn, valgene, spor, krasj, landing. |
 | `bots.ts` / `sim.ts` | Robotene (`pilot()` spår med samme fysikk og regner med at neste grep kan komme sent, `rorValg()` i rorstrekket) og simuleringskontrakten. |
@@ -16,7 +16,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 | `art.ts` | Paletten `P`, kvalitetsnivå (`?kvalitet=`), kritt-korn som mønster, skyer, `støy`/`hash`. |
 | `scene.ts` | Himmel (varmere mot 1884, sol bak Stortinget), skyer, tre fjell-lag med snø og dis, forgrunnen i kornet kritt med skrapt hvitt, graner, nær-båndet (prikker), glød, knauser med krone, fjellveggen over porten (`tegnPort`), jernbanen med tog og stasjon (`tegnBaner`), utgifter, funn. Fjellveggene i rorstrekket har tre lyse piler nedover i porten (ikke tekst). |
 | `figures.ts` | Ballongen med bonde, Ueland, flosshatter og Sverdrup; spøkelset; tingstua; funnet; kronen; Stortinget. |
-| `hud.ts` | Litografibladet: papirmarg, bildetekst, tast, Spart, tidslinja (målet) og bondestripa oppe til venstre (`stripe()`): Ueland + gangeren (vises fra første ×2, `fx.uelandSett`), valgflagg + budsjettbar, og sjansene (bare etter første brukte sjanse). |
+| `hud.ts` | Litografibladet: papirmarg, bildetekst, tast, Spart, tidslinja (målet) og bondestripa oppe til venstre (`stripe()`): Ueland + gangeren (vises fra første ×2, `fx.uelandSett`), valgflagg + budsjettbar (en rad mynter som ramler av enden når du fyrer, og «Penger igjen til valget» i 13 px under), og sjansene (bare etter første brukte sjanse). |
 | `porter.ts` | Bevilgningsportene (`tegnBevilg`): veiskille med to løp. Nedre karmin løp «BEVILG» (embetsmenn, pengesekk, pris), øvre oransje løp «NEI» (bønder, bonus, pil over fjellet), delelinja der midten av ballongen er på terskelen, stiplet gullsti til `til`. |
 | `draw.ts` | Setter bildet sammen (rekkefølgen), `skala`/`tilSkjerm`/`flateX`. |
 | `fx.ts` | Lappefeltet (én lapp om gangen, kø), partikler (mynter, gnister, røyk, hatter, luer, papir), mynter som flyr til telleren, rystelse i ekte tid. |
@@ -64,8 +64,10 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 13. Gangeren går til ×10 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».
 14. Rorstrekket er ca. 15 s (`rorTempo` 30) med tre daler og porter, så filmbildet ved 110 s viser roret.
 
-17. Bevilgningsportene (`bevilg` i tuning, `ter.bevilg`): seks porter (Embetskontor 1846, Telegrafen
-    1858, Kongsvingerbanen, Fyrlyktene, Drammenbanen, Rørosbanen) i en flat dal før et dyrt fjell.
+17. Bevilgningsportene (`bevilg` i tuning, `ter.bevilg`): fire porter (Kongsvingerbanen ca. 72 s,
+    Telegrafen 1870,5 ca. 82 s - står midt i filmbildet ved 80 s, Drammenbanen ca. 87 s, Rørosbanen
+    ca. 97 s). Fra 1854 går formene banen, skrapedal, tind (byttet i `formFor`), så Telegrafen står
+    i tind-perioden 1869. Hovedbanen er en vanlig bane uten port: jernbanen kommer alene i en flat dal før et dyrt fjell.
     Kurven under `åpning` px over bakken ved porten = bevilget: prisen trekkes fra Spart, gangeren
     går til ×1 (Ueland hatet bevilgninger), og staten bærer ballongen (`g.bæres`, ror-fysikk mot
     `rorMål`) til `til`. Imens koster brenneren ingenting og ingenting spares. Over porten = spar
@@ -85,8 +87,9 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     (`fx.tapp`: en karmin bit faller av baren). Fjellet bak porten er like høyt som andre
     (`bevilg.fjell` 1), så nei går an tidlig og ikke sent. Porten viser embetsmenn med pengesekk og
     prisen nede, bønder med bonusen oppå skiltet (porter.ts).
-22. Ueland kommer om bord ved første bevilgningsport (`g.uelandÅr`, `uelandOm()` i rules.ts),
-    senest i `ganger.fra` (1848). Før det sparer slipp `penger.førUeland`.
+22. Ueland kommer om bord alene i `ganger.fra` (1840,5, ca. 34 s), før skrapeåsene 1842 som er
+    øvingsryggen (`g.uelandÅr`, `uelandOm()` i rules.ts). Lappene «Ueland ×5/×10» står under
+    portrettet oppe til venstre (x 20, y 118), ikke ved ballongen. Før det sparer slipp `penger.førUeland`.
 23. Faste utgifter: `FASTE` i levels.ts, `ter.faste` (rygger før 1833, tinder uten utgift, midt i
     skrapedalen), tegnet som karmin plate midt på fjellet i `tegnHindre`.
 24. Valgene 1827/1830 finnes fortsatt (de nullstiller perioden), men tegnes ikke og gir ingen lapp.

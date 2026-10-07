@@ -137,7 +137,7 @@ export function update(g: Game, dt: number) {
 
     // Ueland-gangeren: sammenhengende tid i nær-båndet gir et trinn opp; over båndet faller
     // den ett trinn om gangen.
-    // Ueland kommer om bord i `ganger.fra` (1844), alene, før første bevilgningsport.
+    // Ueland kommer om bord i `ganger.fra` (1840,5), alene, lenge før første bevilgningsport.
     if (g.uelandÅr > g.år && g.år >= T.ganger.fra) {
         g.uelandÅr = T.ganger.fra;
         g.hendelser.push({ slag: 'ueland', nei: false });

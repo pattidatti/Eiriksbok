@@ -116,6 +116,7 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     }
 
     tidslinje(ctx, g);
+    if (!g.harRor && g.mode === 'play') låstRor(ctx);
     stripe(ctx, g, fx, tid);
 
     if (fx.blink > 0) {
@@ -142,8 +143,10 @@ function stripe(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number) {
     const brukt = g.sjanser < T.sjekk.sjanser;
     if (!medUeland && !medBudsjett && !brukt) return;
     const venstre = medUeland ? 114 : 0;
-    const w = venstre + (medBudsjett || brukt ? 160 : 6);
-    const { x, y, h } = STRIPE;
+    const w = venstre + (medBudsjett || brukt ? 178 : 6);
+    const { x, y } = STRIPE;
+    // Med budsjettet blir kortet høyere: forklaringen står under baren.
+    const h = medBudsjett ? 86 : STRIPE.h;
     kort(ctx, x, y, w, h);
     // Full fart (over ×5): gullkant som blinker.
     if (medUeland && g.ganger > 5) {
@@ -188,8 +191,9 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, x
     const inn = Math.min(1, (g.år - (T.penger.førsteEkteValg - 1.2)) / 0.4);
     const bonde = g.år >= T.penger.førsteEkteValg ? Math.max(0, 1 - (g.år - T.penger.førsteEkteValg) / 5.5) : 0;
     const neste = g.ter.valg[g.nesteValg];
-    const bw = 136;
+    const bw = 154;
     const bh = 18;
+    const fyrer = g.hold && !g.bæres && g.mode === 'play';
 
     ctx.save();
     ctx.globalAlpha = inn;
@@ -225,6 +229,30 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, x
     if (fare) ctx.globalAlpha = inn * (0.6 + 0.4 * Math.sin(tid * 12));
     ctx.fillRect(x, by, bw * igjen, bh);
     ctx.globalAlpha = inn;
+    // Baren er en rad med mynter: det er penger, og de blir færre når du fyrer.
+    const fylt = bw * igjen;
+    ctx.strokeStyle = fare ? P.hvit : P.silkeMørk;
+    ctx.lineWidth = 1.2;
+    for (let mx = x + 8; mx + 6 <= x + fylt; mx += 13) {
+        ctx.beginPath();
+        ctx.arc(mx, by + bh / 2, 5, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    // Mens du fyrer: mynter ramler av enden av baren og ned i brenneren.
+    if (fyrer && fylt > 4) {
+        for (let k = 0; k < 3; k++) {
+            const u = (tid * 1.6 + k / 3) % 1;
+            ctx.globalAlpha = inn * (1 - u);
+            ctx.fillStyle = P.silke;
+            ctx.beginPath();
+            ctx.arc(x + fylt - 3 + u * 6, by + bh + 3 + u * 16, 4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = P.kritt;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+        ctx.globalAlpha = inn;
+    }
     // Gjenvalgt: et lyst glimt som feier over den fulle baren.
     if (fx.flagg > 0) {
         const gx = x + bw * (1 - fx.flagg);
@@ -264,6 +292,11 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, x
         ctx.strokeRect(x - 3, by - 3, bw + 6, bh + 6);
         ctx.globalAlpha = inn;
     }
+    // Forklaringen rett under baren, så ingen lurer på om den viser brukt eller igjen.
+    ctx.font = `bold 13px ${FONT}`;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = fare ? P.karmin : P.kritt;
+    ctx.fillText(fyrer ? 'Fyrer: baren tømmes' : 'Penger igjen til valget', x, by + bh + 17);
     if (fx.stabelBlink > 0) {
         ctx.strokeStyle = P.karmin;
         ctx.globalAlpha = fx.stabelBlink;
@@ -288,6 +321,39 @@ function tast(ctx: CanvasRenderingContext2D, x: number, y: number, t: string): n
     ctx.fillText(t, x + 6, y + 15);
     ctx.restore();
     return w;
+}
+
+/** Roret er låst til riksretten i 1884: et lite grått ror med hengelås under tidslinja. */
+function låstRor(ctx: CanvasRenderingContext2D) {
+    const x = 640;
+    const y = 50;
+    kort(ctx, x, y, 110, 24);
+    const cx = x + 14;
+    const cy = y + 12;
+    ctx.strokeStyle = P.halv;
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 6, 0, Math.PI * 2);
+    ctx.stroke();
+    for (let k = 0; k < 6; k++) {
+        const a = (k * Math.PI) / 3;
+        ctx.beginPath();
+        ctx.moveTo(cx + Math.cos(a) * 2, cy + Math.sin(a) * 2);
+        ctx.lineTo(cx + Math.cos(a) * 9, cy + Math.sin(a) * 9);
+        ctx.stroke();
+    }
+    // Hengelåsen.
+    ctx.fillStyle = P.kritt;
+    ctx.fillRect(cx + 4, cy + 1, 7, 6);
+    ctx.beginPath();
+    ctx.arc(cx + 7.5, cy + 1, 2.5, Math.PI, 0);
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.3;
+    ctx.stroke();
+    ctx.font = `13px ${FONT}`;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = P.kritt;
+    ctx.fillText('Roret: 1884', x + 30, y + 17);
 }
 
 /** Målet: tidslinja 1815-1884 øverst i midten, med valgene som små streker. */

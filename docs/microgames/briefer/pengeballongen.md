@@ -870,3 +870,42 @@ Kjente svakheter: (1) En lapp ved ballongen («Ueland ×5!») kan dekke prosjekt
 et øyeblikk. (2) Pinnen ved baren i 1833 ligger delvis over baren. (3) Ballongen er allerede inne i
 løpene ved 55 s; et bilde litt før ville vist veiskillet helt fritt. (4) Roret kommer fortsatt
 først i 1884. (5) Menyen har fortsatt tre regellinjer.
+
+### Natt 3, forbedring 4 (siste, etter vurdering 4: Forståelig 3, Myk start 3, Eleven gjør 4, Utseende 3, Lærerikt 4)
+
+To grep, ingen nye regler.
+
+1. Én ny ting om gangen. Ueland kommer om bord alene i 1840,5 (`ganger.fra`, ca. 34 s), og
+   lærings-øyeblikket kommer et halvt år etter (film-04 ved 35 s viser Ueland og ingen port).
+   Skrapeåsene 1842 er øvingsryggen. Hovedbanen 1854 er nå en vanlig bane uten port, så film-05
+   (55 s) viser bare jernbanen. Fra 1854 går formene banen, skrapedal, tind (byttet i `formFor`).
+   Portene er nå fire: Kongsvingerbanen (ca. 72 s), Telegrafen (flyttet til 1870,5, ca. 82 s),
+   Drammenbanen (ca. 87 s) og Rørosbanen (1879,5, ca. 97 s). Telegrafen står midt i film-06
+   ved 80 s med hele veiskillet (NEI +28 / BEVILG -30). Fyrlyktene og den navngitte toppen i 1860
+   er fjernet. «Øv fra» er flyttet fra 1870 til 1868, så øvingen får med Telegrafen-porten.
+   Lappene «Ueland ×5!» og «Ueland ×10! Full fart!» står nå under portrettet oppe til venstre,
+   ikke midt i bildet ved ballongen og aldri oppå prosjektnavnet på porten.
+2. Valgbaren er entydig. Under baren står «Penger igjen til valget» (fet 13 px), og mens du
+   fyrer «Fyrer: baren tømmes». Den fylte delen er en rad mynter, og mens du holder, ramler
+   mynter av enden av baren. Stripa er 86 px høy når baren vises. Pinnen i 1833 sier nå «Tom for
+   penger før valget = stemt ut». Et lite låst ror (grått hjul med hengelås) og «Roret: 1884»
+   står under tidslinja fra start til roret kommer.
+
+Simulering (200 runder): grønn. flink 100 %, median 820 (p10 651, p90 1162); nybegynner 84 %,
+median 375; sløseren 53, gniten/passiv 21, tilfeldig 69. 35,8 valg/min, press 0,26 -> 0,63 ->
+0,87. Nei-andel (analyse.ts, 100 runder): flink 120 av 400 (30 %), nybegynner 76 av 418.
+Selvspill (fart 4, --cover): grønt, flink vant med 1056, passiv krasjet etter 8 s, Chromebook
+p95 17,3 ms. Scene-audit 0 funn. Likhet nærmest tinghuset (0,41). tsc og eslint rene.
+
+Prøvd som IKKE virket: (a) Bare fjerne porten ved Hovedbanen, Telegrafen og Drammenbanen: flink
+vant 18 % (stemt ut ved valget 1875 - den sene Drammenbanen er for dyr uten port). Drammenbanen
+fikk porten tilbake. (b) Telegrafen som vanlig navngitt topp i tind-perioden 1860: flink brukte en
+sjanse ved valget 1863 i halvparten av rundene (39 av 80), og film-06 havnet bak porten. Toppen er
+fjernet (3 av 80 nå). (c) Første selvspill viste Chromebook p95 28,5 ms; ny kjøring 19,1 og
+17,3 ms - målestøy under last, ikke koden.
+
+Kjente svakheter: (1) Nei-andelen for flink falt fra 60 % til 30 % fordi de to første portene er
+borte; de fire som er igjen kommer sent, når fjellene er dyre. (2) Telegrafen og Drammenbanen står
+tett (ca. 2 s fra staten slipper deg til neste port). (3) Pinnen ved baren i 1833 ligger delvis
+over baren. (4) Roret vises bare som et låst ikon før 1884; ingen dragkamp-måler. (5) Telegrafen
+står i 1870 i spillet, men kom i 1855 i virkeligheten (skiltet viser ikke år).

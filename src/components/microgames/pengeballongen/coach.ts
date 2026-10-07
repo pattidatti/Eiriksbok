@@ -68,8 +68,10 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
         case 'ganger':
             if (h.ganger > h.fra) {
                 // Portrettet spretter og mynter flyr dit for hvert trinn; lapp bare ved milepælene.
-                if (h.ganger === TUNING.ganger.maks) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.1);
-                else if (h.ganger === 5) ved('Ueland ×5!', -60, P.silke, true, 1);
+                // Lappen står under Ueland-portrettet oppe til venstre: ikke midt i bildet, og
+                // aldri oppå navnet på en port.
+                if (h.ganger === TUNING.ganger.maks) c.lapp(`Ueland ×${h.ganger}! Full fart!`, 20, 118, P.silke, true, 1.1);
+                else if (h.ganger === 5) c.lapp('Ueland ×5!', 20, 118, P.silke, true, 1);
             }
             break;
         case 'sjanse':
@@ -142,8 +144,9 @@ export function coach(g: Game, c: Coach) {
     }
     // Jernbanen og den første porten trenger ingen lapp: veiskillet viser de to løpene med
     // ord, pris og bonus på selve løpet.
-    // Ueland kommer om bord i 1844, alene (første port kommer først i 1854).
-    if (!sagt.has('ueland') && g.år >= g.uelandÅr + 0.8 && !g.bæres && g.mode === 'play') {
+    // Ueland kommer om bord i 1840,5 (ca. 34 s), alene: skrapeåsene 1842 er øvingsryggen. Første
+    // port kommer først ved Kongsvingerbanen (ca. 72 s).
+    if (!sagt.has('ueland') && g.år >= g.uelandÅr + 0.5 && !g.bæres && g.mode === 'play') {
         sagt.add('ueland');
         const t0 = g.t;
         text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {

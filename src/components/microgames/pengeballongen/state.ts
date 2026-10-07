@@ -47,9 +47,9 @@ export interface Game {
     t: number;
     /** Spilte sekunder i alt, også etter en ny sjanse (g.t spoles tilbake, denne gjør ikke det). */
     spilt: number;
-    /** Når runden startet (t). Øving fra 1870 starter midt i. */
+    /** Når runden startet (t). Øving fra 1868 starter midt i. */
     start: number;
-    /** Øvingsrunde («Øv fra 1870»): teller ikke for rekord. */
+    /** Øvingsrunde («Øv fra 1868»): teller ikke for rekord. */
     øving: boolean;
     år: number;
     brett: number;

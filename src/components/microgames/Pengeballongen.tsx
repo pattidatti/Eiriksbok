@@ -275,7 +275,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
         text.resetRun();
         setModeBoth('play');
         lyd.start();
-        text.banner(fraÅr ? 'Øving fra 1870' : BRETT[gameRef.current.brett].tittel);
+        text.banner(fraÅr ? 'Øving fra 1868' : BRETT[gameRef.current.brett].tittel);
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
@@ -476,7 +476,7 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                             <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
                                 {save.nådd1884 && (
                                     <ArcadeSmallButton onClick={() => start(TUNING.øvFra)}>
-                                        Øv fra 1870
+                                        Øv fra 1868
                                     </ArcadeSmallButton>
                                 )}
                                 <ArcadeSmallButton onClick={lydAv} ariaLabel="Lyd av eller på">

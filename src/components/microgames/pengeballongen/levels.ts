@@ -117,12 +117,12 @@ export type Form = 'tind' | 'skrapedal' | 'banen';
 export function formFor(p: number, år0: number, banenFra: number): Form {
     if (år0 < banenFra) return p % 2 === 0 ? 'tind' : 'skrapedal';
     const q = Math.round((år0 - banenFra) / 3) % 3;
-    return q === 0 ? 'banen' : q === 1 ? 'tind' : 'skrapedal';
+    return q === 0 ? 'banen' : q === 1 ? 'skrapedal' : 'tind';
 }
 
 /** Jernbanene: navnet på skiltet ved stasjonen, etter året perioden starter. */
 export const BANER: { år: number; navn: string; bevilg?: boolean }[] = [
-    { år: 1854, navn: 'Hovedbanen 1854', bevilg: true },
+    { år: 1854, navn: 'Hovedbanen 1854' },
     { år: 1863, navn: 'Kongsvingerbanen 1862', bevilg: true },
     { år: 1872, navn: 'Drammenbanen 1872', bevilg: true },
 ];
@@ -143,9 +143,8 @@ export const UTGIFTER: { år: number; navn: string; bevilg?: boolean }[] = [
     { år: 1840.5, navn: 'Ny festning' },
     // Med bevilgningsport: Stortinget velger om staten skal betale for det.
     { år: 1846.5, navn: 'Embetskontor' },
-    { år: 1858.5, navn: 'Telegrafen', bevilg: true },
-    { år: 1867.5, navn: 'Fyrlyktene', bevilg: true },
-    { år: 1876.5, navn: 'Rørosbanen', bevilg: true },
+    { år: 1870.5, navn: 'Telegrafen', bevilg: true },
+    { år: 1879.5, navn: 'Rørosbanen', bevilg: true },
 ];
 
 export type FunnId = 'olaboka' | 'jordskatten' | 'formannskap' | 'hovedbanen' | 'ibsen' | 'roret';

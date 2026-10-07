@@ -100,8 +100,8 @@ export const TUNING = {
         rolig: { sekunder: 4, fra: 0.25 },
     },
 
-    /** «Øv fra 1870» låses opp når eleven har nådd 1884 én gang. */
-    øvFra: 1870,
+    /** «Øv fra 1868» låses opp når eleven har nådd 1884 én gang. */
+    øvFra: 1868,
 
     // Pengene.
     penger: {
@@ -134,8 +134,9 @@ export const TUNING = {
     // Ueland-gangeren (skrapebonus). Spart per sekund = perSek x ganger når du slipper i
     // nær-båndet, og bare `penger.utenfor` over det.
     ganger: {
-        /** Her kommer Ueland om bord (ca. 40 s), alene - første port kommer først i 1854 (ca. 57 s). */
-        fra: 1844,
+        /** Her kommer Ueland om bord (ca. 35 s), alene, før skrapeåsene 1842 (øvingsryggen). Første
+         * port (Kongsvingerbanen) kommer først rundt 72 s. */
+        fra: 1840.5,
         /** Nær-båndet: under så mange px over bakken vokser gangeren. */
         nær: 70,
         /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */
