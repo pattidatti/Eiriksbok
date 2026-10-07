@@ -140,7 +140,7 @@ export function påHendelse(h: Hendelse, g: Game, fx: Fx, lyd: Lyd) {
                     blink(fx, 0.25, P.silke);
                 }
                 for (let i = 0; i < h.ganger + 1; i++)
-                    slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: { x: 132, y: 62 } });
+                    slipp(fx, 'mynt', BX + r(-10, 10), y - 10, { maks: r(0.5, 0.8), mål: { x: 98, y: 46 } });
             } else lyd.gangerNed();
             break;
         case 'valg': {

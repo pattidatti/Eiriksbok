@@ -1,6 +1,6 @@
 # Pengeballongen - kart over mappa
 
-Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene). Brief: `docs/microgames/briefer/pengeballongen.md`.
+Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp). Brief: `docs/microgames/briefer/pengeballongen.md`.
 Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1870, selvspill).
 
 | Fil | Hva den gjør |
@@ -14,9 +14,10 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 | `bots.ts` / `sim.ts` | Robotene (`pilot()` spår med samme fysikk og regner med at neste grep kan komme sent, `rorValg()` i rorstrekket) og simuleringskontrakten. |
 | `analyse.ts` | Tuning-verktøy: `npx tsx src/components/microgames/pengeballongen/analyse.ts 100` viser seier, poeng, snitt-ganger og andel av valggrensen tidlig/sent per robot. |
 | `art.ts` | Paletten `P`, kvalitetsnivå (`?kvalitet=`), kritt-korn som mønster, skyer, `støy`/`hash`. |
-| `scene.ts` | Himmel (varmere mot 1884, sol bak Stortinget), skyer, tre fjell-lag med snø og dis, forgrunnen i kornet kritt med skrapt hvitt, graner, nær-båndet (prikker), glød, knauser med krone, fjellveggen over porten (`tegnPort`), jernbanen med tog og stasjon (`tegnBaner`), utgifter, funn. |
+| `scene.ts` | Himmel (varmere mot 1884, sol bak Stortinget), skyer, tre fjell-lag med snø og dis, forgrunnen i kornet kritt med skrapt hvitt, graner, nær-båndet (prikker), glød, knauser med krone, fjellveggen over porten (`tegnPort`), jernbanen med tog og stasjon (`tegnBaner`), utgifter, funn. Fjellveggene i rorstrekket har tre lyse piler nedover i porten (ikke tekst). |
 | `figures.ts` | Ballongen med bonde, Ueland, flosshatter og Sverdrup; spøkelset; tingstua; funnet; kronen; Stortinget. |
-| `hud.ts` | Litografibladet: papirmarg, bildetekst, tast, Spart, brennerpris, tidslinja (målet), Ueland-ovalen, valgstabelen. |
+| `hud.ts` | Litografibladet: papirmarg, bildetekst, tast, Spart, tidslinja (målet) og bondestripa oppe til venstre (`stripe()`): Ueland + gangeren (vises fra første ×2, `fx.uelandSett`), valgflagg + budsjettbar, og sjansene (bare etter første brukte sjanse). |
+| `porter.ts` | Bevilgningsportene (`tegnBevilg`): tømmerport, kongens krok i åpningen, skilt med navn og prisen som rød mynt, stiplet gullsti over fjellet til `til` (der staten bærer deg). |
 | `draw.ts` | Setter bildet sammen (rekkefølgen), `skala`/`tilSkjerm`/`flateX`. |
 | `fx.ts` | Lappefeltet (én lapp om gangen, kø), partikler (mynter, gnister, røyk, hatter, luer, papir), mynter som flyr til telleren, rystelse i ekte tid. |
 | `juice.ts` | Hva verden gjør hver ramme (mynter i brenneren, gnister i båndet, nesten-bom) og ved hendelser. |
@@ -52,10 +53,9 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 
 11. Bondetinget (hendelse `bondeting` ved 1833, ca. 14 s spilltid): brenneren går fra
     `penger.førBonde` (14) til `penger.perSek` (10) Spd/s, banneret «BONDETINGET 1833», og
-    budsjettkortet i HUD-en (`BUDSJETT` i hud.ts, fast under Ueland-portrettet) får en bredere og
-    høyere bar (150x12 -> 200x24), gullkant og stempelet «BONDETINGET 1833» til 1838,5, så
-    filmbildet ved 20 s fanger det. Etiketten «Budsjett til valget 18xx» står alltid; under 25 %
-    igjen blir etikett, bar og kant røde og blinker.
+    budsjettbaren i bondestripa gløder i gull til 1838,5. Etiketten er bare «Valg 18xx» med et
+    valgflagg; under 25 % igjen blir etikett og bar røde og blinker. `BUDSJETT` i hud.ts er bare
+    ankeret til lærings-øyeblikket om valget.
 15. Lappene (forbedring 4): bare én om gangen, i et fast felt under tidslinja (`LAPPEFELT` i fx.ts),
     aldri ved ballongen. Viktige lapper venter i kø (maks to, den aktive viker etter 3 s); korte
     (`sek` <= 1,1: Ueland ×n, Hårfint) byttes ut eller droppes. x/y i `lapp()` brukes ikke lenger.
@@ -71,7 +71,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     `rorMål`) til `til`. Imens koster brenneren ingenting og ingenting spares. Over porten = spar
     sekken, men fyr deg over fjellet selv (koster budsjett). Ett verb: høyden.
 18. Budsjettet strammes: `grense(år)` går fra `penger.grense` (26) i 1833 til `grenseSlutt` (22) i
-    1881. HUD-kortet viser «Igjen til valget 18xx: n av m Spd.». Presset (`press()`) har fire ledd:
+    1881. Stripa viser «Valg 18xx» og baren (ingen tall). Presset (`press()`) har fire ledd:
     synk, fjell, fart og hvor stram grensen er.
 19. Riksretten 1882-1884: tre stemmer (`ter.riksrett`, røde stempler med teller 1/3-3/3 og stiplet linje til tauet) henger ca. 95 px over dalen. Hver kutter ett
     tau til Kongens regjering (`ter.regjering`, klippa i `tegnRegjering`). Det tredje gir roret
@@ -107,5 +107,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
   sent. Med `vent` = robottakten (0,2 s) vant flink 0 av 40 med grep hvert 0,25 s.
 - `usePlaytest`-fabrikken kalles ved hvert oppslag: robotene ligger i `grepRef` i komponenten, ellers
   lages de på nytt hvert grep og glemmer det de har lært (bevilger lettere etter å ha blitt stemt ut).
+- Slutt-skjermen venter på ekte klokke (`vent` i komponenten), ikke dt: dt er kappet til 0,05 s, og med
+  3 bilder/s headless rakk ikke selvspillet å se «Dette skjedde» innen 1,2 s.
 - Plakaten (`--cover`) tegnes uten papirmarg og HUD: komponenten ser at knappene er skjult.
 - Kornet er et `CanvasPattern` som flyttes med `setTransform` - ellers står kornet stille mens fjellet glir.

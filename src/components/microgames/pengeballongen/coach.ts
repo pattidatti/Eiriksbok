@@ -42,9 +42,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
                     sagt.add('vinker');
                     ved(LAPP.vinker, -130, P.halv, false, 3);
                 } else ved('Bøndene vinker deg forbi', -120, P.halv);
-            } else if (h.år === TUNING.penger.førsteEkteValg) {
-                text.banner('BONDESTORTINGET', P.silke);
-            } else ved(`Gjenvalgt ${h.år}!`, -120, P.silke, true);
+            } else if (h.år !== TUNING.penger.førsteEkteValg) ved(`Gjenvalgt ${h.år}!`, -120, P.silke, true);
             if (h.hatt) ved('+1 embetsmann om bord: tyngre', -40, P.karmin);
             break;
         }
@@ -71,8 +69,9 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
-                if (h.ganger > 5) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.1);
-                else ved(`Ueland ×${h.ganger}`, -60, P.silke, h.ganger >= 4, 1);
+                // Portrettet spretter og mynter flyr dit for hvert trinn; lapp bare ved milepælene.
+                if (h.ganger === TUNING.ganger.maks) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.1);
+                else if (h.ganger === 5) ved('Ueland ×5!', -60, P.silke, true, 1);
                 if (h.ganger === 2)
                     text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
                         at: c.vedBallong(-60),
@@ -96,7 +95,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             break;
         case 'bondeting':
             text.banner('BONDETINGET 1833', P.silke);
-            ved(`Bøndene har flertall: brenneren ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd. i sekundet`, -85, P.silke, false, 5);
+            ved(`Brenneren billigere: ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd.`, -85, P.silke, false, 3.5);
             break;
         case 'stemme':
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
@@ -151,12 +150,6 @@ export function coach(g: Game, c: Coach) {
             until: () => c.spill().t > t0 + 1.4,
         });
     }
-    if (!sagt.has('ganger') && g.år >= TUNING.ganger.fra + 0.3) {
-        sagt.add('ganger');
-        // Ueland-linja først (forklarer hvem han er), så tipset - begge i lappefeltet, i kø.
-        c.lapp('Ole Gabriel Ueland: bondeleder som hatet sløsing', BX + 70, g.y - 150, P.silke, false, 4);
-        c.lapp(LAPP.ganger, BX + 70, g.y + 10, P.silke, false, 3);
-    }
     // Jernbanen (fra 1854): ny form midt i runden. Varsle i god tid, så eleven fyrer tidlig.
     if (!sagt.has('banen')) {
         const b = g.ter.baner.find((bn) => bn.x0 - g.x < 620 && bn.x0 > g.x);
@@ -165,7 +158,7 @@ export function coach(g: Game, c: Coach) {
             c.lapp(LAPP.banen, BX + 70, g.y - 60, P.silke, true, 3.5);
         }
     }
-    // Første bevilgningsport: pek på den i god tid, og si hva det andre valget er.
+    // Første bevilgningsport: pek på åpningen. Stien over fjellet og mynten på skiltet viser resten.
     if (!sagt.has('bevilg')) {
         const b = g.ter.bevilg.find((x) => !x.valgt && x.x - g.x < 600 && x.x > g.x);
         if (b) {
@@ -174,7 +167,6 @@ export function coach(g: Game, c: Coach) {
                 until: () => !!b.valgt,
                 seconds: 5,
             });
-            c.lapp(LAPP.spar, BX + 70, g.y - 60, P.kritt, false, 3.5);
         }
     }
     // Riksretten: pek på den første stemmen.

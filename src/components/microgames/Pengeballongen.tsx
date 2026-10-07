@@ -224,9 +224,11 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
             if (m === 'play') {
                 if (g.mode === 'play') juice(g, fx, juiceRef.current, lyd, spillDt, landet);
                 else {
-                    vent.current ??= g.mode === 'won' ? 0.6 : 0.35;
-                    vent.current -= dt;
-                    if (vent.current <= 0) {
+                    // Ekte klokke, ikke dt: dt er kappet til 0,05 s, så med få bilder per
+                    // sekund (selvspillet headless) ble pausen flere sekunder lang.
+                    const nå = performance.now();
+                    vent.current ??= nå + (g.mode === 'won' ? 600 : 350);
+                    if (nå >= vent.current) {
                         vent.current = null;
                         ferdig(g);
                     }
@@ -527,7 +529,13 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                             <ArcadeStats
                                 items={[
                                     {
-                                        value: `${spd(res.spart)} Spd.`,
+                                        value: (
+                                            <TellOpp
+                                                til={res.spart}
+                                                klirr={lyd.klirr}
+                                                ferdig={res.nyRekord ? lyd.spart : undefined}
+                                            />
+                                        ),
                                         label: res.nyRekord
                                             ? 'Ny rekord!'
                                             : res.øving
@@ -558,6 +566,50 @@ export default function Pengeballongen({ onComplete }: MicroGameProps) {
                 </ArcadeStage>
             </div>
         </MicroGameFrame>
+    );
+}
+
+/**
+ * Spart på slutt-skjermen teller opp fra 0 med klirr, og spretter når den er framme:
+ * belønningen skal merkes, ikke bare stå der.
+ */
+function TellOpp({ til, klirr, ferdig }: { til: number; klirr: () => void; ferdig?: () => void }) {
+    const [vist, setVist] = useState(0);
+    const [framme, setFramme] = useState(false);
+    useEffect(() => {
+        const t0 = performance.now();
+        const varighet = Math.min(1400, 500 + til * 1.2);
+        let sist = 0;
+        let id = 0;
+        const steg = (nå: number) => {
+            const u = Math.min(1, (nå - t0) / varighet);
+            const e = 1 - (1 - u) ** 3;
+            setVist(Math.round(til * e));
+            if (nå - sist > 70 && u < 1) {
+                sist = nå;
+                klirr();
+            }
+            if (u < 1) id = requestAnimationFrame(steg);
+            else {
+                setFramme(true);
+                ferdig?.();
+            }
+        };
+        id = requestAnimationFrame(steg);
+        return () => cancelAnimationFrame(id);
+        // Telleren starter én gang per slutt-skjerm.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [til]);
+    return (
+        <span
+            style={{
+                display: 'inline-block',
+                transition: 'transform 180ms cubic-bezier(.3,1.8,.5,1)',
+                transform: framme ? 'scale(1.15)' : 'scale(1)',
+            }}
+        >
+            {spd(vist)} Spd.
+        </span>
     );
 }
 

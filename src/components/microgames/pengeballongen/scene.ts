@@ -6,6 +6,7 @@ import { blandFarge, flyttMønster, hash, hentKunst, kvalitet, P, støy } from '
 import { krone, tegnFunn, tegnStortinget, tegnTingstue } from './figures';
 import { iBåndet, nærhet } from './rules';
 import { bakke, veiForÅr } from './terrain';
+import { tegnBevilg } from './porter';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -559,66 +560,6 @@ function tegnRegjering(
 }
 
 /**
- * Bevilgningsportene: en høy tømmerport i dalen før et dyrt fjell. Lavt gjennom = bevilg
- * (prisen fra sekken, staten bærer deg over fjellet). Over porten = spar sekken, fyr selv.
- */
-function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
-    const x0 = g.x - B.skjermX;
-    const BV = TUNING.bevilg;
-    for (const b of g.ter.bevilg) {
-        const sx = b.x - x0;
-        if (sx < -120 || sx > 1080) continue;
-        // Buen henger så høyt at hele ballongen går under den når kurven er under terskelen.
-        const bue = b.bunn - BV.åpning - B.høyde - 8;
-        const v = 44;
-        const valgt = b.valgt;
-        ctx.save();
-        if (valgt === 'nei') ctx.globalAlpha = 0.45;
-        // Lys i åpningen mens porten ligger foran deg.
-        if (!valgt) {
-            const puls = 0.22 + 0.14 * Math.sin(tid * 5);
-            const gr = ctx.createLinearGradient(0, bue, 0, b.bunn);
-            gr.addColorStop(0, 'rgba(240,200,120,0)');
-            gr.addColorStop(1, `rgba(240,200,120,${puls.toFixed(3)})`);
-            ctx.fillStyle = gr;
-            ctx.fillRect(sx - v, bue, v * 2, b.bunn - bue);
-        }
-        // Stolpene og buen.
-        ctx.fillStyle = '#5b4a38';
-        ctx.fillRect(sx - v - 6, bue - 6, 10, b.bunn - bue + 6);
-        ctx.fillRect(sx + v - 4, bue - 6, 10, b.bunn - bue + 6);
-        ctx.fillRect(sx - v - 14, bue - 12, v * 2 + 28, 9);
-        // Banneret: navnet og begge utfallene, så byttet står der før du velger.
-        const bw = 196;
-        const bh = valgt ? 40 : 64;
-        const by = bue - bh - 14;
-        ctx.fillStyle = valgt === 'ja' ? P.silke : P.hvit;
-        ctx.strokeStyle = P.kritt;
-        ctx.lineWidth = 1.5;
-        ctx.fillRect(sx - bw / 2, by, bw, bh);
-        ctx.strokeRect(sx - bw / 2, by, bw, bh);
-        ctx.textAlign = 'center';
-        if (valgt) {
-            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.karmin;
-            ctx.font = `bold 16px ${FONT}`;
-            ctx.fillText(valgt === 'ja' ? 'BEVILGET' : 'SA NEI', sx, by + 17);
-            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.kritt;
-            ctx.font = `italic 14px ${FONT}`;
-            ctx.fillText(b.navn, sx, by + 34);
-        } else {
-            ctx.fillStyle = P.kritt;
-            ctx.font = `italic 14px ${FONT}`;
-            ctx.fillText(b.navn, sx, by + 16);
-            ctx.font = `bold 14px ${FONT}`;
-            ctx.fillText('Over: spar, fyr selv', sx, by + 35);
-            ctx.fillStyle = P.karmin;
-            ctx.fillText(`Under: bevilg -${b.pris} Spd.`, sx, by + 55);
-        }
-        ctx.restore();
-    }
-}
-
-/**
  * Jernbanene fra 1854: skinner opp stigningen, et tog som puffer oppover og stasjonen med
  * navneskilt. Bare bilde - stigningen selv er terrenget.
  */
@@ -779,10 +720,22 @@ function tegnPort(
         gr.addColorStop(1, 'rgba(240,200,120,0)');
         ctx.fillStyle = gr;
         ctx.fillRect(a, bunn + 4, b - a, 150);
-        // Et skilt nederst på veggen: hva fjellet er, og at veien går under.
-        ctx.fillStyle = P.hvit;
-        ctx.textAlign = 'center';
-        ctx.font = `bold 17px ${FONT}`;
-        ctx.fillText('Pil ned: dykk under!', (a + b) / 2, bunn - 30);
+        // Tre lyse piler nedover i porten: veien går under, ikke over.
+        ctx.strokeStyle = P.hvit;
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round';
+        const mx = (a + b) / 2;
+        for (let i = 0; i < 3; i++) {
+            const fase = (tid * 1.5 + i / 3) % 1;
+            const py = bunn + 18 + fase * 60;
+            ctx.globalAlpha = Math.sin(fase * Math.PI);
+            ctx.beginPath();
+            ctx.moveTo(mx - 16, py - 10);
+            ctx.lineTo(mx, py);
+            ctx.lineTo(mx + 16, py - 10);
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+        ctx.lineCap = 'butt';
     }
 }

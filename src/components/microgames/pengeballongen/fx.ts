@@ -53,6 +53,8 @@ export interface Fx {
     klokke: number;
     /** Hit-stop: spillet fryser så mange ekte sekunder ved et treff (funn, stemme, port). */
     stopp: number;
+    /** Ueland vises i HUD-en fra første gang gangeren går over ×1, og blir stående runden ut. */
+    uelandSett: boolean;
 }
 
 export const nyFx = (): Fx => ({
@@ -66,6 +68,7 @@ export const nyFx = (): Fx => ({
     stabelBlink: 0,
     klokke: 0,
     stopp: 0,
+    uelandSett: false,
 });
 
 const MAKS = 260;
@@ -73,6 +76,7 @@ const MAKS = 260;
 /** Ny runde: tøm partiklene og rystelsen. */
 export function nullstillFx(fx: Fx) {
     fx.p.length = 0;
+    fx.uelandSett = false;
     fx.lapper.length = 0;
     fx.rist = 0;
     fx.blink = 0;

@@ -16,8 +16,7 @@ export const SJANSE_LÆRDOM =
 
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
-    bevilg: 'Under porten: bevilg fra sekken',
-    spar: 'Over porten: spar, fyr selv',
+    bevilg: 'Lavt under porten: staten bærer deg',
     riksrett: 'Riksrett: ta stemmene, kutt tauene!',
     grense: 'Over streken = bøndene stemmer deg ut',
     ganger: 'Gli tett, men fyr før ryggen',
@@ -30,7 +29,7 @@ export const LAPP = {
 export const BEAT = {
     valg: {
         tittel: 'Valget i 1833',
-        tekst: 'Nå teller bøndene pengene du bruker. Er budsjettet ved ballongen tomt før valget, stemmer de deg ut.',
+        tekst: 'Nå teller bøndene pengene du bruker. Er den oransje baren oppe til venstre tom før valget, stemmer de deg ut.',
     },
     ueland: {
         tittel: 'Ueland om bord',

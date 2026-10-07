@@ -699,3 +699,51 @@ Bare visning, ingen nye regler (simuleringen er uendret: flink 100 %, middels 82
 
 Porter: CI-selvspill (fart 4, 60 s) grønt, hele runden grønn (flink vant med 549), audit 0 funn,
 likhet nærmest generalstreiken (0,43). Ikke gjort: pressmåleren og HUD-ryddingen fra vurderingen.
+
+### Natt 3, forbedring 1 (etter vurdering 1 med ny rubrikk: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 4, Lærerikt 4)
+
+Ingen nye regler. Bare tekst og HUD er kuttet, og porten forklares med bilde.
+
+Portfunn: selvspillet var rødt med «slutt-skjermen har ingen Dette skjedde». Spillet brukte allerede
+`text.lesson` + `ArcadeLessons`, men pausen før slutt-skjermen (`vent`, 0,35/0,6 s) talte ned med
+`dt`, som skallet kapper til 0,05 s. Med 3 bilder/s headless tok pausen flere sekunder, og
+selvspillet så etter `[data-coach-lessons]` etter 1,2 s. Nå venter komponenten på ekte klokke
+(`performance.now()`). Selvspillet var etterpå rødt på at scene.ts hadde 843 linjer: portene er
+flyttet til `porter.ts`.
+
+1. Forståelig - porten viser regelen. Skiltet over bevilgningsporten har bare navnet og prisen
+   som en rød mynt («-25»). Teksten «Over: spar, fyr selv / Under: bevilg -25 Spd.» er borte. I
+   åpningen henger kongens krok, og en stiplet gullsti går fra porten over fjellet til der staten
+   slipper deg: under porten blir du båret, over porten må du fyre selv. Lappen «Over porten:
+   spar, fyr selv» er fjernet; den eneste lappen ved første port er «Lavt under porten: staten
+   bærer deg». Fjellveggene i rorstrekket har tre lyse piler nedover i stedet for skiltet «Pil ned:
+   dykk under!».
+2. Forståelig/Myk start - én bondestripe i stedet for tre kort. Ueland, budsjettet og sjansene står
+   i ett kort oppe til venstre (`stripe()` i hud.ts): lite portrett + «×n», valgflagg + «Valg 18xx»
+   + varm bar (ingen tall), og sjansene som små ballonger. Ueland dukker først opp når gangeren går
+   til ×2 første gang (der lærings-øyeblikket om ham kommer), og sjansene først etter at du har
+   brukt en. Spart-kortet er alltid like lite. Før kom alt dette rundt 1833 på en gang.
+3. Færre tekstbokser samtidig. Fjernet: banneret «BONDESTORTINGET» (dobbelt med «BONDETINGET
+   1833»), stempelet «BONDETINGET 1833» i budsjettkortet, de to Ueland-lappene i 1833 («Ole Gabriel
+   Ueland: bondeleder ...» og «Gli tett, men fyr før ryggen»), og «Ueland ×n»-lappen for hvert
+   trinn (nå bare ved ×5 og ×10; portrettet spretter og mynter flyr dit for hvert trinn).
+   Bondeting-lappen er kortet til «Brenneren billigere: 14 → 10 Spd.».
+
+Feel-lista. Før: 1, 2 og 3 på plass; 4 delvis (Spart spretter under runden, men slutt-skjermen
+viste bare et tall). Etter: 4 lagt til - Spart på slutt-skjermen teller opp fra 0 med klirr og
+spretter når den er framme (`TellOpp` i komponenten), med rekord-lyd ved ny rekord. Alle fire på
+plass.
+
+Simulering (200 runder): grønn og uendret (ingen regler endret). flink 100 %, median 554 (p10 442,
+p90 694); nybegynner 82 %, median 256; sløseren 0 %, gniten 21, tilfeldig 47. 38,4 valg/min, press
+0,31 -> 0,67 -> 0,86. Selvspill (fart 4, --cover, hel runde): grønt, flink vant med 628, passiv
+krasjet etter 7 s. Scene-audit 0 funn. Likhet: nærmest petisjonen-3d (0,43). tsc og eslint rene.
+
+Prøvd som IKKE virket: ingenting forkastet i denne runden; første selvspill etter endringene var
+rødt bare på linjetallet i scene.ts.
+
+Kjente svakheter / ikke gjort: (1) Vurderingens forslag om å introdusere roret tidligere og gjøre
+riksretten til en flertallsport er ikke gjort - det er nye regler, og spillet har mange nok.
+(2) Budsjettbaren hopper 114 px til høyre når Ueland kommer inn i stripa. (3) Fjellene er
+fortsatt ikke merket som faste utgifter (Prestelønn, Veier, Festning). (4) Filmbildet ved 110 s
+viser rorstrekket, ikke tauene som kuttes.
