@@ -4213,6 +4213,22 @@
               ],
               "createdDate": "2026-10-01T03:18:14+02:00",
               "lastUpdated": "2026-10-01T04:57:13+00:00"
+            },
+            {
+              "id": "brenningen-av-finnmark",
+              "title": "Brenningen av Finnmark: Da bygdene ble til aske",
+              "description": "Hvorfor tyskerne tvangsflyttet rundt 50 000 mennesker og brente nesten alt i Finnmark og Nord-Troms høsten 1944, og hvordan folk bygde landsdelen opp igjen.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "historie",
+                "andre-verdenskrig",
+                "norge",
+                "finnmark",
+                "okkupasjon",
+                "brent-jord",
+                "gjenreisning"
+              ],
+              "createdDate": "2026-10-07T00:00:00Z"
             }
           ]
         },
