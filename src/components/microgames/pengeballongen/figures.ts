@@ -255,6 +255,23 @@ function mannskap(ctx: CanvasRenderingContext2D, m: Mannskap) {
         ctx.stroke();
         ctx.fillStyle = '#6b5a45';
         ctx.fillRect(31, 0, 8, 14);
+        // Navnelapp i kurven: «Sverdrup», så eleven ser hvem som har tatt over roret.
+        ctx.save();
+        ctx.translate(42, -26);
+        ctx.scale(1 / STØRRELSE, 1 / STØRRELSE);
+        ctx.font = 'bold 15px "Bodoni Moda", Didot, Georgia, serif';
+        const nw = ctx.measureText('Sverdrup').width + 12;
+        ctx.fillStyle = P.hvit;
+        ctx.fillRect(0, -10, nw, 21);
+        ctx.strokeStyle = P.kritt;
+        ctx.lineWidth = 1.2;
+        ctx.strokeRect(0, -10, nw, 21);
+        ctx.fillStyle = P.kritt;
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('Sverdrup', 6, 1);
+        ctx.textBaseline = 'alphabetic';
+        ctx.restore();
     }
 }
 

@@ -73,7 +73,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 18. Budsjettet strammes: `grense(år)` går fra `penger.grense` (26) i 1833 til `grenseSlutt` (22) i
     1881. HUD-kortet viser «Igjen til valget 18xx: n av m Spd.». Presset (`press()`) har fire ledd:
     synk, fjell, fart og hvor stram grensen er.
-19. Riksretten 1882-1884: tre stemmer (`ter.riksrett`) henger ca. 95 px over dalen. Hver kutter ett
+19. Riksretten 1882-1884: tre stemmer (`ter.riksrett`, røde stempler med teller 1/3-3/3 og stiplet linje til tauet) henger ca. 95 px over dalen. Hver kutter ett
     tau til Kongens regjering (`ter.regjering`, klippa i `tegnRegjering`). Det tredje gir roret
     (`g.falt`, klippa faller); mangler noen i 1884, dømmer riksretten resten likevel.
 20. Rorstrekket sparer per år, ikke per sekund (sakte film), ellers ga det siste halvåret mer enn

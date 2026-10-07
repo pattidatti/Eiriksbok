@@ -16,8 +16,8 @@ export const SJANSE_LÆRDOM =
 
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
-    bevilg: 'Lavt gjennom porten: bevilg fra sekken',
-    spar: 'Over porten: spar sekken, fyr selv',
+    bevilg: 'Under porten: bevilg fra sekken',
+    spar: 'Over porten: spar, fyr selv',
     riksrett: 'Riksrett: ta stemmene, kutt tauene!',
     grense: 'Over streken = bøndene stemmer deg ut',
     ganger: 'Gli tett, men fyr før ryggen',

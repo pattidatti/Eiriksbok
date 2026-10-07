@@ -680,3 +680,22 @@ porten tidlig i en billig periode) er sjeldne for roboten. (2) Riksrett-klippa s
 Spart-kortet når den kommer inn fra høyre, så tauene synes først når den er midt i bildet. (3)
 HUD-en oppe til venstre er fortsatt stor (Ueland + budsjettkort). (4) Filmbildet ved 110 s viser
 rorstrekket, ikke tauene som kuttes (det skjer rundt 97-100 s).
+
+### Natt 2, forbedring 3 (siste runde, etter vurdering 2: Gøy 3, Utseende 4, Lærerikt 4, Lesbart 4, Unikt 4)
+
+Bare visning, ingen nye regler (simuleringen er uendret: flink 100 %, middels 82 %, trapp 47 < 256 < 554).
+
+1. 1884 lesbart uten tekst. Kongens regjering har fått et lyst navneskilt med krone og
+   «Kongens regjering» i 18 px fet skrift, og under det «n av 3 tau holder». Klippa henger lavere
+   (`REGJERING.bunn` 235 -> 300, bare bilde) og er 140 px høy, så toppen ligger under Spart-kortet.
+   Riksrett-stemmene er store røde stempler (radius 26) med teller 1/3, 2/3, 3/3, og en rød stiplet
+   linje går fra hvert stempel opp til tauet det kutter. Der et tau er kuttet, sitter et lite rødt
+   stempel med nummeret. Lappen sier «Riksrett n/3: tau kuttet!», og banneret når klippa faller er
+   «RORET ER DITT!». Sverdrup har en navnelapp i kurven. Fjellveggene i rorstrekket (den svarte
+   blokka i film-07) har skiltet «Pil ned: dykk under!».
+2. Portbyttet synlig. Banneret over bevilgningsporten viser navnet, «Over: spar, fyr selv» og
+   «Under: bevilg -25 Spd.» (prisen per port). Etterpå står «BEVILGET» eller «SA NEI». Lappene er
+   nå «Under porten: bevilg fra sekken» og «Over porten: spar, fyr selv».
+
+Porter: CI-selvspill (fart 4, 60 s) grønt, hele runden grønn (flink vant med 549), audit 0 funn,
+likhet nærmest generalstreiken (0,43). Ikke gjort: pressmåleren og HUD-ryddingen fra vurderingen.

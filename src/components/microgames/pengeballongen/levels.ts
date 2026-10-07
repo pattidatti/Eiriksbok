@@ -133,7 +133,7 @@ export const BANER: { år: number; navn: string; bevilg?: boolean }[] = [
  */
 export const RIKSRETT = [1882.35, 1882.95, 1883.55];
 /** Kongens regjering henger over dalen her (år), med bunnen så høyt (skjerm-y). */
-export const REGJERING = { år: 1883.95, bunn: 235 };
+export const REGJERING = { år: 1883.95, bunn: 300 };
 
 /** Kongens navngitte utgifter: en brå spiss på tinden i perioden. */
 export const UTGIFTER: { år: number; navn: string; bevilg?: boolean }[] = [

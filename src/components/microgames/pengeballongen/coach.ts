@@ -67,7 +67,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             if (h.hårfint) ved(h.ja ? 'Akkurat under banneret!' : 'Hårfint over porten!', -60, P.silke, false, 1);
             break;
         case 'riksrett':
-            ved(h.n >= 3 ? 'Siste tau kuttet!' : `Riksrett: tau ${h.n} av 3 kuttet`, -110, P.silke, true, 1.4);
+            ved(`Riksrett ${h.n}/3: tau kuttet!`, -110, P.karmin, true, 1.4);
             break;
         case 'ganger':
             if (h.ganger > h.fra) {
@@ -102,7 +102,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
             break;
         case 'roret': {
-            text.banner('SVERDRUP TAR RORET', P.silke);
+            text.banner('RORET ER DITT!', P.silke);
             const t0 = g.t;
             text.beatOnce('roret', BEAT.roret.tittel, BEAT.roret.tekst, {
                 at: c.vedBallong(-60),

@@ -396,29 +396,40 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         ctx.stroke();
         ctx.restore();
     }
-    // Riksrett-stemmene 1882-1884: en dommerklubbe på et segl. Hver kutter ett tau.
+    // Riksrett-stemmene 1882-1884: store røde stempler med teller (1/3, 2/3, 3/3). En rød
+    // stiplet linje går fra hvert stempel opp til tauet det kutter.
+    const r = ter.regjering;
+    const rcx = r.x - x0;
+    const rTopp = r.bunn - REGJ.høyde;
+    let nr = g.riksrett;
     for (const st of ter.riksrett) {
-        if (st.tatt) continue;
+        if (st.tatt || st.x < g.x - 40) continue;
         const sx = st.x - x0;
-        if (sx < -30 || sx > 990) continue;
+        const tauNr = nr++;
+        if (sx < -40 || sx > 1000 || tauNr > 2) continue;
         const sy = st.y - 10 + Math.sin(tid * 2.4 + st.x) * 3;
+        if (!g.falt && rcx > -120 && rcx < 1100) {
+            ctx.save();
+            ctx.strokeStyle = 'rgba(179,38,45,0.6)';
+            ctx.lineWidth = 2;
+            ctx.setLineDash([6, 6]);
+            ctx.lineDashOffset = -tid * 20;
+            ctx.beginPath();
+            ctx.moveTo(sx, sy - 28);
+            ctx.lineTo(rcx + REGJ.tau[tauNr], rTopp + 10);
+            ctx.stroke();
+            ctx.restore();
+        }
         ctx.save();
         ctx.translate(sx, sy);
-        ctx.globalAlpha = 0.35;
+        ctx.globalAlpha = 0.3;
         ctx.fillStyle = P.silkeLys;
         ctx.beginPath();
-        ctx.arc(0, 0, 22 + Math.sin(tid * 5) * 2, 0, Math.PI * 2);
+        ctx.arc(0, 0, 32 + Math.sin(tid * 5) * 2, 0, Math.PI * 2);
         ctx.fill();
         ctx.globalAlpha = 1;
-        ctx.fillStyle = P.karmin;
-        ctx.beginPath();
-        ctx.arc(0, 0, 13, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.rotate(-0.6 + Math.sin(tid * 4 + st.x) * 0.25);
-        ctx.fillStyle = '#6b5a45';
-        ctx.fillRect(-1.5, -3, 3, 16);
-        ctx.fillStyle = P.hvit;
-        ctx.fillRect(-7, -8, 14, 7);
+        ctx.rotate(-0.15);
+        stempel(ctx, 26, `${tauNr + 1}/3`, 20);
         ctx.restore();
     }
     for (const f of ter.funn) {
@@ -429,9 +440,35 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
     }
 }
 
+/** Riksrettens stempelfarge: klar rød, så stemplene skiller seg fra kronene. */
+const STEMPELRØD = '#b3262d';
+
+/** Målene på Kongens regjering (klippa) og hvor de tre tauene sitter. */
+const REGJ = { bredde: 200, høyde: 140, tau: [-64, 0, 64] };
+
+/** Et rundt rødt stempel med hvit ring og hvit tekst, sentrert i (0, 0). */
+function stempel(ctx: CanvasRenderingContext2D, rad: number, tekst: string, px: number) {
+    ctx.fillStyle = STEMPELRØD;
+    ctx.beginPath();
+    ctx.arc(0, 0, rad, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = P.hvit;
+    ctx.lineWidth = Math.max(1.2, rad * 0.08);
+    ctx.beginPath();
+    ctx.arc(0, 0, rad * 0.8, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = P.hvit;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `bold ${px}px ${FONT}`;
+    ctx.fillText(tekst, 0, 1);
+    ctx.textBaseline = 'alphabetic';
+}
+
 /**
  * Kongens regjering: en fjellklippe som henger i tre tau over dalen 1882-1884. Hver
- * riksrett-stemme kutter ett tau; det tredje får klippa til å falle, og Stortinget får roret.
+ * riksrett-stemme kutter ett tau (et rødt stempel der tauet satt); det tredje får klippa til
+ * å falle, og Stortinget får roret. Klippa henger så lavt at den aldri går bak Spart-kortet.
  */
 function tegnRegjering(
     ctx: CanvasRenderingContext2D,
@@ -445,15 +482,13 @@ function tegnRegjering(
     if (cx < -300 || cx > 1260) return;
     const fall = g.falt ? Math.max(0, (g.x - g.falt) / 260) : 0;
     if (fall > 2.4) return;
-    const bredde = 170;
-    const høyde = 150;
+    const { bredde, høyde, tau } = REGJ;
     const dy = fall * fall * 260;
     const bunn = r.bunn + dy;
     const topp = bunn - høyde;
     // Tauene: fra himmelen ned i klippa. Kuttede tau henger og slenger.
-    const tau = [-bredde * 0.32, 0, bredde * 0.32];
     ctx.strokeStyle = '#6b5a45';
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 4;
     tau.forEach((tx, i) => {
         const kuttet = i < g.riksrett;
         ctx.beginPath();
@@ -491,15 +526,36 @@ function tegnRegjering(
     }
     ctx.fillStyle = P.hvit;
     ctx.fillRect(-bredde / 2, -høyde / 2 - 4, bredde, 5);
-    krone(ctx, 0, -høyde / 2 - 22, 1.4);
+    // Navneskiltet: krone og «Kongens regjering» på lyst papir, så det leses på avstand.
+    const sw = bredde - 14;
+    ctx.fillStyle = 'rgba(31,35,38,0.35)';
+    ctx.fillRect(-sw / 2 + 2, -34 + 3, sw, 50);
     ctx.fillStyle = P.hvit;
+    ctx.fillRect(-sw / 2, -34, sw, 50);
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(-sw / 2, -34, sw, 50);
+    krone(ctx, 0, -20, 1.1);
+    ctx.fillStyle = P.kritt;
     ctx.textAlign = 'center';
-    ctx.font = `italic bold 17px ${FONT}`;
-    ctx.fillText('Kongens regjering', 0, 4);
-    ctx.font = `15px ${FONT}`;
-    ctx.fillText(g.falt ? 'Felt i riksretten' : `${3 - g.riksrett} tau igjen`, 0, 26);
+    ctx.font = `bold 18px ${FONT}`;
+    ctx.fillText('Kongens regjering', 0, 9);
+    ctx.fillStyle = P.hvit;
+    ctx.font = `bold 16px ${FONT}`;
+    ctx.fillText(g.falt ? 'Felt i riksretten!' : `${3 - g.riksrett} av 3 tau holder`, 0, 40);
     ctx.restore();
     ctx.globalAlpha = 1;
+    // Et rødt stempel der hvert kuttet tau satt: riksretten kuttet det.
+    if (!g.falt) {
+        tau.forEach((tx, i) => {
+            if (i >= g.riksrett) return;
+            ctx.save();
+            ctx.translate(cx + tx, topp - 2);
+            ctx.rotate(-0.2);
+            stempel(ctx, 15, `${i + 1}/3`, 11);
+            ctx.restore();
+        });
+    }
 }
 
 /**
@@ -532,21 +588,32 @@ function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
         ctx.fillRect(sx - v - 6, bue - 6, 10, b.bunn - bue + 6);
         ctx.fillRect(sx + v - 4, bue - 6, 10, b.bunn - bue + 6);
         ctx.fillRect(sx - v - 14, bue - 12, v * 2 + 28, 9);
-        // Banneret med pris og navn.
-        const bw = 150;
-        const by = bue - 54;
+        // Banneret: navnet og begge utfallene, så byttet står der før du velger.
+        const bw = 196;
+        const bh = valgt ? 40 : 64;
+        const by = bue - bh - 14;
         ctx.fillStyle = valgt === 'ja' ? P.silke : P.hvit;
         ctx.strokeStyle = P.kritt;
         ctx.lineWidth = 1.5;
-        ctx.fillRect(sx - bw / 2, by, bw, 40);
-        ctx.strokeRect(sx - bw / 2, by, bw, 40);
+        ctx.fillRect(sx - bw / 2, by, bw, bh);
+        ctx.strokeRect(sx - bw / 2, by, bw, bh);
         ctx.textAlign = 'center';
-        ctx.fillStyle = valgt === 'ja' ? P.hvit : P.karmin;
-        ctx.font = `bold 16px ${FONT}`;
-        ctx.fillText(valgt === 'ja' ? 'BEVILGET' : `BEVILG ${b.pris} Spd.`, sx, by + 17);
-        ctx.fillStyle = valgt === 'ja' ? P.hvit : P.kritt;
-        ctx.font = `italic 14px ${FONT}`;
-        ctx.fillText(b.navn, sx, by + 34);
+        if (valgt) {
+            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.karmin;
+            ctx.font = `bold 16px ${FONT}`;
+            ctx.fillText(valgt === 'ja' ? 'BEVILGET' : 'SA NEI', sx, by + 17);
+            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.kritt;
+            ctx.font = `italic 14px ${FONT}`;
+            ctx.fillText(b.navn, sx, by + 34);
+        } else {
+            ctx.fillStyle = P.kritt;
+            ctx.font = `italic 14px ${FONT}`;
+            ctx.fillText(b.navn, sx, by + 16);
+            ctx.font = `bold 14px ${FONT}`;
+            ctx.fillText('Over: spar, fyr selv', sx, by + 35);
+            ctx.fillStyle = P.karmin;
+            ctx.fillText(`Under: bevilg -${b.pris} Spd.`, sx, by + 55);
+        }
         ctx.restore();
     }
 }
@@ -712,5 +779,10 @@ function tegnPort(
         gr.addColorStop(1, 'rgba(240,200,120,0)');
         ctx.fillStyle = gr;
         ctx.fillRect(a, bunn + 4, b - a, 150);
+        // Et skilt nederst på veggen: hva fjellet er, og at veien går under.
+        ctx.fillStyle = P.hvit;
+        ctx.textAlign = 'center';
+        ctx.font = `bold 17px ${FONT}`;
+        ctx.fillText('Pil ned: dykk under!', (a + b) / 2, bunn - 30);
     }
 }
