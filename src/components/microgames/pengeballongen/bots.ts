@@ -4,14 +4,14 @@
 import type { Rng } from '../sim';
 import type { PlaytestBot } from '../playtest';
 import { BOT_EVERY } from '../playtest';
-import { fly, grenseNå, hold, ror, rorMål, synk } from './rules';
+import { fly, grense, grenseNå, hold, ror, rorMål, synk } from './rules';
 import { fartVed, fastTopp, knausVed, veiVed, type Bevilgning, type Knaus } from './terrain';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
 type Grep = (g: Game) => void;
 
-interface Pilot {
+export interface Pilot {
     /** Hvor mange px over bakken roboten vil ligge. */
     margin: number;
     /** Når den skraper: hvor lavt den sikter (px over bakken, inne i nær-båndet). */
@@ -37,8 +37,10 @@ interface Pilot {
      * grensen (0-1) - med `anslag` lagt til for fjellet foran. 0 = alltid, over 1 = aldri.
      */
     betal: number;
-    /** Hva roboten regner med at det koster å fyre seg over fjellet bak porten (Spd.). */
+    /** Hva roboten regner med at resten av perioden koster utenom fjellet (Spd.) ... */
     anslag?: number;
+    /** ... og per px fjellet bak porten rager over dalen (Spd./px). */
+    perPx?: number;
     /** Andel av portene der den ikke tenker på budsjettet og flyr over (slurv). */
     slurv?: number;
     /** Lærer av å bli stemt ut: så mye lettere bevilger den etter en ny sjanse (standard 0,25). */
@@ -93,7 +95,7 @@ function rorValg(g: Game, rekke: number, vent: number): Styring {
  * Piloten spår: «Hvis jeg slipper nå og først fyrer neste gang jeg rekker det - går det bra?»
  * Går det ikke, holder den. Slik fyrer den før ryggen og slipper så fort det er trygt.
  */
-function pilot(p: Pilot): (rng: Rng) => Grep {
+export function pilot(p: Pilot): (rng: Rng) => Grep {
     return (rng) => {
         let n = 0;
         let margin = p.margin;
@@ -124,11 +126,18 @@ function pilot(p: Pilot): (rng: Rng) => Grep {
             const under = knaus ? vei.get(knaus)! : false;
             // Bevilgningsporten: bestem seg første gang den ser den, ut fra budsjettet.
             const bv = nesteBevilg(g, fartVed(g.t) * 2.5);
-            if (bv && !bevilg.has(bv))
-                bevilg.set(
-                    bv,
-                    rng() >= (p.slurv ?? 0) && (g.periode + (p.anslag ?? 14)) / grenseNå(g) > betal
-                );
+            if (bv && !bevilg.has(bv)) {
+                // Som en elev: «Hvor høyt er fjellet bak porten, og hvor mye er igjen av
+                // budsjettet?» Står et valgflagg før porten, begynner budsjettet på nytt der.
+                const v = g.ter.valg[g.nesteValg];
+                const nytt = v && v.ekte && v.x < bv.x;
+                const brukt = nytt ? 0 : g.periode;
+                const grenseDa = nytt ? grense(v.år + TUNING.penger.hvert) : grenseNå(g);
+                let topp = bv.bunn;
+                for (let x = bv.x; x < bv.til; x += 8) topp = Math.min(topp, fastTopp(g.ter, x));
+                const kost = (p.anslag ?? 0) + (p.perPx ?? 0.1) * (bv.bunn - topp);
+                bevilg.set(bv, rng() >= (p.slurv ?? 0) && (brukt + kost) / grenseDa > betal);
+            }
             const ja = bv ? bevilg.get(bv)! : false;
             const ÅP = TUNING.bevilg.åpning;
             const vent = Math.max(BOT_EVERY * p.hver, p.vent ?? 0.75);
@@ -211,13 +220,13 @@ export const BOTS: Record<string, BotDef> = {
     flink: {
         forventer: 'vinner',
         beskrivelse:
-            'Fyrer før hver rygg og regner med at neste grep kan komme sent. Skraper i nær-båndet for Ueland-gangeren og dykker under fjellene med roret i 1884.',
-        make: pilot({ margin: 4, skrapMål: 10, horisont: 0.2, hver: 1, under: 1, ror: 260, betal: 1, anslag: 20 }),
+            'Fyrer før hver rygg og regner med at neste grep kan komme sent. Skraper i nær-båndet, sier nei ved porten når budsjettet holder til fjellet, og dykker under fjellene med roret i 1884.',
+        make: pilot({ margin: 4, skrapMål: 10, horisont: 0.2, hver: 1, under: 1, ror: 260, betal: 1, anslag: 1, perPx: 0.095 }),
     },
     nybegynner: {
         forventer: 'middels',
         beskrivelse:
-            'Fyrer før ryggene med god margin. Skraper i strekk på 4 s (70 % av tida) og styrer seint ned mot portene med roret.',
+            'Fyrer før ryggene med god margin og skraper i strekk på 4 s. Forsiktig ved portene: bevilger ofte når den kunne sagt nei, og sier av og til nei uten å se på budsjettet.',
         make: pilot({
             margin: 45,
             skrap: { andel: 0.4, margin: 12, bytt: 4 },
@@ -226,10 +235,13 @@ export const BOTS: Record<string, BotDef> = {
             hver: 1,
             under: 0.3,
             ror: 200,
-            betal: 1,
-            anslag: 12,
+            // Forsiktig: bevilger ofte selv når budsjettet holder - og av og til glemmer den
+            // budsjettet og sier nei uten å se på fjellet.
+            betal: 0.85,
+            anslag: 3,
+            perPx: 0.095,
             lærer: 0.25,
-            slurv: 0.3,
+            slurv: 0.2,
         }),
     },
     sløseren: {

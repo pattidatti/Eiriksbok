@@ -1,6 +1,6 @@
 # Pengeballongen - kart over mappa
 
-Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp). Brief: `docs/microgames/briefer/pengeballongen.md`.
+Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp; natt 3 forbedring 2: nei ved porten lønner seg, Ueland kommer ved første port, faste utgifter på fjellene, gjenvalg som flaggrykk). Brief: `docs/microgames/briefer/pengeballongen.md`.
 Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1870, selvspill).
 
 | Fil | Hva den gjør |
@@ -80,6 +80,18 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     hele runden. `snapshot().tid` er `g.start + g.spilt` (spolte sekunder teller med), så robottakten
     ikke står stille etter en ny sjanse.
 
+21. Nei ved porten (natt 3, forbedring 2): over porten gir `bevilg.nei` (4) x gangeren og
+    `neiTrinn` (2) trinn opp; bevilget tar også `bevilg.budsjett` (6) av valgbudsjettet
+    (`fx.tapp`: en karmin bit faller av baren). Fjellet bak porten er like høyt som andre
+    (`bevilg.fjell` 1), så nei går an tidlig og ikke sent. Porten viser embetsmenn med pengesekk og
+    prisen nede, bønder med bonusen oppå skiltet (porter.ts).
+22. Ueland kommer om bord ved første bevilgningsport (`g.uelandÅr`, `uelandOm()` i rules.ts),
+    senest i `ganger.fra` (1848). Før det sparer slipp `penger.førUeland`.
+23. Faste utgifter: `FASTE` i levels.ts, `ter.faste` (rygger før 1833, tinder uten utgift, midt i
+    skrapedalen), tegnet som karmin plate midt på fjellet i `tegnHindre`.
+24. Valgene 1827/1830 finnes fortsatt (de nullstiller perioden), men tegnes ikke og gir ingen lapp.
+    Gjenvalg vises som rykk i valgflagget (`fx.flagg`), ikke som lapp.
+
 ## Knapper
 
 - Flink-robotens poeng: `ganger.trinn`, `ganger.nær`, `ganger.vindu`.
@@ -87,7 +99,9 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
   `løft.varmeTau`. Bevis med et jitter-skript: flink med grep hvert 0,2-0,5 s og 5-20 % sene grep.
 - Hvor tett budsjettet er: `penger.grense` (26) og `grenseSlutt` (22) mot `løft.synkTil` og
   `form.økning`. Et fjell bak en port uten bevilgning koster ca. 18-22 Spd., så sent i runden
-  må de fleste bevilge noen. Flink (`betal: 1, anslag: 20`) bevilger når periode + anslag > grensen.
+  må de fleste bevilge noen. Robotene ser på høyden av fjellet bak porten: flink bevilger når
+  brukt + `anslag` + `perPx` x høyden > grensen (står et valgflagg før porten, er brukt 0).
+  `analyse.ts` viser nei/porter per robot.
 - Hva bevilgning koster: `bevilg.pris`/`økning` (25 + 5 per port) og at gangeren nullstilles.
 - Hvor lett porten er å treffe: `bevilg.åpning` (160), `bevilg.skyv` (fjellet flyttes fram så det
   er tid til å synke ned til porten).

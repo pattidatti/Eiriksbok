@@ -7,7 +7,7 @@ export const TUNING = {
     år: {
         start: 1815,
         /** Sekunder per år før det første ekte valget. */
-        førValg: 0.83,
+        førValg: 1.2,
         /** Her bytter tida fart (= penger.førsteEkteValg). */
         skifte: 1833,
         /** Sekunder per år fra 1833. */
@@ -134,7 +134,8 @@ export const TUNING = {
     // Ueland-gangeren (skrapebonus). Spart per sekund = perSek x ganger når du slipper i
     // nær-båndet, og bare `penger.utenfor` over det.
     ganger: {
-        fra: 1833,
+        /** Senest her kommer Ueland om bord (ellers ved første bevilgningsport, 1846). */
+        fra: 1848,
         /** Nær-båndet: under så mange px over bakken vokser gangeren. */
         nær: 70,
         /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */
@@ -175,9 +176,9 @@ export const TUNING = {
     },
 
     // Bevilgningsportene midt i runden (Embetskontor, Telegrafen, Drammenbanen): en port i dalen
-    // rett før fjellet. Gli under banneret = bevilg: prisen trekkes fra sekken (det du har spart),
-    // men staten bærer deg over fjellet, og budsjettet til valget slipper. Fly over porten = spar
-    // sekken, men da må du fyre deg over fjellet selv, og det tar av budsjettet.
+    // rett før fjellet. Gli under banneret = bevilg: prisen trekkes fra sekken og en bit av
+    // valgbudsjettet, men staten bærer deg over fjellet. Fly over porten = nei til kongen: Ueland gir
+    // bonus, men du må fyre deg over fjellet selv, og det tar av budsjettet.
     bevilg: {
         /** Prisen på den første porten (Spd. fra sekken), og så mye dyrere hver neste. */
         pris: 25,
@@ -190,6 +191,14 @@ export const TUNING = {
         dal: 320,
         /** Fjellet med port flyttes så langt fram i perioden (andel), så det er tid til å synke. */
         skyv: 0.2,
+        /** Høyden på fjellet bak en port (andel av et vanlig fjell). 1 = like høyt: et nei går an
+         * tidlig i runden, men ikke ved de store sene prosjektene. Lavere = nei blir alltid riktig. */
+        fjell: 1.0,
+        /** Bevilget: kongens embetsmenn tar så mye av valgbudsjettet (Spd.) - bøndene ser det. */
+        budsjett: 6,
+        /** Sa nei: Ueland gir så mye x gangeren til Spart, og gangeren går så mange trinn opp. */
+        nei: 4,
+        neiTrinn: 2,
     },
 
     // Dalen etter riksretten 1882-1884, med tre riksrett-stemmer (årene står i levels.ts).
@@ -223,8 +232,8 @@ export const TUNING = {
         [100, 'Bonderepresentant'],
         [250, 'Sparebonde'],
         [400, 'Ueland-elev'],
-        [550, 'Dalanes stolthet'],
-        [750, 'Ueland selv'],
+        [600, 'Dalanes stolthet'],
+        [850, 'Ueland selv'],
     ] as [number, string][],
 };
 

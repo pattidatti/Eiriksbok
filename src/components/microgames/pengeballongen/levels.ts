@@ -135,6 +135,9 @@ export const RIKSRETT = [1882.35, 1882.95, 1883.55];
 /** Kongens regjering henger over dalen her (år), med bunnen så høyt (skjerm-y). */
 export const REGJERING = { år: 1883.95, bunn: 300 };
 
+/** Statens faste utgifter: navnene som står på fjellene (etter tur). Fjellet må betales hver gang. */
+export const FASTE = ['Prestelønn', 'Veier', 'Festning', 'Dommere', 'Hæren', 'Embetslønn'];
+
 /** Kongens navngitte utgifter: en brå spiss på tinden i perioden. */
 export const UTGIFTER: { år: number; navn: string; bevilg?: boolean }[] = [
     { år: 1840.5, navn: 'Ny festning' },

@@ -16,12 +16,11 @@ export const SJANSE_LÆRDOM =
 
 export const LAPP = {
     hold: 'Hold MELLOMROM: betal for løft',
-    bevilg: 'Lavt under porten: staten bærer deg',
+    bevilg: 'Under: kongen betaler. Over: si nei!',
     riksrett: 'Riksrett: ta stemmene, kutt tauene!',
     grense: 'Over streken = bøndene stemmer deg ut',
     ganger: 'Gli tett, men fyr før ryggen',
     banen: 'Jernbanen: lang stigning - fyr tidlig!',
-    vinker: 'Bøndene stemmer ennå på embetsmenn',
     ror: 'Pil NED: dykk under fjellet!',
     ola: 'Ola-boka: ta den!',
 };
@@ -34,6 +33,7 @@ export const BEAT = {
     ueland: {
         tittel: 'Ueland om bord',
         tekst: 'Ole Gabriel Ueland ville spare. Gli tett over fjellet uten å fyre, så sparer du mye mer.',
+        nei: 'Du sa nei til kongen, og Ueland kom om bord. Gli tett over fjellet uten å fyre, så sparer du mer.',
     },
     roret: {
         tittel: 'Riksretten 1884',

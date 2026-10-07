@@ -207,7 +207,8 @@ export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number
     // Tingstuene står bak forgrunnskammen.
     for (const v of ter.valg) {
         const sx = v.x - x0;
-        if (sx < -80 || sx > 1040) continue;
+        // Før 1833 vinket bøndene embetsmennene gjennom: de valgene vises ikke.
+        if (!v.ekte || sx < -80 || sx > 1040) continue;
         tegnTingstue(ctx, sx, bakke(ter, v.x) + 2, v.ekte, v.år, tid, !v.ekte);
     }
 
@@ -314,10 +315,10 @@ export function tegnForgrunn(ctx: CanvasRenderingContext2D, g: Game, tid: number
 
 /** Nær-båndet: en prikket strek i skrapt hvitt. Under den vokser Ueland-gangeren. */
 export function tegnBånd(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
-    if (g.år < TUNING.ganger.fra - 0.6 || g.mode !== 'play') return;
+    if (g.år < g.uelandÅr || g.mode !== 'play') return;
     const x0 = g.x - B.skjermX;
     const inne = iBåndet(g);
-    const a = Math.min(1, (g.år - (TUNING.ganger.fra - 0.6)) / 0.6);
+    const a = Math.min(1, (g.år - g.uelandÅr) / 0.6);
     for (let sx = 0; sx <= 960; sx += 9) {
         const y = g.y + nærhet(g.ter, x0 + sx, g.y) - TUNING.ganger.nær;
         const nær = Math.abs(sx - B.skjermX) < 70;
@@ -357,6 +358,21 @@ export function tegnHindre(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
     tegnRegjering(ctx, g, k.korn, x0, tid);
     tegnBevilg(ctx, g, tid);
     ctx.textAlign = 'center';
+    // Statens faste utgifter: en karmin plate med navnet midt på fjellet, under toppen.
+    ctx.font = `bold 13px ${FONT}`;
+    for (const u of ter.faste) {
+        const sx = u.x - x0;
+        if (sx < -80 || sx > 1040 || !u.navn) continue;
+        const y = bakke(ter, u.x) + 34;
+        const w = ctx.measureText(u.navn).width + 12;
+        ctx.fillStyle = P.karmin;
+        ctx.fillRect(sx - w / 2, y - 13, w, 19);
+        ctx.strokeStyle = 'rgba(246,244,236,0.6)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(sx - w / 2 + 2, y - 11, w - 4, 15);
+        ctx.fillStyle = P.hvit;
+        ctx.fillText(u.navn, sx, y + 1);
+    }
     for (const u of ter.utgifter) {
         const sx = u.x - x0;
         if (sx < -80 || sx > 1040) continue;

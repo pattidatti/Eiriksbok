@@ -55,6 +55,11 @@ export interface Fx {
     stopp: number;
     /** Ueland vises i HUD-en fra første gang gangeren går over ×1, og blir stående runden ut. */
     uelandSett: boolean;
+    /** Gjenvalgt: valgflagget i stripa rykker og vaier (0-1). */
+    flagg: number;
+    /** Bevilget: en karmin bit av budsjettbaren rives av og faller (0-1), så stor del av grensen. */
+    tapp: number;
+    tappAndel: number;
 }
 
 export const nyFx = (): Fx => ({
@@ -69,6 +74,9 @@ export const nyFx = (): Fx => ({
     klokke: 0,
     stopp: 0,
     uelandSett: false,
+    flagg: 0,
+    tapp: 0,
+    tappAndel: 0,
 });
 
 const MAKS = 260;
@@ -159,6 +167,8 @@ export function oppdaterFx(fx: Fx, spill: number, ekte: number, scroll: number):
     fx.sprett = Math.max(0, fx.sprett - ekte * 4);
     fx.gangerSprett = Math.max(0, fx.gangerSprett - ekte * 2.5);
     fx.stabelBlink = Math.max(0, fx.stabelBlink - ekte * 3);
+    fx.flagg = Math.max(0, fx.flagg - ekte * 1.4);
+    fx.tapp = Math.max(0, fx.tapp - ekte * 1.1);
     // Bare den første lappen går; står noen i kø, får den aktive maks 3 s før den viker.
     const l = fx.lapper[0];
     if (l) {

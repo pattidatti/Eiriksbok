@@ -191,11 +191,16 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, x
     ctx.moveTo(x + 2, y + 8);
     ctx.lineTo(x + 2, y + 26);
     ctx.stroke();
-    ctx.fillStyle = P.karmin;
+    // Gjenvalgt: flagget rykker opp og vaier (fx.flagg), i stedet for en lapp.
+    const rykk = fx.flagg;
+    const løft = -7 * Math.sin(rykk * Math.PI);
+    const vai = Math.sin(tid * 22) * 4 * rykk;
+    const fl = 1 + 0.5 * rykk;
+    ctx.fillStyle = rykk > 0.2 ? P.silke : P.karmin;
     ctx.beginPath();
-    ctx.moveTo(x + 3, y + 8);
-    ctx.lineTo(x + 15, y + 12);
-    ctx.lineTo(x + 3, y + 16);
+    ctx.moveTo(x + 3, y + 8 + løft);
+    ctx.lineTo(x + 3 + 12 * fl, y + 12 + løft + vai);
+    ctx.lineTo(x + 3, y + 16 + løft + 2 * rykk);
     ctx.fill();
     ctx.font = `bold 15px ${FONT}`;
     ctx.textAlign = 'left';
@@ -209,6 +214,25 @@ function budsjett(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, tid: number, x
     if (fare) ctx.globalAlpha = inn * (0.6 + 0.4 * Math.sin(tid * 12));
     ctx.fillRect(x, by, bw * igjen, bh);
     ctx.globalAlpha = inn;
+    // Gjenvalgt: et lyst glimt som feier over den fulle baren.
+    if (fx.flagg > 0) {
+        const gx = x + bw * (1 - fx.flagg);
+        ctx.fillStyle = 'rgba(255,240,200,0.7)';
+        ctx.fillRect(Math.max(x, gx - 10), by, Math.min(20, x + bw - gx + 10), bh);
+    }
+    // Bevilget: kongens embetsmenn river en karmin bit av baren, og den faller ut av kortet.
+    if (fx.tapp > 0) {
+        const u = 1 - fx.tapp;
+        ctx.save();
+        ctx.globalAlpha = inn * Math.min(1, fx.tapp * 1.6);
+        ctx.translate(x + bw * igjen + (bw * fx.tappAndel) / 2, by + bh / 2 + u * u * 60);
+        ctx.rotate(u * 0.6);
+        ctx.fillStyle = P.karmin;
+        ctx.fillRect((-bw * fx.tappAndel) / 2, -bh / 2, bw * fx.tappAndel, bh);
+        ctx.strokeStyle = P.kritt;
+        ctx.strokeRect((-bw * fx.tappAndel) / 2, -bh / 2, bw * fx.tappAndel, bh);
+        ctx.restore();
+    }
     ctx.strokeStyle = 'rgba(46,50,54,0.35)';
     ctx.lineWidth = 1;
     for (let k = 5; k < grense; k += 5) {

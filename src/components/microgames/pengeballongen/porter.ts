@@ -1,5 +1,7 @@
-// Bevilgningsportene midt i runden: tømmerporten, kongens krok, skiltet med prisen som mynt og
-// den stiplede gullstien over fjellet som viser hvor staten bærer deg om du går under.
+// Bevilgningsportene midt i runden: tømmerporten, kongens krok, den stiplede gullstien over
+// fjellet som viser hvor staten bærer deg om du går under. Under/over leses av bildet: nede i
+// åpningen står kongens embetsmenn med pengesekken og prisen (rød mynt), oppe på skiltet står
+// bøndene med Uelands bonus (oransje mynt).
 
 import { P } from './art';
 import { FONT } from './scene';
@@ -9,9 +11,65 @@ import { TUNING } from './tuning';
 
 const B = TUNING.ballong;
 
+/** En liten figur (ca. 24 px) med føttene i (x, y): embetsmann med flosshatt eller bonde med lue. */
+function figur(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    slag: 'embetsmann' | 'bonde',
+    arm: number
+) {
+    const kropp = slag === 'embetsmann' ? P.kritt : '#8a7a5c';
+    ctx.fillStyle = kropp;
+    ctx.fillRect(x - 4, y - 16, 8, 12);
+    ctx.fillRect(x - 3.5, y - 4, 3, 4);
+    ctx.fillRect(x + 0.5, y - 4, 3, 4);
+    ctx.fillStyle = '#e8d6bf';
+    ctx.beginPath();
+    ctx.arc(x, y - 20, 3.6, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    if (slag === 'embetsmann') {
+        ctx.fillStyle = P.kritt;
+        ctx.fillRect(x - 3, y - 31, 6, 8);
+        ctx.fillRect(x - 5, y - 24, 10, 2);
+    } else {
+        ctx.fillStyle = P.silke;
+        ctx.beginPath();
+        ctx.arc(x, y - 22, 4, Math.PI, 0);
+        ctx.fill();
+        ctx.fillRect(x + 2, y - 25, 4, 3);
+    }
+    // Armen: 0 = ned, 1 = rett opp.
+    ctx.strokeStyle = kropp;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x + 3, y - 14);
+    ctx.lineTo(x + 4 + 5 * (1 - arm), y - 14 - 11 * arm + 4 * (1 - arm));
+    ctx.stroke();
+}
+
+/** En mynt med tekst (prisen eller bonusen). */
+function mynt(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, farge: string, tekst: string) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fillStyle = farge;
+    ctx.fill();
+    ctx.strokeStyle = P.kritt;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.fillStyle = P.hvit;
+    ctx.font = `bold 15px ${FONT}`;
+    ctx.textAlign = 'center';
+    ctx.fillText(tekst, x, y + 5);
+}
+
 /**
  * Bevilgningsportene: en høy tømmerport i dalen før et dyrt fjell. Lavt gjennom = bevilg
- * (prisen fra sekken, staten bærer deg over fjellet). Over porten = spar sekken, fyr selv.
+ * (prisen fra sekken og en bit av valgbudsjettet, staten bærer deg over fjellet). Over porten =
+ * nei til kongen: Ueland gir bonus, men du må fyre deg over fjellet selv.
  */
 export function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
     const x0 = g.x - B.skjermX;
@@ -73,9 +131,24 @@ export function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
             ctx.arc(sx + sving, bue + 42, 7, -Math.PI / 2, Math.PI * 0.9);
             ctx.stroke();
         }
-        // Skiltet: bare navnet og prisen som en rød mynt. Valget viser stien og kroken.
+        // Nede i åpningen: kongens embetsmenn med pengesekken og prisen. Går du under, tar de den.
+        if (valgt !== 'nei') {
+            const hopp = valgt === 'ja' ? Math.abs(Math.sin(tid * 8)) * 3 : 0;
+            figur(ctx, sx - v + 14, b.bunn - hopp, 'embetsmann', valgt === 'ja' ? 1 : 0.5 + 0.3 * Math.sin(tid * 3));
+            figur(ctx, sx + v - 14, b.bunn - hopp, 'embetsmann', valgt === 'ja' ? 1 : 0.5 + 0.3 * Math.sin(tid * 3 + 1));
+            // Pengesekken mellom dem.
+            ctx.fillStyle = '#b89a6a';
+            ctx.beginPath();
+            ctx.ellipse(sx + v - 28, b.bunn - 7, 8, 7, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = P.kritt;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+            if (!valgt) mynt(ctx, sx, b.bunn - 34, 20, P.karmin, `-${b.pris}`);
+        }
+        // Skiltet: navnet. Oppå står bøndene med Uelands bonus for et nei.
         const bw = 176;
-        const bh = 40;
+        const bh = 34;
         const by = bue - bh - 14;
         ctx.fillStyle = valgt === 'ja' ? P.silke : P.hvit;
         ctx.strokeStyle = P.kritt;
@@ -84,28 +157,29 @@ export function tegnBevilg(ctx: CanvasRenderingContext2D, g: Game, tid: number) 
         ctx.strokeRect(sx - bw / 2, by, bw, bh);
         ctx.textAlign = 'center';
         if (valgt) {
-            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.karmin;
-            ctx.font = `bold 16px ${FONT}`;
-            ctx.fillText(valgt === 'ja' ? 'BEVILGET' : 'SA NEI', sx, by + 17);
+            ctx.fillStyle = valgt === 'ja' ? P.hvit : P.silkeMørk;
+            ctx.font = `bold 15px ${FONT}`;
+            ctx.fillText(valgt === 'ja' ? 'BEVILGET' : 'SA NEI', sx, by + 15);
             ctx.fillStyle = valgt === 'ja' ? P.hvit : P.kritt;
-            ctx.font = `italic 14px ${FONT}`;
-            ctx.fillText(b.navn, sx, by + 34);
+            ctx.font = `italic 13px ${FONT}`;
+            ctx.fillText(b.navn, sx, by + 29);
         } else {
             ctx.fillStyle = P.kritt;
             ctx.font = `italic bold 15px ${FONT}`;
-            ctx.fillText(b.navn, sx - 18, by + 25);
-            // Prisen: en mynt på kanten av skiltet.
-            const mx = sx + bw / 2 - 4;
-            const my = by + bh / 2;
-            ctx.beginPath();
-            ctx.arc(mx, my, 22, 0, Math.PI * 2);
-            ctx.fillStyle = P.karmin;
-            ctx.fill();
-            ctx.strokeStyle = P.kritt;
-            ctx.stroke();
-            ctx.fillStyle = P.hvit;
-            ctx.font = `bold 15px ${FONT}`;
-            ctx.fillText(`-${b.pris}`, mx, my + 5);
+            ctx.fillText(b.navn, sx, by + 22);
+        }
+        if (valgt !== 'ja') {
+            // Bøndene jubler (hopper) når du sa nei, og vinker deg opp mens porten ligger foran.
+            const jubel = valgt === 'nei' ? 1 : 0;
+            ctx.globalAlpha = 1;
+            for (let i = 0; i < 3; i++) {
+                const hopp = jubel * Math.abs(Math.sin(tid * 9 + i * 1.3)) * 6;
+                figur(ctx, sx - 52 + i * 22, by - hopp, 'bonde', jubel ? 1 : 0.6 + 0.4 * Math.sin(tid * 5 + i));
+            }
+            if (!valgt) {
+                const bonus = TUNING.bevilg.nei * Math.max(1, g.ganger);
+                mynt(ctx, sx + 44, by - 16, 20, P.silke, `+${bonus}`);
+            }
         }
         ctx.restore();
     }

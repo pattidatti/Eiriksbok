@@ -37,13 +37,11 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             text.banner(BRETT[h.brett].tittel);
             break;
         case 'valg': {
-            if (!h.ekte) {
-                if (!sagt.has('vinker')) {
-                    sagt.add('vinker');
-                    ved(LAPP.vinker, -130, P.halv, false, 3);
-                } else ved('Bøndene vinker deg forbi', -120, P.halv);
-            } else if (h.år !== TUNING.penger.førsteEkteValg) ved(`Gjenvalgt ${h.år}!`, -120, P.silke, true);
-            if (h.hatt) ved('+1 embetsmann om bord: tyngre', -40, P.karmin);
+            // Gjenvalgt vises som et rykk i valgflagget (fx.flagg), ikke som en lapp.
+            if (h.hatt && !sagt.has('hatt')) {
+                sagt.add('hatt');
+                ved('+1 embetsmann om bord: tyngre', -40, P.karmin);
+            }
             break;
         }
         case 'funn': {
@@ -60,8 +58,8 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             else if (h.port) ved('Over fjellet: dyrt', -110, P.karmin, false, 1.2);
             break;
         case 'bevilg':
-            if (h.ja) ved(`Bevilget ${h.navn}: -${h.pris} Spd.`, -110, P.silke, true, 2.2);
-            else ved(`${h.navn}: nei takk - fyr selv!`, -110, P.karmin, false, 1.8);
+            if (h.ja) ved(`Bevilget: -${h.pris} Spd. og budsjett`, -110, P.karmin, true, 2.2);
+            else ved(`Nei til kongen! +${h.bonus} Spd.`, -110, P.silke, true, 2);
             if (h.hårfint) ved(h.ja ? 'Akkurat under banneret!' : 'Hårfint over porten!', -60, P.silke, false, 1);
             break;
         case 'riksrett':
@@ -72,11 +70,6 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
                 // Portrettet spretter og mynter flyr dit for hvert trinn; lapp bare ved milepælene.
                 if (h.ganger === TUNING.ganger.maks) ved(`Ueland ×${h.ganger}! Full fart!`, -60, P.silke, true, 1.1);
                 else if (h.ganger === 5) ved('Ueland ×5!', -60, P.silke, true, 1);
-                if (h.ganger === 2)
-                    text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
-                        at: c.vedBallong(-60),
-                        until: () => c.spill().ganger !== 2,
-                    });
             }
             break;
         case 'sjanse':
@@ -94,8 +87,8 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             }
             break;
         case 'bondeting':
-            text.banner('BONDETINGET 1833', P.silke);
-            ved(`Brenneren billigere: ${TUNING.penger.førBonde} → ${TUNING.penger.perSek} Spd.`, -85, P.silke, false, 3.5);
+            // Ingen banner eller lapp her: valget (lærings-øyeblikket) er det eneste nye i 1833.
+            // Baren gløder i gull, og brenneren blir billigere uten ord.
             break;
         case 'stemme':
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
@@ -168,6 +161,16 @@ export function coach(g: Game, c: Coach) {
                 seconds: 5,
             });
         }
+    }
+    // Ueland kom om bord ved første port: litt etter, når porten og fjellet er forbi.
+    if (!sagt.has('ueland') && g.år >= g.uelandÅr + 0.8 && !g.bæres && g.mode === 'play') {
+        sagt.add('ueland');
+        const t0 = g.t;
+        const nei = g.ter.bevilg[0]?.valgt === 'nei';
+        text.beatOnce('ueland', BEAT.ueland.tittel, nei ? BEAT.ueland.nei : BEAT.ueland.tekst, {
+            at: c.vedBallong(-60),
+            until: () => c.spill().t > t0 + 3,
+        });
     }
     // Riksretten: pek på den første stemmen.
     if (!sagt.has('riksrett')) {
