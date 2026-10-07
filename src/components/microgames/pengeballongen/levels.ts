@@ -122,7 +122,7 @@ export function formFor(p: number, år0: number, banenFra: number): Form {
 
 /** Jernbanene: navnet på skiltet ved stasjonen, etter året perioden starter. */
 export const BANER: { år: number; navn: string; bevilg?: boolean }[] = [
-    { år: 1854, navn: 'Hovedbanen 1854' },
+    { år: 1854, navn: 'Hovedbanen 1854', bevilg: true },
     { år: 1863, navn: 'Kongsvingerbanen 1862', bevilg: true },
     { år: 1872, navn: 'Drammenbanen 1872', bevilg: true },
 ];
@@ -142,7 +142,7 @@ export const FASTE = ['Prestelønn', 'Veier', 'Festning', 'Dommere', 'Hæren', '
 export const UTGIFTER: { år: number; navn: string; bevilg?: boolean }[] = [
     { år: 1840.5, navn: 'Ny festning' },
     // Med bevilgningsport: Stortinget velger om staten skal betale for det.
-    { år: 1846.5, navn: 'Embetskontor', bevilg: true },
+    { år: 1846.5, navn: 'Embetskontor' },
     { år: 1858.5, navn: 'Telegrafen', bevilg: true },
     { år: 1867.5, navn: 'Fyrlyktene', bevilg: true },
     { år: 1876.5, navn: 'Rørosbanen', bevilg: true },

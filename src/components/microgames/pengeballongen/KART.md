@@ -1,6 +1,6 @@
 # Pengeballongen - kart over mappa
 
-Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp; natt 3 forbedring 2: nei ved porten lønner seg, Ueland kommer ved første port, faste utgifter på fjellene, gjenvalg som flaggrykk). Brief: `docs/microgames/briefer/pengeballongen.md`.
+Ferdig bygg (fase 6: kunst, juice, lyd, tekst; forbedring 1: sjanser, Ola-boka, roret, ny HUD; natt 2 forbedring 1: myk kontroll, jernbanen, porter under fjellet; natt 2 forbedring 2: bevilgningsporter, strammere budsjett, riksretten kutter tauene; natt 3 forbedring 1: bondestripa, porten forklart med bilde, færre lapper, Spart teller opp; natt 3 forbedring 2: nei ved porten lønner seg, Ueland kommer ved første port, faste utgifter på fjellene, gjenvalg som flaggrykk; natt 3 forbedring 3: porten som veiskille med to løp, første port Hovedbanen 1854, Ueland alene 1844, lapper ved tingen, én himmel per tiår). Brief: `docs/microgames/briefer/pengeballongen.md`.
 Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skjerm, øving fra 1870, selvspill).
 
 | Fil | Hva den gjør |
@@ -17,7 +17,7 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
 | `scene.ts` | Himmel (varmere mot 1884, sol bak Stortinget), skyer, tre fjell-lag med snø og dis, forgrunnen i kornet kritt med skrapt hvitt, graner, nær-båndet (prikker), glød, knauser med krone, fjellveggen over porten (`tegnPort`), jernbanen med tog og stasjon (`tegnBaner`), utgifter, funn. Fjellveggene i rorstrekket har tre lyse piler nedover i porten (ikke tekst). |
 | `figures.ts` | Ballongen med bonde, Ueland, flosshatter og Sverdrup; spøkelset; tingstua; funnet; kronen; Stortinget. |
 | `hud.ts` | Litografibladet: papirmarg, bildetekst, tast, Spart, tidslinja (målet) og bondestripa oppe til venstre (`stripe()`): Ueland + gangeren (vises fra første ×2, `fx.uelandSett`), valgflagg + budsjettbar, og sjansene (bare etter første brukte sjanse). |
-| `porter.ts` | Bevilgningsportene (`tegnBevilg`): tømmerport, kongens krok i åpningen, skilt med navn og prisen som rød mynt, stiplet gullsti over fjellet til `til` (der staten bærer deg). |
+| `porter.ts` | Bevilgningsportene (`tegnBevilg`): veiskille med to løp. Nedre karmin løp «BEVILG» (embetsmenn, pengesekk, pris), øvre oransje løp «NEI» (bønder, bonus, pil over fjellet), delelinja der midten av ballongen er på terskelen, stiplet gullsti til `til`. |
 | `draw.ts` | Setter bildet sammen (rekkefølgen), `skala`/`tilSkjerm`/`flateX`. |
 | `fx.ts` | Lappefeltet (én lapp om gangen, kø), partikler (mynter, gnister, røyk, hatter, luer, papir), mynter som flyr til telleren, rystelse i ekte tid. |
 | `juice.ts` | Hva verden gjør hver ramme (mynter i brenneren, gnister i båndet, nesten-bom) og ved hendelser. |
@@ -56,9 +56,9 @@ Komponent: `../Pengeballongen.tsx` (skall, input, lagring, meny/pause/slutt-skje
     budsjettbaren i bondestripa gløder i gull til 1838,5. Etiketten er bare «Valg 18xx» med et
     valgflagg; under 25 % igjen blir etikett og bar røde og blinker. `BUDSJETT` i hud.ts er bare
     ankeret til lærings-øyeblikket om valget.
-15. Lappene (forbedring 4): bare én om gangen, i et fast felt under tidslinja (`LAPPEFELT` i fx.ts),
-    aldri ved ballongen. Viktige lapper venter i kø (maks to, den aktive viker etter 3 s); korte
-    (`sek` <= 1,1: Ueland ×n, Hårfint) byttes ut eller droppes. x/y i `lapp()` brukes ikke lenger.
+15. Lappene: bare én om gangen, ved tingen (x/y fra `lapp()`), holdt inne i `LAPPEFELT` i fx.ts
+    (under HUD-kortene). Ingen bannere midt øverst. Viktige lapper venter i kø (maks to, den aktive viker etter 3 s); korte
+    (`sek` <= 1,1: Ueland ×n, Hårfint) byttes ut eller droppes. 
 12. Kongens veto er fjernet (forbedring 3): det var bare ekstra synk, ikke et valg.
 16. Hit-stop: `stopp(fx, sek)` fryser spillet 0,06-0,12 s ved funn, stemme, porten og ×5/×10.
 13. Gangeren går til ×10 (`ganger.maks`); over ×5 kommer fartsstriper, lyd, blink og «Full fart!».

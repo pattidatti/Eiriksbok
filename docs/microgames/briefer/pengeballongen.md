@@ -816,3 +816,57 @@ fortsatt til høyre når Ueland kommer inn i stripa (nå ved første port). (3) 
 flink er stor (p10 593, p90 1007) fordi nei-bonusen vokser med gangeren. (4) Filmbildene i
 selvspillet treffer ingen port; porten er sjekket med egne skjermbilder fra øving 1870. (5) Mynten
 «+n» oppå skiltet og banneret «Ny sjanse» kan dekke hverandre et øyeblikk.
+
+### Natt 3, forbedring 3 (etter vurdering 3: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 3, Lærerikt 4)
+
+Forståelig sto på 3 for tredje gang. Vurdereren hadde aldri sett en port i filmbildene. Derfor
+er porten tegnet om til et veiskille, og brettet er endret så første port står midt i bildet ved
+55 s. Ingen nye regler.
+
+1. Porten er et veiskille med to løp (porter.ts). Nedre løp: en stor karmin flate fra bakken
+   opp til delelinja, ordet «BEVILG» i 32 px, prosjektnavnet, prisen som rød mynt, to embetsmenn i
+   dobbel størrelse med pengesekk og hvite piler som glir mot porten. Øvre løp: en oransje flate
+   med «NEI» i 34 px, bonusen som oransje mynt, tre bønder på bjelken og en stor pil opp over
+   fjellet. Delelinja er en tykk bjelke der midten av ballongen skal være (kurven på terskelen
+   minus halve ballongen), så det eleven ser, stemmer med regelen. Gullstien for «staten bærer
+   deg» står igjen. Etter valget står «BEVILGET» eller «SA NEI!» på løpet du tok, det andre
+   dempes, og begge toner ut over 360 px. Tømmerporten, kroken og skiltet er borte.
+2. Første port flyttet fra Embetskontor (1846, ca. 43 s) til Hovedbanen (1854): `bevilg: true` på
+   Hovedbanen i `BANER`, Embetskontor er en vanlig utgift. Porten står på x 661 ved 55 s, og
+   film-05 viser hele veiskillet. Jernbanen og første port er nå én ting, ikke to.
+3. Ueland kommer om bord alene i 1844 (ca. 40 s, `ganger.fra`), med en egen hendelse. Første port
+   kommer 17 s senere. Lærings-øyeblikket om Ueland har bare én tekst nå.
+4. Bannerne midt øverst er borte. Lappene står ved tingen (x/y fra der det skjedde, holdt inne i
+   bildet under HUD-kortene, `LAPPEFELT` i fx.ts). Fjernet: brett-banneret, «Ny sjanse fra ...»
+   (står nå i lappen: «Stemt ut! Tilbake til 18xx, -n Spd.»), «RORET ER DITT!», lappen
+   «Jernbanen: lang stigning - fyr tidlig!» og pekeren «Under: kongen betaler. Over: si nei!»
+   (løpene sier det selv).
+5. Valgkortet som stoppet spillet («Valget i 1833 ... Skjønner») er byttet ut med en pinne ved
+   baren, «Tom bar før valget = stemt ut», som står 4,5 s uten å stoppe noe.
+6. «Spart for bøndene» stiger ikke lenger uforklart: linja under tallet sier hva som skjer nå -
+   «Slipper: +n i sekundet» (oransje), «Fyrer: sparer ingenting» (karmin, tallet blir grått og
+   står stille) eller «Staten bærer deg». Rekorden vises bare på slutt-skjermen.
+7. Én himmel per tiår (`TIÅR` i scene.ts): grågrønt 1815, rosa morgen fra 1831, klar blå fra
+   1843, rav fra 1853, fiolett skumring fra 1863, gull fra 1874. Fjellene langt bak og disen tar
+   fargen. Likheten med petisjonen-3d falt; nærmest er nå tinghuset (0,42).
+
+Måleren «Storting mot regjering» er vurdert og ikke laget: den ville blitt et femte element i
+HUD-en uten egen regel. Reglene eleven holder i hodet er fortsatt: hold = betal og stig, baren til
+valget, gli tett (Ueland), og porten (under/over). Roret tidlig er ikke gjort.
+
+Feel-lista. Før: alle fire på plass. Etter: 3 styrket (løpene toner ut etter valget, det valgte
+løpet blir stående sterkt med stempel), 1 styrket (figurene på løpet du tok, hopper). Alle fire.
+
+Simulering (200 runder): grønn. flink 100 %, median 724 (p10 565, p90 1005); nybegynner 94 %,
+median 304; sløseren 0 %, gniten/passiv 21, tilfeldig 70. 36,8 valg/min, press 0,26 -> 0,65 ->
+0,86. Nei-andel (analyse.ts, 100 runder): flink 363 av 601 (60 %), nybegynner 150 av 655 (23 %).
+Selvspill (fart 4, --cover, hel runde): grønt, flink vant med 828, passiv krasjet etter 8 s.
+Scene-audit 0 funn. Likhet nærmest tinghuset (0,42). tsc og eslint rene.
+
+Prøvd som IKKE virket: navnet `EPOKE` kolliderte med forgrunnens epoker i scene.ts (rettet til
+`TIÅR`). Ellers ingenting forkastet.
+
+Kjente svakheter: (1) En lapp ved ballongen («Ueland ×5!») kan dekke prosjektnavnet på nedre løp
+et øyeblikk. (2) Pinnen ved baren i 1833 ligger delvis over baren. (3) Ballongen er allerede inne i
+løpene ved 55 s; et bilde litt før ville vist veiskillet helt fritt. (4) Roret kommer fortsatt
+først i 1884. (5) Menyen har fortsatt tre regellinjer.

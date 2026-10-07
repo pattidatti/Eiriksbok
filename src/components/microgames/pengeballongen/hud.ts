@@ -5,7 +5,7 @@
 import { P } from './art';
 import type { Fx } from './fx';
 import { BRETT } from './levels';
-import { grenseNå, grenseVises, iBåndet } from './rules';
+import { grenseNå, grenseVises, iBåndet, sparing } from './rules';
 import { FONT } from './scene';
 import type { Game } from './state';
 import { TUNING } from './tuning';
@@ -93,16 +93,27 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, v: HudVa
     ctx.translate(934, 66);
     ctx.scale(sk, sk);
     ctx.font = `bold 30px ${FONT}`;
-    ctx.fillStyle = fx.sprett > 0.3 ? P.silkeMørk : P.kritt;
+    // Mens du fyrer, sparer du ingenting: tallet blir grått og står stille.
+    const fyrer = g.hold && !g.bæres && g.mode === 'play';
+    ctx.fillStyle = fx.sprett > 0.3 ? P.silkeMørk : fyrer ? P.halv : P.kritt;
     ctx.fillText(`${spd(g.spart)} Spd.`, 0, 0);
     ctx.restore();
-    ctx.font = `14px ${FONT}`;
-    ctx.fillStyle = P.kritt;
-    ctx.fillText(
-        g.år < T.penger.stabelFra ? 'Spd. = speciedaler' : v.rekord && !v.øving ? `Rekord ${spd(v.rekord)}` : '',
-        934,
-        85
-    );
+    // Linja under sier hva som skjer nå: slipp = sparer (+n i sekundet), hold = sparer ingenting.
+    ctx.font = `bold 14px ${FONT}`;
+    if (g.t < 6) {
+        ctx.font = `14px ${FONT}`;
+        ctx.fillStyle = P.kritt;
+        ctx.fillText('Spd. = speciedaler', 934, 85);
+    } else if (g.bæres) {
+        ctx.fillStyle = P.karmin;
+        ctx.fillText('Staten bærer deg', 934, 85);
+    } else if (fyrer) {
+        ctx.fillStyle = P.karmin;
+        ctx.fillText('Fyrer: sparer ingenting', 934, 85);
+    } else if (g.mode === 'play') {
+        ctx.fillStyle = P.silkeMørk;
+        ctx.fillText(`Slipper: +${Math.round(sparing(g))} i sekundet`, 934, 85);
+    }
 
     tidslinje(ctx, g);
     stripe(ctx, g, fx, tid);

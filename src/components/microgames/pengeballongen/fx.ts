@@ -32,10 +32,13 @@ interface Lapp {
     maks: number;
     /** Kort tilbakemelding (Ueland ×n, Hårfint): byttes ut eller droppes, står aldri i kø. */
     lav: boolean;
+    /** Der det skjedde (flatekoordinater): lappen står ved tingen, ikke midt øverst. */
+    x: number;
+    y: number;
 }
 
-/** Det faste lappefeltet: under tidslinja, mellom Ueland-kortet og Spart - aldri ved ballongen. */
-export const LAPPEFELT = { x: 560, y: 64, maksBredde: 400 };
+/** Lappene står der det skjedde, men innenfor dette feltet (under HUD-kortene, over margen). */
+export const LAPPEFELT = { venstre: 16, høyre: 944, topp: 118, bunn: 470, maksBredde: 400 };
 
 export interface Fx {
     p: Partikkel[];
@@ -129,10 +132,8 @@ export function slipp(
  * Bare én lapp vises om gangen. Viktige lapper venter i kø (maks to), korte tilbakemeldinger
  * byttes ut eller droppes. x og y er med for gamle kall, men lappen står alltid i feltet.
  */
-export function lapp(fx: Fx, tekst: string, _x: number, _y: number, farge: string = P.kritt, stor = false, sek = 1.4) {
-    void _x;
-    void _y;
-    const ny: Lapp = { tekst, farge, stor, liv: sek, maks: sek, lav: sek <= 1.1 };
+export function lapp(fx: Fx, tekst: string, x: number, y: number, farge: string = P.kritt, stor = false, sek = 1.4) {
+    const ny: Lapp = { tekst, farge, stor, liv: sek, maks: sek, lav: sek <= 1.1, x, y };
     const aktiv = fx.lapper[0];
     if (!aktiv || aktiv.lav) {
         // Feltet er ledig, eller det står bare en kort tilbakemelding der.
@@ -305,8 +306,6 @@ export function tegnLapper(ctx: CanvasRenderingContext2D, fx: Fx, font: string) 
         const a = Math.min(1, l.liv / 0.3);
         ctx.save();
         ctx.globalAlpha = a;
-        ctx.translate(LAPPEFELT.x, LAPPEFELT.y);
-        ctx.scale(sk, sk);
         // Lang tekst får mindre skrift (aldri under 14 px), så lappen holder seg i feltet.
         let px = l.stor ? 20 : 15;
         ctx.font = `bold ${px}px ${font}`;
@@ -316,6 +315,12 @@ export function tegnLapper(ctx: CanvasRenderingContext2D, fx: Fx, font: string) 
         }
         const w = ctx.measureText(l.tekst).width + 22;
         const h = l.stor ? 30 : 24;
+        // Ved tingen, men aldri utenfor bildet eller over HUD-kortene.
+        const F = LAPPEFELT;
+        const lx = Math.min(F.høyre - w / 2, Math.max(F.venstre + w / 2, l.x + w / 2 - 20));
+        const ly = Math.min(F.bunn, Math.max(F.topp, l.y));
+        ctx.translate(lx, ly);
+        ctx.scale(sk, sk);
         ctx.fillStyle = 'rgba(31,35,38,0.35)';
         ctx.fillRect(-w / 2 + 2, -h / 2 + 3, w, h);
         ctx.fillStyle = P.hvit;

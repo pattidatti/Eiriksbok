@@ -134,8 +134,8 @@ export const TUNING = {
     // Ueland-gangeren (skrapebonus). Spart per sekund = perSek x ganger når du slipper i
     // nær-båndet, og bare `penger.utenfor` over det.
     ganger: {
-        /** Senest her kommer Ueland om bord (ellers ved første bevilgningsport, 1846). */
-        fra: 1848,
+        /** Her kommer Ueland om bord (ca. 40 s), alene - første port kommer først i 1854 (ca. 57 s). */
+        fra: 1844,
         /** Nær-båndet: under så mange px over bakken vokser gangeren. */
         nær: 70,
         /** Bakken som teller, fra så langt bak til så langt foran kurven (px vei). */

@@ -13,14 +13,36 @@ import { TUNING } from './tuning';
 const B = TUNING.ballong;
 export const FONT = '"Bodoni Moda", Didot, "Bodoni 72", Georgia, serif';
 
-/** Hvor varm himmelen er (0 = kjølig morgen, 1 = 1884). */
-const varme = (år: number) => Math.min(1, Math.max(0, (år - 1874) / 10));
+
+/**
+ * Én himmel per tiår, så filmbildene ikke er like: kjølig grågrønt i 1815, rosa morgen da
+ * bøndene tok flertallet, klar blå med Ueland, rav i dampens tiår, fiolett skumring under
+ * striden, varmt gull mot 1884. `tone` farger fjellene langt bak.
+ */
+const TIÅR = [
+    { fra: 1815, topp: '#c6cbbd', bunn: '#e4e6db', tone: '#9aa597' },
+    { fra: 1831, topp: '#d4b4a8', bunn: '#f0dccf', tone: '#a28a8c' },
+    { fra: 1843, topp: '#a6bacb', bunn: '#e0e7ea', tone: '#8495a8' },
+    { fra: 1853, topp: '#d3b07a', bunn: '#efdbb2', tone: '#9e8a66' },
+    { fra: 1863, topp: '#a29fc0', bunn: '#dfdbe8', tone: '#7f7e9e' },
+    { fra: 1874, topp: '#d9c9a8', bunn: '#f1e6cc', tone: '#a89a7a' },
+];
+
+/** Fargen for året: glir over to år inn i neste tiår. */
+function tiår(år: number, nøkkel: 'topp' | 'bunn' | 'tone'): string {
+    let i = 0;
+    for (let k = 0; k < TIÅR.length; k++) if (år >= TIÅR[k].fra) i = k;
+    const a = TIÅR[i];
+    const b = TIÅR[i + 1];
+    if (!b) return a[nøkkel];
+    const t = Math.min(1, Math.max(0, (år - (b.fra - 2)) / 2));
+    return blandFarge(a[nøkkel], b[nøkkel], t);
+}
 
 export function tegnHimmel(ctx: CanvasRenderingContext2D, g: Game, tid: number) {
-    const v = varme(g.år);
     const sky = ctx.createLinearGradient(0, 0, 0, 420);
-    sky.addColorStop(0, blandFarge('#c6cbbd', '#d9c9a8', v));
-    sky.addColorStop(1, blandFarge(P.steinLys, '#f1e6cc', v));
+    sky.addColorStop(0, tiår(g.år, 'topp'));
+    sky.addColorStop(1, tiår(g.år, 'bunn'));
     ctx.fillStyle = sky;
     ctx.fillRect(0, 0, 960, 540);
     const k = hentKunst(ctx);
@@ -124,6 +146,9 @@ function fjellY(l: Lag, wx: number, i: number) {
 export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
     const k = hentKunst(ctx);
     const lav = kvalitet() === 'lav';
+    const tone = tiår(g.år, 'tone');
+    const dis = parseInt(tiår(g.år, 'bunn').slice(1), 16);
+    const disRgb = `${(dis >> 16) & 255},${(dis >> 8) & 255},${dis & 255}`;
     LAG.forEach((l, i) => {
         const off = g.x * l.par;
         ctx.beginPath();
@@ -131,7 +156,7 @@ export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
         for (let sx = -10; sx <= 970; sx += 12) ctx.lineTo(sx, fjellY(l, sx + off, i));
         ctx.lineTo(970, 540);
         ctx.closePath();
-        ctx.fillStyle = l.farge;
+        ctx.fillStyle = blandFarge(l.farge, tone, 0.3 + 0.08 * i);
         ctx.fill();
         if (l.korn && k.korn && !lav) {
             flyttMønster(k.korn, -off);
@@ -159,8 +184,8 @@ export function tegnBakgrunn(ctx: CanvasRenderingContext2D, g: Game) {
         }
         // Dis i dalene: lys halvtone som stiger fra bunnen.
         const d = ctx.createLinearGradient(0, l.base - 40, 0, l.base + 70);
-        d.addColorStop(0, 'rgba(228,230,219,0)');
-        d.addColorStop(1, `rgba(228,230,219,${l.dis})`);
+        d.addColorStop(0, `rgba(${disRgb},0)`);
+        d.addColorStop(1, `rgba(${disRgb},${l.dis})`);
         ctx.fillStyle = d;
         ctx.fillRect(0, l.base - 40, 960, 540);
     });

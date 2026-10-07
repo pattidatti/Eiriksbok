@@ -4,7 +4,7 @@
 import type { ArcadeText } from '../arcade/useArcade';
 import type { Anchor } from '../arcade/stores';
 import { P } from './art';
-import { BRETT, FUNN } from './levels';
+import { FUNN } from './levels';
 import { klaring } from './rules';
 import type { Game, Hendelse } from './state';
 import { BEAT, LAPP, SJANSE_LÆRDOM } from './texts';
@@ -34,7 +34,7 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
         c.lapp(tekst, BX + 70, g.y + dy, farge, stor, sek);
     switch (h.slag) {
         case 'brett':
-            text.banner(BRETT[h.brett].tittel);
+            // Ingen banner midt øverst: bildeteksten nede i margen viser stedet.
             break;
         case 'valg': {
             // Gjenvalgt vises som et rykk i valgflagget (fx.flagg), ikke som en lapp.
@@ -73,9 +73,10 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             }
             break;
         case 'sjanse':
-            text.banner(`Ny sjanse fra ${h.tilbake}`, P.karmin);
             ved(
-                (h.årsak === 'valg' ? 'Stemt ut!' : 'Rett i fjellet!') + (h.straff > 0 ? ` -${h.straff} Spd.` : ''),
+                (h.årsak === 'valg' ? 'Stemt ut!' : 'Rett i fjellet!') +
+                    ` Tilbake til ${h.tilbake}` +
+                    (h.straff > 0 ? `, -${h.straff} Spd.` : ''),
                 -120,
                 P.karmin,
                 true,
@@ -94,7 +95,6 @@ export function coachHendelse(h: Hendelse, g: Game, c: Coach) {
             ved(`Stemme! +${h.verdi}`, -60, P.silke, true, 1);
             break;
         case 'roret': {
-            text.banner('RORET ER DITT!', P.silke);
             const t0 = g.t;
             text.beatOnce('roret', BEAT.roret.tittel, BEAT.roret.tekst, {
                 at: c.vedBallong(-60),
@@ -137,37 +137,16 @@ export function coach(g: Game, c: Coach) {
     const vedBar = () => c.skjerm(BUDSJETT.x + 90, BUDSJETT.y + 40);
     if (!sagt.has('grense') && g.år >= TUNING.penger.førsteEkteValg - 1.2) {
         sagt.add('grense');
-        const t0 = g.t;
-        text.beatOnce('valg', BEAT.valg.tittel, BEAT.valg.tekst, {
-            at: vedBar,
-            until: () => c.spill().t > t0 + 1.4,
-        });
+        // En pinne ved baren, ikke et kort som stopper spillet: baren som tømmes viser resten.
+        text.point('valg', LAPP.grense, vedBar, { seconds: 4.5 });
     }
-    // Jernbanen (fra 1854): ny form midt i runden. Varsle i god tid, så eleven fyrer tidlig.
-    if (!sagt.has('banen')) {
-        const b = g.ter.baner.find((bn) => bn.x0 - g.x < 620 && bn.x0 > g.x);
-        if (b) {
-            sagt.add('banen');
-            c.lapp(LAPP.banen, BX + 70, g.y - 60, P.silke, true, 3.5);
-        }
-    }
-    // Første bevilgningsport: pek på åpningen. Stien over fjellet og mynten på skiltet viser resten.
-    if (!sagt.has('bevilg')) {
-        const b = g.ter.bevilg.find((x) => !x.valgt && x.x - g.x < 600 && x.x > g.x);
-        if (b) {
-            sagt.add('bevilg');
-            text.point('bevilg', LAPP.bevilg, c.vedVerden(b.x - 50, b.bunn - 60), {
-                until: () => !!b.valgt,
-                seconds: 5,
-            });
-        }
-    }
-    // Ueland kom om bord ved første port: litt etter, når porten og fjellet er forbi.
+    // Jernbanen og den første porten trenger ingen lapp: veiskillet viser de to løpene med
+    // ord, pris og bonus på selve løpet.
+    // Ueland kommer om bord i 1844, alene (første port kommer først i 1854).
     if (!sagt.has('ueland') && g.år >= g.uelandÅr + 0.8 && !g.bæres && g.mode === 'play') {
         sagt.add('ueland');
         const t0 = g.t;
-        const nei = g.ter.bevilg[0]?.valgt === 'nei';
-        text.beatOnce('ueland', BEAT.ueland.tittel, nei ? BEAT.ueland.nei : BEAT.ueland.tekst, {
+        text.beatOnce('ueland', BEAT.ueland.tittel, BEAT.ueland.tekst, {
             at: c.vedBallong(-60),
             until: () => c.spill().t > t0 + 3,
         });
