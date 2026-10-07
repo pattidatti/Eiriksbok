@@ -250,6 +250,7 @@ const Taburetten3D = lazy(() => import('./Taburetten3D'));
 const Generalstreiken = lazy(() => import('./Generalstreiken'));
 const KongensTallerkener = lazy(() => import('./KongensTallerkener'));
 const Pengeballongen = lazy(() => import('./Pengeballongen'));
+const Gamma = lazy(() => import('./Gamma'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2557,6 +2558,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Tonelitografier fra «Norge fremstillet i Tegninger» (1846-48): kornet litokritt på grågrønn tonestein, skrapt hvitt i snø og foss, håndkolorert oransje ballong',
         loader: () => import('./Pengeballongen'),
         Component: Pengeballongen as never,
+    },
+    gamma: {
+        id: 'gamma',
+        title: 'Gamma',
+        description:
+            'Finnmark, vinteren 1944-45. Bygda er brent, og familien din har gjemt seg i en torvgamme i fjellet i stedet for å bli tvangsevakuert. Bær ved opp fra bjørkeskogen og fyr for å holde dem varme - men røyken stiger, og patruljebåten i fjorden leter med lyskaster. Ser lyset røyken eller deg, blir dere funnet. Hold ut til hjelpen kommer i februar 1945.',
+        estimatedSeconds: 160,
+        sjanger: 'overlevelse-stealth',
+        tone: 'alvorlig',
+        hook: 'Bygda er brent, og familien har gjemt seg i en gamme. Klarer du å holde dem varme uten at lyset ser røyken?',
+        cover: '/images/microgames/gamma.webp',
+        kunst: 'John Savios fargetresnitt fra Finnmark: svart treskurd, hvite skårne linjer i snøen, preussisk blått og ild i oker',
+        loader: () => import('./Gamma'),
+        Component: Gamma as never,
     },
 };
 
