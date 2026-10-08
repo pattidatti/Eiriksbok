@@ -5,7 +5,7 @@
   "year": "1864-1968",
   "category": "Norge",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/norge-i-moderne-tid/hvalfangsten-hero.webp",
   "details": [
     "Svend Foyns granatharpun fra 1860-tallet gjorde det mulig å fange de største hvalene",
     "Hvalfangst ble forbudt i Nord-Norge i 1904 etter protester fra fiskerne",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/hvalfangsten-01.webp",
       "alt": "Hvalkokeri og hvalbåter blant isfjell i Sørishavet",
       "caption": "Sesongen 1930-1931 var over 10 000 nordmenn med på hvalfangsten i Antarktis."
     },
@@ -125,7 +125,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/hvalfangsten-02.webp",
       "alt": "Forlatt hvalstasjon med rustne tanker på Sør-Georgia",
       "caption": "Den siste hvalstasjonen på Sør-Georgia ble lagt ned i 1966."
     },
@@ -151,7 +151,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/hvalfangsten-03.webp",
       "alt": "Hvalfangstmonument og havn i Sandefjord",
       "caption": "Hvalfangstmuseet i Sandefjord ble grunnlagt i 1917 og forteller i dag historien om norsk hvalfangst."
     },
