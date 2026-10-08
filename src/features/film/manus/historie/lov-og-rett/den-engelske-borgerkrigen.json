@@ -1,0 +1,764 @@
+{
+    "id": "den-engelske-borgerkrigen",
+    "tittel": "Den engelske borgerkrigen: Da folket dømte kongen",
+    "kilde": "/historie/lov-og-rett/den-engelske-borgerkrigen",
+    "bilde": "/images/lov-og-rett/den-engelske-borgerkrigen-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "skafott",
+            "kapittel": "30. januar 1649",
+            "visual": {
+                "type": "BorgerkrigenWhitehall"
+            },
+            "replikker": [
+                {
+                    "si": "London, den 30. januar 1649. En stor folkemengde har samlet seg i gatene."
+                },
+                {
+                    "si": "Utenfor et stort steinhus, Banqueting House, står et skafott. Det er en plattform for henrettelser."
+                },
+                {
+                    "si": "Folk venter. Snart skal en mann føres ut på skafottet."
+                },
+                {
+                    "si": "Han er ingen vanlig fange. Det er Karl 1., kongen av England og Skottland.",
+                    "uttale": "Han er ingen vanlig fange. Det er Karl den første, kongen av England og Skottland."
+                },
+                {
+                    "si": "En domstol har dømt ham til døden. Nå skal han halshugges foran folkemengden."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KONGEN FOR RETTEN",
+                    "undertittel": "Den engelske borgerkrigen, 1642-1651",
+                    "bilde": "/images/lov-og-rett/den-engelske-borgerkrigen-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne det gå så langt?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Engelskmennene hadde stilt sin egen konge for retten og dømt ham som en forbryter."
+                },
+                {
+                    "si": "For mange var det et sjokk. Kongen var jo den som sto over loven."
+                },
+                {
+                    "si": "Hvordan kunne det gå så langt? Svaret er en lang strid om penger, tro og makt."
+                },
+                {
+                    "si": "Striden endte i en borgerkrig, en krig der folk fra samme land kjemper mot hverandre. Den varte fra 1642 til 1651."
+                }
+            ]
+        },
+        {
+            "id": "gud",
+            "kapittel": "Kongen mot parlamentet",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": 0,
+                            "konge": "karl",
+                            "fylt": 0.7,
+                            "merkelapp": "Karl 1. blir konge, 1625"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": -14,
+                            "konge": "karl",
+                            "fylt": 0.7,
+                            "ekstra": "gud",
+                            "merkelapp": "Makta kommer fra Gud"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": -24,
+                            "konge": "karl",
+                            "fylt": 0.4,
+                            "ekstra": "gud",
+                            "merkelapp": "Enevoldskonge: bestemmer alt selv"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Karl 1. ble konge i 1625. Han trodde på noe som kalles kongenes guddommelige rett.",
+                    "uttale": "Karl den første ble konge i 1625. Han trodde på noe som kalles kongenes guddommelige rett."
+                },
+                {
+                    "si": "Det betyr at kongen fikk makta si fra Gud. Derfor måtte han ikke svare til noen her på jorda."
+                },
+                {
+                    "si": "Karl ville styre som en enevoldskonge, altså en konge som bestemmer alt selv."
+                }
+            ]
+        },
+        {
+            "id": "skatt",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": -10,
+                            "konge": "karl",
+                            "fylt": 1,
+                            "ekstra": "mynter",
+                            "merkelapp": "Kongen trenger penger til krig"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": 8,
+                            "konge": "karl",
+                            "fylt": 1,
+                            "ekstra": "janei",
+                            "merkelapp": "Parlamentet sier ja eller nei til nye skatter"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": 8,
+                            "konge": "karl",
+                            "fylt": 1,
+                            "ekstra": "folk",
+                            "merkelapp": "Adelsmenn, biskoper og valgte representanter"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "vipp": -24,
+                            "konge": "karl",
+                            "fylt": 0,
+                            "merkelapp": "Parlamentet sendes hjem"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men Karl trengte hele tiden penger, særlig til krig."
+                },
+                {
+                    "si": "I England hadde parlamentet lenge hatt rett til å si ja eller nei til nye skatter."
+                },
+                {
+                    "si": "Parlamentet var en forsamling av adelsmenn, biskoper og valgte representanter."
+                },
+                {
+                    "si": "I 1628 klaget parlamentet på kongens krav. Karl svarte med å sende hele parlamentet hjem."
+                }
+            ]
+        },
+        {
+            "id": "alene",
+            "kapittel": "Elleve år alene",
+            "visual": {
+                "type": "BorgerkrigenKart",
+                "props": {
+                    "modus": "skipsskatt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fra 1629 til 1640 styrte Karl helt alene. Motstanderne kalte det elleveårstyranniet."
+                },
+                {
+                    "si": "En tyrann er en hersker som misbruker makta si."
+                },
+                {
+                    "si": "Uten parlamentet måtte Karl finne nye måter å skaffe penger på. Han krevde inn skipsskatt, en gammel skatt som før bare byene ved kysten hadde betalt."
+                },
+                {
+                    "si": "Nå måtte hele landet betale."
+                }
+            ]
+        },
+        {
+            "id": "titler",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 266,
+                            "farget": 266,
+                            "farge": "#a16207",
+                            "tittel": "Adelstitler til salgs",
+                            "fargeEtikett": "solgte titler, bare i England"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 266,
+                            "farget": 266,
+                            "farge": "#a16207",
+                            "tittel": "Gamle venner blir sinte",
+                            "fargeEtikett": "solgte titler, bare i England"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Han solgte også adelstitler. Da kunne den som betalte, kalle seg adelig. Bare i England solgte han 266 slike titler."
+                },
+                {
+                    "si": "Mange som før hadde støttet kongen, ble nå sinte."
+                }
+            ]
+        },
+        {
+            "id": "skottland",
+            "kapittel": "Gnisten fra Skottland",
+            "visual": {
+                "type": "BorgerkrigenKart",
+                "props": {
+                    "modus": "skottland"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det som til slutt tvang Karl til å gi seg, var tro."
+                },
+                {
+                    "si": "Mange engelskmenn var puritanere. Det var strenge protestanter som ville fjerne alt som minnet om den katolske kirken."
+                },
+                {
+                    "si": "I 1637 prøvde Karl å tvinge den engelske bønneboka på skottene."
+                },
+                {
+                    "si": "Skottene nektet. I 1639 og 1640 gjorde de opprør."
+                }
+            ]
+        },
+        {
+            "id": "lange-parlamentet",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": -10,
+                            "konge": "karl",
+                            "fylt": 0.5,
+                            "ekstra": "mynter",
+                            "merkelapp": "Krigen koster penger"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": 6,
+                            "konge": "karl",
+                            "fylt": 1,
+                            "merkelapp": "Nå trenger kongen parlamentet"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": 14,
+                            "konge": "karl",
+                            "fylt": 1,
+                            "merkelapp": "November 1640: Det lange parlamentet"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "vipp": 22,
+                            "konge": "karl",
+                            "fylt": 1,
+                            "ekstra": "strafford",
+                            "merkelapp": "Mai 1641: Strafford henrettes"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For å betale for krigen måtte Karl kalle inn parlamentet igjen."
+                },
+                {
+                    "si": "Nå trengte kongen parlamentet. Og det visste parlamentet."
+                },
+                {
+                    "si": "Det nye parlamentet samlet seg i november 1640. Det kalles Det lange parlamentet. Det begynte straks å ta makt fra kongen."
+                },
+                {
+                    "si": "I mai 1641 fikk parlamentet henrettet en av kongens viktigste menn, jarlen av Strafford."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "Borgerkrigen",
+            "visual": {
+                "type": "BorgerkrigenKart",
+                "props": {
+                    "modus": "krig"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I august 1642 reiste Karl fanen sin i byen Nottingham. Det var et tegn på at han kalte folk til krig mot parlamentet."
+                },
+                {
+                    "si": "Landet delte seg. På den ene siden sto kongens tilhengere, rojalistene. På den andre siden sto parlamentet og puritanerne."
+                },
+                {
+                    "si": "Det første store slaget sto ved Edgehill i oktober 1642. Der vant kongens side."
+                }
+            ]
+        },
+        {
+            "id": "ny-haer",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Parlamentets styrke",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Mer penger, flere folk",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "hest",
+                            "tittel": "Cromwells ryttere",
+                            "tekst": "soldater til hest",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "New Model Army, 1645",
+                            "tekst": "en helt ny hær",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Offiserer etter evner",
+                            "tekst": "ikke etter familie",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men parlamentet hadde mer penger og flere folk."
+                },
+                {
+                    "si": "En av lederne het Oliver Cromwell. Han var misfornøyd med hvor dårlig soldatene kjempet, og bygde opp sin egen avdeling av soldater til hest."
+                },
+                {
+                    "si": "I 1645 laget parlamentet en helt ny hær, New Model Army."
+                },
+                {
+                    "si": "Der ble offiserene valgt ut etter hva de kunne, ikke etter hvilken familie de kom fra."
+                }
+            ]
+        },
+        {
+            "id": "seire",
+            "visual": {
+                "type": "BorgerkrigenKart",
+                "props": {
+                    "modus": "seire"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Parlamentets hær vant ved Marston Moor i 1644. Den nye hæren vant ved Naseby i 1645."
+                },
+                {
+                    "si": "I 1647 måtte Karl overgi seg."
+                },
+                {
+                    "si": "Men krigen var ikke over. Karl inngikk i hemmelighet en avtale med skottene, og det brøt ut ny krig."
+                },
+                {
+                    "si": "Den tapte han i slaget ved Preston i 1648."
+                },
+                {
+                    "si": "Rundt 200 000 mennesker døde av krigene på De britiske øyer, enten i kamp eller av sult og sykdom."
+                }
+            ]
+        },
+        {
+            "id": "utrenskning",
+            "kapittel": "Kongen for retten",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": 18,
+                            "konge": "fange",
+                            "fylt": 1,
+                            "merkelapp": "Hva gjør vi med kongen?"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": 18,
+                            "konge": "fange",
+                            "fylt": 1,
+                            "ekstra": "forhandle",
+                            "merkelapp": "Mange vil forhandle videre"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": 18,
+                            "konge": "fange",
+                            "fylt": 1,
+                            "ekstra": "soldater",
+                            "merkelapp": "Desember 1648: Prides utrenskning"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "vipp": 12,
+                            "konge": "fange",
+                            "fylt": 0.3,
+                            "ekstra": "soldater",
+                            "merkelapp": "Igjen: restparlamentet",
+                            "parlamentNavn": "Restparlamentet"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå måtte hærens ledere svare på et vanskelig spørsmål: Hva gjør man med en konge som har tapt, men som ikke vil gi seg?"
+                },
+                {
+                    "si": "Mange i parlamentet ville fortsatt forhandle med ham."
+                },
+                {
+                    "si": "I desember 1648 marsjerte soldater til parlamentet og stengte dem som ville forhandle, ute. Det kalles Prides utrenskning, etter offiseren som ledet den."
+                },
+                {
+                    "si": "Bare de mest radikale puritanerne, de som ville gå lengst, fikk bli igjen. Det som var igjen av parlamentet, ble kalt restparlamentet."
+                }
+            ]
+        },
+        {
+            "id": "dommere",
+            "visual": {
+                "type": "BorgerkrigenRettssal",
+                "props": {
+                    "modus": "dommere"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I januar 1649 satte restparlamentet opp en egen domstol for å dømme kongen."
+                },
+                {
+                    "si": "135 menn ble pekt ut som dommere."
+                },
+                {
+                    "si": "Men rundt femti av dem nektet å være med, og flere trakk seg underveis."
+                },
+                {
+                    "si": "Lederen for domstolen het John Bradshaw. Han var så redd for å bli skutt at han bar en hatt med stål inni."
+                }
+            ]
+        },
+        {
+            "id": "anklagen",
+            "visual": {
+                "type": "BorgerkrigenRettssal",
+                "props": {
+                    "modus": "anklage"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Karl ble anklaget for forræderi mot England. Forræderi betyr å svikte og skade sitt eget land."
+                },
+                {
+                    "si": "Men kongen nektet å svare. Han mente at domstolen ikke hadde lov til å dømme ham, blant annet fordi Lordene, den andre delen av parlamentet, ikke var med."
+                },
+                {
+                    "si": "Bradshaw svarte med setningen som gjorde rettssaken berømt: Selv en konge står under loven."
+                },
+                {
+                    "si": "Den 27. januar ble Karl dømt som tyrann, forræder, morder og fiende av landet. Tre dager senere ble han henrettet."
+                }
+            ]
+        },
+        {
+            "id": "skafott-ord",
+            "visual": {
+                "type": "BorgerkrigenWhitehall",
+                "props": {
+                    "modus": "ord"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 30. januar sto kongen på skafottet. Han holdt fast på sitt."
+                },
+                {
+                    "si": "En undersått og en hersker er to helt forskjellige ting, sa han. En undersått er en som må adlyde kongen."
+                }
+            ]
+        },
+        {
+            "id": "republikk",
+            "kapittel": "Et land uten konge",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": 16,
+                            "konge": "tom",
+                            "fylt": 0.3,
+                            "merkelapp": "Ingen får utrope en ny konge",
+                            "parlamentNavn": "Restparlamentet"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": 16,
+                            "konge": "tom",
+                            "fylt": 0.3,
+                            "ekstra": "republikk",
+                            "merkelapp": "7. februar 1649: Kongedømmet avskaffet",
+                            "parlamentNavn": "Restparlamentet"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": 8,
+                            "konge": "tom",
+                            "fylt": 0.3,
+                            "ekstra": "sporsmal",
+                            "merkelapp": "Starten på en friere tid?",
+                            "parlamentNavn": "Restparlamentet"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Rett etter henrettelsen vedtok parlamentet at ingen fikk utrope en ny konge."
+                },
+                {
+                    "si": "Den 7. februar 1649 ble selve kongedømmet avskaffet. England ble en republikk, et land uten konge."
+                },
+                {
+                    "si": "Mange trodde det var starten på en friere tid."
+                }
+            ]
+        },
+        {
+            "id": "irland",
+            "visual": {
+                "type": "BorgerkrigenKart",
+                "props": {
+                    "modus": "irland"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Slik gikk det ikke. Cromwell ledet en krig i Irland i 1649 og 1650."
+                },
+                {
+                    "si": "Den er kjent for svært brutale metoder, blant annet massakrer i byene Drogheda og Wexford."
+                }
+            ]
+        },
+        {
+            "id": "cromwell",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": 0,
+                            "konge": "tom",
+                            "fylt": 0,
+                            "merkelapp": "April 1653: Parlamentet oppløses",
+                            "parlamentNavn": "Oppløst"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": -24,
+                            "konge": "cromwell",
+                            "fylt": 0,
+                            "merkelapp": "Desember 1653: Lord Protector",
+                            "parlamentNavn": "Oppløst"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": -24,
+                            "konge": "cromwell",
+                            "fylt": 0,
+                            "ekstra": "speil",
+                            "merkelapp": "Styrer alene, som kongen gjorde",
+                            "parlamentNavn": "Oppløst"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "vipp": 0,
+                            "konge": "tom",
+                            "fylt": 0.3,
+                            "merkelapp": "1658: Cromwell dør"
+                        },
+                        {
+                            "fraBeat": 4,
+                            "vipp": -10,
+                            "konge": "karl2",
+                            "fylt": 0.8,
+                            "merkelapp": "1660: Kongen er tilbake"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I april 1653 oppløste Cromwell restparlamentet."
+                },
+                {
+                    "si": "I desember samme år ble han Lord Protector, en som styrer landet i stedet for en konge. Deretter styrte han eneveldig."
+                },
+                {
+                    "si": "Mannen som hadde kjempet mot en konge som styrte alene, endte altså med å styre alene selv."
+                },
+                {
+                    "si": "Cromwell døde i 1658. Uten ham falt republikken fra hverandre."
+                },
+                {
+                    "si": "I 1660 fikk England konge igjen. Sønnen til den henrettede kongen ble Karl 2.",
+                    "uttale": "I 1660 fikk England konge igjen. Sønnen til den henrettede kongen ble Karl den andre."
+                }
+            ]
+        },
+        {
+            "id": "betydning",
+            "kapittel": "Hvorfor det betyr noe",
+            "visual": {
+                "type": "BorgerkrigenVekt",
+                "props": {
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "vipp": -10,
+                            "konge": "karl2",
+                            "fylt": 0.8,
+                            "merkelapp": "Var alt forgjeves?"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "vipp": 0,
+                            "konge": "karl2",
+                            "fylt": 1,
+                            "ekstra": "lov",
+                            "merkelapp": "Ingen konge er sikker på å stå over loven"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "vipp": 6,
+                            "konge": "karl2",
+                            "fylt": 1,
+                            "ekstra": "lov",
+                            "merkelapp": "Parlamentet: et maktsenter"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "vipp": 6,
+                            "konge": "karl2",
+                            "fylt": 1,
+                            "ekstra": "vilkar",
+                            "merkelapp": "1688-1689: kronen mot skrevne vilkår"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Var alt forgjeves? Kongen kom jo tilbake."
+                },
+                {
+                    "si": "Men noe hadde forandret seg for alltid. Ingen engelsk konge kunne lenger være sikker på at han sto over loven."
+                },
+                {
+                    "si": "Parlamentet ble et maktsenter som kongene måtte regne med."
+                },
+                {
+                    "si": "Snaut 40 år senere, i 1688 og 1689, ble en ny konge kastet. Parlamentet ga kronen videre bare mot skrevne vilkår."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Karl mente:",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "En konge kan ikke dømmes av folket.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Domstolen sa:",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Selv en konge står under loven.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "I dag kaller vi det",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "rettsstaten.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Alle må følge reglene.",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "Også de som styrer.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Karl mente til siste slutt at en konge ikke kunne dømmes av folket. Makta hans kom jo fra Gud."
+                },
+                {
+                    "si": "Domstolen sa det motsatte: Selv en konge står under loven."
+                },
+                {
+                    "si": "I dag kaller vi den tanken rettsstaten. Den er en av grunnsteinene i Grunnloven vår."
+                },
+                {
+                    "si": "Også den som har mest makt, må følge reglene. Den tanken ble satt på prøve i London, en vinterdag i 1649."
+                }
+            ]
+        }
+    ]
+}

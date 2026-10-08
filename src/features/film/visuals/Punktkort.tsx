@@ -1,5 +1,16 @@
 import { motion } from 'framer-motion';
-import { LifeBuoy, Radio, Snowflake, ScrollText, Ship, type LucideIcon } from 'lucide-react';
+import {
+    Coins,
+    LifeBuoy,
+    Radio,
+    ScrollText,
+    Ship,
+    Snowflake,
+    Star,
+    Swords,
+    Users,
+    type LucideIcon,
+} from 'lucide-react';
 import type { VisualProps } from '../types';
 
 const IKONER: Record<string, LucideIcon> = {
@@ -8,6 +19,10 @@ const IKONER: Record<string, LucideIcon> = {
     is: Snowflake,
     avtale: ScrollText,
     skip: Ship,
+    penger: Coins,
+    hest: Swords,
+    haer: Users,
+    stjerne: Star,
 };
 
 interface Props {

@@ -28,7 +28,7 @@ const GENERELLE = {
     Dypet: { krav: ['dybde'], lister: {} },
     Sluttkort: { krav: ['setninger'], lister: { setninger: ['tekst', 'fraBeat'] } },
 };
-const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip'];
+const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne'];
 // Prop-navn som bærer fakta. Tallene i dem må stå i artikkelen.
 const FAKTA_PROPS = new Set(['verdi', 'total', 'farget', 'reddet', 'totalt', 'plasser', 'brukt', 'dybde', 'hoyde', 'antall']);
 const ENGELSK_ERSTATNING = /\b(paa|naar|ogsaa|aar|foer|faa|goer|moete|stoerre|hoey|soer|noen gang)\b/i;
