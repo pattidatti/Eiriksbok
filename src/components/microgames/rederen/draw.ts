@@ -3,7 +3,7 @@
 // Leser bare spillet og effektene.
 
 import type { ArcadeView } from '../arcade/useArcade';
-import { ark, P, SERIF, tegnHvalStempel } from './ark';
+import { ark, P, SERIF, tegnHvalKant, tegnHvalStempel } from './ark';
 import { glatt, UNGE_SEK, type Fx } from './fx';
 import type { Båt, Flokk, Game } from './game';
 import { tegnHud, tegnTap } from './hud';
@@ -72,7 +72,7 @@ export interface TegneValg {
 }
 
 /** Hvor tønna står (dråpene flyr herfra). Den står i regnskapet øverst til høyre. */
-export const tønnePos = () => ({ x: 722, y: 62 });
+export const tønnePos = () => ({ x: 702, y: 60 });
 
 // ---------------------------------------------------------------- flokkene
 
@@ -98,55 +98,22 @@ function tegnDødFlokk(ctx: CanvasRenderingContext2D, f: Flokk, t: number) {
     ctx.stroke();
 }
 
-/** Ringen: målestokk (blå bue = hval igjen) og retning (grønn vokser, rød krymper). */
-function tegnRing(ctx: CanvasRenderingContext2D, f: Flokk, klokke: number, mål: boolean) {
-    const andel = Math.min(1, f.n / f.maks);
-    const vokser = f.netto >= 0;
-    const farge = vokser ? P.grønn : P.rød;
-    // Retningsbåndet: akvarell-flate rundt flokken.
-    const blink = !vokser && andel < 0.3 && Math.sin(klokke * 9) < 0;
-    ctx.globalAlpha = blink ? 0.25 : 0.6;
-    ctx.strokeStyle = farge;
-    ctx.lineWidth = 6;
-    ctx.beginPath();
-    ctx.arc(f.x, f.y, R + 6, 0, Math.PI * 2);
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-    // Piler på båndet: utover når flokken vokser, innover når den krymper. Står stille.
-    ctx.fillStyle = farge;
-    for (let i = 0; i < 4; i++) {
-        const a = Math.PI / 4 + (i * Math.PI) / 2;
-        const ut = vokser ? 1 : -1;
-        const r0 = R + 6 - 5 * ut;
-        const r1 = R + 6 + 6 * ut;
-        const cx = Math.cos(a);
-        const cy = Math.sin(a);
-        ctx.beginPath();
-        ctx.moveTo(f.x + cx * r1, f.y + cy * r1);
-        ctx.lineTo(f.x + cx * r0 - cy * 6, f.y + cy * r0 + cx * 6);
-        ctx.lineTo(f.x + cx * r0 + cy * 6, f.y + cy * r0 - cx * 6);
-        ctx.closePath();
-        ctx.fill();
-    }
-    // Målestokken: tynt spor og blå bue som tømmes.
-    ctx.strokeStyle = 'rgba(30,42,53,0.35)';
+/**
+ * Grensa rundt flokken: en tynn strek som viser hvor nær båten må ligge. Fargen og
+ * størrelsen bærer hvalen selv (se `tegnHval`). Når eleven drar en båt hit, lyser den rav.
+ */
+function tegnGrense(ctx: CanvasRenderingContext2D, f: Flokk, mål: boolean) {
+    ctx.strokeStyle = 'rgba(30,42,53,0.22)';
     ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.arc(f.x, f.y, R, 0, Math.PI * 2);
     ctx.stroke();
-    ctx.strokeStyle = P.hval;
-    ctx.lineWidth = 4;
-    ctx.lineCap = 'round';
-    ctx.beginPath();
-    ctx.arc(f.x, f.y, R, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * andel);
-    ctx.stroke();
-    ctx.lineCap = 'butt';
     if (mål) {
         ctx.strokeStyle = P.rav;
         ctx.lineWidth = 2.5;
         ctx.setLineDash([5, 4]);
         ctx.beginPath();
-        ctx.arc(f.x, f.y, R + 14, 0, Math.PI * 2);
+        ctx.arc(f.x, f.y, R + 8, 0, Math.PI * 2);
         ctx.stroke();
         ctx.setLineDash([]);
     }
@@ -157,7 +124,7 @@ function tegnRing(ctx: CanvasRenderingContext2D, f: Flokk, klokke: number, mål:
  * flokken. Én stor hval per flokk, så eleven ser hvor mye som er igjen - og hvilken art.
  */
 export const hvalLengde = (f: Flokk) =>
-    T.arter[f.art].lengde * (0.32 + 0.68 * Math.min(1, f.n / f.maks));
+    T.arter[f.art].lengde * (0.25 + 0.75 * Math.min(1, f.n / f.maks));
 
 /** Fredet flokk: grå stiplet ring uten piler - her fanger ingen. */
 function tegnFredetRing(ctx: CanvasRenderingContext2D, f: Flokk) {
@@ -192,7 +159,7 @@ function tegnFredStempel(ctx: CanvasRenderingContext2D, f: Flokk, finnmark: bool
     ctx.globalAlpha = 1;
 }
 
-function tegnHval(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
+function tegnHval(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx, klokke: number) {
     const unger = fx.unger.get(f.id) ?? [];
     // Retningen flokken svømmer langs sløyfa.
     const kurs = Math.atan2(f.ry * Math.cos(f.fase), -f.rx * Math.sin(f.fase));
@@ -212,14 +179,32 @@ function tegnHval(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
         ctx.lineTo(bx - cx * l * 0.18 - cy * k * 8, by - cy * l * 0.18 + cx * k * 8);
         ctx.stroke();
     }
-    tegnHvalStempel(ctx, f.art, f.id, f.x, f.y, vri, l);
+    // Hvalen selv bærer fargen: grønn kant når flokken vokser, rød når den krymper (og
+    // blinker når den nesten er borte). En fredet flokk har ingen kant.
+    if (f.fredet) tegnHvalStempel(ctx, f.art, f.id, f.x, f.y, vri, l);
+    else {
+        const vokser = f.netto >= 0;
+        const blink = !vokser && f.n < f.maks * 0.3 && Math.sin(klokke * 9) < 0;
+        const farge = vokser ? P.grønn : blink ? '#e8a090' : P.rød;
+        // Skyggen i vannet under hvalen, i samme farge: synes på avstand.
+        ctx.save();
+        ctx.translate(f.x, f.y);
+        ctx.rotate(vri);
+        ctx.globalAlpha = 0.36;
+        ctx.fillStyle = farge;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, l * 0.62, l * 0.24 + 7, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+        tegnHvalKant(ctx, f.art, f.id, f.x, f.y, vri, l, farge, 3.5);
+    }
     // Sprut: hvalen blåser - en søyle av damp over blåsehullet som stiger og brer seg.
-    const fase = (t * 0.3 + f.id * 0.37) % 1;
+    const fase = (t * 0.42 + f.id * 0.37) % 1;
     if (fase < 0.28) {
         const p = fase / 0.28;
         const hx = f.x + cx * l * 0.32;
         const hy = f.y + cy * l * 0.32;
-        const st = 0.6 + 0.5 * (l / 74);
+        const st = 0.6 + 0.5 * (l / 90);
         ctx.globalAlpha = 0.9 * (1 - p * p);
         ctx.fillStyle = '#f6f3ea';
         ctx.strokeStyle = P.hval;
@@ -266,7 +251,7 @@ function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneVal
     for (const f of g.flokker) {
         if (f.død) tegnDødFlokk(ctx, f, fx.døde.get(f.id) ?? 9);
         else if (f.fredet) tegnFredetRing(ctx, f);
-        else tegnRing(ctx, f, o.klokke, f === mål);
+        else tegnGrense(ctx, f, f === mål);
         // Låst: ringen blinker rav og strammer seg inn rundt flokken når båten slippes der.
         const l = fx.lås.get(f.id);
         if (l !== undefined && !f.død) {
@@ -280,7 +265,7 @@ function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneVal
             ctx.globalAlpha = 1;
         }
     }
-    for (const f of g.flokker) if (!f.død) tegnHval(ctx, f, fx);
+    for (const f of g.flokker) if (!f.død) tegnHval(ctx, f, fx, o.klokke);
     // Hval som tas: en liten hval løftes fra flokken til båten, krymper og blir et fat.
     for (const t of fx.tatt) {
         const k = Math.min(1, t.t / 0.9);

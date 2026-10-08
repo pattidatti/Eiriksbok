@@ -43,9 +43,9 @@ export const TUNING = {
      * føder tregest, så den forsvinner først. Seihvalen er liten, men tåler mer.
      */
     arter: {
-        blå: { navn: 'blåhval', olje: 1.2, fødsel: 0.6, lengde: 74 },
-        finn: { navn: 'finnhval', olje: 1, fødsel: 1, lengde: 58 },
-        sei: { navn: 'seihval', olje: 0.75, fødsel: 1.35, lengde: 42 },
+        blå: { navn: 'blåhval', olje: 1.4, fødsel: 0.3, lengde: 100 },
+        finn: { navn: 'finnhval', olje: 1, fødsel: 1, lengde: 76 },
+        sei: { navn: 'seihval', olje: 0.75, fødsel: 1.35, lengde: 58 },
     },
 
     /**
@@ -103,6 +103,11 @@ export const TUNING = {
         grense: 15,
         /** Fat verden kjøper per år (lageret tømmes jevnt; 6 fat i sekundet som før årene ble kortere). */
         kjøpPerÅr: 12,
+        /**
+         * Krisa fra 1931: etter rekordsesongen 1930-31 og krakket kjøpte verden mindre olje.
+         * Lageret tømmes saktere, så den som fanger for mye, får prisfallet.
+         */
+        krise: { fra: 1931, kjøpPerÅr: 6.5 },
         /** Prisen faller så mye per fat lageret er over grensa. */
         fall: 0.06,
         bunn: 0.3,

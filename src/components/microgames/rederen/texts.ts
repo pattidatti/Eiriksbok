@@ -3,7 +3,7 @@
 
 import type { Årsak } from './game';
 
-/** Menyen: én linje. Reglene vises i spillet der de trengs (ringen, tønna, oljeprisen). */
+/** Menyen: én linje. Reglene vises i spillet der de trengs (fargen på hvalen, tønna, oljeprisen). */
 export const MÅL = 'Dra båtene ut til hvalene - og hold havet i live til 1968.';
 
 /** Lappene ved tingen (maks 7 ord). */
@@ -12,14 +12,17 @@ export const LAPP = {
     tilSalgs: 'Til salgs: dra ut for å kjøpe',
     forDyr: 'For lite olje i tønna',
     død: 'Flokken er borte for godt',
-    tom: 'Tønna er snart tom',
     kokeri: 'Kokeriet: en flytende havn',
     taster: 'Piltaster sikter, mellomrom sender',
-    rød: 'Rød ring: flokken krymper',
+    rød: 'Rød hval: flokken krymper',
     marked: 'For mange fat senker oljeprisen',
     finnmark: 'Fangst forbudt i Finnmark',
     blåhval: 'Blåhvalen er fredet',
-    prisFalt: 'Oljeprisen falt!',
+    nyFlokk: 'Ny flokk ved Sørøya',
+    år1904: '1904: Hvalfangerne flytter til Sør-Georgia',
+    år1925: '1925: Kokeriskip tar hval i Sørishavet',
+    år1931: '1931: For mye olje - verden kjøper mindre',
+    år1946: '1946: Kvote - høyst 12 hval i året',
     kvote: 'Årets kvote er tatt: båtene venter',
     kvoteForHøy: 'Kvoten var for høy: hvalene ble færre',
 };
@@ -40,20 +43,23 @@ export const ØYEBLIKK = {
     },
 };
 
+/** Slutt-kortet ved seier: én setning. */
+export const SEIER_SETNING = '1968: Du holdt havet i live.';
+
 export const TAP_TITTEL: Record<Årsak, string> = {
     tomt: 'Havet er tomt',
     konkurs: 'Konkurs',
 };
 
 export const TIPS: Record<Årsak, string> = {
-    tomt: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Tar du flere hval enn det blir født, krymper flokken - og en liten flokk får færre unger. Flytt båten når ringen blir rød.',
+    tomt: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Tar du flere hval enn det blir født, krymper flokken - og en liten flokk får færre unger. Flytt båten når hvalen blir rød.',
     konkurs:
-        'Fangsten må betale for båtene og stasjonen. Send båtene til flokker med grønn ring, og hent båter uten flokk hjem til havna. Kjøp en ny båt bare når en stor flokk står ledig.',
+        'Fangsten må betale for båtene og stasjonen. Send båtene til grønne hvaler, og hent båter uten flokk hjem til havna. Kjøp en ny båt bare når en stor flokk står ledig.',
 };
 
 /** Tipset når prisfallet felte selskapet. */
 export const TIPS_PRIS =
-    'Verden kjøper bare så mye olje i året. Når staven ved tønna går over streken, faller prisen - også på oljen du har. Hent noen båter hjem før det skjer.';
+    'Verden kjøper bare så mye olje i året, og etter 1931 enda mindre. Står det «Prisen faller snart!» ved tønna, hent noen båter hjem.';
 
 export const SKJEDDE = {
     tomt: (år: number) =>

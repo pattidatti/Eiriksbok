@@ -232,10 +232,10 @@ export const KART: Record<KartId, Kart> = {
             { t: 'Sørishavet', x: 262, y: 166, vinkel: -0.05 },
             { t: 'Grytviken', x: 590, y: 40 },
         ],
-        rose: { x: 70, y: 70, r: 40 },
+        rose: { x: 900, y: 385, r: 36 },
         dyp: [
             { x: 470, y: 215, r: 30, tall: '3000' },
-            { x: 840, y: 90, r: 30, tall: '2400' },
+            { x: 70, y: 340, r: 30, tall: '2400' },
         ],
         alder: 1,
     },
@@ -248,8 +248,8 @@ export const BRETT: Brett[] = [
         kart: 'finnmark',
         flokker: [
             // Flokken ved Vadsø er den første båten allerede ute på (rød ring fra start).
-            f('Vadsø', 'finn', 630, 362, 16, 6, { rx: 36, ry: 18, maks: 21 }),
-            f('Varanger', 'blå', 430, 300, 25, 7, { rx: 64, ry: 32, fase: 1.2 }),
+            f('Vadsø', 'finn', 630, 362, 16, 8, { rx: 36, ry: 18, maks: 21 }),
+            f('Varanger', 'blå', 430, 300, 25, 9, { rx: 70, ry: 36, fase: 1.2 }),
         ],
     },
     {
@@ -279,16 +279,13 @@ export const BRETT: Brett[] = [
         hav: 'Sørishavet',
         kart: 'sorishavet',
         flokker: [
-            // Færre og større flokker enn før: tre blåhval (mest olje, føder tregest), to
-            // finnhval og to seihval (minst, føder raskest). Når de store er tatt, er det de
-            // små som er igjen.
-            f('Weddellhavet', 'blå', 125, 228, 32, 12, { rx: 50, ry: 28, maks: 34 }),
-            f('Scotiahavet', 'finn', 300, 255, 26, 13, { rx: 50, ry: 26, maks: 30, fase: 1 }),
-            f('Kerguelen', 'sei', 620, 252, 22, 14, { rx: 45, ry: 26, maks: 26, fase: 2 }),
-            f('Bouvetøya', 'blå', 795, 252, 32, 12, { rx: 55, ry: 28, maks: 34, fase: 3 }),
-            f('Bellingshausen', 'sei', 175, 366, 22, 13, { rx: 50, ry: 22, maks: 26, fase: 4 }),
-            f('Dronning Maud', 'blå', 455, 352, 32, 12, { rx: 60, ry: 24, maks: 34, fase: 5 }),
-            f('Rosshavet', 'finn', 745, 370, 26, 14, { rx: 55, ry: 22, maks: 30, fase: 0.5 }),
+            // Fem store flokker: to blåhval (mest olje, føder tregest), to finnhval og én
+            // seihval (minst, føder raskest). Når blåhvalen er tatt, er det de små som er igjen.
+            f('Weddellhavet', 'blå', 150, 236, 38, 12, { rx: 55, ry: 28, maks: 40 }),
+            f('Bouvetøya', 'blå', 800, 262, 38, 12, { rx: 55, ry: 28, maks: 40, fase: 3 }),
+            f('Dronning Maud', 'sei', 470, 300, 30, 14, { rx: 60, ry: 24, maks: 36, fase: 5 }),
+            f('Scotiahavet', 'finn', 280, 380, 32, 13, { rx: 55, ry: 22, maks: 38, fase: 1 }),
+            f('Rosshavet', 'finn', 670, 380, 32, 14, { rx: 55, ry: 22, maks: 38, fase: 0.5 }),
         ],
     },
 ];

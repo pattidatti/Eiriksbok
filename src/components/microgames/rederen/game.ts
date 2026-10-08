@@ -7,6 +7,7 @@ import {
     dist,
     fangerFra,
     fastKost,
+    kjøpPerÅr,
     fødselsrate,
     havnKost,
     hvalIHavet,
@@ -416,8 +417,9 @@ function årsskifte(g: Game) {
     const kost = årsKost(g);
     const betalt = g.båter.map((b) => ({ id: b.id, kost: havnKost(g, b) }));
     g.tappere = g.båter.filter((b) => !b.hjemme).map((b) => b.id);
-    // Grønt år: du fanget, og havet har minst like mange hval som da året begynte.
-    const grønt = g.tattIÅr > 0 && hvalIHavet(g) >= g.hvalVedÅrStart;
+    // Grønt år: fangsten betalte for året, og havet har minst like mange hval som da året
+    // begynte. Begge deler må holde: en god forvalter tjener penger uten å tømme havet.
+    const grønt = g.tattIÅr > 0 && g.innIÅr >= kost && hvalIHavet(g) >= g.hvalVedÅrStart;
     g.grønnRekke = grønt ? g.grønnRekke + 1 : 0;
     if (grønt) g.grønneÅr++;
     const bonus = T.poeng.grønnBonus;
@@ -572,7 +574,7 @@ export function update(g: Game, dt: number) {
 
     // Verden kjøper olje jevnt: lageret tømmes, og prisen kommer seg.
     if (markedÅpent(g)) {
-        g.lager = Math.max(0, g.lager - (T.marked.kjøpPerÅr / årLengde(g.år)) * dt);
+        g.lager = Math.max(0, g.lager - (kjøpPerÅr(g.år) / årLengde(g.år)) * dt);
         g.pris = prisFor(g.lager);
     }
 

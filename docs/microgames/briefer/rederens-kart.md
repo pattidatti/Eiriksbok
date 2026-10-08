@@ -563,3 +563,58 @@ regel eleven må huske (reglene er fortsatt ringen, tønna og oljeprisen; kvoten
     Lappen om at kvoten var for høy kommer bare når havet faktisk krympet 1946-1951.
   - Bildeendringen i passiv runde er 2,2 (grensa er 2): den rolige starten tar bort mye bevegelse.
   - Tap-stempelet «HAVET TOMT» kan ligge over en flokk som lever (uendret fra før).
+
+### Forbedrer etter vurdering 3 (2026-10-08)
+
+Vurdering 3: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 4, Lærerikt 4 (sum 19). Hovedmål:
+Forståelig. Grepet er å fjerne koder, ikke legge til regler (reglene er fortsatt tre).
+
+- Grep 1 (Forståelig, tønna): regnskapet har ingen tegn å lære. Tønna viser fyllnivået, og til
+  høyre står linjer med vanlige ord: «Inn 4 - ut 3 fat i året» (inn grønt når det dekker ut),
+  «Tom om N år!» bare når det haster, fra 1929 «Oljeprisen: full / Prisen faller snart! / 70 %»
+  og fra 1946 «Kvote: 5 av 12 hval / Kvoten er tatt!». Borte: fat-rekkene med + og -, €- og
+  båtikonene, «Holder 9+ år», oljepris-staven, kvote-strekene, BÅTENE STANSER, tellestrekene
+  og GRØNT ÅR-stempelet i kartusjen (den viser bare år, hav og år til 1968).
+- Grep 1 (tekst oppå tekst): +/- spretter under regnskapet (`PENGER`), ikke over FINNMARK.
+  Prisfallet spretter der også (ikke over båtene i Sørishavet). Bannere for 1904, 1925, Sørøya
+  og 1946 er byttet med lapper på kartet ved flokken lengst fra havna, så de aldri dekker
+  båtene. «Til salgs» peker på prislappen ovenfra. KONKURS slås under regnskapet, ikke over
+  teksten. Slutt-kortet (seier og tap) er én setning, «Dette skjedde» og én stor knapp; rangmerke,
+  «neste: ...», tall-linja og Meny-knappen er borte (rekorden står i menyen).
+- Grep 2 (flokkene): ringene med piler og blå bue er borte. Hvalen selv bærer fargen: grønn eller
+  rød kant i hvalens egen form og en skygge i vannet i samme farge, og den blinker når flokken
+  nesten er borte. Igjen står bare en tynn grense (rav når du drar dit). Hvalene er større
+  (blå 100, finn 76, sei 58) og krymper ned til en fjerdedel. Sørishavet har fem flokker (to blå,
+  to finn, én sei, flere hval i hver). Blåhvalen føder 0,3 x og gir 1,4 x olje: robotene tar den
+  ned til 15 % (den vokser nesten ikke igjen uansett), og ved fullt marked henter de først hjem
+  båten som gir minst olje per fat. I filmen er blåhvalen stor i 1929, liten i 1946 og nesten
+  borte i 1966, mens finnhval og seihval lever.
+- Grep 3 (vendepunktene): 1904 «Hvalfangerne flytter til Sør-Georgia», 1925 «Kokeriskip tar hval
+  i Sørishavet», 1931 «For mye olje - verden kjøper mindre» og 1946 «Kvote - høyst 12 hval i
+  året» er lapper på kartet (maks 7 ord).
+- Grep 4 (trappen): krisa fra 1931 er nå en del av markedet: verden kjøper 6,5 fat i året (var
+  12). Den som fanger for mye, får prisfallet. Grønt år krever også at fangsten betalte året,
+  ellers fikk «sparsom» (som går konkurs) like mange poeng som de som vinner. Forvalteren kjøper
+  bare båter når markedet har plass. Ingen ny regel for eleven.
+- Simuleringen (200 runder per robot): forvalter 91 %, median 133; halvgod 50 % (var 99 %),
+  median 124; sparsom 0 %, median 114; grådig 0 %, tomt hav rundt 1891; tilfeldig 0 %; passiv
+  0 %. Trapp 114 < 124 < 133. 20,7 valg per minutt (var 19,5), press 0,50 -> 0,82 -> 0,96.
+  Selvspill: alle porter grønne, forvalteren vant med 132 poeng, bildeendring passiv 2,2.
+  Scene-audit grønn. Likhetsvakt grønn (tinghuset 0,41). Plakaten er tatt med `--cover-at 85`
+  (1931). Tap-bildene er tatt med `--full --bots grådig` (passiv = konkurs 1901, grådig = tomt
+  hav 1902).
+- Hva som IKKE virket:
+  - Fem flokker med samme størrelse som før: forvalteren gikk konkurs (70 %). Flokkene fikk flere
+    hval (maks 36-40).
+  - Bare lavere blåhvalfødsel: forvalteren forlater flokken på 55 % og kommer aldri tilbake, så
+    blåhvalen ble stående på halvparten. Først `blåLav`/`blåHøy` tok den ned.
+  - Krisa med 5 eller 4 fat i året: alle gikk konkurs (forvalter 0-4 %). 6 ga forvalter 83 %.
+    Tallet er bratt: 6,5 gir 91 / 50 %, 6,7 gir 93 / 70 %.
+  - Uten ringen falt bildeendringen i passiv runde til 1,6. Skyggen under hvalen, større hvaler,
+    litt raskere flokker i Finnmark og hyppigere sprut ga 2,2.
+- Kjente svakheter:
+  - Forvalteren ender ofte med «Tom ved nyttår!» i 1968: krisa gjør slutten trang også for den
+    flinke. Den taper 9 %, nesten alle konkurs de siste årene.
+  - Lærings-øyeblikkene (nyttår, pris) ankres fortsatt ved tønna og kan ligge over regnskapet
+    mens de vises.
+  - Bildeendringen i passiv runde er 2,0-2,3 (grensa er 2).

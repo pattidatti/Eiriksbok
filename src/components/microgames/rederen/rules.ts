@@ -116,6 +116,10 @@ export const fatPåVei = (g: Game) => g.fat.length;
 /** Oljemarkedet er åpent (fra 1929). */
 export const markedÅpent = (g: Game) => g.år >= TUNING.marked.fra;
 
+/** Fat verden kjøper per år (færre i krisa fra 1931). */
+export const kjøpPerÅr = (år: number) =>
+    år >= TUNING.marked.krise.fra ? TUNING.marked.krise.kjøpPerÅr : TUNING.marked.kjøpPerÅr;
+
 /** Oljeprisen (1 = full) når lageret i verden har så mange fat. */
 export function prisFor(lager: number): number {
     const m = TUNING.marked;

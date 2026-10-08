@@ -510,3 +510,53 @@ export function tegnHvalStempel(
     ctx.drawImage(hvalStempel(art, v), -l / 2, -h / 2, l, h);
     ctx.restore();
 }
+
+const silhuetter = new Map<string, HTMLCanvasElement>();
+
+/** Hvalstempelet farget helt i én farge (til kanten rundt hvalen). */
+function silhuett(art: Art, v: number, farge: string): HTMLCanvasElement {
+    const nøkkel = `${art}${v % 3}${farge}`;
+    const ferdig = silhuetter.get(nøkkel);
+    if (ferdig) return ferdig;
+    const src = hvalStempel(art, v);
+    const c = document.createElement('canvas');
+    c.width = src.width;
+    c.height = src.height;
+    const ctx = c.getContext('2d');
+    if (ctx) {
+        ctx.drawImage(src, 0, 0);
+        ctx.globalCompositeOperation = 'source-in';
+        ctx.fillStyle = farge;
+        ctx.fillRect(0, 0, c.width, c.height);
+    }
+    silhuetter.set(nøkkel, c);
+    return c;
+}
+
+/**
+ * Hvalen med en farget kant rundt seg: grønn når flokken vokser, rød når den krymper.
+ * Kanten er hvalens egen form, tegnet litt forskjøvet i åtte retninger under stempelet.
+ */
+export function tegnHvalKant(
+    ctx: CanvasRenderingContext2D,
+    art: Art,
+    v: number,
+    x: number,
+    y: number,
+    vri: number,
+    l: number,
+    farge: string,
+    tykk: number
+) {
+    const h = (l * HVAL.h) / HVAL.l;
+    const sil = silhuett(art, v, farge);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(vri);
+    for (let i = 0; i < 8; i++) {
+        const a = (i * Math.PI) / 4;
+        ctx.drawImage(sil, -l / 2 + Math.cos(a) * tykk, -h / 2 + Math.sin(a) * tykk, l, h);
+    }
+    ctx.restore();
+    tegnHvalStempel(ctx, art, v, x, y, vri, l);
+}

@@ -29,10 +29,15 @@ export const THEME: Partial<ArcadeTheme> = {
 /** Sekunder bildet står frosset med årsaken lyst opp før slutt-skjermen. */
 export const FRYS = 2.5;
 /**
- * Der tallene for olje spretter opp: en spalte til venstre for regnskapet, under landnavnene,
- * så de aldri dekker stedsnavn, kartusjen eller tallene i regnskapet.
+ * Der tallene for olje spretter opp: rett under regnskapet ved tønna (inn til venstre, ut til
+ * høyre), så de aldri dekker stedsnavn, kartusjen eller teksten i regnskapet. Tallene stiger
+ * ca. 35 enheter, så de starter så langt under kortet at de stopper før det.
  */
-export const PENGER = { x: 630, inn: 150, ut: 185, håret: 222 };
+export const PENGER = {
+    inn: { x: 740, y: 166 },
+    ut: { x: 850, y: 166 },
+    håret: { x: 640, y: 172 },
+};
 /** Sekunder en oljedråpe bruker fra tønna til båten. */
 export const DRÅPE_SEK = 0.8;
 
