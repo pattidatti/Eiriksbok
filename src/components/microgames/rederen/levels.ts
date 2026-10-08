@@ -3,6 +3,9 @@
 
 export type KartId = 'finnmark' | 'georgia' | 'sorishavet';
 
+/** Hvalarten i en flokk: blåhval (størst, mest olje, føder tregest), finnhval og seihval. */
+export type Art = 'blå' | 'finn' | 'sei';
+
 export interface FlokkDef {
     navn: string;
     /** Midten av sløyfa flokken vandrer i. */
@@ -16,8 +19,8 @@ export interface FlokkDef {
     fart: number;
     /** Hvor på sløyfa flokken starter (radianer). */
     fase: number;
-    /** Blåhval: fredes i 1966. */
-    blåhval?: boolean;
+    /** Hvalarten (blåhval fredes i 1966). */
+    art: Art;
 }
 
 export interface Land {
@@ -65,12 +68,13 @@ export interface Brett {
 
 const f = (
     navn: string,
+    art: Art,
     cx: number,
     cy: number,
     n: number,
     fart: number,
     o: Partial<FlokkDef> = {}
-): FlokkDef => ({ navn, cx, cy, rx: 70, ry: 36, n, maks: 28, fart, fase: 0, ...o });
+): FlokkDef => ({ navn, art, cx, cy, rx: 70, ry: 36, n, maks: 28, fart, fase: 0, ...o });
 
 const rader = (xs: number[], ys: number[]): [number, number][] =>
     ys.flatMap((y) => xs.map((x) => [x, y] as [number, number]));
@@ -225,12 +229,12 @@ export const KART: Record<KartId, Kart> = {
         ],
         navn: [
             { t: 'ANTARKTIS', x: 480, y: 480, stor: true },
-            { t: 'Sørishavet', x: 220, y: 270, vinkel: -0.05 },
+            { t: 'Sørishavet', x: 262, y: 166, vinkel: -0.05 },
             { t: 'Grytviken', x: 590, y: 40 },
         ],
         rose: { x: 70, y: 70, r: 40 },
         dyp: [
-            { x: 460, y: 270, r: 40, tall: '3000' },
+            { x: 470, y: 215, r: 30, tall: '3000' },
             { x: 840, y: 90, r: 30, tall: '2400' },
         ],
         alder: 1,
@@ -244,30 +248,30 @@ export const BRETT: Brett[] = [
         kart: 'finnmark',
         flokker: [
             // Flokken ved Vadsø er den første båten allerede ute på (rød ring fra start).
-            f('Vadsø', 630, 362, 16, 6, { rx: 36, ry: 18, maks: 21 }),
-            f('Varanger', 430, 300, 21, 7, { rx: 64, ry: 32, fase: 1.2 }),
+            f('Vadsø', 'finn', 630, 362, 16, 6, { rx: 36, ry: 18, maks: 21 }),
+            f('Varanger', 'blå', 430, 300, 25, 7, { rx: 64, ry: 32, fase: 1.2 }),
         ],
     },
     {
         fra: 1880,
         hav: 'Finnmarkskysten',
-        flokker: [f('Nordkapp', 230, 250, 18, 9, { rx: 70, ry: 50, fase: 2 })],
+        flokker: [f('Nordkapp', 'finn', 230, 250, 18, 9, { rx: 70, ry: 50, fase: 2 })],
     },
     {
         fra: 1892,
         hav: 'Finnmarkskysten',
         // Reserven: en flokk ingen har fanget i. Grønn ring å flytte til når de andre er røde.
-        flokker: [f('Sørøya', 390, 410, 22, 8, { rx: 60, ry: 30, fase: 3 })],
+        flokker: [f('Sørøya', 'finn', 390, 410, 22, 8, { rx: 60, ry: 30, fase: 3 })],
     },
     {
         fra: 1904,
         hav: 'Sør-Georgia',
         kart: 'georgia',
         flokker: [
-            f('Nordvest', 220, 162, 16, 10, { fase: 0.5 }),
-            f('Nordøst', 740, 214, 14, 11, { fase: 2.5 }),
-            f('Sørvest', 210, 410, 18, 10, { fase: 4 }),
-            f('Sørøst', 740, 410, 12, 11, { fase: 1 }),
+            f('Nordvest', 'blå', 220, 162, 24, 10, { fase: 0.5 }),
+            f('Nordøst', 'finn', 740, 214, 14, 11, { fase: 2.5 }),
+            f('Sørvest', 'finn', 210, 410, 18, 10, { fase: 4 }),
+            f('Sørøst', 'finn', 740, 410, 12, 11, { fase: 1 }),
         ],
     },
     {
@@ -275,16 +279,16 @@ export const BRETT: Brett[] = [
         hav: 'Sørishavet',
         kart: 'sorishavet',
         flokker: [
-            f('A', 110, 200, 18, 12, { rx: 50, ry: 30, maks: 22 }),
-            f('B', 270, 190, 20, 13, { rx: 50, ry: 30, maks: 22, fase: 1, blåhval: true }),
-            f('C', 520, 220, 16, 13, { rx: 50, ry: 30, maks: 22, fase: 2 }),
-            f('D', 730, 212, 20, 12, { rx: 50, ry: 30, maks: 22, fase: 3, blåhval: true }),
-            f('E', 880, 260, 18, 14, { rx: 40, ry: 30, maks: 22, fase: 4 }),
-            f('F', 140, 360, 20, 13, { rx: 50, ry: 30, maks: 22, fase: 5 }),
-            f('G', 360, 330, 17, 14, { rx: 50, ry: 30, maks: 22, fase: 0.5 }),
-            f('H', 580, 364, 19, 13, { rx: 50, ry: 30, maks: 22, fase: 1.5, blåhval: true }),
-            f('I', 760, 340, 16, 14, { rx: 50, ry: 30, maks: 22, fase: 2.5 }),
-            f('J', 880, 392, 18, 13, { rx: 40, ry: 22, maks: 22, fase: 3.5 }),
+            // Færre og større flokker enn før: tre blåhval (mest olje, føder tregest), to
+            // finnhval og to seihval (minst, føder raskest). Når de store er tatt, er det de
+            // små som er igjen.
+            f('Weddellhavet', 'blå', 125, 228, 32, 12, { rx: 50, ry: 28, maks: 34 }),
+            f('Scotiahavet', 'finn', 300, 255, 26, 13, { rx: 50, ry: 26, maks: 30, fase: 1 }),
+            f('Kerguelen', 'sei', 620, 252, 22, 14, { rx: 45, ry: 26, maks: 26, fase: 2 }),
+            f('Bouvetøya', 'blå', 795, 252, 32, 12, { rx: 55, ry: 28, maks: 34, fase: 3 }),
+            f('Bellingshausen', 'sei', 175, 366, 22, 13, { rx: 50, ry: 22, maks: 26, fase: 4 }),
+            f('Dronning Maud', 'blå', 455, 352, 32, 12, { rx: 60, ry: 24, maks: 34, fase: 5 }),
+            f('Rosshavet', 'finn', 745, 370, 26, 14, { rx: 55, ry: 22, maks: 30, fase: 0.5 }),
         ],
     },
 ];

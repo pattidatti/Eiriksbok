@@ -20,6 +20,8 @@ export const LAPP = {
     finnmark: 'Fangst forbudt i Finnmark',
     blåhval: 'Blåhvalen er fredet',
     prisFalt: 'Oljeprisen falt!',
+    kvote: 'Årets kvote er tatt: båtene venter',
+    kvoteForHøy: 'Kvoten var for høy: hvalene ble færre',
 };
 
 /** Lærings-øyeblikkene (fagkjernen). Maks tre per runde. */
@@ -34,7 +36,7 @@ export const ØYEBLIKK = {
     },
     fredning: {
         tittel: '1966: blåhvalen fredet',
-        tekst: 'Det var nesten ingen blåhval igjen. Nå var det forbudt å fange dem. Fang fra de andre flokkene.',
+        tekst: 'Blåhvalen var nesten borte i hele Sørishavet. Nå var det forbudt å fange den. Fang finnhval og seihval.',
     },
 };
 
@@ -74,4 +76,6 @@ export const LÆRDOM = {
     rekord: 'Sesongen 1930-1931 ble den største noensinne. Det kom mer olje enn verden ville kjøpe.',
     krakk: 'I 1931 kom det så mye hvalolje at prisen falt. Neste sesong ble de fleste norske kokeriene liggende hjemme.',
     fredning: 'I 1966 ble blåhvalen fredet. Da var det nesten ingen igjen i Sørishavet.',
+    kvote: 'Fra 1946 fikk hvalfangerne en kvote: så mange hval i året, ikke flere. Kvoten var satt for høyt, så hvalene ble færre likevel.',
+    arter: 'Fangstfolkene tok blåhvalen først, fordi den ga mest olje. Da den nesten var borte, tok de finnhval og til slutt den mindre seihvalen.',
 };

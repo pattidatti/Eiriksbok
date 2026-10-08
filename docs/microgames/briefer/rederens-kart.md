@@ -504,3 +504,62 @@ Vurdering 2: Forståelig 3, Myk start 3, Eleven gjør 4, Utseende 3, Lærerikt 4
     selskapet gikk konkurs (1906).
   - Ikke gjort fra vurdering 2: hvalene som én stor rygg per flokk, artsbytte og IWC-kvote.
 
+
+### Eierens runde: hvaler, artsbytte og IWC-kvote (2026-10-08)
+
+Eieren ba om at det som gjensto etter natta (vurdering 2, sum 17) ble fikset. Fire grep, ingen ny
+regel eleven må huske (reglene er fortsatt ringen, tønna og oljeprisen; kvoten er noe brettet gjør).
+
+- Grep 1 (hvalene som hvaler): hver flokk tegnes som én stor hval sett ovenfra i stempelstil, med
+  kjølvann og en stor sprut. Lengden er artens lengde ganger hvor full flokken er (32-100 %), så
+  hvalen krymper når ringen tømmes. En unge kommer som én liten hval av samme art som svømmer inn
+  fra kanten av ringen. Båtene legger seg ved kanten av flokken (26 px fra midten, på siden de ble
+  sluppet), så hvalen synes. Sørishavet har nå sju store flokker (maks 26-34) i stedet for ti like
+  (maks 22), og stedsnavn i stedet for bokstaver (Weddellhavet, Bouvetøya, Dronning Maud ...).
+- Grep 2 (artsbytte): flokkene har art. Blåhval er lengst (74 px), lys med rund snute og flekker,
+  gir 1,2 x olje og føder 0,6 x. Finnhval (58 px) er slank og spiss med lys høyre kjeve. Seihval
+  (42 px) er kort, butt og mørk, gir 0,75 x olje og føder 1,35 x. En båt på en full blåhvalflokk
+  tømmer den alltid; en full seiflokk tåler én båt. Fatene fra blåhval er større. Fra 1904 viser
+  stripa nederst artene (form og navn) i stedet for «tar hval». Fredningen 1966 gjelder blåhval
+  (`art === 'blå'`). Ny lærdom `arter` (når en blåhvalflokk dør, og ved fredningen).
+- Grep 3 (IWC-kvoten): fra 1946 vokser regnskapet med en rad «Kvote N av 12» med én strek per hval
+  tatt i år og en tykk strek for kvoten. Når årets kvote er tatt, stanser båtene til nyttår
+  (`fangerFra` gir null): fangstlinjene forsvinner, hver båt ute får et rødt pausemerke, og
+  «BÅTENE STANSER» slås over strekene. Første gang kommer lappen «Årets kvote er tatt: båtene
+  venter» ved strekene (vist før forklart). Banner «1946: Hvalkvote» og lærdom om at kvoten var
+  satt for høyt. Har havet krympet fem år etter (1951), kommer lappen «Kvoten var for høy: hvalene
+  ble færre». Ingen nytt lærings-øyeblikk (fortsatt maks tre: nyttår, pris, fredning).
+- Grep 4 (Forståelig og Myk start): tønne-regnestykket er nå fat, ikke tall: «+» og en rekke fulle
+  fat (inn i fjor) over «-» og en rekke røde fat (ut ved nyttår), ett fat = én fangst ved full
+  pris, halve fat tegnes halvt. Er den øverste rekka lengst, vokser tønna. Første 10 sekunder: ingen
+  banner ved start (kartusjen viser året), og ingen oljetall, dråper, GRØNT ÅR eller nyttårsrykk
+  før 3 s etter første slipp. Rekkefølgen er da: hånd + lapp, slipp, rød ring-lappen, så pengene.
+- Annet: konstantene for skallet er flyttet til `skall.ts` (RederensKart.tsx var 821 linjer).
+- Økonomi for artene: stasjonen i Sørishavet koster 3,5 i 1925-1927 og 5 fra 1928, verden kjøper 12
+  fat i året (var 10,5), og prisen faller 0,06 per fat over streken (var 0,08).
+- Simuleringen (200 runder per robot): forvalter (vinner) 94 % (var 84 %), median 180; halvgod
+  (middels) 99 %, median 158; sparsom (taper) 0 %, median 152, konkurs rundt 1937; grådig 0 %,
+  median 49, tomt hav rundt 1903; tilfeldig 0 %, konkurs 1881; passiv 0 %, konkurs 1905. Trapp
+  152 < 158 < 180. 19,5 valg per minutt (var 39), press 0,45 -> 0,83 -> 0,96. Forvalteren tar
+  årets kvote 3-6 år per runde. Selvspill: alle porter grønne, forvalteren vant med 179 poeng på
+  275 s, bildeendring passiv 2,2. Scene-audit grønn. Likhetsvakt grønn (tinghuset 0,39). Plakaten
+  er tatt med `--cover-at 85` (1931, Sørishavet). Tap-bildene er tatt med `--full --bots grådig`
+  (passiv = konkurs 1914, grådig = tomt hav 1901).
+- Hva som IKKE virket:
+  - Blåhval med 1,5 x olje: «sparsom» (én båt på en stor blåhvalflokk) betalte stasjonen og vant
+    100 %. 1,25 x: sparsom levde til 1943 med flest poeng (trappen snudd).
+  - Blåhval som føder 0,45 x: flokkene i Georgia og Finnmark kom aldri over forvalterens «høy», så
+    båtene lå i havna i årevis og forvalteren vant 14 %. Blåhvalflokkene starter nå nær full.
+  - Stasjon 6 i Sørishavet: halvgod gikk konkurs etter prisfallet (7 %, median under sparsom).
+    Stasjon 5 fra 1925: forvalteren gikk konkurs ved overgangen (86 %). Delt i 3,5 / 5 fra 1928.
+  - Tre unger som svømmer inn samtidig så ut som en fiskestim igjen. Nå én om gangen, større.
+  - Båtene midt på flokken dekket hvalen (robotene slipper midt på). Nå legger båten seg ved kanten.
+- Kjente svakheter:
+  - Forvalteren holder blåhvalflokkene på 55-75 %, så i dens runde er blåhvalen ikke «nesten borte»
+    i 1966; artsbyttet er tydelig hos halvgod (blåhval 10-16 av 34, seihval full i 1965). Teksten om
+    fredningen sier «nesten borte i hele Sørishavet» (historien), ikke «på ditt kart».
+  - Halvgod vinner 99 %: spillet er lettere enn før for den middels gode. Trappen holder på poeng.
+  - Kvoten (12 i året) biter sjelden på forvalteren og stopper ikke grådig (som er død før 1946).
+    Lappen om at kvoten var for høy kommer bare når havet faktisk krympet 1946-1951.
+  - Bildeendringen i passiv runde er 2,2 (grensa er 2): den rolige starten tar bort mye bevegelse.
+  - Tap-stempelet «HAVET TOMT» kan ligge over en flokk som lever (uendret fra før).

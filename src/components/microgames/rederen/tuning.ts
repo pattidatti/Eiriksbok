@@ -37,6 +37,23 @@ export const TUNING = {
         perHvalPerSek: 0.035,
     },
 
+    /**
+     * Artene: olje per hval (ganger `fangst.fatVerdi`), fødsler (ganger `fødsel.perHvalPerSek`)
+     * og hvor lang den tegnede hvalen er når flokken er full (px). Blåhvalen gir mest olje og
+     * føder tregest, så den forsvinner først. Seihvalen er liten, men tåler mer.
+     */
+    arter: {
+        blå: { navn: 'blåhval', olje: 1.2, fødsel: 0.6, lengde: 74 },
+        finn: { navn: 'finnhval', olje: 1, fødsel: 1, lengde: 58 },
+        sei: { navn: 'seihval', olje: 0.75, fødsel: 1.35, lengde: 42 },
+    },
+
+    /**
+     * IWC-kvoten fra 1946: høyst så mange hval i året. Når årets kvote er tatt, stanser
+     * båtene til nyttår. Kvoten var satt for høyt: den stoppet ikke at havet krympet.
+     */
+    kvote: { fra: 1946, perÅr: 12 },
+
     /** Havet er tomt når det er færre hval enn dette igjen i havet du fanger i. */
     tomtHav: 6,
 
@@ -45,7 +62,7 @@ export const TUNING = {
         fart: 180,
         kokeriFart: 70,
         /** En båt som følger en flokk, ligger høyst så langt fra midten av den (px). */
-        følgAvstand: 14,
+        følgAvstand: 26,
         /** Et slipp teller som et nytt valg når målet flyttes mer enn dette. */
         nyttStedPx: 24,
     },
@@ -70,6 +87,7 @@ export const TUNING = {
             { fra: 1880, kost: 0.37 },
             { fra: 1904, kost: 2.8 },
             { fra: 1925, kost: 3.5 },
+            { fra: 1928, kost: 5 },
         ],
     },
 
@@ -84,9 +102,9 @@ export const TUNING = {
         /** Hvor fullt lageret kan bli (fat) før prisen faller. */
         grense: 15,
         /** Fat verden kjøper per år (lageret tømmes jevnt; 6 fat i sekundet som før årene ble kortere). */
-        kjøpPerÅr: 10.5,
+        kjøpPerÅr: 12,
         /** Prisen faller så mye per fat lageret er over grensa. */
-        fall: 0.08,
+        fall: 0.06,
         bunn: 0.3,
     },
 

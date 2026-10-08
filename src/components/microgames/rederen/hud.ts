@@ -2,12 +2,12 @@
 // rederens regnskap med tønna øverst til høyre, og en stripe nederst med tegnforklaring og
 // tidslinje fram til 1968. Tapet: bildet fryser, og årsaken lyser opp.
 
-import { P, SERIF } from './ark';
+import { P, SERIF, tegnHvalStempel } from './ark';
 import { tegnFat, skrog, tønnePos, type TegneValg } from './draw';
 import type { Fx } from './fx';
 import type { Game } from './game';
 import { BRETT } from './levels';
-import { årsKost, egne, fastKost, markedÅpent } from './rules';
+import { årsKost, egne, fastKost, kvoteFull, kvoteÅpen, markedÅpent } from './rules';
 import { TUNING } from './tuning';
 
 const T = TUNING;
@@ -178,7 +178,7 @@ function regnskap(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg, 
     const kost = årsKost(g);
     const igjen = kost > 0 ? Math.floor(Math.max(0, g.tønne) / kost) : 99;
     const fare = tap || igjen < 3;
-    kort(ctx, x, y, W, 120, fare);
+    kort(ctx, x, y, W, regnskapH(g), fare);
     const tp = tønnePos();
     // Tønna rommer seks års drift; én strek på tønna = ett år.
     const fyll = Math.max(0, Math.min(1, o.tønneVist / Math.max(12, kost * 6)));
@@ -201,7 +201,7 @@ function regnskap(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg, 
     ctx.textAlign = 'left';
     const puls = fare ? 1 + 0.08 * Math.sin(o.klokke * 8) : 1;
     ctx.save();
-    ctx.translate(lx, y + 32);
+    ctx.translate(lx, y + 30);
     ctx.scale(puls, puls);
     ctx.fillStyle = fare ? P.rød : P.blekk;
     ctx.font = `bold ${fare ? 21 : 19}px ${SERIF}`;
@@ -216,23 +216,17 @@ function regnskap(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg, 
               : `Holder ${igjen} år`;
     ctx.fillText(holder, 0, 0);
     ctx.restore();
-    // Inn i fjor og ut ved nyttår, i hele fat-olje.
-    ctx.font = `14px ${SERIF}`;
+    // Regnestykket som fat, ikke tall: fat inn i fjor (fulle) over fat ut ved nyttår (røde).
+    // Er den øverste rekka lengst, vokser tønna.
+    ctx.font = `13px ${SERIF}`;
     ctx.fillStyle = P.blekk;
-    ctx.fillText(vis ? `${vis.år}:` : 'Inn', lx, y + 54);
-    ctx.font = `bold 15px ${SERIF}`;
-    ctx.fillStyle = P.grønn;
-    ctx.fillText(`+${Math.round(inn)}`, lx + (vis ? 40 : 28), y + 54);
-    ctx.font = `14px ${SERIF}`;
-    ctx.fillStyle = P.blekk;
-    ctx.textAlign = 'right';
-    ctx.fillText('Ut', rx - 34, y + 54);
-    ctx.font = `bold 15px ${SERIF}`;
-    ctx.fillStyle = P.rød;
-    ctx.fillText(`-${Math.round(ut)}`, rx, y + 54);
+    ctx.fillText('+', lx, y + 50);
+    ctx.fillText('-', lx + 1, y + 66);
+    fatRekke(ctx, lx + 16, y + 45, rx, inn / T.fangst.fatVerdi, false);
+    fatRekke(ctx, lx + 16, y + 61, rx, ut / T.fangst.fatVerdi, true);
     // Hva som koster: stasjonen og hver båt. Fylt båt = på havet (dyr), omriss = i havna (billig).
     let ix = lx + 2;
-    const iy = y + 64;
+    const iy = y + 72;
     ctx.fillStyle = P.blekk;
     ctx.strokeStyle = P.blekk;
     ctx.lineWidth = 1.2;
@@ -262,7 +256,129 @@ function regnskap(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg, 
         ix += b.kokeri ? 24 : 17;
         if (ix > rx - 10) break;
     }
-    if (markedÅpent(g)) markedsMåler(ctx, g, fx, lx, y + 88, rx - lx);
+    if (markedÅpent(g)) markedsMåler(ctx, g, fx, lx, y + 96, rx - lx);
+    if (kvoteÅpen(g)) kvoteMåler(ctx, g, fx, lx, y + 124, rx - lx);
+}
+
+/** Høyden på regnskapet: det vokser når oljeprisen (1929) og IWC-kvoten (1946) kommer. */
+export const regnskapH = (g: Game) => (kvoteÅpen(g) ? 146 : markedÅpent(g) ? 118 : 96);
+
+/**
+ * En rekke små fat: ett fat = én fangst ved full pris. Halve fat tegnes halvt.
+ * `ut` = røde fat som går ut av tønna ved nyttår.
+ */
+function fatRekke(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    maksX: number,
+    antall: number,
+    ut: boolean
+) {
+    const halve = Math.round(antall * 2);
+    const plass = Math.floor((maksX - x) / 8);
+    const hele = Math.min(plass, Math.floor(halve / 2));
+    const halv = hele < plass && halve % 2 === 1;
+    for (let i = 0; i < hele + (halv ? 1 : 0); i++) {
+        const fx = x + i * 8 + 3.5;
+        ctx.save();
+        if (halv && i === hele) {
+            ctx.beginPath();
+            ctx.rect(fx - 5, y - 6, 5, 12);
+            ctx.clip();
+        }
+        if (ut) {
+            ctx.fillStyle = '#e9c9b8';
+            ctx.strokeStyle = P.rød;
+            ctx.lineWidth = 1.3;
+            ctx.beginPath();
+            ctx.ellipse(fx, y, 3.4, 4.4, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(fx - 3.2, y - 1.5);
+            ctx.lineTo(fx + 3.2, y - 1.5);
+            ctx.moveTo(fx - 3.2, y + 1.5);
+            ctx.lineTo(fx + 3.2, y + 1.5);
+            ctx.stroke();
+        } else tegnFat(ctx, fx, y, 0.78);
+        ctx.restore();
+    }
+    if (halve === 0) {
+        ctx.strokeStyle = 'rgba(30,42,53,0.45)';
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + 10, y);
+        ctx.stroke();
+    } else if (Math.floor(halve / 2) > plass) {
+        ctx.fillStyle = ut ? P.rød : P.grønn;
+        ctx.font = `bold 13px ${SERIF}`;
+        ctx.textAlign = 'left';
+        ctx.fillText('+', maksX + 1, y + 5);
+    }
+}
+
+/** IWC-kvoten (fra 1946): én strek per hval tatt i år mot kvoten. Full = båtene stanser. */
+function kvoteMåler(
+    ctx: CanvasRenderingContext2D,
+    g: Game,
+    fx: Fx,
+    x: number,
+    y: number,
+    w: number
+) {
+    const k = T.kvote.perÅr;
+    const full = kvoteFull(g);
+    ctx.textAlign = 'left';
+    ctx.font = `13px ${SERIF}`;
+    ctx.fillStyle = P.blekk;
+    ctx.fillText('Kvote', x, y);
+    ctx.textAlign = 'right';
+    ctx.font = `bold 14px ${SERIF}`;
+    ctx.fillStyle = full ? P.rød : P.blekk;
+    ctx.fillText(full ? 'tatt' : `${Math.min(k, g.tattIÅr)} av ${k}`, x + w, y);
+    // Strekene: en hval per strek, streken til slutt er kvoten.
+    const sx = x;
+    const sw = w - 4;
+    const by = y + 5;
+    const steg = sw / k;
+    ctx.lineWidth = 2;
+    for (let i = 0; i < k; i++) {
+        const tatt = i < g.tattIÅr;
+        ctx.strokeStyle = tatt ? (full ? P.rød : P.hval) : 'rgba(30,42,53,0.2)';
+        ctx.beginPath();
+        ctx.moveTo(sx + i * steg + steg / 2, by);
+        ctx.lineTo(sx + i * steg + steg / 2, by + 8);
+        ctx.stroke();
+    }
+    ctx.strokeStyle = P.blekk;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(sx + sw + 1, by - 3);
+    ctx.lineTo(sx + sw + 1, by + 11);
+    ctx.stroke();
+    // Stempelet slås når årets kvote er tatt.
+    if (full && fx.kvote >= 0) {
+        const t = Math.min(1, fx.kvote / 0.3);
+        const s = 1.8 - 0.8 * t;
+        ctx.save();
+        ctx.translate(x + w / 2 - 6, by + 4);
+        ctx.rotate(-0.08);
+        ctx.scale(s, s);
+        ctx.globalAlpha = 0.35 + 0.65 * t;
+        ctx.fillStyle = P.papir;
+        ctx.fillRect(-46, -9, 92, 18);
+        ctx.strokeStyle = P.rød;
+        ctx.lineWidth = 2;
+        ctx.strokeRect(-46, -9, 92, 18);
+        ctx.fillStyle = P.rød;
+        ctx.font = `bold 13px ${SERIF}`;
+        ctx.textAlign = 'center';
+        ctx.fillText('BÅTENE STANSER', 0, 5);
+        ctx.restore();
+        ctx.globalAlpha = 1;
+    }
 }
 
 /** Oljeprisen (fra 1929): lageret i verden som en stav med en strek. Over streken faller prisen. */
@@ -350,25 +466,43 @@ function stripe(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
     ctx.font = `14px ${SERIF}`;
     ctx.textAlign = 'left';
     ctx.fillStyle = P.blekk;
-    // Regel 1: båt ved flokk tar hval.
-    ctx.save();
-    ctx.translate(26, 521);
-    ctx.scale(0.75, 0.75);
-    skrog(ctx, false);
-    ctx.fill();
-    ctx.restore();
-    ctx.fillText('tar hval', 44, 526);
-    // Regel 2: ringen.
-    ringIkon(ctx, 126, 520, P.grønn, true);
+    if (g.år < T.fredning.finnmark) {
+        // Regel 1: båt ved flokk tar hval.
+        ctx.save();
+        ctx.translate(26, 521);
+        ctx.scale(0.75, 0.75);
+        skrog(ctx, false);
+        ctx.fill();
+        ctx.restore();
+        ctx.fillText('tar hval', 44, 526);
+    }
+    // Regel 2: ringen (fra 1904 helt til venstre, så artene får plass).
+    const rx0 = g.år < T.fredning.finnmark ? 126 : 28;
+    ringIkon(ctx, rx0, 520, P.grønn, true);
     ctx.fillStyle = P.blekk;
-    ctx.fillText('vokser', 146, 526);
-    ringIkon(ctx, 218, 520, P.rød, false);
+    ctx.fillText('vokser', rx0 + 20, 526);
+    ringIkon(ctx, rx0 + 92, 520, P.rød, false);
     ctx.fillStyle = P.blekk;
-    ctx.fillText('krymper', 238, 526);
-    // Regel 3: oljen.
-    tegnFat(ctx, 320, 520, 1);
-    ctx.fillStyle = P.blekk;
-    ctx.fillText(markedÅpent(g) ? 'mange fat: lav pris' : 'båt ute koster mest', 332, 526);
+    ctx.fillText('krymper', rx0 + 112, 526);
+    if (g.år < T.fredning.finnmark) {
+        // Regel 3: oljen.
+        tegnFat(ctx, 320, 520, 1);
+        ctx.fillStyle = P.blekk;
+        ctx.fillText('båt ute koster mest', 332, 526);
+    } else {
+        // Artene på kartet (fra 1904): form og størrelse, størst først. Ringene flyttes fram.
+        const arter = (['blå', 'finn', 'sei'] as const).filter((a) =>
+            g.flokker.some((f) => f.art === a)
+        );
+        let ax = 212;
+        for (const a of arter) {
+            const l = T.arter[a].lengde * 0.42;
+            tegnHvalStempel(ctx, a, 0, ax + l / 2, 520, 0, l);
+            ctx.fillStyle = P.blekk;
+            ctx.fillText(T.arter[a].navn, ax + l + 4, 526);
+            ax += l + 4 + ctx.measureText(T.arter[a].navn).width + 10;
+        }
+    }
 
     // Tidslinja.
     ctx.strokeStyle = P.blekk;

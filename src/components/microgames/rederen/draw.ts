@@ -3,12 +3,12 @@
 // Leser bare spillet og effektene.
 
 import type { ArcadeView } from '../arcade/useArcade';
-import { ark, P, SERIF, stempel, STEMPEL } from './ark';
+import { ark, P, SERIF, tegnHvalStempel } from './ark';
 import { glatt, UNGE_SEK, type Fx } from './fx';
 import type { Båt, Flokk, Game } from './game';
 import { tegnHud, tegnTap } from './hud';
 import { KART, type Kart } from './levels';
-import { fangerFra } from './rules';
+import { fangerFra, kvoteFull } from './rules';
 import { TUNING } from './tuning';
 
 const T = TUNING;
@@ -152,10 +152,13 @@ function tegnRing(ctx: CanvasRenderingContext2D, f: Flokk, klokke: number, mål:
     }
 }
 
-/** Hvor mange hvaler som tegnes for en flokk: én per fire hval, minst én. */
-export const hvalTegn = (n: number) => Math.max(1, Math.ceil(n / 4));
+/**
+ * Lengden på den tegnede hvalen: artens lengde når flokken er full, og den krymper med
+ * flokken. Én stor hval per flokk, så eleven ser hvor mye som er igjen - og hvilken art.
+ */
+export const hvalLengde = (f: Flokk) =>
+    T.arter[f.art].lengde * (0.32 + 0.68 * Math.min(1, f.n / f.maks));
 
-/** Flokken som hvaler: én tegnet hval per fire, de svømmer samme vei, og en og annen blåser. */
 /** Fredet flokk: grå stiplet ring uten piler - her fanger ingen. */
 function tegnFredetRing(ctx: CanvasRenderingContext2D, f: Flokk) {
     ctx.strokeStyle = P.grå;
@@ -189,67 +192,61 @@ function tegnFredStempel(ctx: CanvasRenderingContext2D, f: Flokk, finnmark: bool
     ctx.globalAlpha = 1;
 }
 
-function tegnStempler(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
+function tegnHval(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
     const unger = fx.unger.get(f.id) ?? [];
     // Retningen flokken svømmer langs sløyfa.
     const kurs = Math.atan2(f.ry * Math.cos(f.fase), -f.rx * Math.sin(f.fase));
-    const w = STEMPEL.w;
-    const h = STEMPEL.h;
-    const k = hvalTegn(f.n);
-    // Større flokk = større hvaler (de største er voksne blåhval).
-    const s = 0.8 + 0.35 * Math.min(1, f.n / f.maks);
     const t = fx.klokke;
-    for (let i = 0; i < k; i++) {
-        const a = i * 2.39996 + f.id;
-        const r = i === 0 ? 0 : 10.5 * Math.sqrt(i);
-        const bx = Math.cos(a) * r + Math.sin(t * 0.9 + i * 1.3) * 1.5;
-        const by = Math.sin(a) * r * 0.8 + Math.cos(t * 0.7 + i) * 1.2;
-        const x = f.x + bx;
-        const y = f.y + by;
-        const vri = kurs + Math.sin(t * 1.4 + i * 2.1) * 0.12;
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.rotate(vri);
-        ctx.drawImage(stempel(i), (-w / 2) * s, (-h / 2) * s, w * s, h * s);
-        ctx.restore();
-        // Sprut: en og annen hval blåser - en sky over hodet som stiger og blekner.
-        const fase = (t * 0.32 + i * 0.37 + f.id * 0.61) % 1;
-        if (fase < 0.2) {
-            const p = fase / 0.2;
-            const hx = x + Math.cos(vri) * w * 0.38 * s;
-            const hy = y + Math.sin(vri) * w * 0.38 * s;
-            ctx.globalAlpha = 0.85 * (1 - p);
-            ctx.fillStyle = '#f4f1e6';
-            ctx.strokeStyle = P.hval;
-            ctx.lineWidth = 1;
-            for (let d = 0; d < 3; d++) {
-                const dx = (d - 1) * (4 + 8 * p);
-                const dy = -6 - 20 * p + Math.abs(d - 1) * 4;
-                ctx.beginPath();
-                ctx.arc(hx + dx, hy + dy, 2.5 + 3.5 * p, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.stroke();
-            }
-            ctx.globalAlpha = 1;
-        }
+    const l = hvalLengde(f);
+    const vri = kurs + Math.sin(t * 1.3 + f.id) * 0.07;
+    const cx = Math.cos(vri);
+    const cy = Math.sin(vri);
+    // Kjølvannet: to korte blekkstreker bak halen.
+    ctx.strokeStyle = 'rgba(30,42,53,0.3)';
+    ctx.lineWidth = 1;
+    for (const k of [-1, 1]) {
+        const bx = f.x - cx * l * 0.55;
+        const by = f.y - cy * l * 0.55;
+        ctx.beginPath();
+        ctx.moveTo(bx - cy * k * 4, by + cx * k * 4);
+        ctx.lineTo(bx - cx * l * 0.18 - cy * k * 8, by - cy * l * 0.18 + cx * k * 8);
+        ctx.stroke();
     }
-    // Ungene: små hvaler som popper fram ved flokken og svømmer inn i den.
-    for (let j = 0; j < Math.min(3, unger.length); j++) {
-        const alder = fx.klokke - unger[unger.length - 1 - j];
+    tegnHvalStempel(ctx, f.art, f.id, f.x, f.y, vri, l);
+    // Sprut: hvalen blåser - en søyle av damp over blåsehullet som stiger og brer seg.
+    const fase = (t * 0.3 + f.id * 0.37) % 1;
+    if (fase < 0.28) {
+        const p = fase / 0.28;
+        const hx = f.x + cx * l * 0.32;
+        const hy = f.y + cy * l * 0.32;
+        const st = 0.6 + 0.5 * (l / 74);
+        ctx.globalAlpha = 0.9 * (1 - p * p);
+        ctx.fillStyle = '#f6f3ea';
+        ctx.strokeStyle = P.hval;
+        ctx.lineWidth = 1;
+        for (let d = 0; d < 5; d++) {
+            const side = (d % 2 ? 1 : -1) * Math.ceil(d / 2);
+            const dx = side * (3 + 7 * p) * st;
+            const dy = (-8 - 26 * p + Math.abs(side) * 5) * st;
+            ctx.beginPath();
+            ctx.arc(hx + dx, hy + dy, (2.5 + 4 * p) * st, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+    }
+    // Ungene: en liten hval av samme art svømmer inn fra kanten av ringen og blir en del av flokken.
+    for (let j = 0; j < Math.min(1, unger.length); j++) {
+        const alder = t - unger[unger.length - 1 - j];
         const inn = Math.min(1, alder / UNGE_SEK);
-        const pop =
-            alder < 0.35
-                ? 0.4 + 1.6 * (alder / 0.35) * (1 - alder / 0.35) + (alder / 0.35) * 0.6
-                : 1;
-        const a = kurs + Math.PI * 0.7 + j * 0.9;
-        const r = 28 - 14 * inn;
+        const pop = alder < 0.35 ? 0.4 + 0.6 * (alder / 0.35) : 1;
+        const a = kurs + Math.PI * 0.75 + j * 0.9;
+        const r = 34 - 22 * glatt(inn);
+        const ux = f.x + Math.cos(a) * r;
+        const uy = f.y + Math.sin(a) * r * 0.8;
         ctx.globalAlpha = 0.95 * (1 - inn * inn);
-        ctx.save();
-        ctx.translate(f.x + Math.cos(a) * r, f.y + Math.sin(a) * r * 0.8);
-        ctx.rotate(kurs);
-        const us = 0.5 * pop;
-        ctx.drawImage(stempel(j + 1), (-w / 2) * us, (-h / 2) * us, w * us, h * us);
-        ctx.restore();
+        const ul = T.arter[f.art].lengde * 0.36 * pop;
+        tegnHvalStempel(ctx, f.art, j + 1, ux, uy, Math.atan2(f.y - uy, f.x - ux), ul);
         ctx.globalAlpha = 1;
     }
 }
@@ -283,25 +280,15 @@ function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneVal
             ctx.globalAlpha = 1;
         }
     }
-    for (const f of g.flokker) if (!f.død) tegnStempler(ctx, f, fx);
-    // Hval som tas: stempelet løftes, krymper og blir et fat.
+    for (const f of g.flokker) if (!f.død) tegnHval(ctx, f, fx);
+    // Hval som tas: en liten hval løftes fra flokken til båten, krymper og blir et fat.
     for (const t of fx.tatt) {
         const k = Math.min(1, t.t / 0.9);
         const x = t.x + (t.bx - t.x) * glatt(k);
         const y = t.y + (t.by - t.y) * glatt(k) - Math.sin(k * Math.PI) * 18;
         ctx.globalAlpha = 1 - k * 0.7;
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.rotate(k * 1.2);
-        const s = 0.75 - k * 0.45;
-        ctx.drawImage(
-            stempel(t.v),
-            (-STEMPEL.w / 2) * s,
-            (-STEMPEL.h / 2) * s,
-            STEMPEL.w * s,
-            STEMPEL.h * s
-        );
-        ctx.restore();
+        const l = T.arter[t.art].lengde * (0.34 - k * 0.2);
+        tegnHvalStempel(ctx, t.art, 2, x, y, k * 1.2 + Math.atan2(t.by - t.y, t.bx - t.x), l);
         ctx.globalAlpha = 1;
     }
 }
@@ -478,11 +465,27 @@ function tegnBåter(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg
         ctx.stroke();
     }
     ctx.setLineDash([]);
-    for (const k of g.fat) tegnFat(ctx, k.x, k.y);
+    for (const k of g.fat) tegnFat(ctx, k.x, k.y, Math.sqrt(k.verdi / T.fangst.fatVerdi));
     let nr = 0;
     for (const b of g.båter) {
         if (!b.kokeri && !b.tilbud) nr++;
         tegnBåt(ctx, b, nr, fx, o.valgt === b.id || o.drar?.id === b.id, o.klokke);
+    }
+    // Årets kvote er tatt: båtene på havet stanser. Et rødt pausemerke over hver av dem.
+    if (kvoteFull(g)) {
+        for (const b of g.båter) {
+            if (b.hjemme || b.kokeri || b.tilbud) continue;
+            ctx.fillStyle = P.papir;
+            ctx.strokeStyle = P.rød;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(b.x, b.y - 20, 8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.fillStyle = P.rød;
+            ctx.fillRect(b.x - 4, b.y - 24, 3, 8);
+            ctx.fillRect(b.x + 1, b.y - 24, 3, 8);
+        }
     }
 }
 

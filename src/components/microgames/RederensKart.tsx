@@ -14,7 +14,6 @@ import { ArcadeLessons } from './arcade/ArcadeLayers';
 import { useArcadeLoop, useArcadeText } from './arcade/useArcade';
 import { nextRank, rankFor, useArcadeSave } from './arcade/save';
 import { buzz, createArcadeSynth } from './arcade/synth';
-import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest } from './playtest';
 import { newGame, send, update, type Game, type Hendelse, type Årsak } from './rederen/game';
 import { BOTS } from './rederen/bots';
@@ -22,38 +21,16 @@ import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './rederen/sim';
 import { P, skala, tegn, tønnePos, type Dråpe, type Skala, type TegneValg } from './rederen/draw';
 import { tapMål, tapTekst } from './rederen/hud';
 import { TapKort } from './rederen/TapKort';
-import { SERIF } from './rederen/ark';
 import { byttArk, fraHendelse, fxSteg, nyFx, rykk, type Fx } from './rederen/fx';
 import { BRETT } from './rederen/levels';
 import { dist, fangerFra, framdrift, årsKost } from './rederen/rules';
 import { TUNING } from './rederen/tuning';
+import { DRÅPE_SEK, FRYS, PENGER, STOPP, THEME, velgNivå } from './rederen/skall';
 import { LAPP, LÆRDOM, MÅL, SKJEDDE, TAP_TITTEL, ØYEBLIKK } from './rederen/texts';
 
 // REDERENS KART - Hvalfangsten 1864-1968. Du er rederen: dra hvalbåtene ut på flokkene,
 // la flokkene hvile når ringen blir rød, og betal for båtene hvert nyttår. Reglene bor i
 // ./rederen (se KART.md). Her er skallet, input, lyd, tekst og lagring.
-
-const THEME: Partial<ArcadeTheme> = {
-    ink: P.blekk,
-    paper: '#f0e8d2',
-    accent: P.rav,
-    cta: P.rav,
-    ctaText: P.blekk,
-    chip: '#e3d3a8',
-    scrim: 'rgba(30,24,16,.66)',
-    font: SERIF,
-    fontWeight: 700,
-    bodyFont: SERIF,
-    tracking: '0.02em',
-    textCase: 'none',
-    radius: 2,
-    line: 2,
-    drop: 2,
-    tilt: -1.5,
-    hudText: P.blekk,
-    hudStroke: '#f0e8d2',
-    bannerTop: '24%',
-};
 
 type Mode = 'menu' | 'play' | 'paused' | 'over';
 
@@ -80,31 +57,6 @@ interface Resultat {
 }
 
 const RANGER = TUNING.ranger;
-/** Sekunder bildet står frosset med årsaken lyst opp før slutt-skjermen. */
-const FRYS = 2.5;
-/**
- * Der tallene for olje spretter opp: en spalte til venstre for regnskapet, under landnavnene,
- * så de aldri dekker stedsnavn, kartusjen eller tallene i regnskapet.
- */
-const PENGER = { x: 630, inn: 150, ut: 185, håret: 222 };
-/** Sekunder en oljedråpe bruker fra tønna til båten. */
-const DRÅPE_SEK = 0.8;
-
-/** Kvalitetsnivået: ?kvalitet=lav|middels|hoy, ellers en gjetning fra maskinen. */
-function velgNivå(): 'lav' | 'middels' | 'hoy' {
-    try {
-        const q = new URLSearchParams(window.location.search).get('kvalitet');
-        if (q === 'lav' || q === 'middels' || q === 'hoy') return q;
-        const kjerner = navigator.hardwareConcurrency ?? 4;
-        return kjerner >= 8 ? 'hoy' : kjerner >= 4 ? 'middels' : 'lav';
-    } catch {
-        return 'lav';
-    }
-}
-
-/** Hit-stop: så mange sekunder står spillet stille etter et treff (bildet og lyden går videre). */
-const STOPP = { lås: 0.05, kjøp: 0.08, død: 0.12, krakk: 0.25, fredning: 0.15 };
-
 export default function RederensKart({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');
     const modeRef = useRef<Mode>('menu');
@@ -136,6 +88,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         innKlokke: 0,
         lydFangst: 0,
         lydUnge: 0,
+        kvoteVist: false,
     });
     /** Hit-stop igjen (sekunder), og lærings-øyeblikk som venter til eleven har sett hendelsen. */
     const stopp = useRef(0);
@@ -168,6 +121,13 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         const t = tønnePos();
         return skjerm(t.x - 10, t.y + 52);
     };
+    /** Under kvote-strekene nederst i regnskapet (fra 1946). */
+    const vedKvote = () => skjerm(800, 162);
+    /**
+     * Myk start: én ting om gangen. Oljetall og dråper ved nyttår vises først et par sekunder
+     * etter at eleven har sluppet den første båten (start-lappen og hånda er da borte).
+     */
+    const roligStart = () => !hint.current.slapp || klokke.current - hint.current.slappKlokke < 3;
 
     const ferdig = (g: Game) => {
         const vant = g.mode === 'won';
@@ -203,7 +163,9 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
     /** Én hendelse fra spillet: lyd, effekt og tekst. */
     const hendelse = (g: Game, h: Hendelse) => {
         const fx = fxRef.current;
-        fraHendelse(fx, g, h, { grønn: P.grønn, rød: P.rød, blekk: P.blekk, rav: P.rav });
+        // Myk start: ingen GRØNT ÅR-stempel eller nyttårsrykk før eleven har sluppet en båt.
+        const vis = h.type === 'årsskifte' && roligStart() ? { ...h, grønt: false, kost: 0 } : h;
+        fraHendelse(fx, g, vis, { grønn: P.grønn, rød: P.rød, blekk: P.blekk, rav: P.rav });
         const hr = hint.current;
         const nå = klokke.current;
         if (h.type === 'brett') {
@@ -228,7 +190,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             }
         } else if (h.type === 'fat') {
             synth.tone(1320, 1500, 0.035, 'square', 0.022);
-            hr.inn += TUNING.fangst.fatVerdi;
+            hr.inn += h.verdi;
         } else if (h.type === 'unge') {
             if (nå - hr.lydUnge > 0.5) {
                 hr.lydUnge = nå;
@@ -276,6 +238,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             if (f) {
                 text.point(`død${f.id}`, LAPP.død, vedFlokk(f.id), { tone: 'fare', seconds: 3.5 });
                 text.lesson(`død`, SKJEDDE.død(f.navn, g.år), 3);
+                if (f.art === 'blå') text.lesson('arter', LÆRDOM.arter, 3);
             }
         } else if (h.type === 'reddet') {
             synth.arp(659, [0, 4, 7, 12], 0.09, 0.06);
@@ -328,11 +291,28 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                         ),
                 });
                 text.lesson('fredning', LÆRDOM.fredning, 3);
+                text.lesson('arter', LÆRDOM.arter, 2);
             }
+        } else if (h.type === 'kvoteStart') {
+            synth.arp(392, [0, 5, 7], 0.09, 0.05);
+            text.banner('1946: Hvalkvote', '#e3d3a8', 2.4);
+            text.lesson('kvote', LÆRDOM.kvote, 3);
+        } else if (h.type === 'kvote') {
+            // Årets kvote er tatt: båtene stanser. Vises først, forklares med en lapp ved strekene.
+            synth.tone(300, 150, 0.35, 'square', 0.05);
+            buzz(25);
+            if (!hr.kvoteVist) {
+                hr.kvoteVist = true;
+                text.point('kvote', LAPP.kvote, vedKvote, { seconds: 4 });
+            }
+        } else if (h.type === 'kvoteForHøy') {
+            text.point('kvoteHøy', LAPP.kvoteForHøy, vedKvote, { tone: 'fare', seconds: 4.5 });
+            text.lesson('kvote', LÆRDOM.kvote, 4);
         } else if (h.type === 'årsskifte') {
             // En oljedråpe flyr fra tønna til hver båt: stor til båter på havet, liten til havna.
-            for (const p of h.betalt) if (p.kost > 0) dråper.current.push({ id: p.id, t: 0 });
-            if (h.kost > 0) {
+            if (!roligStart())
+                for (const p of h.betalt) if (p.kost > 0) dråper.current.push({ id: p.id, t: 0 });
+            if (h.kost > 0 && !roligStart()) {
                 const p = skjerm(PENGER.x, PENGER.ut);
                 text.float(`-${Math.round(h.kost)}`, p.x, p.y, P.rød, true);
                 synth.tone(660, 330, 0.3, 'sine', 0.05, 0.1);
@@ -415,9 +395,10 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 sjekkRød(g);
                 // Fatene som kommer inn, samles til ett tall ved havna.
                 const hr = hint.current;
+                if (hr.inn > 0 && roligStart()) hr.inn = 0;
                 if (hr.inn > 0 && klokke.current - hr.innKlokke > 0.7) {
                     const p = skjerm(PENGER.x, PENGER.inn);
-                    text.float(`+${hr.inn}`, p.x, p.y, P.grønn);
+                    text.float(`+${Math.round(hr.inn)}`, p.x, p.y, P.grønn);
                     hr.inn = 0;
                     hr.innKlokke = klokke.current;
                 }
@@ -475,13 +456,14 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             innKlokke: 0,
             lydFangst: 0,
             lydUnge: 0,
+            kvoteVist: false,
         };
         stopp.current = 0;
         senere.current = [];
         setResultat(null);
         text.resetRun();
         setModeBoth('play');
-        text.banner('1864: Varangerfjorden', '#e3d3a8', 2.4);
+        // Ingen banner ved start: kartusjen viser året og havet. Bare hånda og én lapp.
         const første = gameRef.current.båter[0];
         text.point('start', LAPP.start, vedBåt(første.id), {
             until: () => hint.current.slapp,

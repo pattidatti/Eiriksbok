@@ -3,7 +3,7 @@
 // Tiden her er ekte tid, så rystelser og bølger ikke henger igjen i pausen.
 
 import type { Game, Hendelse } from './game';
-import type { KartId } from './levels';
+import type { Art, KartId } from './levels';
 
 export interface Bølge {
     x: number;
@@ -29,7 +29,7 @@ export interface Tatt {
     bx: number;
     by: number;
     t: number;
-    v: number;
+    art: Art;
 }
 
 export interface Skrift {
@@ -72,6 +72,8 @@ export interface Fx {
     fred: Map<number, number>;
     /** Flokken en båt nettopp ble sluppet på: flokk -> sekunder siden (ringen låser seg). */
     lås: Map<number, number>;
+    /** Sekunder siden årets kvote ble tatt (-1 = ikke tatt): stempelet slås. */
+    kvote: number;
 }
 
 export const nyFx = (): Fx => ({
@@ -94,6 +96,7 @@ export const nyFx = (): Fx => ({
     rykk: 0,
     fred: new Map(),
     lås: new Map(),
+    kvote: -1,
 });
 
 /** Et rykk i bildet: det største som kommer, vinner. */
@@ -124,7 +127,7 @@ export function fraHendelse(
                 bx: h.x,
                 by: h.y,
                 t: 0,
-                v: Math.floor(Math.random() * 4),
+                art: f.art,
             });
             bølge(
                 fx,
@@ -182,10 +185,14 @@ export function fraHendelse(
     } else if (h.type === 'fredning') {
         rykk(fx, 6);
         for (const id of h.flokker) fx.fred.set(id, 0);
+    } else if (h.type === 'kvote') {
+        fx.kvote = 0;
+        rykk(fx, 4);
     } else if (h.type === 'tap') {
         rykk(fx, 12);
     } else if (h.type === 'årsskifte') {
         fx.årHopp = 1;
+        fx.kvote = -1;
         if (h.kost > 0) rykk(fx, 2);
         if (h.grønt) {
             fx.grønt = 1;
@@ -224,6 +231,7 @@ export function fxSteg(fx: Fx, g: Game, dt: number, lav: boolean) {
     }
     fx.tønneHopp = Math.max(0, fx.tønneHopp - dt * 4);
     fx.årHopp = Math.max(0, fx.årHopp - dt * 2.5);
+    if (fx.kvote >= 0) fx.kvote += dt;
     fx.grønt = Math.max(0, fx.grønt - dt * 0.6);
     if (fx.arkT < 1) fx.arkT = Math.min(1, fx.arkT + dt / ARK_SEK);
     // Kursen: båtene snur seg mykt mot der de skal. Røyk bak båter som går.
