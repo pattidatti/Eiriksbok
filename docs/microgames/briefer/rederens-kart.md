@@ -245,3 +245,46 @@ gulnet papir, hval som blå fangststempler, tran-rav i tønna».
   vinner forbi 1968.
 - Kjente svakheter å følge med på i gråboksen: med 7-8 båter kan dragingen bli et ork - sjekk at
   vandrefarten gir valg og ikke mas. Tønnegulvet i brett 1 må ikke lære eleven at olje er gratis.
+
+### Gråboks (fase 3a, natt 2026-10-08)
+
+- Bygde gråboksen i `src/components/microgames/rederen/` (KART.md, tuning.ts, levels.ts, game.ts,
+  rules.ts, bots.ts, sim.ts, draw.ts, texts.ts) og `RederensKart.tsx`. Registrert i `registry.ts`
+  med `kunst`. Plakaten er et gråboks-bilde fra selvspillet (`--cover`) og skal byttes når kunsten
+  kommer. Ikke embeddet i artikkelen ennå.
+- Kjerneløkka: dra en båt (mus, klikk-klikk eller 1-9/Tab + piltaster + mellomrom) ut på en
+  flokk. Båten tar én hval per 0,9 s, fatet ruller hjem, flokken føder sakte, og ringen er grønn
+  eller rød etter fødsler mot fangst. Flokkene vandrer langs sløyfer, så båten må følge etter.
+  Vedlikeholdet trekkes ved hvert årsskifte. Brett: Varangerfjorden 1864, Nordkapp 1880,
+  Sør-Georgia 1904 (nytt ark), Sørishavet med kokeriet 1925 (nytt ark). Seier når 1969 begynner.
+- Simuleringen (200 runder per robot) er grønn i forsøk 3:
+  forvalter (vinner) 92 % seier, median 185 poeng; halvgod (middels) 1 % seier, median 133
+  (konkurs rundt 1946); grådig (taper) 0 %, tomt hav rundt 1874; sparsom (taper) 0 %, konkurs
+  rundt 1927; tilfeldig (knappemoser) 0 %, konkurs 1881; passiv 0 %. Presskurve 0,44 -> 0,81 ->
+  0,97. Selvspillet i nettleseren: alle porter grønne, forvalteren vant med 181 poeng.
+- Avvik fra briefen (tallene i punkt 3 gikk ikke opp):
+  - Fødsler er per sekund (0,035 per hval), ikke 0,12 per år. Årene går i ulik fart, og med
+    0,12 per år kunne én båt aldri tømme en flokk i 1864 eller tømte den på sekunder i 1925.
+    Nå gjelder «én båt på én flokk er litt for mye» hele runden (0,035 x 28 < 1/0,9).
+  - Ett fat = 2 olje, vedlikehold 1 (1864), 1 (1880), 1,5 (1904), 2,5 (1925) per båt, kokeriet 5.
+    Med 1 olje per fat og 3 per båt kunne selv den beste ikke betale for flåten i Finnmark.
+  - Varanger-flokken starter på 14 hval og Nordkapp på 18 (ikke 10 og 14): med 10 rakk ikke
+    flokken å vokse før 1880, og selv den flinke gikk konkurs ved første ekte årsskifte.
+  - Runden slutter med seier i 1969 i stedet for å gå videre. Funn, loggbok og rekord-spøkelse
+    som stempel er ikke laget (rekordåret er bare en strek i nedre kant).
+- Hva som IKKE virket:
+  - Forsøk 1: tallene fra briefen - alle gikk konkurs i 1881, også forvalteren.
+  - Forsøk 2: forvalteren vant 2 %. Feilen var roboten: den sendte båten mot der flokken skulle
+    være om 2 s og målte avstanden fra flokken nå, så den flyttet samme båt hvert tick og lot fire
+    båter ligge i havna. Står i KART.md som fallgruve.
+  - Med vedlikehold 2 i Sørishavet vant den halvgode 88 % og fikk nesten like mange poeng som
+    forvalteren; tønna vokste til 500. Med 2,5 og kokeri 5 skiller trappen seg.
+- Kjente svakheter:
+  - Robotenes valg per minutt (74) er mye høyere enn det et menneske gjør; den flinke følger
+    flokkene nesten kontinuerlig. Sjekk i gråboks-diagnosen om dragingen med 7 båter blir mas.
+    Kandidater: lengre fangstradius, saktere vandring, eller at båten følger flokken et stykke selv.
+  - Sørishavet blir rikt når man først har funnet rytmen (tønna stiger jevnt etter 1935). Presset
+    sent i runden kommer mest fra antall båter, ikke fra at havet frister.
+  - Grønt år (havet krympet ikke i år) er grovt; ringen og poengene måler ikke helt det samme.
+  - Tønna i havna overlapper øya i Sørishavet; plasseringen må ordnes når kartarkene tegnes.
+  - Passiv runde: lite bevegelse uten input (bare flokkene vandrer); kunsten må gi liv.
