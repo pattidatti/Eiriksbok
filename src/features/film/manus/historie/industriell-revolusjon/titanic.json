@@ -1,0 +1,461 @@
+{
+    "id": "titanic",
+    "tittel": "Titanic: Skipet som ikke kunne synke",
+    "kilde": "/historie/industriell-revolusjon/titanic",
+    "bilde": "/images/industriell-revolusjon/titanic-hero.webp",
+  "utenforArtikkel": [
+    { "tall": 2469, "begrunnelse": "Galdhøpiggens høyde i meter, brukt som sammenligning for dybden. Kartverket." }
+  ],
+    "scener": [
+        {
+            "id": "natt",
+            "kapittel": "Natten",
+            "visual": { "type": "TitanicHavet", "props": { "modus": "kollisjon" } },
+            "klokke": ["23.38", "23.39", "23.40", "23.40", "23.41"],
+            "replikker": [
+                { "si": "Det er natt, den fjortende april 1912. Vi er midt ute på Atlanterhavet." },
+                {
+                    "si": "Havet ligger helt blankt, og lufta er iskald. Her seiler det største skipet verden har sett."
+                },
+                {
+                    "si": "Klokka 23.40 roper utkikken i masta: Isfjell rett forut!",
+                    "uttale": "Klokka tjue på tolv roper utkikken i masta: Isfjell rett forut!"
+                },
+                {
+                    "si": "Skipet svinger, men det er for sent. Isen skraper langs siden av skroget."
+                },
+                {
+                    "si": "Mange om bord merker nesten ingenting. Noen tror det bare var en liten dult. Men skipet har fått et sår det ikke kan overleve."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "TITANIC",
+                    "undertittel": "Skipet som ikke kunne synke",
+                    "bilde": "/images/industriell-revolusjon/titanic-hero.webp",
+                    "tall": [
+                        { "verdi": 1500, "etikett": "døde", "fraBeat": 2, "tone": "rod" },
+                        { "verdi": 700, "etikett": "ble reddet", "fraBeat": 2, "tone": "gronn" }
+                    ],
+                    "sporsmal": { "tekst": "Hvorfor døde så mange?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Skipet het Titanic." },
+                { "si": "Det var på sin aller første tur, fra England til New York." },
+                {
+                    "si": "Mindre enn tre timer etter smellet var skipet borte. Rundt 1500 mennesker døde, og rundt 700 ble reddet."
+                },
+                {
+                    "si": "I denne filmen skal vi finne ut hvorfor så mange døde, og hvorfor det ikke var tilfeldig hvem som overlevde."
+                }
+            ]
+        },
+        {
+            "id": "storrelse",
+            "kapittel": "Et flytende palass",
+            "visual": { "type": "TitanicHavet", "props": { "modus": "storrelse" } },
+            "replikker": [
+                { "si": "Titanic ble bygd i Belfast og var 269 meter langt." },
+                { "si": "Det er nesten like langt som tre fotballbaner etter hverandre." },
+                {
+                    "si": "Det var plass til 2435 passasjerer. I tillegg var det rundt 900 i mannskapet."
+                },
+                { "si": "Store dampmaskiner, drevet av kull, fikk det enorme skipet til å gå." }
+            ]
+        },
+        {
+            "id": "klasser",
+            "visual": { "type": "TitanicKlasser" },
+            "replikker": [
+                {
+                    "si": "Om bord var skipet delt i tre klasser, nesten som tre etasjer i samfunnet."
+                },
+                {
+                    "si": "I første klasse reiste noen av de rikeste menneskene i verden. De bodde i store, flotte lugarer høyt oppe i skipet."
+                },
+                { "si": "I andre klasse reiste folk med vanlige, gode inntekter." },
+                {
+                    "si": "Langt nede i skipet reiste tredje klasse. Det var de som hadde minst penger. Mange var utvandrere på vei til et nytt liv i Amerika."
+                }
+            ]
+        },
+        {
+            "id": "nordmenn",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 31,
+                            "farget": 31,
+                            "farge": "#2563eb",
+                            "tittel": "31 norskfødte passasjerer",
+                            "fargeEtikett": "født i Norge"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 31,
+                            "farget": 31,
+                            "farge": "#b45309",
+                            "tittel": "De fleste reiste på tredje klasse",
+                            "fargeEtikett": "på vei til Amerika"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Også nordmenn var med. 31 av passasjerene var født i Norge." },
+                {
+                    "si": "De fleste av dem reiste på tredje klasse. De var en del av den store utvandringen, da hundretusenvis av nordmenn reiste til Amerika for å finne arbeid og jord."
+                }
+            ]
+        },
+        {
+            "id": "skott",
+            "kapittel": "Usynkelig?",
+            "visual": { "type": "TitanicSkott" },
+            "replikker": [
+                {
+                    "si": "Hvorfor trodde så mange at Titanic ikke kunne synke? Svaret ligger i hvordan skipet var bygd."
+                },
+                { "si": "Skroget var delt inn i 16 rom, med vanntette vegger mellom." },
+                {
+                    "si": "Verftet regnet med at fire av rommene kunne fylles med vann uten at skipet sank."
+                },
+                {
+                    "si": "Men det var en svakhet. Veggene mellom rommene gikk ikke helt opp til taket."
+                },
+                { "si": "Isfjellet hadde laget hull i seks rom. Det var flere enn skipet tålte." },
+                {
+                    "si": "Baugen sank dypere. Da rant vannet over veggene, akkurat som i en isbitform du vipper på. Rom etter rom ble fylt."
+                }
+            ]
+        },
+        {
+            "id": "livbater",
+            "kapittel": "Livbåtene",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        { "fraBeat": 0, "total": 0, "farget": 0, "tittel": "Livbåtene" },
+                        {
+                            "fraBeat": 1,
+                            "total": 1178,
+                            "farget": 1178,
+                            "farge": "#0d9488",
+                            "tittel": "20 livbåter: 1178 plasser",
+                            "fargeEtikett": "plass i livbåt"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 2200,
+                            "farget": 1178,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Rundt 2200 mennesker om bord",
+                            "fargeEtikett": "plass i livbåt",
+                            "restEtikett": "om bord"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 2200,
+                            "farget": 1178,
+                            "farge": "#0d9488",
+                            "restFarge": "#dc2626",
+                            "tittel": "Over 1000 uten plass",
+                            "fargeEtikett": "plass i livbåt",
+                            "restEtikett": "uten plass"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Nå kommer den viktigste delen av historien." },
+                { "si": "Titanic hadde 20 livbåter. Til sammen var det plass til 1178 personer." },
+                { "si": "Men om bord var det rundt 2200 mennesker." },
+                {
+                    "si": "Selv om hver eneste plass ble brukt, ville nesten halvparten ikke fått plass."
+                },
+                {
+                    "si": "Det er som en skolebuss med seter til bare halve klassen. På en tur der setet er det eneste som kan redde deg."
+                }
+            ]
+        },
+        {
+            "id": "halvtomme",
+            "visual": {
+                "type": "Livbater",
+                "props": {
+                    "bater": [
+                        { "navn": "Den første livbåten", "plasser": 65, "brukt": 28, "fraBeat": 1 },
+                        { "navn": "En annen livbåt", "plasser": 40, "brukt": 12, "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Og det ble enda verre. Mange av livbåtene ble sendt ned på vannet halvtomme."
+                },
+                { "si": "Den første livbåten hadde plass til 65. Bare 28 satt i den." },
+                { "si": "En annen båt med plass til 40 fikk bare med seg 12 mennesker." },
+                {
+                    "si": "Skipet var stort, varmt og opplyst. Ville du gått ned i en liten båt på det svarte, iskalde havet?"
+                }
+            ]
+        },
+        {
+            "id": "synker",
+            "kapittel": "Klokka 02.20",
+            "visual": { "type": "TitanicHavet", "props": { "modus": "synker" } },
+            "klokke": [null, null, "02.20", "02.20"],
+            "replikker": [
+                {
+                    "si": "Da folk forsto at skipet faktisk sank, var mange av båtene allerede borte."
+                },
+                {
+                    "si": "Telegrafistene sendte ut nødsignaler med radio. Radio var helt ny teknologi i 1912."
+                },
+                {
+                    "si": "Klokka 02.20, to timer og førti minutter etter smellet, forsvant Titanic under overflaten.",
+                    "uttale": "Klokka tjue over to om natta, to timer og førti minutter etter smellet, forsvant Titanic under overflaten."
+                },
+                { "si": "De som havnet i det iskalde vannet, hadde nesten ingen sjanse." }
+            ]
+        },
+        {
+            "id": "redning",
+            "visual": { "type": "TitanicKart" },
+            "klokke": ["02.20", "04.10", "08.30", "08.30"],
+            "replikker": [
+                {
+                    "si": "Skipet Carpathia fanget opp nødsignalene og satte kursen mot ulykkesstedet."
+                },
+                {
+                    "si": "Men det tok lang tid. Carpathia begynte å plukke opp folk fra livbåtene klokka 04.10.",
+                    "uttale": "Men det tok lang tid. Carpathia begynte å plukke opp folk fra livbåtene klokka ti over fire."
+                },
+                {
+                    "si": "Det var nesten to timer etter at Titanic hadde sunket. Redningen var ferdig klokka 08.30.",
+                    "uttale": "Det var nesten to timer etter at Titanic hadde sunket. Redningen var ferdig klokka halv ni om morgenen."
+                },
+                {
+                    "si": "Derfor er livbåtene nøkkelen til hele historien. Den som fikk plass i en båt, overlevde. Den som ikke fikk det, døde nesten alltid."
+                }
+            ]
+        },
+        {
+            "id": "klasse",
+            "kapittel": "Hvem overlevde?",
+            "visual": {
+                "type": "Andeler",
+                "props": {
+                    "tittel": "Reddet, etter klasse",
+                    "kilde": "British Wreck Commissioner, 1912",
+                    "rader": [
+                        {
+                            "etikett": "1. klasse",
+                            "reddet": 202,
+                            "totalt": 322,
+                            "fraBeat": 1,
+                            "farge": "#ca8a04"
+                        },
+                        {
+                            "etikett": "2. klasse",
+                            "reddet": 115,
+                            "totalt": 277,
+                            "fraBeat": 2,
+                            "farge": "#2563eb"
+                        },
+                        {
+                            "etikett": "3. klasse",
+                            "reddet": 176,
+                            "totalt": 709,
+                            "fraBeat": 3,
+                            "farge": "#b45309"
+                        },
+                        {
+                            "etikett": "Mannskap",
+                            "reddet": 210,
+                            "totalt": 898,
+                            "fraBeat": 4,
+                            "farge": "#475569"
+                        }
+                    ],
+                    "sammenlign": {
+                        "fraBeat": 5,
+                        "venstre": {
+                            "etikett": "Kvinner, 1. klasse",
+                            "reddet": 139,
+                            "totalt": 144,
+                            "farge": "#ca8a04"
+                        },
+                        "hoyre": {
+                            "etikett": "Menn, 3. klasse",
+                            "reddet": 55,
+                            "totalt": 454,
+                            "farge": "#b45309"
+                        }
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter ulykken undersøkte britiske myndigheter nøye hva som hadde skjedd. De telte hvor mange som ble reddet i hver klasse."
+                },
+                { "si": "I første klasse ble 202 av 322 reddet. Det er nesten to av tre." },
+                { "si": "I andre klasse ble 115 av 277 reddet." },
+                { "si": "I tredje klasse ble bare 176 av 709 reddet. Det er én av fire." },
+                { "si": "Av mannskapet ble 210 av 898 reddet." },
+                {
+                    "si": "Kvinner og barn fikk gå i båtene først. Nesten alle kvinnene i første klasse overlevde, 139 av 144. Men av mennene i tredje klasse overlevde bare 55 av 454."
+                }
+            ]
+        },
+        {
+            "id": "nordmenn-reddet",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 31,
+                            "farget": 10,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "De 31 norskfødte",
+                            "fargeEtikett": "overlevde",
+                            "restEtikett": "omkom"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Og de norske passasjerene? Av de 31 overlevde 10. 21 omkom." },
+                {
+                    "si": "Hvor du sov på skipet, og hvor mye billetten din kostet, hadde altså mye å si for om du levde neste morgen."
+                }
+            ]
+        },
+        {
+            "id": "regler",
+            "kapittel": "Nye regler",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Etter Titanic",
+                    "punkter": [
+                        {
+                            "ikon": "livbat",
+                            "tittel": "Livbåtplass til alle",
+                            "tekst": "på alle passasjerskip",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "radio",
+                            "tittel": "Radio hele døgnet",
+                            "tekst": "ingen nødsignal skal overses",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "is",
+                            "tittel": "Ispatrulje",
+                            "tekst": "holder øye med isfjell",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "SOLAS, 1914",
+                            "tekst": "sikkerhet for liv til sjøs, gjelder fortsatt",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Ulykken sjokkerte hele verden. Svaret ble nye regler." },
+                { "si": "Alle passasjerskip måtte ha livbåter med plass til alle om bord." },
+                {
+                    "si": "Radioen skulle være bemannet hele døgnet, så ingen nødsignaler ble oversett."
+                },
+                { "si": "En egen ispatrulje skulle holde øye med isfjell i Atlanterhavet." },
+                {
+                    "si": "I 1914 ble land enige om en avtale om sikkerhet til sjøs. Den heter SOLAS, og den gjelder fortsatt i dag."
+                },
+                {
+                    "si": "Så hver gang du tar en ferje, er det plass til deg i en livbåt. Delvis på grunn av Titanic."
+                }
+            ]
+        },
+        {
+            "id": "vraket",
+            "kapittel": "Vraket",
+            "visual": {
+                "type": "Dypet",
+                "props": {
+                    "dybde": 3800,
+                    "fjell": { "navn": "Galdhøpiggen", "hoyde": 2469, "fraBeat": 1 },
+                    "vrakFraBeat": 0
+                }
+            },
+            "replikker": [
+                { "si": "Vraket av Titanic ble funnet i 1985, på 3800 meters dyp." },
+                {
+                    "si": "Tenk deg at du setter Galdhøpiggen, Norges høyeste fjell, på havbunnen. Toppen ville fortsatt vært over tusen meter under vannet."
+                },
+                { "si": "Der nede ligger fortsatt restene av skipet som ikke kunne synke." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Det mest moderne skipet i verden.", "fraBeat": 0 },
+                        {
+                            "tekst": "Men ikke livbåtplass til alle.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        { "tekst": "Ny teknologi gjør oss ikke trygge", "fraBeat": 1 },
+                        {
+                            "tekst": "hvis vi slutter å spørre: Hva om det verste skjer?",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Samme isfjell. Samme kalde hav.", "fraBeat": 2 },
+                        { "tekst": "Men ikke samme sjanse.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Ikke bare flaks, men", "fraBeat": 3 },
+                        { "tekst": "regler, plassering og penger.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Titanic var noe av det mest moderne folk hadde bygd. Likevel hadde ingen sørget for at alle fikk plass i livbåtene."
+                },
+                {
+                    "si": "Lærdommen gjelder fortsatt: Ny teknologi gjør oss ikke trygge hvis vi slutter å spørre: Hva om det verste skjer?"
+                },
+                {
+                    "si": "Ulykken viser også hvor mye klassesamfunnet betydde. Alle om bord møtte det samme isfjellet og det samme kalde havet."
+                },
+                {
+                    "si": "Likevel var det ikke bare flaks som avgjorde hvem som levde. Det var regler, plassering og penger."
+                }
+            ]
+        }
+    ]
+}

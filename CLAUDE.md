@@ -247,6 +247,7 @@ The app uses a manifest-driven routing system:
 /admin/links                    Lenkesjekk
 /admin/scanner                  Innholdsskanner
 
+/film/:subjectId/:topicId/:lessonId                Artikkelfilm - artikkelen spilt av med stemme, teksting og 2D/3D (se build_film.md)
 /:subjectId/:topicId/present/:lessonId             Presentasjonsmodus for leksjon
 /:subjectId/:topicId/present/:lessonId/projector   Presentasjon — projektor-view
 ```
@@ -658,6 +659,8 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `scripts/guide-microgame.mjs` | Skriver ut delene av `build_microgame.md` én rolle i nattrutinen trenger (`--rolle designer\|bygg\|forbedrer\|dirigent`), valgt på overskrift |
 | `scripts/kvittering-microgame.mjs` | Hva et mikrospill kostet å lage: tokens, steg, leseandel og rettelses-commits, fra de lokale Claude Code-loggene. `--alle --skriv` oppdaterer `docs/microgames/kvitteringer.md` (sammenligningsgrunnlaget) |
 | `scripts/kontaktark-microgame.mjs` | Setter skjermbildene fra selvspill og scene-audit sammen til ark på 6 ruter med filnavn (`.screenshots/kontaktark/`) - ett bilde å lese i stedet for seks |
+| `scripts/validate-film.mjs` | Validerer manus for artikkelfilmer: skjema, props per visual, beats, norsk, og at alle tall står i artikkelen |
+| `scripts/shots-film.mjs` | Skjermbilder av en artikkelfilm (ett per replikk) + kontaktark + ekte avspilling. Krever Vite-dev-server |
 | `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |
 | `scripts/copy-404.js` | Copies `index.html` to `404.html` for SPA routing on static hosts |
 | `scripts/fetch_feedback.cjs` | Exports Firebase feedback data |
@@ -734,6 +737,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 - `.agent/workflows/LEARNING_PATH_GUIDE.md` — Learning path JSON schema and guide
 - `docs/LEARNING_PATH_V3.md` — Læringssti v3 («Stien»): skjema, aktivitetstyper og prinsipper
 - `.agent/workflows/BUILD_GAME_GUIDE.md` — Guide for å lage nye historiske 3D-mini-spill
+- `.agent/workflows/build_film.md` — Artikkelfilmer (`src/features/film/`): manusformat, visualer, tone, porter. Nattrutinen `eiriksbok-daily-film` følger `daily_film_routine.md`
 - `.agent/workflows/plan_minigame.md` — Designfase for nytt mini-spill
 - `.agent/workflows/build_interactive.md` — Bygge ny interaktiv komponent
 - `Ideer/` — Ideas and planning documents (Norwegian)

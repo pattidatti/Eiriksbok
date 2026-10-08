@@ -48,7 +48,7 @@ export const Layout: React.FC = () => {
 
     // Hard override for presentation and simulation modes
     const path = location.pathname.toLowerCase();
-    const isPresentationMode = path.includes('/present');
+    const isPresentationMode = path.includes('/present') || path.startsWith('/film/');
     const isSimulationMode = path.includes('/sim/play/');
     const hideHeader = contextHideHeader || isPresentationMode || isSimulationMode;
     const forceFullWidth = isFullWidth || isPresentationMode || isSimulationMode;

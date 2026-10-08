@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { filmLenke } from '../features/film/filmIndex';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BookOpen, Map, ChevronDown, ChevronUp, Volume2, Pause, Play, Square, History, ShieldCheck } from 'lucide-react';
+import { BookOpen, Map, ChevronDown, ChevronUp, Volume2, Pause, Play, Square, History, ShieldCheck, Clapperboard } from 'lucide-react';
 import { TimelineComponent, type TimelineEvent } from './TimelineComponent';
 import { formatNorwegianDate } from '../utils/dateUtils';
 import type { SidebarConfig } from '../types';
@@ -75,12 +76,22 @@ const ExpandableSection: React.FC<{ title: string; children: React.ReactNode; de
 export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, timelineEvents, relatedArticles, headings, tags, config, learningPaths, audioState, metadata }) => {
     const lastUpdatedText = formatNorwegianDate(metadata?.lastUpdated);
     const factCheckedText = formatNorwegianDate(metadata?.factChecked);
+    const film = filmLenke(useLocation().pathname);
 
     return (
         <div className="space-y-8">
             <div className="sticky top-8">
                 {/* Desktop: Audio Player & Key Info */}
                 <div className="hidden md:block space-y-4 mb-8">
+                    {film && (
+                        <Link
+                            to={film}
+                            className="flex items-center p-4 rounded-xl shadow-sm border bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 hover:shadow-md transition-all"
+                        >
+                            <Clapperboard className="w-5 h-5 mr-3" />
+                            <span className="font-bold text-sm">Se som film</span>
+                        </Link>
+                    )}
                     {config?.showAudio !== false && audioState?.hasVoice && (
                         <div className="flex gap-2">
                             {audioState.isPlaying ? (
