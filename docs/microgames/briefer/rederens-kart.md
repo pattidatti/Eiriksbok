@@ -337,3 +337,64 @@ Diagnosen: Forståelig 2, Eleven gjør 3. Gjorde bare de tre endringene den ba o
   - Tønna overlapper fortsatt øya ved Grytviken, og båtene i havna i Sørishavet ligger tett under
     havna. Plasseringen ordnes når kartarkene tegnes.
   - Tellestrekene stopper på 60 (300 poeng). Ingen runde har kommet dit.
+
+### Bygg (fase 3b-6, natt 2026-10-08)
+
+- Diagnose 2, endring 1 (regnestykket ved tønna): regnskapet øverst til høyre viser tønna, «I tønna»,
+  «Inn i fjor» (grønn +) og «Ut ved nyttår» (rød -), og en rad ikoner: stasjonen og hver båt (fylt =
+  på havet, dyr; omriss = i havna, billig). Ved nyttår flyr en stor oljedråpe til hver båt ute og en
+  liten til hver båt i havna, og «-X» spretter opp. «Tom om N år» står bare når det er under 4 år.
+  Tapsbildet ved konkurs viser fjorårets tall: «1931: Fangsten ga X olje, men båtene og stasjonen
+  kostet Y.» «Inn i år» ble byttet til «Inn i fjor»: et år er 1,5-2,5 s og fatene bruker tid hjem,
+  så tallet for i år sto nesten alltid på +0.
+- Endring 2 (første bilde): to flokker fra start. Båt 2 ligger alt ute på Vadsø-flokken (rød ring
+  fra første sekund), båt 1 ligger i havna med en fast stiplet pil og en hånd mot den grønne
+  Varanger-flokken, og lappen «Dra båten ut til hvalene». Havna er en stiplet sone som lyser rav når
+  du drar, og sterkere når båten er over den. Ringen er delt: blå bue = hval igjen, grønt/rødt
+  bånd med fire faste piler (utover = vokser, innover = krymper). Tegnforklaringen i stripa nederst
+  har både grønn og rød ring. Kokeriet er en egen form (langt skrog, to piper, slipp akter), ingen «K».
+- Endring 3 (bare kjøp): nye båter kommer ikke av seg selv. Ny teknikk legger en stiplet båt med
+  prislapp (fat + pris) i havna; eleven kjøper ved å dra den ut (prisen trekkes fra tønna), eller
+  lar være. Til salgs koster den ingenting. Kokeriet er også et kjøp (14). For å holde «for få båter
+  taper» uten automatiske båter har stasjonen en fast årskostnad (0 / 0,5 / 4 / 5). Reglene eleven må
+  huske er fortsatt tre: båt ved flokk tar hval, ringen, alt koster olje hvert nyttår.
+- Kunst (alt i 2D-canvas, ferdig på `?kvalitet=lav`): kartarket tegnes én gang per ark til
+  offscreen (`ark.ts`): papir med fiber, flekker og brettekanter, kurslinjer fra kompassrosa,
+  prikkete dybdekurver med tall, vannlinjer langs kysten (seks tynne blekkstreker som blekner
+  utover), skravert land og is, stedsnavn i kursiv og gradert ramme. Sørishavet-arket er mest gulnet.
+  Arket ligger på rederens skrivebord (mørk eik), lampelys oppe til venstre og skygge nede til høyre
+  (kaldere etter 1946). Hval er blå stempler (fire varianter med ujevnt blekk). Båter ovenfra med
+  pipe, kanon og røyk. Arkbytte 1904 og 1925: det gamle arket glir ut (Finnmark med rødt stempel
+  «FANGST FORBUDT 1904»), det nye inn.
+- Juice (feel-lista): før runden var bare 1 (lyd ved fangst og fat) delvis på plass. Nå: 1) grep og
+  slipp har lyd, ringbølger i vannet og sprett på båten; kjøp har arpeggio og bølge; for dyrt har
+  summing. 2) Nesten-bom: «Flokken kom seg!» når en flokk under en firedel vokser til halvparten
+  igjen, og «På håret!» når tønna så vidt klarer nyttår. 3) Stemplet løftes av og blir et fat, unger
+  popper fram lysere, en død flokk trekker seg sammen til et blekk-kryss, båter til salgs kommer med
+  en rav bølge. 4) Årstallet stemples, «GRØNT ÅR (x2)» slås i kartusjen, tønna spretter når fat
+  kommer inn, «+olje» ved havna.
+- Tekst (`useArcadeText`): tre lærings-øyeblikk (rød ring, nyttår 1880, kokeriet 1925), lapper ved
+  tingen (start, til salgs, for dyrt, flokk borte, tønna snart tom, taster), banner ved nytt hav,
+  «Dette skjedde» med det eleven gjorde (år drevet, hval tatt, flokker som døde eller ble reddet).
+- Simuleringen (200 runder per robot): forvalter (vinner) 100 %, median 184; halvgod (middels) 87 %,
+  median 162; sparsom (taper) 0 %, median 151, konkurs rundt 1932; grådig (taper) 0 %, tomt hav 1888;
+  tilfeldig 0 %, konkurs 1881; passiv 0 %, konkurs 1900. Trapp 151 < 162 < 184. 27,5 valg per minutt,
+  press 0,46 -> 0,85 -> 0,97. Selvspill: alle porter grønne, forvalteren vant med 190 poeng.
+  Scene-audit grønn. Likhetsvakt grønn (nærmest tinghuset 0,43).
+- Hva som IKKE virket:
+  - Fast stasjonskost 7 i Sørishavet: forvalteren vant bare 25 % (konkurs 1929). 5 med båt 2 og kokeri 4 virker.
+  - Halvgod som kjøper alt (reserve 0) og lar båter ligge ute: gikk konkurs i 1927, under sparsom.
+  - Grønt år målt per flokk (hver fanget flokk minst like stor): sparsom fikk flere poeng enn
+    forvalteren. Tilbake til «havet krympet ikke».
+  - Startflokkene på 12 og 14 (under 75 % av maks): forvalteren lot dem hvile i 15 år, tønna var
+    nesten tom i 1880, og den tapte i nettleseren i 1881. Nå 16/21 og 21/28.
+  - Plakaten etter 20 s (Finnmark) og etter 115 s med det første papiret var for lik tinghuset
+    (0,55-0,61, samme beige). Skrivebordet rundt arket og et mer gulnet Antarktis-ark (som
+    kunstbriefen sier) løste det. Plakaten er tatt etter 115 s (Sørishavet, `--cover-at 115`).
+- Kjente svakheter:
+  - Sparsom lever til 1932 (briefen ville før 1910). Poengtrappen holder, men det er lenge.
+  - Overgangen til Sørishavet (1925-1928) er der nesten alle tap skjer: kokeri og båt koster 24 på en
+    gang, og stasjonen blir dyrere. Lærings-øyeblikket om kokeriet sier ikke at det er dyrt.
+  - Seieren avslutter runden i 1969 (briefen ville at spillet gikk videre). Funn er ikke laget.
+  - Gamle tap-bilder (`tap-*.png`) i kontaktarket er fra gråboksen; denne runden spilte bare
+    forvalter og passiv i nettleseren.

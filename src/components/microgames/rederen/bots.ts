@@ -29,12 +29,24 @@ interface Vett {
     maksUte: number;
     /** Henter båter uten flokk hjem, så de koster lite. */
     hjemTom: boolean;
+    /** Kjøper en båt til salgs når tønna har så mange års drift i tillegg til prisen (null = aldri). */
+    kjøpReserve: number | null;
 }
 
 /** Flokken båten ligger ved (eller er på vei til). */
 function flokkVed(g: Game, b: Båt): Flokk | null {
     if (b.hjemme) return null;
     return g.flokker.find((f) => f.id === b.følger && !f.død) ?? null;
+}
+
+/** Midt i de levende flokkene, vektet etter antall hval. */
+function midten(g: Game) {
+    const lev = g.flokker.filter((f) => !f.død);
+    const sum = lev.reduce((s, f) => s + f.n, 0) || 1;
+    return {
+        x: lev.reduce((s, f) => s + f.cx * f.n, 0) / sum,
+        y: lev.reduce((s, f) => s + f.cy * f.n, 0) / sum,
+    };
 }
 
 function vett(v: Vett) {
@@ -47,18 +59,28 @@ function vett(v: Vett) {
             const lav = presset ? v.lav * 0.7 : v.lav;
             const høy = presset ? v.høy * 0.75 : v.høy;
 
+            // Kjøp: en båt til salgs, og en stor flokk uten båt å sende den til.
+            const tilSalgs = g.båter.find((b) => b.tilbud);
+            if (tilSalgs && v.kjøpReserve !== null) {
+                const har = g.tønne >= tilSalgs.pris + årsKost(g) * v.kjøpReserve;
+                const ledig = g.flokker.filter(
+                    (k) => !k.død && k.n >= k.maks * v.høy && !g.båter.some((b) => b.følger === k.id)
+                );
+                if (har && (tilSalgs.kokeri || ledig.length)) {
+                    const k = tilSalgs.kokeri ? midten(g) : ledig[0];
+                    return send(g, tilSalgs.id, k.x, k.y);
+                }
+            }
+
             // Kokeriet: legg det midt i de levende flokkene.
-            const kokeri = g.båter.find((b) => b.kokeri);
+            const kokeri = g.båter.find((b) => b.kokeri && !b.tilbud);
             if (kokeri && g.t - kokeriSist > 8) {
-                const lev = g.flokker.filter((f) => !f.død);
-                const sum = lev.reduce((s, f) => s + f.n, 0) || 1;
-                const x = lev.reduce((s, f) => s + f.cx * f.n, 0) / sum;
-                const y = lev.reduce((s, f) => s + f.cy * f.n, 0) / sum;
+                const { x, y } = midten(g);
                 kokeriSist = g.t;
                 if (dist(kokeri.tx, kokeri.ty, x, y) > 60) return send(g, kokeri.id, x, y);
             }
 
-            const båter = g.båter.filter((b) => !b.kokeri);
+            const båter = g.båter.filter((b) => !b.kokeri && !b.tilbud);
             const opptatt = new Set<number>();
             for (const b of båter) {
                 const f = flokkVed(g, b);
@@ -97,34 +119,39 @@ export const BOTS: Record<string, BotDef> = {
     forvalter: {
         forventer: 'vinner',
         beskrivelse:
-            'Sender ut så mange båter som det finnes store flokker, én båt per flokk, flytter båten når flokken blir liten og lar den hvile - båter uten flokk går hjem.',
-        make: vett({ lav: 0.55, høy: 0.75, hver: 1, tønneVett: true, maksUte: 99, hjemTom: true }),
+            'Kjøper en båt når tønna har råd og en stor flokk er ledig, sender én båt per stor flokk, flytter båten når flokken blir liten og lar den hvile - båter uten flokk går hjem.',
+        make: vett({ lav: 0.55, høy: 0.75, hver: 1, tønneVett: true, maksUte: 99, hjemTom: true, kjøpReserve: 1.5 }),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
             'Følger samme regel, men tar flokkene lenger ned før den flytter, reagerer seint, og lar båter uten flokk ligge ute og koste full pris.',
-        make: vett({ lav: 0.3, høy: 0.5, hver: 4, tønneVett: false, maksUte: 99, hjemTom: false }),
+        make: vett({ lav: 0.3, høy: 0.5, hver: 4, tønneVett: false, maksUte: 99, hjemTom: true, kjøpReserve: 0.5 }),
     },
     grådig: {
         forventer: 'taper',
-        beskrivelse: 'Sender alle båtene ut til den største flokken, uten å se på ringen.',
+        beskrivelse: 'Kjøper alt den har råd til og sender båtene til den største flokken. Blir liggende til flokken er tom, uten å se på ringen.',
         make: () => {
             let tick = 0;
             return (g) => {
                 const lev = g.flokker.filter((f) => !f.død);
                 if (!lev.length) return;
                 const stor = lev.reduce((a, f) => (f.n > a.n ? f : a));
-                const båter = g.båter.filter((b) => !b.kokeri);
+                // Kjøper alt som står til salgs, så fort tønna har råd.
+                const salg = g.båter.find((b) => b.tilbud && !b.kokeri && g.tønne >= b.pris);
+                if (salg) return send(g, salg.id, stor.x, stor.y);
+                const båter = g.båter.filter((b) => !b.kokeri && !b.tilbud);
                 const b = båter[tick++ % båter.length];
-                if (b.følger !== stor.id) send(g, b.id, stor.x, stor.y);
+                // Blir liggende til flokken er tom, så går den til den største.
+                const nå = g.flokker.find((f) => f.id === b.følger && !f.død);
+                if (!nå) send(g, b.id, stor.x, stor.y);
             };
         },
     },
     sparsom: {
         forventer: 'taper',
-        beskrivelse: 'Passer godt på hvalene, men sender bare én båt ut - for lite olje til å betale for resten.',
-        make: vett({ lav: 0.5, høy: 0.7, hver: 1, tønneVett: false, maksUte: 1, hjemTom: true }),
+        beskrivelse: 'Passer godt på hvalene, men kjøper aldri båter og har bare én ute - for lite olje til å betale for stasjonen.',
+        make: vett({ lav: 0.5, høy: 0.7, hver: 1, tønneVett: false, maksUte: 1, hjemTom: true, kjøpReserve: null }),
     },
     tilfeldig: {
         forventer: 'taper',

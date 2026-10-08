@@ -1,26 +1,20 @@
-// Gråboksen: hele bildet med enkle former. Leser bare spillet.
-// Det skal forklare uten tekst: svarte båter er dine, blå prikker er hval, ringen rundt
-// flokken er en målestokk (jo mer ring, jo flere hval igjen) som er grønn når flokken vokser
-// og rød når den krymper, og fatene ruller hjem til tønna. Tidslinja nederst viser målet: 1968.
+// Scenen: kartarket, flokkene som blå stempler med ring, båtene sett ovenfra, fatene som ruller
+// hjem, effektene og lampelyset. HUD-en (kartusj, regnskap, tidslinje) ligger i hud.ts.
+// Leser bare spillet og effektene.
 
 import type { ArcadeView } from '../arcade/useArcade';
-import type { Båt, Game } from './game';
-import { BRETT, KART } from './levels';
-import { årsKost } from './rules';
+import { ark, P, SERIF, stempel, STEMPEL } from './ark';
+import { glatt, UNGE_SEK, type Fx } from './fx';
+import type { Båt, Flokk, Game } from './game';
+import { tegnHud, tegnTap } from './hud';
+import { KART, type Kart } from './levels';
+import { fangerFra } from './rules';
 import { TUNING } from './tuning';
 
 const T = TUNING;
+const R = T.fangst.radius;
 
-export const P = {
-    papir: '#ece3cb',
-    land: '#d4b783',
-    blekk: '#1e2a35',
-    hval: '#3a5878',
-    grønn: '#5e8a58',
-    rød: '#a83a26',
-    rav: '#c58a2c',
-    grå: '#9a9483',
-};
+export { P };
 
 export interface Skala {
     s: number;
@@ -28,16 +22,29 @@ export interface Skala {
     oy: number;
 }
 
+/** Kartarket ligger på rederens skrivebord: litt kant av bordet synes rundt arket. */
+const BORD = { x: 34, y: 22 };
+
 export const skala = (w: number, h: number): Skala => {
-    const s = Math.min(w / 960, h / 540);
+    const s = Math.min(w / (960 + BORD.x * 2), h / (540 + BORD.y * 2));
     return { s, ox: (w - 960 * s) / 2, oy: (h - 540 * s) / 2 };
 };
 
-export interface Lapp {
-    tekst: string;
-    x: number;
-    y: number;
-    igjen: number;
+/** Skrivebordet: mørk eik med årer, og skyggen av arket. */
+function tegnBord(ctx: CanvasRenderingContext2D) {
+    ctx.fillStyle = '#3a2717';
+    ctx.fillRect(-300, -300, 1560, 1140);
+    ctx.lineWidth = 2;
+    for (let i = 0; i < 40; i++) {
+        const y = -40 + i * 16;
+        ctx.strokeStyle = i % 3 ? 'rgba(20,10,4,0.28)' : 'rgba(120,80,40,0.18)';
+        ctx.beginPath();
+        ctx.moveTo(-300, y);
+        for (let x = -300; x <= 1260; x += 60) ctx.lineTo(x, y + Math.sin(x * 0.011 + i * 1.7) * 5);
+        ctx.stroke();
+    }
+    ctx.fillStyle = 'rgba(0,0,0,0.45)';
+    ctx.fillRect(8, 10, 960, 540);
 }
 
 /** En oljedråpe som flyr fra tønna til en båt ved årsskiftet. */
@@ -48,186 +55,459 @@ export interface Dråpe {
 }
 
 export interface TegneValg {
-    /** Tønna slik den vises: synker mykt etter årsskiftet. */
     tønneVist: number;
     dråper: Dråpe[];
     meny: boolean;
-    lapper: Lapp[];
     klokke: number;
-    /** Båten eleven holder i nå, og hvor pekeren er. */
     drar: { id: number; x: number; y: number } | null;
-    /** Valgt båt (klikk eller tastatur). */
     valgt: number | null;
-    /** Sikte for tastaturet. */
     sikte: { x: number; y: number } | null;
-    /** Hint: pil fra båt til flokk (start) eller fra båt til havna (første røde ring). */
-    hint: { fra: { x: number; y: number }; til: { x: number; y: number }; hånd?: boolean } | null;
-    /** Rekordåret som blyantmerke i kanten. */
+    /** Start-hintet: fast pil fra båten til den grønne flokken. */
+    hint: { fra: { x: number; y: number }; til: { x: number; y: number } } | null;
     rekord: number;
+    /** Ukesnivået: lav tegner færre småting (samme spill). */
+    lav: boolean;
 }
 
-function tegnLand(ctx: CanvasRenderingContext2D, g: Game) {
-    ctx.fillStyle = P.papir;
-    ctx.fillRect(0, 0, 960, 540);
-    ctx.fillStyle = P.land;
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 2;
-    for (const l of KART[g.kart].land) {
-        ctx.beginPath();
-        l.p.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-        ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-    }
-}
+/** Hvor tønna står (dråpene flyr herfra). Den står i regnskapet øverst til høyre. */
+export const tønnePos = () => ({ x: 722, y: 62 });
 
-/** Hvor tønna står ved havna (dråpene flyr herfra). */
-export const tønnePos = (g: Game) => ({ x: g.havn.x + 26, y: g.havn.y - 16 });
+// ---------------------------------------------------------------- flokkene
 
-/** Hvor mange år tønna holder med de båtene som er ute nå. */
-export const årIgjen = (g: Game) => {
-    const kost = årsKost(g);
-    return kost > 0 ? Math.max(0, Math.floor(g.tønne / kost)) : 99;
-};
-
-function tegnHavn(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg, varsel = false) {
-    const { x, y } = g.havn;
-    ctx.fillStyle = P.blekk;
-    ctx.fillRect(x - 8, y - 8, 16, 16);
-    // Tønna er en søyle. Hver strek er ett år med de båtene som er ute nå.
-    const kost = Math.max(0.5, årsKost(g));
-    const ÅR = 6;
-    const fyll = Math.max(0, Math.min(1, o.tønneVist / (kost * ÅR)));
-    const tw = 20;
-    const th = 48;
-    const tx = x + 16;
-    const ty = y - 40;
-    const igjen = årIgjen(g);
-    ctx.fillStyle = P.papir;
-    ctx.fillRect(tx, ty, tw, th);
-    ctx.fillStyle = igjen < 2 ? P.rød : P.rav;
-    ctx.fillRect(tx, ty + th * (1 - fyll), tw, th * fyll);
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 1;
-    for (let i = 1; i < ÅR; i++) {
-        ctx.beginPath();
-        ctx.moveTo(tx, ty + (th * i) / ÅR);
-        ctx.lineTo(tx + 6, ty + (th * i) / ÅR);
-        ctx.stroke();
-    }
-    ctx.strokeStyle = varsel ? P.rød : P.blekk;
-    ctx.lineWidth = varsel ? 4 : 2;
-    ctx.strokeRect(tx, ty, tw, th);
-    // Nedtellingen: når er tønna tom med de båtene som er ute nå?
-    ctx.fillStyle = igjen < 2 ? P.rød : P.blekk;
-    ctx.font = 'bold 13px Georgia, serif';
-    ctx.textAlign = 'right';
-    ctx.fillText(igjen >= 10 ? 'tom om 10+ år' : `tom om ${igjen} år`, x - 12, y - 24);
-    ctx.font = '12px Georgia, serif';
-    ctx.fillStyle = P.blekk;
-    ctx.fillText(g.havn.navn, x - 12, y - 10);
-}
-
-function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
-    for (const f of g.flokker) {
-        if (f.død) {
-            ctx.strokeStyle = P.grå;
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.arc(f.x, f.y, T.fangst.radius, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.strokeStyle = P.blekk;
-            ctx.beginPath();
-            ctx.moveTo(f.x - 8, f.y - 8);
-            ctx.lineTo(f.x + 8, f.y + 8);
-            ctx.moveTo(f.x + 8, f.y - 8);
-            ctx.lineTo(f.x - 8, f.y + 8);
-            ctx.stroke();
-            continue;
-        }
-        // Ringen er en målestokk: buen er hval igjen (full ring = full flokk). Grønn når
-        // flokken vokser, rød når båtene tar mer enn den føder. Blinker når den er nesten tom.
-        const vokser = f.netto >= 0;
-        const andel = Math.min(1, f.n / f.maks);
-        ctx.strokeStyle = P.grå;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.arc(f.x, f.y, T.fangst.radius, 0, Math.PI * 2);
-        ctx.stroke();
-        const blink = andel < 0.3 && Math.sin(klokke * 10) < 0;
-        ctx.globalAlpha = blink ? 0.25 : 1;
-        ctx.strokeStyle = vokser ? P.grønn : P.rød;
-        ctx.lineWidth = 7;
-        ctx.beginPath();
-        ctx.arc(f.x, f.y, T.fangst.radius, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * andel);
-        ctx.stroke();
-        ctx.globalAlpha = 1;
-        // Hvalene: én prikk per hval i en solsikke-spiral.
-        ctx.fillStyle = P.hval;
-        for (let i = 0; i < f.n; i++) {
-            const a = i * 2.4;
-            const r = 5.2 * Math.sqrt(i + 0.5);
-            ctx.beginPath();
-            ctx.arc(f.x + Math.cos(a) * r, f.y + Math.sin(a) * r * 0.8, 3.2, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-}
-
-function tegnBåt(ctx: CanvasRenderingContext2D, b: Båt, nr: number, valgt: boolean) {
-    const w = b.kokeri ? 64 : 40;
-    const h = b.kokeri ? 24 : 20;
-    if (valgt) {
-        ctx.strokeStyle = P.rav;
-        ctx.lineWidth = 3;
-        ctx.strokeRect(b.x - w / 2 - 4, b.y - h / 2 - 4, w + 8, h + 8);
-    }
-    ctx.fillStyle = P.blekk;
+function tegnDødFlokk(ctx: CanvasRenderingContext2D, f: Flokk, t: number) {
+    // Ringen trekker seg sammen til et blekk-kryss, som et vrak på et sjøkart.
+    const k = Math.min(1, t / 0.9);
+    const r = R * (1 - 0.55 * glatt(k));
+    ctx.strokeStyle = k < 1 ? P.rød : 'rgba(30,42,53,0.35)';
+    ctx.lineWidth = k < 1 ? 3 : 1.2;
+    ctx.setLineDash(k < 1 ? [] : [3, 4]);
     ctx.beginPath();
-    ctx.moveTo(b.x - w / 2, b.y - h / 2);
-    ctx.lineTo(b.x + w / 2 - 10, b.y - h / 2);
-    ctx.lineTo(b.x + w / 2, b.y);
-    ctx.lineTo(b.x + w / 2 - 10, b.y + h / 2);
-    ctx.lineTo(b.x - w / 2, b.y + h / 2);
-    ctx.closePath();
-    ctx.fill();
-    ctx.fillStyle = P.papir;
-    ctx.font = 'bold 14px system-ui, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText(b.kokeri ? 'K' : `${nr}`, b.x - 4, b.y + 5);
-}
-
-function stiplet(ctx: CanvasRenderingContext2D, ax: number, ay: number, bx: number, by: number) {
+    ctx.arc(f.x, f.y, k < 1 ? r : R, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    const s = 9 * glatt(k);
+    ctx.strokeStyle = P.blekk;
+    ctx.lineWidth = 2.5;
     ctx.beginPath();
-    ctx.moveTo(ax, ay);
-    ctx.lineTo(bx, by);
+    ctx.moveTo(f.x - s, f.y - s);
+    ctx.lineTo(f.x + s, f.y + s);
+    ctx.moveTo(f.x + s, f.y - s);
+    ctx.lineTo(f.x - s, f.y + s);
     ctx.stroke();
 }
 
-function tegnBåter(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
-    // Prikkete linjer: fra båter som fanger, hjem til havna (eller kokeriet).
-    ctx.setLineDash([3, 6]);
-    ctx.lineWidth = 1.5;
-    ctx.strokeStyle = P.blekk;
-    for (const k of g.fat) stiplet(ctx, k.x, k.y, k.tx, k.ty);
-    // Kurs: båter på vei.
-    ctx.strokeStyle = P.grå;
-    for (const b of g.båter)
-        if (b.x !== b.tx || b.y !== b.ty) stiplet(ctx, b.x, b.y, b.tx, b.ty);
-    ctx.setLineDash([]);
-    ctx.fillStyle = P.rav;
-    for (const k of g.fat) {
+/** Ringen: målestokk (blå bue = hval igjen) og retning (grønn vokser, rød krymper). */
+function tegnRing(ctx: CanvasRenderingContext2D, f: Flokk, klokke: number, mål: boolean) {
+    const andel = Math.min(1, f.n / f.maks);
+    const vokser = f.netto >= 0;
+    const farge = vokser ? P.grønn : P.rød;
+    // Retningsbåndet: akvarell-flate rundt flokken.
+    const blink = !vokser && andel < 0.3 && Math.sin(klokke * 9) < 0;
+    ctx.globalAlpha = blink ? 0.25 : 0.6;
+    ctx.strokeStyle = farge;
+    ctx.lineWidth = 6;
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, R + 6, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    // Piler på båndet: utover når flokken vokser, innover når den krymper. Står stille.
+    ctx.fillStyle = farge;
+    for (let i = 0; i < 4; i++) {
+        const a = Math.PI / 4 + (i * Math.PI) / 2;
+        const ut = vokser ? 1 : -1;
+        const r0 = R + 6 - 5 * ut;
+        const r1 = R + 6 + 6 * ut;
+        const cx = Math.cos(a);
+        const cy = Math.sin(a);
         ctx.beginPath();
-        ctx.arc(k.x, k.y, 4, 0, Math.PI * 2);
+        ctx.moveTo(f.x + cx * r1, f.y + cy * r1);
+        ctx.lineTo(f.x + cx * r0 - cy * 6, f.y + cy * r0 + cx * 6);
+        ctx.lineTo(f.x + cx * r0 + cy * 6, f.y + cy * r0 - cx * 6);
+        ctx.closePath();
         ctx.fill();
     }
+    // Målestokken: tynt spor og blå bue som tømmes.
+    ctx.strokeStyle = 'rgba(30,42,53,0.35)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, R, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.strokeStyle = P.hval;
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, R, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * andel);
+    ctx.stroke();
+    ctx.lineCap = 'butt';
+    if (mål) {
+        ctx.strokeStyle = P.rav;
+        ctx.lineWidth = 2.5;
+        ctx.setLineDash([5, 4]);
+        ctx.beginPath();
+        ctx.arc(f.x, f.y, R + 14, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.setLineDash([]);
+    }
+}
+
+function tegnStempler(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
+    const unger = fx.unger.get(f.id) ?? [];
+    const venstre = -Math.sin(f.fase) * (f.rx / f.ry) < 0;
+    const w = STEMPEL.w;
+    const h = STEMPEL.h;
+    for (let i = 0; i < f.n; i++) {
+        const a = i * 2.39996;
+        const r = 5.4 * Math.sqrt(i + 0.6);
+        const x = f.x + Math.cos(a) * r;
+        const y = f.y + Math.sin(a) * r * 0.82;
+        // De nyeste stemplene er unger: lysere, og de popper fram.
+        const j = i - (f.n - unger.length);
+        let skala = 1;
+        if (j >= 0) {
+            const alder = fx.klokke - unger[j];
+            ctx.globalAlpha = 0.5 + 0.5 * Math.min(1, alder / UNGE_SEK) ** 3;
+            skala = alder < 0.35 ? 0.4 + 1.9 * (alder / 0.35) * (1 - alder / 0.35) + alder / 0.35 * 0.6 : 0.8;
+        }
+        ctx.save();
+        ctx.translate(x, y);
+        if (venstre) ctx.scale(-1, 1);
+        ctx.rotate(((i * 37) % 11) * 0.02 - 0.1);
+        ctx.drawImage(stempel(i), (-w / 2) * skala, (-h / 2) * skala, w * skala, h * skala);
+        ctx.restore();
+        ctx.globalAlpha = 1;
+    }
+}
+
+function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg) {
+    let mål: Flokk | null = null;
+    if (o.drar) {
+        let bd = R;
+        for (const f of g.flokker) {
+            const d = Math.hypot(f.x - o.drar.x, f.y - o.drar.y);
+            if (!f.død && d < bd) {
+                bd = d;
+                mål = f;
+            }
+        }
+    }
+    for (const f of g.flokker) {
+        if (f.død) tegnDødFlokk(ctx, f, fx.døde.get(f.id) ?? 9);
+        else tegnRing(ctx, f, o.klokke, f === mål);
+    }
+    for (const f of g.flokker) if (!f.død) tegnStempler(ctx, f, fx);
+    // Hval som tas: stempelet løftes, krymper og blir et fat.
+    for (const t of fx.tatt) {
+        const k = Math.min(1, t.t / 0.9);
+        const x = t.x + (t.bx - t.x) * glatt(k);
+        const y = t.y + (t.by - t.y) * glatt(k) - Math.sin(k * Math.PI) * 18;
+        ctx.globalAlpha = 1 - k * 0.7;
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(k * 1.2);
+        const s = 1.4 - k;
+        ctx.drawImage(stempel(t.v), (-STEMPEL.w / 2) * s, (-STEMPEL.h / 2) * s, STEMPEL.w * s, STEMPEL.h * s);
+        ctx.restore();
+        ctx.globalAlpha = 1;
+    }
+}
+
+// ---------------------------------------------------------------- båtene
+
+/** Et lite fat (tran) sett fra siden. */
+export function tegnFat(ctx: CanvasRenderingContext2D, x: number, y: number, s = 1) {
+    ctx.fillStyle = P.rav;
+    ctx.strokeStyle = P.blekk;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.ellipse(x, y, 4.5 * s, 5.5 * s, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x - 4.2 * s, y - 2 * s);
+    ctx.lineTo(x + 4.2 * s, y - 2 * s);
+    ctx.moveTo(x - 4.2 * s, y + 2 * s);
+    ctx.lineTo(x + 4.2 * s, y + 2 * s);
+    ctx.stroke();
+}
+
+/** Skroget sett ovenfra, baugen mot +x. Hvalbåten: smal med kanon i baugen. Kokeriet: langt, slipp akter. */
+export function skrog(ctx: CanvasRenderingContext2D, kokeri: boolean) {
+    ctx.beginPath();
+    if (kokeri) {
+        ctx.moveTo(38, 0);
+        ctx.quadraticCurveTo(30, -12, 14, -12);
+        ctx.lineTo(-34, -12);
+        ctx.lineTo(-34, -5);
+        ctx.lineTo(-26, -3);
+        ctx.lineTo(-26, 3);
+        ctx.lineTo(-34, 5);
+        ctx.lineTo(-34, 12);
+        ctx.lineTo(14, 12);
+        ctx.quadraticCurveTo(30, 12, 38, 0);
+    } else {
+        ctx.moveTo(21, 0);
+        ctx.quadraticCurveTo(14, -8, 2, -8);
+        ctx.lineTo(-15, -7);
+        ctx.quadraticCurveTo(-20, 0, -15, 7);
+        ctx.lineTo(2, 8);
+        ctx.quadraticCurveTo(14, 8, 21, 0);
+    }
+    ctx.closePath();
+}
+
+function tegnBåt(ctx: CanvasRenderingContext2D, b: Båt, nr: number, fx: Fx, valgt: boolean, klokke: number) {
+    const kurs = fx.kurs.get(b.id) ?? Math.PI;
+    const h = fx.hopp.get(b.id);
+    const sprett = h !== undefined ? 1 + 0.35 * Math.sin(Math.min(1, h / 0.5) * Math.PI) : 1;
+    const vipp = Math.sin(klokke * 2.1 + b.id) * 0.05;
+    ctx.save();
+    ctx.translate(b.x, b.y);
+    ctx.save();
+    ctx.rotate(kurs + vipp);
+    ctx.scale(sprett, sprett);
+    if (valgt) {
+        ctx.strokeStyle = P.rav;
+        ctx.lineWidth = 6;
+        skrog(ctx, b.kokeri);
+        ctx.stroke();
+    }
+    if (b.tilbud) {
+        // Til salgs: bare omrisset, stiplet, som en båt tegnet med blyant på kartet.
+        ctx.fillStyle = 'rgba(236,227,203,0.85)';
+        skrog(ctx, b.kokeri);
+        ctx.fill();
+        ctx.strokeStyle = P.blekk;
+        ctx.lineWidth = 1.6;
+        ctx.setLineDash([4, 3]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+    } else {
+        ctx.fillStyle = P.blekk;
+        skrog(ctx, b.kokeri);
+        ctx.fill();
+        // Dekk og pipe.
+        ctx.strokeStyle = 'rgba(236,227,203,0.5)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        if (b.kokeri) {
+            ctx.moveTo(-24, 0);
+            ctx.lineTo(28, 0);
+        } else {
+            ctx.moveTo(-12, 0);
+            ctx.lineTo(14, 0);
+        }
+        ctx.stroke();
+        ctx.fillStyle = P.papir;
+        for (const px of b.kokeri ? [-6, 6] : [-6]) {
+            ctx.beginPath();
+            ctx.arc(px, 0, b.kokeri ? 4 : 3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        if (!b.kokeri) {
+            ctx.fillStyle = P.rav;
+            ctx.beginPath();
+            ctx.arc(15, 0, 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    ctx.restore();
+    if (!b.kokeri && !b.tilbud) {
+        // Nummeret står rett, så det kan leses (og tastes).
+        ctx.fillStyle = P.papir;
+        ctx.strokeStyle = P.blekk;
+        ctx.lineWidth = 3;
+        ctx.font = `bold 13px ${SERIF}`;
+        ctx.textAlign = 'center';
+        ctx.strokeText(`${nr}`, 0, -11);
+        ctx.fillText(`${nr}`, 0, -11);
+    }
+    if (b.tilbud) {
+        // Prislappen: et fat og prisen, festet med en snor.
+        ctx.strokeStyle = P.blekk;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, -8);
+        ctx.lineTo(10, -20);
+        ctx.stroke();
+        ctx.fillStyle = P.rav;
+        ctx.fillRect(4, -36, 40, 18);
+        ctx.strokeRect(4, -36, 40, 18);
+        tegnFat(ctx, 13, -27, 0.75);
+        ctx.fillStyle = P.blekk;
+        ctx.font = `bold 13px ${SERIF}`;
+        ctx.textAlign = 'left';
+        ctx.fillText(`${b.pris}`, 20, -22);
+    }
+    ctx.restore();
+}
+
+function tegnBåter(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg) {
+    // Røyken bak båtene.
+    for (const r of fx.røyk) {
+        const k = r.t / (o.lav ? 1.2 : 1.8);
+        ctx.fillStyle = `rgba(30,42,53,${0.28 * (1 - k)})`;
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, 2 + k * 6, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    // Prikkete fangstlinjer fra båter som fanger, hjem til havna eller kokeriet. De flyter hjemover.
+    ctx.setLineDash([2, 6]);
+    ctx.lineWidth = 1.6;
+    ctx.strokeStyle = 'rgba(30,42,53,0.7)';
+    ctx.lineDashOffset = -o.klokke * 24;
+    for (const b of g.båter) {
+        if (!fangerFra(g, b)) continue;
+        const m = mottakFor(g, b);
+        ctx.beginPath();
+        ctx.moveTo(b.x, b.y);
+        ctx.lineTo(m.x, m.y);
+        ctx.stroke();
+    }
+    // Kursen: båter på vei (blyant).
+    ctx.lineDashOffset = 0;
+    ctx.setLineDash([5, 5]);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(30,42,53,0.35)';
+    for (const b of g.båter) {
+        if (Math.hypot(b.x - b.tx, b.y - b.ty) < 2) continue;
+        ctx.beginPath();
+        ctx.moveTo(b.x, b.y);
+        ctx.lineTo(b.tx, b.ty);
+        ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    for (const k of g.fat) tegnFat(ctx, k.x, k.y);
     let nr = 0;
     for (const b of g.båter) {
-        if (!b.kokeri) nr++;
-        tegnBåt(ctx, b, nr, o.valgt === b.id || o.drar?.id === b.id);
+        if (!b.kokeri && !b.tilbud) nr++;
+        tegnBåt(ctx, b, nr, fx, o.valgt === b.id || o.drar?.id === b.id, o.klokke);
     }
-    // Oljedråpene fra årsskiftet: fra tønna til hver båt som er ute.
-    const fra = tønnePos(g);
+}
+
+function mottakFor(g: Game, b: Båt) {
+    let best = { x: g.havn.x, y: g.havn.y };
+    let bd = Math.hypot(b.x - best.x, b.y - best.y);
+    for (const k of g.båter) {
+        if (!k.kokeri || k.tilbud) continue;
+        const d = Math.hypot(b.x - k.x, b.y - k.y);
+        if (d < bd) {
+            bd = d;
+            best = { x: k.x, y: k.y };
+        }
+    }
+    return best;
+}
+
+// ---------------------------------------------------------------- havna, drag og hint
+
+function tegnHavn(ctx: CanvasRenderingContext2D, g: Game, k: Kart, o: TegneValg) {
+    const s = k.sone;
+    const lyser = o.drar !== null;
+    const inne =
+        o.drar && o.drar.x >= s.x0 && o.drar.x <= s.x1 && o.drar.y >= s.y0 && o.drar.y <= s.y1;
+    ctx.fillStyle = inne ? 'rgba(197,138,44,0.35)' : lyser ? 'rgba(197,138,44,0.16)' : 'rgba(30,42,53,0.04)';
+    ctx.fillRect(s.x0, s.y0, s.x1 - s.x0, s.y1 - s.y0);
+    ctx.strokeStyle = lyser ? P.rav : 'rgba(30,42,53,0.45)';
+    ctx.lineWidth = lyser ? 2.5 : 1.2;
+    ctx.setLineDash([6, 4]);
+    ctx.strokeRect(s.x0, s.y0, s.x1 - s.x0, s.y1 - s.y0);
+    ctx.setLineDash([]);
+    // Ankeret: havnas tegn på sjøkartet.
+    const { x, y } = g.havn;
+    ctx.strokeStyle = P.blekk;
+    ctx.fillStyle = P.blekk;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(x, y - 9, 3, 0, Math.PI * 2);
+    ctx.moveTo(x, y - 6);
+    ctx.lineTo(x, y + 8);
+    ctx.moveTo(x - 5, y - 2);
+    ctx.lineTo(x + 5, y - 2);
+    ctx.moveTo(x - 8, y + 3);
+    ctx.quadraticCurveTo(x, y + 12, x + 8, y + 3);
+    ctx.stroke();
+}
+
+function pil(ctx: CanvasRenderingContext2D, fra: { x: number; y: number }, til: { x: number; y: number }, kort = 0) {
+    const a = Math.atan2(til.y - fra.y, til.x - fra.x);
+    const ex = til.x - Math.cos(a) * kort;
+    const ey = til.y - Math.sin(a) * kort;
+    ctx.beginPath();
+    ctx.moveTo(fra.x, fra.y);
+    ctx.lineTo(ex, ey);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath();
+    ctx.moveTo(ex, ey);
+    ctx.lineTo(ex - 14 * Math.cos(a - 0.45), ey - 14 * Math.sin(a - 0.45));
+    ctx.lineTo(ex - 14 * Math.cos(a + 0.45), ey - 14 * Math.sin(a + 0.45));
+    ctx.closePath();
+    ctx.fill();
+}
+
+/** En hånd med pekefinger, som griper båten. */
+function tegnHånd(ctx: CanvasRenderingContext2D, x: number, y: number) {
+    ctx.fillStyle = P.papir;
+    ctx.strokeStyle = P.blekk;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.roundRect(x - 3, y - 2, 7, 16, 3);
+    ctx.fill();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(x + 4, y + 20, 11, 10, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+}
+
+function tegnDragOgHint(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
+    if (o.hint) {
+        // Fast hint: en stiplet pil fra båten til den grønne flokken, og en hånd på båten. Den
+        // pulserer litt i styrke, men står stille.
+        const puls = 0.55 + 0.45 * Math.sin(o.klokke * 3.2);
+        ctx.globalAlpha = 0.45 + 0.4 * puls;
+        ctx.strokeStyle = P.blekk;
+        ctx.fillStyle = P.blekk;
+        ctx.lineWidth = 3;
+        ctx.setLineDash([10, 7]);
+        pil(ctx, o.hint.fra, o.hint.til, R + 14);
+        ctx.globalAlpha = 1;
+        tegnHånd(ctx, o.hint.fra.x + 6, o.hint.fra.y + 4);
+    }
+    if (o.drar) {
+        const b = g.båter.find((k) => k.id === o.drar!.id);
+        if (b) {
+            ctx.strokeStyle = P.blekk;
+            ctx.fillStyle = P.blekk;
+            ctx.lineWidth = 2;
+            ctx.setLineDash([6, 5]);
+            pil(ctx, b, o.drar, 6);
+            // Skyggebåten der den slippes.
+            ctx.save();
+            ctx.translate(o.drar.x, o.drar.y);
+            ctx.rotate(Math.atan2(o.drar.y - b.y, o.drar.x - b.x));
+            ctx.globalAlpha = 0.45;
+            skrog(ctx, b.kokeri);
+            ctx.fill();
+            ctx.restore();
+            ctx.globalAlpha = 1;
+        }
+    }
+    if (o.sikte) {
+        ctx.strokeStyle = P.rav;
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        ctx.arc(o.sikte.x, o.sikte.y, 12, 0, Math.PI * 2);
+        ctx.moveTo(o.sikte.x - 20, o.sikte.y);
+        ctx.lineTo(o.sikte.x + 20, o.sikte.y);
+        ctx.moveTo(o.sikte.x, o.sikte.y - 20);
+        ctx.lineTo(o.sikte.x, o.sikte.y + 20);
+        ctx.stroke();
+    }
+}
+
+function tegnDråper(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
+    const fra = tønnePos();
     ctx.fillStyle = P.rav;
     ctx.strokeStyle = P.blekk;
     ctx.lineWidth = 1.5;
@@ -235,308 +515,108 @@ function tegnBåter(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
         const b = g.båter.find((k) => k.id === d.id);
         if (!b) continue;
         const x = fra.x + (b.x - fra.x) * d.t;
-        const y = fra.y + (b.y - fra.y) * d.t - Math.sin(d.t * Math.PI) * 40;
+        const y = fra.y + (b.y - fra.y) * d.t - Math.sin(d.t * Math.PI) * 60;
+        const s = b.hjemme ? 0.6 : 1.1;
         ctx.beginPath();
-        ctx.moveTo(x, y - 9);
-        ctx.quadraticCurveTo(x + 6, y, x, y + 5);
-        ctx.quadraticCurveTo(x - 6, y, x, y - 9);
+        ctx.moveTo(x, y - 9 * s);
+        ctx.quadraticCurveTo(x + 6 * s, y, x, y + 5 * s);
+        ctx.quadraticCurveTo(x - 6 * s, y, x, y - 9 * s);
         ctx.fill();
         ctx.stroke();
     }
-    if (o.drar) {
-        const b = g.båter.find((k) => k.id === o.drar!.id);
-        if (b) {
-            ctx.setLineDash([6, 5]);
-            ctx.strokeStyle = P.blekk;
-            ctx.lineWidth = 2;
-            stiplet(ctx, b.x, b.y, o.drar.x, o.drar.y);
-            ctx.setLineDash([]);
-            ctx.beginPath();
-            ctx.arc(o.drar.x, o.drar.y, T.fangst.radius, 0, Math.PI * 2);
-            ctx.stroke();
-        }
-    }
-    if (o.sikte) {
-        ctx.strokeStyle = P.rav;
-        ctx.lineWidth = 2;
+}
+
+function tegnBølger(ctx: CanvasRenderingContext2D, fx: Fx) {
+    for (const b of fx.bølger) {
+        const k = b.t / b.liv;
+        ctx.globalAlpha = (1 - k) * 0.8;
+        ctx.strokeStyle = b.farge;
+        ctx.lineWidth = b.tykk;
         ctx.beginPath();
-        ctx.arc(o.sikte.x, o.sikte.y, 10, 0, Math.PI * 2);
-        ctx.moveTo(o.sikte.x - 16, o.sikte.y);
-        ctx.lineTo(o.sikte.x + 16, o.sikte.y);
-        ctx.moveTo(o.sikte.x, o.sikte.y - 16);
-        ctx.lineTo(o.sikte.x, o.sikte.y + 16);
+        ctx.arc(b.x, b.y, 4 + b.r * glatt(k), 0, Math.PI * 2);
         ctx.stroke();
     }
-}
-
-/** En enkel hånd med pekefinger opp: hintet som drar båten. */
-function tegnHånd(ctx: CanvasRenderingContext2D, x: number, y: number) {
-    ctx.fillStyle = P.papir;
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.rect(x - 3, y - 4, 7, 16);
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.ellipse(x + 4, y + 18, 10, 9, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.stroke();
-}
-
-function tegnHint(ctx: CanvasRenderingContext2D, o: TegneValg) {
-    if (!o.hint) return;
-    const { fra, til } = o.hint;
-    if (o.hint.hånd) {
-        // Hånden griper båten og drar en skyggebåt ut til flokken, om og om igjen.
-        const t = Math.min(1, ((o.klokke * 0.5) % 1.3) / 1);
-        const x = fra.x + (til.x - fra.x) * t;
-        const y = fra.y + (til.y - fra.y) * t;
-        ctx.globalAlpha = 0.35;
-        ctx.strokeStyle = P.blekk;
-        ctx.lineWidth = 2;
-        ctx.setLineDash([6, 5]);
-        stiplet(ctx, fra.x, fra.y, x, y);
-        ctx.setLineDash([]);
-        ctx.fillStyle = P.blekk;
-        ctx.fillRect(x - 20, y - 10, 40, 20);
-        ctx.globalAlpha = 1;
-        tegnHånd(ctx, x, y);
-        return;
-    }
-    const puls = 0.5 + 0.5 * Math.sin(o.klokke * 5);
-    ctx.globalAlpha = 0.4 + 0.6 * puls;
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 3;
-    ctx.setLineDash([10, 8]);
-    stiplet(ctx, fra.x, fra.y, til.x, til.y);
-    ctx.setLineDash([]);
-    const a = Math.atan2(til.y - fra.y, til.x - fra.x);
-    ctx.beginPath();
-    ctx.moveTo(til.x, til.y);
-    ctx.lineTo(til.x - 14 * Math.cos(a - 0.5), til.y - 14 * Math.sin(a - 0.5));
-    ctx.moveTo(til.x, til.y);
-    ctx.lineTo(til.x - 14 * Math.cos(a + 0.5), til.y - 14 * Math.sin(a + 0.5));
-    ctx.stroke();
     ctx.globalAlpha = 1;
 }
 
-/** År -> x på tidslinja nederst. */
-const tidX = (år: number) => 40 + ((år - T.tid.start) / (T.tid.seier - T.tid.start)) * 860;
-
-function tegnHud(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
-    // Kartusjen: året, havet og forvalter-poengene som tellestreker (én strek = 5 poeng).
-    ctx.fillStyle = P.papir;
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 2;
-    ctx.fillRect(12, 12, 190, 80);
-    ctx.strokeRect(12, 12, 190, 80);
-    ctx.fillStyle = P.blekk;
-    ctx.textAlign = 'left';
-    ctx.font = 'bold 30px Georgia, serif';
-    ctx.fillText(`${g.år}`, 24, 44);
-    ctx.font = '15px Georgia, serif';
-    ctx.fillText(BRETT[g.brett].hav, 24, 64);
-    ctx.strokeStyle = g.grønnRekke > 1 ? P.grønn : P.blekk;
-    ctx.lineWidth = 1.5;
-    const streker = Math.min(60, Math.floor(g.poeng / 5));
-    for (let i = 0; i < streker; i++) {
-        const gr = Math.floor(i / 5);
-        const k = i % 5;
-        const gx = 24 + (gr % 12) * 14;
-        const gy = 72;
-        ctx.beginPath();
-        if (k < 4) {
-            ctx.moveTo(gx + k * 3, gy);
-            ctx.lineTo(gx + k * 3, gy + 12);
-        } else {
-            ctx.moveTo(gx - 2, gy + 10);
-            ctx.lineTo(gx + 12, gy + 2);
-        }
-        ctx.stroke();
-    }
-
-    // Tidslinja: målet er å holde ut forbi 1968. Merker der du må flytte til et nytt hav.
-    ctx.fillStyle = P.papir;
-    ctx.fillRect(0, 516, 960, 24);
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(0, 516);
-    ctx.lineTo(960, 516);
-    ctx.stroke();
-    ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(tidX(T.tid.start), 530);
-    ctx.lineTo(tidX(T.tid.seier), 530);
-    ctx.stroke();
-    ctx.fillStyle = P.blekk;
-    ctx.fillRect(tidX(T.tid.start), 527, tidX(g.år) - tidX(T.tid.start), 6);
-    ctx.font = '11px Georgia, serif';
-    ctx.textAlign = 'left';
-    ctx.lineWidth = 1.5;
-    for (const b of BRETT) {
-        if (!b.kart || b.fra === T.tid.start) continue;
-        const x = tidX(b.fra);
-        ctx.beginPath();
-        ctx.moveTo(x, 522);
-        ctx.lineTo(x, 538);
-        ctx.stroke();
-        ctx.fillText(b.hav, x + 4, 527);
-    }
-    if (o.rekord > T.tid.start) {
-        ctx.strokeStyle = P.grå;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(tidX(o.rekord), 520);
-        ctx.lineTo(tidX(o.rekord), 540);
-        ctx.stroke();
-    }
-    // Flagget ved 1968.
-    const fx = tidX(1968);
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(fx, 536);
-    ctx.lineTo(fx, 500);
-    ctx.stroke();
-    ctx.fillStyle = P.grønn;
-    ctx.beginPath();
-    ctx.moveTo(fx, 500);
-    ctx.lineTo(fx + 22, 506);
-    ctx.lineTo(fx, 512);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-    ctx.fillStyle = P.blekk;
-    ctx.font = 'bold 12px Georgia, serif';
-    ctx.textAlign = 'right';
-    ctx.fillText('1968', fx - 4, 510);
-    // Her er du nå.
-    const nx = tidX(g.år);
-    ctx.beginPath();
-    ctx.moveTo(nx, 524);
-    ctx.lineTo(nx - 6, 517);
-    ctx.lineTo(nx + 6, 517);
-    ctx.closePath();
-    ctx.fill();
-
-    // Tegnforklaringen: de tre reglene.
-    const lx = 760;
-    const ly = 412;
-    ctx.fillStyle = P.papir;
-    ctx.strokeStyle = P.blekk;
-    ctx.lineWidth = 1.5;
-    ctx.fillRect(lx, ly, 188, 76);
-    ctx.strokeRect(lx, ly, 188, 76);
-    ctx.textAlign = 'left';
-    ctx.font = '12px Georgia, serif';
-    ctx.fillStyle = P.blekk;
-    ctx.fillRect(lx + 8, ly + 9, 18, 10);
-    ctx.fillText('båt ved flokk = tar hval', lx + 32, ly + 18);
-    ctx.lineWidth = 3;
-    ctx.strokeStyle = P.grønn;
-    ctx.beginPath();
-    ctx.arc(lx + 16, ly + 38, 7, -Math.PI / 2, Math.PI * 0.9);
-    ctx.stroke();
-    ctx.fillText('ring = hval igjen', lx + 32, ly + 42);
-    ctx.fillStyle = P.rav;
-    ctx.fillRect(lx + 10, ly + 54, 12, 14);
-    ctx.fillStyle = P.blekk;
-    ctx.fillText('båt ute koster mest olje', lx + 32, ly + 66);
+/** Lampelyset: varmt fra øvre venstre hjørne, mild skygge nede til høyre. Kaldere etter 1946. */
+function tegnLys(ctx: CanvasRenderingContext2D, år: number) {
+    const kald = år >= 1946;
+    const lys = ctx.createRadialGradient(40, 20, 20, 40, 20, 760);
+    lys.addColorStop(0, kald ? 'rgba(235,240,255,0.22)' : 'rgba(255,205,120,0.32)');
+    lys.addColorStop(1, 'rgba(255,214,140,0)');
+    ctx.fillStyle = lys;
+    ctx.fillRect(-200, -200, 1360, 940);
+    const skygge = ctx.createRadialGradient(960, 540, 40, 960, 540, 700);
+    skygge.addColorStop(0, kald ? 'rgba(20,30,50,0.4)' : 'rgba(50,30,10,0.38)');
+    skygge.addColorStop(1, 'rgba(50,30,10,0)');
+    ctx.fillStyle = skygge;
+    ctx.fillRect(-200, -200, 1360, 940);
 }
 
-/** Tapet: bildet fryser, og årsaken lyser opp. */
-function tegnTap(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
-    ctx.fillStyle = 'rgba(236,227,203,0.7)';
-    ctx.fillRect(0, 0, 960, 540);
-    const puls = 0.5 + 0.5 * Math.sin(o.klokke * 6);
-    let tekst: string;
-    if (g.årsak === 'konkurs') {
-        // Båtene som var ute, og tønna de tappet.
-        const fra = tønnePos(g);
-        ctx.strokeStyle = P.rød;
-        ctx.lineWidth = 2;
-        ctx.setLineDash([4, 5]);
-        for (const b of g.båter) if (g.tappere.includes(b.id)) stiplet(ctx, fra.x, fra.y, b.x, b.y);
-        ctx.setLineDash([]);
-        // Båtene på havet (full pris) blinker tydelig, båtene i havna (lite) svakt.
-        let nr = 0;
-        for (const b of g.båter) {
-            if (!b.kokeri) nr++;
-            const ute = g.tappere.includes(b.id);
-            tegnBåt(ctx, b, nr, false);
-            ctx.strokeStyle = P.rød;
-            ctx.lineWidth = ute ? 2 + 2 * puls : 1;
-            const w = b.kokeri ? 38 : 26;
-            ctx.strokeRect(b.x - w, b.y - 16, w * 2, 32);
-        }
-        tegnHavn(ctx, g, o, true);
-        const kost = String(Math.round(årsKost(g) * 10) / 10).replace('.', ',');
-        tekst = `${g.år}: Tønna er tom. Flåten kostet ${kost} olje i året, men fangsten ga for lite.`;
-    } else {
-        // Flokkene som døde, med året.
-        let sist: { navn: string; år: number } | null = null;
-        ctx.textAlign = 'center';
-        for (const f of g.flokker) {
-            ctx.strokeStyle = P.rød;
-            ctx.lineWidth = 3 + 2 * puls;
-            ctx.beginPath();
-            ctx.arc(f.x, f.y, T.fangst.radius, 0, Math.PI * 2);
-            ctx.stroke();
-            ctx.fillStyle = P.blekk;
-            ctx.font = 'bold 14px Georgia, serif';
-            const lapp = f.død ? `${f.navn}: tom ${f.dødÅr}` : `${f.navn}: ${f.n} hval igjen`;
-            ctx.fillText(lapp, f.x, f.y - T.fangst.radius - 8);
-            if (f.død && f.dødÅr !== null && (!sist || f.dødÅr >= sist.år)) sist = { navn: f.navn, år: f.dødÅr };
-        }
-        tekst = sist
-            ? `${g.år}: Havet er tomt. Den siste flokken, ${sist.navn}, forsvant i ${sist.år}.`
-            : `${g.år}: Havet er tomt. Det er for få hval igjen til å få nok unger.`;
-    }
-    ctx.font = 'bold 18px Georgia, serif';
-    const bw = Math.min(940, ctx.measureText(tekst).width + 28);
-    const x = 480 - bw / 2;
-    ctx.fillStyle = P.papir;
+/** Stempelet over det gamle arket når Finnmark stenges. */
+function tegnForbudt(ctx: CanvasRenderingContext2D) {
+    ctx.save();
+    ctx.translate(480, 300);
+    ctx.rotate(-0.12);
     ctx.strokeStyle = P.rød;
-    ctx.lineWidth = 3;
-    ctx.fillRect(x, 456, bw, 36);
-    ctx.strokeRect(x, 456, bw, 36);
-    ctx.fillStyle = P.blekk;
-    ctx.textAlign = 'left';
-    ctx.fillText(tekst, x + 14, 480);
+    ctx.fillStyle = P.rød;
+    ctx.lineWidth = 4;
+    ctx.globalAlpha = 0.85;
+    ctx.strokeRect(-190, -40, 380, 80);
+    ctx.font = `bold 34px ${SERIF}`;
+    ctx.textAlign = 'center';
+    ctx.fillText('FANGST FORBUDT 1904', 0, 12);
+    ctx.restore();
+    // Skravering: kysten er stengt.
+    ctx.strokeStyle = 'rgba(30,42,53,0.18)';
+    ctx.lineWidth = 1;
+    for (let x = -540; x < 960; x += 10) {
+        ctx.beginPath();
+        ctx.moveTo(x, 540);
+        ctx.lineTo(x + 540, 0);
+        ctx.stroke();
+    }
 }
 
-export function tegn(view: ArcadeView, g: Game, o: TegneValg) {
+export function tegn(view: ArcadeView, g: Game, fx: Fx, o: TegneValg) {
     const { ctx, w, h, dpr } = view;
     const k = skala(w, h);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = P.blekk;
+    ctx.fillStyle = '#3a2717';
     ctx.fillRect(0, 0, w, h);
     ctx.setTransform(dpr * k.s, 0, 0, dpr * k.s, dpr * k.ox, dpr * k.oy);
-    tegnLand(ctx, g);
-    tegnHavn(ctx, g, o);
-    tegnFlokker(ctx, g, o.klokke);
-    tegnBåter(ctx, g, o);
-    tegnHint(ctx, o);
-    if (!o.meny) tegnHud(ctx, g, o);
-    if (!o.meny && g.mode === 'lost') {
-        tegnTap(ctx, g, o);
-        return;
+    tegnBord(ctx);
+    // Arket og alt på det klippes til arket, så arkbyttet ikke tegner utover bordet.
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(0, 0, 960, 540);
+    ctx.clip();
+    const r = k.s * dpr;
+    // Arkbytte: det gamle arket glir opp og ut, det nye kommer nedenfra.
+    const e = fx.arkFra ? glatt(fx.arkT) : 1;
+    const dy = (1 - e) * 540;
+    if (fx.arkFra && fx.arkT < 1) {
+        ctx.save();
+        ctx.translate(0, -e * 540);
+        ctx.drawImage(ark(fx.arkFra, r), 0, 0, 960, 540);
+        if (fx.arkFra === 'finnmark') tegnForbudt(ctx);
+        ctx.restore();
     }
-    for (const l of o.lapper) {
-        ctx.font = 'bold 17px Georgia, serif';
-        const bw = ctx.measureText(l.tekst).width + 24;
-        const x = Math.max(8, Math.min(952 - bw, l.x - bw / 2));
-        ctx.globalAlpha = Math.min(1, l.igjen * 2);
-        ctx.fillStyle = P.papir;
-        ctx.strokeStyle = P.blekk;
-        ctx.lineWidth = 2;
-        ctx.fillRect(x, l.y - 22, bw, 32);
-        ctx.strokeRect(x, l.y - 22, bw, 32);
-        ctx.fillStyle = P.blekk;
-        ctx.textAlign = 'left';
-        ctx.fillText(l.tekst, x + 12, l.y);
-        ctx.globalAlpha = 1;
-    }
+    ctx.save();
+    ctx.translate(0, dy);
+    ctx.drawImage(ark(g.kart, r), 0, 0, 960, 540);
+    const kart = KART[g.kart];
+    if (!o.meny) tegnHavn(ctx, g, kart, o);
+    tegnFlokker(ctx, g, fx, o);
+    tegnBølger(ctx, fx);
+    tegnBåter(ctx, g, fx, o);
+    if (!o.meny) tegnDragOgHint(ctx, g, o);
+    ctx.restore();
+    ctx.restore();
+    tegnLys(ctx, g.år);
+    if (o.meny) return;
+    tegnDråper(ctx, g, o);
+    tegnHud(ctx, g, fx, o);
+    if (g.mode === 'lost') tegnTap(ctx, g, o.klokke);
 }

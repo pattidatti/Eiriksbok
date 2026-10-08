@@ -2,11 +2,11 @@
 // sakte, og hver båt koster olje ved hvert årsskifte - mye på havet, lite i havna. Ren TypeScript: komponenten,
 // robotene og simuleringen kjører den samme koden.
 
-import { BRETT, KART, brettFor, type KartId } from './levels';
+import { BRETT, KART, brettFor, iSone, type KartId } from './levels';
 import {
     dist,
     fangerFra,
-    flåteFor,
+    fastKost,
     fødselsrate,
     havnKost,
     hvalIHavet,
@@ -36,13 +36,15 @@ export interface Flokk {
     x: number;
     y: number;
     død: boolean;
-    /** Født og tatt hittil i år (ringen og loggboka). */
+    /** Født og tatt hittil i år. */
     født: number;
     tatt: number;
     /** Netto per sekund akkurat nå: fødsler minus fangst. Ringen er grønn når den er >= 0. */
     netto: number;
     /** Året flokken døde (for tap-bildet). */
     dødÅr: number | null;
+    /** Har vært nesten tom (under en firedel): blir den stor igjen, er den reddet. */
+    kritisk: boolean;
 }
 
 export interface Båt {
@@ -56,6 +58,9 @@ export interface Båt {
     klokke: number;
     /** Ligger (eller seiler) i havna: koster lite. */
     hjemme: boolean;
+    /** Står til salgs i havna. Dra den ut for å kjøpe (koster `pris` fra tønna). */
+    tilbud: boolean;
+    pris: number;
     /** Flokken båten følger etter, og hvor ved flokken den ligger. */
     følger: number | null;
     ox: number;
@@ -71,12 +76,21 @@ export interface Fat {
 
 export type Hendelse =
     | { type: 'brett'; brett: number }
-    | { type: 'båt'; id: number }
+    | { type: 'tilbud'; id: number }
+    | { type: 'kjøp'; id: number; pris: number }
+    | { type: 'forDyr'; id: number }
+    | { type: 'reddet'; flokk: number }
     | { type: 'fangst'; x: number; y: number; flokk: number }
     | { type: 'unge'; flokk: number }
     | { type: 'død'; flokk: number }
     | { type: 'fat' }
-    | { type: 'årsskifte'; kost: number; grønt: boolean; betalt: { id: number; kost: number }[] }
+    | {
+          type: 'årsskifte';
+          kost: number;
+          inn: number;
+          grønt: boolean;
+          betalt: { id: number; kost: number }[];
+      }
     | { type: 'slipp'; id: number }
     | { type: 'tap'; årsak: Årsak }
     | { type: 'seier' };
@@ -108,6 +122,11 @@ export interface Game {
     totaltTatt: number;
     /** Båtene som var ute (full pris) ved siste årsskifte. */
     tappere: number[];
+    /** Regnskapet: olje inn hittil i år, og fjorårets inn og ut (vises ved tønna og i tap-bildet). */
+    innIÅr: number;
+    sist: { år: number; inn: number; ut: number; fast: number } | null;
+    /** Neste båt til salgs (indeks i TUNING.tilbud). */
+    tilbudNeste: number;
     nesteId: number;
     hendelser: Hendelse[];
     rng: () => number;
@@ -136,6 +155,7 @@ function leggTilFlokker(g: Game, brett: number) {
             tatt: 0,
             netto: 0,
             dødÅr: null,
+            kritisk: false,
         };
         const p = sløyfe(f, f.fase, g.t);
         f.x = p.x;
@@ -144,15 +164,13 @@ function leggTilFlokker(g: Game, brett: number) {
     }
 }
 
-/** Båtens faste plass i havna: på rad under havna, kokeriet til venstre. */
+/** Båtens faste plass i havna (plassene står i kartarket), kokeriet på sin egen plass. */
 export function havnPlass(g: Game, b: Båt) {
-    if (b.kokeri) return { x: g.havn.x - T.båt.havnPlass.kokeriDx, y: g.havn.y };
-    const i = g.båter.filter((k) => !k.kokeri).indexOf(b);
-    const { dx, dy, rad } = T.båt.havnPlass;
-    return {
-        x: g.havn.x + ((i % rad) - (rad - 1) / 2) * dx,
-        y: g.havn.y + dy * (1 + Math.floor(i / rad)),
-    };
+    const k = KART[g.kart];
+    if (b.kokeri) return { x: k.kokeriPlass[0], y: k.kokeriPlass[1] };
+    const i = g.båter.filter((v) => !v.kokeri).indexOf(b);
+    const p = k.plasser[Math.max(0, i) % k.plasser.length];
+    return { x: p[0], y: p[1] };
 }
 
 function tilHavn(g: Game, b: Båt) {
@@ -163,8 +181,8 @@ function tilHavn(g: Game, b: Båt) {
     b.følger = null;
 }
 
-function nyBåt(g: Game, kokeri: boolean) {
-    // Nye båter legger seg i havna. Der koster de lite til eleven sender dem ut.
+function nyBåt(g: Game, kokeri: boolean, pris = 0): Båt {
+    // Nye båter legger seg i havna. Til salgs koster de ingenting før eleven kjøper dem.
     const b: Båt = {
         id: g.nesteId++,
         kokeri,
@@ -174,6 +192,8 @@ function nyBåt(g: Game, kokeri: boolean) {
         ty: 0,
         klokke: T.fangst.intervall,
         hjemme: true,
+        tilbud: pris > 0,
+        pris,
         følger: null,
         ox: 0,
         oy: 0,
@@ -182,14 +202,18 @@ function nyBåt(g: Game, kokeri: boolean) {
     tilHavn(g, b);
     b.x = b.tx;
     b.y = b.ty;
-    g.hendelser.push({ type: 'båt', id: b.id });
+    return b;
 }
 
-/** Flåten vokser av seg selv: nye båter og kokeriet legger seg i havna. */
-function fyllFlåten(g: Game) {
-    const vil = flåteFor(g.år);
-    while (g.båter.filter((b) => !b.kokeri).length < vil) nyBåt(g, false);
-    if (g.år >= T.kokeriFra && !g.båter.some((b) => b.kokeri)) nyBåt(g, true);
+/** Ny teknikk: en båt (eller kokeriet) legger seg til salgs i havna. Eleven velger selv om den kjøpes. */
+function fyllTilbud(g: Game) {
+    const liste = T.tilbud;
+    while (g.tilbudNeste < liste.length && liste[g.tilbudNeste].fra <= g.år) {
+        if (g.båter.filter((b) => b.tilbud).length >= T.maksTilbud) return;
+        const t = liste[g.tilbudNeste++];
+        const b = nyBåt(g, t.kokeri, t.pris);
+        g.hendelser.push({ type: 'tilbud', id: b.id });
+    }
 }
 
 function startBrett(g: Game, brett: number) {
@@ -198,6 +222,7 @@ function startBrett(g: Game, brett: number) {
     if (def.kart) {
         // Nytt kartark: det gamle havet er stengt. Fat underveis kommer hjem, båtene seiler hjem.
         g.tønne += g.fat.length * T.fangst.fatVerdi;
+        g.innIÅr += g.fat.length * T.fangst.fatVerdi;
         g.fat = [];
         g.kart = def.kart;
         g.havn = { ...KART[def.kart].havn };
@@ -235,12 +260,25 @@ export function newGame(seed: number): Game {
         tattIÅr: 0,
         totaltTatt: 0,
         tappere: [],
+        innIÅr: 0,
+        sist: null,
+        tilbudNeste: 0,
         nesteId: 1,
         hendelser: [],
         rng: mulberry(seed),
     };
     startBrett(g, 0);
-    fyllFlåten(g);
+    for (let i = 0; i < T.startBåter; i++) nyBåt(g, false);
+    // Den siste båten er alt ute ved den nærmeste flokken: ringen er rød fra første sekund.
+    const ute = g.båter[g.båter.length - 1];
+    const nær = g.flokker[0];
+    ute.hjemme = false;
+    ute.følger = nær.id;
+    ute.ox = T.båt.følgAvstand;
+    ute.oy = 0;
+    ute.x = ute.tx = nær.x + ute.ox;
+    ute.y = ute.ty = nær.y;
+    fyllTilbud(g);
     return g;
 }
 
@@ -256,10 +294,22 @@ export function send(g: Game, id: number, x: number, y: number) {
     const { w, h } = T.flate;
     x = Math.max(10, Math.min(w - 10, x));
     y = Math.max(10, Math.min(h - 10, y));
+    const iHavna = iSone(KART[g.kart], x, y);
+    if (b.tilbud) {
+        // Kjøpet: dra båten ut av havna. Har tønna ikke nok olje, blir den stående.
+        if (iHavna) return;
+        if (g.tønne < b.pris) {
+            g.hendelser.push({ type: 'forDyr', id });
+            return;
+        }
+        g.tønne -= b.pris;
+        b.tilbud = false;
+        g.hendelser.push({ type: 'kjøp', id, pris: b.pris });
+    }
     const fraX = b.tx;
     const fraY = b.ty;
     const varHjemme = b.hjemme;
-    if (dist(x, y, g.havn.x, g.havn.y) < T.båt.havnSnap) {
+    if (iHavna) {
         tilHavn(g, b);
     } else {
         b.hjemme = false;
@@ -290,7 +340,7 @@ function mottak(g: Game, x: number, y: number) {
     let best = { x: g.havn.x, y: g.havn.y };
     let bd = dist(x, y, best.x, best.y);
     for (const b of g.båter) {
-        if (!b.kokeri) continue;
+        if (!b.kokeri || b.tilbud) continue;
         const d = dist(x, y, b.x, b.y);
         if (d < bd) {
             bd = d;
@@ -304,16 +354,18 @@ function årsskifte(g: Game) {
     const kost = årsKost(g);
     const betalt = g.båter.map((b) => ({ id: b.id, kost: havnKost(g, b) }));
     g.tappere = g.båter.filter((b) => !b.hjemme).map((b) => b.id);
-    const hval = hvalIHavet(g);
-    const grønt = g.tattIÅr > 0 && hval >= g.hvalVedÅrStart;
+    // Grønt år: du fanget, og havet har minst like mange hval som da året begynte.
+    const grønt = g.tattIÅr > 0 && hvalIHavet(g) >= g.hvalVedÅrStart;
     g.grønnRekke = grønt ? g.grønnRekke + 1 : 0;
     if (grønt) g.grønneÅr++;
     const bonus = T.poeng.grønnBonus;
     g.poeng += T.poeng.perÅr + (grønt ? bonus[Math.min(g.grønnRekke, bonus.length) - 1] : 0);
     g.tønne -= kost;
-    g.hendelser.push({ type: 'årsskifte', kost, grønt, betalt });
+    g.sist = { år: g.år, inn: g.innIÅr, ut: kost, fast: fastKost(g.år) };
+    g.hendelser.push({ type: 'årsskifte', kost, inn: g.innIÅr, grønt, betalt });
     g.år++;
     g.tattIÅr = 0;
+    g.innIÅr = 0;
     for (const f of g.flokker) f.født = f.tatt = 0;
     if (g.tønne < 0) {
         if (g.år <= T.økonomi.gulvTil) g.tønne = 0;
@@ -326,7 +378,7 @@ function årsskifte(g: Game) {
     }
     const b = brettFor(g.år);
     if (b !== g.brett) startBrett(g, b);
-    fyllFlåten(g);
+    fyllTilbud(g);
     g.hvalVedÅrStart = hvalIHavet(g);
 }
 
@@ -351,6 +403,11 @@ export function update(g: Game, dt: number) {
             f.n++;
             f.født++;
             g.hendelser.push({ type: 'unge', flokk: f.id });
+        }
+        if (!f.død && f.n < f.maks * 0.25) f.kritisk = true;
+        if (f.kritisk && f.n >= f.maks * 0.5) {
+            f.kritisk = false;
+            g.hendelser.push({ type: 'reddet', flokk: f.id });
         }
     }
 
@@ -404,6 +461,7 @@ export function update(g: Game, dt: number) {
         const d = dist(k.x, k.y, k.tx, k.ty);
         if (d <= fv) {
             g.tønne += T.fangst.fatVerdi;
+            g.innIÅr += T.fangst.fatVerdi;
             g.hendelser.push({ type: 'fat' });
             return false;
         }

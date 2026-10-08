@@ -1,15 +1,43 @@
-// Tekstene i Rederens kart: mål, regler, tips og «Dette skjedde». Tonen er alvorlig og saklig.
+// Tekstene i Rederens kart: mål, regler, lapper, lærings-øyeblikk, tips og «Dette skjedde».
+// Tonen er alvorlig og saklig. Lapper maks 7 ord, lærings-øyeblikk én setning (maks ~20 ord).
 
 import type { Årsak } from './game';
 
 export const MÅL =
-    'Du er rederen. Send hvalbåtene ut og hold selskapet i live til 1968 - uten å tømme havet.';
+    'Du er rederen. Hold selskapet i live forbi 1968 - uten å tømme havet.';
 
 export const REGLER = [
-    'Dra en båt ut til en flokk med blå prikker. Båten tar hval, og fatene ruller hjem til tønna.',
-    'Ringen rundt flokken viser hvor mange hval som er igjen. Den er grønn når flokken vokser og rød når båtene tar mer enn det blir født.',
-    'En båt på havet koster mye olje hvert år. I havna koster den lite. Du velger selv hvor mange som er ute. Tom tønne betyr konkurs.',
+    'Dra en båt ut til en flokk. Båten tar hval, og fatene ruller hjem til tønna.',
+    'Grønn ring: flokken vokser. Rød ring: båtene tar flere hval enn det blir født.',
+    'Hvert nyttår koster båtene olje. Ute koster de mye, i havna lite.',
 ];
+
+/** Lappene ved tingen (maks 7 ord). */
+export const LAPP = {
+    start: 'Dra båten ut til hvalene',
+    tilSalgs: 'Til salgs: dra ut for å kjøpe',
+    forDyr: 'For lite olje i tønna',
+    død: 'Flokken er borte for godt',
+    tom: 'Tønna er snart tom',
+    kokeri: 'Kokeriet: en flytende havn',
+    taster: 'Piltaster sikter, mellomrom sender',
+};
+
+/** Lærings-øyeblikkene (fagkjernen). Maks tre per runde. */
+export const ØYEBLIKK = {
+    rød: {
+        tittel: 'Rød ring: flokken krymper',
+        tekst: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Dra båten bort, så flokken får hvile.',
+    },
+    nyttår: {
+        tittel: 'Nyttår: båtene koster olje',
+        tekst: 'Hvert nyttår betaler du for stasjonen og båtene. En båt på havet koster mye, i havna lite.',
+    },
+    kokeri: {
+        tittel: 'Kokeriet',
+        tekst: 'Kokeriet kokte hvalen til olje ute på havet. Da kunne fangstfolkene jakte lenger ut, og tømme havet fortere.',
+    },
+};
 
 export const TAP_TITTEL: Record<Årsak, string> = {
     tomt: 'Havet er tomt',
@@ -17,27 +45,28 @@ export const TAP_TITTEL: Record<Årsak, string> = {
 };
 
 export const TIPS: Record<Årsak, string> = {
-    tomt: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Tar du flere hval enn det blir født, krymper flokken - og en liten flokk får færre unger. Flytt båtene bort når ringen blir rød.',
+    tomt: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Tar du flere hval enn det blir født, krymper flokken - og en liten flokk får færre unger. Flytt båten når ringen blir rød.',
     konkurs:
-        'En båt på havet koster mye olje, i havna koster den lite. Send en båt ut bare når en flokk har grønn ring og tåler den. Men har du for få ute, får du ikke nok olje til å betale for resten.',
+        'Fangsten må betale for båtene og stasjonen. Send båtene til flokker med grønn ring, og hent båter uten flokk hjem til havna. Kjøp en ny båt bare når en stor flokk står ledig.',
 };
 
 export const SKJEDDE = {
     tomt: (år: number) =>
-        `${år}: Havet ble tomt. I Finnmark ble det tatt rundt 3500 blåhval før fangsten ble forbudt i 1904.`,
+        `${år}: Havet ble tomt. Slik gikk det med blåhvalen: den ble jaktet nesten helt bort.`,
     konkurs: (år: number) =>
         `${år}: Selskapet gikk konkurs. Båtene kostet penger hvert år, enten de fanget eller ikke.`,
-    seier: 'Norge sluttet i Antarktis i 1968 fordi hvalen var nesten borte. Du holdt havet i live.',
+    seier: 'Norge sluttet å fange hval i Antarktis i 1968 fordi hvalen var nesten borte. Du holdt havet i live.',
+    drift: (år: number, hval: number) => `Du drev selskapet i ${år} år og tok ${hval} hval.`,
+    død: (navn: string, år: number) =>
+        `Flokken ${navn} ble borte i ${år}. En liten flokk får for få unger til å vokse igjen.`,
+    reddet: 'Du lot en nesten tom flokk være i fred, og den vokste igjen.',
 };
 
 export const LÆRDOM = {
     fødsler:
         'En blåhvalhunn får bare én unge hvert andre eller tredje år. Derfor tåler en flokk bare at det blir tatt litt om gangen.',
+    finnmark: 'I 1904 ble hvalfangst forbudt i Nord-Norge. Fiskerne mente den ødela fisket.',
     teknikk:
         'Ny teknikk som dampbåter, granatharpun og kokerier gjorde at fangstfolkene kunne tømme havet fortere.',
-    rekord:
-        'Sesongen 1930-1931 ble den største noensinne: over 40 000 hval på én sesong.',
+    rekord: 'Sesongen 1930-1931 ble den største noensinne. Det kom mer olje enn verden ville kjøpe.',
 };
-
-export const NYTT_BÅT = 'Ny båt i havna. Der koster den lite.';
-export const HINT_RØD = 'Rød ring: flokken krymper. Flytt båten.';

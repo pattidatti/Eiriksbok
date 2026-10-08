@@ -4,7 +4,7 @@ import type { PlaytestSnapshot } from '../playtest';
 import type { SimSpec } from '../sim';
 import { BOTS } from './bots';
 import { newGame, update, type Game } from './game';
-import { framdrift, hvalIHavet, press } from './rules';
+import { egne, framdrift, hvalIHavet, press } from './rules';
 import { TUNING } from './tuning';
 
 export const GAME_ID = 'rederens-kart';
@@ -12,7 +12,7 @@ export const GAME_ID = 'rederens-kart';
 export function årsakTekst(g: Game): string | undefined {
     if (g.mode !== 'lost') return undefined;
     return g.årsak === 'konkurs'
-        ? `konkurs ${g.år} (${g.båter.length} båter, ${hvalIHavet(g)} hval igjen)`
+        ? `konkurs ${g.år} (${egne(g).length} båter, ${hvalIHavet(g)} hval igjen)`
         : `tomt hav ${g.år} (tatt ${g.totaltTatt} hval)`;
 }
 

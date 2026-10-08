@@ -19,21 +19,25 @@ export const årLengde = (år: number) => fraTabell(T.tid.perioder, år).sek;
 /** Olje per vanlig båt per år. */
 export const vedlikehold = (år: number) => fraTabell(T.økonomi.vedlikehold, år).båt;
 
-/** Hvor mange vanlige båter flåten har dette året. */
-export const flåteFor = (år: number) => fraTabell(T.flåte, år).båter;
+/** Stasjonen på land: fast olje per år. */
+export const fastKost = (år: number) => fraTabell(T.økonomi.fast, år).kost;
 
-/** Hva én båt koster neste årsskifte: full pris på havet, en liten del i havna. */
+/** Hva én båt koster neste årsskifte: full pris på havet, en liten del i havna, ingenting til salgs. */
 export function havnKost(g: Game, b: Båt): number {
+    if (b.tilbud) return 0;
     const full = b.kokeri ? T.økonomi.kokeri : vedlikehold(g.år);
     return b.hjemme ? full * T.økonomi.havnAndel : full;
 }
 
-/** Hva hele flåten koster neste årsskifte. */
+/** Hva hele selskapet koster neste årsskifte: stasjonen pluss båtene. */
 export function årsKost(g: Game): number {
-    let k = 0;
+    let k = fastKost(g.år);
     for (const b of g.båter) k += havnKost(g, b);
     return k;
 }
+
+/** Båtene du eier (ikke de som står til salgs). */
+export const egne = (g: Game) => g.båter.filter((b) => !b.tilbud);
 
 export const dist = (ax: number, ay: number, bx: number, by: number) =>
     Math.hypot(ax - bx, ay - by);
@@ -46,7 +50,7 @@ export const iHavn = (_g: Game, b: Båt) => b.hjemme;
 
 /** Flokken båten fanger fra nå (nærmeste levende innenfor radius), eller null. */
 export function fangerFra(g: Game, b: Båt): Flokk | null {
-    if (b.kokeri || !iRo(b) || iHavn(g, b)) return null;
+    if (b.kokeri || b.tilbud || !iRo(b) || iHavn(g, b)) return null;
     let best: Flokk | null = null;
     let bd = T.fangst.radius;
     for (const f of g.flokker) {
@@ -88,7 +92,7 @@ export const framtid = (f: Flokk, t: number, sek: number) =>
 
 /** Press 0-1: hvor mange båter du må passe på, og hvor fort hvalene vandrer. */
 export function press(g: Game): number {
-    const båter = g.båter.filter((b) => !b.kokeri).length;
+    const båter = g.båter.filter((b) => !b.kokeri && !b.tilbud).length;
     const levende = g.flokker.filter((f) => !f.død);
     const fart = levende.length ? levende.reduce((s, f) => s + f.fart, 0) / levende.length : 0;
     const p = 0.5 * (båter / T.press.maksBåter) + 0.5 * (fart / T.press.maksFart);

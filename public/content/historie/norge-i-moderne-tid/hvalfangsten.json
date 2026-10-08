@@ -124,6 +124,13 @@
       "content": "Nederland, Storbritannia og til slutt Norge trakk seg ut av fangsten. Den siste landstasjonen på Sør-Georgia ble lagt ned i 1966, og det siste norske kokeriet fanget hval i Antarktis i sesongen 1967-1968 (Basberg mfl., 2024). Etter rundt hundre år var det store norske hvaleventyret over."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "rederens-kart"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/placeholder.webp",
       "alt": "Forlatt hvalstasjon med rustne tanker på Sør-Georgia",

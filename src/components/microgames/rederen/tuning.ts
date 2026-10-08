@@ -41,10 +41,6 @@ export const TUNING = {
     båt: {
         fart: 180,
         kokeriFart: 70,
-        /** Slipper du en båt nærmere havna enn dette, legger den seg på plassen sin i havna. */
-        havnSnap: 50,
-        /** Plassene i havna: rader under havna (dx mellom båtene, dy ned), kokeriet til venstre. */
-        havnPlass: { dx: 46, dy: 26, rad: 4, kokeriDx: 80 },
         /** En båt som følger en flokk, ligger høyst så langt fra midten av den (px). */
         følgAvstand: 14,
         /** Et slipp teller som et nytt valg når målet flyttes mer enn dette. */
@@ -58,27 +54,35 @@ export const TUNING = {
             { fra: 1864, båt: 1 },
             { fra: 1880, båt: 1 },
             { fra: 1904, båt: 1.5 },
-            { fra: 1925, båt: 2.5 },
+            { fra: 1925, båt: 2 },
         ],
-        kokeri: 5,
+        kokeri: 4,
         /** En båt i havna koster bare denne delen av full pris. */
         havnAndel: 0.35,
         /** Før dette året kan tønna ikke gå under null (brett 1: lær deg ringen først). */
         gulvTil: 1880,
+        /** Stasjonen og mannskapet på land: fast olje per år, enten du har båter ute eller ikke. */
+        fast: [
+            { fra: 1864, kost: 0 },
+            { fra: 1880, kost: 0.5 },
+            { fra: 1904, kost: 4 },
+            { fra: 1925, kost: 5 },
+        ],
     },
 
-    /** Flåten: antall båter (uten kokeriet) fra hvert år. Nye båter legger seg i havna;
-     *  eleven velger selv hvor mange som går ut. */
-    flåte: [
-        { fra: 1864, båter: 1 },
-        { fra: 1880, båter: 2 },
-        { fra: 1904, båter: 3 },
-        { fra: 1910, båter: 4 },
-        { fra: 1925, båter: 5 },
-        { fra: 1928, båter: 6 },
-        { fra: 1931, båter: 7 },
+    /** Flåten: du starter med så mange båter (én ligger alt ute ved den nærmeste flokken). */
+    startBåter: 2,
+    /** Båter til salgs: legger seg i havna dette året. Eleven kjøper ved å dra dem ut. */
+    tilbud: [
+        { fra: 1880, pris: 6, kokeri: false },
+        { fra: 1904, pris: 8, kokeri: false },
+        { fra: 1910, pris: 8, kokeri: false },
+        { fra: 1925, pris: 14, kokeri: true },
+        { fra: 1925, pris: 10, kokeri: false },
+        { fra: 1928, pris: 10, kokeri: false },
     ],
-    kokeriFra: 1925,
+    /** Høyst så mange båter til salgs i havna samtidig (resten venter). */
+    maksTilbud: 2,
 
     /** Vandring: flokkene følger en sløyfe med litt støy. */
     vandring: {
