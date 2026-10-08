@@ -3,14 +3,8 @@
 
 import type { Årsak } from './game';
 
-export const MÅL =
-    'Du er rederen. Hold selskapet i live forbi 1968 - uten å tømme havet.';
-
-export const REGLER = [
-    'Dra en båt ut til en flokk. Båten tar hval, og fatene ruller hjem til tønna.',
-    'Grønn ring: flokken vokser. Rød ring: båtene tar flere hval enn det blir født.',
-    'Hvert nyttår koster båtene olje. Ute koster de mye, i havna lite.',
-];
+/** Menyen: én linje. Reglene vises i spillet der de trengs (ringen, tønna, oljeprisen). */
+export const MÅL = 'Dra båtene ut til hvalene - og hold havet i live til 1968.';
 
 /** Lappene ved tingen (maks 7 ord). */
 export const LAPP = {
@@ -21,21 +15,26 @@ export const LAPP = {
     tom: 'Tønna er snart tom',
     kokeri: 'Kokeriet: en flytende havn',
     taster: 'Piltaster sikter, mellomrom sender',
+    rød: 'Rød ring: flokken krymper',
+    marked: 'For mange fat senker oljeprisen',
+    finnmark: 'Fangst forbudt i Finnmark',
+    blåhval: 'Blåhvalen er fredet',
+    prisFalt: 'Oljeprisen falt!',
 };
 
 /** Lærings-øyeblikkene (fagkjernen). Maks tre per runde. */
 export const ØYEBLIKK = {
-    rød: {
-        tittel: 'Rød ring: flokken krymper',
-        tekst: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Dra båten bort, så flokken får hvile.',
-    },
     nyttår: {
         tittel: 'Nyttår: båtene koster olje',
         tekst: 'Hvert nyttår betaler du for stasjonen og båtene. En båt på havet koster mye, i havna lite.',
     },
-    kokeri: {
-        tittel: 'Kokeriet',
-        tekst: 'Kokeriet kokte hvalen til olje ute på havet. Da kunne fangstfolkene jakte lenger ut, og tømme havet fortere.',
+    pris: {
+        tittel: 'For mye olje på en gang',
+        tekst: 'Verden kjøper bare så mye olje i året. Kom det mer, falt prisen - også på oljen i tønna. Hent noen båter hjem.',
+    },
+    fredning: {
+        tittel: '1966: blåhvalen fredet',
+        tekst: 'Det var nesten ingen blåhval igjen. Nå var det forbudt å fange dem. Fang fra de andre flokkene.',
     },
 };
 
@@ -49,6 +48,10 @@ export const TIPS: Record<Årsak, string> = {
     konkurs:
         'Fangsten må betale for båtene og stasjonen. Send båtene til flokker med grønn ring, og hent båter uten flokk hjem til havna. Kjøp en ny båt bare når en stor flokk står ledig.',
 };
+
+/** Tipset når prisfallet felte selskapet. */
+export const TIPS_PRIS =
+    'Verden kjøper bare så mye olje i året. Når staven ved tønna går over streken, faller prisen - også på oljen du har. Hent noen båter hjem før det skjer.';
 
 export const SKJEDDE = {
     tomt: (år: number) =>
@@ -69,4 +72,6 @@ export const LÆRDOM = {
     teknikk:
         'Ny teknikk som dampbåter, granatharpun og kokerier gjorde at fangstfolkene kunne tømme havet fortere.',
     rekord: 'Sesongen 1930-1931 ble den største noensinne. Det kom mer olje enn verden ville kjøpe.',
+    krakk: 'I 1931 kom det så mye hvalolje at prisen falt. Neste sesong ble de fleste norske kokeriene liggende hjemme.',
+    fredning: 'I 1966 ble blåhvalen fredet. Da var det nesten ingen igjen i Sørishavet.',
 };

@@ -398,3 +398,60 @@ Diagnosen: Forståelig 2, Eleven gjør 3. Gjorde bare de tre endringene den ba o
   - Seieren avslutter runden i 1969 (briefen ville at spillet gikk videre). Funn er ikke laget.
   - Gamle tap-bilder (`tap-*.png`) i kontaktarket er fra gråboksen; denne runden spilte bare
     forvalter og passiv i nettleseren.
+
+### Forbedrer etter vurdering 1 (natt 2026-10-08)
+
+Vurdering 1: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 3, Lærerikt 4 (sum 18).
+
+- Forbedring 1 (vendepunktene som regler, maks tre regler å huske): reglene er fortsatt tre -
+  båt ved flokk tar hval, ringen, og nyttår gjør opp. Den tredje har fått oljeprisen: fra 1929
+  havner hvert fat på et lager i verden som tømmes med 15 fat per år. Står staven ved tønna over
+  streken, faller prisen på nye fat, og ved nyttår mister oljen i tønna like mye i verdi. Det
+  gir konkurs av overfangst, også med full tønne. Staven og lappen «For mange fat senker
+  oljeprisen» kommer i 1929 (alene, fire år etter kokeriet); forklaringen (lærings-øyeblikket
+  «For mye olje på en gang») kommer 1,6 s etter første prisfall, etter smellet. 1904 og 1966 er
+  hendelser, ikke regler: i 1904 slås FORBUDT-stempler på Finnmark-flokkene, båtene seiler hjem,
+  og 1,4 s etter glir Sør-Georgia-arket inn. I 1966 slås FREDET på blåhval-flokkene (B, D, H),
+  båtene der seiler hjem, ringen blir grå og stiplet; forklaringen kommer 1,8 s etter.
+  IWC-kvotene (1946) er ikke laget - det ville vært en fjerde regel.
+- Forbedring 2 (hvaler og tønne): hvalstempelet er en blåhval ovenfra (halefinne, luffer,
+  blåsehull), én tegnet hval per fire, større jo fullere flokken er. De svømmer i retningen
+  flokken går, og en og annen blåser (sprut som stiger og blekner). Ungene er små hvaler som
+  svømmer inn i flokken. Regnskapet har ingen desimaltall: «Holder N år» stort, rødt og pulserende
+  «Tom om N år!» under tre år, Inn/Ut i hele tall, streker på tønna (én per år), og oljepris-staven.
+- Forbedring 3 (tekst): slutt-skjermen har ingen fargekode og ikke feltet «1969 - den som
+  fortsatt fangstet». Tallene er «År drevet», forvalter-poeng og grønne år; ranken står i lappen
+  («Holdt havet i live» ved seier). Ved tap står årsaken i én rød setning øverst («1936: Fangsten
+  ga 8 olje, men båtene og stasjonen kostet 22», eller prisfallet), med eget tips når prisfallet
+  felte selskapet. Menyen er én linje. Rød ring forklares med en lapp ved ringen første gang (én
+  gang per runde), ikke en boks som dekker kartet. Kokeri-boksen er byttet med lappen ved kjøp.
+  Lærings-øyeblikkene er nå nyttår, prisfall og fredning.
+- Feel-lista: før runden var 2 (På håret!, Flokken kom seg!), 3 (stempler, unger, døde flokker,
+  arkbytte) og delvis 1 og 4 på plass. Lagt til: 1) rykk i hele bildet (slipp på flokk 3 px, kjøp
+  5, død 7, fredning 6, prisfall 11, tap 12) og hit-stop (0,05-0,25 s); slipp på en flokk gir et
+  eget klikk og en rav ring som strammer seg inn rundt flokken. 4) prisfallet vises med smell,
+  stort «-X» ved tønna og «Oljeprisen falt!», og tapet har årsaken på slutt-skjermen.
+- Simuleringen (200 runder per robot): forvalter (vinner) 100 %, median 187; halvgod (middels)
+  59 % (var 87 %), median 156; sparsom (taper) 0 %, median 148, konkurs rundt 1932; grådig 0 %,
+  tomt hav 1888; tilfeldig 0 %, konkurs 1881; passiv 0 %, konkurs 1900. Trapp 148 < 156 < 187.
+  41,3 valg per minutt (var 27,5: forvalteren henter båter hjem når staven nærmer seg streken),
+  press 0,46 -> 0,85 -> 0,97. Halvgod ser staven først etter at prisen har falt én gang (som en
+  elev som lærer av smellet); den opplever prisfall i 83 % av rundene. Forvalter som overser
+  markedet vinner bare 57 % - regelen avgjør. Selvspill: alle porter grønne, forvalteren vant med
+  194 poeng. Scene-audit grønn. Likhetsvakt grønn (nærmest tinghuset 0,42). Plakaten er fortsatt
+  tatt etter 115 s (1930, Sørishavet). Tap-skjermene er fotografert med
+  `--full --bots grådig` (passiv-slutt = konkurs 1895, grådig-slutt = tomt hav 1877).
+- Hva som IKKE virket:
+  - Grense per år (fat inn i år mot 13-15, prisfall ved nyttår): år på 2,5 s gir for mye støy
+    (12-19 fat med samme flåte). Forvalteren som så på «fat i fjor» sendte båtene hjem og ut igjen,
+    tapte et halvt år i reise hver gang og gikk konkurs (0-49 % seier). Lageret som tømmes jevnt
+    gir en stav som stiger og synker mykt, og den kan leses.
+  - Fast tak på båter ute (grense / fat per båt): forvalteren eide alt 8 båter og gikk konkurs
+    på havneavgiften (73 %).
+  - Fall 0,08 per fat over streken: halvgod vant 73 %. 0,1 ga 59-63 %.
+- Kjente svakheter:
+  - 41 valg per minutt er høyt; mye er forvalterens hjem/ut ved streken. Et menneske gjør færre.
+  - Hvalene ser litt ut som fisk på avstand (luffene). Spruten er liten.
+  - Nyttår-boksen står over kartet til eleven trykker «Skjønner» (spillet går i sakte film).
+  - Lappen «Tønna er snart tom» og markedslappen kan stå samtidig ved tønna i 1929.
+  - Sparsom lever fortsatt til rundt 1932.

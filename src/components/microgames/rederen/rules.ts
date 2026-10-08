@@ -1,6 +1,7 @@
 // Fagkjernen og hjelpere som både spillet, robotene og tegningen bruker. Ren TypeScript.
 // Regel 1: en båt ved en flokk tar hval. Regel 2: flokken føder sakte - jo færre, jo færre
-// unger. Regel 3: hver båt koster olje hvert år - full pris på havet, lite i havna.
+// unger. Regel 3: nyttår gjør opp - hver båt koster olje (full pris på havet, lite i havna),
+// og fra 1929 faller oljeprisen når det kommer for mange fat på en gang.
 
 import type { Båt, Flokk, Game } from './game';
 import { TUNING } from './tuning';
@@ -54,7 +55,7 @@ export function fangerFra(g: Game, b: Båt): Flokk | null {
     let best: Flokk | null = null;
     let bd = T.fangst.radius;
     for (const f of g.flokker) {
-        if (f.død) continue;
+        if (f.død || f.fredet) continue;
         const d = dist(b.x, b.y, f.x, f.y);
         if (d <= bd) {
             bd = d;
@@ -102,3 +103,15 @@ export function press(g: Game): number {
 /** Framdrift 0-1 mot 1969. */
 export const framdrift = (g: Game) =>
     Math.min(1, (g.år - T.tid.start + g.iÅr / årLengde(g.år)) / (T.tid.seier - T.tid.start));
+
+/** Fat som er på vei hjem nå (eleven ser dem rulle). */
+export const fatPåVei = (g: Game) => g.fat.length;
+
+/** Oljemarkedet er åpent (fra 1929). */
+export const markedÅpent = (g: Game) => g.år >= TUNING.marked.fra;
+
+/** Oljeprisen (1 = full) når lageret i verden har så mange fat. */
+export function prisFor(lager: number): number {
+    const m = TUNING.marked;
+    return Math.max(m.bunn, Math.min(1, 1 - m.fall * (lager - m.grense)));
+}

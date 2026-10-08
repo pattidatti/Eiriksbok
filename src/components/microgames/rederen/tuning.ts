@@ -70,6 +70,31 @@ export const TUNING = {
         ],
     },
 
+    /**
+     * Oljemarkedet (fra 1929): hvert fat som kommer inn, havner på lageret i verden. Verden
+     * kjøper `grense` fat per år (lageret tømmes jevnt). Er lageret over grensa, faller prisen
+     * på nye fat - og ved nyttår mister oljen i tønna like mye i verdi. Sesongen 1930-31 ga
+     * mer olje enn verden ville kjøpe.
+     */
+    marked: {
+        fra: 1929,
+        /** Fat verden kjøper per år, og hvor fullt lageret kan bli før prisen faller. */
+        grense: 15,
+        /** Prisen faller så mye per fat lageret er over grensa. */
+        fall: 0.1,
+        bunn: 0.3,
+    },
+
+    /** Fredning: flokkene låses dette året. Båtene der seiler hjem, og ingen kan fange der. */
+    fredning: {
+        /** Fangst forbudt i Finnmark: flokkene på det første arket låses, båtene seiler hjem, og et øyeblikk etter kommer det nye arket. */
+        finnmark: 1904,
+        /** Sekunder fra forbudet til det nye arket legges over. */
+        finnmarkVent: 1.4,
+        /** Blåhvalen fredet: flokkene merket `blåhval` i Sørishavet låses. */
+        blåhval: 1966,
+    },
+
     /** Flåten: du starter med så mange båter (én ligger alt ute ved den nærmeste flokken). */
     startBåter: 2,
     /** Båter til salgs: legger seg i havna dette året. Eleven kjøper ved å dra dem ut. */
@@ -105,6 +130,6 @@ export const TUNING = {
         [1904, 'Stasjonssjef i Grytviken'],
         [1925, 'Kokerisjef'],
         [1946, 'Reder i Sandefjord'],
-        [1969, 'Den som fortsatt fangstet i 1969'],
+        [1969, 'Holdt havet i live'],
     ] as [number, string][],
 };

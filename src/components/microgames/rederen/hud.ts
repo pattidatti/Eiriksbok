@@ -7,14 +7,19 @@ import { tegnFat, skrog, tønnePos, type TegneValg } from './draw';
 import type { Fx } from './fx';
 import type { Game } from './game';
 import { BRETT } from './levels';
-import { årsKost, egne, fastKost } from './rules';
+import { årsKost, egne, fastKost, markedÅpent } from './rules';
 import { TUNING } from './tuning';
 
 const T = TUNING;
 
-const komma = (v: number) => String(Math.round(v * 10) / 10).replace('.', ',');
-
-function kort(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, fare = false) {
+function kort(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+    fare = false
+) {
     ctx.fillStyle = 'rgba(240,232,210,0.94)';
     ctx.fillRect(x, y, w, h);
     ctx.strokeStyle = fare ? P.rød : P.blekk;
@@ -100,7 +105,14 @@ function kartusj(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
 }
 
 /** Tønna: et fat sett fra siden, fylt med tran. */
-function tønne(ctx: CanvasRenderingContext2D, x: number, y: number, fyll: number, fare: boolean, hopp: number) {
+function tønne(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    fyll: number,
+    fare: boolean,
+    hopp: number
+) {
     const w = 40;
     const h = 64;
     ctx.save();
@@ -148,40 +160,69 @@ function tønne(ctx: CanvasRenderingContext2D, x: number, y: number, fyll: numbe
     ctx.restore();
 }
 
-/** Regnskapet ved tønna: hva som kom inn i år, og hva båtene og stasjonen koster ved nyttår. */
+/** Regnskapet ved tønna: hvor lenge oljen holder, hva som kom inn og går ut, og oljeprisen. */
 function regnskap(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg, tap: boolean) {
     const x = 688;
     const y = 12;
     const W = 208;
     const kost = årsKost(g);
-    const igjen = kost > 0 ? Math.floor(g.tønne / kost) : 99;
-    const fare = tap || igjen < 2;
+    const igjen = kost > 0 ? Math.floor(Math.max(0, g.tønne) / kost) : 99;
+    const fare = tap || igjen < 3;
     kort(ctx, x, y, W, 120, fare);
     const tp = tønnePos();
+    // Tønna rommer seks års drift; én strek på tønna = ett år.
     const fyll = Math.max(0, Math.min(1, o.tønneVist / Math.max(12, kost * 6)));
     tønne(ctx, tp.x, tp.y, fyll, fare, fx.tønneHopp);
-    // Inn: hele fjoråret (et år er kort, og fatene bruker tid hjem), eller hittil i år før første nyttår.
+    ctx.strokeStyle = 'rgba(30,42,53,0.55)';
+    ctx.lineWidth = 1.2;
+    for (let k = 1; k < 6; k++) {
+        const ly = tp.y + 32 - (64 * k) / 6;
+        ctx.beginPath();
+        ctx.moveTo(tp.x + 17, ly);
+        ctx.lineTo(tp.x + 24, ly);
+        ctx.stroke();
+    }
     const vis = tap && g.sist ? g.sist : null;
     const inn = g.sist ? g.sist.inn : g.innIÅr;
     const ut = vis ? vis.ut : kost;
     const lx = x + 62;
     const rx = x + W - 12;
+    // Det viktigste: hvor mange år oljen holder. Stort, og rødt når det haster.
     ctx.textAlign = 'left';
+    const puls = fare ? 1 + 0.08 * Math.sin(o.klokke * 8) : 1;
+    ctx.save();
+    ctx.translate(lx, y + 32);
+    ctx.scale(puls, puls);
+    ctx.fillStyle = fare ? P.rød : P.blekk;
+    ctx.font = `bold ${fare ? 21 : 19}px ${SERIF}`;
+    const holder = tap
+        ? 'Tønna er tom!'
+        : igjen < 1
+          ? 'Tom ved nyttår!'
+          : igjen < 3
+            ? `Tom om ${igjen} år!`
+            : igjen > 9
+              ? 'Holder 9+ år'
+              : `Holder ${igjen} år`;
+    ctx.fillText(holder, 0, 0);
+    ctx.restore();
+    // Inn i fjor og ut ved nyttår, i hele fat-olje.
     ctx.font = `14px ${SERIF}`;
     ctx.fillStyle = P.blekk;
-    ctx.fillText('I tønna', lx, y + 26);
-    ctx.fillText(vis ? `Inn i ${vis.år}` : g.sist ? 'Inn i fjor' : 'Inn i år', lx, y + 48);
-    ctx.fillText('Ut ved nyttår', lx, y + 70);
-    ctx.textAlign = 'right';
+    ctx.fillText(vis ? `${vis.år}:` : 'Inn', lx, y + 54);
     ctx.font = `bold 15px ${SERIF}`;
-    ctx.fillText(komma(Math.max(0, o.tønneVist)), rx, y + 26);
     ctx.fillStyle = P.grønn;
-    ctx.fillText(`+${komma(inn)}`, rx, y + 48);
+    ctx.fillText(`+${Math.round(inn)}`, lx + (vis ? 40 : 28), y + 54);
+    ctx.font = `14px ${SERIF}`;
+    ctx.fillStyle = P.blekk;
+    ctx.textAlign = 'right';
+    ctx.fillText('Ut', rx - 34, y + 54);
+    ctx.font = `bold 15px ${SERIF}`;
     ctx.fillStyle = P.rød;
-    ctx.fillText(`-${komma(ut)}`, rx, y + 70);
+    ctx.fillText(`-${Math.round(ut)}`, rx, y + 54);
     // Hva som koster: stasjonen og hver båt. Fylt båt = på havet (dyr), omriss = i havna (billig).
     let ix = lx + 2;
-    const iy = y + 88;
+    const iy = y + 64;
     ctx.fillStyle = P.blekk;
     ctx.strokeStyle = P.blekk;
     ctx.lineWidth = 1.2;
@@ -211,17 +252,56 @@ function regnskap(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg, 
         ix += b.kokeri ? 24 : 17;
         if (ix > rx - 10) break;
     }
+    if (markedÅpent(g)) markedsMåler(ctx, g, fx, lx, y + 88, rx - lx);
+}
+
+/** Oljeprisen (fra 1929): lageret i verden som en stav med en strek. Over streken faller prisen. */
+function markedsMåler(
+    ctx: CanvasRenderingContext2D,
+    g: Game,
+    fx: Fx,
+    x: number,
+    y: number,
+    w: number
+) {
+    const m = T.marked;
+    const lager = Math.min(m.grense * 2, g.lager);
+    const over = g.lager > m.grense;
+    const sw = w - 4;
+    const by = y + 6;
     ctx.textAlign = 'left';
-    ctx.font = `bold 13px ${SERIF}`;
-    ctx.fillStyle = fare ? P.rød : P.blekk;
-    if (tap) ctx.fillText('Tønna er tom', lx, y + 114);
-    else if (igjen < 4) ctx.fillText(igjen < 1 ? 'Tom ved nyttår!' : `Tom om ${igjen} år`, lx, y + 114);
+    ctx.font = `13px ${SERIF}`;
+    ctx.fillStyle = P.blekk;
+    ctx.fillText('Oljepris', x, y + 2);
+    ctx.textAlign = 'right';
+    ctx.font = `bold 14px ${SERIF}`;
+    ctx.fillStyle = g.pris < 1 ? P.rød : P.grønn;
+    const pst = Math.round(g.pris * 100);
+    ctx.fillText(g.pris < 1 ? `${pst} %` : 'full', x + w, y + 2);
+    // Staven: hvor mye olje som venter på kjøpere. Streken midt på = det verden kjøper i året.
+    const sx = x;
+    ctx.fillStyle = 'rgba(30,42,53,0.12)';
+    ctx.fillRect(sx, by, sw, 9);
+    const fw = (sw * lager) / (m.grense * 2);
+    const rist = over ? Math.sin(fx.klokke * 30) * 1.2 : 0;
+    ctx.fillStyle = over ? P.rød : P.rav;
+    ctx.fillRect(sx, by + rist, fw, 9);
+    const gx = sx + sw / 2;
+    ctx.strokeStyle = P.blekk;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(gx, by - 3);
+    ctx.lineTo(gx, by + 12);
+    ctx.stroke();
+    ctx.lineWidth = 1;
+    ctx.strokeRect(sx, by, sw, 9);
 }
 
 /** År -> x på tidslinja. */
 const X0 = 488;
 const X1 = 930;
-const tidX = (år: number) => X0 + ((år - T.tid.start) / (T.tid.seier - 1 - T.tid.start)) * (X1 - X0);
+const tidX = (år: number) =>
+    X0 + ((år - T.tid.start) / (T.tid.seier - 1 - T.tid.start)) * (X1 - X0);
 
 function ringIkon(ctx: CanvasRenderingContext2D, x: number, y: number, farge: string, ut: boolean) {
     ctx.globalAlpha = 0.6;
@@ -278,7 +358,7 @@ function stripe(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
     // Regel 3: oljen.
     tegnFat(ctx, 320, 520, 1);
     ctx.fillStyle = P.blekk;
-    ctx.fillText('båt ute koster mest', 332, 526);
+    ctx.fillText(markedÅpent(g) ? 'mange fat: lav pris' : 'båt ute koster mest', 332, 526);
 
     // Tidslinja.
     ctx.strokeStyle = P.blekk;
@@ -347,10 +427,27 @@ export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: Tegne
     stripe(ctx, g, o);
 }
 
+/** Hvorfor runden ble tapt, i én setning (tap-bildet og slutt-skjermen). */
+export function tapTekst(g: Game): string {
+    if (g.årsak === 'konkurs') {
+        const s = g.sist;
+        if (s && g.pris < 0.8)
+            return `${s.år}: For mange fat på en gang. Oljeprisen falt til ${Math.round(g.pris * 100)} %.`;
+        return s
+            ? `${s.år}: Fangsten ga ${Math.round(s.inn)} olje, men båtene og stasjonen kostet ${Math.round(s.ut)}.`
+            : `${g.år}: Tønna er tom.`;
+    }
+    let sist: number | null = null;
+    for (const f of g.flokker)
+        if (f.død && f.dødÅr !== null && (sist === null || f.dødÅr > sist)) sist = f.dødÅr;
+    return sist !== null
+        ? `${g.år}: Havet er tomt. Den siste flokken forsvant i ${sist}.`
+        : `${g.år}: Havet er tomt. Det er for få hval igjen til å få nok unger.`;
+}
+
 /** Tapet: bildet fryser, og årsaken lyser opp (båtene som tappet tønna, eller flokkene som forsvant). */
 export function tegnTap(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
     const puls = 0.5 + 0.5 * Math.sin(klokke * 6);
-    let tekst: string;
     if (g.årsak === 'konkurs') {
         const fra = tønnePos();
         ctx.strokeStyle = P.rød;
@@ -372,12 +469,13 @@ export function tegnTap(ctx: CanvasRenderingContext2D, g: Game, klokke: number) 
             ctx.arc(b.x, b.y, b.kokeri ? 42 : 26, 0, Math.PI * 2);
             ctx.stroke();
         }
-        const s = g.sist;
-        tekst = s
-            ? `${s.år}: Fangsten ga ${komma(s.inn)} olje, men båtene og stasjonen kostet ${komma(s.ut)}.`
-            : `${g.år}: Tønna er tom.`;
+        if (g.pris < 0.8) {
+            // Prisfallet: måleren ved tønna lyser opp.
+            ctx.strokeStyle = P.rød;
+            ctx.lineWidth = 2 + 2 * puls;
+            ctx.strokeRect(744, 92, 146, 34);
+        }
     } else {
-        let sist: { navn: string; år: number } | null = null;
         ctx.textAlign = 'center';
         for (const f of g.flokker) {
             ctx.strokeStyle = P.rød;
@@ -392,12 +490,9 @@ export function tegnTap(ctx: CanvasRenderingContext2D, g: Game, klokke: number) 
             const lapp = f.død ? `tom ${f.dødÅr}` : `${f.n} hval igjen`;
             ctx.strokeText(lapp, f.x, f.y - T.fangst.radius - 14);
             ctx.fillText(lapp, f.x, f.y - T.fangst.radius - 14);
-            if (f.død && f.dødÅr !== null && (!sist || f.dødÅr >= sist.år)) sist = { navn: f.navn, år: f.dødÅr };
         }
-        tekst = sist
-            ? `${g.år}: Havet er tomt. Den siste flokken forsvant i ${sist.år}.`
-            : `${g.år}: Havet er tomt. Det er for få hval igjen til å få nok unger.`;
     }
+    const tekst = tapTekst(g);
     ctx.font = `bold 18px ${SERIF}`;
     const bw = Math.min(940, ctx.measureText(tekst).width + 32);
     const x = 480 - bw / 2;

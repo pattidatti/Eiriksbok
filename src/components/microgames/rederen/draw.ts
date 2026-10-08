@@ -150,29 +150,103 @@ function tegnRing(ctx: CanvasRenderingContext2D, f: Flokk, klokke: number, mål:
     }
 }
 
+/** Hvor mange hvaler som tegnes for en flokk: én per fire hval, minst én. */
+export const hvalTegn = (n: number) => Math.max(1, Math.ceil(n / 4));
+
+/** Flokken som hvaler: én tegnet hval per fire, de svømmer samme vei, og en og annen blåser. */
+/** Fredet flokk: grå stiplet ring uten piler - her fanger ingen. */
+function tegnFredetRing(ctx: CanvasRenderingContext2D, f: Flokk) {
+    ctx.strokeStyle = P.grå;
+    ctx.lineWidth = 3;
+    ctx.setLineDash([6, 5]);
+    ctx.beginPath();
+    ctx.arc(f.x, f.y, R + 6, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+}
+
+function tegnFredStempel(ctx: CanvasRenderingContext2D, f: Flokk, finnmark: boolean, t: number) {
+    const k = Math.min(1, t / 0.35);
+    const s = k < 1 ? 2.2 - 1.2 * glatt(k) : 1;
+    ctx.save();
+    ctx.translate(f.x, f.y + 4);
+    ctx.rotate(-0.2);
+    ctx.scale(s, s);
+    ctx.globalAlpha = Math.min(1, 0.3 + k) * 0.9;
+    const farge = finnmark ? P.rød : P.blekk;
+    ctx.strokeStyle = farge;
+    ctx.fillStyle = 'rgba(236,227,203,0.75)';
+    ctx.lineWidth = 2.5;
+    ctx.fillRect(-46, -13, 92, 26);
+    ctx.strokeRect(-46, -13, 92, 26);
+    ctx.fillStyle = farge;
+    ctx.font = `bold 15px ${SERIF}`;
+    ctx.textAlign = 'center';
+    ctx.fillText(finnmark ? 'FORBUDT' : 'FREDET', 0, 5);
+    ctx.restore();
+    ctx.globalAlpha = 1;
+}
+
 function tegnStempler(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
     const unger = fx.unger.get(f.id) ?? [];
-    const venstre = -Math.sin(f.fase) * (f.rx / f.ry) < 0;
+    // Retningen flokken svømmer langs sløyfa.
+    const kurs = Math.atan2(f.ry * Math.cos(f.fase), -f.rx * Math.sin(f.fase));
     const w = STEMPEL.w;
     const h = STEMPEL.h;
-    for (let i = 0; i < f.n; i++) {
-        const a = i * 2.39996;
-        const r = 5.4 * Math.sqrt(i + 0.6);
-        const x = f.x + Math.cos(a) * r;
-        const y = f.y + Math.sin(a) * r * 0.82;
-        // De nyeste stemplene er unger: lysere, og de popper fram.
-        const j = i - (f.n - unger.length);
-        let skala = 1;
-        if (j >= 0) {
-            const alder = fx.klokke - unger[j];
-            ctx.globalAlpha = 0.5 + 0.5 * Math.min(1, alder / UNGE_SEK) ** 3;
-            skala = alder < 0.35 ? 0.4 + 1.9 * (alder / 0.35) * (1 - alder / 0.35) + alder / 0.35 * 0.6 : 0.8;
-        }
+    const k = hvalTegn(f.n);
+    // Større flokk = større hvaler (de største er voksne blåhval).
+    const s = 0.8 + 0.35 * Math.min(1, f.n / f.maks);
+    const t = fx.klokke;
+    for (let i = 0; i < k; i++) {
+        const a = i * 2.39996 + f.id;
+        const r = i === 0 ? 0 : 10.5 * Math.sqrt(i);
+        const bx = Math.cos(a) * r + Math.sin(t * 0.9 + i * 1.3) * 1.5;
+        const by = Math.sin(a) * r * 0.8 + Math.cos(t * 0.7 + i) * 1.2;
+        const x = f.x + bx;
+        const y = f.y + by;
+        const vri = kurs + Math.sin(t * 1.4 + i * 2.1) * 0.12;
         ctx.save();
         ctx.translate(x, y);
-        if (venstre) ctx.scale(-1, 1);
-        ctx.rotate(((i * 37) % 11) * 0.02 - 0.1);
-        ctx.drawImage(stempel(i), (-w / 2) * skala, (-h / 2) * skala, w * skala, h * skala);
+        ctx.rotate(vri);
+        ctx.drawImage(stempel(i), (-w / 2) * s, (-h / 2) * s, w * s, h * s);
+        ctx.restore();
+        // Sprut: en og annen hval blåser - en sky over hodet som stiger og blekner.
+        const fase = (t * 0.32 + i * 0.37 + f.id * 0.61) % 1;
+        if (fase < 0.16) {
+            const p = fase / 0.16;
+            const hx = x + Math.cos(vri) * w * 0.38 * s;
+            const hy = y + Math.sin(vri) * w * 0.38 * s;
+            ctx.globalAlpha = 0.85 * (1 - p);
+            ctx.fillStyle = '#f4f1e6';
+            ctx.strokeStyle = P.hval;
+            ctx.lineWidth = 1;
+            for (let d = 0; d < 3; d++) {
+                const dx = (d - 1) * (3 + 5 * p);
+                const dy = -4 - 12 * p + Math.abs(d - 1) * 3;
+                ctx.beginPath();
+                ctx.arc(hx + dx, hy + dy, 2 + 2.5 * p, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.stroke();
+            }
+            ctx.globalAlpha = 1;
+        }
+    }
+    // Ungene: små hvaler som popper fram ved flokken og svømmer inn i den.
+    for (let j = 0; j < Math.min(3, unger.length); j++) {
+        const alder = fx.klokke - unger[unger.length - 1 - j];
+        const inn = Math.min(1, alder / UNGE_SEK);
+        const pop =
+            alder < 0.35
+                ? 0.4 + 1.6 * (alder / 0.35) * (1 - alder / 0.35) + (alder / 0.35) * 0.6
+                : 1;
+        const a = kurs + Math.PI * 0.7 + j * 0.9;
+        const r = 28 - 14 * inn;
+        ctx.globalAlpha = 0.95 * (1 - inn * inn);
+        ctx.save();
+        ctx.translate(f.x + Math.cos(a) * r, f.y + Math.sin(a) * r * 0.8);
+        ctx.rotate(kurs);
+        const us = 0.5 * pop;
+        ctx.drawImage(stempel(j + 1), (-w / 2) * us, (-h / 2) * us, w * us, h * us);
         ctx.restore();
         ctx.globalAlpha = 1;
     }
@@ -192,9 +266,26 @@ function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneVal
     }
     for (const f of g.flokker) {
         if (f.død) tegnDødFlokk(ctx, f, fx.døde.get(f.id) ?? 9);
+        else if (f.fredet) tegnFredetRing(ctx, f);
         else tegnRing(ctx, f, o.klokke, f === mål);
+        // Låst: ringen blinker rav og strammer seg inn rundt flokken når båten slippes der.
+        const l = fx.lås.get(f.id);
+        if (l !== undefined && !f.død) {
+            const k = l / 0.6;
+            ctx.globalAlpha = 1 - k;
+            ctx.strokeStyle = P.rav;
+            ctx.lineWidth = 5 * (1 - k) + 1;
+            ctx.beginPath();
+            ctx.arc(f.x, f.y, R + 30 * (1 - glatt(k)), 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+        }
     }
     for (const f of g.flokker) if (!f.død) tegnStempler(ctx, f, fx);
+    // Fredet: et stempel over flokken («FREDET 1966» eller «FORBUDT 1903»), slått på med et smell.
+    for (const f of g.flokker)
+        if (f.fredet && !f.død)
+            tegnFredStempel(ctx, f, g.kart === 'finnmark', fx.fred.get(f.id) ?? 9);
     // Hval som tas: stempelet løftes, krymper og blir et fat.
     for (const t of fx.tatt) {
         const k = Math.min(1, t.t / 0.9);
@@ -204,8 +295,14 @@ function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneVal
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(k * 1.2);
-        const s = 1.4 - k;
-        ctx.drawImage(stempel(t.v), (-STEMPEL.w / 2) * s, (-STEMPEL.h / 2) * s, STEMPEL.w * s, STEMPEL.h * s);
+        const s = 0.75 - k * 0.45;
+        ctx.drawImage(
+            stempel(t.v),
+            (-STEMPEL.w / 2) * s,
+            (-STEMPEL.h / 2) * s,
+            STEMPEL.w * s,
+            STEMPEL.h * s
+        );
         ctx.restore();
         ctx.globalAlpha = 1;
     }
@@ -255,7 +352,14 @@ export function skrog(ctx: CanvasRenderingContext2D, kokeri: boolean) {
     ctx.closePath();
 }
 
-function tegnBåt(ctx: CanvasRenderingContext2D, b: Båt, nr: number, fx: Fx, valgt: boolean, klokke: number) {
+function tegnBåt(
+    ctx: CanvasRenderingContext2D,
+    b: Båt,
+    nr: number,
+    fx: Fx,
+    valgt: boolean,
+    klokke: number
+) {
     const kurs = fx.kurs.get(b.id) ?? Math.PI;
     const h = fx.hopp.get(b.id);
     const sprett = h !== undefined ? 1 + 0.35 * Math.sin(Math.min(1, h / 0.5) * Math.PI) : 1;
@@ -405,7 +509,11 @@ function tegnHavn(ctx: CanvasRenderingContext2D, g: Game, k: Kart, o: TegneValg)
     const lyser = o.drar !== null;
     const inne =
         o.drar && o.drar.x >= s.x0 && o.drar.x <= s.x1 && o.drar.y >= s.y0 && o.drar.y <= s.y1;
-    ctx.fillStyle = inne ? 'rgba(197,138,44,0.35)' : lyser ? 'rgba(197,138,44,0.16)' : 'rgba(30,42,53,0.04)';
+    ctx.fillStyle = inne
+        ? 'rgba(197,138,44,0.35)'
+        : lyser
+          ? 'rgba(197,138,44,0.16)'
+          : 'rgba(30,42,53,0.04)';
     ctx.fillRect(s.x0, s.y0, s.x1 - s.x0, s.y1 - s.y0);
     ctx.strokeStyle = lyser ? P.rav : 'rgba(30,42,53,0.45)';
     ctx.lineWidth = lyser ? 2.5 : 1.2;
@@ -428,7 +536,12 @@ function tegnHavn(ctx: CanvasRenderingContext2D, g: Game, k: Kart, o: TegneValg)
     ctx.stroke();
 }
 
-function pil(ctx: CanvasRenderingContext2D, fra: { x: number; y: number }, til: { x: number; y: number }, kort = 0) {
+function pil(
+    ctx: CanvasRenderingContext2D,
+    fra: { x: number; y: number },
+    til: { x: number; y: number },
+    kort = 0
+) {
     const a = Math.atan2(til.y - fra.y, til.x - fra.x);
     const ex = til.x - Math.cos(a) * kort;
     const ey = til.y - Math.sin(a) * kort;
@@ -585,7 +698,10 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, o: TegneValg) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = '#3a2717';
     ctx.fillRect(0, 0, w, h);
-    ctx.setTransform(dpr * k.s, 0, 0, dpr * k.s, dpr * k.ox, dpr * k.oy);
+    // Rykket: hele bordet og arket hopper litt (HUD-en også - det er ett kart på et bord).
+    const rx = fx.rykk ? (Math.random() - 0.5) * 2 * fx.rykk : 0;
+    const ry = fx.rykk ? (Math.random() - 0.5) * 2 * fx.rykk : 0;
+    ctx.setTransform(dpr * k.s, 0, 0, dpr * k.s, dpr * (k.ox + rx * k.s), dpr * (k.oy + ry * k.s));
     tegnBord(ctx);
     // Arket og alt på det klippes til arket, så arkbyttet ikke tegner utover bordet.
     ctx.save();

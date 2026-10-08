@@ -12,7 +12,7 @@ export const GAME_ID = 'rederens-kart';
 export function årsakTekst(g: Game): string | undefined {
     if (g.mode !== 'lost') return undefined;
     return g.årsak === 'konkurs'
-        ? `konkurs ${g.år} (${egne(g).length} båter, ${hvalIHavet(g)} hval igjen)`
+        ? `konkurs ${g.år} (${egne(g).length} båter, ${hvalIHavet(g)} hval igjen${g.pris < 1 ? `, oljepris ${Math.round(g.pris * 100)} %` : ''})`
         : `tomt hav ${g.år} (tatt ${g.totaltTatt} hval)`;
 }
 
@@ -45,7 +45,12 @@ const spec: SimSpec<Game> = {
     bots: Object.fromEntries(
         Object.entries(BOTS).map(([navn, b]) => [
             navn,
-            { forventer: b.forventer, tilfeldig: b.tilfeldig, beskrivelse: b.beskrivelse, make: b.make },
+            {
+                forventer: b.forventer,
+                tilfeldig: b.tilfeldig,
+                beskrivelse: b.beskrivelse,
+                make: b.make,
+            },
         ])
     ),
 };

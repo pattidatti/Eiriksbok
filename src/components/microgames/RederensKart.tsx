@@ -20,12 +20,13 @@ import { newGame, send, update, type Game, type Hendelse, type Årsak } from './
 import { BOTS } from './rederen/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './rederen/sim';
 import { P, skala, tegn, tønnePos, type Dråpe, type Skala, type TegneValg } from './rederen/draw';
+import { tapTekst } from './rederen/hud';
 import { SERIF } from './rederen/ark';
-import { byttArk, fraHendelse, fxSteg, nyFx, type Fx } from './rederen/fx';
+import { byttArk, fraHendelse, fxSteg, nyFx, rykk, type Fx } from './rederen/fx';
 import { BRETT } from './rederen/levels';
 import { dist, fangerFra, framdrift, årsKost } from './rederen/rules';
 import { TUNING } from './rederen/tuning';
-import { LAPP, LÆRDOM, MÅL, REGLER, SKJEDDE, TAP_TITTEL, TIPS, ØYEBLIKK } from './rederen/texts';
+import { LAPP, LÆRDOM, MÅL, SKJEDDE, TAP_TITTEL, TIPS, TIPS_PRIS, ØYEBLIKK } from './rederen/texts';
 
 // REDERENS KART - Hvalfangsten 1864-1968. Du er rederen: dra hvalbåtene ut på flokkene,
 // la flokkene hvile når ringen blir rød, og betal for båtene hvert nyttår. Reglene bor i
@@ -70,6 +71,10 @@ interface Resultat {
     poeng: number;
     grønne: number;
     nyRekord: boolean;
+    /** Prisfallet felte selskapet. */
+    prisFall: boolean;
+    /** Hvorfor runden ble tapt, i én setning. */
+    hvorfor: string | null;
     lærdom: string[];
 }
 
@@ -91,7 +96,8 @@ function velgNivå(): 'lav' | 'middels' | 'hoy' {
     }
 }
 
-const komma = (v: number) => String(Math.round(v * 10) / 10).replace('.', ',');
+/** Hit-stop: så mange sekunder står spillet stille etter et treff (bildet og lyden går videre). */
+const STOPP = { lås: 0.05, kjøp: 0.08, død: 0.12, krakk: 0.25, fredning: 0.15 };
 
 export default function RederensKart({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');
@@ -115,7 +121,18 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
     const dragStart = useRef({ x: 0, y: 0 });
     const valgt = useRef<number | null>(null);
     const sikte = useRef<{ x: number; y: number } | null>(null);
-    const hint = useRef({ slapp: false, tomVarselÅr: 0, inn: 0, innKlokke: 0, lydFangst: 0, lydUnge: 0 });
+    const hint = useRef({
+        slapp: false,
+        rødVist: false,
+        tomVarselÅr: 0,
+        inn: 0,
+        innKlokke: 0,
+        lydFangst: 0,
+        lydUnge: 0,
+    });
+    /** Hit-stop igjen (sekunder), og lærings-øyeblikk som venter til eleven har sett hendelsen. */
+    const stopp = useRef(0);
+    const senere = useRef<{ ved: number; gjør: () => void }[]>([]);
 
     useEffect(() => {
         saveRef.current = save;
@@ -167,6 +184,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             poeng: g.poeng,
             grønne: g.grønneÅr,
             nyRekord,
+            prisFall: g.årsak === 'konkurs' && g.pris < 0.8,
+            hvorfor: vant ? null : tapTekst(g),
             lærdom: text.lessons(3),
         });
         slutt.current = performance.now();
@@ -212,15 +231,16 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             hr.slapp = true;
             synth.tone(520, 300, 0.06, 'triangle', 0.08);
             synth.noise(0.18, 0.05, 1600, 0.04);
+            const b = g.båter.find((k) => k.id === h.id);
+            if (b && b.følger !== null) {
+                // Låst på flokken: et tydelig klikk og et lite stopp.
+                synth.tone(330, 660, 0.09, 'square', 0.05, 0.03);
+                stopp.current = Math.max(stopp.current, STOPP.lås);
+            }
         } else if (h.type === 'tilbud') {
             const b = g.båter.find((k) => k.id === h.id);
             synth.arp(523, [0, 4, 7], 0.08, 0.05);
-            if (b?.kokeri)
-                text.beatOnce('kokeri', ØYEBLIKK.kokeri.tittel, ØYEBLIKK.kokeri.tekst, {
-                    at: vedBåt(h.id),
-                    until: () => !gameRef.current.båter.find((k) => k.id === h.id)?.tilbud,
-                });
-            else if (b)
+            if (b)
                 text.point(`salg${h.id}`, LAPP.tilSalgs, vedBåt(h.id), {
                     seconds: 7,
                     until: () => !gameRef.current.båter.find((k) => k.id === h.id)?.tilbud,
@@ -228,6 +248,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         } else if (h.type === 'kjøp') {
             synth.arp(392, [0, 4, 7, 12], 0.06, 0.07);
             buzz(20);
+            stopp.current = Math.max(stopp.current, STOPP.kjøp);
             const b = g.båter.find((k) => k.id === h.id);
             if (b) {
                 const p = skjerm(b.x, b.y - 30);
@@ -241,6 +262,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             text.point('fordyr', LAPP.forDyr, vedTønne, { tone: 'fare', seconds: 3 });
         } else if (h.type === 'død') {
             synth.tone(220, 82, 0.9, 'triangle', 0.08);
+            buzz(40);
+            stopp.current = Math.max(stopp.current, STOPP.død);
             const f = g.flokker.find((k) => k.id === h.flokk);
             if (f) {
                 text.point(`død${f.id}`, LAPP.død, vedFlokk(f.id), { tone: 'fare', seconds: 3.5 });
@@ -254,19 +277,71 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 text.float('Flokken kom seg!', p.x, p.y, P.grønn, true, 1.8);
                 text.lesson('reddet', SKJEDDE.reddet, 3);
             }
+        } else if (h.type === 'marked') {
+            synth.arp(440, [0, 3, 7], 0.09, 0.05);
+            text.point('marked', LAPP.marked, () => skjerm(792, 178), { seconds: 6 });
+        } else if (h.type === 'krakk') {
+            // Prisfallet: tønna mister olje med et smell, og forklaringen kommer etter.
+            synth.tone(392, 98, 0.9, 'sawtooth', 0.07);
+            synth.noise(0.5, 0.06, 500, 0.05);
+            buzz([50, 40, 90]);
+            stopp.current = Math.max(stopp.current, STOPP.krakk);
+            const p = skjerm(722, 120);
+            text.float(`-${Math.round(h.tap)}`, p.x, p.y, P.rød, true, 1.8);
+            const q = skjerm(560, 150);
+            text.float(LAPP.prisFalt, q.x, q.y, P.rød, true, 1.8);
+            senere.current.push({
+                ved: klokke.current + 1.6,
+                gjør: () =>
+                    text.beatOnce('pris', ØYEBLIKK.pris.tittel, ØYEBLIKK.pris.tekst, {
+                        at: vedTønne,
+                    }),
+            });
+            text.lesson('krakk', LÆRDOM.krakk, 4);
+        } else if (h.type === 'fredning') {
+            synth.tone(150, 150, 0.12, 'square', 0.07);
+            synth.noise(0.25, 0.08, 700, 0.02);
+            stopp.current = Math.max(stopp.current, STOPP.fredning);
+            const første = h.flokker[0];
+            if (h.hva === 'finnmark') {
+                const hp = () => skjerm(gameRef.current.havn.x - 60, gameRef.current.havn.y - 40);
+                text.point('finnmark', LAPP.finnmark, hp, { tone: 'fare', seconds: 3 });
+            } else if (første !== undefined) {
+                text.point('blåhval', LAPP.blåhval, vedFlokk(første), { seconds: 3 });
+                senere.current.push({
+                    ved: klokke.current + 1.8,
+                    gjør: () =>
+                        text.beatOnce(
+                            'fredning',
+                            ØYEBLIKK.fredning.tittel,
+                            ØYEBLIKK.fredning.tekst,
+                            {
+                                at: vedFlokk(første),
+                            }
+                        ),
+                });
+                text.lesson('fredning', LÆRDOM.fredning, 3);
+            }
         } else if (h.type === 'årsskifte') {
             // En oljedråpe flyr fra tønna til hver båt: stor til båter på havet, liten til havna.
             for (const p of h.betalt) if (p.kost > 0) dråper.current.push({ id: p.id, t: 0 });
             if (h.kost > 0) {
                 const p = skjerm(640, 80);
-                text.float(`-${komma(h.kost)}`, p.x, p.y, P.rød, true);
+                text.float(`-${Math.round(h.kost)}`, p.x, p.y, P.rød, true);
                 synth.tone(660, 330, 0.3, 'sine', 0.05, 0.1);
             }
             if (h.grønt) synth.arp(784, [0, 4, 7], 0.07, 0.04);
             if (g.år === TUNING.økonomi.gulvTil)
-                text.beatOnce('nyttår', ØYEBLIKK.nyttår.tittel, ØYEBLIKK.nyttår.tekst, { at: vedTønne });
+                text.beatOnce('nyttår', ØYEBLIKK.nyttår.tittel, ØYEBLIKK.nyttår.tekst, {
+                    at: vedTønne,
+                });
             const kost = årsKost(g);
-            if (g.år > TUNING.økonomi.gulvTil && g.tønne >= 0 && g.tønne < kost && g.mode === 'play') {
+            if (
+                g.år > TUNING.økonomi.gulvTil &&
+                g.tønne >= 0 &&
+                g.tønne < kost &&
+                g.mode === 'play'
+            ) {
                 const p = skjerm(620, 120);
                 text.float('På håret!', p.x, p.y, P.rav, true, 1.6);
                 if (hr.tomVarselÅr !== g.år) {
@@ -282,18 +357,23 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         } else if (h.type === 'seier') {
             synth.arp(523, [0, 4, 7, 12, 16, 19], 0.1, 0.07);
             text.banner('1968: havet lever', P.grønn, 3);
+            rykk(fx, 6);
         }
     };
 
     /** Første røde ring: lærings-øyeblikket ved flokken båten tømmer. */
     const sjekkRød = (g: Game) => {
-        if (g.t < 2.5) return;
+        if (g.t < 2.5 || hint.current.rødVist) return;
         for (const b of g.båter) {
             const f = fangerFra(g, b);
             if (!f || f.netto >= 0 || f.n > f.maks * 0.62) continue;
-            text.beatOnce('rød', ØYEBLIKK.rød.tittel, ØYEBLIKK.rød.tekst, {
-                at: vedFlokk(f.id),
-                until: () => !gameRef.current.båter.some((k) => fangerFra(gameRef.current, k) === f),
+            // Forklart der den først dukker opp: en lapp ved ringen, ikke en boks over kartet.
+            hint.current.rødVist = true;
+            text.point('rød', LAPP.rød, vedFlokk(f.id), {
+                tone: 'fare',
+                seconds: 5,
+                until: () =>
+                    !gameRef.current.båter.some((k) => fangerFra(gameRef.current, k) === f),
             });
             return;
         }
@@ -314,7 +394,12 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             const m = modeRef.current;
             klokke.current += dt;
             if (m === 'play') {
-                update(g, dt * text.timeScale());
+                // Hit-stop: spillet står et øyeblikk etter et treff.
+                const spillDt = stopp.current > 0 ? 0 : dt;
+                stopp.current = Math.max(0, stopp.current - dt);
+                update(g, spillDt * text.timeScale());
+                for (const s of senere.current) if (klokke.current >= s.ved) s.gjør();
+                senere.current = senere.current.filter((s) => klokke.current < s.ved);
                 for (const h of g.hendelser) hendelse(g, h);
                 g.hendelser.length = 0;
                 sjekkRød(g);
@@ -370,13 +455,26 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         drar.current = null;
         valgt.current = null;
         sikte.current = null;
-        hint.current = { slapp: false, tomVarselÅr: 0, inn: 0, innKlokke: 0, lydFangst: 0, lydUnge: 0 };
+        hint.current = {
+            slapp: false,
+            rødVist: false,
+            tomVarselÅr: 0,
+            inn: 0,
+            innKlokke: 0,
+            lydFangst: 0,
+            lydUnge: 0,
+        };
+        stopp.current = 0;
+        senere.current = [];
         setResultat(null);
         text.resetRun();
         setModeBoth('play');
         text.banner('1864: Varangerfjorden', '#e3d3a8', 2.4);
         const første = gameRef.current.båter[0];
-        text.point('start', LAPP.start, vedBåt(første.id), { until: () => hint.current.slapp, seconds: 20 });
+        text.point('start', LAPP.start, vedBåt(første.id), {
+            until: () => hint.current.slapp,
+            seconds: 20,
+        });
     };
     const pause = () => {
         if (modeRef.current !== 'play') return;
@@ -447,7 +545,11 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 if (e.code === 'ArrowDown') s.y += d;
                 s.x = Math.max(10, Math.min(950, s.x));
                 s.y = Math.max(10, Math.min(530, s.y));
-            } else if ((e.code === 'Space' || e.code === 'Enter') && valgt.current !== null && sikte.current) {
+            } else if (
+                (e.code === 'Space' || e.code === 'Enter') &&
+                valgt.current !== null &&
+                sikte.current
+            ) {
                 send(g, valgt.current, sikte.current.x, sikte.current.y);
             } else return;
             e.preventDefault();
@@ -498,7 +600,10 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         } else if (drar.current) {
             const id = drar.current.id;
             drar.current = null;
-            if (e.type === 'pointerup' && dist(p.x, p.y, dragStart.current.x, dragStart.current.y) > 12) {
+            if (
+                e.type === 'pointerup' &&
+                dist(p.x, p.y, dragStart.current.x, dragStart.current.y) > 12
+            ) {
                 send(g, id, p.x, p.y);
                 valgt.current = null;
                 sikte.current = null;
@@ -514,7 +619,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         snapshot: () => {
             // Runden er ikke avgjort for eleven før slutt-skjermen står (tap-bildet fryser først).
             const s = snapshotOf(gameRef.current, modeRef.current === 'menu');
-            if ((s.fase === 'vunnet' || s.fase === 'tapt') && modeRef.current !== 'over') s.fase = 'spiller';
+            if ((s.fase === 'vunnet' || s.fase === 'tapt') && modeRef.current !== 'over')
+                s.fase = 'spiller';
             return s;
         },
         start: () => {
@@ -594,29 +700,17 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                         <ArcadeScreen>
                             <ArcadeLogo>Rederens kart</ArcadeLogo>
                             <ArcadeTag color={P.rav}>Hvalfangsten 1864-1968</ArcadeTag>
-                            <p style={{ fontSize: 17, margin: '8px 0 4px', maxWidth: 560 }}>{MÅL}</p>
-                            <ol
-                                style={{
-                                    textAlign: 'left',
-                                    fontSize: 15,
-                                    margin: '4px 0 10px',
-                                    paddingLeft: 22,
-                                    lineHeight: 1.4,
-                                    maxWidth: 560,
-                                }}
-                            >
-                                {REGLER.map((r) => (
-                                    <li key={r}>{r}</li>
-                                ))}
-                            </ol>
+                            <p style={{ fontSize: 18, margin: '10px 0 12px', maxWidth: 560 }}>
+                                {MÅL}
+                            </p>
                             <ArcadeBigButton onClick={start}>Start (mellomrom)</ArcadeBigButton>
                             <ArcadeSmallButton onClick={lydAv} ariaLabel="Lyd av eller på">
                                 {muted ? 'Lyd: av' : 'Lyd: på'}
                             </ArcadeSmallButton>
                             {save.runder > 0 && (
                                 <p style={{ fontSize: 15, margin: '8px 0 2px' }}>
-                                    Lengst: <b>{save.rekord}</b> ({rankFor(RANGER, save.rekord)}) · Beste
-                                    poeng: <b>{save.poeng}</b>
+                                    Lengst: <b>{save.rekord}</b> ({rankFor(RANGER, save.rekord)}) ·
+                                    Beste poeng: <b>{save.poeng}</b>
                                 </p>
                             )}
                         </ArcadeScreen>
@@ -626,8 +720,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                         <ArcadeScreen>
                             <ArcadeLogo>Pause</ArcadeLogo>
                             <p style={{ fontSize: 15, margin: '4px 0 10px', maxWidth: 520 }}>
-                                Mus: dra en båt dit den skal. Tastatur: 1-9 velger båt, K kokeriet, piltaster
-                                sikter, mellomrom sender.
+                                Mus: dra en båt dit den skal. Tastatur: 1-9 velger båt, K kokeriet,
+                                piltaster sikter, mellomrom sender.
                             </p>
                             <ArcadeBigButton onClick={resume}>Fortsett</ArcadeBigButton>
                             <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
@@ -643,14 +737,29 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                                 {res.vant ? '1968 - havet lever' : TAP_TITTEL[res.årsak ?? 'tomt']}
                             </ArcadeLogo>
                             <ArcadeTag color={res.vant ? P.grønn : P.rød}>
-                                {res.nyRekord ? `${res.år} - ny rekord!` : `${res.år}`}
+                                {res.nyRekord ? `Ny rekord: ${res.år}` : rankFor(RANGER, res.år)}
                             </ArcadeTag>
+                            {res.hvorfor && (
+                                <p
+                                    style={{
+                                        fontSize: 17,
+                                        fontWeight: 700,
+                                        color: P.rød,
+                                        margin: '8px 0 0',
+                                        maxWidth: 580,
+                                    }}
+                                >
+                                    {res.hvorfor}
+                                </p>
+                            )}
                             {!res.vant && res.årsak && (
-                                <p style={{ fontSize: 16, margin: '8px 0', maxWidth: 580 }}>{TIPS[res.årsak]}</p>
+                                <p style={{ fontSize: 16, margin: '8px 0', maxWidth: 580 }}>
+                                    {res.prisFall ? TIPS_PRIS : TIPS[res.årsak]}
+                                </p>
                             )}
                             <ArcadeStats
                                 items={[
-                                    { value: `${res.år}`, label: rankFor(RANGER, res.år) },
+                                    { value: `${res.år - TUNING.tid.start}`, label: 'År drevet' },
                                     { value: `${res.poeng}`, label: 'Forvalter-poeng' },
                                     { value: `${res.grønne}`, label: 'Grønne år' },
                                 ]}
@@ -661,7 +770,9 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                                 </p>
                             )}
                             <ArcadeLessons items={res.lærdom} />
-                            <ArcadeBigButton onClick={omstart}>Ny runde (mellomrom)</ArcadeBigButton>
+                            <ArcadeBigButton onClick={omstart}>
+                                Ny runde (mellomrom)
+                            </ArcadeBigButton>
                             <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
                         </ArcadeScreen>
                     )}

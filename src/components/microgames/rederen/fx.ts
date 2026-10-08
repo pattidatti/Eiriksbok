@@ -64,6 +64,12 @@ export interface Fx {
     arkFra: KartId | null;
     arkT: number;
     klokke: number;
+    /** Rykk i hele bildet (piksler), dempes raskt. */
+    rykk: number;
+    /** Flokker som nettopp ble fredet: flokk -> sekunder siden (stempelet slås). */
+    fred: Map<number, number>;
+    /** Flokken en båt nettopp ble sluppet på: flokk -> sekunder siden (ringen låser seg). */
+    lås: Map<number, number>;
 }
 
 export const nyFx = (): Fx => ({
@@ -82,7 +88,15 @@ export const nyFx = (): Fx => ({
     arkFra: null,
     arkT: 1,
     klokke: 0,
+    rykk: 0,
+    fred: new Map(),
+    lås: new Map(),
 });
+
+/** Et rykk i bildet: det største som kommer, vinner. */
+export const rykk = (fx: Fx, px: number) => {
+    fx.rykk = Math.max(fx.rykk, px);
+};
 
 export const ARK_SEK = 1.6;
 export const UNGE_SEK = 5;
@@ -92,12 +106,32 @@ export function bølge(fx: Fx, x: number, y: number, r: number, farge: string, l
 }
 
 /** Hendelser fra spillet -> effekter. Kalles før hendelsene tømmes. */
-export function fraHendelse(fx: Fx, g: Game, h: Hendelse, farger: { grønn: string; rød: string; blekk: string; rav: string }) {
+export function fraHendelse(
+    fx: Fx,
+    g: Game,
+    h: Hendelse,
+    farger: { grønn: string; rød: string; blekk: string; rav: string }
+) {
     if (h.type === 'fangst') {
         const f = g.flokker.find((k) => k.id === h.flokk);
         if (f) {
-            fx.tatt.push({ x: f.x, y: f.y, bx: h.x, by: h.y, t: 0, v: Math.floor(Math.random() * 4) });
-            bølge(fx, f.x + (Math.random() - 0.5) * 20, f.y + (Math.random() - 0.5) * 14, 12, farger.blekk, 0.6, 1.2);
+            fx.tatt.push({
+                x: f.x,
+                y: f.y,
+                bx: h.x,
+                by: h.y,
+                t: 0,
+                v: Math.floor(Math.random() * 4),
+            });
+            bølge(
+                fx,
+                f.x + (Math.random() - 0.5) * 20,
+                f.y + (Math.random() - 0.5) * 14,
+                12,
+                farger.blekk,
+                0.6,
+                1.2
+            );
         }
     } else if (h.type === 'unge') {
         const l = fx.unger.get(h.flokk) ?? [];
@@ -107,6 +141,7 @@ export function fraHendelse(fx: Fx, g: Game, h: Hendelse, farger: { grønn: stri
         if (f) bølge(fx, f.x, f.y, 20, farger.grønn, 0.9, 1.5);
     } else if (h.type === 'død') {
         fx.døde.set(h.flokk, 0);
+        rykk(fx, 7);
         const f = g.flokker.find((k) => k.id === h.flokk);
         if (f) bølge(fx, f.x, f.y, 70, farger.rød, 1.4, 3);
     } else if (h.type === 'fat') {
@@ -117,9 +152,15 @@ export function fraHendelse(fx: Fx, g: Game, h: Hendelse, farger: { grønn: stri
         if (b) {
             bølge(fx, b.tx, b.ty, 34, farger.blekk, 0.7, 2);
             bølge(fx, b.tx, b.ty, 52, farger.blekk, 1.0, 1);
+            if (b.følger !== null) {
+                // Båten låser seg på flokken: ringen blinker rav og strammer seg inn.
+                fx.lås.set(b.følger, 0);
+                rykk(fx, 3);
+            }
         }
     } else if (h.type === 'kjøp') {
         fx.hopp.set(h.id, 0);
+        rykk(fx, 5);
         const b = g.båter.find((k) => k.id === h.id);
         if (b) bølge(fx, b.x, b.y, 60, farger.rav, 1.0, 3);
     } else if (h.type === 'tilbud') {
@@ -132,8 +173,17 @@ export function fraHendelse(fx: Fx, g: Game, h: Hendelse, farger: { grønn: stri
             bølge(fx, f.x, f.y, 80, farger.grønn, 1.6, 4);
             bølge(fx, f.x, f.y, 56, farger.grønn, 1.2, 2);
         }
+    } else if (h.type === 'krakk') {
+        rykk(fx, 11);
+        fx.tønneHopp = 1;
+    } else if (h.type === 'fredning') {
+        rykk(fx, 6);
+        for (const id of h.flokker) fx.fred.set(id, 0);
+    } else if (h.type === 'tap') {
+        rykk(fx, 12);
     } else if (h.type === 'årsskifte') {
         fx.årHopp = 1;
+        if (h.kost > 0) rykk(fx, 2);
         if (h.grønt) {
             fx.grønt = 1;
             fx.rekke = g.grønnRekke;
@@ -158,6 +208,12 @@ export function fxSteg(fx: Fx, g: Game, dt: number, lav: boolean) {
         else fx.unger.delete(k);
     }
     for (const [k, t] of fx.døde) fx.døde.set(k, t + dt);
+    for (const [k, t] of fx.fred) fx.fred.set(k, t + dt);
+    for (const [k, t] of fx.lås) {
+        if (t > 0.6) fx.lås.delete(k);
+        else fx.lås.set(k, t + dt);
+    }
+    fx.rykk = fx.rykk < 0.2 ? 0 : fx.rykk * Math.exp(-dt * 9);
     for (const [k, t] of fx.hopp) {
         if (t > 1) fx.hopp.delete(k);
         else fx.hopp.set(k, t + dt);

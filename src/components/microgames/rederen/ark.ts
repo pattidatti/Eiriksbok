@@ -72,7 +72,15 @@ function papir(ctx: CanvasRenderingContext2D, k: Kart, rng: () => number) {
         for (let j = 0; j < 4; j++) {
             ctx.fillStyle = `rgba(140,100,40,${0.025 + 0.015 * k.alder})`;
             ctx.beginPath();
-            ctx.ellipse(x + j * 2, y - j, r * (1 - j * 0.18), r * (0.8 - j * 0.12), rng(), 0, Math.PI * 2);
+            ctx.ellipse(
+                x + j * 2,
+                y - j,
+                r * (1 - j * 0.18),
+                r * (0.8 - j * 0.12),
+                rng(),
+                0,
+                Math.PI * 2
+            );
             ctx.fill();
         }
         ctx.strokeStyle = `rgba(120,80,30,${0.08 + 0.06 * k.alder})`;
@@ -197,7 +205,10 @@ function rose(ctx: CanvasRenderingContext2D, k: Kart) {
             ctx.beginPath();
             ctx.moveTo(x, y);
             ctx.lineTo(tx, ty);
-            ctx.lineTo(x + Math.cos(a + side * Math.PI / 2) * b, y + Math.sin(a + side * Math.PI / 2) * b);
+            ctx.lineTo(
+                x + Math.cos(a + (side * Math.PI) / 2) * b,
+                y + Math.sin(a + (side * Math.PI) / 2) * b
+            );
             ctx.closePath();
             ctx.fillStyle = side < 0 ? P.blekk : P.papir;
             ctx.fill();
@@ -316,9 +327,12 @@ export function ark(id: KartId, r: number): HTMLCanvasElement {
     return c;
 }
 
-/** Hvalstempelet: en flat hvalsilhuett i stempelblått, med ujevn blekkmengde. Fire varianter. */
+/**
+ * Hvalstempelet: en blåhval sett ovenfra, i stempelblått med ujevnt blekk. Hodet peker mot
+ * høyre, halefinnen (to fliker) til venstre, og to små luffer på sidene. Fire varianter.
+ */
 const stempler: HTMLCanvasElement[] = [];
-export const STEMPEL = { w: 15, h: 8 };
+export const STEMPEL = { w: 28, h: 13 };
 
 export function stempel(i: number): HTMLCanvasElement {
     if (!stempler.length) {
@@ -327,25 +341,50 @@ export function stempel(i: number): HTMLCanvasElement {
             const [c, ctx] = lagCanvas(STEMPEL.w * S, STEMPEL.h * S);
             ctx.scale(S, S);
             const rng = rngFra(101 + v * 31);
+            const m = STEMPEL.h / 2;
             ctx.fillStyle = P.hval;
+            // Kroppen: bred over luffene, smal mot halen.
             ctx.beginPath();
-            // Kroppen: rundt hode til høyre, smal hale mot venstre, sporen (halefinnen) helt til venstre.
-            ctx.moveTo(14.6, 4);
-            ctx.bezierCurveTo(14.6, 1.2, 10, 1.0, 6.5, 2.4);
-            ctx.lineTo(3.2, 3.5);
-            ctx.lineTo(0.4, 1.2);
-            ctx.lineTo(1.6, 4);
-            ctx.lineTo(0.4, 6.8);
-            ctx.lineTo(3.2, 4.5);
-            ctx.lineTo(6.5, 5.6);
-            ctx.bezierCurveTo(10, 7.0, 14.6, 6.8, 14.6, 4);
+            ctx.moveTo(27.4, m);
+            ctx.bezierCurveTo(27.4, m - 3.4, 22, m - 3.9, 16, m - 3.5);
+            ctx.bezierCurveTo(11, m - 3.0, 7.5, m - 1.4, 5.2, m - 0.7);
+            ctx.lineTo(5.2, m + 0.7);
+            ctx.bezierCurveTo(7.5, m + 1.4, 11, m + 3.0, 16, m + 3.5);
+            ctx.bezierCurveTo(22, m + 3.9, 27.4, m + 3.4, 27.4, m);
             ctx.fill();
-            // Ujevnt blekk: små hull i stempelet.
-            ctx.globalCompositeOperation = 'destination-out';
-            for (let k = 0; k < 9 + v * 3; k++) {
-                ctx.globalAlpha = 0.3 + rng() * 0.5;
+            // Halefinnen: to fliker.
+            ctx.beginPath();
+            ctx.moveTo(5.8, m);
+            ctx.quadraticCurveTo(3.6, m - 5.6, 0.4, m - 5.8);
+            ctx.quadraticCurveTo(2.4, m - 2.2, 2.2, m);
+            ctx.quadraticCurveTo(2.4, m + 2.2, 0.4, m + 5.8);
+            ctx.quadraticCurveTo(3.6, m + 5.6, 5.8, m);
+            ctx.fill();
+            // Luffene.
+            for (const k of [-1, 1]) {
                 ctx.beginPath();
-                ctx.arc(2 + rng() * 12, 2 + rng() * 4, 0.25 + rng() * 0.45, 0, Math.PI * 2);
+                ctx.moveTo(19.5, m + k * 3);
+                ctx.quadraticCurveTo(16.5, m + k * 6.4, 14.2, m + k * 6.3);
+                ctx.quadraticCurveTo(16, m + k * 4.2, 16.4, m + k * 3.2);
+                ctx.fill();
+            }
+            // Blåsehullet og ryggen: lyse streker, så hvalen får form.
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.globalAlpha = 0.55;
+            ctx.beginPath();
+            ctx.ellipse(23.4, m, 0.9, 0.55, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.globalAlpha = 0.28;
+            ctx.lineWidth = 0.6;
+            ctx.beginPath();
+            ctx.moveTo(21, m);
+            ctx.lineTo(8, m);
+            ctx.stroke();
+            // Ujevnt blekk: små hull i stempelet.
+            for (let k = 0; k < 12 + v * 4; k++) {
+                ctx.globalAlpha = 0.25 + rng() * 0.45;
+                ctx.beginPath();
+                ctx.arc(4 + rng() * 22, m - 3 + rng() * 6, 0.25 + rng() * 0.5, 0, Math.PI * 2);
                 ctx.fill();
             }
             ctx.globalAlpha = 1;

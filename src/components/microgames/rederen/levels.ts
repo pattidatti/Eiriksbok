@@ -16,6 +16,8 @@ export interface FlokkDef {
     fart: number;
     /** Hvor på sløyfa flokken starter (radianer). */
     fase: number;
+    /** Blåhval: fredes i 1966. */
+    blåhval?: boolean;
 }
 
 export interface Land {
@@ -141,11 +143,7 @@ export const KART: Record<KartId, Kart> = {
         id: 'georgia',
         havn: { x: 476, y: 212, navn: 'Grytviken' },
         sone: { x0: 368, y0: 124, x1: 592, y1: 226 },
-        plasser: [
-            ...rader([405, 455, 505, 555], [190, 166]),
-            [430, 142],
-            [530, 142],
-        ],
+        plasser: [...rader([405, 455, 505, 555], [190, 166]), [430, 142], [530, 142]],
         kokeriPlass: [480, 142],
         land: [
             {
@@ -278,13 +276,13 @@ export const BRETT: Brett[] = [
         kart: 'sorishavet',
         flokker: [
             f('A', 110, 200, 18, 12, { rx: 50, ry: 30, maks: 22 }),
-            f('B', 270, 190, 20, 13, { rx: 50, ry: 30, maks: 22, fase: 1 }),
+            f('B', 270, 190, 20, 13, { rx: 50, ry: 30, maks: 22, fase: 1, blåhval: true }),
             f('C', 520, 220, 16, 13, { rx: 50, ry: 30, maks: 22, fase: 2 }),
-            f('D', 730, 212, 20, 12, { rx: 50, ry: 30, maks: 22, fase: 3 }),
+            f('D', 730, 212, 20, 12, { rx: 50, ry: 30, maks: 22, fase: 3, blåhval: true }),
             f('E', 880, 260, 18, 14, { rx: 40, ry: 30, maks: 22, fase: 4 }),
             f('F', 140, 360, 20, 13, { rx: 50, ry: 30, maks: 22, fase: 5 }),
             f('G', 360, 330, 17, 14, { rx: 50, ry: 30, maks: 22, fase: 0.5 }),
-            f('H', 580, 364, 19, 13, { rx: 50, ry: 30, maks: 22, fase: 1.5 }),
+            f('H', 580, 364, 19, 13, { rx: 50, ry: 30, maks: 22, fase: 1.5, blåhval: true }),
             f('I', 760, 340, 16, 14, { rx: 50, ry: 30, maks: 22, fase: 2.5 }),
             f('J', 880, 392, 18, 13, { rx: 40, ry: 22, maks: 22, fase: 3.5 }),
         ],

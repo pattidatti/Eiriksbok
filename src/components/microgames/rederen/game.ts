@@ -11,6 +11,8 @@ import {
     havnKost,
     hvalIHavet,
     iRo,
+    markedÅpent,
+    prisFor,
     sløyfe,
     vinkelfart,
     årLengde,
@@ -45,6 +47,10 @@ export interface Flokk {
     dødÅr: number | null;
     /** Har vært nesten tom (under en firedel): blir den stor igjen, er den reddet. */
     kritisk: boolean;
+    /** Blåhval (fredes i 1966). */
+    blåhval?: boolean;
+    /** Låst: fangst forbudt her (Finnmark 1903, blåhvalen 1966). Flokken lever og føder videre. */
+    fredet: boolean;
 }
 
 export interface Båt {
@@ -93,6 +99,10 @@ export type Hendelse =
       }
     | { type: 'slipp'; id: number }
     | { type: 'tap'; årsak: Årsak }
+    /** Prisen falt ved nyttår: for mange fat på ett år. `tap` = olje tønna mistet i verdi. */
+    | { type: 'krakk'; fra: number; til: number; tap: number; fat: number }
+    | { type: 'marked' }
+    | { type: 'fredning'; hva: 'finnmark' | 'blåhval'; flokker: number[] }
     | { type: 'seier' };
 
 export interface Game {
@@ -124,7 +134,13 @@ export interface Game {
     tappere: number[];
     /** Regnskapet: olje inn hittil i år, og fjorårets inn og ut (vises ved tønna og i tap-bildet). */
     innIÅr: number;
-    sist: { år: number; inn: number; ut: number; fast: number } | null;
+    /** Oljemarkedet: fat på lageret i verden (tømmes jevnt), prisen nå (1 = full), fat inn i år. */
+    lager: number;
+    pris: number;
+    fatIÅr: number;
+    sist: { år: number; inn: number; ut: number; fast: number; fat: number } | null;
+    /** Sekunder til det nye arket kommer (etter forbudet i Finnmark), ellers null. */
+    byttOm: number | null;
     /** Neste båt til salgs (indeks i TUNING.tilbud). */
     tilbudNeste: number;
     nesteId: number;
@@ -156,6 +172,7 @@ function leggTilFlokker(g: Game, brett: number) {
             netto: 0,
             dødÅr: null,
             kritisk: false,
+            fredet: false,
         };
         const p = sløyfe(f, f.fase, g.t);
         f.x = p.x;
@@ -221,8 +238,9 @@ function startBrett(g: Game, brett: number) {
     const def = BRETT[brett];
     if (def.kart) {
         // Nytt kartark: det gamle havet er stengt. Fat underveis kommer hjem, båtene seiler hjem.
-        g.tønne += g.fat.length * T.fangst.fatVerdi;
-        g.innIÅr += g.fat.length * T.fangst.fatVerdi;
+        g.tønne += g.fat.length * T.fangst.fatVerdi * g.pris;
+        g.innIÅr += g.fat.length * T.fangst.fatVerdi * g.pris;
+        g.fatIÅr += g.fat.length;
         g.fat = [];
         g.kart = def.kart;
         g.havn = { ...KART[def.kart].havn };
@@ -261,8 +279,12 @@ export function newGame(seed: number): Game {
         totaltTatt: 0,
         tappere: [],
         innIÅr: 0,
+        lager: 0,
+        pris: 1,
+        fatIÅr: 0,
         sist: null,
         tilbudNeste: 0,
+        byttOm: null,
         nesteId: 1,
         hendelser: [],
         rng: mulberry(seed),
@@ -320,7 +342,7 @@ export function send(g: Game, id: number, x: number, y: number) {
             let bd = T.fangst.radius;
             for (const f of g.flokker) {
                 const d = dist(x, y, f.x, f.y);
-                if (f.død || d > bd) continue;
+                if (f.død || f.fredet || d > bd) continue;
                 bd = d;
                 b.følger = f.id;
                 // Behold litt av avstanden, så to båter ved samme flokk ikke ligger oppå hverandre.
@@ -350,7 +372,25 @@ function mottak(g: Game, x: number, y: number) {
     return best;
 }
 
+/** Oljemarkedet ved nyttår: er lageret i verden for fullt, mister oljen i tønna verdi. */
+function marked(g: Game) {
+    if (g.år < T.marked.fra || g.pris >= 1) return;
+    const før = Math.max(0, g.tønne);
+    g.tønne = før * g.pris;
+    g.hendelser.push({ type: 'krakk', fra: 1, til: g.pris, tap: før - g.tønne, fat: g.fatIÅr });
+}
+
+/** Fredning: flokkene låses, og båtene som lå der, seiler hjem. */
+function fred(g: Game, hva: 'finnmark' | 'blåhval') {
+    const låst = g.flokker.filter((f) => !f.død && (hva === 'finnmark' || f.blåhval));
+    for (const f of låst) f.fredet = true;
+    for (const b of g.båter)
+        if (b.følger !== null && låst.some((f) => f.id === b.følger)) tilHavn(g, b);
+    g.hendelser.push({ type: 'fredning', hva, flokker: låst.map((f) => f.id) });
+}
+
 function årsskifte(g: Game) {
+    marked(g);
     const kost = årsKost(g);
     const betalt = g.båter.map((b) => ({ id: b.id, kost: havnKost(g, b) }));
     g.tappere = g.båter.filter((b) => !b.hjemme).map((b) => b.id);
@@ -361,11 +401,12 @@ function årsskifte(g: Game) {
     const bonus = T.poeng.grønnBonus;
     g.poeng += T.poeng.perÅr + (grønt ? bonus[Math.min(g.grønnRekke, bonus.length) - 1] : 0);
     g.tønne -= kost;
-    g.sist = { år: g.år, inn: g.innIÅr, ut: kost, fast: fastKost(g.år) };
+    g.sist = { år: g.år, inn: g.innIÅr, ut: kost, fast: fastKost(g.år), fat: g.fatIÅr };
     g.hendelser.push({ type: 'årsskifte', kost, inn: g.innIÅr, grønt, betalt });
     g.år++;
     g.tattIÅr = 0;
     g.innIÅr = 0;
+    g.fatIÅr = 0;
     for (const f of g.flokker) f.født = f.tatt = 0;
     if (g.tønne < 0) {
         if (g.år <= T.økonomi.gulvTil) g.tønne = 0;
@@ -377,7 +418,13 @@ function årsskifte(g: Game) {
         return;
     }
     const b = brettFor(g.år);
-    if (b !== g.brett) startBrett(g, b);
+    if (g.år === T.fredning.finnmark && g.kart === 'finnmark') {
+        // Forbudet kommer først: flokkene låses og båtene seiler hjem. Så kommer det nye arket.
+        fred(g, 'finnmark');
+        g.byttOm = T.fredning.finnmarkVent;
+    } else if (b !== g.brett) startBrett(g, b);
+    if (g.år === T.marked.fra) g.hendelser.push({ type: 'marked' });
+    if (g.år === T.fredning.blåhval) fred(g, 'blåhval');
     fyllTilbud(g);
     g.hvalVedÅrStart = hvalIHavet(g);
 }
@@ -460,8 +507,13 @@ export function update(g: Game, dt: number) {
     g.fat = g.fat.filter((k) => {
         const d = dist(k.x, k.y, k.tx, k.ty);
         if (d <= fv) {
-            g.tønne += T.fangst.fatVerdi;
-            g.innIÅr += T.fangst.fatVerdi;
+            g.tønne += T.fangst.fatVerdi * g.pris;
+            g.innIÅr += T.fangst.fatVerdi * g.pris;
+            g.fatIÅr++;
+            if (markedÅpent(g)) {
+                g.lager++;
+                g.pris = prisFor(g.lager);
+            }
             g.hendelser.push({ type: 'fat' });
             return false;
         }
@@ -469,6 +521,20 @@ export function update(g: Game, dt: number) {
         k.y += ((k.ty - k.y) / d) * fv;
         return true;
     });
+
+    if (g.byttOm !== null) {
+        g.byttOm -= dt;
+        if (g.byttOm <= 0) {
+            g.byttOm = null;
+            startBrett(g, brettFor(g.år));
+        }
+    }
+
+    // Verden kjøper olje jevnt: lageret tømmes, og prisen kommer seg.
+    if (markedÅpent(g)) {
+        g.lager = Math.max(0, g.lager - (T.marked.grense / årLengde(g.år)) * dt);
+        g.pris = prisFor(g.lager);
+    }
 
     // Tomt hav: alle flokkene borte, eller for få hval igjen.
     const levende = g.flokker.filter((f) => !f.død);
