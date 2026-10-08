@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, BookOpen, ChevronLeft, ChevronRight, Maximize2, Minimize2, X } from 'lucide-react';
 import { tegnLysbilde } from './tegnLysbilde';
 import type { Lysbilde, Sporsmal } from './types';
+import type { Teksting as TekstingValg } from './studiebevis';
 
 const PILLE =
     'pointer-events-auto inline-flex items-center gap-1.5 rounded-full bg-white/85 px-3 py-1.5 text-sm font-medium text-slate-700 shadow backdrop-blur hover:bg-white';
@@ -40,11 +41,14 @@ export function Knapp({
     etikett,
     onClick,
     hoved,
+    aktiv,
     children,
 }: {
     etikett: string;
     onClick: () => void;
     hoved?: boolean;
+    /** Et panel knappen åpner er åpent, eller en innstilling er slått på. */
+    aktiv?: boolean;
     children: React.ReactNode;
 }) {
     return (
@@ -53,7 +57,11 @@ export function Knapp({
             aria-label={etikett}
             title={etikett}
             className={`flex items-center justify-center rounded-full shadow transition active:scale-90 ${
-                hoved ? 'h-12 w-12 bg-indigo-600 text-white hover:bg-indigo-700' : 'h-11 w-11 bg-white/85 text-slate-700 backdrop-blur hover:bg-white'
+                hoved
+                    ? 'h-12 w-12 bg-indigo-600 text-white hover:bg-indigo-700'
+                    : aktiv
+                      ? 'h-11 w-11 bg-amber-300 text-slate-900 hover:bg-amber-200'
+                      : 'h-11 w-11 bg-white/85 text-slate-700 backdrop-blur hover:bg-white'
             }`}
         >
             {children}
@@ -62,10 +70,24 @@ export function Knapp({
 }
 
 /** Tekstingen: står der blikket er, med ordet som sies nå markert. */
-export function Teksting({ tekst, ord }: { tekst: string; ord: { index: number; lengde: number } | null }) {
+export function Teksting({
+    tekst,
+    ord,
+    storrelse = 'normal',
+}: {
+    tekst: string;
+    ord: { index: number; lengde: number } | null;
+    storrelse?: TekstingValg;
+}) {
+    if (storrelse === 'av') return null;
+    const stor = storrelse === 'stor';
     return (
         <div className="pointer-events-none absolute inset-x-0 bottom-20 flex justify-center px-4">
-            <p className="max-w-4xl rounded-2xl bg-white/90 px-5 py-3 text-center text-xl leading-snug text-slate-800 shadow-lg backdrop-blur">
+            <p
+                className={`rounded-2xl bg-white/90 text-center leading-snug text-slate-800 shadow-lg backdrop-blur ${
+                    stor ? 'max-w-5xl px-6 py-4 text-3xl' : 'max-w-4xl px-5 py-3 text-xl'
+                }`}
+            >
                 {ord ? (
                     <>
                         {tekst.slice(0, ord.index)}
@@ -98,7 +120,7 @@ export function StaHint({ naerSete, onFinnPlass }: { naerSete: boolean; onFinnPl
                 </button>
             </div>
             <div className="absolute bottom-4 left-4 rounded-2xl bg-white/85 px-4 py-2.5 text-sm text-slate-700 shadow backdrop-blur">
-                <b>WASD</b> eller <b>piltaster</b>: gå · <b>Dra med musa</b>: se deg rundt · <b>Klikk på et gult sete</b>: sett deg
+                <b>WASD</b> eller <b>piltaster</b>: gå · <b>Dra med musa</b>: se deg rundt · <b>Klikk på et gult sete</b>: sett deg · <b>H</b>: hurtigtaster
             </div>
         </>
     );

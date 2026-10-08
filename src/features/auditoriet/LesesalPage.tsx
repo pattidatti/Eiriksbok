@@ -5,9 +5,9 @@
 //
 // Salene på universitetet går etter klokka (SalPage). Her bestemmer eleven selv.
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Monitor, Pause, Play, RotateCcw, Volume2, VolumeX } from 'lucide-react';
+import { Captions, CaptionsOff, ChevronLeft, ChevronRight, Keyboard, Monitor, NotebookPen, Pause, Play, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { useForelesning } from './useForelesning';
 import type { Forelesning, Sporsmal } from './types';
 import { hentProgram } from './kringkasting';
@@ -16,9 +16,26 @@ import { SalScene } from './scene/SalScene';
 import type { SpillerModus } from './scene/Spiller';
 import { bestLedigSete, type Sete } from './scene/salGeometri';
 import { Knapp, Sporsmalskort, StaHint, StortLysbilde, Teksting, Toppstripe } from './komponenter';
-import { hentSporsmal, useFullskjerm, useHeleSkjermen } from './hjelpere';
+import { Hurtigtaster, Melding, NotatPanel } from './paneler';
+import { hentSporsmal, useFullskjerm, useHeleSkjermen, useHurtigtaster, useMelding } from './hjelpere';
+import { lysbildeOverskrift } from './sisteFor';
+import { useStudiebevis } from './studiebevis';
 
 const STANDARD = 'historie/vikingtiden/rikssamlingen';
+
+const TASTER: [string, string][] = [
+    ['W A S D', 'Gå'],
+    ['E', 'Sett deg'],
+    ['Q', 'Reis deg'],
+    ['Mellomrom', 'Pause eller spill'],
+    ['← →', 'Forrige eller neste (når du sitter)'],
+    ['M', 'Lyd av eller på'],
+    ['T', 'Teksting: vanlig, stor, av'],
+    ['N', 'Noter det foreleseren sier nå'],
+    ['L', 'Se lysbildet stort'],
+    ['H', 'Denne lista'],
+    ['Esc', 'Lukk'],
+];
 
 function useLastForelesning(sti: string) {
     const [data, setData] = useState<{ forelesning: Forelesning; sporsmal: Sporsmal[] } | null>(null);
@@ -62,6 +79,13 @@ export function LesesalPage() {
     const [naerSete, setNaerSete] = useState<Sete | null>(null);
     const [visLysbilde, setVisLysbilde] = useState(false);
     const [quizApen, setQuizApen] = useState(false);
+    const [panel, setPanel] = useState<'notater' | 'hjelp' | null>(null);
+    const { melding, vis } = useMelding();
+    const teksting = useStudiebevis((s) => s.teksting);
+    const nesteTeksting = useStudiebevis((s) => s.nesteTeksting);
+    const notere = useStudiebevis((s) => s.notere);
+    const stemple = useStudiebevis((s) => s.stemple);
+    const antallNotater = useStudiebevis((s) => s.notater[sti]?.liste.length ?? 0);
 
     const settDeg = useCallback((s: Sete) => {
         setSete(s);
@@ -83,30 +107,61 @@ export function LesesalPage() {
         }
     }, [f]);
 
+    // Segmentene eleven faktisk har hørt (minst to sekunder av). Å hoppe gjennom gir ikke stempel.
+    const hort = useRef(new Set<number>());
     useEffect(() => {
-        if (f.status === 'ferdig' && (data?.sporsmal.length ?? 0) > 0) {
-            const t = setTimeout(() => setQuizApen(true), 1200);
-            return () => clearTimeout(t);
-        }
-    }, [f.status, data]);
+        if (f.status !== 'spiller') return;
+        const i = f.indeks;
+        const t = setTimeout(() => hort.current.add(i), 2000);
+        return () => clearTimeout(t);
+    }, [f.status, f.indeks]);
 
-    // Tastatur: E setter deg, Q reiser deg, mellomrom pauser.
+    // Forelesningen hørt til endes: stempel i studiebeviset, så spørsmålene.
+    const fl0 = data?.forelesning;
     useEffect(() => {
-        const ned = (e: KeyboardEvent) => {
-            if ((e.target as HTMLElement)?.closest('input, textarea, button')) return;
-            const k = e.key.toLowerCase();
-            if (k === 'e' && modus === 'gaar' && naerSete && !sete) settDeg(naerSete);
-            if (k === 'q' && modus === 'sitter') reisDeg();
-            if (k === ' ' && modus === 'sitter') {
-                e.preventDefault();
-                if (f.status === 'spiller') f.pause();
-                else if (f.status === 'pause') f.fortsett();
-            }
-            if (k === 'escape' && visLysbilde) setVisLysbilde(false);
+        if (f.status !== 'ferdig' || !fl0) return;
+        const sal = salForFag(fl0.fag);
+        const nok = hort.current.size / fl0.segmenter.length >= 0.4;
+        const ny = nok && stemple(sti, { tittel: fl0.tittel, salId: sal?.id ?? fl0.fag, fag: fl0.fag, kilde: fl0.kilde });
+        const t1 = ny ? setTimeout(() => vis('Nytt stempel i studiebeviset!'), 0) : undefined;
+        const t2 = (data?.sporsmal.length ?? 0) > 0 ? setTimeout(() => setQuizApen(true), 1200) : undefined;
+        return () => {
+            clearTimeout(t1);
+            clearTimeout(t2);
         };
-        window.addEventListener('keydown', ned);
-        return () => window.removeEventListener('keydown', ned);
-    }, [modus, naerSete, sete, settDeg, reisDeg, f, visLysbilde]);
+    }, [f.status, data, fl0, sti, stemple, vis]);
+
+    const noter = () => {
+        if (!fl0 || !f.segment || f.status === 'ferdig') return;
+        notere(sti, fl0.tittel, { tekst: f.segment.si, lysbilde: lysbildeOverskrift(f.lysbilde) });
+        vis('Notert! Se notatblokka');
+    };
+    const byttTeksting = () => {
+        nesteTeksting();
+        const ny = useStudiebevis.getState().teksting;
+        vis(ny === 'av' ? 'Tekstingen er av' : ny === 'stor' ? 'Stor teksting' : 'Vanlig teksting');
+    };
+    const sitter = modus === 'sitter';
+    const harInne = modus !== 'ute';
+    const veksle = (p: 'notater' | 'hjelp') => setPanel((n) => (n === p ? null : p));
+
+    useHurtigtaster({
+        e: modus === 'gaar' && !!naerSete && !sete && (() => settDeg(naerSete!)),
+        q: sitter && reisDeg,
+        ' ': sitter && (() => (f.status === 'spiller' ? f.pause() : f.status === 'pause' ? f.fortsett() : undefined)),
+        arrowleft: sitter && (() => f.hopp(-1)),
+        arrowright: sitter && (() => f.hopp(1)),
+        m: harInne && f.byttLyd,
+        t: harInne && byttTeksting,
+        n: harInne && noter,
+        l: harInne && (() => setVisLysbilde((v) => !v)),
+        h: harInne && (() => veksle('hjelp')),
+        '?': harInne && (() => veksle('hjelp')),
+        escape: () => {
+            if (panel) setPanel(null);
+            else if (visLysbilde) setVisLysbilde(false);
+        },
+    });
 
     if (feil) {
         return (
@@ -133,6 +188,10 @@ export function LesesalPage() {
                     tavleTekst={fl.tittel}
                     anim={f.anim}
                     utseende={sal.foreleser.utseende}
+                    farge={sal.farge}
+                    salNavn="Lesesalen"
+                    direkte={f.status === 'spiller'}
+                    friminutt={f.status === 'ferdig'}
                     modus={modus}
                     sete={sete}
                     onVelgSete={settDeg}
@@ -189,7 +248,7 @@ export function LesesalPage() {
 
             {modus === 'sitter' && fl && (
                 <>
-                    {f.segment && f.status !== 'ferdig' && <Teksting tekst={f.segment.si} ord={f.ord} />}
+                    {f.segment && f.status !== 'ferdig' && <Teksting tekst={f.segment.si} ord={f.ord} storrelse={teksting} />}
                     <div className="absolute inset-x-0 bottom-3 flex items-center justify-center gap-2 px-4">
                         <Knapp etikett="Forrige" onClick={() => f.hopp(-1)}>
                             <ChevronLeft size={20} />
@@ -217,17 +276,33 @@ export function LesesalPage() {
                         <Knapp etikett="Neste" onClick={() => f.hopp(1)}>
                             <ChevronRight size={20} />
                         </Knapp>
-                        <div className="mx-2 hidden h-2 w-40 overflow-hidden rounded-full bg-white/70 shadow-inner sm:block">
+                        <div className="mx-2 hidden h-2 w-32 overflow-hidden rounded-full bg-white/70 shadow-inner md:block">
                             <div
                                 className="h-full rounded-full bg-amber-500 transition-all"
                                 style={{ width: `${((f.indeks + (f.status === 'ferdig' ? 1 : 0)) / Math.max(1, f.antall)) * 100}%` }}
                             />
                         </div>
-                        <Knapp etikett={f.lydPa ? 'Lyd av' : 'Lyd på'} onClick={f.byttLyd}>
+                        <Knapp etikett={f.lydPa ? 'Lyd av (M)' : 'Lyd på (M)'} onClick={f.byttLyd}>
                             {f.lydPa ? <Volume2 size={20} /> : <VolumeX size={20} />}
                         </Knapp>
-                        <Knapp etikett="Se lysbildet" onClick={() => setVisLysbilde(true)}>
+                        <Knapp etikett="Teksting (T)" onClick={byttTeksting} aktiv={teksting === 'stor'}>
+                            {teksting === 'av' ? <CaptionsOff size={20} /> : <Captions size={20} />}
+                        </Knapp>
+                        <span className="relative">
+                            <Knapp etikett="Notatblokka (N noterer)" onClick={() => veksle('notater')} aktiv={panel === 'notater'}>
+                                <NotebookPen size={20} />
+                            </Knapp>
+                            {antallNotater > 0 && (
+                                <span className="pointer-events-none absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-500 px-1 text-xs font-bold text-white">
+                                    {antallNotater}
+                                </span>
+                            )}
+                        </span>
+                        <Knapp etikett="Se lysbildet (L)" onClick={() => setVisLysbilde(true)}>
                             <Monitor size={20} />
+                        </Knapp>
+                        <Knapp etikett="Hurtigtaster (H)" onClick={() => veksle('hjelp')}>
+                            <Keyboard size={20} />
                         </Knapp>
                         <button
                             onClick={reisDeg}
@@ -263,6 +338,11 @@ export function LesesalPage() {
                     }}
                 />
             )}
+
+            {panel === 'notater' && fl && <NotatPanel sti={sti} tittel={fl.tittel} onLukk={() => setPanel(null)} />}
+            {panel === 'hjelp' && <Hurtigtaster taster={TASTER} onLukk={() => setPanel(null)} />}
+
+            <Melding tekst={melding} />
         </div>
     );
 }

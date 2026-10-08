@@ -12,6 +12,8 @@ import { klokkeslett, sendingNaa, tidIgjen, type Program } from '../kringkasting
 import { Spiller, type SpillerModus } from './Spiller';
 import type { Verden } from './verden';
 import type { Sete } from './salGeometri';
+import { Boks, Klokke, PaaLufta, Plante, Vindu } from './pynt';
+import { useHimmel } from './himmel';
 
 const BREDDE = 8;
 const HOYDE = 4.6;
@@ -133,16 +135,7 @@ function tegnTavle(c: ReturnType<typeof lagCanvas>, program: Program | null, naa
     c.tex.needsUpdate = true;
 }
 
-function Boks({ pos, str, farge }: { pos: [number, number, number]; str: [number, number, number]; farge: string }) {
-    return (
-        <mesh position={pos}>
-            <boxGeometry args={str} />
-            <ToonMaterial color={farge} />
-        </mesh>
-    );
-}
-
-function Dor({ sal, i, skilt, onKlikk }: { sal: Sal; i: number; skilt: THREE.Texture; onKlikk: () => void }) {
+function Dor({ sal, i, skilt, direkte, onKlikk }: { sal: Sal; i: number; skilt: THREE.Texture; direkte: boolean; onKlikk: () => void }) {
     const { x, z, side } = dorPlass(i);
     // Døra og skiltet vender inn mot gangen.
     const rot = side < 0 ? Math.PI / 2 : -Math.PI / 2;
@@ -167,6 +160,11 @@ function Dor({ sal, i, skilt, onKlikk }: { sal: Sal; i: number; skilt: THREE.Tex
                 <planeGeometry args={[0.5, 0.7]} />
                 <meshBasicMaterial color="#fde68a" toneMapped={false} />
             </mesh>
+            {/* Karm rundt døra */}
+            <Boks pos={[-0.9, 1.35, 0.06]} str={[0.12, 2.7, 0.08]} farge="#f5efe4" />
+            <Boks pos={[0.9, 1.35, 0.06]} str={[0.12, 2.7, 0.08]} farge="#f5efe4" />
+            <Boks pos={[0, 2.66, 0.06]} str={[1.92, 0.12, 0.08]} farge="#f5efe4" />
+            <PaaLufta pos={[1.62, 2.5, 0.08]} paa={direkte} bredde={0.8} />
             {/* Skiltet over døra */}
             <mesh position={[0, 3.45, 0.06]}>
                 <planeGeometry args={[2.6, 2.6 * (420 / 1024)]} />
@@ -176,33 +174,84 @@ function Dor({ sal, i, skilt, onKlikk }: { sal: Sal; i: number; skilt: THREE.Tex
     );
 }
 
-function Plante({ pos }: { pos: [number, number, number] }) {
-    return (
-        <group position={pos}>
-            <Boks pos={[0, 0.3, 0]} str={[0.5, 0.6, 0.5]} farge="#9a3412" />
-            <mesh position={[0, 1.05, 0]}>
-                <sphereGeometry args={[0.45, 12, 10]} />
-                <ToonMaterial color="#15803d" />
-            </mesh>
-        </group>
+/** Rutete steingulv, tegnet én gang og gjentatt. */
+function lagGulv(lengde: number) {
+    const c = lagCanvas(256, 256);
+    const { ctx } = c;
+    for (let y = 0; y < 2; y++)
+        for (let x = 0; x < 2; x++) {
+            ctx.fillStyle = (x + y) % 2 ? '#e9e1d2' : '#d8ccb6';
+            ctx.fillRect(x * 128, y * 128, 128, 128);
+        }
+    ctx.strokeStyle = 'rgba(120,100,70,0.25)';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(0, 0, 256, 256);
+    ctx.strokeRect(128, 128, 128, 128);
+    c.tex.wrapS = c.tex.wrapT = THREE.RepeatWrapping;
+    c.tex.repeat.set(BREDDE / 1.6, lengde / 1.6);
+    c.tex.needsUpdate = true;
+    return c;
+}
+
+/** Studiebeviset i glass og ramme på veggen ved inngangen. */
+function tegnDiplom(c: ReturnType<typeof lagCanvas>, bevis: { antall: number; tittel: string }) {
+    const { ctx, w, h } = c;
+    ctx.fillStyle = '#fffaf0';
+    ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = '#b45309';
+    ctx.lineWidth = 10;
+    ctx.strokeRect(24, 24, w - 48, h - 48);
+    ctx.lineWidth = 3;
+    ctx.strokeRect(42, 42, w - 84, h - 84);
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#92400e';
+    ctx.font = `700 40px ${FONT}`;
+    ctx.fillText('STUDIEBEVIS', w / 2, 120);
+    ctx.fillStyle = '#1e293b';
+    ctx.font = `italic 600 30px Georgia, serif`;
+    ctx.fillText(UNIVERSITET, w / 2, 170);
+    ctx.font = `800 76px ${FONT}`;
+    ctx.fillText(bevis.tittel, w / 2, 300);
+    ctx.font = `500 34px ${FONT}`;
+    ctx.fillStyle = '#475569';
+    ctx.fillText(
+        bevis.antall === 0 ? 'Ingen forelesninger ennå' : `${bevis.antall} ${bevis.antall === 1 ? 'forelesning' : 'forelesninger'} hørt`,
+        w / 2,
+        370
     );
+    // Segl
+    ctx.fillStyle = '#dc2626';
+    ctx.beginPath();
+    ctx.arc(w - 140, h - 130, 52, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#fecaca';
+    ctx.font = `800 26px ${FONT}`;
+    ctx.fillText('EB', w - 140, h - 120);
+    ctx.textAlign = 'start';
+    c.tex.needsUpdate = true;
 }
 
 export function GangScene({
     program,
     naa,
     modus,
+    bevis,
     onNaerDor,
     onGaInn,
 }: {
     program: Program | null;
     naa: number;
     modus: SpillerModus;
+    /** Studiebeviset på veggen ved inngangen. */
+    bevis: { antall: number; tittel: string };
     onNaerDor: (sal: Sal | null) => void;
     onGaInn: (sal: Sal) => void;
 }) {
     const skilt = useMemo(() => SALER.map(() => lagCanvas(1024, 420)), []);
     const tavle = useMemo(() => lagCanvas(1600, 900), []);
+    const diplom = useMemo(() => lagCanvas(800, 560), []);
+    const gulv = useMemo(() => lagGulv(START_Z - SLUTT_Z), []);
+    const himmel = useHimmel();
     const banner = useMemo(() => {
         const c = lagCanvas(1600, 260);
         c.ctx.fillStyle = '#ffffff';
@@ -217,6 +266,8 @@ export function GangScene({
         return c;
     }, []);
 
+    useEffect(() => tegnDiplom(diplom, bevis), [diplom, bevis]);
+
     useEffect(() => {
         SALER.forEach((sal, i) => tegnSkilt(skilt[i], sal, program, naa));
         tegnTavle(tavle, program, naa);
@@ -227,8 +278,10 @@ export function GangScene({
             skilt.forEach((c) => c.tex.dispose());
             tavle.tex.dispose();
             banner.tex.dispose();
+            diplom.tex.dispose();
+            gulv.tex.dispose();
         },
-        [skilt, tavle, banner]
+        [skilt, tavle, banner, diplom, gulv]
     );
 
     const lengde = START_Z - SLUTT_Z;
@@ -241,8 +294,13 @@ export function GangScene({
             <directionalLight position={[3, 8, 4]} intensity={0.6} color="#fff3d6" />
 
             {/* Gulv, tak, vegger */}
-            <Boks pos={[0, -0.05, midtZ]} str={[BREDDE, 0.1, lengde]} farge="#e7e1d6" />
-            <Boks pos={[0, 0.003, midtZ]} str={[2.2, 0.01, lengde - 2]} farge="#9f1239" />
+            <mesh position={[0, 0, midtZ]} rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[BREDDE, lengde]} />
+                <meshToonMaterial map={gulv.tex} />
+            </mesh>
+            {/* Løper med gullkant */}
+            <Boks pos={[0, 0.004, midtZ]} str={[2.5, 0.008, lengde - 2]} farge="#d4a24c" />
+            <Boks pos={[0, 0.009, midtZ]} str={[2.2, 0.008, lengde - 2.3]} farge="#9f1239" />
             <Boks pos={[0, HOYDE + 0.05, midtZ]} str={[BREDDE, 0.1, lengde]} farge="#fbf7f0" />
             <Boks pos={[-BREDDE / 2 - 0.05, HOYDE / 2, midtZ]} str={[0.1, HOYDE, lengde]} farge="#fbf6ec" />
             <Boks pos={[BREDDE / 2 + 0.05, HOYDE / 2, midtZ]} str={[0.1, HOYDE, lengde]} farge="#fbf6ec" />
@@ -251,6 +309,38 @@ export function GangScene({
             {/* Trepanel nederst */}
             <Boks pos={[-BREDDE / 2 + 0.03, 0.55, midtZ]} str={[0.06, 1.1, lengde]} farge="#d9b78f" />
             <Boks pos={[BREDDE / 2 - 0.03, 0.55, midtZ]} str={[0.06, 1.1, lengde]} farge="#d9b78f" />
+
+            {/* Søyler og takbjelker mellom dørene */}
+            {Array.from({ length: 5 }, (_, i) => {
+                // Midt mellom to dører, så de aldri står i veien for en dør, benk eller plante.
+                const z = dorPlass(0).z - 3.25 - i * 6.5;
+                return (
+                    <group key={i}>
+                        <Boks pos={[-BREDDE / 2 + 0.15, HOYDE / 2, z]} str={[0.3, HOYDE, 0.5]} farge="#efe5d3" />
+                        <Boks pos={[BREDDE / 2 - 0.15, HOYDE / 2, z]} str={[0.3, HOYDE, 0.5]} farge="#efe5d3" />
+                        <Boks pos={[0, HOYDE - 0.15, z]} str={[BREDDE, 0.3, 0.4]} farge="#d9b78f" />
+                    </group>
+                );
+            })}
+
+            {/* Stasjonsklokke midt i gangen, med skive begge veier */}
+            <group position={[0, HOYDE - 0.75, -14.5]}>
+                <mesh position={[0, 0.45, 0]}>
+                    <cylinderGeometry args={[0.03, 0.03, 0.6, 8]} />
+                    <meshBasicMaterial color="#334155" />
+                </mesh>
+                <Klokke pos={[0, 0, 0.06]} r={0.4} />
+                <Klokke pos={[0, 0, -0.06]} rot={[0, Math.PI, 0]} r={0.4} />
+            </group>
+
+            {/* Studiebeviset ved inngangen */}
+            <group position={[-BREDDE / 2 + 0.06, 2.1, -1.4]} rotation={[0, Math.PI / 2, 0]}>
+                <Boks pos={[0, 0, -0.02]} str={[1.75, 1.27, 0.06]} farge="#7c5a3c" />
+                <mesh position={[0, 0, 0.02]}>
+                    <planeGeometry args={[1.6, 1.12]} />
+                    <meshBasicMaterial map={diplom.tex} toneMapped={false} />
+                </mesh>
+            </group>
 
             {/* Taklys */}
             {Array.from({ length: 9 }, (_, i) => (
@@ -276,8 +366,31 @@ export function GangScene({
             </group>
 
             {SALER.map((sal, i) => (
-                <Dor key={sal.id} sal={sal} i={i} skilt={skilt[i].tex} onKlikk={() => onGaInn(sal)} />
+                <Dor
+                    key={sal.id}
+                    sal={sal}
+                    i={i}
+                    skilt={skilt[i].tex}
+                    direkte={!!program && !sendingNaa(sal.id, program.saler[sal.id] ?? [], naa)?.friminutt}
+                    onKlikk={() => onGaInn(sal)}
+                />
             ))}
+
+            {/* Vinduer over benkene, med himmel etter klokka */}
+            {SALER.map((_, i) => {
+                const { z, side } = dorPlass(i);
+                const x = (-side * BREDDE) / 2 + side * 0.06;
+                return (
+                    <Vindu
+                        key={i}
+                        pos={[x, 2.75, z - 0.5]}
+                        rot={[0, side < 0 ? -Math.PI / 2 : Math.PI / 2, 0]}
+                        b={2.4}
+                        h={2.2}
+                        himmel={himmel}
+                    />
+                );
+            })}
 
             {/* Benker og planter mellom dørene */}
             {SALER.map((_, i) => {

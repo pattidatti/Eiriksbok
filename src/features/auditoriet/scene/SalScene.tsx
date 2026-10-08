@@ -12,6 +12,7 @@ import { Foreleser } from './Foreleser';
 import { Publikum } from './Publikum';
 import { Spiller, type SpillerModus } from './Spiller';
 import { lagTavle } from './tavle';
+import { useHimmel } from './himmel';
 import type { Sete } from './salGeometri';
 
 export function SalScene({
@@ -20,6 +21,10 @@ export function SalScene({
     tavleTekst,
     anim,
     utseende,
+    farge,
+    salNavn,
+    direkte,
+    friminutt,
     modus,
     sete,
     onVelgSete,
@@ -33,6 +38,12 @@ export function SalScene({
     tavleTekst: string;
     anim: React.MutableRefObject<ForelesningAnim>;
     utseende: Utseende;
+    farge: string;
+    salNavn: string;
+    /** Det foreleses akkurat nå (PÅ LUFTA lyser). */
+    direkte: boolean;
+    /** Publikum strekker på seg og prater. */
+    friminutt: boolean;
     modus: SpillerModus;
     sete: Sete | null;
     onVelgSete: (s: Sete) => void;
@@ -41,6 +52,7 @@ export function SalScene({
 }) {
     const tavle = useMemo(() => lagTavle(tavleTekst), [tavleTekst]);
     useEffect(() => () => tavle.dispose(), [tavle]);
+    const himmel = useHimmel();
 
     return (
         <MicroCanvas
@@ -54,10 +66,10 @@ export function SalScene({
             <ambientLight intensity={1.05} />
             <hemisphereLight args={['#fffaf0', '#c8a27a', 0.6]} />
             <directionalLight position={[10, 9, 2]} intensity={0.9} color="#fff3d6" />
-            <Sal tavle={tavle} />
+            <Sal tavle={tavle} farge={farge} navn={salNavn} direkte={direkte} himmel={himmel} />
             <Lerret lysbilde={lysbilde} tittel={tittel} />
             <Foreleser anim={anim} utseende={utseende} />
-            <Publikum ledigeKlikkbare={modus === 'gaar' && !sete} onVelgSete={onVelgSete} mittSete={sete?.id ?? null} />
+            <Publikum friminutt={friminutt} ledigeKlikkbare={modus === 'gaar' && !sete} onVelgSete={onVelgSete} mittSete={sete?.id ?? null} />
             <Spiller modus={modus} sete={sete} onFremme={onFremme} onNaerSete={onNaerSete} />
         </MicroCanvas>
     );

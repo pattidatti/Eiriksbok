@@ -14,6 +14,13 @@ Status 2026-10-08 (kveld): fase 1-3 er bygget, med nettleserstemmen som midlerti
   (lag 2) i `public/content/forelesninger/` overstyrer når `sourceHash` stemmer.
 - **Lesesalen** (`/oving/auditoriet/lesesal?forelesning=<sti>`): én forelesning fra start,
   med pause og hopp, til projektoren.
+- **Studiebeviset** (`studiebevis.ts`): stempel per forelesning eleven har hørt minst 40 % av
+  (XP første gang), grader fra fersk student til professor, innrammet på veggen i gangen.
+  Notatblokk (N lagrer setningen som sies), program og salsbytte (P), teksting vanlig/stor/av
+  (T), lyd (M) og hurtigtaster (H). Lyd og teksting huskes.
+- **Rommene**: PÅ LUFTA-lamper, klokker som går riktig, vinduer med himmel etter klokka,
+  søyler, bjelker og hengelamper, salens farge på navneskilt, stripe og løper. Publikum
+  reiser seg og prater i friminuttet.
 - Gjenstår: stemmen (§3), lag 2-manus i den daglige rutinen, ekte elever i salen.
 ---
 

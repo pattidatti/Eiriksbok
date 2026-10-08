@@ -1,6 +1,6 @@
 // Hooks og henting som deles av salene, lesesalen og gangen.
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLayout } from '../../context/LayoutContext';
 import type { Sporsmal } from './types';
 
@@ -47,3 +47,42 @@ export async function hentSporsmal(artikkelUrl: string): Promise<Sporsmal[]> {
         .filter((q) => q.question && q.options.length >= 2 && q.options.includes(q.answer));
 }
 
+
+/**
+ * Hurtigtaster for salene. Hver tast er en liten bokstav (eller 'escape', ' ').
+ * Taster i skjemafelt ignoreres, og mellomrom på en knapp er knappens.
+ */
+export function useHurtigtaster(taster: Record<string, (() => void) | false | undefined>) {
+    const ref = useRef(taster);
+    useEffect(() => {
+        ref.current = taster;
+    });
+    useEffect(() => {
+        const ned = (e: KeyboardEvent) => {
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+            const el = e.target as HTMLElement | null;
+            if (el?.closest('input, textarea, select, [contenteditable="true"]')) return;
+            const k = e.key === '?' ? '?' : e.key.toLowerCase();
+            // Mellomrom og Enter på en knapp er knappens egne.
+            if ((k === ' ' || k === 'enter') && el?.closest('button, a')) return;
+            const f = ref.current[k];
+            if (!f) return;
+            e.preventDefault();
+            f();
+        };
+        window.addEventListener('keydown', ned);
+        return () => window.removeEventListener('keydown', ned);
+    }, []);
+}
+
+/** En kort melding som forsvinner av seg selv. */
+export function useMelding(ms = 2600) {
+    const [melding, setMelding] = useState<{ tekst: string; id: number } | null>(null);
+    useEffect(() => {
+        if (!melding) return;
+        const t = setTimeout(() => setMelding(null), ms);
+        return () => clearTimeout(t);
+    }, [melding, ms]);
+    const vis = useCallback((tekst: string) => setMelding({ tekst, id: Date.now() }), []);
+    return { melding: melding?.tekst ?? null, vis };
+}

@@ -27,10 +27,13 @@ function tilfeldig(frø: number) {
 }
 
 export function Publikum({
+    friminutt = false,
     ledigeKlikkbare,
     onVelgSete,
     mittSete,
 }: {
+    /** I friminuttet reiser noen seg, og alle snur seg og prater med sidemannen. */
+    friminutt?: boolean;
     /** Når eleven står, lyser de ledige setene og kan klikkes. */
     ledigeKlikkbare: boolean;
     onVelgSete: (sete: Sete) => void;
@@ -45,6 +48,8 @@ export function Publikum({
     const har = useRef<THREE.InstancedMesh>(null);
     const puter = useRef<THREE.InstancedMesh>(null);
     const [hover, setHover] = useState<number | null>(null);
+    // 0 = forelesning, 1 = friminutt. Glir mykt, så ingen spretter opp på én frame.
+    const pause = useRef(0);
 
     // Farger settes én gang.
     useEffect(() => {
@@ -73,25 +78,34 @@ export function Publikum({
         if (p.instanceColor) p.instanceColor.needsUpdate = true;
     }, [hover, ledigeKlikkbare, mittSete]);
 
-    useFrame((state) => {
+    useFrame((state, dt) => {
         const t = state.clock.getElapsedTime();
+        pause.current += ((friminutt ? 1 : 0) - pause.current) * Math.min(1, dt * 1.5);
+        const p = pause.current;
         statister.forEach((s, i) => {
             const fase = tilfeldig(s.id + 3) * 10;
             // Noen lener seg over pulten og skriver, andre sitter rett opp.
             const skriver = tilfeldig(s.id + 21) < 0.35;
-            const lean = skriver ? 0.28 : 0.04 + Math.sin(t * 0.4 + fase) * 0.03;
-            const y = s.gulv;
+            // I friminuttet: noen står og strekker seg, alle snur seg mot sidemannen.
+            const reiser = tilfeldig(s.id + 33) < 0.4;
+            const opp = reiser ? p * 0.62 : 0;
+            const mot = (tilfeldig(s.id + 41) < 0.5 ? -1 : 1) * 0.9;
+            const lean = (skriver ? 0.28 : 0.04 + Math.sin(t * 0.4 + fase) * 0.03) * (1 - p);
+            const y = s.gulv + opp;
 
-            tmp.position.set(s.x, y + 0.82, s.z + 0.12 - lean * 0.3);
+            tmp.position.set(s.x, y + 0.82, s.z + 0.12 - lean * 0.3 - opp * 0.45);
             // Publikum ser mot -z, så framover er negativ rotasjon om x.
-            tmp.rotation.set(-lean, 0, 0);
-            tmp.scale.set(1, 1, 1);
+            tmp.rotation.set(-lean, mot * p * 0.35, 0);
+            tmp.scale.set(1, 1 + opp * 0.25, 1);
             tmp.updateMatrix();
             kropper.current?.setMatrixAt(i, tmp.matrix);
+            tmp.scale.set(1, 1, 1);
 
-            const sving = Math.sin(t * 0.7 + fase) * 0.18 + (skriver ? 0 : Math.sin(t * 0.23 + fase) * 0.12);
-            const nikk = skriver ? 0.35 : Math.sin(t * 0.5 + fase * 2) * 0.05;
-            tmp.position.set(s.x, y + 1.34, s.z + 0.08 - lean * 0.75);
+            const prat = Math.sin(t * 2.2 + fase) * 0.08 * p;
+            const sving =
+                (Math.sin(t * 0.7 + fase) * 0.18 + (skriver ? 0 : Math.sin(t * 0.23 + fase) * 0.12)) * (1 - p) + mot * p + prat;
+            const nikk = (skriver ? 0.35 : Math.sin(t * 0.5 + fase * 2) * 0.05) * (1 - p) + Math.abs(Math.sin(t * 3 + fase)) * 0.12 * p;
+            tmp.position.set(s.x, y + 1.34 + opp * 0.12, s.z + 0.08 - lean * 0.75 - opp * 0.45);
             tmp.rotation.set(-nikk, sving, 0);
             tmp.updateMatrix();
             hoder.current?.setMatrixAt(i, tmp.matrix);

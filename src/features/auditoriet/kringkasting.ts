@@ -120,6 +120,17 @@ export function sendingNaa(salId: string, poster: ProgramPost[], naa = Date.now(
     return { post, start, slutt, nesteStart, neste, friminutt: naa >= slutt };
 }
 
+/** De neste `antall` forelesningene etter den som går nå, med starttid. */
+export function kommende(salId: string, poster: ProgramPost[], naa = Date.now(), antall = 5) {
+    const ut: { post: ProgramPost; start: number }[] = [];
+    let s = sendingNaa(salId, poster, naa);
+    while (s && ut.length < antall) {
+        ut.push({ post: s.neste, start: s.nesteStart });
+        s = sendingNaa(salId, poster, s.nesteStart);
+    }
+    return ut;
+}
+
 /** «12 min igjen», «1 min igjen», «snart ferdig». */
 export function tidIgjen(ms: number): string {
     const min = Math.ceil(ms / 60000);

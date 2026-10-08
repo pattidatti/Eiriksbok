@@ -6,9 +6,12 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { lagNettleserStemme, lagTekstStemme, ventPaStemmer, type Stemme } from './stemme';
+import { useStudiebevis } from './studiebevis';
 
-export function useStemme(startMedLyd = true) {
-    const [lydPa, setLydPa] = useState(startMedLyd);
+export function useStemme() {
+    // Lyd av/på huskes til neste besøk.
+    const lydPa = useStudiebevis((s) => s.lyd);
+    const setLyd = useStudiebevis((s) => s.settLyd);
     const [navn, setNavn] = useState<string | null>(null);
     const [harNorsk, setHarNorsk] = useState<boolean | null>(null);
     const ref = useRef<Stemme>(lagTekstStemme());
@@ -28,8 +31,8 @@ export function useStemme(startMedLyd = true) {
         };
     }, [lydPa]);
 
-    const byttLyd = useCallback(() => setLydPa((p) => !p), []);
-    const settLyd = useCallback((pa: boolean) => setLydPa(pa), []);
+    const byttLyd = useCallback(() => setLyd(!useStudiebevis.getState().lyd), [setLyd]);
+    const settLyd = useCallback((pa: boolean) => setLyd(pa), [setLyd]);
 
     return { ref, lydPa, navn, harNorsk, byttLyd, settLyd };
 }
