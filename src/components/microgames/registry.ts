@@ -251,6 +251,7 @@ const Generalstreiken = lazy(() => import('./Generalstreiken'));
 const KongensTallerkener = lazy(() => import('./KongensTallerkener'));
 const Pengeballongen = lazy(() => import('./Pengeballongen'));
 const Gamma = lazy(() => import('./Gamma'));
+const RederensKart = lazy(() => import('./RederensKart'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2572,6 +2573,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'John Savios fargetresnitt fra Finnmark: svart treskurd med tykke konturer, hvite skårne riper i snøen, preussisk blå natt, nordlys som skårne linjer og ild i oker og rødt',
         loader: () => import('./Gamma'),
         Component: Gamma as never,
+    },
+    'rederens-kart': {
+        id: 'rederens-kart',
+        title: 'Rederens kart',
+        description:
+            'Hvalfangsten 1864-1968. Du er rederen. Dra hvalbåtene ut til flokkene på kartet - fra Varangerfjorden til isen rundt Antarktis. Båtene tar hval og fatene ruller hjem, men flokkene får unger sakte, og hver båt koster olje hvert år. Hold både havet og selskapet i live forbi 1968.',
+        estimatedSeconds: 210,
+        sjanger: 'ruteplanlegging i sanntid',
+        tone: 'alvorlig',
+        hook: 'Du er rederen. Klarer du å holde selskapet i live uten å tømme havet - det historien ikke klarte?',
+        cover: '/images/microgames/rederens-kart.webp',
+        kunst: 'Sjøkart i kobberstikk fra hvalfangstens tid: jernblekk og vannlinjer på gulnet papir, hval som blå fangststempler, tran-rav i tønna',
+        loader: () => import('./RederensKart'),
+        Component: RederensKart as never,
     },
 };
 
