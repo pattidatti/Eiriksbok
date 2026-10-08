@@ -2,15 +2,17 @@
 // sakte, og hver båt koster olje ved hvert årsskifte - mye på havet, lite i havna. Ren TypeScript: komponenten,
 // robotene og simuleringen kjører den samme koden.
 
-import { BRETT, KART, brettFor, iSone, type KartId } from './levels';
+import { BRETT, KART, brettFor, iSone, type Art, type KartId } from './levels';
 import {
     dist,
     fangerFra,
     fastKost,
+    kjøpPerÅr,
     fødselsrate,
     havnKost,
     hvalIHavet,
     iRo,
+    kvoteFull,
     markedÅpent,
     prisFor,
     sløyfe,
@@ -47,8 +49,8 @@ export interface Flokk {
     dødÅr: number | null;
     /** Har vært nesten tom (under en firedel): blir den stor igjen, er den reddet. */
     kritisk: boolean;
-    /** Blåhval (fredes i 1966). */
-    blåhval?: boolean;
+    /** Hvalarten: størrelse, olje og fødsler (blåhval fredes i 1966). */
+    art: Art;
     /** Låst: fangst forbudt her (Finnmark 1903, blåhvalen 1966). Flokken lever og føder videre. */
     fredet: boolean;
 }
@@ -76,6 +78,8 @@ export interface Båt {
 export interface Fat {
     x: number;
     y: number;
+    /** Olje fatet er verdt ved full pris (blåhval gir mest). */
+    verdi: number;
     tx: number;
     ty: number;
 }
@@ -89,7 +93,7 @@ export type Hendelse =
     | { type: 'fangst'; x: number; y: number; flokk: number }
     | { type: 'unge'; flokk: number }
     | { type: 'død'; flokk: number }
-    | { type: 'fat' }
+    | { type: 'fat'; verdi: number }
     | {
           type: 'årsskifte';
           kost: number;
@@ -103,6 +107,11 @@ export type Hendelse =
     | { type: 'krakk'; fra: number; til: number; tap: number; fat: number }
     | { type: 'marked' }
     | { type: 'fredning'; hva: 'finnmark' | 'blåhval'; flokker: number[] }
+    /** IWC-kvoten begynner (1946), og årets kvote er tatt (båtene stanser til nyttår). */
+    | { type: 'kvoteStart' }
+    | { type: 'kvote' }
+    /** Noen år etter 1946: havet har krympet selv om kvoten ble holdt. */
+    | { type: 'kvoteForHøy'; fra: number; nå: number }
     | { type: 'seier' };
 
 export interface Game {
@@ -129,6 +138,10 @@ export interface Game {
     /** Hval i havet ved starten av året, og fangst hittil i år. */
     hvalVedÅrStart: number;
     tattIÅr: number;
+    /** Årets IWC-kvote er tatt (fra 1946): båtene stanser til nyttår. */
+    kvoteNådd: boolean;
+    /** Hval i havet da kvoten kom (1946). */
+    hvalVedKvote: number | null;
     totaltTatt: number;
     /** Båtene som var ute (full pris) ved siste årsskifte. */
     tappere: number[];
@@ -238,8 +251,9 @@ function startBrett(g: Game, brett: number) {
     const def = BRETT[brett];
     if (def.kart) {
         // Nytt kartark: det gamle havet er stengt. Fat underveis kommer hjem, båtene seiler hjem.
-        g.tønne += g.fat.length * T.fangst.fatVerdi * g.pris;
-        g.innIÅr += g.fat.length * T.fangst.fatVerdi * g.pris;
+        const verdi = g.fat.reduce((s, k) => s + k.verdi, 0);
+        g.tønne += verdi * g.pris;
+        g.innIÅr += verdi * g.pris;
         g.fatIÅr += g.fat.length;
         g.fat = [];
         g.kart = def.kart;
@@ -276,6 +290,8 @@ export function newGame(seed: number): Game {
         grønneÅr: 0,
         hvalVedÅrStart: 0,
         tattIÅr: 0,
+        kvoteNådd: false,
+        hvalVedKvote: null,
         totaltTatt: 0,
         tappere: [],
         innIÅr: 0,
@@ -345,11 +361,18 @@ export function send(g: Game, id: number, x: number, y: number) {
                 if (f.død || f.fredet || d > bd) continue;
                 bd = d;
                 b.følger = f.id;
-                // Behold litt av avstanden, så to båter ved samme flokk ikke ligger oppå hverandre.
+                // Båten legger seg ved kanten av flokken (på siden du slapp den, eller siden
+                // den kom fra), så hvalen i midten synes og to båter ikke ligger oppå hverandre.
                 const m = T.båt.følgAvstand;
-                const k = d > m ? m / d : 1;
-                b.ox = (x - f.x) * k;
-                b.oy = (y - f.y) * k;
+                let vx = x - f.x;
+                let vy = y - f.y;
+                if (Math.hypot(vx, vy) < 4) {
+                    vx = b.x - f.x;
+                    vy = b.y - f.y;
+                }
+                const l = Math.hypot(vx, vy) || 1;
+                b.ox = (vx / l) * m;
+                b.oy = (vy / l) * m;
             }
         }
     }
@@ -382,7 +405,7 @@ function marked(g: Game) {
 
 /** Fredning: flokkene låses, og båtene som lå der, seiler hjem. */
 function fred(g: Game, hva: 'finnmark' | 'blåhval') {
-    const låst = g.flokker.filter((f) => !f.død && (hva === 'finnmark' || f.blåhval));
+    const låst = g.flokker.filter((f) => !f.død && (hva === 'finnmark' || f.art === 'blå'));
     for (const f of låst) f.fredet = true;
     for (const b of g.båter)
         if (b.følger !== null && låst.some((f) => f.id === b.følger)) tilHavn(g, b);
@@ -394,8 +417,9 @@ function årsskifte(g: Game) {
     const kost = årsKost(g);
     const betalt = g.båter.map((b) => ({ id: b.id, kost: havnKost(g, b) }));
     g.tappere = g.båter.filter((b) => !b.hjemme).map((b) => b.id);
-    // Grønt år: du fanget, og havet har minst like mange hval som da året begynte.
-    const grønt = g.tattIÅr > 0 && hvalIHavet(g) >= g.hvalVedÅrStart;
+    // Grønt år: fangsten betalte for året, og havet har minst like mange hval som da året
+    // begynte. Begge deler må holde: en god forvalter tjener penger uten å tømme havet.
+    const grønt = g.tattIÅr > 0 && g.innIÅr >= kost && hvalIHavet(g) >= g.hvalVedÅrStart;
     g.grønnRekke = grønt ? g.grønnRekke + 1 : 0;
     if (grønt) g.grønneÅr++;
     const bonus = T.poeng.grønnBonus;
@@ -405,6 +429,7 @@ function årsskifte(g: Game) {
     g.hendelser.push({ type: 'årsskifte', kost, inn: g.innIÅr, grønt, betalt });
     g.år++;
     g.tattIÅr = 0;
+    g.kvoteNådd = false;
     g.innIÅr = 0;
     g.fatIÅr = 0;
     for (const f of g.flokker) f.født = f.tatt = 0;
@@ -427,6 +452,13 @@ function årsskifte(g: Game) {
     if (g.år === T.fredning.blåhval) fred(g, 'blåhval');
     fyllTilbud(g);
     g.hvalVedÅrStart = hvalIHavet(g);
+    if (g.år === T.kvote.fra) {
+        g.hvalVedKvote = g.hvalVedÅrStart;
+        g.hendelser.push({ type: 'kvoteStart' });
+    }
+    // Fem år med kvote: har havet krympet likevel, var kvoten satt for høyt.
+    if (g.hvalVedKvote !== null && g.år === T.kvote.fra + 5 && g.hvalVedÅrStart < g.hvalVedKvote)
+        g.hendelser.push({ type: 'kvoteForHøy', fra: g.hvalVedKvote, nå: g.hvalVedÅrStart });
 }
 
 function tap(g: Game, årsak: Årsak) {
@@ -491,7 +523,17 @@ export function update(g: Game, dt: number) {
         g.tattIÅr++;
         g.totaltTatt++;
         const m = mottak(g, b.x, b.y);
-        g.fat.push({ x: b.x, y: b.y, tx: m.x, ty: m.y });
+        g.fat.push({
+            x: b.x,
+            y: b.y,
+            tx: m.x,
+            ty: m.y,
+            verdi: T.fangst.fatVerdi * T.arter[f.art].olje,
+        });
+        if (kvoteFull(g) && !g.kvoteNådd) {
+            g.kvoteNådd = true;
+            g.hendelser.push({ type: 'kvote' });
+        }
         g.hendelser.push({ type: 'fangst', x: b.x, y: b.y, flokk: f.id });
         if (f.n <= 0) {
             f.n = 0;
@@ -507,14 +549,14 @@ export function update(g: Game, dt: number) {
     g.fat = g.fat.filter((k) => {
         const d = dist(k.x, k.y, k.tx, k.ty);
         if (d <= fv) {
-            g.tønne += T.fangst.fatVerdi * g.pris;
-            g.innIÅr += T.fangst.fatVerdi * g.pris;
+            g.tønne += k.verdi * g.pris;
+            g.innIÅr += k.verdi * g.pris;
             g.fatIÅr++;
             if (markedÅpent(g)) {
                 g.lager++;
                 g.pris = prisFor(g.lager);
             }
-            g.hendelser.push({ type: 'fat' });
+            g.hendelser.push({ type: 'fat', verdi: k.verdi * g.pris });
             return false;
         }
         k.x += ((k.tx - k.x) / d) * fv;
@@ -532,7 +574,7 @@ export function update(g: Game, dt: number) {
 
     // Verden kjøper olje jevnt: lageret tømmes, og prisen kommer seg.
     if (markedÅpent(g)) {
-        g.lager = Math.max(0, g.lager - (T.marked.kjøpPerÅr / årLengde(g.år)) * dt);
+        g.lager = Math.max(0, g.lager - (kjøpPerÅr(g.år) / årLengde(g.år)) * dt);
         g.pris = prisFor(g.lager);
     }
 

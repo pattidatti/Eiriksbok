@@ -19,6 +19,13 @@ export interface BotDef {
 interface Vett {
     /** Flytter båten bort når flokken er under denne andelen av maks. */
     lav: number;
+    /**
+     * Flytter båten fra en blåhvalflokk først under denne andelen. Blåhvalen gir mest olje og
+     * vokser nesten ikke igjen, så den blir tatt først - slik det gikk i Sørishavet.
+     */
+    blåLav: number;
+    /** Sender båter til en blåhvalflokk så lenge den er over denne andelen. */
+    blåHøy: number;
     /** Sender bare båter til flokker over denne andelen av maks. */
     høy: number;
     /** Gjør et grep bare hvert n-te tick. */
@@ -79,7 +86,7 @@ function vett(v: Vett) {
 
             // Kjøp: en båt til salgs, og en stor flokk uten båt å sende den til.
             const tilSalgs = g.båter.find((b) => b.tilbud);
-            if (tilSalgs && v.kjøpReserve !== null && !fullt) {
+            if (tilSalgs && v.kjøpReserve !== null && plass) {
                 const har = g.tønne >= tilSalgs.pris + årsKost(g) * v.kjøpReserve;
                 const ledig = g.flokker.filter(
                     (k) =>
@@ -111,12 +118,16 @@ function vett(v: Vett) {
             const ute = båter.filter((b) => !b.hjemme).length;
 
             if (fullt) {
-                // For mange båter ute for markedet: båten ved den minste flokken går hjem.
+                // For mange båter ute for markedet: båten som gir minst olje per fat (minste art,
+                // så minste flokk) går hjem. Markedet teller fat, så blåhvalen lønner seg mest.
+                const verdi = (b: Båt) => {
+                    const f = flokkVed(g, b);
+                    return f ? T.arter[f.art].olje * 100 + f.n : -1;
+                };
                 let minst: Båt | null = null;
                 for (const b of båter) {
                     if (b.hjemme) continue;
-                    const f = flokkVed(g, b);
-                    if (!minst || (f?.n ?? -1) < (flokkVed(g, minst)?.n ?? -1)) minst = b;
+                    if (!minst || verdi(b) < verdi(minst)) minst = b;
                 }
                 if (minst) return send(g, minst.id, g.havn.x, g.havn.y);
             }
@@ -124,14 +135,16 @@ function vett(v: Vett) {
             for (const b of båter) {
                 const f = flokkVed(g, b);
                 // Flokken tåler mer: la båten ligge (den følger flokken selv).
-                if (f && f.n > f.maks * lav) continue;
+                const grense = f?.art === 'blå' ? Math.min(lav, v.blåLav) : lav;
+                if (f && f.n > f.maks * grense) continue;
                 // Markedet tåler ikke flere fat i år: båtene i havna blir liggende.
                 if (b.hjemme && (ute >= v.maksUte || !plass)) continue;
                 // Ringen er rød og flokken er liten (eller båten ligger hjemme): finn en flokk som tåler det.
                 let mål: Flokk | null = null;
                 let score = -Infinity;
                 for (const k of g.flokker) {
-                    if (k.død || k.fredet || opptatt.has(k.id) || k.n < k.maks * høy) continue;
+                    const terskel = k.art === 'blå' ? Math.min(høy, v.blåHøy) : høy;
+                    if (k.død || k.fredet || opptatt.has(k.id) || k.n < k.maks * terskel) continue;
                     const s = k.n - dist(k.x, k.y, g.havn.x, g.havn.y) * 0.01;
                     if (s > score) {
                         score = s;
@@ -156,6 +169,8 @@ export const BOTS: Record<string, BotDef> = {
             'Kjøper en båt når tønna har råd og en stor flokk er ledig, sender én båt per stor flokk, flytter båten når flokken blir liten og lar den hvile - båter uten flokk går hjem. Fra 1929 henter den båtene hjem når årets fat nærmer seg markedsgrensa.',
         make: vett({
             lav: 0.55,
+            blåLav: 0.15,
+            blåHøy: 0.25,
             høy: 0.75,
             hver: 1,
             tønneVett: true,
@@ -171,6 +186,8 @@ export const BOTS: Record<string, BotDef> = {
             'Følger samme regel, men tar flokkene lenger ned før den flytter, reagerer seint, og lar båter uten flokk ligge ute og koste full pris. Passer på markedsgrensa først etter at prisen har falt én gang.',
         make: vett({
             lav: 0.3,
+            blåLav: 0.15,
+            blåHøy: 0.25,
             høy: 0.5,
             hver: 4,
             tønneVett: false,
@@ -207,6 +224,8 @@ export const BOTS: Record<string, BotDef> = {
             'Passer godt på hvalene, men kjøper aldri båter og har bare én ute - for lite olje til å betale for stasjonen.',
         make: vett({
             lav: 0.5,
+            blåLav: 0.5,
+            blåHøy: 0.7,
             høy: 0.7,
             hver: 1,
             tønneVett: false,

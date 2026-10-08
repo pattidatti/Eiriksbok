@@ -2,7 +2,7 @@
 // stedsnavn og gradert ramme. Tegnes én gang til et offscreen-canvas per ark og oppløsning,
 // og gjenbrukes hvert bilde med drawImage. Ingen gradienter her (lampelyset legges på i draw.ts).
 
-import { KART, type Kart, type KartId } from './levels';
+import { KART, type Art, type Kart, type KartId } from './levels';
 
 export const P = {
     papir: '#ece3cb',
@@ -328,69 +328,235 @@ export function ark(id: KartId, r: number): HTMLCanvasElement {
 }
 
 /**
- * Hvalstempelet: en blåhval sett ovenfra, i stempelblått med ujevnt blekk. Hodet peker mot
- * høyre, halefinnen (to fliker) til venstre, og to små luffer på sidene. Fire varianter.
+ * Hvalstempelet: én hval sett ovenfra, i stempelblekk med ujevne hull. Hodet peker mot høyre,
+ * halefinnen (to fliker) mot venstre. Tre arter, tre former: blåhvalen er lang og lys med
+ * bred, rund snute og flekker; finnhvalen er slank og spiss med lys høyre kjeve; seihvalen
+ * er kort, butt og mørk. Tegnet i enheter der hvalen er 100 lang, og skalert når den brukes.
  */
-const stempler: HTMLCanvasElement[] = [];
-export const STEMPEL = { w: 28, h: 13 };
+export const HVAL = { l: 100, h: 34 };
 
-export function stempel(i: number): HTMLCanvasElement {
-    if (!stempler.length) {
-        for (let v = 0; v < 4; v++) {
-            const S = 4;
-            const [c, ctx] = lagCanvas(STEMPEL.w * S, STEMPEL.h * S);
-            ctx.scale(S, S);
-            const rng = rngFra(101 + v * 31);
-            const m = STEMPEL.h / 2;
-            ctx.fillStyle = P.hval;
-            // Kroppen: bred over luffene, smal mot halen.
-            ctx.beginPath();
-            ctx.moveTo(27.4, m);
-            ctx.bezierCurveTo(27.4, m - 3.4, 22, m - 3.9, 16, m - 3.5);
-            ctx.bezierCurveTo(11, m - 3.0, 7.5, m - 1.4, 5.2, m - 0.7);
-            ctx.lineTo(5.2, m + 0.7);
-            ctx.bezierCurveTo(7.5, m + 1.4, 11, m + 3.0, 16, m + 3.5);
-            ctx.bezierCurveTo(22, m + 3.9, 27.4, m + 3.4, 27.4, m);
-            ctx.fill();
-            // Halefinnen: to fliker.
-            ctx.beginPath();
-            ctx.moveTo(5.8, m);
-            ctx.quadraticCurveTo(3.6, m - 5.6, 0.4, m - 5.8);
-            ctx.quadraticCurveTo(2.4, m - 2.2, 2.2, m);
-            ctx.quadraticCurveTo(2.4, m + 2.2, 0.4, m + 5.8);
-            ctx.quadraticCurveTo(3.6, m + 5.6, 5.8, m);
-            ctx.fill();
-            // Luffene.
-            for (const k of [-1, 1]) {
-                ctx.beginPath();
-                ctx.moveTo(19.5, m + k * 3);
-                ctx.quadraticCurveTo(16.5, m + k * 6.4, 14.2, m + k * 6.3);
-                ctx.quadraticCurveTo(16, m + k * 4.2, 16.4, m + k * 3.2);
-                ctx.fill();
-            }
-            // Blåsehullet og ryggen: lyse streker, så hvalen får form.
-            ctx.globalCompositeOperation = 'destination-out';
-            ctx.globalAlpha = 0.55;
-            ctx.beginPath();
-            ctx.ellipse(23.4, m, 0.9, 0.55, 0, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.globalAlpha = 0.28;
-            ctx.lineWidth = 0.6;
-            ctx.beginPath();
-            ctx.moveTo(21, m);
-            ctx.lineTo(8, m);
-            ctx.stroke();
-            // Ujevnt blekk: små hull i stempelet.
-            for (let k = 0; k < 12 + v * 4; k++) {
-                ctx.globalAlpha = 0.25 + rng() * 0.45;
-                ctx.beginPath();
-                ctx.arc(4 + rng() * 22, m - 3 + rng() * 6, 0.25 + rng() * 0.5, 0, Math.PI * 2);
-                ctx.fill();
-            }
-            ctx.globalAlpha = 1;
-            ctx.globalCompositeOperation = 'source-over';
-            stempler.push(c);
-        }
+interface Form {
+    farge: string;
+    /** Halve bredden på det bredeste stedet (enheter). */
+    bred: number;
+    /** Hvor bredest (0-100). */
+    midt: number;
+    /** 0 = spiss snute, 1 = bred og rund. */
+    rund: number;
+    /** Luffene: plass og lengde. */
+    luffX: number;
+    luff: number;
+    /** Ryggfinne (strek) og lyse flekker. */
+    finne: number;
+    flekker: number;
+    /** Lys høyre kjeve (finnhval). */
+    kjeve: boolean;
+}
+
+const FORM: Record<Art, Form> = {
+    blå: {
+        farge: '#4f7396',
+        bred: 7.8,
+        midt: 64,
+        rund: 1,
+        luffX: 70,
+        luff: 9,
+        finne: 0.6,
+        flekker: 26,
+        kjeve: false,
+    },
+    finn: {
+        farge: '#34506e',
+        bred: 7.6,
+        midt: 60,
+        rund: 0.35,
+        luffX: 70,
+        luff: 9,
+        finne: 1,
+        flekker: 6,
+        kjeve: true,
+    },
+    sei: {
+        farge: '#26374a',
+        bred: 10,
+        midt: 58,
+        rund: 0.25,
+        luffX: 68,
+        luff: 10,
+        finne: 1.4,
+        flekker: 4,
+        kjeve: false,
+    },
+};
+
+const hvaler = new Map<string, HTMLCanvasElement>();
+
+export function hvalStempel(art: Art, v: number): HTMLCanvasElement {
+    const nøkkel = `${art}${v % 3}`;
+    const ferdig = hvaler.get(nøkkel);
+    if (ferdig) return ferdig;
+    const S = 2.2;
+    const [c, ctx] = lagCanvas(HVAL.l * S, HVAL.h * S);
+    ctx.scale(S, S);
+    const fm = FORM[art];
+    const rng = rngFra(311 + (v % 3) * 47 + art.length * 13);
+    const m = HVAL.h / 2;
+    const b = fm.bred;
+    const nese = 99;
+    ctx.fillStyle = fm.farge;
+    // Kroppen: bred over luffene, smal mot halen. Snuta er rund (blåhval) eller spiss.
+    const r = fm.rund;
+    ctx.beginPath();
+    ctx.moveTo(nese, m);
+    ctx.bezierCurveTo(nese, m - b * (0.3 + 0.7 * r), nese - 10, m - b, fm.midt, m - b);
+    ctx.bezierCurveTo(fm.midt - 22, m - b * 0.95, 26, m - b * 0.45, 12, m - 1.3);
+    ctx.lineTo(12, m + 1.3);
+    ctx.bezierCurveTo(26, m + b * 0.45, fm.midt - 22, m + b * 0.95, fm.midt, m + b);
+    ctx.bezierCurveTo(nese - 10, m + b, nese, m + b * (0.3 + 0.7 * r), nese, m);
+    ctx.fill();
+    // Halefinnen: to brede fliker med et hakk i midten.
+    ctx.beginPath();
+    ctx.moveTo(15, m);
+    ctx.quadraticCurveTo(9, m - 15, 1, m - 15.5);
+    ctx.quadraticCurveTo(5, m - 6, 4, m - 0.6);
+    ctx.lineTo(6, m);
+    ctx.lineTo(4, m + 0.6);
+    ctx.quadraticCurveTo(5, m + 6, 1, m + 15.5);
+    ctx.quadraticCurveTo(9, m + 15, 15, m);
+    ctx.fill();
+    // Luffene: smale, bakoverstrøkne.
+    for (const k of [-1, 1]) {
+        ctx.beginPath();
+        ctx.moveTo(fm.luffX + 2, m + k * (b - 1));
+        ctx.quadraticCurveTo(
+            fm.luffX - 4,
+            m + k * (b + fm.luff * 0.8),
+            fm.luffX - 9,
+            m + k * (b + fm.luff)
+        );
+        ctx.quadraticCurveTo(fm.luffX - 5, m + k * (b + 1), fm.luffX - 4, m + k * (b - 1.5));
+        ctx.fill();
     }
-    return stempler[i % stempler.length];
+    // Lyst: blåsehull, ryggstrek, ryggfinne, flekker og (finnhval) lys høyre kjeve.
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.globalAlpha = 0.7;
+    for (const k of [-1, 1]) {
+        ctx.beginPath();
+        ctx.ellipse(nese - 17, m + k * 0.9, 1.4, 0.6, 0, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.globalAlpha = 0.25;
+    ctx.lineWidth = 0.9;
+    ctx.beginPath();
+    ctx.moveTo(nese - 22, m);
+    ctx.lineTo(18, m);
+    ctx.stroke();
+    if (fm.kjeve) {
+        ctx.globalAlpha = 0.45;
+        ctx.beginPath();
+        ctx.ellipse(nese - 8, m + b * 0.55, 8, b * 0.32, -0.08, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.globalAlpha = 0.4;
+    for (let k = 0; k < fm.flekker; k++) {
+        ctx.beginPath();
+        const x = 22 + rng() * 64;
+        ctx.ellipse(
+            x,
+            m - b * 0.7 + rng() * b * 1.4,
+            0.6 + rng() * 1.6,
+            0.4 + rng() * 0.8,
+            0,
+            0,
+            Math.PI * 2
+        );
+        ctx.fill();
+    }
+    // Ujevnt blekk: små hull i stempelet.
+    for (let k = 0; k < 30; k++) {
+        ctx.globalAlpha = 0.2 + rng() * 0.4;
+        ctx.beginPath();
+        ctx.arc(4 + rng() * 92, m - 6 + rng() * 12, 0.3 + rng() * 0.7, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    ctx.globalCompositeOperation = 'source-over';
+    // Ryggfinnen: en liten mørk strek langt bak (seihvalen har den størst).
+    ctx.strokeStyle = '#162230';
+    ctx.lineWidth = 1.1 * fm.finne;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(34, m);
+    ctx.lineTo(34 - 5 * fm.finne, m);
+    ctx.stroke();
+    hvaler.set(nøkkel, c);
+    return c;
+}
+
+/** Tegn en hval med midten i (x, y), retning `vri` og lengde `l` (px). */
+export function tegnHvalStempel(
+    ctx: CanvasRenderingContext2D,
+    art: Art,
+    v: number,
+    x: number,
+    y: number,
+    vri: number,
+    l: number
+) {
+    const h = (l * HVAL.h) / HVAL.l;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(vri);
+    ctx.drawImage(hvalStempel(art, v), -l / 2, -h / 2, l, h);
+    ctx.restore();
+}
+
+const silhuetter = new Map<string, HTMLCanvasElement>();
+
+/** Hvalstempelet farget helt i én farge (til kanten rundt hvalen). */
+function silhuett(art: Art, v: number, farge: string): HTMLCanvasElement {
+    const nøkkel = `${art}${v % 3}${farge}`;
+    const ferdig = silhuetter.get(nøkkel);
+    if (ferdig) return ferdig;
+    const src = hvalStempel(art, v);
+    const c = document.createElement('canvas');
+    c.width = src.width;
+    c.height = src.height;
+    const ctx = c.getContext('2d');
+    if (ctx) {
+        ctx.drawImage(src, 0, 0);
+        ctx.globalCompositeOperation = 'source-in';
+        ctx.fillStyle = farge;
+        ctx.fillRect(0, 0, c.width, c.height);
+    }
+    silhuetter.set(nøkkel, c);
+    return c;
+}
+
+/**
+ * Hvalen med en farget kant rundt seg: grønn når flokken vokser, rød når den krymper.
+ * Kanten er hvalens egen form, tegnet litt forskjøvet i åtte retninger under stempelet.
+ */
+export function tegnHvalKant(
+    ctx: CanvasRenderingContext2D,
+    art: Art,
+    v: number,
+    x: number,
+    y: number,
+    vri: number,
+    l: number,
+    farge: string,
+    tykk: number
+) {
+    const h = (l * HVAL.h) / HVAL.l;
+    const sil = silhuett(art, v, farge);
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(vri);
+    for (let i = 0; i < 8; i++) {
+        const a = (i * Math.PI) / 4;
+        ctx.drawImage(sil, -l / 2 + Math.cos(a) * tykk, -h / 2 + Math.sin(a) * tykk, l, h);
+    }
+    ctx.restore();
+    tegnHvalStempel(ctx, art, v, x, y, vri, l);
 }

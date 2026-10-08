@@ -51,7 +51,7 @@ export const iHavn = (_g: Game, b: Båt) => b.hjemme;
 
 /** Flokken båten fanger fra nå (nærmeste levende innenfor radius), eller null. */
 export function fangerFra(g: Game, b: Båt): Flokk | null {
-    if (b.kokeri || b.tilbud || !iRo(b) || iHavn(g, b)) return null;
+    if (b.kokeri || b.tilbud || !iRo(b) || iHavn(g, b) || kvoteFull(g)) return null;
     let best: Flokk | null = null;
     let bd = T.fangst.radius;
     for (const f of g.flokker) {
@@ -67,7 +67,13 @@ export function fangerFra(g: Game, b: Båt): Flokk | null {
 
 /** Fødsler per sekund i flokken nå (regel 2). */
 export const fødselsrate = (f: Flokk) =>
-    f.død || f.n >= f.maks ? 0 : f.n * T.fødsel.perHvalPerSek;
+    f.død || f.n >= f.maks ? 0 : f.n * T.fødsel.perHvalPerSek * T.arter[f.art].fødsel;
+
+/** IWC-kvoten gjelder (fra 1946). */
+export const kvoteÅpen = (g: Game) => g.år >= T.kvote.fra;
+
+/** IWC-kvoten (fra 1946): er årets kvote tatt? Da stanser båtene til nyttår. */
+export const kvoteFull = (g: Game) => g.år >= T.kvote.fra && g.tattIÅr >= T.kvote.perÅr;
 
 /** Fangst per sekund fra én båt (regel 1). */
 export const fangstrate = () => 1 / T.fangst.intervall;
@@ -109,6 +115,10 @@ export const fatPåVei = (g: Game) => g.fat.length;
 
 /** Oljemarkedet er åpent (fra 1929). */
 export const markedÅpent = (g: Game) => g.år >= TUNING.marked.fra;
+
+/** Fat verden kjøper per år (færre i krisa fra 1931). */
+export const kjøpPerÅr = (år: number) =>
+    år >= TUNING.marked.krise.fra ? TUNING.marked.krise.kjøpPerÅr : TUNING.marked.kjøpPerÅr;
 
 /** Oljeprisen (1 = full) når lageret i verden har så mange fat. */
 export function prisFor(lager: number): number {
