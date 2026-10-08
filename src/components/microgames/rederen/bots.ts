@@ -4,7 +4,7 @@
 import type { PlaytestBot } from '../playtest';
 import type { Rng } from '../sim';
 import { send, type Båt, type Flokk, type Game } from './game';
-import { dist, framtid, iHavn, årsKost } from './rules';
+import { dist, årsKost } from './rules';
 import { TUNING } from './tuning';
 
 const T = TUNING;
@@ -23,29 +23,18 @@ interface Vett {
     høy: number;
     /** Gjør et grep bare hvert n-te tick. */
     hver: number;
-    /** Følger flokken når den har glidd så langt fra båten (px). */
-    følg: number;
-    /** Sikter dit flokken er om så mange sekunder. */
-    forut: number;
     /** Bryr seg om tønna: senker kravene når den er nesten tom. */
     tønneVett: boolean;
-    /** Bruker bare så mange båter (resten ligger i havna). */
+    /** Sender høyst så mange båter ut (resten ligger i havna). */
     maksUte: number;
+    /** Henter båter uten flokk hjem, så de koster lite. */
+    hjemTom: boolean;
 }
 
 /** Flokken båten ligger ved (eller er på vei til). */
 function flokkVed(g: Game, b: Båt): Flokk | null {
-    let best: Flokk | null = null;
-    let bd = T.fangst.radius * 1.6;
-    for (const f of g.flokker) {
-        if (f.død) continue;
-        const d = dist(b.tx, b.ty, f.x, f.y);
-        if (d < bd) {
-            bd = d;
-            best = f;
-        }
-    }
-    return best;
+    if (b.hjemme) return null;
+    return g.flokker.find((f) => f.id === b.følger && !f.død) ?? null;
 }
 
 function vett(v: Vett) {
@@ -70,27 +59,19 @@ function vett(v: Vett) {
             }
 
             const båter = g.båter.filter((b) => !b.kokeri);
-            const opptatt = new Map<number, number>();
+            const opptatt = new Set<number>();
             for (const b of båter) {
-                if (iHavn(g, b) && b.tx === g.havn.x) continue;
                 const f = flokkVed(g, b);
-                if (f) opptatt.set(f.id, b.id);
+                if (f) opptatt.add(f.id);
             }
-            let ute = båter.filter((b) => !(b.tx === g.havn.x && b.ty === g.havn.y)).length;
+            const ute = båter.filter((b) => !b.hjemme).length;
 
             for (const b of båter) {
-                const hjemme = b.tx === g.havn.x && b.ty === g.havn.y;
-                const f = hjemme ? null : flokkVed(g, b);
-                if (f && f.n > f.maks * lav) {
-                    // Flokken tåler mer: følg den hvis den glir bort.
-                    const p = framtid(f, g.t, v.forut);
-                    if (dist(b.tx, b.ty, f.x, f.y) > v.følg && dist(b.tx, b.ty, p.x, p.y) > v.følg)
-                        return send(g, b.id, p.x, p.y);
-                    continue;
-                }
+                const f = flokkVed(g, b);
+                // Flokken tåler mer: la båten ligge (den følger flokken selv).
+                if (f && f.n > f.maks * lav) continue;
+                if (b.hjemme && ute >= v.maksUte) continue;
                 // Ringen er rød og flokken er liten (eller båten ligger hjemme): finn en flokk som tåler det.
-                if (!hjemme) opptatt.delete(f?.id ?? -1);
-                if (hjemme && ute >= v.maksUte) continue;
                 let mål: Flokk | null = null;
                 let score = -Infinity;
                 for (const k of g.flokker) {
@@ -101,14 +82,12 @@ function vett(v: Vett) {
                         mål = k;
                     }
                 }
-                if (mål) {
-                    const p = framtid(mål, g.t, v.forut + dist(b.x, b.y, mål.x, mål.y) / T.båt.fart);
-                    return send(g, b.id, p.x, p.y);
-                }
-                if (!hjemme) {
-                    ute--;
-                    return send(g, b.id, g.havn.x, g.havn.y);
-                }
+                if (mål) return send(g, b.id, mål.x, mål.y);
+                // Ingen flokk tåler mer: båten går hjem og koster lite.
+                if (b.hjemme) continue;
+                if (v.hjemTom) return send(g, b.id, g.havn.x, g.havn.y);
+                // Halvgod: drar båten bort fra den lille flokken, men lar den ligge ute og koste full pris.
+                if (f) return send(g, b.id, (f.x + g.havn.x) / 2, (f.y + g.havn.y) / 2);
             }
         };
     };
@@ -118,18 +97,18 @@ export const BOTS: Record<string, BotDef> = {
     forvalter: {
         forventer: 'vinner',
         beskrivelse:
-            'Flytter båten når flokken blir liten og ringen rød, lar flokker hvile, én båt per flokk, og følger flokken når den glir bort.',
-        make: vett({ lav: 0.55, høy: 0.75, hver: 1, følg: 18, forut: 2, tønneVett: true, maksUte: 99 }),
+            'Sender ut så mange båter som det finnes store flokker, én båt per flokk, flytter båten når flokken blir liten og lar den hvile - båter uten flokk går hjem.',
+        make: vett({ lav: 0.55, høy: 0.75, hver: 1, tønneVett: true, maksUte: 99, hjemTom: true }),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger samme regel, men tar flokkene lenger ned, reagerer seint og sikter dit flokken er nå.',
-        make: vett({ lav: 0.3, høy: 0.5, hver: 4, følg: 30, forut: 0, tønneVett: false, maksUte: 99 }),
+            'Følger samme regel, men tar flokkene lenger ned før den flytter, reagerer seint, og lar båter uten flokk ligge ute og koste full pris.',
+        make: vett({ lav: 0.3, høy: 0.5, hver: 4, tønneVett: false, maksUte: 99, hjemTom: false }),
     },
     grådig: {
         forventer: 'taper',
-        beskrivelse: 'Sender alle båtene til den største flokken og følger den, uten å se på ringen.',
+        beskrivelse: 'Sender alle båtene ut til den største flokken, uten å se på ringen.',
         make: () => {
             let tick = 0;
             return (g) => {
@@ -138,17 +117,14 @@ export const BOTS: Record<string, BotDef> = {
                 const stor = lev.reduce((a, f) => (f.n > a.n ? f : a));
                 const båter = g.båter.filter((b) => !b.kokeri);
                 const b = båter[tick++ % båter.length];
-                if (dist(b.tx, b.ty, stor.x, stor.y) > 14) {
-                    const p = framtid(stor, g.t, 1 + dist(b.x, b.y, stor.x, stor.y) / T.båt.fart);
-                    send(g, b.id, p.x, p.y);
-                }
+                if (b.følger !== stor.id) send(g, b.id, stor.x, stor.y);
             };
         },
     },
     sparsom: {
         forventer: 'taper',
-        beskrivelse: 'Passer godt på hvalene, men bruker bare én båt - de andre ligger i havna og koster olje.',
-        make: vett({ lav: 0.5, høy: 0.7, hver: 1, følg: 18, forut: 2, tønneVett: false, maksUte: 1 }),
+        beskrivelse: 'Passer godt på hvalene, men sender bare én båt ut - for lite olje til å betale for resten.',
+        make: vett({ lav: 0.5, høy: 0.7, hver: 1, tønneVett: false, maksUte: 1, hjemTom: true }),
     },
     tilfeldig: {
         forventer: 'taper',

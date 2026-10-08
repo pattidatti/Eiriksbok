@@ -1,6 +1,6 @@
 // Fagkjernen og hjelpere som både spillet, robotene og tegningen bruker. Ren TypeScript.
 // Regel 1: en båt ved en flokk tar hval. Regel 2: flokken føder sakte - jo færre, jo færre
-// unger. Regel 3: hver båt koster olje hvert år.
+// unger. Regel 3: hver båt koster olje hvert år - full pris på havet, lite i havna.
 
 import type { Båt, Flokk, Game } from './game';
 import { TUNING } from './tuning';
@@ -22,10 +22,16 @@ export const vedlikehold = (år: number) => fraTabell(T.økonomi.vedlikehold, å
 /** Hvor mange vanlige båter flåten har dette året. */
 export const flåteFor = (år: number) => fraTabell(T.flåte, år).båter;
 
+/** Hva én båt koster neste årsskifte: full pris på havet, en liten del i havna. */
+export function havnKost(g: Game, b: Båt): number {
+    const full = b.kokeri ? T.økonomi.kokeri : vedlikehold(g.år);
+    return b.hjemme ? full * T.økonomi.havnAndel : full;
+}
+
 /** Hva hele flåten koster neste årsskifte. */
 export function årsKost(g: Game): number {
     let k = 0;
-    for (const b of g.båter) k += b.kokeri ? T.økonomi.kokeri : vedlikehold(g.år);
+    for (const b of g.båter) k += havnKost(g, b);
     return k;
 }
 
@@ -35,9 +41,8 @@ export const dist = (ax: number, ay: number, bx: number, by: number) =>
 /** Ligger båten i ro (fremme)? */
 export const iRo = (b: Båt) => dist(b.x, b.y, b.tx, b.ty) < 0.5;
 
-/** Ligger båten i havna? */
-export const iHavn = (g: Game, b: Båt) =>
-    dist(b.x, b.y, g.havn.x, g.havn.y) < T.båt.havnSnap * 0.5;
+/** Ligger båten i havna (eller er på vei dit)? */
+export const iHavn = (_g: Game, b: Båt) => b.hjemme;
 
 /** Flokken båten fanger fra nå (nærmeste levende innenfor radius), eller null. */
 export function fangerFra(g: Game, b: Båt): Flokk | null {

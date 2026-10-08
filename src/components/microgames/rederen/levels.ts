@@ -137,7 +137,14 @@ export const BRETT: Brett[] = [
         fra: 1880,
         hav: 'Finnmarkskysten',
         flokker: [f('Nordkapp', 230, 250, 18, 9, { rx: 70, ry: 50, fase: 2 })],
-        nytt: 'Ny båt. Den koster olje hvert år.',
+        nytt: 'Ny båt i havna. Der koster den lite, ute koster den mer.',
+    },
+    {
+        fra: 1892,
+        hav: 'Finnmarkskysten',
+        // Reserven: en flokk ingen har fanget i. Grønn ring å flytte til når de andre er røde.
+        flokker: [f('Sørøya', 390, 390, 22, 8, { rx: 60, ry: 34, fase: 3 })],
+        nytt: 'Ny flokk ved Sørøya. Ingen har fanget her ennå.',
     },
     {
         fra: 1904,

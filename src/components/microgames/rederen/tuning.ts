@@ -41,8 +41,12 @@ export const TUNING = {
     båt: {
         fart: 180,
         kokeriFart: 70,
-        /** Slipper du en båt nærmere havna enn dette, legger den seg i havna. */
-        havnSnap: 34,
+        /** Slipper du en båt nærmere havna enn dette, legger den seg på plassen sin i havna. */
+        havnSnap: 50,
+        /** Plassene i havna: rader under havna (dx mellom båtene, dy ned), kokeriet til venstre. */
+        havnPlass: { dx: 46, dy: 26, rad: 4, kokeriDx: 80 },
+        /** En båt som følger en flokk, ligger høyst så langt fra midten av den (px). */
+        følgAvstand: 14,
         /** Et slipp teller som et nytt valg når målet flyttes mer enn dette. */
         nyttStedPx: 24,
     },
@@ -57,11 +61,14 @@ export const TUNING = {
             { fra: 1925, båt: 2.5 },
         ],
         kokeri: 5,
+        /** En båt i havna koster bare denne delen av full pris. */
+        havnAndel: 0.35,
         /** Før dette året kan tønna ikke gå under null (brett 1: lær deg ringen først). */
         gulvTil: 1880,
     },
 
-    /** Flåten: antall båter (uten kokeriet) fra hvert år. Kommer av seg selv. */
+    /** Flåten: antall båter (uten kokeriet) fra hvert år. Nye båter legger seg i havna;
+     *  eleven velger selv hvor mange som går ut. */
     flåte: [
         { fra: 1864, båter: 1 },
         { fra: 1880, båter: 2 },

@@ -288,3 +288,52 @@ gulnet papir, hval som blå fangststempler, tran-rav i tønna».
   - Grønt år (havet krympet ikke i år) er grovt; ringen og poengene måler ikke helt det samme.
   - Tønna i havna overlapper øya i Sørishavet; plasseringen må ordnes når kartarkene tegnes.
   - Passiv runde: lite bevegelse uten input (bare flokkene vandrer); kunsten må gi liv.
+
+### Gråboks etter diagnose 1 (fase 3a, natt 2026-10-08)
+
+Diagnosen: Forståelig 2, Eleven gjør 3. Gjorde bare de tre endringene den ba om.
+
+- Endring 1 (lesbarhet): ringen er en målestokk. Buen viser hval igjen (`n / maks`), fargen er
+  vokser/krymper, og den blinker under 30 %. Tidslinje nederst med flagg ved 1968 og merker for
+  Sør-Georgia (1904) og Sørishavet (1925), en trekant for «nå» og rekordstreken. Båtene er dobbelt
+  så store (40 x 20, kokeriet 64 x 24). Hintet er en hånd som drar en skyggebåt fra havna til
+  flokken. Dobbelttallet er borte: poengene er tellestreker i kartusjen (én strek = 5 poeng), og
+  tønna er en søyle uten tall med én strek per år flåten tåler. Den oransje fangstringen rundt
+  båtene er fjernet (den rotet til bildet i 1944).
+- Endring 2 (regel): nye båter legger seg på faste plasser i havna og koster `havnAndel` = 0,35
+  av full pris der. En båt ute koster full pris. Eleven velger selv hvor mange som er ute. En båt
+  som slippes på en flokk, følger flokken selv til eleven flytter den, så draget er et valg (fange
+  mer eller la flokken hvile), ikke jakt etter en flokk som glir bort. Ny reserveflokk ved Sørøya
+  i 1892 (22 hval), så det finnes en grønn flokk å flytte til før 1904.
+- Endring 3 (kostnad og tap synlig): ved årsskiftet flyr en oljedråpe fra tønna til hver båt som er
+  ute, tønna synker mykt, og «tom om N år» står ved tønna (rød under 2). Ved tap fryser bildet i
+  2,8 s: konkurs lyser opp tønna og båtene (sterkt for båtene ute, svakt for dem i havna) med
+  «Flåten kostet X olje i året, men fangsten ga for lite»; tomt hav lyser opp flokkene med
+  «tom ÅR» eller «N hval igjen».
+- Robotene: `vett()` har mistet `følg`/`forut` (båten følger selv) og fått `hjemTom`. Forvalteren
+  sender ut så mange båter som det finnes store flokker og henter båter uten flokk hjem. Halvgod
+  tar flokkene ned til 30 %, reagerer hvert 4. tick og lar båter uten flokk ligge ute og koste full
+  pris. Grådig sender alle ut på den største flokken. Sparsom har bare én båt ute.
+- Simuleringen (200 runder per robot) er grønn: forvalter (vinner) 100 %, median 183; halvgod
+  (middels) 41 %, median 156; grådig (taper) 0 %, tomt hav 1870; sparsom (taper) 0 %, median 143,
+  konkurs rundt 1936; tilfeldig (knappemoser) 0 %, konkurs 1881; passiv 0 %, konkurs 1890. Trapp
+  143 < 156 < 183. Valg per minutt (forvalter) falt fra 74 til 26,6. Selvspillet i nettleseren:
+  alle porter grønne, forvalteren vant med 181 poeng, 28,6 valg per minutt.
+- Hva som IKKE virket:
+  - Halvgod med samme regel som før (lav 0,3) vant 100 % med median 164, nesten som forvalteren:
+    når båten følger selv, er det lite igjen å gjøre dårlig.
+  - Halvgod med lav 0,2 eller lavere tapte i 1870 som grådig: Varanger-flokken (14) kommer under
+    `tomtHav` før roboten flytter. Står i KART.md.
+  - Halvgod som lar båten bli liggende på flokken når ingen annen flokk er stor nok, tømte Varanger
+    i 1879 (median 79).
+  - `havnAndel` 0,25 lot sparsom leve til 1941 med median 152, rett under halvgod. 0,5 virket også
+    (sparsom 132), men da koster havna ikke lenger «lite».
+- Kjente svakheter:
+  - Sparsom går konkurs først i 1930-årene (briefen ville før 1910). Med billig havn er én båt nok
+    helt til kokeriet kommer. Poengtrappen holder likevel.
+  - 26 valg per minutt er under en tredjedel av før, men fortsatt mye med 7 båter. Neste knapp er
+    roboten, ikke spillet: den flytter båten ved 55 % hver gang.
+  - Grådig taper allerede i 1870 (etter 12 s). Det er tydelig, men kort.
+  - Tønna overlapper fortsatt øya ved Grytviken, og båtene i havna i Sørishavet ligger tett under
+    havna. Plasseringen ordnes når kartarkene tegnes.
+  - Tellestrekene stopper på 60 (300 poeng). Ingen runde har kommet dit.

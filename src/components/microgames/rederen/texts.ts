@@ -7,8 +7,8 @@ export const MÅL =
 
 export const REGLER = [
     'Dra en båt ut til en flokk med blå prikker. Båten tar hval, og fatene ruller hjem til tønna.',
-    'Ringen rundt flokken er grønn når den vokser og rød når båtene tar mer enn det blir født.',
-    'Hver båt koster olje hvert år, også når den ligger i havna. Tom tønne betyr konkurs.',
+    'Ringen rundt flokken viser hvor mange hval som er igjen. Den er grønn når flokken vokser og rød når båtene tar mer enn det blir født.',
+    'En båt på havet koster mye olje hvert år. I havna koster den lite. Du velger selv hvor mange som er ute. Tom tønne betyr konkurs.',
 ];
 
 export const TAP_TITTEL: Record<Årsak, string> = {
@@ -19,7 +19,7 @@ export const TAP_TITTEL: Record<Årsak, string> = {
 export const TIPS: Record<Årsak, string> = {
     tomt: 'En blåhvalhunn får bare én unge hvert andre eller tredje år. Tar du flere hval enn det blir født, krymper flokken - og en liten flokk får færre unger. Flytt båtene bort når ringen blir rød.',
     konkurs:
-        'Hver båt koster olje hvert år, enten den fanger eller ligger i havna. Spre båtene på mange flokker, så tar hver av dem lite.',
+        'En båt på havet koster mye olje, i havna koster den lite. Send en båt ut bare når en flokk har grønn ring og tåler den. Men har du for få ute, får du ikke nok olje til å betale for resten.',
 };
 
 export const SKJEDDE = {
@@ -39,5 +39,5 @@ export const LÆRDOM = {
         'Sesongen 1930-1931 ble den største noensinne: over 40 000 hval på én sesong.',
 };
 
-export const NYTT_BÅT = 'Ny båt i havna. Den koster olje hvert år.';
+export const NYTT_BÅT = 'Ny båt i havna. Der koster den lite.';
 export const HINT_RØD = 'Rød ring: flokken krymper. Flytt båten.';

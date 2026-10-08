@@ -19,7 +19,7 @@ import { usePlaytest } from './playtest';
 import { newGame, send, update, type Game, type Årsak } from './rederen/game';
 import { BOTS } from './rederen/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './rederen/sim';
-import { P, skala, tegn, type Lapp, type Skala, type TegneValg } from './rederen/draw';
+import { P, skala, tegn, type Dråpe, type Lapp, type Skala, type TegneValg } from './rederen/draw';
 import { BRETT } from './rederen/levels';
 import { dist, framdrift, iHavn, iRo } from './rederen/rules';
 import { TUNING } from './rederen/tuning';
@@ -67,6 +67,10 @@ interface Resultat {
 }
 
 const RANGER = TUNING.ranger;
+/** Sekunder bildet står frosset med årsaken lyst opp før slutt-skjermen. */
+const FRYS = 2.8;
+/** Sekunder en oljedråpe bruker fra tønna til båten. */
+const DRÅPE_SEK = 0.7;
 
 export default function RederensKart({ onComplete }: MicroGameProps) {
     const [mode, setMode] = useState<Mode>('menu');
@@ -81,6 +85,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
     const [muted, setMuted] = useState(() => synth.isMuted());
     const skalaRef = useRef<Skala>(skala(960, 540));
     const lapper = useRef<Lapp[]>([]);
+    const dråper = useRef<Dråpe[]>([]);
+    const tønneVist = useRef<number>(TUNING.økonomi.startTønne);
     const klokke = useRef(0);
     const vent = useRef<number | null>(null);
     const slutt = useRef(0);
@@ -139,7 +145,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         const første = g.båter[0];
         if (!h.slapp && g.t < 10 && første && iHavn(g, første) && g.flokker[0]) {
             const f = g.flokker[0];
-            return { fra: { x: første.x, y: første.y }, til: { x: f.x, y: f.y } };
+            return { fra: { x: første.x, y: første.y }, til: { x: f.x, y: f.y }, hånd: true };
         }
         if (h.rødIgjen > 0) {
             const b = g.båter.find((k) => k.id === h.rødBåt);
@@ -166,6 +172,15 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                     if (h.type === 'fangst') synth.tone(330, 260, 0.05, 'triangle', 0.05);
                     if (h.type === 'fat') synth.tone(660, 700, 0.04, 'square', 0.03);
                     if (h.type === 'slipp') hint.current.slapp = true;
+                    if (h.type === 'årsskifte') {
+                        // En oljedråpe flyr fra tønna til hver båt som er ute.
+                        for (const p of h.betalt) {
+                            const b = g.båter.find((k) => k.id === p.id);
+                            if (b && !b.hjemme) dråper.current.push({ id: p.id, t: 0 });
+                        }
+                        if (h.betalt.some((p) => g.båter.find((k) => k.id === p.id && !k.hjemme)))
+                            synth.tone(520, 200, 0.18, 'sine', 0.05);
+                    }
                     if (h.type === 'død') {
                         const f = g.flokker.find((k) => k.id === h.flokk);
                         if (f) lapp('Flokken er borte for godt.', f.x, f.y - 50, 3);
@@ -190,7 +205,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                     }
                 }
                 if (g.mode !== 'play') {
-                    vent.current ??= 1.0;
+                    vent.current ??= g.mode === 'lost' ? FRYS : 1.0;
                     vent.current -= dt;
                     if (vent.current <= 0) {
                         vent.current = null;
@@ -198,12 +213,18 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                     }
                 }
             }
+            for (const d of dråper.current) d.t += dt / DRÅPE_SEK;
+            dråper.current = dråper.current.filter((d) => d.t < 1);
+            // Tønna synker mykt, så eleven ser at den tappes.
+            tønneVist.current += (g.tønne - tønneVist.current) * Math.min(1, dt * 3);
             for (const l of lapper.current) l.igjen -= dt;
             lapper.current = lapper.current.filter((l) => l.igjen > 0);
             skalaRef.current = skala(view.w, view.h);
             const spiller = m === 'play';
             tegn(view, g, {
                 meny: m === 'menu',
+                tønneVist: tønneVist.current,
+                dråper: spiller ? dråper.current : [],
                 lapper: spiller ? lapper.current : [],
                 klokke: klokke.current,
                 drar: spiller ? drar.current : null,
@@ -223,6 +244,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         gameRef.current = newGame(Math.floor(Math.random() * 1e9));
         vent.current = null;
         lapper.current = [];
+        dråper.current = [];
+        tønneVist.current = TUNING.økonomi.startTønne;
         drar.current = null;
         valgt.current = null;
         sikte.current = null;
@@ -323,7 +346,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         if (e.type === 'pointerdown') {
             synth.unlock();
             let treff: number | null = null;
-            let bd = 28;
+            let bd = 34;
             for (const b of g.båter) {
                 const d = dist(b.x, b.y, p.x, p.y);
                 if (d < bd) {
