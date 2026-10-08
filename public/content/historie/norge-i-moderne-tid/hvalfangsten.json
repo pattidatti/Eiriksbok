@@ -1,0 +1,261 @@
+{
+  "id": "hvalfangsten",
+  "title": "Hvalfangsten: Da Norge jaktet på verdens største dyr",
+  "layout": "rich",
+  "year": "1864-1968",
+  "category": "Norge",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Svend Foyns granatharpun fra 1860-tallet gjorde det mulig å fange de største hvalene",
+    "Hvalfangst ble forbudt i Nord-Norge i 1904 etter protester fra fiskerne",
+    "Sesongen 1930-1931 var over 10 000 nordmenn i Antarktis og over 40 000 hval ble drept",
+    "Det siste norske kokeriet fanget hval i Antarktis i 1967-1968"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er desember 1930, langt sør i Sørishavet, rundt Antarktis. Isfjellene er større enn kirker, og havet er grått og kaldt. Midt i alt dette ligger et stort fabrikkskip, et kokeri. Små, raske båter kommer tilbake fra jakten og sleper døde hval etter seg. Mange av mannskapene er nordmenn, tusenvis av kilometer hjemmefra."
+    },
+    {
+      "type": "text",
+      "content": "Sesongen 1930-1931 ble den største noensinne. Da var 41 ekspedisjoner, altså hele fangstflåter, 232 hvalbåter og 10 550 nordmenn i Antarktis. Mange av nordmennene jobbet på utenlandske skip. Til sammen drepte de over 40 000 hval på én sesong (Basberg mfl., 2024). Hvordan havnet Norge her? Og hvorfor tok eventyret slutt?"
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hvalkokeri og hvalbåter blant isfjell i Sørishavet",
+      "caption": "Sesongen 1930-1931 var over 10 000 nordmenn med på hvalfangsten i Antarktis."
+    },
+    {
+      "type": "header",
+      "text": "En harpun som eksploderer"
+    },
+    {
+      "type": "text",
+      "content": "Historien begynner med én mann: Svend Foyn. Han ble født i Tønsberg i 1809, og i 1846 begynte han å fange sel. I 1863 fikk han bygget «Spes & Fides», en liten båt med dampmaskin. Våren 1864 dro han med den til Varangerfjorden i Finnmark for å jakte på hval (Thoresen & Barr, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Men for å fange de største hvalene trengte han et bedre våpen. På 1860-tallet utviklet Foyn sammen med presten Hans Esmark en ny harpun med en granat i spissen. En granat er en liten bombe. Harpunen ble skutt ut fra en kanon på båten, og granaten eksploderte inni hvalen. Før sesongen 1868 virket den godt nok, og da fanget Foyn 30 hval på én sesong (Thoresen & Barr, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Dampbåten, kanonen og granatharpunen ble starten på det vi kaller industriell hvalfangst. Industriell betyr at noe blir gjort med maskiner og i stor skala, som i en fabrikk. Nå kunne fangstfolkene jakte på de største hvalene som finnes, blåhvalen og finnhvalen (Basberg mfl., 2024). Det var den samme utviklingen som i [den industrielle revolusjonen](/historie/industriell-revolusjon/industriell-revolusjon): nye maskiner gjorde arbeidet mange ganger større."
+    },
+    {
+      "type": "header",
+      "text": "Fiskerne slår tilbake"
+    },
+    {
+      "type": "text",
+      "content": "I 1870 bygde Foyn den første moderne hvalstasjonen nær Vadsø. En hvalstasjon er en fabrikk på land der hvalen blir skåret opp og kokt til olje. I 1873 fikk han enerett på hvalfangst langs Finnmarkskysten i ti år. Ingen andre fikk lov til å fange der før retten gikk ut i 1881. Foyn ble en svært rik mann (Thoresen & Barr, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Etter det kom mange andre etter. På 1890-tallet lå det over 30 hvalstasjoner i Nord-Norge (Basberg mfl., 2024). Men mange fiskere i nord var sterkt imot hvalfangsten. Etter sterk motstand fra fiskerne vedtok Stortinget en lov 1. februar 1904. Den forbød hvalfangst i de tre nordligste fylkene (Basberg mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Da hadde fangsten allerede satt spor. I denne første perioden ble det tatt rundt 3500 blåhval (Haug, 2026b). Hvalfangerne måtte finne nye hav."
+    },
+    {
+      "type": "header",
+      "text": "Mot isen i sør"
+    },
+    {
+      "type": "text",
+      "content": "Svaret lå i sør. Carl Anton Larsen ledet ekspedisjoner til Antarktis i 1892-1894. Han så at det var mye hval der. I 1904 ble hvalstasjonen Grytviken bygget på øya Sør-Georgia, med Larsen som leder (Basberg mfl., 2024). Noen år senere ble de samme isområdene kjent i hele verden gjennom [kappløpet mot Sydpolen](/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen)."
+    },
+    {
+      "type": "text",
+      "content": "I Sandefjord satt verftseieren Christen Christensen. I 1903 bygde han om dampskipet «Admiralen» til verdens første moderne flytende hvalkokeri (Store norske leksikon, 2025). Et kokeri er et skip som fungerer som en flytende fabrikk. Hvalen blir skåret opp og kokt rett på havet, så skipet trenger ingen stasjon på land. I 1905 startet han norsk hvalfangst med «Admiralen» ved Sør-Shetlandsøyene i Antarktis (Basberg mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "På 1920-tallet kom det neste store spranget. Kokeriene fikk en sklie i akterenden, en opphalingsslipp, som gjorde at mannskapet kunne dra hele hvalen opp på dekk. Petter Sørlle tok patent på slippen, og den ble første gang brukt på kokeriet «Lancing» i 1925. Nå kunne kokeriene fange ute på det åpne havet langt fra land. Denne fangsten fikk sitt store gjennombrudd i 1927-1928 (Basberg mfl., 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Hva var hvalen verdt?"
+    },
+    {
+      "type": "text",
+      "content": "Spekket, det tykke fettlaget under huden, ble kokt til hvalolje. Hvalolje ble brukt som lampeolje, og etter hvert lærte man å gjøre oljen fast, slik at den kunne brukes til margarin (Basberg mfl., 2024). Christen Christensen bygde i 1913 den første fabrikken i Norge for å gjøre hvalolje fast (Store norske leksikon, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "For byer som Sandefjord betydde hvalfangsten arbeid og rikdom. Rederen Lars Christensen, sønn av Christen, besøkte et hvalfangstmuseum i USA i 1914. Han bestemte seg for at Sandefjord skulle få et eget. I 1917 ga han Hvalfangstmuseet til byen. Det er i dag det eneste museet i Europa som handler bare om hvalfangst (Pedersen, 2025)."
+    },
+    {
+      "type": "header",
+      "text": "Fangst uten grenser"
+    },
+    {
+      "type": "text",
+      "content": "Hvalfangst er et regnestykke. Hvert år får hvalene unger, men en blåhvalhunn får bare én unge hvert andre eller tredje år (Haug, 2026b). Tar fangstfolkene flere hval enn det blir født, krymper bestanden, altså antallet hval i havet. Prøv selv: Velg hvor mange hval flåten skal fange hver sesong, og se hva som skjer. Prøv både en stor og en liten kvote. En kvote er en grense for hvor mye man har lov til å fange."
+    },
+    {
+      "type": "component",
+      "name": "Hvalregnskapet",
+      "props": {
+        "title": "Hvalregnskapet",
+        "seasons": 20
+      }
+    },
+    {
+      "type": "text",
+      "content": "I Sørishavet skjedde akkurat dette. Rekordsesongen 1930-1931 ga så mye hvalolje at det ble for mye å selge, og fangsten brøt sammen året etter (Basberg mfl., 2024). Landene prøvde å lage regler. Den første internasjonale avtalen kom i Genève i 1931, og den bygde på en norsk hvallov fra 1929. I 1932 innførte hvalfangstselskapene selv kvoter (Basberg mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Etter andre verdenskrig gikk 17 land sammen og stiftet Den internasjonale hvalfangstkommisjonen, IWC, i 1946. Fra 1949 fikk all fangst i Antarktis en felles grense (Basberg mfl., 2024). Likevel måtte de største hvalene til slutt fredes. Blåhvalen ble fredet i Nord-Atlanteren i 1955 og i Sørishavet i 1966. Fredet betyr at det er forbudt å drepe dyret. Bestandene i sør er fortsatt små i dag (Haug, 2026b)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Blåhvalen",
+        "content": "Blåhvalen er det største dyret som lever i dag, og trolig det største dyret som noen gang har levd. Den kan bli rundt 30 meter lang og veie opptil 190 tonn. Likevel spiser den bare krill, små rekelignende dyr. Globalt regnes blåhvalen som truet (Haug, 2026b)."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Nederland, Storbritannia og til slutt Norge trakk seg ut av fangsten. Den siste landstasjonen på Sør-Georgia ble lagt ned i 1966, og det siste norske kokeriet fanget hval i Antarktis i sesongen 1967-1968 (Basberg mfl., 2024). Etter rundt hundre år var det store norske hvaleventyret over."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Forlatt hvalstasjon med rustne tanker på Sør-Georgia",
+      "caption": "Den siste hvalstasjonen på Sør-Georgia ble lagt ned i 1966."
+    },
+    {
+      "type": "header",
+      "text": "Hvalfangst i dag"
+    },
+    {
+      "type": "text",
+      "content": "I 1982 vedtok IWC en full stans i all kommersiell hvalfangst, altså fangst for å selge. Stansen kalles et moratorium, og den gjaldt fra 1986. Norge sa nei til vedtaket. Norge mente at en full stans ikke var i tråd med det kommisjonens egne forskere hadde anbefalt. I 1993 startet Norge igjen fangst av vågehval langs norskekysten, og mange andre land reagerte sterkt (Tønnessen & Hallenstvedt, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Vågehvalen er mye mindre enn blåhvalen. Den blir 8-9 meter lang og veier opptil 9 tonn. Bestanden som Norge fanger fra, er på litt over 100 000 dyr og har vært stabil i 20-30 år. Norske fangstfolk tar rundt 500-600 vågehval i året, og det er kjøttet de er ute etter (Haug, 2026a). Japan har også startet kommersiell vågehvalfangst igjen, fra 2019 (Basberg mfl., 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Om det er riktig å fange hval i dag, er folk uenige om. Noen mener at fangst er greit så lenge bestanden er stor og kvotene bygger på forskning. Andre mener at hval er så store og spesielle dyr at de ikke bør jaktes i det hele tatt. Spørsmålet handler både om tall og om hva vi mener er rett."
+    },
+    {
+      "type": "text",
+      "content": "Hvalfangsten ga arbeid til tusenvis av nordmenn og gjorde noen av dem svært rike. Den viser også hva som skjer når et folk høster av naturen uten å regne på hva naturen tåler. Den samme lærdommen er viktig for andre ressurser i havet, fra fisk til [oljen under havbunnen](/historie/norge-i-moderne-tid/oljealderen)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hvalfangstmonument og havn i Sandefjord",
+      "caption": "Hvalfangstmuseet i Sandefjord ble grunnlagt i 1917 og forteller i dag historien om norsk hvalfangst."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Basberg, B. L., Tønnessen, J. N. & Hallenstvedt, A. (2024). *Hvalfangst*. Store norske leksikon. Hentet 08.10.2026 fra [snl.no](https://snl.no/hvalfangst)",
+          "Haug, T. (2026a). *Vågehval*. Store norske leksikon. Hentet 08.10.2026 fra [snl.no](https://snl.no/v%C3%A5gehval)",
+          "Haug, T. (2026b). *Blåhval*. Store norske leksikon. Hentet 08.10.2026 fra [snl.no](https://snl.no/bl%C3%A5hval)",
+          "Pedersen, F. L. (2025). *Hvalfangstmuseet*. Store norske leksikon. Hentet 08.10.2026 fra [snl.no](https://snl.no/Hvalfangstmuseet)",
+          "Store norske leksikon. (2025). *Christen Christensen*. Hentet 08.10.2026 fra [snl.no](https://snl.no/Christen_Christensen)",
+          "Thoresen, P. & Barr, S. (2025). *Svend Foyn*. Store norske leksikon. Hentet 08.10.2026 fra [snl.no](https://snl.no/Svend_Foyn)",
+          "Tønnessen, J. N. & Hallenstvedt, A. (2024). *Den internasjonale hvalfangstkommisjonen*. Store norske leksikon. Hentet 08.10.2026 fra [snl.no](https://snl.no/Den_internasjonale_hvalfangstkommisjonen)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvem var Svend Foyn, og hvilken oppfinnelse gjorde den moderne hvalfangsten mulig?",
+          "Hvorfor ble hvalfangst forbudt i de tre nordligste fylkene i 1904?",
+          "Hva er et hvalkokeri, og hvorfor var det viktig at kokeriene kunne fange ute på det åpne havet?",
+          "Hva ble hvaloljen brukt til?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor en stor fangst hvert år kan gi mindre hval til sammen på lang sikt. Bruk det du så i Hvalregnskapet.",
+          "Hvalfangerne visste at hvalene ble færre, men fortsatte likevel. Hvorfor tror du det var så vanskelig å stoppe?",
+          "Sammenlign blåhvalen og vågehvalen. Hvorfor er det lettere å fange vågehval uten å true bestanden?",
+          "Norge sa nei til moratoriet i 1982. Hvilke argumenter hadde Norge, og hvorfor reagerte andre land?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Bør Norge fortsatt fange hval? Lag to lister med argumenter for og mot.",
+          "Finn en annen ressurs i naturen som har blitt overbeskattet, for eksempel en fiskeart. Hva skjedde, og hva gjorde man for å stoppe det?",
+          "Skriv et dagboknotat fra en ung hvalfanger fra Sandefjord på vei til Antarktis i 1930."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva var spesielt med harpunen som Svend Foyn utviklet?",
+            "options": [
+              "Den var laget av gull",
+              "Den hadde en granat i spissen som eksploderte inni hvalen",
+              "Den ble kastet for hånd",
+              "Den kunne fange fisk og hval samtidig"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Granatharpunen ble skutt ut fra en kanon og eksploderte inni hvalen. Sammen med dampbåten gjorde den det mulig å fange de største hvalene."
+          },
+          {
+            "question": "Hvorfor ble hvalfangst forbudt i Nord-Norge i 1904?",
+            "options": [
+              "Det var ikke flere hval igjen",
+              "Kongen ville ha hvalene selv",
+              "Fiskerne protesterte sterkt mot hvalfangsten",
+              "Det ble for kaldt å jobbe der"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Etter sterk motstand fra fiskerne ble hvalfangst forbudt i de tre nordligste fylkene ved en lov fra 1. februar 1904."
+          },
+          {
+            "question": "Hva er et flytende hvalkokeri?",
+            "options": [
+              "Et skip der hvalen blir skåret opp og kokt til olje ute på havet",
+              "En restaurant som serverer hvalkjøtt",
+              "En liten båt som jakter hval",
+              "Et hus på stranden"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Et kokeri er en flytende fabrikk. Christen Christensen bygde det første moderne kokeriet, «Admiralen», i 1903."
+          },
+          {
+            "question": "Når fanget det siste norske kokeriet hval i Antarktis?",
+            "options": [
+              "1904-1905",
+              "1930-1931",
+              "1946-1947",
+              "1967-1968"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Det siste norske kokeriet fanget hval i Antarktis i sesongen 1967-1968."
+          },
+          {
+            "question": "Hvilken hval fanger Norge i dag?",
+            "options": [
+              "Blåhval",
+              "Vågehval",
+              "Spermhval",
+              "Ingen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Norge startet igjen fangst av vågehval i 1993. Bestanden er på litt over 100 000 dyr, og det tas rundt 500-600 i året."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

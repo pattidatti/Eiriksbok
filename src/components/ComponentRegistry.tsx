@@ -78,6 +78,7 @@ const ParlamentetsJa = lazy(() => import('./content/interactive/ParlamentetsJa')
 const KronensVei = lazy(() => import('./content/interactive/KronensVei').then(m => ({ default: m.KronensVei })));
 const Bondetinget = lazy(() => import('./content/interactive/Bondetinget').then(m => ({ default: m.Bondetinget })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
+const Hvalregnskapet = lazy(() => import('./content/interactive/Hvalregnskapet').then(m => ({ default: m.Hvalregnskapet })));
 const KongensSegl = lazy(() => import('./content/interactive/KongensSegl').then(m => ({ default: m.KongensSegl })));
 const GullSaltVekten = lazy(() => import('./content/interactive/GullSaltVekten').then(m => ({ default: m.GullSaltVekten })));
 const TondibiSlaget = lazy(() => import('./content/interactive/TondibiSlaget').then(m => ({ default: m.TondibiSlaget })));
@@ -1028,6 +1029,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     KronensVei,
     Bondetinget,
     BrentJord,
+    Hvalregnskapet,
     KongensSegl,
     MalstangaTest,
     MapCarousel,

@@ -3705,6 +3705,21 @@
               ],
               "createdDate": "2026-09-04T04:17:16+02:00",
               "lastUpdated": "2026-09-18T07:37:40+02:00"
+            },
+            {
+              "id": "hvalfangsten",
+              "title": "Hvalfangsten: Da Norge jaktet på verdens største dyr",
+              "description": "Hvordan granatharpunen og de flytende kokeriene sendte tusenvis av nordmenn på hvalfangst, og hvorfor de store hvalene ble så få.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "hvalfangst",
+                "antarktis",
+                "økonomi",
+                "miljø",
+                "bærekraft"
+              ],
+              "createdDate": "2026-10-08T00:00:00Z"
             }
           ]
         },
