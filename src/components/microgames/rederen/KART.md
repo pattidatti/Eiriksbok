@@ -14,6 +14,7 @@ Komponent: `../RederensKart.tsx` (skall, input, lyd, tekst via `useArcadeText`, 
 | `fx.ts` | Effekter i ekte tid: bølger, røyk, hval som tas, unger som popper, døde flokker, båtenes kurs og sprett, tønne/år/grønt-stempel, arkbytte, `rykk` (hele bildet hopper), `lås` (ringen strammer seg når båten slippes på flokken), `fred` (FREDET/FORBUDT-stempelet slås). `fraHendelse` leser spillets hendelser. |
 | `draw.ts` | Scenen: arkbytte, havnesona (lyser når du drar), ringer (blå bue = hval igjen, grønt/rødt bånd med piler = vokser/krymper, grå stiplet = fredet), flokken som hvaler (én per fire hval, svømmer langs sløyfa, sprut), båter ovenfra, prislapp, fangstlinjer, fat, hint (fast pil + hånd), drag, sikte, oljedråper, lampelys. |
 | `hud.ts` | Kartusjen (år, hav, år til 1968, tellestreker, GRØNT ÅR-stempel), regnskapet med tønna («Holder N år» stort, rødt «Tom om N år!» under 3, Inn/Ut i hele tall, ikon per båt: fylt = ute, omriss = havn, oljepris-staven fra 1929), stripa nederst (tegnforklaring + tidslinje), tap-bildet og `tapTekst` (årsaken i én setning, også på slutt-skjermen). |
+| `TapKort.tsx` | Slutt-kortet ved tap: lite, på motsatt side av stempelet (`tapMål` i `hud.ts`), med årsaken i én setning, tallene på én linje og ett punkt fra «Dette skjedde». Seier bruker vanlig `ArcadeScreen`. |
 | `texts.ts` | Mål (menyen er én linje), lapper (maks 7 ord; rød ring, marked, forbud, fredning), lærings-øyeblikk (`ØYEBLIKK`: nyttår, pris, fredning), tips (`TIPS_PRIS` når prisfallet felte selskapet), «Dette skjedde», lærdom. |
 
 ## Kjerneløkka
@@ -38,9 +39,12 @@ Lærings-øyeblikk (maks tre): `nyttår` (årsskiftet til 1880), `pris` (1,6 s e
 
 ## Fallgruver
 
-- Plasser for HUD: kartusjen dekker x 16-230, y 16-108; regnskapet x 688-896, y 12-132; stripa y 500-540; knappene øverst til høyre. Flokker (sløyfe + radius 46) må ligge utenfor.
+- Plasser for HUD: kartusjen dekker x 16-230, y 16-108 (GRØNT ÅR-stempelet har fast plass i kartusjen, x 144-220, y 55-77); regnskapet x 688-896, y 12-132; stripa y 500-540; knappene øverst til høyre. Flokker (sløyfe + radius 46) må ligge utenfor.
 - Havnesona må ikke overlappe noen flokksløyfe, ellers kan båten ikke slippes på flokken.
 - `lav * maks` må være over `tomtHav` (6) i brett 1.
 - Alle økonomitall er olje per år, men årene går i ulik fart (1,5 / 2 / 2,5 s). Fangst og fødsler er per sekund.
 - Markedsroboten må se på lageret (staven), ikke telle fat per år: år på 2,5 s gir så mye støy at «fat i fjor» fikk forvalteren til å sende båtene hjem og ut igjen, og den gikk konkurs.
 - Grønt år målt per flokk (hver fanget flokk minst like stor) ga «sparsom» flere poeng enn «forvalter». Behold målet for hele havet.
+- Flytende oljetall (+inn, -kost, -kjøp, «På håret!») spretter i `PENGER`-spalten (x 630) i `RederensKart.tsx`, ikke ved havna eller tønna: der dekket de stedsnavn og regnskapet. Prisfallet står ved x 430.
+- Lærings-øyeblikket om fredning har ikke anker: kortet midt øverst dekker ingen FREDET-stempler. FREDET tegnes etter båtene.
+- Årene er 30 % kortere enn før vurdering 2. Alt som er «per år» (vedlikehold, `fast`, kokeri, `marked.kjøpPerÅr`) og robotenes buffere i år (`kjøpReserve`, `presset`) er skalert likt. `marked.grense` er et lagernivå og skaleres ikke.

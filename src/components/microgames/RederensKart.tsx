@@ -20,13 +20,14 @@ import { newGame, send, update, type Game, type Hendelse, type Årsak } from './
 import { BOTS } from './rederen/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './rederen/sim';
 import { P, skala, tegn, tønnePos, type Dråpe, type Skala, type TegneValg } from './rederen/draw';
-import { tapTekst } from './rederen/hud';
+import { tapMål, tapTekst } from './rederen/hud';
+import { TapKort } from './rederen/TapKort';
 import { SERIF } from './rederen/ark';
 import { byttArk, fraHendelse, fxSteg, nyFx, rykk, type Fx } from './rederen/fx';
 import { BRETT } from './rederen/levels';
 import { dist, fangerFra, framdrift, årsKost } from './rederen/rules';
 import { TUNING } from './rederen/tuning';
-import { LAPP, LÆRDOM, MÅL, SKJEDDE, TAP_TITTEL, TIPS, TIPS_PRIS, ØYEBLIKK } from './rederen/texts';
+import { LAPP, LÆRDOM, MÅL, SKJEDDE, TAP_TITTEL, ØYEBLIKK } from './rederen/texts';
 
 // REDERENS KART - Hvalfangsten 1864-1968. Du er rederen: dra hvalbåtene ut på flokkene,
 // la flokkene hvile når ringen blir rød, og betal for båtene hvert nyttår. Reglene bor i
@@ -57,6 +58,7 @@ const THEME: Partial<ArcadeTheme> = {
 type Mode = 'menu' | 'play' | 'paused' | 'over';
 
 interface Save {
+    /** Året selskapet holdt lengst (1969 = holdt til målet). Vises som år drevet. */
     rekord: number;
     poeng: number;
     runder: number;
@@ -70,9 +72,8 @@ interface Resultat {
     år: number;
     poeng: number;
     grønne: number;
+    /** Flere forvalter-poeng enn noen gang før. */
     nyRekord: boolean;
-    /** Prisfallet felte selskapet. */
-    prisFall: boolean;
     /** Hvorfor runden ble tapt, i én setning. */
     hvorfor: string | null;
     lærdom: string[];
@@ -81,6 +82,11 @@ interface Resultat {
 const RANGER = TUNING.ranger;
 /** Sekunder bildet står frosset med årsaken lyst opp før slutt-skjermen. */
 const FRYS = 2.5;
+/**
+ * Der tallene for olje spretter opp: en spalte til venstre for regnskapet, under landnavnene,
+ * så de aldri dekker stedsnavn, kartusjen eller tallene i regnskapet.
+ */
+const PENGER = { x: 630, inn: 150, ut: 185, håret: 222 };
 /** Sekunder en oljedråpe bruker fra tønna til båten. */
 const DRÅPE_SEK = 0.8;
 
@@ -123,6 +129,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
     const sikte = useRef<{ x: number; y: number } | null>(null);
     const hint = useRef({
         slapp: false,
+        slappKlokke: 0,
         rødVist: false,
         tomVarselÅr: 0,
         inn: 0,
@@ -165,7 +172,8 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
     const ferdig = (g: Game) => {
         const vant = g.mode === 'won';
         const prev = saveRef.current;
-        const nyRekord = g.år > prev.rekord;
+        // Rekorden er forvalter-poengene: et år (1969) sier ingenting når målet er 1968.
+        const nyRekord = prev.runder > 0 && g.poeng > prev.poeng;
         if (g.årsak === 'tomt') text.lesson('tomt', SKJEDDE.tomt(g.år), 5);
         if (g.årsak === 'konkurs') text.lesson('konkurs', SKJEDDE.konkurs(g.år), 5);
         if (vant) text.lesson('seier', SKJEDDE.seier, 5);
@@ -184,7 +192,6 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             poeng: g.poeng,
             grønne: g.grønneÅr,
             nyRekord,
-            prisFall: g.årsak === 'konkurs' && g.pris < 0.8,
             hvorfor: vant ? null : tapTekst(g),
             lærdom: text.lessons(3),
         });
@@ -228,6 +235,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 synth.tone(880, 1175, 0.12, 'sine', 0.025);
             }
         } else if (h.type === 'slipp') {
+            if (!hr.slapp) hr.slappKlokke = nå;
             hr.slapp = true;
             synth.tone(520, 300, 0.06, 'triangle', 0.08);
             synth.noise(0.18, 0.05, 1600, 0.04);
@@ -251,7 +259,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             stopp.current = Math.max(stopp.current, STOPP.kjøp);
             const b = g.båter.find((k) => k.id === h.id);
             if (b) {
-                const p = skjerm(b.x, b.y - 30);
+                const p = skjerm(PENGER.x, PENGER.ut);
                 text.float(`-${h.pris}`, p.x, p.y, P.rød, true);
                 if (b.kokeri) text.point('kokeri', LAPP.kokeri, vedBåt(h.id), { seconds: 4 });
             }
@@ -286,9 +294,9 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             synth.noise(0.5, 0.06, 500, 0.05);
             buzz([50, 40, 90]);
             stopp.current = Math.max(stopp.current, STOPP.krakk);
-            const p = skjerm(722, 120);
+            const p = skjerm(430, 175);
             text.float(`-${Math.round(h.tap)}`, p.x, p.y, P.rød, true, 1.8);
-            const q = skjerm(560, 150);
+            const q = skjerm(430, 120);
             text.float(LAPP.prisFalt, q.x, q.y, P.rød, true, 1.8);
             senere.current.push({
                 ved: klokke.current + 1.6,
@@ -302,7 +310,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             synth.tone(150, 150, 0.12, 'square', 0.07);
             synth.noise(0.25, 0.08, 700, 0.02);
             stopp.current = Math.max(stopp.current, STOPP.fredning);
-            const første = h.flokker[0];
+            const første = h.flokker[h.flokker.length - 1];
             if (h.hva === 'finnmark') {
                 const hp = () => skjerm(gameRef.current.havn.x - 60, gameRef.current.havn.y - 40);
                 text.point('finnmark', LAPP.finnmark, hp, { tone: 'fare', seconds: 3 });
@@ -311,13 +319,12 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 senere.current.push({
                     ved: klokke.current + 1.8,
                     gjør: () =>
+                        // Uten anker: kortet står øverst midt på arket, der ingen
+                        // FREDET-stempler ligger (de peker selv ut flokkene).
                         text.beatOnce(
                             'fredning',
                             ØYEBLIKK.fredning.tittel,
-                            ØYEBLIKK.fredning.tekst,
-                            {
-                                at: vedFlokk(første),
-                            }
+                            ØYEBLIKK.fredning.tekst
                         ),
                 });
                 text.lesson('fredning', LÆRDOM.fredning, 3);
@@ -326,7 +333,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
             // En oljedråpe flyr fra tønna til hver båt: stor til båter på havet, liten til havna.
             for (const p of h.betalt) if (p.kost > 0) dråper.current.push({ id: p.id, t: 0 });
             if (h.kost > 0) {
-                const p = skjerm(640, 80);
+                const p = skjerm(PENGER.x, PENGER.ut);
                 text.float(`-${Math.round(h.kost)}`, p.x, p.y, P.rød, true);
                 synth.tone(660, 330, 0.3, 'sine', 0.05, 0.1);
             }
@@ -342,7 +349,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 g.tønne < kost &&
                 g.mode === 'play'
             ) {
-                const p = skjerm(620, 120);
+                const p = skjerm(PENGER.x, PENGER.håret);
                 text.float('På håret!', p.x, p.y, P.rav, true, 1.6);
                 if (hr.tomVarselÅr !== g.år) {
                     hr.tomVarselÅr = g.år;
@@ -363,7 +370,10 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
 
     /** Første røde ring: lærings-øyeblikket ved flokken båten tømmer. */
     const sjekkRød = (g: Game) => {
-        if (g.t < 2.5 || hint.current.rødVist) return;
+        // Én lapp om gangen: rød ring forklares først når eleven har sluppet den første båten
+        // og start-lappen er borte.
+        const hr = hint.current;
+        if (hr.rødVist || !hr.slapp || klokke.current - hr.slappKlokke < 2) return;
         for (const b of g.båter) {
             const f = fangerFra(g, b);
             if (!f || f.netto >= 0 || f.n > f.maks * 0.62) continue;
@@ -406,7 +416,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 // Fatene som kommer inn, samles til ett tall ved havna.
                 const hr = hint.current;
                 if (hr.inn > 0 && klokke.current - hr.innKlokke > 0.7) {
-                    const p = skjerm(g.havn.x, g.havn.y - 24);
+                    const p = skjerm(PENGER.x, PENGER.inn);
                     text.float(`+${hr.inn}`, p.x, p.y, P.grønn);
                     hr.inn = 0;
                     hr.innKlokke = klokke.current;
@@ -437,6 +447,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                 sikte: spiller ? sikte.current : null,
                 hint: spiller ? hintNå(g) : null,
                 rekord: saveRef.current.rekord,
+                slutt: m === 'over',
                 lav: gameState.nivå === 'lav',
             });
         },
@@ -457,6 +468,7 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
         sikte.current = null;
         hint.current = {
             slapp: false,
+            slappKlokke: 0,
             rødVist: false,
             tomVarselÅr: 0,
             inn: 0,
@@ -709,8 +721,9 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                             </ArcadeSmallButton>
                             {save.runder > 0 && (
                                 <p style={{ fontSize: 15, margin: '8px 0 2px' }}>
-                                    Lengst: <b>{save.rekord}</b> ({rankFor(RANGER, save.rekord)}) ·
-                                    Beste poeng: <b>{save.poeng}</b>
+                                    Lengst: <b>{save.rekord - TUNING.tid.start} år</b> (
+                                    {rankFor(RANGER, save.rekord)}) · Beste poeng:{' '}
+                                    <b>{save.poeng}</b>
                                 </p>
                             )}
                         </ArcadeScreen>
@@ -731,32 +744,14 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                         </ArcadeScreen>
                     )}
 
-                    {mode === 'over' && res && (
+                    {mode === 'over' && res && res.vant && (
                         <ArcadeScreen>
-                            <ArcadeLogo>
-                                {res.vant ? '1968 - havet lever' : TAP_TITTEL[res.årsak ?? 'tomt']}
-                            </ArcadeLogo>
-                            <ArcadeTag color={res.vant ? P.grønn : P.rød}>
-                                {res.nyRekord ? `Ny rekord: ${res.år}` : rankFor(RANGER, res.år)}
+                            <ArcadeLogo>1968 - havet lever</ArcadeLogo>
+                            <ArcadeTag color={P.grønn}>
+                                {res.nyRekord
+                                    ? `Ny rekord: ${res.poeng} forvalter-poeng`
+                                    : rankFor(RANGER, res.år)}
                             </ArcadeTag>
-                            {res.hvorfor && (
-                                <p
-                                    style={{
-                                        fontSize: 17,
-                                        fontWeight: 700,
-                                        color: P.rød,
-                                        margin: '8px 0 0',
-                                        maxWidth: 580,
-                                    }}
-                                >
-                                    {res.hvorfor}
-                                </p>
-                            )}
-                            {!res.vant && res.årsak && (
-                                <p style={{ fontSize: 16, margin: '8px 0', maxWidth: 580 }}>
-                                    {res.prisFall ? TIPS_PRIS : TIPS[res.årsak]}
-                                </p>
-                            )}
                             <ArcadeStats
                                 items={[
                                     { value: `${res.år - TUNING.tid.start}`, label: 'År drevet' },
@@ -764,17 +759,31 @@ export default function RederensKart({ onComplete }: MicroGameProps) {
                                     { value: `${res.grønne}`, label: 'Grønne år' },
                                 ]}
                             />
-                            {neste && (
-                                <p style={{ fontSize: 15, margin: '4px 0' }}>
-                                    Hold ut til {neste[0]} for «{neste[1]}»
-                                </p>
-                            )}
                             <ArcadeLessons items={res.lærdom} />
                             <ArcadeBigButton onClick={omstart}>
                                 Ny runde (mellomrom)
                             </ArcadeBigButton>
                             <ArcadeSmallButton onClick={toMenu}>Meny</ArcadeSmallButton>
                         </ArcadeScreen>
+                    )}
+
+                    {mode === 'over' && res && !res.vant && (
+                        <TapKort
+                            tittel={TAP_TITTEL[res.årsak ?? 'tomt']}
+                            merke={
+                                res.nyRekord
+                                    ? `Ny rekord: ${res.poeng} forvalter-poeng`
+                                    : rankFor(RANGER, res.år)
+                            }
+                            hvorfor={res.hvorfor}
+                            tall={`${res.år - TUNING.tid.start} år drevet · ${res.poeng} poeng${
+                                neste ? ` · neste: ${neste[1]} (${neste[0]})` : ''
+                            }`}
+                            lærdom={res.lærdom}
+                            venstre={tapMål(gameRef.current).x > 480}
+                            onOmstart={omstart}
+                            onMeny={toMenu}
+                        />
                     )}
                 </ArcadeStage>
             </div>

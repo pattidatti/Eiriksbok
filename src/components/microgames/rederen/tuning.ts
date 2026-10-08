@@ -4,14 +4,17 @@
 export const TUNING = {
     flate: { w: 960, h: 540 },
 
-    /** Tiden: sekunder per år i hver periode. Seier når året 1969 begynner. */
+    /**
+     * Tiden: sekunder per år i hver periode. Seier når året 1969 begynner. Årene ble 30 %
+     * kortere etter vurdering 2 (runden ca. 2,5 min); alt som koster olje per år, ble skalert likt.
+     */
     tid: {
         start: 1864,
         seier: 1969,
         perioder: [
-            { fra: 1864, sek: 1.5 },
-            { fra: 1904, sek: 2 },
-            { fra: 1925, sek: 2.5 },
+            { fra: 1864, sek: 1.1 },
+            { fra: 1904, sek: 1.4 },
+            { fra: 1925, sek: 1.75 },
         ],
     },
 
@@ -51,12 +54,12 @@ export const TUNING = {
     økonomi: {
         startTønne: 12,
         vedlikehold: [
-            { fra: 1864, båt: 1 },
-            { fra: 1880, båt: 1 },
-            { fra: 1904, båt: 1.5 },
-            { fra: 1925, båt: 2 },
+            { fra: 1864, båt: 0.73 },
+            { fra: 1880, båt: 0.73 },
+            { fra: 1904, båt: 1.05 },
+            { fra: 1925, båt: 1.4 },
         ],
-        kokeri: 4,
+        kokeri: 2.8,
         /** En båt i havna koster bare denne delen av full pris. */
         havnAndel: 0.35,
         /** Før dette året kan tønna ikke gå under null (brett 1: lær deg ringen først). */
@@ -64,9 +67,9 @@ export const TUNING = {
         /** Stasjonen og mannskapet på land: fast olje per år, enten du har båter ute eller ikke. */
         fast: [
             { fra: 1864, kost: 0 },
-            { fra: 1880, kost: 0.5 },
-            { fra: 1904, kost: 4 },
-            { fra: 1925, kost: 5 },
+            { fra: 1880, kost: 0.37 },
+            { fra: 1904, kost: 2.8 },
+            { fra: 1925, kost: 3.5 },
         ],
     },
 
@@ -78,10 +81,12 @@ export const TUNING = {
      */
     marked: {
         fra: 1929,
-        /** Fat verden kjøper per år, og hvor fullt lageret kan bli før prisen faller. */
+        /** Hvor fullt lageret kan bli (fat) før prisen faller. */
         grense: 15,
+        /** Fat verden kjøper per år (lageret tømmes jevnt; 6 fat i sekundet som før årene ble kortere). */
+        kjøpPerÅr: 10.5,
         /** Prisen faller så mye per fat lageret er over grensa. */
-        fall: 0.1,
+        fall: 0.08,
         bunn: 0.3,
     },
 
@@ -102,9 +107,9 @@ export const TUNING = {
         { fra: 1880, pris: 6, kokeri: false },
         { fra: 1904, pris: 8, kokeri: false },
         { fra: 1910, pris: 8, kokeri: false },
-        { fra: 1925, pris: 14, kokeri: true },
-        { fra: 1925, pris: 10, kokeri: false },
-        { fra: 1928, pris: 10, kokeri: false },
+        { fra: 1925, pris: 11, kokeri: true },
+        { fra: 1925, pris: 8, kokeri: false },
+        { fra: 1928, pris: 8, kokeri: false },
     ],
     /** Høyst så mange båter til salgs i havna samtidig (resten venter). */
     maksTilbud: 2,

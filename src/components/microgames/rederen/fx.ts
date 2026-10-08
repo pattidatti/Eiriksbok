@@ -59,6 +59,8 @@ export interface Fx {
     årHopp: number;
     /** Grønt år: stempelet i kartusjen. */
     grønt: number;
+    /** Sekunder siden runden ble tapt (-1 = ikke tapt): det store stempelet slås. */
+    tap: number;
     rekke: number;
     /** Arkbytte: det gamle arket glir ut, det nye inn. */
     arkFra: KartId | null;
@@ -84,6 +86,7 @@ export const nyFx = (): Fx => ({
     tønneHopp: 0,
     årHopp: 0,
     grønt: 0,
+    tap: -1,
     rekke: 0,
     arkFra: null,
     arkT: 1,
@@ -194,6 +197,7 @@ export function fraHendelse(
 /** Ett bilde fram i ekte tid. `lav` = færre røykdotter. */
 export function fxSteg(fx: Fx, g: Game, dt: number, lav: boolean) {
     fx.klokke += dt;
+    if (g.mode === 'lost') fx.tap = fx.tap < 0 ? 0 : fx.tap + dt;
     for (const b of fx.bølger) b.t += dt;
     fx.bølger = fx.bølger.filter((b) => b.t < b.liv);
     for (const r of fx.røyk) r.t += dt;

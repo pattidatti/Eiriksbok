@@ -29,7 +29,10 @@ interface Vett {
     maksUte: number;
     /** Henter båter uten flokk hjem, så de koster lite. */
     hjemTom: boolean;
-    /** Kjøper en båt til salgs når tønna har så mange års drift i tillegg til prisen (null = aldri). */
+    /**
+     * Kjøper en båt til salgs når tønna har så mange års drift i tillegg til prisen (null = aldri).
+     * Årene ble 30 % kortere etter vurdering 2, så reservene er ganget med 1,4: samme buffer i sekunder.
+     */
     kjøpReserve: number | null;
     /**
      * Oljemarkedet: 'ser' holder fatene i år under grensa (tellerverket ved tønna), 'lærer'
@@ -70,7 +73,7 @@ function vett(v: Vett) {
             const lager = g.lager + fatPåVei(g);
             const fullt = passer && lager > T.marked.grense * 0.85;
             const plass = !passer || lager < T.marked.grense * 0.6;
-            const presset = v.tønneVett && g.tønne < årsKost(g) * 1.2;
+            const presset = v.tønneVett && g.tønne < årsKost(g) * 1.7;
             const lav = presset ? v.lav * 0.7 : v.lav;
             const høy = presset ? v.høy * 0.75 : v.høy;
 
@@ -158,7 +161,7 @@ export const BOTS: Record<string, BotDef> = {
             tønneVett: true,
             maksUte: 99,
             hjemTom: true,
-            kjøpReserve: 1.5,
+            kjøpReserve: 2.1,
             marked: 'ser',
         }),
     },
@@ -173,7 +176,7 @@ export const BOTS: Record<string, BotDef> = {
             tønneVett: false,
             maksUte: 99,
             hjemTom: true,
-            kjøpReserve: 0.5,
+            kjøpReserve: 0.7,
             marked: 'lærer',
         }),
     },

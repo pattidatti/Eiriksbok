@@ -47,14 +47,16 @@ function kartusj(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
         ctx.arc(cx, cy, 6, 0, Math.PI * 2);
         ctx.stroke();
     }
-    const s = 1 + 0.35 * fx.årHopp;
+    // Årstallet hopper litt ved nyttår, men aldri inn i teksten ved siden av.
+    const s = 1 + 0.2 * fx.årHopp;
     ctx.save();
     ctx.translate(x + 16, y + 40);
     ctx.scale(s, s);
     ctx.fillStyle = P.blekk;
     ctx.textAlign = 'left';
     ctx.font = `bold 34px ${SERIF}`;
-    ctx.fillText(`${g.år}`, 0, 0);
+    // Seieren kommer når 1969 begynner, men målet er 1968: kartusjen viser aldri 1969.
+    ctx.fillText(`${Math.min(g.år, T.tid.seier - 1)}`, 0, 0);
     ctx.restore();
     ctx.fillStyle = P.blekk;
     ctx.font = `italic 15px ${SERIF}`;
@@ -63,7 +65,7 @@ function kartusj(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
     ctx.font = `13px ${SERIF}`;
     ctx.textAlign = 'right';
     const igjen = T.tid.seier - 1 - g.år;
-    ctx.fillText(igjen > 0 ? `${igjen} år til 1968` : 'forbi 1968', x + 204, y + 30);
+    ctx.fillText(igjen > 0 ? `${igjen} år til 1968` : 'målet nådd', x + 204, y + 30);
     // Poengene: tellestreker, fem i en bunt (én strek = 5 poeng). Grønne når du har grønne år på rad.
     ctx.strokeStyle = g.grønnRekke > 1 ? P.grønn : P.blekk;
     ctx.lineWidth = 1.6;
@@ -83,22 +85,30 @@ function kartusj(ctx: CanvasRenderingContext2D, g: Game, fx: Fx) {
         }
         ctx.stroke();
     }
-    // Grønt år: et stempel slås i kartusjen.
+    // Grønt år: et stempel slås i en fast, tom plass i kartusjen (til høyre for havnavnet,
+    // under «år til 1968», over tellestrekene), så det aldri dekker annen tekst.
     if (fx.grønt > 0) {
         const k = 1 - fx.grønt;
-        const sk = k < 0.15 ? 1.8 - (k / 0.15) * 0.8 : 1;
+        const sk = k < 0.15 ? 1.12 - (k / 0.15) * 0.12 : 1;
         ctx.save();
-        ctx.translate(x + 158, y + 52);
-        ctx.rotate(-0.18);
+        ctx.translate(x + 166, y + 50);
         ctx.scale(sk, sk);
         ctx.globalAlpha = Math.min(1, fx.grønt * 2.5);
+        ctx.fillStyle = P.papir;
+        ctx.fillRect(-38, -11, 76, 22);
         ctx.strokeStyle = P.grønn;
         ctx.fillStyle = P.grønn;
-        ctx.lineWidth = 2.5;
-        ctx.strokeRect(-50, -15, 100, 30);
-        ctx.font = `bold 15px ${SERIF}`;
+        ctx.lineWidth = 2;
+        ctx.strokeRect(-38, -11, 76, 22);
+        const tekst = fx.rekke > 1 ? `GRØNT ÅR x${Math.min(3, fx.rekke)}` : 'GRØNT ÅR';
+        let px = 13;
+        ctx.font = `bold ${px}px ${SERIF}`;
+        while (px > 9 && ctx.measureText(tekst).width > 68) {
+            px -= 0.5;
+            ctx.font = `bold ${px}px ${SERIF}`;
+        }
         ctx.textAlign = 'center';
-        ctx.fillText(fx.rekke > 1 ? `GRØNT ÅR x${Math.min(3, fx.rekke)}` : 'GRØNT ÅR', 0, 5);
+        ctx.fillText(tekst, 0, px * 0.36);
         ctx.restore();
         ctx.globalAlpha = 1;
     }
@@ -421,6 +431,63 @@ function stripe(ctx: CanvasRenderingContext2D, g: Game, o: TegneValg) {
     ctx.fill();
 }
 
+/**
+ * Der tapet stemples: den tomme tønna (konkurs) eller flokken som døde sist (tomt hav).
+ * Holdes unna kartusjen, regnskapet og stripa. Slutt-kortet legger seg på motsatt side.
+ */
+export function tapMål(g: Game): { x: number; y: number; flokk: number | null } {
+    if (g.årsak === 'konkurs') return { x: 770, y: 72, flokk: null };
+    let mål = null as Game['flokker'][number] | null;
+    for (const f of g.flokker) {
+        if (!mål) mål = f;
+        else if (f.død && (!mål.død || (f.dødÅr ?? 0) > (mål.dødÅr ?? 0))) mål = f;
+        else if (!f.død && !mål.død && f.n < mål.n) mål = f;
+    }
+    if (!mål) return { x: 480, y: 270, flokk: null };
+    return {
+        x: Math.max(130, Math.min(830, mål.x)),
+        y: Math.max(170, Math.min(400, mål.y)),
+        flokk: mål.id,
+    };
+}
+
+/** Det store stempelet: slås ned med et smell og blir liggende skrått over tingen. */
+function stortStempel(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    linje1: string,
+    linje2: string,
+    t: number
+) {
+    const k = Math.min(1, t / 0.3);
+    const s = k < 1 ? 2.4 - 1.4 * k * k : 1;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(-0.14);
+    ctx.scale(s, s);
+    ctx.globalAlpha = Math.min(1, 0.25 + k);
+    ctx.font = `bold 32px ${SERIF}`;
+    const w1 = ctx.measureText(linje1).width;
+    ctx.font = `bold 15px ${SERIF}`;
+    const w = Math.max(w1, ctx.measureText(linje2).width) + 40;
+    ctx.fillStyle = P.papir;
+    ctx.fillRect(-w / 2, -34, w, 68);
+    ctx.strokeStyle = P.rød;
+    ctx.lineWidth = 4;
+    ctx.strokeRect(-w / 2, -34, w, 68);
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(-w / 2 + 6, -28, w - 12, 56);
+    ctx.fillStyle = P.rød;
+    ctx.textAlign = 'center';
+    ctx.font = `bold 32px ${SERIF}`;
+    ctx.fillText(linje1, 0, 6);
+    ctx.font = `bold 15px ${SERIF}`;
+    ctx.fillText(linje2, 0, 24);
+    ctx.restore();
+    ctx.globalAlpha = 1;
+}
+
 export function tegnHud(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneValg) {
     kartusj(ctx, g, fx);
     regnskap(ctx, g, fx, o, g.mode === 'lost' && g.årsak === 'konkurs');
@@ -446,8 +513,15 @@ export function tapTekst(g: Game): string {
 }
 
 /** Tapet: bildet fryser, og årsaken lyser opp (båtene som tappet tønna, eller flokkene som forsvant). */
-export function tegnTap(ctx: CanvasRenderingContext2D, g: Game, klokke: number) {
+export function tegnTap(
+    ctx: CanvasRenderingContext2D,
+    g: Game,
+    klokke: number,
+    fx: Fx,
+    slutt: boolean
+) {
     const puls = 0.5 + 0.5 * Math.sin(klokke * 6);
+    const mål = tapMål(g);
     if (g.årsak === 'konkurs') {
         const fra = tønnePos();
         ctx.strokeStyle = P.rød;
@@ -487,11 +561,30 @@ export function tegnTap(ctx: CanvasRenderingContext2D, g: Game, klokke: number) 
             ctx.strokeStyle = P.papir;
             ctx.lineWidth = 4;
             ctx.font = `bold 14px ${SERIF}`;
+            if (f.id === mål.flokk) continue;
             const lapp = f.død ? `tom ${f.dødÅr}` : `${f.n} hval igjen`;
             ctx.strokeText(lapp, f.x, f.y - T.fangst.radius - 14);
             ctx.fillText(lapp, f.x, f.y - T.fangst.radius - 14);
         }
     }
+    // Stempelet slås på tingen som felte selskapet.
+    const t = Math.max(0, fx.tap);
+    if (g.årsak === 'konkurs') {
+        stortStempel(
+            ctx,
+            mål.x,
+            mål.y,
+            'KONKURS',
+            g.pris < 0.8 ? 'oljeprisen falt' : 'tønna er tom',
+            t
+        );
+    } else {
+        const f = g.flokker.find((k) => k.id === mål.flokk);
+        const under = f ? (f.død ? `${f.navn}: tom ${f.dødÅr}` : `${f.navn}: ${f.n} hval`) : '';
+        stortStempel(ctx, mål.x, mål.y, 'HAVET TOMT', under, t);
+    }
+    // Setningen nederst står bare mens bildet er frosset; etterpå står den i slutt-kortet.
+    if (slutt) return;
     const tekst = tapTekst(g);
     ctx.font = `bold 18px ${SERIF}`;
     const bw = Math.min(940, ctx.measureText(tekst).width + 32);

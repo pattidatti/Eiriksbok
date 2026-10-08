@@ -65,6 +65,8 @@ export interface TegneValg {
     /** Start-hintet: fast pil fra båten til den grønne flokken. */
     hint: { fra: { x: number; y: number }; til: { x: number; y: number } } | null;
     rekord: number;
+    /** Slutt-kortet står: tap-setningen tegnes ikke på kartet (den står i kortet). */
+    slutt: boolean;
     /** Ukesnivået: lav tegner færre småting (samme spill). */
     lav: boolean;
 }
@@ -172,10 +174,10 @@ function tegnFredStempel(ctx: CanvasRenderingContext2D, f: Flokk, finnmark: bool
     ctx.translate(f.x, f.y + 4);
     ctx.rotate(-0.2);
     ctx.scale(s, s);
-    ctx.globalAlpha = Math.min(1, 0.3 + k) * 0.9;
+    ctx.globalAlpha = Math.min(1, 0.3 + k);
     const farge = finnmark ? P.rød : P.blekk;
     ctx.strokeStyle = farge;
-    ctx.fillStyle = 'rgba(236,227,203,0.75)';
+    ctx.fillStyle = P.papir;
     ctx.lineWidth = 2.5;
     ctx.fillRect(-46, -13, 92, 26);
     ctx.strokeRect(-46, -13, 92, 26);
@@ -212,8 +214,8 @@ function tegnStempler(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
         ctx.restore();
         // Sprut: en og annen hval blåser - en sky over hodet som stiger og blekner.
         const fase = (t * 0.32 + i * 0.37 + f.id * 0.61) % 1;
-        if (fase < 0.16) {
-            const p = fase / 0.16;
+        if (fase < 0.2) {
+            const p = fase / 0.2;
             const hx = x + Math.cos(vri) * w * 0.38 * s;
             const hy = y + Math.sin(vri) * w * 0.38 * s;
             ctx.globalAlpha = 0.85 * (1 - p);
@@ -221,10 +223,10 @@ function tegnStempler(ctx: CanvasRenderingContext2D, f: Flokk, fx: Fx) {
             ctx.strokeStyle = P.hval;
             ctx.lineWidth = 1;
             for (let d = 0; d < 3; d++) {
-                const dx = (d - 1) * (3 + 5 * p);
-                const dy = -4 - 12 * p + Math.abs(d - 1) * 3;
+                const dx = (d - 1) * (4 + 8 * p);
+                const dy = -6 - 20 * p + Math.abs(d - 1) * 4;
                 ctx.beginPath();
-                ctx.arc(hx + dx, hy + dy, 2 + 2.5 * p, 0, Math.PI * 2);
+                ctx.arc(hx + dx, hy + dy, 2.5 + 3.5 * p, 0, Math.PI * 2);
                 ctx.fill();
                 ctx.stroke();
             }
@@ -282,10 +284,6 @@ function tegnFlokker(ctx: CanvasRenderingContext2D, g: Game, fx: Fx, o: TegneVal
         }
     }
     for (const f of g.flokker) if (!f.død) tegnStempler(ctx, f, fx);
-    // Fredet: et stempel over flokken («FREDET 1966» eller «FORBUDT 1903»), slått på med et smell.
-    for (const f of g.flokker)
-        if (f.fredet && !f.død)
-            tegnFredStempel(ctx, f, g.kart === 'finnmark', fx.fred.get(f.id) ?? 9);
     // Hval som tas: stempelet løftes, krymper og blir et fat.
     for (const t of fx.tatt) {
         const k = Math.min(1, t.t / 0.9);
@@ -727,6 +725,11 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, o: TegneValg) {
     tegnFlokker(ctx, g, fx, o);
     tegnBølger(ctx, fx);
     tegnBåter(ctx, g, fx, o);
+    // Fredet: et stempel over flokken («FREDET» eller «FORBUDT»), slått på med et smell. Tegnes
+    // over båtene, så båtene som seiler hjem ikke skjuler det.
+    for (const f of g.flokker)
+        if (f.fredet && !f.død)
+            tegnFredStempel(ctx, f, g.kart === 'finnmark', fx.fred.get(f.id) ?? 9);
     if (!o.meny) tegnDragOgHint(ctx, g, o);
     ctx.restore();
     ctx.restore();
@@ -734,5 +737,5 @@ export function tegn(view: ArcadeView, g: Game, fx: Fx, o: TegneValg) {
     if (o.meny) return;
     tegnDråper(ctx, g, o);
     tegnHud(ctx, g, fx, o);
-    if (g.mode === 'lost') tegnTap(ctx, g, o.klokke);
+    if (g.mode === 'lost') tegnTap(ctx, g, o.klokke, fx, o.slutt);
 }

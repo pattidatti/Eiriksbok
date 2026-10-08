@@ -455,3 +455,52 @@ Vurdering 1: Forståelig 3, Myk start 4, Eleven gjør 4, Utseende 3, Lærerikt 4
   - Nyttår-boksen står over kartet til eleven trykker «Skjønner» (spillet går i sakte film).
   - Lappen «Tønna er snart tom» og markedslappen kan stå samtidig ved tønna i 1929.
   - Sparsom lever fortsatt til rundt 1932.
+
+### Forbedrer etter vurdering 2, siste runde (natt 2026-10-08)
+
+Vurdering 2: Forståelig 3, Myk start 3, Eleven gjør 4, Utseende 3, Lærerikt 4 (sum 17). Bare to grep, ingen nye regler.
+
+- Grep A (tapet på kartet): når runden tapes, slås et stort rødt stempel ned på tingen som felte
+  selskapet: «KONKURS» over tønna (med «tønna er tom» eller «oljeprisen falt»), eller «HAVET TOMT»
+  på flokken som døde sist (med navn og år). Setningen nederst står mens bildet er frosset. Etterpå
+  kommer et lite slutt-kort (`TapKort.tsx`) på motsatt side av stempelet: tittel, rang, årsaken i
+  én rød setning, «N år drevet · N poeng · neste rang» og ett punkt fra «Dette skjedde» (røyktesten
+  krever fagstoffet på slutt-skjermen). Tipsavsnittet er borte fra tapet. Kartusjen viser aldri
+  1969 («1968», «målet nådd»). Rekorden er nå forvalter-poeng («Ny rekord: 175 forvalter-poeng»),
+  og menyen viser «Lengst: N år».
+- Grep B (tekst og start): GRØNT ÅR-stempelet har fast, tom plass i kartusjen (krymper teksten til
+  den passer), og årstallet hopper mindre. Alle oljetall spretter i en egen spalte til venstre for
+  regnskapet (x 630), prisfallet ved x 430, så ingenting dekker FINNMARK, Vadsø eller regnskapet.
+  FREDET/FORBUDT tegnes over båtene og med tett papir, og lærings-øyeblikket om fredning står uten
+  anker (midt øverst), så ingen stempler dekkes. Rød ring-lappen kommer først 2 s etter at eleven
+  har sluppet den første båten (start-lappen er da borte): én lapp om gangen. Båt 2 starter fortsatt
+  på Vadsø-flokken; ringen er rød, men lappen venter. Spruten er større og varer litt lenger.
+- Tempo: årene er 30 % kortere (1,1 / 1,4 / 1,75 s). Vedlikehold, stasjon, kokeri og hvor mye olje
+  verden kjøper per år er ganget med 0,7, så alt koster det samme per sekund. Båtene i Sørishavet
+  er billigere (kokeri 11, båt 8): det er mindre tid til å spare opp før 1925. Robotenes buffere
+  i år er ganget med 1,4 (samme buffer i sekunder). Spilltid for en vinnerrunde 212 s -> 150 s.
+- Simuleringen (200 runder per robot): forvalter (vinner) 84 %, median 185; halvgod (middels) 63 %,
+  median 162; sparsom (taper) 0 %, median 149, konkurs rundt 1934; grådig 0 %, median 78, tomt
+  hav (1890-1955); tilfeldig 0 %, konkurs 1881; passiv 0 %, konkurs 1905. Trapp 149 < 162 < 185.
+  39,1 valg per minutt, press 0,45 -> 0,83 -> 0,97. Selvspill: alle porter grønne, forvalteren
+  vant med 191 poeng på 276 s i nettleseren (var 421 s). Scene-audit grønn. Likhetsvakt grønn
+  (tinghuset 0,43). Plakaten er tatt med `--cover-at 85` (1932, Sørishavet). Tap-bildene er tatt
+  med `--full --bots grådig` (passiv = konkurs 1906, grådig = tomt hav 1923).
+- Hva som IKKE virket:
+  - Bare kortere år: forvalteren vant 4 %. `marked.grense` var både lagernivå og hvor mye verden
+    kjøper per år; skalert ned ble prisen felt på halve lageret. Delt i `grense` og `kjøpPerÅr`.
+  - Prisfallet skjer ved hvert nyttår, så kortere år gjør det hardere per sekund: halvgod vant 47 %
+    med median under sparsom. `fall` 0,08 (var 0,1) ga trappen tilbake.
+  - Billigere kokeri-drift (2,5) eller stasjon (3) hjalp ikke forvalteren (taper fortsatt 16 % rundt
+    1927, med 7 båter) og løftet bare sparsom. Beholdt 2,8 / 3,5.
+  - Uten rød ring-lappen tidlig falt bildeendringen for passiv runde til 2,0 (grensa er 2). Større
+    sprut ga 2,5.
+- Kjente svakheter:
+  - Forvalteren vinner 84 % (var 100 %): 16 % går konkurs ved overgangen til Sørishavet. Her er
+    fortsatt det dyreste øyeblikket.
+  - Grådig lever lenger enn før (median tomt hav rundt 1920, noen til 1955): brettene er kortere
+    i sekunder, så havet rekker ikke å bli tomt før neste ark kommer.
+  - Tapssetningen gjelder fjoråret («1905: Fangsten ga 0 olje»), mens «Dette skjedde» sier året
+    selskapet gikk konkurs (1906).
+  - Ikke gjort fra vurdering 2: hvalene som én stor rygg per flokk, artsbytte og IWC-kvote.
+

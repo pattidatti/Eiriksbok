@@ -532,7 +532,7 @@ export function update(g: Game, dt: number) {
 
     // Verden kjøper olje jevnt: lageret tømmes, og prisen kommer seg.
     if (markedÅpent(g)) {
-        g.lager = Math.max(0, g.lager - (T.marked.grense / årLengde(g.år)) * dt);
+        g.lager = Math.max(0, g.lager - (T.marked.kjøpPerÅr / årLengde(g.år)) * dt);
         g.pris = prisFor(g.lager);
     }
 
