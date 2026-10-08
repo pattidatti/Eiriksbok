@@ -28,6 +28,7 @@ export const FULL_WIDTH_PATHS = [
     '/oving/kjedereaksjonen',
     '/oving/kryssord',
     '/oving/pengeliv',
+    '/oving/auditoriet',
 ];
 
 export const useLayout = () => {

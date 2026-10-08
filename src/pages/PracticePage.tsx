@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor, Mic } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -36,6 +36,14 @@ export const PracticePage: React.FC = () => {
             icon: Wallet,
             color: 'bg-emerald-600',
             link: '/oving/pengeliv'
+        },
+        {
+            id: 'auditoriet',
+            title: 'Auditoriet',
+            description: 'Et universitet der det går forelesninger hele døgnet, i én sal per fag. Gå inn, finn en plass og hør hva som foreleses akkurat nå. Under arbeid.',
+            icon: Mic,
+            color: 'bg-sky-600',
+            link: '/oving/auditoriet'
         },
         {
             id: 'kompetansemal',

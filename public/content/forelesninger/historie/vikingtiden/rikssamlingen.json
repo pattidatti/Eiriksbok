@@ -1,0 +1,461 @@
+{
+  "id": "rikssamlingen",
+  "tittel": "Rikssamlingen",
+  "kilde": "/historie/vikingtiden/rikssamlingen",
+  "fag": "historie",
+  "emne": "vikingtiden",
+  "sourceHash": "6e86c9fb1b21e3aad5e125b350c184c4725de40a",
+  "foreleser": {
+    "navn": "Ingrid",
+    "rolle": "historiker"
+  },
+  "segmenter": [
+    {
+      "si": "Hei, og velkommen! Jeg heter Ingrid. I dag skal vi snakke om hvordan Norge ble ett rike.",
+      "lysbilde": {
+        "type": "tittel",
+        "tekst": "Rikssamlingen",
+        "undertekst": "Hvordan Norge ble ett rike",
+        "del": "Vikingtiden"
+      },
+      "gest": "aapne-hender",
+      "humor": "glad"
+    },
+    {
+      "si": "Vi reiser tilbake til slutten av 800-tallet. Da fantes det ikke noe land som het Norge, slik vi kjenner det i dag.",
+      "lysbilde": {
+        "type": "bilde",
+        "src": "/images/lessons/vikingtiden/rikssamlingen.webp",
+        "tekst": "Norge på 800-tallet"
+      },
+      "humor": "noytral"
+    },
+    {
+      "si": "I stedet fantes det mange små riker langs kysten og inne i dalene. Hvert av dem hadde sin egen konge eller høvding.",
+      "gest": "aapne-hender"
+    },
+    {
+      "si": "Hovedpersonen i dag er Harald Hårfagre. Han blir ofte kalt Norges første rikskonge, altså den første kongen over hele riket.",
+      "lysbilde": {
+        "type": "tittel",
+        "tekst": "Harald Hårfagre",
+        "undertekst": "Konge fra omkring år 865",
+        "del": "Del 1: Harald og løftet"
+      },
+      "gest": "peke-lerret"
+    },
+    {
+      "si": "Han ble konge rundt år 865, og han døde en gang mellom 930 og 933. Det er veldig lenge å være konge."
+    },
+    {
+      "si": "Faren hans het Halvdan Svarte. Men hvor Halvdan styrte, er vi faktisk ikke sikre på.",
+      "gest": "riste-hode",
+      "humor": "nysgjerrig"
+    },
+    {
+      "si": "De eldste sagaene sier Ringerike. Snorre Sturlason, som skrev ned kongesagaene over tre hundre år senere, sier Vestfold.",
+      "lysbilde": {
+        "type": "kart",
+        "tittel": "Hvor kom Harald fra?",
+        "steder": [
+          {
+            "navn": "Ringerike",
+            "lat": 60.17,
+            "lng": 10.2,
+            "uthev": true
+          },
+          {
+            "navn": "Vestfold",
+            "lat": 59.25,
+            "lng": 10.2,
+            "uthev": true
+          }
+        ]
+      },
+      "gest": "peke-lerret"
+    },
+    {
+      "si": "Og nå kommer en historie du kanskje har hørt før.",
+      "gest": "lene-frem",
+      "humor": "glad"
+    },
+    {
+      "si": "Ifølge sagaen ville Harald gifte seg med en kongsdatter som het Gyda. Men Gyda sa nei.",
+      "humor": "overrasket"
+    },
+    {
+      "si": "Hun ville ikke ha en konge som bare styrte et lite rike. Først måtte han samle hele Norge.",
+      "gest": "riste-hode"
+    },
+    {
+      "si": "Da lovet Harald at han ikke skulle klippe eller gre håret før han hadde klart det.",
+      "gest": "hand-pa-bryst",
+      "humor": "alvorlig"
+    },
+    {
+      "si": "Derfor fikk han navnet Hårfagre. Det betyr han med det vakre håret.",
+      "lysbilde": {
+        "type": "ord",
+        "ord": "Hårfagre",
+        "betydning": "med det fagre, altså vakre, håret"
+      },
+      "gest": "peke-lerret",
+      "humor": "glad"
+    },
+    {
+      "si": "Men husk at dette er en saga. Den ble skrevet ned lenge etter at Harald var død, så vi vet ikke om det skjedde akkurat slik.",
+      "gest": "lene-frem",
+      "humor": "nysgjerrig"
+    },
+    {
+      "si": "Så til det store slaget. Det skjedde i Hafrsfjord, like ved der Stavanger ligger i dag.",
+      "lysbilde": {
+        "type": "tittel",
+        "tekst": "Slaget i Hafrsfjord",
+        "undertekst": "Snorre sier år 872",
+        "del": "Del 2: Slaget"
+      },
+      "gest": "aapne-hender",
+      "humor": "noytral"
+    },
+    {
+      "si": "Snorre skriver at slaget var i år 872. Men mange historikere tror at det skjedde litt senere.",
+      "gest": "riste-hode"
+    },
+    {
+      "si": "Og her er noe mange ikke vet. De gamle skaldediktene forteller at det var Harald som ble angrepet!",
+      "gest": "lene-frem",
+      "humor": "overrasket"
+    },
+    {
+      "si": "Skaldedikt er dikt som hoffdiktere laget mens kongene levde. De er mye eldre enn sagaene.",
+      "lysbilde": {
+        "type": "ord",
+        "ord": "Skaldedikt",
+        "betydning": "dikt laget av kongens diktere mens kongen levde"
+      },
+      "humor": "noytral"
+    },
+    {
+      "si": "Fiendene kom østfra, fra Agder, fra Viken rundt Oslofjorden og fra Jylland i Danmark. Men Harald vant.",
+      "lysbilde": {
+        "type": "kart",
+        "tittel": "Angrepet på Harald",
+        "steder": [
+          {
+            "navn": "Hafrsfjord",
+            "lat": 58.94,
+            "lng": 5.64,
+            "uthev": true
+          },
+          {
+            "navn": "Agder",
+            "lat": 58.45,
+            "lng": 7.9
+          },
+          {
+            "navn": "Viken",
+            "lat": 59.6,
+            "lng": 10.7
+          },
+          {
+            "navn": "Jylland",
+            "lat": 56.2,
+            "lng": 9.2
+          }
+        ]
+      },
+      "gest": "peke-lerret"
+    },
+    {
+      "si": "Hvorfor vant han? Han var sterk, men han hadde også mektige venner.",
+      "lysbilde": {
+        "type": "punkter",
+        "tittel": "Hvorfor vant Harald?",
+        "punkter": [
+          "En sterk hær",
+          "Mektige venner i nord",
+          "Et maktsenter på Avaldsnes"
+        ]
+      },
+      "gest": "telle-fingre",
+      "humor": "nysgjerrig"
+    },
+    {
+      "si": "Han fikk med seg en jarl fra Hålogaland, langt nord i landet. En jarl er en høvding som styrer et område på vegne av kongen.",
+      "lysbilde": {
+        "type": "ord",
+        "ord": "Jarl",
+        "betydning": "en høvding som styrer et område for kongen"
+      }
+    },
+    {
+      "si": "Jarlen het Håkon Grjotgardsson. Slik fikk Harald makt i Trøndelag også. Slekta til Håkon ble senere kalt ladejarlene, etter gården Lade ved Trondheimsfjorden.",
+      "lysbilde": {
+        "type": "kart",
+        "tittel": "Haralds venner og maktsenter",
+        "steder": [
+          {
+            "navn": "Lade",
+            "lat": 63.44,
+            "lng": 10.45,
+            "uthev": true
+          },
+          {
+            "navn": "Hålogaland",
+            "lat": 68.4,
+            "lng": 15.4
+          },
+          {
+            "navn": "Avaldsnes",
+            "lat": 59.35,
+            "lng": 5.28,
+            "uthev": true
+          }
+        ]
+      },
+      "gest": "peke-lerret",
+      "humor": "noytral"
+    },
+    {
+      "si": "Selv bygde Harald maktsenteret sitt på Avaldsnes på Karmøy, ute ved kysten.",
+      "gest": "peke-lerret"
+    },
+    {
+      "si": "Slaget i Hafrsfjord har blitt selve symbolet på at Norge ble samlet.",
+      "lysbilde": {
+        "type": "aarstall",
+        "aar": "872",
+        "tekst": "Slaget i Hafrsfjord, ifølge Snorre"
+      },
+      "gest": "nikke"
+    },
+    {
+      "si": "Men historikere mener det er litt overdrevet å si at ett slag samlet Norge. Det fantes ennå ingen ordninger som kunne holde riket sammen.",
+      "gest": "riste-hode",
+      "humor": "alvorlig"
+    },
+    {
+      "si": "For å forstå hvorfor Harald ville ha akkurat kysten, må vi se på kartet.",
+      "lysbilde": {
+        "type": "kart",
+        "tittel": "Nordvegen",
+        "steder": [
+          {
+            "navn": "Avaldsnes",
+            "lat": 59.35,
+            "lng": 5.28,
+            "uthev": true
+          },
+          {
+            "navn": "Lade",
+            "lat": 63.44,
+            "lng": 10.45
+          }
+        ],
+        "rute": [
+          [
+            7.6,
+            57.85
+          ],
+          [
+            6.5,
+            57.95
+          ],
+          [
+            5.4,
+            58.75
+          ],
+          [
+            4.95,
+            59.3
+          ],
+          [
+            4.75,
+            60.4
+          ],
+          [
+            4.85,
+            61.6
+          ],
+          [
+            5.1,
+            62.25
+          ],
+          [
+            6.1,
+            62.65
+          ],
+          [
+            8.3,
+            63.35
+          ],
+          [
+            9.8,
+            64.3
+          ],
+          [
+            11.6,
+            65.4
+          ],
+          [
+            12.6,
+            66.6
+          ],
+          [
+            13.6,
+            68
+          ],
+          [
+            15.9,
+            68.9
+          ],
+          [
+            18,
+            69.7
+          ]
+        ]
+      },
+      "gest": "peke-lerret",
+      "humor": "nysgjerrig"
+    },
+    {
+      "si": "Langs kysten gikk en viktig sjøvei, som de kalte Nordvegen. Det var den raskeste måten å reise og frakte varer på."
+    },
+    {
+      "si": "Og nå skal du få vite noe kult. Navnet Norge kommer trolig nettopp herfra. Det gamle ordet norðrvegr betyr veien mot nord.",
+      "lysbilde": {
+        "type": "ord",
+        "ord": "Norðrvegr",
+        "betydning": "veien mot nord, som trolig ga Norge navnet"
+      },
+      "gest": "aapne-hender",
+      "humor": "glad"
+    },
+    {
+      "si": "Språkforskere har riktignok foreslått andre forklaringer også. Men denne er den vanligste.",
+      "humor": "noytral"
+    },
+    {
+      "si": "Den som styrte kysten, styrte også handelen og skipene. Og Avaldsnes lå perfekt til for å holde øye med alle som seilte forbi.",
+      "gest": "peke-lerret"
+    },
+    {
+      "si": "Langs kysten hadde Harald også store gårder. De ga ham mat og inntekter, og steder der krigerne hans kunne bo."
+    },
+    {
+      "si": "Lokale stormenn kunne godta Harald som sjef over seg. De lovet å kjempe for ham og gi ham en del av det de tjente på handel.",
+      "gest": "hand-pa-bryst"
+    },
+    {
+      "si": "Men avtalene var personlige. De gjaldt mellom to mennesker, ikke mellom et folk og et land. Og det gjorde riket skjørt.",
+      "gest": "lene-frem",
+      "humor": "alvorlig"
+    },
+    {
+      "si": "Det merket man da Harald døde.",
+      "lysbilde": {
+        "type": "tittel",
+        "tekst": "Etter Harald",
+        "undertekst": "Et rike som falt fra hverandre",
+        "del": "Del 3: Etter Harald"
+      },
+      "gest": "nikke"
+    },
+    {
+      "si": "Ifølge sagaene hadde han hele 16 sønner. Han lot dem vokse opp hos vennene sine, og han giftet dem inn i mektige familier.",
+      "gest": "telle-fingre",
+      "humor": "overrasket"
+    },
+    {
+      "si": "Det var smart, for da fikk han flere venner. Men da Harald var borte, begynte sønnene å slåss om makta.",
+      "humor": "alvorlig"
+    },
+    {
+      "si": "Eirik Blodøks fikk mest makt først. Men så ble han presset ut av halvbroren sin, Håkon den gode.",
+      "gest": "aapne-hender"
+    },
+    {
+      "si": "Faktisk tok det helt til 1000-tallet før vi kan snakke om et Norge som holdt seg samlet.",
+      "lysbilde": {
+        "type": "tidslinje",
+        "tittel": "En samling som tok lang tid",
+        "hendelser": [
+          {
+            "aar": "ca. 865",
+            "tekst": "Harald blir konge"
+          },
+          {
+            "aar": "872?",
+            "tekst": "Slaget i Hafrsfjord"
+          },
+          {
+            "aar": "930-933",
+            "tekst": "Harald dør"
+          },
+          {
+            "aar": "1000-tallet",
+            "tekst": "Norge holder seg samlet"
+          },
+          {
+            "aar": "1100-tallet",
+            "tekst": "Kongene føres tilbake til Harald"
+          }
+        ],
+        "uthev": 3
+      },
+      "gest": "peke-lerret",
+      "humor": "noytral"
+    },
+    {
+      "si": "Og her kommer en siste vri. På 1100-tallet begynte lærde folk å si at alle norske konger stammet fra Harald.",
+      "gest": "lene-frem",
+      "humor": "nysgjerrig"
+    },
+    {
+      "si": "Da var det bare etterkommerne hans som hadde rett til å bli konge. Det var et smart politisk triks.",
+      "gest": "nikke"
+    },
+    {
+      "si": "I dag tviler historikere på at konger som Olav Tryggvason og Harald Hardråde virkelig var i slekt med Harald Hårfagre.",
+      "gest": "riste-hode"
+    },
+    {
+      "si": "Så, hva skal du huske fra i dag? Tre ting.",
+      "lysbilde": {
+        "type": "punkter",
+        "tittel": "Husk dette",
+        "punkter": [
+          "Harald Hårfagre regnes som Norges første rikskonge",
+          "Makt over kysten, Nordvegen, var nøkkelen",
+          "Riket hang sammen på personlige bånd, og samlingen tok flere hundre år"
+        ]
+      },
+      "gest": "telle-fingre",
+      "humor": "glad"
+    },
+    {
+      "si": "En: Harald Hårfagre regnes som Norges første rikskonge, og slaget i Hafrsfjord er symbolet på samlingen."
+    },
+    {
+      "si": "To: Makten handlet om å styre kysten, Nordvegen, som trolig har gitt Norge navnet sitt."
+    },
+    {
+      "si": "Tre: Riket hang sammen på personlige bånd. Derfor falt det fra hverandre da Harald døde, og samlingen tok flere hundre år."
+    },
+    {
+      "si": "Tenk over dette til neste gang: Hvorfor var kysten så viktig for Harald?",
+      "lysbilde": {
+        "type": "sporsmal",
+        "tekst": "Hvorfor var kysten så viktig for Harald?"
+      },
+      "gest": "lene-frem",
+      "humor": "nysgjerrig"
+    },
+    {
+      "si": "Nå får du noen spørsmål på skjermen. Takk for at du hørte på!",
+      "gest": "aapne-hender",
+      "humor": "glad"
+    }
+  ]
+}

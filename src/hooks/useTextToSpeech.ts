@@ -34,7 +34,7 @@ function loadRate(): number {
  * Picks the best Norwegian voice available.
  * Priority: filter out eSpeak → prefer "Natural" → "Google" cloud → any nb-NO voice.
  */
-function pickBestNorwegianVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
+export function pickBestNorwegianVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
     const nbVoices = voices.filter(
         (v) =>
             (v.lang === 'nb-NO' || v.lang === 'no-NO' || v.lang.startsWith('nb') || v.lang.startsWith('no')) &&

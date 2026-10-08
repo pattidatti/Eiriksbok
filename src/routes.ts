@@ -78,5 +78,9 @@ export const routeFactories: Record<string, PageFactory> = {
     MicroGamePreviewPage: () => import('./pages/MicroGamePreviewPage').then(module => ({ default: module.MicroGamePreviewPage })),
     ArkadePage: () => import('./pages/ArkadePage').then(module => ({ default: module.ArkadePage })),
     Pengeliv: () => import('./features/okonomi/PengelivPage').then(module => ({ default: module.PengelivPage })),
+    UniversitetPage: () => import('./features/auditoriet/UniversitetPage').then(module => ({ default: module.UniversitetPage })),
+    SalPage: () => import('./features/auditoriet/SalPage').then(module => ({ default: module.SalPage })),
+    LesesalPage: () => import('./features/auditoriet/LesesalPage').then(module => ({ default: module.LesesalPage })),
+    StemmetestPage: () => import('./features/auditoriet/StemmetestPage').then(module => ({ default: module.StemmetestPage })),
 };
 

@@ -44,3 +44,7 @@ stats.html
 *.tmp
 *.orig
 *.code-workspace
+
+# Forelesningene til Auditoriet (automanus + program.json). Genereres av
+# scripts/generate-forelesninger.mts i scan:content, både i dev og i byggen.
+public/data/forelesninger/

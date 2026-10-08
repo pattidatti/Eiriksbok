@@ -79,6 +79,10 @@ const CompetencyGoalsPage = React.lazy(routeFactories.CompetencyGoalsPage);
 const MicroGamePreviewPage = React.lazy(routeFactories.MicroGamePreviewPage);
 const ArkadePage = React.lazy(routeFactories.ArkadePage);
 const Pengeliv = React.lazy(routeFactories.Pengeliv);
+const StemmetestPage = React.lazy(routeFactories.StemmetestPage);
+const UniversitetPage = React.lazy(routeFactories.UniversitetPage);
+const SalPage = React.lazy(routeFactories.SalPage);
+const LesesalPage = React.lazy(routeFactories.LesesalPage);
 
 
 
@@ -157,6 +161,10 @@ const router = createBrowserRouter([
       { path: "test/bryggen-gard", element: <BryggenGardPage /> },
       { path: "oving/rpg", element: <RpgPage /> },
       { path: "oving/pengeliv", element: <Pengeliv /> },
+      { path: "oving/auditoriet", element: <UniversitetPage /> },
+      { path: "oving/auditoriet/stemmetest", element: <StemmetestPage /> },
+      { path: "oving/auditoriet/lesesal", element: <LesesalPage /> },
+      { path: "oving/auditoriet/:salId", element: <SalPage /> },
       { path: "mikrospill", element: <MicroGamePreviewPage /> },
       { path: "mikrospill/:gameId", element: <MicroGamePreviewPage /> },
       { path: "oving/kompetansemal", element: <CompetencyGoalsPage /> },
