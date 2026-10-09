@@ -1,0 +1,344 @@
+{
+    "id": "embetsmannsstaten",
+    "tittel": "Embetsmannsstaten: Da prestene og dommerne styrte Norge",
+    "kilde": "/historie/norge-i-moderne-tid/embetsmannsstaten",
+    "bilde": "/images/norge-i-moderne-tid/embetsmannsstaten-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "salen",
+            "kapittel": "1833",
+            "visual": { "type": "EmbetsmannSalen", "props": { "modus": "valg" } },
+            "replikker": [
+                {
+                    "si": "Det er 1833. Vi står i Stortinget i Christiania, som Oslo het den gangen. Om litt fylles salen."
+                },
+                {
+                    "si": "Tre år tidligere satt det 43 embetsmenn her: prester, dommere og offiserer. Bare 21 var bønder."
+                },
+                { "si": "Nå kommer bøndene inn. 45 bønder og 35 embetsmenn." },
+                {
+                    "si": "For første gang er bøndene flest. Mennene som har styrt Norge siden 1814, er i mindretall."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "EMBETS\u00adMANNS\u00adSTATEN",
+                    "undertittel": "Da prestene og dommerne styrte Norge",
+                    "bilde": "/images/norge-i-moderne-tid/embetsmannsstaten-hero.webp",
+                    "tall": [{ "verdi": 50, "etikett": "år til med embetsmenn i regjeringen", "fraBeat": 1, "tone": "rod" }],
+                    "sporsmal": { "tekst": "Hvordan kan man vinne et valg, og likevel ikke styre?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Bøndene hadde vunnet. Men de styrte ikke landet." },
+                { "si": "Embetsmennene ble sittende med makta i 50 år til." },
+                {
+                    "si": "Historikeren Jens Arup Seip kalte denne tiden embetsmannsstaten. Fra 1814 til 1884 hadde embetsmennene den egentlige makta i Norge."
+                },
+                { "si": "Så hvordan kan man vinne et valg, og likevel ikke styre?" }
+            ]
+        },
+        {
+            "id": "hvem",
+            "kapittel": "Hvem var embetsmennene?",
+            "visual": { "type": "EmbetsmannsFolk", "props": { "modus": "hvem" } },
+            "replikker": [
+                { "si": "Først: Hva er en embetsmann? Det var en mann med en fast og viktig jobb i staten." },
+                { "si": "Det kunne være en prest eller en biskop i kirken." },
+                { "si": "Det kunne være en offiser i hæren." },
+                {
+                    "si": "Eller en sorenskriver, som var dommer ute i distriktene. Eller en amtmann, omtrent som en statsforvalter i dag."
+                },
+                {
+                    "si": "De var ikke mange. I 1825 var de rundt 1900, og i 1875 rundt 2300. De hadde studert jus, teologi, som er læren om kristendommen, eller gått på krigsskolen."
+                },
+                {
+                    "si": "Før 1814 styrte de landet for kongen i København. Folk måtte adlyde dem, fordi de var kongens folk."
+                }
+            ]
+        },
+        {
+            "id": "hvorfor",
+            "kapittel": "Hvorfor akkurat de?",
+            "visual": { "type": "EmbetsmannsFolk", "props": { "modus": "hvorfor" } },
+            "replikker": [
+                {
+                    "si": "I 1814 fikk Norge sin egen grunnlov. Hvem skulle nå lede landet?"
+                },
+                {
+                    "si": "Andre land hadde en adel, rike familier som arvet makt og titler. Men i Norge hadde adelen nesten dødd ut allerede på 1600-tallet."
+                },
+                { "si": "Kjøpmennene og fabrikkeierne var ennå for få og for svake." },
+                {
+                    "si": "Igjen sto embetsmennene. De hadde ledet an i 1814, og de var vant til å styre."
+                },
+                {
+                    "si": "De kalte seg selv landets beste menn. De hadde kunnskap, og de mente at de ikke gikk i noens lomme."
+                }
+            ]
+        },
+        {
+            "id": "makt",
+            "visual": { "type": "EmbetsmannsMakt", "props": { "modus": "grunnlov" } },
+            "replikker": [
+                { "si": "Grunnloven delte makta i to. På den ene siden sto Stortinget. På den andre sto kongen." },
+                { "si": "Stortinget bestemte over lovene og over pengene." },
+                {
+                    "si": "Men det var kongen som valgte regjeringen, de som styrte landet fra dag til dag."
+                },
+                {
+                    "si": "Og kongen valgte embetsmenn. Fram til 1884 satt det bare embetsmenn i regjeringen."
+                }
+            ]
+        },
+        {
+            "id": "stemme",
+            "visual": { "type": "EmbetsmannsFolk", "props": { "modus": "stemmerett" } },
+            "replikker": [
+                { "si": "Grunnloven sa også hvem som fikk stemme ved valg." },
+                {
+                    "si": "Det var embetsmennene, bønder som eide eller leide jord, og borgere i byene som drev handel."
+                },
+                {
+                    "si": "Kvinner fikk ikke stemme. Husmenn, tjenestefolk og arbeidere sto også utenfor."
+                }
+            ]
+        },
+        {
+            "id": "holde",
+            "kapittel": "Slik holdt de på makta",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Slik holdt de på makta",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Valgloven, 1828", "tekst": "ingen valgkamp, ingen stemmesedler", "fraBeat": 1 },
+                        { "ikon": "snakk", "tittel": "Narr av allmuen", "tekst": "å organisere seg var nesten skittent", "fraBeat": 2 },
+                        { "ikon": "haer", "tittel": "Thranebevegelsen", "tekst": "slått ned i 1851", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Embetsmennene ville ikke slippe makta. Ifølge Seip gjorde de mye for å holde motstanderne nede."
+                },
+                {
+                    "si": "En valglov fra 1828 skulle stoppe valgkamp. Ingen skulle dele ut stemmesedler eller samle folk rundt en kandidat."
+                },
+                {
+                    "si": "Embetsmennene gjorde narr av allmuen, altså vanlige folk på landet. Å organisere seg politisk ble sett på som nesten litt skittent."
+                },
+                {
+                    "si": "Thranebevegelsen samlet husmenn og arbeidere fra 1848. Men i 1851 slo myndighetene den ned, med hjelp fra lensmennene i bygdene."
+                }
+            ]
+        },
+        {
+            "id": "bondene",
+            "kapittel": "Bøndene slår tilbake",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 10,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Ti nordmenn",
+                            "restEtikett": "nordmenn"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 10,
+                            "farget": 9,
+                            "farge": "#15803d",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Ni av ti bodde på landet",
+                            "fargeEtikett": "på landet",
+                            "restEtikett": "i byen"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 10,
+                            "farget": 9,
+                            "farge": "#1e3a8a",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Men de stemte på presten og fogden",
+                            "fargeEtikett": "stemte som før",
+                            "restEtikett": "i byen"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men én gruppe kunne utfordre embetsmennene: bøndene." },
+                {
+                    "si": "Ni av ti nordmenn bodde på landet. Og Grunnloven sa at to tredeler av dem på Stortinget skulle komme fra landet."
+                },
+                {
+                    "si": "Problemet var at bøndene ofte stemte på presten eller fogden i bygda. Slik hadde det alltid vært."
+                }
+            ]
+        },
+        {
+            "id": "neergaard",
+            "visual": { "type": "EmbetsmannsOlaboka" },
+            "replikker": [
+                {
+                    "si": "John Neergaard, en bonde fra Nordmøre, ville endre på det. Han skrev en bok som ble kalt Ola-boka."
+                },
+                {
+                    "si": "Budskapet var enkelt: Så lenge embetsmennene har flertall, blir det ikke bedre for bøndene. Derfor må bønder stemme på bønder."
+                },
+                {
+                    "si": "Neergaard reiste rundt i landet med boka. Flere bønder skrev seg inn i manntallet, listen over dem som fikk stemme."
+                },
+                {
+                    "si": "Embetsmennene så på ham med mistro. I 1830 var han reserve på Stortinget. Da en representant ble syk, sørget de for at Neergaard ikke ble kalt inn."
+                }
+            ]
+        },
+        {
+            "id": "valget",
+            "visual": { "type": "EmbetsmannSalen", "props": { "modus": "regjering" } },
+            "replikker": [
+                {
+                    "si": "Men ved valget i 1833 kom Neergaard inn, sammen med mange andre bønder. Salen var deres."
+                },
+                { "si": "Se nå bort på regjeringen." },
+                {
+                    "si": "Der sitter fortsatt bare embetsmenn. Det var kongen som valgte dem, ikke Stortinget."
+                },
+                {
+                    "si": "Bøndene hadde vunnet salen. Men regjeringen og embetsmennene i hele landet satt der de satt."
+                }
+            ]
+        },
+        {
+            "id": "seire",
+            "kapittel": "Hva fikk bøndene til?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "To store seire, 1836 til 1837",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Skatten på jord fjernet", "tekst": "i by og på land", "fraBeat": 1 },
+                        { "ikon": "hus", "tittel": "Lokalt selvstyre", "tekst": "formannskapslovene, januar 1837", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Bøndene fikk ikke gjennom sakene sine med en gang. Men på Stortinget i 1836 og 1837 kom to store seire."
+                },
+                { "si": "Skatten på jord og eiendom ble fjernet, både i byene og på landet." },
+                {
+                    "si": "Og i januar 1837 kom formannskapslovene. Nå kunne folk i hver bygd og by velge sine egne folk til å styre kommunen."
+                },
+                { "si": "Det er derfor vi har kommunestyrer i dag." }
+            ]
+        },
+        {
+            "id": "ueland",
+            "visual": { "type": "EmbetsmannsUeland" },
+            "replikker": [
+                {
+                    "si": "Den viktigste bondelederen var Ole Gabriel Ueland fra Rogaland. Han var lærer og flyttet fra gård til gård for å undervise barna."
+                },
+                {
+                    "si": "Ueland satt på Stortinget fra 1833 til 1869. Han ville at staten skulle bruke minst mulig penger."
+                },
+                {
+                    "si": "Han stemte mot pensjoner til statens folk, og mot penger til veier, jernbane og kunst. Det fikk blant andre Henrik Ibsen merke."
+                },
+                {
+                    "si": "Men Ueland ville ikke velte systemet. Når bøndene hadde fått sitt, ga han ofte regjeringen det den ba om."
+                }
+            ]
+        },
+        {
+            "id": "skurker",
+            "kapittel": "Var de skurker?",
+            "visual": { "type": "EmbetsmannsHistorikere" },
+            "replikker": [
+                { "si": "Var embetsmennene skurker? Historikerne er ikke enige." },
+                { "si": "Seip mente at de holdt motstanderne nede for å beholde makta." },
+                {
+                    "si": "Francis Sejersted mente at Norge var en rettsstat. Der må de som styrer, følge lover og regler. Han mente embetsmennene prøvde å være rettferdige."
+                },
+                {
+                    "si": "Samtidig vet vi at mange embetsmenn jukset med penger fram til 1850-årene. Noen tok penger som tilhørte staten."
+                },
+                {
+                    "si": "Kanskje ligger sannheten midt imellom. De styrte stort sett ordentlig, men de passet godt på sin egen makt."
+                }
+            ]
+        },
+        {
+            "id": "slutten",
+            "kapittel": "1884",
+            "visual": { "type": "EmbetsmannSalen", "props": { "modus": "slutt" } },
+            "replikker": [
+                {
+                    "si": "Fra rundt 1870 vokste en ny og bredere opposisjon fram. Nå var det ikke bare bønder, men også kristne lekfolk og liberale folk i byene."
+                },
+                {
+                    "si": "Lederen var Johan Sverdrup. Han samlet alle som var lei av at embetsmennene bestemte."
+                },
+                {
+                    "si": "Kampen endte med riksretten i 1884. Statsrådene i regjeringen ble dømt."
+                },
+                {
+                    "si": "Samme år dannet Sverdrup en regjering som hadde flertallet på Stortinget med seg. Det var starten på parlamentarismen: Regjeringen må ha støtte fra Stortinget."
+                }
+            ]
+        },
+        {
+            "id": "veien",
+            "visual": { "type": "EmbetsmannsTidslinje" },
+            "replikker": [
+                {
+                    "si": "Embetsmennene forsvant ikke over natta. Men steg for steg tok nye grupper over plassene deres."
+                },
+                { "si": "Se hele veien. I 1814 fikk Norge Grunnloven. I 1833 vant bøndene Stortinget." },
+                {
+                    "si": "I 1837 fikk bygdene styre seg selv. Og i 1884 måtte regjeringen ha Stortinget med seg."
+                },
+                { "si": "I 1898 fikk alle menn stemmerett. Og i 1913 fikk alle kvinner det samme." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Demokratiet kom ikke", "fraBeat": 0 },
+                        { "tekst": "ferdig i én pakke i 1814.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Bøndene vant Stortinget i 1833.", "fraBeat": 1 },
+                        { "tekst": "Det tok over 50 år til å vinne regjeringen.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Å vinne et valg er ikke det samme", "fraBeat": 2 },
+                        { "tekst": "som å styre landet.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Embetsmannsstaten viser at demokratiet ikke kom ferdig i én pakke i 1814." },
+                {
+                    "si": "Bøndene vant Stortinget i 1833. Men det tok over 50 år til før folkets valgte også bestemte hvem som skulle styre landet."
+                },
+                {
+                    "si": "Så neste gang noen sier at de har vunnet et valg, kan du spørre: Har de også fått makta?"
+                }
+            ]
+        }
+    ]
+}
