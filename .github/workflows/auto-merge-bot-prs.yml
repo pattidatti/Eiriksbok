@@ -30,7 +30,7 @@ on:
     - cron: '20 1 * * *'   # rett etter daily-content (01:00 UTC)
     - cron: '50 2 * * *'   # fallback for sene innholds-PR-er
     - cron: '30 9,11,13 * * *'   # fallback for daily-microgame (07:15 UTC)
-    - cron: '45 5,7 * * *'   # fallback for daily-film (04:00 UTC); film-PR-er har ingen CI-sjekk å vente på
+    - cron: '45 5,7,11,13,17,19,23,1 * * *'   # fallback for daily-film (04, 10, 16, 22 UTC); film-PR-er har ingen CI-sjekk å vente på
   workflow_dispatch: {}
 
 permissions:

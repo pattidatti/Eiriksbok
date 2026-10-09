@@ -1,7 +1,7 @@
 # Filmer - idékø
 
 Nattrutinen `eiriksbok-daily-film` tar den første linja under «Kø» som ikke er merket ferdig,
-før den ser på artikkelen fra to dager siden. Skriv artikkelens sti, og eventuelt `ØNSKE:` med
+før den ser på nyeste artikkel (kl. 10 UTC) eller etterslepet (`scripts/film-etterslep.mjs`). Skriv artikkelens sti, og eventuelt `ØNSKE:` med
 det du vil ha i filmen.
 
 Eksempel: `- /historie/andre-verdenskrig/d-dagen ØNSKE: flåten i 3D, kart over de fem strendene`
