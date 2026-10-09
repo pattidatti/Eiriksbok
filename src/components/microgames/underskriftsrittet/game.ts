@@ -242,7 +242,8 @@ function nyttNavn(g: Game, i: number) {
     const dristig = g.lykter.some((l) => dist(l.x, l.z, h.x, h.z) < T.dristig * T.lykt.lys);
     g.navn += 1;
     if (dristig) g.dristige += 1;
-    g.poeng += dristig ? T.poeng.dristig : T.poeng.navn;
+    const gang = tun.telemark ? T.poeng.telemark : 1;
+    g.poeng += (dristig ? T.poeng.dristig : T.poeng.navn) * gang;
     g.sisteNavn = { x: h.x, z: h.z };
     g.navnTider.push(g.t);
     g.hendelser.push({ type: 'navn', x: h.x, z: h.z, dristig, tun: i });
@@ -264,7 +265,7 @@ function nyttNavn(g: Game, i: number) {
         tun.segl = true;
         g.segl += 1;
         if (tun.telemark) g.seglTelemark += 1;
-        g.poeng += T.poeng.segl;
+        g.poeng += T.poeng.segl * (tun.telemark ? T.poeng.telemark : 1);
         g.valg += 1;
         g.hendelser.push({ type: 'segl', tun: i });
         // Fagkjernen: mange bygder fra både Agder og Telemark = kommisjonen.

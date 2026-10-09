@@ -6,7 +6,7 @@ export const MÅL =
 export const REGLER = [
     'Ri: piltaster eller WASD (eller hold fingeren der hesten skal).',
     'Samle: ri sakte over tunet. Jo nærmere midten, jo flere navn.',
-    'Unngå lyset: hvert fjerde navn tenner en lykt hos fogden.',
+    'Unngå det oransje lyset: navnene på de oransje merkene tenner en lykt hos fogden.',
 ];
 
 export const TAP_TITTEL = { lys: 'Klagen er stoppet', vinter: 'Vinteren kom' } as const;

@@ -1,4 +1,4 @@
-// HUD-en i gråboksen: kartusjen øverst (måned og bygd), klagebrevet til høyre (navnene) og
+// HUD-en i gråboksen: frosten (kalenderen), kartusjen øverst (måned og bygd) og
 // kommisjonsmåleren nederst (8 segl, minst 2 fra Telemark). Egen tilstand på 10 Hz, så
 // 3D-treet aldri tegnes på nytt for HUD-ens skyld.
 
@@ -15,8 +15,6 @@ interface Visning {
     måned: string;
     sted: string;
     kalender: number | null;
-    navn: number;
-    dristige: number;
     segl: number;
     telemark: number;
     ut: boolean;
@@ -28,10 +26,8 @@ function les(g: Game): Visning {
     const nær = g.tun.find((t) => dist(h.x, h.z, t.x, t.z) < T.tun.radius + 3);
     return {
         måned: månedNavn(g.brett, månedAndel(g)),
-        sted: nær ? `${nær.navn} ${Math.floor(nær.samlet)}/${T.tun.seglVed}` : b.tittel,
+        sted: nær ? `${nær.navn}${nær.telemark ? ' (Telemark)' : ''}` : b.tittel,
         kalender: b.visKalender ? månedAndel(g) : null,
-        navn: g.navn,
-        dristige: g.dristige,
         segl: g.segl,
         telemark: g.seglTelemark,
         ut: utÅpen(g),
@@ -57,10 +53,23 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
     // Segl fra Agder fylles fra venstre, segl fra Telemark fra høyre.
     const plasser = Array.from({ length: T.kommisjon.segl }, (_, i) => ({
         fylt: i < agder || i >= T.kommisjon.segl - v.telemark,
+        farge: i >= T.kommisjon.segl - T.kommisjon.telemark ? FARGE.telemark : FARGE.blod,
     }));
+    // Kalenderen er frost: den kryper inn fra kantene av bildet mens måneden går.
+    const frost = v.kalender === null ? 0 : Math.round(v.kalender * 20) / 20;
 
     return (
         <>
+            {frost > 0 && (
+                <div
+                    style={{
+                        position: 'absolute',
+                        inset: 0,
+                        pointerEvents: 'none',
+                        boxShadow: `inset 0 0 ${30 + 110 * frost}px ${8 + 50 * frost}px rgba(236, 246, 255, ${0.35 + 0.55 * frost})`,
+                    }}
+                />
+            )}
             {/* Kartusjen: måned og bygd */}
             <div
                 style={{
@@ -70,7 +79,7 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                     marginLeft: -160,
                     width: 320,
                     padding: '6px 10px 8px',
-                    background: FARGE.grunn,
+                    background: FARGE.panel,
                     border: `2px solid ${FARGE.kalk}`,
                     borderRadius: 14,
                     color: FARGE.kalk,
@@ -83,44 +92,6 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                     {v.måned} - ANNO 1786
                 </div>
                 <div style={{ fontSize: 16 }}>{v.sted}</div>
-                {v.kalender !== null && (
-                    <div style={{ height: 6, marginTop: 4, background: '#0b1a19', borderRadius: 3 }}>
-                        <div
-                            style={{
-                                height: 6,
-                                width: `${Math.round(v.kalender * 100)}%`,
-                                background: FARGE.kalk,
-                                borderRadius: 3,
-                            }}
-                        />
-                    </div>
-                )}
-            </div>
-
-            {/* Klagebrevet: navnene */}
-            <div
-                style={{
-                    position: 'absolute',
-                    right: 10,
-                    top: 90,
-                    width: 92,
-                    padding: '8px 6px',
-                    background: FARGE.kalk,
-                    color: FARGE.blekk,
-                    border: `2px solid ${FARGE.blekk}`,
-                    textAlign: 'center',
-                    fontFamily: 'Georgia, serif',
-                    pointerEvents: 'none',
-                }}
-            >
-                <div style={{ fontSize: 14, fontWeight: 700 }}>Klagen</div>
-                <div style={{ fontSize: 36, fontWeight: 700, lineHeight: 1.1 }}>{v.navn}</div>
-                <div style={{ fontSize: 14 }}>navn</div>
-                {v.dristige > 0 && (
-                    <div style={{ fontSize: 14, color: '#8a5a10', fontWeight: 700 }}>
-                        {v.dristige} dristige
-                    </div>
-                )}
             </div>
 
             {/* Kommisjonsmåleren: 8 segl, de to siste fra Telemark */}
@@ -134,27 +105,27 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                     alignItems: 'center',
                     gap: 6,
                     padding: '6px 12px',
-                    background: FARGE.blod,
+                    background: FARGE.kalk,
                     border: `2px solid ${FARGE.blekk}`,
-                    color: FARGE.kalk,
+                    color: FARGE.blekk,
                     fontFamily: 'Georgia, serif',
                     fontSize: 15,
                     pointerEvents: 'none',
                 }}
             >
-                <span style={{ fontWeight: 700 }}>Agder</span>
+                <span style={{ fontWeight: 700, color: FARGE.blod }}>Agder</span>
                 {plasser.map((p, i) => (
                     <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                         {i === T.kommisjon.segl - T.kommisjon.telemark && (
-                            <span style={{ fontWeight: 700 }}>Telemark</span>
+                            <span style={{ fontWeight: 700, color: FARGE.telemark }}>Telemark</span>
                         )}
                         <span
                             style={{
                                 width: 24,
                                 height: 24,
                                 borderRadius: 12,
-                                border: `2px solid ${FARGE.kalk}`,
-                                background: p.fylt ? FARGE.kalk : 'transparent',
+                                border: `3px solid ${p.farge}`,
+                                background: p.fylt ? p.farge : 'transparent',
                                 display: 'inline-block',
                             }}
                         />

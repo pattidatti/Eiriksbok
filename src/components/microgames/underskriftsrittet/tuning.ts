@@ -78,16 +78,17 @@ export const TUNING = {
         ser: 12,
     },
 
-    /** Poeng: navn x1, dristige navn x2, segl og kommisjon. */
-    poeng: { navn: 1, dristig: 2, segl: 50, kommisjon: 200 },
+    /** Poeng: navn x1, dristige navn x2, segl og kommisjon. Bygdene i Telemark ligger lenger
+     *  unna og er farligere, så navn og segl derfra teller mer (`telemark` ganger). */
+    poeng: { navn: 1, dristig: 2, segl: 50, kommisjon: 200, telemark: 3 },
 
     /** Rangene etter poeng. */
     ranger: [
         [0, 'Nabo med penn'],
-        [150, 'Bygdas talsmann'],
-        [350, 'Bondefører på Agder'],
-        [550, "Lofthus' høyre hånd"],
-        [750, 'Agders stemme'],
+        [200, 'Bygdas talsmann'],
+        [450, 'Bondefører på Agder'],
+        [750, "Lofthus' høyre hånd"],
+        [1050, 'Agders stemme'],
     ] as [number, string][],
 
     /** Kameraet: høyde og avstand bak (ca. 55 grader ned), og forsprang i fartsretningen. */

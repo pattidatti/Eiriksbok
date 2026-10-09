@@ -191,7 +191,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                         seconds: 5,
                     });
                 if (h.brett === 2)
-                    text.point('telemark', 'Minst 2 segl fra Telemark', ved(() => t0), {
+                    text.point('telemark', 'Telemark: tre ganger poeng, minst 2 segl', ved(() => t0), {
                         seconds: 6,
                     });
             }
@@ -367,7 +367,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                 <ArcadeStage
                     ref={stageRef}
                     theme={THEME}
-                    background={FARGE.grunn}
+                    background={FARGE.luft}
                     label="Underskriftsrittet - samle navn på klagen"
                 >
                     <div
@@ -379,10 +379,10 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                     >
                         <MicroCanvas
                             camera={{ position: [0, T.kamera.høyde, T.kamera.bak + 9], fov: 42 }}
-                            background={FARGE.grunn}
-                            fog={{ color: FARGE.grunn, near: 30, far: 60 }}
+                            background={FARGE.luft}
+                            fog={{ color: FARGE.luft, near: 34, far: 70 }}
                             controls={false}
-                            light="twilight"
+                            light="day"
                             contactShadows={false}
                         >
                             <Kart key={brett} brett={brett} gRef={gRef} />

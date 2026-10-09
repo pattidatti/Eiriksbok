@@ -279,3 +279,36 @@ klagen samlet mange bak seg, ble den kalt opprør. Kravene vant fram, men ledere
   ennå (bare tekst på slutt-skjermen). Klageboka, lyd, pause når vinduet scrolles bort og plakat
   mangler. Horisonten er nesten svart. Robotene bruker ikke åsene eller landeveien, så rutevalget
   er ikke prøvd i simuleringen.
+
+### Gråboks-diagnose 1 (natt 2026-10-09)
+
+- Diagnosen ga Forståelig 2, Eleven gjør 3. Gjort de tre endringene, fortsatt primitive former:
+  (1) Fogden er én varm farge (oransje): kropp, hode og lykt som vugger når han går, lyspøl og kant i
+  samme farge (tegnet oppå åsene), og fangstringen rundt hesten fylles fra kanten i oransje.
+  Underskriftene er blå. (2) Framgangen står i verden: en blå framdriftsbue rundt hvert tun som ender
+  i et segl (tom rød ring, så rødt segl), blått fyll som vokser fra midten (tom/halvfull/ferdig),
+  lilla hus for Telemark (og en kaldere bakke i Telemark-brettet), blå pil til nærmeste bygd uten
+  segl eller til utgangen, og frost som kryper inn fra kantene i stedet for kalenderstripen.
+  Klagebrevet med «Klagen N navn» er fjernet. Kommisjonsmåleren er lys med røde Agder-segl og
+  lilla Telemark-segl. (3) Å lese faren lønner seg: oransje merker på buen viser hvilke navn som
+  tenner en lykt (du ser når du må ri), en oransje strek går fra hver lykt til bygda den går mot og
+  krymper når den nærmer seg, og Telemark-bygdene gir tre ganger poeng for navn og segl (farligere
+  bygder, mer igjen). Bakken er lys eng (`#a9c48e`), lys «day» og lys tåke.
+- Regler eleven må huske er fortsatt tre (ri, samle sakte midt på, unngå det oransje lyset).
+  Regel 3 i `texts.ts` peker nå på de oransje merkene.
+- Simuleringen (200 runder per robot): grønn. Seende vinner 90 % (median 1113), halvgod 11 %
+  (median 500), grådig 0 % (median 360), redd 0 % (median 396), tilfeldig 0 % (median 12), passiv
+  0 %. Før: halvgod 391 mot grådig 360, nå 500 mot 360. 26 valg per minutt, presset 0,15 -> 0,34 -> 0,43.
+  Rangene er flyttet opp (200/450/750/1050) siden poengtaket nå ligger rundt 1100.
+- Nettleser-røyktest: seende vant med 1110 poeng (samsvar), Chromebook lav 4,1 ms JS per bilde,
+  29 draw calls. Eneste portfunn: coverbildet mangler (ventet før kunst).
+- Det som IKKE virket: (1) raskere navn (`maksFart` 5,2, `kant` 0,12) løftet den grådige mer enn den
+  halvgode (443 mot 502) - den rekker seglet før lyktene kommer. (2) Brattere kant uten mer fart
+  (`kant` 0,05-0,1) straffet den halvgode, som rir vide, raske sirkler (394-402). (3) Segl som stiger
+  i verdi (20 + 15 per segl) løftet bare vinneren (1264), ikke den halvgode (429). (4) Telemark x2 ga
+  445 mot 360 - x3 skiller tydeligere. (5) Lyktstreker uten lengdegrense krysset hele kartet og ble
+  et kaos - nå bare under 20 m.
+- Kjente svakheter: fogden er ikke synlig før første lykt tennes (de oransje merkene på buen varsler
+  den). Den redde roboten tjener på Telemark x3 (396, toppen av taperne). Robotene ser ikke merkene
+  eller strekene, så simuleringen måler bare poengendringen, ikke om eleven leser faren bedre.
+  Telemark-bakken er litt grå. Dristig gir fortsatt mest til den som rir blindt gjennom lyset.
