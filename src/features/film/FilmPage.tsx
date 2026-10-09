@@ -300,8 +300,8 @@ function Startskjerm({ manus, f }: { manus: FilmManus; f: Narrator }) {
                 <div className="text-white/75 text-sm">
                     {!f.stemmerLastet
                         ? 'Ser etter norsk stemme …'
-                        : f.voice
-                          ? `Stemme: ${f.voice.name}`
+                        : f.stemmeNavn
+                          ? `Stemme: ${f.stemmeNavn}`
                           : 'Fant ingen norsk stemme på denne maskinen. Filmen går med tekst.'}
                 </div>
             </div>
@@ -399,17 +399,17 @@ function Kontroller({
             <button
                 className={knapp}
                 onClick={() => f.setLydPaa(!f.lydPaa)}
-                disabled={!f.voice}
+                disabled={!f.harStemme}
                 aria-label={f.lydPaa ? 'Slå av lyd' : 'Slå på lyd'}
                 title={
-                    f.voice
+                    f.harStemme
                         ? f.lydPaa
                             ? 'Lyd av (bare tekst)'
                             : 'Lyd på'
                         : 'Ingen norsk stemme på maskinen'
                 }
             >
-                {f.lydPaa && f.voice ? (
+                {f.lydPaa && f.harStemme ? (
                     <Volume2 className="w-5 h-5" />
                 ) : (
                     <VolumeX className="w-5 h-5" />

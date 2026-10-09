@@ -248,6 +248,7 @@ The app uses a manifest-driven routing system:
 /admin/scanner                  Innholdsskanner
 
 /film/:subjectId/:topicId/:lessonId                Artikkelfilm - artikkelen spilt av med stemme, teksting og 2D/3D (se build_film.md)
+                                                   Stemmen er innspilt i eget repo `eiriksbok-lyd` (Chirp 3 HD via GitHub Action, Cloudflare Pages); nettleserstemmen er reserve
 /:subjectId/:topicId/present/:lessonId             Presentasjonsmodus for leksjon
 /:subjectId/:topicId/present/:lessonId/projector   Presentasjon — projektor-view
 ```
