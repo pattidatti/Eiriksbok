@@ -1,5 +1,5 @@
 {
-  "buildId": 94244795629403,
+  "buildId": 204408271825466,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2002,6 +2002,10 @@
     "scanner-config": [
       "content/config/scanner-config.json"
     ],
+    "rikssamlingen": [
+      "content/forelesninger/historie/vikingtiden/rikssamlingen.json",
+      "content/historie/vikingtiden/rikssamlingen.json"
+    ],
     "global-timeline-images": [
       "content/global-timeline-images.json"
     ],
@@ -2100,6 +2104,9 @@
     ],
     "eneveldet": [
       "content/historie/dansketiden/eneveldet.json"
+    ],
+    "lofthusreisingen": [
+      "content/historie/dansketiden/lofthusreisingen.json"
     ],
     "nodsarene": [
       "content/historie/dansketiden/nodsarene.json"
@@ -3017,9 +3024,6 @@
     ],
     "oppdagelsesreiser": [
       "content/historie/vikingtiden/oppdagelsesreiser.json"
-    ],
-    "rikssamlingen": [
-      "content/historie/vikingtiden/rikssamlingen.json"
     ],
     "samfunn-og-rett": [
       "content/historie/vikingtiden/samfunn-og-rett.json"
@@ -5526,6 +5530,7 @@
     "concepts/zimmermann-telegrammet.json/zimmermann-telegrammet": "content/concepts/zimmermann-telegrammet.json",
     "config/progression.json/progression": "content/config/progression.json",
     "config/scanner-config.json/scanner-config": "content/config/scanner-config.json",
+    "forelesninger/historie/vikingtiden/rikssamlingen": "content/forelesninger/historie/vikingtiden/rikssamlingen.json",
     "global-timeline-images.json/undefined/global-timeline-images": "content/global-timeline-images.json",
     "global-timeline.json/undefined/global-timeline": "content/global-timeline.json",
     "global-timeline.manual.json/undefined/global-timeline.manual": "content/global-timeline.manual.json",
@@ -5559,6 +5564,7 @@
     "historie/antikkens-hellas/peloponneskrigen": "content/historie/antikkens-hellas/peloponneskrigen.json",
     "historie/dansketiden/christian-iv": "content/historie/dansketiden/christian-iv.json",
     "historie/dansketiden/eneveldet": "content/historie/dansketiden/eneveldet.json",
+    "historie/dansketiden/lofthusreisingen": "content/historie/dansketiden/lofthusreisingen.json",
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
     "historie/dansketiden/pietismen": "content/historie/dansketiden/pietismen.json",
     "historie/dansketiden/store-nordiske-krig": "content/historie/dansketiden/store-nordiske-krig.json",
