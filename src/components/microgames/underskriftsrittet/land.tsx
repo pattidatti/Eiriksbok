@@ -76,6 +76,45 @@ export function Bakke({ brett }: { brett: number }) {
     const åsMat = useMemo(() => new THREE.MeshToonMaterial({ color: FARGE.ås }), []);
     const åsKant = useMemo(() => konturMat(FARGE.blekk, 0.12), []);
     const steinMat = useMemo(() => maltMat({ vertexColors: false, color: '#9a968a' }), []);
+    // Furu på lyngbergene, som på Agder-heiene: alle trærne i brettet i tre instanser.
+    const furu = useMemo(() => {
+        const r = frø(77 + brett * 13);
+        const ut: { x: number; y: number; z: number; s: number }[] = [];
+        for (const [ax, az, ar] of b.åser) {
+            const n = Math.round(ar * 1.2);
+            for (let k = 0; k < n; k++) {
+                const a = (k / n) * Math.PI * 2 + r() * 0.8;
+                const ρ = ar * (0.15 + r() * 0.6);
+                const y = ÅS_Y * Math.sqrt(Math.max(0, ar * ar - ρ * ρ)) - 0.15;
+                ut.push({ x: ax + Math.cos(a) * ρ, y, z: az + Math.sin(a) * ρ, s: 0.8 + r() * 0.5 });
+            }
+        }
+        return ut;
+    }, [b, brett]);
+    const furuKrone = useRef<THREE.InstancedMesh>(null);
+    const furuKant = useRef<THREE.InstancedMesh>(null);
+    const furuStamme = useRef<THREE.InstancedMesh>(null);
+    const furuMat = useMemo(() => new THREE.MeshToonMaterial({ color: FARGE.skog }), []);
+    const furuKantMat = useMemo(() => konturMat(FARGE.blekk, 0.1), []);
+    const furuStammeMat = useMemo(() => maltMat({ vertexColors: false, color: '#8a4a2a' }), []);
+    useEffect(() => {
+        furu.forEach((f, i) => {
+            V.set(f.x, f.y + 1.3 * f.s, f.z);
+            Q.identity();
+            SK.set(f.s, f.s, f.s);
+            M4.compose(V, Q, SK);
+            furuKrone.current?.setMatrixAt(i, M4);
+            furuKant.current?.setMatrixAt(i, M4);
+            V.set(f.x, f.y, f.z);
+            M4.compose(V, Q, SK);
+            furuStamme.current?.setMatrixAt(i, M4);
+        });
+        for (const m of [furuKrone.current, furuKant.current, furuStamme.current]) {
+            if (!m) continue;
+            m.instanceMatrix.needsUpdate = true;
+            m.computeBoundingSphere();
+        }
+    }, [furu]);
     return (
         <group userData={{ sceneAuditIgnore: true }}>
             <mesh rotation={FLAT} position={[0, -0.02, 0]}>
@@ -123,7 +162,7 @@ export function Bakke({ brett }: { brett: number }) {
             ))}
             {b.åser.map(([x, z, r], i) => (
                 <group key={i} position={[x, 0, z]}>
-                    <group scale={[1, 0.3, 1]}>
+                    <group scale={[1, ÅS_Y, 1]}>
                         <mesh material={åsMat}>
                             <sphereGeometry args={[r, 28, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
                         </mesh>
@@ -138,7 +177,7 @@ export function Bakke({ brett }: { brett: number }) {
                             material={steinMat}
                             position={[
                                 Math.cos(a) * r * (0.35 + 0.12 * k),
-                                r * 0.3 * 0.82,
+                                r * ÅS_Y * 0.82,
                                 Math.sin(a) * r * (0.35 + 0.12 * k),
                             ]}
                             scale={[1, 0.7, 1]}
@@ -148,9 +187,40 @@ export function Bakke({ brett }: { brett: number }) {
                     ))}
                 </group>
             ))}
+            {furu.length > 0 && (
+                <>
+                    <instancedMesh
+                        ref={furuKrone}
+                        args={[undefined, undefined, furu.length]}
+                        material={furuMat}
+                        frustumCulled={false}
+                    >
+                        <coneGeometry args={[0.75, 2.2, 7]} />
+                    </instancedMesh>
+                    <instancedMesh
+                        ref={furuKant}
+                        args={[undefined, undefined, furu.length]}
+                        material={furuKantMat}
+                        frustumCulled={false}
+                    >
+                        <coneGeometry args={[0.75, 2.2, 7]} />
+                    </instancedMesh>
+                    <instancedMesh
+                        ref={furuStamme}
+                        args={[undefined, undefined, furu.length]}
+                        material={furuStammeMat}
+                        frustumCulled={false}
+                    >
+                        <cylinderGeometry args={[0.12, 0.16, 0.9, 6]} />
+                    </instancedMesh>
+                </>
+            )}
         </group>
     );
 }
+
+/** Hvor høye lyngbergene er i forhold til bredden. */
+const ÅS_Y = 0.4;
 
 function frø(seed: number) {
     let a = seed >>> 0;

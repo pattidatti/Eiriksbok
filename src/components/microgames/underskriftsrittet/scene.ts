@@ -62,7 +62,14 @@ export function settRopLapp(
     proj: Proj | null
 ) {
     if (!el) return;
-    const p = spiller && tunHer(g) >= 0 && proj ? proj(g.hest.x, g.hest.z, 0) : null;
+    // Én lapp om gangen: tastelappen venter til «ri»-lappen ved start er borte.
+    // Den byr seg først litt etter at eleven har begynt å ri (så «ri»-lappen rekker å forsvinne),
+    // eller straks eleven leser høyt (da er «ri»-lappen alt tatt bort).
+    if (g.t < 0.5) delete el.dataset.styrt;
+    if (!el.dataset.styrt && g.input.styrke > 0 && g.t > 1.5) el.dataset.styrt = String(g.t);
+    if (!el.dataset.klar && (Number(el.dataset.styrt ?? 99) + 1.2 < g.t || g.t > 9 || leser(g)))
+        el.dataset.klar = '1';
+    const p = el.dataset.klar && spiller && tunHer(g) >= 0 && proj ? proj(g.hest.x, g.hest.z, 0) : null;
     el.style.opacity = p ? '1' : '0';
     if (!p) return;
     el.style.left = `${p.x}px`;

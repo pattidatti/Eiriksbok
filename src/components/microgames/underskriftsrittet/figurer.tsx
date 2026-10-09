@@ -13,7 +13,7 @@ import { åsHøyde, clamp, dist, galoppAndel } from './rules';
 import { FARGE } from './palette';
 import { TUNING } from './tuning';
 import type { Scene } from './scene';
-import { glødTekstur, lunteTekstur } from './textures';
+import { glødTekstur, lunteTekstur, lysfeltTekstur, lyktIkonTekstur } from './textures';
 import { dragonFigur, fogdMann, hestBein, hestKropp } from './models';
 import { konturMat, maltMat } from './kontur';
 
@@ -287,9 +287,9 @@ interface LyktMat {
     lunteTex: THREE.Texture;
 }
 
-function settLyktMat(m: LyktMat, farlig: boolean, lev: number, blink: boolean) {
-    m.glød.opacity = (farlig ? 0.95 : 0.45) * lev;
-    m.kant.opacity = (farlig ? 1 : 0.35) * lev;
+function settLyktMat(m: LyktMat, farlig: boolean, lev: number, blink: boolean, demp: number) {
+    m.glød.opacity = (farlig ? 1 : 0.5) * lev * demp;
+    m.kant.opacity = (farlig ? 1 : 0.4) * lev * demp;
     m.kant.color.set(blink ? FARGE.kalk : FARGE.fare);
 }
 
@@ -346,10 +346,11 @@ export function Lykter({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
                 const lunte = lunteTekstur().clone();
                 lunte.needsUpdate = true;
                 return {
+                    // Vanlig blanding (ikke additiv): to felt over hverandre blir litt
+                    // sterkere, ikke en hvitgul klatt.
                     glød: new THREE.MeshBasicMaterial({
-                        map: glødTekstur(),
+                        map: lysfeltTekstur(),
                         transparent: true,
-                        blending: THREE.AdditiveBlending,
                         depthWrite: false,
                         depthTest: false,
                         toneMapped: false,
@@ -416,22 +417,21 @@ export function Lykter({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
             const igjen = l.levetid - l.alder;
             const lev = l.hjem ? clamp(igjen / T.lykt.hjemTid, 0, 1) : clamp(igjen / 1.2, 0, 1);
             const tok = g.mode === 'lost' && g.fanger === l.id;
+            // Ved tap: lyset som tok deg står fram, de andre dempes, så du ser hvem det var.
+            const demp = g.mode === 'lost' && !tok ? 0.3 : 1;
             const puls = tok ? 1 + 0.25 * Math.sin(s.tid * 14) : 1;
-            pøl.scale.setScalar((r / 0.74) * blaff * puls);
+            pøl.scale.setScalar((r / 0.965) * blaff * puls);
             kant.scale.setScalar(r * blaff * puls);
-            settLyktMat(mats[i], l.farlig, lev, tok && Math.sin(s.tid * 14) > 0);
+            settLyktMat(mats[i], l.farlig, lev, tok && Math.sin(s.tid * 14) > 0, demp);
             fogd.visible = !l.dragon;
             drag.visible = l.dragon;
             drag.rotation.y = -l.retning;
             const vugg = går && !l.hjem ? Math.sin(l.alder * 9) : 0;
             fogd.position.y = Math.abs(vugg) * 0.16 - (1 - lev) * 2.2;
             fogd.rotation.z = vugg * 0.08;
-            lykt.position.set(
-                l.dragon ? 0 : 0.62,
-                (l.dragon ? 2.0 : 1.25) + Math.abs(vugg) * 0.1 - (1 - lev) * 2,
-                0
-            );
-            lykt.scale.setScalar(lev * (tok ? 1.5 : 1));
+            // Lykt-ikonet svever over hodet, så hver patrulje er én tydelig figur.
+            lykt.position.set(0, (l.dragon ? 3.4 : 3.0) + Math.abs(vugg) * 0.1 - (1 - lev) * 2, 0);
+            lykt.scale.setScalar(1.7 * lev * (tok ? 1.5 : 1) * (demp < 1 ? 0.7 : 1));
             // Lunta: fra mannen til bygda han går mot. Den krymper når han kommer nærmere,
             // så du ser hvor lenge du kan skrive før du må ri.
             const dx = l.mx - l.x;
@@ -480,7 +480,7 @@ export function Lykter({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
                         renderOrder={3}
                         material={mats[i].kant}
                     >
-                        <ringGeometry args={[0.93, 1, 48]} />
+                        <ringGeometry args={[0.9, 1, 64]} />
                     </mesh>
                     <group scale={1.3}>
                         <mesh geometry={mann} material={figurMat} />
@@ -495,10 +495,15 @@ export function Lykter({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
                             <planeGeometry args={[1, 0.3]} />
                         </mesh>
                     </group>
-                    <mesh>
-                        <sphereGeometry args={[0.24, 12, 8]} />
-                        <meshBasicMaterial color={FARGE.fareLys} toneMapped={false} />
-                    </mesh>
+                    <sprite renderOrder={6}>
+                        <spriteMaterial
+                            map={lyktIkonTekstur()}
+                            transparent
+                            depthTest={false}
+                            depthWrite={false}
+                            toneMapped={false}
+                        />
+                    </sprite>
                 </group>
             ))}
         </>

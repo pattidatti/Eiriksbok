@@ -436,3 +436,34 @@ klagen samlet mange bak seg, ble den kalt opprør. Kravene vant fram, men ledere
 - Feel-lista: før runden var 1-4 på plass. Etter: fortsatt 1-4; 1 er styrket (lyd, rykk og stemmering
   når du begynner å lese), 2 gjelder nå også lesingen (slippe i siste liten gir «Akkurat unna!»), og 4
   (tapet) viser nå hvor og av hvem du ble tatt.
+
+### Siste forbedrer (natt 2026-10-09)
+
+- Vurdering 3 ga sum 18, med Forståelig på 3 for tredje runde. Begge grepene gjelder den aksen, og
+  ingen nye regler er lagt til.
+- (1) Patruljene er lesbare: hver fogdens mann har nå et stort, lyst lykt-ikon (en tegnet lykt med
+  glorie) som svever over hodet og alltid tegnes øverst. Lysfeltet er en svak, nesten jevn fyll med
+  skarp kant og en tykkere ring - vanlig blanding i stedet for additiv, så to felt over hverandre blir
+  litt sterkere, ikke en hvitgul klatt. Ved tap dempes alle andre lys til 30 %, mens lyset som tok deg
+  pulserer med kalkhvit kant. Lappen i det fryste bildet sier nå også hvorfor: «Du leste klagen høyt
+  for mange. Det kalte fogden oppvigleri - opprør mot kongen.» Selvspillet fikk et taper-skjermbilde
+  i første kjøring («Klagen er stoppet», med hvor og hvorfor) - harnessen er ikke endret.
+- (2) Ryddigere synsfelt: tastelappen ved hesten venter til «ri»-lappen ved start er borte (1,2 s etter
+  at eleven har begynt å ri, eller straks eleven leser høyt), så det står aldri to lapper over helten.
+  Bygdeskiltet står 3,6 m utenfor tunringen (før 2,3) og blekner når rytteren er nærmere enn 8 m.
+  De grå steinkuplene er byttet med lyngberg (brunlilla, høyere) med furu på - tre instanser for alle
+  furuene i brettet.
+- Simuleringen (200 runder per robot): grønn og uendret, siden ingen regel er rørt. Seende 87 %
+  (median 1225), halvgod 34 % (1010), grådig 0 % (242), redd 0 % (329), tilfeldig 0 % (66), passiv
+  0 %. 28 valg per minutt, presset 0,13 -> 0,33 -> 0,43. Selvspill: seende vant med 1231 (samsvar),
+  Chromebook lav 10,7 ms JS per bilde, 79 draw calls. Scene-audit grønn (0 funn), likhetsvakt grønn
+  (nærmest kurs-for-gronland 0,28). Ny plakat.
+- Det som IKKE virket: første forsøk på én lapp om gangen (tastelappen etter at eleven hadde styrt)
+  ga fortsatt to lapper i første bilde, fordi «ri»-lappen tar litt tid å forsvinne. Nå venter den 1,2 s,
+  og «ri»-lappen forsvinner straks eleven leser høyt.
+- Ikke gjort (tid): hesten har fortsatt samme kloss-silhuett; ulik effekt per klage; arrestasjonen
+  av Lofthus spilt av før VUNNET-stemplene.
+- Kjente svakheter: to lysfelt som ligger nesten oppå hverandre blir fortsatt litt sterkere i
+  overlappen (ingen stencil). Lykt-ikonet kan dekke litt av tunhusene når mannen står midt på tunet.
+- Feel-lista: før runden var 1-4 på plass. Etter: fortsatt 1-4; 4 (tapet) er styrket - lyset som tok
+  deg står fram mens de andre dempes, og lappen sier hvorfor.

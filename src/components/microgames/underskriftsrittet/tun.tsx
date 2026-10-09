@@ -156,6 +156,8 @@ const SK = new THREE.Vector3();
 const VARM = new THREE.Color('#ffcf7a');
 const SKILT_PX = 440;
 const SKILT_B = 7.25;
+/** Hvor langt utenfor tunringen skiltet står, så det aldri dekker tunet eller seglet. */
+const SKILT_AV = 3.6;
 const P = new THREE.Vector3();
 
 /** Rektanglene HUD-en dekker (piksler i spillvinduet): kartusjen øverst, klagebrevet til
@@ -220,7 +222,7 @@ function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
         if (!t || g.brett !== brett) return;
         // Bare tun i (eller like ved) bildet tegnes.
         // Bare det som er i bildet, tegnes: tunet (ringen og husene) og skiltet hver for seg.
-        const zS = d.z - T.tun.radius - 2.3;
+        const zS = d.z - T.tun.radius - SKILT_AV;
         const inne = iBildet(rs.camera, d.x, d.z, T.tun.radius + 0.6, 0.5);
         const skiltInne = iBildet(rs.camera, d.x, zS, SKILT_B / 2, 2);
         kull(rot.current, inne);
@@ -235,7 +237,9 @@ function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
             P.set(d.x + SKILT_B / 2, 1.5, zS).project(rs.camera);
             const bx = (P.x * 0.5 + 0.5) * W;
             const by = (-P.y * 0.5 + 0.5) * H;
-            const mål = underHud(ax, ay, bx, by, W, H) ? 0 : 1;
+            // ... og når rytteren er like ved, så det aldri dekker helten.
+            const nærHest = dist(g.hest.x, g.hest.z, d.x, zS) < 8;
+            const mål = underHud(ax, ay, bx, by, W, H) || nærHest ? 0 : 1;
             const mat = plate.current.material as THREE.MeshBasicMaterial;
             mat.opacity += (mål - mat.opacity) * 0.18;
             plate.current.visible = mat.opacity > 0.02;
@@ -367,7 +371,7 @@ function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
                 </mesh>
             </group>
             {/* Skiltet bak seglet, vendt mot kameraet */}
-            <group position={[d.x, 0, d.z - T.tun.radius - 2.3]} ref={skiltRot}>
+            <group position={[d.x, 0, d.z - T.tun.radius - SKILT_AV]} ref={skiltRot}>
                 <mesh
                     position={[-2.2, 0.8, 0]}
                     ref={(m) => {

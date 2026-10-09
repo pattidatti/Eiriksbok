@@ -16,6 +16,7 @@ import { createArcadeSynth, buzz } from './arcade/synth';
 import { usePlaytest, playtestSpeed } from './playtest';
 import {
     alleSegl,
+    leser,
     merketHus,
     newGame,
     rop,
@@ -524,7 +525,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
             ved(() => g.hest, 2.6),
             {
                 seconds: 9,
-                until: () => g.input.styrke > 0 && g.t > 1.5,
+                until: () => (g.input.styrke > 0 && g.t > 1.5) || leser(g),
             }
         );
     };

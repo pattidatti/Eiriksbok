@@ -93,11 +93,16 @@ export function FangetKant({ tatt }: { tatt: string | null }) {
                         fontFamily: TEKST_FONT,
                         fontWeight: 700,
                         fontSize: 19,
-                        whiteSpace: 'nowrap',
+                        textAlign: 'center',
+                        maxWidth: '86%',
                         animation: 'arcBeat .35s ease-out',
                     }}
                 >
                     {tatt}
+                    <div style={{ fontSize: 15, fontWeight: 600, marginTop: 2 }}>
+                        Du leste klagen høyt for mange. Det kalte fogden oppvigleri - opprør mot
+                        kongen.
+                    </div>
                 </div>
             )}
         </>

@@ -18,8 +18,8 @@ export const FARGE = {
     lyng: '#6d5a66',
     lyngLys: '#8c7086',
     lyngMørk: '#4c3d48',
-    /** Lyngkollene: brunlilla kupler med gråstein. */
-    ås: '#7d6c5a',
+    /** Lyngbergene: brunlilla lyng med gråstein og furu. */
+    ås: '#866a72',
     åker: '#c2a85e',
     åkerPløyd: '#8a6544',
     åkerKant: '#5e4630',

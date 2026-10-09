@@ -51,6 +51,72 @@ export function glødTekstur(): THREE.CanvasTexture {
     return glødCache;
 }
 
+let feltCache: THREE.CanvasTexture | null = null;
+/** Lysfeltet: svak, nesten jevn fyll med skarp kant. Ingen gyllen klatt i midten, så to felt
+ *  som ligger over hverandre ikke blir gul grøt - kanten (en egen ring) viser hvor lyset slutter. */
+export function lysfeltTekstur(): THREE.CanvasTexture {
+    if (feltCache) return feltCache;
+    const S = 256;
+    const { c, ctx } = lagCanvas(S, S);
+    const g = ctx.createRadialGradient(S / 2, S / 2, 0, S / 2, S / 2, S / 2);
+    g.addColorStop(0, 'rgba(255,190,90,0.42)');
+    g.addColorStop(0.5, 'rgba(250,160,60,0.3)');
+    g.addColorStop(0.96, 'rgba(240,120,24,0.34)');
+    g.addColorStop(0.97, 'rgba(240,120,24,0)');
+    g.addColorStop(1, 'rgba(240,120,24,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, S, S);
+    feltCache = tekstur(c);
+    return feltCache;
+}
+
+let lyktIkonCache: THREE.CanvasTexture | null = null;
+/** Lykt-ikonet over fogdens mann: en stor, lys lykt med glorie, tegnet med sotbrun kontur. */
+export function lyktIkonTekstur(): THREE.CanvasTexture {
+    if (lyktIkonCache) return lyktIkonCache;
+    const S = 128;
+    const { c, ctx } = lagCanvas(S, S);
+    const halo = ctx.createRadialGradient(64, 70, 6, 64, 70, 62);
+    halo.addColorStop(0, 'rgba(255,236,170,0.95)');
+    halo.addColorStop(0.45, 'rgba(255,190,90,0.55)');
+    halo.addColorStop(1, 'rgba(255,170,70,0)');
+    ctx.fillStyle = halo;
+    ctx.fillRect(0, 0, S, S);
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = '#3a2416';
+    // Hanken
+    ctx.beginPath();
+    ctx.arc(64, 30, 11, Math.PI, 0);
+    ctx.stroke();
+    // Taket
+    ctx.fillStyle = '#5a3a22';
+    ctx.beginPath();
+    ctx.moveTo(44, 46);
+    ctx.lineTo(84, 46);
+    ctx.lineTo(74, 30);
+    ctx.lineTo(54, 30);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Glasset med flammen
+    ctx.fillStyle = '#ffe7a0';
+    ctx.fillRect(48, 46, 32, 40);
+    ctx.strokeRect(48, 46, 32, 40);
+    ctx.fillStyle = '#f07818';
+    ctx.beginPath();
+    ctx.moveTo(64, 52);
+    ctx.quadraticCurveTo(74, 68, 64, 80);
+    ctx.quadraticCurveTo(54, 68, 64, 52);
+    ctx.fill();
+    // Foten
+    ctx.fillStyle = '#5a3a22';
+    ctx.fillRect(42, 86, 44, 9);
+    ctx.strokeRect(42, 86, 44, 9);
+    lyktIkonCache = tekstur(c);
+    return lyktIkonCache;
+}
+
 let seglCache: THREE.CanvasTexture | null = null;
 /** Lakkseglet: rødt voks med en krone og en L, og ujevn kant. */
 export function seglTekstur(): THREE.CanvasTexture {
