@@ -7281,6 +7281,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hvalfangsten",
+      "title": "Hvalfangsten: Da Norge jaktet på verdens største dyr",
+      "description": "Hvordan granatharpunen og de flytende kokeriene sendte tusenvis av nordmenn på hvalfangst, og hvorfor de store hvalene ble så få.",
+      "startDate": 1864,
+      "endDate": 1968,
+      "displayDate": "1864-1968",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/hvalfangsten",
+      "tags": [
+        "norge",
+        "hvalfangst",
+        "antarktis",
+        "økonomi",
+        "miljø",
+        "bærekraft"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "meiji-restaurasjonen",
       "title": "Meiji-restaurasjonen: Japan blir en stormakt",
       "description": "Etter at amerikanske krigsskip tvang landet til å åpne seg, moderniserte Japan seg selv lynraskt og ble en stormakt på rundt 40 år.",
