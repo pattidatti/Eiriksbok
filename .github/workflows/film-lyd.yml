@@ -2,8 +2,9 @@ name: Filmlyd
 
 # Lager fortellerstemmen til artikkelfilmene og legger den i R2-bøtta `eiriksbok-lyd`
 # (scripts/film-lyd/lag_lyd.py). Workeren i cloudflare/lyd-worker/ viser lyden til
-# filmspilleren. Kjører hver time fordi film-PR-er merges av auto-merge med GITHUB_TOKEN,
-# og slike merger starter ikke `on: push`. Uten nye manus tar en kjøring et halvt minutt.
+# filmspilleren. Film-PR-er merges av auto-merge med GITHUB_TOKEN, og slike merger starter
+# ikke `on: push` - derfor starter auto-merge-bot-prs.yml denne workflowen selv etter en
+# film-merge. Timeplanen under er reserve. Uten nye manus tar en kjøring et halvt minutt.
 
 on:
   schedule:

@@ -75,6 +75,7 @@ jobs:
           fi
 
           MERGED_ANY=0
+          MERGED_FILM=0
 
           for PR in $PRS; do
             echo "::group::PR #$PR"
@@ -170,6 +171,10 @@ jobs:
             if [ -n "$SHA" ]; then
               echo "PR #$PR merget: $SHA"
               MERGED_ANY=1
+              if gh pr view "$PR" --repo "$REPO" --json files -q '.files[].path' \
+                  | grep -q '^src/features/film/manus/'; then
+                MERGED_FILM=1
+              fi
             else
               echo "::warning::PR #$PR ble ikke merget (mergeable=$MERGEABLE) - manuell sjekk anbefalt"
             fi
@@ -182,4 +187,12 @@ jobs:
           if [ "$MERGED_ANY" = "1" ]; then
             echo "Minst én PR merget - trigger deploy av main."
             gh workflow run deploy.yml --repo "$REPO" --ref main
+          fi
+
+          # Samme grunn for filmlyden: film-lyd.yml lytter på push til manus/, men
+          # merger med GITHUB_TOKEN starter den ikke. Timeplanen (xx:17) er bare
+          # reserve - GitHub hopper over planlagte kjøringer når det er travelt.
+          if [ "$MERGED_FILM" = "1" ]; then
+            echo "Film-manus merget - trigger filmlyd."
+            gh workflow run film-lyd.yml --repo "$REPO" --ref main
           fi
