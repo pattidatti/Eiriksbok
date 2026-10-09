@@ -108,8 +108,7 @@ jobs:
           python scripts/film-lyd/lag_lyd.py ${{ steps.telle.outputs.args }} \
             | { grep -vE '^  [0-9]+/[0-9]+$' || true; } | tee logg.txt
 
-      # Avvik (Whisper hørte noe annet enn manuset) og kvotestopp meldes på issue #12,
-      # der nattrutinene rapporterer.
+      # Avvik (Whisper hørte noe annet enn manuset) og kvotestopp meldes på issue #495.
       - name: Meld avvik
         if: always() && hashFiles('logg.txt') != ''
         env:
@@ -123,5 +122,5 @@ jobs:
               cat logg.txt
               echo '```'
             } > melding.md
-            gh issue comment 12 --repo "$GITHUB_REPOSITORY" --body-file melding.md
+            gh issue comment 495 --repo "$GITHUB_REPOSITORY" --body-file melding.md
           fi
