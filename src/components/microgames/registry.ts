@@ -252,6 +252,7 @@ const KongensTallerkener = lazy(() => import('./KongensTallerkener'));
 const Pengeballongen = lazy(() => import('./Pengeballongen'));
 const Gamma = lazy(() => import('./Gamma'));
 const RederensKart = lazy(() => import('./RederensKart'));
+const Underskriftsrittet = lazy(() => import('./Underskriftsrittet'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2587,6 +2588,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Sjøkart i kobberstikk fra hvalfangstens tid: jernblekk og vannlinjer på gulnet papir, hval som blå fangststempler, tran-rav i tønna',
         loader: () => import('./RederensKart'),
         Component: RederensKart as never,
+    },
+    underskriftsrittet: {
+        id: 'underskriftsrittet',
+        title: 'Underskriftsrittet',
+        description:
+            'Lofthusreisingen 1786. Du er Christian Lofthus på hesteryggen. Kronprinsen vil ha bevis for at du taler for mange, så du rir fra bygd til bygd i Agder og Telemark og samler navn på klagen til kongen. Ri sakte over tunet for å få mange navn - men å samle bønder var oppvigleri, og navnene tenner lyktene til fogdens menn. Åtte bygder bak klagen, og København må sette ned en kommisjon.',
+        estimatedSeconds: 210,
+        sjanger: 'jaktarkade - sanke og unnslippe',
+        tone: 'alvorlig',
+        hook: 'Du er Lofthus på hesteryggen. Får du nok navn på klagen før fogdens menn tar deg?',
+        cover: '/images/microgames/underskriftsrittet.webp',
+        kunst: 'Rosemalte kister fra Agder og Telemark på 1780-tallet: akantusranker i kalkhvitt og oker på mørk blågrønn grunn, sammen med klagebrevets jernblekk og røde lakksegl',
+        loader: () => import('./Underskriftsrittet'),
+        Component: Underskriftsrittet as never,
     },
 };
 
