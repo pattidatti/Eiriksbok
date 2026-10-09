@@ -25,7 +25,7 @@ import {
 } from './underskriftsrittet/game';
 import { BOTS } from './underskriftsrittet/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './underskriftsrittet/sim';
-import { BRETT } from './underskriftsrittet/levels';
+import { BRETT, KLAGE_NAVN } from './underskriftsrittet/levels';
 import { dist, galoppAndel, SISTE_BRETT } from './underskriftsrittet/rules';
 import { TUNING } from './underskriftsrittet/tuning';
 import { Bakke, Fogdhus, Lys, Skog, Utgang } from './underskriftsrittet/land';
@@ -35,7 +35,7 @@ import { FARGE } from './underskriftsrittet/palette';
 import { Hud } from './underskriftsrittet/hud';
 import { lagLyd, type Lyd } from './underskriftsrittet/lyd';
 import { nyScene, settFase, type Scene } from './underskriftsrittet/scene';
-import { TEKST_FONT, TITTEL_FONT } from './underskriftsrittet/textures';
+import { lagKorn, TEKST_FONT, TITTEL_FONT } from './underskriftsrittet/textures';
 import { Meny, PauseSkjerm, Slutt, type Resultat, type Save } from './underskriftsrittet/skjermer';
 import { LÆRDOM } from './underskriftsrittet/texts';
 
@@ -78,6 +78,7 @@ const START_SAVE: Save = { rekord: 0, flestNavn: 0, runder: 0, kommisjoner: 0, f
 type Proj = (x: number, z: number, y?: number) => { x: number; y: number } | null;
 
 const CAM = new THREE.Vector3();
+const BLIKK = new THREE.Vector3();
 const TMP = new THREE.Vector3();
 
 interface LoopProps {
@@ -90,16 +91,22 @@ interface LoopProps {
     onTick: (rawDt: number) => void;
 }
 
-/** Spilløkka og kameraet: følger hesten fra et fast, skrått punkt (nord opp, ingen rotasjon). */
+/** Spilløkka og kameraet: følger hesten fra et fast, skrått punkt (nord opp, ingen rotasjon).
+ *  I menyen henger kameraet rett over brettet som et kart, så eleven ser bygdene og veien før
+ *  rittet, og svinger ned bak rytteren når rittet starter. */
 function Loop({ gRef, sRef, modeRef, text, projRef, onEvents, onTick }: LoopProps) {
     const zoom = useRef(1);
+    const blikk = useRef(new THREE.Vector3(0, 0, 9));
     useFrame((state, rawDt) => {
         const dt = Math.min(0.05, rawDt);
         const g = gRef.current;
         const s = sRef.current;
         s.tid += dt;
         if (modeRef.current === 'play') {
-            for (let k = 0; k < SPEED && g.mode === 'play'; k++) update(g, dt * text.timeScale());
+            // Hit-stop: et kort øyeblikk i sakte film når seglet trykkes.
+            const stopp = s.tid < s.stopp ? 0.12 : 1;
+            for (let k = 0; k < SPEED && g.mode === 'play'; k++)
+                update(g, dt * text.timeScale() * stopp);
             if (g.hendelser.length) {
                 const hs = g.hendelser.splice(0);
                 onEvents(g, hs);
@@ -116,17 +123,29 @@ function Loop({ gRef, sRef, modeRef, text, projRef, onEvents, onTick }: LoopProp
         zoom.current += (z - zoom.current) * Math.min(1, dt * 2.2);
         const lx = h.x + Math.cos(h.retning) * lead;
         const lz = h.z + Math.sin(h.retning) * lead;
-        CAM.set(lx, T.kamera.høyde * zoom.current, lz + T.kamera.bak * zoom.current);
+        if (modeRef.current === 'menu') {
+            // Kartet: rett ovenfra, midt over bygdene og startstedet i brettet.
+            const b = BRETT[g.brett];
+            const pk = [...b.bygder.map((d) => [d.x, d.z]), b.start];
+            const cx = pk.reduce((a, p) => a + p[0], 0) / pk.length;
+            const cz = pk.reduce((a, p) => a + p[1], 0) / pk.length;
+            CAM.set(cx, T.kamera.kartHøyde, cz + 2);
+            BLIKK.set(cx, 0, cz);
+        } else {
+            CAM.set(lx, T.kamera.høyde * zoom.current, lz + T.kamera.bak * zoom.current);
+            BLIKK.set(lx, 0, lz);
+        }
         const k = 1 - Math.exp(-dt * 4);
         const cam = state.camera;
         cam.position.lerp(CAM, k);
+        blikk.current.lerp(BLIKK, k);
         // Risting svinner i ekte tid, så den aldri henger igjen i pausen.
         s.rist = Math.max(0, s.rist - dt * 1.6);
         const r = s.rist * s.rist;
         cam.lookAt(
-            cam.position.x + (Math.random() - 0.5) * r,
+            blikk.current.x + (Math.random() - 0.5) * r,
             0,
-            cam.position.z - T.kamera.bak * zoom.current + (Math.random() - 0.5) * r
+            blikk.current.z + (Math.random() - 0.5) * r
         );
         const size = state.size;
         projRef.current = (x, zz, y = 0.5) => {
@@ -136,25 +155,6 @@ function Loop({ gRef, sRef, modeRef, text, projRef, onEvents, onTick }: LoopProp
         };
     });
     return null;
-}
-
-/** Lerretskorn: en liten flis med støy, laget én gang. */
-function lagKorn(): string {
-    try {
-        const c = document.createElement('canvas');
-        c.width = c.height = 96;
-        const ctx = c.getContext('2d')!;
-        const img = ctx.createImageData(96, 96);
-        for (let i = 0; i < img.data.length; i += 4) {
-            const v = Math.random() * 255;
-            img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
-            img.data[i + 3] = 22;
-        }
-        ctx.putImageData(img, 0, 0);
-        return c.toDataURL();
-    } catch {
-        return '';
-    }
 }
 
 export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
@@ -348,8 +348,27 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                 const t = g.t;
                 s.segl[h.tun] = s.tid;
                 s.rist = 0.55;
+                s.stopp = s.tid + 0.28;
                 lyd.segl();
                 buzz([20, 40, 60]);
+                // Poengene for seglet spretter opp over tunet.
+                const sp = projRef.current?.(tun.x, tun.z - T.tun.radius, 2.5);
+                const verdi = T.poeng.segl * (tun.telemark ? T.poeng.telemark : 1);
+                if (sp) text.float(`+${verdi}`, sp.x, sp.y - 20, FARGE.gull, true);
+                if (h.nyKlage) {
+                    lyd.klage();
+                    const kp = projRef.current?.(tun.x, tun.z, 1);
+                    if (kp)
+                        text.float(
+                            `${KLAGE_NAVN[tun.klage]} på klagen!`,
+                            kp.x,
+                            kp.y - 70,
+                            FARGE.kalk,
+                            false,
+                            1.6
+                        );
+                }
+                text.lesson('klager', LÆRDOM.klager, 2);
                 text.beatOnce(
                     'segl',
                     'Et segl på klagen',
@@ -385,11 +404,49 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                     tk.pen = s.tid;
                     lyd.navn(h.dristig);
                 }
+                // Hvert navn gir et lite tall som spretter opp fra rytteren.
+                const tunN = g.tun[h.tun];
+                const gang = tunN?.telemark ? T.poeng.telemark : 1;
+                const pts = (h.dristig ? T.poeng.dristig : T.poeng.navn) * gang;
+                const np = projRef.current?.(h.x, h.z, 3.4);
+                if (np)
+                    text.float(
+                        `+${pts}`,
+                        np.x + (Math.random() - 0.5) * 40,
+                        np.y - 10,
+                        h.dristig ? FARGE.gull : FARGE.navnLys
+                    );
                 if (h.dristig && g.t - sistDristig.current > 1.5) {
                     sistDristig.current = g.t;
-                    const p = projRef.current?.(h.x, h.z, 2.6);
-                    if (p) text.float('Dristig! x2', p.x, p.y - 30, FARGE.gull);
+                    if (np) text.float('Dristig! x2', np.x, np.y - 44, FARGE.gull);
                 }
+                // Regel tre, første gang: merket på buen viser hvilket navn som tenner en lykt.
+                const b0 = BRETT[g.brett];
+                if (tunN && g.brett === 0 && Math.floor(tunN.samlet) === b0.førsteLykt - 3) {
+                    const f = b0.førsteLykt / T.tun.seglVed;
+                    const mx = tunN.x + Math.sin(f * Math.PI * 2) * (T.tun.radius - 0.3);
+                    const mz = tunN.z - Math.cos(f * Math.PI * 2) * (T.tun.radius - 0.3);
+                    text.point(
+                        'merke',
+                        'Oransje merke: det navnet tenner en lykt',
+                        ved(() => ({ x: mx, z: mz }), 0.1),
+                        { seconds: 5, tone: 'fare' }
+                    );
+                }
+            }
+            if (h.type === 'unnslapp') {
+                // Akkurat unna: ringen var over halvfull, men du kom deg ut av lyset.
+                lyd.unnslapp();
+                s.rist = Math.max(s.rist, 0.25);
+                const p = projRef.current?.(g.hest.x, g.hest.z, 3.4);
+                if (p)
+                    text.float(
+                        h.topp > 0.8 ? 'Med nød og neppe!' : 'Akkurat unna!',
+                        p.x,
+                        p.y - 40,
+                        FARGE.fareLys,
+                        true
+                    );
             }
             if (h.type === 'funn') {
                 const tun = g.tun[h.tun];
@@ -630,21 +687,19 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                             contactShadows={false}
                         >
                             <Lys sRef={sRef} />
-                            {/* Kartet er større enn bildet: kameraet følger rytteren, så bygdene og skogen
-                                utenfor bildet er kulisse for innrammings-sjekken, ikke «modellen». */}
-                            <group userData={{ sceneAuditIgnore: true }}>
-                                <Bakke brett={brett} />
-                                <Skog brett={brett} />
-                                <Fogdhus key={`g${brett}`} brett={brett} sRef={sRef} />
-                                <Tunene
-                                    key={`t${brett}`}
-                                    brett={brett}
-                                    gRef={gRef}
-                                    sRef={sRef}
-                                    funnet={save.funn}
-                                />
-                                <Utgang key={`u${brett}`} brett={brett} gRef={gRef} />
-                            </group>
+                            {/* Bakken og skogen er kulisse (sceneAuditIgnore). Tunene, fogdgårdene og
+                                utgangen tegnes bare når de er i bildet (underskriftsrittet/synlig.ts). */}
+                            <Bakke brett={brett} />
+                            <Skog brett={brett} />
+                            <Fogdhus key={`g${brett}`} brett={brett} sRef={sRef} />
+                            <Tunene
+                                key={`t${brett}`}
+                                brett={brett}
+                                gRef={gRef}
+                                sRef={sRef}
+                                funnet={save.funn}
+                            />
+                            <Utgang key={`u${brett}`} brett={brett} gRef={gRef} />
                             <Hest gRef={gRef} sRef={sRef} />
                             <Lykter gRef={gRef} sRef={sRef} />
                             <Blekk gRef={gRef} sRef={sRef} />

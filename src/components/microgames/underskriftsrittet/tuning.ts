@@ -5,7 +5,7 @@ export const TUNING = {
     /** Hesten: fart i skritt (når du slipper) og galopp, og hvor fort den skifter fart. */
     hest: {
         skritt: 2.4,
-        galopp: 8.5,
+        galopp: 10,
         aksel: 6,
         brems: 5,
         /** Svingfart i radianer per sekund i skritt og i galopp (vid sving i galopp). */
@@ -14,7 +14,7 @@ export const TUNING = {
         /** Krapp sving bremser: andel av farten som tapes per radian svingbehov per sekund. */
         svingBrems: 0.55,
         /** Fartsfaktor på landeveien og over åsen. */
-        vei: 1.15,
+        vei: 1.6,
         ås: 0.72,
         /** Bredden på landeveien (avstand fra midtlinja). */
         veiBredde: 1.4,
@@ -69,7 +69,11 @@ export const TUNING = {
     },
 
     /** Fangstringen: sekunder i lyset før du er tatt, og hvor fort ringen tømmes ute av lyset. */
-    fangst: { tømming: 1.4 },
+    fangst: {
+        tømming: 1.4,
+        /** Så full må ringen ha vært for at det teller som «akkurat unna» når du slipper fri. */
+        nesten: 0.5,
+    },
 
     /** Dristig: navn mens en lykt er nærmere enn så mange lysradier teller dobbelt. */
     dristig: 2,
@@ -100,6 +104,13 @@ export const TUNING = {
         [1050, 'Agders stemme'],
     ] as [number, string][],
 
-    /** Kameraet: høyde og avstand bak (ca. 55 grader ned), og forsprang i fartsretningen. */
-    kamera: { høyde: 21, bak: 14.5, forsprang: 0.45, galoppZoom: 0.12 },
+    /** Kameraet: høyde og avstand bak (ca. 55 grader ned), forsprang i fartsretningen, og kartet i menyen. */
+    kamera: {
+        høyde: 21,
+        bak: 14.5,
+        forsprang: 0.45,
+        galoppZoom: 0.12,
+        /** I menyen: kartet rett ovenfra i denne høyden. */
+        kartHøyde: 40,
+    },
 } as const;

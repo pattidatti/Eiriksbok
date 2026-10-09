@@ -36,10 +36,22 @@ export function påÅs(b: Brett, x: number, z: number): boolean {
     return b.åser.some(([ax, az, r]) => dist(x, z, ax, az) < r);
 }
 
+/** Hvor høyt åsen er på et punkt (kuppelen er flatet til 30 %), så hesten rir oppå den. */
+export function åsHøyde(b: Brett, x: number, z: number): number {
+    let y = 0;
+    for (const [ax, az, r] of b.åser) {
+        const d = dist(x, z, ax, az);
+        if (d < r) y = Math.max(y, 0.3 * Math.sqrt(r * r - d * d));
+    }
+    return y;
+}
+
 /** Fartsfaktoren der hesten står: landeveien er rask, åsen er tung. */
 export function terreng(b: Brett, x: number, z: number): number {
     if (påÅs(b, x, z)) return T.hest.ås;
-    if (påVei(b, x, z)) return T.hest.vei;
+    // Landeveien gir fart på etappene mellom bygdene, men ikke inne på tunet (der rir du sakte).
+    if (påVei(b, x, z) && !b.bygder.some((t) => dist(x, z, t.x, t.z) < T.tun.radius + 1))
+        return T.hest.vei;
     return 1;
 }
 

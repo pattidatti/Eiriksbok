@@ -3,11 +3,23 @@
 
 export type LyktModus = 'står' | 'går' | 'leter';
 
+/** De tre klagene bøndene samlet navn mot. Hver bygd har én av dem (ikonet over husene),
+ *  og seglet derfra fyller raden i klagebrevet. */
+export type Klage = 'gebyr' | 'korn' | 'handel';
+export const KLAGER: Klage[] = ['gebyr', 'korn', 'handel'];
+export const KLAGE_NAVN: Record<Klage, string> = {
+    gebyr: 'Gebyrene',
+    korn: 'Kornmonopolet',
+    handel: 'Handelsretten',
+};
+
 export interface Bygd {
     navn: string;
     x: number;
     z: number;
     telemark: boolean;
+    /** Det bygda klager mest over (det står i Klageboka-bladet herfra). */
+    klage: Klage;
     /** Hvordan lyktene som tennes her, oppfører seg (brett 1 lærer bort én ting om gangen). */
     modus: LyktModus;
 }
@@ -49,8 +61,8 @@ export const BRETT: Brett[] = [
         start: [0, 9],
         ut: [20, -20],
         bygder: [
-            { navn: 'Vestre Moland', x: 0, z: 0, telemark: false, modus: 'står' },
-            { navn: 'Birkeland', x: 13, z: -11, telemark: false, modus: 'går' },
+            { navn: 'Vestre Moland', x: 0, z: 0, telemark: false, klage: 'gebyr', modus: 'står' },
+            { navn: 'Birkeland', x: 13, z: -11, telemark: false, klage: 'handel', modus: 'går' },
         ],
         vei: [
             [0, 14],
@@ -79,10 +91,10 @@ export const BRETT: Brett[] = [
         start: [0, 16],
         ut: [0, -24],
         bygder: [
-            { navn: 'Landvik', x: -14, z: 4, telemark: false, modus: 'leter' },
-            { navn: 'Eide', x: 13, z: 6, telemark: false, modus: 'leter' },
-            { navn: 'Øyestad', x: -12, z: -14, telemark: false, modus: 'leter' },
-            { navn: 'Froland', x: 14, z: -14, telemark: false, modus: 'leter' },
+            { navn: 'Landvik', x: -14, z: 4, telemark: false, klage: 'handel', modus: 'leter' },
+            { navn: 'Eide', x: 13, z: 6, telemark: false, klage: 'gebyr', modus: 'leter' },
+            { navn: 'Øyestad', x: -12, z: -14, telemark: false, klage: 'korn', modus: 'leter' },
+            { navn: 'Froland', x: 14, z: -14, telemark: false, klage: 'korn', modus: 'leter' },
         ],
         vei: [
             [0, 20],
@@ -117,10 +129,10 @@ export const BRETT: Brett[] = [
         start: [0, 16],
         ut: [0, -24],
         bygder: [
-            { navn: 'Treungen', x: -13, z: 6, telemark: true, modus: 'leter' },
-            { navn: 'Drangedal', x: 14, z: 2, telemark: true, modus: 'leter' },
-            { navn: 'Nissedal', x: 2, z: -12, telemark: true, modus: 'leter' },
-            { navn: 'Fyresdal', x: -14, z: -16, telemark: true, modus: 'leter' },
+            { navn: 'Treungen', x: -13, z: 6, telemark: true, klage: 'gebyr', modus: 'leter' },
+            { navn: 'Drangedal', x: 14, z: 2, telemark: true, klage: 'gebyr', modus: 'leter' },
+            { navn: 'Nissedal', x: 2, z: -12, telemark: true, klage: 'handel', modus: 'leter' },
+            { navn: 'Fyresdal', x: -14, z: -16, telemark: true, klage: 'korn', modus: 'leter' },
         ],
         vei: [
             [0, 22],

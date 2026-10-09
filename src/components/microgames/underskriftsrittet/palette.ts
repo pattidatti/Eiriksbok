@@ -11,9 +11,21 @@ export const FARGE = {
     grunnMørk: '#2e5a4f',
     grunnTelemark: '#34505c',
     strøk: '#4d8270',
+    /** Landet: eng, lyng og åker (malt mellomtone, så det leses som land i måneskinn). */
+    eng: '#5d8447',
+    engLys: '#77a05a',
+    engMørk: '#456a37',
+    lyng: '#6d5a66',
+    lyngLys: '#8c7086',
+    lyngMørk: '#4c3d48',
+    /** Lyngkollene: brunlilla kupler med gråstein. */
+    ås: '#7d6c5a',
+    åker: '#c2a85e',
+    åkerPløyd: '#8a6544',
+    åkerKant: '#5e4630',
     /** Lufta og tåka bortenfor kartet. */
-    luft: '#2a4c45',
-    tåke: '#31564d',
+    luft: '#2b4a3b',
+    tåke: '#365a44',
     /** Skog, åser og ranker i bakken. */
     skog: '#2f5a4f',
     skogLys: '#5f8f6a',

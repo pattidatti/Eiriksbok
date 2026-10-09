@@ -7,9 +7,9 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { Game } from './game';
-import { utÅpen } from './game';
+import { brettAv, utÅpen } from './game';
 import { BRETT } from './levels';
-import { clamp, dist, galoppAndel } from './rules';
+import { åsHøyde, clamp, dist, galoppAndel } from './rules';
 import { FARGE } from './palette';
 import { TUNING } from './tuning';
 import type { Scene } from './scene';
@@ -42,8 +42,10 @@ function nesteMål(g: Game): { x: number; z: number; ut: boolean } | null {
     return best;
 }
 
-const FANG_R = 1.9;
+const FANG_R = 2.5;
 const FANG_LAG = 6;
+/** Rytteren er tegnet stor fordi han er den du styrer, og skal synes først. */
+const HEST_SKALA = 2.1;
 const STØV = 10;
 
 /** Hesten og rytteren, fangstringen rundt dem og pila til neste bygd. */
@@ -51,7 +53,9 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
     const kropp = useMemo(() => hestKropp(), []);
     const bein = useMemo(() => hestBein(), []);
     const mat = useMemo(() => maltMat(), []);
-    const kant = useMemo(() => konturMat(FARGE.blekk, 0.06), []);
+    const kant = useMemo(() => konturMat(FARGE.blekk, 0.04), []);
+    // Lys ytterkant rundt rytteren, så han skiller seg ut fra alt annet på kartet.
+    const lysKant = useMemo(() => konturMat(FARGE.kalk, 0.085), []);
     useEffect(
         () => () => {
             kropp.dispose();
@@ -95,7 +99,8 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
         if (spiller) fase.current += dt * h.fart * 1.9;
         const p = fase.current;
         if (rot.current) {
-            rot.current.position.set(h.x, Math.abs(Math.sin(p)) * (0.05 + 0.12 * ga), h.z);
+            const åsY = åsHøyde(brettAv(g), h.x, h.z);
+            rot.current.position.set(h.x, åsY + Math.abs(Math.sin(p)) * (0.05 + 0.12 * ga), h.z);
             rot.current.rotation.y = -h.retning;
         }
         // Hesten lener seg inn i svingen.
@@ -152,7 +157,7 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
             pil.current.visible = !!m && !inne && spiller;
             if (m && pil.current.visible) {
                 const a = Math.atan2(m.z - h.z, m.x - h.x);
-                pil.current.position.set(h.x + Math.cos(a) * 3.6, 0.12, h.z + Math.sin(a) * 3.6);
+                pil.current.position.set(h.x + Math.cos(a) * 4.4, 0.12, h.z + Math.sin(a) * 4.4);
                 pil.current.rotation.y = -a;
             }
         }
@@ -166,10 +171,11 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
     ];
     return (
         <>
-            <group ref={rot} scale={1.25}>
+            <group ref={rot} scale={HEST_SKALA}>
                 <group ref={lean}>
                     <mesh geometry={kropp} material={mat} />
                     <mesh geometry={kropp} material={kant} />
+                    <mesh geometry={kropp} material={lysKant} />
                     {BEIN.map(([x, z], k) => (
                         <mesh
                             key={k}

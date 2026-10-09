@@ -1,9 +1,10 @@
 // Teksturene i Underskriftsrittet, malt på canvas én gang ved oppstart og gjenbrukt:
-// kistelokket (bakken med akantusranker), lyspølen, lakkseglet, blomstene i tun-ringen,
+// landet (eng, lyng og åker), lyspølen, lakkseglet, blomstene i tun-ringen,
 // lunta og merket på døra. Ingen bildefiler, ingen nedlasting.
 
 import * as THREE from 'three';
 import { FARGE } from './palette';
+import { BRETT, type Klage } from './levels';
 
 export const TITTEL_FONT = '"Grenze Gotisch", Georgia, serif';
 export const TEKST_FONT = '"Alegreya Sans", "Trebuchet MS", sans-serif';
@@ -30,106 +31,6 @@ function frø(seed: number) {
         a = (a * 1664525 + 1013904223) >>> 0;
         return a / 4294967296;
     };
-}
-
-/** En akantusranke: en S-bue med C-bøyer og kalkhvite høylys-strøk, som på en kiste. */
-function ranke(
-    ctx: CanvasRenderingContext2D,
-    x: number,
-    y: number,
-    s: number,
-    a: number,
-    farge: string,
-    høylys: string
-) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(a);
-    ctx.scale(s, s);
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = farge;
-    ctx.lineWidth = 7;
-    ctx.beginPath();
-    ctx.moveTo(-40, 10);
-    ctx.bezierCurveTo(-20, -30, 20, 30, 40, -10);
-    ctx.stroke();
-    // C-bøyer som krøller seg ut fra stengelen
-    for (const [cx, cy, r, f] of [
-        [-28, -4, 12, 1],
-        [2, 4, 10, -1],
-        [30, -12, 9, 1],
-    ] as const) {
-        ctx.lineWidth = 5;
-        ctx.beginPath();
-        ctx.arc(
-            cx,
-            cy + f * 8,
-            r,
-            f > 0 ? Math.PI * 0.9 : -Math.PI * 0.1,
-            f > 0 ? Math.PI * 2.2 : Math.PI * 1.2
-        );
-        ctx.stroke();
-    }
-    ctx.strokeStyle = høylys;
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(-36, 4);
-    ctx.bezierCurveTo(-18, -26, 16, 22, 34, -14);
-    ctx.stroke();
-    ctx.restore();
-}
-
-let grunnCache: THREE.CanvasTexture | null = null;
-/** Bakken: mørk blågrønn grunn med synlige penselstrøk og svake ranker, som et kistelokk. */
-export function grunnTekstur(): THREE.CanvasTexture {
-    if (grunnCache) return grunnCache;
-    const S = 512;
-    const { c, ctx } = lagCanvas(S, S);
-    const r = frø(17);
-    ctx.fillStyle = FARGE.grunn;
-    ctx.fillRect(0, 0, S, S);
-    // Penselstrøk i to toner
-    for (let i = 0; i < 260; i++) {
-        const x = r() * S;
-        const y = r() * S;
-        const l = 20 + r() * 60;
-        ctx.strokeStyle = r() < 0.5 ? FARGE.grunnMørk : FARGE.strøk;
-        ctx.globalAlpha = 0.25 + r() * 0.3;
-        ctx.lineWidth = 3 + r() * 6;
-        ctx.lineCap = 'round';
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.quadraticCurveTo(x + l * 0.5, y + (r() - 0.5) * 16, x + l, y + (r() - 0.5) * 10);
-        ctx.stroke();
-    }
-    // Ranker, også over kantene så teksturen går i ett når den gjentas
-    ctx.globalAlpha = 0.5;
-    for (let i = 0; i < 9; i++) {
-        const x = r() * S;
-        const y = r() * S;
-        const s = 0.9 + r() * 0.8;
-        const a = r() * Math.PI * 2;
-        for (const [ox, oy] of [
-            [0, 0],
-            [S, 0],
-            [-S, 0],
-            [0, S],
-            [0, -S],
-        ])
-            ranke(ctx, x + ox, y + oy, s, a, FARGE.skog, 'rgba(241,231,204,0.35)');
-    }
-    // Korn
-    ctx.globalAlpha = 1;
-    const img = ctx.getImageData(0, 0, S, S);
-    for (let i = 0; i < img.data.length; i += 4) {
-        const n = (r() - 0.5) * 14;
-        img.data[i] += n;
-        img.data[i + 1] += n;
-        img.data[i + 2] += n;
-    }
-    ctx.putImageData(img, 0, 0);
-    grunnCache = tekstur(c, true);
-    return grunnCache;
 }
 
 let glødCache: THREE.CanvasTexture | null = null;
@@ -270,4 +171,266 @@ export function merkeTekstur(): THREE.CanvasTexture {
     ctx.stroke();
     merkeCache = tekstur(c);
     return merkeCache;
+}
+
+// ---------------------------------------------------------------------------------------------
+// Landet: eng, lyng og åker rundt hver bygd, malt for hele brettet på ett lerret (ingen gjentak).
+
+/** Hvor stort landlerretet er i meter (samme som bakkeflaten i `Bakke`). */
+export const LAND_M = 130;
+const landCache = new Map<number, THREE.CanvasTexture>();
+
+/** Bakken i et brett: eng med gresstuster, lyngflekker og åkerlapper rundt bygdene. */
+export function landTekstur(brett: number): THREE.CanvasTexture {
+    const hit = landCache.get(brett);
+    if (hit) return hit;
+    const b = BRETT[brett];
+    const S = 2048;
+    const k = S / LAND_M;
+    const px = (m: number) => (m + LAND_M / 2) * k;
+    const { c, ctx } = lagCanvas(S, S);
+    const r = frø(41 + brett * 13);
+    const nærTun = (x: number, z: number, d: number) =>
+        b.bygder.some((t) => Math.hypot(x - t.x, z - t.z) < d);
+
+    // Enga: grunnfarge og store, myke flekker i lysere og mørkere grønt.
+    ctx.fillStyle = FARGE.eng;
+    ctx.fillRect(0, 0, S, S);
+    for (let i = 0; i < 420; i++) {
+        ctx.globalAlpha = 0.18 + r() * 0.2;
+        ctx.fillStyle = r() < 0.5 ? FARGE.engLys : FARGE.engMørk;
+        ctx.beginPath();
+        ctx.ellipse(r() * S, r() * S, 20 + r() * 70, 14 + r() * 50, r() * 3, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+    // Lyngen: lilla-brune flekker med prikker, mest ute i kanten og rundt åsene.
+    const lyng = (x: number, z: number, rad: number) => {
+        const cx = px(x);
+        const cz = px(z);
+        const R = rad * k;
+        ctx.globalAlpha = 0.85;
+        ctx.fillStyle = FARGE.lyng;
+        for (let n = 0; n < 7; n++) {
+            ctx.beginPath();
+            ctx.ellipse(
+                cx + (r() - 0.5) * R,
+                cz + (r() - 0.5) * R,
+                R * (0.35 + r() * 0.4),
+                R * (0.25 + r() * 0.35),
+                r() * 3,
+                0,
+                Math.PI * 2
+            );
+            ctx.fill();
+        }
+        for (let n = 0; n < rad * rad * 9; n++) {
+            ctx.globalAlpha = 0.7;
+            ctx.fillStyle = r() < 0.5 ? FARGE.lyngLys : FARGE.lyngMørk;
+            const a = r() * Math.PI * 2;
+            const d = Math.sqrt(r()) * R * 0.75;
+            ctx.beginPath();
+            ctx.arc(cx + Math.cos(a) * d, cz + Math.sin(a) * d, 2 + r() * 3, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    };
+    for (let i = 0; i < 30; i++) {
+        const x = (r() * 2 - 1) * (LAND_M / 2 - 4);
+        const z = (r() * 2 - 1) * (LAND_M / 2 - 4);
+        if (nærTun(x, z, 9)) continue;
+        lyng(x, z, 2 + r() * 2.5);
+    }
+    for (const [x, z, rad] of b.åser) lyng(x, z, rad + 1.5);
+
+    // Åkrene: tre-fire lapper rundt hvert tun, pløyd jord eller gul stubb med furer.
+    for (const t of b.bygder) {
+        const n = 3 + Math.floor(r() * 2);
+        for (let i = 0; i < n; i++) {
+            const a = (i / n) * Math.PI * 2 + r() * 0.8;
+            const d = 7.4 + r() * 3.2;
+            const x = t.x + Math.cos(a) * d;
+            const z = t.z + Math.sin(a) * d;
+            const w = (3.6 + r() * 2.6) * k;
+            const h = (2.6 + r() * 1.8) * k;
+            const pløyd = r() < 0.45;
+            ctx.save();
+            ctx.translate(px(x), px(z));
+            ctx.rotate(a + Math.PI / 2 + (r() - 0.5) * 0.4);
+            ctx.globalAlpha = 1;
+            ctx.fillStyle = pløyd ? FARGE.åkerPløyd : FARGE.åker;
+            ctx.strokeStyle = FARGE.åkerKant;
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.rect(-w / 2, -h / 2, w, h);
+            ctx.fill();
+            ctx.stroke();
+            ctx.globalAlpha = 0.55;
+            ctx.strokeStyle = pløyd ? FARGE.åkerKant : '#8e7a3e';
+            ctx.lineWidth = 3;
+            for (let fy = -h / 2 + 7; fy < h / 2 - 3; fy += 10) {
+                ctx.beginPath();
+                ctx.moveTo(-w / 2 + 4, fy);
+                ctx.lineTo(w / 2 - 4, fy);
+                ctx.stroke();
+            }
+            ctx.restore();
+        }
+    }
+
+    // Gresstuster og noen små blomster, så enga har korn på nært hold.
+    ctx.lineCap = 'round';
+    for (let i = 0; i < 9000; i++) {
+        const x = r() * S;
+        const y = r() * S;
+        const l = 4 + r() * 6;
+        ctx.globalAlpha = 0.35 + r() * 0.3;
+        ctx.strokeStyle = r() < 0.7 ? FARGE.engMørk : FARGE.engLys;
+        ctx.lineWidth = 1.6 + r() * 1.4;
+        ctx.beginPath();
+        ctx.moveTo(x - l * 0.4, y - l);
+        ctx.lineTo(x, y);
+        ctx.lineTo(x + l * 0.4, y - l);
+        ctx.stroke();
+    }
+    for (let i = 0; i < 700; i++) {
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = r() < 0.6 ? FARGE.kalk : FARGE.gull;
+        ctx.beginPath();
+        ctx.arc(r() * S, r() * S, 2 + r() * 1.5, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    const t = tekstur(c);
+    landCache.set(brett, t);
+    return t;
+}
+
+// ---------------------------------------------------------------------------------------------
+// Klagene: et lite malt ikon for hver (på skiltet over tunet og i klagebrevet).
+
+/** Tegner klage-ikonet i en kalkhvit medaljong med sentrum (cx, cy) og radius R. */
+export function tegnKlage(
+    ctx: CanvasRenderingContext2D,
+    klage: Klage,
+    cx: number,
+    cy: number,
+    R: number
+) {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.scale(R / 50, R / 50);
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = FARGE.kalk;
+    ctx.strokeStyle = FARGE.blekk;
+    ctx.lineWidth = 6;
+    ctx.beginPath();
+    ctx.arc(0, 0, 46, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.lineWidth = 4;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    if (klage === 'gebyr') {
+        // Myntstabel: embetsmennenes gebyrer.
+        for (let i = 3; i >= 0; i--) {
+            ctx.fillStyle = i % 2 ? FARGE.gull : '#e8bf5c';
+            ctx.beginPath();
+            ctx.ellipse(-8, 22 - i * 11, 22, 8, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+        }
+        ctx.fillStyle = FARGE.gull;
+        ctx.beginPath();
+        ctx.ellipse(20, 6, 11, 20, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(20, -4);
+        ctx.lineTo(20, 16);
+        ctx.stroke();
+    } else if (klage === 'korn') {
+        // Kornbånd: kornmonopolet.
+        for (const a of [-0.55, -0.27, 0, 0.27, 0.55]) {
+            const tx = Math.sin(a) * 34;
+            const ty = -Math.cos(a) * 34 + 8;
+            ctx.strokeStyle = FARGE.blekk;
+            ctx.beginPath();
+            ctx.moveTo(0, 34);
+            ctx.quadraticCurveTo(tx * 0.3, 0, tx, ty);
+            ctx.stroke();
+            ctx.fillStyle = FARGE.gull;
+            ctx.beginPath();
+            ctx.ellipse(tx, ty, 6, 12, a, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+        }
+        ctx.fillStyle = FARGE.blod;
+        ctx.fillRect(-12, 12, 24, 8);
+        ctx.strokeRect(-12, 12, 24, 8);
+    } else {
+        // Vekta: byborgerne bestemte prisen på tømmeret.
+        ctx.strokeStyle = FARGE.blekk;
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.moveTo(0, -30);
+        ctx.lineTo(0, 30);
+        ctx.moveTo(-18, 30);
+        ctx.lineTo(18, 30);
+        ctx.moveTo(-30, -18);
+        ctx.lineTo(30, -24);
+        ctx.stroke();
+        ctx.lineWidth = 3;
+        for (const [x, y] of [
+            [-30, -18],
+            [30, -24],
+        ]) {
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x - 11, y + 22);
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + 11, y + 22);
+            ctx.stroke();
+            ctx.fillStyle = x < 0 ? FARGE.blodLys : FARGE.gull;
+            ctx.beginPath();
+            ctx.ellipse(x, y + 23, 14, 6, 0, 0, Math.PI);
+            ctx.fill();
+            ctx.stroke();
+        }
+    }
+    ctx.restore();
+}
+
+const klageBildeCache = new Map<Klage, string>();
+/** Klage-ikonet som bilde (data-URL) til HUD-en. */
+export function klageBilde(klage: Klage): string {
+    const hit = klageBildeCache.get(klage);
+    if (hit) return hit;
+    try {
+        const { c, ctx } = lagCanvas(96, 96);
+        tegnKlage(ctx, klage, 48, 48, 46);
+        const url = c.toDataURL();
+        klageBildeCache.set(klage, url);
+        return url;
+    } catch {
+        return '';
+    }
+}
+
+/** Lerretskorn: en liten flis med støy, laget én gang. */
+export function lagKorn(): string {
+    try {
+        const c = document.createElement('canvas');
+        c.width = c.height = 96;
+        const ctx = c.getContext('2d')!;
+        const img = ctx.createImageData(96, 96);
+        for (let i = 0; i < img.data.length; i += 4) {
+            const v = Math.random() * 255;
+            img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
+            img.data[i + 3] = 22;
+        }
+        ctx.putImageData(img, 0, 0);
+        return c.toDataURL();
+    } catch {
+        return '';
+    }
 }

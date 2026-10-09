@@ -12,7 +12,8 @@ import { dist, påVei } from './rules';
 import { FARGE } from './palette';
 import { TUNING } from './tuning';
 import type { Scene } from './scene';
-import { grunnTekstur, TITTEL_FONT, TEKST_FONT } from './textures';
+import { LAND_M, landTekstur, TITTEL_FONT, TEKST_FONT } from './textures';
+import { iBildet, kull } from './synlig';
 import { fogdGård, TRE_KRONE, TRE_STAMME } from './models';
 import { konturMat, maltMat } from './kontur';
 
@@ -65,25 +66,21 @@ export function Lys({ sRef }: { sRef: SRef }) {
     );
 }
 
-/** Bakken (kistelokket), landeveien og åsene. */
+/** Bakken (eng, lyng og åker), landeveien og lyngåsene. Ren kulisse for scene-auditen. */
 export function Bakke({ brett }: { brett: number }) {
     const b = BRETT[brett];
     const telemark = b.bygder.some((t) => t.telemark);
-    const S = T.grense * 2 + 70;
-    const tex = useMemo(() => {
-        const t = grunnTekstur().clone();
-        t.repeat.set(S / 18, S / 18);
-        t.needsUpdate = true;
-        return t;
-    }, [S]);
-    useEffect(() => () => tex.dispose(), [tex]);
-    const åsMat = useMemo(() => new THREE.MeshToonMaterial({ color: '#4f8266' }), []);
+    const S = LAND_M;
+    // Lerretet males én gang per brett og gjenbrukes (ikke kastet ved brettbytte).
+    const tex = useMemo(() => landTekstur(brett), [brett]);
+    const åsMat = useMemo(() => new THREE.MeshToonMaterial({ color: FARGE.ås }), []);
     const åsKant = useMemo(() => konturMat(FARGE.blekk, 0.12), []);
+    const steinMat = useMemo(() => maltMat({ vertexColors: false, color: '#9a968a' }), []);
     return (
-        <group>
+        <group userData={{ sceneAuditIgnore: true }}>
             <mesh rotation={FLAT} position={[0, -0.02, 0]}>
                 <planeGeometry args={[S, S]} />
-                <meshLambertMaterial map={tex} color={telemark ? '#c8d4e8' : '#ffffff'} />
+                <meshLambertMaterial map={tex} color={telemark ? '#dfe2ee' : '#ffffff'} />
             </mesh>
             {b.vei.slice(1).map((p, i) => {
                 const a = b.vei[i];
@@ -111,14 +108,44 @@ export function Bakke({ brett }: { brett: number }) {
                     </group>
                 );
             })}
+            {/* Runde ledd der veistykkene møtes, så veien går i ett (ikke som planker) */}
+            {b.vei.map(([x, z], i) => (
+                <group key={`l${i}`} position={[x, 0, z]}>
+                    <mesh rotation={FLAT} position={[0, 0.006, 0]}>
+                        <circleGeometry args={[T.hest.veiBredde * 0.875, 20]} />
+                        <meshLambertMaterial color={FARGE.veiKant} />
+                    </mesh>
+                    <mesh rotation={FLAT} position={[0, 0.011, 0]}>
+                        <circleGeometry args={[T.hest.veiBredde * 0.65, 20]} />
+                        <meshLambertMaterial color={FARGE.vei} />
+                    </mesh>
+                </group>
+            ))}
             {b.åser.map(([x, z, r], i) => (
-                <group key={i} position={[x, 0, z]} scale={[1, 0.3, 1]}>
-                    <mesh material={åsMat}>
-                        <sphereGeometry args={[r, 28, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
-                    </mesh>
-                    <mesh material={åsKant}>
-                        <sphereGeometry args={[r, 28, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
-                    </mesh>
+                <group key={i} position={[x, 0, z]}>
+                    <group scale={[1, 0.3, 1]}>
+                        <mesh material={åsMat}>
+                            <sphereGeometry args={[r, 28, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
+                        </mesh>
+                        <mesh material={åsKant}>
+                            <sphereGeometry args={[r, 28, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
+                        </mesh>
+                    </group>
+                    {/* Gråstein i lyngen, så åsen leses som en kolle og ikke som et vann */}
+                    {[0.4, 2.1, 3.9, 5.2].map((a, k) => (
+                        <mesh
+                            key={k}
+                            material={steinMat}
+                            position={[
+                                Math.cos(a) * r * (0.35 + 0.12 * k),
+                                r * 0.3 * 0.82,
+                                Math.sin(a) * r * (0.35 + 0.12 * k),
+                            ]}
+                            scale={[1, 0.7, 1]}
+                        >
+                            <dodecahedronGeometry args={[0.38 + 0.12 * (k % 2), 0]} />
+                        </mesh>
+                    ))}
                 </group>
             ))}
         </group>
@@ -169,6 +196,16 @@ export function Skog({ brett }: { brett: number }) {
                 continue;
             if (dist(x, z, b.start[0], b.start[1]) < 4 || dist(x, z, b.ut[0], b.ut[1]) < 5)
                 continue;
+            // Ingen trær foran eller rundt skiltet nord for tunet.
+            if (
+                b.bygder.some(
+                    (t) =>
+                        Math.abs(x - t.x) < 5.2 &&
+                        z < t.z - T.tun.radius + 1 &&
+                        z > t.z - T.tun.radius - 6.5
+                )
+            )
+                continue;
             if (ut.some((o) => dist(x, z, o.x, o.z) < 1.9)) continue;
             ut.push({ x, z, s: 0.8 + r() * 0.7, f: Math.floor(r() * KRONER.length) });
         }
@@ -202,7 +239,7 @@ export function Skog({ brett }: { brett: number }) {
     }, [trær]);
     if (!n) return null;
     return (
-        <group key={`${brett}-${n}`}>
+        <group key={`${brett}-${n}`} userData={{ sceneAuditIgnore: true }}>
             <instancedMesh ref={stamme} args={[TRE_STAMME, stammeMat, n]} />
             <instancedMesh ref={kant} args={[TRE_KRONE, kantMat, n]} />
             <instancedMesh ref={krone} args={[TRE_KRONE, kroneMat, n]} />
@@ -210,17 +247,20 @@ export function Skog({ brett }: { brett: number }) {
     );
 }
 
-/** Fogdgårdene: mørke hus med oransje vindu. Døra blaffer opp når en mann går ut med lykt. */
+/** Fogdgårdene: grå embetsgårder med skifertak og oransje vindu. Døra blaffer opp når en mann
+ *  går ut med lykt. Tegnes bare når de er i bildet (se synlig.ts). */
 export function Fogdhus({ brett, sRef }: { brett: number; sRef: SRef }) {
     const b = BRETT[brett];
     const geo = useMemo(() => fogdGård(), []);
     const mat = useMemo(() => maltMat(), []);
     const kant = useMemo(() => konturMat(FARGE.fare, 0.07), []);
     const dører = useRef<(THREE.Mesh | null)[]>([]);
+    const gårder = useRef<(THREE.Group | null)[]>([]);
     useEffect(() => () => geo.dispose(), [geo]);
-    useFrame(() => {
+    useFrame((st) => {
         const s = sRef.current;
-        b.fogder.forEach((_, i) => {
+        b.fogder.forEach(([x, z], i) => {
+            kull(gårder.current[i], iBildet(st.camera, x, z, 1.6));
             const d = dører.current[i];
             if (!d) return;
             const siden = s.tid - (s.blaff[i] ?? -99);
@@ -234,7 +274,13 @@ export function Fogdhus({ brett, sRef }: { brett: number; sRef: SRef }) {
     return (
         <>
             {b.fogder.map(([x, z], i) => (
-                <group key={i} position={[x, 0, z]} rotation={[0, 0, 0]}>
+                <group
+                    key={i}
+                    position={[x, 0, z]}
+                    ref={(g) => {
+                        gårder.current[i] = g;
+                    }}
+                >
                     <mesh geometry={geo} material={mat} />
                     <mesh geometry={geo} material={kant} />
                     {/* Døra og vinduet mot sør (mot kameraet) */}
@@ -298,7 +344,9 @@ export function Utgang({ brett, gRef }: { brett: number; gRef: GRef }) {
     useEffect(() => () => skilt.tex.dispose(), [skilt]);
     useFrame((st) => {
         const g = gRef.current;
-        if (grp.current) grp.current.visible = g.brett === brett && utÅpen(g);
+        const åpen = g.brett === brett && utÅpen(g);
+        if (grp.current) grp.current.visible = åpen;
+        kull(grp.current, åpen && iBildet(st.camera, b.ut[0], b.ut[1], 2.8));
         if (bølge.current) {
             // Bølgen vokser ut fra stolpen og blekner (stedet står stille).
             const k = (st.clock.elapsedTime * 0.8) % 1;

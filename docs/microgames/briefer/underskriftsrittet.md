@@ -347,3 +347,53 @@ klagen samlet mange bak seg, ble den kalt opprør. Kravene vant fram, men ledere
 - Kjente svakheter: grådig (683) ligger nærmere halvgod enn før. Epilogen er ikke sett av selvspillet
   i bilder, bare at slutt-skjermen kommer. Fogdgårdene er mørke klosser. Robotene bruker fortsatt ikke
   åsene, og de går ikke etter Klagebok-merkene.
+
+### Forbedring 1 (natt 2026-10-09)
+
+- Vurdering 1 ga sum 17 (Forståelig 3, Myk start 4, Eleven gjør 3, Utseende 3, Lærerikt 4).
+- (1) Klagene er det du samler: hver bygd har én klage (gebyrene, kornmonopolet eller
+  handelsretten), vist som et malt ikon i en medaljong på skiltet over tunet. Klagebrevet har tre
+  navngitte rader med samme ikoner; hvert segl stemples inn i raden for bygdas klage, og første segl
+  i en rad gir lyd og «Kornmonopolet på klagen!». Klagene er fordelt etter Klageboka-bladene
+  (Landvik og Nissedal = handel, Øyestad og Fyresdal = korn, Eide og Drangedal = gebyr osv.).
+  Kravet «minst ett segl per klage» ble IKKE lagt inn: med 4/3/3 bygder per klage og 8 av 10 segl
+  for å vinne har enhver vinner alle tre, så det ville vært en regel å lese uten at den avgjør noe.
+  Ny lærdom «klager» på slutt-skjermen.
+- (2) Verden ser ut som land: bakken er ett malt lerret per brett (eng med gresstuster og små
+  blomster, lyngflekker, pløyde og gule åkerlapper rundt hver bygd) i stedet for kistelokket med
+  ranker som leste som bølger. Åsene er gråbrune lyngkoller med stein, og hesten rir oppå dem.
+  Veien har runde ledd. Rytteren er 2,1x (før 1,25x) med lys ytterkant og blågrå frakk/brun hatt
+  (før nesten svart). Fogdgårdene er grå embetsgårder med blågrått skifertak. Skiltene blekner bort
+  når de havner under kartusjen, klagebrevet eller kommisjonsbåndet (stolpene også), og ingen trær
+  plantes foran eller rundt skiltene.
+- (3) Kortere etapper og mer rykk: galopp 8,5 -> 10, og landeveien gir 1,6x fart (før 1,15) - men
+  bare utenfor tunene. Hvert navn gir et poengtall som spretter opp fra rytteren (+1/+3, gyllent
+  +2/+6 for dristige), hvert segl et stort «+50/+150», hit-stop (0,28 s sakte film) og risting.
+  Poengene i klagebrevet teller opp og spretter. Menyen er kortet til to setninger (hvem du er og
+  tastene). Regel to står som lapp på tunet når du kommer dit («Ri sakte over tunet: samle navn»),
+  og regel tre som lapp ved det oransje merket tre navn før første lykt («Oransje merke: det navnet
+  tenner en lykt»), før beatOnce-kortet når lykta tennes.
+- sceneAuditIgnore: flagget står nå bare på `Bakke` og `Skog`. Tun, skilt, fogdgårder og utgang
+  tegnes bare når de er i kamerautsnittet (`synlig.ts`: frustum-test per ting og `kull` som skrur
+  meshene av). Det var ikke nok alene: med et skrått perspektivkamera er utsnittet et trapes, og
+  boksen rundt det som var synlig (fogdgårdene helt ute i kantene, Birkeland i hjørnet) stakk ut
+  av bildet (12/27). Menyen viser derfor brettet rett ovenfra som et kart (`kamera.kartHøyde` 40),
+  og kameraet svinger ned bak rytteren når rittet starter. Det gir eleven oversikt over bygdene og
+  veien før start, og auditen er grønn (18/27) uten at noe spillinnhold er skjult for den.
+- Feel-lista: før runden var 1 (lyd og blekk per navn, segl-dunk) og 3 (segl faller, lykter
+  slukker, blomster springer ut) på plass. Lagt til 2 (nesten-bom: ringen over halvfull og du
+  kommer deg ut = «Akkurat unna!»/«Med nød og neppe!», lyd og risting) og 4 (poengtall per navn
+  og segl, poeng som teller opp og spretter, klagerader som stemples). Nå er alle fire på plass.
+- Simuleringen (200 runder per robot): grønn. Seende vinner 91 % (median 1111), halvgod 20 % (849),
+  grådig 0 % (686), redd 0 % (421), tilfeldig 0 % (10), passiv 0 %. 31 valg per minutt, presset
+  0,15 -> 0,34 -> 0,45. Selvspill: seende vant (1079-1094, samsvar), Chromebook lav 10 ms JS per
+  bilde, 76 draw calls. Scene-audit og likhetsvakt grønne (nærmest 0,24-0,25). Plakaten er ny.
+- Det som IKKE virket: (1) landeveien 1,6x overalt senket halvgod fra 37 % til 7 % seier (fart inne
+  på tunet gjorde sløyfene for vide) - nå bare utenfor tunene. (2) Bare vei 1,3-1,6 uten raskere
+  galopp ga 464-552 for halvgod (trappa nesten rød). Galopp 10 + vei 1,6 utenfor tun ga 849.
+  (3) Strammere kulling alene (fogdgård-radius 0,2) holdt ikke auditen: gården ligger reelt i
+  kanten av bildet. (4) Lilla lyngkupler leste som dammer; nå gråbrune med stein.
+- Kjente svakheter: halvgod vinner sjeldnere enn før (20 % mot 37 %), selv om medianen holder seg
+  mellom. Robotene bruker fortsatt ikke veien med vilje. Klagene endrer ikke ruten (ingen regel
+  krever dem). Navne-tallene kan stable seg tett i Telemark (4 navn/s). Lyngkollene er store flate
+  kupler. Det oransje merket-lappen vises bare i brett 1.

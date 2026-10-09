@@ -41,6 +41,16 @@ export function lagLyd(s: ArcadeSynth) {
             s.tone(330, 110, 0.9, 'sawtooth', 0.08);
         },
         funn: () => s.arp(523, [0, 7, 12], 0.07, 0.05),
+        /** Akkurat unna lyset: et lettet pust og en lys tone opp. */
+        unnslapp: () => {
+            s.noise(0.18, 0.08, 1400);
+            s.tone(440, 880, 0.22, 'triangle', 0.06);
+        },
+        /** En ny klage er fylt i brevet: pennen setter et kraftig strek. */
+        klage: () => {
+            s.noise(0.09, 0.09, 4200, 0.05);
+            s.arp(523, [0, 4, 7, 12], 0.06, 0.05);
+        },
         /** Kommisjonen er satt ned. */
         seier: () => s.arp(262, [0, 4, 7, 12, 16, 19], 0.13, 0.07),
         /** En lykt i epilogen: bare et lite, stille knepp. */

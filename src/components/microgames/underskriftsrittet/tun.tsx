@@ -14,7 +14,15 @@ import { clamp, dist } from './rules';
 import { FARGE } from './palette';
 import { TUNING } from './tuning';
 import type { Scene } from './scene';
-import { blomstTekstur, merkeTekstur, seglTekstur, TEKST_FONT, TITTEL_FONT } from './textures';
+import {
+    blomstTekstur,
+    merkeTekstur,
+    seglTekstur,
+    tegnKlage,
+    TEKST_FONT,
+    TITTEL_FONT,
+} from './textures';
+import { iBildet, kull } from './synlig';
 import { tunHus, tunVinduer } from './models';
 import { konturMat, maltMat } from './kontur';
 
@@ -78,34 +86,38 @@ function lagBue(førsteLykt: number, navnPerLykt: number) {
     });
 }
 
-/** Skiltet med bygdenavnet, malt som kartusjen på et kistelokk. */
+/** Skiltet med bygdenavnet, malt som kartusjen på et kistelokk, med bygdas klage i en
+ *  medaljong til venstre (det seglet herfra fyller i klagebrevet). */
 function useSkilt(d: Bygd) {
     const skilt = useMemo(() => {
-        const c = crispCanvas(340, 120);
+        const c = crispCanvas(SKILT_PX, 120);
         const kant = d.telemark ? FARGE.telemark : FARGE.blod;
         const tegn = () =>
             c.draw((ctx, w, h) => {
+                const x0 = 62;
                 ctx.fillStyle = FARGE.panel;
                 ctx.strokeStyle = kant;
                 ctx.lineWidth = 8;
                 ctx.beginPath();
-                ctx.roundRect(8, 8, w - 16, h - 16, 40);
+                ctx.roundRect(x0, 8, w - x0 - 8, h - 16, 40);
                 ctx.fill();
                 ctx.stroke();
                 ctx.strokeStyle = FARGE.kalk;
                 ctx.lineWidth = 2;
                 ctx.beginPath();
-                ctx.roundRect(18, 18, w - 36, h - 36, 30);
+                ctx.roundRect(x0 + 10, 18, w - x0 - 28, h - 36, 30);
                 ctx.stroke();
+                tegnKlage(ctx, d.klage, 60, h / 2, 56);
+                const mx = (x0 + 60 + w) / 2;
                 ctx.fillStyle = FARGE.kalk;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.font = `700 46px ${TITTEL_FONT}`;
-                ctx.fillText(d.navn, w / 2, d.telemark ? 52 : h / 2 + 2);
+                ctx.fillText(d.navn, mx, d.telemark ? 52 : h / 2 + 2);
                 if (d.telemark) {
                     ctx.fillStyle = FARGE.telemarkLys;
                     ctx.font = `700 21px ${TEKST_FONT}`;
-                    ctx.fillText('TELEMARK', w / 2, 88);
+                    ctx.fillText('TELEMARK', mx, 88);
                 }
             });
         tegn();
@@ -142,6 +154,21 @@ const E = new THREE.Euler();
 const V = new THREE.Vector3();
 const SK = new THREE.Vector3();
 const VARM = new THREE.Color('#ffcf7a');
+const SKILT_PX = 440;
+const SKILT_B = 7.25;
+const P = new THREE.Vector3();
+
+/** Rektanglene HUD-en dekker (piksler i spillvinduet): kartusjen øverst, klagebrevet til
+ *  høyre og kommisjonsbåndet nederst. Skiltet blekner bort når det havner under dem. */
+function underHud(x0: number, y0: number, x1: number, y1: number, W: number, H: number) {
+    const rom: [number, number, number, number][] = [
+        [W / 2 - 260, 0, W / 2 + 260, 104],
+        [W - 176, 50, W, 420],
+        [W / 2 - 310, H - 86, W / 2 + 310, H],
+        [0, 0, 170, 48],
+    ];
+    return rom.some(([a, b, c, d]) => x1 > a && x0 < c && y1 > b && y0 < d);
+}
 const MØRK = new THREE.Color('#3a302a');
 
 function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
@@ -171,6 +198,10 @@ function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
     const segl = useRef<THREE.Group>(null);
     const bølge = useRef<THREE.Mesh>(null);
     const merke = useRef<THREE.Group>(null);
+    const rot = useRef<THREE.Group>(null);
+    const skiltRot = useRef<THREE.Group>(null);
+    const plate = useRef<THREE.Mesh>(null);
+    const stolper = useRef<(THREE.Mesh | null)[]>([]);
     const vist = useRef(-1);
     const m = merketHus({ x: 0, z: 0 });
     useEffect(
@@ -182,11 +213,34 @@ function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
         [bue, hus, vinduer]
     );
 
-    useFrame(() => {
+    useFrame((rs) => {
         const g = gRef.current;
         const s = sRef.current;
         const t = g.tun[i];
         if (!t || g.brett !== brett) return;
+        // Bare tun i (eller like ved) bildet tegnes.
+        // Bare det som er i bildet, tegnes: tunet (ringen og husene) og skiltet hver for seg.
+        const zS = d.z - T.tun.radius - 2.3;
+        const inne = iBildet(rs.camera, d.x, d.z, T.tun.radius + 0.6, 0.5);
+        const skiltInne = iBildet(rs.camera, d.x, zS, SKILT_B / 2, 2);
+        kull(rot.current, inne);
+        kull(skiltRot.current, skiltInne);
+        if (plate.current && skiltInne) {
+            // Skiltet blekner når det ligger under HUD-en.
+            const W = rs.size.width;
+            const H = rs.size.height;
+            P.set(d.x - SKILT_B / 2, 3.0, zS).project(rs.camera);
+            const ax = (P.x * 0.5 + 0.5) * W;
+            const ay = (-P.y * 0.5 + 0.5) * H;
+            P.set(d.x + SKILT_B / 2, 1.5, zS).project(rs.camera);
+            const bx = (P.x * 0.5 + 0.5) * W;
+            const by = (-P.y * 0.5 + 0.5) * H;
+            const mål = underHud(ax, ay, bx, by, W, H) ? 0 : 1;
+            const mat = plate.current.material as THREE.MeshBasicMaterial;
+            mat.opacity += (mål - mat.opacity) * 0.18;
+            plate.current.visible = mat.opacity > 0.02;
+            for (const st of stolper.current) if (st) st.visible = mat.opacity > 0.3;
+        }
         const andel = t.samlet / T.tun.seglVed;
         // Faren: hvor nær er den nærmeste lykta som er på vei hit (eller allerede her)?
         let nær = Infinity;
@@ -243,82 +297,101 @@ function Tun({ d, i, brett, gRef, sRef, funnet }: TunProps) {
             }
         }
         if (merke.current) merke.current.visible = !g.funn.includes(t.navn);
+        kull(rot.current, inne);
+        kull(skiltRot.current, skiltInne);
     });
 
     return (
-        <group position={[d.x, 0, d.z]}>
-            {/* Tunet: litt lysere jord, og blått fyll som vokser fra midten med navnene */}
-            <mesh rotation={FLAT} position={[0, 0.015, 0]}>
-                <circleGeometry args={[T.tun.radius, 48]} />
-                <meshLambertMaterial color="#557a62" />
-            </mesh>
-            <mesh ref={fyll} rotation={FLAT} position={[0, 0.025, 0]}>
-                <circleGeometry args={[T.tun.radius - 0.6, 48]} />
-                <meshBasicMaterial
-                    color={FARGE.navn}
-                    transparent
-                    opacity={0.3}
-                    depthWrite={false}
-                />
-            </mesh>
-            <mesh rotation={FLAT} position={[0, 0.04, 0]} material={bue}>
-                <ringGeometry args={[T.tun.radius - 0.6, T.tun.radius, 80]} />
-            </mesh>
-            <mesh rotation={FLAT} position={[0, 0.035, 0]}>
-                <ringGeometry args={[T.tun.radius, T.tun.radius + 0.12, 80]} />
-                <meshBasicMaterial color={FARGE.blekk} />
-            </mesh>
-            <instancedMesh ref={blomster} args={[BLOMST_GEO, blomstMat, T.tun.seglVed]} />
-            <mesh geometry={hus} material={husMat} />
-            <mesh geometry={hus} material={kantMat} />
-            <mesh geometry={vinduer} material={vinduMat} />
-            {/* Det malte merket foran gården med et blad til Klageboka */}
-            <group ref={merke} position={[m.x * 0.62, 0.05, m.z * 0.62]}>
-                <mesh rotation={FLAT}>
-                    <circleGeometry args={[0.62, 28]} />
+        <>
+            <group position={[d.x, 0, d.z]} ref={rot}>
+                {/* Tunet: litt lysere jord, og blått fyll som vokser fra midten med navnene */}
+                <mesh rotation={FLAT} position={[0, 0.015, 0]}>
+                    <circleGeometry args={[T.tun.radius, 48]} />
+                    <meshLambertMaterial color="#8c8a5c" />
+                </mesh>
+                <mesh ref={fyll} rotation={FLAT} position={[0, 0.025, 0]}>
+                    <circleGeometry args={[T.tun.radius - 0.6, 48]} />
                     <meshBasicMaterial
-                        map={merkeTekstur()}
+                        color={FARGE.navn}
                         transparent
-                        opacity={funnet ? 0.45 : 1}
-                        toneMapped={false}
+                        opacity={0.3}
+                        depthWrite={false}
                     />
                 </mesh>
-            </group>
-            {/* Plassen der seglet trykkes, der buen ender */}
-            <mesh rotation={FLAT} position={[0, 0.05, -T.tun.radius]}>
-                <ringGeometry args={[0.78, 1.02, 32]} />
-                <meshBasicMaterial color={FARGE.blod} toneMapped={false} />
-            </mesh>
-            <group ref={segl} position={[0, 0, -T.tun.radius]} visible={false}>
-                <mesh position={[0, 0.2, 0]}>
-                    <cylinderGeometry args={[1.25, 1.35, 0.4, 28]} />
-                    <meshLambertMaterial color={FARGE.blod} />
+                <mesh rotation={FLAT} position={[0, 0.04, 0]} material={bue}>
+                    <ringGeometry args={[T.tun.radius - 0.6, T.tun.radius, 80]} />
                 </mesh>
-                <mesh rotation={FLAT} position={[0, 0.41, 0]}>
-                    <circleGeometry args={[1.25, 28]} />
-                    <meshBasicMaterial map={seglTekstur()} transparent toneMapped={false} />
+                <mesh rotation={FLAT} position={[0, 0.035, 0]}>
+                    <ringGeometry args={[T.tun.radius, T.tun.radius + 0.12, 80]} />
+                    <meshBasicMaterial color={FARGE.blekk} />
+                </mesh>
+                <instancedMesh ref={blomster} args={[BLOMST_GEO, blomstMat, T.tun.seglVed]} />
+                <mesh geometry={hus} material={husMat} />
+                <mesh geometry={hus} material={kantMat} />
+                <mesh geometry={vinduer} material={vinduMat} />
+                {/* Det malte merket foran gården med et blad til Klageboka */}
+                <group ref={merke} position={[m.x * 0.62, 0.05, m.z * 0.62]}>
+                    <mesh rotation={FLAT}>
+                        <circleGeometry args={[0.62, 28]} />
+                        <meshBasicMaterial
+                            map={merkeTekstur()}
+                            transparent
+                            opacity={funnet ? 0.45 : 1}
+                            toneMapped={false}
+                        />
+                    </mesh>
+                </group>
+                {/* Plassen der seglet trykkes, der buen ender */}
+                <mesh rotation={FLAT} position={[0, 0.05, -T.tun.radius]}>
+                    <ringGeometry args={[0.78, 1.02, 32]} />
+                    <meshBasicMaterial color={FARGE.blod} toneMapped={false} />
+                </mesh>
+                <group ref={segl} position={[0, 0, -T.tun.radius]} visible={false}>
+                    <mesh position={[0, 0.2, 0]}>
+                        <cylinderGeometry args={[1.25, 1.35, 0.4, 28]} />
+                        <meshLambertMaterial color={FARGE.blod} />
+                    </mesh>
+                    <mesh rotation={FLAT} position={[0, 0.41, 0]}>
+                        <circleGeometry args={[1.25, 28]} />
+                        <meshBasicMaterial map={seglTekstur()} transparent toneMapped={false} />
+                    </mesh>
+                </group>
+                <mesh
+                    ref={bølge}
+                    rotation={FLAT}
+                    position={[0, 0.06, -T.tun.radius]}
+                    visible={false}
+                >
+                    <ringGeometry args={[1.1, 1.35, 40]} />
+                    <meshBasicMaterial color={FARGE.kalk} transparent depthWrite={false} />
                 </mesh>
             </group>
-            <mesh ref={bølge} rotation={FLAT} position={[0, 0.06, -T.tun.radius]} visible={false}>
-                <ringGeometry args={[1.1, 1.35, 40]} />
-                <meshBasicMaterial color={FARGE.kalk} transparent depthWrite={false} />
-            </mesh>
             {/* Skiltet bak seglet, vendt mot kameraet */}
-            <group position={[0, 0, -T.tun.radius - 2.3]}>
-                <mesh position={[-2.0, 0.8, 0]}>
+            <group position={[d.x, 0, d.z - T.tun.radius - 2.3]} ref={skiltRot}>
+                <mesh
+                    position={[-2.2, 0.8, 0]}
+                    ref={(m) => {
+                        stolper.current[0] = m;
+                    }}
+                >
                     <boxGeometry args={[0.16, 1.6, 0.16]} />
                     <meshLambertMaterial color="#3b2a22" />
                 </mesh>
-                <mesh position={[2.0, 0.8, 0]}>
+                <mesh
+                    position={[2.6, 0.8, 0]}
+                    ref={(m) => {
+                        stolper.current[1] = m;
+                    }}
+                >
                     <boxGeometry args={[0.16, 1.6, 0.16]} />
                     <meshLambertMaterial color="#3b2a22" />
                 </mesh>
-                <mesh position={[0, 2.25, 0.1]} rotation={[-0.55, 0, 0]}>
-                    <planeGeometry args={[5.6, 1.98]} />
+                <mesh ref={plate} position={[0, 2.25, 0.1]} rotation={[-0.55, 0, 0]}>
+                    <planeGeometry args={[SKILT_B, 1.98]} />
                     <meshBasicMaterial map={skilt.tex} transparent toneMapped={false} />
                 </mesh>
             </group>
-        </group>
+        </>
     );
 }
 

@@ -24,12 +24,14 @@ export interface Scene {
     faseFra: number;
     /** Skjermrystelse som svinner i ekte tid. */
     rist: number;
+    /** Hit-stop: spillet går i sakte film til denne tida (ekte sekunder) når et segl trykkes. */
+    stopp: number;
     /** Lyset: 0 = natt, 1 = morgen (kommisjonen satt ned), 2 = mars (kaldt). */
     lys: number;
 }
 
 export function nyScene(): Scene {
-    return { tid: 0, streker: [], segl: [], blaff: [], fase: 'spill', faseFra: 0, rist: 0, lys: 0 };
+    return { tid: 0, streker: [], segl: [], blaff: [], fase: 'spill', faseFra: 0, rist: 0, stopp: 0, lys: 0 };
 }
 
 export function settFase(s: Scene, f: Fase) {

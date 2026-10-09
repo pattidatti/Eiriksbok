@@ -2,16 +2,17 @@
 // - øverst i midten en malt kartusj som på et kistelokk (måned, ANNO 1786, bygda du er i),
 //   med kalenderen som en ranke som males fram langs kanten, og frost som kryper inn fra kantene,
 // - til høyre klagebrevet, der hvert navn skrives inn som en blekkstrek (gylne for dristige),
+//   og tre rader for klagene (gebyrene, kornmonopolet, handelsretten) som fylles med segl,
 // - nederst kommisjonsmåleren: et rødt bånd med 8 segl (Agder og Telemark) mot København.
 // Egen tilstand på 10 Hz, så 3D-treet aldri tegnes på nytt for HUD-ens skyld.
 
 import { useEffect, useRef, useState } from 'react';
 import { brettAv, månedAndel, type Game } from './game';
-import { månedNavn } from './levels';
+import { KLAGER, KLAGE_NAVN, månedNavn, type Klage } from './levels';
 import { dist } from './rules';
 import { TUNING } from './tuning';
 import { FARGE } from './palette';
-import { TEKST_FONT, TITTEL_FONT } from './textures';
+import { klageBilde, TEKST_FONT, TITTEL_FONT } from './textures';
 
 const T = TUNING;
 
@@ -22,6 +23,9 @@ interface Visning {
     kalender: number | null;
     segl: number;
     telemark: number;
+    gebyr: number;
+    korn: number;
+    handel: number;
 }
 
 function les(g: Game): Visning {
@@ -35,6 +39,9 @@ function les(g: Game): Visning {
         kalender: b.visKalender ? Math.round(månedAndel(g) * 40) / 40 : null,
         segl: g.segl,
         telemark: g.seglTelemark,
+        gebyr: g.klager.gebyr,
+        korn: g.klager.korn,
+        handel: g.klager.handel,
     };
 }
 
@@ -213,7 +220,7 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                 <Ranke speil farge={FARGE.skogLys} />
             </div>
 
-            <Klagebrev gRef={gRef} />
+            <Klagebrev gRef={gRef} klager={{ gebyr: v.gebyr, korn: v.korn, handel: v.handel }} />
 
             {/* Kommisjonsmåleren: et rødt bånd med 8 segl mot København */}
             <div
@@ -296,11 +303,78 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
     );
 }
 
-const BREV_W = 132;
-const BREV_H = 190;
+const BREV_W = 156;
+const BREV_H = 84;
 
-/** Klagebrevet til høyre: hvert navn blir en blekkstrek. Tegnes bit for bit, aldri på nytt. */
-function Klagebrev({ gRef }: { gRef: React.MutableRefObject<Game> }) {
+/** Én rad i klagebrevet: ikonet, navnet på klagen og ett lite segl per bygd som har klaget. */
+function KlageRad({ k, n }: { k: Klage; n: number }) {
+    return (
+        <div
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '3px 8px',
+                opacity: n > 0 ? 1 : 0.55,
+                textAlign: 'left',
+            }}
+        >
+            <img
+                key={n > 0 ? 'fylt' : 'tom'}
+                src={klageBilde(k)}
+                alt=""
+                width={30}
+                height={30}
+                style={{
+                    flex: 'none',
+                    filter: n > 0 ? 'none' : 'grayscale(1)',
+                    animation: n > 0 ? 'ur-stempel .5s cubic-bezier(.2,.8,.3,1.2)' : undefined,
+                }}
+            />
+            <div style={{ minWidth: 0 }}>
+                <div style={{ fontFamily: TEKST_FONT, fontSize: 14, fontWeight: 700, lineHeight: 1.1 }}>
+                    {KLAGE_NAVN[k]}
+                </div>
+                <div style={{ display: 'flex', gap: 3, marginTop: 2, height: 13 }}>
+                    {n === 0 ? (
+                        <span
+                            style={{
+                                width: 12,
+                                height: 12,
+                                borderRadius: 6,
+                                border: `1.5px dashed ${FARGE.blekk}`,
+                            }}
+                        />
+                    ) : (
+                        Array.from({ length: n }, (_, i) => (
+                            <span
+                                key={i}
+                                style={{
+                                    width: 13,
+                                    height: 13,
+                                    borderRadius: 7,
+                                    background: `radial-gradient(circle at 38% 34%, ${FARGE.blodLys}, ${FARGE.blod} 62%)`,
+                                    border: `1px solid ${FARGE.blekk}`,
+                                    animation: 'ur-stempel .5s cubic-bezier(.2,.8,.3,1.2)',
+                                }}
+                            />
+                        ))
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}
+
+/** Klagebrevet til høyre: hvert navn blir en blekkstrek (tegnes bit for bit, aldri på nytt),
+ *  og hvert segl fyller raden for klagen bygda hadde. Poengene teller opp og spretter. */
+function Klagebrev({
+    gRef,
+    klager,
+}: {
+    gRef: React.MutableRefObject<Game>;
+    klager: Record<Klage, number>;
+}) {
     const lerret = useRef<HTMLCanvasElement>(null);
     const tall = useRef<HTMLDivElement>(null);
     const poeng = useRef<HTMLDivElement>(null);
@@ -315,6 +389,7 @@ function Klagebrev({ gRef }: { gRef: React.MutableRefObject<Game> }) {
         ctx.scale(dpr, dpr);
         let tegnet = 0;
         let dristigTegnet = 0;
+        let vist = 0;
         let x = 12;
         let y = 18;
         let frø = 7;
@@ -375,7 +450,17 @@ function Klagebrev({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                 x += l + 5;
             }
             if (tall.current) tall.current.textContent = `${g.navn}`;
-            if (poeng.current) poeng.current.textContent = `${g.poeng} poeng`;
+            // Poengene teller opp mot det riktige tallet, og spretter når de øker.
+            if (g.poeng < vist) vist = 0;
+            if (g.poeng > vist) {
+                vist += Math.max(1, Math.ceil((g.poeng - vist) * 0.4));
+                vist = Math.min(vist, g.poeng);
+                poeng.current?.animate(
+                    [{ transform: 'scale(1.35)' }, { transform: 'scale(1)' }],
+                    { duration: 220, easing: 'ease-out' }
+                );
+            }
+            if (poeng.current) poeng.current.textContent = `${vist} poeng`;
         };
         tick();
         const id = window.setInterval(tick, 100);
@@ -420,13 +505,24 @@ function Klagebrev({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                 ref={poeng}
                 style={{
                     fontFamily: TEKST_FONT,
-                    fontSize: 15,
-                    fontWeight: 500,
+                    fontSize: 17,
+                    fontWeight: 700,
                     color: FARGE.blod,
                     marginTop: 2,
                 }}
             >
                 0 poeng
+            </div>
+            <div
+                style={{
+                    borderTop: `1.5px solid ${FARGE.blekk}`,
+                    margin: '5px 8px 0',
+                    paddingTop: 2,
+                }}
+            >
+                {KLAGER.map((k) => (
+                    <KlageRad key={k} k={k} n={klager[k]} />
+                ))}
             </div>
         </div>
     );

@@ -12,7 +12,7 @@ import {
 import { ArcadeLessons } from '../arcade/ArcadeLayers';
 import { rang } from './rules';
 import { FARGE } from './palette';
-import { KLAGEBOKA, KRAV, MÅL, REGLER, SEIER, TAP_TITTEL, TIPS } from './texts';
+import { KLAGEBOKA, KRAV, MÅL, SEIER, TAP_TITTEL, TASTER, TIPS } from './texts';
 
 export interface Save {
     rekord: number;
@@ -74,20 +74,7 @@ export function Meny({
             ) : (
                 <>
                     <p style={{ fontSize: 17, margin: '8px 0 4px', maxWidth: 580 }}>{MÅL}</p>
-                    <ul
-                        style={{
-                            textAlign: 'left',
-                            fontSize: 16,
-                            margin: '4px 0 8px',
-                            paddingLeft: 18,
-                            lineHeight: 1.35,
-                            maxWidth: 580,
-                        }}
-                    >
-                        {REGLER.map((r) => (
-                            <li key={r}>{r}</li>
-                        ))}
-                    </ul>
+                    <p style={{ fontSize: 16, margin: '2px 0 10px', maxWidth: 580 }}>{TASTER}</p>
                     <ArcadeBigButton onClick={begin}>Ri ut (mellomrom)</ArcadeBigButton>
                     {save.runder > 0 && (
                         <p style={{ fontSize: 15, margin: '8px 0 2px' }}>

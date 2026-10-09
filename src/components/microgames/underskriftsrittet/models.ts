@@ -57,23 +57,24 @@ export function hestKropp(): THREE.BufferGeometry {
         // Sal-dekkenet, rødt med oker kant
         { geometry: box(0.72, 0.36, 0.64), position: [0, 1.12, 0], color: FARGE.blod },
         { geometry: box(0.76, 0.06, 0.66), position: [0, 0.96, 0], color: FARGE.gull },
-        // Rytteren: mørk frakk, kalkhvitt ansikt, bred hatt
-        { geometry: box(0.36, 0.7, 0.4), position: [-0.05, 1.62, 0], color: '#2c2a33' },
+        // Rytteren: blågrå frakk (lys nok til å synes ovenfra), kalkhvitt ansikt, brun hatt med gullbånd
+        { geometry: box(0.36, 0.7, 0.4), position: [-0.05, 1.62, 0], color: '#56709a' },
         {
             geometry: box(0.16, 0.5, 0.12),
             position: [0.12, 1.55, 0.26],
             rotation: [0, 0, -0.7],
-            color: '#2c2a33',
+            color: '#56709a',
         },
         {
             geometry: box(0.16, 0.5, 0.12),
             position: [0.12, 1.55, -0.26],
             rotation: [0, 0, -0.7],
-            color: '#2c2a33',
+            color: '#56709a',
         },
         { geometry: kule(0.17), position: [0, 2.08, 0], color: '#e8c9a6' },
-        { geometry: cyl(0.34, 0.34, 0.05, 14), position: [0, 2.24, 0], color: FARGE.blekk },
-        { geometry: cyl(0.16, 0.18, 0.2, 10), position: [0, 2.34, 0], color: FARGE.blekk },
+        { geometry: cyl(0.34, 0.34, 0.05, 14), position: [0, 2.24, 0], color: '#6a4a34' },
+        { geometry: cyl(0.16, 0.18, 0.2, 10), position: [0, 2.34, 0], color: '#6a4a34' },
+        { geometry: cyl(0.185, 0.185, 0.05, 10), position: [0, 2.28, 0], color: FARGE.gull },
         // Klagebrevet i veska
         { geometry: box(0.3, 0.22, 0.06), position: [-0.4, 1.28, 0.33], color: FARGE.papir },
     ]);
@@ -152,15 +153,16 @@ export function tunVinduer(): THREE.BufferGeometry {
     return mergeParts(deler);
 }
 
-/** Fogdgården: et mørkt, høyt hus med en lykt på stolpen. Herfra kommer mennene. */
+/** Fogdgården: et grått, høyt embetshus med en lykt på stolpen. Herfra kommer mennene. */
 export function fogdGård(): THREE.BufferGeometry {
     return mergeParts([
-        { geometry: box(2.6, 1.8, 1.7), position: [0, 0.9, 0], color: '#4a3a30' },
+        // Embetsgården: grå, kalket panel og blågrått skifertak (aldri helsvart sett ovenfra).
+        { geometry: box(2.6, 1.8, 1.7), position: [0, 0.9, 0], color: '#d8cfba' },
         {
             geometry: tak(2.0, 1.1, 2.8),
             position: [0, 1.8, 0],
             rotation: [0, Math.PI / 2, 0],
-            color: '#17110e',
+            color: '#8b9aaa',
         },
         { geometry: box(2.66, 0.1, 1.76), position: [0, 1.82, 0], color: FARGE.fare },
         { geometry: box(0.1, 1.8, 0.1), position: [1.7, 0.9, 0.9], color: '#2a211c' },

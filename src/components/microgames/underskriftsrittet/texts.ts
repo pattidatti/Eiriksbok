@@ -1,13 +1,10 @@
 // All tekst i Underskriftsrittet utenom lappene i komponenten: mål, regler, tips og lærdom.
 
 export const MÅL =
-    'Du er Christian Lofthus høsten 1786. Kronprinsen vil ha bevis for at du taler for mange. Ri fra bygd til bygd og samle navn på klagen - før fogdens menn tar deg.';
+    'Høsten 1786. Du er Christian Lofthus. Ri fra bygd til bygd og samle navn på klagen til kongen.';
 
-export const REGLER = [
-    'Ri: piltaster eller WASD (eller hold fingeren der hesten skal).',
-    'Samle: ri sakte over tunet. Jo nærmere midten, jo flere navn.',
-    'Unngå det oransje lyset: navnene på de oransje merkene tenner en lykt hos fogden. Når buen blir oransje, er han på vei.',
-];
+/** Bare tastene i menyen. Resten vises i spillet første gang det skjer. */
+export const TASTER = 'Ri med piltastene eller WASD (eller hold fingeren der hesten skal).';
 
 export const TAP_TITTEL = { lys: 'Klagen er stoppet', vinter: 'Vinteren kom' } as const;
 
@@ -32,6 +29,8 @@ export const LÆRDOM = {
     straff: 'Kravene vant fram, men lederen ble straffet: Lofthus døde i fangenskap i 1797.',
     telemark:
         'Bevegelsen spredte seg fra Agder til Telemark. Jo flere bygder, jo vanskeligere å kalle det én manns klage.',
+    klager:
+        'Bøndene klaget over tre ting: høye gebyrer til embetsmennene, kornmonopolet, og at bare byborgerne fikk kjøpe tømmeret deres.',
     dristig:
         'Å samle bønder til møter var forbudt, uansett hva kronprinsen hadde sagt. Du tok sjansen likevel.',
 } as const;

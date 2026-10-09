@@ -2,7 +2,7 @@
 // sakte over tunene, og hvert navn kan tenne en lykt hos fogdens menn. Ren TypeScript:
 // komponenten, robotene og simuleringen kjører den samme koden.
 
-import { BRETT, type Brett, type LyktModus } from './levels';
+import { BRETT, type Brett, type Klage, type LyktModus } from './levels';
 import {
     SISTE_BRETT,
     clamp,
@@ -25,6 +25,7 @@ export interface Tun {
     x: number;
     z: number;
     telemark: boolean;
+    klage: Klage;
     modus: LyktModus;
     /** Navn samlet her (desimaltall - hele navn teller). */
     samlet: number;
@@ -60,7 +61,9 @@ export type Hendelse =
     | { type: 'navn'; x: number; z: number; dristig: boolean; tun: number }
     | { type: 'lykt'; id: number; dragon: boolean }
     | { type: 'slukk'; id: number }
-    | { type: 'segl'; tun: number }
+    | { type: 'segl'; tun: number; nyKlage: boolean }
+    /** Fangstringen var minst halvfull, men du kom deg ut av lyset. */
+    | { type: 'unnslapp'; topp: number }
     | { type: 'funn'; tun: number }
     | { type: 'brett'; brett: number }
     | { type: 'tap'; årsak: Årsak }
@@ -84,9 +87,13 @@ export interface Game {
     dristige: number;
     segl: number;
     seglTelemark: number;
+    /** Segl per klage (radene i klagebrevet). */
+    klager: Record<Klage, number>;
     poeng: number;
     /** Fangstringen rundt hesten, 0-1. Full = tatt. */
     fangst: number;
+    /** Det høyeste fangstringen nådde siden du sist var helt fri (for «akkurat unna»). */
+    toppFangst: number;
     /** Lykta som tok hesten (for bildet som fryser ved tap). */
     fanger: number | null;
     /** Bygder der du har ridd over tunet ved gården med det malte merket (Klageboka). */
@@ -129,6 +136,7 @@ function startBrett(g: Game, brett: number) {
     g.hest.fart = T.hest.skritt;
     g.hest.retning = -Math.PI / 2;
     g.fangst = 0;
+    g.toppFangst = 0;
     g.sisteNavn = null;
     g.lykterIBrett = 0;
     g.navnTider = [];
@@ -152,8 +160,10 @@ export function newGame(seed = 1, brett = 0): Game {
         dristige: 0,
         segl: 0,
         seglTelemark: 0,
+        klager: { gebyr: 0, korn: 0, handel: 0 },
         poeng: 0,
         fangst: 0,
+        toppFangst: 0,
         fanger: null,
         funn: [],
         sisteNavn: null,
@@ -284,9 +294,11 @@ function nyttNavn(g: Game, i: number) {
         tun.segl = true;
         g.segl += 1;
         if (tun.telemark) g.seglTelemark += 1;
+        const nyKlage = g.klager[tun.klage] === 0;
+        g.klager[tun.klage] += 1;
         g.poeng += T.poeng.segl * (tun.telemark ? T.poeng.telemark : 1);
         g.valg += 1;
-        g.hendelser.push({ type: 'segl', tun: i });
+        g.hendelser.push({ type: 'segl', tun: i, nyKlage });
         // Bygda er ferdig: mennene som leter her, går hjem.
         for (const l of g.lykter)
             if (!l.dragon && dist(l.mx, l.mz, tun.x, tun.z) < T.lykt.leteRadius + 2) {
@@ -406,6 +418,12 @@ function fangsten(g: Game, dt: number) {
     if (iLyset(g)) g.fangst += dt / brettAv(g).fangTid;
     else g.fangst -= T.fangst.tømming * dt;
     g.fangst = clamp(g.fangst, 0, 1);
+    g.toppFangst = Math.max(g.toppFangst, g.fangst);
+    if (g.fangst <= 0 && g.toppFangst > 0) {
+        if (g.toppFangst >= T.fangst.nesten)
+            g.hendelser.push({ type: 'unnslapp', topp: g.toppFangst });
+        g.toppFangst = 0;
+    }
     if (g.fangst >= 1) {
         const h = g.hest;
         let best = Infinity;
