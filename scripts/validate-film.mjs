@@ -29,6 +29,9 @@ const GENERELLE = {
     Sluttkort: { krav: ['setninger'], lister: { setninger: ['tekst', 'fraBeat'] } },
 };
 const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk'];
+/** Ca. 12 sekunder tale. Lengre enkeltsetninger risikerer å bli kuttet av Chrome. */
+const MAKS_TALTE_ORD_PER_SETNING = 30;
+
 // Prop-navn som bærer fakta. Tallene i dem må stå i artikkelen.
 const FAKTA_PROPS = new Set(['verdi', 'total', 'farget', 'reddet', 'totalt', 'plasser', 'brukt', 'dybde', 'hoyde', 'antall']);
 const ENGELSK_ERSTATNING = /\b(paa|naar|ogsaa|aar|foer|faa|goer|moete|stoerre|hoey|soer|noen gang)\b/i;
@@ -177,6 +180,16 @@ function sjekk(fil, visualer) {
             }
             for (const t of tallI(r.si)) {
                 if (!fasit.includes(t) && !tillatt.has(t)) feil.push(`${h}: tallet ${t} står ikke i artikkelen - rett det, eller før det i utenforArtikkel med begrunnelse`);
+            }
+            // Stemmen leser én setning om gangen, og Chrome kutter en ytring etter ca. 15 sekunder.
+            // Tall teller som fire ord, for «1825» blir «atten hundre og tjuefem» høyt.
+            for (const setning of (r.uttale ?? r.si).split(/(?<=[.!?])\s+/)) {
+                const talt = setning
+                    .split(/\s+/)
+                    .filter(Boolean)
+                    .reduce((sum, o) => sum + (/\d{2,}/.test(o) ? 4 : 1), 0);
+                if (talt > MAKS_TALTE_ORD_PER_SETNING)
+                    feil.push(`${h}: en setning er ${talt} ord høyt (maks ${MAKS_TALTE_ORD_PER_SETNING}, tall teller 4) - Chrome kutter stemmen etter ca. 15 sekunder. Del setningen.`);
             }
             if (/\b\d{1,2}\.\d{2}\b/.test(r.si) && !r.uttale) adv.push(`${h}: klokkeslett uten "uttale" - stemmen leser "23.40" som tall`);
         });

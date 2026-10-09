@@ -37,6 +37,12 @@ function anslaa(tekst: string, rate: number, tekstmodus: boolean) {
     return tekstmodus ? ord / ORD_PER_SEK_LES + 1.2 : ord / (ORD_PER_SEK_TALE * rate) + 0.4;
 }
 
+/** Deler en replikk i setninger, så ingen enkeltytring blir lang nok til at Chrome kutter den. */
+export function setninger(tekst: string): string[] {
+    const biter = tekst.match(/[^.!?]+(?:[.!?]+[»"')]*|$)/g) ?? [tekst];
+    return biter.map((b) => b.trim()).filter(Boolean);
+}
+
 export function useFilmNarrator(manus: FilmManus | null) {
     const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null);
     const [stemmerLastet, setStemmerLastet] = useState(false);
@@ -102,15 +108,12 @@ export function useFilmNarrator(manus: FilmManus | null) {
     // hopper filmen videre.
     const tokenRef = useRef(0);
     const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const keepAliveRef = useRef<ReturnType<typeof setInterval> | null>(null);
     // Når replikken startet, og hvor langt i replikken vi var, for fremdriftsvisning.
     const replikkStartRef = useRef(0);
 
     const ryddTimere = useCallback(() => {
         if (timerRef.current) clearTimeout(timerRef.current);
-        if (keepAliveRef.current) clearInterval(keepAliveRef.current);
         timerRef.current = null;
-        keepAliveRef.current = null;
     }, []);
 
     const stoppTale = useCallback(() => {
@@ -152,29 +155,33 @@ export function useFilmNarrator(manus: FilmManus | null) {
             }
 
             const synth = window.speechSynthesis;
-            const u = new SpeechSynthesisUtterance(r.uttale);
-            if (voice) u.voice = voice;
-            u.lang = voice?.lang ?? 'nb-NO';
-            u.rate = rate;
-            u.onend = neste;
-            u.onerror = (e) => {
-                if (e.error === 'interrupted' || e.error === 'canceled') return;
-                neste();
+            // Replikken leses setning for setning. Chrome kutter ytringer etter ca.
+            // 15 sekunder, og pause()/resume()-trikset mot det dreper stemmen midt i
+            // ordet på noen maskiner. Tall som «1825» blir mange ord høyt, så en
+            // replikk som ser kort ut på skjermen kan likevel bli for lang.
+            const biter = setninger(r.uttale);
+            const lesBit = (b: number) => {
+                if (token !== tokenRef.current) return;
+                if (b >= biter.length) {
+                    neste();
+                    return;
+                }
+                const u = new SpeechSynthesisUtterance(biter[b]);
+                if (voice) u.voice = voice;
+                u.lang = voice?.lang ?? 'nb-NO';
+                u.rate = rate;
+                u.onend = () => lesBit(b + 1);
+                u.onerror = (e) => {
+                    if (e.error === 'interrupted' || e.error === 'canceled') return;
+                    lesBit(b + 1);
+                };
+                synth.speak(u);
             };
             // Chrome glemmer av og til å sende onend. Da går vi videre selv, godt etter
             // at replikken burde vært ferdig.
             timerRef.current = setTimeout(neste, (r.anslag * 2.2 + 4) * 1000);
-            // Chrome stopper lange ytringer etter ca. 15 sekunder uten dette.
-            keepAliveRef.current = setInterval(() => {
-                if (synth.speaking && !synth.paused) {
-                    synth.pause();
-                    synth.resume();
-                }
-            }, 12000);
             // Liten forsinkelse: speak() rett etter cancel() blir stille på ChromeOS.
-            setTimeout(() => {
-                if (token === tokenRef.current) synth.speak(u);
-            }, 60);
+            setTimeout(() => lesBit(0), 60);
         },
         [replikker, tekstmodus, voice, rate, stoppTale, ryddTimere]
     );

@@ -73,7 +73,7 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
 | `bilde` | Artikkelens `heroImage`. Startskjermen og Tittelkort bruker det. |
 | `kapittel` | Settes på første scene i hver del. Blir skilt i bildet og navn i tidslinja. 4-7 kapitler. |
 | `klokke` | Valgfri. Én verdi per replikk (`null` = skjul). Bare klokkeslett som står i artikkelen, pluss minuttene rett før for oppbygging. |
-| `si` | Teksten som vises og leses. 1-3 korte setninger. |
+| `si` | Teksten som vises og leses. 1-3 korte setninger. Stemmen leser én setning om gangen, og Chrome kutter en ytring etter ca. 15 sekunder, så ingen setning over 30 ord høyt (et tall som «1825» teller fire). `validate-film` stopper lengre setninger. |
 | `uttale` | Når stemmen skal si noe annet enn tekstingen: klokkeslett («tjue på tolv»), forkortelser, tall stemmen leser feil. |
 | `utenforArtikkel` | Hvert tall i filmen som ikke står i artikkelen, med begrunnelse og kilde. Helst tom. |
 
