@@ -59,9 +59,9 @@ BOTTE = 'eiriksbok-lyd'
 
 # Alt som påvirker lyden står her. Endres noe, får alle filmer nytt fingeravtrykk og lages på nytt.
 STEMME = 'nb-NO-Chirp3-HD-Algieba'
-TEMPO = 1.1
-PAUSE_REPLIKK = 0.35
-PAUSE_SCENE = 1.1
+TEMPO = 0.95  # 1.1 var for raskt for 14-åringer (eieren 2026-10-09)
+PAUSE_REPLIKK = 0.8
+PAUSE_SCENE = 1.4
 FORMATVERSJON = 1
 
 RATE = 24000

@@ -23,7 +23,7 @@ hvor ofte bildet skifter.
   beaten skifter. Synken går per replikk, ikke per sekund, for stemmen er ulik fra maskin til
   maskin. Bruk derfor aldri faste sekunder for å treffe et ord. Bruk beats.
 - **Stemmen lages for deg.** Innen en time etter at manuset er merget, lager Actionen
-  `.github/workflows/film-lyd.yml` fortellerstemmen (Google Chirp 3 HD, «Algieba», tempo 1,1),
+  `.github/workflows/film-lyd.yml` fortellerstemmen (Google Chirp 3 HD, «Algieba», tempo 0,95),
   sjekker den med Whisper og legger den i Cloudflare R2. Du lager aldri lyd selv og legger aldri
   lydfiler i repoet. Til lyden er klar, og når et manus er endret siden sist, leser nettleserens
   stemme. Tidene i lydfila styrer beatene, så synken per replikk gjelder fortsatt. Uttaler

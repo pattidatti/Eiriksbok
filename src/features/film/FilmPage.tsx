@@ -225,28 +225,27 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
                     </div>
                     {/* Teksting: alltid på, i eget felt rett under bildet så den aldri dekker grafikken */}
                     <div className="h-[4.5rem] md:h-20 shrink-0 flex items-center justify-center px-6 border-t border-slate-200">
-                        <AnimatePresence mode="wait">
-                            <motion.p
-                                key={
-                                    laast
-                                        ? `${sceneNr}-${beat}`
-                                        : f.status === 'klar'
-                                          ? 'klar'
-                                          : f.indeks
-                                }
-                                initial={{ opacity: 0, y: 6 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="text-slate-900 text-base md:text-xl font-semibold leading-snug text-center line-clamp-3"
-                            >
-                                {laast
-                                    ? scene.replikker[beat]?.si
+                        {/* Ingen exit-animasjon: AnimatePresence mode="wait" ble hengende på gammel
+                            tekst når replikken byttet raskt (tempobytte, scenehopp). */}
+                        <motion.p
+                            key={
+                                laast
+                                    ? `${sceneNr}-${beat}`
                                     : f.status === 'klar'
-                                      ? ''
-                                      : f.replikk?.si}
-                            </motion.p>
-                        </AnimatePresence>
+                                      ? 'klar'
+                                      : f.indeks
+                            }
+                            initial={{ opacity: 0, y: 6 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="text-slate-900 text-base md:text-xl font-semibold leading-snug text-center line-clamp-3"
+                        >
+                            {laast
+                                ? scene.replikker[beat]?.si
+                                : f.status === 'klar'
+                                  ? ''
+                                  : f.replikk?.si}
+                        </motion.p>
                     </div>
                 </div>
             </div>

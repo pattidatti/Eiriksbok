@@ -34,8 +34,11 @@ const LYD_BASE =
 
 const ORD_PER_SEK_TALE = 2.5;
 const ORD_PER_SEK_LES = 2.1;
-const PAUSE_REPLIKK_MS = 350;
-const PAUSE_SCENE_MS = 1100;
+/** Nettleserstemmen er for rask for 14-åringer på 1x. «1x» i filmen betyr dette tempoet. */
+const GRUNNTEMPO = 0.85;
+const PAUSE_SETNING_MS = 250;
+const PAUSE_REPLIKK_MS = 800;
+const PAUSE_SCENE_MS = 1400;
 
 interface Lydspor {
     url: string;
@@ -48,7 +51,9 @@ function ordtall(tekst: string) {
 
 function anslaa(tekst: string, rate: number, tekstmodus: boolean) {
     const ord = ordtall(tekst);
-    return tekstmodus ? ord / ORD_PER_SEK_LES + 1.2 : ord / (ORD_PER_SEK_TALE * rate) + 0.4;
+    if (tekstmodus) return ord / ORD_PER_SEK_LES + 1.2;
+    const pauser = ((setninger(tekst).length - 1) * PAUSE_SETNING_MS) / 1000;
+    return ord / (ORD_PER_SEK_TALE * GRUNNTEMPO * rate) + pauser + 0.4;
 }
 
 /** Deler en replikk i setninger, så ingen enkeltytring blir lang nok til at Chrome kutter den. */
@@ -302,11 +307,17 @@ export function useFilmNarrator(manus: FilmManus | null) {
                 const u = new SpeechSynthesisUtterance(biter[b]);
                 if (voice) u.voice = voice;
                 u.lang = voice?.lang ?? 'nb-NO';
-                u.rate = rate;
-                u.onend = () => lesBit(b + 1);
+                u.rate = rate * GRUNNTEMPO;
+                // En liten pust mellom setningene, så eleven rekker å henge med.
+                const videre = () => {
+                    if (token !== tokenRef.current) return;
+                    if (b + 1 >= biter.length) lesBit(b + 1);
+                    else setTimeout(() => lesBit(b + 1), PAUSE_SETNING_MS);
+                };
+                u.onend = videre;
                 u.onerror = (e) => {
                     if (e.error === 'interrupted' || e.error === 'canceled') return;
-                    lesBit(b + 1);
+                    videre();
                 };
                 synth.speak(u);
             };
