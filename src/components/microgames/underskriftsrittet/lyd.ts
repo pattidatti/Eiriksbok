@@ -40,6 +40,11 @@ export function lagLyd(s: ArcadeSynth) {
             s.noise(0.3, 0.18, 220);
             s.tone(330, 110, 0.9, 'sawtooth', 0.08);
         },
+        /** Du begynner å lese klagen høyt: et kremt og en lav, bestemt tone. */
+        rop: () => {
+            s.noise(0.06, 0.05, 900);
+            s.tone(196, 220, 0.2, 'triangle', 0.05, 0.05);
+        },
         funn: () => s.arp(523, [0, 7, 12], 0.07, 0.05),
         /** Akkurat unna lyset: et lettet pust og en lys tone opp. */
         unnslapp: () => {

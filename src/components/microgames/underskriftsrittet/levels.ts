@@ -10,7 +10,7 @@ export const KLAGER: Klage[] = ['gebyr', 'korn', 'handel'];
 export const KLAGE_NAVN: Record<Klage, string> = {
     gebyr: 'Gebyrene',
     korn: 'Kornmonopolet',
-    handel: 'Handelsretten',
+    handel: 'Tømmerprisen',
 };
 
 export interface Bygd {

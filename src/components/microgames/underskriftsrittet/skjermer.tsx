@@ -30,6 +30,8 @@ export interface Resultat {
     poeng: number;
     nyRekord: boolean;
     nyeFunn: string[];
+    /** Hvor og av hvem du ble tatt (bare når lyset tok deg). */
+    hvor?: string | null;
     lærdom: string[];
 }
 
@@ -159,9 +161,23 @@ export function Slutt({
                     </div>
                 </>
             ) : (
-                <p style={{ fontSize: 15, margin: '6px 0', maxWidth: 580, lineHeight: 1.3 }}>
-                    {TIPS[res.årsak ?? 'vinter']}
-                </p>
+                <>
+                    {res.hvor && (
+                        <p
+                            style={{
+                                fontSize: 17,
+                                fontWeight: 700,
+                                margin: '4px 0 0',
+                                color: FARGE.blod,
+                            }}
+                        >
+                            {res.hvor}.
+                        </p>
+                    )}
+                    <p style={{ fontSize: 15, margin: '6px 0', maxWidth: 580, lineHeight: 1.3 }}>
+                        {TIPS[res.årsak ?? 'vinter']}
+                    </p>
+                </>
             )}
             <ArcadeStats
                 items={[

@@ -8,10 +8,11 @@ epilogen, selvspill). Skjermene (meny med Klageboka, pause, slutt) i `skjermer.t
 | --- | --- |
 | `tuning.ts` | Alle tallene: hesten, kartgrense, tunet (radius, navnefart, segl ved 20, husene og merket), kommisjonen, lyktene (spredning, hjemTid), fangsten, dristig, dragonene, poeng, ranger, kamera (galoppZoom). |
 | `levels.ts` | `BRETT`: de tre månedene med bygder (hver med én av tre klager: `gebyr`, `korn`, `handel`), landevei, åser, **fogdgårder** (der lyktene tennes), lykter per navn, lyktfart, fangtid, dragoner. |
-| `game.ts` | Tilstanden, `newGame`, grepet `styr` og kjerneløkka `update`: `rir` -> `samler` (Klageboka-funn, navn, `nyttNavn`, segl, seier) -> `lykteneGår` -> `fangsten` (husker `fanger`) -> `måneden`. |
-| `rules.ts` | Rene hjelpere: terreng, `navneFart`, `ser`, `pressFra`, `rang`. |
+| `game.ts` | Tilstanden, `newGame`, grepene `styr` og `rop` (hold for å lese høyt), `tunHer`, `leser`, `tattTekst`, og kjerneløkka `update`: `rir` -> `samler` (Klageboka-funn, navn, `nyttNavn`, segl, seier) -> `lykteneGår` -> `fangsten` (husker `fanger`) -> `måneden`. |
+| `rules.ts` | Rene hjelpere: terreng, `navneFart` (vokser med `ropT`), `ser`, `pressFra`, `rang`. |
 | `bots.ts` / `sim.ts` | Robotene og simuleringskontrakten. |
-| `scene.ts` | Visningstilstanden (ikke regler): blekkstreker på vei, når seglet ble trykket, dørblaff, fase (spill/fanget/epilog), risting, hit-stop (`stopp`), lys (natt/morgen/mars). |
+| `lapper.tsx` | DOM-lagene: lerretet (vignett, toning), tastelappen ved hesten (`RopLapp`) og `FangetKant` (oransje kant + «Fogdens mann så deg ved X - N av 8 segl»). |
+| `scene.ts` | `settRopLapp` (flytter tastelappen hvert bilde) og visningstilstanden (ikke regler): blekkstreker på vei, når seglet ble trykket, dørblaff, fase (spill/fanget/epilog), risting, hit-stop (`stopp`), lys (natt/morgen/mars). |
 | `synlig.ts` | `iBildet` (frustum-test) og `kull` (skrur mesher av utenfor bildet). Tun, skilt, fogdgårder og utgang tegnes bare når de er i bildet. |
 | `land.tsx` | `Lys` (måneskinn, morgen, mars), `Bakke` (eng/lyng/åker-lerret per brett, vei med runde ledd, lyngkoller med stein - kulisse), `Skog` (instanser), `Fogdhus` (døra blaffer), `Utgang` (stolpe, skilt, bølge). |
 | `tun.tsx` | Tunene: hus, framdriftsbuen (shader: blå navn, oransje merker, kalkhvit -> oransje når en lykt er på vei), blomsterkrans per navn, segl som faller og trykkes, Klagebok-merket, skilt med `crispCanvas` og klage-medaljong (blekner under HUD-en). |
@@ -24,7 +25,10 @@ epilogen, selvspill). Skjermene (meny med Klageboka, pause, slutt) i `skjermer.t
 ## Kjerneløkka
 
 1. Hesten rir med fart og vekt: holdt tast = mot galopp, sluppet = skritt. Krapp sving bremser.
-2. Inne i ringen rundt et tun renner navn: flest midt på og i skritt (`navneFart`). Ved 20 navn: segl.
+2. Inne i ringen rundt et tun: HOLD (mellomrom, eller fingeren på hesten) for å lese klagen høyt. Hesten
+   stanser, navnene strømmer fortere jo lenger du holder (`rop.fart` + `rop.vekst` per s). Men lykter innen
+   `rop.hør` går mot deg (x`rop.lokk`), og nye lykter tennes nærmere (`rop.nærmere`). Slipp = ri. Ved 20 navn: segl.
+   Uten å holde gir tunet ingen navn.
 3. Navn nummer `førsteLykt` og så hvert `navnPerLykt` tenner en lykt fra fogdgården nærmest (10-18 m
    unna, `spredning` rundt retningen). Lykta går til stedet der navnet ble skrevet, leter, går videre
    etter `leteTid`, slukker etter `levetid`. Får bygda segl, går mennene som leter der hjem (`hjemTid`).
@@ -38,7 +42,7 @@ epilogen, selvspill). Skjermene (meny med Klageboka, pause, slutt) i `skjermer.t
 ## Knapper
 
 - Vanskelighet: `lykt.lys`, `levetid`, `leteTid`, `levels.ts` (`navnPerLykt`, `lyktFart`, `fangTid`, `fogder`).
-- Hvor deilig samlingen er: `tun.maksFart`, `kant`, `galoppAndel`.
+- Hvor deilig samlingen er: `rop.fart`, `rop.vekst`, `rop.maks`. Risikoen: `rop.hør`, `rop.lokk`, `rop.nærmere`.
 - Ferdighetstrappen: `poeng` (særlig `telemark`), `dristig`, robotenes `vett()`-tall.
 - Juice: `FANGET_S`/`EPILOG_S` i komponenten, `kamera.galoppZoom`, risting i `scene.rist`, hit-stop i
   `scene.stopp`, poengtall (`text.float`) per navn og segl, «Akkurat unna!» ved `fangst.nesten`.

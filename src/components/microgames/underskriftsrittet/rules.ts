@@ -60,12 +60,9 @@ export function galoppAndel(fart: number): number {
     return clamp((fart - T.hest.skritt) / (T.hest.galopp - T.hest.skritt), 0, 1);
 }
 
-/** Navn per sekund: flest midt på tunet og i skritt, noen få i galopp, ingen utenfor ringen. */
-export function navneFart(d: number, fart: number): number {
-    if (d >= T.tun.radius) return 0;
-    const nær = T.tun.kant + (1 - T.tun.kant) * (1 - d / T.tun.radius);
-    const rolig = 1 - (1 - T.tun.galoppAndel) * galoppAndel(fart);
-    return T.tun.maksFart * nær * rolig;
+/** Navn per sekund mens du leser klagen høyt: strømmen vokser jo lenger du holder. */
+export function navneFart(ropT: number): number {
+    return Math.min(T.rop.maks, T.rop.fart + T.rop.vekst * ropT);
 }
 
 /** Ser lykta hesten? På åsen ser den deg bare når den er nær. */

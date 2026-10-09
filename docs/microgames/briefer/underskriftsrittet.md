@@ -397,3 +397,42 @@ klagen samlet mange bak seg, ble den kalt opprør. Kravene vant fram, men ledere
   mellom. Robotene bruker fortsatt ikke veien med vilje. Klagene endrer ikke ruten (ingen regel
   krever dem). Navne-tallene kan stable seg tett i Telemark (4 navn/s). Lyngkollene er store flate
   kupler. Det oransje merket-lappen vises bare i brett 1.
+
+### Forbedring 2 (natt 2026-10-09)
+
+- Vurdering 2 ga sum 17 igjen (Eleven gjør 3 og Forståelig 3 for andre runde). Derfor er kjerneløkka
+  på tunet byttet ut, ikke pyntet.
+- (1) Eleven gjør: nytt risikogrep i stedet for å stå i ro og vente. Hold mellomrom (eller fingeren på
+  hesten) på tunet for å lese klagen høyt: hesten stanser, og navnene strømmer fortere jo lenger du
+  holder (1,6 navn/s, +0,6 per sekund, tak 7). Men fogdens menn hører deg: lykter innen 10 m går rett
+  mot deg (1,3x fart), og nye lykter tennes nærmere (opptil 55 % nærmere etter 5 s). Slipp for å ri
+  ut; da starter strømmen forfra neste gang. Uten å holde gir tunet ingen navn - det ERSTATTER
+  gamle «ri sakte midt på»-regelen. Reglene er fortsatt tre: ri, hold for å samle, unngå lyset.
+  Synlig: en oransje stemmering (10 m, sterkere jo lenger du holder) med bølger ut fra rytteren, og
+  en fast tastelapp under hesten («Hold mellomrom: les høyt» / «Leser høyt - slipp for å ri»). Lyd og
+  lite rykk når du begynner å lese. Robotene bruker samme grep (`rop`): de stanser og leser til en
+  lykt er for nær. Den halvgode slipper for tidlig (etter 3 s) og reagerer seint.
+- (2) Forståelig: tapsøyeblikket sier hvor og hvorfor - i det fryste bildet står «Fogdens mann så deg
+  ved Treungen - 6 av 8 segl» (eller «En dragon»), og samme linje står øverst på slutt-skjermen over
+  tipset. Tipset og lykt-kortet forklarer at lesingen lokker fogdens menn. Lappen «Ri sakte over
+  tunet» er fjernet (tastelappen tar over), så det er én boble færre.
+- (3) Panelet og slutt-skjermen bruker samme navn: «Tømmerprisen» i klagebrevet og «Tømmerprisen opp»
+  på slutten. Telemark-kravet står først når du er i Telemark («Minst 2 av seglene må være fra
+  Telemark»); før det står «8 segl: da må København lytte».
+- Simuleringen (200 runder per robot): grønn. Seende vinner 87 % (median 1225), halvgod 34 % (1010),
+  grådig 0 % (242), redd 0 % (329), tilfeldig 0 % (66), passiv 0 %. 28 valg per minutt, presset
+  0,13 -> 0,33 -> 0,43. Selvspill: seende vant med 1226 (samsvar), Chromebook lav 11 ms JS per bilde,
+  77 draw calls. Scene-audit grønn, likhetsvakt grønn (nærmest kurs-for-gronland 0,32). Ny plakat.
+- Det som IKKE virket: (1) rask strøm (2,2 + 0,7/s) uten at lyktene hørte deg: grådig vant 100 %, den
+  rekker seglet før lyktene kommer. (2) Lykter som hører deg på 13 m med 1,5x fart: seende vant 0 %
+  (rømte for tidlig og mistet strømmen hver gang). (3) Strøm 1,8 + 0,8/s og hørsel 11 m: grådig vant
+  igjen. (4) Halvgod med samme tålmod som seende ble bedre enn seende (flere dristige navn) - nå
+  slipper den etter 3 s, som en elev som ikke tør å holde lenge.
+- Ikke gjort (tid): patruljene er fortsatt oransje lyssirkler uten eget lykt-ikon og kan ligge i lag;
+  skilt kan fortsatt dekke segl og kanten; de grå steinkollene er ikke byttet med lyngberg og furu;
+  ulik effekt per klage; arrestasjonen spilt av ved stolpen.
+- Kjente svakheter: tastelappen og «ri»-lappen kan stå tett de første sekundene. Halvgod vinner 34 %.
+  Valg per minutt falt litt (31 -> 28), siden lesingen nå er lengre, færre grep.
+- Feel-lista: før runden var 1-4 på plass. Etter: fortsatt 1-4; 1 er styrket (lyd, rykk og stemmering
+  når du begynner å lese), 2 gjelder nå også lesingen (slippe i siste liten gir «Akkurat unna!»), og 4
+  (tapet) viser nå hvor og av hvem du ble tatt.

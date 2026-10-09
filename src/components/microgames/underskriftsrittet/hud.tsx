@@ -2,14 +2,14 @@
 // - øverst i midten en malt kartusj som på et kistelokk (måned, ANNO 1786, bygda du er i),
 //   med kalenderen som en ranke som males fram langs kanten, og frost som kryper inn fra kantene,
 // - til høyre klagebrevet, der hvert navn skrives inn som en blekkstrek (gylne for dristige),
-//   og tre rader for klagene (gebyrene, kornmonopolet, handelsretten) som fylles med segl,
+//   og tre rader for klagene (gebyrene, kornmonopolet, tømmerprisen) som fylles med segl,
 // - nederst kommisjonsmåleren: et rødt bånd med 8 segl (Agder og Telemark) mot København.
 // Egen tilstand på 10 Hz, så 3D-treet aldri tegnes på nytt for HUD-ens skyld.
 
 import { useEffect, useRef, useState } from 'react';
 import { brettAv, månedAndel, type Game } from './game';
 import { KLAGER, KLAGE_NAVN, månedNavn, type Klage } from './levels';
-import { dist } from './rules';
+import { dist, SISTE_BRETT } from './rules';
 import { TUNING } from './tuning';
 import { FARGE } from './palette';
 import { klageBilde, TEKST_FONT, TITTEL_FONT } from './textures';
@@ -17,6 +17,8 @@ import { klageBilde, TEKST_FONT, TITTEL_FONT } from './textures';
 const T = TUNING;
 
 interface Visning {
+    /** Telemark-kravet vises først når du er kommet til Telemark. */
+    iTelemark: boolean;
     måned: string;
     sted: string;
     telemarkSted: boolean;
@@ -33,6 +35,7 @@ function les(g: Game): Visning {
     const h = g.hest;
     const nær = g.tun.find((t) => dist(h.x, h.z, t.x, t.z) < T.tun.radius + 3);
     return {
+        iTelemark: g.brett === SISTE_BRETT,
         måned: månedNavn(g.brett, månedAndel(g)),
         sted: nær ? nær.navn : b.tittel,
         telemarkSted: nær ? nær.telemark : b.bygder.some((t) => t.telemark),
@@ -243,7 +246,9 @@ export function Hud({ gRef }: { gRef: React.MutableRefObject<Game> }) {
                         marginBottom: 3,
                     }}
                 >
-                    8 segl, minst 2 fra Telemark: da må København lytte
+                    {v.iTelemark
+                        ? `Minst ${T.kommisjon.telemark} av seglene må være fra Telemark`
+                        : `${T.kommisjon.segl} segl: da må København lytte`}
                 </div>
                 <div
                     style={{
@@ -332,7 +337,14 @@ function KlageRad({ k, n }: { k: Klage; n: number }) {
                 }}
             />
             <div style={{ minWidth: 0 }}>
-                <div style={{ fontFamily: TEKST_FONT, fontSize: 14, fontWeight: 700, lineHeight: 1.1 }}>
+                <div
+                    style={{
+                        fontFamily: TEKST_FONT,
+                        fontSize: 14,
+                        fontWeight: 700,
+                        lineHeight: 1.1,
+                    }}
+                >
                     {KLAGE_NAVN[k]}
                 </div>
                 <div style={{ display: 'flex', gap: 3, marginTop: 2, height: 13 }}>
@@ -455,10 +467,10 @@ function Klagebrev({
             if (g.poeng > vist) {
                 vist += Math.max(1, Math.ceil((g.poeng - vist) * 0.4));
                 vist = Math.min(vist, g.poeng);
-                poeng.current?.animate(
-                    [{ transform: 'scale(1.35)' }, { transform: 'scale(1)' }],
-                    { duration: 220, easing: 'ease-out' }
-                );
+                poeng.current?.animate([{ transform: 'scale(1.35)' }, { transform: 'scale(1)' }], {
+                    duration: 220,
+                    easing: 'ease-out',
+                });
             }
             if (poeng.current) poeng.current.textContent = `${vist} poeng`;
         };

@@ -65,6 +65,8 @@ export type Hendelse =
     /** Fangstringen var minst halvfull, men du kom deg ut av lyset. */
     | { type: 'unnslapp'; topp: number }
     | { type: 'funn'; tun: number }
+    /** Du begynte å lese klagen høyt. */
+    | { type: 'rop' }
     | { type: 'brett'; brett: number }
     | { type: 'tap'; årsak: Årsak }
     | { type: 'seier' };
@@ -78,7 +80,9 @@ export interface Game {
     årsak: Årsak | null;
     hest: { x: number; z: number; fart: number; retning: number };
     /** Det eleven holder inne: retning og styrke 0-1 (0 = slipp, hesten skritter). */
-    input: { dx: number; dz: number; styrke: number };
+    input: { dx: number; dz: number; styrke: number; roper: boolean };
+    /** Sekunder du har lest klagen høyt uten å slippe (0 når du rir). */
+    ropT: number;
     tun: Tun[];
     lykter: Lykt[];
     nesteId: number;
@@ -137,6 +141,8 @@ function startBrett(g: Game, brett: number) {
     g.hest.retning = -Math.PI / 2;
     g.fangst = 0;
     g.toppFangst = 0;
+    g.ropT = 0;
+    g.input.roper = false;
     g.sisteNavn = null;
     g.lykterIBrett = 0;
     g.navnTider = [];
@@ -152,7 +158,8 @@ export function newGame(seed = 1, brett = 0): Game {
         mode: 'play',
         årsak: null,
         hest: { x: 0, z: 0, fart: T.hest.skritt, retning: -Math.PI / 2 },
-        input: { dx: 0, dz: 0, styrke: 0 },
+        input: { dx: 0, dz: 0, styrke: 0, roper: false },
+        ropT: 0,
         tun: [],
         lykter: [],
         nesteId: 1,
@@ -190,6 +197,19 @@ export function styr(g: Game, dx: number, dz: number, styrke = 1) {
     g.input.styrke = clamp(styrke, 0, 1);
 }
 
+/** Grepet på tunet: hold for å lese klagen høyt (navnene strømmer), slipp for å ri. */
+export function rop(g: Game, på: boolean) {
+    g.input.roper = på;
+}
+
+/** Tunet du står i og kan lese for (uten segl ennå), eller -1. */
+export function tunHer(g: Game): number {
+    return g.tun.findIndex((t) => !t.segl && dist(g.hest.x, g.hest.z, t.x, t.z) < T.tun.radius);
+}
+
+/** Leser du klagen høyt akkurat nå? */
+export const leser = (g: Game) => g.input.roper && tunHer(g) >= 0;
+
 export const alleSegl = (g: Game) => g.tun.every((t) => t.segl);
 export const utÅpen = (g: Game) => alleSegl(g) && g.brett < SISTE_BRETT;
 export const månedAndel = (g: Game) => clamp(g.brettT / brettAv(g).sekunder, 0, 1);
@@ -199,7 +219,10 @@ function rir(g: Game, dt: number) {
     const b = brettAv(g);
     const inp = g.input;
     const ga = galoppAndel(h.fart);
-    if (inp.styrke > 0) {
+    if (leser(g)) {
+        // Du har stanset hesten og leser klagen høyt for folket på tunet.
+        h.fart = Math.max(0, h.fart - T.tun.stans * dt);
+    } else if (inp.styrke > 0) {
         const ønsket = Math.atan2(inp.dz, inp.dx);
         const diff = vinkelDiff(h.retning, ønsket);
         const sving = T.hest.svingSkritt + (T.hest.svingGalopp - T.hest.svingSkritt) * ga;
@@ -235,7 +258,9 @@ function tennLykt(g: Game, dragon: boolean, modus: LyktModus) {
                 gz = fz;
             }
         const a = Math.atan2(gz - fra.z, gx - fra.x) + (g.rng() - 0.5) * T.lykt.spredning;
-        const d = clamp(dist(gx, gz, fra.x, fra.z), T.lykt.tennMin, T.lykt.tennMax);
+        // Jo lenger du har lest høyt, jo nærmere tennes lykta: fogdens menn har hørt deg.
+        const nær = 1 - T.rop.nærmere * Math.min(1, g.ropT / T.rop.nærTid);
+        const d = clamp(dist(gx, gz, fra.x, fra.z), T.lykt.tennMin, T.lykt.tennMax) * nær;
         x = clamp(fra.x + Math.cos(a) * d, -T.grense, T.grense);
         z = clamp(fra.z + Math.sin(a) * d, -T.grense, T.grense);
     }
@@ -326,6 +351,14 @@ export function merketHus(tun: { x: number; z: number }) {
 
 function samler(g: Game, dt: number) {
     const h = g.hest;
+    if (leser(g)) {
+        // Å begynne å lese høyt er et valg: nå hører fogdens menn deg.
+        if (g.ropT === 0) {
+            g.valg += 1;
+            g.hendelser.push({ type: 'rop' });
+        }
+        g.ropT += dt;
+    } else g.ropT = 0;
     g.tun.forEach((tun, i) => {
         if (!g.funn.includes(tun.navn)) {
             const m = merketHus(tun);
@@ -335,8 +368,8 @@ function samler(g: Game, dt: number) {
             }
         }
         if (tun.segl || g.mode !== 'play') return;
-        const r = navneFart(dist(h.x, h.z, tun.x, tun.z), h.fart);
-        if (r <= 0) return;
+        if (!g.input.roper || dist(h.x, h.z, tun.x, tun.z) >= T.tun.radius) return;
+        const r = navneFart(g.ropT);
         const før = Math.floor(tun.samlet);
         tun.samlet = Math.min(T.tun.seglVed, tun.samlet + r * dt);
         for (let k = før + 1; k <= Math.floor(tun.samlet) && g.mode === 'play'; k++) {
@@ -375,9 +408,11 @@ function lykteneGår(g: Game, dt: number) {
             continue;
         }
         if (l.modus === 'står') continue;
-        l.jakter = l.modus === 'leter' && ser(b, l.x, l.z, h.x, h.z, T.lykt.ser);
+        // Leser du høyt, hører mennene i nærheten deg og går rett mot stemmen.
+        const hører = l.farlig && g.ropT > 0 && dist(l.x, l.z, h.x, h.z) < T.rop.hør;
+        l.jakter = hører || (l.modus === 'leter' && ser(b, l.x, l.z, h.x, h.z, T.lykt.ser));
         if (l.jakter) {
-            flytt(l, h.x, h.z, dt);
+            flytt(l, h.x, h.z, dt * (hører ? T.rop.lokk : 1));
             continue;
         }
         const d = dist(l.x, l.z, mål.x, mål.z);
@@ -467,6 +502,16 @@ export function update(g: Game, dt: number) {
     fangsten(g, dt);
     if (g.mode !== 'play') return;
     måneden(g);
+}
+
+/** Hvor og hvorfor du ble tatt: nærmeste bygd, hvem som så deg, og seglene du rakk. */
+export function tattTekst(g: Game): string {
+    const h = g.hest;
+    let hvor = g.tun[0];
+    for (const t of g.tun) if (dist(t.x, t.z, h.x, h.z) < dist(hvor.x, hvor.z, h.x, h.z)) hvor = t;
+    const f = g.lykter.find((l) => l.id === g.fanger);
+    const hvem = f?.dragon ? 'En dragon' : 'Fogdens mann';
+    return `${hvem} så deg ved ${hvor.navn} - ${g.segl} av ${T.kommisjon.segl} segl`;
 }
 
 export function lykterNær(g: Game, r = 15): number {

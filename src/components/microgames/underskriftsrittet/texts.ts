@@ -4,12 +4,13 @@ export const MÅL =
     'Høsten 1786. Du er Christian Lofthus. Ri fra bygd til bygd og samle navn på klagen til kongen.';
 
 /** Bare tastene i menyen. Resten vises i spillet første gang det skjer. */
-export const TASTER = 'Ri med piltastene eller WASD (eller hold fingeren der hesten skal).';
+export const TASTER =
+    'Ri med piltastene eller WASD. Hold mellomrom på tunet for å lese klagen høyt (eller hold fingeren på hesten).';
 
 export const TAP_TITTEL = { lys: 'Klagen er stoppet', vinter: 'Vinteren kom' } as const;
 
 export const TIPS = {
-    lys: 'Å samle bønder til møter var oppvigleri, og hvert navn tente en ny lykt. Ri ut av bygda før lyktene kommer, og kom tilbake når de har gått videre.',
+    lys: 'Å samle bønder til møter var oppvigleri. Jo lenger du leste høyt, jo nærmere kom fogdens menn. Slipp før lyset når deg, ri unna, og kom tilbake når de har gått videre.',
     vinter: 'Kronprinsen ville ha bevis for at du talte for mange. Med for få bygder bak seg var klagen bare én manns klage. Ingen kunne stemme eller skrive i avisen - navnene var den eneste makta bøndene hadde.',
 } as const;
 
@@ -18,7 +19,7 @@ export const SEIER = [
     'Mars 1787, Lillesand. Kommisjonen ga bøndene rett. Men Lofthus ble tatt med list og dømt til tvangsarbeid i lenker på livstid.',
 ];
 
-export const KRAV = ['Gebyrene ned', 'Bedre tømmerpris', 'Kornmonopolet borte (1788)'];
+export const KRAV = ['Gebyrene ned', 'Tømmerprisen opp', 'Kornmonopolet borte (1788)'];
 
 export const LÆRDOM = {
     eneste: 'Under eneveldet var klage til kongen den eneste lovlige veien. Bøndene kunne ikke stemme.',
@@ -29,8 +30,7 @@ export const LÆRDOM = {
     straff: 'Kravene vant fram, men lederen ble straffet: Lofthus døde i fangenskap i 1797.',
     telemark:
         'Bevegelsen spredte seg fra Agder til Telemark. Jo flere bygder, jo vanskeligere å kalle det én manns klage.',
-    klager:
-        'Bøndene klaget over tre ting: høye gebyrer til embetsmennene, kornmonopolet, og at bare byborgerne fikk kjøpe tømmeret deres.',
+    klager: 'Bøndene klaget over tre ting: høye gebyrer til embetsmennene, kornmonopolet, og at bare byborgerne fikk kjøpe tømmeret deres.',
     dristig:
         'Å samle bønder til møter var forbudt, uansett hva kronprinsen hadde sagt. Du tok sjansen likevel.',
 } as const;

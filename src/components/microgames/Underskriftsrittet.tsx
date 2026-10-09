@@ -18,7 +18,9 @@ import {
     alleSegl,
     merketHus,
     newGame,
+    rop,
     styr,
+    tattTekst,
     update,
     type Game,
     type Hendelse,
@@ -33,8 +35,9 @@ import { Tunene } from './underskriftsrittet/tun';
 import { Blekk, EpilogLykter, Hest, Lykter } from './underskriftsrittet/figurer';
 import { FARGE } from './underskriftsrittet/palette';
 import { Hud } from './underskriftsrittet/hud';
+import { FangetKant, Lerret, RopLapp } from './underskriftsrittet/lapper';
 import { lagLyd, type Lyd } from './underskriftsrittet/lyd';
-import { nyScene, settFase, type Scene } from './underskriftsrittet/scene';
+import { nyScene, settFase, settRopLapp, type Scene } from './underskriftsrittet/scene';
 import { lagKorn, TEKST_FONT, TITTEL_FONT } from './underskriftsrittet/textures';
 import { Meny, PauseSkjerm, Slutt, type Resultat, type Save } from './underskriftsrittet/skjermer';
 import { LÆRDOM } from './underskriftsrittet/texts';
@@ -178,6 +181,15 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
     const peker = useRef<{ id: number; x: number; y: number } | null>(null);
     const stageRef = useRef<HTMLDivElement>(null);
     const toningRef = useRef<HTMLDivElement>(null);
+    /** Tastelappen ved hesten på tunet («Hold mellomrom: les høyt»). */
+    const ropLapp = useRef<HTMLDivElement>(null);
+    /** Hvor og hvorfor du ble tatt (vises i det fryste bildet og på slutt-skjermen). */
+    const [tatt, settTatt] = useState<string | null>(null);
+    const tattRef = useRef<string | null>(null);
+    const setTatt = (v: string | null) => {
+        tattRef.current = v;
+        settTatt(v);
+    };
     const grepRef = useRef<Record<string, (g: Game) => void>>({});
     const sistDristig = useRef(-9);
     const takt = useRef({ hov: 0, hjerte: 0, pen: 0, banner: 0 });
@@ -228,6 +240,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
             poeng: g.poeng,
             nyRekord: g.poeng > prev.rekord,
             nyeFunn,
+            hvor: g.årsak === 'lys' ? tattRef.current : null,
             lærdom: text.lessons(3),
         });
         sRef.current.fase = 'stille';
@@ -241,6 +254,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
         const s = sRef.current;
         const m = modeRef.current;
         const tk = takt.current;
+        settRopLapp(ropLapp.current, g, m === 'play', projRef.current);
         if (m === 'play') {
             const ga = galoppAndel(g.hest.fart);
             tk.hov -= dt;
@@ -332,7 +346,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                     const vist = text.beatOnce(
                         'lykt',
                         'Navnene tenner lys',
-                        'Å samle bønder til møter var oppvigleri. Navnene tenner fogdens lykter. Hold deg unna lyset!',
+                        'Å samle bønder til møter var oppvigleri. Mens du leser høyt, hører fogdens menn deg og går mot stemmen. Slipp og ri unna lyset!',
                         { at: ved(l), until: () => gRef.current.t > t + 1.2 }
                     );
                     if (!vist && g.brett === 0 && g.lykterIBrett === 2)
@@ -434,6 +448,10 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                     );
                 }
             }
+            if (h.type === 'rop') {
+                lyd.rop();
+                s.rist = Math.max(s.rist, 0.12);
+            }
             if (h.type === 'unnslapp') {
                 // Akkurat unna: ringen var over halvfull, men du kom deg ut av lyset.
                 lyd.unnslapp();
@@ -462,6 +480,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
             }
             if (h.type === 'tap') {
                 if (h.årsak === 'lys') {
+                    setTatt(tattTekst(g));
                     setModeBoth('fanget');
                     settFase(s, 'fanget');
                     s.rist = 0.8;
@@ -493,12 +512,12 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
         peker.current = null;
         sistDristig.current = -9;
         setRes(null);
+        setTatt(null);
         setVisBok(false);
         setBrett(0);
         text.clear();
         text.resetRun();
         setModeBoth('play');
-        const t0 = g.tun[0];
         text.point(
             'ri',
             '← ↑ → ↓ eller WASD: ri',
@@ -508,20 +527,12 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                 until: () => g.input.styrke > 0 && g.t > 1.5,
             }
         );
-        text.point(
-            'samle',
-            'Ri sakte over tunet: samle navn',
-            ved(() => t0),
-            {
-                seconds: 14,
-                until: () => t0.samlet >= 4,
-            }
-        );
     };
     const pause = () => {
         if (modeRef.current === 'play') {
             taster.current.clear();
             styr(gRef.current, 0, 0, 0);
+            rop(gRef.current, false);
             setModeBoth('paused');
         }
     };
@@ -594,12 +605,19 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                 begin();
                 return;
             }
+            if (e.code === 'Space' && modeRef.current === 'play') {
+                // Hold mellomrom på tunet: les klagen høyt.
+                e.preventDefault();
+                rop(gRef.current, true);
+                return;
+            }
             if (!RETNING[e.code] || modeRef.current !== 'play') return;
             e.preventDefault();
             taster.current.add(e.code);
             oppdater();
         };
         const up = (e: KeyboardEvent) => {
+            if (e.code === 'Space') rop(gRef.current, false);
             if (!taster.current.delete(e.code)) return;
             oppdater();
         };
@@ -620,6 +638,7 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
         if (e.type === 'pointerup' || e.type === 'pointercancel') {
             peker.current = null;
             styr(g, 0, 0, 0);
+            rop(g, false);
             return;
         }
         if (e.type === 'pointermove' && !peker.current) return;
@@ -629,6 +648,13 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
         peker.current = { id: e.pointerId, x: e.clientX - r.left, y: e.clientY - r.top };
         const dx = peker.current.x - p.x;
         const dy = peker.current.y - p.y;
+        // Hold fingeren på hesten (eller rett ved) for å lese klagen høyt.
+        if (Math.hypot(dx, dy) < 42) {
+            styr(g, 0, 0, 0);
+            rop(g, true);
+            return;
+        }
+        rop(g, false);
         styr(g, dx, dy, Math.min(1, Math.hypot(dx, dy) / 140));
     };
 
@@ -717,40 +743,9 @@ export default function Underskriftsrittet({ onComplete }: MicroGameProps) {
                         </MicroCanvas>
                     </div>
 
-                    {/* Malt lerret: vignett og korn over hele bildet */}
-                    <div
-                        aria-hidden
-                        style={{
-                            position: 'absolute',
-                            inset: 0,
-                            pointerEvents: 'none',
-                            background: `radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(10,22,20,.55) 100%)${korn ? `, url(${korn})` : ''}`,
-                            mixBlendMode: 'multiply',
-                        }}
-                    />
-                    <div
-                        ref={toningRef}
-                        aria-hidden
-                        style={{
-                            position: 'absolute',
-                            inset: 0,
-                            pointerEvents: 'none',
-                            background: FARGE.panel,
-                            opacity: 0,
-                        }}
-                    />
-                    {mode === 'fanget' && (
-                        <div
-                            aria-hidden
-                            style={{
-                                position: 'absolute',
-                                inset: 0,
-                                pointerEvents: 'none',
-                                boxShadow: `inset 0 0 160px 60px rgba(240,120,24,.45)`,
-                            }}
-                        />
-                    )}
-
+                    <Lerret korn={korn} toningRef={toningRef} />
+                    <RopLapp ref={ropLapp} />
+                    {mode === 'fanget' && <FangetKant tatt={tatt} />}
                     {hudOn && <Hud gRef={gRef} />}
                     {(hudOn || mode === 'epilog') && (
                         <div

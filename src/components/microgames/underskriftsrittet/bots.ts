@@ -1,9 +1,10 @@
-// Robotene. De bruker samme grep som eleven (styr i game.ts: hold en retning eller slipp) og
-// ser bare det eleven ser: hesten, tunene, lyktene og dragonene.
+// Robotene. De bruker samme grep som eleven (styr i game.ts: hold en retning eller slipp, og
+// rop: hold for å lese klagen høyt på tunet) og ser bare det eleven ser: hesten, tunene,
+// lyktene og dragonene.
 
 import type { PlaytestBot } from '../playtest';
 import type { Rng } from '../sim';
-import { brettAv, styr, type Game } from './game';
+import { brettAv, rop, styr, type Game } from './game';
 import { dist } from './rules';
 import { TUNING } from './tuning';
 
@@ -21,8 +22,8 @@ interface Vett {
     flukt: number;
     /** Velger ikke en bygd der en lykt står nærmere tunet enn dette. */
     unngåTun: number;
-    /** Styrken på tøylene mens den rir rundt tunet (0 = slipp, skritt). */
-    sirkel: number;
+    /** Leser høyt så mange sekunder før den slipper uansett (Infinity = til lyset kommer). */
+    tålmod: number;
     /** Handler bare hvert n-te tick (treg elev). */
     hvert: number;
     /** Ser så mange sekunder fram: i galopp må du svinge unna tidligere. */
@@ -63,6 +64,7 @@ function vett(v: Vett) {
                 }
             }
             const fare = fx !== 0 || fz !== 0;
+            if (fare || g.ropT > v.tålmod) rop(g, false);
 
             // Målet: en bygd uten segl der lyktene ikke er, eller utgangen når alle har segl.
             const velg = (unntak: number) => {
@@ -125,15 +127,14 @@ function vett(v: Vett) {
                 styr(g, bx, bz, 1);
                 return;
             }
-            if (mål >= 0 && d < T.tun.radius) {
-                // Ri rolige sløyfer tett rundt midten av tunet.
-                const a = Math.atan2(h.z - mz, h.x - mx) + 1.0;
-                const px = mx + Math.cos(a) * 1.4;
-                const pz = mz + Math.sin(a) * 1.4;
-                if (v.sirkel <= 0) styr(g, 0, 0, 0);
-                else styr(g, px - h.x, pz - h.z, v.sirkel);
+            if (mål >= 0 && d < T.tun.radius - 1.5) {
+                // Stans og les klagen høyt til lyset kommer for nær (eller tålmodet tar slutt).
+                styr(g, 0, 0, 0);
+                if (g.ropT <= v.tålmod) rop(g, true);
+                else if (g.ropT > v.tålmod) styr(g, h.x - mx, h.z - mz, 1);
                 return;
             }
+            rop(g, false);
             const nær = mål >= 0 && d < T.tun.radius + 3;
             styr(g, mx - h.x, mz - h.z, nær ? 0.35 : 1);
         };
@@ -145,30 +146,31 @@ export const BOTS: Record<string, BotDef> = {
         forventer: 'vinner',
         beskrivelse:
             'Rir rolige sløyfer midt på tunet, rir ut når en lykt kommer nær, og velger bygda der lyktene ikke er.',
-        make: vett({ flukt: 3.5, unngåTun: 4, sirkel: 0.15, hvert: 1, forut: 0.5, blind: false }),
+        make: vett({ flukt: 3.5, unngåTun: 4, tålmod: 99, hvert: 1, forut: 0.5, blind: false }),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
             'Gjør det samme, men reagerer seint (hvert tredje grep) og rir for fort over tunet.',
-        make: vett({ flukt: 2.5, unngåTun: 2, sirkel: 0.55, hvert: 3, forut: 0.2, blind: false }),
+        make: vett({ flukt: 3, unngåTun: 2, tålmod: 3, hvert: 3, forut: 0.2, blind: false }),
     },
     grådig: {
         forventer: 'taper',
         beskrivelse: 'Samler navn som om lyset ikke fantes, og rir rett gjennom lyktene.',
-        make: vett({ flukt: 0, unngåTun: 0, sirkel: 0.15, hvert: 1, forut: 0, blind: true }),
+        make: vett({ flukt: 0, unngåTun: 0, tålmod: 99, hvert: 1, forut: 0, blind: true }),
     },
     redd: {
         forventer: 'taper',
         beskrivelse:
             'Tør ikke samle mens det finnes lykter i nærheten, og holder seg unna til de har gått hjem.',
-        make: vett({ flukt: 11, unngåTun: 14, sirkel: 0.15, hvert: 1, forut: 0.5, blind: false }),
+        make: vett({ flukt: 11, unngåTun: 14, tålmod: 99, hvert: 1, forut: 0.5, blind: false }),
     },
     tilfeldig: {
         forventer: 'taper',
         tilfeldig: true,
         beskrivelse: 'Holder tilfeldige piltaster uten å se på tunene eller lyktene.',
         make: (rng) => (g) => {
+            if (rng() < 0.1) rop(g, rng() < 0.4);
             if (rng() < 0.3) {
                 if (rng() < 0.2) styr(g, 0, 0, 0);
                 else styr(g, rng() * 2 - 1, rng() * 2 - 1, 1);

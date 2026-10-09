@@ -26,18 +26,31 @@ export const TUNING = {
     /** Tunene: ringen der navnene strømmer, og hvor mange navn som gir et segl. */
     tun: {
         radius: 5,
-        /** Navn per sekund midt på tunet i skritt. */
-        maksFart: 4.2,
-        /** Kanten av ringen gir så stor andel av midten. */
-        kant: 0.25,
-        /** Galopp gir så stor andel som skritt (farten demper strømmen lineært). */
-        galoppAndel: 0.15,
         seglVed: 20,
+        /** Hesten stanser så fort mens du leser høyt (fart per sekund). */
+        stans: 9,
         /** Husene står i en ring rundt midten. Huset i `husVinkel` har det malte merket
          *  (Klageboka): rir du så nær det, får du et blad. */
         husR: 2.6,
         husVinkel: 0.6,
         funnR: 1.5,
+    },
+
+    /** Å lese klagen høyt (hold mellomrom eller hold på hesten inne på tunet). Navnene
+     *  strømmer fortere jo lenger du holder, men fogdens menn hører deg: nye lykter tennes
+     *  nærmere, og lyktene innen `hør` meter går mot deg. Slipp for å ri ut. */
+    rop: {
+        /** Navn per sekund når du begynner å lese, økning per sekund, og taket. */
+        fart: 1.6,
+        vekst: 0.6,
+        maks: 7,
+        /** Nye lykter tennes opptil så stor andel nærmere etter `nærTid` sekunder. */
+        nærmere: 0.55,
+        nærTid: 5,
+        /** Lykter så nær deg går mot deg mens du leser (meter). */
+        hør: 10,
+        /** Så mye fortere går de når de hører deg. */
+        lokk: 1.3,
     },
 
     /** Kommisjonen: segl som trengs, og hvor mange av dem som må være fra Telemark. */

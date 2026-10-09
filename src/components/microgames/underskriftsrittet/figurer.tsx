@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { Game } from './game';
-import { brettAv, utÅpen } from './game';
+import { brettAv, leser, utÅpen } from './game';
 import { BRETT } from './levels';
 import { åsHøyde, clamp, dist, galoppAndel } from './rules';
 import { FARGE } from './palette';
@@ -72,6 +72,32 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
         []
     );
     const pil = useRef<THREE.Group>(null);
+    // Stemmen: hvor langt fogdens menn hører deg mens du leser høyt (fast ring), og
+    // bølger som går ut fra rytteren.
+    const hør = useRef<THREE.Group>(null);
+    const hørMat = useMemo(
+        () =>
+            new THREE.MeshBasicMaterial({
+                color: FARGE.fare,
+                transparent: true,
+                opacity: 0,
+                depthWrite: false,
+                toneMapped: false,
+            }),
+        []
+    );
+    const bølgeMat = useMemo(
+        () =>
+            new THREE.MeshBasicMaterial({
+                color: FARGE.fareLys,
+                transparent: true,
+                opacity: 0,
+                depthWrite: false,
+                toneMapped: false,
+            }),
+        []
+    );
+    const bølge = useRef<THREE.Mesh>(null);
     const støv = useRef<(THREE.Mesh | null)[]>([]);
     const støvData = useRef(Array.from({ length: STØV }, () => ({ x: 0, z: 0, t: -9 })));
     const fase = useRef(0);
@@ -150,6 +176,7 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
             const fare = g.fangst > 0.01;
             settFarge(fangMat, fare && Math.sin(s.tid * 18) > 0 ? FARGE.fareLys : FARGE.kalk);
         }
+        if (hør.current) settStemme(hør.current, bølge.current, hørMat, bølgeMat, g, s.tid);
         if (pil.current) {
             const m = nesteMål(g);
             const d = m ? dist(h.x, h.z, m.x, m.z) : 0;
@@ -219,6 +246,14 @@ export function Hest({ gRef, sRef }: { gRef: GRef; sRef: SRef }) {
                     );
                 })}
             </group>
+            <group ref={hør} visible={false}>
+                <mesh rotation={FLAT} material={hørMat}>
+                    <ringGeometry args={[T.rop.hør - 0.12, T.rop.hør + 0.12, 72]} />
+                </mesh>
+                <mesh ref={bølge} rotation={FLAT} material={bølgeMat}>
+                    <ringGeometry args={[0.92, 1, 56]} />
+                </mesh>
+            </group>
             <group ref={pil} visible={false}>
                 <mesh rotation={FLAT} scale={1.18} position={[-0.05, -0.01, 0]}>
                     <shapeGeometry args={[pilForm]} />
@@ -261,6 +296,27 @@ function settLyktMat(m: LyktMat, farlig: boolean, lev: number, blink: boolean) {
 function settLunte(t: THREE.Texture, lengde: number, tid: number) {
     t.repeat.x = lengde / 0.9;
     t.offset.x = -tid * 0.8;
+}
+
+/** Stemmeringen: synlig mens du leser høyt, sterkere jo lenger du holder. Bølgen går ut fra
+ *  rytteren til ringen og blekner (ringen selv står stille). */
+function settStemme(
+    gr: THREE.Group,
+    bølge: THREE.Mesh | null,
+    ring: THREE.MeshBasicMaterial,
+    bm: THREE.MeshBasicMaterial,
+    g: Game,
+    tid: number
+) {
+    const på = g.mode === 'play' && leser(g);
+    gr.visible = på;
+    if (!på) return;
+    gr.position.set(g.hest.x, 0.08, g.hest.z);
+    const styrke = Math.min(1, g.ropT / T.rop.nærTid);
+    ring.opacity = 0.25 + 0.5 * styrke;
+    const a = (tid * (0.9 + styrke)) % 1;
+    if (bølge) bølge.scale.setScalar(1 + a * (T.rop.hør - 1));
+    bm.opacity = 0.7 * (1 - a);
 }
 
 function settFarge(m: THREE.MeshBasicMaterial, farge: string) {
