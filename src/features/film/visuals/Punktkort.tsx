@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import {
     Coins,
+    House,
     LifeBuoy,
+    MessageCircleX,
     Radio,
     ScrollText,
     Ship,
@@ -23,6 +25,8 @@ const IKONER: Record<string, LucideIcon> = {
     hest: Swords,
     haer: Users,
     stjerne: Star,
+    hus: House,
+    snakk: MessageCircleX,
 };
 
 interface Props {
