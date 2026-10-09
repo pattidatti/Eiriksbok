@@ -42,7 +42,12 @@ const spec: SimSpec<Game> = {
     bots: Object.fromEntries(
         Object.entries(BOTS).map(([navn, b]) => [
             navn,
-            { forventer: b.forventer, tilfeldig: b.tilfeldig, beskrivelse: b.beskrivelse, make: b.make },
+            {
+                forventer: b.forventer,
+                tilfeldig: b.tilfeldig,
+                beskrivelse: b.beskrivelse,
+                make: b.make,
+            },
         ])
     ),
 };

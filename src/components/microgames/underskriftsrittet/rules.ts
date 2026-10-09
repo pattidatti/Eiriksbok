@@ -7,7 +7,8 @@ import { TUNING } from './tuning';
 const T = TUNING;
 
 export const clamp = (v: number, a: number, b: number) => Math.max(a, Math.min(b, v));
-export const dist = (ax: number, az: number, bx: number, bz: number) => Math.hypot(ax - bx, az - bz);
+export const dist = (ax: number, az: number, bx: number, bz: number) =>
+    Math.hypot(ax - bx, az - bz);
 
 /** Vinkel fra a til b, pakket inn i (-pi, pi]. */
 export function vinkelDiff(a: number, b: number): number {
@@ -64,7 +65,11 @@ export function ser(b: Brett, lx: number, lz: number, hx: number, hz: number, re
 
 /** Presset 0-1: lykter nær deg, fangstringen, måneden og hvor langt i rittet du er. */
 export function pressFra(brett: number, lykterNær: number, fangst: number, månedAndel: number) {
-    return clamp(0.12 * brett + 0.33 * Math.min(1, lykterNær / 5) + 0.25 * fangst + 0.18 * månedAndel, 0, 1);
+    return clamp(
+        0.12 * brett + 0.33 * Math.min(1, lykterNær / 5) + 0.25 * fangst + 0.18 * månedAndel,
+        0,
+        1
+    );
 }
 
 export function rang(poeng: number): string {

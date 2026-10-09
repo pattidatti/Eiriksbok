@@ -72,7 +72,8 @@ function vett(v: Vett) {
                     if (t.segl || k === unntak) return;
                     const s = v.blind
                         ? -dist(h.x, h.z, t.x, t.z)
-                        : Math.min(trygg(t.x, t.z), v.unngåTun * 3) - dist(h.x, h.z, t.x, t.z) * 0.25;
+                        : Math.min(trygg(t.x, t.z), v.unngåTun * 3) -
+                          dist(h.x, h.z, t.x, t.z) * 0.25;
                     if (s > best) {
                         best = s;
                         i = k;
@@ -86,7 +87,8 @@ function vett(v: Vett) {
             const dMål = t ? dist(h.x, h.z, t.x, t.z) : 99;
             // Lykta er på tunet: ri videre til en annen bygd.
             if (t && !v.blind && fare && dMål < T.tun.radius + 2) mål = velg(mål);
-            if (t && !v.blind && trygg(t.x, t.z) < v.unngåTun && dMål > T.tun.radius) mål = velg(mål);
+            if (t && !v.blind && trygg(t.x, t.z) < v.unngåTun && dMål > T.tun.radius)
+                mål = velg(mål);
             const m = mål >= 0 ? g.tun[mål] : { x: b.ut[0], z: b.ut[1] };
             const mx = m.x;
             const mz = m.z;
@@ -109,9 +111,11 @@ function vett(v: Vett) {
                         const pz = h.z + cz * fart * s * 0.4;
                         const kant = T.grense - Math.max(Math.abs(px), Math.abs(pz));
                         fri = Math.min(fri, kant + 2);
-                        for (const l of farlige) fri = Math.min(fri, dist(l.x, l.z, px, pz) - lys(l));
+                        for (const l of farlige)
+                            fri = Math.min(fri, dist(l.x, l.z, px, pz) - lys(l));
                     }
-                    const score = Math.min(fri, 6) + ((cx * (mx - h.x) + cz * (mz - h.z)) / d) * 1.2;
+                    const score =
+                        Math.min(fri, 6) + ((cx * (mx - h.x) + cz * (mz - h.z)) / d) * 1.2;
                     if (score > best) {
                         best = score;
                         bx = cx;

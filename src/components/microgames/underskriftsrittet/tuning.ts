@@ -33,6 +33,11 @@ export const TUNING = {
         /** Galopp gir så stor andel som skritt (farten demper strømmen lineært). */
         galoppAndel: 0.15,
         seglVed: 20,
+        /** Husene står i en ring rundt midten. Huset i `husVinkel` har det malte merket
+         *  (Klageboka): rir du så nær det, får du et blad. */
+        husR: 2.6,
+        husVinkel: 0.6,
+        funnR: 1.5,
     },
 
     /** Kommisjonen: segl som trengs, og hvor mange av dem som må være fra Telemark. */
@@ -44,6 +49,10 @@ export const TUNING = {
         /** Avstand fra siste underskrift der en ny lykt tennes. */
         tennMin: 10,
         tennMax: 18,
+        /** Spredning (radianer) rundt retningen mot fogdgården. */
+        spredning: 0.5,
+        /** Sekunder mannen bruker på å slukke og gå når bygda er ferdig. */
+        hjemTid: 1.5,
         /** Sekunder før mannen går hjem. */
         levetid: 30,
         /** Leteringen rundt stedet der det sist ble skrevet under. */
@@ -92,5 +101,5 @@ export const TUNING = {
     ] as [number, string][],
 
     /** Kameraet: høyde og avstand bak (ca. 55 grader ned), og forsprang i fartsretningen. */
-    kamera: { høyde: 21, bak: 14.5, forsprang: 0.45 },
+    kamera: { høyde: 21, bak: 14.5, forsprang: 0.45, galoppZoom: 0.12 },
 } as const;

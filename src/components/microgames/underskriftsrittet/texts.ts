@@ -6,7 +6,7 @@ export const MÅL =
 export const REGLER = [
     'Ri: piltaster eller WASD (eller hold fingeren der hesten skal).',
     'Samle: ri sakte over tunet. Jo nærmere midten, jo flere navn.',
-    'Unngå det oransje lyset: navnene på de oransje merkene tenner en lykt hos fogden.',
+    'Unngå det oransje lyset: navnene på de oransje merkene tenner en lykt hos fogden. Når buen blir oransje, er han på vei.',
 ];
 
 export const TAP_TITTEL = { lys: 'Klagen er stoppet', vinter: 'Vinteren kom' } as const;
@@ -25,7 +25,28 @@ export const KRAV = ['Gebyrene ned', 'Bedre tømmerpris', 'Kornmonopolet borte (
 
 export const LÆRDOM = {
     eneste: 'Under eneveldet var klage til kongen den eneste lovlige veien. Bøndene kunne ikke stemme.',
-    oppvigleri: 'Når mange samlet seg bak klagen, kalte embetsmennene det opprør - og sendte folk etter Lofthus.',
-    kommisjon: 'Navn fra mange bygder i Agder og Telemark fikk København til å sette ned en kommisjon.',
+    oppvigleri:
+        'Når mange samlet seg bak klagen, kalte embetsmennene det opprør - og sendte folk etter Lofthus.',
+    kommisjon:
+        'Navn fra mange bygder i Agder og Telemark fikk København til å sette ned en kommisjon.',
     straff: 'Kravene vant fram, men lederen ble straffet: Lofthus døde i fangenskap i 1797.',
+    telemark:
+        'Bevegelsen spredte seg fra Agder til Telemark. Jo flere bygder, jo vanskeligere å kalle det én manns klage.',
+    dristig:
+        'Å samle bønder til møter var forbudt, uansett hva kronprinsen hadde sagt. Du tok sjansen likevel.',
 } as const;
+
+/** Klageboka: ett blad i hver bygd, ved gården med det malte merket. Alt står i artikkelen. */
+export const KLAGEBOKA: Record<string, string> = {
+    'Vestre Moland': 'Lofthus eide sin egen gård utenfor Lillesand da han var 23 år.',
+    Birkeland:
+        'Lofthus drev gård, sagbruk, handel og skipsfart - og var ikke redd for å si hva han mente.',
+    Landvik: 'Bøndene fikk bare selge tømmeret til borgerne i byen. Da bestemte borgerne prisen.',
+    Eide: 'Embetsmennene tok betalt for jobben de gjorde for folk, ofte mye.',
+    Øyestad: 'Fra 1735 fikk Sør-Norge bare kjøpe korn fra Danmark. Det kalles kornmonopolet.',
+    Froland: 'Sommeren 1786 reiste Lofthus to ganger til København og møtte kronprinsen.',
+    Treungen: 'Kong Christian 7. var syk. Det var kronprins Frederik som hadde makta.',
+    Drangedal: 'Kommisjonen fant at bøndene hadde rett i mye. To sorenskrivere mistet jobben.',
+    Nissedal: 'Kjøpmennene i Arendal måtte betale erstatning til bøndene.',
+    Fyresdal: 'I 1788 ble kornmonopolet opphevet. Lofthus-saken var med på å få det til.',
+};

@@ -52,6 +52,8 @@ export interface Lykt {
     mz: number;
     /** Sekunder den har lett der. Etter en stund går den videre til nyeste underskrift. */
     lett: number;
+    /** Bygda er ferdig: mannen går hjem og slukker. */
+    hjem: boolean;
 }
 
 export type Hendelse =
@@ -59,6 +61,7 @@ export type Hendelse =
     | { type: 'lykt'; id: number; dragon: boolean }
     | { type: 'slukk'; id: number }
     | { type: 'segl'; tun: number }
+    | { type: 'funn'; tun: number }
     | { type: 'brett'; brett: number }
     | { type: 'tap'; årsak: Årsak }
     | { type: 'seier' };
@@ -84,6 +87,10 @@ export interface Game {
     poeng: number;
     /** Fangstringen rundt hesten, 0-1. Full = tatt. */
     fangst: number;
+    /** Lykta som tok hesten (for bildet som fryser ved tap). */
+    fanger: number | null;
+    /** Bygder der du har ridd over tunet ved gården med det malte merket (Klageboka). */
+    funn: string[];
     sisteNavn: { x: number; z: number } | null;
     lykterIBrett: number;
     navnTider: number[];
@@ -147,6 +154,8 @@ export function newGame(seed = 1, brett = 0): Game {
         seglTelemark: 0,
         poeng: 0,
         fangst: 0,
+        fanger: null,
+        funn: [],
         sisteNavn: null,
         lykterIBrett: 0,
         navnTider: [],
@@ -206,8 +215,17 @@ function tennLykt(g: Game, dragon: boolean, modus: LyktModus) {
     if (dragon) {
         [x, z] = b.vei[0];
     } else {
-        const a = g.rng() * Math.PI * 2;
-        const d = T.lykt.tennMin + g.rng() * (T.lykt.tennMax - T.lykt.tennMin);
+        // Mannen kommer fra fogdgården nærmest stedet du skrev under (eller fra skogkanten
+        // mot gården når den ligger langt unna). Nær gård = kort lunte.
+        let gx = b.fogder[0][0];
+        let gz = b.fogder[0][1];
+        for (const [fx, fz] of b.fogder)
+            if (dist(fx, fz, fra.x, fra.z) < dist(gx, gz, fra.x, fra.z)) {
+                gx = fx;
+                gz = fz;
+            }
+        const a = Math.atan2(gz - fra.z, gx - fra.x) + (g.rng() - 0.5) * T.lykt.spredning;
+        const d = clamp(dist(gx, gz, fra.x, fra.z), T.lykt.tennMin, T.lykt.tennMax);
         x = clamp(fra.x + Math.cos(a) * d, -T.grense, T.grense);
         z = clamp(fra.z + Math.sin(a) * d, -T.grense, T.grense);
     }
@@ -227,6 +245,7 @@ function tennLykt(g: Game, dragon: boolean, modus: LyktModus) {
         mx: fra.x,
         mz: fra.z,
         lett: 0,
+        hjem: false,
     };
     g.lykterIBrett += 1;
     g.lykter.push(l);
@@ -268,6 +287,13 @@ function nyttNavn(g: Game, i: number) {
         g.poeng += T.poeng.segl * (tun.telemark ? T.poeng.telemark : 1);
         g.valg += 1;
         g.hendelser.push({ type: 'segl', tun: i });
+        // Bygda er ferdig: mennene som leter her, går hjem.
+        for (const l of g.lykter)
+            if (!l.dragon && dist(l.mx, l.mz, tun.x, tun.z) < T.lykt.leteRadius + 2) {
+                l.hjem = true;
+                l.farlig = false;
+                l.levetid = Math.min(l.levetid, l.alder + T.lykt.hjemTid);
+            }
         // Fagkjernen: mange bygder fra både Agder og Telemark = kommisjonen.
         if (g.segl >= T.kommisjon.segl && g.seglTelemark >= T.kommisjon.telemark) {
             g.poeng += T.poeng.kommisjon;
@@ -278,9 +304,24 @@ function nyttNavn(g: Game, i: number) {
     }
 }
 
+/** Gården med det malte merket på døra i hver bygd (Klageboka). */
+export function merketHus(tun: { x: number; z: number }) {
+    return {
+        x: tun.x + Math.cos(T.tun.husVinkel) * T.tun.husR,
+        z: tun.z + Math.sin(T.tun.husVinkel) * T.tun.husR,
+    };
+}
+
 function samler(g: Game, dt: number) {
     const h = g.hest;
     g.tun.forEach((tun, i) => {
+        if (!g.funn.includes(tun.navn)) {
+            const m = merketHus(tun);
+            if (dist(h.x, h.z, m.x, m.z) < T.tun.funnR) {
+                g.funn.push(tun.navn);
+                g.hendelser.push({ type: 'funn', tun: i });
+            }
+        }
         if (tun.segl || g.mode !== 'play') return;
         const r = navneFart(dist(h.x, h.z, tun.x, tun.z), h.fart);
         if (r <= 0) return;
@@ -308,6 +349,7 @@ function lykteneGår(g: Game, dt: number) {
     for (const l of g.lykter) {
         const mål = { x: l.mx, z: l.mz };
         l.alder += dt;
+        if (l.hjem) continue;
         if (l.dragon) {
             // Dragonen rir mot deg når den ser deg, ellers mot siste underskrift. Svinger dårlig.
             l.jakter = ser(b, l.x, l.z, h.x, h.z, T.dragon.ser);
@@ -365,6 +407,15 @@ function fangsten(g: Game, dt: number) {
     else g.fangst -= T.fangst.tømming * dt;
     g.fangst = clamp(g.fangst, 0, 1);
     if (g.fangst >= 1) {
+        const h = g.hest;
+        let best = Infinity;
+        for (const l of g.lykter) {
+            const d = dist(l.x, l.z, h.x, h.z);
+            if (l.farlig && d < best) {
+                best = d;
+                g.fanger = l.id;
+            }
+        }
         g.mode = 'lost';
         g.årsak = 'lys';
         g.hendelser.push({ type: 'tap', årsak: 'lys' });

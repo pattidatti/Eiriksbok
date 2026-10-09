@@ -27,6 +27,8 @@ export interface Brett {
     vei: [number, number][];
     /** Åsene: x, z, radius. */
     åser: [number, number, number][];
+    /** Fogdgårdene: lyktene tennes her (eller 10-18 m mot gården). Nær gård = kort lunte. */
+    fogder: [number, number][];
     /** Første lykt i hver bygd tennes ved dette navnet, så hvert n-te navn i hele brettet. */
     førsteLykt: number;
     navnPerLykt: number;
@@ -58,6 +60,10 @@ export const BRETT: Brett[] = [
             [20, -20],
         ],
         åser: [[-12, -8, 6]],
+        fogder: [
+            [-11, -3],
+            [22, -2],
+        ],
         førsteLykt: 10,
         navnPerLykt: 99,
         lyktFart: 1.1,
@@ -92,6 +98,10 @@ export const BRETT: Brett[] = [
             [0, -24],
         ],
         åser: [[-1, -11, 5]],
+        fogder: [
+            [-23, -4],
+            [4, -23],
+        ],
         førsteLykt: 5,
         navnPerLykt: 5,
         lyktFart: 2.1,
@@ -124,6 +134,10 @@ export const BRETT: Brett[] = [
         åser: [
             [-6, -4, 5],
             [12, -14, 5],
+        ],
+        fogder: [
+            [-24, -4],
+            [17, -8],
         ],
         førsteLykt: 4,
         navnPerLykt: 4,

@@ -1,47 +1,53 @@
 # Underskriftsrittet - kart over mappa
 
-GRÅBOKS (primitive former, ingen kunst, ingen juice). Brief: `docs/microgames/briefer/underskriftsrittet.md`.
-Komponent: `../Underskriftsrittet.tsx` (skall, input, kamera, lapper, meny/pause/slutt-skjerm, selvspill).
+Ferdig spill (kunst, juice, lyd, tekst). Brief: `docs/microgames/briefer/underskriftsrittet.md`.
+Komponent: `../Underskriftsrittet.tsx` (skall, input, kamera og risting, lyd, lapper, fryst bilde ved tap,
+epilogen, selvspill). Skjermene (meny med Klageboka, pause, slutt) i `skjermer.tsx`.
 
 | Fil | Hva den gjør |
 | --- | --- |
-| `tuning.ts` | Alle tallene: hesten (skritt/galopp/sving/terreng), kartgrense, tunet (radius, navnefart, segl ved 20), kommisjonen (8 segl, 2 fra Telemark), lyktene, fangsten, dristig, dragonene, poeng, ranger, kamera. |
-| `levels.ts` | `BRETT`: de tre månedene (Vestre Moland, Nedenes, Telemark) med bygder, landevei, åser, lykter per navn, lyktfart, fangtid, dragoner. `månedNavn()`. |
-| `game.ts` | Tilstanden, `newGame`, grepet `styr(g, dx, dz, styrke)` og kjerneløkka `update`: `rir` -> `samler` (navn, `nyttNavn`, segl, seier) -> `lykteneGår` -> `fangsten` -> `måneden` (neste brett / vinter). |
-| `rules.ts` | Rene hjelpere: terreng (vei/ås), `navneFart`, `ser` (åsen skjuler deg), `pressFra`, `rang`. |
-| `bots.ts` / `sim.ts` | Robotene (`vett()`: flukt, unngåTun, sirkel, hvert, forut, blind) og simuleringskontrakten. |
-| `world.tsx` | Gråboks-verdenen: `Kart` (lys bakke, vei, åser, tun med blått fyll, framdriftsbue i én shader med oransje lykt-merker, segl der buen ender, utgangen), `Hest` (+ fangstring som fylles fra kanten, blå pil til nærmeste bygd uten segl), `Lykter` (pool på 24: oransje mann med lykt som vugger når han går, lyspøl tegnet oppå åsene, strek til bygda han går mot når den er under 20 m). |
-| `hud.tsx` | Frosten (kalenderen kryper inn fra kantene), kartusjen (måned + bygd), kommisjonsmåleren (8 segl, Telemark lilla). Ingen navnetall. Egen 10 Hz-tilstand. |
-| `palette.ts` | Fargene. Én betydning per farge: blått = underskriftene, oransje = fogden og lyset, lilla = Telemark, rødt = segl og Agder-hus. |
-| `texts.ts` | Mål, regler, tips ved tap, seiersteksten, kravene og lærdommen. |
+| `tuning.ts` | Alle tallene: hesten, kartgrense, tunet (radius, navnefart, segl ved 20, husene og merket), kommisjonen, lyktene (spredning, hjemTid), fangsten, dristig, dragonene, poeng, ranger, kamera (galoppZoom). |
+| `levels.ts` | `BRETT`: de tre månedene med bygder, landevei, åser, **fogdgårder** (der lyktene tennes), lykter per navn, lyktfart, fangtid, dragoner. |
+| `game.ts` | Tilstanden, `newGame`, grepet `styr` og kjerneløkka `update`: `rir` -> `samler` (Klageboka-funn, navn, `nyttNavn`, segl, seier) -> `lykteneGår` -> `fangsten` (husker `fanger`) -> `måneden`. |
+| `rules.ts` | Rene hjelpere: terreng, `navneFart`, `ser`, `pressFra`, `rang`. |
+| `bots.ts` / `sim.ts` | Robotene og simuleringskontrakten. |
+| `scene.ts` | Visningstilstanden (ikke regler): blekkstreker på vei, når seglet ble trykket, dørblaff, fase (spill/fanget/epilog), risting, lys (natt/morgen/mars). |
+| `land.tsx` | `Lys` (måneskinn, morgen, mars), `Bakke` (kistelokket, vei, åser), `Skog` (instanser), `Fogdhus` (døra blaffer), `Utgang` (stolpe, skilt, bølge). |
+| `tun.tsx` | Tunene: hus, framdriftsbuen (shader: blå navn, oransje merker, kalkhvit -> oransje når en lykt er på vei), blomsterkrans per navn, segl som faller og trykkes, Klagebok-merket, skilt med `crispCanvas`. |
+| `figurer.tsx` | `Hest` (bein, lener seg, støv, fangstring, pil), `Lykter` (pool: lyspøl, kant, mann/dragon, lunte, blaff, slukker når bygda er ferdig, den som tok deg pulserer), `Blekk` (navn som flyr til rytteren), `EpilogLykter`. |
+| `models.ts` / `kontur.ts` / `textures.ts` | Sammenslåtte figurer, sotbrun kontur og toon-materiale, canvas-teksturene (bakke, glød, segl, blomst, lunte, merke). |
+| `hud.tsx` | Kartusjen (måned, bygd, kalender-ranke), frosten, klagebrevet (blekkstreker, navn, poeng), kommisjonsbåndet (8 segl, stempel-animasjon). |
+| `lyd.ts` | Hovslag, pennekrafs, dør og lykt, dragon, segl-dunk, hjerteslag, fanget, seier, epilog. |
+| `texts.ts` | Mål, regler, tips ved tap, seier, krav, lærdom og `KLAGEBOKA` (ti fakta fra artikkelen). |
 
 ## Kjerneløkka
 
 1. Hesten rir med fart og vekt: holdt tast = mot galopp, sluppet = skritt. Krapp sving bremser.
 2. Inne i ringen rundt et tun renner navn: flest midt på og i skritt (`navneFart`). Ved 20 navn: segl.
-3. Navn nummer `førsteLykt` og så hvert `navnPerLykt` i en bygd tenner en lykt 10-18 m unna. Lykta går
-   til stedet der navnet ble skrevet, leter i en sløyfe som går inn over midten, går videre til nyeste
-   underskrift etter `leteTid`, og slukner etter `levetid`. Brett 1: første lykt står, andre går.
+3. Navn nummer `førsteLykt` og så hvert `navnPerLykt` tenner en lykt fra fogdgården nærmest (10-18 m
+   unna, `spredning` rundt retningen). Lykta går til stedet der navnet ble skrevet, leter, går videre
+   etter `leteTid`, slukker etter `levetid`. Får bygda segl, går mennene som leter der hjem (`hjemTid`).
 4. I lyset fylles fangstringen (`fangTid`), full = tatt. Navn med en lykt nær teller dobbelt (dristig).
-   Navn og segl fra Telemark teller tre ganger (`poeng.telemark`): farligere bygder, mer igjen.
-5. Brett 3: 12 navn på 5 s sender en dragon fra landeveien som rir etter deg (ser deg ikke på åsen).
+5. Brett 3: 12 navn på 5 s sender en dragon fra landeveien.
 6. Brettet går videre når alle bygdene har segl og du rir ut ved stolpen, eller når måneden er over.
-   8 segl (minst 2 fra Telemark) = seier. Desember slutt = «Vinteren kom».
+   8 segl (minst 2 fra Telemark) = seier -> epilog (morgen, så mars 1787 og lyktene rundt rytteren).
 
 ## Knapper
 
-- Vanskelighet: `lykt.lys`, `levetid`, `leteTid`, `levels.ts` (`navnPerLykt`, `lyktFart`, `fangTid`, `sekunder`).
+- Vanskelighet: `lykt.lys`, `levetid`, `leteTid`, `levels.ts` (`navnPerLykt`, `lyktFart`, `fangTid`, `fogder`).
 - Hvor deilig samlingen er: `tun.maksFart`, `kant`, `galoppAndel`.
 - Ferdighetstrappen: `poeng` (særlig `telemark`), `dristig`, robotenes `vett()`-tall.
+- Juice: `FANGET_S`/`EPILOG_S` i komponenten, `kamera.galoppZoom`, risting i `scene.rist`.
 
 ## Fallgruver
 
 - Lykter som jaget hesten (`lykt.ser` > 0) samlet seg i flokker og gjorde spillet uvinnelig - står på 0.
-- Bygder nær kartkanten ble feller: hold dem minst 12 m fra `grense`.
+- Bygder nær kartkanten ble feller: hold dem minst 12 m fra `grense`. Fogdgårder kan ligge utenfor.
 - Brett 1 har en skjult måned (95 s) så en passiv spiller ikke blir stående for alltid.
-- Klageboka (funn på tvers av runder) er ikke bygd ennå.
-- Raskere navnefart (`tun.maksFart` opp) hjelper den grådige mer enn den halvgode: den rekker seglet
-  før lyktene kommer. Brattere kant (`tun.kant` ned) straffer den halvgode som rir vide sirkler.
-- Lyktstreker over hele kartet ble et kaos av linjer: `STREK_MAKS` i `world.tsx` holder dem korte.
-- Merkene på buen leser `førsteLykt`/`navnPerLykt` fra brettet: endrer du regelen i `nyttNavn`, endre
-  shaderen i `world.tsx` også.
+- Merkene på buen leser `førsteLykt`/`navnPerLykt`: endrer du regelen i `nyttNavn`, endre shaderen i `tun.tsx`.
+- React-kompilatoren nekter mutasjon av materialer fra `useMemo` i `useFrame`: legg den i en modulfunksjon
+  (`settBue`, `settLyktMat` o.l.).
+- Komponentnavn med æ/ø/å godtas ikke av fast-refresh-regelen (derfor `Skog` og `Fogdhus`).
+- `.arc-stage canvas` er absolutt plassert i skallet: klagebrevets canvas må ha `position: relative`.
+- Kartet er større enn bildet, så kart-gruppa har `userData.sceneAuditIgnore` (innrammings-sjekken).
+- Selvspillets snapshot melder `spiller` under det fryste bildet og epilogen, så slutt-skjermen blir sjekket.

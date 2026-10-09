@@ -312,3 +312,38 @@ klagen samlet mange bak seg, ble den kalt opprør. Kravene vant fram, men ledere
   den). Den redde roboten tjener på Telemark x3 (396, toppen av taperne). Robotene ser ikke merkene
   eller strekene, så simuleringen måler bare poengendringen, ikke om eleven leser faren bedre.
   Telemark-bakken er litt grå. Dristig gir fortsatt mest til den som rir blindt gjennom lyset.
+
+### Bygg (natt 2026-10-09)
+
+- Diagnose 2 gjort først: (1) faren på buen - fogdens lunte (stiplet, animert strek fra mannen til
+  bygda han går mot) vises fra han tennes når målet er nær deg, buen foran fyllet skifter fra kalkhvit
+  til pulserende oransje når en lykt er på vei, og et tap fryser bildet i 2,2 s med kameraet tett inn,
+  oransje kant og lykta som tok deg pulserende. (2) Pila (stor, lys blå med sort kant) og fangstringen
+  (kalkhvit, alltid synlig) står fra første bilde; mennene som leter i en bygd som får segl, slukker og
+  går hjem. (3) Lyktene tennes nå fra synlige fogdgårder (døra blaffer opp), så bygdene har ulik
+  risiko: nær gård = kort lunte. Navn ved husene og veiskiller ble IKKE gjort - tre regler holder.
+- Kunsten fra kunstbriefen: kistelokket som bakke (canvas med penselstrøk, akantusranker og korn),
+  rosemalte trær som instanser med sotbrun kontur, røde (Agder) og lilla (Telemark) hus med kalkhvite
+  kanter, lakksegl med krone og L, blomsterkrans som springer ut for hvert navn, skilt i kartusj med
+  `crispCanvas`, måneskinn som blir morgen når kommisjonen settes ned og kaldt i mars. Natten er malt
+  blågrønn i mellomtone (ikke svart), etter diagnose 1. Skrift: Grenze Gotisch (fraktur) og Alegreya
+  Sans via fontsource (UnifrakturMaguntia og Alegreya finnes ikke i prosjektet).
+- Juice: hesten galopperer med bein, lener seg i svingen, støver i galopp, kameraet zoomer ut i galopp;
+  navnene flyr som blekkstreker fra husene (gylne for dristige) og skrives inn i klagebrevet; seglet
+  faller, klemmes og sender en bølge, kameraet rister, båndet stempler. Lyd for alt (hov, penn, dør,
+  segl, hjerteslag i lyset, dragon). Seier: «Redsel i København», morgenlys, så «Mars 1787,
+  Lillesand» og tolv lykter som tennes én etter én rundt rytteren, så opptellingen med kravene stemplet.
+- HUD: kartusj med måned og bygd og kalender-ranke, klagebrevet til høyre, kommisjonsbåndet nederst.
+  Klageboka: ti blader (ett per bygd, fakta fra artikkelen) ved det malte merket på tunet, i menyen.
+- Simuleringen (200 runder per robot): grønn. Seende vinner 91 % (median 1112), halvgod 37 % (916),
+  grådig 0 % (683), redd 0 % (419), tilfeldig 0 % (12), passiv 0 %. 31 valg per minutt, presset
+  0,15 -> 0,34 -> 0,45. Fogdgårdene og hjemgangen løftet halvgod (500 -> 916) og grådig (360 -> 683).
+- Nettleser: seende vant med samme poeng som simuleringen, Chromebook lav 7,4 ms JS per bilde, 71 draw
+  calls. Scene-audit og likhetsvakt grønne (nærmest loddposen 0,20).
+- Det som IKKE virket: (1) mørke tak sett ovenfra gjorde husene svarte - takene er nå røde/lilla med
+  kalkhvit møne. (2) Den første natt-paletten (`#2f5850`) var for mørk; løftet en tone og lyset opp.
+  (3) Skallets `.arc-stage canvas` la klagebrevets canvas over tittelen. (4) Innrammings-sjekken
+  telte hele kartet som modell; kart-gruppa er merket som kulisse.
+- Kjente svakheter: grådig (683) ligger nærmere halvgod enn før. Epilogen er ikke sett av selvspillet
+  i bilder, bare at slutt-skjermen kommer. Fogdgårdene er mørke klosser. Robotene bruker fortsatt ikke
+  åsene, og de går ikke etter Klagebok-merkene.

@@ -107,6 +107,13 @@
       "content": "I København ble de redde. I desember 1786 satte de ned en kommisjon, altså en gruppe som skulle granske klagene. Den ble kalt Lofthuskommisjonen (Sætra & Mardal, 2025). Samtidig trakk de tilbake ordren om å arrestere Lofthus (Willoch, 2000). Det så ut som om bøndene hadde vunnet."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "underskriftsrittet"
+      }
+    },
+    {
       "type": "image",
       "src": "/images/placeholder.webp",
       "alt": "Væpnede bønder samlet rundt en gård på Agder",
