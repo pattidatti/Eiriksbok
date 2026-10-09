@@ -108,8 +108,14 @@ et forløp, tall, en ting, mennesker som står mot hverandre).
 
 ### Hopp over
 
-- Læringsstier, oversiktsartikler uten en historie, og artikler under 600 ord.
+- Læringsstier og artikler under 600 ord.
 - Artikler der tonen ikke tåler film etter guiden §4. Nevn dem i rapporten.
+
+**Oversiktsartikler skal ha film.** I KRLE er sammenligningsartiklene (`krle/sammenligning/`)
+blant de viktigste i hele faget. Mangler artikkelen én historie, bygg filmen på sammenligningen:
+gå gjennom religionene eller syna én etter én, med det samme spørsmålet til hver, og la
+visualen vise dem side om side (et felt per religion som fylles ut, symboler, et kart over hvor
+de holder til). Avslutt med hva som er likt og hva som skiller.
 
 Skriv `/tmp/artikkel.txt`: sti, tittel, og tre setninger om hva filmen skal vise.
 
