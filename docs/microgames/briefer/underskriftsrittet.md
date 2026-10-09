@@ -249,3 +249,33 @@ klagen samlet mange bak seg, ble den kalt opprør. Kravene vant fram, men ledere
   lykter per navn og navn per segl må finnes i simuleringen: en forsiktig robot skal tape på
   kalenderen, en grådig robot uten flukt skal bli tatt, og en robot som samler i rykk og
   rir ut skal vinne.
+
+### Gråboks (natt 2026-10-09)
+
+- Bygd etter steg 3a: reglene i `underskriftsrittet/` (`tuning.ts`, `levels.ts`, `game.ts`, `rules.ts`),
+  robotene i `bots.ts`, `sim.ts`, gråboks-visning i R3F (`world.tsx`, `hud.tsx`), `KART.md`, og
+  registrert i `registry.ts` med `kunst`. Ikke embeddet i artikkelen.
+- Opptrappingen fra punkt 11 er de tre brettene: Vestre Moland (første lykt står, andre går mot
+  tunet, ingen fangst fra første lykt), Nedenes (lyktene leter, kalender 80 s) og Telemark (dragoner,
+  fangst på 0,5 s, kalender 100 s). Brettet går videre når alle bygdene har segl og du rir ut ved
+  stolpen, eller når måneden er over.
+- Simuleringen (200 runder per robot): grønn. Seende vinner 90 % (median 785 poeng), halvgod 11 %
+  (median 391), grådig (blind for lyset) 0 % (median 360), redd (tør ikke samle) 0 % (median 278),
+  knappemoser 0 % (median 6), passiv 0 %. 26 valg per minutt, presset 0,15 -> 0,34 -> 0,43.
+- Nettleser-røyktest: seende vant med 792 poeng (samsvar med simuleringen), Chromebook-nivå lav
+  3,7 ms JS per bilde, 23 draw calls. Eneste portfunn: coverbildet mangler (ventet før kunst).
+- Det som IKKE virket: (1) lykter som så og jaget hesten (`lykt.ser` 6-7,5 m) samlet seg i flokker
+  og fanget den flinke roboten - seende vant 3-11 %. Nå leter lyktene bare. (2) Lykter som alltid
+  gikk mot nyeste underskrift fulgte deg som en sverm - nå går de til stedet de ble tent for, og
+  går videre først etter `leteTid` (20 s). (3) Hvert tredje navn i Telemark og hvert fjerde i
+  Nedenes ga 12-14 lykter samtidig - nå hvert fjerde (Telemark) og hvert femte (Nedenes).
+  (4) Bygder 10 m fra kartkanten ble feller; grensen er flyttet ut til 30. (5) Midt på tunet var
+  trygt fordi leteringen gikk utenfor - sløyfen trekker seg nå inn over midten.
+- Avvik fra briefen: levetid 30 s (ikke 40), lyspøl 2,6 m, dragon ved 12 navn på 5 s (ikke 8 -
+  med den nye navnefarten var 8 vanlig tempo), brett 1 har en skjult måned på 95 s så en passiv
+  spiller ikke står for alltid, og lyktene jager ikke (åsen skjuler deg bare for dragonene).
+- Kjente svakheter: ferdighetstrappen er smal (middels 391 mot taper 360) fordi poengtaket ligger
+  nær 800 for alle som vinner; navn etter seglet gir ingenting. Seier gir ingen epilog-animasjon
+  ennå (bare tekst på slutt-skjermen). Klageboka, lyd, pause når vinduet scrolles bort og plakat
+  mangler. Horisonten er nesten svart. Robotene bruker ikke åsene eller landeveien, så rutevalget
+  er ikke prøvd i simuleringen.
