@@ -11,3 +11,4 @@ Eksempel: `- /historie/andre-verdenskrig/d-dagen ØNSKE: flåten i 3D, kart over
 ## Ferdig
 
 - /historie/industriell-revolusjon/titanic (referansen, laget i chat 2026-10-08)
+- /historie/norge-i-moderne-tid/hvalfangsten (nattrutinen 2026-10-09)

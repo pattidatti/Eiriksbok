@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 import {
+    Bomb,
     Coins,
+    Factory,
+    Fish,
+    Lamp,
     House,
     LifeBuoy,
     MessageCircleX,
@@ -27,6 +31,10 @@ const IKONER: Record<string, LucideIcon> = {
     stjerne: Star,
     hus: House,
     snakk: MessageCircleX,
+    bombe: Bomb,
+    fabrikk: Factory,
+    hval: Fish,
+    lampe: Lamp,
 };
 
 interface Props {
