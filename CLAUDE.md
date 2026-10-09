@@ -248,7 +248,7 @@ The app uses a manifest-driven routing system:
 /admin/scanner                  Innholdsskanner
 
 /film/:subjectId/:topicId/:lessonId                Artikkelfilm - artikkelen spilt av med stemme, teksting og 2D/3D (se build_film.md)
-                                                   Stemmen er innspilt i eget repo `eiriksbok-lyd` (Chirp 3 HD via GitHub Action, Cloudflare Pages); nettleserstemmen er reserve
+                                                   Stemmen er innspilt (Chirp 3 HD, `scripts/film-lyd/`, Cloudflare R2 + Worker); nettleserstemmen er reserve
 /:subjectId/:topicId/present/:lessonId             Presentasjonsmodus for leksjon
 /:subjectId/:topicId/present/:lessonId/projector   Presentasjon — projektor-view
 ```
@@ -660,6 +660,7 @@ som skal genereres, og artikkelen ender uten bilder for godt.
 | `scripts/guide-microgame.mjs` | Skriver ut delene av `build_microgame.md` én rolle i nattrutinen trenger (`--rolle designer\|bygg\|forbedrer\|dirigent`), valgt på overskrift |
 | `scripts/kvittering-microgame.mjs` | Hva et mikrospill kostet å lage: tokens, steg, leseandel og rettelses-commits, fra de lokale Claude Code-loggene. `--alle --skriv` oppdaterer `docs/microgames/kvitteringer.md` (sammenligningsgrunnlaget) |
 | `scripts/kontaktark-microgame.mjs` | Setter skjermbildene fra selvspill og scene-audit sammen til ark på 6 ruter med filnavn (`.screenshots/kontaktark/`) - ett bilde å lese i stedet for seks |
+| `scripts/film-lyd/lag_lyd.py` | Fortellerstemmen til artikkelfilmene: Chirp 3 HD per replikk, Whisper-kontroll, én mp3 + tidsfil per film i R2-bøtta `eiriksbok-lyd`. Kjøres av `.github/workflows/film-lyd.yml` hver time; Workeren i `cloudflare/lyd-worker/` viser lyden. Stopper ved 800 000 tegn i måneden |
 | `scripts/validate-film.mjs` | Validerer manus for artikkelfilmer: skjema, props per visual, beats, norsk, og at alle tall står i artikkelen |
 | `scripts/shots-film.mjs` | Skjermbilder av en artikkelfilm (ett per replikk) + kontaktark + ekte avspilling. Krever Vite-dev-server |
 | `scripts/optimize-images.js` | Optimaliserer WebP-bilder under `public/`. Kvitterer for hver fil i `scripts/image-ledger.json`, så et bilde komprimeres én gang - ikke én gang per build |

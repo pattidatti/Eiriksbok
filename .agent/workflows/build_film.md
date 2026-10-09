@@ -22,12 +22,12 @@ hvor ofte bildet skifter.
 - **Beat = replikken som leses nå** (0, 1, 2 ...). Visualen får `beat` og endrer bildet når
   beaten skifter. Synken går per replikk, ikke per sekund, for stemmen er ulik fra maskin til
   maskin. Bruk derfor aldri faste sekunder for å treffe et ord. Bruk beats.
-- **Stemmen lages for deg.** Når manuset er merget, lager repoet
-  [`eiriksbok-lyd`](https://github.com/pattidatti/eiriksbok-lyd) fortellerstemmen innen en time
-  (Google Chirp 3 HD, «Algieba», tempo 1,1) og publiserer den til Cloudflare Pages. Du lager
-  aldri lyd selv og legger aldri lydfiler i Eiriksbok. Til lyden er klar, og når et manus er
-  endret siden sist, leser nettleserens stemme. Tidene i lydfila styrer beatene, så synken per
-  replikk gjelder fortsatt. Uttaler stemmen noe feil, rett det med `uttale` på replikken.
+- **Stemmen lages for deg.** Innen en time etter at manuset er merget, lager Actionen
+  `.github/workflows/film-lyd.yml` fortellerstemmen (Google Chirp 3 HD, «Algieba», tempo 1,1),
+  sjekker den med Whisper og legger den i Cloudflare R2. Du lager aldri lyd selv og legger aldri
+  lydfiler i repoet. Til lyden er klar, og når et manus er endret siden sist, leser nettleserens
+  stemme. Tidene i lydfila styrer beatene, så synken per replikk gjelder fortsatt. Uttaler
+  stemmen noe feil, rett det med `uttale` på replikken.
 - **Uten stemme i det hele tatt går filmen i tekstmodus:** hver replikk står så lenge det tar å
   lese den. Filmen må derfor fungere uten lyd.
 - **Teksting ligger i eget felt UNDER bildet.** Hele 16:9-flaten er din, også nederste kant.
@@ -39,7 +39,7 @@ hvor ofte bildet skifter.
 | Filmens egne visualer | `src/features/film/visuals/<film-id>/<Navn>.tsx` - fila eksporterer `export function <Navn>` |
 | Generelle visualer | `src/features/film/visuals/*.tsx`, registrert i `visuals/index.ts` (`GENERELLE`) |
 | Spiller, forteller | `FilmPage.tsx`, `useFilmNarrator.ts` |
-| Innspilt stemme | eget repo `eiriksbok-lyd` (`lag_lyd.py`, Action hver time) - ikke i dette repoet |
+| Innspilt stemme | `scripts/film-lyd/lag_lyd.py` (Action `film-lyd.yml` hver time) → R2-bøtta `eiriksbok-lyd`, vist av Workeren i `cloudflare/lyd-worker/`. Rør dem ikke i en film-PR |
 
 Filmer og egne visualer **finnes automatisk** (`import.meta.glob`). En ny film legger bare til
 nye filer - den endrer aldri `index.ts`, `filmIndex.ts`, `App.tsx` eller artikkelen. «Se som

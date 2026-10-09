@@ -6,9 +6,9 @@ import type { FilmManus } from './types';
  * Fortelleren: leser replikkene i manuset én etter én, og sier hvilken scene og replikk
  * som går nå. Tre måter, i denne rekkefølgen:
  *
- * 1. Innspilt: ferdig lyd fra lydrepoet `eiriksbok-lyd` (Google Chirp 3 HD, laget av en
- *    GitHub Action når manuset kommer inn). Én mp3 per film og en json med start og slutt
- *    for hver replikk. Lydens klokke styrer hvilken replikk som går.
+ * 1. Innspilt: ferdig lyd (Google Chirp 3 HD) som `scripts/film-lyd/lag_lyd.py` legger i
+ *    Cloudflare R2, vist av Workeren i `cloudflare/lyd-worker/`. Én mp3 per film og en json
+ *    med start og slutt for hver replikk. Lydens klokke styrer hvilken replikk som går.
  * 2. Nettleserens innebygde norske stemme, når filmen ikke har innspilt lyd ennå.
  * 3. Tekstmodus (ingen stemme, eller lyden av): hver replikk står på skjermen så lenge det
  *    tar å lese den.

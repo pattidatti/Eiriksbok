@@ -48,3 +48,6 @@ stats.html
 # Forelesningene til Auditoriet (automanus + program.json). Genereres av
 # scripts/generate-forelesninger.mts i scan:content, både i dev og i byggen.
 public/data/forelesninger/
+
+# Wranglers lokale tilstand (Worker-testing)
+.wrangler/

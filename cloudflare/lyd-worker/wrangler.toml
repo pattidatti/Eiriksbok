@@ -1,0 +1,9 @@
+# Worker som viser filmlyden fra R2. Publiseres av .github/workflows/film-lyd.yml.
+name = "eiriksbok-lyd"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "LYD"
+bucket_name = "eiriksbok-lyd"

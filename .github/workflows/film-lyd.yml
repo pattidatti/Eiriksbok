@@ -1,0 +1,127 @@
+name: Filmlyd
+
+# Lager fortellerstemmen til artikkelfilmene og legger den i R2-bøtta `eiriksbok-lyd`
+# (scripts/film-lyd/lag_lyd.py). Workeren i cloudflare/lyd-worker/ viser lyden til
+# filmspilleren. Kjører hver time fordi film-PR-er merges av auto-merge med GITHUB_TOKEN,
+# og slike merger starter ikke `on: push`. Uten nye manus tar en kjøring et halvt minutt.
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      film:
+        description: 'Bare denne filmen (f.eks. historie/industriell-revolusjon/titanic)'
+        required: false
+      tving:
+        description: 'Lag på nytt selv om lyden er oppdatert'
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'src/features/film/manus/**'
+      - 'scripts/film-lyd/**'
+      - 'cloudflare/lyd-worker/**'
+      - '.github/workflows/film-lyd.yml'
+
+concurrency:
+  group: film-lyd
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  GOOGLE_TTS_KEY: ${{ secrets.GOOGLE_TTS_KEY }}
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+jobs:
+  lyd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Mangler Cloudflare-nøkler
+        if: env.CLOUDFLARE_API_TOKEN == '' || env.CLOUDFLARE_ACCOUNT_ID == ''
+        run: |
+          echo "::warning::CLOUDFLARE_API_TOKEN eller CLOUDFLARE_ACCOUNT_ID er ikke satt. Ingenting å gjøre."
+          echo "STOPP=1" >> "$GITHUB_ENV"
+
+      - uses: actions/checkout@v5
+        if: env.STOPP != '1'
+        with:
+          sparse-checkout: |
+            src/features/film/manus
+            scripts/film-lyd
+            cloudflare/lyd-worker
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        if: env.STOPP != '1'
+        with:
+          node-version: 22
+
+      # Workeren er døra inn til bøtta. Publiseres hver gang; det tar noen sekunder og
+      # holder den lik koden i repoet.
+      - name: Publiser Workeren
+        if: env.STOPP != '1'
+        working-directory: cloudflare/lyd-worker
+        run: npx --yes wrangler@4 deploy
+
+      - uses: actions/setup-python@v6
+        if: env.STOPP != '1'
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/film-lyd/requirements.txt
+
+      - name: Hva mangler lyd?
+        id: telle
+        if: env.STOPP != '1'
+        run: |
+          ARGS=""
+          [ -n "${{ inputs.film }}" ] && ARGS="$ARGS --film ${{ inputs.film }}"
+          [ "${{ inputs.tving }}" = "true" ] && ARGS="$ARGS --tving"
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+          echo "mangler=$(python scripts/film-lyd/lag_lyd.py $ARGS --bare-telle)" >> "$GITHUB_OUTPUT"
+
+      - name: Mangler Google-nøkkel
+        if: env.STOPP != '1' && steps.telle.outputs.mangler != '0' && env.GOOGLE_TTS_KEY == ''
+        run: echo "::warning::${{ steps.telle.outputs.mangler }} filmer mangler lyd, men GOOGLE_TTS_KEY er ikke satt."
+
+      - name: Installer
+        if: env.STOPP != '1' && steps.telle.outputs.mangler != '0' && env.GOOGLE_TTS_KEY != ''
+        run: pip install -r scripts/film-lyd/requirements.txt
+
+      - name: Whisper-modellen (cache)
+        if: env.STOPP != '1' && steps.telle.outputs.mangler != '0' && env.GOOGLE_TTS_KEY != ''
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: nb-whisper-medium-ct2
+
+      - name: Lag lyd
+        if: env.STOPP != '1' && steps.telle.outputs.mangler != '0' && env.GOOGLE_TTS_KEY != ''
+        run: |
+          python scripts/film-lyd/lag_lyd.py ${{ steps.telle.outputs.args }} \
+            | { grep -vE '^  [0-9]+/[0-9]+$' || true; } | tee logg.txt
+
+      # Avvik (Whisper hørte noe annet enn manuset) og kvotestopp meldes på issue #12,
+      # der nattrutinene rapporterer.
+      - name: Meld avvik
+        if: always() && hashFiles('logg.txt') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if grep -qE 'AVVIK|[1-9][0-9]* avvik|STOPP' logg.txt; then
+            {
+              echo "**Filmlyd $(date -u +%F):** Whisper hørte noe annet enn manuset i noen replikker, eller kvoten stoppet jobben. Lytt på replikkene; er uttalen feil, skriv \`uttale\` i manuset, så lages lyden på nytt."
+              echo
+              echo '```'
+              cat logg.txt
+              echo '```'
+            } > melding.md
+            gh issue comment 12 --repo "$GITHUB_REPOSITORY" --body-file melding.md
+          fi
