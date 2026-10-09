@@ -86,7 +86,7 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
                     {film && (
                         <Link
                             to={film}
-                            className="flex items-center p-4 rounded-xl shadow-sm border bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 hover:shadow-md transition-all"
+                            className="hidden lg:flex items-center p-4 rounded-xl shadow-sm border bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 hover:shadow-md transition-all"
                         >
                             <Clapperboard className="w-5 h-5 mr-3" />
                             <span className="font-bold text-sm">Se som film</span>

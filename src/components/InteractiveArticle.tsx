@@ -7,9 +7,11 @@ import {
     PlayCircle,
     ArrowLeft,
     BookOpen,
-    ChevronDown
+    ChevronDown,
+    Clapperboard
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { filmLenke } from '../features/film/filmIndex';
 import { ArticleContent } from './ArticleContent';
 import { RichSidebar } from './RichSidebar';
 import { getArticleHeadings } from '../utils/articleHeadings';
@@ -83,6 +85,7 @@ const FactBox: React.FC<{ content: string }> = React.memo(({ content }) => (
 
 export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, sidebarConfig, lessonNav, footerSlot }) => {
     const navigate = useNavigate();
+    const film = filmLenke(useLocation().pathname);
     const { events: globalEvents } = useGlobalTimeline();
     const { speak, pause, resume, cancel, playBlock, isPlaying, isPaused, hasVoice, activeBlockIndex, rate, setRate } = useTTS();
 
@@ -353,6 +356,18 @@ export const InteractiveArticle: React.FC<InteractiveArticleProps> = ({ event, s
                     <h1 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold text-slate-900 mb-2 leading-tight">
                         {event.title}
                     </h1>
+
+                    {/* Filmknappen bor i sidebaren på brede skjermer. Under lg havner
+                        sidebaren nederst (eller skjules), så her får den egen plass. */}
+                    {film && (
+                        <Link
+                            to={film}
+                            className="lg:hidden mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-600 text-white text-sm font-bold shadow-sm hover:bg-indigo-700 transition-colors"
+                        >
+                            <Clapperboard className="w-4 h-4" />
+                            Se som film
+                        </Link>
+                    )}
                 </div>
             </div>
 
