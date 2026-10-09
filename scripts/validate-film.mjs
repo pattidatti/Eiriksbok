@@ -28,7 +28,7 @@ const GENERELLE = {
     Dypet: { krav: ['dybde'], lister: {} },
     Sluttkort: { krav: ['setninger'], lister: { setninger: ['tekst', 'fraBeat'] } },
 };
-const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk'];
+const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe'];
 /** Ca. 12 sekunder tale. Lengre enkeltsetninger risikerer å bli kuttet av Chrome. */
 const MAKS_TALTE_ORD_PER_SETNING = 30;
 

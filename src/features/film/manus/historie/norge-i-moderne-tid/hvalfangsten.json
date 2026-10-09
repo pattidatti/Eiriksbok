@@ -1,0 +1,256 @@
+{
+    "id": "hvalfangsten",
+    "tittel": "Hvalfangsten: Norges eventyr i isen",
+    "kilde": "/historie/norge-i-moderne-tid/hvalfangsten",
+    "bilde": "/images/norge-i-moderne-tid/hvalfangsten-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "sorishavet",
+            "kapittel": "Sørishavet",
+            "visual": { "type": "HvalfangstHavet", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "Det er desember 1930. Vi er langt sør i Sørishavet, havet rundt Antarktis." },
+                { "si": "Isfjellene her er større enn kirker. Havet er grått og kaldt." },
+                { "si": "Midt i alt dette ligger et stort fabrikkskip. Det kalles et kokeri." },
+                { "si": "Små, raske båter kommer tilbake fra jakten. De sleper døde hval etter seg." },
+                { "si": "Mange av mannskapene er nordmenn. De er tusenvis av kilometer hjemmefra." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "HVALFANGSTEN",
+                    "undertittel": "Norges eventyr i isen",
+                    "bilde": "/images/norge-i-moderne-tid/hvalfangsten-hero.webp",
+                    "tall": [
+                        { "verdi": 10550, "etikett": "nordmenn i Antarktis", "fraBeat": 1 },
+                        { "verdi": 40000, "etikett": "hval drept", "fraBeat": 2, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hvordan havnet Norge her?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Sesongen 1930 til 1931 ble den største noensinne." },
+                { "si": "Da var 41 hele fangstflåter, 232 hvalbåter og 10 550 nordmenn i Antarktis." },
+                { "si": "Til sammen drepte de over 40 000 hval på én eneste sesong." },
+                { "si": "Hvordan havnet Norge her? Og hvorfor tok eventyret slutt?" }
+            ]
+        },
+        {
+            "id": "foyn",
+            "kapittel": "Harpunen",
+            "visual": { "type": "HvalfangstHarpun" },
+            "replikker": [
+                { "si": "Historien begynner med én mann: Svend Foyn. Han ble født i Tønsberg i 1809." },
+                {
+                    "si": "I 1863 fikk han bygget en liten båt med dampmaskin. Den het Spes & Fides.",
+                    "uttale": "I 1863 fikk han bygget en liten båt med dampmaskin. Den het Spes og Fides."
+                },
+                { "si": "Men de største hvalene var for store for de gamle våpnene. Foyn trengte noe bedre." },
+                { "si": "Sammen med presten Hans Esmark lagde han en harpun med en granat i spissen. En granat er en liten bombe." },
+                { "si": "Harpunen ble skutt ut fra en kanon på båten. I 1868 virket den, og Foyn fanget 30 hval på én sesong." }
+            ]
+        },
+        {
+            "id": "industriell",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Industriell hvalfangst",
+                    "punkter": [
+                        { "ikon": "bombe", "tittel": "Damp, kanon og granat", "tekst": "tre nye ting på én båt", "fraBeat": 0 },
+                        { "ikon": "fabrikk", "tittel": "Maskiner i stor skala", "tekst": "som i en fabrikk", "fraBeat": 1 },
+                        { "ikon": "hval", "tittel": "Blåhval og finnhval", "tekst": "de største hvalene som finnes", "fraBeat": 2 },
+                        { "ikon": "stjerne", "tittel": "Som i industrien ellers", "tekst": "maskiner gjør arbeidet større", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Dampbåten, kanonen og granatharpunen ble starten på det vi kaller industriell hvalfangst." },
+                { "si": "Industriell betyr at noe blir gjort med maskiner og i stor skala, som i en fabrikk." },
+                { "si": "Nå kunne fangstfolkene jakte på de største hvalene som finnes, blåhvalen og finnhvalen." },
+                { "si": "Det var den samme utviklingen som i den industrielle revolusjonen. Nye maskiner gjorde arbeidet mange ganger større." }
+            ]
+        },
+        {
+            "id": "finnmark",
+            "visual": { "type": "HvalfangstKart", "props": { "modus": "nord" } },
+            "replikker": [
+                { "si": "I 1870 bygde Foyn den første moderne hvalstasjonen, nær Vadsø i Finnmark." },
+                { "si": "En hvalstasjon er en fabrikk på land. Der blir hvalen skåret opp og kokt til olje." },
+                { "si": "I ti år var det bare Foyn som fikk fange hval langs Finnmarkskysten. Han ble en svært rik mann." },
+                { "si": "Så kom mange andre etter. På 1890-tallet lå det over 30 hvalstasjoner i Nord-Norge." },
+                { "si": "Men fiskerne i nord var sterkt imot. I 1904 forbød Stortinget hvalfangst i de tre nordligste fylkene." },
+                { "si": "Da var rundt 3500 blåhval allerede tatt. Hvalfangerne måtte finne nye hav." }
+            ]
+        },
+        {
+            "id": "sor",
+            "kapittel": "Mot isen i sør",
+            "visual": { "type": "HvalfangstKart", "props": { "modus": "sor" } },
+            "replikker": [
+                { "si": "Svaret lå i sør, rundt Antarktis, nesten på den andre siden av jorda." },
+                { "si": "Carl Anton Larsen ledet ekspedisjoner dit fra 1892 til 1894. Han så at det var mye hval der." },
+                { "si": "I 1904 ble hvalstasjonen Grytviken bygget på øya Sør-Georgia. Larsen ble leder." },
+                { "si": "Samtidig satt Christen Christensen i Sandefjord. Han eide et verft, et sted der man bygger skip, og han hadde en ny idé." }
+            ]
+        },
+        {
+            "id": "kokeri",
+            "visual": { "type": "HvalfangstHavet", "props": { "modus": "kokeri" } },
+            "replikker": [
+                { "si": "I 1903 bygde Christensen om et dampskip som het Admiralen." },
+                { "si": "Det ble verdens første moderne flytende hvalkokeri." },
+                { "si": "Et kokeri er et skip som fungerer som en fabrikk på havet. Hvalen blir skåret opp og kokt rett om bord." },
+                { "si": "Da trengte skipet ingen stasjon på land. I 1905 tok Christensen Admiralen med til Sør-Shetlandsøyene i Antarktis." }
+            ]
+        },
+        {
+            "id": "slippen",
+            "visual": { "type": "HvalfangstHavet", "props": { "modus": "slipp" } },
+            "replikker": [
+                { "si": "På 1920-tallet kom det neste store spranget." },
+                { "si": "Kokeriene fikk en sklie bak på skipet. Den heter en opphalingsslipp." },
+                { "si": "Nå kunne mannskapet dra hele hvalen opp på dekk, midt ute på det åpne havet." },
+                { "si": "Petter Sørlle fikk patent på slippen, så ingen andre fikk lage den uten lov. Den ble brukt første gang i 1925." }
+            ]
+        },
+        {
+            "id": "verdi",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hva var hvalen verdt?",
+                    "punkter": [
+                        { "ikon": "lampe", "tittel": "Lampeolje", "tekst": "spekket ble kokt til hvalolje", "fraBeat": 1 },
+                        { "ikon": "fabrikk", "tittel": "Margarin", "tekst": "når oljen ble gjort fast", "fraBeat": 2 },
+                        { "ikon": "penger", "tittel": "Arbeid og rikdom", "tekst": "for byer som Sandefjord", "fraBeat": 3 },
+                        { "ikon": "hus", "tittel": "Hvalfangstmuseet", "tekst": "gitt til Sandefjord i 1917", "fraBeat": 4 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Hvorfor ville alle ha hval? Svaret er spekket, det tykke fettlaget under huden." },
+                { "si": "Spekket ble kokt til hvalolje. Folk brente oljen i lampene sine." },
+                { "si": "Etter hvert lærte man å gjøre oljen fast. Da kunne den brukes til margarin." },
+                { "si": "For byer som Sandefjord betydde hvalfangsten arbeid og rikdom." },
+                { "si": "I 1917 ga rederen Lars Christensen byen et hvalfangstmuseum. Det er det eneste i Europa som handler bare om hvalfangst." }
+            ]
+        },
+        {
+            "id": "regnskap",
+            "kapittel": "Fangst uten grenser",
+            "visual": { "type": "HvalfangstRegnskap" },
+            "replikker": [
+                { "si": "Men hvalfangst er et regnestykke. Hvert år blir det født nye hval." },
+                { "si": "Det går sakte. En blåhvalhunn får bare én unge hvert andre eller tredje år." },
+                { "si": "Tar fangstfolkene flere hval enn det blir født, krymper bestanden. Bestanden er antallet hval i havet." },
+                { "si": "Det er som en sparegris. Tar du ut mer enn du legger inn, blir den tom til slutt." },
+                { "si": "En kvote er en grense for hvor mye man har lov til å fange. Med en liten kvote kan bestanden holde seg." }
+            ]
+        },
+        {
+            "id": "kollaps",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "For mye, for sent",
+                    "punkter": [
+                        { "ikon": "hval", "tittel": "Rekord: 1930-1931", "tekst": "den største sesongen noensinne", "fraBeat": 0 },
+                        { "ikon": "penger", "tittel": "For mye olje", "tekst": "fangsten brøt sammen året etter", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Genève, 1931", "tekst": "den første avtalen mellom land", "fraBeat": 2 },
+                        { "ikon": "haer", "tittel": "IWC, 1946", "tekst": "17 land i en hvalfangstkommisjon", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I Sørishavet skjedde akkurat dette." },
+                { "si": "Rekordsesongen ga så mye hvalolje at det ble for mye å selge. Året etter brøt fangsten sammen." },
+                { "si": "Landene prøvde å lage regler. Den første avtalen kom i Genève i 1931, og den bygde på en norsk lov." },
+                {
+                    "si": "Etter andre verdenskrig gikk 17 land sammen. I 1946 stiftet de Den internasjonale hvalfangstkommisjonen, IWC.",
+                    "uttale": "Etter andre verdenskrig gikk 17 land sammen. I 1946 stiftet de Den internasjonale hvalfangstkommisjonen, I W C."
+                }
+            ]
+        },
+        {
+            "id": "fredet",
+            "visual": { "type": "HvalfangstStorrelse", "props": { "modus": "bla" } },
+            "replikker": [
+                { "si": "Likevel måtte de største hvalene til slutt fredes. Fredet betyr at det er forbudt å drepe dyret." },
+                { "si": "Blåhvalen ble fredet i Nord-Atlanteren i 1955, og i Sørishavet i 1966." },
+                { "si": "Blåhvalen er trolig det største dyret som har levd på jorda. Den kan bli rundt 30 meter lang og veie opptil 190 tonn." },
+                { "si": "Likevel er det fortsatt få blåhval i sør i dag." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": { "type": "HvalfangstHavet", "props": { "modus": "tomt" } },
+            "replikker": [
+                { "si": "Nederland, Storbritannia og til slutt Norge trakk seg ut av fangsten." },
+                { "si": "Den siste landstasjonen på Sør-Georgia ble lagt ned i 1966." },
+                { "si": "Det siste norske kokeriet fanget hval i Antarktis sesongen 1967 til 1968." },
+                { "si": "Etter rundt hundre år var det store norske hvaleventyret over." }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "Hvalfangst i dag",
+            "visual": { "type": "HvalfangstStorrelse", "props": { "modus": "begge" } },
+            "replikker": [
+                {
+                    "si": "I 1982 vedtok IWC å stanse all hvalfangst for salg. En slik stans kalles et moratorium.",
+                    "uttale": "I 1982 vedtok I W C å stanse all hvalfangst for salg. En slik stans kalles et moratorium."
+                },
+                { "si": "Norge sa nei. Norge mente at stansen ikke fulgte rådene fra kommisjonens egne forskere." },
+                { "si": "I 1993 begynte Norge igjen å fange vågehval langs kysten. Mange land reagerte sterkt." },
+                { "si": "Vågehvalen er mye mindre enn blåhvalen. Den blir 8 til 9 meter lang og veier opptil 9 tonn." },
+                { "si": "Det finnes litt over 100 000 av dem der Norge fanger. Norske fangstfolk tar rundt 500 til 600 i året." }
+            ]
+        },
+        {
+            "id": "uenige",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Er det riktig?",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Greit med kvoter", "tekst": "når det er mange hval, og forskerne regner", "fraBeat": 1 },
+                        { "ikon": "hval", "tittel": "Ikke jakt på hval", "tekst": "de er for store og spesielle dyr", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Er det riktig å fange hval i dag? Folk er uenige." },
+                { "si": "Noen mener fangst er greit, så lenge det er mange hval og kvotene bygger på forskning." },
+                { "si": "Andre mener at hval er så store og spesielle dyr at de ikke bør jaktes i det hele tatt." },
+                { "si": "Spørsmålet handler både om tall og om hva vi mener er rett. Hva mener du?" }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Arbeid til tusenvis.", "fraBeat": 0 },
+                        { "tekst": "Rikdom til noen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Naturen har et regnestykke.", "fraBeat": 1 },
+                        { "tekst": "Tar du mer enn den tåler, blir det tomt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Fisken. Oljen. Hvalen.", "fraBeat": 2 },
+                        { "tekst": "Regn før du høster.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Hvalfangsten ga arbeid til tusenvis av nordmenn, og gjorde noen av dem svært rike." },
+                { "si": "Men den viser også hva som skjer når vi høster av naturen uten å regne på hva naturen tåler." },
+                { "si": "Den samme lærdommen gjelder alt vi henter fra havet, fra fisk til oljen under havbunnen." }
+            ]
+        }
+    ]
+}
