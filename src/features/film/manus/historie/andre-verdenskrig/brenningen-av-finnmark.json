@@ -1,0 +1,513 @@
+{
+    "id": "brenningen-av-finnmark",
+    "tittel": "Brenningen av Finnmark: Da bygdene ble til aske",
+    "kilde": "/historie/andre-verdenskrig/brenningen-av-finnmark",
+    "bilde": "/images/andre-verdenskrig/brenningen-av-finnmark-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "kaia",
+            "kapittel": "Kaia",
+            "visual": {
+                "type": "FinnmarkBygda",
+                "props": {
+                    "modus": "kai"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er november 1944, i et lite fiskevær i Finnmark. Det er mørkt og kaldt."
+                },
+                {
+                    "si": "Ute på kaia står en familie med noen sekker og et par dyner. Tyske soldater har sagt at alle må gå om bord i båten."
+                },
+                {
+                    "si": "Båten legger fra land. Familien ser bakover, mot bygda si."
+                },
+                {
+                    "si": "Da ser de røyken stige. Fra huset sitt, fra fjøset, fra skolen og fra kirken."
+                },
+                {
+                    "si": "Snart står hele bygda i flammer."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "BRENNINGEN AV FINNMARK",
+                    "undertittel": "Da bygdene ble til aske",
+                    "bilde": "/images/andre-verdenskrig/brenningen-av-finnmark-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 50000,
+                            "etikett": "tvangsevakuert",
+                            "fraBeat": 1,
+                            "tone": "rod"
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvorfor gjorde de det?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det skjedde i hundrevis av bygder og byer i Finnmark og Nord-Troms, høsten og vinteren 1944."
+                },
+                {
+                    "si": "Tyskerne tvang rundt 50 000 mennesker til å forlate hjemmene sine. Det kalles tvangsevakuering: Folk blir flyttet bort med makt, enten de vil eller ikke.",
+                    "uttale": "Tyskerne tvang rundt femti tusen mennesker til å forlate hjemmene sine. Det kalles tvangsevakuering: Folk blir flyttet bort med makt, enten de vil eller ikke."
+                },
+                {
+                    "si": "Så brente de nesten alt som sto igjen. Hvorfor gjorde de det? Og hvordan klarte folk å bygge alt opp igjen?"
+                }
+            ]
+        },
+        {
+            "id": "retrett",
+            "kapittel": "En hær på vei hjem",
+            "visual": {
+                "type": "FinnmarkKart",
+                "props": {
+                    "modus": "retrett"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Høsten 1944 er andre verdenskrig i ferd med å snu. Tyskland taper."
+                },
+                {
+                    "si": "Over 200 000 tyske soldater er i Nord-Finland. Nå må de komme seg ut.",
+                    "uttale": "Over to hundre tusen tyske soldater er i Nord-Finland. Nå må de komme seg ut."
+                },
+                {
+                    "si": "De trekker seg tilbake mot Lyngen i Nord-Troms. Der skal de lage en ny forsvarslinje, en linje fienden ikke skal komme forbi."
+                }
+            ]
+        },
+        {
+            "id": "sovjet",
+            "visual": {
+                "type": "FinnmarkKart",
+                "props": {
+                    "modus": "sovjet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Samtidig angriper den sovjetiske hæren fra øst. Den 22. oktober 1944 krysser sovjetiske soldater grensen til Norge."
+                },
+                {
+                    "si": "Tre dager senere er Kirkenes befridd. Men byen er nesten borte. Bare 28 av rundt 900 bygninger står igjen."
+                },
+                {
+                    "si": "Sovjetiske soldater rykker videre vestover, til Tanaelva. Der stanser de, 6. november."
+                },
+                {
+                    "si": "Den 10. november kommer norske soldater til Finnmark."
+                },
+                {
+                    "si": "Finnmark blir den første delen av Norge som blir befridd. Men bare den østligste biten. Resten ligger mellom to hærer."
+                }
+            ]
+        },
+        {
+            "id": "ordren",
+            "kapittel": "Ordren fra Hitler",
+            "visual": {
+                "type": "FinnmarkKart",
+                "props": {
+                    "modus": "ordre"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Først prøver tyskerne å få folk til å flytte frivillig. Rundt 5000 mennesker reiser fra Øst-Finnmark.",
+                    "uttale": "Først prøver tyskerne å få folk til å flytte frivillig. Rundt fem tusen mennesker reiser fra Øst-Finnmark."
+                },
+                {
+                    "si": "Men de fleste vil ikke dra. De vil ikke forlate gården, båten og dyrene sine."
+                },
+                {
+                    "si": "Den 26. oktober er Josef Terboven i Troms. Terboven er rikskommissær, altså Hitlers mann i Norge."
+                },
+                {
+                    "si": "Han er redd for at den norske regjeringen i London skal få kontroll over Finnmark, med hjelp fra folk som bor der."
+                },
+                {
+                    "si": "To dager senere, 28. oktober 1944, kommer ordren fra Hitler. Alle som bor øst for Lyngen, skal flyttes med tvang, og alle hus skal brennes."
+                }
+            ]
+        },
+        {
+            "id": "rendulic",
+            "visual": {
+                "type": "FinnmarkOrdren",
+                "props": {
+                    "modus": "ordre"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Generalen som leder de tyske soldatene i nord, heter Lothar Rendulic."
+                },
+                {
+                    "si": "Han mener det er greit å ødelegge veier og bruer, for å bremse fienden."
+                },
+                {
+                    "si": "Men han har sagt at de ikke burde tvinge folket som bor der."
+                },
+                {
+                    "si": "Likevel skriver han under på ordren om evakuering og ødeleggelse. Det er 29. oktober 1944."
+                }
+            ]
+        },
+        {
+            "id": "brentjord",
+            "kapittel": "Brent jord",
+            "visual": {
+                "type": "FinnmarkBygda",
+                "props": {
+                    "modus": "brentjord"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det tyskerne gjør, kalles brent jord."
+                },
+                {
+                    "si": "Brent jord betyr at en hær som trekker seg tilbake, ødelegger alt fienden kan ha nytte av."
+                },
+                {
+                    "si": "Ingen skal finne mat, husly, veier eller båter. Husly betyr et sted å bo, tak over hodet."
+                },
+                {
+                    "si": "Tanken er at de sovjetiske soldatene ikke skal få hjelp eller tak over hodet når de rykker fram."
+                }
+            ]
+        },
+        {
+            "id": "omfang",
+            "visual": {
+                "type": "FinnmarkKart",
+                "props": {
+                    "modus": "omfang"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men i Finnmark går ødeleggelsen mye lenger enn det en hær trenger."
+                },
+                {
+                    "si": "Nesten hele Finnmark vest for Varangerbotn og Tana blir totalt ødelagt."
+                },
+                {
+                    "si": "I Nord-Troms blir mellom halvparten og ni av ti bygninger ødelagt, alt etter hvor du bor."
+                },
+                {
+                    "si": "I Vardø blir 85 prosent av byen ødelagt."
+                }
+            ]
+        },
+        {
+            "id": "telling",
+            "visual": {
+                "type": "FinnmarkTelling"
+            },
+            "replikker": [
+                {
+                    "si": "Etter krigen telte Statistisk sentralbyrå opp hva som ble ødelagt. Listen er lang."
+                },
+                {
+                    "si": "11 000 bolighus. 4700 fjøs og uthus.",
+                    "uttale": "Elleve tusen bolighus. Fire tusen sju hundre fjøs og uthus."
+                },
+                {
+                    "si": "306 fiskebruk og 420 butikker. Et fiskebruk er stedet der båtene leverer fisken på land.",
+                    "uttale": "Tre hundre og seks fiskebruk og fire hundre og tjue butikker. Et fiskebruk er stedet der båtene leverer fisken på land."
+                },
+                {
+                    "si": "106 skoler. 21 sykehus og legekontor. 140 forsamlingshus og 27 kirker.",
+                    "uttale": "Hundre og seks skoler. Tjueen sykehus og legekontor. Hundre og førti forsamlingshus og tjuesju kirker."
+                },
+                {
+                    "si": "I tillegg ødela tyskerne nesten alle båtene. For folk som levde av fiske, var båten like viktig som huset."
+                }
+            ]
+        },
+        {
+            "id": "sorover",
+            "kapittel": "Reisen sørover",
+            "visual": {
+                "type": "FinnmarkKart",
+                "props": {
+                    "modus": "sorover"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Over 37 000 mennesker fra Finnmark og drøyt 12 000 fra Nord-Troms blir tvangsevakuert.",
+                    "uttale": "Over trettisju tusen mennesker fra Finnmark og drøyt tolv tusen fra Nord-Troms blir tvangsevakuert."
+                },
+                {
+                    "si": "De fleste blir fraktet sørover med båt. Noen med små fiskebåter, andre med store tyske transportskip."
+                },
+                {
+                    "si": "Fiskerne behandler folk stort sett godt. På de tyske skipene er forholdene ofte svært dårlige."
+                },
+                {
+                    "si": "Mellom 200 og 300 mennesker døde i forbindelse med evakueringen.",
+                    "uttale": "Mellom to hundre og tre hundre mennesker døde i forbindelse med evakueringen."
+                }
+            ]
+        },
+        {
+            "id": "carl-arp",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1800,
+                            "farget": 1800,
+                            "farge": "#475569",
+                            "tittel": "1800 mennesker om bord på «Carl Arp»",
+                            "fargeEtikett": "om bord"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1800,
+                            "farget": 1800,
+                            "farge": "#b45309",
+                            "tittel": "Tenk deg: tett i tett, lite mat og vann",
+                            "fargeEtikett": "om bord"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1800,
+                            "farget": 25,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "25 døde under reisen",
+                            "fargeEtikett": "døde, de fleste av sykdom",
+                            "restEtikett": "overlevde reisen"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et av de tyske skipene het Carl Arp. Om bord var det 1800 mennesker, tett i tett."
+                },
+                {
+                    "si": "Tenk deg et lasterom fullt av barn, gamle og syke. Uten nok mat, vann eller toaletter."
+                },
+                {
+                    "si": "Under reisen døde 25 av dem. De fleste døde av sykdom."
+                }
+            ]
+        },
+        {
+            "id": "tromso",
+            "visual": {
+                "type": "FinnmarkKart",
+                "props": {
+                    "modus": "tromso"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "De fleste kommer først til Tromsø. Bare i november 1944 passerer over 30 000 evakuerte gjennom byen.",
+                    "uttale": "De fleste kommer først til Tromsø. Bare i november 1944 passerer over tretti tusen evakuerte gjennom byen."
+                },
+                {
+                    "si": "Litt over 70 prosent av dem havner i Nordland og Troms."
+                },
+                {
+                    "si": "Rundt 18 000 blir sendt helt til Sør-Norge. De fleste havner på Østlandet.",
+                    "uttale": "Rundt atten tusen blir sendt helt til Sør-Norge. De fleste havner på Østlandet."
+                },
+                {
+                    "si": "Mange skal bo borte fra hjemmet sitt i over et halvt år."
+                }
+            ]
+        },
+        {
+            "id": "gjemte",
+            "kapittel": "De som gjemte seg",
+            "visual": {
+                "type": "FinnmarkGamme"
+            },
+            "replikker": [
+                {
+                    "si": "Men ikke alle følger ordren. Rundt 23 000 mennesker i Finnmark gjemmer seg i stedet.",
+                    "uttale": "Men ikke alle følger ordren. Rundt tjuetre tusen mennesker i Finnmark gjemmer seg i stedet."
+                },
+                {
+                    "si": "De bor i huler i fjellet, i enkle hytter eller i gammer. En gamme er en liten hytte bygd av torv, altså flak av jord og gress."
+                },
+                {
+                    "si": "Tenk deg en vinter i Finnmark. Det er mørkt nesten hele døgnet, og det kan være mange kuldegrader."
+                },
+                {
+                    "si": "Maten er lite, og hjemmet er brent."
+                },
+                {
+                    "si": "I februar 1945 blir 500 mennesker fra Finnmark fraktet over havet til Skottland."
+                }
+            ]
+        },
+        {
+            "id": "hjem",
+            "kapittel": "Hjem til ingenting",
+            "visual": {
+                "type": "FinnmarkBygda",
+                "props": {
+                    "modus": "hjem"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I mai 1945 er krigen slutt, og folk vil hjem. Men hjem til hva? Nesten alt er brent."
+                },
+                {
+                    "si": "Først handler det om å skaffe husly, et sted å bo, til alle som kommer tilbake."
+                },
+                {
+                    "si": "Våren 1947 starter den varige gjenreisningen. Gjenreisning betyr å bygge opp igjen."
+                },
+                {
+                    "si": "Mange velger å flytte tilbake til akkurat den plassen der de bodde før, selv om myndighetene hadde andre planer."
+                },
+                {
+                    "si": "Det meste er gjenreist i løpet av åtte til ni år."
+                }
+            ]
+        },
+        {
+            "id": "planen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Gjenreisningen",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Husbanken",
+                            "tekst": "gunstige lån til nye hus",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Nord-Norge-planen, 1952 til 1960",
+                            "tekst": "veier, boliger og annen hjelp",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Ferdig tidlig på 1960-tallet",
+                            "tekst": "samtidig som velferdsstaten ble bygd",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Staten gir gunstige lån gjennom Husbanken. Gunstige lån betyr lån det er lett å betale tilbake."
+                },
+                {
+                    "si": "Fra 1952 til 1960 kommer Nord-Norge-planen. Den skal bygge veier, boliger og gi annen hjelp til landsdelen."
+                },
+                {
+                    "si": "Hele gjenreisningen varer til tidlig på 1960-tallet. Derfor ble de fleste husene i Finnmark bygd i de samme årene."
+                }
+            ]
+        },
+        {
+            "id": "straff",
+            "kapittel": "Ble noen straffet?",
+            "visual": {
+                "type": "FinnmarkOrdren",
+                "props": {
+                    "modus": "dom"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Og generalen som skrev under på ordren? Lothar Rendulic sto for retten i Nürnberg."
+                },
+                {
+                    "si": "Han ble dømt til 20 års straffarbeid, altså fengsel med tvangsarbeid. Det var for krigsforbrytelser på Balkan, i Sørøst-Europa. En krigsforbrytelse er et brudd på reglene for krig."
+                },
+                {
+                    "si": "Men han ble ikke funnet skyldig for ødeleggelsen i Nord-Norge."
+                },
+                {
+                    "si": "Senere ble straffen satt ned til ti år. I 1951 slapp han ut."
+                },
+                {
+                    "si": "Mange i Finnmark syntes det var urettferdig. For dem var brenningen en forbrytelse mot vanlige mennesker."
+                },
+                {
+                    "si": "For retten var spørsmålet om hæren trengte det i krigen. Hvor går grensen mellom krigføring og krigsforbrytelse?"
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "En av de største katastrofene",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "i norsk historie.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Brent jord rammer ikke bare soldater.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Det rammer hele samfunn.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Folk som nektet å gi opp",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "bygde alt opp igjen fra ingenting.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Brenningen av Finnmark og Nord-Troms er en av de største katastrofene i norsk historie."
+                },
+                {
+                    "si": "Den viser hva brent jord betyr. Det er ikke bare soldater som rammes, men hele samfunn."
+                },
+                {
+                    "si": "Men det er også en historie om folk som nektet å gi opp, og som bygde alt opp igjen fra ingenting."
+                }
+            ]
+        }
+    ]
+}
