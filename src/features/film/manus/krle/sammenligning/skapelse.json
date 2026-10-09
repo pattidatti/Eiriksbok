@@ -1,0 +1,222 @@
+{
+    "id": "skapelse",
+    "tittel": "Skapelse: Hvor kommer alt fra?",
+    "kilde": "/krle/sammenligning/skapelse",
+    "bilde": "/images/sammenligning/skapelse-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "natt",
+            "kapittel": "Spørsmålet",
+            "visual": { "type": "SkapelseKosmos", "props": { "modus": "natt" } },
+            "replikker": [
+                { "si": "Tenk deg at du ligger på ryggen ute en klar natt. Himmelen er full av stjerner." },
+                { "si": "Har alt dette alltid vært der? Eller begynte det en gang?" },
+                { "si": "Og hvis det begynte, hvem satte det i gang?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SKAPELSE",
+                    "undertittel": "Hvor kommer alt fra?",
+                    "bilde": "/images/sammenligning/skapelse-hero.webp",
+                    "sporsmal": { "tekst": "Har verden en begynnelse?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Nesten alle religioner har en fortelling om hvordan verden ble til." },
+                { "si": "Fagordet for slike fortellinger er kosmogoni. Det betyr en fortelling om hvordan verden ble til." },
+                { "si": "Fortellingene handler sjelden bare om fortiden. De svarer på hvorfor vi finnes, og hva vi skal gjøre med tiden vi har." },
+                { "si": "Vi skal se at det største skillet ikke er antall dager. Det er om verden har en begynnelse i det hele tatt." }
+            ]
+        },
+        {
+            "id": "tre-typer",
+            "kapittel": "Tre typer",
+            "visual": { "type": "SkapelseTreTyper", "props": {} },
+            "replikker": [
+                { "si": "Forskerne deler skapelsesfortellingene i tre typer." },
+                { "si": "Den første: Gud skaper av ingenting. Det lå ikke noe der fra før." },
+                { "si": "Den andre: Gud skaper av et rot eller et stoff som allerede lå der." },
+                { "si": "Den tredje: Et urvesen, et kjempevesen fra tidenes begynnelse, blir delt opp i biter. Bitene blir til verden." },
+                { "si": "Du skal møte alle tre i denne filmen." }
+            ]
+        },
+        {
+            "id": "ingenting",
+            "kapittel": "En Gud som vil",
+            "visual": { "type": "SkapelseKosmos", "props": { "modus": "ord" } },
+            "replikker": [
+                { "si": "Vi begynner med jødedommen, kristendommen og islam. Sammen kalles de de abrahamittiske religionene, oppkalt etter Abraham, som alle tre ser tilbake på." },
+                { "si": "I begynnelsen er det bare mørke over dypet. Men Gud er der før alt annet." },
+                { "si": "Gud sier noe, og det blir til. I den jødiske teksten står uttrykket Gud sa hele ti ganger." },
+                { "si": "Alle tre mener at Gud skapte av ingenting, bare ved å si det, tenke det eller ville det." },
+                { "si": "Fagordet er ex nihilo. Det er latin og betyr av ingenting. Gud hadde ikke noe materiale å bygge med." }
+            ]
+        },
+        {
+            "id": "dager",
+            "visual": { "type": "SkapelseDager", "props": { "modus": "bibel" } },
+            "replikker": [
+                { "si": "Jødedommen og kristendommen leser den samme teksten, første Mosebok." },
+                { "si": "Der skaper Gud verden på seks dager." },
+                { "si": "Dagene er bygd som tre par. Først lager Gud tre tomme rom. Så fyller han dem." },
+                { "si": "Så kommer den sjuende dagen, og da hviler Gud." },
+                { "si": "For jøder er den sjuende dagen selve poenget. Det er den eneste dagen Gud kaller hellig." },
+                { "si": "For kristne er det viktigste at mennesket er skapt i Guds bilde, og har fått ansvar for å ta vare på jorda." }
+            ]
+        },
+        {
+            "id": "islam",
+            "visual": { "type": "SkapelseDager", "props": { "modus": "islam" } },
+            "replikker": [
+                { "si": "Islam forteller også om seks dager. Men det er én forskjell som er lett å overse." },
+                { "si": "I Bibelen hviler Gud på den sjuende dagen. Koranen sier det motsatte." },
+                { "si": "Der står det at Gud skapte himlene og jorden på seks dager, og at ingen tretthet rørte ham." },
+                { "si": "Altså ingen hviledag. En Gud som ikke blir sliten, trenger ikke hvile." },
+                { "si": "Mennesket, Adam, blir formet av leire. Oppgaven er å være Guds forvalter, en som passer på jorda for ham." }
+            ]
+        },
+        {
+            "id": "nyere",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Tre nyere bevegelser, tre ulike svar",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Bahá'í",
+                            "tekst": "skapelsen begynte aldri",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Mormonismen",
+                            "tekst": "Gud organiserte stoff som alt fantes",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Jehovas vitner",
+                            "tekst": "seks dager, men hver dag er en lang periode",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Tre nyere bevegelser bryter med den vanlige lesningen, hver på sin måte." },
+                { "si": "Bahá'í sier at skapelsen aldri begynte. En Gud som ikke alltid har skapt, ville ikke vært en skaper.", "uttale": "Bahai sier at skapelsen aldri begynte. En Gud som ikke alltid har skapt, ville ikke vært en skaper." },
+                { "si": "Mormonismen sier at Gud ikke skapte av ingenting. Han organiserte stoff som alt fantes, slik en byggmester bruker materialer." },
+                { "si": "Jehovas vitner holder på seks dager. Men de leser hver dag som en lang tidsperiode, ikke som et døgn." }
+            ]
+        },
+        {
+            "id": "ring",
+            "kapittel": "Tiden går i ring",
+            "visual": { "type": "SkapelseKosmos", "props": { "modus": "ring" } },
+            "replikker": [
+                { "si": "Nå reiser vi til India. Her er det formen på tiden som er det store." },
+                { "si": "I de abrahamittiske religionene går tiden som en linje, med en start. I hinduismen går tiden i ring." },
+                { "si": "Verden blir til, består og går under. Og så begynner det på nytt." },
+                { "si": "Det finnes ingen første gang. Spør du en hindu hva som skjedde helt i starten, er svaret at det ikke fantes noen start." },
+                { "si": "Målet for mennesket er å slippe ut av kretsløpet. Et kretsløp er noe som går rundt og rundt." }
+            ]
+        },
+        {
+            "id": "purusha",
+            "visual": { "type": "SkapelseTreTyper", "props": { "fokus": "urvesen" } },
+            "replikker": [
+                { "si": "Hinduismen har ikke én skapelsesfortelling, men flere som lever side om side." },
+                { "si": "Den mest kjente er Purusha-hymnen. En hymne er en hellig sang." },
+                { "si": "Der blir et gigantisk urvesen ofret, og verden blir laget av kroppen hans." },
+                { "si": "Det er den tredje typen. Verden blir ikke skapt av ingenting, men av noe som allerede fantes." }
+            ]
+        },
+        {
+            "id": "buddha",
+            "visual": { "type": "SkapelsePila", "props": {} },
+            "replikker": [
+                { "si": "Buddhismen går enda lenger. Den har ingen gud som skapte verden, og ingen skapelsesfortelling." },
+                { "si": "Ifølge tekstene nektet Buddha å svare på om verden har vart evig." },
+                { "si": "Han sammenlignet det med en mann som er truffet av en pil." },
+                { "si": "Mannen krever å få vite hvem som skjøt, før han lar legen ta ut pila." },
+                { "si": "Svaret hjelper ham ikke. Det som hjelper, er å få ut pila. For buddhister er målet å få slutt på lidelsen." }
+            ]
+        },
+        {
+            "id": "veven",
+            "kapittel": "Mønsteret",
+            "visual": { "type": "SkapelseVeven", "props": {} },
+            "replikker": [
+                { "si": "La oss samle alt i ett bilde. Her er ni tradisjoner, og fire faser fra før begynnelsen til hva vi skal her." },
+                { "si": "De abrahamittiske religionene og de nyere bevegelsene fyller nesten hver rute." },
+                { "si": "Sikhismen hører hjemme i India, men svarer mer likt de abrahamittiske. Før verden fantes det bare mørke, helt til Gud bestemte seg." },
+                { "si": "Hinduismen har ingen rute for før begynnelsen. Det fantes ingen begynnelse." },
+                { "si": "Og buddhismen fyller bare den siste ruta. Den tomme ruta er svaret." }
+            ]
+        },
+        {
+            "id": "skille",
+            "visual": { "type": "SkapelseSkille", "props": {} },
+            "replikker": [
+                { "si": "Nå ser du mønsteret. Det som skiller tradisjonene mest, er om verden har en begynnelse." },
+                { "si": "Har verden en begynnelse, må noen ha satt den i gang. Da har den trolig en mening også." },
+                { "si": "Har den ingen begynnelse, er det ingen som satte den i gang. Da må meningen ligge et annet sted." },
+                { "si": "Der det finnes en skaper, får mennesket et oppdrag fra noen. Der det ikke finnes en skaper, må mennesket finne oppgaven sin helt selv." }
+            ]
+        },
+        {
+            "id": "samisk",
+            "kapittel": "Et levende landskap",
+            "visual": { "type": "SkapelseSolstraler", "props": {} },
+            "replikker": [
+                { "si": "En gjestestemme fra nord: den gamle samiske religionen." },
+                { "si": "Den bygde på at naturen lever. Fjell, steiner, kilder og sjøer kunne ha sin egen åndelige kraft." },
+                { "si": "Mange trodde også at det fantes flere verdener ved siden av vår, blant annet de dødes rike og en underverden." },
+                { "si": "Solguden Beaivi står sentralt. Ifølge mytologien kom reinen vandrende til jorda langs solstrålene.", "uttale": "Solguden Baivi står sentralt. Ifølge mytologien kom reinen vandrende til jorda langs solstrålene." },
+                { "si": "Her er spørsmålet ikke bare når verden ble til, men hva slags sted den er. Er landskapet laget og gitt til oss, eller lever det selv?" }
+            ]
+        },
+        {
+            "id": "bigbang",
+            "kapittel": "Og de som ikke tror?",
+            "visual": { "type": "SkapelseKosmos", "props": { "modus": "bigbang" } },
+            "replikker": [
+                { "si": "Naturvitenskapen har også en fortelling om begynnelsen." },
+                { "si": "Tanken er at universet startet som noe ufattelig tett og varmt. Det kaller vi Big Bang." },
+                { "si": "Tanken ble først lagt fram av belgiske Georges Lemaître. Han var både fysiker og prest.", "uttale": "Tanken ble først lagt fram av belgiske Georges Lemetre. Han var både fysiker og prest." },
+                { "si": "Big Bang forteller hvordan det skjedde, ikke hvorfor." },
+                { "si": "Humanister og andre som ikke tror på en gud, mener at ingen har gitt universet en mening utenfra. Derfor må mennesket lage mening selv." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Seks dager, ingen dager,", "fraBeat": 0 },
+                        { "tekst": "eller ingen fortelling i det hele tatt.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "En linje med en start, eller en ring.", "fraBeat": 1 },
+                        { "tekst": "Det avgjør hva mennesket er til for.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Et oppdrag fra noen,", "fraBeat": 2 },
+                        { "tekst": "eller en mening du må finne selv.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Hva svarer du?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Noen bruker seks dager. Noen bruker ingen dager. Og noen lar spørsmålet stå helt åpent." },
+                { "si": "Men det store skillet er om verden har en begynnelse. Det avgjør hva mennesket er til for." },
+                { "si": "Enten har vi fått et oppdrag fra noen. Eller så må vi finne meningen selv." },
+                { "si": "Det er det samme spørsmålet, stilt av mennesker over hele verden. Hva svarer du?" }
+            ]
+        }
+    ]
+}
