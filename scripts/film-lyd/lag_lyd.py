@@ -345,15 +345,19 @@ def lag_film(nokkel: str, manus: dict, sjekk: bool) -> tuple[dict, bytes]:
         'hash': avtrykk,
         'stemme': STEMME,
         'tempo': TEMPO,
-        # Fingeravtrykket i filnavnet lar nettleseren cache lyden for alltid: ny lyd får nytt navn.
-        'lyd': f'{Path(nokkel).name}-{avtrykk}.mp3',
+        'lyd': '',  # settes under, når lyden er kodet
         'varighet': round(t, 3),
         'laget': dt.datetime.now(dt.timezone.utc).isoformat(timespec='seconds'),
         'kontrollert': sjekk,
         'replikker': tider,
         'avvik': funn,
     }
-    return data, kod_mp3(b''.join(biter))
+    mp3 = kod_mp3(b''.join(biter))
+    # Filnavnet følger innholdet i lydfila, ikke manuset: samme manus lest på nytt gir litt
+    # annen lyd og andre tider. Med nytt navn kan nettleseren cache lyden for alltid uten å
+    # blande gammel lyd med nye tider.
+    data['lyd'] = f'{Path(nokkel).name}-{hashlib.sha256(mp3).hexdigest()[:16]}.mp3'
+    return data, mp3
 
 
 def ffmpeg() -> str:
