@@ -3,6 +3,7 @@ import { getMicroGame } from './registry';
 import { MicroGameEmbedProvider } from './MicroGameFrame';
 import { MicroGameLauncher } from './MicroGameLauncher';
 import { MicroGameIntro } from './MicroGameIntro';
+import { useWindowFill } from './useWindowFill';
 import type { MicroGameEntry, MicroGameProps, MicroGameResult } from './types';
 import { useProgressStore } from '../../features/progress/useProgressStore';
 
@@ -80,52 +81,14 @@ export function MicroGameBlock({
     const [inView, setInView] = React.useState(false);
     const rootRef = React.useRef<HTMLDivElement>(null);
 
-    // Fullskjerm-først (eier, 2026-09-26): fra artikkelen åpnes spillet alltid i
-    // fullskjerm - 2-3 ganger så stor flate som spalten. Omslaget her (ikke
-    // spillrammen) går i fullskjerm, fordi forespørselen må skje i selve klikket,
-    // før spillmodulen er lastet og rammen finnes. Der nettleseren ikke har
-    // Fullscreen API (iPhone) eller sier nei, fyller omslaget vinduet («pseudo»).
+    // Fullskjerm-først (eier, 2026-09-26): fra artikkelen åpnes spillet alltid
+    // stort - 2-3 ganger så stor flate som spalten. Omslaget her (ikke spillrammen)
+    // fyller nettleservinduet, så det kan skje i selve klikket, før spillmodulen er
+    // lastet og rammen finnes. Bevisst ikke ekte fullskjerm (se useWindowFill).
     // (Må stå før early return.)
-    const [nativeFs, setNativeFs] = React.useState(false);
-    const [pseudoFs, setPseudoFs] = React.useState(false);
-    React.useEffect(() => {
-        const onChange = () =>
-            setNativeFs(!!rootRef.current && document.fullscreenElement === rootRef.current);
-        document.addEventListener('fullscreenchange', onChange);
-        return () => document.removeEventListener('fullscreenchange', onChange);
-    }, []);
-    React.useEffect(() => {
-        if (!pseudoFs) return;
-        const prev = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-        // Artikkelen ligger i en egen stablingskontekst, så sidens klebrige meny
-        // ville ligget over spillet uansett z-index. Den skjules så lenge.
-        document.body.classList.add('mg-pseudo-open');
-        const onKey = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') setPseudoFs(false);
-        };
-        window.addEventListener('keydown', onKey);
-        return () => {
-            document.body.style.overflow = prev;
-            document.body.classList.remove('mg-pseudo-open');
-            window.removeEventListener('keydown', onKey);
-        };
-    }, [pseudoFs]);
-    const enterFullscreen = React.useCallback(() => {
-        const el = rootRef.current;
-        if (!el) return;
-        if (document.fullscreenEnabled && typeof el.requestFullscreen === 'function') {
-            el.requestFullscreen({ navigationUI: 'hide' })
-                .then(() => {
-                    // Mobil: prøv å legge skjermen ned. Går det ikke, går det ikke.
-                    const o = screen.orientation as ScreenOrientation & {
-                        lock?: (o: string) => Promise<void>;
-                    };
-                    o?.lock?.('landscape').catch(() => {});
-                })
-                .catch(() => setPseudoFs(true));
-        } else setPseudoFs(true);
-    }, []);
+    const [filled, setFilled] = React.useState(false);
+    useWindowFill(filled);
+    const enterFullscreen = React.useCallback(() => setFilled(true), []);
     // Innflygingen: plakaten vokser fra kortet til hele skjermen mens spillet
     // gjøres klart bak den (se MicroGameIntro). (Må stå før early return.)
     const [intro, setIntro] = React.useState<{ from: DOMRect | null } | null>(null);
@@ -138,10 +101,7 @@ export function MicroGameBlock({
         },
         [enterFullscreen]
     );
-    const exitFullscreen = React.useCallback(() => {
-        setPseudoFs(false);
-        if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
-    }, []);
+    const exitFullscreen = React.useCallback(() => setFilled(false), []);
 
     // Synlighet: la «Spill»-knappen puste når kortet ses, og hent spillet i
     // forkant hvis eleven blir værende i nærheten. (Må stå før early return.)
@@ -237,7 +197,7 @@ export function MicroGameBlock({
     );
     return (
         <div
-            className={`${blockClassName}${pseudoFs ? ' mg-pseudo-fs' : ''}`}
+            className={`${blockClassName}${filled ? ' mg-pseudo-fs' : ''}`}
             data-microgame={gameId}
             ref={rootRef}
         >
@@ -258,7 +218,7 @@ export function MicroGameBlock({
                             window.setTimeout(() => setGameReady(true), 60);
                         },
                         fullscreen: {
-                            active: nativeFs || pseudoFs,
+                            active: filled,
                             enter: enterFullscreen,
                             exit: exitFullscreen,
                         },

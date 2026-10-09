@@ -7,8 +7,8 @@ import { motion, useReducedMotion } from 'framer-motion';
 // eleven aldri ser en tom ramme, en lastespinner eller 3D-scenen som hakker
 // mens shaderne kompileres. Når spillet er klart, toner plakaten ut.
 //
-// Tegnes inne i omslaget som går i fullskjerm (MicroGameBlock), så den ligger
-// øverst både i ekte fullskjerm og når spillet fyller vinduet.
+// Tegnes inne i omslaget som fyller vinduet (MicroGameBlock), så den ligger
+// øverst over spillet.
 
 interface Rect {
     top: number;

@@ -681,16 +681,20 @@ body.dyslexia-mode header > div > :last-child span {
   }
 }
 
-/* Mikrospill i fullskjerm (knappen i MicroGameFrame): rammen fyller skjermen, og
-   spillvinduet ([data-mg-stage]) tar all høyden som er igjen etter tittellinja
-   og kontrollene under. */
-.mg-frame:fullscreen {
+/* Mikrospill i «fullskjerm» (knappen i MicroGameFrame): rammen fyller nettleser-
+   vinduet - ikke hele skjermen - og spillvinduet ([data-mg-stage]) tar all høyden som
+   er igjen etter tittellinja og kontrollene under. */
+.mg-frame.mg-frame--fill {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
   background: #f8fafc;
   border-radius: 0;
+  border: 0;
   overflow-y: auto;
 }
-.mg-frame:fullscreen [data-mg-stage] {
-  height: calc(100vh - 9rem) !important;
+.mg-frame--fill [data-mg-stage] {
+  height: calc(100dvh - 9rem) !important;
   min-height: 0 !important;
   max-height: none !important;
   aspect-ratio: auto !important;
@@ -717,11 +721,9 @@ body.dyslexia-mode header > div > :last-child span {
   }
 }
 
-/* Fullskjerm-først: artikkelens omslag rundt et mikrospill (MicroGameBlock) går i
-   fullskjerm i samme klikk som «Spill». Reserve der Fullscreen API mangler: omslaget
-   fyller vinduet (.mg-pseudo-fs). Arkadespill (.arc-stage) har ingen kontroller under
-   spillvinduet og får hele høyden minus tittellinja. */
-[data-microgame]:fullscreen,
+/* Fullskjerm-først: artikkelens omslag rundt et mikrospill (MicroGameBlock) fyller
+   nettleservinduet (.mg-pseudo-fs) i samme klikk som «Spill». Arkadespill (.arc-stage)
+   har ingen kontroller under spillvinduet og får hele høyden minus tittellinja. */
 [data-microgame].mg-pseudo-fs {
   margin: 0 !important;
   padding: 6px;
@@ -734,18 +736,16 @@ body.dyslexia-mode header > div > :last-child span {
   z-index: 80;
 }
 body.mg-pseudo-open header.sticky,
-body.mg-pseudo-open .fixed:not([data-microgame] .fixed) {
+body.mg-pseudo-open .fixed:not([data-microgame] .fixed):not(.mg-frame .fixed) {
   visibility: hidden;
 }
-[data-microgame]:fullscreen [data-mg-stage],
 [data-microgame].mg-pseudo-fs [data-mg-stage] {
   height: calc(100dvh - 9rem) !important;
   min-height: 0 !important;
   max-height: none !important;
   aspect-ratio: auto !important;
 }
-[data-microgame]:fullscreen .arc-stage,
 [data-microgame].mg-pseudo-fs .arc-stage,
-.mg-frame:fullscreen .arc-stage {
+.mg-frame--fill .arc-stage {
   height: calc(100dvh - 76px) !important;
 }

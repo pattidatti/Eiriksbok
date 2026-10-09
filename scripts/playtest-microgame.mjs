@@ -625,12 +625,12 @@ async function playtestGame(browser, id) {
         // Fullskjerm-først: eleven møter spillet i fullskjerm, så robotene og
         // skjermbildene skal også gjøre det.
         // Startkortet («Spill») ber selv om fullskjerm; ellers trykker vi knappen i rammen.
-        const isFull = () => page.evaluate(() => !!document.fullscreenElement || !!document.querySelector('.mg-pseudo-fs'));
+        const isFull = () => page.evaluate(() => !!document.querySelector('.mg-pseudo-fs, .mg-frame--fill'));
         if (!(await isFull())) {
             await page.click('button[aria-label="Spill i fullskjerm"]', { timeout: 3000 }).catch(() => {});
             await page.waitForTimeout(800);
         }
-        rep.notes.push((await isFull()) ? 'spilt i fullskjerm' : 'IKKE i fullskjerm - nettleseren avviste det, spilt i spalten');
+        rep.notes.push((await isFull()) ? 'spilt i fullskjerm' : 'IKKE i fullskjerm - spilt i spalten');
         await page.evaluate(() => document.querySelector('[data-mg-stage]')?.scrollIntoView({ block: 'center' }));
         await page.waitForTimeout(1500);
         writeFileSync(path.join(dir, 'meny.png'), await stageShot(page));

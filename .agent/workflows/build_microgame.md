@@ -412,9 +412,10 @@ i et 2D-spill - det drar med seg three og Tone.
 
 ### Fullskjerm-først
 
-Fra artikkelen åpnes spillet alltid i fullskjerm (eier, 2026-09-26): «Spill»-kortet i artikkelen ber
-om fullskjerm i samme klikk, og der nettleseren ikke tillater det (iPhone), fyller spillet hele
-vinduet. Lukker eleven fullskjermen, blir spillet stående i artikkelen. Det gir 2-3 ganger så stor
+Fra artikkelen åpnes spillet alltid i fullskjerm (eier, 2026-09-26): «Spill»-kortet i artikkelen
+lar spillet fylle hele nettleservinduet i samme klikk. Det er bevisst ikke ekte fullskjerm (eier,
+2026-10-09): eleven beholder faner og resten av maskinen, og Esc tilhører spillet (pause). Eleven
+lukker med knappen i tittellinja, og da blir spillet stående i artikkelen. Det gir 2-3 ganger så stor
 flate som spalten (1366×768 på en Chromebook mot rundt 720×540).
 
 - Design HUD, brikker og tekst for fullskjerm 1366×768 - det er slik eleven møter spillet.

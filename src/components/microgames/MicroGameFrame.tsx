@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronUp, Gamepad2, Maximize2, Minimize2, RotateCcw } from 'lucide-react';
 import { MicroGameLauncher } from './MicroGameLauncher';
+import { useWindowFill } from './useWindowFill';
 
 // Kontekst som lar en embed-kontekst (f.eks. en artikkel) be om at spillet
 // starter sammenslått. Uten provider (standalone /mikrospill-side, preview,
@@ -77,26 +78,18 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
     // aldri - ingen WebGL-kontekst før eleven faktisk åpner spillet.
     const showBody = !collapsible || open;
 
-    // Fullskjerm: hele rammen (tittel + spill + kontroller) går i fullskjerm, og
-    // spillvinduet ([data-mg-stage]) strekker seg til skjermhøyden - se index.css.
-    const rootRef = useRef<HTMLDivElement>(null);
-    const [fullscreen, setFullscreen] = useState(false);
-    useEffect(() => {
-        const onChange = () => setFullscreen(document.fullscreenElement === rootRef.current);
-        document.addEventListener('fullscreenchange', onChange);
-        return () => document.removeEventListener('fullscreenchange', onChange);
-    }, []);
+    // Fullskjerm: hele rammen (tittel + spill + kontroller) fyller nettleservinduet,
+    // og spillvinduet ([data-mg-stage]) strekker seg til vindushøyden - se index.css.
+    // I en artikkel eier omslaget (MicroGameBlock) dette i stedet.
     const embedFs = embed?.fullscreen;
-    // I en artikkel kan omslaget alltid gi fullskjerm (ekte eller hele vinduet).
-    const canFullscreen =
-        !!embedFs || (typeof document !== 'undefined' && !!document.fullscreenEnabled);
-    const isFull = embedFs ? embedFs.active : fullscreen;
+    const [filled, setFilled] = useState(false);
+    useWindowFill(filled && !embedFs);
+    const isFull = embedFs ? embedFs.active : filled;
     const toggleFullscreen = () => {
         if (embedFs) {
             if (embedFs.active) embedFs.exit();
             else embedFs.enter();
-        } else if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
-        else void rootRef.current?.requestFullscreen().catch(() => {});
+        } else setFilled((f) => !f);
     };
 
     // Lukket igjen etter å ha vært åpnet: samme startkort som før første start.
@@ -119,10 +112,9 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
 
     return (
         <motion.div
-            ref={rootRef}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mg-frame bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
+            className={`mg-frame${filled && !embedFs ? ' mg-frame--fill' : ''} bg-white/70 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden shadow-sm`}
         >
             <header className="flex items-center justify-between gap-3 px-3.5 py-2 bg-white/60 border-b border-slate-200">
                 {collapsible ? (
@@ -148,22 +140,20 @@ export const MicroGameFrame: React.FC<MicroGameFrameProps> = ({
                         </div>
                     </div>
                 )}
-                {canFullscreen && (
-                    <button
-                        onClick={toggleFullscreen}
-                        className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition flex-shrink-0"
-                        aria-label={isFull ? 'Avslutt fullskjerm' : 'Spill i fullskjerm'}
-                    >
-                        {isFull ? (
-                            <Minimize2 className="w-3.5 h-3.5" />
-                        ) : (
-                            <Maximize2 className="w-3.5 h-3.5" />
-                        )}
-                        <span className="hidden md:inline">
-                            {isFull ? 'Lukk fullskjerm' : 'Fullskjerm'}
-                        </span>
-                    </button>
-                )}
+                <button
+                    onClick={toggleFullscreen}
+                    className="inline-flex items-center gap-1 px-2 py-1 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-md transition flex-shrink-0"
+                    aria-label={isFull ? 'Avslutt fullskjerm' : 'Spill i fullskjerm'}
+                >
+                    {isFull ? (
+                        <Minimize2 className="w-3.5 h-3.5" />
+                    ) : (
+                        <Maximize2 className="w-3.5 h-3.5" />
+                    )}
+                    <span className="hidden md:inline">
+                        {isFull ? 'Lukk fullskjerm' : 'Fullskjerm'}
+                    </span>
+                </button>
                 {onRetry && (
                     <button
                         onClick={onRetry}
