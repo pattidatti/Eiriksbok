@@ -79,6 +79,7 @@ export const routeFactories: Record<string, PageFactory> = {
     ArkadePage: () => import('./pages/ArkadePage').then(module => ({ default: module.ArkadePage })),
     Pengeliv: () => import('./features/okonomi/PengelivPage').then(module => ({ default: module.PengelivPage })),
     FilmPage: () => import('./features/film/FilmPage').then(module => ({ default: module.FilmPage })),
+    FilmerPage: () => import('./pages/FilmerPage').then(module => ({ default: module.FilmerPage })),
     UniversitetPage: () => import('./features/auditoriet/UniversitetPage').then(module => ({ default: module.UniversitetPage })),
     SalPage: () => import('./features/auditoriet/SalPage').then(module => ({ default: module.SalPage })),
     LesesalPage: () => import('./features/auditoriet/LesesalPage').then(module => ({ default: module.LesesalPage })),

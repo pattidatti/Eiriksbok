@@ -17,22 +17,23 @@ import {
 import type { FilmManus } from './types';
 import { useFilmNarrator, type FlatReplikk } from './useFilmNarrator';
 import { hentVisual } from './visuals';
-import { hentManus } from './filmIndex';
+import { hentManus, merkSomSett } from './filmIndex';
 import { ErrorBoundary } from '../../components/ErrorBoundary';
 
 /**
  * Artikkelfilm: spiller av en artikkel som fortalt film med animasjoner, 2D/3D-
  * grafikk, teksting og nettleserens innebygde stemme.
- * Rute: /film/:subjectId/:topicId/:lessonId
+ * Rute: /film/:subjectId/:topicId/:lessonId (og /film/:subjectId/:topicId/:subTopicId/:lessonId)
  */
 export function FilmPage() {
-    const { subjectId, topicId, lessonId } = useParams();
+    const { subjectId, topicId, subTopicId, lessonId } = useParams();
+    const sti = '/' + [subjectId, topicId, subTopicId, lessonId].filter(Boolean).join('/');
     const [manus, setManus] = useState<FilmManus | null>(null);
     const [feil, setFeil] = useState(false);
 
     useEffect(() => {
         let aktiv = true;
-        hentManus(`/${subjectId}/${topicId}/${lessonId}`)
+        hentManus(sti)
             .then((d) => {
                 if (!aktiv) return;
                 if (d) setManus(d);
@@ -42,14 +43,14 @@ export function FilmPage() {
         return () => {
             aktiv = false;
         };
-    }, [subjectId, topicId, lessonId]);
+    }, [sti]);
 
     if (feil) {
         return (
             <div className="fixed inset-0 flex flex-col items-center justify-center gap-4 bg-slate-50 text-slate-700">
                 <p className="text-xl font-semibold">Denne artikkelen har ingen film ennå.</p>
                 <Link
-                    to={`/${subjectId}/${topicId}/${lessonId}`}
+                    to={sti}
                     className="text-indigo-600 font-bold underline"
                 >
                     Til artikkelen
@@ -71,6 +72,10 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
     const laast = import.meta.env.DEV && sok.has('scene');
     const sceneNr = laast ? Number(sok.get('scene')) : f.scene;
     const beat = laast ? Number(sok.get('beat') ?? 0) : f.beat;
+
+    useEffect(() => {
+        if (f.status === 'ferdig') merkSomSett(manus.kilde);
+    }, [f.status, manus.kilde]);
 
     const scene = manus.scener[sceneNr];
     const Visual = hentVisual(scene.visual.type);

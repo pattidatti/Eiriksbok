@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor, Mic } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor, Mic, Clapperboard } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -12,6 +12,14 @@ export const PracticePage: React.FC = () => {
             icon: Gamepad2,
             color: 'bg-gradient-to-br from-indigo-500 to-violet-600',
             link: '/oving/arkade'
+        },
+        {
+            id: 'filmer',
+            title: 'Filmer',
+            description: 'Artiklene fortalt som film, med stemme, kart og 3D. Velg fag og emne, og se hva som skjedde mens fortelleren forklarer.',
+            icon: Clapperboard,
+            color: 'bg-gradient-to-br from-rose-500 to-orange-500',
+            link: '/oving/filmer'
         },
         {
             id: 'minnevokteren',

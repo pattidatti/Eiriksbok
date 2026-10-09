@@ -28,7 +28,7 @@ export interface FlatReplikk {
 export type FilmStatus = 'klar' | 'spiller' | 'pause' | 'ferdig';
 
 /** Hvor den innspilte lyden ligger. Kan overstyres i utvikling med VITE_FILM_LYD_BASE. */
-const LYD_BASE =
+export const LYD_BASE =
     (import.meta.env.VITE_FILM_LYD_BASE as string | undefined) ??
     'https://eiriksbok-lyd.eiriksbok.workers.dev';
 

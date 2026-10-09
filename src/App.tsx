@@ -80,6 +80,7 @@ const MicroGamePreviewPage = React.lazy(routeFactories.MicroGamePreviewPage);
 const ArkadePage = React.lazy(routeFactories.ArkadePage);
 const Pengeliv = React.lazy(routeFactories.Pengeliv);
 const FilmPage = React.lazy(routeFactories.FilmPage);
+const FilmerPage = React.lazy(routeFactories.FilmerPage);
 const StemmetestPage = React.lazy(routeFactories.StemmetestPage);
 const UniversitetPage = React.lazy(routeFactories.UniversitetPage);
 const SalPage = React.lazy(routeFactories.SalPage);
@@ -163,6 +164,8 @@ const router = createBrowserRouter([
       { path: "oving/rpg", element: <RpgPage /> },
       { path: "oving/pengeliv", element: <Pengeliv /> },
       { path: "film/:subjectId/:topicId/:lessonId", element: <FilmPage /> },
+      { path: "film/:subjectId/:topicId/:subTopicId/:lessonId", element: <FilmPage /> },
+      { path: "oving/filmer", element: <FilmerPage /> },
       { path: "oving/auditoriet", element: <UniversitetPage /> },
       { path: "oving/auditoriet/stemmetest", element: <StemmetestPage /> },
       { path: "oving/auditoriet/lesesal", element: <LesesalPage /> },
