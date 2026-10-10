@@ -1,0 +1,371 @@
+{
+    "id": "nansen-og-flyktningene",
+    "tittel": "Nansen og flyktningene: Et pass for de som ikke hørte til",
+    "kilde": "/historie/mellomkrigstiden/nansen-og-flyktningene",
+    "bilde": "/images/mellomkrigstiden/nansen-og-flyktningene-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 260, "begrunnelse": "Summen av de 200 voksne og 60 barna som står i artikkelen, brukt som totalen i prikkfeltet." }
+    ],
+    "scener": [
+        {
+            "id": "stasjonen",
+            "kapittel": "Sergej",
+            "visual": { "type": "NansenStasjon", "props": { "modus": "uten" } },
+            "replikker": [
+                { "si": "Tenk deg at du heter Sergej og er 20 år gammel. Det er 1922." },
+                {
+                    "si": "Du har flyktet fra Russland etter revolusjonen og borgerkrigen. Nå står du på en jernbanestasjon i et land der du ikke kjenner noen."
+                },
+                { "si": "Du går bort til grensen. Kan jeg reise inn? Svaret er et spørsmål: Hvor er papirene dine?" },
+                { "si": "Du spør om lov til å bo, om jobb og om en framtid. Samme spørsmål hver gang: Hvor er papirene dine?" },
+                {
+                    "si": "Sergej er oppdiktet. Men problemet hans var ekte, for hundretusener av mennesker etter første verdenskrig."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NANSEN",
+                    "undertittel": "Et pass for de som ikke hørte til",
+                    "bilde": "/images/mellomkrigstiden/nansen-og-flyktningene-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kan et papir forandre et liv?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Folk som Sergej var statsløse. Det betyr at ingen stat regnet dem som sine borgere. Uten pass var de nesten usynlige."
+                },
+                {
+                    "si": "Mannen som fant en løsning, var en nordmann de fleste kjente fra helt andre ting: polarhelten Fridtjof Nansen."
+                },
+                { "si": "Hvordan kunne et lite papir forandre livet til hundretusener av mennesker?" }
+            ]
+        },
+        {
+            "id": "liv",
+            "kapittel": "Fra isen til diplomatiet",
+            "visual": { "type": "NansenKart", "props": { "modus": "liv" } },
+            "replikker": [
+                { "si": "Fridtjof Nansen ble født i 1861, like utenfor Kristiania, som i dag heter Oslo." },
+                {
+                    "si": "I 1888 gikk han over innlandsisen på Grønland på ski. Senere ble han verdenskjent med polarskuta Fram."
+                },
+                { "si": "Men i 1914 brøt første verdenskrig ut, og nesten all utforskning stoppet." },
+                {
+                    "si": "I 1917 og 1918 var Nansen i Washington. Der forhandlet han fram en avtale, så Norge kunne få inn viktig mat."
+                },
+                {
+                    "si": "Etter krigen ble han Norges utsending, altså representant, i Folkeforbundet. Det var en ny organisasjon som skulle hindre at verden gikk i krig igjen."
+                }
+            ]
+        },
+        {
+            "id": "fangene",
+            "kapittel": "Fangene",
+            "visual": { "type": "NansenKart", "props": { "modus": "fanger" } },
+            "replikker": [
+                { "si": "Våren 1920 fikk Nansen sitt første store oppdrag fra Folkeforbundet: Få krigsfangene hjem." },
+                {
+                    "si": "Krigen var over, men hundretusener av soldater satt fortsatt i fangeleirer. Mange av dem satt i Russland."
+                },
+                { "si": "Det fantes lite penger, og Russland var preget av revolusjon og kaos." },
+                {
+                    "si": "Likevel klarte Nansen det. På halvannet år sendte han rundt 450 000 krigsfanger hjem til familiene sine."
+                },
+                { "si": "Oppdraget viste at Nansen kunne mer enn å gå på ski. Han kunne få ting gjort." }
+            ]
+        },
+        {
+            "id": "flukt",
+            "kapittel": "Millioner uten land",
+            "visual": { "type": "NansenKart", "props": { "modus": "flukt" } },
+            "replikker": [
+                {
+                    "si": "Det neste problemet var enda større. Etter revolusjonen og borgerkrigen hadde rundt to millioner russere flyktet fra landet."
+                },
+                {
+                    "si": "Mange av dem var blitt statsløse. De kunne ikke reise hjem, og de hadde ingen papirer som viste hvem de var."
+                },
+                {
+                    "si": "I juni 1921 opprettet Folkeforbundet et eget kontor for flyktninger, og Nansen ble sjefen. Han fikk tittelen høykommissær."
+                },
+                { "si": "En høykommissær er en slags sjef som får et spesielt oppdrag av mange land på en gang." }
+            ]
+        },
+        {
+            "id": "passet",
+            "kapittel": "Nansenpasset",
+            "visual": { "type": "NansenPasset", "props": { "modus": "pass" } },
+            "replikker": [
+                {
+                    "si": "Nansen forsto noe viktig. Flyktningene trengte ikke et nytt land med en gang. Først trengte de et bevis på hvem de var."
+                },
+                {
+                    "si": "I juli 1922 møttes 31 land på en konferanse i Genève. Der foreslo Nansen et eget reisedokument for flyktninger."
+                },
+                { "si": "Det ble kalt Nansenpasset." },
+                {
+                    "si": "Passet ga ikke statsborgerskap, altså at et land regner deg som sin borger. Men med passet kunne de søke om å reise inn i et land, bo der og arbeide der."
+                },
+                {
+                    "si": "Etter hvert godtok mer enn 50 land Nansenpasset. Nå fantes det et felles papir for mennesker som ikke hørte til noe sted."
+                }
+            ]
+        },
+        {
+            "id": "stasjonen-igjen",
+            "visual": { "type": "NansenStasjon", "props": { "modus": "med" } },
+            "replikker": [
+                { "si": "Tenk på Sergej igjen. Nå har han et Nansenpass i lomma." },
+                { "si": "Ved grensen viser passet hvem han er. Nå kan han søke om å reise inn." },
+                { "si": "Nå kan han søke om lov til å bo i landet. Og han kan søke om arbeid." },
+                { "si": "Grensen, politiet og fabrikken er de samme som før. Men svaret er et helt annet." }
+            ]
+        },
+        {
+            "id": "sult",
+            "kapittel": "Nye kriser",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 35,
+                            "farget": 35,
+                            "farge": "#b45309",
+                            "tittel": "Russland 1921: én figur = én million",
+                            "fargeEtikett": "i fare for å sulte"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 35,
+                            "farget": 35,
+                            "farge": "#7f1d1d",
+                            "tittel": "Mange land i Vesten sa nei",
+                            "fargeEtikett": "i fare, uten hjelp"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 35,
+                            "farget": 7,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Nansen fikk fram mat",
+                            "fargeEtikett": "reddet, laveste anslag",
+                            "restEtikett": "i fare"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 35,
+                            "farget": 22,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Anslagene: fra 7 til 22 millioner reddet",
+                            "fargeEtikett": "reddet, høyeste anslag",
+                            "restEtikett": "i fare"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mens Nansen jobbet med flyktningene, kom en ny katastrofe. Sommeren 1921 var det hungersnød i Russland. Rundt 35 millioner mennesker sto i fare for å sulte."
+                },
+                {
+                    "si": "Mange land i Vesten ville ikke hjelpe. De stolte ikke på de nye kommunistiske lederne som hadde tatt makten etter revolusjonen."
+                },
+                { "si": "Nansen ga seg ikke. Han samlet inn mat og fikk den fram til dem som trengte den." },
+                {
+                    "si": "Ingen vet nøyaktig hvor mange som ble reddet. Tallene går fra 7 millioner til 22 millioner mennesker."
+                }
+            ]
+        },
+        {
+            "id": "bytte",
+            "visual": { "type": "NansenKart", "props": { "modus": "bytte" } },
+            "replikker": [
+                {
+                    "si": "I 1922 tapte Hellas en krig mot Tyrkia. Grekere som bodde i Lilleasia, den delen av Tyrkia som ligger i Asia, flyktet til Hellas."
+                },
+                {
+                    "si": "Nansen var med på å ordne en stor utveksling av folk. Om lag 1 250 000 grekere i Tyrkia ble byttet mot om lag 500 000 tyrkere i Hellas.",
+                    "uttale": "Nansen var med på å ordne en stor utveksling av folk. Om lag én million to hundre og femti tusen grekere i Tyrkia ble byttet mot om lag fem hundre tusen tyrkere i Hellas."
+                },
+                { "si": "Det var en hard løsning, for folk måtte forlate hjemmene sine." },
+                { "si": "Men målet var at de skulle få en ny start et annet sted, med hjelp og erstatning." }
+            ]
+        },
+        {
+            "id": "armenia",
+            "visual": { "type": "NansenKart", "props": { "modus": "armenia" } },
+            "replikker": [
+                {
+                    "si": "Fra 1925 kjempet Nansen for armenerne. Mange av dem var flyktninger etter folkemordet på armenerne under første verdenskrig."
+                },
+                { "si": "Nansen reiste selv til Armenia i 1925 og lagde en plan for et nytt hjem for dem." },
+                {
+                    "si": "Men denne gangen fikk han lite støtte fra Folkeforbundet og de andre landene. Planen ble aldri gjennomført."
+                }
+            ]
+        },
+        {
+            "id": "prisen",
+            "kapittel": "Arven",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "1922",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Nobels fredspris", "tekst": "for hjelpearbeidet", "fraBeat": 0 },
+                        {
+                            "ikon": "penger",
+                            "tittel": "122 000 kroner",
+                            "tekst": "en gave fra Christian Erichsen",
+                            "fraBeat": 1
+                        },
+                        { "ikon": "hus", "tittel": "Alt til nødhjelp", "tekst": "mest i Ukraina", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I 1922 fikk Nansen Nobels fredspris for hjelpearbeidet sitt." },
+                {
+                    "si": "Forretningsmannen Christian Erichsen ga ham like mye penger som prisen var verdt, 122 000 kroner."
+                },
+                { "si": "Nansen beholdt ikke pengene. Han brukte dem på nødhjelp, mest i Ukraina." }
+            ]
+        },
+        {
+            "id": "kontoret",
+            "visual": { "type": "NansenPasset", "props": { "modus": "kontor" } },
+            "replikker": [
+                {
+                    "si": "Nansen døde 13. mai 1930 på Polhøgda i Bærum. Han ble begravet fire dager senere, på 17. mai.",
+                    "uttale": "Nansen døde trettende mai 1930 på Polhøgda i Bærum. Han ble begravet fire dager senere, på syttende mai."
+                },
+                {
+                    "si": "Men arbeidet stoppet ikke. I 1931 åpnet Nansenkontoret i Genève for å fortsette å hjelpe flyktningene."
+                },
+                {
+                    "si": "Kontoret behandlet rundt 800 000 saker. Det hjalp folk med å fornye passet, skaffe visum og få lov til å bo og arbeide."
+                },
+                {
+                    "si": "Et visum er en tillatelse til å reise inn i et land. Pengene kom blant annet fra salg av egne Nansen-frimerker."
+                },
+                { "si": "I 1938 fikk Nansenkontoret selv Nobels fredspris." }
+            ]
+        },
+        {
+            "id": "odd",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 260,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Nansenhjelpen, 1937: disse fikk hjelp",
+                            "restEtikett": "fikk hjelp til Norge"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 260,
+                            "farget": 0,
+                            "restFarge": "#475569",
+                            "tittel": "De hadde mistet statsborgerskapet",
+                            "restEtikett": "uten statsborgerskap"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 260,
+                            "farget": 200,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "200 voksne fikk komme til Norge",
+                            "fargeEtikett": "voksne",
+                            "restEtikett": "venter"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 260,
+                            "farget": 60,
+                            "farge": "#d97706",
+                            "restFarge": "#0d9488",
+                            "tittel": "Og 60 barn",
+                            "fargeEtikett": "barn",
+                            "restEtikett": "voksne"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Også sønnen hans, Odd Nansen, tok arven videre. I 1937 startet han organisasjonen Nansenhjelpen." },
+                { "si": "Den skulle hjelpe mennesker som hadde mistet statsborgerskapet sitt." },
+                {
+                    "si": "Tyskland tok over Østerrike og Tsjekkoslovakia. Da skaffet Nansenhjelpen 200 voksne flyktninger lov til å reise inn i Norge."
+                },
+                { "si": "I tillegg fikk 60 barn komme." }
+            ]
+        },
+        {
+            "id": "metodene",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Det Nansen etterlot",
+                    "punkter": [
+                        { "ikon": "hus", "tittel": "1939: 500 000", "tekst": "trengte fortsatt hjelp", "fraBeat": 0 },
+                        { "ikon": "hus", "tittel": "Mat og trygghet", "tekst": "først av alt", "fraBeat": 1 },
+                        { "ikon": "skip", "tittel": "Hjem igjen", "tekst": "hvis det er mulig", "fraBeat": 2 },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Et nytt liv",
+                            "tekst": "et annet sted, hvis hjem ikke går",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nansen fikk ikke løst alt. Da Nansenkontoret ble lagt ned i 1939, trengte fortsatt rundt 500 000 flyktninger hjelp."
+                },
+                { "si": "Men han brukte metoder som senere ble vanlige i arbeidet med flyktninger. Først: gi folk mat og trygghet." },
+                { "si": "Så: hjelp dem hjem, hvis det er mulig." },
+                { "si": "Og hvis det ikke går: hjelp dem å bygge et nytt liv et annet sted." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ikke et problem som skulle bort.", "fraBeat": 0 },
+                        { "tekst": "Mennesker som trengte en ny start.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Et lite papir", "fraBeat": 1 },
+                        { "tekst": "kan bety alt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Et pass er et bevis", "fraBeat": 2 },
+                        { "tekst": "på at du finnes.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nansen behandlet ikke flyktningene som et problem som skulle bort. Han så mennesker som trengte en ny start."
+                },
+                { "si": "Og han viste at et lite papir kan bety alt." },
+                { "si": "Et pass er ikke bare et dokument. Det er et bevis på at du finnes." }
+            ]
+        }
+    ]
+}
