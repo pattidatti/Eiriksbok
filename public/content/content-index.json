@@ -1,5 +1,5 @@
 {
-  "buildId": 204408271825466,
+  "buildId": 244750599484432,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2576,6 +2576,9 @@
     ],
     "midtoesten": [
       "content/historie/mellomkrigstiden/midtoesten.json"
+    ],
+    "nansen-og-flyktningene": [
+      "content/historie/mellomkrigstiden/nansen-og-flyktningene.json"
     ],
     "norge": [
       "content/historie/mellomkrigstiden/norge.json"
@@ -5721,6 +5724,7 @@
     "historie/mellomkrigstiden/kultur": "content/historie/mellomkrigstiden/kultur.json",
     "historie/mellomkrigstiden/mellomkrigstiden-sti": "content/historie/mellomkrigstiden/mellomkrigstiden-sti.json",
     "historie/mellomkrigstiden/midtoesten": "content/historie/mellomkrigstiden/midtoesten.json",
+    "historie/mellomkrigstiden/nansen-og-flyktningene": "content/historie/mellomkrigstiden/nansen-og-flyktningene.json",
     "historie/mellomkrigstiden/norge": "content/historie/mellomkrigstiden/norge.json",
     "historie/mellomkrigstiden/oversikt": "content/historie/mellomkrigstiden/oversikt.json",
     "historie/mellomkrigstiden/sovjet": "content/historie/mellomkrigstiden/sovjet.json",

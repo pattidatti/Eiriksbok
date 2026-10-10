@@ -1,0 +1,262 @@
+{
+  "id": "nansen-og-flyktningene",
+  "title": "Fridtjof Nansen og flyktningene: Et pass for de som ikke hørte til",
+  "layout": "rich",
+  "year": "1920-1930",
+  "category": "Norge og verden",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Etter første verdenskrig var hundretusener av mennesker statsløse og uten papirer",
+    "Fridtjof Nansen hjalp rundt 450 000 krigsfanger hjem og ble Folkeforbundets høykommissær for flyktninger i 1921",
+    "Nansenpasset fra 1922 ble godtatt av mer enn 50 land og ga flyktninger et bevis på hvem de var",
+    "Nansen fikk Nobels fredspris i 1922, og Nansenkontoret fikk den samme prisen i 1938"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg at du heter Sergej og er 20 år gammel. Det er 1922. Du har flyktet fra Russland etter revolusjonen og borgerkrigen, og nå står du på en jernbanestasjon i et land der du ikke kjenner noen. Du vil jobbe. Du vil finne et sted å bo. Men hver gang du spør, får du det samme spørsmålet tilbake: Hvor er papirene dine?"
+    },
+    {
+      "type": "text",
+      "content": "Sergej er oppdiktet, men problemet hans var ekte. Etter første verdenskrig var hundretusener av mennesker statsløse. Det betyr at ingen stat regnet dem som sine borgere. De hadde ikke pass, og uten pass var de nesten usynlige for myndighetene. Mannen som fant en løsning, var en nordmann de fleste kjente fra helt andre ting: polarhelten Fridtjof Nansen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Flyktninger med kofferter på en jernbanestasjon i 1920-årene",
+      "caption": "Etter den russiske revolusjonen var rundt to millioner russere på flukt i Europa."
+    },
+    {
+      "type": "header",
+      "text": "Fra isen til diplomatiet"
+    },
+    {
+      "type": "text",
+      "content": "Fridtjof Nansen ble født 10. oktober 1861 utenfor Kristiania (Haberman, 1972). Han ble verdenskjent da han gikk over innlandsisen på Grønland på ski i 1888, og senere med polarskuta Fram. Den historien kan du lese mer om i artikkelen om [kappløpet mot Sydpolen](/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen)."
+    },
+    {
+      "type": "text",
+      "content": "Men da første verdenskrig brøt ut i 1914, stoppet nesten all utforskning. Nansen ble i stedet opptatt av politikk mellom land. I 1917 og 1918 ledet han en norsk delegasjon i Washington. Der forhandlet han fram en avtale som gjorde at Norge kunne få inn viktig mat, selv om de allierte landene stengte mye av handelen (Haberman, 1972). Etter krigen ble han Norges utsending til [Folkeforbundet](/historie/mellomkrigstiden/folkeforbundet), den nye organisasjonen som skulle hindre at verden gikk i krig igjen. Der satt han fra 1920 og helt til han døde."
+    },
+    {
+      "type": "header",
+      "text": "Første oppdrag: Få fangene hjem"
+    },
+    {
+      "type": "text",
+      "content": "Våren 1920 fikk Nansen sitt første store oppdrag. Folkeforbundet ba ham hjelpe krigsfangene hjem. Selv om krigen var over, satt hundretusener av soldater fortsatt i fangeleirer, mange av dem i Russland. Det fantes lite penger, og Russland var preget av revolusjon og kaos."
+    },
+    {
+      "type": "text",
+      "content": "Likevel klarte Nansen det. På halvannet år sendte han rundt 450 000 krigsfanger hjem til familiene sine (Haberman, 1972; Barr mfl., 2026). Han hadde lite penger, men han var modig og fant hele tiden nye løsninger (Haberman, 1972). Oppdraget viste at Nansen var god til noe mer enn å gå på ski. Han kunne få ting gjort."
+    },
+    {
+      "type": "header",
+      "text": "Millioner uten land"
+    },
+    {
+      "type": "text",
+      "content": "Det neste problemet var enda større. Etter [den russiske revolusjonen](/historie/forste-verdenskrig/russiske-revolusjon) og borgerkrigen som fulgte, hadde rundt to millioner russere flyktet fra landet (Barr mfl., 2026). Mange av dem var blitt statsløse. De kunne ikke reise hjem, og de hadde ingen papirer som viste hvem de var."
+    },
+    {
+      "type": "text",
+      "content": "I juni 1921 opprettet Folkeforbundet et eget kontor for flyktninger og ba Nansen lede det. Han fikk tittelen høykommissær for flyktninger (Haberman, 1972). En høykommissær er en slags sjef som får et spesielt oppdrag av mange land på en gang. Nansen hadde én idé som skulle forandre livet til hundretusener."
+    },
+    {
+      "type": "header",
+      "text": "Nansenpasset: Et papir som åpnet dører"
+    },
+    {
+      "type": "text",
+      "content": "Nansen forsto at flyktningene ikke trengte et nytt land med en gang. De trengte først et bevis på hvem de var. På en konferanse i Genève i juli 1922, der 31 land var med, foreslo han et eget reisedokument for flyktninger (Barr mfl., 2026). Det ble kalt Nansenpasset."
+    },
+    {
+      "type": "text",
+      "content": "Passet ga ikke flyktningene statsborgerskap. Men med passet kunne de søke om å reise inn i et land, søke om lov til å bo der og søke om arbeid. Etter hvert godtok mer enn 50 land Nansenpasset (Barr mfl., 2026). Nå fantes det et felles papir for mennesker som ikke hørte til noe sted."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv: Under følger du Sergej to ganger. Først uten papirer, så med et Nansenpass. Se hva som skjer ved de samme fire lukene."
+    },
+    {
+      "type": "component",
+      "name": "Papirlos",
+      "props": {
+        "title": "Et papir som åpner dører",
+        "navn": "Sergej"
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hungersnøden i Russland"
+    },
+    {
+      "type": "text",
+      "content": "Mens Nansen jobbet med flyktningene, kom en ny katastrofe. Sommeren 1921 var det stor hungersnød i Russland, og myndighetene i landet ba om hjelp. Rundt 35 millioner mennesker sto i fare for å sulte (Barr mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Mange land i Vesten ville ikke hjelpe. De stolte ikke på den nye kommunistiske regjeringen i Russland. Nansen ga seg likevel ikke. Han jobbet med enorm energi, samlet inn mat og fikk den fram til de som trengte det (Haberman, 1972). Ingen vet nøyaktig hvor mange som ble reddet. Tallene som er oppgitt, går fra 7 millioner til 22 millioner mennesker (Haberman, 1972). Uansett tall var det en av de største hjelpeaksjonene verden hadde sett."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nødhjelp med mat deles ut i en russisk landsby 1922",
+      "caption": "Under hungersnøden i 1921 og 1922 samlet Nansen inn mat og penger til millioner av sultende russere."
+    },
+    {
+      "type": "header",
+      "text": "Hellas, Tyrkia og Armenia"
+    },
+    {
+      "type": "text",
+      "content": "I 1922 tapte Hellas en krig mot Tyrkia. Grekere som bodde i Lilleasia, den delen av Tyrkia som ligger i Asia, flyktet til Hellas. Den greske regjeringen ba om hjelp, og Nansen var med på å ordne en stor utveksling av folk. Om lag 1 250 000 grekere i Tyrkia ble byttet mot om lag 500 000 tyrkere i Hellas (Haberman, 1972). Det var en hard løsning, for folk måtte forlate hjemmene sine. Men målet var at de skulle få en ny start et annet sted, med hjelp og erstatning."
+    },
+    {
+      "type": "text",
+      "content": "Fra 1925 kjempet Nansen for armenerne. Armenerne hadde overlevd [folkemordet på armenerne](/historie/osmanske-riket/folkemordet-pa-armenerne) under første verdenskrig, og mange av dem var flyktninger. Nansen reiste selv til Armenia i 1925 og lagde en plan for et nytt hjem for dem (Barr mfl., 2026). Denne gangen fikk han lite støtte fra Folkeforbundet og de andre landene, og planen ble ikke gjennomført (Haberman, 1972)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Nansens hjelpearbeid i tall",
+        "content": "1920-1921: Leder arbeidet med å få krigsfangene hjem. Rundt 450 000 kommer hjem.\n1921: Blir Folkeforbundets høykommissær for flyktninger.\n1921-1922: Leder nødhjelpen under hungersnøden i Russland.\n1922: Nansenpasset blir til. Mer enn 50 land godtar det.\n1922: Får Nobels fredspris.\n1925: Reiser til Armenia for å hjelpe armenske flyktninger.\n1930: Dør 13. mai på Polhøgda."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Fredsprisen og arven"
+    },
+    {
+      "type": "text",
+      "content": "I 1922 fikk Nansen Nobels fredspris for hjelpearbeidet sitt. Forretningsmannen Christian Erichsen ga ham like mye penger som prisen var verdt, 122 000 kroner. Nansen brukte pengene på nødhjelp, mest i Ukraina (Barr mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Nansen døde 13. mai 1930 på Polhøgda i Bærum (Barr mfl., 2026). Han ble begravet fire dager senere, på 17. mai (Haberman, 1972). Men arbeidet hans stoppet ikke. I 1931 åpnet Nansenkontoret i Genève for å fortsette å hjelpe flyktningene. Kontoret behandlet rundt 800 000 saker. Det hjalp folk med å fornye passet, skaffe visum og få lov til å bo og arbeide i et nytt land. Pengene kom blant annet fra gebyrer på Nansenpasset og fra salg av egne Nansen-frimerker i Norge og Frankrike. I 1938 fikk Nansenkontoret selv Nobels fredspris (Store norske leksikon, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Også sønnen hans, Odd Nansen, tok arven videre. I 1937 startet han organisasjonen Nansenhjelpen, som skulle hjelpe mennesker som hadde mistet statsborgerskapet sitt. Etter at Tyskland tok over Østerrike og Tsjekkoslovakia, skaffet Nansenhjelpen innreisetillatelse til Norge for 200 voksne flyktninger og 60 barn (Greve, 2024). Du kan lese mer om Odd Nansen i artikkelen om [konsentrasjonsleirene](/historie/andre-verdenskrig/konsentrasjonsleirene)."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor er Nansen viktig i dag?"
+    },
+    {
+      "type": "text",
+      "content": "Nansen fikk ikke løst alle problemene. Han hadde ofte lite penger, og planen for armenerne ble aldri noe av. Da Nansenkontoret ble lagt ned i 1939, var det fortsatt rundt 500 000 flyktninger som trengte hjelp (Store norske leksikon, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Likevel viste Nansen noe viktig. Han behandlet ikke flyktningene som et problem som skulle bort, men som mennesker som trengte en ny start. Han brukte metoder som senere ble vanlige i arbeidet med flyktninger: gi folk mat og trygghet, hjelp dem hjem hvis det er mulig, og hjelp dem å bygge et nytt liv et annet sted hvis det ikke er det (Haberman, 1972). Og han viste at et lite papir kan bety alt. Et pass er ikke bare et dokument. Det er et bevis på at du finnes."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Fridtjof Nansen ved skrivebordet i Genève med flyktningpapirer",
+      "caption": "Fra 1921 til han døde i 1930 ledet Fridtjof Nansen Folkeforbundets arbeid for flyktninger."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Barr, S., Østby, L., Tvedt, K. A., Brox, K. H. & Iversen, V. (2026). *Fridtjof Nansen*. Store norske leksikon. Hentet 10.10.2026 fra [snl.no/Fridtjof_Nansen](https://snl.no/Fridtjof_Nansen)",
+          "Greve, T. (2024). *Nansenhjelp*. Store norske leksikon. Hentet 10.10.2026 fra [snl.no/Nansenhjelp](https://snl.no/Nansenhjelp)",
+          "Haberman, F. W. (Red.). (1972). *Fridtjof Nansen - Biographical*. I *Nobel Lectures, Peace 1901-1925*. Elsevier. Hentet 10.10.2026 fra [nobelprize.org](https://www.nobelprize.org/prizes/peace/1922/nansen/biographical/)",
+          "Store norske leksikon. (2024). *Nansenkontoret*. Hentet 10.10.2026 fra [snl.no/Nansenkontoret](https://snl.no/Nansenkontoret)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr det å være statsløs?",
+          "Hva var Nansens første store oppdrag for Folkeforbundet, og hvor mange mennesker gjaldt det?",
+          "Hva var Nansenpasset, og hvor mange land godtok det til slutt?",
+          "Hva fikk Nansen Nobels fredspris for, og hva brukte han pengene til?"
+        ],
+        "reflekter": [
+          "Nansenpasset ga ikke flyktningene et nytt statsborgerskap. Forklar hvorfor det likevel var så viktig for dem.",
+          "Mange land i Vesten ville ikke hjelpe Russland under hungersnøden. Hvorfor tror du Nansen mente at de burde hjelpe likevel?",
+          "Utvekslingen mellom Hellas og Tyrkia hjalp mange, men tvang også folk fra hjemmene sine. Drøft om det var en god løsning.",
+          "Hvorfor tror du Nansen lyktes med krigsfangene, men ikke med planen for armenerne?"
+        ],
+        "gaaVidere": [
+          "Tenk deg at du er Sergej i 1922. Skriv et kort brev hjem der du forteller hva Nansenpasset betydde for deg.",
+          "Finn ut hvilke papirer en person trenger for å reise, bo og arbeide i Norge i dag. Sammenlign med Sergejs situasjon.",
+          "Diskuter i klassen: Har land i dag et ansvar for flyktninger som ikke er deres egne borgere? Bruk Nansen som eksempel."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr det å være statsløs?",
+            "options": [
+              "At du bor på landet",
+              "At ingen stat regner deg som sin borger",
+              "At du har to pass",
+              "At du jobber for staten"
+            ],
+            "correctAnswer": 1,
+            "explanation": "En statsløs person har ikke statsborgerskap i noe land. Derfor hadde mange flyktninger etter første verdenskrig ingen papirer."
+          },
+          {
+            "question": "Hva var Nansenpasset?",
+            "options": [
+              "Et pass for polarforskere",
+              "Et reisedokument for flyktninger uten statsborgerskap",
+              "Et norsk statsborgerskap",
+              "Et frimerke"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Nansen foreslo passet i 1922. Med det kunne flyktninger søke om å reise inn, bo og arbeide i andre land."
+          },
+          {
+            "question": "Omtrent hvor mange krigsfanger hjalp Nansen hjem etter første verdenskrig?",
+            "options": [
+              "4 500",
+              "45 000",
+              "450 000",
+              "4,5 millioner"
+            ],
+            "correctAnswer": 2,
+            "explanation": "På halvannet år fra 1920 sendte Nansen rundt 450 000 krigsfanger hjem."
+          },
+          {
+            "question": "Hvilket år fikk Fridtjof Nansen Nobels fredspris?",
+            "options": [
+              "1905",
+              "1914",
+              "1922",
+              "1938"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Nansen fikk fredsprisen i 1922. I 1938 fikk Nansenkontoret, som fortsatte arbeidet hans, også fredsprisen."
+          },
+          {
+            "question": "Hvorfor ville mange land i Vesten ikke hjelpe Russland under hungersnøden i 1921-1922?",
+            "options": [
+              "De visste ikke om den",
+              "De stolte ikke på den nye kommunistiske regjeringen",
+              "Russland ville ikke ha hjelp",
+              "Det fantes ikke mat i Europa"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Russland var mistenkt i Vesten etter revolusjonen. Nansen mente likevel at sultende mennesker måtte få hjelp."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -4630,6 +4630,22 @@
               ],
               "createdDate": "2026-01-18T22:34:44+01:00",
               "lastUpdated": "2026-07-29T12:01:15+02:00"
+            },
+            {
+              "id": "nansen-og-flyktningene",
+              "title": "Fridtjof Nansen og flyktningene: Et pass for de som ikke hørte til",
+              "description": "Polarhelten Fridtjof Nansen hjalp krigsfanger hjem, ledet nødhjelp til sultende russere og laget Nansenpasset for flyktninger uten land.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "mellomkrigstiden",
+                "folkeforbundet",
+                "flyktninger",
+                "nansen",
+                "russland",
+                "nobels-fredspris"
+              ],
+              "createdDate": "2026-10-10T00:00:00Z"
             }
           ]
         },
