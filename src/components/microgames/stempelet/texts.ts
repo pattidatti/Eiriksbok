@@ -12,6 +12,7 @@ export const BORDLAPP = {
     kasse: (n: number) => `Kassa: ${n}`,
     husleie: (n: number, sek: number) => `Husleie ${n} · nyttår om ${sek} s`,
     hylle: (n: number, maks: number) => `Uten papirer: ${n} av ${maks}`,
+    kart: (n: number) => `Passene har nådd ${n} land`,
     /** Prisen ved lomma: kan personen betale, eller hjelper du gratis? */
     lomme: (pris: number) =>
         pris > 0 ? `Betaler +${pris}` : pris <= -3 ? `Grå sak ${pris}` : `Gratis ${pris}`,
@@ -59,9 +60,10 @@ export const TELEGRAM = 'Nobels fredspris til Nansenkontoret';
 /** Korte lapper festet til tingen (maks 7 ord). */
 export const LAPP = {
     første: 'Klikk: stempelet fyller båndet',
-    penger: 'Nytt i 1932: gebyr, kassa og husleie',
+    penger: 'Nytt i 1932: gebyr og kassa',
+    leie: 'Nytt i 1933: husleie ved nyttår',
     redning: 'I siste liten!',
-    tom: 'Tom lomme: du hjelper gratis',
+    tom: 'Kan ikke betale. Gratis koster kassa 2.',
     dilemma: 'Begge går ut nå. Hvem tar du?',
     ghost: 'Røde mynter: det slaget koster',
     frimerke: 'Slå arket: +4 i kassa',
@@ -78,7 +80,7 @@ export const ØYEBLIKK = {
         tekst: 'Passet gikk ut. Et Nansenpass var ikke et statsborgerskap, så personen står uten papirer igjen.',
     },
     tom: {
-        tittel: 'Tom lomme',
+        tittel: 'Tom pengepung',
         tekst: 'Denne personen kan ikke betale gebyret. Du kan hjelpe gratis, men da betaler kontoret to mynter fra kassa.',
     },
     frimerke: {

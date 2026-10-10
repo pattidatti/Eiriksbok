@@ -399,7 +399,7 @@ export function tegnPass(ctx: CanvasRenderingContext2D, w: number, h: number, d:
         // Står på kortet før stempelet faller: kan personen betale, eller er lomma tom?
         ctx.font = `800 13px ${SKRIFT_DECO}`;
         ctx.fillStyle = d.betaler && !d.grå ? '#7a5a10' : FARGE.rød;
-        ctx.fillText(d.betaler && !d.grå ? 'BETALER' : 'TOM LOMME', w * 0.82, h * 0.36 + 40);
+        ctx.fillText(d.betaler && !d.grå ? 'BETALER' : 'TOM PUNG', w * 0.82, h * 0.36 + 40);
     }
     // Feltet for båndet.
     ctx.textAlign = 'left';
@@ -608,4 +608,60 @@ export function tegnKø(ctx: CanvasRenderingContext2D, w: number, h: number, per
     ctx.font = `400 12px ${SKRIFT_SERIF}`;
     ctx.fillText(`${personer.length} venter`, 10, h / 2 + 10);
     personer.slice(0, 10).forEach((p, i) => portrett(ctx, 82 + i * 43, 6, 38, 58, p));
+}
+
+/**
+ * Den tomme pengepungen på passet: en brun skinnpung med åpen, mørk munn og slappe snorer,
+ * på en lys rund lapp med rød kant. Viser at personen ikke kan betale gebyret. Logisk 128 x 128.
+ */
+export function tegnPung(ctx: CanvasRenderingContext2D, w: number, h: number) {
+    ctx.clearRect(0, 0, w, h);
+    const cx = w / 2;
+    // Bakgrunn: lys lapp med rød kant.
+    ctx.fillStyle = '#f3e3d6';
+    ctx.beginPath();
+    ctx.arc(cx, h / 2, 58, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.lineWidth = 7;
+    ctx.strokeStyle = FARGE.rød;
+    ctx.stroke();
+    // Skygge under pungen.
+    ctx.fillStyle = 'rgba(0,0,0,0.22)';
+    ctx.beginPath();
+    ctx.ellipse(cx + 3, 100, 34, 8, 0, 0, Math.PI * 2);
+    ctx.fill();
+    // Selve pungen: rund bunn, smal hals.
+    ctx.fillStyle = '#8a5530';
+    ctx.strokeStyle = '#4a2a14';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(cx - 20, 46);
+    ctx.bezierCurveTo(cx - 48, 62, cx - 44, 102, cx, 102);
+    ctx.bezierCurveTo(cx + 44, 102, cx + 48, 62, cx + 20, 46);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Lys kant på skinnet.
+    ctx.strokeStyle = 'rgba(255,220,180,0.35)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(cx - 8, 78, 22, Math.PI * 0.9, Math.PI * 1.35);
+    ctx.stroke();
+    // Den åpne munnen: mørk og tom.
+    ctx.fillStyle = '#1a0f08';
+    ctx.strokeStyle = '#4a2a14';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.ellipse(cx, 44, 26, 10, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    // Snorene henger slapt ned.
+    ctx.strokeStyle = '#c9a36a';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(cx + 18, 50);
+    ctx.quadraticCurveTo(cx + 34, 64, cx + 28, 82);
+    ctx.moveTo(cx + 14, 52);
+    ctx.quadraticCurveTo(cx + 22, 70, cx + 16, 86);
+    ctx.stroke();
 }

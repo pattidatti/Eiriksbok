@@ -3,7 +3,7 @@
 // 2. Stempelet fyller båndet helt (ingen timing: ferdigheten er hvem du tar først).
 // 3. Kassa (fra 1932): mynt +1, tom lomme -2, grå sak -3, frimerkeark +4. Husleie ved nyttår.
 
-import { BRETT, FRIMERKE_PLASS, PLASSER } from './levels';
+import { ANTALL_LAND, BRETT, FRIMERKE_PLASS, PLASSER } from './levels';
 import { type Game, type Pass } from './state';
 import { TUNING } from './tuning';
 
@@ -94,6 +94,7 @@ export function slå(g: Game) {
 export function reis(g: Game, p: Pass) {
     g.pass.splice(g.pass.indexOf(p), 1);
     g.hjulpet++;
+    g.reiser.push({ land: p.person % ANTALL_LAND, plass: p.plass, brett: g.brett });
     g.ut.push({ type: 'reist', id: p.id, plass: p.plass, person: p.person });
     if (p.fornyet >= 3 && p.person < 10 && !g.arkiv.includes(p.person)) {
         g.arkiv.push(p.person);

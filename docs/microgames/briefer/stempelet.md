@@ -355,3 +355,35 @@ Fem konsepter, dommer runde 1 (Spillbart / Fagregelen avgjør):
   **Kjente svakheter:** Uten timing er stempelslaget ett grep; variasjonen ligger i valget av
   pass. Regningen ligger fortsatt tett inntil passplassen lengst til høyre. Teksten i køen og
   på avisa er liten (pynt, ikke regler). Banneret for arkivkort kan dekke køen et øyeblikk.
+- **Fase: forbedrer etter vurdering 2 (sum 19 igjen; Utseende sto på 3 to runder).**
+  Kjerneløkka for Utseende er endret: verden endrer seg nå av det eleven gjør og av årene.
+  (1) Europakartet midt nederst (`kart.tsx`, erstatter blekkputa og pennen): når en person
+  reiser videre, krymper passet og et lite grønt pass flyr i en bue ut til landet på kartet.
+  Landet tennes i gull med året, en ring går ut fra det, og en stiplet reiselinje går fra
+  Genève (rød stjerne). Lappen under kartet teller «Passene har nådd N land»; skiltet øverst
+  sier fortsatt at passet ble godtatt i over 50 land. Tretten land (samme som `REISEMÅL`).
+  En papirløs blir stående som en grå skikkelse som reiser seg bak navnekortet i hylla, og
+  blekner når personen er tilbake på bordet som grå sak.
+  (2) Den svarte sirkelen er byttet med en tom pengepung (brun skinnpung, åpen mørk munn,
+  slappe snorer, lys lapp med rød kant). Passet sier «TOM PUNG». Første gang står lappen «Kan
+  ikke betale. Gratis koster kassa 2.» ved pungen (i tillegg til lærings-øyeblikket). Ingen
+  nye knapper.
+  (3) 1932 er delt opp: 1932 gebyr og kassa («Nytt i 1932: gebyr og kassa»), 1933 husleie
+  (regningen glir inn med «Nytt i 1933: husleie ved nyttår»), 1934 frimerkearket. Rommet eldes:
+  en bunke gamle aviser vokser under årets avis (gulere jo eldre), dagslyset blir svakere og
+  varmere mot 1938, og fra 1934 står bordlampa på med en gul lyskjegle i hjørnet. Kartet viser
+  året.
+  Regler eleven må huske: fortsatt tre (båndet/stempelet, betaler eller gratis, husleia).
+  Feel-lista: 1-4 var på plass før runden. Utvidet 3 (ting kommer og går): passet som reiser,
+  flyr ut til kartet og landet tennes med ring; den grå skikkelsen reiser seg; regningen glir
+  inn for seg selv i 1933.
+  Tall: husleie `[0, 0, 8, 9, 10, 10, 10, 8]`, frimerke fra 1934.
+  **Simuleringen er grønn:** saksbehandler 93 %, median 122; nybegynner 48 %, median 107;
+  gratis-for-alle 0 %, median 79; knappemoser 0 %, median 25; passiv 0 %; 41,6 valg per
+  minutt; press 0,47 -> 0,82 -> 0,97. Selvspillet: vant med 122, 39 draw calls, p95 9,6 ms på
+  Chromebook-nivå. Audit grønn, likhetsvakt grønn (nærmest tinghuset 0,30).
+  **Prøvde som IKKE virket:** de første grå skikkelsene (kjegle 0,32 høy) var for små til å
+  synes på kontaktarket; nå 0,48 med større hode.
+  **Kjente svakheter:** Landnavnene på kartet er små på Chromebook (gull og året bærer
+  budskapet, og flyteteksten «Vera reiser til Belgia» sier navnet). Stempelet hviler på kartet
+  ved start og dekker en del av det. Køen øverst viser ikke de papirløse som grå.

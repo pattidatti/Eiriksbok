@@ -10,7 +10,7 @@ import { crispCanvas } from '../kit';
 import { FARGE } from './farger';
 import { BRETT, LOMME, PASS_MÅL, PLASSER, SKUFF_PLASS } from './levels';
 import { nå, type Fx } from './fx';
-import { tegnPass } from './tegning';
+import { tegnPass, tegnPung } from './tegning';
 import type { Game } from './state';
 import { TUNING } from './tuning';
 
@@ -27,6 +27,17 @@ const BÅND = { x0: -0.33, x1: 0.64, z: 0.39, d: 0.1 };
 const easeOut = (u: number) => 1 - Math.pow(1 - u, 3);
 /** Sekunder passet bruker på å gli ut (reist videre eller utløpt). */
 const UT_TID = 0.7;
+
+/** Den tomme pengepungen, tegnet én gang og delt av alle passene. */
+let pung: THREE.CanvasTexture | null = null;
+function pungTekstur() {
+    if (!pung) {
+        const c = crispCanvas(128, 128);
+        c.draw((ctx, w, h) => tegnPung(ctx, w, h));
+        pung = c.tex;
+    }
+    return pung;
+}
 
 export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; plass: number }) {
     const [lerret] = useState(() => crispCanvas(300, 212));
@@ -59,9 +70,12 @@ export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; pl
             const u = Math.min(1, e / UT_TID);
             const k = u * u;
             if (b.type === 'reist') {
-                gr.position.set(pl.x, 0.012 + Math.sin(u * Math.PI) * 0.5, pl.z - k * 3.4);
-                gr.rotation.y = u * 0.25;
+                // Passet løftes og krymper til et lite pass som flyr ut til landet på kartet
+                // (kart.tsx tar over derfra).
+                gr.position.set(pl.x, 0.012 + u * 0.3, pl.z);
+                gr.rotation.y = u * 0.6;
                 ark.current?.color.set('#ffffff');
+                gr.scale.setScalar(Math.max(0.05, 1 - u));
             } else {
                 gr.position.set(
                     pl.x + (SKUFF_PLASS.x - pl.x) * k,
@@ -71,7 +85,7 @@ export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; pl
                 gr.rotation.y = -u * 0.4;
                 ark.current?.color.set('#8f908c');
             }
-            gr.scale.setScalar(1 - k * 0.35);
+            if (b.type !== 'reist') gr.scale.setScalar(1 - k * 0.35);
             if (gnist.current) gnist.current.visible = false;
             if (lys.current) lys.current.visible = false;
             if (mynt.current) mynt.current.visible = false;
@@ -194,15 +208,11 @@ export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; pl
                     <meshLambertMaterial color={FARGE.gull} emissive="#7a5a10" emissiveIntensity={0.6} />
                 </mesh>
             </group>
-            {/* ... eller et tomt gebyrfelt: mørkt hull med rød kant */}
-            <group ref={tom} position={[LOMME.x, 0.007, LOMME.z]}>
+            {/* ... eller en tom pengepung: kan ikke betale gebyret */}
+            <group ref={tom} position={[LOMME.x, 0.01, LOMME.z]}>
                 <mesh rotation={[-Math.PI / 2, 0, 0]}>
-                    <circleGeometry args={[0.19, 24]} />
-                    <meshBasicMaterial color={FARGE.hull} />
-                </mesh>
-                <mesh position={[0, 0.002, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-                    <ringGeometry args={[0.19, 0.235, 28]} />
-                    <meshBasicMaterial color={FARGE.rød} />
+                    <planeGeometry args={[0.5, 0.5]} />
+                    <meshBasicMaterial map={pungTekstur()} transparent depthWrite={false} />
                 </mesh>
             </group>
         </group>

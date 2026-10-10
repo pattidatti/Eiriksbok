@@ -232,13 +232,18 @@ export function Regning({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
     );
 }
 
-/** Ett spor i hylla: et kort med bilde, navn og året personen ble papirløs. */
+/**
+ * Ett spor i hylla: et kort med bilde, navn og året personen ble papirløs, og en grå skikkelse
+ * som reiser seg og blir stående til personen får nytt pass.
+ */
 function HylleSpor({ gRef, i }: { gRef: GRef; i: number }) {
     const [lerret] = useState(() => crispCanvas(128, 96));
     const sist = useRef('');
     const inn = useRef(-10);
     const kort = useRef<THREE.Mesh>(null);
     const mat = useRef<THREE.MeshLambertMaterial>(null);
+    const figur = useRef<THREE.Group>(null);
+    const figurMat = useRef<THREE.MeshLambertMaterial>(null);
     const spor = {
         x: SKUFF_PLASS.x - 0.68 + (i % 3) * 0.68,
         z: SKUFF_PLASS.z - 0.26 + Math.floor(i / 3) * 0.52,
@@ -252,6 +257,7 @@ function HylleSpor({ gRef, i }: { gRef: GRef; i: number }) {
         m.visible = !!p;
         if (!p) {
             sist.current = '';
+            if (figur.current) figur.current.visible = false;
             return;
         }
         const nøkkel = `${p.person}|${p.år}`;
@@ -265,6 +271,15 @@ function HylleSpor({ gRef, i }: { gRef: GRef; i: number }) {
         const e = 1 - Math.pow(1 - u, 3);
         m.position.set(spor.x + (1 - e) * 2.2, 0.07 + Math.sin(e * Math.PI) * 0.3, spor.z);
         if (mat.current) mat.current.opacity = p.påBordet ? 0.45 : 1;
+        // Den grå skikkelsen reiser seg bak kortet når kortet har landet, og står der.
+        const f = figur.current;
+        if (f) {
+            const r = Math.max(0, Math.min(1, (t - inn.current - 0.4) / 0.4));
+            f.visible = r > 0;
+            f.scale.set(1, Math.max(0.01, 1 - Math.pow(1 - r, 3)), 1);
+            f.position.y = 0.065 + (p.påBordet ? 0 : Math.sin(t * 1.3 + i) * 0.006);
+        }
+        if (figurMat.current) figurMat.current.opacity = p.påBordet ? 0.35 : 1;
     });
     return (
         <>
@@ -276,6 +291,17 @@ function HylleSpor({ gRef, i }: { gRef: GRef; i: number }) {
                 <planeGeometry args={[0.62, 0.465]} />
                 <meshLambertMaterial ref={mat} map={lerret.tex} transparent />
             </mesh>
+            {/* Personen uten papirer: en grå skikkelse som blir stående ved grensen */}
+            <group ref={figur} position={[spor.x + 0.18, 0.065, spor.z - 0.12]} visible={false}>
+                <mesh position={[0, 0.24, 0]}>
+                    <coneGeometry args={[0.16, 0.48, 10]} />
+                    <meshLambertMaterial ref={figurMat} color="#9a9c98" transparent />
+                </mesh>
+                <mesh position={[0, 0.56, 0]}>
+                    <sphereGeometry args={[0.11, 12, 10]} />
+                    <meshLambertMaterial color="#9a9c98" />
+                </mesh>
+            </group>
         </>
     );
 }

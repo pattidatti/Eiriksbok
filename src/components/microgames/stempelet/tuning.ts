@@ -46,8 +46,11 @@ export const TUNING = {
         tomLomme: 2,
         gråSak: 3,
         frimerke: 4,
-        /** Husleia ved hvert årsskifte, 1931-1938. 1931 har ingen penger (bare stempel og bånd). */
-        husleie: [0, 6, 8, 9, 10, 10, 10, 8] as number[],
+        /**
+         * Husleia ved hvert årsskifte, 1931-1938. 1931 har ingen penger, 1932 bare gebyret:
+         * husleia kommer først i 1933 (én ny ting per år).
+         */
+        husleie: [0, 0, 8, 9, 10, 10, 10, 8] as number[],
     },
 
     /** Frimerkearket: når det kommer i året, og hvor lenge det ligger. */

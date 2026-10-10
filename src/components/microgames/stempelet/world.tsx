@@ -1,6 +1,6 @@
 // Verden: kameraet fra saksbehandlerens stol (55 grader ned), skrivebordet, vinduslyset som
-// glir over bordet i løpet av året og skifter farge med årstiden, pynten (blekkpute, penn),
-// køen utenfor luka og avisa med årets overskrift. Passene, stempelet og tingene på bordet bor i egne filer. Leser spillet fra gRef
+// glir over bordet i løpet av året og skifter farge med årstiden, køen utenfor luka, avisa
+// med årets overskrift oppå bunken av gamle aviser, og rommet som mørkner år for år. Passene, stempelet og tingene på bordet bor i egne filer. Leser spillet fra gRef
 // hver frame - ingen React-state per frame.
 
 import { useRef, useState } from 'react';
@@ -10,7 +10,8 @@ import { Particles, crispCanvas, useQuality } from '../kit';
 import { BRETT, PLASSER, VANLIGE } from './levels';
 import { nå, type Fx } from './fx';
 import { sikt, trykk } from './game';
-import type { Game } from './state';
+import { husleie, type Game } from './state';
+import { Kart } from './kart';
 import { TUNING } from './tuning';
 import { tegnAvis, tegnBord, tegnKø, tegnVindu } from './tegning';
 import { AVIS, TELEGRAM } from './texts';
@@ -27,6 +28,7 @@ const sommer = new THREE.Color('#fff0cf');
 const grått = new THREE.Color('#8e9090');
 const desember = new THREE.Color('#ffb46a');
 const tmp = new THREE.Color();
+const lampefarge = new THREE.Color('#ffcf96');
 
 function Kamera({ fxRef }: { fxRef: FxRef }) {
     useFrame(({ camera, size }) => {
@@ -113,42 +115,26 @@ function Vindu({ gRef }: { gRef: GRef }) {
     );
 }
 
-/** Pynt på bordet: blekkputa, en fyllepenn og en stabel mapper i hjørnene. */
-function Pynt() {
-    return (
-        <group>
-            {/* Blekkputa der stempelet hviler */}
-            <mesh position={[0, 0.03, 2.35]}>
-                <cylinderGeometry args={[0.4, 0.42, 0.06, 32]} />
-                <meshStandardMaterial color="#8d918e" metalness={0.6} roughness={0.4} />
-            </mesh>
-            <mesh position={[0, 0.062, 2.35]} rotation={[-Math.PI / 2, 0, 0]}>
-                <circleGeometry args={[0.33, 32]} />
-                <meshLambertMaterial color="#6e3414" />
-            </mesh>
-            {/* Fyllepennen */}
-            <mesh position={[1.2, 0.05, 2.5]} rotation={[0, 0, Math.PI / 2]}>
-                <cylinderGeometry args={[0.045, 0.045, 1.1, 12]} />
-                <meshStandardMaterial color="#141716" metalness={0.3} roughness={0.35} />
-            </mesh>
-            <mesh position={[0.58, 0.05, 2.5]} rotation={[0, 0, Math.PI / 2]}>
-                <coneGeometry args={[0.045, 0.16, 12]} />
-                <meshStandardMaterial color="#c8a24e" metalness={0.8} roughness={0.3} />
-            </mesh>
-        </group>
-    );
-}
-
-/** Kassa og regningen kommer først i 1932, sammen med pengene: de glir inn fra høyre. */
-function Pengeting({ gRef, children }: { gRef: GRef; children: React.ReactNode }) {
+/**
+ * Tingene som kommer med pengene glir inn fra høyre: kassa i 1932 (gebyret), regningen i 1933
+ * (husleia). Én ny ting per år.
+ */
+function GlirInn({
+    gRef,
+    når,
+    children,
+}: {
+    gRef: GRef;
+    når: (g: Game) => boolean;
+    children: React.ReactNode;
+}) {
     const ref = useRef<THREE.Group>(null);
     const kom = useRef(-1);
     useFrame(() => {
         const g = gRef.current;
         const gr = ref.current;
         if (!gr) return;
-        const på = BRETT[g.brett].penger;
-        if (!på) {
+        if (!når(g)) {
             kom.current = -1;
             gr.visible = false;
             return;
@@ -160,6 +146,9 @@ function Pengeting({ gRef, children }: { gRef: GRef; children: React.ReactNode }
     });
     return <group ref={ref}>{children}</group>;
 }
+
+const harKasse = (g: Game) => BRETT[g.brett].penger;
+const harLeie = (g: Game) => husleie(g.brett) > 0;
 
 /** Hvor mange som står i køen utenfor luka, år for år (1935: bølgen fra Saar). */
 const KØ = [2, 3, 4, 5, 8, 7, 8, 9];
@@ -190,6 +179,63 @@ function Kø({ gRef }: { gRef: GRef }) {
     );
 }
 
+/** De gamle avisene under årets: litt på skrå, og gulere jo eldre de er. */
+const GAMLE = Array.from({ length: 7 }, (_, i) => ({
+    x: Math.sin(i * 2.3) * 0.12 - 0.06,
+    z: Math.cos(i * 1.7) * 0.08 + 0.04,
+    r: Math.sin(i * 3.1) * 0.22,
+    farge: new THREE.Color('#d9c89a').lerp(new THREE.Color('#efe9da'), i / 7),
+}));
+
+/**
+ * Rommet eldes år for år: dagslyset blir svakere og varmere mot 1938, og fra 1934 står
+ * bordlampa på og kaster en gul lyskjegle over hjørnet (lange kvelder på kontoret).
+ */
+function Rom({ gRef }: { gRef: GRef }) {
+    const amb = useRef<THREE.AmbientLight>(null);
+    const lampe = useRef<THREE.MeshBasicMaterial>(null);
+    const [tex] = useState(() => {
+        const c = crispCanvas(128, 128);
+        c.draw((ctx, w, h) => {
+            const gr = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2);
+            gr.addColorStop(0, 'rgba(255,214,140,1)');
+            gr.addColorStop(0.5, 'rgba(255,190,110,0.45)');
+            gr.addColorStop(1, 'rgba(255,170,90,0)');
+            ctx.fillStyle = gr;
+            ctx.fillRect(0, 0, w, h);
+        });
+        return c.tex;
+    });
+    useFrame(() => {
+        const g = gRef.current;
+        const år = g.brett / (BRETT.length - 1);
+        if (amb.current) {
+            amb.current.intensity += (0.72 - år * 0.2 - amb.current.intensity) * 0.03;
+            amb.current.color.lerp(tmp.set('#dfe7ee').lerp(lampefarge, år * 0.6), 0.03);
+        }
+        if (lampe.current) {
+            const mål = g.brett >= 3 ? 0.18 + (g.brett - 3) * 0.06 : 0;
+            lampe.current.opacity += (mål - lampe.current.opacity) * 0.03;
+        }
+    });
+    return (
+        <>
+            <ambientLight ref={amb} intensity={0.72} color="#dfe7ee" />
+            <mesh position={[-4.3, 0.04, -1.2]} rotation={[-Math.PI / 2, 0, 0]} userData={{ sceneAuditIgnore: true }}>
+                <planeGeometry args={[3.6, 3.0]} />
+                <meshBasicMaterial
+                    ref={lampe}
+                    map={tex}
+                    transparent
+                    opacity={0}
+                    blending={THREE.AdditiveBlending}
+                    depthWrite={false}
+                />
+            </mesh>
+        </>
+    );
+}
+
 /** Avisa: ny overskrift hvert år. Sent i 1938 ligger telegrammet om fredsprisen der i stedet. */
 function Avis({ gRef }: { gRef: GRef }) {
     const [lerret] = useState(() => crispCanvas(300, 180));
@@ -205,8 +251,26 @@ function Avis({ gRef }: { gRef: GRef }) {
             tegnAvis(ctx, w, h, år, telegram ? TELEGRAM : (AVIS[g.brett] ?? ''), telegram)
         );
     });
+    const bunke = useRef<(THREE.Mesh | null)[]>([]);
+    useFrame(() => {
+        const n = gRef.current.brett;
+        bunke.current.forEach((m, i) => m && (m.visible = i < n));
+    });
     return (
         <group position={[-3.35, 0.02, -1.72]} rotation={[0, 0.08, 0]}>
+            {/* Bunken av gamle aviser: én til for hvert år kontoret har vært åpent. */}
+            {GAMLE.map((a, i) => (
+                <mesh
+                    key={i}
+                    ref={(m) => (bunke.current[i] = m)}
+                    position={[a.x, -0.012 + i * 0.0012, a.z]}
+                    rotation={[-Math.PI / 2, 0, a.r]}
+                    visible={false}
+                >
+                    <planeGeometry args={[1.45, 0.87]} />
+                    <meshLambertMaterial color={a.farge} />
+                </mesh>
+            ))}
             <mesh position={[0.04, -0.008, 0.05]} rotation={[-Math.PI / 2, 0, 0]}>
                 <planeGeometry args={[1.48, 0.9]} />
                 <meshBasicMaterial color="#000" transparent opacity={0.3} />
@@ -223,21 +287,23 @@ export function Verden({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
     const q = useQuality();
     return (
         <>
-            <ambientLight intensity={0.7} color="#dfe7ee" />
+            <Rom gRef={gRef} />
             <hemisphereLight args={['#dfe9ff', '#1d2a24', 0.55]} />
             <Kamera fxRef={fxRef} />
             <Vindu gRef={gRef} />
             <Bord gRef={gRef} />
-            <Pynt />
             {PLASSER.map((_, i) => (
                 <PassPlass key={i} gRef={gRef} fxRef={fxRef} plass={i} />
             ))}
             <Kø gRef={gRef} />
             <Avis gRef={gRef} />
-            <Pengeting gRef={gRef}>
+            <GlirInn gRef={gRef} når={harKasse}>
                 <Kasse gRef={gRef} fxRef={fxRef} />
+            </GlirInn>
+            <GlirInn gRef={gRef} når={harLeie}>
                 <Regning gRef={gRef} fxRef={fxRef} />
-            </Pengeting>
+            </GlirInn>
+            <Kart gRef={gRef} />
             <Flygende fxRef={fxRef} />
             <Hylle gRef={gRef} />
             <Ark gRef={gRef} />

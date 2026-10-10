@@ -119,6 +119,8 @@ export interface Game {
     arkiv: number[];
     /** Personer som reiste videre med gyldig pass. */
     hjulpet: number;
+    /** Hver reise med gyldig pass: landet på kartet (REISEMÅL), plassen passet lå på og året. */
+    reiser: { land: number; plass: number; brett: number }[];
     /** Alle som ble papirløse i runden (navn og år), i rekkefølge. */
     mistet: { person: number; år: number }[];
     /** Spilltid da siste dilemma ble meldt (to pass går ut samtidig). */
@@ -154,6 +156,7 @@ export function newGame(seed: number): Game {
         førsteTom: false,
         arkiv: [],
         hjulpet: 0,
+        reiser: [],
         mistet: [],
         sistDilemma: -99,
         bølgeKom: false,

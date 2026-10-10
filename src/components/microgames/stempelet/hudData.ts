@@ -22,6 +22,8 @@ export interface HudData {
     penger: boolean;
     /** Personer som har reist videre med gyldig pass. */
     hjulpet: number;
+    /** Land på kartet som passene har nådd. */
+    land: number;
 }
 
 export function lesHud(g: Game): HudData {
@@ -41,6 +43,7 @@ export function lesHud(g: Game): HudData {
         frimerke: !!g.frimerke,
         penger: BRETT[g.brett].penger,
         hjulpet: g.hjulpet,
+        land: new Set(g.reiser.map((r) => r.land)).size,
     };
 }
 
@@ -57,6 +60,7 @@ export function sammeHud(a: HudData, b: HudData): boolean {
         a.frimerke !== b.frimerke ||
         a.penger !== b.penger ||
         a.hjulpet !== b.hjulpet ||
+        a.land !== b.land ||
         a.lommer.length !== b.lommer.length
     )
         return false;

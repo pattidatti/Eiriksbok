@@ -4,7 +4,7 @@
 
 import { FARGE } from './farger';
 import type { HudData } from './hudData';
-import { BRETT, FRIMERKE_PLASS, KASSE_PLASS, LOMME, PLASSER, REGNING_PLASS, SKUFF_PLASS } from './levels';
+import { BRETT, FRIMERKE_PLASS, KART_PLASS, KASSE_PLASS, LOMME, PLASSER, REGNING_PLASS, SKUFF_PLASS } from './levels';
 import { BORDLAPP, GRENSE, saksnummer } from './texts';
 import { SKRIFT_DECO, SKRIFT_MASKIN } from './tegning';
 import { TUNING } from './tuning';
@@ -271,14 +271,14 @@ export function Hud({ d, anker, knapper }: { d: HudData; anker: Anker; knapper: 
                 </Merke>
             )}
 
-            {/* Lappene på tingene. Kassa og regningen kommer i 1932, sammen med pengene. */}
+            {/* Lappene på tingene. Kassa kommer i 1932 med gebyret, regningen i 1933 med husleia. */}
             {d.penger && (
                 <Merke at={anker(KASSE_PLASS.x, KASSE_PLASS.z + 0.62)} farge={FARGE.tekst} bakgrunn={lav ? '#f2c4bd' : FARGE.papir} stor>
                     {BORDLAPP.kasse(d.kasse)}
                 </Merke>
             )}
             <Merke
-                at={d.penger ? anker(REGNING_PLASS.x, REGNING_PLASS.z + 0.66) : null}
+                at={d.husleie > 0 ? anker(REGNING_PLASS.x, REGNING_PLASS.z + 0.66) : null}
                 farge={FARGE.papir}
                 bakgrunn={lav ? FARGE.rød : FARGE.tekst}
                 stor
@@ -293,6 +293,9 @@ export function Hud({ d, anker, knapper }: { d: HudData; anker: Anker; knapper: 
                 stor
             >
                 {BORDLAPP.hylle(d.papirløse, TUNING.tap.papirløse)}
+            </Merke>
+            <Merke at={anker(KART_PLASS.x, KART_PLASS.z + 0.78)} farge={FARGE.tekst} bakgrunn={FARGE.papir} stor>
+                {BORDLAPP.kart(d.land)}
             </Merke>
         </>
     );

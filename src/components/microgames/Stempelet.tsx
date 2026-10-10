@@ -179,6 +179,7 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     };
     const vedArk = () => tilSkjerm(fxRef.current, FRIMERKE_PLASS.x, 0.1, FRIMERKE_PLASS.z - 0.3);
     const vedKasse = () => tilSkjerm(fxRef.current, KASSE_PLASS.x, 0.3, KASSE_PLASS.z - 0.3);
+    const vedRegning = () => tilSkjerm(fxRef.current, REGNING_PLASS.x, 0.1, REGNING_PLASS.z - 0.5);
     const vedHylle = () => tilSkjerm(fxRef.current, SKUFF_PLASS.x, 0.1, SKUFF_PLASS.z - 0.55);
     const plassAv = (id: number) => gRef.current.pass.find((p) => p.id === id)?.plass ?? 0;
     const flyt = (t: string, at: { x: number; y: number } | null, farge: string) => {
@@ -304,9 +305,10 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             case 'forny':
                 if (u.lomme === 'tom' && g.brett >= 1) {
                     const at = vedPlass(plassAv(u.id));
-                    if (!text.beatOnce('tom', ØYEBLIKK.tom.tittel, ØYEBLIKK.tom.tekst, { at }))
-                        text.point('tom', LAPP.tom, at, { seconds: 4, once: true });
-                    else text.point('ghost', LAPP.ghost, vedKasse, { seconds: 5, once: true });
+                    // Første gang: lapp ved den tomme pengepungen, i tillegg til øyeblikket.
+                    text.point('tom', LAPP.tom, at, { seconds: 5, once: true });
+                    if (text.beatOnce('tom', ØYEBLIKK.tom.tittel, ØYEBLIKK.tom.tekst, { at }))
+                        text.point('ghost', LAPP.ghost, vedKasse, { seconds: 5, once: true });
                 }
                 break;
             case 'frimerkeKom':
@@ -397,8 +399,9 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             case 'nyttÅr':
                 lyd.nyttÅr();
                 text.banner(String(u.år), FARGE.grønn, 1.6);
-                // Én ny ting per år: pengene kommer i 1932.
+                // Én ny ting per år: gebyret i 1932, husleia i 1933.
                 if (u.brett === 1) text.point('penger', LAPP.penger, vedKasse, { seconds: 5, once: true });
+                if (u.brett === 2) text.point('leie', LAPP.leie, vedRegning, { seconds: 5, once: true });
                 break;
             case 'arkiv':
                 text.banner(`ARKIVKORT: ${navn(u.person).toUpperCase()}`, FARGE.oransje, 1.6);
