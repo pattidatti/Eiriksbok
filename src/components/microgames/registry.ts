@@ -253,6 +253,7 @@ const Pengeballongen = lazy(() => import('./Pengeballongen'));
 const Gamma = lazy(() => import('./Gamma'));
 const RederensKart = lazy(() => import('./RederensKart'));
 const Underskriftsrittet = lazy(() => import('./Underskriftsrittet'));
+const Stempelet = lazy(() => import('./Stempelet'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2602,6 +2603,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Rosemalte kister fra Agder og Telemark på 1780-tallet: akantusranker i kalkhvitt og oker på mørk blågrønn grunn, sammen med klagebrevets jernblekk og røde lakksegl',
         loader: () => import('./Underskriftsrittet'),
         Component: Underskriftsrittet as never,
+    },
+    stempelet: {
+        id: 'stempelet',
+        title: 'Stempelet',
+        description:
+            'Nansenkontoret i Genève, 1931-1938. Du er saksbehandler, og bordet er fullt av Nansenpass. Hvert pass har et bånd som krymper. Hold inne stempelet og slipp i det lyse feltet, så fylles båndet igjen. Går et pass ut, er personen papirløs igjen, for passet var aldri et statsborgerskap. Pass med mynt gir gebyr til kassa, pass med tom lomme koster. Slå frimerkearkene, betal husleia hvert nyttår, og hold kontoret åpent til 1938.',
+        estimatedSeconds: 200,
+        sjanger: 'vedlikehold mot klokka',
+        tone: 'alvorlig',
+        hook: 'Du er saksbehandler hos Nansen. Rekker du å fornye passene før folk blir papirløse igjen?',
+        cover: '/images/microgames/stempelet.webp',
+        kunst: 'Mellomkrigstidens sikkerhetstrykk på pass og gebyrmerker: grønt guilloche-mønster på kald papirhvit, oransje stempelblekk og nikkel på et mørkegrønt skrivebord i Genève',
+        loader: () => import('./Stempelet'),
+        Component: Stempelet as never,
     },
 };
 

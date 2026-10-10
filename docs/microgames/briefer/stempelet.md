@@ -214,3 +214,32 @@ Fem konsepter, dommer runde 1 (Spillbart / Fagregelen avgjør):
   guilloche-look i stedet for fiolett stempelblekk (Tinghuset). Kjente svakheter å sjekke i
   gråboksen: om timingen i slaget gjør det for tregt når bordet er fullt, og om husleia (2 til 9)
   gir et reelt kassapress uten å bli umulig.
+- **Fase: gråboks (bygg 3a).** Bygde reglene i `src/components/microgames/stempelet/` (KART.md,
+  tuning.ts, levels.ts, state.ts, rules.ts, game.ts, bots.ts, sim.ts) og visningen med primitive
+  former (world.tsx, hud.tsx), `Stempelet.tsx` med usePlaytest, og registrering i `registry.ts`.
+  Opptrappingen fra punkt 11 ligger i `levels.ts` (1931 bare mynt og maks 5, 1932 tom lomme der
+  den første er tvunget, 1933 frimerkearket, så flere pass og høyere husleie).
+  **Simuleringen er grønn** (200 runder per robot): saksbehandler (vinner) 100 %, median 130 saker;
+  nybegynner (middels) 86 %, median 119; gratis-for-alle (taper) 0 %, median 100, går tom ved
+  husleia rundt 1936; knappemoser 0 %, median 26; passiv 0 %. 43 valg per minutt, presset går
+  0,47 -> 0,78 -> 0,95. Selvspillet i nettleseren: vinneren vant med 130 (samme som simuleringen),
+  Chromebook 24 draw calls, p95 5 ms per bilde. Eneste portfunn: coverbildet mangler (ventet).
+  **Endringer fra briefen (tallene som ble justert, og tre nye regler):**
+  - Et pass kan bare stemples når båndet er under 50 % (`pass.fornyFra`); lomma vises først da.
+    Uten dette kunne man slå samme mynt-pass om og om igjen og tjene uendelig.
+  - Lomma (mynt/tom) er fast for personen, ikke trukket på nytt ved hver fornyelse, og andelen
+    tomme lommer fordeles med en jevn teller i stedet for terningkast (mindre flaks mellom runder).
+  - Personer reiser videre med gyldig pass etter 40-70 s (`pass.blirMin/Maks`), så bordet får nye
+    folk og årets andel tomme lommer virker. Det er også stedet arkivkortene utløses (3 fornyelser).
+  - Tom lomme koster 2 (ikke 1), grå sak 3 (ikke 2). Husleie 2 + 1 per år som i briefen.
+  **Prøvde som IKKE virket:** (1) lomma trukket på nytt hver gang: hele bordet ble mynt fra 1931,
+  og «gratis for alle» vant 34-80 %. (2) Fornyelse fra 70 % bånd: den som stempler alt tidlig fikk
+  flest saker og slo vinneren på poeng. (3) Tom lomme -1: kassa ble aldri et problem for den som
+  fornyer alle. (4) Terningkast for tomme lommer: for stor spredning (gratis-for-alle p90 over
+  vinnerens median).
+  **Kjente svakheter:** Vinneren taper aldri (100 %) og har 40+ mynter i 1935 - briefen vil at også
+  den flinke skal være i fare; stram `kasse.husleieØkning` eller `BRETT[].tom` sent i runden når
+  kunsten er på plass. Den flinke strategien (mynt tidlig, tomme lommer sent) er ikke forklart i
+  spillet; den bør vises i et lærings-øyeblikk eller en lapp. Bordet er stort og passene små i
+  bildet (kameraet kan gå nærmere). Ingen navn eller ansikter på passene ennå, ingen lyd, ingen
+  arkivkort-visning i menyen (bare tellet). Skjermbilder: `.screenshots/playtest/stempelet/`.
