@@ -8,7 +8,7 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { crispCanvas } from '../kit';
 import { FARGE } from './farger';
-import { LOMME, PASS_MÅL, PLASSER, SKUFF_PLASS } from './levels';
+import { BRETT, LOMME, PASS_MÅL, PLASSER, SKUFF_PLASS } from './levels';
 import { nå, type Fx } from './fx';
 import { tegnPass } from './tegning';
 import type { Game } from './state';
@@ -25,6 +25,8 @@ const tmp = new THREE.Color();
 /** Båndet: fra x0 til x1 langs underkanten av passet. */
 const BÅND = { x0: -0.33, x1: 0.64, z: 0.39, d: 0.1 };
 const easeOut = (u: number) => 1 - Math.pow(1 - u, 3);
+/** Sekunder passet bruker på å gli ut (reist videre eller utløpt). */
+const UT_TID = 0.7;
 
 export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; plass: number }) {
     const [lerret] = useState(() => crispCanvas(300, 212));
@@ -46,17 +48,46 @@ export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; pl
         const p = g.pass.find((q) => q.plass === plass);
         const gr = gruppe.current;
         if (!gr) return;
-        gr.visible = !!p;
-        if (!p) return;
-        const t = clock.elapsedTime;
         const s = sist.current;
+        if (!p) {
+            // Passet forlot plassen: reiste videre (glir ut over bordkanten mot grensen) eller
+            // gikk ut (glir grått ned i hylla). Aldri bare borte mellom to bilder.
+            const b = fx.borte[plass];
+            const e = b ? nå() - b.t : 99;
+            gr.visible = !!b && s.id !== -1 && e < UT_TID;
+            if (!gr.visible || !b) return;
+            const u = Math.min(1, e / UT_TID);
+            const k = u * u;
+            if (b.type === 'reist') {
+                gr.position.set(pl.x, 0.012 + Math.sin(u * Math.PI) * 0.5, pl.z - k * 3.4);
+                gr.rotation.y = u * 0.25;
+                ark.current?.color.set('#ffffff');
+            } else {
+                gr.position.set(
+                    pl.x + (SKUFF_PLASS.x - pl.x) * k,
+                    0.012 + Math.sin(u * Math.PI) * 0.3,
+                    pl.z + (SKUFF_PLASS.z - pl.z) * k
+                );
+                gr.rotation.y = -u * 0.4;
+                ark.current?.color.set('#8f908c');
+            }
+            gr.scale.setScalar(1 - k * 0.35);
+            if (gnist.current) gnist.current.visible = false;
+            if (lys.current) lys.current.visible = false;
+            if (mynt.current) mynt.current.visible = false;
+            if (fyll.current) fyll.current.visible = b.type === 'reist';
+            return;
+        }
+        gr.visible = true;
+        const t = clock.elapsedTime;
+        const penger = BRETT[g.brett].penger;
         // Nytt pass: glir inn fra eleven sin side av bordet (eller fra hylla som grå sak).
         if (p.id !== s.id) {
             s.id = p.id;
             s.fra = t;
             s.grå = p.grå;
         }
-        const nøkkel = `${p.id}|${p.merker.length}|${p.grå}`;
+        const nøkkel = `${p.id}|${p.merker.length}|${p.grå}|${penger}`;
         if (nøkkel !== s.nøkkel) {
             s.nøkkel = nøkkel;
             lerret.draw((ctx, w, h) =>
@@ -66,6 +97,7 @@ export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; pl
                     merker: p.merker,
                     merkeÅr: p.merkeÅr,
                     grå: p.grå,
+                    betaler: penger ? p.betaler : null,
                 })
             );
         }
@@ -103,14 +135,18 @@ export function PassPlass({ gRef, fxRef, plass }: { gRef: GRef; fxRef: FxRef; pl
             gnist.current.position.x = BÅND.x0 + lengde * andel;
             gnist.current.scale.setScalar(0.8 + Math.sin(t * 40 + plass) * 0.25 + Math.random() * 0.2);
         }
+        // Lomma synes fra passet kommer (fra 1932), så eleven ser før stempelet om personen kan
+        // betale. Før passet er til fornyelse, ligger den mindre og stille.
+        const klar = !!p.lomme || p.grå;
         if (mynt.current) {
-            mynt.current.visible = p.lomme === 'mynt' && !p.grå;
-            mynt.current.position.y = 0.09 + Math.sin(t * 3 + plass) * 0.012;
-            mynt.current.rotation.y = t * 1.4 + plass;
+            mynt.current.visible = penger && p.betaler && !p.grå;
+            mynt.current.position.y = klar ? 0.09 + Math.sin(t * 3 + plass) * 0.012 : 0.05;
+            mynt.current.rotation.y = klar ? t * 1.4 + plass : 0.6;
+            mynt.current.scale.setScalar(klar ? 1 : 0.72);
         }
         if (tom.current) {
-            tom.current.visible = p.lomme === 'tom' || p.grå;
-            tom.current.scale.setScalar(p.grå ? 1.25 : 1);
+            tom.current.visible = penger && (!p.betaler || p.grå);
+            tom.current.scale.setScalar(p.grå ? 1.25 : klar ? 1 : 0.72);
         }
         // Dilemmaet: hvitt lys rundt de to passene som går ut samtidig.
         if (lys.current && lysMat.current) {

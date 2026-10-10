@@ -38,10 +38,9 @@ export function trykk(g: Game) {
 
 export function slipp(g: Game) {
     if (g.mode !== 'play') return;
-    const h = g.stempel.hold;
-    if (h === null) return;
+    if (g.stempel.hold === null) return;
     g.stempel.hold = null;
-    slå(g, h);
+    slå(g);
 }
 
 /** Tastaturet: flytt stempelet til neste pass (retning 1 eller -1), ordnet fra venstre. */

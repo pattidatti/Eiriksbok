@@ -25,6 +25,8 @@ export interface Fx {
     /** To pass som går ut samtidig: lyses opp til `til`. */
     dilemma: number[];
     dilemmaTil: number;
+    /** Pass som nettopp forlot en plass: reiste videre (glir ut over bordkanten) eller gikk ut. */
+    borte: Record<number, { type: 'reist' | 'utløpt'; t: number }>;
 }
 
 export const nyFx = (): Fx => ({
@@ -42,6 +44,7 @@ export const nyFx = (): Fx => ({
     betaltBeløp: 0,
     dilemma: [],
     dilemmaTil: -10,
+    borte: {},
 });
 
 /** Sekunder en mynt bruker i lufta. */

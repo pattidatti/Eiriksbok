@@ -18,6 +18,10 @@ export interface HudData {
     /** Pass til fornyelse: plassen og hva et slag gir (+) eller koster (-). */
     lommer: { plass: number; pris: number }[];
     frimerke: boolean;
+    /** Har pengene kommet (1932-)? Før det er kassa og regningen borte. */
+    penger: boolean;
+    /** Personer som har reist videre med gyldig pass. */
+    hjulpet: number;
 }
 
 export function lesHud(g: Game): HudData {
@@ -32,8 +36,11 @@ export function lesHud(g: Game): HudData {
         rekke: g.rekke,
         lommer: g.pass
             .filter((p) => p.lomme || p.grå)
-            .map((p) => ({ plass: p.plass, pris: pris(p) })),
+            .map((p) => ({ plass: p.plass, pris: pris(g, p) }))
+            .filter((l) => l.pris !== 0),
         frimerke: !!g.frimerke,
+        penger: BRETT[g.brett].penger,
+        hjulpet: g.hjulpet,
     };
 }
 
@@ -48,6 +55,8 @@ export function sammeHud(a: HudData, b: HudData): boolean {
         a.papirløse !== b.papirløse ||
         a.rekke !== b.rekke ||
         a.frimerke !== b.frimerke ||
+        a.penger !== b.penger ||
+        a.hjulpet !== b.hjulpet ||
         a.lommer.length !== b.lommer.length
     )
         return false;

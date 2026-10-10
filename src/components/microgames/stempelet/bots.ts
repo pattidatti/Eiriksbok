@@ -58,19 +58,19 @@ const tilFornyelse = (g: Game) => g.pass.filter((p) => p.lomme || p.grå);
  * Den flinke: redder først det som er i ferd med å gå ut, så frimerkearket, så mynt-passene
  * (gebyret). Tomme lommer tar den sent, rett før de går ut, og bare når kassa tåler det.
  */
-function klok(g: Game): Mål | null {
+function klok(g: Game, frimerker = true): Mål | null {
     const leie = husleie(g.brett);
     const igjenAvÅret = TUNING.år.sekunder - g.iÅr;
     const fare = papirløse(g) >= TUNING.tap.papirløse - 2;
     const buffer = igjenAvÅret < 10 ? leie : Math.ceil(leie / 2);
     const kandidater = tilFornyelse(g)
         .filter((p) => kanStemple(g, p))
-        .filter((p) => pris(p) > 0 || fare || g.kasse + pris(p) >= buffer)
+        .filter((p) => pris(g, p) > 0 || fare || g.kasse + pris(g, p) >= buffer)
         .sort((a, b) => (a.grå ? 0 : a.igjen) - (b.grå ? 0 : b.igjen));
     const haster = kandidater.find((p) => p.grå || p.igjen < 2.5);
     if (haster) return haster;
-    if (g.frimerke) return 'frimerke';
-    const mynt = kandidater.find((p) => pris(p) > 0);
+    if (g.frimerke && frimerker) return 'frimerke';
+    const mynt = kandidater.find((p) => pris(g, p) > 0);
     if (mynt) return mynt;
     return kandidater.find((p) => p.igjen < 4) ?? null;
 }
@@ -79,14 +79,14 @@ export const BOTS: Record<string, BotDef> = {
     saksbehandler: {
         forventer: 'vinner',
         beskrivelse:
-            'kortest bånd først, fullt slag hver gang, slår frimerkearket og sparer til husleia',
-        make: () => slagmaskin(klok, () => 2, 1),
+            'kortest bånd først, slår frimerkearket og sparer til husleia',
+        make: () => slagmaskin((g) => klok(g), () => 2, 1),
     },
     nybegynner: {
         forventer: 'middels',
         beskrivelse:
-            'følger samme plan, men er treg mellom slagene og slår skjevt hver tredje gang',
-        make: (rng) => slagmaskin(klok, () => (rng() < 0.33 ? 1 : 2), 4),
+            'følger samme plan, men er treg mellom slagene',
+        make: () => slagmaskin((g) => klok(g), () => 2, 4),
     },
     'gratis-for-alle': {
         forventer: 'taper',
@@ -104,7 +104,7 @@ export const BOTS: Record<string, BotDef> = {
     knappemoser: {
         forventer: 'taper',
         tilfeldig: true,
-        beskrivelse: 'slår tilfeldige pass med tilfeldig lengde på slaget',
+        beskrivelse: 'slår tilfeldige pass og ark uten plan',
         make: (rng) =>
             slagmaskin(
                 (g) => {

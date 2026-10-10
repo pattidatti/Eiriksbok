@@ -1,12 +1,11 @@
 // Stempelet: nikkelfot, oransje gummi, messinghals og trehåndtak. Det henger etter pekeren,
-// løftes mens eleven holder, skjelver når det er holdt for lenge, og smeller ned. Ringen rundt
-// foten viser timingen: slipp når fyllet er i det hvite feltet. Ved slaget spruter blekket.
+// løftes mens eleven holder og smeller ned når eleven slipper. Ingen timing: hvert slag er fullt.
+// Ved slaget spruter blekket.
 
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { FARGE } from './farger';
-import { PLASSER } from './levels';
 import { nå, type Fx } from './fx';
 import type { Game } from './state';
 import { TUNING } from './tuning';
@@ -15,81 +14,10 @@ type GRef = React.MutableRefObject<Game>;
 type FxRef = React.MutableRefObject<Fx>;
 
 const S = TUNING.stempel;
-/** Ringen: fyllet vokser fra INN til UT. Det hvite feltet er der fyllet er mellom fullFra og fullTil. */
-const INN = 0.12;
-const UT = 0.72;
-const radius = (h: number) => INN + (UT - INN) * Math.min(1, h / S.fullTil);
-const FELT_INN = radius(S.fullFra);
 const DRÅPER = 18;
 const dråpeGeo = new THREE.SphereGeometry(0.035, 6, 4);
 const hjelp = new THREE.Object3D();
 const easeOut = (u: number) => 1 - Math.pow(1 - u, 3);
-
-function Ring({ gRef }: { gRef: GRef }) {
-    const gruppe = useRef<THREE.Group>(null);
-    const fyll = useRef<THREE.Mesh>(null);
-    const fyllMat = useRef<THREE.MeshBasicMaterial>(null);
-    const feltMat = useRef<THREE.MeshBasicMaterial>(null);
-    const bølge = useRef<THREE.Mesh>(null);
-    const bølgeMat = useRef<THREE.MeshBasicMaterial>(null);
-    useFrame(({ clock }) => {
-        const g = gRef.current;
-        const st = g.stempel;
-        const t = clock.elapsedTime;
-        const gr = gruppe.current;
-        if (!gr) return;
-        // Før første slag: ringen vises på passet som rister, og fylles av seg selv i en løkke.
-        const demo = g.saker === 0 && st.hold === null && g.mode === 'play';
-        let h = st.hold;
-        let x = st.x;
-        let z = st.z;
-        if (demo) {
-            const mål = g.pass.filter((p) => !p.grå).sort((a, b) => a.igjen - b.igjen)[0];
-            if (mål) {
-                x = PLASSER[mål.plass].x;
-                z = PLASSER[mål.plass].z;
-            }
-            h = (t % 1.5) * 0.62;
-        }
-        gr.visible = h !== null;
-        if (h === null) return;
-        gr.position.set(x, 0.05, z);
-        const inne = h >= S.fullFra && h <= S.fullTil;
-        if (fyll.current && fyllMat.current) {
-            fyll.current.scale.setScalar(radius(h) / UT);
-            fyllMat.current.color.set(h < S.fullFra ? '#8c938f' : inne ? FARGE.lys : FARGE.rød);
-            fyllMat.current.opacity = h < S.fullFra ? 0.55 : 0.85;
-        }
-        if (feltMat.current) feltMat.current.opacity = inne ? 0.95 : 0.4 + Math.sin(t * 6) * 0.12;
-        // En bølge som pulserer ut fra feltet mens det er tid for å slippe.
-        if (bølge.current && bølgeMat.current) {
-            const u = (t * 1.6) % 1;
-            bølge.current.visible = inne;
-            bølge.current.scale.setScalar(1 + u * 0.35);
-            bølgeMat.current.opacity = (1 - u) * 0.6;
-        }
-    });
-    return (
-        <group ref={gruppe} visible={false}>
-            <mesh rotation={[-Math.PI / 2, 0, 0]}>
-                <ringGeometry args={[UT + 0.01, UT + 0.06, 48]} />
-                <meshBasicMaterial color={FARGE.rød} transparent opacity={0.7} />
-            </mesh>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.002, 0]}>
-                <ringGeometry args={[FELT_INN, UT, 48]} />
-                <meshBasicMaterial ref={feltMat} color={FARGE.lys} transparent opacity={0.4} />
-            </mesh>
-            <mesh ref={fyll} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.004, 0]}>
-                <ringGeometry args={[UT - 0.09, UT, 48]} />
-                <meshBasicMaterial ref={fyllMat} color={FARGE.nikkel} transparent opacity={0.8} />
-            </mesh>
-            <mesh ref={bølge} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.001, 0]} visible={false}>
-                <ringGeometry args={[UT, UT + 0.05, 48]} />
-                <meshBasicMaterial ref={bølgeMat} color={FARGE.lys} transparent opacity={0.5} />
-            </mesh>
-        </group>
-    );
-}
 
 /** Blekket som spruter ut ved slaget, og en sjokkring i bordet. */
 function Blekk({ fxRef }: { fxRef: FxRef }) {
@@ -159,7 +87,7 @@ export function Stempel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
         let skjelv = 0;
         if (h !== null) {
             y = 0.85 + easeOut(Math.min(1, h / S.lysTil)) * 0.85;
-            if (h > S.fullTil) skjelv = Math.min(1, (h - S.fullTil) * 4);
+            if (h > 1.2) skjelv = Math.min(0.5, (h - 1.2) * 2);
         } else if (etter < 0.07) y = 0.06;
         else if (etter < 0.4) y = 0.06 + easeOut((etter - 0.07) / 0.33) * 0.79;
         else y = 0.85 + Math.sin(t * 2) * 0.02;
@@ -195,7 +123,6 @@ export function Stempel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
     });
     return (
         <>
-            <Ring gRef={gRef} />
             <Blekk fxRef={fxRef} />
             <mesh ref={skygge} rotation={[-Math.PI / 2, 0, 0]}>
                 <circleGeometry args={[0.4, 28]} />

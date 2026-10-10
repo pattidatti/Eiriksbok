@@ -25,18 +25,15 @@ export const TUNING = {
         parAvstand: 1.5,
     },
 
-    /** Stempelet: følger pekeren med litt forsinkelse, og timingen i slaget. */
+    /**
+     * Stempelet: følger pekeren med litt forsinkelse. Timingringen er tatt bort (vurdering 1):
+     * hvert slag er fullt, så ferdigheten er hvem du tar først og hva kassa tåler.
+     */
     stempel: {
         /** Hvor fort stempelet tar igjen pekeren (1/s). Høyere = mindre tregt. */
         følg: 10,
-        /** Holdt kortere enn dette = skjevt slag. */
-        fullFra: 0.35,
-        /** Stempelet løftes til topps her (bare visning). */
-        lysTil: 0.65,
-        /** Holdt lenger enn dette = armen skjelver, skjevt slag. */
-        fullTil: 0.9,
-        /** Skjevt slag fyller så mye av båndet (andel av fullt), lagt oppå det som er igjen. */
-        skjevt: 0.5,
+        /** Stempelet løftes til topps her mens eleven holder (bare visning). */
+        lysTil: 0.4,
         /** Treffsonen rundt midten av et pass (halv bredde og halv dybde). */
         treffX: 0.72,
         treffZ: 0.55,
@@ -44,13 +41,13 @@ export const TUNING = {
 
     /** Kassa: gebyrer, frimerker og husleie (mynter). */
     kasse: {
-        start: 7,
+        start: 12,
         mynt: 1,
         tomLomme: 2,
         gråSak: 3,
         frimerke: 4,
-        /** Husleia ved hvert årsskifte, 1931-1938. */
-        husleie: [4, 6, 8, 9, 10, 10, 10, 8] as number[],
+        /** Husleia ved hvert årsskifte, 1931-1938. 1931 har ingen penger (bare stempel og bånd). */
+        husleie: [0, 6, 8, 9, 10, 10, 10, 8] as number[],
     },
 
     /** Frimerkearket: når det kommer i året, og hvor lenge det ligger. */
@@ -58,6 +55,9 @@ export const TUNING = {
 
     /** Grå saker: tid i venteskuffen før personen kommer tilbake på bordet. */
     grå: { venter: 6 },
+
+    /** «I siste liten»: et slag på et pass med mindre enn så mange sekunder igjen. */
+    redning: { igjen: 1.2 },
 
     /** Dilemma: to pass med under `igjen` s bånd samtidig, høyst én gang per `pause` s. */
     dilemma: { igjen: 2.2, pause: 14 },

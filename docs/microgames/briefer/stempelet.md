@@ -319,3 +319,39 @@ Fem konsepter, dommer runde 1 (Spillbart / Fagregelen avgjør):
   fortsatt i rundt 7 % av rundene, alltid på husleia i 1938, så selvspillet kan en sjelden gang
   vise en tapt vinnerrunde. Teksten på hyllekortene er liten (det står også i lappen og på
   slutt-skjermen). Lærings-kortet kan dekke et par pass mens det står (sakte film).
+- **Fase: forbedrer etter vurdering 1 (sum 19: Forståelig 4, Myk start 4, Eleven gjør 4,
+  Utseende 3, Lærerikt 4).**
+  (1) Det passet GA: når en person reiser videre, glir passet ut over bordkanten, en hvit
+  tekst sier «Vera reiser til Belgia», og et skilt øverst på midten teller «Reist videre med
+  passet: N · Nansenpasset ble godtatt i over 50 land». Når et pass går ut, står «Avvist ved
+  grensen» på passet før det glir grått ned i hylla.
+  (2) Gebyret er synlig før stempelet: fra 1932 ligger mynten eller den tomme lomma på passet
+  fra det kommer (mindre og stille til passet kan fornyes), passet har teksten «BETALER» eller
+  «TOM LOMME» under gebyrfeltet, og lappen ved lomma sier «Betaler +1», «Gratis -2» eller
+  «Grå sak -3». Timingringen er tatt bort: hvert slag fyller båndet helt (holdt inne løfter
+  bare stempelet). Ferdigheten er nå hvem du tar først og hva kassa tåler.
+  (3) Én ny ting per år: 1931 har ingen penger (`BRETT[].penger`): ingen lommer, ingen kassa,
+  ingen regning, grå saker koster ingenting. I 1932 glir kassa og regningen inn fra høyre med
+  lappen «Nytt i 1932: gebyr, kassa og husleie». 1933 frimerkearket (som før). Menyen er én
+  setning. Rommet: en kø med ansikter bakerst på bordet («I KØEN», 2 i 1931 til 9 i 1938, ny
+  rekkefølge når et pass kommer), en avis med årets overskrift (1931 Nansenkontoret åpner,
+  1932 krisen, 1933 Hitler, 1934 Saar skal stemme, 1935 Saar blir tysk, 1936 Spania, 1937
+  Nansenhjelpen, 1938 Østerrike) og telegrammet om fredsprisen sent i 1938. Mappene er borte.
+  Passbildene er håndkolorerte og ulike (hudtone, hår, lue, hatt, skjerf, briller, skjegg,
+  bakgrunn). Regler eleven må huske: tre (båndet/stempelet, betaler eller gratis, husleia).
+  Feel-lista: før runden var 1 (hver handling svarer) og 4 (belønningen merkes) på plass. Lagt
+  til 2: «I siste liten!» med egen lys tone når et pass reddes med under 1,2 s igjen. Lagt til
+  3: passene glir ut (opp over kanten når de reiser, ned i hylla når de går ut) i stedet for å
+  forsvinne mellom to bilder; kassa og regningen glir inn i 1932.
+  Tall: startkasse 12 (var 7), husleie `[0, 6, 8, 9, 10, 10, 10, 8]`. Nybegynneren slår ikke
+  skjevt lenger, bare tregt (pause 4 grep).
+  **Simuleringen er grønn:** saksbehandler 91 %, median 122; nybegynner 40 %, median 107;
+  gratis-for-alle 0 %, median 78; knappemoser 0 %, median 24; passiv 0 %; 42 valg per minutt;
+  press 0,47 -> 0,82 -> 0,96. Selvspillet: vant med 127, 39 draw calls, p95 8,1 ms på
+  Chromebook-nivå. Audit grønn, likhetsvakt grønn (nærmest gamma 0,30).
+  **Prøvde som IKKE virket:** startkasse 8 og 10 uten inntekt i 1931: vinneren nede i 67 % og
+  78 % (taper på husleia i 1938). Nybegynner som glemmer frimerkearket: 0 % seier, for stor
+  avstand til vinneren. Første skilt-tekst i 13 px ble målt til 12,7 px i fullskjerm (nå 14).
+  **Kjente svakheter:** Uten timing er stempelslaget ett grep; variasjonen ligger i valget av
+  pass. Regningen ligger fortsatt tett inntil passplassen lengst til høyre. Teksten i køen og
+  på avisa er liten (pynt, ikke regler). Banneret for arkivkort kan dekke køen et øyeblikk.

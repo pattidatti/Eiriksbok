@@ -5,7 +5,7 @@
 import { FARGE } from './farger';
 import type { HudData } from './hudData';
 import { BRETT, FRIMERKE_PLASS, KASSE_PLASS, LOMME, PLASSER, REGNING_PLASS, SKUFF_PLASS } from './levels';
-import { BORDLAPP, saksnummer } from './texts';
+import { BORDLAPP, GRENSE, saksnummer } from './texts';
 import { SKRIFT_DECO, SKRIFT_MASKIN } from './tegning';
 import { TUNING } from './tuning';
 
@@ -15,6 +15,7 @@ const CSS = `
 @keyframes stp-riv { 0% { transform: translateY(0) rotate(0); opacity: 1 }
   100% { transform: translateY(160px) rotate(-24deg); opacity: 0 } }
 @keyframes stp-rull { 0% { transform: translateY(-60%); opacity: .2 } 100% { transform: none; opacity: 1 } }
+@keyframes stp-sprett { 0% { transform: scale(1) } 35% { transform: scale(1.6) } 100% { transform: scale(1) } }
 @keyframes stp-puls { 0%,100% { transform: translate(-50%,-50%) scale(1) } 50% { transform: translate(-50%,-50%) scale(1.12) } }
 `;
 
@@ -185,9 +186,54 @@ function Nummermaskin({ d }: { d: HudData }) {
                     {Array.from({ length: Math.min(10, d.rekke) }, (_, i) => (
                         <span key={i} style={{ width: 8, height: 8, borderRadius: 4, background: FARGE.oransje }} />
                     ))}
-                    <span style={{ fontSize: 14, fontWeight: 700, marginLeft: 4 }}>{d.rekke} rene</span>
+                    <span style={{ fontSize: 14, fontWeight: 700, marginLeft: 4 }}>{d.rekke} på rad</span>
                 </div>
             )}
+        </div>
+    );
+}
+
+/**
+ * Det passet ga: et skilt øverst ved bordkanten (der folk står og går) som teller hvor mange
+ * som har reist videre med gyldig pass. Passene glir ut over kanten mot skiltet.
+ */
+function Grense({ d }: { d: HudData }) {
+    return (
+        <div
+            style={{
+                position: 'absolute',
+                left: '50%',
+                top: 12,
+                transform: 'translateX(-50%)',
+                background: FARGE.papir,
+                border: `2px solid ${FARGE.grønn}`,
+                borderRadius: 3,
+                padding: '4px 14px 5px',
+                textAlign: 'center',
+                color: FARGE.tekst,
+                fontFamily: SKRIFT_DECO,
+                boxShadow: '0 4px 0 rgba(0,0,0,.35)',
+                pointerEvents: 'none',
+            }}
+        >
+            <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: 8 }}>
+                <span style={{ fontSize: 14, fontWeight: 700, letterSpacing: 1.2 }}>
+                    {GRENSE.tittel.toUpperCase()}
+                </span>
+                <span
+                    key={d.hjulpet}
+                    style={{
+                        fontSize: 24,
+                        fontWeight: 800,
+                        color: FARGE.grønn,
+                        display: 'inline-block',
+                        animation: d.hjulpet ? 'stp-sprett 0.45s ease-out' : undefined,
+                    }}
+                >
+                    {d.hjulpet}
+                </span>
+            </div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#3c4440' }}>{GRENSE.under}</div>
         </div>
     );
 }
@@ -202,7 +248,9 @@ export function Hud({ d, anker, knapper }: { d: HudData; anker: Anker; knapper: 
             <Nummermaskin d={d} />
             <div style={{ position: 'absolute', right: 16, top: 14, display: 'flex', gap: 8 }}>{knapper}</div>
 
-            {/* Prisen ved hver lomme: +1 for mynt, -2 for tomt gebyrfelt, -3 for grå sak */}
+            <Grense d={d} />
+
+            {/* Prisen ved hver lomme: «Betaler +1», «Gratis -2» eller «Grå sak -3» */}
             {d.lommer.map((l) => {
                 const p = PLASSER[l.plass];
                 return (
@@ -211,8 +259,9 @@ export function Hud({ d, anker, knapper }: { d: HudData; anker: Anker; knapper: 
                         at={anker(p.x + LOMME.x, p.z + LOMME.z - 0.42)}
                         farge={l.pris > 0 ? FARGE.tekst : FARGE.papir}
                         bakgrunn={l.pris > 0 ? FARGE.gull : l.pris < -2 ? '#5b1512' : FARGE.rød}
+                        stor
                     >
-                        {l.pris > 0 ? `+${l.pris}` : `${l.pris}`}
+                        {BORDLAPP.lomme(l.pris)}
                     </Merke>
                 );
             })}
@@ -222,12 +271,14 @@ export function Hud({ d, anker, knapper }: { d: HudData; anker: Anker; knapper: 
                 </Merke>
             )}
 
-            {/* Lappene på tingene */}
-            <Merke at={anker(KASSE_PLASS.x, KASSE_PLASS.z + 0.62)} farge={FARGE.tekst} bakgrunn={lav ? '#f2c4bd' : FARGE.papir} stor>
-                {BORDLAPP.kasse(d.kasse)}
-            </Merke>
+            {/* Lappene på tingene. Kassa og regningen kommer i 1932, sammen med pengene. */}
+            {d.penger && (
+                <Merke at={anker(KASSE_PLASS.x, KASSE_PLASS.z + 0.62)} farge={FARGE.tekst} bakgrunn={lav ? '#f2c4bd' : FARGE.papir} stor>
+                    {BORDLAPP.kasse(d.kasse)}
+                </Merke>
+            )}
             <Merke
-                at={anker(REGNING_PLASS.x, REGNING_PLASS.z + 0.66)}
+                at={d.penger ? anker(REGNING_PLASS.x, REGNING_PLASS.z + 0.66) : null}
                 farge={FARGE.papir}
                 bakgrunn={lav ? FARGE.rød : FARGE.tekst}
                 stor

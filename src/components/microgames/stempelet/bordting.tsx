@@ -29,7 +29,7 @@ function prisUnder(g: Game): number {
     if (!m) return 0;
     if (m === 'frimerke') return TUNING.kasse.frimerke;
     if (!m.lomme && !m.grå) return 0;
-    return pris(m);
+    return pris(g, m);
 }
 
 /** Kassa: et nikkelbrett og en stabel med én mynt per mynt i kassa. */

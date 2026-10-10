@@ -4,27 +4,64 @@
 import { PERSONER } from './levels';
 import type { Årsak } from './state';
 
-export const MÅL = 'Forny Nansenpassene før de går ut, og hold kontoret åpent til nyttår 1938.';
-
-/** De tre reglene i menyen. Under spillet står reglene på bordet. */
-export const REGLER = [
-    'Båndet krymper. Er det tomt, er personen papirløs igjen.',
-    'Hold inne og slipp mens ringen er i det hvite feltet.',
-    'Gyllen mynt gir 1 til kassa. Tomt felt koster 2. Husleia betales hvert nyttår.',
-];
+/** Menyen har bare denne ene setningen. Resten viser spillet når det trengs, ett år om gangen. */
+export const MÅL = 'Slå stempelet på passet før båndet går tomt, og hold kontoret åpent til 1938.';
 
 /** Merkelappene på bordet (maks 7 ord). */
 export const BORDLAPP = {
     kasse: (n: number) => `Kassa: ${n}`,
     husleie: (n: number, sek: number) => `Husleie ${n} · nyttår om ${sek} s`,
     hylle: (n: number, maks: number) => `Uten papirer: ${n} av ${maks}`,
+    /** Prisen ved lomma: kan personen betale, eller hjelper du gratis? */
+    lomme: (pris: number) =>
+        pris > 0 ? `Betaler +${pris}` : pris <= -3 ? `Grå sak ${pris}` : `Gratis ${pris}`,
 };
+
+/** Det passet ga: personen reiser videre over en grense. */
+export const GRENSE = {
+    tittel: 'Reist videre med passet',
+    under: 'Nansenpasset ble godtatt i over 50 land',
+    reist: (person: number) => `${navn(person)} reiser til ${REISEMÅL[person % REISEMÅL.length]}`,
+    avvist: 'Avvist ved grensen',
+};
+
+/** Hvor personene reiser videre (land som godtok Nansenpasset). */
+export const REISEMÅL = [
+    'Frankrike',
+    'Belgia',
+    'Jugoslavia',
+    'Libanon',
+    'Tsjekkoslovakia',
+    'Bulgaria',
+    'Sveits',
+    'Norge',
+    'Hellas',
+    'Nederland',
+    'Sverige',
+    'Danmark',
+    'Syria',
+];
+
+/** Avisa på bordet: én overskrift per år (rommet forandrer seg med årene). */
+export const AVIS: string[] = [
+    'Nansenkontoret åpner i Genève',
+    'Krisen: millioner uten arbeid',
+    'Hitler tar makten i Tyskland',
+    'Saar skal stemme om framtida',
+    'Saar blir tysk. Mange flykter',
+    'Borgerkrig i Spania',
+    'Nansenhjelpen starter i Oslo',
+    'Tyskland tar Østerrike',
+];
+/** Telegrammet som kommer sent i 1938. */
+export const TELEGRAM = 'Nobels fredspris til Nansenkontoret';
 
 /** Korte lapper festet til tingen (maks 7 ord). */
 export const LAPP = {
-    første: 'Hold inne. Slipp i det hvite feltet.',
-    slippNå: 'Slipp nå!',
-    tom: 'Tomt felt: to mynter ut av kassa',
+    første: 'Klikk: stempelet fyller båndet',
+    penger: 'Nytt i 1932: gebyr, kassa og husleie',
+    redning: 'I siste liten!',
+    tom: 'Tom lomme: du hjelper gratis',
     dilemma: 'Begge går ut nå. Hvem tar du?',
     ghost: 'Røde mynter: det slaget koster',
     frimerke: 'Slå arket: +4 i kassa',
@@ -42,7 +79,7 @@ export const ØYEBLIKK = {
     },
     tom: {
         tittel: 'Tom lomme',
-        tekst: 'Denne personen kan ikke betale gebyret. Kontoret kan fornye likevel, men da går to mynter ut av kassa.',
+        tekst: 'Denne personen kan ikke betale gebyret. Du kan hjelpe gratis, men da betaler kontoret to mynter fra kassa.',
     },
     frimerke: {
         tittel: 'Nansen-frimerkene',

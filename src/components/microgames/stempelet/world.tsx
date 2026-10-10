@@ -1,18 +1,19 @@
 // Verden: kameraet fra saksbehandlerens stol (55 grader ned), skrivebordet, vinduslyset som
-// glir over bordet i løpet av året og skifter farge med årstiden, og pynten (blekkpute, penn,
-// mapper). Passene, stempelet og tingene på bordet bor i egne filer. Leser spillet fra gRef
+// glir over bordet i løpet av året og skifter farge med årstiden, pynten (blekkpute, penn),
+// køen utenfor luka og avisa med årets overskrift. Passene, stempelet og tingene på bordet bor i egne filer. Leser spillet fra gRef
 // hver frame - ingen React-state per frame.
 
 import { useRef, useState } from 'react';
 import { useFrame, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Particles, crispCanvas, useQuality } from '../kit';
-import { PLASSER } from './levels';
+import { BRETT, PLASSER, VANLIGE } from './levels';
 import { nå, type Fx } from './fx';
 import { sikt, trykk } from './game';
 import type { Game } from './state';
 import { TUNING } from './tuning';
-import { tegnBord, tegnVindu } from './tegning';
+import { tegnAvis, tegnBord, tegnKø, tegnVindu } from './tegning';
+import { AVIS, TELEGRAM } from './texts';
 import { PassPlass } from './pass';
 import { Stempel } from './stempel';
 import { Ark, Flygende, Hylle, Kasse, Regning } from './bordting';
@@ -134,13 +135,86 @@ function Pynt() {
                 <coneGeometry args={[0.045, 0.16, 12]} />
                 <meshStandardMaterial color="#c8a24e" metalness={0.8} roughness={0.3} />
             </mesh>
-            {/* Mappene bakerst */}
-            {[0, 1, 2].map((i) => (
-                <mesh key={i} position={[-3.4 + i * 0.03, 0.03 + i * 0.05, -1.8 - i * 0.02]} rotation={[0, -0.1 + i * 0.05, 0]}>
-                    <boxGeometry args={[1.3, 0.045, 0.5]} />
-                    <meshLambertMaterial color={i === 1 ? '#8a6a3e' : '#76592f'} />
-                </mesh>
-            ))}
+        </group>
+    );
+}
+
+/** Kassa og regningen kommer først i 1932, sammen med pengene: de glir inn fra høyre. */
+function Pengeting({ gRef, children }: { gRef: GRef; children: React.ReactNode }) {
+    const ref = useRef<THREE.Group>(null);
+    const kom = useRef(-1);
+    useFrame(() => {
+        const g = gRef.current;
+        const gr = ref.current;
+        if (!gr) return;
+        const på = BRETT[g.brett].penger;
+        if (!på) {
+            kom.current = -1;
+            gr.visible = false;
+            return;
+        }
+        if (kom.current < 0) kom.current = nå();
+        const u = Math.min(1, (nå() - kom.current) / 0.7);
+        gr.visible = true;
+        gr.position.x = (1 - (1 - Math.pow(1 - u, 3))) * 4;
+    });
+    return <group ref={ref}>{children}</group>;
+}
+
+/** Hvor mange som står i køen utenfor luka, år for år (1935: bølgen fra Saar). */
+const KØ = [2, 3, 4, 5, 8, 7, 8, 9];
+
+/** Køen utenfor luka: en rad med ansikter bakerst på bordet. Tegnes på nytt når et pass kommer. */
+function Kø({ gRef }: { gRef: GRef }) {
+    const [lerret] = useState(() => crispCanvas(520, 70));
+    const nøkkel = useRef('');
+    useFrame(() => {
+        const g = gRef.current;
+        const n = KØ[g.brett] ?? 4;
+        const k = `${g.brett}|${g.nesteId}`;
+        if (k === nøkkel.current) return;
+        nøkkel.current = k;
+        const opptatt = new Set([...g.pass.map((p) => p.person), ...g.skuff.map((v) => v.person)]);
+        const kø: number[] = [];
+        for (let i = 0; i < VANLIGE && kø.length < n; i++) {
+            const p = (g.nesteId * 3 + i * 7) % VANLIGE;
+            if (!opptatt.has(p) && !kø.includes(p)) kø.push(p);
+        }
+        lerret.draw((ctx, w, h) => tegnKø(ctx, w, h, kø));
+    });
+    return (
+        <mesh position={[0, 0.02, -1.78]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[4.6, 0.62]} />
+            <meshBasicMaterial map={lerret.tex} transparent />
+        </mesh>
+    );
+}
+
+/** Avisa: ny overskrift hvert år. Sent i 1938 ligger telegrammet om fredsprisen der i stedet. */
+function Avis({ gRef }: { gRef: GRef }) {
+    const [lerret] = useState(() => crispCanvas(300, 180));
+    const nøkkel = useRef('');
+    useFrame(() => {
+        const g = gRef.current;
+        const telegram = g.brett === BRETT.length - 1 && g.iÅr >= 14;
+        const k = `${g.brett}|${telegram}`;
+        if (k === nøkkel.current) return;
+        nøkkel.current = k;
+        const år = BRETT[g.brett].år;
+        lerret.draw((ctx, w, h) =>
+            tegnAvis(ctx, w, h, år, telegram ? TELEGRAM : (AVIS[g.brett] ?? ''), telegram)
+        );
+    });
+    return (
+        <group position={[-3.35, 0.02, -1.72]} rotation={[0, 0.08, 0]}>
+            <mesh position={[0.04, -0.008, 0.05]} rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[1.48, 0.9]} />
+                <meshBasicMaterial color="#000" transparent opacity={0.3} />
+            </mesh>
+            <mesh rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[1.45, 0.87]} />
+                <meshLambertMaterial map={lerret.tex} />
+            </mesh>
         </group>
     );
 }
@@ -158,9 +232,13 @@ export function Verden({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             {PLASSER.map((_, i) => (
                 <PassPlass key={i} gRef={gRef} fxRef={fxRef} plass={i} />
             ))}
-            <Kasse gRef={gRef} fxRef={fxRef} />
+            <Kø gRef={gRef} />
+            <Avis gRef={gRef} />
+            <Pengeting gRef={gRef}>
+                <Kasse gRef={gRef} fxRef={fxRef} />
+                <Regning gRef={gRef} fxRef={fxRef} />
+            </Pengeting>
             <Flygende fxRef={fxRef} />
-            <Regning gRef={gRef} fxRef={fxRef} />
             <Hylle gRef={gRef} />
             <Ark gRef={gRef} />
             <Stempel gRef={gRef} fxRef={fxRef} />

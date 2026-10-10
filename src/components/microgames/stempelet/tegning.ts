@@ -119,71 +119,142 @@ export function tegnBord(ctx: CanvasRenderingContext2D, w: number, h: number) {
 }
 
 /** Bildet i passet: et ovalt fotografi i gråtoner med en rolig silhuett. */
-function portrett(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, person: number) {
+/** Hudtoner, hårfarger og bakgrunner for håndkolorerte passbilder fra 1930-tallet. */
+const HUD = ['#d9b08c', '#c99a74', '#b9835d', '#e3bf9c', '#a8714e', '#d4a37f'];
+const HÅR = ['#2a1d16', '#4a3020', '#6b4a2c', '#1b1714', '#8a8780', '#7a3b1c'];
+const BAK = [
+    ['#d8cfb8', '#8f8670'],
+    ['#c9d2cf', '#7d8a86'],
+    ['#d6c7b4', '#93745e'],
+    ['#cfd0c0', '#7f8a6c'],
+];
+
+/**
+ * Et håndkolorert passbilde. Hver person har sitt eget ansikt: hudtone, hår, hatt eller
+ * skjerf, briller, bart eller skjegg, og en egen bakgrunn. Samme person = samme bilde.
+ */
+export function portrett(
+    ctx: CanvasRenderingContext2D,
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+    person: number
+) {
     const p = PERSONER[person];
     const r = hash(person + 11);
+    const velg = <T,>(liste: T[]) => liste[Math.floor(r() * liste.length)];
+    const [bak1, bak2] = velg(BAK);
+    const hud = velg(HUD);
+    const hår = velg(HÅR);
+    const frakk = velg(['#3b3f45', '#4a3a2e', '#2f3b33', '#5a4b3a', '#30323a']);
+    const pynt = r();
     ctx.save();
     ctx.beginPath();
     ctx.ellipse(x + w / 2, y + h / 2, w / 2, h / 2, 0, 0, Math.PI * 2);
     ctx.clip();
     const bg = ctx.createLinearGradient(x, y, x + w, y + h);
-    const lys = 190 + Math.floor(r() * 30);
-    bg.addColorStop(0, `rgb(${lys},${lys - 4},${lys - 12})`);
-    bg.addColorStop(1, `rgb(${lys - 70},${lys - 72},${lys - 76})`);
+    bg.addColorStop(0, bak1);
+    bg.addColorStop(1, bak2);
     ctx.fillStyle = bg;
     ctx.fillRect(x, y, w, h);
     const cx = x + w / 2 + (r() - 0.5) * 3;
-    const hud = 60 + Math.floor(r() * 40);
-    const tone = `rgb(${hud + 40},${hud + 36},${hud + 30})`;
-    const mørk = `rgb(${hud - 30},${hud - 32},${hud - 34})`;
+    const hodeB = w * (0.18 + r() * 0.04);
+    const hodeH = h * (0.19 + r() * 0.03);
     // Skuldrer og frakk.
-    ctx.fillStyle = mørk;
+    ctx.fillStyle = frakk;
     ctx.beginPath();
     ctx.ellipse(cx, y + h * 1.02, w * 0.5, h * 0.36, 0, 0, Math.PI * 2);
     ctx.fill();
-    // Krage.
-    ctx.fillStyle = `rgb(${lys - 20},${lys - 22},${lys - 26})`;
+    // Skjorte eller bluse i halsen.
+    ctx.fillStyle = p?.kvinne ? velg(['#e9e1cf', '#b5534a', '#5e7d9a']) : '#ece6d6';
     ctx.beginPath();
     ctx.moveTo(cx - w * 0.12, y + h * 0.7);
-    ctx.lineTo(cx, y + h * 0.84);
+    ctx.lineTo(cx, y + h * 0.86);
     ctx.lineTo(cx + w * 0.12, y + h * 0.7);
     ctx.fill();
     // Hals og hode.
-    ctx.fillStyle = tone;
+    ctx.fillStyle = hud;
     ctx.fillRect(cx - w * 0.08, y + h * 0.55, w * 0.16, h * 0.16);
     ctx.beginPath();
-    ctx.ellipse(cx, y + h * 0.42, w * 0.2, h * 0.2, 0, 0, Math.PI * 2);
+    ctx.ellipse(cx, y + h * 0.42, hodeB, hodeH, 0, 0, Math.PI * 2);
     ctx.fill();
-    // Hår: kort for menn, oppsatt eller skjerf for kvinner.
-    ctx.fillStyle = mørk;
+    // Øyne og munn: små mørke streker, så ansiktet har et uttrykk.
+    ctx.fillStyle = 'rgba(30,22,18,0.8)';
+    ctx.fillRect(cx - w * 0.09, y + h * 0.4, w * 0.05, h * 0.018);
+    ctx.fillRect(cx + w * 0.04, y + h * 0.4, w * 0.05, h * 0.018);
+    ctx.fillStyle = 'rgba(120,50,40,0.55)';
+    ctx.fillRect(cx - w * 0.05, y + h * 0.53, w * 0.1, h * 0.014);
+    ctx.fillStyle = hår;
     if (p?.kvinne) {
-        if (r() < 0.4) {
+        if (pynt < 0.3) {
+            // Skjerf over håret.
+            ctx.fillStyle = velg(['#8e2f2a', '#3d5a7a', '#6d5a2a', '#4f6b4a']);
             ctx.beginPath();
-            ctx.ellipse(cx, y + h * 0.4, w * 0.27, h * 0.27, 0, Math.PI, Math.PI * 2);
-            ctx.lineTo(cx + w * 0.27, y + h * 0.62);
-            ctx.lineTo(cx - w * 0.27, y + h * 0.62);
+            ctx.ellipse(cx, y + h * 0.38, w * 0.26, h * 0.25, 0, Math.PI * 1.02, Math.PI * 1.98);
+            ctx.lineTo(cx + w * 0.24, y + h * 0.6);
+            ctx.lineTo(cx - w * 0.24, y + h * 0.6);
+            ctx.fill();
+        } else if (pynt < 0.6) {
+            // Langt hår.
+            ctx.beginPath();
+            ctx.ellipse(cx, y + h * 0.4, w * 0.26, h * 0.26, 0, Math.PI, Math.PI * 2);
+            ctx.lineTo(cx + w * 0.26, y + h * 0.64);
+            ctx.lineTo(cx + w * 0.17, y + h * 0.64);
+            ctx.lineTo(cx + w * 0.17, y + h * 0.42);
+            ctx.lineTo(cx - w * 0.17, y + h * 0.42);
+            ctx.lineTo(cx - w * 0.17, y + h * 0.64);
+            ctx.lineTo(cx - w * 0.26, y + h * 0.64);
             ctx.fill();
         } else {
+            // Oppsatt hår med knute.
             ctx.beginPath();
-            ctx.ellipse(cx, y + h * 0.36, w * 0.23, h * 0.18, 0, Math.PI, Math.PI * 2);
+            ctx.ellipse(cx, y + h * 0.35, w * 0.22, h * 0.17, 0, Math.PI, Math.PI * 2);
             ctx.fill();
             ctx.beginPath();
-            ctx.ellipse(cx + w * 0.16, y + h * 0.3, w * 0.09, h * 0.08, 0, 0, Math.PI * 2);
+            ctx.ellipse(cx + w * 0.17, y + h * 0.28, w * 0.08, h * 0.07, 0, 0, Math.PI * 2);
             ctx.fill();
         }
     } else {
         ctx.beginPath();
         ctx.ellipse(cx, y + h * 0.34, w * 0.21, h * 0.12, 0, Math.PI, Math.PI * 2);
         ctx.fill();
-        if (r() < 0.4) {
-            // Bart.
-            ctx.fillRect(cx - w * 0.06, y + h * 0.49, w * 0.12, h * 0.025);
+        if (pynt < 0.3) {
+            // Sixpence-lue.
+            ctx.fillStyle = velg(['#4b4a44', '#5b4632', '#39403a']);
+            ctx.beginPath();
+            ctx.ellipse(cx, y + h * 0.27, w * 0.24, h * 0.1, 0, Math.PI, Math.PI * 2);
+            ctx.fill();
+            ctx.fillRect(cx - w * 0.26, y + h * 0.26, w * 0.4, h * 0.035);
+        } else if (pynt < 0.45) {
+            // Hatt med brem.
+            ctx.fillStyle = '#26282a';
+            ctx.fillRect(cx - w * 0.15, y + h * 0.13, w * 0.3, h * 0.13);
+            ctx.fillRect(cx - w * 0.28, y + h * 0.25, w * 0.56, h * 0.035);
+        }
+        const skjegg = r();
+        ctx.fillStyle = hår;
+        if (skjegg < 0.3) ctx.fillRect(cx - w * 0.07, y + h * 0.49, w * 0.14, h * 0.025);
+        else if (skjegg < 0.5) {
+            ctx.beginPath();
+            ctx.ellipse(cx, y + h * 0.55, w * 0.15, h * 0.09, 0, 0, Math.PI);
+            ctx.fill();
         }
     }
-    // Lys fra venstre.
+    if (r() < 0.25) {
+        // Briller.
+        ctx.strokeStyle = 'rgba(25,20,18,0.85)';
+        ctx.lineWidth = Math.max(0.8, w * 0.018);
+        ctx.beginPath();
+        ctx.arc(cx - w * 0.065, y + h * 0.405, w * 0.05, 0, Math.PI * 2);
+        ctx.moveTo(cx + w * 0.115, y + h * 0.405);
+        ctx.arc(cx + w * 0.065, y + h * 0.405, w * 0.05, 0, Math.PI * 2);
+        ctx.stroke();
+    }
+    // Lys fra venstre og et svakt sepia-lag over alt (gammelt fotografi).
     const sk = ctx.createLinearGradient(x, y, x + w, y);
-    sk.addColorStop(0, 'rgba(255,255,255,0.12)');
-    sk.addColorStop(1, 'rgba(0,0,0,0.22)');
+    sk.addColorStop(0, 'rgba(255,248,230,0.16)');
+    sk.addColorStop(1, 'rgba(40,24,10,0.26)');
     ctx.fillStyle = sk;
     ctx.fillRect(x, y, w, h);
     ctx.restore();
@@ -286,6 +357,8 @@ export interface PassTegning {
     merkeÅr: number[];
     grå: boolean;
     id: number;
+    /** Kan personen betale gebyret? null = ingen penger ennå (1931). */
+    betaler: boolean | null;
 }
 
 /** Passet: guilloche-ramme, bilde, navn, gebyrfelt og stempelmerkene. Logisk 300 x 212. */
@@ -317,10 +390,17 @@ export function tegnPass(ctx: CanvasRenderingContext2D, w: number, h: number, d:
     ctx.arc(w * 0.82, h * 0.36, 26, 0, Math.PI * 2);
     ctx.stroke();
     ctx.setLineDash([]);
-    ctx.font = `700 9px ${SKRIFT_DECO}`;
     ctx.textAlign = 'center';
-    ctx.fillStyle = 'rgba(21,23,26,0.55)';
-    ctx.fillText('GEBYR', w * 0.82, h * 0.36 + 38);
+    if (d.betaler === null) {
+        ctx.font = `700 9px ${SKRIFT_DECO}`;
+        ctx.fillStyle = 'rgba(21,23,26,0.55)';
+        ctx.fillText('GEBYR', w * 0.82, h * 0.36 + 38);
+    } else {
+        // Står på kortet før stempelet faller: kan personen betale, eller er lomma tom?
+        ctx.font = `800 13px ${SKRIFT_DECO}`;
+        ctx.fillStyle = d.betaler && !d.grå ? '#7a5a10' : FARGE.rød;
+        ctx.fillText(d.betaler && !d.grå ? 'BETALER' : 'TOM LOMME', w * 0.82, h * 0.36 + 40);
+    }
     // Feltet for båndet.
     ctx.textAlign = 'left';
     ctx.font = `700 9px ${SKRIFT_DECO}`;
@@ -453,4 +533,79 @@ export function tegnVindu(ctx: CanvasRenderingContext2D, w: number, h: number) {
         for (let j = 0; j < rad; j++)
             ctx.fillRect(sp + i * (rw + sp), sp + j * (rh + sp), rw, rh);
     ctx.filter = 'none';
+}
+
+/** Avisa på bordet: navnet, årstallet og årets overskrift. Logisk 300 x 180. */
+export function tegnAvis(
+    ctx: CanvasRenderingContext2D,
+    w: number,
+    h: number,
+    år: number,
+    tittel: string,
+    telegram: boolean
+) {
+    if (telegram) {
+        ctx.fillStyle = '#f3e7b8';
+        ctx.fillRect(0, 0, w, h);
+        korn(ctx, w, h, 'rgba(120,100,60,0.25)', 500, år + 7);
+        ctx.fillStyle = FARGE.tekst;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.font = `800 26px ${SKRIFT_DECO}`;
+        ctx.fillText('TELEGRAM', w / 2, 30);
+        ctx.fillRect(20, 50, w - 40, 2);
+        ctx.font = `700 19px ${SKRIFT_MASKIN}`;
+        const ord = tittel.toUpperCase().split(' ');
+        const halv = Math.ceil(ord.length / 2);
+        ctx.fillText(ord.slice(0, halv).join(' '), w / 2, 92);
+        ctx.fillText(ord.slice(halv).join(' '), w / 2, 120);
+        ctx.font = `400 14px ${SKRIFT_MASKIN}`;
+        ctx.fillText(`OSLO ${år}`, w / 2, 156);
+        return;
+    }
+    ctx.fillStyle = '#e6e0d0';
+    ctx.fillRect(0, 0, w, h);
+    korn(ctx, w, h, 'rgba(60,55,45,0.25)', 700, år);
+    ctx.fillStyle = FARGE.tekst;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `700 22px ${SKRIFT_SERIF}`;
+    ctx.fillText('Nytt fra Europa', w / 2, 22);
+    ctx.fillRect(12, 38, w - 24, 2);
+    ctx.font = `400 12px ${SKRIFT_MASKIN}`;
+    ctx.fillText(String(år), w / 2, 50);
+    ctx.fillRect(12, 60, w - 24, 1);
+    // Overskriften over to linjer, store bokstaver.
+    ctx.font = `800 23px ${SKRIFT_DECO}`;
+    const ord = tittel.toUpperCase().split(' ');
+    let linje = '';
+    const linjer: string[] = [];
+    for (const o of ord) {
+        const prøv = linje ? `${linje} ${o}` : o;
+        if (ctx.measureText(prøv).width > w - 30 && linje) {
+            linjer.push(linje);
+            linje = o;
+        } else linje = prøv;
+    }
+    linjer.push(linje);
+    linjer.slice(0, 2).forEach((l, i) => ctx.fillText(l, w / 2, 84 + i * 28));
+    // Spalter med «tekst»: grå streker.
+    ctx.fillStyle = 'rgba(40,40,40,0.35)';
+    for (let k = 0; k < 3; k++)
+        for (let i = 0; i < 4; i++) ctx.fillRect(14 + k * 94, 140 + i * 9, 84 - ((i * 13 + k * 7) % 24), 3);
+}
+
+/** Køen utenfor luka: ansiktene som venter, i en rad. Logisk 520 x 70. */
+export function tegnKø(ctx: CanvasRenderingContext2D, w: number, h: number, personer: number[]) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = 'rgba(21,23,26,0.55)';
+    ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = FARGE.papir;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.font = `700 13px ${SKRIFT_DECO}`;
+    ctx.fillText('I KØEN', 10, h / 2 - 8);
+    ctx.font = `400 12px ${SKRIFT_SERIF}`;
+    ctx.fillText(`${personer.length} venter`, 10, h / 2 + 10);
+    personer.slice(0, 10).forEach((p, i) => portrett(ctx, 82 + i * 43, 6, 38, 58, p));
 }

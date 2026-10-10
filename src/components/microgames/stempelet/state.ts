@@ -26,7 +26,7 @@ export interface Pass {
     rist: number;
     /** Ganger denne personen er fornyet i runden. */
     fornyet: number;
-    /** Stempelmerker på passet (for visningen): fullt eller skjevt, og årstallet i merket. */
+    /** Stempelmerker på passet (for visningen), og årstallet i merket. */
     merker: boolean[];
     merkeÅr: number[];
 }
@@ -54,7 +54,17 @@ export interface Stempel {
 
 /** Det spillet vil vise eleven. Komponenten tømmer lista hver frame. */
 export type Ut =
-    | { type: 'slag'; id: number; fullt: boolean; lomme: 'mynt' | 'tom'; grå: boolean }
+    | {
+          type: 'slag';
+          id: number;
+          fullt: boolean;
+          lomme: 'mynt' | 'tom';
+          grå: boolean;
+          /** Hva slaget ga (+) eller kostet (-) kassa. */
+          pris: number;
+          /** Passet hadde under `redning.igjen` s igjen: reddet i siste liten. */
+          redning: boolean;
+      }
     | { type: 'gyldig'; id: number }
     | { type: 'tomKasse'; id: number }
     | { type: 'bom' }
@@ -96,7 +106,7 @@ export interface Game {
     nesteId: number;
     /** Saker fornyet (poengene). */
     saker: number;
-    /** Fulle slag på rad og lengste rekke. */
+    /** Slag på rad uten at noen har mistet papirene, og lengste rekke. */
     rekke: number;
     lengsteRekke: number;
     /** Beslutningspunkter så langt (et pass blir til fornyelse, et ark kommer, en grå sak kommer tilbake). */

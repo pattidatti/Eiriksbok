@@ -1,5 +1,6 @@
 // Brettene: ett år per brett, 1931-1938. Opptrappingen fra designbriefen punkt 11.
-// Brett 1 har bare stempelet, brett 2 tar inn tom lomme, brett 3 frimerkearket.
+// Én ny ting per år: 1931 bare stempel og bånd, 1932 penger (mynt, tom lomme, kassa og
+// husleie), 1933 frimerkearket.
 // Fra brett 4 stiger presset bare med antall pass og husleia.
 
 export interface Brett {
@@ -10,6 +11,8 @@ export interface Brett {
     maks: number;
     /** Andel pass med tom lomme når de skal fornyes. */
     tom: number;
+    /** Koster eller gir passet penger i år? 1931 har bare stempel og bånd. */
+    penger: boolean;
     /** Kommer det et frimerkeark i løpet av året? */
     frimerke: boolean;
     /** En historisk hendelse: mange nye pass på en gang, `ved` sekunder inn i året. */
@@ -17,14 +20,14 @@ export interface Brett {
 }
 
 export const BRETT: Brett[] = [
-    { år: 1931, nyHvert: 7, maks: 5, tom: 0, frimerke: false },
-    { år: 1932, nyHvert: 5.5, maks: 6, tom: 0.3, frimerke: false },
-    { år: 1933, nyHvert: 4.5, maks: 7, tom: 0.35, frimerke: true },
-    { år: 1934, nyHvert: 4, maks: 8, tom: 0.42, frimerke: true },
-    { år: 1935, nyHvert: 3.5, maks: 9, tom: 0.45, frimerke: true, bølge: { antall: 3, ved: 3 } },
-    { år: 1936, nyHvert: 3, maks: 9, tom: 0.5, frimerke: true },
-    { år: 1937, nyHvert: 2.6, maks: 10, tom: 0.53, frimerke: true },
-    { år: 1938, nyHvert: 2.2, maks: 10, tom: 0.52, frimerke: true },
+    { år: 1931, nyHvert: 7, maks: 5, tom: 0, penger: false, frimerke: false },
+    { år: 1932, nyHvert: 5.5, maks: 6, tom: 0.3, penger: true, frimerke: false },
+    { år: 1933, nyHvert: 4.5, maks: 7, tom: 0.35, penger: true, frimerke: true },
+    { år: 1934, nyHvert: 4, maks: 8, tom: 0.42, penger: true, frimerke: true },
+    { år: 1935, nyHvert: 3.5, maks: 9, tom: 0.45, penger: true, frimerke: true, bølge: { antall: 3, ved: 3 } },
+    { år: 1936, nyHvert: 3, maks: 9, tom: 0.5, penger: true, frimerke: true },
+    { år: 1937, nyHvert: 2.6, maks: 10, tom: 0.53, penger: true, frimerke: true },
+    { år: 1938, nyHvert: 2.2, maks: 10, tom: 0.52, penger: true, frimerke: true },
 ];
 
 /** De ti plassene på bordet (verdenskoordinater, x mot høyre, z mot eleven). */

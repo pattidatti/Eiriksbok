@@ -1,7 +1,7 @@
 // Fagkjernen: stempelet, båndet og kassa.
 // 1. Båndet krymper. Tomt bånd = personen er papirløs igjen (passet var aldri et statsborgerskap).
-// 2. Stempelet fyller båndet: fullt slag helt, skjevt slag halvt.
-// 3. Kassa: mynt +1, tom lomme -2, grå sak -3, frimerkeark +4. Husleia trekkes ved årsskiftet.
+// 2. Stempelet fyller båndet helt (ingen timing: ferdigheten er hvem du tar først).
+// 3. Kassa (fra 1932): mynt +1, tom lomme -2, grå sak -3, frimerkeark +4. Husleie ved nyttår.
 
 import { BRETT, FRIMERKE_PLASS, PLASSER } from './levels';
 import { type Game, type Pass } from './state';
@@ -34,8 +34,9 @@ export function under(g: Game, x: number, z: number): Pass | 'frimerke' | null {
     return null;
 }
 
-/** Hva et slag på passet koster (negativt) eller gir (positivt). */
-export function pris(p: Pass): number {
+/** Hva et slag på passet koster (negativt) eller gir (positivt). 1931 har ingen penger. */
+export function pris(g: Game, p: Pass): number {
+    if (!BRETT[g.brett].penger) return 0;
     if (p.grå) return -TUNING.kasse.gråSak;
     if (p.lomme === 'mynt') return TUNING.kasse.mynt;
     return -TUNING.kasse.tomLomme;
@@ -44,14 +45,14 @@ export function pris(p: Pass): number {
 /** Kan passet stemples nå? Gyldige pass (ingen lomme) og pass kassa ikke har råd til, kan ikke. */
 export function kanStemple(g: Game, p: Pass): boolean {
     if (!p.lomme && !p.grå) return false;
-    return g.kasse + pris(p) >= 0;
+    return g.kasse + pris(g, p) >= 0;
 }
 
-/** Slaget treffer bordet: holdt i `holdt` sekunder. */
-export function slå(g: Game, holdt: number) {
+/** Slaget treffer bordet. Hvert slag er fullt (timingringen er tatt bort). */
+export function slå(g: Game) {
     const st = g.stempel;
     const mål = under(g, st.x, st.z);
-    const fullt = holdt >= S.fullFra && holdt <= S.fullTil;
+    const fullt = true;
     if (!mål) {
         g.ut.push({ type: 'bom' });
         return;
@@ -73,8 +74,10 @@ export function slå(g: Game, holdt: number) {
     }
     const lomme = p.grå ? 'tom' : (p.lomme ?? 'tom');
     const varGrå = p.grå;
-    g.kasse += pris(p);
-    p.igjen = fullt ? p.varer : Math.min(p.varer, p.igjen + p.varer * S.skjevt);
+    const beløp = pris(g, p);
+    const redning = !p.grå && p.igjen < TUNING.redning.igjen;
+    g.kasse += beløp;
+    p.igjen = p.varer;
     p.lomme = null;
     p.grå = false;
     p.rist = 0;
@@ -84,7 +87,7 @@ export function slå(g: Game, holdt: number) {
     g.saker++;
     g.rekke = fullt ? g.rekke + 1 : 0;
     g.lengsteRekke = Math.max(g.lengsteRekke, g.rekke);
-    g.ut.push({ type: 'slag', id: p.id, fullt, lomme, grå: varGrå });
+    g.ut.push({ type: 'slag', id: p.id, fullt, lomme, grå: varGrå, pris: beløp, redning });
 }
 
 /** Personen reiser videre med gyldig pass. Tre fornyelser = arkivkortet. */

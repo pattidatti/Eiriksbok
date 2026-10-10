@@ -20,10 +20,16 @@ export function lagLyd(s: ArcadeSynth) {
             s.tone(240, 150, 0.06, 'triangle', 0.18);
             s.tone(1400, 1350, 0.12, 'sine', 0.03, 0.02);
         },
-        /** Skjevt slag: lettere og matt. */
-        skjevt: () => {
-            s.noise(0.07, 0.3, 420);
-            s.tone(170, 110, 0.12, 'sine', 0.28);
+        /** Reddet i siste liten: en lys, stigende tone oppå dunket. */
+        redning: () => {
+            s.tone(523, 784, 0.18, 'sine', 0.07, 0.08);
+            s.tone(784, 1046, 0.22, 'sine', 0.05, 0.2);
+        },
+        /** Personen reiser videre: papir og to rolige toner. */
+        reist: () => {
+            s.noise(0.12, 0.08, 2600);
+            s.tone(392, 392, 0.25, 'sine', 0.04, 0.05);
+            s.tone(523, 523, 0.35, 'sine', 0.04, 0.22);
         },
         /** Stempelet i bordet uten pass. */
         bom: () => {
