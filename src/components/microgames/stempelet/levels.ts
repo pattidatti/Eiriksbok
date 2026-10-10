@@ -12,59 +12,86 @@ export interface Brett {
     tom: number;
     /** Kommer det et frimerkeark i løpet av året? */
     frimerke: boolean;
+    /** En historisk hendelse: mange nye pass på en gang, `ved` sekunder inn i året. */
+    bølge?: { antall: number; ved: number };
 }
 
 export const BRETT: Brett[] = [
     { år: 1931, nyHvert: 7, maks: 5, tom: 0, frimerke: false },
     { år: 1932, nyHvert: 5.5, maks: 6, tom: 0.3, frimerke: false },
     { år: 1933, nyHvert: 4.5, maks: 7, tom: 0.35, frimerke: true },
-    { år: 1934, nyHvert: 4, maks: 8, tom: 0.4, frimerke: true },
-    { år: 1935, nyHvert: 3.5, maks: 8, tom: 0.42, frimerke: true },
-    { år: 1936, nyHvert: 3, maks: 9, tom: 0.45, frimerke: true },
-    { år: 1937, nyHvert: 2.6, maks: 10, tom: 0.48, frimerke: true },
-    { år: 1938, nyHvert: 2.2, maks: 10, tom: 0.5, frimerke: true },
+    { år: 1934, nyHvert: 4, maks: 8, tom: 0.42, frimerke: true },
+    { år: 1935, nyHvert: 3.5, maks: 9, tom: 0.45, frimerke: true, bølge: { antall: 3, ved: 3 } },
+    { år: 1936, nyHvert: 3, maks: 9, tom: 0.5, frimerke: true },
+    { år: 1937, nyHvert: 2.6, maks: 10, tom: 0.53, frimerke: true },
+    { år: 1938, nyHvert: 2.2, maks: 10, tom: 0.52, frimerke: true },
 ];
 
 /** De ti plassene på bordet (verdenskoordinater, x mot høyre, z mot eleven). */
 export const PLASSER: { x: number; z: number }[] = [
-    { x: -1.6, z: -0.7 },
-    { x: 0, z: -0.7 },
-    { x: 1.6, z: -0.7 },
-    { x: -1.6, z: 0.65 },
-    { x: 0, z: 0.65 },
-    { x: 1.6, z: 0.65 },
-    { x: -3.2, z: -0.7 },
-    { x: 3.2, z: -0.7 },
-    { x: -3.2, z: 0.65 },
-    { x: 3.2, z: 0.65 },
+    { x: -1.55, z: 0.62 },
+    { x: 0, z: 0.62 },
+    { x: 1.55, z: 0.62 },
+    { x: -1.55, z: -0.68 },
+    { x: 0, z: -0.68 },
+    { x: 1.55, z: -0.68 },
+    { x: -3.1, z: -0.68 },
+    { x: 3.1, z: -0.68 },
+    { x: -3.1, z: 0.62 },
+    { x: 3.1, z: 0.62 },
 ];
+
+/** Lomma (gebyrfeltet) på passet, i forhold til midten av passet. Passet er 1,42 x 1. */
+export const LOMME = { x: 0.454, z: -0.14 };
+export const PASS_MÅL = { b: 1.42, d: 1 };
 
 /** Der frimerkearket legger seg, myntstabelen, husleie-regningen og papirløs-hylla. */
-export const FRIMERKE_PLASS = { x: -4.7, z: -0.55 };
-export const KASSE_PLASS = { x: 4.6, z: 1.45 };
-export const REGNING_PLASS = { x: 4.7, z: -0.55 };
-export const SKUFF_PLASS = { x: -4.75, z: 1.3 };
+export const FRIMERKE_PLASS = { x: -4.45, z: -0.62 };
+export const KASSE_PLASS = { x: 3.0, z: 2.25 };
+export const REGNING_PLASS = { x: 4.45, z: -0.62 };
+export const SKUFF_PLASS = { x: -3.0, z: 2.2 };
 
-/** Personene på passene. De ti første er arkivkortene (seks fra Russland, fire fra Armenia). */
-export const PERSONER: string[] = [
-    'SERGEJ',
-    'ANAHIT',
-    'OLGA',
-    'ARAM',
-    'NIKOLAJ',
-    'SIRANUSH',
-    'VERA',
-    'ARMEN',
-    'BORIS',
-    'TATJANA',
-    'GRIGOR',
-    'LJUDMILA',
-    'MIKAEL',
-    'IRINA',
-    'HAGOP',
-    'PAVEL',
-    'NARINE',
-    'DMITRIJ',
-    'SONA',
-    'ALEKSEJ',
+/** En person på et pass: navn i versaler, kvinne eller mann (bildet), og hvor personen kom fra. */
+export interface Person {
+    navn: string;
+    kvinne: boolean;
+    fra: 'RUSSLAND' | 'ARMENIA' | 'SAAR';
+}
+
+const r = (navn: string, kvinne: boolean): Person => ({ navn, kvinne, fra: 'RUSSLAND' });
+const a = (navn: string, kvinne: boolean): Person => ({ navn, kvinne, fra: 'ARMENIA' });
+const s = (navn: string, kvinne: boolean): Person => ({ navn, kvinne, fra: 'SAAR' });
+
+/**
+ * Personene på passene. De ti første er arkivkortene (seks fra Russland, fire fra Armenia).
+ * De fire siste kommer bare med bølgen i 1935 (flyktninger fra Saar).
+ */
+export const PERSONER: Person[] = [
+    r('SERGEJ', false),
+    a('ANAHIT', true),
+    r('OLGA', true),
+    a('ARAM', false),
+    r('NIKOLAJ', false),
+    a('SIRANUSH', true),
+    r('VERA', true),
+    a('ARMEN', false),
+    r('BORIS', false),
+    r('TATJANA', true),
+    a('GRIGOR', false),
+    r('LJUDMILA', true),
+    a('MIKAEL', false),
+    r('IRINA', true),
+    a('HAGOP', false),
+    r('PAVEL', false),
+    a('NARINE', true),
+    r('DMITRIJ', false),
+    a('SONA', true),
+    r('ALEKSEJ', false),
+    s('KARL', false),
+    s('MARIA', true),
+    s('JOHANN', false),
+    s('ELSE', true),
 ];
+
+/** Vanlige personer (0-19) og bølgen fra Saar (20-23). */
+export const VANLIGE = 20;

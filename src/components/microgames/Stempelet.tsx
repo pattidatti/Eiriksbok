@@ -15,23 +15,45 @@ import {
 import { ArcadeLessons } from './arcade/ArcadeLayers';
 import { useArcadeText, type ArcadeText } from './arcade/useArcade';
 import { useArcadeSave, nextRank, rankFor } from './arcade/save';
+import { createArcadeSynth } from './arcade/synth';
 import type { ArcadeTheme } from './arcade/tokens';
 import { usePlaytest, playtestSpeed } from './playtest';
-import { nestePass, newGame, slipp, trykk, update, type Game } from './stempelet/game';
+import { newGame, slipp, update, type Game } from './stempelet/game';
 import { BOTS } from './stempelet/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './stempelet/sim';
 import { Verden } from './stempelet/world';
 import { Hud } from './stempelet/hud';
-import { lesHud, type HudData } from './stempelet/hudData';
+import { lesHud, sammeHud, type HudData } from './stempelet/hudData';
 import { FARGE } from './stempelet/farger';
-import { myntPlass, nyFx, nå, regningHull, tilSkjerm, type Fx } from './stempelet/fx';
-import { FRIMERKE_PLASS, KASSE_PLASS, PLASSER, REGNING_PLASS } from './stempelet/levels';
+import { HIT_STOP, myntPlass, nyFx, nå, regningHull, tilSkjerm, type Fx } from './stempelet/fx';
+import { lagLyd } from './stempelet/lyd';
+import {
+    FRIMERKE_PLASS,
+    KASSE_PLASS,
+    LOMME,
+    PLASSER,
+    REGNING_PLASS,
+    SKUFF_PLASS,
+} from './stempelet/levels';
 import type { Ut } from './stempelet/state';
 import { TUNING } from './stempelet/tuning';
-import { LAPP, LÆRDOM, MÅL, REGLER, SEIER, TAP, ØYEBLIKK, navn } from './stempelet/texts';
+import { SKRIFT_DECO } from './stempelet/tegning';
+import {
+    ARKIV,
+    BØLGE,
+    LAPP,
+    LÆRDOM,
+    MÅL,
+    REGLER,
+    SEIER,
+    TAP,
+    ØYEBLIKK,
+    navn,
+    navneliste,
+} from './stempelet/texts';
 
 // STEMPELET - Nansenkontoret i Genève 1931-1938. Eleven slår stempelet på passene
-// før de går ut, og holder kassa i live med gebyrer og frimerker. Gråboks.
+// før de går ut, og holder kassa i live med gebyrer og frimerker.
 
 const SPEED = playtestSpeed();
 
@@ -42,19 +64,19 @@ const THEME: Partial<ArcadeTheme> = {
     cta: FARGE.grønn,
     ctaText: '#fff',
     chip: '#dcd6c6',
-    scrim: 'rgba(21,23,26,0.6)',
-    font: 'Georgia, serif',
+    scrim: 'rgba(14,20,18,0.72)',
+    font: SKRIFT_DECO,
     fontWeight: 700,
     bodyFont: 'Georgia, serif',
-    tracking: '1px',
+    tracking: '2px',
     textCase: 'uppercase',
     radius: 2,
     line: 2,
-    drop: 3,
+    drop: 4,
     tilt: 0,
     hudText: FARGE.papir,
     hudStroke: FARGE.tekst,
-    bannerTop: '22%',
+    bannerTop: '20%',
 };
 
 type Mode = 'menu' | 'play' | 'paused' | 'over';
@@ -77,24 +99,33 @@ interface Resultat {
     neste: [number, string] | null;
     nyRekord: boolean;
     lærdom: string[];
+    nyeKort: number[];
 }
 
+/** Hver frame: spillets tid (med hit-stop og sakte film), hendelser og HUD ti ganger i sekundet. */
 function Loop({
     gRef,
+    fxRef,
     modeRef,
     textRef,
+    sakteRef,
     onUt,
     onHud,
 }: {
     gRef: React.MutableRefObject<Game>;
+    fxRef: React.MutableRefObject<Fx>;
     modeRef: React.MutableRefObject<Mode>;
     textRef: React.MutableRefObject<ArcadeText>;
+    sakteRef: React.MutableRefObject<number>;
     onUt: React.MutableRefObject<(u: Ut) => void>;
     onHud: React.MutableRefObject<(g: Game) => void>;
 }) {
     const acc = useRef(0);
     useFrame((_, raw) => {
-        const dt = Math.min(0.05, raw) * textRef.current.timeScale();
+        const t = nå();
+        let dt = Math.min(0.05, raw) * textRef.current.timeScale();
+        if (t < fxRef.current.slag + HIT_STOP) dt = 0;
+        else if (t < sakteRef.current) dt *= 0.15;
         const g = gRef.current;
         if (modeRef.current === 'play')
             for (let k = 0; k < SPEED && g.mode === 'play'; k++) update(g, dt);
@@ -114,19 +145,27 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     const [first] = useState(() => newGame(Math.floor(Math.random() * 1e9)));
     const gRef = useRef<Game>(first);
     const fxRef = useRef<Fx>(nyFx());
+    const sakteRef = useRef(0);
     const [hud, setHud] = useState<HudData>(() => lesHud(first));
+    const hudRef = useRef(hud);
     const [res, setRes] = useState<Resultat | null>(null);
     const [save, updateSave] = useArcadeSave<Save>(GAME_ID, DEFAULT_SAVE);
     const saveRef = useRef(save);
     const [text, textLayer] = useArcadeText(GAME_ID);
     const textRef = useRef(text);
+    const [synth] = useState(createArcadeSynth);
+    const [lyd] = useState(() => lagLyd(synth));
+    const [stum, setStum] = useState(() => synth.isMuted());
     const stageRef = useRef<HTMLDivElement>(null);
     const completed = useRef(false);
+    const holdtFør = useRef(false);
+    const dilemmaer = useRef(0);
 
     useEffect(() => {
         saveRef.current = save;
         textRef.current = text;
     });
+    useEffect(() => () => synth.dispose(), [synth]);
 
     const setModeBoth = (m: Mode) => {
         modeRef.current = m;
@@ -136,14 +175,15 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     // Ankere: faste punkter på bordet i piksler.
     const vedPlass = (plass: number) => () => {
         const p = PLASSER[plass];
-        return tilSkjerm(fxRef.current, p.x, 0.1, p.z - 0.35);
+        return tilSkjerm(fxRef.current, p.x, 0.1, p.z - 0.4);
     };
     const vedStempel = () => {
         const st = gRef.current.stempel;
         return tilSkjerm(fxRef.current, st.x, 1.2, st.z);
     };
     const vedArk = () => tilSkjerm(fxRef.current, FRIMERKE_PLASS.x, 0.1, FRIMERKE_PLASS.z - 0.3);
-    const vedKasse = () => tilSkjerm(fxRef.current, KASSE_PLASS.x, 0.3, KASSE_PLASS.z);
+    const vedKasse = () => tilSkjerm(fxRef.current, KASSE_PLASS.x, 0.3, KASSE_PLASS.z - 0.3);
+    const vedHylle = () => tilSkjerm(fxRef.current, SKUFF_PLASS.x, 0.1, SKUFF_PLASS.z - 0.55);
     const plassAv = (id: number) => gRef.current.pass.find((p) => p.id === id)?.plass ?? 0;
     const flyt = (t: string, at: { x: number; y: number } | null, farge: string) => {
         if (at) text.float(t, at.x, at.y - 30, farge, true);
@@ -164,7 +204,7 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             });
         }
     };
-    /** Mynter flyr fra toppen av stabelen til et punkt (lommehull, regning). */
+    /** Mynter flyr fra toppen av stabelen til et punkt (gebyrfelt, regning). */
     const fraStabel = (n: number, mål: (i: number) => { x: number; z: number }) => {
         const k = gRef.current.kasse;
         for (let i = 0; i < n; i++) {
@@ -181,9 +221,9 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             });
         }
     };
-    const lomme = (id: number) => {
-        const p = PLASSER[plassAv(id)];
-        return { x: p.x + 0.42, z: p.z - 0.15 };
+    const lomme = (plass: number) => {
+        const p = PLASSER[plass];
+        return { x: p.x + LOMME.x, z: p.z + LOMME.z };
     };
 
     const avslutt = (vunnet: boolean) => {
@@ -201,6 +241,9 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             ? TUNING.ranger[TUNING.ranger.length - 1][1]
             : rankFor(TUNING.ranger, g.saker);
         const tap = g.årsak ? TAP[g.årsak] : null;
+        // Det eleven gjorde: hvem som mistet papirene, med navn og år.
+        if (g.mistet.length) text.lesson('mistet', LÆRDOM.mistet(navneliste(g.mistet.slice(0, 4))), 100);
+        else text.lesson('mistet', LÆRDOM.ingenMistet, 100);
         setRes({
             vunnet,
             saker: g.saker,
@@ -210,12 +253,15 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             neste: nextRank(TUNING.ranger, best),
             nyRekord: g.saker > prev.best && prev.runs > 0,
             lærdom: text.lessons(3),
+            nyeKort: g.arkiv.filter((p) => !prev.arkiv.includes(p)),
         });
         text.clear();
         setModeBoth('over');
+        if (vunnet) lyd.seier();
+        else lyd.tap();
         if ((vunnet || g.saker >= 40) && !completed.current) {
             completed.current = true;
-            onComplete({ score: Math.min(1, g.saker / 220), completed: true });
+            onComplete({ score: Math.min(1, g.saker / 140), completed: true });
         }
     };
 
@@ -225,35 +271,54 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
 
     const visUt = (u: Ut) => {
         const g = gRef.current;
+        const fx = fxRef.current;
         switch (u.type) {
             case 'slag': {
-                fxRef.current.slag = nå();
-                const at = vedPlass(plassAv(u.id))();
+                const plass = plassAv(u.id);
+                const pl = PLASSER[plass];
+                fx.slag = nå();
+                fx.slagX = pl.x;
+                fx.slagZ = pl.z;
+                fx.slagFullt = u.fullt;
+                fx.slagId = u.id;
+                if (u.fullt) lyd.klonk();
+                else lyd.skjevt();
+                const at = vedPlass(plass)();
                 const pris = u.grå
                     ? -TUNING.kasse.gråSak
                     : u.lomme === 'mynt'
                       ? TUNING.kasse.mynt
                       : -TUNING.kasse.tomLomme;
                 flyt(
-                    `${pris > 0 ? '+' : ''}${pris}${u.fullt ? '' : ' (skjevt)'}`,
+                    `${pris > 0 ? '+' : ''}${pris}${u.fullt ? '' : ' skjevt'}`,
                     at,
-                    pris > 0 ? FARGE.grønn : FARGE.rød
+                    pris > 0 ? FARGE.gull : '#ff8a7a'
                 );
+                const l = lomme(plass);
                 if (pris > 0) {
-                    const l = lomme(u.id);
                     tilStabel(pris, l.x, l.z);
-                } else fraStabel(-pris, () => lomme(u.id));
+                    lyd.inn(pris);
+                } else {
+                    fraStabel(-pris, () => l);
+                    lyd.ut(-pris);
+                }
                 if (u.lomme === 'tom') text.lesson('gebyr', LÆRDOM.gebyr, 1);
                 break;
             }
+            case 'bom':
+                fx.bom = nå();
+                lyd.bom();
+                break;
             case 'forny':
                 if (u.lomme === 'tom' && g.brett >= 1) {
                     const at = vedPlass(plassAv(u.id));
                     if (!text.beatOnce('tom', ØYEBLIKK.tom.tittel, ØYEBLIKK.tom.tekst, { at }))
                         text.point('tom', LAPP.tom, at, { seconds: 4, once: true });
+                    else text.point('ghost', LAPP.ghost, vedKasse, { seconds: 5, once: true });
                 }
                 break;
             case 'frimerkeKom':
+                lyd.papir();
                 if (
                     !text.beatOnce('frimerke', ØYEBLIKK.frimerke.tittel, ØYEBLIKK.frimerke.tekst, {
                         at: vedArk,
@@ -262,37 +327,78 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                     text.point('frimerke', LAPP.frimerke, vedArk, { seconds: 4 });
                 break;
             case 'frimerke':
-                fxRef.current.slag = nå();
-                flyt(`+${TUNING.kasse.frimerke}`, vedArk(), FARGE.grønn);
+                fx.slag = nå();
+                fx.slagX = FRIMERKE_PLASS.x;
+                fx.slagZ = FRIMERKE_PLASS.z;
+                fx.slagFullt = true;
+                fx.slagId = -2;
+                lyd.klonk();
+                lyd.inn(TUNING.kasse.frimerke);
+                flyt(`+${TUNING.kasse.frimerke}`, vedArk(), FARGE.gull);
                 tilStabel(TUNING.kasse.frimerke, FRIMERKE_PLASS.x, FRIMERKE_PLASS.z);
                 text.lesson('frimerke', LÆRDOM.frimerke, 2);
                 break;
-            case 'utløpt':
+            case 'utløpt': {
+                lyd.papirløs();
+                const sist = g.mistet[g.mistet.length - 1];
+                if (sist) {
+                    const at = vedHylle();
+                    if (at) text.float(`${navn(sist.person)}, ${sist.år}`, at.x, at.y - 10, '#d9d6cc', false, 2.5);
+                }
                 text.beatOnce('utløpt', ØYEBLIKK.utløpt.tittel, ØYEBLIKK.utløpt.tekst, {
                     at: vedPlass(u.plass),
                 });
                 text.lesson('papirløs', LÆRDOM.papirløs, 3);
                 break;
+            }
             case 'tilbake':
                 text.point('grå', LAPP.grå, vedPlass(plassAv(u.id)), { seconds: 3, once: true });
                 break;
             case 'gyldig':
+                lyd.nei();
                 text.point('gyldig', LAPP.gyldig, vedPlass(plassAv(u.id)), { seconds: 2.5 });
                 break;
             case 'tomKasse':
+                lyd.nei();
                 text.point('tomKasse', LAPP.tomKasse, vedKasse, { tone: 'fare', seconds: 2.5 });
+                break;
+            case 'dilemma': {
+                if (dilemmaer.current >= 3 || text.beatActive()) break;
+                dilemmaer.current++;
+                fx.dilemma = u.ider;
+                fx.dilemmaTil = nå() + 1.6;
+                sakteRef.current = nå() + 0.5;
+                lyd.dilemma();
+                if (dilemmaer.current <= 2) {
+                    const [a, b] = u.ider.map((id) => PLASSER[plassAv(id)]);
+                    text.point(
+                        'dilemma',
+                        LAPP.dilemma,
+                        () =>
+                            tilSkjerm(fx, (a.x + b.x) / 2, 0.1, Math.min(a.z, b.z) - 0.55),
+                        { seconds: 2 }
+                    );
+                }
+                break;
+            }
+            case 'bølge':
+                lyd.bølge();
+                text.banner(BØLGE.banner, FARGE.oransje, 2.2);
+                text.lesson('bølge', BØLGE.lærdom, 2);
                 break;
             case 'reist':
                 text.lesson(`reist`, LÆRDOM.reist(u.person), 1);
                 break;
             case 'husleie':
-                flyt(`-${u.beløp} husleie`, vedKasse(), FARGE.rød);
-                fxRef.current.betalt = nå();
-                fxRef.current.betaltBeløp = u.beløp;
+                lyd.husleie(u.beløp);
+                flyt(`-${u.beløp} husleie`, vedKasse(), '#ff8a7a');
+                fx.betalt = nå();
+                fx.betaltBeløp = u.beløp;
                 fraStabel(u.beløp, (i) => regningHull(REGNING_PLASS.x, REGNING_PLASS.z, i));
                 break;
             case 'nyttÅr':
-                text.banner(String(u.år), FARGE.grønn, 1.8);
+                lyd.nyttÅr();
+                text.banner(String(u.år), FARGE.grønn, 1.6);
                 break;
             case 'arkiv':
                 text.banner(`ARKIVKORT: ${navn(u.person).toUpperCase()}`, FARGE.oransje, 1.6);
@@ -309,9 +415,15 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     useEffect(() => {
         onUt.current = visUt;
         onHud.current = (g: Game) => {
-            setHud(lesHud(g));
-            // Første slag: et lite hint ved ringen, bare én gang.
+            const ny = lesHud(g);
+            if (!sammeHud(ny, hudRef.current)) {
+                hudRef.current = ny;
+                setHud(ny);
+            }
             const h = g.stempel.hold;
+            if (h !== null && !holdtFør.current) lyd.løft();
+            holdtFør.current = h !== null;
+            // Første slag: et lite hint ved ringen, bare én gang.
             if (g.saker === 0 && h !== null && h >= TUNING.stempel.fullFra)
                 textRef.current.point('slippNå', LAPP.slippNå, vedStempel, {
                     until: () => gRef.current.stempel.hold === null,
@@ -322,18 +434,24 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     });
 
     const start = () => {
+        synth.unlock();
         const g = newGame(Math.floor(Math.random() * 1e9));
         gRef.current = g;
         bots.current = {};
         fxRef.current.flyg = [];
+        fxRef.current.dilemma = [];
+        dilemmaer.current = 0;
         text.resetRun();
         setRes(null);
-        setHud(lesHud(g));
+        const h = lesHud(g);
+        hudRef.current = h;
+        setHud(h);
         setModeBoth('play');
         text.banner(String(TUNING.år.første), FARGE.grønn, 1.8);
-        text.point('første', LAPP.første, vedPlass(0), {
+        const første = [...g.pass].sort((a, b) => a.igjen - b.igjen)[0];
+        text.point('første', LAPP.første, vedPlass(første?.plass ?? 0), {
             until: () => gRef.current.saker > 0,
-            seconds: 12,
+            seconds: 14,
         });
     };
     const pause = () => {
@@ -341,40 +459,27 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     };
     const resume = () => setModeBoth('play');
     const toMenu = () => setModeBoth('menu');
+    const byttLyd = () => {
+        synth.unlock();
+        synth.setMuted(!synth.isMuted());
+        setStum(synth.isMuted());
+    };
 
-    // Tastatur: Tab/piler flytter stempelet, mellomrom holdes og slippes. Esc/P = pause.
+    // Esc/P = pause. Stempelet styres med musa (eller fingeren): før, hold, slipp.
     useEffect(() => {
         const ned = (e: KeyboardEvent) => {
             if (e.key === 'Escape' || e.key === 'p' || e.key === 'P') {
                 if (modeRef.current === 'play') setModeBoth('paused');
                 else if (modeRef.current === 'paused') setModeBoth('play');
-                return;
             }
-            if (modeRef.current !== 'play') return;
-            const g = gRef.current;
-            if (e.key === 'Tab' || e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                e.preventDefault();
-                nestePass(g, e.shiftKey ? -1 : 1);
-            } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                e.preventDefault();
-                nestePass(g, -1);
-            } else if (e.key === ' ') {
-                e.preventDefault();
-                if (!e.repeat) trykk(g);
-            }
-        };
-        const opp = (e: KeyboardEvent) => {
-            if (e.key === ' ' && modeRef.current === 'play') slipp(gRef.current);
         };
         const pekerOpp = () => {
             if (modeRef.current === 'play') slipp(gRef.current);
         };
         window.addEventListener('keydown', ned);
-        window.addEventListener('keyup', opp);
         window.addEventListener('pointerup', pekerOpp);
         return () => {
             window.removeEventListener('keydown', ned);
-            window.removeEventListener('keyup', opp);
             window.removeEventListener('pointerup', pekerOpp);
         };
     }, []);
@@ -430,8 +535,8 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                 >
                     <div style={{ position: 'absolute', inset: 0, touchAction: 'none' }}>
                         <MicroCanvas
-                            camera={{ position: [0, 7.6, 5.4], fov: 42 }}
-                            background={FARGE.bord}
+                            camera={{ position: [0, 7.3, 5.0], fov: 35 }}
+                            background="#1a1410"
                             fog={null}
                             controls={false}
                             contactShadows={false}
@@ -439,23 +544,40 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                         >
                             <Loop
                                 gRef={gRef}
+                                fxRef={fxRef}
                                 modeRef={modeRef}
                                 textRef={textRef}
+                                sakteRef={sakteRef}
                                 onUt={onUt}
                                 onHud={onHud}
                             />
                             <Verden gRef={gRef} fxRef={fxRef} />
                         </MicroCanvas>
                     </div>
+                    {/* Vignett: kanten av bordet i skygge */}
+                    <div
+                        style={{
+                            position: 'absolute',
+                            inset: 0,
+                            pointerEvents: 'none',
+                            background:
+                                'radial-gradient(ellipse at 45% 45%, rgba(0,0,0,0) 60%, rgba(0,0,0,.3) 100%)',
+                        }}
+                    />
 
                     {spiller && (
                         <Hud
                             d={hud}
                             anker={(x, z) => tilSkjerm(fxRef.current, x, 0.1, z)}
                             knapper={
-                                <ArcadeSmallButton onClick={pause} ariaLabel="Pause">
-                                    Pause (Esc)
-                                </ArcadeSmallButton>
+                                <>
+                                    <ArcadeSmallButton onClick={byttLyd} ariaLabel="Lyd av eller på">
+                                        {stum ? 'Lyd: av' : 'Lyd: på'}
+                                    </ArcadeSmallButton>
+                                    <ArcadeSmallButton onClick={pause} ariaLabel="Pause">
+                                        Pause (Esc)
+                                    </ArcadeSmallButton>
+                                </>
                             }
                         />
                     )}
@@ -465,10 +587,8 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                     {mode === 'menu' && (
                         <ArcadeScreen>
                             <ArcadeLogo>Stempelet</ArcadeLogo>
-                            <ArcadeTag color={FARGE.oransje}>Nansenkontoret 1931-1938</ArcadeTag>
-                            <p style={{ fontSize: 18, fontWeight: 700, margin: '10px 0 6px' }}>
-                                {MÅL}
-                            </p>
+                            <ArcadeTag color={FARGE.oransje}>Nansenkontoret · Genève 1931-1938</ArcadeTag>
+                            <p style={{ fontSize: 18, fontWeight: 700, margin: '10px 0 6px' }}>{MÅL}</p>
                             <ol
                                 style={{
                                     display: 'grid',
@@ -485,10 +605,32 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                             </ol>
                             <ArcadeBigButton onClick={start}>Åpne kontoret</ArcadeBigButton>
                             {save.runs > 0 && (
-                                <p style={{ fontSize: 15, margin: '8px 0 0' }}>
-                                    Rekord: <b>{save.best}</b> saker · Arkivkort:{' '}
-                                    <b>{save.arkiv.length} av 10</b>
-                                </p>
+                                <>
+                                    <p style={{ fontSize: 15, margin: '8px 0 4px' }}>
+                                        Rekord: <b>{save.best}</b> saker · Lengste rekke rene stempler:{' '}
+                                        <b>{save.rekke}</b>
+                                    </p>
+                                    <div style={{ fontSize: 14, fontWeight: 700, margin: '4px 0 2px' }}>
+                                        Arkivkort: {save.arkiv.length} av 10
+                                    </div>
+                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
+                                        {ARKIV.map((s, i) => (
+                                            <span
+                                                key={i}
+                                                title={save.arkiv.includes(i) ? s : 'Forny samme person tre ganger'}
+                                                style={{
+                                                    fontSize: 14,
+                                                    padding: '2px 6px',
+                                                    border: `1px solid ${FARGE.tekst}`,
+                                                    background: save.arkiv.includes(i) ? FARGE.grønn : 'transparent',
+                                                    color: save.arkiv.includes(i) ? '#fff' : '#77756c',
+                                                }}
+                                            >
+                                                {save.arkiv.includes(i) ? navn(i) : '?'}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </>
                             )}
                         </ArcadeScreen>
                     )}
@@ -507,9 +649,7 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                     {mode === 'over' && res && (
                         <ArcadeScreen>
                             <ArcadeLogo>{res.vunnet ? 'Telegram' : 'Kontoret stenger'}</ArcadeLogo>
-                            <ArcadeTag color={res.vunnet ? FARGE.grønn : FARGE.rød}>
-                                {res.rang}
-                            </ArcadeTag>
+                            <ArcadeTag color={res.vunnet ? FARGE.grønn : FARGE.rød}>{res.rang}</ArcadeTag>
                             <div
                                 data-tap-tips
                                 style={{
@@ -517,23 +657,24 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                                     padding: '8px 12px',
                                     border: `2px solid ${res.vunnet ? FARGE.grønn : FARGE.rød}`,
                                     textAlign: 'left',
+                                    fontFamily: '"Courier New", Courier, monospace',
                                 }}
                             >
                                 <div style={{ fontSize: 16, fontWeight: 800 }}>{res.tittel}</div>
-                                <div style={{ fontSize: 16, marginTop: 4 }}>{res.tekst}</div>
+                                <div style={{ fontSize: 15, marginTop: 4 }}>{res.tekst}</div>
                             </div>
                             <ArcadeStats
                                 items={[
-                                    {
-                                        value: res.saker,
-                                        label: res.nyRekord ? 'Ny rekord!' : 'Saker fornyet',
-                                    },
+                                    { value: res.saker, label: res.nyRekord ? 'Ny rekord!' : 'Saker fornyet' },
                                     { value: save.best, label: 'Rekord' },
                                 ]}
                             />
-                            <ArcadeLessons
-                                items={res.lærdom.length ? res.lærdom : [LÆRDOM.papirløs]}
-                            />
+                            {res.nyeKort.length > 0 && (
+                                <p style={{ fontSize: 15, margin: '6px 0' }}>
+                                    <b>Nytt arkivkort:</b> {ARKIV[res.nyeKort[0]]}
+                                </p>
+                            )}
+                            <ArcadeLessons items={res.lærdom.length ? res.lærdom : [LÆRDOM.papirløs]} />
                             {res.neste && (
                                 <p style={{ fontSize: 14, margin: '4px 0' }}>
                                     Neste rang: {res.neste[1]} ved {res.neste[0]} saker

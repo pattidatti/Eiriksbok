@@ -138,6 +138,13 @@
       "content": "Nansen døde 13. mai 1930 på Polhøgda i Bærum (Barr mfl., 2026). Han ble begravet fire dager senere, på 17. mai (Haberman, 1972). Men arbeidet hans stoppet ikke. I 1931 åpnet Nansenkontoret i Genève for å fortsette å hjelpe flyktningene. Kontoret behandlet rundt 800 000 saker. Det hjalp folk med å fornye passet, skaffe visum og få lov til å bo og arbeide i et nytt land. Pengene kom blant annet fra gebyrer på Nansenpasset og fra salg av egne Nansen-frimerker i Norge og Frankrike. I 1938 fikk Nansenkontoret selv Nobels fredspris (Store norske leksikon, 2024)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "stempelet"
+      }
+    },
+    {
       "type": "text",
       "content": "Også sønnen hans, Odd Nansen, tok arven videre. I 1937 startet han organisasjonen Nansenhjelpen, som skulle hjelpe mennesker som hadde mistet statsborgerskapet sitt. Etter at Tyskland tok over Østerrike og Tsjekkoslovakia, skaffet Nansenhjelpen innreisetillatelse til Norge for 200 voksne flyktninger og 60 barn (Greve, 2024). Du kan lese mer om Odd Nansen i artikkelen om [konsentrasjonsleirene](/historie/andre-verdenskrig/konsentrasjonsleirene)."
     },

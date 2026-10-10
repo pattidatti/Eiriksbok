@@ -1,11 +1,18 @@
-// Delt mellom visningen og komponenten: tidspunkt for slag (til animasjonen) og
-// kameraet, så lapper kan festes til ting på bordet. Ingen React.
+// Delt mellom visningen og komponenten: tidspunkt og sted for slag (animasjon, blekk, risting),
+// kameraet (så lapper kan festes til ting på bordet), mynter i lufta og dilemmaet. Ingen React.
 
 import * as THREE from 'three';
 
 export interface Fx {
-    /** performance.now()/1000 da siste slag traff. */
+    /** nå() da siste slag traff, hvor, og om det var fullt. */
     slag: number;
+    slagX: number;
+    slagZ: number;
+    slagFullt: boolean;
+    /** Passet som ble truffet (id), for at passet skal dukke seg. */
+    slagId: number;
+    /** Slag i bordet uten pass (tomt dunk). */
+    bom: number;
     /** Kameraet og lerretets størrelse (settes av Kamera i world.tsx). */
     kamera: THREE.Camera | null;
     w: number;
@@ -15,20 +22,32 @@ export interface Fx {
     /** Når husleia sist ble betalt (regningen viser myntene en liten stund). */
     betalt: number;
     betaltBeløp: number;
+    /** To pass som går ut samtidig: lyses opp til `til`. */
+    dilemma: number[];
+    dilemmaTil: number;
 }
 
 export const nyFx = (): Fx => ({
     slag: -10,
+    slagX: 0,
+    slagZ: 0,
+    slagFullt: true,
+    slagId: -1,
+    bom: -10,
     kamera: null,
     w: 1000,
     h: 600,
     flyg: [],
     betalt: -10,
     betaltBeløp: 0,
+    dilemma: [],
+    dilemmaTil: -10,
 });
 
 /** Sekunder en mynt bruker i lufta. */
 export const FLYTID = 0.45;
+/** Hit-stop: så lenge spillet står stille når stempelet treffer (ekte sekunder). */
+export const HIT_STOP = 0.07;
 
 export const nå = () => performance.now() / 1000;
 
@@ -55,19 +74,19 @@ export interface Flyg {
     tilStabel: boolean;
 }
 
-/** Myntstabelen: søyler på ti. Midten av mynt nr. i (0 nederst). */
-export const STABEL = { søyle: 10, tykk: 0.07, avstand: 0.42 };
+/** Myntstabelen: søyler på ti, tre søyler i bredden. Midten av mynt nr. i (0 nederst). */
+export const STABEL = { søyle: 10, tykk: 0.07, avstand: 0.42, bunn: 0.075 };
 
 export function myntPlass(kx: number, kz: number, i: number) {
     const s = Math.floor(i / STABEL.søyle);
     return {
         x: kx - 0.42 + (s % 3) * STABEL.avstand,
-        y: 0.04 + (i % STABEL.søyle) * STABEL.tykk,
+        y: STABEL.bunn + (i % STABEL.søyle) * STABEL.tykk,
         z: kz - Math.floor(s / 3) * 0.42,
     };
 }
 
 /** Hullene på regningen: to rader på fem. Midten av hull nr. i. */
 export function regningHull(rx: number, rz: number, i: number) {
-    return { x: rx - 0.4 + (i % 5) * 0.2, z: rz - 0.05 + Math.floor(i / 5) * 0.22 };
+    return { x: rx - 0.4 + (i % 5) * 0.2, z: rz + 0.02 + Math.floor(i / 5) * 0.2 };
 }

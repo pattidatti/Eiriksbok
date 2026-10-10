@@ -91,6 +91,7 @@ export function update(g: Game, dt: number) {
         if (p.igjen <= 0) {
             g.pass.splice(g.pass.indexOf(p), 1);
             g.skuff.push({ person: p.person, om: TUNING.grå.venter });
+            g.mistet.push({ person: p.person, år: brett.år });
             g.rekke = 0;
             g.ut.push({ type: 'utløpt', id: p.id, plass: p.plass });
         }
@@ -126,6 +127,32 @@ export function update(g: Game, dt: number) {
         }
     }
 
+    // Historisk bølge: mange nye pass på en gang (1935: flyktninger fra Saar).
+    if (brett.bølge && !g.bølgeKom && g.iÅr >= brett.bølge.ved) {
+        g.bølgeKom = true;
+        let n = 0;
+        for (let i = 0; i < brett.bølge.antall; i++) {
+            const plass = ledigPlass(g, brett.maks);
+            if (plass === null) break;
+            const p = lagPass(g, plass, ledigPerson(g, true));
+            p.igjen = p.varer * (P.nyttMin + g.rng() * (P.nyttMaks - P.nyttMin));
+            trekkBetaler(g, p, brett.tom);
+            g.ut.push({ type: 'nyttPass', id: p.id });
+            n++;
+        }
+        g.valg += n;
+        g.ut.push({ type: 'bølge', antall: n });
+    }
+
+    // Dilemma: to pass går ut nesten samtidig. Visningen fryser et øyeblikk og lyser opp begge.
+    if (g.t - g.sistDilemma > TUNING.dilemma.pause) {
+        const nær = g.pass.filter((p) => !p.grå && p.lomme && p.igjen < TUNING.dilemma.igjen);
+        if (nær.length >= 2) {
+            g.sistDilemma = g.t;
+            g.ut.push({ type: 'dilemma', ider: nær.slice(0, 2).map((p) => p.id) });
+        }
+    }
+
     // Frimerkearket.
     if (g.frimerkeVed !== null && g.iÅr >= g.frimerkeVed) {
         g.frimerkeVed = null;
@@ -155,6 +182,7 @@ export function update(g: Game, dt: number) {
             return;
         }
         g.brett++;
+        g.bølgeKom = false;
         g.iÅr -= TUNING.år.sekunder;
         const f = TUNING.frimerke;
         g.frimerkeVed = BRETT[g.brett].frimerke ? f.fraSek + g.rng() * (f.tilSek - f.fraSek) : null;

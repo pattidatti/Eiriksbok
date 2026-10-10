@@ -3,7 +3,7 @@
 // 2. Stempelet fyller båndet: fullt slag helt, skjevt slag halvt.
 // 3. Kassa: mynt +1, tom lomme -2, grå sak -3, frimerkeark +4. Husleia trekkes ved årsskiftet.
 
-import { FRIMERKE_PLASS, PLASSER } from './levels';
+import { BRETT, FRIMERKE_PLASS, PLASSER } from './levels';
 import { type Game, type Pass } from './state';
 import { TUNING } from './tuning';
 
@@ -80,6 +80,7 @@ export function slå(g: Game, holdt: number) {
     p.rist = 0;
     p.fornyet++;
     p.merker.push(fullt);
+    p.merkeÅr.push(BRETT[g.brett].år);
     g.saker++;
     g.rekke = fullt ? g.rekke + 1 : 0;
     g.lengsteRekke = Math.max(g.lengsteRekke, g.rekke);

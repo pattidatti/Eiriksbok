@@ -1,6 +1,6 @@
 // Paletten fra kunstbriefen.
 export const FARGE = {
-    bord: '#22302b',
+    bord: '#2a6450',
     papir: '#efe9da',
     grønn: '#3f8f6b',
     oransje: '#e07a2e',

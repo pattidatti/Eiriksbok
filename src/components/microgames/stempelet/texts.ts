@@ -10,23 +10,23 @@ export const MÅL = 'Forny Nansenpassene før de går ut, og hold kontoret åpen
 export const REGLER = [
     'Båndet krymper. Er det tomt, er personen papirløs igjen.',
     'Hold inne og slipp mens ringen er i det hvite feltet.',
-    'Gyllen mynt gir 1. Svart hull koster 2. Regningen betales hvert nyttår.',
+    'Gyllen mynt gir 1 til kassa. Tomt felt koster 2. Husleia betales hvert nyttår.',
 ];
 
 /** Merkelappene på bordet (maks 7 ord). */
 export const BORDLAPP = {
     kasse: (n: number) => `Kassa: ${n}`,
-    husleie: (n: number) => `Husleie ved nyttår: ${n}`,
+    husleie: (n: number, sek: number) => `Husleie ${n} · nyttår om ${sek} s`,
     hylle: (n: number, maks: number) => `Uten papirer: ${n} av ${maks}`,
 };
 
-export const TASTER = 'Mus: før stempelet, hold inne, slipp · Tab: neste pass · Mellomrom: slå';
-
 /** Korte lapper festet til tingen (maks 7 ord). */
 export const LAPP = {
-    første: 'Hold inne, slipp i det hvite feltet',
+    første: 'Hold inne. Slipp i det hvite feltet.',
     slippNå: 'Slipp nå!',
-    tom: 'Tom lomme: to mynter ut av kassa',
+    tom: 'Tomt felt: to mynter ut av kassa',
+    dilemma: 'Begge går ut nå. Hvem tar du?',
+    ghost: 'Røde mynter: det slaget koster',
     frimerke: 'Slå arket: +4 i kassa',
     gyldig: 'Gyldig ennå - ta et kortere bånd',
     tomKasse: 'Kassa har ikke nok',
@@ -42,12 +42,19 @@ export const ØYEBLIKK = {
     },
     tom: {
         tittel: 'Tom lomme',
-        tekst: 'Denne personen kan ikke betale gebyret. Kontoret fornyer likevel, men det koster to mynter fra kassa.',
+        tekst: 'Denne personen kan ikke betale gebyret. Kontoret kan fornye likevel, men da går to mynter ut av kassa.',
     },
     frimerke: {
         tittel: 'Nansen-frimerkene',
         tekst: 'Norge og Frankrike solgte egne Nansen-frimerker, og pengene gikk til kontoret. Slå arket før det glir bort.',
     },
+};
+
+/** Den historiske bølgen i 1935. */
+export const BØLGE = {
+    banner: 'FLYKTNINGER FRA SAAR',
+    lærdom:
+        'I 1935 ble Saar en del av Tyskland igjen. Folk som flyktet derfra, fikk også Nansenpass.',
 };
 
 export const TAP: Record<Årsak, { tittel: string; tekst: string }> = {
@@ -73,10 +80,35 @@ export const LÆRDOM = {
     frimerke: 'Norge og Frankrike solgte Nansen-frimerker for å holde kontoret i gang.',
     reist: (person: number) =>
         `${navn(person)} reiste videre med gyldig pass. Passet ga lov til å reise og arbeide.`,
+    mistet: (navnene: string) =>
+        `${navnene} mistet papirene mens du satt ved bordet. Uten gyldig pass kunne de bli sendt ut av landet.`,
+    ingenMistet:
+        'Ingen mistet papirene mens du satt ved bordet. Det klarte ikke det virkelige kontoret: i 1939 trengte rundt 500 000 fortsatt hjelp.',
 };
 
+/** Arkivkortene: én setning om hva passet lot personen gjøre (oppdiktede personer). */
+export const ARKIV: string[] = [
+    'Sergej fikk arbeid som sjåfør i Paris.',
+    'Anahit fikk lov til å jobbe som syerske i Marseille.',
+    'Olga kunne reise til Beograd og undervise i fiolin.',
+    'Aram fikk bo i Beirut og åpne et skomakerverksted.',
+    'Nikolaj fikk visum til Praha og studerte til ingeniør.',
+    'Siranush fikk reise til Sofia og finne igjen broren sin.',
+    'Vera fikk arbeid på et sykehus i Brussel.',
+    'Armen fikk lov til å arbeide i en silkefabrikk i Lyon.',
+    'Boris fikk arbeid i gruvene i Nord-Frankrike.',
+    'Tatjana fikk bo i Oslo og jobbe som sykepleier.',
+];
+
+/** «Olga (1934), Aram (1936) og Vera (1937)» */
+export function navneliste(liste: { person: number; år: number }[]): string {
+    const deler = liste.map((m) => `${navn(m.person)} (${m.år})`);
+    if (deler.length <= 1) return deler.join('');
+    return `${deler.slice(0, -1).join(', ')} og ${deler[deler.length - 1]}`;
+}
+
 export function navn(person: number): string {
-    const n = PERSONER[person] ?? 'NOEN';
+    const n = PERSONER[person]?.navn ?? 'NOEN';
     return n.charAt(0) + n.slice(1).toLowerCase();
 }
 

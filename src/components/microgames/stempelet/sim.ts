@@ -1,7 +1,8 @@
 // Simuleringen av Stempelet: samme regler og roboter som Stempelet.tsx.
 
 import type { PlaytestSnapshot } from '../playtest';
-import type { SimSpec } from '../sim';
+import { seeded, type SimSpec } from '../sim';
+import { BOT_EVERY, PLAYTEST_DT } from '../playtest';
 import { BOTS } from './bots';
 import { framdrift, newGame, press, update, årstall, type Game } from './game';
 import { TUNING } from './tuning';
@@ -54,3 +55,31 @@ const spec: SimSpec<Game> = {
 };
 
 export default spec;
+
+/**
+ * Måling for balansen bak dilemmaet (diagnose 2): hvor mange en robot mister i runden, og
+ * kassa ved hvert nyttår. Kjør:
+ * npx tsx -e "import('./src/components/microgames/stempelet/sim.ts').then(m => console.log(m.målMistet('saksbehandler')))"
+ */
+export function målMistet(bot: string, runder = 200) {
+    const mistet: number[] = [];
+    let seire = 0;
+    for (let s = 1; s <= runder; s++) {
+        const g = newGame(s * 7919);
+        const grep = BOTS[bot].make(seeded(s * 31));
+        let neste = 0;
+        while (g.mode === 'play' && g.t < MAKS_SEKUNDER) {
+            if (g.t >= neste) {
+                grep(g);
+                neste += BOT_EVERY;
+            }
+            update(g, PLAYTEST_DT);
+            g.ut.length = 0;
+        }
+        mistet.push(g.mistet.length);
+        if (g.mode === 'won') seire++;
+    }
+    mistet.sort((a, b) => a - b);
+    const q = (p: number) => mistet[Math.floor(p * (mistet.length - 1))];
+    return { bot, seire: seire / runder, mistet: { p10: q(0.1), median: q(0.5), p90: q(0.9) } };
+}

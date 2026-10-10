@@ -1,7 +1,7 @@
 // Tilstanden i Stempelet. Ren data uten React, så simuleringen og nettleseren deler den.
 
 import { seeded, type Rng } from '../sim';
-import { PLASSER, PERSONER } from './levels';
+import { PLASSER, PERSONER, VANLIGE } from './levels';
 import { TUNING } from './tuning';
 
 export type Årsak = 'papirløse' | 'stengt';
@@ -26,8 +26,9 @@ export interface Pass {
     rist: number;
     /** Ganger denne personen er fornyet i runden. */
     fornyet: number;
-    /** Stempelmerker på passet (for visningen): fullt eller skjevt. */
+    /** Stempelmerker på passet (for visningen): fullt eller skjevt, og årstallet i merket. */
     merker: boolean[];
+    merkeÅr: number[];
 }
 
 export interface Venter {
@@ -68,6 +69,8 @@ export type Ut =
     | { type: 'husleie'; beløp: number }
     | { type: 'nyttÅr'; år: number; brett: number }
     | { type: 'arkiv'; person: number }
+    | { type: 'dilemma'; ider: number[] }
+    | { type: 'bølge'; antall: number }
     | { type: 'tap'; årsak: Årsak }
     | { type: 'seier' };
 
@@ -106,6 +109,12 @@ export interface Game {
     arkiv: number[];
     /** Personer som reiste videre med gyldig pass. */
     hjulpet: number;
+    /** Alle som ble papirløse i runden (navn og år), i rekkefølge. */
+    mistet: { person: number; år: number }[];
+    /** Spilltid da siste dilemma ble meldt (to pass går ut samtidig). */
+    sistDilemma: number;
+    /** Har årets bølge (BRETT[].bølge) kommet? */
+    bølgeKom: boolean;
     /** Hendelser til visningen (lyd, lapper). Tømmes av komponenten og av simuleringen. */
     ut: Ut[];
 }
@@ -135,6 +144,9 @@ export function newGame(seed: number): Game {
         førsteTom: false,
         arkiv: [],
         hjulpet: 0,
+        mistet: [],
+        sistDilemma: -99,
+        bølgeKom: false,
         ut: [],
     };
     g.tomTeller = rng() * 0.5;
@@ -166,6 +178,7 @@ export function lagPass(g: Game, plass: number, person: number): Pass {
         rist: 0,
         fornyet: 0,
         merker: [],
+        merkeÅr: [],
     };
     g.pass.push(p);
     return p;
@@ -177,11 +190,40 @@ export function ledigPlass(g: Game, maks: number): number | null {
     return null;
 }
 
-/** En person som ikke er på bordet eller i skuffen nå. */
-export function ledigPerson(g: Game): number {
+/** En person som ikke er på bordet eller i skuffen nå. `saar` = bølgen fra Saar i 1935. */
+export function ledigPerson(g: Game, saar = false): number {
     const opptatt = new Set([...g.pass.map((p) => p.person), ...g.skuff.map((s) => s.person)]);
-    const frie = PERSONER.map((_, i) => i).filter((i) => !opptatt.has(i));
-    return frie.length ? frie[Math.floor(g.rng() * frie.length)] : Math.floor(g.rng() * 20);
+    const fra = saar ? VANLIGE : 0;
+    const til = saar ? PERSONER.length : VANLIGE;
+    const frie: number[] = [];
+    for (let i = fra; i < til; i++) if (!opptatt.has(i)) frie.push(i);
+    return frie.length ? frie[Math.floor(g.rng() * frie.length)] : fra + Math.floor(g.rng() * (til - fra));
+}
+
+type Hylleplass = { person: number; år: number; påBordet: boolean };
+let hylleCache: { g: Game | null; t: number; liste: Hylleplass[] } = { g: null, t: -1, liste: [] };
+
+/** De papirløse nå (i skuffen og grå på bordet), i den rekkefølgen de mistet papirene. */
+export function papirløsListe(g: Game): Hylleplass[] {
+    if (hylleCache.g === g && hylleCache.t === g.t) return hylleCache.liste;
+    const liste = byggPapirløsListe(g);
+    hylleCache = { g, t: g.t, liste };
+    return liste;
+}
+
+function byggPapirløsListe(g: Game): Hylleplass[] {
+    const ute = [
+        ...g.skuff.map((v) => ({ person: v.person, påBordet: false })),
+        ...g.pass.filter((p) => p.grå).map((p) => ({ person: p.person, påBordet: true })),
+    ];
+    const når = (person: number) => {
+        for (let i = g.mistet.length - 1; i >= 0; i--) if (g.mistet[i].person === person) return i;
+        return -1;
+    };
+    return ute
+        .map((u) => ({ ...u, i: når(u.person) }))
+        .sort((x, y) => x.i - y.i)
+        .map((u) => ({ person: u.person, påBordet: u.påBordet, år: g.mistet[u.i]?.år ?? 0 }));
 }
 
 export function papirløse(g: Game): number {

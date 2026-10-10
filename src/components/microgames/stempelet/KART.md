@@ -1,49 +1,44 @@
 # Stempelet - kart over mappa
 
 Nansenkontoret i Genève 1931-1938: slå stempelet på passene før båndet går tomt, og hold kassa
-i live. Brief: `docs/microgames/briefer/stempelet.md`. Fase: **gråboks** (primitive former, ingen
-kunst, juice eller lyd). Komponent: `../Stempelet.tsx` (meny, løkke, input, tekst, lagring,
-usePlaytest, slutt-skjerm).
+i live. Brief: `docs/microgames/briefer/stempelet.md`. Fase: **kunst og juice** (bygd på
+arkadeskallet). Komponent: `../Stempelet.tsx` (meny, løkke med hit-stop og sakte film, tekst,
+lyd, lagring, usePlaytest, slutt-skjerm).
 
 | Fil | Hva den gjør |
 | --- | --- |
-| `tuning.ts` | Alle tallene: år, bånd (`pass`), timing i slaget (`stempel`), kassa og husleie, frimerkearket, grå saker, tap, ranger, press. Endre her først. |
-| `levels.ts` | `BRETT` (ett år per brett: nye pass, maks på bordet, andel tomme lommer, frimerkeark), plassene på bordet, personene. |
-| `state.ts` | Typene (`Game`, `Pass`, `Ut`) og `newGame(seed)`, `lagPass`, `papirløse`, `husleie`. Ingen regler. |
-| `rules.ts` | Fagkjernen: `slå()` (fullt/skjevt, pris, kassa), `kanStemple`, `pris`, `blirTilFornyelse`, `trekkBetaler` (jevn teller, ikke terning), `reis` (personen reiser videre, arkivkort). |
-| `game.ts` | Kjerneløkka `update(g, dt)`: stempelet følger pekeren, båndene krymper, skuffen, nye pass, frimerkearket, tap, årsskiftet med husleie. Grepene `sikt`, `siktPlass`, `trykk`, `slipp`, `nestePass`. `press`, `framdrift`. |
-| `bots.ts`, `sim.ts` | Robotene (`saksbehandler`, `nybegynner`, `gratis-for-alle`, `knappemoser`) og simuleringen. |
-| `world.tsx` | Visningen i 3D: kamera 55 grader ned, bordet (pekeren), passene per plass (gyllen mynt eller svart lommehull), stempelet med hvitt treffefelt, myntstabelen, mynter i lufta, husleie-regningen, papirløs-hylla, frimerkearket. |
-| `hud.tsx`, `hudData.ts` | DOM-HUD-en: år, saksnummer, taster, og merkelapper festet til bordet (+1/-2/-3 ved lommene, kassa, husleie, hylla). |
-| `texts.ts`, `farger.ts`, `fx.ts` | All tekst (mål, regler, bordlapper, lapper, øyeblikk, tap, seier, lærdom), paletten, og slagtid, kamera til ankere (`tilSkjerm`), flygende mynter (`flyg`, `myntPlass`, `regningHull`). |
+| `tuning.ts` | Alle tallene: år, bånd (`pass`), timing i slaget (`stempel`), kassa og husleie, frimerkearket, grå saker, dilemma, tap, ranger, press. Endre her først. |
+| `levels.ts` | `BRETT` (ett år per brett: nye pass, maks, andel tomme lommer, frimerkeark, `bølge` = Saar 1935), plassene på bordet, `LOMME`, `PERSONER` (navn, kvinne, land; 20-23 er Saar). |
+| `state.ts` | Typene (`Game`, `Pass`, `Ut`), `newGame`, `lagPass`, `ledigPerson`, `papirløse`, `papirløsListe` (hylla med navn og år), `husleie`. `g.mistet` = alle som ble papirløse i runden. |
+| `rules.ts` | Fagkjernen: `slå()` (fullt/skjevt, pris, kassa), `under`, `kanStemple`, `pris`, `blirTilFornyelse`, `trekkBetaler` (jevn teller), `reis` (arkivkort). |
+| `game.ts` | Kjerneløkka `update(g, dt)`: stempelet, båndene, skuffen, nye pass, bølgen, dilemma-meldingen, frimerkearket, tap, nyttår. Grepene `sikt`, `trykk`, `slipp`. `press`, `framdrift`. |
+| `bots.ts`, `sim.ts` | Robotene og simuleringen. `målMistet(bot)` i `sim.ts` måler hvor mange en robot mister per runde (krav fra diagnose 2: vinneren median 2-4). |
+| `world.tsx` | Kamera (55 grader, rykk ved slag), skrivebordet (canvas), vinduslyset som glir over bordet og skifter med årstid/tap/seier, pynt, støv på middels/høy. |
+| `pass.tsx` | Ett pass: canvas med guilloche, bilde, navn, land og stempelmerker (tegnes bare ved endring), båndet som lunte med gnist, lomma (mynt eller tomt felt), dilemma-lys. |
+| `stempel.tsx` | Stempelet (tyngde, løft, skjelv, klem), timingringen (hvitt felt, demo før første slag), blekksprut og sjokkring. |
+| `bordting.tsx` | Kassa (stabel, røde mynter et slag koster, røde hull til husleia, gyllent spøkelse for gevinst), mynter i lufta, regningen, papirløs-hylla med navnekort, frimerkearket. |
+| `tegning.ts` | Alle canvas-tegninger: bord, pass, portrett, merke, frimerkeark, regning, hyllekort, vindu. Skriftene. |
+| `hud.tsx`, `hudData.ts` | DOM-HUD: blokkalender med åtte år (målet), nummereringsmaskin, lapper ved lommer, kassa, regning (nedtelling) og hylla. `sammeHud` hindrer unødig rendring. |
+| `texts.ts`, `lyd.ts`, `farger.ts`, `fx.ts` | Tekst (lapper, øyeblikk, tap, seier, lærdom, arkivkort), lydene, paletten, delt visningstilstand (slag, mynter, dilemma, `tilSkjerm`). |
 
 ## Kjerneløkka
 
-1. Hvert pass har et bånd (`igjen` av `varer`, 16-20 s). Under `pass.fornyFra` (50 %) er det til
-   fornyelse: lomma vises (mynt hvis personen kan betale, ellers tom). Gyldige pass kan ikke stemples.
-2. Eleven fører stempelet dit (henger etter pekeren, `stempel.følg`), holder og slipper. Holdt
-   `fullFra`-`fullTil` s = fullt bånd, ellers skjevt (halvt bånd lagt på).
-3. Kassa: mynt +1, tom lomme -2, grå sak -3, frimerkeark +4. Kassa kan ikke gå under 0: har den
-   ikke nok, skjer ingenting.
-4. Tomt bånd: personen går i skuffen i 6 s og kommer tilbake som grå sak. 6 papirløse (skuff + grå
-   på bordet) = tap. Personer reiser videre etter `pass.blirMin`-`blirMaks` s med gyldig pass.
-5. Ved nyttår trekkes husleia (`kasse.husleie[år]`), og myntene flyr fra stabelen til regningen. Ikke nok = tap.
-6. En ny tom lomme får samme bånd som et mynt-pass (`pass.parAvstand`), så begge går ut samtidig.
-
-## Hvorfor spillet virker (balansen)
-
-Lomma er fast for personen. Den flinke tar mynt-passene med en gang de er til fornyelse (mer
-gebyr) og de tomme lommene sent, rett før de går ut (koster sjeldnere). «Gratis for alle» fornyer
-alle så fort de kan og går tom for penger rundt 1935-36.
+1. Hvert pass har et bånd (16-20 s). Under `pass.fornyFra` (50 %) kan det fornyes: lomma vises.
+2. Eleven fører stempelet dit, holder og slipper. Holdt `fullFra`-`fullTil` s = fullt bånd, ellers halvt.
+3. Kassa: mynt +1, tomt felt -2, grå sak -3, frimerkeark +4. Ikke nok = ingenting skjer.
+4. Tomt bånd: personen havner i hylla (navn og år), kommer tilbake som grå sak etter 6 s. 6 papirløse = tap.
+5. Nyttår: husleia trekkes (`kasse.husleie[år]`). Ikke nok = kontoret stenger.
+6. 1935: tre flyktninger fra Saar på en gang (`BRETT[4].bølge`).
 
 ## Knapper som styrer mest
 
-- Kassapresset: `kasse.tomLomme`, `kasse.husleie`, `kasse.frimerke`, `BRETT[].tom`.
-- Arbeidspresset: `BRETT[].nyHvert` og `maks`, `pass.blirMin/Maks`, `pass.fornyFra`.
+- Kassapresset og dilemmaet: `BRETT[].tom`, `kasse.husleie`, `kasse.tomLomme`, `kasse.frimerke`.
+- Arbeidspresset: `BRETT[].nyHvert`, `maks`, `pass.blirMin/Maks`, `pass.fornyFra`.
 - Ferdighetstrappen: `stempel.fullFra/fullTil`, `stempel.følg`.
 
 ## Fallgruver
 
 - Brett 1: et pass går ikke ut før det har ristet 4 s (`update`).
 - `g.ut` tømmes av komponenten (`Loop`) og av `step` i simuleringen.
-- Komponentfiler eksporterer bare komponenter: tall og hjelpere i `.ts`-filene.
+- Hit-stop og sakte film (dilemma) gjelder bare nettleseren; simuleringen kjører uten.
+- Canvas-teksturene byttes aldri til `null`; passet tegnes på nytt bare når nøkkelen endres.

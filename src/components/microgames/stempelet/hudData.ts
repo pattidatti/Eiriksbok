@@ -7,7 +7,9 @@ import { TUNING } from './tuning';
 
 export interface HudData {
     år: number;
-    årAndel: number;
+    brett: number;
+    /** Hele sekunder til nyttår. */
+    tilNyttår: number;
     saker: number;
     kasse: number;
     husleie: number;
@@ -21,7 +23,8 @@ export interface HudData {
 export function lesHud(g: Game): HudData {
     return {
         år: BRETT[g.brett].år,
-        årAndel: g.iÅr / TUNING.år.sekunder,
+        brett: g.brett,
+        tilNyttår: Math.max(0, Math.ceil(TUNING.år.sekunder - g.iÅr)),
         saker: g.saker,
         kasse: g.kasse,
         husleie: husleie(g.brett),
@@ -32,4 +35,21 @@ export function lesHud(g: Game): HudData {
             .map((p) => ({ plass: p.plass, pris: pris(p) })),
         frimerke: !!g.frimerke,
     };
+}
+
+/** Er HUD-en lik som sist? Da slipper React å tegne den på nytt. */
+export function sammeHud(a: HudData, b: HudData): boolean {
+    if (
+        a.år !== b.år ||
+        a.tilNyttår !== b.tilNyttår ||
+        a.saker !== b.saker ||
+        a.kasse !== b.kasse ||
+        a.husleie !== b.husleie ||
+        a.papirløse !== b.papirløse ||
+        a.rekke !== b.rekke ||
+        a.frimerke !== b.frimerke ||
+        a.lommer.length !== b.lommer.length
+    )
+        return false;
+    return a.lommer.every((l, i) => l.plass === b.lommer[i].plass && l.pris === b.lommer[i].pris);
 }

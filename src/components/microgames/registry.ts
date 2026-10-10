@@ -2608,7 +2608,7 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         id: 'stempelet',
         title: 'Stempelet',
         description:
-            'Nansenkontoret i Genève, 1931-1938. Du er saksbehandler, og bordet er fullt av Nansenpass. Hvert pass har et bånd som krymper. Hold inne stempelet og slipp i det lyse feltet, så fylles båndet igjen. Går et pass ut, er personen papirløs igjen, for passet var aldri et statsborgerskap. Pass med mynt gir gebyr til kassa, pass med tom lomme koster. Slå frimerkearkene, betal husleia hvert nyttår, og hold kontoret åpent til 1938.',
+            'Nansenkontoret i Genève, 1931-1938. Du er saksbehandler, og bordet er fullt av Nansenpass. Hvert pass har et bånd som krymper. Hold inne stempelet og slipp i det hvite feltet, så fylles båndet igjen. Går et pass ut, er personen papirløs igjen, for passet var aldri et statsborgerskap. Pass med mynt gir gebyr til kassa, pass med tom lomme koster. Slå frimerkearkene, betal husleia hvert nyttår, og hold kontoret åpent til 1938.',
         estimatedSeconds: 200,
         sjanger: 'vedlikehold mot klokka',
         tone: 'alvorlig',

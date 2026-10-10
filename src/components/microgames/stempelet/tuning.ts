@@ -44,13 +44,13 @@ export const TUNING = {
 
     /** Kassa: gebyrer, frimerker og husleie (mynter). */
     kasse: {
-        start: 6,
+        start: 7,
         mynt: 1,
         tomLomme: 2,
         gråSak: 3,
         frimerke: 4,
         /** Husleia ved hvert årsskifte, 1931-1938. */
-        husleie: [4, 6, 8, 9, 10, 10, 10, 10] as number[],
+        husleie: [4, 6, 8, 9, 10, 10, 10, 8] as number[],
     },
 
     /** Frimerkearket: når det kommer i året, og hvor lenge det ligger. */
@@ -59,16 +59,19 @@ export const TUNING = {
     /** Grå saker: tid i venteskuffen før personen kommer tilbake på bordet. */
     grå: { venter: 6 },
 
+    /** Dilemma: to pass med under `igjen` s bånd samtidig, høyst én gang per `pause` s. */
+    dilemma: { igjen: 2.2, pause: 14 },
+
     /** Tap: så mange papirløse samtidig (i skuffen og grå på bordet). */
     tap: { papirløse: 6 },
 
     /** Rangene: saker fornyet. */
     ranger: [
         [0, 'Kontorbud'],
-        [40, 'Ekspeditør'],
-        [90, 'Saksbehandler'],
-        [150, 'Kontorsjef'],
-        [220, 'Direktør for Nansenkontoret'],
+        [30, 'Ekspeditør'],
+        [70, 'Saksbehandler'],
+        [110, 'Kontorsjef'],
+        [140, 'Direktør for Nansenkontoret'],
     ] as [number, string][],
 
     /** Press (0-1): vekt på fullt bord og på tomme lommer. */

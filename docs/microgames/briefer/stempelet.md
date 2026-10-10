@@ -275,3 +275,47 @@ Fem konsepter, dommer runde 1 (Spillbart / Fagregelen avgjør):
   husleia vises over regningen litt etter at nytt år har startet (regningen viser da neste års
   hull). Kassa kan vise rundt 60 mynter; flere blir ikke tegnet.
   Skjermbilder: `.screenshots/playtest/stempelet/film-05-55s.png`, `film-07-110s.png`, `film-08-150s.png`.
+- **Fase: bygg 3b (kunst, juice, tekst) etter diagnose 2.** Diagnose 2 punkt 1 og 2 er gjort, og
+  fra punkt 3 bølgen fra Saar (1935). Endringer i reglene:
+  (1) Dilemmaet: `BRETT[].tom` løftet sent i runden (0,42/0,45/0,5/0,53/0,52 fra 1934), husleia
+  `[4, 6, 8, 9, 10, 10, 10, 8]`, startkasse 7. `g.mistet` logger hvem som ble papirløs og når.
+  Ny måling `målMistet(bot)` i `sim.ts`: vinneren mister median 2 (p10 0, p90 5) og vinner 93 %.
+  To pass med under 2,2 s bånd samtidig gir hendelsen `dilemma`: spillet går i sakte film i 0,5 s,
+  begge passene lyses opp, og lappen «Begge går ut nå. Hvem tar du?» (to første gangene).
+  Den som mister papirene, glir inn i hylla som et kort med bilde, navn og år («Olga, 1934»),
+  navnet stiger opp over hylla, og slutt-skjermen nevner dem i «Dette skjedde».
+  (2) Pris og tid på passet: båndet brenner som en lunte (grønt, gult, rødt, blinker til slutt,
+  gnist i enden), mynt eller tomt felt med rød kant på passet, +1/-2/-3 ved lomma. Når stempelet
+  svever over et pass som koster, blinker myntene som vil forsvinne rødt i stabelen; over et
+  mynt-pass eller frimerkearket vises gylne spøkelsesmynter. Mangler kassa til husleia, står
+  røde hull i stabelen. Regningen har nedtelling («Husleie 10 · nyttår om 12 s») og blinker
+  rødt når kassa er lav. Hylla har ingen røde spor lenger. Kalenderen viser åtte år som ruter
+  (ferdige grønne, nå oransje) i stedet for linja som så ut til å gå baklengs. Saksnummeret er en
+  liten nummereringsmaskin oppe til høyre. Tab/Mellomrom er fjernet; bare musa/fingeren styrer.
+  Før første slag viser timingringen seg på passet som rister og fylles av seg selv i en løkke.
+  (3) 1935: tre flyktninger fra Saar på en gang (banner, lærdom, personer KARL, MARIA, JOHANN, ELSE).
+  Kunst: canvas-teksturer for bord (valnøtt rundt skogsgrønt skinn med gullinje), pass
+  (guilloche, rosett, ovalt portrett i gråtoner, navn i versaler, gebyrfelt, stempelmerker med
+  «NANSEN · GENÈVE · 1934» i ringen), frimerkeark, regning og hyllekort. Vinduslyset glir over
+  bordet gjennom året og skifter farge (vinter blåhvitt, sommer varmere, grått ved tap, lavt
+  desemberlys ved seier). Stempel i nikkel/messing/tre som lener seg etter bevegelsen. Juice:
+  hit-stop 70 ms, kamerarykk, stempelet klemmes, blekk spruter og blir liggende som dråper,
+  sjokkring, passet dukker seg, mynter flyr i bue og klirrer, kalenderen rives av ved nyttår,
+  nummereringsmaskinen ruller. Lyd fra arkadeskallets synth (dunk, klirr, stille tone når noen
+  mister papirene), knapp for lyd av/på. Arkivkort vises i menyen og på slutt-skjermen.
+  Kamera: fov 35, (0, 7,3, 5,0) mot (0, 0, 0,45); hylla og kassa ligger foran passene.
+  **Simuleringen er grønn:** saksbehandler 93 %, median 126; nybegynner 12 %, median 116;
+  gratis-for-alle 0 %, median 78; knappemoser 0 %, median 24; 43 valg per minutt; press
+  0,47 -> 0,82 -> 0,97. Selvspillet: vinneren vant med 122 (simuleringen median 126), 52 draw
+  calls, p95 14,4 ms per bilde på Chromebook-nivå; audit og likhetsvakt grønne (nærmest gamma 0,29).
+  Ytelse: passets felles grunn (guilloche og rosett) tegnes én gang og kopieres; hylla regnes én
+  gang per bilde. Uten dette var p95 35 ms. Bordet ble lysere flaskegrønt (`#2a6450`), fordi det
+  mørke grønne lå for nær Inn mot stranda i likhetsvakten (0,53). Plakaten er fra sekund 70.
+  **Prøvde som IKKE virket:** tom-andel 0,45-0,55 fra 1934: vinneren nede i 40 %. Husleie 8 i 1938
+  alene ga median 1 mistet (for lite dilemma). Kamera med fov 36 og hylla/kassa på sidene: hylla
+  og kassa ble klippet av ved 1366 x 768. «Rent treff gir helt år» ble ikke laget: robotene slår i
+  steg på 0,2 s og kan ikke treffe midten, og det ville vært en fjerde ting å huske.
+  **Kjente svakheter:** Nybegynneren vinner bare 12 % (taper på kassa i 1938). Vinneren taper
+  fortsatt i rundt 7 % av rundene, alltid på husleia i 1938, så selvspillet kan en sjelden gang
+  vise en tapt vinnerrunde. Teksten på hyllekortene er liten (det står også i lappen og på
+  slutt-skjermen). Lærings-kortet kan dekke et par pass mens det står (sakte film).
