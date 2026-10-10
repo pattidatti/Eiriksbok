@@ -1,0 +1,605 @@
+{
+    "id": "overgangsriter",
+    "tittel": "Overgangsriter: Fra vugge til grav",
+    "kilde": "/krle/sammenligning/overgangsriter",
+    "bilde": "/images/sammenligning/overgangsriter-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "munkene",
+            "kapittel": "Bryllupet uten munk",
+            "visual": {
+                "type": "OvergangsriterMunkene",
+                "props": {
+                    "modus": "bryllup"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Noen steder i den buddhistiske verden begynner bryllupsdagen hjemme hos brudeparet."
+                },
+                {
+                    "si": "Munkene fra klosteret kommer på besøk. De får mat, og de leser høyt fra hellige tekster."
+                },
+                {
+                    "si": "Så går munkene tilbake til klosteret."
+                },
+                {
+                    "si": "Senere på dagen blir paret gift. Men det er ikke en eneste munk til stede."
+                },
+                {
+                    "si": "Buddhistiske munker gifter ikke bort folk. Men når noen dør, er det munkene som styrer seremonien."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Overgangsriter",
+                    "undertittel": "Fra vugge til grav",
+                    "bilde": "/images/sammenligning/overgangsriter-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvilken dag i livet bryr religionen seg mest om?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor er munkene borte i bryllupet, men til stede i begravelsen?"
+                },
+                {
+                    "si": "I denne filmen sammenligner vi hvordan ni tradisjoner markerer de store dagene i livet."
+                },
+                {
+                    "si": "Og vi skal finne ut hvilken dag hver av dem bryr seg mest om."
+                }
+            ]
+        },
+        {
+            "id": "fire",
+            "kapittel": "Fire overganger",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "vandrer": true,
+                    "fokus": [
+                        {
+                            "steg": null,
+                            "tekst": "Fire overganger i et liv"
+                        },
+                        {
+                            "steg": 0,
+                            "tekst": "Du blir født"
+                        },
+                        {
+                            "steg": 1,
+                            "tekst": "Du slutter å være barn"
+                        },
+                        {
+                            "steg": 2,
+                            "tekst": "Du binder deg til noen"
+                        },
+                        {
+                            "steg": 3,
+                            "tekst": "Du dør"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk på livet som en trapp med fire trinn. Fire ganger skjer det noe alle rundt deg merker."
+                },
+                {
+                    "si": "Du blir født."
+                },
+                {
+                    "si": "Du slutter å være barn."
+                },
+                {
+                    "si": "Du binder deg til noen."
+                },
+                {
+                    "si": "Og du dør. Seremoniene som markerer slike skifter, kalles overgangsriter. De finnes i alle samfunn."
+                }
+            ]
+        },
+        {
+            "id": "terskel",
+            "visual": {
+                "type": "OvergangsriterTerskel"
+            },
+            "replikker": [
+                {
+                    "si": "Rundt 1909 så den franske forskeren Arnold van Gennep at slike seremonier har tre trinn."
+                },
+                {
+                    "si": "Først slipper du taket i det du var."
+                },
+                {
+                    "si": "Så er du en stund midt imellom, verken det ene eller det andre. Den tilstanden kalles liminalfasen."
+                },
+                {
+                    "si": "Til slutt tar de andre imot deg som noe nytt."
+                },
+                {
+                    "si": "Det siste trinnet er det viktigste. En overgangsrite forandrer ikke deg så mye. Den forandrer hva alle andre venter seg av deg."
+                }
+            ]
+        },
+        {
+            "id": "ni",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "fokus": [
+                        {
+                            "steg": null,
+                            "tekst": "Ni tradisjoner, fire trinn"
+                        },
+                        {
+                            "steg": null,
+                            "visTomme": true,
+                            "tekst": "Stiplet rute: ingen egen seremoni",
+                            "ikon": "tom"
+                        },
+                        {
+                            "steg": null,
+                            "visTomme": true,
+                            "tekst": "Hvilket trinn bryr de seg mest om?"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Her står ni tradisjoner side om side, én farge hver. Alle ni kjenner de fire overgangene."
+                },
+                {
+                    "si": "Men de gjør veldig ulikt ut av dem. Ser du de stiplete rutene? Der har tradisjonen ingen egen seremoni i det hele tatt."
+                },
+                {
+                    "si": "La oss gå gjennom dem, tre og tre."
+                }
+            ]
+        },
+        {
+            "id": "abrahamittisk",
+            "kapittel": "Pakt og ansvar",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "tradisjoner": ["jodedom", "kristendom", "islam"],
+                    "fokus": [
+                        {
+                            "steg": 0,
+                            "tradisjon": "jodedom",
+                            "tekst": "Brit mila: den åttende dagen",
+                            "ikon": "kalender:8"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "jodedom",
+                            "tekst": "Bar mitzva: 13 år og én dag",
+                            "ikon": "bok"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "jodedom",
+                            "tekst": "Ansvaret går fra foreldrene til den unge",
+                            "ikon": "overlevering"
+                        },
+                        {
+                            "steg": 0,
+                            "tradisjon": "kristendom",
+                            "tekst": "Dåpen: med i kirken",
+                            "ikon": "vann"
+                        },
+                        {
+                            "steg": 0,
+                            "tradisjon": "kristendom",
+                            "tekst": "Spedbarn eller den som kan velge selv?",
+                            "ikon": "vann"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I jødedommen skjer den første riten før barnet kan huske noe. Gutter omskjæres den åttende dagen. Det kalles brit mila."
+                },
+                {
+                    "si": "Tretten år senere kommer bar mitzva. Ved 13 år og én dag har gutten selv ansvaret for å følge budene."
+                },
+                {
+                    "si": "Ingen blir jøde den dagen, for det var gutten fra før. Det er ansvaret som går over fra foreldrene til den unge."
+                },
+                {
+                    "si": "I kristendommen er dåpen den første riten. Den gjør et menneske til en del av kirken."
+                },
+                {
+                    "si": "De fleste døper spedbarn. Men baptister og pinsevenner mener du må være gammel nok til å velge troen selv."
+                }
+            ]
+        },
+        {
+            "id": "islam",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "tradisjoner": ["jodedom", "kristendom", "islam"],
+                    "fokus": [
+                        {
+                            "steg": 1,
+                            "tradisjon": "islam",
+                            "tekst": "Islam: ingen ungdomsrite",
+                            "ikon": "tom"
+                        },
+                        {
+                            "steg": 0,
+                            "tradisjon": "islam",
+                            "tekst": "Shahada hviskes i øret",
+                            "ikon": "ore"
+                        },
+                        {
+                            "steg": 2,
+                            "tradisjon": "islam",
+                            "tekst": "Nikah: avtale, vitner og en gave",
+                            "ikon": "avtale"
+                        },
+                        {
+                            "steg": 3,
+                            "tradisjon": "islam",
+                            "tekst": "Janaza: vendt mot Mekka",
+                            "ikon": "kompass"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Islam markerer fødsel, ekteskap og død. Men islam har ingen egen seremoni for ungdom."
+                },
+                {
+                    "si": "Til gjengjeld følger én setning deg hele livet. Trosbekjennelsen, shahada, er det første som hviskes i øret på den nyfødte."
+                },
+                {
+                    "si": "Bryllupet er enkelt. Det er en avtale med vitner, og mannen gir kvinnen en gave som heter mahr."
+                },
+                {
+                    "si": "Begravelsen går fort. Kroppen vaskes, svøpes i hvite tøystykker og legges i graven vendt mot Mekka."
+                }
+            ]
+        },
+        {
+            "id": "hindu",
+            "kapittel": "Riter som viser hvem du er",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "tradisjoner": ["hinduisme", "sikhisme", "buddhisme"],
+                    "fokus": [
+                        {
+                            "steg": null,
+                            "tradisjon": "hinduisme",
+                            "tekst": "Hinduismen: flest seremonier"
+                        },
+                        {
+                            "steg": 0,
+                            "tradisjon": "hinduisme",
+                            "tekst": "Samskara: fra før fødselen til bålet",
+                            "ikon": "flamme"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "hinduisme",
+                            "tekst": "Upanayana: den hellige snoren",
+                            "ikon": "snor"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "hinduisme",
+                            "tekst": "Bare de tre øverste lagene fikk lov",
+                            "ikon": "lag"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå til de indiske tradisjonene. Hinduismen har flest seremonier av alle ni."
+                },
+                {
+                    "si": "De gamle tekstene beskriver en lang rekke riter som kalles samskara. De går fra før barnet er blitt til og helt fram til bålet."
+                },
+                {
+                    "si": "Ved snorseremonien, upanayana, får gutten en hellig snor. Nå får han lov til å lese de hellige tekstene."
+                },
+                {
+                    "si": "Men bare gutter fra de tre øverste lagene i samfunnet hadde rett til den. Riten sa altså også hvem som fikk lov til å bli elev."
+                }
+            ]
+        },
+        {
+            "id": "runder",
+            "visual": {
+                "type": "OvergangsriterRunder"
+            },
+            "replikker": [
+                {
+                    "si": "Bryllupet, vivaha, er blant hinduismens største fester. Paret går fire runder rundt et bål."
+                },
+                {
+                    "si": "Så tar de sju skritt mot nord. Det er de sju skrittene som gjør dem gift."
+                },
+                {
+                    "si": "Sikhene gjør noe av det samme. Men i bryllupet Anand Karaj går paret rundt den hellige boka Guru Granth Sahib."
+                },
+                {
+                    "si": "De går én runde for hvert av de fire versene som synges. I midten står altså en bok, ikke en prest."
+                }
+            ]
+        },
+        {
+            "id": "buddhisme",
+            "visual": {
+                "type": "OvergangsriterMunkene",
+                "props": {
+                    "modus": "begravelse"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Buddhismen gjør det stikk motsatte av hinduismen. Bryllupet er ingen religiøs handling i det hele tatt."
+                },
+                {
+                    "si": "Men i begravelsen tar religionen full plass. Munkene synger hellige tekster."
+                },
+                {
+                    "si": "Familien gir mat og klær til klosteret i den dødes navn. Buddhister tror at en god handling gir noe de kaller punya, og at den kan gis videre til en som er død."
+                },
+                {
+                    "si": "Når du er død, er du avhengig av at andre gjør gode handlinger for deg."
+                },
+                {
+                    "si": "I Tibet mener de at den døde er 49 dager i en mellomtilstand. En annen gren av buddhismen, theravada, mener at det nye livet begynner med én gang."
+                }
+            ]
+        },
+        {
+            "id": "nyere",
+            "kapittel": "Overgangen du ber om selv",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "tradisjoner": ["bahai", "mormonisme", "jehovas-vitner"],
+                    "fokus": [
+                        {
+                            "steg": null,
+                            "tekst": "Tre nyere bevegelser"
+                        },
+                        {
+                            "steg": 0,
+                            "tradisjon": "bahai",
+                            "tekst": "Bahá'í: ingen dåp, navnefest er frivillig",
+                            "ikon": "navnelapp"
+                        },
+                        {
+                            "steg": 2,
+                            "tradisjon": "bahai",
+                            "tekst": "Alle foreldre som lever, må si ja",
+                            "ikon": "ja"
+                        },
+                        {
+                            "steg": 2,
+                            "tradisjon": "mormonisme",
+                            "tekst": "Beseglet i tempelet: sammen for alltid",
+                            "ikon": "tempel"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "mormonisme",
+                            "tekst": "Dåp ved åtte år",
+                            "ikon": "kalender:8"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Bahá'í, mormonismen og Jehovas vitner kalles ofte nyere bevegelser. Alle tre gjør om på et trinn de andre tar for gitt."
+                },
+                {
+                    "si": "Bahá'í har verken dåp eller konfirmasjon. Familien kan holde en navnefest, men ingen må gjøre det."
+                },
+                {
+                    "si": "Bryllupet har derimot strenge regler. Alle foreldre som lever, må si ja. Så sier begge to den samme setningen foran vitner."
+                },
+                {
+                    "si": "Mormonismen gjør bryllupet til den største seremonien. Et par som blir beseglet, altså bundet sammen i en seremoni i tempelet, hører sammen for alltid, ikke bare til den ene dør."
+                },
+                {
+                    "si": "Spedbarn døpes ikke. Dåpen kommer når barnet er åtte år, for da mener kirken at du kan velge mellom rett og galt."
+                }
+            ]
+        },
+        {
+            "id": "vitner",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "tradisjoner": ["bahai", "mormonisme", "jehovas-vitner"],
+                    "fokus": [
+                        {
+                            "steg": 0,
+                            "tradisjon": "jehovas-vitner",
+                            "tekst": "Fødselen markeres ikke",
+                            "ikon": "tom"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "jehovas-vitner",
+                            "tekst": "Måneder med opplæring",
+                            "ikon": "bok"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "jehovas-vitner",
+                            "tekst": "To spørsmål. To ja. Under vann.",
+                            "ikon": "ja"
+                        },
+                        {
+                            "steg": 1,
+                            "tradisjon": "jehovas-vitner",
+                            "tekst": "Du må be om den selv",
+                            "ikon": "vann"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Jehovas vitner markerer ikke fødselen i det hele tatt. De mener den som døpes, selv må ha forstått hva det handler om."
+                },
+                {
+                    "si": "Den ene seremonien de har, krever til gjengjeld mye. Etter måneder med opplæring ber du en bønn alene, der du lover å følge Gud."
+                },
+                {
+                    "si": "Siden svarer du ja på to spørsmål foran forsamlingen. Så blir du senket helt under vann på et av de store møtene."
+                },
+                {
+                    "si": "Ingen gir deg denne overgangen. Du må be om den selv."
+                }
+            ]
+        },
+        {
+            "id": "monster",
+            "kapittel": "Mønsteret",
+            "visual": {
+                "type": "OvergangsriterTrapp",
+                "props": {
+                    "fokus": [
+                        {
+                            "steg": 0,
+                            "visTomme": true,
+                            "tekst": "Fødsel: markeres nesten overalt"
+                        },
+                        {
+                            "steg": 1,
+                            "visTomme": true,
+                            "tekst": "Fra barn til voksen: varierer mest"
+                        },
+                        {
+                            "steg": 2,
+                            "visTomme": true,
+                            "tekst": "Bryllup: mest religiøst med egne regler"
+                        },
+                        {
+                            "steg": 3,
+                            "visTomme": true,
+                            "tekst": "Døden: alle ni markerer den"
+                        },
+                        {
+                            "steg": 3,
+                            "tekst": "Der den døde ikke kan si noe selv"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Setter vi trinnene ved siden av hverandre, ser vi et mønster. Fødselen markeres nesten overalt."
+                },
+                {
+                    "si": "Veien ut av barndommen varierer mest. Fra åtte år hos mormonene, til et valg du kan ta som voksen hos Jehovas vitner."
+                },
+                {
+                    "si": "Bryllupet blir mest religiøst der religionen selv lager reglene, og minst der det følger skikkene på stedet."
+                },
+                {
+                    "si": "Og døden er den ene overgangen som ingen av de ni lar være å markere."
+                },
+                {
+                    "si": "Ved de tre første kan den det gjelder, si noe selv. Ved den siste kan den døde ikke det. Kanskje handler en begravelse like mye om dem som blir igjen."
+                }
+            ]
+        },
+        {
+            "id": "norge",
+            "kapittel": "Norge i dag",
+            "visual": {
+                "type": "OvergangsriterNorge"
+            },
+            "replikker": [
+                {
+                    "si": "Folk holder ofte fast på seremoniene lenge etter at de har sluttet å tro."
+                },
+                {
+                    "si": "I 1960 ble 93 prosent av norske femtenåringer konfirmert i kirken."
+                },
+                {
+                    "si": "I 2023 var tallet rundt 48 prosent. Og i 2022 valgte nesten 13 800 ungdommer humanistisk konfirmasjon i stedet."
+                },
+                {
+                    "si": "Men av dem som døde i 2024, ble hele 80,4 prosent begravet i kirkens regi.",
+                    "uttale": "Men av dem som døde i 2024, ble hele åtti komma fire prosent begravet i kirkens regi."
+                },
+                {
+                    "si": "Færre bruker kirken når livet begynner. De fleste bruker den fortsatt når det slutter."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Fire overganger. Ni tradisjoner.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Ulike svar på hvilken som er viktigst.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "En rite forandrer ikke bare deg.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Den forandrer hva andre venter av deg.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Og den siste overgangen",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "er kanskje mest for dem som blir igjen.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Alle ni kjenner de samme fire overgangene, men de svarer ulikt på hvilken som er viktigst."
+                },
+                {
+                    "si": "En overgangsrite forandrer ikke bare deg. Den forandrer hva alle andre venter seg av deg."
+                },
+                {
+                    "si": "Og den siste overgangen, døden, markerer alle. Kanskje fordi den er for dem som blir igjen."
+                }
+            ]
+        }
+    ]
+}
