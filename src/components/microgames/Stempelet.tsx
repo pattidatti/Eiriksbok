@@ -24,8 +24,8 @@ import { Verden } from './stempelet/world';
 import { Hud } from './stempelet/hud';
 import { lesHud, type HudData } from './stempelet/hudData';
 import { FARGE } from './stempelet/farger';
-import { nyFx, nå, tilSkjerm, type Fx } from './stempelet/fx';
-import { FRIMERKE_PLASS, KASSE_PLASS, PLASSER } from './stempelet/levels';
+import { myntPlass, nyFx, nå, regningHull, tilSkjerm, type Fx } from './stempelet/fx';
+import { FRIMERKE_PLASS, KASSE_PLASS, PLASSER, REGNING_PLASS } from './stempelet/levels';
 import type { Ut } from './stempelet/state';
 import { TUNING } from './stempelet/tuning';
 import { LAPP, LÆRDOM, MÅL, REGLER, SEIER, TAP, ØYEBLIKK, navn } from './stempelet/texts';
@@ -148,6 +148,43 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
     const flyt = (t: string, at: { x: number; y: number } | null, farge: string) => {
         if (at) text.float(t, at.x, at.y - 30, farge, true);
     };
+    /** Mynter flyr fra bordet til toppen av stabelen (kassa er alt oppdatert). */
+    const tilStabel = (n: number, x: number, z: number) => {
+        const k = gRef.current.kasse;
+        for (let i = 0; i < n; i++) {
+            const m = myntPlass(KASSE_PLASS.x, KASSE_PLASS.z, k - n + i);
+            fxRef.current.flyg.push({
+                fx: x,
+                fz: z,
+                tx: m.x,
+                tz: m.z,
+                ty: m.y,
+                start: nå() + i * 0.08,
+                tilStabel: true,
+            });
+        }
+    };
+    /** Mynter flyr fra toppen av stabelen til et punkt (lommehull, regning). */
+    const fraStabel = (n: number, mål: (i: number) => { x: number; z: number }) => {
+        const k = gRef.current.kasse;
+        for (let i = 0; i < n; i++) {
+            const m = myntPlass(KASSE_PLASS.x, KASSE_PLASS.z, k + n - 1 - i);
+            const til = mål(i);
+            fxRef.current.flyg.push({
+                fx: m.x,
+                fz: m.z,
+                tx: til.x,
+                tz: til.z,
+                ty: 0.08,
+                start: nå() + i * 0.06,
+                tilStabel: false,
+            });
+        }
+    };
+    const lomme = (id: number) => {
+        const p = PLASSER[plassAv(id)];
+        return { x: p.x + 0.42, z: p.z - 0.15 };
+    };
 
     const avslutt = (vunnet: boolean) => {
         const g = gRef.current;
@@ -202,6 +239,10 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                     at,
                     pris > 0 ? FARGE.grønn : FARGE.rød
                 );
+                if (pris > 0) {
+                    const l = lomme(u.id);
+                    tilStabel(pris, l.x, l.z);
+                } else fraStabel(-pris, () => lomme(u.id));
                 if (u.lomme === 'tom') text.lesson('gebyr', LÆRDOM.gebyr, 1);
                 break;
             }
@@ -223,6 +264,7 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
             case 'frimerke':
                 fxRef.current.slag = nå();
                 flyt(`+${TUNING.kasse.frimerke}`, vedArk(), FARGE.grønn);
+                tilStabel(TUNING.kasse.frimerke, FRIMERKE_PLASS.x, FRIMERKE_PLASS.z);
                 text.lesson('frimerke', LÆRDOM.frimerke, 2);
                 break;
             case 'utløpt':
@@ -245,6 +287,9 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                 break;
             case 'husleie':
                 flyt(`-${u.beløp} husleie`, vedKasse(), FARGE.rød);
+                fxRef.current.betalt = nå();
+                fxRef.current.betaltBeløp = u.beløp;
+                fraStabel(u.beløp, (i) => regningHull(REGNING_PLASS.x, REGNING_PLASS.z, i));
                 break;
             case 'nyttÅr':
                 text.banner(String(u.år), FARGE.grønn, 1.8);
@@ -280,6 +325,7 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
         const g = newGame(Math.floor(Math.random() * 1e9));
         gRef.current = g;
         bots.current = {};
+        fxRef.current.flyg = [];
         text.resetRun();
         setRes(null);
         setHud(lesHud(g));
@@ -405,6 +451,7 @@ export default function Stempelet({ onComplete }: MicroGameProps) {
                     {spiller && (
                         <Hud
                             d={hud}
+                            anker={(x, z) => tilSkjerm(fxRef.current, x, 0.1, z)}
                             knapper={
                                 <ArcadeSmallButton onClick={pause} ariaLabel="Pause">
                                     Pause (Esc)

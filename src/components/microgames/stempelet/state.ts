@@ -189,5 +189,6 @@ export function papirløse(g: Game): number {
 }
 
 export function husleie(brett: number): number {
-    return TUNING.kasse.husleieStart + TUNING.kasse.husleieØkning * brett;
+    const h = TUNING.kasse.husleie;
+    return h[Math.min(brett, h.length - 1)];
 }

@@ -243,3 +243,35 @@ Fem konsepter, dommer runde 1 (Spillbart / Fagregelen avgjør):
   spillet; den bør vises i et lærings-øyeblikk eller en lapp. Bordet er stort og passene små i
   bildet (kameraet kan gå nærmere). Ingen navn eller ansikter på passene ennå, ingen lyd, ingen
   arkivkort-visning i menyen (bare tellet). Skjermbilder: `.screenshots/playtest/stempelet/`.
+- **Fase: gråboks etter diagnose 1 (Forståelig 2, Eleven gjør 3).** Gjorde de tre endringene.
+  (1) Økonomien er fysisk: lomma er en gyllen mynt som stikker opp, eller et åpent svart hull;
+  hver lomme har en lapp med +1, -2 eller -3. Ved slaget flyr myntene i en bue til eller fra en
+  synlig myntstabel (én gyllen mynt per mynt i kassa, søyler på ti). Husleie-regningen ligger ved
+  siden av: ett hull per mynt i husleia og en rød strek som krymper mot nyttår; ved nyttår flyr
+  myntene fra stabelen ned i hullene. Det oransje feltet er byttet med et hvitt treffefelt (ringen
+  blir hvit inne i feltet, rød etterpå), og stempelmerkene er fylte flekker, ikke ringer. Den
+  grå kassa og sylinderen er borte. Tekstlappen med seks linjer og hjørneboksene for kassa og
+  papirløse er fjernet; bordet har tre merkelapper («Kassa: 21», «Husleie ved nyttår: 8»,
+  «Uten papirer: 0 av 6»). Reglene står fortsatt i menyen.
+  (2) Presset: husleia er en liste per år, `kasse.husleie = [4, 6, 8, 9, 10, 10, 10, 10]` (var
+  2 + 1 per år). En ny tom lomme får samme bånd som et mynt-pass på bordet (`pass.parAvstand`
+  1,5 s), så de går ut samtidig og eleven må velge.
+  (3) Tapet: den svarte blokka er papirløs-hylla med seks spor (det siste rødt). Grå pass glir
+  inn i et spor; et grått pass som er tilbake på bordet vises gjennomsiktig i sporet sitt. Passet
+  glir fra hylla tilbake til plassen sin som grå sak med et større svart hull og -3.
+  **Simuleringen er grønn:** saksbehandler (vinner) 99 %, median 126; nybegynner (middels) 34 %,
+  median 117; gratis-for-alle (taper) 0 %, median 77; knappemoser 0 %, passiv 0 %. 42,5 valg per
+  minutt, press 0,47 -> 0,78 -> 0,95. Eget måleskript for vinneren: kassa før husleia er
+  17/23/29/30/29/24/18/12 mot husleie 4/6/8/9/10/10/10/10, sluttkasse etter siste husleie median
+  0,2x husleia (før betaling 1,2x), og 40 % av rundene har minst ett papirløst pass. Selvspillet:
+  vant med 127 (simuleringen 126), 38 draw calls (var 24), p95 6,1 ms på Chromebook-nivå.
+  **Prøvde som IKKE virket:** husleie 6 + 3 per år eller 8 + 3: alle roboter taper. Husleie
+  4/7/9/10/11/11/11/11: vinneren nede i 78 %. Start-kasse 4: vinneren under 75 %. Paringen av
+  tom lomme og mynt-pass gjorde vinneren *rikere* med lav husleie (den samler de tomme lommene
+  sent), så den virker bare sammen med høyere husleie.
+  **Kjente svakheter:** Vinneren har fortsatt en topp på rundt 30 mynter midt i runden (1934-35,
+  3x husleia); presset er ekte først fra 1936. Den nest siste passplassen til høyre (x 3,2) ligger
+  tett inntil regningen. Ingen ansikter eller navn på passene, ingen lyd. Myntene som flyr ved
+  husleia vises over regningen litt etter at nytt år har startet (regningen viser da neste års
+  hull). Kassa kan vise rundt 60 mynter; flere blir ikke tegnet.
+  Skjermbilder: `.screenshots/playtest/stempelet/film-05-55s.png`, `film-07-110s.png`, `film-08-150s.png`.

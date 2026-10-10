@@ -1,7 +1,7 @@
 // Fagkjernen: stempelet, båndet og kassa.
 // 1. Båndet krymper. Tomt bånd = personen er papirløs igjen (passet var aldri et statsborgerskap).
 // 2. Stempelet fyller båndet: fullt slag helt, skjevt slag halvt.
-// 3. Kassa: mynt +1, tom lomme -1, grå sak -2, frimerkeark +4. Husleia trekkes ved årsskiftet.
+// 3. Kassa: mynt +1, tom lomme -2, grå sak -3, frimerkeark +4. Husleia trekkes ved årsskiftet.
 
 import { FRIMERKE_PLASS, PLASSER } from './levels';
 import { type Game, type Pass } from './state';

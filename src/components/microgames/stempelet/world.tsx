@@ -1,14 +1,14 @@
-// Gråboksen: bordet, passene, stempelet, kassa, venteskuffen og frimerkearket som
-// primitive former. Leser spillet fra gRef hver frame (ingen React-state per frame).
+// Gråboksen: bordet, passene, stempelet, myntstabelen, husleie-regningen, papirløs-hylla og
+// frimerkearket som primitive former. Leser spillet fra gRef hver frame (ingen React-state per frame).
 
 import { useRef } from 'react';
 import { useFrame, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
 import { FARGE } from './farger';
-import { FRIMERKE_PLASS, KASSE_PLASS, PLASSER, SKUFF_PLASS } from './levels';
-import { nå, type Fx } from './fx';
+import { FRIMERKE_PLASS, KASSE_PLASS, PLASSER, REGNING_PLASS, SKUFF_PLASS } from './levels';
+import { FLYTID, myntPlass, nå, regningHull, type Fx } from './fx';
 import { sikt, trykk } from './game';
-import type { Game } from './state';
+import { husleie, papirløse, type Game } from './state';
 import { TUNING } from './tuning';
 
 type GRef = React.MutableRefObject<Game>;
@@ -53,6 +53,7 @@ function Bord({ gRef }: { gRef: GRef }) {
 
 /** Ett pass på én plass. Skjules når plassen er tom. */
 function PassPlass({ gRef, plass }: { gRef: GRef; plass: number }) {
+    const sist = useRef({ id: -1, fra: 0 });
     const gruppe = useRef<THREE.Group>(null);
     const ark = useRef<THREE.MeshLambertMaterial>(null);
     const bånd = useRef<THREE.Mesh>(null);
@@ -69,8 +70,15 @@ function PassPlass({ gRef, plass }: { gRef: GRef; plass: number }) {
         gr.visible = !!p;
         if (!p) return;
         const t = clock.elapsedTime;
+        // En grå sak glir tilbake fra papirløs-hylla.
+        if (p.id !== sist.current.id) sist.current = { id: p.id, fra: p.grå ? t : -10 };
+        const u = Math.min(1, (t - sist.current.fra) / 0.5);
         const rist = p.rist > 0 && !p.grå ? 0.035 : 0;
-        gr.position.set(pl.x + Math.sin(t * 47 + plass) * rist, 0.02, pl.z);
+        gr.position.set(
+            SKUFF_PLASS.x + (pl.x - SKUFF_PLASS.x) * u + Math.sin(t * 47 + plass) * rist,
+            0.02 + Math.sin(u * Math.PI) * 0.4,
+            SKUFF_PLASS.z + (pl.z - SKUFF_PLASS.z) * u
+        );
         gr.rotation.y = Math.sin(t * 31 + plass) * rist * 0.6;
         ark.current?.color.set(p.grå ? FARGE.grå : FARGE.papir);
         const andel = p.grå ? 0 : Math.max(0, p.igjen / p.varer);
@@ -85,7 +93,10 @@ function PassPlass({ gRef, plass }: { gRef: GRef; plass: number }) {
             else c.copy(grønn);
         }
         if (mynt.current) mynt.current.visible = p.lomme === 'mynt';
-        if (tom.current) tom.current.visible = p.lomme === 'tom';
+        if (tom.current) {
+            tom.current.visible = p.lomme === 'tom' || p.grå;
+            tom.current.scale.setScalar(p.grå ? 1.3 : 1);
+        }
         if (merke.current) {
             const sist = p.merker[p.merker.length - 1];
             merke.current.visible = p.merker.length > 0;
@@ -108,19 +119,23 @@ function PassPlass({ gRef, plass }: { gRef: GRef; plass: number }) {
                 <planeGeometry args={[1.2, 0.12]} />
                 <meshBasicMaterial ref={båndMat} color={FARGE.grønn} />
             </mesh>
-            {/* Lomma: mynt eller tom */}
-            <mesh ref={mynt} position={[0.42, 0.08, -0.15]}>
-                <cylinderGeometry args={[0.16, 0.16, 0.06, 20]} />
-                <meshLambertMaterial color={FARGE.nikkel} />
+            {/* Lomma: en gyllen mynt som stikker opp, eller et åpent svart hull */}
+            <mesh ref={mynt} position={[0.42, 0.12, -0.15]} rotation={[0.5, 0, 0]}>
+                <cylinderGeometry args={[0.19, 0.19, 0.07, 20]} />
+                <meshLambertMaterial
+                    color={FARGE.gull}
+                    emissive={FARGE.gull}
+                    emissiveIntensity={0.35}
+                />
             </mesh>
-            <mesh ref={tom} position={[0.42, 0.05, -0.15]} rotation={[-Math.PI / 2, 0, 0]}>
-                <ringGeometry args={[0.1, 0.17, 20]} />
-                <meshBasicMaterial color={FARGE.rød} />
+            <mesh ref={tom} position={[0.42, 0.048, -0.15]} rotation={[-Math.PI / 2, 0, 0]}>
+                <circleGeometry args={[0.2, 20]} />
+                <meshBasicMaterial color={FARGE.hull} />
             </mesh>
-            {/* Siste stempelmerke */}
-            <mesh ref={merke} position={[0.05, 0.047, -0.05]} rotation={[-Math.PI / 2, 0, 0]}>
-                <ringGeometry args={[0.16, 0.22, 24]} />
-                <meshBasicMaterial color={FARGE.oransje} transparent opacity={0.85} />
+            {/* Siste stempelmerke: en fylt blekkflekk */}
+            <mesh ref={merke} position={[0.02, 0.047, -0.05]} rotation={[-Math.PI / 2, 0, 0]}>
+                <circleGeometry args={[0.2, 20]} />
+                <meshBasicMaterial color={FARGE.oransje} transparent opacity={0.55} />
             </mesh>
         </group>
     );
@@ -132,7 +147,11 @@ function Stempel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
     const skygge = useRef<THREE.Mesh>(null);
     const fyll = useRef<THREE.Mesh>(null);
     const fyllMat = useRef<THREE.MeshBasicMaterial>(null);
+    const felt = useRef<THREE.Mesh>(null);
+    const feltMat = useRef<THREE.MeshBasicMaterial>(null);
     const S = TUNING.stempel;
+    // Ringen vokser fra 0,15 til 1. Det hvite feltet er der den er mellom fullFra og fullTil.
+    const fra = 0.15 + (0.85 * S.fullFra) / S.fullTil;
     useFrame(() => {
         const g = gRef.current;
         const st = g.stempel;
@@ -151,15 +170,15 @@ function Stempel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             fyll.current.position.set(st.x, 0.07, st.z);
             const k = h === null ? 0 : Math.min(1, h / S.fullTil);
             fyll.current.scale.setScalar(0.15 + k * 0.85);
+            const inne = h !== null && h >= S.fullFra && h <= S.fullTil;
             fyllMat.current.color.set(
-                h === null || h < S.fullFra
-                    ? FARGE.nikkel
-                    : h <= S.lysTil
-                      ? FARGE.oransje
-                      : h <= S.fullTil
-                        ? '#c9873f'
-                        : FARGE.rød
+                h === null || h < S.fullFra ? '#6d726f' : inne ? FARGE.lys : FARGE.rød
             );
+            if (felt.current && feltMat.current) {
+                felt.current.visible = h !== null;
+                felt.current.position.set(st.x, 0.065, st.z);
+                feltMat.current.opacity = inne ? 0.75 : 0.28;
+            }
         }
     });
     return (
@@ -168,7 +187,12 @@ function Stempel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
                 <circleGeometry args={[0.42, 24]} />
                 <meshBasicMaterial color="#000" transparent opacity={0.35} />
             </mesh>
-            {/* Ringen rundt foten: det lyse feltet er den oransje ringen */}
+            {/* Det hvite treffefeltet: slipp mens ringen er inne i det */}
+            <mesh ref={felt} rotation={[-Math.PI / 2, 0, 0]} visible={false}>
+                <ringGeometry args={[0.46 * fra, 0.58, 40]} />
+                <meshBasicMaterial ref={feltMat} color={FARGE.lys} transparent opacity={0.28} />
+            </mesh>
+            {/* Ringen som vokser mens stempelet holdes */}
             <mesh ref={fyll} rotation={[-Math.PI / 2, 0, 0]} visible={false}>
                 <ringGeometry args={[0.46, 0.56, 32]} />
                 <meshBasicMaterial ref={fyllMat} color={FARGE.nikkel} />
@@ -191,62 +215,215 @@ function Stempel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
     );
 }
 
-function Ting({ gRef }: { gRef: GRef }) {
-    const ark = useRef<THREE.Mesh>(null);
-    const stabel = useRef<THREE.Mesh>(null);
-    const grå = useRef<(THREE.Mesh | null)[]>([]);
+const MAKS_MYNTER = 60;
+const myntGeo = new THREE.CylinderGeometry(0.17, 0.17, 0.06, 18);
+const hjelp = new THREE.Object3D();
+
+/** Myntstabelen: én gyllen mynt per mynt i kassa. Mynter i lufta mot stabelen telles ikke ennå. */
+function Stabel({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
+    const ref = useRef<THREE.InstancedMesh>(null);
+    useFrame(() => {
+        const m = ref.current;
+        if (!m) return;
+        const t = nå();
+        const underveis = fxRef.current.flyg.filter((f) => f.tilStabel && t < f.start + FLYTID);
+        const n = Math.max(0, Math.min(MAKS_MYNTER, gRef.current.kasse - underveis.length));
+        for (let i = 0; i < n; i++) {
+            const p = myntPlass(KASSE_PLASS.x, KASSE_PLASS.z, i);
+            hjelp.position.set(p.x, p.y, p.z);
+            hjelp.updateMatrix();
+            m.setMatrixAt(i, hjelp.matrix);
+        }
+        m.count = n;
+        m.instanceMatrix.needsUpdate = true;
+    });
+    return (
+        <instancedMesh ref={ref} args={[myntGeo, undefined, MAKS_MYNTER]} frustumCulled={false}>
+            <meshLambertMaterial
+                color={FARGE.gull}
+                emissive={FARGE.gull}
+                emissiveIntensity={0.25}
+            />
+        </instancedMesh>
+    );
+}
+
+/** Myntene i lufta: en bue fra der de kommer fra til der de skal. */
+function Flygende({ fxRef }: { fxRef: FxRef }) {
+    const ref = useRef<THREE.InstancedMesh>(null);
+    useFrame(() => {
+        const m = ref.current;
+        if (!m) return;
+        const fx = fxRef.current;
+        const t = nå();
+        fx.flyg = fx.flyg.filter((f) => t < f.start + FLYTID);
+        let n = 0;
+        for (const f of fx.flyg) {
+            const u = (t - f.start) / FLYTID;
+            if (u < 0 || n >= 24) continue;
+            hjelp.position.set(
+                f.fx + (f.tx - f.fx) * u,
+                0.15 + (f.ty - 0.15) * u + Math.sin(u * Math.PI) * 1.4,
+                f.fz + (f.tz - f.fz) * u
+            );
+            hjelp.rotation.set(u * 9, 0, 0);
+            hjelp.updateMatrix();
+            m.setMatrixAt(n++, hjelp.matrix);
+        }
+        hjelp.rotation.set(0, 0, 0);
+        m.count = n;
+        m.instanceMatrix.needsUpdate = true;
+    });
+    return (
+        <instancedMesh ref={ref} args={[myntGeo, undefined, 24]} frustumCulled={false}>
+            <meshLambertMaterial color={FARGE.gull} emissive={FARGE.gull} emissiveIntensity={0.5} />
+        </instancedMesh>
+    );
+}
+
+/** Husleie-regningen: ett hull per mynt i husleia og en rød strek som krymper mot nyttår. */
+function Regning({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
+    const papir = useRef<THREE.MeshLambertMaterial>(null);
+    const strek = useRef<THREE.Mesh>(null);
+    const hull = useRef<(THREE.Mesh | null)[]>([]);
+    const betalt = useRef<(THREE.Mesh | null)[]>([]);
     useFrame(() => {
         const g = gRef.current;
-        if (ark.current) ark.current.visible = !!g.frimerke;
-        if (stabel.current) {
-            const n = Math.max(0, g.kasse);
-            stabel.current.visible = n > 0;
-            stabel.current.scale.y = Math.max(0.001, n);
-            stabel.current.position.y = 0.15 + (n * 0.04) / 2;
+        const fx = fxRef.current;
+        const leie = husleie(g.brett);
+        papir.current?.color.set(g.kasse < leie ? '#f2c4bd' : FARGE.papir);
+        const igjen = Math.max(0, 1 - g.iÅr / TUNING.år.sekunder);
+        if (strek.current) {
+            strek.current.scale.x = Math.max(0.001, igjen);
+            strek.current.position.x = REGNING_PLASS.x - 0.5 + 0.5 * igjen;
         }
-        grå.current.forEach((m, i) => {
-            if (m) m.visible = i < g.skuff.length;
+        const t = nå();
+        hull.current.forEach((m, i) => {
+            if (m) m.visible = i < leie;
+        });
+        betalt.current.forEach((m, i) => {
+            if (m)
+                m.visible =
+                    i < fx.betaltBeløp && t > fx.betalt + i * 0.06 + FLYTID && t < fx.betalt + 2.2;
+        });
+    });
+    const R = REGNING_PLASS;
+    return (
+        <>
+            <mesh position={[R.x, 0.02, R.z]}>
+                <boxGeometry args={[1.2, 0.03, 0.85]} />
+                <meshLambertMaterial ref={papir} color={FARGE.papir} />
+            </mesh>
+            {/* Nedtellingen til nyttår */}
+            <mesh ref={strek} position={[R.x, 0.04, R.z - 0.3]} rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[1, 0.1]} />
+                <meshBasicMaterial color={FARGE.rød} />
+            </mesh>
+            {Array.from({ length: 10 }, (_, i) => {
+                const h = regningHull(R.x, R.z, i);
+                return (
+                    <group key={i}>
+                        <mesh
+                            ref={(m) => {
+                                hull.current[i] = m;
+                            }}
+                            position={[h.x, 0.04, h.z]}
+                            rotation={[-Math.PI / 2, 0, 0]}
+                        >
+                            <ringGeometry args={[0.06, 0.085, 16]} />
+                            <meshBasicMaterial color={FARGE.tekst} />
+                        </mesh>
+                        <mesh
+                            ref={(m) => {
+                                betalt.current[i] = m;
+                            }}
+                            position={[h.x, 0.06, h.z]}
+                            visible={false}
+                        >
+                            <cylinderGeometry args={[0.085, 0.085, 0.03, 14]} />
+                            <meshLambertMaterial color={FARGE.gull} />
+                        </mesh>
+                    </group>
+                );
+            })}
+        </>
+    );
+}
+
+/** Papirløs-hylla: seks spor. Hver grå sak glir inn i et spor. Fulle spor = tap. */
+function Hylle({ gRef }: { gRef: GRef }) {
+    const pass = useRef<(THREE.Mesh | null)[]>([]);
+    const mat = useRef<(THREE.MeshLambertMaterial | null)[]>([]);
+    const inn = useRef<number[]>(Array(6).fill(-10));
+    const før = useRef(0);
+    const N = TUNING.tap.papirløse;
+    const spor = (i: number) => ({
+        x: SKUFF_PLASS.x - 0.45 + (i % 3) * 0.45,
+        z: SKUFF_PLASS.z - 0.25 + Math.floor(i / 3) * 0.5,
+    });
+    useFrame(() => {
+        const g = gRef.current;
+        const t = nå();
+        const alle = Math.min(N, papirløse(g));
+        for (let i = før.current; i < alle; i++) inn.current[i] = t;
+        før.current = alle;
+        pass.current.forEach((m, i) => {
+            if (!m) return;
+            m.visible = i < alle;
+            const u = Math.min(1, (t - inn.current[i]) / 0.4);
+            const s = spor(i);
+            m.position.set(s.x + (1 - u) * 1.6, 0.1, s.z);
+            // I hylla (solid) eller tilbake på bordet som grå sak (gjennomsiktig).
+            const m2 = mat.current[i];
+            if (m2) m2.opacity = i < g.skuff.length ? 1 : 0.45;
         });
     });
     return (
         <>
-            {/* Frimerkearket */}
-            <mesh ref={ark} position={[FRIMERKE_PLASS.x, 0.03, FRIMERKE_PLASS.z]} visible={false}>
-                <boxGeometry args={[1.1, 0.04, 0.85]} />
-                <meshLambertMaterial color="#c7a0c0" />
+            <mesh position={[SKUFF_PLASS.x, 0.04, SKUFF_PLASS.z]}>
+                <boxGeometry args={[1.5, 0.08, 1.15]} />
+                <meshLambertMaterial color="#141917" />
             </mesh>
-            {/* Kassa: en metallkasse med en stabel mynter */}
-            <mesh position={[KASSE_PLASS.x, 0.07, KASSE_PLASS.z]}>
-                <boxGeometry args={[1.1, 0.14, 0.8]} />
-                <meshLambertMaterial color="#5b605e" />
-            </mesh>
-            <mesh ref={stabel} position={[KASSE_PLASS.x, 0.2, KASSE_PLASS.z]}>
-                <cylinderGeometry args={[0.22, 0.22, 0.04, 20]} />
-                <meshLambertMaterial color={FARGE.nikkel} />
-            </mesh>
-            {/* Venteskuffen med de grå sakene */}
-            <mesh position={[SKUFF_PLASS.x, 0.08, SKUFF_PLASS.z]}>
-                <boxGeometry args={[1.4, 0.16, 1.1]} />
-                <meshLambertMaterial color="#4a4a46" />
-            </mesh>
-            {Array.from({ length: 6 }, (_, i) => (
-                <mesh
-                    key={i}
-                    ref={(m) => {
-                        grå.current[i] = m;
-                    }}
-                    position={[
-                        SKUFF_PLASS.x - 0.45 + (i % 3) * 0.45,
-                        0.18 + Math.floor(i / 3) * 0.05,
-                        SKUFF_PLASS.z - 0.2 + Math.floor(i / 3) * 0.35,
-                    ]}
-                    visible={false}
-                >
-                    <boxGeometry args={[0.38, 0.03, 0.3]} />
-                    <meshLambertMaterial color={FARGE.grå} />
-                </mesh>
-            ))}
+            {Array.from({ length: N }, (_, i) => {
+                const s = spor(i);
+                return (
+                    <group key={i}>
+                        <mesh position={[s.x, 0.085, s.z]} rotation={[-Math.PI / 2, 0, 0]}>
+                            <planeGeometry args={[0.4, 0.42]} />
+                            <meshBasicMaterial color={i === N - 1 ? FARGE.rød : '#4b5751'} />
+                        </mesh>
+                        <mesh
+                            ref={(m) => {
+                                pass.current[i] = m;
+                            }}
+                            visible={false}
+                        >
+                            <boxGeometry args={[0.34, 0.03, 0.36]} />
+                            <meshLambertMaterial
+                                ref={(m) => {
+                                    mat.current[i] = m;
+                                }}
+                                color={FARGE.grå}
+                                transparent
+                            />
+                        </mesh>
+                    </group>
+                );
+            })}
         </>
+    );
+}
+
+function Ark({ gRef }: { gRef: GRef }) {
+    const ark = useRef<THREE.Mesh>(null);
+    useFrame(() => {
+        if (ark.current) ark.current.visible = !!gRef.current.frimerke;
+    });
+    return (
+        <mesh ref={ark} position={[FRIMERKE_PLASS.x, 0.03, FRIMERKE_PLASS.z]} visible={false}>
+            <boxGeometry args={[1.1, 0.04, 0.85]} />
+            <meshLambertMaterial color="#c7a0c0" />
+        </mesh>
     );
 }
 
@@ -260,7 +437,11 @@ export function Verden({ gRef, fxRef }: { gRef: GRef; fxRef: FxRef }) {
             {PLASSER.map((_, i) => (
                 <PassPlass key={i} gRef={gRef} plass={i} />
             ))}
-            <Ting gRef={gRef} />
+            <Stabel gRef={gRef} fxRef={fxRef} />
+            <Flygende fxRef={fxRef} />
+            <Regning gRef={gRef} fxRef={fxRef} />
+            <Hylle gRef={gRef} />
+            <Ark gRef={gRef} />
             <Stempel gRef={gRef} fxRef={fxRef} />
         </>
     );

@@ -6,24 +6,31 @@ import type { Årsak } from './state';
 
 export const MÅL = 'Forny Nansenpassene før de går ut, og hold kontoret åpent til nyttår 1938.';
 
-/** De tre reglene på lappen ved bordkanten. */
+/** De tre reglene i menyen. Under spillet står reglene på bordet. */
 export const REGLER = [
     'Båndet krymper. Er det tomt, er personen papirløs igjen.',
-    'Hold inne og slipp i det lyse feltet: fullt slag fyller hele båndet.',
-    'Mynt gir 1 til kassa. Tom lomme koster 2. Husleia betales hvert nyttår.',
+    'Hold inne og slipp mens ringen er i det hvite feltet.',
+    'Gyllen mynt gir 1. Svart hull koster 2. Regningen betales hvert nyttår.',
 ];
+
+/** Merkelappene på bordet (maks 7 ord). */
+export const BORDLAPP = {
+    kasse: (n: number) => `Kassa: ${n}`,
+    husleie: (n: number) => `Husleie ved nyttår: ${n}`,
+    hylle: (n: number, maks: number) => `Uten papirer: ${n} av ${maks}`,
+};
 
 export const TASTER = 'Mus: før stempelet, hold inne, slipp · Tab: neste pass · Mellomrom: slå';
 
 /** Korte lapper festet til tingen (maks 7 ord). */
 export const LAPP = {
-    første: 'Hold inne, slipp i det lyse feltet',
+    første: 'Hold inne, slipp i det hvite feltet',
     slippNå: 'Slipp nå!',
-    tom: 'Tom lomme: koster 2 fra kassa',
+    tom: 'Tom lomme: to mynter ut av kassa',
     frimerke: 'Slå arket: +4 i kassa',
     gyldig: 'Gyldig ennå - ta et kortere bånd',
     tomKasse: 'Kassa har ikke nok',
-    grå: 'Grå sak: koster 3 å fornye',
+    grå: 'Grå sak: tre mynter ut av kassa',
     husleie: 'Husleia er betalt',
 };
 

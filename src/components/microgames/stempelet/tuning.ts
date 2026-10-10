@@ -21,6 +21,8 @@ export const TUNING = {
         blirMaks: 70,
         /** De tre passene ved start (andel bånd igjen). Det første rister. */
         start: [0.24, 0.48, 0.72],
+        /** En ny tom lomme får båndet til et mynt-pass, pluss/minus halvparten av dette (s). */
+        parAvstand: 1.5,
     },
 
     /** Stempelet: følger pekeren med litt forsinkelse, og timingen i slaget. */
@@ -29,7 +31,7 @@ export const TUNING = {
         følg: 10,
         /** Holdt kortere enn dette = skjevt slag. */
         fullFra: 0.35,
-        /** Det lyse feltet i ringen slutter her (bare visning). */
+        /** Stempelet løftes til topps her (bare visning). */
         lysTil: 0.65,
         /** Holdt lenger enn dette = armen skjelver, skjevt slag. */
         fullTil: 0.9,
@@ -47,9 +49,8 @@ export const TUNING = {
         tomLomme: 2,
         gråSak: 3,
         frimerke: 4,
-        /** Husleia ved årsskiftet: start + økning per år. */
-        husleieStart: 2,
-        husleieØkning: 1,
+        /** Husleia ved hvert årsskifte, 1931-1938. */
+        husleie: [4, 6, 8, 9, 10, 10, 10, 10] as number[],
     },
 
     /** Frimerkearket: når det kommer i året, og hvor lenge det ligger. */

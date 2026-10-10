@@ -1,10 +1,13 @@
-// HUD-en i gråboksen: kalender, saksnummer, kassa, de papirløse og lappen med reglene.
-// Bare enkle bokser nå; kunsten (blokkalender, nummereringsmaskin) kommer i neste fase.
+// HUD-en i gråboksen: kalender og saksnummer i hjørnene. Resten står på bordet: korte
+// merkelapper ved myntstabelen, regningen og papirløs-hylla, og prisen ved hver lomme.
 
 import { FARGE } from './farger';
 import type { HudData } from './hudData';
-import { REGLER, TASTER, saksnummer } from './texts';
+import { FRIMERKE_PLASS, KASSE_PLASS, PLASSER, REGNING_PLASS, SKUFF_PLASS } from './levels';
+import { BORDLAPP, TASTER, saksnummer } from './texts';
 import { TUNING } from './tuning';
+
+type Anker = (x: number, z: number) => { x: number; y: number } | null;
 
 const boks: React.CSSProperties = {
     position: 'absolute',
@@ -16,8 +19,47 @@ const boks: React.CSSProperties = {
     pointerEvents: 'none',
 };
 
-export function Hud({ d, knapper }: { d: HudData; knapper: React.ReactNode }) {
+/** En liten lapp festet til et punkt på bordet. */
+function Merke({
+    at,
+    farge,
+    bakgrunn,
+    stor,
+    children,
+}: {
+    at: { x: number; y: number } | null;
+    farge: string;
+    bakgrunn: string;
+    stor?: boolean;
+    children: React.ReactNode;
+}) {
+    if (!at) return null;
+    return (
+        <div
+            style={{
+                position: 'absolute',
+                left: at.x,
+                top: at.y,
+                transform: 'translate(-50%, -50%)',
+                color: farge,
+                background: bakgrunn,
+                padding: stor ? '2px 8px' : '0 5px',
+                fontSize: stor ? 15 : 17,
+                fontWeight: 800,
+                fontFamily: 'Georgia, serif',
+                whiteSpace: 'nowrap',
+                pointerEvents: 'none',
+                borderRadius: 3,
+            }}
+        >
+            {children}
+        </div>
+    );
+}
+
+export function Hud({ d, anker, knapper }: { d: HudData; anker: Anker; knapper: React.ReactNode }) {
     const lav = d.kasse < d.husleie;
+    const fare = d.papirløse >= TUNING.tap.papirløse - 2;
     return (
         <>
             {/* Kalenderen: årstallet og hvor langt det er til nyttår */}
@@ -44,43 +86,57 @@ export function Hud({ d, knapper }: { d: HudData; knapper: React.ReactNode }) {
                     <div style={{ fontSize: 14 }}>Rene stempler på rad: {d.rekke}</div>
                 )}
             </div>
-            {/* Kassa */}
-            <div
-                style={{
-                    ...boks,
-                    right: 12,
-                    bottom: 12,
-                    width: 190,
-                    borderColor: lav ? FARGE.rød : FARGE.tekst,
-                }}
+
+            {/* Prisen ved hver lomme: +1 for mynt, -2 for tomt hull, -3 for grå sak */}
+            {d.lommer.map((l) => {
+                const p = PLASSER[l.plass];
+                return (
+                    <Merke
+                        key={l.plass}
+                        at={anker(p.x + 0.42, p.z - 0.55)}
+                        farge={l.pris > 0 ? FARGE.tekst : FARGE.papir}
+                        bakgrunn={l.pris > 0 ? FARGE.gull : FARGE.rød}
+                    >
+                        {l.pris > 0 ? `+${l.pris}` : l.pris}
+                    </Merke>
+                );
+            })}
+            {d.frimerke && (
+                <Merke
+                    at={anker(FRIMERKE_PLASS.x, FRIMERKE_PLASS.z)}
+                    farge={FARGE.tekst}
+                    bakgrunn={FARGE.gull}
+                >
+                    +{TUNING.kasse.frimerke}
+                </Merke>
+            )}
+
+            {/* Merkelappene på bordet */}
+            <Merke
+                at={anker(KASSE_PLASS.x, KASSE_PLASS.z + 0.6)}
+                farge={FARGE.tekst}
+                bakgrunn={FARGE.papir}
+                stor
             >
-                <div style={{ fontSize: 15, fontWeight: 700 }}>Kassa: {d.kasse} mynter</div>
-                <div style={{ fontSize: 15, color: lav ? FARGE.rød : FARGE.tekst }}>
-                    Husleie ved nyttår: {d.husleie}
-                </div>
-            </div>
-            {/* Venteskuffen */}
-            <div
-                style={{
-                    ...boks,
-                    left: 12,
-                    bottom: 12,
-                    width: 190,
-                    borderColor: d.papirløse >= 4 ? FARGE.rød : FARGE.tekst,
-                }}
+                {BORDLAPP.kasse(d.kasse)}
+            </Merke>
+            <Merke
+                at={anker(REGNING_PLASS.x, REGNING_PLASS.z + 0.65)}
+                farge={FARGE.papir}
+                bakgrunn={lav ? FARGE.rød : FARGE.tekst}
+                stor
             >
-                <div style={{ fontSize: 15, fontWeight: 700 }}>
-                    Uten papirer: {d.papirløse} av {TUNING.tap.papirløse}
-                </div>
-            </div>
-            {/* Lappen med de tre reglene */}
-            <div style={{ ...boks, right: 12, top: 12, width: 260, fontSize: 14 }}>
-                <ol style={{ margin: 0, paddingLeft: 18 }}>
-                    {REGLER.map((r) => (
-                        <li key={r}>{r}</li>
-                    ))}
-                </ol>
-            </div>
+                {BORDLAPP.husleie(d.husleie)}
+            </Merke>
+            <Merke
+                at={anker(SKUFF_PLASS.x, SKUFF_PLASS.z + 0.75)}
+                farge={FARGE.papir}
+                bakgrunn={fare ? FARGE.rød : FARGE.tekst}
+                stor
+            >
+                {BORDLAPP.hylle(d.papirløse, TUNING.tap.papirløse)}
+            </Merke>
+
             <div
                 style={{
                     position: 'absolute',

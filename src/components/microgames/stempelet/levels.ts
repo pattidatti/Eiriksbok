@@ -39,10 +39,11 @@ export const PLASSER: { x: number; z: number }[] = [
     { x: 3.2, z: 0.65 },
 ];
 
-/** Der frimerkearket legger seg, kassa og venteskuffen. */
-export const FRIMERKE_PLASS = { x: 4.7, z: -0.4 };
-export const KASSE_PLASS = { x: 4.7, z: 1.5 };
-export const SKUFF_PLASS = { x: -4.8, z: 1.2 };
+/** Der frimerkearket legger seg, myntstabelen, husleie-regningen og papirløs-hylla. */
+export const FRIMERKE_PLASS = { x: -4.7, z: -0.55 };
+export const KASSE_PLASS = { x: 4.6, z: 1.45 };
+export const REGNING_PLASS = { x: 4.7, z: -0.55 };
+export const SKUFF_PLASS = { x: -4.75, z: 1.3 };
 
 /** Personene på passene. De ti første er arkivkortene (seks fra Russland, fire fra Armenia). */
 export const PERSONER: string[] = [

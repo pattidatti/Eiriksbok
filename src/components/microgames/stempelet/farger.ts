@@ -8,4 +8,7 @@ export const FARGE = {
     nikkel: '#c7c9c6',
     tekst: '#15171a',
     grå: '#8a8d8a',
+    gull: '#e2b43c',
+    hull: '#050505',
+    lys: '#ffffff',
 };

@@ -13,9 +13,9 @@ usePlaytest, slutt-skjerm).
 | `rules.ts` | Fagkjernen: `slå()` (fullt/skjevt, pris, kassa), `kanStemple`, `pris`, `blirTilFornyelse`, `trekkBetaler` (jevn teller, ikke terning), `reis` (personen reiser videre, arkivkort). |
 | `game.ts` | Kjerneløkka `update(g, dt)`: stempelet følger pekeren, båndene krymper, skuffen, nye pass, frimerkearket, tap, årsskiftet med husleie. Grepene `sikt`, `siktPlass`, `trykk`, `slipp`, `nestePass`. `press`, `framdrift`. |
 | `bots.ts`, `sim.ts` | Robotene (`saksbehandler`, `nybegynner`, `gratis-for-alle`, `knappemoser`) og simuleringen. |
-| `world.tsx` | Visningen i 3D: kamera 55 grader ned, bordet (pekeren), passene per plass, stempelet med ring og skygge, kassa, skuffen, frimerkearket. |
-| `hud.tsx`, `hudData.ts` | DOM-HUD-en: år, saksnummer, kassa og husleie, de papirløse, lappen med reglene, taster. |
-| `texts.ts`, `farger.ts`, `fx.ts` | All tekst (mål, regler, lapper, øyeblikk, tap, seier, lærdom), paletten, og slagtid + kamera til ankere (`tilSkjerm`). |
+| `world.tsx` | Visningen i 3D: kamera 55 grader ned, bordet (pekeren), passene per plass (gyllen mynt eller svart lommehull), stempelet med hvitt treffefelt, myntstabelen, mynter i lufta, husleie-regningen, papirløs-hylla, frimerkearket. |
+| `hud.tsx`, `hudData.ts` | DOM-HUD-en: år, saksnummer, taster, og merkelapper festet til bordet (+1/-2/-3 ved lommene, kassa, husleie, hylla). |
+| `texts.ts`, `farger.ts`, `fx.ts` | All tekst (mål, regler, bordlapper, lapper, øyeblikk, tap, seier, lærdom), paletten, og slagtid, kamera til ankere (`tilSkjerm`), flygende mynter (`flyg`, `myntPlass`, `regningHull`). |
 
 ## Kjerneløkka
 
@@ -27,7 +27,8 @@ usePlaytest, slutt-skjerm).
    ikke nok, skjer ingenting.
 4. Tomt bånd: personen går i skuffen i 6 s og kommer tilbake som grå sak. 6 papirløse (skuff + grå
    på bordet) = tap. Personer reiser videre etter `pass.blirMin`-`blirMaks` s med gyldig pass.
-5. Ved nyttår trekkes husleia (`kasse.husleieStart` + `husleieØkning` per år). Ikke nok = tap.
+5. Ved nyttår trekkes husleia (`kasse.husleie[år]`), og myntene flyr fra stabelen til regningen. Ikke nok = tap.
+6. En ny tom lomme får samme bånd som et mynt-pass (`pass.parAvstand`), så begge går ut samtidig.
 
 ## Hvorfor spillet virker (balansen)
 
@@ -37,7 +38,7 @@ alle så fort de kan og går tom for penger rundt 1935-36.
 
 ## Knapper som styrer mest
 
-- Kassapresset: `kasse.tomLomme`, `kasse.husleieStart/Økning`, `kasse.frimerke`, `BRETT[].tom`.
+- Kassapresset: `kasse.tomLomme`, `kasse.husleie`, `kasse.frimerke`, `BRETT[].tom`.
 - Arbeidspresset: `BRETT[].nyHvert` og `maks`, `pass.blirMin/Maks`, `pass.fornyFra`.
 - Ferdighetstrappen: `stempel.fullFra/fullTil`, `stempel.følg`.
 

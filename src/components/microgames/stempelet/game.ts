@@ -3,7 +3,15 @@
 
 import { BRETT, PLASSER } from './levels';
 import { blirTilFornyelse, reis, slå, trekkBetaler } from './rules';
-import { husleie, lagPass, ledigPerson, ledigPlass, papirløse, type Game } from './state';
+import {
+    husleie,
+    lagPass,
+    ledigPerson,
+    ledigPlass,
+    papirløse,
+    type Game,
+    type Pass,
+} from './state';
 import { TUNING } from './tuning';
 
 export { newGame, type Game } from './state';
@@ -113,6 +121,7 @@ export function update(g: Game, dt: number) {
             const p = lagPass(g, plass, ledigPerson(g));
             p.igjen = p.varer * (P.nyttMin + g.rng() * (P.nyttMaks - P.nyttMin));
             trekkBetaler(g, p, brett.tom);
+            if (!p.betaler) parMedMynt(g, p);
             g.ut.push({ type: 'nyttPass', id: p.id });
         }
     }
@@ -151,6 +160,19 @@ export function update(g: Game, dt: number) {
         g.frimerkeVed = BRETT[g.brett].frimerke ? f.fraSek + g.rng() * (f.tilSek - f.fraSek) : null;
         g.ut.push({ type: 'nyttÅr', år: BRETT[g.brett].år, brett: g.brett });
     }
+}
+
+/**
+ * En tom lomme kommer i par med et mynt-pass: båndene går tomme omtrent samtidig, så eleven
+ * ikke rekker begge og må velge hvem som venter.
+ */
+function parMedMynt(g: Game, p: Pass) {
+    const mynt = g.pass.filter(
+        (q) => q !== p && q.betaler && !q.grå && !q.lomme && q.igjen / q.varer > P.fornyFra
+    );
+    if (!mynt.length) return;
+    const q = mynt.reduce((a, b) => (a.igjen > b.igjen ? a : b));
+    p.igjen = Math.min(p.varer, q.igjen + TUNING.pass.parAvstand * (g.rng() - 0.5));
 }
 
 function tap(g: Game, årsak: 'papirløse' | 'stengt') {
