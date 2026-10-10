@@ -1,0 +1,632 @@
+{
+    "id": "frelse",
+    "tittel": "Frelse: Målet med det hele",
+    "kilde": "/krle/sammenligning/frelse",
+    "bilde": "/images/sammenligning/frelse-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "to-svar",
+            "kapittel": "To svar",
+            "visual": {
+                "type": "FrelseToVeier",
+                "props": {
+                    "modus": "start"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En prest sier at det ikke finnes noe du kan gjøre for å bli frelst."
+                },
+                {
+                    "si": "Gaven er allerede gitt. Prøver du å betale for en gave, har du ikke skjønt hva en gave er."
+                },
+                {
+                    "si": "Langt unna sitter en buddhistisk munk helt stille og gjør det stikk motsatte."
+                },
+                {
+                    "si": "Han jobber med seg selv, dag etter dag. Ingen andre kan gjøre den jobben for ham."
+                },
+                {
+                    "si": "Begge er på vei mot noe godt. Men de er uenige om hvem som må gjøre jobben."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "FRELSE",
+                    "undertittel": "Målet med det hele",
+                    "bilde": "/images/sammenligning/frelse-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvem må gjøre jobben?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ordet frelse betyr at et menneske slipper fri fra noe som er galt."
+                },
+                {
+                    "si": "Vi skal møte ni religioner og trossamfunn, og stille dem det samme spørsmålet."
+                },
+                {
+                    "si": "Ikke bare hva målet er. Men hvem som må gjøre jobben for å komme dit."
+                }
+            ]
+        },
+        {
+            "id": "fra-hva",
+            "kapittel": "Fri fra hva?",
+            "visual": {
+                "type": "FrelseToVeier",
+                "props": {
+                    "modus": "problem"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Alle religionene er enige om at noe er galt. Men de er dypt uenige om hva."
+                },
+                {
+                    "si": "Kristne snakker om synd og skyld. Du har gjort noe galt, og du klarer ikke å gjøre det godt igjen selv."
+                },
+                {
+                    "si": "Hinduer og buddhister snakker om å bli født om og om igjen, uten å komme seg ut."
+                },
+                {
+                    "si": "Og noen tradisjoner synes at selve ordet frelse passer dårlig på dem."
+                }
+            ]
+        },
+        {
+            "id": "stigen",
+            "visual": {
+                "type": "FrelseStigen",
+                "props": {
+                    "fokus": [
+                        {
+                            "tekst": "To ender av samme stige"
+                        },
+                        {
+                            "tekst": "Noen må hente deg",
+                            "ende": "topp"
+                        },
+                        {
+                            "tekst": "Du må slippe taket selv",
+                            "ende": "bunn"
+                        },
+                        {
+                            "tekst": "Nåde: en gave du ikke har fortjent",
+                            "ende": "topp"
+                        },
+                        {
+                            "tekst": "Ni tradisjoner skal plasseres",
+                            "venter": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Derfor kan svarene settes på en stige. Øverst står gjort for deg, nederst gjort av deg."
+                },
+                {
+                    "si": "Skal du reddes ut av noe du ikke klarer å fikse selv, må noen andre komme og hente deg."
+                },
+                {
+                    "si": "Skal du ut av et kretsløp du selv holder i gang, må du slippe taket. Den jobben er din."
+                },
+                {
+                    "si": "Det kristne ordet for den øverste enden er nåde. Gud tilgir den skyldige, selv om mennesket ikke har fortjent det."
+                },
+                {
+                    "si": "Nå plasserer vi ni tradisjoner på stigen, én etter én."
+                }
+            ]
+        },
+        {
+            "id": "kristendom",
+            "kapittel": "Gaven, vekten og pakten",
+            "visual": {
+                "type": "FrelseStigen",
+                "props": {
+                    "fokus": [
+                        {
+                            "tekst": "Kristendom",
+                            "tradisjon": "kristendom",
+                            "plassert": ["kristendom"]
+                        },
+                        {
+                            "tekst": "Paulus: du får den gratis",
+                            "tradisjon": "kristendom",
+                            "plassert": ["kristendom"]
+                        },
+                        {
+                            "tekst": "Luther og Calvin: troen alene",
+                            "tradisjon": "kristendom",
+                            "plassert": ["kristendom"]
+                        },
+                        {
+                            "tekst": "Kristne er ikke enige om alt",
+                            "tradisjon": "kristendom",
+                            "plassert": ["kristendom"]
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Først kristendommen. Den ligger så høyt mot gave-enden som det går an."
+                },
+                {
+                    "si": "Paulus skrev at du ikke kan jobbe deg til frelse med gode gjerninger. Du får den gratis."
+                },
+                {
+                    "si": "Luther og Calvin gjorde dette enda skarpere. Det er troen alene som teller, og ingenting du selv presterer."
+                },
+                {
+                    "si": "Kristne er ikke enige om alt. Katolikker sier at nåden kommer først, men at mennesket ikke bare sitter stille."
+                }
+            ]
+        },
+        {
+            "id": "islam",
+            "visual": {
+                "type": "FrelseVekt"
+            },
+            "replikker": [
+                {
+                    "si": "Islam bruker et helt annet bilde: en vekt."
+                },
+                {
+                    "si": "På dommens dag må både hver enkelt og fellesskapet stå til ansvar for Gud."
+                },
+                {
+                    "si": "Koranen sier at det settes opp riktige vektskåler, slik at ingen skal lide den minste urett."
+                },
+                {
+                    "si": "Men vekten er bare halve bildet. Gud kalles også Den barmhjertige."
+                },
+                {
+                    "si": "Koranen sier at Gud ikke tilgir at noen dyrker noe annet ved siden av ham. Men alt annet kan han tilgi, hos den han vil. Regnskapet føres, men Gud har det siste ordet."
+                }
+            ]
+        },
+        {
+            "id": "jodedom",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 613,
+                            "farget": 0,
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Ingen fødes med synd",
+                            "restEtikett": "bud som venter"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 613,
+                            "farget": 613,
+                            "farge": "#3b82f6",
+                            "tittel": "613 bud",
+                            "fargeEtikett": "bud om hvordan du lever nå"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 613,
+                            "farget": 613,
+                            "farge": "#3b82f6",
+                            "tittel": "Gud tok første steg. Resten er din jobb",
+                            "fargeEtikett": "bud du må holde selv"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Jødedommen faller nesten utenfor spørsmålet. Jødiske lærde har aldri ment at mennesker fødes med synd. Da er det ikke noe å reddes ut av."
+                },
+                {
+                    "si": "Det viktigste er avtalen med Gud og de 613 budene. Altså hvordan du lever akkurat nå."
+                },
+                {
+                    "si": "Ifølge tradisjonen tok Gud det første steget da avtalen ble inngått. Resten av jobben er din."
+                }
+            ]
+        },
+        {
+            "id": "plassert-abraham",
+            "visual": {
+                "type": "FrelseStigen",
+                "props": {
+                    "fokus": [
+                        {
+                            "tekst": "Islam: nåde og innsats i samme setning",
+                            "tradisjon": "islam",
+                            "plassert": ["kristendom", "islam"]
+                        },
+                        {
+                            "tekst": "Jødedom: din vei, men det finnes hjelp",
+                            "tradisjon": "jodedom",
+                            "plassert": ["kristendom", "islam", "jodedom"]
+                        },
+                        {
+                            "tekst": "Tre religioner, tre trinn",
+                            "plassert": ["kristendom", "islam", "jodedom"]
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Islam havner på midten av stigen. Arbeidet er nødvendig, men det siste ordet er ikke ditt."
+                },
+                {
+                    "si": "Jødedommen havner lenger ned. Det meste ligger på hva du gjør, men Gud hjelper deg underveis."
+                },
+                {
+                    "si": "Samme stamfar, Abraham. Likevel tre ulike trinn."
+                }
+            ]
+        },
+        {
+            "id": "samsara",
+            "kapittel": "Veier du må gå selv",
+            "visual": {
+                "type": "FrelseHjulet",
+                "props": {
+                    "modus": "samsara"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I hinduismen, buddhismen og sikhismen er problemet et annet. Her går verden i ring."
+                },
+                {
+                    "si": "Du blir født, du dør, og du blir født på nytt. Om og om igjen. Kretsløpet heter samsara."
+                },
+                {
+                    "si": "Det er dine egne handlinger som holder hjulet i gang. Da hjelper det lite å bli tilgitt."
+                },
+                {
+                    "si": "Målet i hinduismen heter moksha. Det betyr å komme fri fra gjenfødelsen, altså ut av hjulet."
+                }
+            ]
+        },
+        {
+            "id": "tre-veier",
+            "visual": {
+                "type": "FrelseHjulet",
+                "props": {
+                    "modus": "veier"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hinduismen peker på tre veier ut av hjulet."
+                },
+                {
+                    "si": "Den første er handlingens vei. Du gjør det du skal."
+                },
+                {
+                    "si": "Den andre er kunnskapens vei. Du forstår hvordan alt henger sammen."
+                },
+                {
+                    "si": "Den tredje heter bhakti, hengivelsens vei. Der knytter du deg til en gud som er full av nåde."
+                },
+                {
+                    "si": "De to første gjør du selv. Den tredje ligger nærmere nåden. Én religion, flere trinn."
+                }
+            ]
+        },
+        {
+            "id": "flammen",
+            "visual": {
+                "type": "FrelseHjulet",
+                "props": {
+                    "modus": "flamme"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Buddhismens mål heter nirvana. Ordet betyr å slukne."
+                },
+                {
+                    "si": "Nirvana er ikke et paradis. Buddha brukte bildet av en flamme som slukner fordi den ikke har mer å brenne på. Da tar all lidelse slutt."
+                },
+                {
+                    "si": "Veien dit går gjennom din egen måte å leve på, meditasjon og forståelse. Ingen slipper deg inn noe sted."
+                }
+            ]
+        },
+        {
+            "id": "rent-land",
+            "visual": {
+                "type": "FrelseKart"
+            },
+            "replikker": [
+                {
+                    "si": "Men heller ikke buddhister er enige med hverandre."
+                },
+                {
+                    "si": "I rent land-buddhismen, som står sterkt i Kina og Japan, stoler den troende på buddhaen Amitabha i stedet for på seg selv."
+                },
+                {
+                    "si": "Det er omtrent så nær nåde en buddhist kommer."
+                }
+            ]
+        },
+        {
+            "id": "plassert-india",
+            "visual": {
+                "type": "FrelseStigen",
+                "props": {
+                    "fokus": [
+                        {
+                            "tekst": "Hinduisme: din vei, men det finnes hjelp",
+                            "tradisjon": "hinduisme",
+                            "plassert": ["kristendom", "islam", "jodedom", "hinduisme"]
+                        },
+                        {
+                            "tekst": "Buddhisme: ingen kan gjøre det for deg",
+                            "tradisjon": "buddhisme",
+                            "plassert": ["kristendom", "islam", "jodedom", "hinduisme", "buddhisme"]
+                        },
+                        {
+                            "tekst": "Sikhisme: meditasjon, hjelp og ærlig arbeid",
+                            "tradisjon": "sikhisme",
+                            "plassert": [
+                                "kristendom",
+                                "islam",
+                                "jodedom",
+                                "hinduisme",
+                                "buddhisme",
+                                "sikhisme"
+                            ]
+                        },
+                        {
+                            "tekst": "Kirpa: nåden du ikke rår over",
+                            "tradisjon": "sikhisme",
+                            "plassert": [
+                                "kristendom",
+                                "islam",
+                                "jodedom",
+                                "hinduisme",
+                                "buddhisme",
+                                "sikhisme"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hinduismen havner nest nederst. Det meste er din jobb, men en nådefull gud kan hjelpe."
+                },
+                {
+                    "si": "Buddhismen havner helt nederst, i den andre enden. Ingen kan redde deg utenfra."
+                },
+                {
+                    "si": "Sikhismen viser tydeligst en midt imellom. Du mediterer over Guds navn, hjelper andre og arbeider ærlig, midt i et vanlig liv."
+                },
+                {
+                    "si": "Men selve møtet med Gud kan du ikke få til alene. Det må Gud gi deg. Nåden heter kirpa, og den er det eneste du ikke rår over selv."
+                }
+            ]
+        },
+        {
+            "id": "nivaer",
+            "kapittel": "Tre yngre svar",
+            "visual": {
+                "type": "FrelseNivaer"
+            },
+            "replikker": [
+                {
+                    "si": "Så tre yngre og mindre trossamfunn. Mormonismen og Jehovas vitner kommer fra kristendommen. Bahá'í kommer fra sjia-islam, en av retningene i islam."
+                },
+                {
+                    "si": "Mormonismen svarer ja og nei på én gang. Kirken lærer at alle døde skal stå opp igjen og leve evig, men at de havner på tre ulike nivåer."
+                },
+                {
+                    "si": "Selve oppstandelsen er en gave alle får."
+                },
+                {
+                    "si": "Men skal du helt til topps, dit kirken kaller opphøyelse, må du tro, være døpt, holde budene og gifte deg i tempelet."
+                }
+            ]
+        },
+        {
+            "id": "plassert-nye",
+            "visual": {
+                "type": "FrelseStigen",
+                "props": {
+                    "fokus": [
+                        {
+                            "tekst": "Mormonisme: gave og innsats",
+                            "tradisjon": "mormonisme",
+                            "plassert": [
+                                "kristendom",
+                                "islam",
+                                "jodedom",
+                                "hinduisme",
+                                "buddhisme",
+                                "sikhisme",
+                                "mormonisme"
+                            ]
+                        },
+                        {
+                            "tekst": "Jehovas vitner: gaven først, så svaret ditt",
+                            "tradisjon": "jehovas-vitner",
+                            "plassert": [
+                                "kristendom",
+                                "islam",
+                                "jodedom",
+                                "hinduisme",
+                                "buddhisme",
+                                "sikhisme",
+                                "mormonisme",
+                                "jehovas-vitner"
+                            ]
+                        },
+                        {
+                            "tekst": "Hvem som kommer med blant de 144 000, velger Gud",
+                            "tradisjon": "jehovas-vitner",
+                            "plassert": [
+                                "kristendom",
+                                "islam",
+                                "jodedom",
+                                "hinduisme",
+                                "buddhisme",
+                                "sikhisme",
+                                "mormonisme",
+                                "jehovas-vitner"
+                            ]
+                        },
+                        {
+                            "tekst": "Bahá'í: ingen prester, ingen målstrek",
+                            "tradisjon": "bahai",
+                            "plassert": [
+                                "kristendom",
+                                "islam",
+                                "jodedom",
+                                "hinduisme",
+                                "buddhisme",
+                                "sikhisme",
+                                "mormonisme",
+                                "jehovas-vitner",
+                                "bahai"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mormonismen havner derfor på midten. Både gave og innsats."
+                },
+                {
+                    "si": "Jehovas vitner havner nest øverst. De kaller frelsen en gave, men du må vise med handlinger at troen lever. Og du kan miste den igjen."
+                },
+                {
+                    "si": "Hvem som kommer med blant de 144 000 i himmelen, er det Gud som velger."
+                },
+                {
+                    "si": "Bahá'í havner på trinnet din vei. Det finnes ingen prester, så ingen kan gjøre jobben for deg. Veien går gjennom bønn, kunnskap og arbeid for andre, og den tar aldri slutt."
+                }
+            ]
+        },
+        {
+            "id": "monsteret",
+            "kapittel": "Mønsteret",
+            "visual": {
+                "type": "FrelseStigen",
+                "props": {
+                    "fokus": [
+                        {
+                            "tekst": "Alle ni på stigen",
+                            "plassert": "alle"
+                        },
+                        {
+                            "tekst": "Bare to helt ytterst",
+                            "plassert": "alle",
+                            "ytterst": true
+                        },
+                        {
+                            "tekst": "Midten mener begge deler, med vilje",
+                            "plassert": "alle",
+                            "midten": true
+                        },
+                        {
+                            "tekst": "Inne i én religion: ulike trinn",
+                            "plassert": "alle",
+                            "skygger": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på stigen nå, med alle ni på plass."
+                },
+                {
+                    "si": "Ytterpunktene er lette å forklare. Men bare to havner helt ute på kanten: kristendommen øverst og buddhismen nederst."
+                },
+                {
+                    "si": "Resten ligger imellom. De er ikke vage. De mener begge deler, med vilje: gjør jobben, men det siste ordet er ikke ditt."
+                },
+                {
+                    "si": "Og bhakti-hinduismen og rent land-buddhismen ligger nærmere nåden enn resten av sin egen religion."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ligger målet utenfor deg,",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "må noen slippe deg inn.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Ligger problemet inne i deg,",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "må du rydde opp selv.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Noen svarer at spørsmålet",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "er stilt med feil ord.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Vil en religion ikke svare?",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "Sjekk om spørsmålet var godt nok.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ligger målet utenfor deg, må noen andre slippe deg inn. Da blir nåde et naturlig svar."
+                },
+                {
+                    "si": "Ligger problemet inne i deg selv, må du rydde opp selv. Da blir innsats et naturlig svar."
+                },
+                {
+                    "si": "Og noen tradisjoner, som jødedommen, mener at hele spørsmålet er stilt med feil ord."
+                },
+                {
+                    "si": "Når en religion ikke vil svare, er det lurt å sjekke om spørsmålet var godt nok."
+                }
+            ]
+        }
+    ]
+}
