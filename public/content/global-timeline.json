@@ -5757,6 +5757,31 @@
       ]
     },
     {
+      "id": "lofthusreisingen",
+      "title": "Lofthusreisingen: Bonden som klaget til kongen",
+      "description": "Christian Lofthus samlet bøndene på Agder mot embetsmenn og byborgere i 1786, og fikk delvis rett - men endte i lenker på Akershus.",
+      "startDate": 1786,
+      "endDate": 1787,
+      "displayDate": "1786-1787",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/lofthusreisingen",
+      "tags": [
+        "norge",
+        "dansketiden",
+        "eneveldet",
+        "bondeoppror",
+        "agder",
+        "1700-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "den-amerikanske-grunnloven",
       "title": "Den amerikanske grunnloven",
       "description": "Hvordan USA delte makten i tre for at ingen skulle kunne bli en ny konge.",

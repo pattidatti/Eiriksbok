@@ -5,7 +5,7 @@
   "year": "1920-1930",
   "category": "Norge og verden",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/mellomkrigstiden/nansen-og-flyktningene-hero.webp",
   "details": [
     "Etter første verdenskrig var hundretusener av mennesker statsløse og uten papirer",
     "Fridtjof Nansen hjalp rundt 450 000 krigsfanger hjem og ble Folkeforbundets høykommissær for flyktninger i 1921",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/mellomkrigstiden/nansen-og-flyktningene-01.webp",
       "alt": "Flyktninger med kofferter på en jernbanestasjon i 1920-årene",
       "caption": "Etter den russiske revolusjonen var rundt to millioner russere på flukt i Europa."
     },
@@ -101,7 +101,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/mellomkrigstiden/nansen-og-flyktningene-02.webp",
       "alt": "Nødhjelp med mat deles ut i en russisk landsby 1922",
       "caption": "Under hungersnøden i 1921 og 1922 samlet Nansen inn mat og penger til millioner av sultende russere."
     },
@@ -155,7 +155,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/mellomkrigstiden/nansen-og-flyktningene-03.webp",
       "alt": "Fridtjof Nansen ved skrivebordet i Genève med flyktningpapirer",
       "caption": "Fra 1921 til han døde i 1930 ledet Fridtjof Nansen Folkeforbundets arbeid for flyktninger."
     },

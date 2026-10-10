@@ -5,7 +5,7 @@
   "year": "1786-1787",
   "category": "Norge",
   "readTime": "8 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dansketiden/lofthusreisingen-hero.webp",
   "details": [
     "Lofthusreisingen i 1786-1787 var det største bondeopprøret i Norge i dansketiden",
     "Bøndene på Agder og i Telemark klaget over høye gebyrer og over at byborgerne bestemte over handelen",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/lofthusreisingen-01.webp",
       "alt": "Bondeleder arresteres av soldater i Lillesand 1787",
       "caption": "I mars 1787 ble Christian Lofthus tatt til fange i Lillesand og sendt i lenker til Akershus."
     },
@@ -115,7 +115,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/lofthusreisingen-02.webp",
       "alt": "Væpnede bønder samlet rundt en gård på Agder",
       "caption": "Høsten 1786 samlet flere hundre bønder seg for å beskytte Christian Lofthus mot å bli arrestert."
     },
@@ -161,7 +161,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/lofthusreisingen-03.webp",
       "alt": "Minnesmerke over Christian Lofthus i Lillesand",
       "caption": "I dag minnes Lillesand Christian Lofthus som en bondehøvding som sto opp mot urettferdighet."
     },

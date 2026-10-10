@@ -888,7 +888,7 @@
   "_unmapped": [
     {
       "tag": "historie",
-      "count": 359
+      "count": 361
     },
     {
       "tag": "teknologi",
@@ -904,7 +904,7 @@
     },
     {
       "tag": "økonomi",
-      "count": 69
+      "count": 71
     },
     {
       "tag": "filosofi",
@@ -939,19 +939,19 @@
       "count": 38
     },
     {
+      "tag": "demokrati",
+      "count": 36
+    },
+    {
+      "tag": "1800-tallet",
+      "count": 36
+    },
+    {
       "tag": "nykolonialisme",
       "count": 36
     },
     {
-      "tag": "demokrati",
-      "count": 35
-    },
-    {
       "tag": "middelalderen",
-      "count": 35
-    },
-    {
-      "tag": "1800-tallet",
       "count": 35
     },
     {
@@ -987,6 +987,10 @@
       "count": 25
     },
     {
+      "tag": "1700-tallet",
+      "count": 25
+    },
+    {
       "tag": "delte-samfunn",
       "count": 25
     },
@@ -1000,10 +1004,6 @@
     },
     {
       "tag": "ritual",
-      "count": 24
-    },
-    {
-      "tag": "1700-tallet",
       "count": 24
     },
     {
@@ -1055,15 +1055,15 @@
       "count": 19
     },
     {
+      "tag": "andre-verdenskrig",
+      "count": 19
+    },
+    {
       "tag": "kultur",
       "count": 18
     },
     {
       "tag": "holocaust",
-      "count": 18
-    },
-    {
-      "tag": "andre-verdenskrig",
       "count": 18
     },
     {
@@ -1167,6 +1167,10 @@
       "count": 11
     },
     {
+      "tag": "dansketiden",
+      "count": 11
+    },
+    {
       "tag": "hinduisme",
       "count": 11
     },
@@ -1216,10 +1220,6 @@
     },
     {
       "tag": "diplomati",
-      "count": 10
-    },
-    {
-      "tag": "dansketiden",
       "count": 10
     },
     {
@@ -1335,6 +1335,10 @@
       "count": 8
     },
     {
+      "tag": "stemmerett",
+      "count": 8
+    },
+    {
       "tag": "frihet",
       "count": 8
     },
@@ -1344,6 +1348,10 @@
     },
     {
       "tag": "fred",
+      "count": 8
+    },
+    {
+      "tag": "okkupasjon",
       "count": 8
     },
     {
@@ -1379,10 +1387,6 @@
       "count": 7
     },
     {
-      "tag": "stemmerett",
-      "count": 7
-    },
-    {
       "tag": "segregering",
       "count": 7
     },
@@ -1392,10 +1396,6 @@
     },
     {
       "tag": "the-troubles",
-      "count": 7
-    },
-    {
-      "tag": "okkupasjon",
       "count": 7
     },
     {
@@ -1472,6 +1472,10 @@
     },
     {
       "tag": "ideologi",
+      "count": 6
+    },
+    {
+      "tag": "miljø",
       "count": 6
     },
     {
@@ -1827,6 +1831,14 @@
       "count": 4
     },
     {
+      "tag": "antarktis",
+      "count": 4
+    },
+    {
+      "tag": "bærekraft",
+      "count": 4
+    },
+    {
       "tag": "symboler",
       "count": 4
     },
@@ -1900,10 +1912,6 @@
     },
     {
       "tag": "symbol",
-      "count": 4
-    },
-    {
-      "tag": "miljø",
       "count": 4
     },
     {
@@ -3023,6 +3031,10 @@
       "count": 2
     },
     {
+      "tag": "hvalfangst",
+      "count": 2
+    },
+    {
       "tag": "meiji",
       "count": 2
     },
@@ -3064,10 +3076,6 @@
     },
     {
       "tag": "nansen",
-      "count": 2
-    },
-    {
-      "tag": "antarktis",
       "count": 2
     },
     {
@@ -3203,6 +3211,14 @@
       "count": 2
     },
     {
+      "tag": "brent-jord",
+      "count": 2
+    },
+    {
+      "tag": "gjenreisning",
+      "count": 2
+    },
+    {
       "tag": "konspirasjonsteorier",
       "count": 2
     },
@@ -3304,10 +3320,6 @@
     },
     {
       "tag": "oljefondet",
-      "count": 2
-    },
-    {
-      "tag": "bærekraft",
       "count": 2
     },
     {
@@ -4143,11 +4155,15 @@
       "count": 1
     },
     {
-      "tag": "brent-jord",
+      "tag": "eneveldet",
       "count": 1
     },
     {
-      "tag": "gjenreisning",
+      "tag": "bondeoppror",
+      "count": 1
+    },
+    {
+      "tag": "agder",
       "count": 1
     },
     {

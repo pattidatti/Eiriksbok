@@ -3374,7 +3374,7 @@
               "id": "lofthusreisingen",
               "title": "Lofthusreisingen: Bonden som klaget til kongen",
               "description": "Christian Lofthus samlet bøndene på Agder mot embetsmenn og byborgere i 1786, og fikk delvis rett - men endte i lenker på Akershus.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/dansketiden/lofthusreisingen-hero.webp",
               "tags": [
                 "norge",
                 "dansketiden",
@@ -3383,7 +3383,8 @@
                 "agder",
                 "1700-tallet"
               ],
-              "createdDate": "2026-10-09T00:00:00Z"
+              "createdDate": "2026-10-09T03:18:56+02:00",
+              "lastUpdated": "2026-10-09T09:02:00+02:00"
             }
           ]
         },
@@ -4635,7 +4636,7 @@
               "id": "nansen-og-flyktningene",
               "title": "Fridtjof Nansen og flyktningene: Et pass for de som ikke hørte til",
               "description": "Polarhelten Fridtjof Nansen hjalp krigsfanger hjem, ledet nødhjelp til sultende russere og laget Nansenpasset for flyktninger uten land.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/mellomkrigstiden/nansen-og-flyktningene-hero.webp",
               "tags": [
                 "norge",
                 "mellomkrigstiden",
@@ -9402,7 +9403,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-29T07:40:34+02:00"
+                  "lastUpdated": "2026-10-09T07:44:55+02:00"
                 },
                 {
                   "id": "bonn",
@@ -9428,7 +9429,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-08-29T07:40:34+02:00"
+                  "lastUpdated": "2026-10-09T07:44:55+02:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -9454,7 +9455,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-29T07:40:34+02:00"
+                  "lastUpdated": "2026-10-09T07:44:55+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -9467,7 +9468,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-29T07:40:34+02:00"
+                  "lastUpdated": "2026-10-09T07:44:55+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -9480,7 +9481,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-08-29T07:40:34+02:00"
+                  "lastUpdated": "2026-10-09T07:44:55+02:00"
                 },
                 {
                   "id": "frelse",
