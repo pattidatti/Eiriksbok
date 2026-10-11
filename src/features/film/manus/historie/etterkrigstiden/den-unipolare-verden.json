@@ -1,0 +1,405 @@
+{
+    "id": "den-unipolare-verden",
+    "tittel": "Den unipolare verden: Da USA sto alene på toppen",
+    "kilde": "/historie/etterkrigstiden/den-unipolare-verden",
+    "bilde": "/images/etterkrigstiden/den-unipolare-verden-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "kreml",
+            "kapittel": "Flagget går ned",
+            "visual": {
+                "type": "UnipolarKreml"
+            },
+            "replikker": [
+                {
+                    "si": "Det er den 25. desember 1991. Vi står foran Kreml i Moskva."
+                },
+                {
+                    "si": "Øverst på stanga henger et rødt flagg med hammer og sigd. Det er flagget til Sovjetunionen."
+                },
+                {
+                    "si": "Nå blir flagget firt ned. For aller siste gang."
+                },
+                {
+                    "si": "Sovjetunionen finnes ikke lenger. De femten sovjetrepublikkene blir egne, selvstendige land."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DEN UNIPOLARE VERDEN",
+                    "undertittel": "Da USA sto alene på toppen",
+                    "bilde": "/images/etterkrigstiden/den-unipolare-verden-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvem passer på den sterkeste?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I over 40 år hadde USA og Sovjetunionen holdt hverandre i sjakk."
+                },
+                {
+                    "si": "Nå sto USA igjen helt alene på toppen. Denne filmen handler om årene fra 1991 til 2008."
+                },
+                {
+                    "si": "Og den handler om ett spørsmål: Når ingen kan stoppe den sterkeste, hvem passer da på at makten brukes rettferdig?"
+                }
+            ]
+        },
+        {
+            "id": "poler",
+            "kapittel": "Én pol",
+            "visual": {
+                "type": "UnipolarPoler",
+                "props": {
+                    "modus": "poler"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Historikere kaller dette en unipolar verden. En pol er et maktsentrum, et sted der makten samles."
+                },
+                {
+                    "si": "Under den kalde krigen var verden bipolar. Det betyr at den hadde to poler, USA og Sovjetunionen."
+                },
+                {
+                    "si": "De to balanserte hverandre. Land etter land valgte side."
+                },
+                {
+                    "si": "Etter 1991 var den ene polen borte. Ingen kunne måle seg med USA, verken militært eller økonomisk."
+                },
+                {
+                    "si": "USA hadde verdens største økonomi og militærbaser spredt over hele kloden."
+                }
+            ]
+        },
+        {
+            "id": "fukuyama",
+            "visual": {
+                "type": "UnipolarPoler",
+                "props": {
+                    "modus": "ideer"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I Vesten jublet mange. Allerede i 1989 skrev den amerikanske forskeren Francis Fukuyama en berømt tekst."
+                },
+                {
+                    "si": "Han spurte om verden var kommet til historiens slutt. Han mente ikke at det aldri skulle skje noe mer."
+                },
+                {
+                    "si": "Han mente at den store kampen mellom ideer var avgjort. Demokrati og markedsøkonomi hadde vunnet over kommunismen."
+                },
+                {
+                    "si": "Og resten av verden ville før eller siden følge etter."
+                },
+                {
+                    "si": "Tanken var enkel: Gi folk frihet til å stemme og frihet til å handle, så ordner resten seg selv."
+                }
+            ]
+        },
+        {
+            "id": "sko",
+            "kapittel": "Verden veves sammen",
+            "visual": {
+                "type": "UnipolarKart",
+                "props": {
+                    "modus": "sko"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "På 1990-tallet begynte varer, penger og informasjon å krysse grenser raskere enn før. Dette kalles globalisering."
+                },
+                {
+                    "si": "Ta en joggesko. Den kan bli tegnet og designet i USA,"
+                },
+                {
+                    "si": "sydd i Vietnam, av stoff fra Kina,"
+                },
+                {
+                    "si": "og solgt i en butikk i Norge."
+                },
+                {
+                    "si": "Containerskip fraktet varene billig over havene. Og internett gjorde at penger kunne flyttes over hele kloden på sekunder."
+                }
+            ]
+        },
+        {
+            "id": "wto",
+            "visual": {
+                "type": "UnipolarSkip"
+            },
+            "replikker": [
+                {
+                    "si": "Den 1. januar 1995 fikk den nye verdensøkonomien sitt eget hovedkvarter: Verdens handelsorganisasjon, WTO."
+                },
+                {
+                    "si": "Der ble landene enige om felles regler for handel. Toll, altså en avgift på varer fra andre land, ble kuttet."
+                },
+                {
+                    "si": "I desember 2001 skjedde noe som skulle forandre alt. Kina ble medlem."
+                },
+                {
+                    "si": "Vestlige selskaper flyttet fabrikkene sine dit, fordi arbeidskraften var billig."
+                },
+                {
+                    "si": "Kina ble verdens fabrikk. Det ble starten på landets vei mot å bli en supermakt."
+                }
+            ]
+        },
+        {
+            "id": "gevinst",
+            "visual": {
+                "type": "UnipolarKart",
+                "props": {
+                    "modus": "gevinst"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For mange land ble globaliseringen en vei ut av fattigdom."
+                },
+                {
+                    "si": "Hundrevis av millioner mennesker, spesielt i Asia, fikk jobb og et bedre liv."
+                },
+                {
+                    "si": "Men i gamle industribyer i USA og Europa forsvant fabrikkene. Arbeidere sto uten jobb."
+                },
+                {
+                    "si": "Gevinsten ble delt svært ujevnt."
+                }
+            ]
+        },
+        {
+            "id": "gjeld",
+            "kapittel": "Lån med lenker",
+            "visual": {
+                "type": "UnipolarGjeld",
+                "props": {
+                    "modus": "krav"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Globaliseringen hadde også en bakside. Mange fattige land hadde tatt opp store lån på 1970- og 80-tallet."
+                },
+                {
+                    "si": "De klarte ikke å betale tilbake. Da måtte de be Det internasjonale pengefondet, IMF, om hjelp."
+                },
+                {
+                    "si": "Men hjelpen kom med strenge krav. Det kalles strukturtilpasning: landet må bygge om hele økonomien sin for å få lån."
+                },
+                {
+                    "si": "Landet måtte kutte i det staten brukte penger på, og selge statlige selskaper til private eiere."
+                },
+                {
+                    "si": "Det måtte fjerne subsidier, altså penger fra staten som holdt prisene nede. Og det måtte slippe priser og handel fri."
+                },
+                {
+                    "si": "Og kravene ble bestemt i Washington, ikke i landene selv."
+                }
+            ]
+        },
+        {
+            "id": "to-syn",
+            "visual": {
+                "type": "UnipolarGjeld",
+                "props": {
+                    "modus": "syn"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Var dette bra eller dårlig? Noen mener kravene var nødvendig medisin for syke økonomier."
+                },
+                {
+                    "si": "Andre mener det var en ny og usynlig form for kolonistyre. Ingen soldater og ingen guvernører, men full kontroll gjennom gjeld."
+                },
+                {
+                    "si": "Det kalles nykolonialisme. Råvarene og fortjenesten strømmet fortsatt fra fattige land til rike, akkurat som i kolonitiden."
+                },
+                {
+                    "si": "Mange mistet jobben, og prisene steg. Flere steder ble det store protester."
+                }
+            ]
+        },
+        {
+            "id": "nato",
+            "kapittel": "NATO flytter østover",
+            "visual": {
+                "type": "UnipolarKart",
+                "props": {
+                    "modus": "nato"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Samtidig forandret kartet over Europa seg. Land som Polen, Tsjekkia og de baltiske landene hadde vært tvunget inn under Sovjetunionens makt."
+                },
+                {
+                    "si": "Nå ville de vestover så fort som mulig. De søkte om å bli med i EU og i NATO, en militærallianse der landene lover å forsvare hverandre."
+                },
+                {
+                    "si": "I 1999 ble Polen, Tsjekkia og Ungarn medlemmer av NATO."
+                },
+                {
+                    "si": "I 2004 fulgte sju land til, blant dem Estland, Latvia og Litauen."
+                },
+                {
+                    "si": "Sett fra Vesten var dette en seier for friheten. Landene valgte selv, og de valgte demokrati."
+                },
+                {
+                    "si": "Men sett fra Moskva så det helt annerledes ut. NATO, den gamle fienden fra den kalde krigen, rykket stadig nærmere grensen."
+                },
+                {
+                    "si": "Og Russland var selv svakt etter at Sovjetunionen falt. Den bitterheten skulle få store følger."
+                }
+            ]
+        },
+        {
+            "id": "elleve",
+            "kapittel": "Sprekkene",
+            "visual": {
+                "type": "UnipolarKart",
+                "props": {
+                    "modus": "terror"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 11. september 2001 fikk den unipolare verden sitt første store sjokk."
+                },
+                {
+                    "si": "Terrornettverket al-Qaida kapret fly og styrtet dem inn i World Trade Center i New York og i forsvarsdepartementet Pentagon."
+                },
+                {
+                    "si": "Et fly styrtet også i Pennsylvania. Nesten 3000 mennesker mistet livet."
+                },
+                {
+                    "si": "Verdens mektigste land ble rammet midt i hjertet, av en fiende uten hær og uten stat."
+                },
+                {
+                    "si": "USA svarte med å angripe Afghanistan i oktober 2001. I 2003 gikk USA også til krig mot Irak."
+                },
+                {
+                    "si": "Krigene ble lange og dyre. De svekket USAs rykte i store deler av verden."
+                }
+            ]
+        },
+        {
+            "id": "krisen",
+            "visual": {
+                "type": "UnipolarKart",
+                "props": {
+                    "modus": "krise"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det andre sjokket kom innenfra. I september 2008 gikk banken Lehman Brothers konkurs."
+                },
+                {
+                    "si": "I mange år hadde bankene lånt ut penger til folk som kjøpte hus, men som ikke kunne betale tilbake."
+                },
+                {
+                    "si": "Krisen spredte seg som en bølge over hele den globaliserte verden. Millioner mistet jobb og bolig."
+                },
+                {
+                    "si": "Amerikanske myndigheter måtte redde bankene med krisepakker på rundt 700 milliarder dollar."
+                },
+                {
+                    "si": "Landet som hadde fortalt alle andre hvordan økonomi skulle styres, hadde mistet kontrollen over sin egen."
+                }
+            ]
+        },
+        {
+            "id": "etter",
+            "visual": {
+                "type": "UnipolarPoler",
+                "props": {
+                    "modus": "etter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter 2008 snakket færre om historiens slutt."
+                },
+                {
+                    "si": "Kina vokste i rekordfart, og Russland var på vei tilbake som stormakt."
+                },
+                {
+                    "si": "Tilliten til den amerikanske modellen hadde fått en knekk. Tiden med bare én supermakt var over."
+                }
+            ]
+        },
+        {
+            "id": "notat",
+            "kapittel": "Granskerens notat",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "På overflaten:",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "frihet, demokrati og fri handel.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Følg pengene:",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "de mektigste skrev reglene, og gjeld ga kontroll.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Begge deler er sant på samme tid.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Det er derfor historie er vanskelig, og viktig.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Når ingen kan stoppe den sterkeste,",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "hvem passer da på?",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på årene fra 1991 til 2008 med granskerens blikk. På overflaten handlet de om frihet, demokrati og fri handel."
+                },
+                {
+                    "si": "Men følger du pengene, ser du noe annet. Reglene ble skrevet av de mektigste, gjeld ga kontroll, og gevinsten havnet skjevt."
+                },
+                {
+                    "si": "Begge deler er sant på samme tid. Det er nettopp det som gjør historie vanskelig, og viktig."
+                },
+                {
+                    "si": "Og spørsmålet fra starten står igjen: Når ingen kan stoppe den sterkeste, hvem passer da på at makten brukes rettferdig?"
+                }
+            ]
+        }
+    ]
+}
