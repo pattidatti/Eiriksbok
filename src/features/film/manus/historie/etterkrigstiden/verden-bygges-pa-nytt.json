@@ -1,0 +1,222 @@
+{
+    "id": "verden-bygges-pa-nytt",
+    "tittel": "1945: Verden bygges på nytt",
+    "kilde": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
+    "bilde": "/images/etterkrigstiden/verden-bygges-pa-nytt-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "ruiner",
+            "kapittel": "Ruinene",
+            "visual": { "type": "VerdenRuiner" },
+            "replikker": [
+                { "si": "Det er sommeren 1945. Store deler av verden ligger i grus." },
+                { "si": "Byer som Warszawa, Tokyo og Berlin er bombet i stykker. Hus etter hus står uten tak og vegger." },
+                { "si": "Millioner av mennesker vandrer langs veiene i Europa, uten hjem og uten land." },
+                { "si": "Midt i dette kaoset samles verdens ledere. De lover hverandre: Aldri mer krig." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "1945",
+                    "undertittel": "Verden bygges på nytt",
+                    "bilde": "/images/etterkrigstiden/verden-bygges-pa-nytt-hero.webp",
+                    "tall": [{ "verdi": 70, "etikett": "millioner døde", "fraBeat": 1, "tone": "rod" }],
+                    "sporsmal": { "tekst": "Hvem skrev reglene, og hvem tjente på dem?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Andre verdenskrig var den dødeligste krigen i historien." },
+                { "si": "Minst 70 millioner mennesker døde." },
+                { "si": "Men lederne gjorde mer enn å love fred. De skrev regler. Og den som skriver reglene, får makt." },
+                { "si": "Reglene fra 1945 styrer fortsatt mye av livet ditt. Så la oss spørre: Hvem skrev reglene, og hvem tjente på dem?" }
+            ]
+        },
+        {
+            "id": "kjemper",
+            "kapittel": "To kjemper",
+            "visual": { "type": "VerdenKart", "props": { "modus": "kjemper" } },
+            "replikker": [
+                { "si": "Etter krigen var Europa og Asia utslitt. Storbritannia var nesten konkurs, og Frankrike hadde vært okkupert." },
+                { "si": "Tyskland og Japan lå knust." },
+                { "si": "Men to land sto igjen som kjemper: Sovjetunionen og USA." },
+                { "si": "Sovjetunionen hadde mistet rundt 27 millioner mennesker. Men landet hadde en enorm hær, og den sto midt i Øst-Europa." },
+                { "si": "USA hadde knapt blitt bombet hjemme. Landet hadde verdens sterkeste økonomi, og bare USA hadde atombomben." }
+            ]
+        },
+        {
+            "id": "generalforsamlingen",
+            "kapittel": "FN",
+            "visual": { "type": "VerdenSalen", "props": { "modus": "generalforsamling" } },
+            "replikker": [
+                {
+                    "si": "Den 26. juni 1945 skrev 51 land under på FN-pakten i San Francisco. De forente nasjoner, FN, var i gang.",
+                    "uttale": "Den tjuesjette juni 1945 skrev 51 land under på FN-pakten i San Francisco. De forente nasjoner, FN, var i gang."
+                },
+                { "si": "Tanken var enkel: Hvis alle land har et sted å snakke sammen, trenger de ikke skyte på hverandre." },
+                { "si": "I Generalforsamlingen fikk alle land én stemme hver, uansett om landet var stort eller lite." },
+                { "si": "Det hørtes rettferdig ut. Men den virkelige makten ble lagt et annet sted." }
+            ]
+        },
+        {
+            "id": "sikkerhetsradet",
+            "visual": { "type": "VerdenSalen", "props": { "modus": "sikkerhetsrad" } },
+            "replikker": [
+                { "si": "I Sikkerhetsrådet fikk fem land fast plass: USA, Sovjetunionen, Storbritannia, Frankrike og Kina." },
+                { "si": "Hver av dem fikk vetorett. Veto betyr at ett eneste nei stopper hele saken, uansett hva resten av verden mener." },
+                { "si": "Og vedtakene fra Sikkerhetsrådet er de eneste i FN som alle land er nødt til å følge." },
+                { "si": "Hvorfor akkurat disse fem? De var de allierte som vant krigen." },
+                { "si": "Vinnerne bygde fredens hus, og ga seg selv nøklene." }
+            ]
+        },
+        {
+            "id": "fn-mer",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "FN var mer enn stormaktene",
+                    "punkter": [
+                        { "ikon": "hus", "tittel": "WHO og UNICEF", "tekst": "kontorer for helse, mat og barn", "fraBeat": 0 },
+                        { "ikon": "avtale", "tittel": "Menneskerettighetene", "tekst": "1948: alle er født frie, med samme menneskeverd", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "Trygve Lie", "tekst": "FNs første generalsekretær, fra Norge", "fraBeat": 2 },
+                        { "ikon": "haer", "tittel": "Små land trenger regler", "tekst": "derfor satset Norge alt på FN", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "FN var likevel mye mer enn en klubb for stormaktene. FN fikk egne kontorer for helse, mat og barn, som WHO og UNICEF." },
+                { "si": "I 1948 vedtok FN Verdenserklæringen om menneskerettigheter. Den sier at alle mennesker er født frie, med samme menneskeverd." },
+                { "si": "Og FNs aller første generalsekretær, altså den øverste sjefen, var en nordmann: Trygve Lie." },
+                { "si": "Norge satset alt på FN. For små land trenger felles regler mer enn stormaktene gjør." }
+            ]
+        },
+        {
+            "id": "bretton-woods",
+            "kapittel": "Verdens penger",
+            "visual": { "type": "VerdenKart", "props": { "modus": "bretton" } },
+            "replikker": [
+                { "si": "Den kanskje viktigste avtalen ble laget før krigen engang var slutt." },
+                { "si": "I juli 1944 møttes 44 land, også Norge, i den lille byen Bretton Woods i USA." },
+                { "si": "De samlet seg på et hotell. Der bestemte de hvordan verdens penger skulle fungere." }
+            ]
+        },
+        {
+            "id": "dollaren",
+            "visual": { "type": "VerdenDollar", "props": { "modus": "kjede" } },
+            "replikker": [
+                { "si": "Regelen var slik: Amerikanske dollar kunne veksles inn i gull." },
+                { "si": "Og alle andre lands penger ble knyttet til dollaren. Kronen, pundet, francen." },
+                { "si": "Fra nå av var dollaren verdens penger." },
+                { "si": "Ville et land kjøpe olje, korn eller maskiner fra utlandet, trengte det som regel dollar." }
+            ]
+        },
+        {
+            "id": "bankene",
+            "visual": { "type": "VerdenDollar", "props": { "modus": "banker" } },
+            "replikker": [
+                { "si": "Det samme møtet la grunnlaget for to nye institusjoner. Det er et fint ord for store organisasjoner med egne regler." },
+                { "si": "Pengefondet IMF skulle låne ut penger til land i krise. Det er som en legevakt for land i pengetrøbbel." },
+                { "si": "Du får hjelp, men du må følge legens ordre. Landet må styre pengene sine slik fondet sier." },
+                { "si": "Verdensbanken skulle gi lån til gjenoppbygging og til fattige land. Til veier, kraftverk og havner." }
+            ]
+        },
+        {
+            "id": "stemmene",
+            "visual": { "type": "VerdenDollar", "props": { "modus": "stemmer" } },
+            "replikker": [
+                { "si": "Men hvem bestemmer i disse bankene? Husk at i FNs generalforsamling har hvert land én stemme." },
+                { "si": "I IMF teller ikke stemmene likt. Hvert land får en kvote, altså en andel." },
+                { "si": "Jo større økonomi landet har, og jo mer det handler med utlandet, jo flere stemmer får det." },
+                { "si": "Slik fikk USA og de andre store industrilandene mest makt. Og Verdensbanken har alltid hatt en amerikansk sjef." }
+            ]
+        },
+        {
+            "id": "marshall",
+            "kapittel": "Marshallhjelpen",
+            "visual": { "type": "VerdenKart", "props": { "modus": "marshall" } },
+            "replikker": [
+                { "si": "I 1948 gjorde USA noe som lignet ren gavmildhet." },
+                { "si": "Gjennom Marshallhjelpen sendte USA 13,2 milliarder dollar til Vest-Europa, i lån og gaver fram til 1951." },
+                { "si": "Pengene bygde opp fabrikker, veier og byer. Også Norge fikk godt over 450 millioner dollar." },
+                { "si": "Sovjetunionen sa nei. Polen og Tsjekkoslovakia takket også nei, under sterkt press fra Moskva." }
+            ]
+        },
+        {
+            "id": "baktanke",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hva fikk USA igjen?",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Kunder", "tekst": "Europa måtte kjøpe varer for dollar", "fraBeat": 1 },
+                        { "ikon": "snakk", "tittel": "Nei til kommunismen", "tekst": "fattige og desperate velgere", "fraBeat": 2 },
+                        { "ikon": "hus", "tittel": "Trygghet for USA", "tekst": "et stabilt Vest-Europa", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men en gransker spør alltid: Hva fikk giveren igjen?" },
+                { "si": "Europa manglet dollar. Mat, drivstoff og maskiner kunne bare kjøpes for dollar, så mye av handelen gikk til USA." },
+                { "si": "USA ville også hindre at fattige og desperate europeere valgte kommunismen, altså det systemet Sovjetunionen hadde." },
+                { "si": "Og et stabilt Vest-Europa var bra for USAs egen sikkerhet. Gaven hadde altså en baktanke." }
+            ]
+        },
+        {
+            "id": "jernteppet",
+            "kapittel": "Sprekken",
+            "visual": { "type": "VerdenKart", "props": { "modus": "jernteppe" } },
+            "replikker": [
+                { "si": "Håpet var ekte. Folk som hadde overlevd to verdenskriger på tretti år, mente det når de sa aldri mer." },
+                { "si": "Men sprekken var synlig allerede i 1945. Sovjetunionens hær ble stående i Øst-Europa." },
+                { "si": "Stalin sørget for lydige regjeringer i land etter land. Og ingen av de to kjempene stolte på den andre." },
+                { "si": "I 1946 holdt Winston Churchill en tale. Han sa at et jernteppe hadde senket seg tvers gjennom Europa. Han mente at Europa var delt i to." },
+                { "si": "Fra Stettin ved Østersjøen, til Trieste ved Adriaterhavet." }
+            ]
+        },
+        {
+            "id": "sporene",
+            "kapittel": "Hvem skrev reglene?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvem skrev reglene?",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Vetoretten i FN", "tekst": "de fem som vant krigen", "fraBeat": 1 },
+                        { "ikon": "penger", "tittel": "Verdens penger", "tekst": "dollaren", "fraBeat": 2 },
+                        { "ikon": "fabrikk", "tittel": "IMF og Verdensbanken", "tekst": "den som betaler mest, altså USA", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "La oss samle sporene." },
+                { "si": "Hvem fikk vetorett i FN? De fem som vant krigen." },
+                { "si": "Hvilke penger ble verdens penger? Dollaren." },
+                { "si": "Hvem har makten i IMF og Verdensbanken? Den som betaler mest, altså USA." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ikke nødvendigvis en ond plan.", "fraBeat": 0 },
+                        { "tekst": "Mange mente alvor med fred.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Men vinnerne fikk et forsprang", "fraBeat": 1 },
+                        { "tekst": "som verden fortsatt lever med.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Fred bygd på regler.", "fraBeat": 2 },
+                        { "tekst": "Regler skrevet av vinnerne.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Dette var ikke nødvendigvis en ond plan. Mange av dem som bygde systemet, mente alvor med fred. Og verden fikk mange tiår uten storkrig mellom stormaktene." },
+                { "si": "Men systemet ga også vinnerne av krigen et forsprang som verden fortsatt lever med." },
+                { "si": "Så husk dette bildet av 1945: fred bygd på regler, og regler skrevet av vinnerne." }
+            ]
+        }
+    ]
+}
