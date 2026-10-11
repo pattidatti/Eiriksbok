@@ -124,6 +124,13 @@
       "content": "Mens Hauge satt innesperret, kunne bevegelsen ha falt sammen. Det gjorde den ikke. Vennesamfunnene hadde egne ledere, egne bedrifter og hverandre, og haugianerne fortsatte å starte bedrifter helt fram til 1828 (Dørum, 2025). Da riksforsamlingen samlet seg på Eidsvoll i 1814 for å lage [grunnloven](/samfunnskunnskap/styringsformer/grunnloven), var tre av dem som var valgt dit, haugianere (Dørum, 2025). Flere haugianske miljøer ble etter hvert steder der folk lærte å organisere seg politisk (Seland, 2015)."
     },
     {
+      "type": "component",
+      "name": "MicroGame",
+      "props": {
+        "gameId": "brevnettet"
+      }
+    },
+    {
       "type": "text",
       "content": "På 1830- og 1840-tallet var haugianerne en kjernegruppe i bondeopposisjonen på Stortinget (Dørum, 2025). Bondeopposisjonen var bøndene som utfordret [embetsmennene](/historie/norge-i-moderne-tid/embetsmannsstaten) som styrte landet. Hvor mange haugianere satt på Stortinget? Det er forskerne faktisk uenige om. En forsker har talt 35 fram til 1860, en annen 49 før 1880-årene, og to andre kom fram til 56 mellom 1814 og 1880. De fleste kom fra Vestlandet (Dørum, 2025). Tallene blir trolig forskjellige fordi det ikke fantes noe medlemskort, så hver forsker må selv avgjøre hvem som regnes som haugianer."
     },

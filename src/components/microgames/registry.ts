@@ -254,6 +254,7 @@ const Gamma = lazy(() => import('./Gamma'));
 const RederensKart = lazy(() => import('./RederensKart'));
 const Underskriftsrittet = lazy(() => import('./Underskriftsrittet'));
 const Stempelet = lazy(() => import('./Stempelet'));
+const Brevnettet3D = lazy(() => import('./Brevnettet3D'));
 
 export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.LazyExoticComponent<React.ComponentType<unknown>> }> = {
     'havet-kommer': {
@@ -2617,6 +2618,20 @@ export const MICRO_GAMES: Record<string, MicroGameEntry & { Component: React.Laz
         kunst: 'Mellomkrigstidens sikkerhetstrykk på pass og gebyrmerker: grønt guilloche-mønster på kald papirhvit, oransje stempelblekk og nikkel på et mørkegrønt skrivebord i Genève',
         loader: () => import('./Stempelet'),
         Component: Stempelet as never,
+    },
+    brevnettet: {
+        id: 'brevnettet',
+        title: 'Brevnettet',
+        description:
+            'Hans Nielsen Hauge 1796-1814. Dra ulltråder på veven fra Hauge til de mørke stuene, så tennes lyset. Men lensmannen tar Hauge igjen og igjen, og da slukner alle stuer som bare hang på ham. Bind stuene til hverandre, så lever bevegelsen videre - også de ti årene Hauge sitter i fengsel.',
+        estimatedSeconds: 180,
+        sjanger: 'nettverksbygging i sanntid',
+        tone: 'lett',
+        hook: 'Du er tråden mellom vennene. Brenner lyset ennå når lensmannen har tatt Hauge?',
+        cover: '/images/microgames/brevnettet.webp',
+        kunst: 'Norske åklær og billedvev på oppstadvev rundt 1800: plantefarget ull i indigo, krapprødt og reinfanngult, trappetrinn-figurer og åttebladroser, i talglys',
+        loader: () => import('./Brevnettet3D'),
+        Component: Brevnettet3D as never,
     },
 };
 
