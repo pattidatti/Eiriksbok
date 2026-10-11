@@ -5,7 +5,7 @@
   "year": "1796-1824",
   "category": "Norge under eneveldet",
   "readTime": "8 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dansketiden/hans-nielsen-hauge-hero.webp",
   "details": [
     "Hans Nielsen Hauge (1771-1824) var en bondesønn fra Tune som begynte å preke i 1796, selv om det var forbudt.",
     "Tilhengerne hans, haugianerne, bygde et nett av vennesamfunn over hele landet og startet opptil 150 bedrifter.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/hans-nielsen-hauge-01.webp",
       "alt": "Ung bonde pløyer åker i Østfold om våren",
       "caption": "Hauge fikk opplevelsen som forandret livet hans mens han arbeidet på åkeren hjemme i Tune, 5. april 1796."
     },
@@ -111,7 +111,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/hans-nielsen-hauge-02.webp",
       "alt": "Mann sitter alene i fengselscelle med bok",
       "caption": "Hauge satt fengslet i nesten ti år, det meste av tiden uten at noen domstol hadde dømt ham."
     },
@@ -157,7 +157,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/hans-nielsen-hauge-03.webp",
       "alt": "Bønder samlet til bønnemøte i en stue",
       "caption": "Haugianerne møttes i vanlige stuer rundt om i landet. Det var akkurat slike møter Konventikkelplakaten forbød."
     },
