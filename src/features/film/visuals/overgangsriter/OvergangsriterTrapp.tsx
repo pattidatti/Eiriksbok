@@ -276,7 +276,7 @@ export function OvergangsriterTrapp({ beat, playing, props }: VisualProps<Props>
 
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 42, near: 0.5, far: 200, position: [2, 11, 26] }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 42, near: 0.5, far: 200, position: [2, 11, 26] }}>
                 <Scene
                     trads={trads}
                     fokus={fokus}

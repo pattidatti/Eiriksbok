@@ -213,7 +213,7 @@ export function FinnmarkGamme({ beat, playing }: VisualProps) {
     const lapp = LAPPER[Math.min(beat, LAPPER.length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 42, near: 0.3, far: 400, position: [26, 12, 34] }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 42, near: 0.3, far: 400, position: [26, 12, 34] }}>
                 <Scene beat={beat} playing={playing} />
             </Canvas>
             <AnimatePresence mode="wait">

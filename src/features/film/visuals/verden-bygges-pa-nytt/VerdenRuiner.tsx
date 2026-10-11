@@ -234,7 +234,7 @@ export function VerdenRuiner({ beat, playing }: VisualProps) {
     );
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 45, near: 0.3, far: 400, position: [34, 24, 34] }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 45, near: 0.3, far: 400, position: [34, 24, 34] }}>
                 <Scene beat={beat} playing={playing} />
             </Canvas>
             <AnimatePresence>

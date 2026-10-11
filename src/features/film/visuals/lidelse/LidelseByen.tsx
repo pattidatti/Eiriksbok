@@ -368,7 +368,7 @@ export function LidelseByen({ beat, playing, props }: VisualProps<{ modus?: Modu
     const tekst = TEKSTER[modus][Math.min(beat, TEKSTER[modus].length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 42, near: 0.3, far: 400, position: [26, 13, 30] }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 42, near: 0.3, far: 400, position: [26, 13, 30] }}>
                 <Scene modus={modus} beat={beat} playing={playing} />
             </Canvas>
             <AnimatePresence mode="wait">

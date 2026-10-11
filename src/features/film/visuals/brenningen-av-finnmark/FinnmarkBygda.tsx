@@ -629,7 +629,7 @@ export function FinnmarkBygda({ beat, playing, props }: VisualProps<{ modus?: Mo
     const lapp = liste[Math.min(beat, liste.length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas
+            <Canvas resize={{ offsetSize: true }}
                 dpr={dpr}
                 camera={{ fov: 42, near: 0.3, far: 400, position: [30, 16, 42] }}
                 gl={{ antialias: true }}

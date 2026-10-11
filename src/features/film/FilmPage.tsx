@@ -1,4 +1,13 @@
-import { Suspense, createElement, useCallback, useEffect, useRef, useState } from 'react';
+import {
+    Suspense,
+    createElement,
+    useCallback,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+    type ReactNode,
+} from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -49,10 +58,7 @@ export function FilmPage() {
         return (
             <div className="fixed inset-0 flex flex-col items-center justify-center gap-4 bg-slate-50 text-slate-700">
                 <p className="text-xl font-semibold">Denne artikkelen har ingen film ennå.</p>
-                <Link
-                    to={sti}
-                    className="text-indigo-600 font-bold underline"
-                >
+                <Link to={sti} className="text-indigo-600 font-bold underline">
                     Til artikkelen
                 </Link>
             </div>
@@ -111,9 +117,13 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
     }, [f, manus.scener.length, byttFullskjerm]);
 
     return (
-        <div ref={rammeRef} className="fixed inset-0 z-50 flex flex-col bg-slate-200 select-none">
+        <div
+            ref={rammeRef}
+            className="fixed inset-0 z-50 flex flex-col bg-slate-200 select-none [--reserve:13rem] [@media(max-height:500px)]:[--reserve:9.5rem]"
+        >
             {!fullskjerm && (
-                <header className="h-12 shrink-0 flex items-center gap-3 px-3 sm:px-5 bg-white border-b border-slate-200">
+                // Liggende mobil har for lite høyde til topplinja; der går filmen foran.
+                <header className="h-12 shrink-0 [@media(max-height:500px)]:hidden flex items-center gap-3 px-3 sm:px-5 bg-white border-b border-slate-200">
                     <Link
                         to={manus.kilde}
                         className="flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-indigo-600"
@@ -131,105 +141,110 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
 
             <div className="flex-1 min-h-0 flex items-center justify-center p-2">
                 <div
-                    className="flex flex-col rounded-xl shadow-2xl overflow-hidden bg-white"
+                    className="@container flex flex-col rounded-xl shadow-2xl overflow-hidden bg-white"
                     style={{
+                        // dvh, ikke vh: på mobil er vh høyden uten nettleserens adressefelt.
                         width: fullskjerm
-                            ? 'min(100%, calc((100vh - 9.5rem) * 16 / 9))'
-                            : 'min(100%, calc((100vh - 13rem) * 16 / 9))',
+                            ? 'min(100%, calc((100dvh - 9.5rem) * 16 / 9))'
+                            : 'min(100%, calc((100dvh - var(--reserve)) * 16 / 9))',
                     }}
                 >
                     <div
                         className="relative aspect-video overflow-hidden bg-slate-900"
                         onClick={() => f.status !== 'klar' && f.toggle()}
                     >
-                        <AnimatePresence initial={false}>
-                            <motion.div
-                                key={sceneNr}
-                                className="absolute inset-0"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.7 }}
-                            >
-                                <ErrorBoundary>
-                                    <Suspense
-                                        fallback={<div className="absolute inset-0 bg-slate-900" />}
-                                    >
-                                        {Visual ? (
-                                            // Visualen er bufret per navn i hentVisual, så den er stabil mellom renderinger.
-                                            createElement(Visual, {
-                                                beat,
-                                                playing,
-                                                props: scene.visual.props ?? {},
-                                            })
-                                        ) : (
-                                            <div className="absolute inset-0 flex items-center justify-center bg-slate-100 text-slate-500">
-                                                Mangler visual: {scene.visual.type}
-                                            </div>
-                                        )}
-                                    </Suspense>
-                                </ErrorBoundary>
-                            </motion.div>
-                        </AnimatePresence>
-
-                        {/* Kapittelskilt når et nytt kapittel starter */}
-                        <AnimatePresence>
-                            {scene.kapittel && beat === 0 && (laast || f.status !== 'klar') && (
+                        <Lerret>
+                            <AnimatePresence initial={false}>
                                 <motion.div
-                                    key={scene.id}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ delay: 0.4 }}
-                                    className="absolute top-[4%] left-[3%] px-4 py-1.5 rounded-full bg-white/90 text-slate-900 text-sm md:text-lg font-black shadow"
-                                >
-                                    {scene.kapittel}
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-
-                        {/* Klokka */}
-                        <AnimatePresence>
-                            {klokke && (
-                                <motion.div
+                                    key={sceneNr}
+                                    className="absolute inset-0"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
-                                    className="absolute top-[4%] right-[3%] px-4 py-1.5 rounded-xl bg-slate-900/80 text-amber-300 font-mono text-2xl md:text-4xl font-bold tabular-nums shadow-lg"
+                                    transition={{ duration: 0.7 }}
                                 >
-                                    <AnimatePresence mode="popLayout">
-                                        <motion.span
-                                            key={klokke}
-                                            initial={{ y: -14, opacity: 0 }}
-                                            animate={{ y: 0, opacity: 1 }}
-                                            exit={{ y: 14, opacity: 0 }}
-                                            className="inline-block"
+                                    <ErrorBoundary>
+                                        <Suspense
+                                            fallback={
+                                                <div className="absolute inset-0 bg-slate-900" />
+                                            }
                                         >
-                                            {klokke}
-                                        </motion.span>
-                                    </AnimatePresence>
+                                            {Visual ? (
+                                                // Visualen er bufret per navn i hentVisual, så den er stabil mellom renderinger.
+                                                createElement(Visual, {
+                                                    beat,
+                                                    playing,
+                                                    props: scene.visual.props ?? {},
+                                                })
+                                            ) : (
+                                                <div className="absolute inset-0 flex items-center justify-center bg-slate-100 text-slate-500">
+                                                    Mangler visual: {scene.visual.type}
+                                                </div>
+                                            )}
+                                        </Suspense>
+                                    </ErrorBoundary>
                                 </motion.div>
-                            )}
-                        </AnimatePresence>
+                            </AnimatePresence>
 
-                        {!laast && f.status === 'klar' && <Startskjerm manus={manus} f={f} />}
-                        {f.status === 'ferdig' && (
-                            <Sluttskjerm
-                                manus={manus}
-                                omigjen={() => f.gaTilScene(0)}
-                                spill={f.play}
-                            />
-                        )}
-                        {f.status === 'pause' && (
-                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div className="w-20 h-20 rounded-full bg-white/85 flex items-center justify-center shadow-xl">
-                                    <Play className="w-9 h-9 text-slate-900 ml-1" />
+                            {/* Kapittelskilt når et nytt kapittel starter */}
+                            <AnimatePresence>
+                                {scene.kapittel && beat === 0 && (laast || f.status !== 'klar') && (
+                                    <motion.div
+                                        key={scene.id}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ delay: 0.4 }}
+                                        className="absolute top-[4%] left-[3%] px-4 py-1.5 rounded-full bg-white/90 text-slate-900 text-sm md:text-lg font-black shadow"
+                                    >
+                                        {scene.kapittel}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
+                            {/* Klokka */}
+                            <AnimatePresence>
+                                {klokke && (
+                                    <motion.div
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="absolute top-[4%] right-[3%] px-4 py-1.5 rounded-xl bg-slate-900/80 text-amber-300 font-mono text-2xl md:text-4xl font-bold tabular-nums shadow-lg"
+                                    >
+                                        <AnimatePresence mode="popLayout">
+                                            <motion.span
+                                                key={klokke}
+                                                initial={{ y: -14, opacity: 0 }}
+                                                animate={{ y: 0, opacity: 1 }}
+                                                exit={{ y: 14, opacity: 0 }}
+                                                className="inline-block"
+                                            >
+                                                {klokke}
+                                            </motion.span>
+                                        </AnimatePresence>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
+                            {!laast && f.status === 'klar' && <Startskjerm manus={manus} f={f} />}
+                            {f.status === 'ferdig' && (
+                                <Sluttskjerm
+                                    manus={manus}
+                                    omigjen={() => f.gaTilScene(0)}
+                                    spill={f.play}
+                                />
+                            )}
+                            {f.status === 'pause' && (
+                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                    <div className="w-20 h-20 rounded-full bg-white/85 flex items-center justify-center shadow-xl">
+                                        <Play className="w-9 h-9 text-slate-900 ml-1" />
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </Lerret>
                     </div>
                     {/* Teksting: alltid på, i eget felt rett under bildet så den aldri dekker grafikken */}
-                    <div className="h-[4.5rem] md:h-20 shrink-0 flex items-center justify-center px-6 border-t border-slate-200">
+                    <div className="h-[4.5rem] @3xl:h-20 shrink-0 flex items-center justify-center px-4 @3xl:px-6 border-t border-slate-200">
                         {/* Ingen exit-animasjon: AnimatePresence mode="wait" ble hengende på gammel
                             tekst når replikken byttet raskt (tempobytte, scenehopp). */}
                         <motion.p
@@ -243,7 +258,7 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
                             initial={{ opacity: 0, y: 6 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="text-slate-900 text-base md:text-xl font-semibold leading-snug text-center line-clamp-3"
+                            className="text-slate-900 text-[15px] @md:text-base @3xl:text-xl font-semibold leading-snug text-center line-clamp-3"
                         >
                             {laast
                                 ? scene.replikker[beat]?.si
@@ -266,6 +281,44 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
 }
 
 type Narrator = ReturnType<typeof useFilmNarrator>;
+
+/** Bredden visualene er tegnet for (filmruta på en Chromebook, 1366x768). */
+const LERRET_BREDDE = 1000;
+
+/**
+ * Lerretet filmen tegnes på. Under LERRET_BREDDE lages bildet i full bredde og skaleres
+ * ned som en helhet, slik en video gjør. Ellers ville tekst med fast størrelse ligget
+ * utenfor bildet på mobil. R3F-lerret inni må ha resize={{ offsetSize: true }}, ellers
+ * måler de den nedskalerte størrelsen og blir skalert ned to ganger.
+ */
+function Lerret({ children }: { children: ReactNode }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [bredde, setBredde] = useState(LERRET_BREDDE);
+    useLayoutEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        setBredde(el.clientWidth);
+        const ro = new ResizeObserver(([e]) => setBredde(e.contentRect.width));
+        ro.observe(el);
+        return () => ro.disconnect();
+    }, []);
+    const indre = Math.max(bredde, LERRET_BREDDE);
+    const skala = bredde / indre;
+    return (
+        <div ref={ref} className="absolute inset-0">
+            <div
+                className="absolute top-0 left-0 origin-top-left [container-type:size]"
+                style={{
+                    width: indre,
+                    height: (indre * 9) / 16,
+                    transform: skala < 1 ? `scale(${skala})` : undefined,
+                }}
+            >
+                {children}
+            </div>
+        </div>
+    );
+}
 
 function kapittelFor(manus: FilmManus, scene: number) {
     for (let i = scene; i >= 0; i--) if (manus.scener[i].kapittel) return manus.scener[i].kapittel!;

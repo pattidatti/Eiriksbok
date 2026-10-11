@@ -266,7 +266,7 @@ export function BorgerkrigenWhitehall({ beat, playing, props }: VisualProps<{ mo
               ][Math.min(beat, 4)];
     return (
         <div className="absolute inset-0">
-            <Canvas
+            <Canvas resize={{ offsetSize: true }}
                 dpr={dpr}
                 camera={{ fov: 42, near: 0.3, far: 400, position: [44, 30, 58] }}
                 gl={{ antialias: true }}

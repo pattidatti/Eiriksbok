@@ -301,7 +301,7 @@ export function VerdenSalen({ beat, playing, props }: VisualProps<{ modus?: Modu
     const gf = modus === 'generalforsamling';
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 45, near: 0.3, far: 200, position: [0, 15, 24] }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 45, near: 0.3, far: 200, position: [0, 15, 24] }}>
                 <Scene modus={modus} beat={beat} playing={playing} />
             </Canvas>
             <AnimatePresence>

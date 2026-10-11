@@ -310,7 +310,7 @@ export function BorgerkrigenRettssal({ beat, playing, props }: VisualProps<{ mod
     const lapp = LAPPER[modus][Math.min(beat, LAPPER[modus].length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas
+            <Canvas resize={{ offsetSize: true }}
                 dpr={dpr}
                 camera={{ fov: 44, near: 0.2, far: 200, position: [0, 9, 26] }}
                 gl={{ antialias: true }}

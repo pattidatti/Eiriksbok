@@ -152,7 +152,11 @@ export function DdagenStranda({ beat, playing, props }: VisualProps<{ modus: str
     const dpr = useMemo<[number, number]>(() => (guessTier().tier === 'lav' ? [1, 1] : [1, 1.5]), []);
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 42, position: [20, 8, 30] }}>
+            <Canvas
+                resize={{ offsetSize: true }}
+                dpr={dpr}
+                camera={{ fov: 42, position: [20, 8, 30] }}
+            >
                 <Scene beat={beat} playing={playing} />
             </Canvas>
             {/* Merkelapper og tall som DOM over lerretet, ikke som 3D-tekst */}
@@ -161,6 +165,10 @@ export function DdagenStranda({ beat, playing, props }: VisualProps<{ modus: str
 }
 ```
 
+- **`resize={{ offsetSize: true }}` er påbudt.** Filmen tegnes alltid minst 1000 px bred og
+  skaleres ned som et bilde på mobil (`Lerret` i `FilmPage.tsx`). Uten flagget måler lerretet
+  den nedskalerte størrelsen og blir bittelite. Tegn derfor for 1000x562 og bruk vanlige
+  px/rem-størrelser; ikke `vw`/`vh` (bruk `cqw`/`cqh` om noe skal følge bildets størrelse).
 - **Beat-klokke:** i `useFrame`: `const dt = playing ? Math.min(delta, 0.05) : 0`; nullstill
   `beatTid` når `beat` skifter. Alt animeres ut fra `(beat, beatTid)`. På pause fryser bildet.
 - **Kamera per beat:** en funksjon `kameraFor(beat, t) -> { pos, se }`, og kameraet glir dit

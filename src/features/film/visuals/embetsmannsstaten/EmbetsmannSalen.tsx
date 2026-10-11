@@ -471,7 +471,7 @@ export function EmbetsmannSalen({ beat, playing, props }: VisualProps<{ modus?: 
     const lapp = liste[Math.min(beat, liste.length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 42, near: 0.3, far: 200, position: [0, 13, 23] }} gl={{ antialias: true }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 42, near: 0.3, far: 200, position: [0, 13, 23] }} gl={{ antialias: true }}>
                 <Scene modus={modus} beat={beat} playing={playing} />
             </Canvas>
             <AnimatePresence mode="wait">

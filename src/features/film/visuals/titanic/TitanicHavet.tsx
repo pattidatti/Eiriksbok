@@ -425,7 +425,7 @@ export function TitanicHavet({ beat, playing, props }: VisualProps<Props>) {
     );
     return (
         <div className="absolute inset-0">
-            <Canvas
+            <Canvas resize={{ offsetSize: true }}
                 dpr={dpr}
                 camera={{ fov: 42, near: 0.5, far: 900, position: [22, 8, 30] }}
                 gl={{ antialias: true }}

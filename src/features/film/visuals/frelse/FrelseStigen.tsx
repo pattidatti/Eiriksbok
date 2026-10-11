@@ -362,7 +362,7 @@ function Scene({
                     position={[-BREDDE / 2 - 1.2, trinnY(0) + 0.3, trinnZ(0)]}
                     zIndexRange={[5, 0]}
                 >
-                    <div className="-translate-x-full -translate-y-1/2 text-right text-lg md:text-2xl font-display font-black text-amber-700 uppercase leading-none whitespace-nowrap">
+                    <div className="-translate-x-full -translate-y-1/2 text-right text-lg md:text-xl font-display font-black text-amber-700 uppercase leading-none whitespace-nowrap">
                         Gjort
                         <br />
                         for deg
@@ -374,7 +374,7 @@ function Scene({
                     position={[-BREDDE / 2 - 1.2, trinnY(4) + 0.3, trinnZ(4)]}
                     zIndexRange={[5, 0]}
                 >
-                    <div className="-translate-x-full -translate-y-1/2 text-right text-lg md:text-2xl font-display font-black text-slate-700 uppercase leading-none whitespace-nowrap">
+                    <div className="-translate-x-full -translate-y-1/2 text-right text-lg md:text-xl font-display font-black text-slate-700 uppercase leading-none whitespace-nowrap">
                         Gjort
                         <br />
                         av deg
@@ -411,7 +411,7 @@ export function FrelseStigen({ beat, playing, props }: VisualProps<Props>) {
 
     return (
         <div className="absolute inset-0">
-            <Canvas dpr={dpr} camera={{ fov: 42, near: 0.5, far: 200, position: [2.5, 7.5, 24] }}>
+            <Canvas resize={{ offsetSize: true }} dpr={dpr} camera={{ fov: 42, near: 0.5, far: 200, position: [2.5, 7.5, 24] }}>
                 <Scene fokus={fokus} beat={beat} playing={playing} aktivt={aktivtTrinn} />
             </Canvas>
 

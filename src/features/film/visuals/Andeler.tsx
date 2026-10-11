@@ -102,7 +102,7 @@ function Ring({ rad, forsinkelse = 0 }: { rad: Omit<Rad, 'fraBeat'>; forsinkelse
     const omkrets = 2 * Math.PI * R;
     return (
         <div className="flex flex-col items-center">
-            <svg viewBox="0 0 300 300" className="w-[min(30vw,40vh)]">
+            <svg viewBox="0 0 300 300" className="w-[min(31cqw,55cqh)]">
                 <circle cx={150} cy={150} r={R} fill="none" stroke="#e2e8f0" strokeWidth={36} />
                 <motion.circle
                     cx={150}
