@@ -1,0 +1,72 @@
+// Alle tallene i Brevnettet. Reglene i game.ts leser herfra - endre balansen her,
+// og kjør simuleringen på nytt (npx tsx scripts/sim-microgame.mts --ids brevnettet).
+
+export const TUNING = {
+    /** Veven i verdensenheter. Stuene plasseres innenfor denne rammen. */
+    vev: { minX: -7.2, maxX: 7.2, minY: -3.3, maxY: 3.0 },
+    /** Minste avstand mellom to prikker (stuer og Hauge) når en ny stue plasseres. */
+    avstand: 1.7,
+    /** Flest stuer på veven samtidig (plassen og visningen tåler ikke flere). */
+    maksStuer: 26,
+    /** Flest tråder samtidig. */
+    maksTråder: 60,
+
+    tråd: {
+        /** Lengste tråd mellom to stuer. Hauges tråder har ingen grense. */
+        maksLengde: 7.5,
+    },
+
+    hauge: {
+        /** Sekunder Hauge sitter inne etter en arrestasjon før han slippes ut. */
+        inne: 3,
+        /** Han slippes ut minst så langt fra nærmeste tente stue (vokser per arrestasjon). */
+        utAvstand: 3,
+        utAvstandVekst: 0.4,
+        /** Den nye stua ved siden av ham når han slippes ut. */
+        nyStueAvstand: 2.2,
+    },
+
+    lensmann: {
+        /** Første gang (1797) rir han ekstra sakte. */
+        førsteVarsel: 4.5,
+        /** Fengselsårene: sekunder mellom hvert klipp (først, sist) og varselet på tråden. */
+        klippHver: [4, 3] as [number, number],
+        klippVarsel: 2,
+        /** Sjanse for at han går etter en svak tråd (en stue som bare har den ene tråden). */
+        klippSvak: 0.7,
+    },
+
+    fengsel: {
+        /** Når i fengselsårene Hauge slippes ut til saltverket (1809), og hvor lenge. */
+        saltverk: 15,
+        saltverkSek: 5,
+    },
+
+    ring: {
+        /** Når ringen er så full, teller det som et nytt valg (ofre stua?). */
+        snartFull: 0.6,
+        /** Kljåsteiner som kan falle før tapet. */
+        steiner: 3,
+    },
+
+    poeng: {
+        /** Brevfart langs tråden (enheter per sekund). */
+        brevFart: 2.4,
+        /** Poeng per brev, ganger størrelsen på vennegruppen. */
+        brev: 5,
+        /** Bonus per tent stue i 1814. */
+        tentIMål: 150,
+    },
+
+    /** Sjanse for at en ny stue er en av de navngitte (Sara Oust, Fennefoss ...). */
+    navnSjanse: 0.18,
+} as const;
+
+/** Rangene etter tente stuer i 1814 (stigende terskel). */
+export const RANGER: [number, string][] = [
+    [0, 'Husandakt'],
+    [3, 'Vennegruppe'],
+    [7, 'Lesere'],
+    [12, 'Haugianere'],
+    [20, 'Bondeopposisjon'],
+];

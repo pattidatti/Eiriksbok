@@ -259,3 +259,36 @@ Registry-felt `sjanger`: `'nettverksbygging i sanntid'`.
   (2) Fengselsårene må ikke bli et «se på»-brett - mål `valg` der spesielt. (3) Venteringen er
   regel nummer tre; hvis gråboksen viser at det er for mye i brett 3, kan den byttes mot at stuer
   bare forsvinner etter en stund uten egen ring.
+
+### Fase: gråboks (2026-10-11)
+
+- Bygde gråboksen i `src/components/microgames/brevnettet/` (KART.md, tuning.ts, levels.ts, net.ts,
+  game.ts, bots.ts, sim.ts, view.ts, world.tsx, texts.ts) og `Brevnettet3D.tsx`, registrert i
+  `registry.ts` med `kunst`. Største fil: komponenten, 625 linjer.
+- Reglene: bare tråd fra Hauge tenner; lensmannen river Hauges tråder (fra 1804 klipper han én
+  tråd om gangen med 2 s rødt varsel); tente stuer uten tråd til en annen tent stue rakner; full
+  ring rundt en mørk stue = kljåstein (tre = tap). Opptrappingen fra punkt 11 er brettene i
+  `levels.ts`: 1796 bare tenning (spøkelsestråd), 1797 lensmannen (spøkelsestråd mellom stuene i
+  fare + lærings-øyeblikk), 1798 venteringen, 1799-1803 alt, 1804-1814 fengselsbrett med
+  saltverket i 1809.
+- Visning: R3F med bokser på et skrått vevplan, fast kamera med svak pust, dra eller klikk-klikk
+  mellom prikkene. Instanser for stuer, tråder og brev: 14 draw calls på lav.
+- Simulering (200 runder per robot), grønn på tredje justering: binder (vinner) 100 %, median
+  142 565; halvgod (middels) 100 %, median 115 375; bare-hauge (taper) 0 %, median 0; tilfeldig
+  (knappemoser) 0 %, median 3 415; passiv 0 %. 15,6 valg per minutt, press 0,26 -> 0,37 -> 0,60.
+  Nettleser-selvspill: binder vant med 146 205 poeng, i samsvar med simuleringen.
+- Det som IKKE virket: (1) Første forsøk med 2-3 nøster per år: vinnerroboten tapte 100 % på
+  «tre stuer ga opp» rundt 1800 - garnet rakk ikke til to tråder per ny stue. Løst med høyere
+  inntekt (3 i 1797-1798, 5-8 i 1799-1803). (2) Med rent tilfeldig klipping i fengselsårene
+  overlevde nesten alt, og fengselsbrettet ble et «se på»-brett. Nå går lensmannen etter svake
+  tråder (stuer med bare én tent nabo) 70 % av gangene (`klippSvak`).
+- Kjente svakheter: (1) For lett for robotene - halvgod vinner også 100 %; trappen kommer fra
+  antall tente stuer og poeng, ikke fra seier. En ekte elev sikter dårligere enn en robot, så det
+  kan være riktig, men bør sjekkes når eieren spiller. (2) Fengselsbrettet krever lite av en god
+  spiller (binder mister nesten ingen stuer); `klippHver`/`klippSvak` er knappene. (3) Poengene
+  vokser veldig (brev x gruppestørrelse gir 100 000+); vurder tak per brev eller å telle
+  gruppestørrelse annerledes. (4) Portfunn som er ventet nå: coverbilde mangler, og bildet står
+  stille uten input (ingen juice/liv ennå). (5) Kameravinkelen ble litt kraftigere enn briefens
+  15/8 grader i bildet - sjekk på Chromebook-pekeplate.
+- Skjermbilder: `.screenshots/playtest/brevnettet/film-02-10s.png`, `film-05-55s.png`,
+  `film-07-110s.png`.
