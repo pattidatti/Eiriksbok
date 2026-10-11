@@ -1,0 +1,491 @@
+{
+    "id": "russland-etter-sovjet",
+    "tittel": "Russland etter Sovjet: Fra sammenbrudd til krig",
+    "kilde": "/historie/etterkrigstiden/russland-etter-sovjet",
+    "bilde": "/images/etterkrigstiden/russland-etter-sovjet-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "juledag",
+            "kapittel": "Juledag 1991",
+            "visual": {
+                "type": "RusslandKart",
+                "props": {
+                    "modus": "sammenbrudd"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er juledag, 25. desember 1991. Det store røde landet på kartet er Sovjetunionen, et av verdens to mektigste land."
+                },
+                {
+                    "si": "Denne dagen blir det røde flagget tatt ned fra Kreml i Moskva for siste gang."
+                },
+                {
+                    "si": "Sovjetunionen forsvinner, uten krig og nesten uten et skudd. Femten nye land dukker opp på kartet."
+                },
+                {
+                    "si": "Det største av dem er Russland. Men for millioner av russere føles dette som et nederlag."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Russland etter Sovjet",
+                    "undertittel": "Fra sammenbrudd til krig",
+                    "bilde": "/images/etterkrigstiden/russland-etter-sovjet-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Følg pengene, gassen og stoltheten",
+                        "fraBeat": 1
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om Russland etter Sovjet."
+                },
+                {
+                    "si": "Hvordan gikk landet fra dette sammenbruddet til å starte Europas største krig siden 1945?"
+                },
+                {
+                    "si": "Følg pengene, gassen og den sårede stoltheten. Da ser du mønsteret."
+                }
+            ]
+        },
+        {
+            "id": "sjokk",
+            "kapittel": "Alt raser sammen",
+            "visual": {
+                "type": "RusslandNittitallet",
+                "props": {
+                    "modus": "sjokk"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Russland skulle bytte system i full fart. Før bestemte staten alt. Nå skulle markedet bestemme."
+                },
+                {
+                    "si": "Vestlige rådgivere anbefalte sjokkterapi: slipp prisene fri, selg det staten eier, og gjør det raskt."
+                },
+                {
+                    "si": "Den 2. januar 1992 ble prisene på de fleste varer sluppet fri."
+                },
+                {
+                    "si": "Samme år steg prisene med over 2500 prosent. Det kalles inflasjon: pengene blir verdt mindre og mindre."
+                },
+                {
+                    "si": "Sparepengene til vanlige folk ble verdiløse i løpet av noen måneder. Lærere og leger fikk ikke lønn."
+                }
+            ]
+        },
+        {
+            "id": "levealder",
+            "visual": {
+                "type": "RusslandNittitallet",
+                "props": {
+                    "modus": "levealder"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Krisen kunne til og med måles i hvor lenge folk levde."
+                },
+                {
+                    "si": "Fra 1988 til 1994 falt forventet levealder for russiske menn med hele sju år."
+                },
+                {
+                    "si": "En gutt født i 1994 kunne regne med et mye kortere liv."
+                }
+            ]
+        },
+        {
+            "id": "oligarker",
+            "visual": {
+                "type": "RusslandNittitallet",
+                "props": {
+                    "modus": "oligarker"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Samtidig ble statens største skatter solgt for småpenger: oljefelt, gruver og fabrikker."
+                },
+                {
+                    "si": "De havnet hos en liten gruppe menn med gode kontakter. De ble kalt oligarker: superrike folk som bruker pengene sine til å få makt."
+                },
+                {
+                    "si": "De ble noen av verdens rikeste mennesker. Naboene deres solgte eiendelene sine på gata for å overleve."
+                },
+                {
+                    "si": "For mange russere ble 90-tallet beviset på at demokrati og marked betydde kaos, fattigdom og skam."
+                }
+            ]
+        },
+        {
+            "id": "avtalen",
+            "kapittel": "Putin tar over",
+            "visual": {
+                "type": "RusslandAvtalen",
+                "props": {
+                    "modus": "avtale"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nyttårsaften 1999 trekker president Boris Jeltsin seg. Han peker på en mann nesten ingen kjenner."
+                },
+                {
+                    "si": "Han heter Vladimir Putin, og han har vært offiser i KGB, Sovjetunionens hemmelige politi. I mars 2000 vinner han valget."
+                },
+                {
+                    "si": "Putin tilbyr russerne en avtale som aldri blir sagt høyt. Dere får orden, lønn i tide og et land som reiser seg igjen."
+                },
+                {
+                    "si": "Til gjengjeld blander dere dere ikke i politikken."
+                }
+            ]
+        },
+        {
+            "id": "tv",
+            "visual": {
+                "type": "RusslandAvtalen",
+                "props": {
+                    "modus": "tv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Putin hadde flaks. Oljeprisen steg kraftig utover 2000-tallet, og pengene strømmet inn i statskassen."
+                },
+                {
+                    "si": "Mange russere fikk det bedre enn før."
+                },
+                {
+                    "si": "Samtidig kom alle de store TV-kanalene under statens kontroll. Der får de fleste russere nyhetene sine."
+                },
+                {
+                    "si": "Medieeiere som kritiserte Putin, måtte flykte. Oligarker som utfordret ham, havnet i fengsel eller i utlandet."
+                },
+                {
+                    "si": "Bit for bit forsvant den frie debatten."
+                }
+            ]
+        },
+        {
+            "id": "sitat",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Putin, 2005:",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "«Sovjetunionens sammenbrudd var det 20. århundrets største geopolitiske katastrofe.»",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Ikke en seier. Ikke frihet.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Et tap man kan prøve å ta igjen.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 2005 kalte Putin Sovjetunionens sammenbrudd det tjuende århundrets største geopolitiske katastrofe. Geopolitisk betyr her: om makten mellom land."
+                },
+                {
+                    "si": "Det mange i vest så som frihet, så Putin som et tap. Og et tap kan man prøve å ta igjen."
+                }
+            ]
+        },
+        {
+            "id": "ror",
+            "kapittel": "Gass som våpen",
+            "visual": {
+                "type": "RusslandGass",
+                "props": {
+                    "modus": "ror"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Russland sitter på noen av verdens største lagre av gass og olje."
+                },
+                {
+                    "si": "Europa trengte energien. Tyskland og flere andre land bygde rørledninger rett til Russland."
+                },
+                {
+                    "si": "Gassen varmet husene og drev fabrikkene. Europa ble avhengig av den."
+                },
+                {
+                    "si": "Tanken var at handel skaper fred. Land som tjener penger på hverandre, går ikke til krig."
+                }
+            ]
+        },
+        {
+            "id": "kran",
+            "visual": {
+                "type": "RusslandGass",
+                "props": {
+                    "modus": "kran"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men Kreml så det motsatt. Gassen var ikke bare en vare. Den var et pressmiddel, noe du kan true andre med."
+                },
+                {
+                    "si": "Land som gjorde som Russland ville, fikk billig gass."
+                },
+                {
+                    "si": "Land som protesterte, kunne oppleve at kranen ble skrudd igjen. Midt på vinteren."
+                },
+                {
+                    "si": "Tenk deg å si nei til naboen som eier varmen i huset ditt."
+                }
+            ]
+        },
+        {
+            "id": "nordstream",
+            "visual": {
+                "type": "RusslandKart",
+                "props": {
+                    "modus": "gass"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Her er granskerens regel: Se ikke på hva ledere sier. Se på hva de bygger."
+                },
+                {
+                    "si": "Mye av gassen til Europa gikk gjennom rør i Ukraina."
+                },
+                {
+                    "si": "Men Russland bygde rør som gikk utenom. Nord Stream ligger på bunnen av Østersjøen, rett til Tyskland. Den sto ferdig i 2011."
+                },
+                {
+                    "si": "Nå kunne gassen flyte vestover, selv om Russland havnet i strid med naboene."
+                }
+            ]
+        },
+        {
+            "id": "nato",
+            "kapittel": "Opptrappingen",
+            "visual": {
+                "type": "RusslandKart",
+                "props": {
+                    "modus": "nato"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mens Russland ble rikere, flyttet grensene i Europa seg. Land som før var styrt fra Moskva, gikk inn i NATO og EU."
+                },
+                {
+                    "si": "Polen, Tsjekkia og Ungarn i 1999. Sju land til i 2004, blant dem Estland, Latvia og Litauen."
+                },
+                {
+                    "si": "De hadde levd under sovjetisk kontroll. NATO er et forsvarssamarbeid der landene lover å hjelpe hverandre, og det ville de være med i."
+                },
+                {
+                    "si": "Fra Kreml så det annerledes ut: en fiendtlig militærallianse rykket stadig nærmere."
+                },
+                {
+                    "si": "Det er viktig å forstå hvordan Russland så det. Men ingen stat har lov til å ta land fra en annen med makt."
+                }
+            ]
+        },
+        {
+            "id": "trappa",
+            "visual": {
+                "type": "RusslandKart",
+                "props": {
+                    "modus": "opptrapping"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sommeren 2008 går Russland til krig mot Georgia, et lite naboland som ville vestover."
+                },
+                {
+                    "si": "Krigen varer i fem dager, og Georgia mister kontrollen over Sør-Ossetia og Abkhasia. Vesten protesterer, men kjøper gass som før."
+                },
+                {
+                    "si": "I 2014 gjør ukrainerne opprør mot presidenten sin, som var vennlig mot Russland."
+                },
+                {
+                    "si": "Russiske soldater uten kjennetegn tar kontroll på Krim. Den 18. mars annekterer Russland halvøya: de tar den og kaller den russisk."
+                },
+                {
+                    "si": "EU og USA svarer med sanksjoner, altså straff mot handelen. Men de kjøper fortsatt gass."
+                },
+                {
+                    "si": "Den 24. februar 2022 kommer fullskalainvasjonen. Russland angriper Ukraina med full styrke, fra flere sider."
+                }
+            ]
+        },
+        {
+            "id": "feil",
+            "visual": {
+                "type": "RusslandTrappa",
+                "props": {}
+            },
+            "replikker": [
+                {
+                    "si": "Putin regnet med en rask seier. Han regnet også med at et splittet Vesten ville se en annen vei, som før."
+                },
+                {
+                    "si": "Han tok feil på begge punkter. Ukrainerne kjempet imot, og krigen ble lang og blodig."
+                },
+                {
+                    "si": "Og se på trappa. Georgia, Krim, Ukraina. Hvert steg var større enn det forrige."
+                },
+                {
+                    "si": "Under trappa ser du gassen. Den fortsatte å strømme både etter Georgia og etter Krim."
+                }
+            ]
+        },
+        {
+            "id": "svar",
+            "kapittel": "Verden svarer",
+            "visual": {
+                "type": "RusslandKart",
+                "props": {
+                    "modus": "svar"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Invasjonen forandret Europa på noen uker. De fleste EU- og NATO-land innførte harde sanksjoner, og hundrevis av selskaper dro fra Russland."
+                },
+                {
+                    "si": "Europa begynte den vonde jobben med å kutte den russiske gassen."
+                },
+                {
+                    "si": "Finland og Sverige hadde holdt seg utenfor militærallianser i generasjoner. Nå søkte de om å bli med i NATO."
+                },
+                {
+                    "si": "Finland ble medlem i april 2023, og Sverige i mars 2024. Tyskland og resten av Europa begynte å ruste opp."
+                },
+                {
+                    "si": "Krigen har kostet enormt, mest for Ukraina. Per 2026 finnes det fortsatt ingen varig fred."
+                }
+            ]
+        },
+        {
+            "id": "hvorfor",
+            "kapittel": "Hvorfor så ingen det?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvorfor reagerte ikke Vesten før?",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Pengene",
+                            "tekst": "billig gass til industrien",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Ønsketenkningen",
+                            "tekst": "handel skulle gjøre Russland fredelig",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Vanen",
+                            "tekst": "etter hver krise ble det hverdag igjen",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "bombe",
+                            "tittel": "Frykten",
+                            "tekst": "Russland har atomvåpen",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå kommer det ubehagelige spørsmålet. Signalene var synlige i mange år. Hvorfor reagerte ikke Vesten før?"
+                },
+                {
+                    "si": "Det første svaret er pengene. Europas industri tjente på billig russisk gass, og ingen ville gi slipp på den."
+                },
+                {
+                    "si": "Det andre er ønsketenkning. Mange trodde at handel av seg selv ville gjøre Russland fredelig."
+                },
+                {
+                    "si": "Det tredje er vanen. Etter hver krise ble det raskt hverdag igjen, og gassen fortsatte å strømme."
+                },
+                {
+                    "si": "Det fjerde er frykten. Russland har atomvåpen, og ingen ville ha en direkte kamp."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Penger, gass og såret stolthet.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Slik bygde Putin makt.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Avhengighet kan gjøre land blinde",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "for fare.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Den som eier energien,",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "eier også en del av makten.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Putin bygde makten sin av tre ting: gass, penger og en såret stolthet etter 1991."
+                },
+                {
+                    "si": "Historien om Russland er også en historie om Vesten. Å være avhengig av en vare kan gjøre land blinde for fare."
+                },
+                {
+                    "si": "Og den viser en ting du kan ta med deg videre. Den som eier energien, eier også en del av makten."
+                }
+            ]
+        }
+    ]
+}
