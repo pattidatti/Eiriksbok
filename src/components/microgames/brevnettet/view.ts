@@ -10,6 +10,7 @@ export const FARGE = {
     vegg: '#2b1e16',
     ull: '#e9dfc6',
     brun: '#7a6450',
+    grå: '#8a8580',
     indigo: '#2f4f86',
     gul: '#e2ae3a',
     rød: '#a8322a',

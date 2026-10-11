@@ -25,7 +25,7 @@ export const ØYEBLIKK = {
     },
     fengsel: {
         tittel: 'Hauge i fengsel',
-        tekst: 'Nå klipper lensmannen én tråd om gangen. En stue med to tråder tåler ett klipp.',
+        tekst: 'Nå klipper lensmannen den tråden flest stuer henger på. Den blir rød først. Dra den på nytt for ett nøste, eller bind stua til en annen.',
     },
 };
 
@@ -34,6 +34,7 @@ export const LAPP = {
     ring: 'Folk venter her. Tenn stua i tide',
     nøster: 'Hver tråd koster ett nøste',
     saltverk: 'Hauge er ute i fem sekunder!',
+    knytt: 'Dra den røde tråden på nytt',
 };
 
 export const LÆRDOM = {

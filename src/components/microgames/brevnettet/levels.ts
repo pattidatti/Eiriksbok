@@ -7,11 +7,11 @@ export interface Brett {
     tittel: string;
     /** Lengste tid på brettet i sekunder. */
     sek: number;
-    /** Nøster eleven får når brettet starter. */
+    /** Nøster eleven får når brettet starter (resten kommer per stue som overlever et raid). */
     nøster: number;
     /** Stuer som dukker opp med en gang brettet starter (posisjoner i andeler av veven, eller tilfeldig). */
     startStuer: { x: number; y: number }[];
-    /** Sekunder mellom hver nye mørke stue (null = ingen nye underveis). */
+    /** Sekunder mellom hvert nye par av mørke stuer, én på hver side (null = ingen nye underveis). */
     stueHver: number | null;
     /** Lensmannen: sekunder fra brettets start til første ritt, og mellom rittene (null = han kommer ikke). */
     lensFørst: number | null;
@@ -50,7 +50,7 @@ export const BRETT: Brett[] = [
         år: 1797,
         tittel: 'ANNO 1797',
         sek: 25,
-        nøster: 3,
+        nøster: 2,
         startStuer: [{ x: 0.7, y: 0.3 }],
         stueHver: null,
         lensFørst: 9,
@@ -63,7 +63,7 @@ export const BRETT: Brett[] = [
         år: 1798,
         tittel: 'ANNO 1798',
         sek: 28,
-        nøster: 3,
+        nøster: 2,
         startStuer: [
             { x: 0.08, y: 0.5 },
             { x: 0.92, y: 0.55 },
@@ -78,67 +78,67 @@ export const BRETT: Brett[] = [
         år: 1799,
         tittel: 'ANNO 1799',
         sek: 16,
-        nøster: 5,
+        nøster: 0,
         startStuer: [],
-        stueHver: 7.5,
+        stueHver: 13,
         lensFørst: 9,
         lensHver: 18,
-        varsel: 3,
+        varsel: 3.5,
         ringTid: 18,
     },
     {
         år: 1800,
         tittel: 'ANNO 1800',
         sek: 16,
-        nøster: 6,
+        nøster: 0,
         startStuer: [],
-        stueHver: 6.5,
+        stueHver: 12,
         lensFørst: null,
         lensHver: 16,
-        varsel: 3,
+        varsel: 3.5,
         ringTid: 16,
     },
     {
         år: 1801,
         tittel: 'ANNO 1801',
         sek: 16,
-        nøster: 7,
+        nøster: 0,
         startStuer: [],
-        stueHver: 5.5,
+        stueHver: 11,
         lensFørst: null,
         lensHver: 14,
-        varsel: 2.6,
+        varsel: 3.2,
         ringTid: 15,
     },
     {
         år: 1802,
         tittel: 'ANNO 1802',
         sek: 16,
-        nøster: 8,
+        nøster: 0,
         startStuer: [],
-        stueHver: 4.8,
+        stueHver: 10,
         lensFørst: null,
         lensHver: 12.5,
-        varsel: 2.6,
+        varsel: 3.2,
         ringTid: 14,
     },
     {
         år: 1803,
         tittel: 'ANNO 1803',
         sek: 16,
-        nøster: 8,
+        nøster: 0,
         startStuer: [],
-        stueHver: 4,
+        stueHver: 9,
         lensFørst: null,
         lensHver: 11,
-        varsel: 2.4,
+        varsel: 3,
         ringTid: 13,
     },
     {
         år: 1804,
         tittel: 'ANNO 1804',
-        sek: 30,
-        nøster: 3,
+        sek: 38,
+        nøster: 1,
         startStuer: [],
         stueHver: null,
         lensFørst: 0.5,

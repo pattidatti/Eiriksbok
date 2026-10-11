@@ -152,7 +152,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
     const hud = {
         år: useRef<HTMLDivElement>(null),
         nøster: useRef<HTMLDivElement>(null),
-        poeng: useRef<HTMLDivElement>(null),
+        tente: useRef<HTMLDivElement>(null),
         steiner: useRef<HTMLDivElement>(null),
     };
 
@@ -233,8 +233,24 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                 break;
             }
             case 'tråd':
+            case 'knytt':
                 sfx.tukk();
                 break;
+            case 'kuttVarsel': {
+                const t = g.tråder.find((x) => x.id === h.id);
+                if (t)
+                    text.point(
+                        'knytt',
+                        LAPP.knytt,
+                        påVev(() => {
+                            const a = gRef.current.stuer.get(t.a);
+                            const b = gRef.current.stuer.get(t.b);
+                            return a && b ? { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 } : null;
+                        }),
+                        { seconds: 4, tone: 'fare' }
+                    );
+                break;
+            }
             case 'tent':
                 sfx.tent();
                 break;
@@ -296,10 +312,8 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
     const oppdaterHud = (g: Game) => {
         if (hud.år.current) hud.år.current.textContent = `ANNO ${visÅr(g)}`;
         if (hud.nøster.current) hud.nøster.current.textContent = String(g.nøster);
-        if (hud.poeng.current)
-            hud.poeng.current.textContent = Math.round(g.poeng).toLocaleString('nb-NO');
-        if (hud.steiner.current)
-            hud.steiner.current.textContent = '■'.repeat(3 - g.steiner) + '□'.repeat(g.steiner);
+        if (hud.tente.current) hud.tente.current.textContent = String(tente(g).length);
+        if (hud.steiner.current) hud.steiner.current.textContent = `${g.steiner} av 3`;
         spøkelseRef.current = spøkelse(g);
     };
 
@@ -459,7 +473,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                         <ambientLight intensity={0.7} />
                         <pointLight position={[-9, 2, 6]} intensity={60} color="#ffd9a0" />
                         <Kamera />
-                        <Vev gRef={gRef} />
+                        <Vev />
                         <Stuer gRef={gRef} />
                         <Garn gRef={gRef} dragRef={dragRef} spøkelseRef={spøkelseRef} />
                         <Figurer gRef={gRef} />
@@ -508,10 +522,13 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                             <div style={{ fontSize: 15 }}>nøster</div>
                         </div>
                         <div style={{ ...hudTekst, position: 'absolute', left: 16, bottom: 12 }}>
-                            <div ref={hud.poeng} style={{ fontSize: 24, lineHeight: 1 }}>
+                            <div
+                                ref={hud.tente}
+                                style={{ fontSize: 40, lineHeight: 1, color: FARGE.gul }}
+                            >
                                 0
                             </div>
-                            <div style={{ fontSize: 14 }}>brev-poeng</div>
+                            <div style={{ fontSize: 15 }}>stuer lyser</div>
                         </div>
                         <div
                             style={{
@@ -522,10 +539,10 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                                 textAlign: 'right',
                             }}
                         >
-                            <div ref={hud.steiner} style={{ fontSize: 22, letterSpacing: '0.2em' }}>
-                                ■■■
+                            <div ref={hud.steiner} style={{ fontSize: 22, lineHeight: 1 }}>
+                                0 av 3
                             </div>
-                            <div style={{ fontSize: 14 }}>kljåsteiner</div>
+                            <div style={{ fontSize: 14 }}>stuer ga opp</div>
                         </div>
                     </div>
                     {hudPå && (
@@ -604,7 +621,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                                     { value: res.tent, label: 'tente stuer' },
                                     {
                                         value: res.poeng.toLocaleString('nb-NO'),
-                                        label: res.nyRekord ? 'ny rekord!' : 'poeng',
+                                        label: res.nyRekord ? 'stue-år, ny rekord!' : 'stue-år',
                                     },
                                     { value: res.år, label: 'år' },
                                 ]}

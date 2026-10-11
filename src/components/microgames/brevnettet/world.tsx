@@ -5,9 +5,10 @@ import { useRef } from 'react';
 import { useFrame, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
 import { TUNING } from './tuning';
-import { HAUGE, avstand, iFare, type Punkt } from './net';
+import { HAUGE, avstand, type Punkt } from './net';
 import { FARGE, treff, type Drag, type Spøkelse } from './view';
-import { kanBinde, node, type Game } from './game';
+import { kanBinde, node, truet, type Game } from './game';
+import { BRETT } from './levels';
 
 const V = TUNING.vev;
 const MAKS_S = TUNING.maksStuer;
@@ -23,11 +24,17 @@ const skala = new THREE.Vector3();
 const zAkse = new THREE.Vector3(0, 0, 1);
 const farge = new THREE.Color();
 const GUL = new THREE.Color(FARGE.gul);
+const RØD = new THREE.Color(FARGE.rød);
 const dragMat = new THREE.MeshBasicMaterial({ color: FARGE.svart });
 const spøkMat = new THREE.MeshBasicMaterial({
-    color: FARGE.svart,
+    color: FARGE.indigo,
     transparent: true,
     opacity: 0.4,
+});
+const stiMat = new THREE.MeshBasicMaterial({
+    color: FARGE.rød,
+    transparent: true,
+    opacity: 0.5,
 });
 
 /** Plasser en boks (lengde 1 langs x) mellom to punkter. */
@@ -39,18 +46,8 @@ function strekk(a: Punkt, b: Punkt, tykk: number, z: number, out: THREE.Matrix4)
     return out.compose(pos, q, skala);
 }
 
-/** Veven: grunnen, rammen, overbommen og kljåsteinene. */
-export function Vev({ gRef }: { gRef: GRef }) {
-    const steiner = useRef<(THREE.Mesh | null)[]>([]);
-    useFrame((_, dt) => {
-        const g = gRef.current;
-        steiner.current.forEach((m, i) => {
-            if (!m) return;
-            const falt = i < g.steiner;
-            const mål = falt ? -9 : V.minY - 1.6;
-            m.position.y += (mål - m.position.y) * Math.min(1, dt * 6);
-        });
-    });
+/** Veven: grunnen, rammen og overbommen. (Kljåsteinene vises bare i HUD-en, ikke dobbelt.) */
+export function Vev() {
     const bredde = V.maxX - V.minX + 1.6;
     const høyde = V.maxY - V.minY + 2.2;
     const midtY = (V.maxY + V.minY) / 2 + 0.3;
@@ -71,23 +68,15 @@ export function Vev({ gRef }: { gRef: GRef }) {
                     <meshStandardMaterial color={FARGE.brun} />
                 </mesh>
             ))}
-            {[0, 1, 2].map((i) => (
-                <mesh
-                    key={i}
-                    ref={(m) => {
-                        steiner.current[i] = m;
-                    }}
-                    position={[-1.6 + i * 1.6, V.minY - 1.6, 0.15]}
-                >
-                    <boxGeometry args={[0.7, 0.6, 0.4]} />
-                    <meshStandardMaterial color="#8a8580" />
-                </mesh>
-            ))}
         </group>
     );
 }
 
-/** Stuene (bokser), ringen av ventende folk (en stolpe som vokser) og rødt blink ved fare. */
+/**
+ * Stuene med tilstanden vist som form: mørke stuer er lave og grå med en ring av ventende folk
+ * som krymper mot null, tente stuer er høye og lyse, og stuer som rakner ved neste raid eller
+ * klipp, synker og blinker rødt mens lensmannen rir eller tråden er merket.
+ */
 export function Stuer({ gRef }: { gRef: GRef }) {
     const hus = useRef<THREE.InstancedMesh>(null);
     const ring = useRef<THREE.InstancedMesh>(null);
@@ -98,29 +87,33 @@ export function Stuer({ gRef }: { gRef: GRef }) {
         const h = hus.current;
         const r = ring.current;
         if (!h || !r) return;
-        const fare = new Set(g.lens ? iFare(g.stuer, g.tråder).map((s) => s.id) : []);
-        const kutt = new Set<number>();
-        for (const t of g.tråder) if (t.kutt > 0) [t.a, t.b].forEach((id) => kutt.add(id));
+        const fare = truet(g);
+        const venter = BRETT[g.brett].ringTid !== null;
         const blink = Math.sin(tid.current * 12) > 0;
         let i = 0;
         for (const s of g.stuer.values()) {
             const vokse = s.tent >= 0 ? Math.min(1, s.tent * 4) : 1;
-            const st = 1 + (s.lys ? 0.25 * vokse : 0);
-            m4.compose(pos.set(s.x, s.y, Z), q.identity(), skala.set(st, st, st));
-            h.setMatrixAt(i, m4);
-            const iFareNå = (fare.has(s.id) || (kutt.has(s.id) && s.lys)) && blink;
-            farge.set(iFareNå ? FARGE.rød : s.lys ? FARGE.gul : FARGE.brun);
+            const iFare = fare.has(s.id);
+            if (s.lys) {
+                // Høy og lys. Truet: synker ned i veven og blinker.
+                const synk = iFare ? 0.45 + 0.15 * Math.sin(tid.current * 12) : 1;
+                skala.set(1 + 0.1 * vokse, 1 + 0.25 * vokse, (1 + 1.6 * vokse) * synk);
+                pos.set(s.x, s.y + 0.15 * vokse, Z + 0.15 * skala.z);
+            } else {
+                skala.set(0.7, 0.55, 0.45);
+                pos.set(s.x, s.y, Z);
+            }
+            h.setMatrixAt(i, m4.compose(pos, q.identity(), skala));
+            farge.set(s.lys ? (iFare && blink ? FARGE.rød : FARGE.gul) : FARGE.grå);
             if (s.rakner >= 0 && s.rakner < 0.6) farge.lerp(GUL, 1 - s.rakner / 0.6);
             h.setColorAt(i, farge);
-            // Ringen: en stolpe under stua som fylles mot rødt.
-            const fyll = s.lys ? 0 : s.ring;
-            m4.compose(
-                pos.set(s.x - 0.45 + 0.45 * fyll, s.y - 0.62, Z),
-                q.identity(),
-                skala.set(Math.max(0.001, fyll), fyll > 0 ? 1 : 0.001, 1)
-            );
+            // Ringen av ventende folk: krymper mot stua og blir rød når tiden nesten er ute.
+            const igjen = s.lys || !venter ? 0 : 1 - s.ring;
+            const rs = igjen > 0 ? 0.45 + 0.75 * igjen : 0.001;
+            m4.compose(pos.set(s.x, s.y, Z - 0.02), q.identity(), skala.set(rs, rs, 1));
             r.setMatrixAt(i, m4);
-            farge.set(fyll > TUNING.ring.snartFull ? FARGE.rød : FARGE.brun);
+            farge.set(FARGE.brun);
+            if (s.ring > TUNING.ring.snartFull) farge.lerp(RØD, blink ? 1 : 0.6);
             r.setColorAt(i, farge);
             i++;
         }
@@ -138,7 +131,7 @@ export function Stuer({ gRef }: { gRef: GRef }) {
                 <meshStandardMaterial />
             </instancedMesh>
             <instancedMesh ref={ring} args={[undefined, undefined, MAKS_S]} frustumCulled={false}>
-                <boxGeometry args={[0.9, 0.14, 0.12]} />
+                <torusGeometry args={[0.7, 0.07, 6, 28]} />
                 <meshStandardMaterial />
             </instancedMesh>
         </group>
@@ -174,10 +167,24 @@ export function Garn({
             const c = node(g, x.b);
             if (!a || !c) continue;
             const hauge = x.a === HAUGE || x.b === HAUGE;
-            t.setMatrixAt(i, strekk(a, c, 0.12, Z - 0.05, m4));
-            farge.set(x.kutt > 0 && blink ? FARGE.rød : hauge ? FARGE.indigo : FARGE.gul);
+            const venner = !hauge && g.stuer.get(x.a)?.lys && g.stuer.get(x.b)?.lys;
+            const tykk = x.kutt > 0 ? 0.2 : 0.12;
+            t.setMatrixAt(i, strekk(a, c, tykk, Z - 0.05, m4));
+            farge.set(
+                x.kutt > 0
+                    ? blink
+                        ? FARGE.rød
+                        : FARGE.svart
+                    : hauge
+                      ? FARGE.indigo
+                      : venner
+                        ? FARGE.gul
+                        : FARGE.grå
+            );
             t.setColorAt(i, farge);
             i++;
+            // Brev går bare mellom to tente stuer: der lever nettet uten Hauge.
+            if (!venner) continue;
             const p = { x: a.x + (c.x - a.x) * x.brev, y: a.y + (c.y - a.y) * x.brev };
             m4.compose(pos.set(p.x, p.y, Z + 0.12), q.identity(), skala.set(1, 1, 1));
             b.setMatrixAt(j++, m4);
@@ -210,9 +217,10 @@ export function Garn({
             const c = s ? node(g, s.b) : null;
             sm.visible = !!(a && c);
             if (a && c) {
-                strekk(a, c, 0.1, Z + 0.02, m4);
+                const puls = 0.5 + 0.5 * Math.sin(tid.current * 5);
+                strekk(a, c, 0.14 + 0.1 * puls, Z + 0.02, m4);
                 m4.decompose(sm.position, sm.quaternion, sm.scale);
-                spøkMat.opacity = 0.2 + 0.35 * (0.5 + 0.5 * Math.sin(tid.current * 5));
+                spøkMat.opacity = 0.3 + 0.65 * puls;
             }
         }
     });
@@ -223,8 +231,8 @@ export function Garn({
                 <meshStandardMaterial />
             </instancedMesh>
             <instancedMesh ref={brev} args={[undefined, undefined, MAKS_T]} frustumCulled={false}>
-                <boxGeometry args={[0.26, 0.18, 0.05]} />
-                <meshStandardMaterial color="#ffffff" />
+                <boxGeometry args={[0.2, 0.14, 0.05]} />
+                <meshStandardMaterial color={FARGE.ull} />
             </instancedMesh>
             <mesh ref={drag} material={dragMat} visible={false}>
                 <boxGeometry args={[1, 1, 1]} />
@@ -236,10 +244,14 @@ export function Garn({
     );
 }
 
-/** Hauge (indigo søyle med svart hatt) og lensmannen (rød boks som rir mot ham). */
+/**
+ * Hauge (indigo søyle med svart hatt) og lensmannen (rød boks). Mellom rittene venter
+ * lensmannen ved kanten der han skal ri ut. Når han rir, er stien til Hauge tegnet rødt.
+ */
 export function Figurer({ gRef }: { gRef: GRef }) {
     const hauge = useRef<THREE.Group>(null);
     const lens = useRef<THREE.Mesh>(null);
+    const sti = useRef<THREE.Mesh>(null);
     useFrame(() => {
         const g = gRef.current;
         const h = hauge.current;
@@ -248,16 +260,24 @@ export function Figurer({ gRef }: { gRef: GRef }) {
             h.position.set(g.hauge.x, g.hauge.y, Z);
         }
         const l = lens.current;
-        if (l) {
-            l.visible = !!g.lens;
-            if (g.lens) {
-                const k = Math.min(1, g.lens.t / g.lens.varsel);
-                l.position.set(
-                    g.lens.fra.x + (g.hauge.x - g.lens.fra.x) * k,
-                    g.lens.fra.y + (g.hauge.y - g.lens.fra.y) * k,
-                    Z + 0.3
-                );
-            }
+        const st = sti.current;
+        if (!l || !st) return;
+        const venter = !g.lens && g.lensT !== null && !g.hauge.inne;
+        l.visible = !!g.lens || venter;
+        st.visible = !!g.lens && !g.hauge.inne;
+        if (g.lens) {
+            const k = Math.min(1, g.lens.t / g.lens.varsel);
+            l.position.set(
+                g.lens.fra.x + (g.hauge.x - g.lens.fra.x) * k,
+                g.lens.fra.y + (g.hauge.y - g.lens.fra.y) * k,
+                Z + 0.3
+            );
+            l.scale.setScalar(1);
+            strekk(l.position, g.hauge, 0.08, Z + 0.25, m4);
+            m4.decompose(st.position, st.quaternion, st.scale);
+        } else if (venter) {
+            l.position.set(g.lensFra.x, g.lensFra.y, Z + 0.3);
+            l.scale.setScalar(0.7);
         }
     });
     return (
@@ -275,6 +295,9 @@ export function Figurer({ gRef }: { gRef: GRef }) {
             <mesh ref={lens} visible={false}>
                 <boxGeometry args={[1, 0.8, 0.4]} />
                 <meshStandardMaterial color={FARGE.rød} />
+            </mesh>
+            <mesh ref={sti} material={stiMat} visible={false}>
+                <boxGeometry args={[1, 1, 1]} />
             </mesh>
         </group>
     );

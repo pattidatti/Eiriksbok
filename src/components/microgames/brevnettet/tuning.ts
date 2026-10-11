@@ -29,16 +29,19 @@ export const TUNING = {
     lensmann: {
         /** Første gang (1797) rir han ekstra sakte. */
         førsteVarsel: 4.5,
+        /** Nøster per stue som fortsatt lyser etter et raid, og flest nøster per raid. */
+        nøsterPerStue: 1,
+        nøsterMaks: 6,
         /** Fengselsårene: sekunder mellom hvert klipp (først, sist) og varselet på tråden. */
-        klippHver: [4, 3] as [number, number],
+        klippHver: [2, 1.4] as [number, number],
         klippVarsel: 2,
-        /** Sjanse for at han går etter en svak tråd (en stue som bare har den ene tråden). */
-        klippSvak: 0.7,
+        /** Tilfeldig slingring på tiden mellom klippene (andel opp eller ned). */
+        klippSpredning: 0.4,
     },
 
     fengsel: {
         /** Når i fengselsårene Hauge slippes ut til saltverket (1809), og hvor lenge. */
-        saltverk: 15,
+        saltverk: 19,
         saltverkSek: 5,
     },
 
@@ -49,14 +52,8 @@ export const TUNING = {
         steiner: 3,
     },
 
-    poeng: {
-        /** Brevfart langs tråden (enheter per sekund). */
-        brevFart: 2.4,
-        /** Poeng per brev, ganger størrelsen på vennegruppen. */
-        brev: 5,
-        /** Bonus per tent stue i 1814. */
-        tentIMål: 150,
-    },
+    /** Brevfart langs tråden (enheter per sekund). Brevene er bare pynt, de gir ikke poeng. */
+    brevFart: 2.4,
 
     /** Sjanse for at en ny stue er en av de navngitte (Sara Oust, Fennefoss ...). */
     navnSjanse: 0.18,

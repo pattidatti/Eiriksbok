@@ -292,3 +292,43 @@ Registry-felt `sjanger`: `'nettverksbygging i sanntid'`.
   15/8 grader i bildet - sjekk på Chromebook-pekeplate.
 - Skjermbilder: `.screenshots/playtest/brevnettet/film-02-10s.png`, `film-05-55s.png`,
   `film-07-110s.png`.
+
+### Fase: gråboks etter diagnose 1 (2026-10-11)
+
+- Diagnosen: forståelig 2, eleven gjør 3. Mørke og tente stuer så like ut, regelen var usynlig,
+  grå klosser og HUD-tall viste det samme, poengtallet (26 550) betydde ingenting, og middels
+  vant 100 %.
+- (1) Tilstand med form: mørke stuer er lave og grå med en ring av ventende folk som krymper mot
+  stua (rød når tiden nesten er ute). Tente stuer er høye og gule. Stuer som rakner ved neste raid
+  eller klipp (`truet` i `game.ts`) synker og blinker rødt mens lensmannen rir (3-4 s) eller tråden
+  er merket (2 s). Spøkelsestråden fra Hauge til første mørke stue er tykkere og pulserer. Fjernet
+  kljåsteinene i 3D (HUD sier nå «x av 3 stuer ga opp»), brev vises bare mellom to tente stuer, og
+  det store tallet nede til venstre er antall tente stuer. Poengene er stue-år (tente stuer per
+  nytt år) og vises bare på sluttskjermen.
+- (2) Press og knapphet: lensmannen venter synlig ved kanten der han skal ri ut, og rir langs en
+  rød sti til Hauge på 3-4 s. Nøster kommer bare fra raid: ett per stue som fortsatt lyser
+  (maks 6), pluss litt startgarn i 1796-1798 og ett i 1804. Mørke stuer kommer to og to, én på hver
+  halvdel av veven (hvert 13. s i 1799, hvert 9. i 1803).
+- (3) Fengselsårene: lensmannen klipper alltid tråden som får flest stuer til å rakne, merket rødt
+  2 s før. Eleven kan dra den røde tråden på nytt for ett nøste (knyt om) eller binde stua til en
+  annen (omvei). Fengselsbrettet er nå 38 s, klipp hvert 2.-1,4. s med 40 % slingring. Fortsatt
+  tre regler; knyt om er et grep, ikke en regel. Ny lapp: «Dra den røde tråden på nytt».
+- Simulering (200 runder per robot), grønn: binder (vinner) 100 %, median 233 stue-år; halvgod
+  (middels) 60 %, median 190 (82 % av vinneren); bare-hauge (taper) 0 %, median 2; tilfeldig
+  (knappemoser) 0 %, median 14; passiv 0 %. 19,0 valg per minutt, press 0,25 -> 0,41 -> 0,70.
+  Vanligste tap for middels: «fengselsårene tok alt» i 1813 med 12 nøster ubrukt (den lager aldri
+  ekstra tråder). Nettleser-selvspill: binder vant med 226, i samsvar med simuleringen.
+- Det som IKKE virket: (1) Nøster bare fra raid med tak 5 og ingen startgarn i 1798: vinneren
+  sultet og tapte på «tre stuer ga opp» i 1800-1801 (0 %). (2) Med tak 10 vant middels 100 % og
+  vinneren bare 50 %, fordi vinneren brukte garn på ekstra tråder for tidlig - nå sparer roboten
+  ekstra tråder til 1803 og fengselsårene. (3) Rene klipp uten slingring ga en klippe: middels
+  gikk fra 95 % ved klipp hvert 2-1,4 s (30 s brett) til 0 % ved 1,8-1,3 s, fordi han endte på
+  nøyaktig to stuer hver gang. Slingringen (`klippSpredning`) og 38 s brett jevnet det ut.
+- Kjente svakheter: (1) Middels ligger nær terskelen på to stuer; små endringer i `klippHver`
+  vipper ham mye. (2) Fengselsårene er raske (et klipp hvert 1,4-2 s, ofte to røde tråder
+  samtidig) - kan bli for hektisk for en elev på pekeplate; sjekk når eieren spiller. (3) Vinneren
+  vinner 100 % og mister nesten ingenting i fengselsårene; rang skiller, ikke seier. (4) Portfunn
+  som gjenstår: coverbilde mangler, og bildet står stille uten input (gråboks, ingen juice).
+  (5) Raknede stuer i fengselsårene blir grå uten ring - riktig, men de fyller brettet.
+- Skjermbilder: `.screenshots/playtest/brevnettet/passiv-01-2s.png`, `film-07-110s.png`,
+  `film-08-150s.png`.

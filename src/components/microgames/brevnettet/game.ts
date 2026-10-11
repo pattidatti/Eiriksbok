@@ -5,18 +5,7 @@
 import { seeded, type Rng } from '../sim';
 import { BRETT, RUNDE_SEK } from './levels';
 import { TUNING } from './tuning';
-import {
-    HAUGE,
-    avstand,
-    finnTråd,
-    gruppe,
-    harHauge,
-    iFare,
-    tenteNaboer,
-    type Punkt,
-    type Stue,
-    type Tråd,
-} from './net';
+import { HAUGE, avstand, finnTråd, harHauge, iFare, type Punkt, type Stue, type Tråd } from './net';
 
 const T = TUNING;
 
@@ -32,9 +21,9 @@ export type Hendelse =
     | { k: 'arrest'; rakna: number[] }
     | { k: 'ut' }
     | { k: 'kuttVarsel'; id: number }
+    | { k: 'knytt'; id: number }
     | { k: 'kutt'; rakna: number[]; x: number; y: number }
-    | { k: 'gaOpp'; x: number; y: number }
-    | { k: 'brev'; x: number; y: number; p: number };
+    | { k: 'gaOpp'; x: number; y: number };
 
 export interface Lensmann {
     /** Sekunder siden han red ut. */
@@ -59,11 +48,16 @@ export interface Game {
     nøster: number;
     /** Kljåsteiner som har falt (stuer som ga opp). */
     steiner: number;
+    /** Stue-år: hvert nytt år legges antall tente stuer til. */
     poeng: number;
+    /** Året som sist ga stue-år. */
+    sistÅr: number;
     valg: number;
     stueT: number;
     lensT: number | null;
     lens: Lensmann | null;
+    /** Der lensmannen venter og rir ut fra neste gang (stien er synlig). */
+    lensFra: Punkt;
     /** Fengselsårene: Hauge er tatt for siste gang, og lensmannen klipper tråder. */
     klipper: boolean;
     klippT: number;
@@ -102,10 +96,12 @@ export function newGame(seed: number): Game {
         nøster: 0,
         steiner: 0,
         poeng: 0,
+        sistÅr: 1796,
         valg: 0,
         stueT: 0,
         lensT: null,
         lens: null,
+        lensFra: { x: V.maxX + 1.2, y: V.maxY },
         klipper: false,
         klippT: 0,
         saltverk: 'før',
@@ -179,11 +175,14 @@ function nærmeste(g: Game, p: Punkt, bareTente = false) {
     return d;
 }
 
-function ledigPlass(g: Game, nær?: Punkt, radius = 0): Punkt | null {
+/** Ledig plass: nær et punkt, eller hvor som helst (side -1 = venstre halvdel, 1 = høyre). */
+function ledigPlass(g: Game, nær?: Punkt, radius = 0, side = 0): Punkt | null {
+    const fra = side > 0 ? 0.6 : V.minX;
+    const til = side < 0 ? -0.6 : V.maxX;
     for (let k = 0; k < 60; k++) {
         const p = nær
             ? { x: nær.x + (g.rng() * 2 - 1) * radius, y: nær.y + (g.rng() * 2 - 1) * radius }
-            : { x: V.minX + g.rng() * (V.maxX - V.minX), y: V.minY + g.rng() * (V.maxY - V.minY) };
+            : { x: fra + g.rng() * (til - fra), y: V.minY + g.rng() * (V.maxY - V.minY) };
         if (p.x < V.minX || p.x > V.maxX || p.y < V.minY || p.y > V.maxY) continue;
         if (nærmeste(g, p) >= T.avstand) return p;
     }
@@ -196,10 +195,19 @@ function ledigPlass(g: Game, nær?: Punkt, radius = 0): Punkt | null {
  */
 export function bind(g: Game, a: number, b: number): boolean {
     if (g.fase !== 'spiller' || a === b || g.nøster < 1) return false;
-    if (g.tråder.length >= T.maksTråder) return false;
     const pa = node(g, a);
     const pb = node(g, b);
-    if (!pa || !pb || finnTråd(g.tråder, a, b)) return false;
+    if (!pa || !pb) return false;
+    const finnes = finnTråd(g.tråder, a, b);
+    if (finnes) {
+        // Knyt om: en tråd lensmannen har merket, kan knyttes fast igjen for ett nøste.
+        if (finnes.kutt <= 0) return false;
+        finnes.kutt = 0;
+        g.nøster--;
+        g.hendelser.push({ k: 'knytt', id: finnes.id });
+        return true;
+    }
+    if (g.tråder.length >= T.maksTråder) return false;
     const hauge = a === HAUGE || b === HAUGE;
     const stue = g.stuer.get(a === HAUGE ? b : a)!;
     if (hauge && stue.lys) return false;
@@ -224,7 +232,9 @@ export function kanBinde(g: Game, a: number, b: number) {
     if (g.fase !== 'spiller' || a === b || g.nøster < 1) return false;
     const pa = node(g, a);
     const pb = node(g, b);
-    if (!pa || !pb || finnTråd(g.tråder, a, b)) return false;
+    if (!pa || !pb) return false;
+    const finnes = finnTråd(g.tråder, a, b);
+    if (finnes) return finnes.kutt > 0;
     if (a === HAUGE || b === HAUGE) return !g.stuer.get(a === HAUGE ? b : a)!.lys;
     return avstand(pa, pb) <= T.tråd.maksLengde;
 }
@@ -252,6 +262,9 @@ function arrest(g: Game) {
     g.hauge.utOm = brett(g).fengsel ? Infinity : T.hauge.inne;
     g.arrestasjoner++;
     const rakna = rakne(g);
+    // Garnet kommer fra vennene: hver stue som fortsatt lyser, gir et nøste.
+    const L = T.lensmann;
+    g.nøster += Math.min(L.nøsterMaks, Math.floor(tente(g).length * L.nøsterPerStue));
     g.hendelser.push({ k: 'arrest', rakna });
     if (brett(g).fengsel && !g.klipper) {
         g.klipper = true;
@@ -261,8 +274,9 @@ function arrest(g: Game) {
 }
 
 function rid(g: Game, varsel: number) {
-    const fra = g.rng() < 0.5 ? { x: V.minX - 1.2, y: V.maxY } : { x: V.maxX + 1.2, y: V.maxY };
-    g.lens = { t: 0, varsel, fra };
+    g.lens = { t: 0, varsel, fra: g.lensFra };
+    const side = g.rng() < 0.5 ? -1 : 1;
+    g.lensFra = { x: side * (V.maxX + 1.2), y: V.minY + g.rng() * (V.maxY - V.minY) };
     g.valg++;
     g.hendelser.push({ k: 'rir' });
 }
@@ -300,22 +314,30 @@ function klipp(g: Game, dt: number) {
         const mål = g.tråder.filter(
             (t) => t.kutt === 0 && !harHauge(t) && g.stuer.get(t.a)?.lys && g.stuer.get(t.b)?.lys
         );
-        // Han leter etter de svake trådene: en stue som bare har den ene tråden, rakner.
-        const svake = mål.filter(
-            (t) =>
-                tenteNaboer(g.stuer, g.tråder, t.a) === 1 ||
-                tenteNaboer(g.stuer, g.tråder, t.b) === 1
-        );
-        const fra = svake.length && g.rng() < T.lensmann.klippSvak ? svake : mål;
-        if (fra.length) {
-            const t = fra[Math.floor(g.rng() * fra.length)];
+        // Han klipper alltid tråden flest stuer henger på (flest rakner om den ryker).
+        let verst: Tråd[] = [];
+        let skade = -1;
+        for (const t of mål) {
+            const n = iFare(
+                g.stuer,
+                g.tråder.filter((x) => x !== t && x.kutt <= 0)
+            ).length;
+            if (n > skade) {
+                skade = n;
+                verst = [];
+            }
+            if (n === skade) verst.push(t);
+        }
+        if (verst.length) {
+            const t = verst[Math.floor(g.rng() * verst.length)];
             t.kutt = T.lensmann.klippVarsel;
             g.valg++;
             g.hendelser.push({ k: 'kuttVarsel', id: t.id });
         }
         const k = Math.min(1, g.brettT / b.sek);
         const [a, z] = T.lensmann.klippHver;
-        g.klippT = a + (z - a) * k;
+        const slingring = 1 + (g.rng() * 2 - 1) * T.lensmann.klippSpredning;
+        g.klippT = (a + (z - a) * k) * slingring;
     }
     for (const t of [...g.tråder]) {
         if (t.kutt <= 0) continue;
@@ -356,27 +378,17 @@ function brev(g: Game, dt: number) {
         const b = node(g, t.b);
         if (!a || !b) continue;
         const len = Math.max(0.5, avstand(a, b));
-        t.brev += (t.retning * T.poeng.brevFart * dt) / len;
+        t.brev += (t.retning * T.brevFart * dt) / len;
         if (t.brev > 0 && t.brev < 1) continue;
         t.brev = Math.min(1, Math.max(0, t.brev));
         t.retning = t.brev >= 1 ? -1 : 1;
-        if (harHauge(t)) continue;
-        const sa = g.stuer.get(t.a)!;
-        const sb = g.stuer.get(t.b)!;
-        if (!sa.lys || !sb.lys) continue;
-        const p = T.poeng.brev * gruppe(g.stuer, g.tråder, sa.id);
-        g.poeng += p;
-        const mål = t.brev >= 1 ? sb : sa;
-        g.hendelser.push({ k: 'brev', x: mål.x, y: mål.y, p });
     }
 }
 
 function avslutt(g: Game) {
     const n = tente(g).length;
-    if (n >= 2) {
-        g.fase = 'vunnet';
-        g.poeng += n * T.poeng.tentIMål;
-    } else tap(g, 'fengsel');
+    if (n >= 2) g.fase = 'vunnet';
+    else tap(g, 'fengsel');
 }
 
 export function update(g: Game, dt: number) {
@@ -411,8 +423,12 @@ export function update(g: Game, dt: number) {
         g.stueT -= dt;
         if (g.stueT <= 0) {
             g.stueT = b.stueHver;
-            const p = ledigPlass(g);
-            if (p) leggStue(g, p);
+            // To og to, på hver sin side av veven: du rekker ikke begge via Hauge.
+            const side = g.rng() < 0.5 ? -1 : 1;
+            for (const sd of [side, -side]) {
+                const p = ledigPlass(g, undefined, 0, sd);
+                if (p) leggStue(g, p);
+            }
         }
     }
 
@@ -442,6 +458,12 @@ export function update(g: Game, dt: number) {
     if (g.fase !== 'spiller') return;
     brev(g, dt);
 
+    const år = visÅr(g);
+    if (år > g.sistÅr) {
+        g.poeng += (år - g.sistÅr) * tente(g).length;
+        g.sistÅr = år;
+    }
+
     const alleLyser = g.stuer.size > 0 && mørke(g).length === 0;
     if ((b.slutterNårAlleLyser && g.brettT > 6 && alleLyser) || g.brettT >= b.sek) {
         if (g.brett === BRETT.length - 1) avslutt(g);
@@ -470,4 +492,20 @@ export function press(g: Game) {
     const fare = Math.min(0.15, iFare(g.stuer, g.tråder).length * 0.03);
     const p = 0.1 + framdrift(g) * 0.45 + ringMaks * 0.2 + varsel + fare + (g.klipper ? 0.1 : 0);
     return Math.min(1, p);
+}
+
+/**
+ * Stuene som rakner om ingenting gjøres: når lensmannen rir (alle som bare henger på Hauge)
+ * og når en tråd er merket rødt i fengselsårene. Visningen lar dem synke og blinke.
+ */
+export function truet(g: Game): Set<number> {
+    const ut = new Set<number>();
+    if (g.lens) for (const s of iFare(g.stuer, g.tråder)) ut.add(s.id);
+    if (g.tråder.some((t) => t.kutt > 0))
+        for (const s of iFare(
+            g.stuer,
+            g.tråder.filter((t) => t.kutt <= 0)
+        ))
+            ut.add(s.id);
+    return ut;
 }

@@ -69,20 +69,3 @@ export function iFare(stuer: Map<number, Stue>, tråder: Tråd[]): Stue[] {
     for (const s of stuer.values()) if (s.lys && tenteNaboer(stuer, tråder, s.id) === 0) ut.push(s);
     return ut;
 }
-
-/** Størrelsen på vennegruppen (tente stuer bundet sammen) som stua hører til. */
-export function gruppe(stuer: Map<number, Stue>, tråder: Tråd[], id: number) {
-    const sett = new Set<number>([id]);
-    const kø = [id];
-    while (kø.length) {
-        const n = kø.pop()!;
-        for (const t of tråder) {
-            if (t.a !== n && t.b !== n) continue;
-            const o = andre(t, n);
-            if (o === HAUGE || sett.has(o) || !stuer.get(o)?.lys) continue;
-            sett.add(o);
-            kø.push(o);
-        }
-    }
-    return sett.size;
-}

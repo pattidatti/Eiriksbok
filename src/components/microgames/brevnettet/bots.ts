@@ -3,7 +3,7 @@
 
 import type { PlaytestBot } from '../playtest';
 import type { Rng } from '../sim';
-import { bind, kanBinde, mørke, tente, type Game } from './game';
+import { bind, kanBinde, mørke, tente, truet, type Game } from './game';
 import { HAUGE, avstand, iFare, tenteNaboer, type Stue } from './net';
 
 export interface BotDef {
@@ -63,6 +63,8 @@ function klok(v: Vett) {
                         if (s?.lys && tenteNaboer(g.stuer, g.tråder, id) <= 1)
                             if (bindTilNabo(g, s, [t.a, t.b])) return;
                     }
+                    // Ingen omvei: knyt om den merkede tråden.
+                    if (truet(g).size && bind(g, t.a, t.b)) return;
                 }
             }
             // 3) Tenn en mørk stue via Hauge.
@@ -72,7 +74,8 @@ function klok(v: Vett) {
                 if (bind(g, HAUGE, m.id)) return;
             }
             // 4) Overskudd: gjør nettet tettere (en stue med to tråder tåler ett klipp).
-            const fritt = g.klipper ? 0 : 3;
+            // Ekstra tråder trengs først når lensmannen klipper (fra 1803 holder den av garnet).
+            const fritt = g.klipper ? 0 : g.brett >= 7 ? 2 : 6;
             if (v.dobbel && g.nøster > fritt) {
                 const svak = tente(g)
                     .filter((s) => tenteNaboer(g.stuer, g.tråder, s.id) === 1)
