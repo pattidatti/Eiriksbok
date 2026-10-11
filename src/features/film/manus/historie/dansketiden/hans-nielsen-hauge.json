@@ -1,0 +1,318 @@
+{
+    "id": "hans-nielsen-hauge",
+    "tittel": "Hans Nielsen Hauge: Predikanten som bygde et nettverk",
+    "kilde": "/historie/dansketiden/hans-nielsen-hauge",
+    "bilde": "/images/dansketiden/hans-nielsen-hauge-hero.webp",
+    "scener": [
+        {
+            "id": "aker",
+            "kapittel": "Våren 1796",
+            "visual": { "type": "HaugeNettet", "props": { "modus": "aker" } },
+            "replikker": [
+                { "si": "Det er vår i 1796. Vi er på en gård i Tune i Østfold." },
+                {
+                    "si": "En ung bondesønn arbeider på åkeren. Mens han arbeider, synger han en salme."
+                },
+                {
+                    "si": "Midt i salmen kjenner han noe han senere beskriver slik: Gud er helt nær."
+                },
+                {
+                    "si": "Han blir sikker på én ting. Han må ut og fortelle andre om det."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "HANS NIELSEN HAUGE",
+                    "undertittel": "Predikanten som bygde et nettverk",
+                    "bilde": "/images/dansketiden/hans-nielsen-hauge-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor var en bondesønn farlig?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Bondesønnen het Hans Nielsen Hauge." },
+                {
+                    "si": "Det han gjorde de neste åtte årene, var ulovlig. Likevel samlet han vanlige folk over hele landet."
+                },
+                { "si": "Myndighetene så på bevegelsen hans som en trussel." },
+                {
+                    "si": "Hvordan kunne en bondegutt som sang salmer, skremme dem som styrte Norge? Det skal vi finne ut."
+                }
+            ]
+        },
+        {
+            "id": "loven",
+            "kapittel": "Forbudt å preke",
+            "visual": { "type": "HaugeTavla", "props": { "modus": "lov" } },
+            "replikker": [
+                {
+                    "si": "Hauge ble født i 1771 på gården Hauge. Han kunne Bibelen godt allerede som ung."
+                },
+                {
+                    "si": "Norge var en del av Danmark-Norge. Kongen hadde all makt, og han bestemte også over kirken og troen."
+                },
+                {
+                    "si": "I 1741 hadde kongen innført en lov som het Konventikkelplakaten. Et konventikkel er et lite, privat møte der folk ber og leser Bibelen sammen."
+                },
+                { "si": "Slike møter var bare lov hvis presten på stedet hadde kontroll over dem." },
+                { "si": "Og å reise rundt og preke var helt forbudt." },
+                {
+                    "si": "Hauge brøt loven hver gang han holdt et møte. Han mente at vanlige folk kunne snakke om Gud uten en prest i midten."
+                }
+            ]
+        },
+        {
+            "id": "reiser",
+            "kapittel": "Fra Tune til Tromsø",
+            "visual": { "type": "HaugeKart", "props": { "modus": "reiser" } },
+            "replikker": [
+                { "si": "Fra 1797 til 1804 reiste Hauge rundt i store deler av Norge." },
+                { "si": "Reisene gikk helt nord til Tromsø." },
+                { "si": "Han tok også flere turer til Danmark." },
+                {
+                    "si": "Overalt holdt han møter i stuer og på tun. De som ble med, ble kalt lesere, eller haugianere."
+                },
+                {
+                    "si": "Haugianerne skulle angre og vende om. De så strengt på dans, drikking og annen moro."
+                }
+            ]
+        },
+        {
+            "id": "boker",
+            "visual": { "type": "HaugeTavla", "props": { "modus": "boker" } },
+            "replikker": [
+                { "si": "Hauge skrev også. Han ga ut 33 bøker og småskrifter." },
+                {
+                    "si": "Fram til 1805 kom de ut i rundt 200 000 eksemplarer.",
+                    "uttale": "Fram til atten hundre og fem kom de ut i rundt to hundre tusen eksemplarer."
+                },
+                {
+                    "si": "Det gjorde bondesønnen fra Tune til den mest leste forfatteren i Norge på sin tid."
+                }
+            ]
+        },
+        {
+            "id": "nettverk",
+            "kapittel": "Et nettverk",
+            "visual": { "type": "HaugeNettet", "props": { "modus": "nettverk" } },
+            "replikker": [
+                {
+                    "si": "Men det viktigste Hauge laget, var ikke bøkene. Det var et nettverk."
+                },
+                {
+                    "si": "På hvert sted fikk han venner. De fortsatte å møtes når han reiste videre."
+                },
+                {
+                    "si": "Hjemmet og familien var grunnmuren. Hver gård ble et lite vennesamfunn."
+                },
+                {
+                    "si": "Gruppene holdt kontakten med hverandre gjennom brev og reiser."
+                },
+                {
+                    "si": "Hauge pekte ut lokale ledere som fikk ansvar. Allerede i 1804 hadde han tilhengere i store deler av landet."
+                }
+            ]
+        },
+        {
+            "id": "kvinner",
+            "visual": { "type": "HaugeTavla", "props": { "modus": "kvinner" } },
+            "replikker": [
+                {
+                    "si": "Hauge gjorde noe som vakte stor oppsikt på den tiden. Han lot kvinner preke og lede møter."
+                },
+                {
+                    "si": "Fram til 1830 kan opptil en fjerdedel av predikantene ha vært kvinner."
+                },
+                { "si": "Men studier av enkelte bygder tyder på at det var nærmere ti prosent." },
+                {
+                    "si": "Noen av dem kjenner vi navnet på, som Sara Oust og Marthe Olsdatter Gabestad."
+                }
+            ]
+        },
+        {
+            "id": "bedrifter",
+            "kapittel": "Tro og arbeid",
+            "visual": { "type": "HaugeKart", "props": { "modus": "bedrifter" } },
+            "replikker": [
+                {
+                    "si": "For Hauge hørte troen og arbeidet sammen. Våren 1801 ble han kjøpmann i Bergen."
+                },
+                {
+                    "si": "Han skaffet lån til venner som ville starte noe nytt. Mange måtte skaffe seg borgerbrev, altså lov fra myndighetene til å drive handel."
+                },
+                {
+                    "si": "Mellom 1799 og 1828 kan haugianerne ha startet opptil 150 bedrifter. De ga arbeid til flere hundre mennesker."
+                },
+                {
+                    "si": "De drev papirfabrikker på Eiker og Fennefoss, og et teglverk på Eg ved Kristiansand."
+                },
+                {
+                    "si": "De hadde et boktrykkeri i Kristiansand, en kobbergruve i Vingelen og møller i Gravdalen."
+                },
+                {
+                    "si": "Kritikerne mente at Hauge bare ville tjene penger selv. Det gjorde myndighetene enda mer mistenksomme."
+                }
+            ]
+        },
+        {
+            "id": "fengsel",
+            "kapittel": "Ti år bak murene",
+            "visual": { "type": "HaugeNettet", "props": { "modus": "fengsel" } },
+            "replikker": [
+                { "si": "Hauge ble arrestert flere ganger mens han reiste." },
+                {
+                    "si": "I 1804 ble han tatt igjen. Denne gangen slapp han ikke ut."
+                },
+                {
+                    "si": "Han satt fengslet fra 1804 til 1814. Det meste av tiden hadde han ikke engang fått en dom."
+                },
+                { "si": "Fra 1804 til 1806 var også skriftene hans forbudt." }
+            ]
+        },
+        {
+            "id": "salt",
+            "visual": { "type": "HaugeKart", "props": { "modus": "salt" } },
+            "replikker": [
+                {
+                    "si": "Mens han satt inne, skjedde det noe merkelig. Under Napoleonskrigene, store kriger i Europa, ble sjøveien til Norge stengt."
+                },
+                {
+                    "si": "Det ble mangel på salt. Folk trengte salt for å holde mat lenge."
+                },
+                {
+                    "si": "I 1809 slapp myndighetene Hauge ut en stund. Han skulle hjelpe et saltverk på Sørlandet til å virke bedre."
+                },
+                {
+                    "si": "Staten som hadde fengslet ham for å preke, trengte altså de praktiske evnene hans."
+                }
+            ]
+        },
+        {
+            "id": "dommen",
+            "visual": { "type": "HaugeTavla", "props": { "modus": "dom" } },
+            "replikker": [
+                { "si": "Først i 1814 kom dommen." },
+                {
+                    "si": "Hauge fikk en bot på 1000 riksdaler. Riksdaler var datidens penger.",
+                    "uttale": "Hauge fikk en bot på tusen riksdaler. Riksdaler var datidens penger."
+                },
+                {
+                    "si": "Han ble dømt for å ha brutt Konventikkelplakaten, og for å ha kritisert prestene."
+                },
+                {
+                    "si": "Men han ble frifunnet for det alvorligste: at han ville lage en egen kirke, og at han hadde lurt penger fra vennene sine."
+                }
+            ]
+        },
+        {
+            "id": "overlevde",
+            "kapittel": "Bevegelsen lever",
+            "visual": { "type": "HaugeNettet", "props": { "modus": "uten" } },
+            "replikker": [
+                {
+                    "si": "Mens Hauge satt innesperret, kunne bevegelsen ha falt sammen. Det gjorde den ikke."
+                },
+                {
+                    "si": "Vennegruppene hadde egne ledere, egne bedrifter og hverandre."
+                },
+                { "si": "Haugianerne fortsatte å starte bedrifter helt fram til 1828." },
+                {
+                    "si": "Da riksforsamlingen samlet seg på Eidsvoll i 1814 for å lage grunnloven, var tre av dem som var valgt dit, haugianere."
+                },
+                {
+                    "si": "Mange haugianske miljøer ble steder der folk lærte å organisere seg politisk."
+                }
+            ]
+        },
+        {
+            "id": "stortinget",
+            "visual": { "type": "HaugeTavla", "props": { "modus": "forskere" } },
+            "replikker": [
+                {
+                    "si": "På 1830- og 1840-tallet var haugianerne en viktig del av bondeopposisjonen på Stortinget.",
+                    "uttale": "På atten-tretti- og atten-førti-tallet var haugianerne en viktig del av bondeopposisjonen på Stortinget."
+                },
+                {
+                    "si": "Bondeopposisjonen var bøndene som utfordret embetsmennene, de høyt utdannede tjenestemennene som styrte landet."
+                },
+                {
+                    "si": "Hvor mange haugianere satt på Stortinget? Det er forskerne uenige om. En har talt 35 fram til 1860."
+                },
+                {
+                    "si": "En annen kom fram til 49 før 1880-årene. To andre fant 56 mellom 1814 og 1880.",
+                    "uttale": "En annen kom fram til førtini før atten-åtti-årene. To andre fant femtiseks mellom atten-fjorten og atten-åtti."
+                },
+                {
+                    "si": "Det fantes ikke noe medlemskort. Hver forsker må selv avgjøre hvem som regnes som haugianer."
+                }
+            ]
+        },
+        {
+            "id": "fri",
+            "visual": { "type": "HaugeTavla", "props": { "modus": "fri" } },
+            "replikker": [
+                {
+                    "si": "I 1842 ble Konventikkelplakaten endelig opphevet. Haugianerne hadde kjempet for det i mange år."
+                },
+                {
+                    "si": "Nå kunne vanlige folk holde kristne møter uten at presten hadde kontroll. Samme år var mange haugianere med på å starte Det Norske Misjonsselskap."
+                }
+            ]
+        },
+        {
+            "id": "arven",
+            "kapittel": "Arven",
+            "visual": { "type": "HaugeKart", "props": { "modus": "arv" } },
+            "replikker": [
+                {
+                    "si": "Etter dommen sluttet Hauge å reise. I 1817 kjøpte han gården Bredtvet utenfor Christiania, som i dag heter Oslo."
+                },
+                {
+                    "si": "Der skrev han i 1821 et brev til vennene sine, et testamente. Han ba dem holde seg i statskirken."
+                },
+                { "si": "Hauge døde på Bredtvet i 1824, 53 år gammel." },
+                {
+                    "si": "I Sverige brøt lignende bevegelser ut og laget egne frikirker, altså kirker utenfor statskirken."
+                },
+                {
+                    "si": "I Norge ble lekfolket, vanlige folk som ikke var prester, værende inne i statskirken. Testamentet fikk altså store følger."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Han prekte når det var forbudt.", "fraBeat": 0 },
+                        { "tekst": "Han lot vanlige folk snakke om Gud.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Myndighetene satte lederen i fengsel.", "fraBeat": 1 },
+                        { "tekst": "Men nettverket levde videre.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Vanlige folk kan organisere seg,", "fraBeat": 2 },
+                        {
+                            "tekst": "starte noe nytt og stå sammen, også når lederen er borte.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Store norske leksikon kaller Hauge trolig den personen som har betydd mest for kirkelivet i Norge siden reformasjonen."
+                },
+                {
+                    "si": "Myndighetene trodde de kunne stoppe bevegelsen ved å stoppe lederen. De tok feil."
+                },
+                {
+                    "si": "Kanskje det viktigste Hauge lærte vanlige folk, var dette: De kunne selv organisere seg og starte noe nytt. Og de kunne stå sammen, også når lederen var borte."
+                }
+            ]
+        }
+    ]
+}
