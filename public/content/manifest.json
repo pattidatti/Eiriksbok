@@ -3385,6 +3385,21 @@
               ],
               "createdDate": "2026-10-09T03:18:56+02:00",
               "lastUpdated": "2026-10-09T09:02:00+02:00"
+            },
+            {
+              "id": "hans-nielsen-hauge",
+              "title": "Hans Nielsen Hauge: Predikanten som bygde et nettverk",
+              "description": "Bondesønnen som prekte selv om det var forbudt, satt ti år i fengsel og bygde en bevegelse som overlevde ham.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "dansketiden",
+                "kristendom",
+                "vekkelse",
+                "haugianere",
+                "lekmannsbevegelse"
+              ],
+              "createdDate": "2026-10-11T00:00:00Z"
             }
           ]
         },

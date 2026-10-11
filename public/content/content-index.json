@@ -1,5 +1,5 @@
 {
-  "buildId": 244750599484432,
+  "buildId": 108296504723937,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2104,6 +2104,9 @@
     ],
     "eneveldet": [
       "content/historie/dansketiden/eneveldet.json"
+    ],
+    "hans-nielsen-hauge": [
+      "content/historie/dansketiden/hans-nielsen-hauge.json"
     ],
     "lofthusreisingen": [
       "content/historie/dansketiden/lofthusreisingen.json"
@@ -5567,6 +5570,7 @@
     "historie/antikkens-hellas/peloponneskrigen": "content/historie/antikkens-hellas/peloponneskrigen.json",
     "historie/dansketiden/christian-iv": "content/historie/dansketiden/christian-iv.json",
     "historie/dansketiden/eneveldet": "content/historie/dansketiden/eneveldet.json",
+    "historie/dansketiden/hans-nielsen-hauge": "content/historie/dansketiden/hans-nielsen-hauge.json",
     "historie/dansketiden/lofthusreisingen": "content/historie/dansketiden/lofthusreisingen.json",
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
     "historie/dansketiden/pietismen": "content/historie/dansketiden/pietismen.json",
