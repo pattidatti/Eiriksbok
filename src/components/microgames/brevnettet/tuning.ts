@@ -5,13 +5,13 @@ export const TUNING = {
     /** Veven i verdensenheter. Stuene plasseres innenfor denne rammen. */
     vev: { minX: -7.2, maxX: 7.2, minY: -3.3, maxY: 3.0 },
     /** Minste avstand mellom to prikker (stuer og Hauge) når en ny stue plasseres. */
-    avstand: 1.7,
+    avstand: 2.0,
     /** Nye stuer dukker opp i den ytre delen av hver halvdel (0 = hvor som helst, 1 = helt ute). */
     kantAndel: 0.4,
     /** Flest stuer på veven samtidig (plassen og visningen tåler ikke flere). */
     maksStuer: 26,
     /** Knaggen rommer så mange nøster (garn du ikke bruker, går tapt). */
-    nøsterTak: 8,
+    nøsterTak: 10,
     /** Flest tråder samtidig. */
     maksTråder: 60,
 
@@ -35,10 +35,14 @@ export const TUNING = {
         førsteVarsel: 5,
         /** Nøster per stue som fortsatt lyser etter et raid, og flest nøster per raid. */
         nøsterPerStue: 1,
-        nøsterMaks: 6,
+        nøsterMaks: 5,
+        /** Ekstra nøster per stue i en ring (minst to tente naboer) etter et raid. */
+        nøsterPerRing: 1,
         /** Fengselsårene: sekunder mellom hvert klipp (først, sist) og varselet på tråden. */
         klippHver: [1.4, 1.0] as [number, number],
         klippVarsel: 2,
+        /** Fra dette brettet (3 = 1799) merker han også tråden som bærer mest i hvert raid. */
+        raidKlippFra: 3,
         /** Tilfeldig slingring på tiden mellom klippene (andel opp eller ned). */
         klippSpredning: 0.4,
     },
@@ -47,8 +51,10 @@ export const TUNING = {
         /** Når i fengselsårene Hauge slippes ut til saltverket (1809), og hvor lenge. */
         saltverk: 19,
         saltverkSek: 5,
+        /** Sitter Hauge alt inne når 1804 kommer: så lenge varer varselet før de store klippene. */
+        storeKlipp: 5,
         /** Nøster vennene sender hvert fengselsår. */
-        nøsterPerÅr: 1,
+        nøsterPerÅr: 0,
     },
 
     ring: {

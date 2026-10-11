@@ -15,6 +15,8 @@ export interface Stue {
     rakner: number;
     /** Sekunder siden stua ble tent (for visningen). */
     tent: number;
+    /** Sekunder siden stua dukket opp (for visningen: den vokser fram). */
+    født: number;
     navn?: string;
 }
 
@@ -27,6 +29,8 @@ export interface Tråd {
     retning: 1 | -1;
     /** Sekunder igjen før lensmannen klipper denne tråden (0 = ikke varslet). */
     kutt: number;
+    /** Hvor lang tid varselet hadde da tråden ble merket (for nedtellingen i visningen). */
+    kuttFra?: number;
     /** Sekunder siden tråden klikket fast (for dirringen). */
     alder: number;
 }

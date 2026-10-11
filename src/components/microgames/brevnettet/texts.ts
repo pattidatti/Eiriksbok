@@ -12,7 +12,7 @@ export const TIPS: Record<Årsak, string> = {
     mørkt: 'Alle stuene hang bare på Hauge. Da han ble tatt, sto de alene. Bind stuene til hverandre - det var slik bevegelsen overlevde 1804-1814.',
     ringer: 'Hauge kunne ikke være overalt. Derfor pekte han ut lokale ledere, og vennene holdt kontakten med brev. Ikke bruk alt garnet på Hauge - en stue som er bundet til nabostua, trenger ham ikke.',
     fengsel:
-        'Lensmannen klipper én tråd om gangen. En stue med to tråder tåler ett klipp. Lag ringer, ikke rekker.',
+        'I 1804 klipper lensmannen alle tråder som en stue henger på alene, og så én tråd om gangen. En stue med to tråder tåler ett klipp. Lag ringer, ikke rekker.',
 };
 
 export const SEIER =
@@ -23,9 +23,13 @@ export const ØYEBLIKK = {
         tittel: 'Lensmannen kommer!',
         tekst: 'Han tar Hauge og river trådene hans. Stuer som bare henger på Hauge, slukner. Bind dem sammen!',
     },
-    fengsel: {
-        tittel: 'Hauge i fengsel',
-        tekst: 'Nå klipper lensmannen én tråd om gangen. Den blir rød først. Dra den igjen, eller bind stua til en annen.',
+    klipp: {
+        tittel: 'Lensmannen klipper',
+        tekst: 'Den røde tråden ryker når han tar Hauge. Gi stua en tråd til, eller dra den røde tråden på nytt.',
+    },
+    stor: {
+        tittel: '1804: Hauge tas for godt',
+        tekst: 'Nå klipper lensmannen alle tråder som en stue henger på alene. Stuer i ring, med to tråder, står igjen.',
     },
 };
 
@@ -34,6 +38,7 @@ export const LAPP = {
     ring: 'Folk venter her. Tenn stua i tide',
     nøster: 'Hver tråd koster ett nøste',
     saltverk: 'Hauge er ute i fem sekunder!',
+    akkurat: 'Akkurat!',
 };
 
 export const LÆRDOM = {
@@ -69,7 +74,7 @@ export function lærdomFra(g: Game, vant: boolean): [string, string, number][] {
     if (knyttet > 0)
         ut.push([
             'knytt',
-            `Du knyttet ${knyttet} tråder på nytt i fengselsårene. Vennene holdt kontakten med brev.`,
+            `Du knyttet ${knyttet} tråder på nytt. Vennene holdt kontakten med brev.`,
             1,
         ]);
     if (vant) ut.push(['eidsvoll', `${tente(g).length} stuer lyste i 1814. ${LÆRDOM.eidsvoll}`, 4]);

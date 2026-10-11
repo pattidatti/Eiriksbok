@@ -2,7 +2,7 @@
 
 Hans Nielsen Hauge 1796-1814 som nettverksbygging i sanntid (Mini Metro-verbet med klippe-vri).
 Brief: `docs/microgames/briefer/brevnettet.md`. Komponenten: `../Brevnettet3D.tsx`.
-Fase: **bygd** (kunst, juice, lyd og tekst). Neste: vurdering og rettelser.
+Fase: **forbedring 1** (raidklipp, 1804-klipp av enslige tråder, ringbonus, feel). Neste: ny vurdering.
 
 ## Filene
 
@@ -36,9 +36,16 @@ stue-år (og ett nøste per fengselsår) -> neste brett. Seier: minst to tente s
 `rakne` i `game.ts` (bruker `iFare`): etter hver arrestasjon og hvert klipp rakner tente stuer uten
 tråd til en annen tent stue. Bare tråd fra Hauge tenner (`bind`).
 
+Lensmannen kutter (`merkVerste`, `merkAlleSvake`, `kuttTikk`): fra 1799 merker han i hvert raid
+tråden som bærer mest (rød mens han rir, ryker når han tar Hauge). I 1804 merker han ALLE tråder
+som en stue henger på alene (hendelsen `stor`), så bare ringer står. Etter et raid gir hver tent
+stue et nøste (maks `nøsterMaks`) og hver stue i ring (`ringStuer`, to tente naboer) ett til
+(`nøsterPerRing`). Det er det som gjør ringer lønnsomme og trappen bratt.
+
 ## Knapper
 
-- Garn: `nøster` per brett, `nøsterTak`, `nøsterPerStue`/`nøsterMaks`, `fengsel.nøsterPerÅr`.
+- Garn: `nøster` per brett, `nøsterTak`, `nøsterPerStue`/`nøsterMaks`, `nøsterPerRing`, `fengsel.nøsterPerÅr` (0).
+- Klipp: `raidKlippFra` (brett 3 = 1799), `fengsel.storeKlipp`, 1804-rittet (`varsel` 6 i `levels.ts`).
 - Tempo: `stueHver`, `lensHver`, `varsel`, `ringTid` per brett.
 - Fengselsårene: `klippHver` og `klippSpredning` (middels svarer på røde tråder, men går tom for garn).
 

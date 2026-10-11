@@ -45,9 +45,11 @@ export function Figurer({ gRef }: { gRef: GRef }) {
         // Hauge går og strikker (en stiv vugging), eller sitter i fengselet under veven.
         fe.visible = g.hauge.inne;
         if (g.hauge.inne) {
-            h.position.set(FENGSEL.x, FENGSEL.y + 0.55, 0.1);
-            h.scale.setScalar(0.55);
-            h.rotation.z = 0;
+            // Han føres bort: glir fra der han ble tatt og ned i fengselet under veven.
+            mål.set(FENGSEL.x, FENGSEL.y + 0.55, 0.1);
+            h.position.lerp(mål, 1 - Math.exp(-dt * 4));
+            h.scale.setScalar(0.55 + 0.45 * Math.min(1, h.position.distanceTo(mål) / 4));
+            h.rotation.z = Math.sin(T * 9) * 0.08 * Math.min(1, h.position.distanceTo(mål));
         } else {
             h.position.set(g.hauge.x, g.hauge.y + 0.08 + Math.abs(Math.sin(T * 3)) * 0.05, 0.1);
             h.scale.setScalar(1);
@@ -62,21 +64,23 @@ export function Figurer({ gRef }: { gRef: GRef }) {
             mål.set(
                 g.lens.fra.x + (g.hauge.x - g.lens.fra.x) * k,
                 g.lens.fra.y + (g.hauge.y - g.lens.fra.y) * k,
-                0.36
+                // Ute på veven rir han bak trådene, så nettet ikke forsvinner under ham.
+                0.36 - 0.34 * Math.min(1, k * 4)
             );
             r.position.copy(mål);
         } else {
             const a = merket ? g.stuer.get(merket.a) : null;
             const b = merket ? g.stuer.get(merket.b) : null;
-            if (a && b) mål.set((a.x + b.x) / 2, (a.y + b.y) / 2 + 0.95, 0.5);
+            if (a && b) mål.set((a.x + b.x) / 2, (a.y + b.y) / 2 + 0.95, 0.02);
             else mål.set(g.lensFra.x, g.lensFra.y, 0.36);
             r.position.lerp(mål, 1 - Math.exp(-dt * (merket ? 6 : 2.5)));
         }
         const fart = r.position.x - forrige.current.x;
         if (Math.abs(fart) > 0.002) r.scale.x = fart > 0 ? 1 : -1;
         const rir = r.position.distanceTo(forrige.current) > 0.004;
-        r.position.y += rir ? Math.abs(Math.sin(T * 11)) * 0.14 : 0;
-        r.rotation.z = rir ? Math.sin(T * 11) * 0.06 : 0;
+        // Når han venter, tramper hesten utålmodig på stedet.
+        r.position.y += rir ? Math.abs(Math.sin(T * 11)) * 0.14 : Math.abs(Math.sin(T * 2.6)) * 0.07;
+        r.rotation.z = rir ? Math.sin(T * 11) * 0.06 : Math.sin(T * 1.3) * 0.04;
         forrige.current.copy(r.position);
         forrige.current.y -= rir ? Math.abs(Math.sin(T * 11)) * 0.14 : 0;
 

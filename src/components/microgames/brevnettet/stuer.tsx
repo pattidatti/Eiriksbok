@@ -76,8 +76,10 @@ export function Stuer({
         let igjenFare = 1;
         if (g.lens) igjenFare = 1 - g.lens.t / g.lens.varsel;
         else {
-            const kutt = g.tråder.filter((t) => t.kutt > 0).map((t) => t.kutt);
-            if (kutt.length) igjenFare = Math.min(...kutt) / TUNING.lensmann.klippVarsel;
+            const kutt = g.tråder
+                .filter((t) => t.kutt > 0)
+                .map((t) => t.kutt / (t.kuttFra ?? TUNING.lensmann.klippVarsel));
+            if (kutt.length) igjenFare = Math.min(...kutt);
         }
         const venter = BRETT[g.brett].ringTid !== null;
         const blink = Math.sin(T * 12) > 0;
@@ -125,7 +127,10 @@ export function Stuer({
                 const rak = s.rakner;
                 const vrak = rak >= 0;
                 q.setFromAxisAngle(zAkse, vrak ? 0.14 : 0);
-                skala.set(løft, løft, 1);
+                // En ny stue vokser fram med et lite sprett.
+                const f = Math.min(1, s.født / 0.4);
+                const inn = f < 1 ? f * (1 + 0.5 * Math.sin(Math.PI * f)) : 1;
+                skala.set(løft * inn, løft * inn, 1);
                 pos.set(s.x, s.y, 0.02);
                 mm.setMatrixAt(i, m4.compose(pos, q, skala));
                 mm.setColorAt(i, vrak ? VRAK : HVIT);

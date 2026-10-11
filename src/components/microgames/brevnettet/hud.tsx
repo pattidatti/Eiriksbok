@@ -130,13 +130,32 @@ export function Hud({
                                 år.current[i] = el;
                             }}
                             style={{
+                                position: 'relative',
                                 width: 11,
                                 height: 11,
                                 transform: 'scale(1)',
                                 transition: 'transform .3s, background .3s',
                                 outline: `1px solid ${FARGE.vegg}`,
                             }}
-                        />
+                        >
+                            {FØRST + i === 1804 && (
+                                // Merket for den store arrestasjonen: der tar lensmannen Hauge for godt.
+                                <span
+                                    style={{
+                                        position: 'absolute',
+                                        left: -3,
+                                        top: 14,
+                                        fontSize: 14,
+                                        whiteSpace: 'nowrap',
+                                        color: '#ff8a70',
+                                        borderLeft: `2px solid ${FARGE.rød}`,
+                                        paddingLeft: 3,
+                                    }}
+                                >
+                                    1804 Hauge tas
+                                </span>
+                            )}
+                        </div>
                     ))}
                     <span style={{ fontSize: 15, marginLeft: 6, color: FARGE.gul }}>1814</span>
                 </div>
@@ -170,7 +189,7 @@ export function Hud({
                         gridTemplateColumns: 'repeat(2, 26px)',
                         gap: 4,
                         marginTop: 4,
-                        minHeight: 4 * 30,
+                        minHeight: Math.ceil(TUNING.nøsterTak / 2) * 30,
                     }}
                 >
                     {Array.from({ length: TUNING.nøsterTak }, (_, i) => (
@@ -238,9 +257,40 @@ export function Hud({
                         </div>
                     ))}
                 </div>
-                <div style={{ fontSize: 14, marginTop: 4 }}>stuer som kan gi opp</div>
+                <div style={{ fontSize: 14, marginTop: 4 }}>
+                    mørke stuer som kan gi opp
+                </div>
             </div>
         </div>
+    );
+}
+
+/** Et tall som teller opp fra 0 og spretter når det er framme (sluttskjermen). */
+export function Tell({ verdi, sek = 0.9 }: { verdi: number; sek?: number }) {
+    const ref = useRef<HTMLSpanElement>(null);
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const t0 = performance.now();
+        let id = 0;
+        const steg = () => {
+            const k = Math.min(1, (performance.now() - t0) / (sek * 1000));
+            const e = 1 - (1 - k) ** 3;
+            el.textContent = Math.round(verdi * e).toLocaleString('nb-NO');
+            el.style.transform = k >= 1 ? 'scale(1.25)' : 'scale(1)';
+            if (k < 1) id = requestAnimationFrame(steg);
+            else window.setTimeout(() => el && (el.style.transform = 'scale(1)'), 160);
+        };
+        id = requestAnimationFrame(steg);
+        return () => cancelAnimationFrame(id);
+    }, [verdi, sek]);
+    return (
+        <span
+            ref={ref}
+            style={{ display: 'inline-block', transition: 'transform .16s ease-out' }}
+        >
+            0
+        </span>
     );
 }
 

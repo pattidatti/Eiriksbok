@@ -3,7 +3,7 @@
 
 import type { PlaytestBot } from '../playtest';
 import type { Rng } from '../sim';
-import { bind, kanBinde, mørke, tente, truet, type Game } from './game';
+import { bind, kanBinde, mørke, tente, type Game } from './game';
 import { HAUGE, avstand, iFare, tenteNaboer, type Stue } from './net';
 
 export interface BotDef {
@@ -58,7 +58,16 @@ function klok(v: Vett) {
             }
             // 2) Tråd under kniven: gi endepunktene en ekstra tråd.
             if (v.knytt) {
-                const t = g.tråder.find((x) => x.kutt > 0);
+                // Bare tråder der klippet faktisk får en stue til å rakne.
+                const t = g.tråder.find(
+                    (x) =>
+                        x.kutt > 0 &&
+                        [x.a, x.b].some(
+                            (id) =>
+                                g.stuer.get(id)?.lys &&
+                                tenteNaboer(g.stuer, g.tråder, id) <= 1
+                        )
+                );
                 if (t) {
                     for (const id of [t.a, t.b]) {
                         const s = g.stuer.get(id);
@@ -66,7 +75,7 @@ function klok(v: Vett) {
                             if (bindTilNabo(g, s, [t.a, t.b])) return;
                     }
                     // Ingen omvei: knyt om den merkede tråden.
-                    if (truet(g).size && bind(g, t.a, t.b)) return;
+                    if (bind(g, t.a, t.b)) return;
                 }
             }
             // 3) Tenn en mørk stue via Hauge.
@@ -77,7 +86,7 @@ function klok(v: Vett) {
             }
             // 4) Overskudd: gjør nettet tettere (en stue med to tråder tåler ett klipp).
             // Ekstra tråder trengs først når lensmannen klipper (fra 1803 holder den av garnet).
-            const fritt = g.klipper ? 0 : g.brett >= 7 ? 2 : 6;
+            const fritt = g.klipper ? 0 : g.brett >= 3 ? 2 : 6;
             if (v.dobbel && g.nøster > fritt) {
                 const svak = tente(g)
                     .filter((s) => tenteNaboer(g.stuer, g.tråder, s.id) === 1)

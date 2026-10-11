@@ -33,7 +33,7 @@ import { Inndata, Kamera, Lys, Rekordstrek, Vev, AnnoSkilt } from './brevnettet/
 import { Stuer } from './brevnettet/stuer';
 import { Fnugg, Garn } from './brevnettet/garn';
 import { Figurer } from './brevnettet/figurer';
-import { Hud, TrappLogo } from './brevnettet/hud';
+import { Hud, Tell, TrappLogo } from './brevnettet/hud';
 import {
     brekk,
     dirr,
@@ -210,6 +210,11 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
         return q ? (projRef.current?.(q.x, q.y) ?? null) : null;
     };
     const stue = (id: number) => påVev(() => gRef.current.stuer.get(id) ?? null);
+    /** Tekst som spretter opp fra et punkt på veven. */
+    const svev = (p: Punkt, t: string, farge: string, stor = false) => {
+        const q = projRef.current?.(p.x, p.y);
+        if (q) text.float(t, q.x, q.y - 24, farge, stor);
+    };
     const haugeAnker = påVev(() => (gRef.current.hauge.inne ? null : gRef.current.hauge));
 
     const sluttRunde = () => {
@@ -284,6 +289,12 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                 break;
             case 'knytt': {
                 sfx.tukk();
+                if (h.akkurat) {
+                    sfx.tent();
+                    const t0 = g.tråder.find((x) => x.id === h.id);
+                    const a0 = t0 ? g.stuer.get(t0.a) : null;
+                    if (a0) svev(a0, LAPP.akkurat, FARGE.gul, true);
+                }
                 dirr(fx, h.id);
                 const t = g.tråder.find((x) => x.id === h.id);
                 const a = t ? g.stuer.get(t.a) : null;
@@ -293,10 +304,10 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
             }
             case 'kuttVarsel': {
                 sfx.varsel();
-                // Første røde tråd i fengselsårene: lærings-øyeblikket ved tråden.
+                // Første røde tråd: lærings-øyeblikket ved tråden (ikke i 1804, der står det store).
                 const t = g.tråder.find((x) => x.id === h.id);
-                if (t)
-                    text.beatOnce('fengsel', ØYEBLIKK.fengsel.tittel, ØYEBLIKK.fengsel.tekst, {
+                if (t && !BRETT[g.brett].fengsel)
+                    text.beatOnce('klipp', ØYEBLIKK.klipp.tittel, ØYEBLIKK.klipp.tekst, {
                         at: påVev(() => {
                             const a = gRef.current.stuer.get(t.a);
                             const b = gRef.current.stuer.get(t.b);
@@ -313,6 +324,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                 break;
             }
             case 'rir': {
+                if (BRETT[g.brett].fengsel) break;
                 const f = iFare(g.stuer, g.tråder)[0];
                 text.beatOnce('regel', ØYEBLIKK.regel.tittel, ØYEBLIKK.regel.tekst, {
                     at: f ? stue(f.id) : haugeAnker,
@@ -333,10 +345,46 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                     1.8
                 );
                 break;
+            case 'stor': {
+                // Den store arrestasjonen: eget merke på årslinja og eget øyeblikk.
+                sfx.varsel();
+                const t = g.tråder.find((x) => x.kutt > 0);
+                text.beatOnce('stor', ØYEBLIKK.stor.tittel, ØYEBLIKK.stor.tekst, {
+                    at: t
+                        ? påVev(() => {
+                              const a = gRef.current.stuer.get(t.a);
+                              const b = gRef.current.stuer.get(t.b);
+                              return a && b ? { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 } : null;
+                          })
+                        : haugeAnker,
+                    until: () => !gRef.current.tråder.some((x) => x.kutt > 0),
+                });
+                break;
+            }
             case 'arrest':
                 sfx.arrest();
-                rist(fx, 0.6);
+                rist(fx, h.siste ? 1 : 0.6);
                 flakk(fx);
+                if (h.siste) text.banner('HAUGE DØMT', FARGE.rød, 2);
+                // Vennene i ringene sender garn: et nøste svever opp fra hver av dem.
+                h.ring.forEach((id) => {
+                    const s = g.stuer.get(id);
+                    if (s) {
+                        strø(fx, s, 6, FARGE.gul, 1.8);
+                        svev(s, '+1', FARGE.gul);
+                    }
+                });
+                if (h.nøster > 0) sfx.tukk();
+                if (h.berget.length) {
+                    const s = g.stuer.get(h.berget[0]);
+                    if (s)
+                        svev(
+                            s,
+                            h.akkurat ? LAPP.akkurat : `${h.berget.length} berget`,
+                            FARGE.gul,
+                            h.akkurat
+                        );
+                }
                 strø(fx, g.hauge, 12, FARGE.indigo, 2.4);
                 h.rakna.forEach((id, i) => {
                     sfx.rakne(i);
@@ -655,9 +703,9 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                             <ArcadeLessons items={res.lærdom} />
                             <ArcadeStats
                                 items={[
-                                    { value: res.tent, label: 'tente stuer' },
+                                    { value: <Tell verdi={res.tent} />, label: 'tente stuer' },
                                     {
-                                        value: res.poeng.toLocaleString('nb-NO'),
+                                        value: <Tell verdi={res.poeng} sek={1.3} />,
                                         label: res.nyRekord ? 'stue-år, ny rekord!' : 'stue-år',
                                     },
                                     { value: res.år, label: 'år' },

@@ -5,7 +5,7 @@
 import { seeded, type Rng } from '../sim';
 import { BRETT, RUNDE_SEK } from './levels';
 import { TUNING } from './tuning';
-import { HAUGE, avstand, finnTråd, harHauge, iFare, type Punkt, type Stue, type Tråd } from './net';
+import { HAUGE, avstand, finnTråd, harHauge, iFare, tenteNaboer, type Punkt, type Stue, type Tråd } from './net';
 
 const T = TUNING;
 
@@ -18,10 +18,21 @@ export type Hendelse =
     | { k: 'tent'; id: number }
     | { k: 'tråd'; id: number }
     | { k: 'rir' }
-    | { k: 'arrest'; rakna: number[] }
+    /** Den store arrestasjonen i 1804 er varslet: alle tråder som bærer alene, er merket. */
+    | { k: 'stor'; sek: number }
+    /** siste = den store arrestasjonen i 1804. berget = stuer eleven reddet under rittet. */
+    | {
+          k: 'arrest';
+          rakna: number[];
+          siste: boolean;
+          ring: number[];
+          nøster: number;
+          berget: number[];
+          akkurat: boolean;
+      }
     | { k: 'ut' }
     | { k: 'kuttVarsel'; id: number }
-    | { k: 'knytt'; id: number }
+    | { k: 'knytt'; id: number; akkurat: boolean }
     | { k: 'kutt'; rakna: number[]; x: number; y: number }
     | { k: 'gaOpp'; x: number; y: number }
     /** En tråd som ryker (for visningen: løse ender som pisker). */
@@ -34,6 +45,9 @@ export interface Lensmann {
     varsel: number;
     /** Hvor han red ut fra (kanten av veven). */
     fra: Punkt;
+    /** Stuer som var i fare en gang under rittet, og når eleven sist reddet en. */
+    fare: Set<number>;
+    sistRedd: number;
 }
 
 export interface Game {
@@ -147,7 +161,8 @@ function startBrett(g: Game, i: number) {
         g.hauge.utOm = Infinity;
         g.lensT = null;
         g.klipper = true;
-        g.klippT = T.lensmann.klippHver[0];
+        g.klippT = T.lensmann.klippHver[0] + T.fengsel.storeKlipp;
+        merkAlleSvake(g, T.fengsel.storeKlipp);
     }
     g.hendelser.push({ k: 'år', brett: i });
 }
@@ -169,6 +184,7 @@ function leggStue(g: Game, p: Punkt) {
         ringVarslet: false,
         rakner: -1,
         tent: -1,
+        født: 0,
         navn,
     };
     g.stuer.set(s.id, s);
@@ -214,10 +230,11 @@ export function bind(g: Game, a: number, b: number): boolean {
     if (finnes) {
         // Knyt om: en tråd lensmannen har merket, kan knyttes fast igjen for ett nøste.
         if (finnes.kutt <= 0) return false;
+        const akkurat = finnes.kutt < 0.7;
         finnes.kutt = 0;
         g.nøster--;
         g.stat.knyttet++;
-        g.hendelser.push({ k: 'knytt', id: finnes.id });
+        g.hendelser.push({ k: 'knytt', id: finnes.id, akkurat });
         return true;
     }
     if (g.tråder.length >= T.maksTråder) return false;
@@ -265,6 +282,10 @@ function rakne(g: Game) {
     return ut.map((s) => s.id);
 }
 
+/** Tente stuer med minst to tråder til andre tente stuer (tåler ett klipp). */
+export const ringStuer = (g: Game) =>
+    tente(g).filter((s) => tenteNaboer(g.stuer, g.tråder, s.id) >= 2);
+
 /** Fjern trådene som `vekk` sier, og meld hver av dem som en tråd som ryker. */
 function rykk(g: Game, vekk: (t: Tråd) => boolean) {
     const igjen: Tråd[] = [];
@@ -291,26 +312,44 @@ function tap(g: Game, årsak: Årsak) {
     g.årsak = årsak;
 }
 
-function arrest(g: Game) {
+function arrest(g: Game, lens: Lensmann | null) {
+    const siste = !!brett(g).fengsel;
     rykk(g, harHauge);
     g.hauge.inne = true;
     g.hauge.utOm = brett(g).fengsel ? Infinity : T.hauge.inne;
     g.arrestasjoner++;
     const rakna = rakne(g);
     g.stat.reddetMaks = Math.max(g.stat.reddetMaks, tente(g).length);
-    // Garnet kommer fra vennene: hver stue som fortsatt lyser, gir et nøste.
+    // Garnet kommer fra vennene: hver stue som fortsatt lyser, gir et nøste, og stuer i en
+    // ring (minst to tråder til tente stuer) gir et ekstra. Ringer betaler seg.
     const L = T.lensmann;
-    gi(g, Math.min(L.nøsterMaks, Math.floor(tente(g).length * L.nøsterPerStue)));
-    g.hendelser.push({ k: 'arrest', rakna });
+    const iRing = ringStuer(g).length;
+    const før = g.nøster;
+    gi(g, Math.min(L.nøsterMaks, Math.floor(tente(g).length * L.nøsterPerStue)) + iRing * L.nøsterPerRing);
+    const berget = lens
+        ? [...lens.fare].filter((id) => g.stuer.get(id)?.lys && !rakna.includes(id))
+        : [];
+    g.hendelser.push({
+        k: 'arrest',
+        rakna,
+        siste,
+        ring: ringStuer(g).map((s) => s.id),
+        nøster: g.nøster - før,
+        berget,
+        akkurat: !!lens && berget.length > 0 && lens.varsel - lens.sistRedd < 1,
+    });
     if (brett(g).fengsel && !g.klipper) {
         g.klipper = true;
-        g.klippT = T.lensmann.klippHver[0];
+        g.klippT = T.lensmann.klippHver[0] + 0.6;
     }
     if (!tente(g).length) tap(g, brett(g).fengsel ? 'fengsel' : 'mørkt');
 }
 
 function rid(g: Game, varsel: number) {
-    g.lens = { t: 0, varsel, fra: g.lensFra };
+    g.lens = { t: 0, varsel, fra: g.lensFra, fare: new Set(), sistRedd: -9 };
+    // Fra 1799 klipper han også tråden mellom stuene som bærer mest, når han tar Hauge.
+    if (brett(g).fengsel && g.saltverk === 'før') merkAlleSvake(g, varsel);
+    else if (g.brett >= T.lensmann.raidKlippFra && !brett(g).fengsel) merkVerste(g, varsel);
     const side = g.rng() < 0.5 ? -1 : 1;
     // Han venter ved kanten, under knaggen med nøstene (HUD-en oppe til høyre).
     g.lensFra = { x: side * (V.maxX + 0.85), y: V.minY + g.rng() * (V.maxY - 1.8 - V.minY) };
@@ -344,38 +383,66 @@ function slippUt(g: Game, nyStue: boolean) {
     }
 }
 
+/**
+ * Lensmannen merker tråden som bærer mest: den som får flest stuer til å rakne om den ryker.
+ * Henger ingen stue på én tråd (ringer, ikke rekker), gjør klippet ingen skade.
+ */
+function merkVerste(g: Game, sek: number) {
+    const mål = g.tråder.filter(
+        (t) => t.kutt === 0 && !harHauge(t) && g.stuer.get(t.a)?.lys && g.stuer.get(t.b)?.lys
+    );
+    let verst: Tråd[] = [];
+    let skade = -1;
+    for (const t of mål) {
+        const n = iFare(
+            g.stuer,
+            g.tråder.filter((x) => x !== t && x.kutt <= 0 && !(g.lens && harHauge(x)))
+        ).length;
+        if (n > skade) {
+            skade = n;
+            verst = [];
+        }
+        if (n === skade) verst.push(t);
+    }
+    if (!verst.length) return;
+    const t = verst[Math.floor(g.rng() * verst.length)];
+    t.kutt = sek;
+    t.kuttFra = sek;
+    g.valg++;
+    g.hendelser.push({ k: 'kuttVarsel', id: t.id });
+}
+
+/**
+ * Den store arrestasjonen i 1804: lensmannen merker ALLE tråder som en stue henger på alene.
+ * Stuer i en ring (to tråder eller flere) står igjen; rekker rakner fra endene.
+ */
+function merkAlleSvake(g: Game, sek: number) {
+    const lys = (id: number) => !!g.stuer.get(id)?.lys;
+    const ene = (id: number) => tenteNaboer(g.stuer, g.tråder, id) === 1;
+    for (const t of g.tråder) {
+        if (t.kutt > 0 || harHauge(t) || !lys(t.a) || !lys(t.b)) continue;
+        if (!ene(t.a) && !ene(t.b)) continue;
+        t.kutt = sek;
+        t.kuttFra = sek;
+        g.hendelser.push({ k: 'kuttVarsel', id: t.id });
+    }
+    g.valg++;
+    g.hendelser.push({ k: 'stor', sek });
+}
+
 function klipp(g: Game, dt: number) {
     const b = brett(g);
     g.klippT -= dt;
-    if (g.klippT <= 0) {
-        const mål = g.tråder.filter(
-            (t) => t.kutt === 0 && !harHauge(t) && g.stuer.get(t.a)?.lys && g.stuer.get(t.b)?.lys
-        );
-        // Han klipper alltid tråden flest stuer henger på (flest rakner om den ryker).
-        let verst: Tråd[] = [];
-        let skade = -1;
-        for (const t of mål) {
-            const n = iFare(
-                g.stuer,
-                g.tråder.filter((x) => x !== t && x.kutt <= 0)
-            ).length;
-            if (n > skade) {
-                skade = n;
-                verst = [];
-            }
-            if (n === skade) verst.push(t);
-        }
-        if (verst.length) {
-            const t = verst[Math.floor(g.rng() * verst.length)];
-            t.kutt = T.lensmann.klippVarsel;
-            g.valg++;
-            g.hendelser.push({ k: 'kuttVarsel', id: t.id });
-        }
-        const k = Math.min(1, g.brettT / b.sek);
-        const [a, z] = T.lensmann.klippHver;
-        const slingring = 1 + (g.rng() * 2 - 1) * T.lensmann.klippSpredning;
-        g.klippT = (a + (z - a) * k) * slingring;
-    }
+    if (g.klippT > 0) return;
+    merkVerste(g, T.lensmann.klippVarsel);
+    const k = Math.min(1, g.brettT / b.sek);
+    const [a, z] = T.lensmann.klippHver;
+    const slingring = 1 + (g.rng() * 2 - 1) * T.lensmann.klippSpredning;
+    g.klippT = (a + (z - a) * k) * slingring;
+}
+
+/** Merkede tråder teller ned og ryker (både under raidene og i fengselsårene). */
+function kuttTikk(g: Game, dt: number) {
     for (const t of [...g.tråder]) {
         if (t.kutt <= 0) continue;
         t.kutt -= dt;
@@ -385,7 +452,7 @@ function klipp(g: Game, dt: number) {
         const sb = g.stuer.get(t.b)!;
         const rakna = rakne(g);
         g.hendelser.push({ k: 'kutt', rakna, x: (sa.x + sb.x) / 2, y: (sa.y + sb.y) / 2 });
-        if (!tente(g).length) return tap(g, 'fengsel');
+        if (!tente(g).length) return tap(g, brett(g).fengsel ? 'fengsel' : 'mørkt');
     }
 }
 
@@ -436,6 +503,7 @@ export function update(g: Game, dt: number) {
     for (const s of g.stuer.values()) {
         if (s.rakner >= 0) s.rakner += dt;
         if (s.tent >= 0) s.tent += dt;
+        s.født += dt;
     }
 
     // Hauge slippes ut etter en arrestasjon (ikke i fengselsårene).
@@ -473,10 +541,15 @@ export function update(g: Game, dt: number) {
 
     // Lensmannen rir mot Hauge.
     if (g.lens) {
-        g.lens.t += dt;
-        if (g.lens.t >= g.lens.varsel) {
+        const L = g.lens;
+        L.t += dt;
+        // Følg med på hvem som er i fare, og når eleven redder en (til «akkurat!»).
+        const nå = truet(g);
+        for (const id of L.fare) if (!nå.has(id) && g.stuer.get(id)?.lys) L.sistRedd = L.t;
+        for (const id of nå) L.fare.add(id);
+        if (L.t >= L.varsel) {
             g.lens = null;
-            if (!g.hauge.inne) arrest(g);
+            if (!g.hauge.inne) arrest(g, L);
             if (g.saltverk === 'ute') g.saltverk = 'ferdig';
             g.lensT = brett(g).lensHver;
             if (g.fase !== 'spiller') return;
@@ -489,10 +562,9 @@ export function update(g: Game, dt: number) {
         }
     }
 
-    if (g.klipper) {
-        klipp(g, dt);
-        if (g.fase !== 'spiller') return;
-    }
+    if (g.klipper) klipp(g, dt);
+    kuttTikk(g, dt);
+    if (g.fase !== 'spiller') return;
     ringer(g, dt);
     if (g.fase !== 'spiller') return;
     brev(g, dt);

@@ -374,3 +374,45 @@ Registry-felt `sjanger`: `'nettverksbygging i sanntid'`.
   (3) Ventende folk på ringen er små. (4) Ingen skygger (punktlys-skygge er for dyrt).
 - Skjermbilder: `.screenshots/playtest/brevnettet/film-05-55s.png`, `film-08-150s.png`,
   `binder-slutt.png`.
+
+### Fase: forbedring 1 (2026-10-11)
+
+- Vurdering 1: Forståelig 4, Myk start 4, Eleven gjør 3, Utseende 4, Lærerikt 4 (sum 19).
+  Hovedfunn: middels vant like ofte som vinneren (216 mot 229), samme grep hele runden.
+- (1) Brattere trapp (Eleven gjør): regel 2 «Lensmannen kutter» gjelder nå hele runden, ikke bare
+  fengselsårene. Fra 1799 merker han i hvert raid tråden som bærer mest (rød og skjelvende mens han
+  rir) og klipper den når han tar Hauge. I 1804 merker han alle tråder som en stue henger på alene
+  (6 s ritt, eget lærings-øyeblikk «1804: Hauge tas for godt»), så bare ringer står igjen. Garnet
+  belønner ringer: etter et raid gir hver tent stue et nøste (maks 5), og hver stue med to tente
+  naboer ett til (`nøsterPerRing`, ingen tak utover knaggen, som nå rommer 10). Ingen nøster per
+  fengselsår lenger. Fortsatt tre regler - klippet er samme regel som før, bare oftere.
+- (3) 1804 som egen hendelse: rødt merke «1804 Hauge tas» under årslinja, «HAUGE DØMT»-banner og
+  kraftigere risting ved den siste arrestasjonen, Hauge glir synlig ned i fengselet i stedet for å
+  hoppe dit, og trådene hans pisker av (som før). Brettet ryddet: minste avstand mellom stuer
+  1,7 -> 2,0 (ingen stuer oppå hverandre), og rytteren rir bak trådene ute på veven.
+- (2) Delvis: «+1» svever opp fra hver ringstue når raidet gir garn, så eleven ser hvor nøstene
+  kommer fra. Teksten ved kljåsteinene er «mørke stuer som kan gi opp». Bøker mot 200 000 og
+  stuer som blir papirmølle/sagbruk er IKKE gjort.
+- Feel-lista. Før: 1 (tukk, dirring, partikler) på plass; 2, 3 og 4 manglet. Etter: 2 «Akkurat!»
+  når eleven redder en stue under ett sekund før lensmannen slår til, eller knytter en rød tråd med
+  under 0,7 s igjen, og «N berget» etter raidet; 3 nye stuer vokser fram med et sprett (`født`);
+  4 tallene på sluttskjermen teller opp og spretter (`Tell` i `hud.tsx`). Lensmannen tramper på
+  stedet mens han venter (verden lever uten input).
+- Simulering (200 runder per robot), grønn: binder (vinner) 100 %, median 247; halvgod (middels)
+  60 %, median 172 (70 % av vinneren); bare-hauge 0 %, median 3; tilfeldig 0 %, median 5; passiv
+  0 %. 19,0 valg per minutt, press 0,24 -> 0,36 -> 0,63. Selvspill: binder vant med 222 (samsvar),
+  scene-audit grønn, likhetsvakt grønn (nærmest inn-mot-stranda 0,38).
+- Det som IKKE virket: (1) Raidklipp alene med gamle nøster (maks 6): begge robotene sultet og tapte
+  på «tre stuer ga opp» (8-9 %). (2) Ringbonus under samme tak (maks 8 totalt): bonusen forsvant i
+  taket og vinneren tapte 50 % mens middels vant 100 %. (3) Raskere klipp i fengselsårene alene ga en
+  klippe (middels 100 % ved 1,2-0,85 s, 2 % ved 1,0-0,7 s) og ble hektisk. Det som virket, var
+  1804-klippet av alle enslige tråder: det belønner ringer bygd på forhånd, ikke fart.
+  Robotendring: binder knytter bare om røde tråder som faktisk får en stue til å rakne (før knyttet
+  den hver rød tråd mens noe var truet, også ufarlige), og bygger ekstra tråder fra 1799 i stedet
+  for 1803 - det en elev som har skjønt raidklippet, gjør.
+- Kjente svakheter: (1) Middels ligger på 52-60 % og er følsom for `klippHver` (1,35 gir 52 %).
+  (2) Fengselsårene klipper fortsatt hvert 1,0-1,4 s. (3) «1804 Hauge tas»-merket er lite (14 px).
+  (4) Forbedring 2 er bare delvis gjort (bøker/bedrifter mangler). (5) Mange røde tråder samtidig
+  i 1804 kan bli mye for en elev - sjekk når eieren spiller.
+- Skjermbilder: `.screenshots/playtest/brevnettet/film-07-110s.png`, `film-08-150s.png`,
+  `binder-slutt.png`.
