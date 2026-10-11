@@ -1,304 +1,209 @@
-// Visningen av Brevnettet (gråboks): veven, stuene, Hauge, trådene, brevene og lensmannen
-// med primitive former. Alt leses fra spilltilstanden i useFrame - ingen React-state per bilde.
+// Rommet i Brevnettet: tømmerveggen, oppstadveven med åkleet, årstallet vevd inn i øvre bord,
+// rekordstreken i høyre vevkant, talglyset, kameraet og den usynlige flaten som fanger draget.
+// Stuene, garnet og figurene bor i stuer.tsx, garn.tsx og figurer.tsx.
 
-import { useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useFrame, type ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
+import { crispCanvas } from '../kit';
 import { TUNING } from './tuning';
-import { HAUGE, avstand, type Punkt } from './net';
-import { FARGE, treff, type Drag, type Spøkelse } from './view';
-import { kanBinde, node, truet, type Game } from './game';
+import type { Punkt } from './net';
+import { FARGE, VEV } from './view';
+import { tente, visÅr, type Game } from './game';
 import { BRETT } from './levels';
-
-const V = TUNING.vev;
-const MAKS_S = TUNING.maksStuer;
-const MAKS_T = TUNING.maksTråder;
-const Z = 0.22;
+import { ressurser } from './ressurser';
+import { tegnTrapp, trappBredde } from './trappeskrift';
+import type { Fx } from './fx';
 
 type GRef = React.MutableRefObject<Game>;
+const V = TUNING.vev;
 
-const m4 = new THREE.Matrix4();
-const q = new THREE.Quaternion();
-const pos = new THREE.Vector3();
-const skala = new THREE.Vector3();
-const zAkse = new THREE.Vector3(0, 0, 1);
-const farge = new THREE.Color();
-const GUL = new THREE.Color(FARGE.gul);
-const RØD = new THREE.Color(FARGE.rød);
-const dragMat = new THREE.MeshBasicMaterial({ color: FARGE.svart });
-const spøkMat = new THREE.MeshBasicMaterial({
-    color: FARGE.indigo,
-    transparent: true,
-    opacity: 0.4,
-});
-const stiMat = new THREE.MeshBasicMaterial({
-    color: FARGE.rød,
-    transparent: true,
-    opacity: 0.5,
-});
-
-/** Plasser en boks (lengde 1 langs x) mellom to punkter. */
-function strekk(a: Punkt, b: Punkt, tykk: number, z: number, out: THREE.Matrix4) {
-    const len = Math.max(0.001, avstand(a, b));
-    pos.set((a.x + b.x) / 2, (a.y + b.y) / 2, z);
-    q.setFromAxisAngle(zAkse, Math.atan2(b.y - a.y, b.x - a.x));
-    skala.set(len, tykk, tykk);
-    return out.compose(pos, q, skala);
-}
-
-/** Veven: grunnen, rammen og overbommen. (Kljåsteinene vises bare i HUD-en, ikke dobbelt.) */
+/** Veven: tømmervegg, vevstol (overbom og stolper) og åkleet med normalkart. */
 export function Vev() {
-    const bredde = V.maxX - V.minX + 1.6;
-    const høyde = V.maxY - V.minY + 2.2;
-    const midtY = (V.maxY + V.minY) / 2 + 0.3;
+    const R = ressurser();
     return (
         <group>
-            <mesh position={[0, midtY, -0.06]}>
-                <boxGeometry args={[bredde, høyde, 0.1]} />
-                <meshStandardMaterial color={FARGE.ull} roughness={1} />
+            <mesh position={[0, VEV.midtY, 0]} material={R.mat.vev}>
+                <planeGeometry args={[VEV.w, VEV.h]} />
             </mesh>
-            {/* Overbommen og stolpene */}
-            <mesh position={[0, midtY + høyde / 2 + 0.2, 0.1]}>
-                <boxGeometry args={[bredde + 1.4, 0.4, 0.4]} />
-                <meshStandardMaterial color={FARGE.brun} />
-            </mesh>
-            {[-1, 1].map((s) => (
-                <mesh key={s} position={[s * (bredde / 2 + 0.5), midtY - 0.8, 0.1]}>
-                    <boxGeometry args={[0.35, høyde + 3, 0.35]} />
-                    <meshStandardMaterial color={FARGE.brun} />
+            {/* Stua og vevstolen er kulisse, ikke spillbrettet (scene-audit hopper over dem). */}
+            <group userData={{ sceneAuditIgnore: true }}>
+                <mesh position={[0, 0, -1.6]} material={R.mat.vegg}>
+                    <planeGeometry args={[70, 40]} />
                 </mesh>
-            ))}
-        </group>
-    );
-}
-
-/**
- * Stuene med tilstanden vist som form: mørke stuer er lave og grå med en ring av ventende folk
- * som krymper mot null, tente stuer er høye og lyse, og stuer som rakner ved neste raid eller
- * klipp, synker og blinker rødt mens lensmannen rir eller tråden er merket.
- */
-export function Stuer({ gRef }: { gRef: GRef }) {
-    const hus = useRef<THREE.InstancedMesh>(null);
-    const ring = useRef<THREE.InstancedMesh>(null);
-    const tid = useRef(0);
-    useFrame((_, dt) => {
-        tid.current += dt;
-        const g = gRef.current;
-        const h = hus.current;
-        const r = ring.current;
-        if (!h || !r) return;
-        const fare = truet(g);
-        const venter = BRETT[g.brett].ringTid !== null;
-        const blink = Math.sin(tid.current * 12) > 0;
-        let i = 0;
-        for (const s of g.stuer.values()) {
-            const vokse = s.tent >= 0 ? Math.min(1, s.tent * 4) : 1;
-            const iFare = fare.has(s.id);
-            if (s.lys) {
-                // Høy og lys. Truet: synker ned i veven og blinker.
-                const synk = iFare ? 0.45 + 0.15 * Math.sin(tid.current * 12) : 1;
-                skala.set(1 + 0.1 * vokse, 1 + 0.25 * vokse, (1 + 1.6 * vokse) * synk);
-                pos.set(s.x, s.y + 0.15 * vokse, Z + 0.15 * skala.z);
-            } else {
-                skala.set(0.7, 0.55, 0.45);
-                pos.set(s.x, s.y, Z);
-            }
-            h.setMatrixAt(i, m4.compose(pos, q.identity(), skala));
-            farge.set(s.lys ? (iFare && blink ? FARGE.rød : FARGE.gul) : FARGE.grå);
-            if (s.rakner >= 0 && s.rakner < 0.6) farge.lerp(GUL, 1 - s.rakner / 0.6);
-            h.setColorAt(i, farge);
-            // Ringen av ventende folk: krymper mot stua og blir rød når tiden nesten er ute.
-            const igjen = s.lys || !venter ? 0 : 1 - s.ring;
-            const rs = igjen > 0 ? 0.45 + 0.75 * igjen : 0.001;
-            m4.compose(pos.set(s.x, s.y, Z - 0.02), q.identity(), skala.set(rs, rs, 1));
-            r.setMatrixAt(i, m4);
-            farge.set(FARGE.brun);
-            if (s.ring > TUNING.ring.snartFull) farge.lerp(RØD, blink ? 1 : 0.6);
-            r.setColorAt(i, farge);
-            i++;
-        }
-        h.count = i;
-        r.count = i;
-        h.instanceMatrix.needsUpdate = true;
-        r.instanceMatrix.needsUpdate = true;
-        if (h.instanceColor) h.instanceColor.needsUpdate = true;
-        if (r.instanceColor) r.instanceColor.needsUpdate = true;
-    });
-    return (
-        <group>
-            <instancedMesh ref={hus} args={[undefined, undefined, MAKS_S]} frustumCulled={false}>
-                <boxGeometry args={[0.8, 0.7, 0.3]} />
-                <meshStandardMaterial />
-            </instancedMesh>
-            <instancedMesh ref={ring} args={[undefined, undefined, MAKS_S]} frustumCulled={false}>
-                <torusGeometry args={[0.7, 0.07, 6, 28]} />
-                <meshStandardMaterial />
-            </instancedMesh>
-        </group>
-    );
-}
-
-/** Trådene, brevene på dem, dra-tråden og spøkelsestråden. */
-export function Garn({
-    gRef,
-    dragRef,
-    spøkelseRef,
-}: {
-    gRef: GRef;
-    dragRef: React.MutableRefObject<Drag | null>;
-    spøkelseRef: React.MutableRefObject<Spøkelse | null>;
-}) {
-    const tråd = useRef<THREE.InstancedMesh>(null);
-    const brev = useRef<THREE.InstancedMesh>(null);
-    const drag = useRef<THREE.Mesh>(null);
-    const spøk = useRef<THREE.Mesh>(null);
-    const tid = useRef(0);
-    useFrame((_, dt) => {
-        tid.current += dt;
-        const g = gRef.current;
-        const t = tråd.current;
-        const b = brev.current;
-        if (!t || !b) return;
-        let i = 0;
-        let j = 0;
-        const blink = Math.sin(tid.current * 12) > 0;
-        for (const x of g.tråder) {
-            const a = node(g, x.a);
-            const c = node(g, x.b);
-            if (!a || !c) continue;
-            const hauge = x.a === HAUGE || x.b === HAUGE;
-            const venner = !hauge && g.stuer.get(x.a)?.lys && g.stuer.get(x.b)?.lys;
-            const tykk = x.kutt > 0 ? 0.2 : 0.12;
-            t.setMatrixAt(i, strekk(a, c, tykk, Z - 0.05, m4));
-            farge.set(
-                x.kutt > 0
-                    ? blink
-                        ? FARGE.rød
-                        : FARGE.svart
-                    : hauge
-                      ? FARGE.indigo
-                      : venner
-                        ? FARGE.gul
-                        : FARGE.grå
-            );
-            t.setColorAt(i, farge);
-            i++;
-            // Brev går bare mellom to tente stuer: der lever nettet uten Hauge.
-            if (!venner) continue;
-            const p = { x: a.x + (c.x - a.x) * x.brev, y: a.y + (c.y - a.y) * x.brev };
-            m4.compose(pos.set(p.x, p.y, Z + 0.12), q.identity(), skala.set(1, 1, 1));
-            b.setMatrixAt(j++, m4);
-        }
-        t.count = i;
-        b.count = j;
-        t.instanceMatrix.needsUpdate = true;
-        b.instanceMatrix.needsUpdate = true;
-        if (t.instanceColor) t.instanceColor.needsUpdate = true;
-
-        const d = dragRef.current;
-        const dm = drag.current;
-        if (dm) {
-            const fra = d ? node(g, d.fra) : null;
-            dm.visible = !!(d && fra);
-            if (d && fra) {
-                const til = treff(g, d);
-                const mål = til !== null && til !== d.fra ? node(g, til) : null;
-                const ok = mål ? kanBinde(g, d.fra, til!) : true;
-                dragMat.color.set(ok ? (d.fra === HAUGE ? FARGE.indigo : FARGE.svart) : FARGE.rød);
-                const slutt = mål ?? d;
-                strekk(fra, slutt, 0.09, Z, m4);
-                m4.decompose(dm.position, dm.quaternion, dm.scale);
-            }
-        }
-        const s = spøkelseRef.current;
-        const sm = spøk.current;
-        if (sm) {
-            const a = s ? node(g, s.a) : null;
-            const c = s ? node(g, s.b) : null;
-            sm.visible = !!(a && c);
-            if (a && c) {
-                const puls = 0.5 + 0.5 * Math.sin(tid.current * 5);
-                strekk(a, c, 0.14 + 0.1 * puls, Z + 0.02, m4);
-                m4.decompose(sm.position, sm.quaternion, sm.scale);
-                spøkMat.opacity = 0.3 + 0.65 * puls;
-            }
-        }
-    });
-    return (
-        <group>
-            <instancedMesh ref={tråd} args={[undefined, undefined, MAKS_T]} frustumCulled={false}>
-                <boxGeometry args={[1, 1, 1]} />
-                <meshStandardMaterial />
-            </instancedMesh>
-            <instancedMesh ref={brev} args={[undefined, undefined, MAKS_T]} frustumCulled={false}>
-                <boxGeometry args={[0.2, 0.14, 0.05]} />
-                <meshStandardMaterial color={FARGE.ull} />
-            </instancedMesh>
-            <mesh ref={drag} material={dragMat} visible={false}>
-                <boxGeometry args={[1, 1, 1]} />
-            </mesh>
-            <mesh ref={spøk} material={spøkMat} visible={false}>
-                <boxGeometry args={[1, 1, 1]} />
-            </mesh>
-        </group>
-    );
-}
-
-/**
- * Hauge (indigo søyle med svart hatt) og lensmannen (rød boks). Mellom rittene venter
- * lensmannen ved kanten der han skal ri ut. Når han rir, er stien til Hauge tegnet rødt.
- */
-export function Figurer({ gRef }: { gRef: GRef }) {
-    const hauge = useRef<THREE.Group>(null);
-    const lens = useRef<THREE.Mesh>(null);
-    const sti = useRef<THREE.Mesh>(null);
-    useFrame(() => {
-        const g = gRef.current;
-        const h = hauge.current;
-        if (h) {
-            h.visible = !g.hauge.inne;
-            h.position.set(g.hauge.x, g.hauge.y, Z);
-        }
-        const l = lens.current;
-        const st = sti.current;
-        if (!l || !st) return;
-        const venter = !g.lens && g.lensT !== null && !g.hauge.inne;
-        l.visible = !!g.lens || venter;
-        st.visible = !!g.lens && !g.hauge.inne;
-        if (g.lens) {
-            const k = Math.min(1, g.lens.t / g.lens.varsel);
-            l.position.set(
-                g.lens.fra.x + (g.hauge.x - g.lens.fra.x) * k,
-                g.lens.fra.y + (g.hauge.y - g.lens.fra.y) * k,
-                Z + 0.3
-            );
-            l.scale.setScalar(1);
-            strekk(l.position, g.hauge, 0.08, Z + 0.25, m4);
-            m4.decompose(st.position, st.quaternion, st.scale);
-        } else if (venter) {
-            l.position.set(g.lensFra.x, g.lensFra.y, Z + 0.3);
-            l.scale.setScalar(0.7);
-        }
-    });
-    return (
-        <group>
-            <group ref={hauge}>
-                <mesh>
-                    <cylinderGeometry args={[0.32, 0.4, 0.9, 12]} />
-                    <meshStandardMaterial color={FARGE.indigo} />
+                {/* Overbommen som veven henger i, og de to stolpene. */}
+                <mesh
+                    position={[0, VEV.midtY + VEV.h / 2 + 0.25, 0.15]}
+                    rotation={[0, 0, Math.PI / 2]}
+                    material={R.mat.tre}
+                >
+                    <cylinderGeometry args={[0.3, 0.3, VEV.w + 2.4, 10]} />
                 </mesh>
-                <mesh position={[0, 0.55, 0]}>
-                    <boxGeometry args={[0.7, 0.2, 0.5]} />
-                    <meshStandardMaterial color={FARGE.svart} />
+                {[-1, 1].map((s) => (
+                    <mesh
+                        key={s}
+                        position={[s * (VEV.w / 2 + 0.55), VEV.midtY - 0.6, -0.1]}
+                        material={R.mat.tre}
+                        geometry={R.geo.boks}
+                        scale={[0.45, VEV.h + 3.2, 0.45]}
+                    />
+                ))}
+                {/* Skillestokken nederst, der renningen går videre ned mot kljåsteinene. */}
+                <mesh
+                    position={[0, VEV.midtY - VEV.h / 2 - 0.12, 0.08]}
+                    rotation={[0, 0, Math.PI / 2]}
+                    material={R.mat.tre}
+                >
+                    <cylinderGeometry args={[0.13, 0.13, VEV.w + 0.6, 8]} />
                 </mesh>
             </group>
-            <mesh ref={lens} visible={false}>
-                <boxGeometry args={[1, 0.8, 0.4]} />
-                <meshStandardMaterial color={FARGE.rød} />
-            </mesh>
-            <mesh ref={sti} material={stiMat} visible={false}>
-                <boxGeometry args={[1, 1, 1]} />
-            </mesh>
+        </group>
+    );
+}
+
+/** Årstallet vevd inn i øvre bord med trappeskrift. Tegnes på nytt bare når året skifter. */
+export function AnnoSkilt({ gRef }: { gRef: GRef }) {
+    const skilt = useMemo(() => crispCanvas(560, 48), []);
+    const mat = useMemo(
+        // Årstallet tegnes uten lys, så det kan leses også i skyggen fra talglyset.
+        () =>
+            new THREE.MeshBasicMaterial({
+                map: skilt.tex,
+                transparent: true,
+                color: '#c8c0b4',
+            }),
+        [skilt]
+    );
+    const år = useRef(0);
+    useEffect(() => () => mat.dispose(), [mat]);
+    useFrame(() => {
+        const g = gRef.current;
+        const n = visÅr(g);
+        if (n === år.current) return;
+        år.current = n;
+        const tekst = `ANNO ${n}`;
+        skilt.draw((ctx, w, h) => {
+            const celle = 5;
+            const bw = trappBredde(tekst) * celle;
+            const x = (w - bw) / 2;
+            ctx.fillStyle = FARGE.indigo;
+            ctx.fillRect(x - 22, 0, bw + 44, h);
+            ctx.fillStyle = FARGE.rød;
+            ctx.fillRect(x - 22, 0, 6, h);
+            ctx.fillRect(x + bw + 16, 0, 6, h);
+            tegnTrapp(ctx, tekst, x, (h - 7 * celle) / 2, celle, FARGE.gul);
+        });
+    });
+    const høyde = VEV.h * VEV.bord * 0.86;
+    return (
+        <mesh position={[0, VEV.midtY + VEV.h / 2 - (VEV.h * VEV.bord) / 2, 0.015]} material={mat}>
+            <planeGeometry args={[(høyde * 560) / 48, høyde]} />
+        </mesh>
+    );
+}
+
+/** Rekorden er en gul strek i høyre vevkant; en hvit knute viser hvor mange som lyser nå. */
+export function Rekordstrek({ gRef, rekord }: { gRef: GRef; rekord: number }) {
+    const R = ressurser();
+    const knute = useRef<THREE.Mesh>(null);
+    const x = VEV.w / 2 - 0.32;
+    const bunn = V.minY - 0.4;
+    const høyde = V.maxY - V.minY + 0.8;
+    const per = høyde / TUNING.maksStuer;
+    useFrame(() => {
+        const k = knute.current;
+        if (!k) return;
+        const n = tente(gRef.current).length;
+        k.position.y += (bunn + n * per - k.position.y) * 0.2;
+    });
+    return (
+        <group>
+            {rekord > 0 && (
+                <mesh
+                    position={[x, bunn + (rekord * per) / 2, 0.05]}
+                    material={R.mat.rekord}
+                    geometry={R.geo.boks}
+                    scale={[0.14, rekord * per, 0.06]}
+                />
+            )}
+            <mesh
+                ref={knute}
+                position={[x, bunn, 0.1]}
+                material={R.mat.lys}
+                geometry={R.geo.boks}
+                scale={[0.3, 0.14, 0.1]}
+            />
+        </group>
+    );
+}
+
+const KALD = new THREE.Color('#8ea2c8');
+const VARM = new THREE.Color('#ffb877');
+
+/**
+ * Lyset: ett talglys til venstre for veven (flimrer, flakker ved arrestasjon), svakt
+ * hemisfærelys som blir sterkere jo flere stuer som lyser, kaldere i fengselsårene, og
+ * morgensol fra høyre i 1814.
+ */
+export function Lys({ gRef, fx }: { gRef: GRef; fx: Fx }) {
+    const R = ressurser();
+    const punkt = useRef<THREE.PointLight>(null);
+    const hemi = useRef<THREE.HemisphereLight>(null);
+    const sol = useRef<THREE.DirectionalLight>(null);
+    const flamme = useRef<THREE.Mesh>(null);
+    const tid = useRef(0);
+    useFrame((_, dt) => {
+        tid.current += dt;
+        const T = tid.current;
+        const g = gRef.current;
+        const fengsel = !!BRETT[g.brett].fengsel;
+        const n = tente(g).length;
+        const flimmer =
+            0.88 +
+            0.07 * Math.sin(T * 7.3) +
+            0.05 * Math.sin(T * 13.1 + 1) +
+            fx.flakk * 0.45 * Math.sin(T * 41);
+        const p = punkt.current;
+        if (p) p.intensity = (fengsel ? 34 : 60) * Math.max(0.2, flimmer);
+        const f = flamme.current;
+        if (f) f.scale.set(0.55 * flimmer, 0.95 * flimmer, 1);
+        const h = hemi.current;
+        if (h) {
+            // Fengselsårene: stua blir mørkere og kaldere, og bare de tente stuene lyser opp.
+            h.intensity = fengsel
+                ? 0.12 + Math.min(0.3, n * 0.02)
+                : 0.32 + Math.min(0.5, n * 0.035);
+            h.color.copy(fengsel ? KALD : VARM);
+        }
+        const s = sol.current;
+        if (s) s.intensity = fx.morgen * 2.4;
+    });
+    return (
+        <group>
+            {/* Varm restglød i stua: ingenting blir helt svart, skyggene er rødbrune. */}
+            <ambientLight color="#ff7a3a" intensity={0.35} />
+            <hemisphereLight ref={hemi} args={[VARM, '#6a2c12', 0.45]} />
+            <pointLight
+                ref={punkt}
+                position={[-8.4, -1.2, 3.2]}
+                color="#ffa64d"
+                intensity={60}
+                distance={0}
+                decay={2}
+            />
+            <directionalLight ref={sol} position={[14, 5, 6]} color="#ffe2b0" intensity={0} />
+            {/* Talglyset står på en hylle foran veven, nede til venstre. */}
+            <group position={[-9.3, -2.4, 2.4]} userData={{ sceneAuditIgnore: true }}>
+                <mesh position={[0, 0.5, 0]} material={R.mat.lys}>
+                    <cylinderGeometry args={[0.2, 0.22, 1, 10]} />
+                </mesh>
+                <mesh position={[0, -0.05, 0]} material={R.mat.tre}>
+                    <cylinderGeometry args={[0.55, 0.6, 0.12, 12]} />
+                </mesh>
+                <mesh ref={flamme} position={[0, 1.4, 0.05]} material={R.mat.flamme}>
+                    <planeGeometry args={[1, 1]} />
+                </mesh>
+            </group>
         </group>
     );
 }
@@ -316,7 +221,7 @@ export function Inndata({
     const punkt = (e: ThreeEvent<PointerEvent>) => ({ x: e.point.x, y: e.point.y });
     return (
         <mesh
-            position={[0, 0, Z]}
+            position={[0, 0, 0.22]}
             onPointerDown={(e) => {
                 e.stopPropagation();
                 const el = e.target as unknown as { setPointerCapture?: (id: number) => void };
@@ -332,15 +237,26 @@ export function Inndata({
     );
 }
 
-/** Fast kamera skrått forfra (fra venstre og litt nedenfra), med en svak pust. */
-export function Kamera() {
+/**
+ * Fast kamera skrått forfra (fra venstre og litt nedenfra), men så lite skrått at prikkene er
+ * store og draget er like presist som i 2D. Avstanden tilpasses vinduet, så hele veven alltid synes.
+ * Pusten er svak, og ristingen svinner i ekte tid.
+ */
+export function Kamera({ fx }: { fx: Fx }) {
     const t = useRef(0);
     useFrame((state, dt) => {
         t.current += dt;
-        const c = state.camera;
-        const pust = Math.sin(t.current * 0.6) * 0.06;
-        c.position.set(-3.9 + pust, -2.2, 14.6);
-        c.lookAt(0, -0.2, 0);
+        const c = state.camera as THREE.PerspectiveCamera;
+        const halv = Math.tan(((c.fov / 2) * Math.PI) / 180);
+        const aspekt = state.size.width / Math.max(1, state.size.height);
+        const d = Math.max(VEV.synH / 2 / halv, VEV.synB / 2 / (halv * aspekt));
+        const pust = Math.sin(t.current * 0.5) * 0.04;
+        const r = fx.traume * fx.traume;
+        const rx = r * 0.35 * Math.sin(t.current * 47);
+        const ry = r * 0.3 * Math.sin(t.current * 39 + 1);
+        // Skrått forfra som i kunstbriefen: ca. 11 grader fra venstre og 6 nedenfra.
+        c.position.set(-0.2 * d + pust + rx, VEV.synMidtY - 0.11 * d + ry, d);
+        c.lookAt(rx * 0.5, VEV.synMidtY + ry * 0.5, 0);
     });
     return null;
 }

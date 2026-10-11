@@ -32,17 +32,19 @@ export const BRETT: Brett[] = [
     {
         år: 1796,
         tittel: 'ANNO 1796',
-        sek: 20,
-        nøster: 3,
+        sek: 22,
+        nøster: 4,
         startStuer: [
-            { x: 0.62, y: 0.6 },
-            { x: 0.36, y: 0.32 },
+            { x: 0.64, y: 0.62 },
+            { x: 0.34, y: 0.3 },
+            { x: 0.43, y: 0.84 },
         ],
         stueHver: null,
         lensFørst: null,
         lensHver: null,
         varsel: 0,
-        ringTid: null,
+        // Ringen synes fra første sekund, men fylles så sakte at den ikke rekker å bli full.
+        ringTid: 50,
         slutterNårAlleLyser: true,
         spøkelse: 'tenn',
     },
@@ -55,8 +57,8 @@ export const BRETT: Brett[] = [
         stueHver: null,
         lensFørst: 9,
         lensHver: null,
-        varsel: 4.5,
-        ringTid: null,
+        varsel: 5,
+        ringTid: 40,
         spøkelse: 'bind',
     },
     {
@@ -71,7 +73,7 @@ export const BRETT: Brett[] = [
         stueHver: null,
         lensFørst: 21,
         lensHver: null,
-        varsel: 3.5,
+        varsel: 4.5,
         ringTid: 20,
     },
     {
@@ -83,7 +85,7 @@ export const BRETT: Brett[] = [
         stueHver: 13,
         lensFørst: 9,
         lensHver: 18,
-        varsel: 3.5,
+        varsel: 4.2,
         ringTid: 18,
     },
     {
@@ -95,7 +97,7 @@ export const BRETT: Brett[] = [
         stueHver: 12,
         lensFørst: null,
         lensHver: 16,
-        varsel: 3.5,
+        varsel: 4.2,
         ringTid: 16,
     },
     {
@@ -107,7 +109,7 @@ export const BRETT: Brett[] = [
         stueHver: 11,
         lensFørst: null,
         lensHver: 14,
-        varsel: 3.2,
+        varsel: 4,
         ringTid: 15,
     },
     {
@@ -119,7 +121,7 @@ export const BRETT: Brett[] = [
         stueHver: 10,
         lensFørst: null,
         lensHver: 12.5,
-        varsel: 3.2,
+        varsel: 4,
         ringTid: 14,
     },
     {
@@ -131,7 +133,7 @@ export const BRETT: Brett[] = [
         stueHver: 9,
         lensFørst: null,
         lensHver: 11,
-        varsel: 3,
+        varsel: 3.8,
         ringTid: 13,
     },
     {

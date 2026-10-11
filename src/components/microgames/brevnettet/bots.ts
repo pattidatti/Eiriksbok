@@ -39,6 +39,8 @@ interface Vett {
     binder: boolean;
     /** Gir stuer med bare én tent nabo en tråd til (ringer, ikke rekker). */
     dobbel: boolean;
+    /** Svarer på en rød tråd i fengselsårene (omvei eller knyt om). */
+    knytt: boolean;
     /** Holder så mange nøster i reserve før den tenner en ny stue. */
     reserve: number;
 }
@@ -55,7 +57,7 @@ function klok(v: Vett) {
                 if (bindTilNabo(g, s)) return;
             }
             // 2) Tråd under kniven: gi endepunktene en ekstra tråd.
-            if (v.dobbel) {
+            if (v.knytt) {
                 const t = g.tråder.find((x) => x.kutt > 0);
                 if (t) {
                     for (const id of [t.a, t.b]) {
@@ -102,18 +104,18 @@ export const BOTS: Record<string, BotDef> = {
         forventer: 'vinner',
         beskrivelse:
             'Tenner stuer via Hauge, binder hver ny stue til en tent nabo med en gang og gir svake stuer en tråd til (ringer, ikke rekker).',
-        make: klok({ hver: 1, binder: true, dobbel: true, reserve: 1 }),
+        make: klok({ hver: 1, binder: true, dobbel: true, knytt: true, reserve: 1 }),
     },
     halvgod: {
         forventer: 'middels',
         beskrivelse:
-            'Følger regelen og binder stuene sammen, men er treg (ett grep i sekundet) og lager aldri ekstra tråder.',
-        make: klok({ hver: 5, binder: true, dobbel: false, reserve: 1 }),
+            'Følger regelen og binder stuene sammen, svarer på røde tråder, men er treg (ett grep i sekundet) og lager aldri ekstra tråder på forhånd.',
+        make: klok({ hver: 5, binder: true, dobbel: false, knytt: true, reserve: 1 }),
     },
     'bare-hauge': {
         forventer: 'taper',
         beskrivelse: 'Binder alt bare til Hauge og bryr seg ikke om tråder mellom stuene.',
-        make: klok({ hver: 1, binder: false, dobbel: false, reserve: 0 }),
+        make: klok({ hver: 1, binder: false, dobbel: false, knytt: false, reserve: 0 }),
     },
     tilfeldig: {
         forventer: 'taper',

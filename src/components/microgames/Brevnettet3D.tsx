@@ -1,9 +1,12 @@
+import '@fontsource/alegreya-sans/500.css';
+import '@fontsource/alegreya-sans/800.css';
 import { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import type { MicroGameProps } from './types';
 import { MicroGameFrame } from './MicroGameFrame';
 import { MicroCanvas } from './kit';
+import { KitEffects } from './kit/KitEffects';
 import {
     ArcadeStage,
     ArcadeScreen,
@@ -26,13 +29,29 @@ import { BOTS } from './brevnettet/bots';
 import { GAME_ID, MAKS_SEKUNDER, snapshotOf } from './brevnettet/sim';
 import { RANGER } from './brevnettet/tuning';
 import { FARGE, treff, type Drag, type Spøkelse } from './brevnettet/view';
-import { Figurer, Garn, Inndata, Kamera, Stuer, Vev } from './brevnettet/world';
-import { LAPP, LÆRDOM, SEIER, TAP_TITTEL, TIPS, ØYEBLIKK } from './brevnettet/texts';
+import { Inndata, Kamera, Lys, Rekordstrek, Vev, AnnoSkilt } from './brevnettet/world';
+import { Stuer } from './brevnettet/stuer';
+import { Fnugg, Garn } from './brevnettet/garn';
+import { Figurer } from './brevnettet/figurer';
+import { Hud, TrappLogo } from './brevnettet/hud';
+import {
+    brekk,
+    dirr,
+    flakk,
+    lagFx,
+    morgen,
+    nullstill,
+    rist,
+    stegFx,
+    strø,
+    type Fx,
+} from './brevnettet/fx';
+import { LAPP, SEIER, TAP_TITTEL, TIPS, ØYEBLIKK, lærdomFra } from './brevnettet/texts';
 
 // BREVNETTET - Hans Nielsen Hauge 1796-1814. Dra ulltråder mellom stuene på veven: bare
 // Hauge tenner, men lensmannen tar ham igjen og igjen, og da lever bare stuene som er
 // bundet til hverandre. Reglene bor i ./brevnettet (se KART.md). Her er skallet, input,
-// tekst og lagring. GRÅBOKS: primitive former, ingen kunst og ingen juice ennå.
+// tekst, lyd, juice-hendelser og lagring. Looken: et bondeåkle på oppstadveven i talglys.
 
 type Mode = 'menu' | 'play' | 'paused' | 'over';
 
@@ -46,8 +65,8 @@ const THEME: Partial<ArcadeTheme> = {
     ctaText: FARGE.ull,
     chip: '#d9cba8',
     scrim: 'rgba(43,30,22,.55)',
-    font: "'Alegreya', Georgia, serif",
-    bodyFont: "'Alegreya', Georgia, serif",
+    font: "'Alegreya Sans', Georgia, serif",
+    bodyFont: "'Alegreya Sans', Georgia, serif",
     fontWeight: 800,
     tracking: '0.06em',
     textCase: 'uppercase',
@@ -84,12 +103,31 @@ interface Resultat {
 
 function lagSfx(a: ArcadeSynth) {
     return {
-        tukk: () => a.tone(520, 380, 0.06, 'triangle', 0.25),
-        tent: () => a.arp(523, [0, 4, 7], 0.05, 0.12),
+        /** Tråden klikker fast: et tørt «tukk» og en kort dirrende tone, som en strammet streng. */
+        tukk: () => {
+            a.tone(520, 380, 0.05, 'triangle', 0.25);
+            a.tone(196, 192, 0.35, 'sine', 0.08, 0.03);
+        },
+        tent: () => a.arp(523, [0, 4, 7, 12], 0.05, 0.11),
         nei: () => a.tone(180, 140, 0.08, 'square', 0.08),
-        arrest: () => a.noise(0.25, 0.25, 900),
-        kutt: () => a.tone(900, 300, 0.1, 'sawtooth', 0.1),
-        dunk: () => a.tone(90, 50, 0.25, 'sine', 0.4),
+        hov: (høy: boolean) => a.tone(høy ? 150 : 120, 70, 0.06, 'triangle', 0.16),
+        arrest: () => {
+            a.noise(0.3, 0.25, 700);
+            a.tone(300, 110, 0.4, 'sawtooth', 0.08, 0.05);
+        },
+        rakne: (i: number) => a.tone(520 - i * 40, 160, 0.45, 'sine', 0.12, i * 0.08),
+        varsel: () => a.tone(880, 860, 0.08, 'square', 0.05),
+        kutt: () => {
+            a.noise(0.08, 0.2, 2400);
+            a.tone(900, 260, 0.12, 'sawtooth', 0.1);
+        },
+        dunk: () => {
+            a.tone(90, 45, 0.35, 'sine', 0.45);
+            a.noise(0.12, 0.15, 300);
+        },
+        år: () => a.tone(392, 392, 0.25, 'sine', 0.06),
+        seier: () => a.arp(392, [0, 4, 7, 12, 16, 19], 0.11, 0.13),
+        tap: () => a.arp(330, [0, -3, -7, -12], 0.16, 0.1),
     };
 }
 
@@ -107,9 +145,11 @@ type Proj = (x: number, y: number) => { x: number; y: number } | null;
 function Løkke({
     frameRef,
     projRef,
+    fx,
 }: {
     frameRef: React.MutableRefObject<(dt: number) => void>;
     projRef: React.MutableRefObject<Proj | null>;
+    fx: Fx;
 }) {
     const v = useRef(new THREE.Vector3());
     useFrame((state, raw) => {
@@ -124,6 +164,7 @@ function Løkke({
             };
         };
         frameRef.current(Math.min(0.05, raw));
+        stegFx(fx, Math.min(0.05, raw));
     });
     return null;
 }
@@ -149,12 +190,9 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
     const fullført = useRef(false);
     const grepRef = useRef<Record<string, (g: Game) => void>>({});
     const hudT = useRef(0);
-    const hud = {
-        år: useRef<HTMLDivElement>(null),
-        nøster: useRef<HTMLDivElement>(null),
-        tente: useRef<HTMLDivElement>(null),
-        steiner: useRef<HTMLDivElement>(null),
-    };
+    const hovT = useRef(0);
+    const hovN = useRef(0);
+    const [fx] = useState(lagFx);
 
     useEffect(() => {
         saveRef.current = save;
@@ -182,7 +220,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
         const forrige = saveRef.current;
         const nyeNavn = navn.filter((n) => !forrige.åkle.includes(n));
         const poeng = Math.round(g.poeng);
-        if (vant) text.lesson('eidsvoll', LÆRDOM.eidsvoll, 3);
+        for (const [k, t, w] of lærdomFra(g, vant)) text.lesson(k, t, w);
         updateSave((s) => ({
             bestTent: Math.max(s.bestTent, vant ? lys.length : 0),
             bestPoeng: Math.max(s.bestPoeng, poeng),
@@ -204,6 +242,8 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
             lærdom: text.lessons(3),
         });
         text.clear();
+        if (vant) sfx.seier();
+        else sfx.tap();
         settMode('over');
         if ((vant || BRETT[g.brett].fengsel) && !fullført.current) {
             fullført.current = true;
@@ -217,12 +257,13 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
             case 'år': {
                 const b = BRETT[h.brett];
                 text.banner(b.tittel, b.fengsel ? FARGE.rød : FARGE.indigo, 1.4);
+                if (h.brett > 0) sfx.år();
                 if (h.brett === 0)
                     text.point('tenn', LAPP.tenn, haugeAnker, {
                         seconds: 14,
                         until: () => gRef.current.tråder.length > 0,
                     });
-                if (b.ringTid !== null && BRETT[h.brett - 1]?.ringTid === null) {
+                if (h.brett === 2) {
                     const m = [...g.stuer.values()].filter((s) => !s.lys).pop();
                     if (m)
                         text.point('ring', LAPP.ring, stue(m.id), {
@@ -232,28 +273,45 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                 }
                 break;
             }
+            case 'ny': {
+                const s = g.stuer.get(h.id);
+                if (s?.navn)
+                    text.point(`navn-${s.id}`, s.navn, stue(s.id), { seconds: 4, tone: 'bra' });
+                break;
+            }
             case 'tråd':
-            case 'knytt':
                 sfx.tukk();
                 break;
+            case 'knytt': {
+                sfx.tukk();
+                dirr(fx, h.id);
+                const t = g.tråder.find((x) => x.id === h.id);
+                const a = t ? g.stuer.get(t.a) : null;
+                const b = t ? g.stuer.get(t.b) : null;
+                if (a && b) strø(fx, { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }, 8, FARGE.gul, 1.6);
+                break;
+            }
             case 'kuttVarsel': {
+                sfx.varsel();
+                // Første røde tråd i fengselsårene: lærings-øyeblikket ved tråden.
                 const t = g.tråder.find((x) => x.id === h.id);
                 if (t)
-                    text.point(
-                        'knytt',
-                        LAPP.knytt,
-                        påVev(() => {
+                    text.beatOnce('fengsel', ØYEBLIKK.fengsel.tittel, ØYEBLIKK.fengsel.tekst, {
+                        at: påVev(() => {
                             const a = gRef.current.stuer.get(t.a);
                             const b = gRef.current.stuer.get(t.b);
                             return a && b ? { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 } : null;
                         }),
-                        { seconds: 4, tone: 'fare' }
-                    );
+                        until: () => !gRef.current.tråder.some((x) => x.id === t.id && x.kutt > 0),
+                    });
                 break;
             }
-            case 'tent':
+            case 'tent': {
                 sfx.tent();
+                const s = g.stuer.get(h.id);
+                if (s) strø(fx, s, 14, FARGE.gul, 3, 1.2);
                 break;
+            }
             case 'rir': {
                 const f = iFare(g.stuer, g.tråder)[0];
                 text.beatOnce('regel', ØYEBLIKK.regel.tittel, ØYEBLIKK.regel.tekst, {
@@ -265,14 +323,26 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                 });
                 break;
             }
+            case 'ryk':
+                brekk(fx, h.a, h.b, h.hauge);
+                strø(
+                    fx,
+                    { x: (h.a.x + h.b.x) / 2, y: (h.a.y + h.b.y) / 2 },
+                    4,
+                    h.hauge ? FARGE.indigo : FARGE.gul,
+                    1.8
+                );
+                break;
             case 'arrest':
                 sfx.arrest();
-                if (h.rakna.length) text.lesson('alene', LÆRDOM.alene);
-                if (tente(g).length) text.lesson('reddet', LÆRDOM.reddet, 2);
-                if (g.klipper && g.saltverk === 'før') {
-                    text.beatOnce('fengsel', ØYEBLIKK.fengsel.tittel, ØYEBLIKK.fengsel.tekst);
-                    text.lesson('fengsel', LÆRDOM.fengsel, 2);
-                }
+                rist(fx, 0.6);
+                flakk(fx);
+                strø(fx, g.hauge, 12, FARGE.indigo, 2.4);
+                h.rakna.forEach((id, i) => {
+                    sfx.rakne(i);
+                    const s = g.stuer.get(id);
+                    if (s) strø(fx, s, 10, FARGE.brun, 2.2);
+                });
                 break;
             case 'ut':
                 if (g.saltverk === 'ute')
@@ -280,10 +350,17 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                 break;
             case 'kutt':
                 sfx.kutt();
+                rist(fx, 0.25);
+                h.rakna.forEach((id, i) => {
+                    sfx.rakne(i);
+                    const s = g.stuer.get(id);
+                    if (s) strø(fx, s, 10, FARGE.brun, 2.2);
+                });
                 break;
             case 'gaOpp':
                 sfx.dunk();
-                text.lesson('gaOpp', LÆRDOM.gaOpp);
+                rist(fx, 0.45);
+                strø(fx, h, 16, FARGE.brun, 2.6);
                 break;
             default:
                 break;
@@ -310,10 +387,6 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
     };
 
     const oppdaterHud = (g: Game) => {
-        if (hud.år.current) hud.år.current.textContent = `ANNO ${visÅr(g)}`;
-        if (hud.nøster.current) hud.nøster.current.textContent = String(g.nøster);
-        if (hud.tente.current) hud.tente.current.textContent = String(tente(g).length);
-        if (hud.steiner.current) hud.steiner.current.textContent = `${g.steiner} av 3`;
         spøkelseRef.current = spøkelse(g);
     };
 
@@ -326,6 +399,16 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
             hudT.current = 0;
             oppdaterHud(g);
         }
+        // Hovslag mens lensmannen rir: stive, jevne slag som kommer nærmere.
+        if (g.lens && !g.hauge.inne) {
+            hovT.current -= dt * text.timeScale();
+            if (hovT.current <= 0) {
+                hovT.current = 0.26;
+                hovN.current++;
+                sfx.hov(hovN.current % 2 === 0);
+            }
+        }
+        if (g.fase === 'vunnet') morgen(fx, dt);
         if (g.fase !== 'spiller' && !slutter.current) {
             slutter.current = true;
             dragRef.current = null;
@@ -336,6 +419,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
     const start = () => {
         synth.unlock();
         gRef.current = newGame(Date.now() % 100000);
+        nullstill(fx);
         slutter.current = false;
         dragRef.current = null;
         grepRef.current = {};
@@ -415,7 +499,24 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
             else if (modeRef.current === 'paused') settMode('play');
         };
         window.addEventListener('keydown', ned);
-        return () => window.removeEventListener('keydown', ned);
+        // Pause når vinduet ruller ut av syne eller fanen skjules.
+        const skjult = () => {
+            if (document.hidden && modeRef.current === 'play') settMode('paused');
+        };
+        document.addEventListener('visibilitychange', skjult);
+        const el = stageRef.current;
+        const io =
+            el && typeof IntersectionObserver !== 'undefined'
+                ? new IntersectionObserver(([e]) => {
+                      if (!e.isIntersecting && modeRef.current === 'play') settMode('paused');
+                  })
+                : null;
+        if (el) io?.observe(el);
+        return () => {
+            window.removeEventListener('keydown', ned);
+            document.removeEventListener('visibilitychange', skjult);
+            io?.disconnect();
+        };
     }, []);
 
     usePlaytest(GAME_ID, () => ({
@@ -446,12 +547,6 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
     }));
 
     const hudPå = mode === 'play' || mode === 'paused';
-    const hudTekst: React.CSSProperties = {
-        fontFamily: "'Alegreya', Georgia, serif",
-        fontWeight: 800,
-        color: FARGE.ull,
-        textShadow: `0 2px 0 ${FARGE.vegg}`,
-    };
 
     return (
         <MicroGameFrame title="Brevnettet" bleed>
@@ -463,88 +558,29 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                     label="Brevnettet - Hans Nielsen Hauge"
                 >
                     <MicroCanvas
-                        camera={{ position: [-3.9, -2.2, 14.6], fov: 40 }}
+                        postprocessing
+                        camera={{ position: [-0.9, -0.9, 16], fov: 36 }}
                         background={FARGE.vegg}
                         fog={null}
                         controls={false}
                         builtInLights={false}
                         contactShadows={false}
                     >
-                        <ambientLight intensity={0.7} />
-                        <pointLight position={[-9, 2, 6]} intensity={60} color="#ffd9a0" />
-                        <Kamera />
+                        <Lys gRef={gRef} fx={fx} />
+                        <Kamera fx={fx} />
                         <Vev />
-                        <Stuer gRef={gRef} />
-                        <Garn gRef={gRef} dragRef={dragRef} spøkelseRef={spøkelseRef} />
+                        <AnnoSkilt gRef={gRef} />
+                        <Rekordstrek gRef={gRef} rekord={save.bestTent} />
+                        <Stuer gRef={gRef} dragRef={dragRef} />
+                        <Garn gRef={gRef} dragRef={dragRef} spøkelseRef={spøkelseRef} fx={fx} />
+                        <Fnugg fx={fx} />
                         <Figurer gRef={gRef} />
                         <Inndata onNed={ned} onFlytt={flytt} onOpp={opp} />
-                        <Løkke frameRef={frameRef} projRef={projRef} />
+                        <Løkke frameRef={frameRef} projRef={projRef} fx={fx} />
+                        <KitEffects bloomIntensity={0.55} bloomThreshold={0.95} />
                     </MicroCanvas>
 
-                    <div
-                        style={{
-                            position: 'absolute',
-                            inset: 0,
-                            pointerEvents: 'none',
-                            opacity: hudPå ? 1 : 0,
-                        }}
-                    >
-                        <div
-                            ref={hud.år}
-                            style={{
-                                ...hudTekst,
-                                position: 'absolute',
-                                top: 10,
-                                left: 0,
-                                right: 0,
-                                textAlign: 'center',
-                                fontSize: 26,
-                                letterSpacing: '0.12em',
-                            }}
-                        >
-                            ANNO 1796
-                        </div>
-                        <div
-                            style={{
-                                ...hudTekst,
-                                position: 'absolute',
-                                right: 16,
-                                top: 60,
-                                textAlign: 'center',
-                            }}
-                        >
-                            <div
-                                ref={hud.nøster}
-                                style={{ fontSize: 40, lineHeight: 1, color: FARGE.gul }}
-                            >
-                                3
-                            </div>
-                            <div style={{ fontSize: 15 }}>nøster</div>
-                        </div>
-                        <div style={{ ...hudTekst, position: 'absolute', left: 16, bottom: 12 }}>
-                            <div
-                                ref={hud.tente}
-                                style={{ fontSize: 40, lineHeight: 1, color: FARGE.gul }}
-                            >
-                                0
-                            </div>
-                            <div style={{ fontSize: 15 }}>stuer lyser</div>
-                        </div>
-                        <div
-                            style={{
-                                ...hudTekst,
-                                position: 'absolute',
-                                right: 16,
-                                bottom: 12,
-                                textAlign: 'right',
-                            }}
-                        >
-                            <div ref={hud.steiner} style={{ fontSize: 22, lineHeight: 1 }}>
-                                0 av 3
-                            </div>
-                            <div style={{ fontSize: 14 }}>stuer ga opp</div>
-                        </div>
-                    </div>
+                    <Hud gRef={gRef} synlig={hudPå} rekord={save.bestTent} />
                     {hudPå && (
                         <div
                             style={{
@@ -569,15 +605,16 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                     {mode === 'menu' && (
                         <ArcadeScreen>
                             <ArcadeTag>Hans Nielsen Hauge 1796-1814</ArcadeTag>
-                            <ArcadeLogo accent={FARGE.gul}>Brevnettet</ArcadeLogo>
-                            <p style={{ fontSize: 16, lineHeight: 1.4, margin: '8px 0' }}>
+                            <TrappLogo tekst="BREVNETTET" />
+                            <p style={{ fontSize: 18, lineHeight: 1.4, margin: '8px 0' }}>
                                 Dra tråder fra Hauge til de mørke stuene. Bind stuene til hverandre,
                                 så lyset brenner når lensmannen tar ham.
                             </p>
                             {save.runder > 0 && (
-                                <p style={{ fontSize: 14, margin: '0 0 8px' }}>
-                                    Rekord: {save.bestTent} tente stuer i 1814 · Åkleet:{' '}
-                                    {save.åkle.length} av 6
+                                <p style={{ fontSize: 16, margin: '0 0 8px' }}>
+                                    Rekord: {save.bestTent} tente stuer i 1814. Vevd inn i åkleet:{' '}
+                                    {save.åkle.length} av 6 navn
+                                    {save.åkle.length ? ` (${save.åkle.join(', ')})` : ''}
                                 </p>
                             )}
                             <ArcadeBigButton onClick={start}>Spill</ArcadeBigButton>
@@ -597,16 +634,16 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                             <ArcadeTag color={res.vant ? FARGE.gul : FARGE.rød}>
                                 {res.tittel}
                             </ArcadeTag>
-                            <ArcadeLogo accent={FARGE.gul}>{res.rang}</ArcadeLogo>
+                            <ArcadeLogo>{res.rang}</ArcadeLogo>
                             {res.tekst && (
-                                <p style={{ fontSize: 16, lineHeight: 1.35, margin: '6px 0' }}>
+                                <p style={{ fontSize: 18, lineHeight: 1.35, margin: '6px 0' }}>
                                     {res.tekst}
                                 </p>
                             )}
                             {res.tips && (
                                 <p
                                     style={{
-                                        fontSize: 15,
+                                        fontSize: 17,
                                         lineHeight: 1.35,
                                         margin: '6px 0',
                                         fontWeight: 700,
@@ -627,7 +664,7 @@ export default function Brevnettet3D({ onComplete }: MicroGameProps) {
                                 ]}
                             />
                             {res.nyeNavn.length > 0 && (
-                                <p style={{ fontSize: 14, margin: '6px 0' }}>
+                                <p style={{ fontSize: 16, margin: '6px 0' }}>
                                     Vevd inn i åkleet: {res.nyeNavn.join(', ')}
                                 </p>
                             )}

@@ -1,6 +1,6 @@
 // All tekst i Brevnettet: tap, tips, seier, lærings-øyeblikk og «Dette skjedde».
 
-import type { Årsak } from './game';
+import { tente, type Game, type Årsak } from './game';
 
 export const TAP_TITTEL: Record<Årsak, string> = {
     mørkt: 'Alt lyset slukket',
@@ -25,7 +25,7 @@ export const ØYEBLIKK = {
     },
     fengsel: {
         tittel: 'Hauge i fengsel',
-        tekst: 'Nå klipper lensmannen den tråden flest stuer henger på. Den blir rød først. Dra den på nytt for ett nøste, eller bind stua til en annen.',
+        tekst: 'Nå klipper lensmannen én tråd om gangen. Den blir rød først. Dra den igjen, eller bind stua til en annen.',
     },
 };
 
@@ -34,7 +34,6 @@ export const LAPP = {
     ring: 'Folk venter her. Tenn stua i tide',
     nøster: 'Hver tråd koster ett nøste',
     saltverk: 'Hauge er ute i fem sekunder!',
-    knytt: 'Dra den røde tråden på nytt',
 };
 
 export const LÆRDOM = {
@@ -44,3 +43,36 @@ export const LÆRDOM = {
     fengsel: 'Hauge satt i fengsel fra 1804, men vennene holdt kontakten med brev.',
     eidsvoll: 'I 1814 var tre av mennene på Eidsvoll haugianere.',
 };
+
+/**
+ * «Dette skjedde»: knyttet til det eleven faktisk gjorde i runden. Nøkkel, tekst og vekt
+ * (tyngst vises først).
+ */
+export function lærdomFra(g: Game, vant: boolean): [string, string, number][] {
+    const ut: [string, string, number][] = [];
+    const { raknet, reddetMaks, knyttet } = g.stat;
+    if (reddetMaks > 0)
+        ut.push([
+            'reddet',
+            `Det meste du hadde: ${reddetMaks} stuer som levde videre etter at lensmannen tok Hauge. De var bundet til hverandre.`,
+            3,
+        ]);
+    if (raknet > 0)
+        ut.push([
+            'alene',
+            raknet === 1
+                ? 'Én stue slukket fordi den bare hang på Hauge eller på én tråd som ble klippet.'
+                : `${raknet} stuer slukket fordi de bare hang på Hauge eller på én tråd som ble klippet.`,
+            2,
+        ]);
+    if (g.steiner > 0) ut.push(['gaOpp', LÆRDOM.gaOpp, 2]);
+    if (knyttet > 0)
+        ut.push([
+            'knytt',
+            `Du knyttet ${knyttet} tråder på nytt i fengselsårene. Vennene holdt kontakten med brev.`,
+            1,
+        ]);
+    if (vant) ut.push(['eidsvoll', `${tente(g).length} stuer lyste i 1814. ${LÆRDOM.eidsvoll}`, 4]);
+    else ut.push(['fengsel', LÆRDOM.fengsel, 1]);
+    return ut;
+}

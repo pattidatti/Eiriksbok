@@ -332,3 +332,45 @@ Registry-felt `sjanger`: `'nettverksbygging i sanntid'`.
   (5) Raknede stuer i fengselsårene blir grå uten ring - riktig, men de fyller brettet.
 - Skjermbilder: `.screenshots/playtest/brevnettet/passiv-01-2s.png`, `film-07-110s.png`,
   `film-08-150s.png`.
+
+### Fase: bygg (kunst, juice, tekst) (2026-10-11)
+
+- Diagnose 2 først: 1796 starter med tre mørke stuer i full størrelse rundt Hauge, hver med en
+  rhombe-ring som krymper (ringTid 50 s, så den ikke rekker å bli full), og lensmannen venter ved
+  kanten med en stiplet rød sti til Hauge fra sekund 0. Kameraet står nå nesten rett forfra
+  (ca. 11 grader fra venstre, 6 nedenfra) og tilpasser avstanden til vinduet, så stuene er store
+  (1,35 enheter). Rittet varer 4-5 s (`varsel`), truede stuer synker, blinker og får en rød ring
+  som teller ned, og en stue som rakner, tømmes for farge ovenfra og står skjev og grå. Nye stuer
+  kommer ute ved kanten, den ene på siden der lensmannen venter (`kantAndel`). Fengselsårene:
+  tråden som skal klippes er tykk, rød og skjelver, stuene på den får røde nedtellingsringer,
+  vennene sender ett nøste per fengselsår (`fengsel.nøsterPerÅr`), og hjelpelappen er fjernet
+  (lærings-øyeblikket kommer ved første røde tråd i stedet). Knaggen rommer 8 nøster (`nøsterTak`).
+- Kunsten: åkleet er ett plan med canvas-tekstur (renning, innslag, bord med rhomber, tagger,
+  «H N H») og normalkart fra samme tegning. Stuer, roser, Hauge og lensmannen er trappetrinn-figurer
+  bygd fra tegn-rutenett (`pikselGeo` i `art.ts`, vertex-farger, ett draw call per slag). Garnet er
+  12 ledd per kjedelinje i én instans-mesh: stramt når det klikker fast, synker slakt, dirrer, og
+  pisker og faller når det ryker. Brev med rødt segl glir mellom tente stuer. Årstallet er vevd inn
+  i øvre bord med egen 5 x 7-trappeskrift (`crispCanvas`). Talglyset står nede til venstre og
+  flimrer (flakker ved arrestasjon), stua blir mørkere og kaldere i fengselsårene, morgensol i 1814.
+  Hauge sitter i et fengsel under veven mens han er inne. 26 draw calls og 5k trekanter på lav.
+- HUD: årene mot 1814 som vevde ruter (målet), knagg med nøster og tall i trappeskrift, lysmåler
+  med rekord, tre kljåsteiner som faller. Rekorden er også en gul strek i høyre vevkant.
+  Lyd: tukk med dirrende tone, arpeggio når en stue tennes, hovslag mens lensmannen rir, rakne-
+  toner, klipp, dunk, seier og tap. «Dette skjedde» bygges fra det eleven gjorde (`lærdomFra`).
+- Simulering (200 runder per robot), grønn: binder (vinner) 100 %, median 229; halvgod (middels)
+  100 %, median 216; bare-hauge 0 %, median 3; tilfeldig 0 %, median 5; passiv 0 %. 19,3 valg
+  per minutt, press 0,24 -> 0,36 -> 0,71. Selvspill: binder vant med 220 (samsvar). Scene-audit
+  og likhetsvakt grønne (nærmest inn-mot-stranda 0,38).
+- Det som IKKE virket: (1) Med ett nøste per fengselsår vant halvgod 100 % og trappen sprakk
+  (247 mot 254), fordi garnet hopet seg opp. Løst med tak på knaggen (8) og klipp hvert 1,4-1,0 s.
+  (2) Første lys (lyst hemisfærelys, nesten rett forfra) ga en lys rektangel-plakat som var for lik
+  Rederens kart i form (0,72) og Radionettet/Inn mot stranda i farge. Løst med kunstbriefens
+  talglys: lavt, oransje, med fall over veven, varm restglød og rødbrun tømmervegg. (3) Lerreter i
+  HUD-en ble absolutt plassert av skallet (`[data-mg-stage] canvas`) og kom med på plakaten - nå
+  er HUD-tallene bilder (`tegnTrappBilde`).
+- Kjente svakheter: (1) Middels vinner fortsatt 100 %; trappen er smal (216 mot 229 stue-år).
+  Ekte elever sikter dårligere enn roboten, men fengselsårene kan bli for lette eller for hektiske
+  (klipp hvert 1-1,4 s). (2) Talglyset gjør veven oransje; naturhvit ull leses mest på venstre side.
+  (3) Ventende folk på ringen er små. (4) Ingen skygger (punktlys-skygge er for dyrt).
+- Skjermbilder: `.screenshots/playtest/brevnettet/film-05-55s.png`, `film-08-150s.png`,
+  `binder-slutt.png`.

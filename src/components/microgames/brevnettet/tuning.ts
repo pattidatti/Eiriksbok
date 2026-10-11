@@ -6,8 +6,12 @@ export const TUNING = {
     vev: { minX: -7.2, maxX: 7.2, minY: -3.3, maxY: 3.0 },
     /** Minste avstand mellom to prikker (stuer og Hauge) når en ny stue plasseres. */
     avstand: 1.7,
+    /** Nye stuer dukker opp i den ytre delen av hver halvdel (0 = hvor som helst, 1 = helt ute). */
+    kantAndel: 0.4,
     /** Flest stuer på veven samtidig (plassen og visningen tåler ikke flere). */
     maksStuer: 26,
+    /** Knaggen rommer så mange nøster (garn du ikke bruker, går tapt). */
+    nøsterTak: 8,
     /** Flest tråder samtidig. */
     maksTråder: 60,
 
@@ -28,12 +32,12 @@ export const TUNING = {
 
     lensmann: {
         /** Første gang (1797) rir han ekstra sakte. */
-        førsteVarsel: 4.5,
+        førsteVarsel: 5,
         /** Nøster per stue som fortsatt lyser etter et raid, og flest nøster per raid. */
         nøsterPerStue: 1,
         nøsterMaks: 6,
         /** Fengselsårene: sekunder mellom hvert klipp (først, sist) og varselet på tråden. */
-        klippHver: [2, 1.4] as [number, number],
+        klippHver: [1.4, 1.0] as [number, number],
         klippVarsel: 2,
         /** Tilfeldig slingring på tiden mellom klippene (andel opp eller ned). */
         klippSpredning: 0.4,
@@ -43,6 +47,8 @@ export const TUNING = {
         /** Når i fengselsårene Hauge slippes ut til saltverket (1809), og hvor lenge. */
         saltverk: 19,
         saltverkSek: 5,
+        /** Nøster vennene sender hvert fengselsår. */
+        nøsterPerÅr: 1,
     },
 
     ring: {
