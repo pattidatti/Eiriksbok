@@ -5,7 +5,7 @@
   "year": "1643-1715",
   "category": "Eneveldet i Frankrike",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-hero.webp",
   "details": [
     "Ludvig 14. var konge i Frankrike i 72 år, fra 1643 til 1715, og kalte seg Solkongen.",
     "Etter adelsopprøret Fronden samlet han adelen ved hoffet i Versailles, der de kjempet om gunsten hans i stedet for å gjøre opprør.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-01.webp",
       "alt": "Hoffolk samlet rundt kongens seng om morgenen",
       "caption": "Hver morgen sto adelsmenn rundt sengen til Ludvig 14. når han sto opp. Det var en ære å få være med."
     },
@@ -80,7 +80,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-02.webp",
       "alt": "Den lange Speilsalen i Versailles med lysekroner",
       "caption": "Speilsalen i Versailles er 73 meter lang. Her gikk hoffolkene hver dag, og her ble store seremonier holdt."
     },
@@ -149,7 +149,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-03.webp",
       "alt": "Kvinner marsjerer mot slottet Versailles i regnvær",
       "caption": "I oktober 1789 marsjerte kvinner fra Paris til Versailles. Etter det var slottet ikke lenger sentrum for makten i Frankrike."
     },
