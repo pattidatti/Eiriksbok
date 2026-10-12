@@ -1,0 +1,448 @@
+{
+    "id": "chile-1973",
+    "tittel": "Få økonomien til å skrike: Kuppet i Chile",
+    "kilde": "/historie/den-kalde-krigen/chile-1973",
+    "bilde": "/images/historie/den-kalde-krigen/chile-1973_hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "gruva",
+            "kapittel": "Kobberlandet",
+            "visual": {
+                "type": "ChileGruva",
+                "props": {
+                    "modus": "gruve"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Vi står på kanten av en enorm kobbergruve. Lastebilene kjører i ring, ned og opp av hullet."
+                },
+                {
+                    "si": "Dette er Chile. Den største rikdommen i landet ligger i bakken, og den heter kobber."
+                },
+                {
+                    "si": "Men gruvene var ikke chilenske. De store kobbergruvene tilhørte amerikanske selskaper."
+                },
+                {
+                    "si": "Selskapene tok fortjenesten ut av landet. Pengene seilte bort, og de havnet i USA."
+                },
+                {
+                    "si": "For mange chilenere føltes det urettferdig. Det var jo deres egen rikdom."
+                }
+            ]
+        },
+        {
+            "id": "kartet",
+            "visual": {
+                "type": "ChileKart",
+                "props": {
+                    "modus": "land"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Chile er et langt og smalt land på vestkysten av Sør-Amerika."
+                },
+                {
+                    "si": "Langt mot nord ligger USA. Det var der selskapene som eide gruvene, holdt til."
+                },
+                {
+                    "si": "Pila viser hvor kobberpengene gikk. Ut av Chile, og nordover til selskapene i USA."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Få økonomien til å skrike",
+                    "undertittel": "Kuppet i Chile, 1973",
+                    "bilde": "/images/historie/den-kalde-krigen/chile-1973_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Kan man velte et land uten å skyte?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om kuppet i Chile i 1973."
+                },
+                {
+                    "si": "Et kupp er når noen tar makten med tvang, i stedet for å vinne et valg."
+                },
+                {
+                    "si": "Vi skal se hvordan USA hjalp til å velte en regjering uten å løfte et gevær. De kvalte i stedet en hel økonomi."
+                }
+            ]
+        },
+        {
+            "id": "allende",
+            "kapittel": "Håpet",
+            "visual": {
+                "type": "ChileGruva",
+                "props": {
+                    "modus": "deling"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1970 vant Salvador Allende presidentvalget i Chile."
+                },
+                {
+                    "si": "Han var sosialist. Han lovet å gi landets rikdom tilbake til folket."
+                },
+                {
+                    "si": "Det viktigste han gjorde, var å nasjonalisere kobbergruvene. Det betyr at staten tok over gruvene, så landet selv eide dem."
+                },
+                {
+                    "si": "Nå skulle kobberpengene gå til skoler, sykehus og vanlige chilenere. Ikke til selskaper i USA."
+                }
+            ]
+        },
+        {
+            "id": "hap",
+            "visual": {
+                "type": "ChileTrykk",
+                "props": {
+                    "modus": "hap"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Allende gjorde mer enn å snakke."
+                },
+                {
+                    "si": "Han ga gratis melk til alle barn."
+                },
+                {
+                    "si": "Han bygde boliger, og han hevet lønningene."
+                },
+                {
+                    "si": "For mange fattige chilenere var det første gang noen i regjeringen brydde seg om dem. Det var en tid full av håp."
+                }
+            ]
+        },
+        {
+            "id": "nixon",
+            "kapittel": "Krig uten kuler",
+            "visual": {
+                "type": "ChileKart",
+                "props": {
+                    "modus": "frykt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men i USA ble president Nixon rasende."
+                },
+                {
+                    "si": "Han var redd for at Allende skulle gjøre Chile til et nytt Cuba."
+                },
+                {
+                    "si": "Og han var enda reddere for noe annet: at flere land skulle følge etter og ta tilbake sine egne ressurser."
+                },
+                {
+                    "si": "Hvis Chile lyktes, kunne andre land i Latin-Amerika få samme idé."
+                }
+            ]
+        },
+        {
+            "id": "ordren",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "«Få økonomien til å skrike.»",
+                    "undertittel": "Richard Nixon, om Chile, 1970",
+                    "sporsmal": {
+                        "tekst": "Hva betyr det?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nixon ga derfor en ordre til CIA. CIA er USAs hemmelige tjeneste, som driver med spionasje."
+                },
+                {
+                    "si": "Ordren gjaldt Chiles økonomi. Den lød: Få økonomien til å skrike."
+                },
+                {
+                    "si": "Hva betyr det? At hverdagen i Chile skulle bli så vond at folk mistet troen på sin egen regjering."
+                }
+            ]
+        },
+        {
+            "id": "spakene",
+            "visual": {
+                "type": "ChileTrykk",
+                "props": {
+                    "modus": "trykk"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "USA ville ikke sende soldater. I stedet startet de en lydløs krig mot Chiles økonomi."
+                },
+                {
+                    "si": "Først stanset de alle lån. Da fikk ikke landet kjøpt deler og varer."
+                },
+                {
+                    "si": "Så betalte de i hemmelighet lastebilsjåfører for å streike. Maten nådde ikke fram til butikkene."
+                },
+                {
+                    "si": "De presset ned prisen på kobber, den største rikdommen landet hadde."
+                },
+                {
+                    "si": "Og de ga penger til aviser som spredte frykt og uro."
+                },
+                {
+                    "si": "Spak for spak steg trykket. Til slutt skrek økonomien."
+                }
+            ]
+        },
+        {
+            "id": "stille",
+            "visual": {
+                "type": "ChileGruva",
+                "props": {
+                    "modus": "stille"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på gruva nå. Kobberet er verdt mindre, og det mangler både deler og varer."
+                },
+                {
+                    "si": "Etter to år med kaos lå Chiles økonomi i ruiner."
+                },
+                {
+                    "si": "Poenget er ubehagelig enkelt. Du trenger ikke å erobre et land for å velte regjeringen."
+                },
+                {
+                    "si": "Du kan gjøre hverdagen så vond at folk mister troen. Så lar du noen andre ta det siste steget."
+                }
+            ]
+        },
+        {
+            "id": "palasset",
+            "kapittel": "11. september",
+            "visual": {
+                "type": "ChilePalasset"
+            },
+            "replikker": [
+                {
+                    "si": "Da slo militæret til. Det var morgen, den 11. september 1973."
+                },
+                {
+                    "si": "Hæren omringet presidentpalasset."
+                },
+                {
+                    "si": "Så bombet de palasset. President Allende nektet å overgi seg, og han døde inne i palasset."
+                },
+                {
+                    "si": "General Augusto Pinochet tok makten. Han styrte Chile som diktator i 17 år. En diktator styrer alene, uten frie valg."
+                }
+            ]
+        },
+        {
+            "id": "stadion",
+            "visual": {
+                "type": "ChileArkiv",
+                "props": {
+                    "modus": "stadion"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I dagene etter kuppet ble det store nasjonalstadionet i hovedstaden gjort om til et fengsel."
+                },
+                {
+                    "si": "Tusenvis av mennesker som var uenige med Pinochet, ble samlet der. Mange ble torturert eller drept."
+                }
+            ]
+        },
+        {
+            "id": "forsvunne",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 3000,
+                            "farget": 3000,
+                            "farge": "#7f1d1d",
+                            "tittel": "Over 3000 drept eller forsvunnet",
+                            "fargeEtikett": "drept eller forsvant sporløst"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 3000,
+                            "farget": 3000,
+                            "farge": "#334155",
+                            "tittel": "«De forsvunne»",
+                            "fargeEtikett": "drept eller forsvant sporløst"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Over 3000 chilenere ble drept eller forsvant sporløst i årene som fulgte."
+                },
+                {
+                    "si": "De kalles fortsatt de forsvunne. Mange familier vet den dag i dag ikke hva som skjedde med dem."
+                }
+            ]
+        },
+        {
+            "id": "laboratoriet",
+            "kapittel": "Laboratoriet",
+            "visual": {
+                "type": "ChileGruva",
+                "props": {
+                    "modus": "privat"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "USA hadde fått det de ville: en leder som ikke truet dem, og en åpen dør for amerikanske selskaper."
+                },
+                {
+                    "si": "Under Pinochet ble Chile et levende laboratorium, et sted der man prøvde ut en ny måte å styre økonomien på."
+                },
+                {
+                    "si": "En gruppe chilenske økonomer utdannet i USA, kalt Chicago-guttene, fikk fritt spillerom."
+                },
+                {
+                    "si": "Kobberet ble for en stor del privat igjen. Det betyr at selskaper, ikke staten, eide det."
+                },
+                {
+                    "si": "Store deler av samfunnet ble solgt til private selskaper. Helt ned til skoler, vann og pensjoner."
+                }
+            ]
+        },
+        {
+            "id": "arven",
+            "visual": {
+                "type": "ChileArkiv",
+                "props": {
+                    "modus": "arven"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Var det bra for Chile? Det er folk fortsatt uenige om."
+                },
+                {
+                    "si": "Noen mener at endringene gjorde Chile rikere på sikt."
+                },
+                {
+                    "si": "Andre peker på at forskjellen mellom fattig og rik vokste."
+                },
+                {
+                    "si": "Og folket fikk aldri stemme over de store endringene. Ingen fikk lov til å protestere."
+                }
+            ]
+        },
+        {
+            "id": "monsteret",
+            "kapittel": "Mønsteret",
+            "visual": {
+                "type": "ChileKart",
+                "props": {
+                    "modus": "monster"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ser du mønsteret? En folkevalgt leder ville at landets rikdom skulle bli i landet."
+                },
+                {
+                    "si": "En stormakt så det som en trussel og fjernet ham. Ikke med åpen krig, men i det skjulte."
+                },
+                {
+                    "si": "Tjue år før hadde USA gjort det samme i Iran, med Operasjon Ajax. Der veltet de en leder som ville ta tilbake oljen."
+                },
+                {
+                    "si": "Den samme oppskriften finner vi i Kongo, og i flere andre land."
+                }
+            ]
+        },
+        {
+            "id": "arkivet",
+            "visual": {
+                "type": "ChileArkiv",
+                "props": {
+                    "modus": "arkiv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvordan vet vi alt dette? I lang tid nektet USA for å ha blandet seg inn i Chile."
+                },
+                {
+                    "si": "Men senere ble hemmelige dokumenter gjort kjent for alle."
+                },
+                {
+                    "si": "De viste svart på hvitt hva CIA hadde gjort."
+                },
+                {
+                    "si": "De mektige forteller ikke alltid sannheten med en gang. Derfor må historikere grave i arkivene."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ingen soldater fra USA.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Likevel falt et demokrati.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Våpenet var økonomien:",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "lån, streik, priser og frykt.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Regningen gikk til folket.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "17 år uten frie valg.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "USA sendte aldri soldater til Chile. Likevel falt en folkevalgt regjering."
+                },
+                {
+                    "si": "Våpenet var økonomien. Lån som stoppet, streiker, lave priser og frykt."
+                },
+                {
+                    "si": "Prisen ble betalt av det chilenske folket. De mistet både demokratiet sitt og tusenvis av mennesker."
+                }
+            ]
+        }
+    ]
+}
