@@ -1,0 +1,262 @@
+{
+    "id": "operasjon-ajax",
+    "tittel": "Operasjon Ajax: Da oljen ble verdt et kupp",
+    "kilde": "/historie/den-kalde-krigen/operasjon-ajax",
+    "bilde": "/images/historie/den-kalde-krigen/operasjon-ajax_hero.webp",
+    "utenforArtikkel": [
+        { "tall": 60, "begrunnelse": "Artikkelen skriver det med bokstaver: «Først i 2013, seksti år etter, innrømmet CIA»." }
+    ],
+    "scener": [
+        {
+            "id": "oljefeltet",
+            "kapittel": "Oljen",
+            "visual": { "type": "AjaxOljefelt", "props": { "modus": "olje" } },
+            "replikker": [
+                { "si": "Tenk deg et oljefelt i Iran. Pumpene går og går, i stekende sol." },
+                { "si": "Under bakken ligger enorme mengder olje. Den er verdt en formue." },
+                { "si": "Oljen blir hentet opp av arbeidere fra Iran. Det er de som gjør det harde arbeidet." },
+                { "si": "Men oljen tilhører ikke iranerne som jobber her. Hvem eier den da?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "OPERASJON AJAX",
+                    "undertittel": "Da oljen ble verdt et kupp",
+                    "bilde": "/images/historie/den-kalde-krigen/operasjon-ajax_hero.webp",
+                    "sporsmal": { "tekst": "Hvordan velter man en regjering i det skjulte?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Operasjon Ajax." },
+                { "si": "I 1953 veltet to land i hemmelighet regjeringen i Iran. Et kupp er når noen tar makten med tvang, uten valg." },
+                { "si": "Hvordan kan man velte en hel regjering, uten at noen ser hvem som står bak?" }
+            ]
+        },
+        {
+            "id": "iran",
+            "visual": { "type": "AjaxKart", "props": { "modus": "iran" } },
+            "replikker": [
+                { "si": "Iran er et stort land i Midtøsten." },
+                { "si": "Problemet var at iranerne ikke eide oljen selv. Et britisk selskap hentet den opp. I dag heter selskapet BP." },
+                { "si": "Selskapet tok nesten hele fortjenesten. Fortjeneste er pengene som blir igjen når alt er betalt." },
+                { "si": "Iranerne gjorde det harde arbeidet. Men de satt igjen med smuler." }
+            ]
+        },
+        {
+            "id": "mossadeq",
+            "kapittel": "Mossadeq",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Mohammad Mossadeq",
+                    "punkter": [
+                        { "ikon": "haer", "tittel": "Folkevalgt og populær", "tekst": "statsminister fra 1951", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Utdannet jurist", "tekst": "kunne loven godt", "fraBeat": 2 },
+                        { "ikon": "hus", "tittel": "Styrte fra sengen", "tekst": "han var ofte syk", "fraBeat": 3 },
+                        { "ikon": "stjerne", "tittel": "Årets mann", "tekst": "i det amerikanske bladet Time", "fraBeat": 4 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I 1951 fikk Iran en ny statsminister. Han het Mohammad Mossadeq." },
+                { "si": "Han var valgt av folket, og han var svært populær." },
+                { "si": "Mossadeq var en gammel mann og utdannet jurist. Han kunne loven godt." },
+                { "si": "Han var ofte syk, og styrte landet fra sengen sin." },
+                { "si": "Samme år kåret det amerikanske bladet Time ham til årets mann." }
+            ]
+        },
+        {
+            "id": "nasjonaliser",
+            "visual": { "type": "AjaxOljefelt", "props": { "modus": "nasjonaliser" } },
+            "replikker": [
+                { "si": "Mossadeq mente noe enkelt. Oljen ligger i Iran, så den bør tilhøre iranerne." },
+                { "si": "Derfor bestemte han at staten skulle ta over oljeselskapet." },
+                { "si": "Dette kalles å nasjonalisere. Det som var eid av et selskap, blir eid av landet." },
+                { "si": "Mossadeq sa: Med Guds hjelp og folkets vilje har vi tatt tilbake det som alltid har vært vårt." }
+            ]
+        },
+        {
+            "id": "blokade",
+            "visual": { "type": "AjaxOljefelt", "props": { "modus": "blokade" } },
+            "replikker": [
+                { "si": "For iranerne var Mossadeq en helt. For britene var han en tyv." },
+                { "si": "Britene nektet å miste oljepengene. De satte i gang en blokade." },
+                { "si": "En blokade betyr at handelen blir stengt. Ingen skip kom lenger for å kjøpe Irans olje." },
+                { "si": "Iran tjente nesten ingenting på oljen sin. Folk ble fattigere." },
+                { "si": "Men britene greide ikke å fjerne Mossadeq alene. Da ba de USA om hjelp." }
+            ]
+        },
+        {
+            "id": "kald-krig",
+            "kapittel": "Et kupp i hemmelighet",
+            "visual": { "type": "AjaxKart", "props": { "modus": "kald" } },
+            "replikker": [
+                { "si": "USA sa ja. Men hvorfor?" },
+                { "si": "Den kalde krigen var på sitt kaldeste. USA var redd for at Iran skulle havne på Sovjetunionens side." },
+                { "si": "Frykten for kommunisme ble unnskyldningen." },
+                { "si": "Men oljen var den egentlige gevinsten." },
+                { "si": "President Eisenhower ga grønt lys til en hemmelig operasjon. Den fikk kodenavnet Ajax." }
+            ]
+        },
+        {
+            "id": "teateret",
+            "visual": { "type": "AjaxTeateret", "props": { "modus": "kupp" } },
+            "replikker": [
+                { "si": "CIA er USAs hemmelige tjeneste. Agenten Kermit Roosevelt reiste til Iran med kofferter fulle av penger." },
+                { "si": "Han betalte folk for å lage falske opptøyer i gatene. Opptøyer er urolige folkemengder som roper og slåss." },
+                { "si": "Han fikk aviser til å trykke løgner om Mossadeq." },
+                { "si": "Han bestakk militære ledere. Han betalte også bøller for å skape kaos." },
+                { "si": "Målet var at det skulle se ut som om folket selv ville bli kvitt statsministeren sin." },
+                { "si": "Fra utsiden så det ut som folkets vilje. Men bak kulissene var det CIA som trakk i trådene." }
+            ]
+        },
+        {
+            "id": "prisen",
+            "visual": { "type": "AjaxTeateret", "props": { "modus": "pris" } },
+            "replikker": [
+                { "si": "Og prisen? Hele operasjonen kostet under én million dollar." },
+                { "si": "For den summen byttet to land ut en hel regjering. Så billig kan makt være." }
+            ]
+        },
+        {
+            "id": "seier",
+            "kapittel": "August 1953",
+            "visual": { "type": "AjaxOljefelt", "props": { "modus": "seier" } },
+            "replikker": [
+                { "si": "I august 1953 lyktes planen." },
+                { "si": "Mossadeq ble dømt for landssvik, altså for å ha forrådt sitt eget land. Han satt i husarrest resten av livet." },
+                { "si": "Sjahen, Irans konge, fikk tilbake all makt. Og han hadde USA å takke for det." },
+                { "si": "Oljen fløt igjen til selskaper i Vesten." },
+                { "si": "På overflaten var dette en knusende seier for USA og Storbritannia." }
+            ]
+        },
+        {
+            "id": "domino",
+            "kapittel": "Bumerangen",
+            "visual": { "type": "AjaxDomino" },
+            "replikker": [
+                { "si": "Men en seier kan slå tilbake. Et folk glemmer ikke at noen fjernet lederen de valgte." },
+                { "si": "Sjahen styrte hardt i over 25 år." },
+                { "si": "Det hemmelige politiet hans, SAVAK, fengslet og torturerte alle som protesterte." },
+                { "si": "Folket hatet sjahen. Og de hatet USA, som holdt ham ved makten." },
+                { "si": "I 1979 kokte sinnet over i den islamske revolusjonen. Sjahen ble styrtet." },
+                { "si": "Iran gikk fra å være USAs venn til å bli USAs erklærte fiende." }
+            ]
+        },
+        {
+            "id": "gisler",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#2563eb",
+                            "tittel": "Ambassaden i Teheran",
+                            "fargeEtikett": "amerikanere"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#dc2626",
+                            "tittel": "52 gisler i 444 dager",
+                            "fargeEtikett": "holdt fanget"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#7f1d1d",
+                            "tittel": "Fra venner til fiender",
+                            "fargeEtikett": "gisler"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Kort etter stormet sinte studenter den amerikanske ambassaden i Teheran, hovedstaden i Iran." },
+                { "si": "De tok 52 amerikanere som gisler. Gislene satt fanget i 444 dager." },
+                { "si": "Et gissel er en fange som blir holdt for å presse noen. Nå var Iran og USA fiender." }
+            ]
+        },
+        {
+            "id": "bakslag",
+            "visual": { "type": "AjaxKart", "props": { "modus": "bakslag" } },
+            "replikker": [
+                { "si": "Fiendskapet mellom Iran og USA varer fortsatt i dag." },
+                { "si": "Mange historikere mener at forholdet ville sett helt annerledes ut uten kuppet i 1953." },
+                { "si": "Dette kaller vi blowback, eller bakslag. Det er når en hemmelig handling slår tilbake på den som sto bak." },
+                { "si": "USA fikk billig olje og en vennlig leder i noen tiår. Men de skapte også et helt folk som følte seg sveket." }
+            ]
+        },
+        {
+            "id": "monsteret",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Mønsteret",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Et fattig land", "tekst": "med en verdifull ressurs", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "En leder", "tekst": "som vil beholde rikdommen i landet", "fraBeat": 2 },
+                        { "ikon": "hest", "tittel": "En stormakt", "tekst": "som fjerner ham i det skjulte", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Operasjon Ajax viser et mønster som går igjen i historien." },
+                { "si": "Først et fattig land med en ressurs som er verdt mye." },
+                { "si": "Så en leder som vil at rikdommen skal bli i landet." },
+                { "si": "Og til slutt en stormakt som fjerner ham, i det skjulte." },
+                { "si": "Slike inngrep har ofte en pris. Men regningen kommer gjerne først mange år senere." }
+            ]
+        },
+        {
+            "id": "sannheten",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Hvem forteller historien?",
+                    "bilde": "/images/historie/den-kalde-krigen/operasjon-ajax_hero.webp",
+                    "tall": [
+                        { "verdi": 60, "etikett": "år før CIA innrømmet kuppet", "fraBeat": 1, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hvem tjener på versjonen du får høre?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Vi bør også være kritiske til kildene. I mange år nektet USA for at de sto bak kuppet." },
+                { "si": "Først i 2013, seksti år etter, innrømmet CIA offentlig at de hadde gjort det." },
+                { "si": "Sannheten om hemmelige operasjoner kan bruke lang tid på å komme fram. Spør alltid: Hvem tjener på den versjonen jeg får høre?" }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Under én million dollar.", "fraBeat": 0 },
+                        { "tekst": "En hel regjering byttet ut.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Seieren i 1953", "fraBeat": 1 },
+                        { "tekst": "ble fiendskapet i 1979.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "En rask seier", "fraBeat": 2 },
+                        { "tekst": "kan bli et langt nederlag.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "For under én million dollar ble en folkevalgt regjering byttet ut." },
+                { "si": "Men seieren i 1953 ble starten på fiendskapet i 1979, og det varer fortsatt." },
+                { "si": "Slik kan en rask seier bli til et langt nederlag." }
+            ]
+        }
+    ]
+}
