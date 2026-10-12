@@ -9,13 +9,17 @@ import {
     Library,
     ExternalLink,
     Pause,
-    BookOpen
+    BookOpen,
+    Clapperboard,
+    Play
 } from 'lucide-react';
 import type { PresentationData, LearningPathStep } from '../../types';
 import { usePresentationSync } from '../../hooks/usePresentationSync';
 import { SlideEraTimeline } from './SlideEraTimeline';
 import { resolveTimelineConfig } from './resolveTimelineConfig';
 import { computeNext, computePrev } from './presentationNav';
+import { useFilmInfo } from '../../features/film/useFilmInfo';
+import { filmLenke } from '../../features/film/filmIndex';
 
 interface PresentationControllerProps {
     data: PresentationData;
@@ -30,6 +34,43 @@ const findFirstInternalLink = (step: LearningPathStep | undefined): string | nul
         if (!isExternal) return link.url;
     }
     return null;
+};
+
+/** Lærerens bilde av film-lysbildet: plakaten og hva som skjer på projektoren. */
+const FilmForhandsvisning = ({ sti }: { sti: string }) => {
+    const { tittel, bilde, lengde, scener } = useFilmInfo(sti);
+    return (
+        <div className="flex-1 min-h-0 flex gap-8 items-center">
+            <div className="relative w-1/2 aspect-video rounded-xl overflow-hidden bg-slate-800 shadow-2xl ring-1 ring-white/10">
+                {bilde && <img src={bilde} alt="" className="w-full h-full object-cover" />}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
+                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white/90 text-slate-900 flex items-center justify-center shadow-xl">
+                    <Play className="w-7 h-7 translate-x-0.5 fill-current" />
+                </span>
+            </div>
+            <div className="flex-1 space-y-4">
+                <div className="flex items-center gap-2 text-indigo-300 text-sm font-bold uppercase tracking-widest">
+                    <Clapperboard className="w-4 h-4" />
+                    Film{lengde ? ` · ${lengde}` : ''}{scener ? ` · ${scener} scener` : ''}
+                </div>
+                <h1 className="text-3xl font-bold leading-tight">{tittel ?? ' '}</h1>
+                <p className="text-lg text-slate-300 leading-relaxed">
+                    Filmen spilles av på projektoren. Klikk play der, eller trykk mellomrom.
+                </p>
+                <p className="text-sm text-slate-500">
+                    Ingen projektor åpen?{' '}
+                    <a
+                        href={filmLenke(sti) ?? '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-indigo-300 font-bold hover:text-indigo-200 inline-flex items-center gap-1"
+                    >
+                        Åpne filmen i ny fane <ExternalLink className="w-3 h-3" />
+                    </a>
+                </p>
+            </div>
+        </div>
+    );
 };
 
 export const PresentationController: React.FC<PresentationControllerProps> = ({ data, onClose, steps }) => {
@@ -246,9 +287,13 @@ export const PresentationController: React.FC<PresentationControllerProps> = ({ 
                         <span className={`font-bold uppercase tracking-widest text-sm mb-4 ${
                             isTaskPause ? 'text-amber-400' : 'text-indigo-500'
                         }`}>
-                            {isTaskPause ? 'Pause for oppgave' : 'Projektør-preview'}
+                            {isTaskPause ? 'Pause for oppgave' : currentSlide.film ? 'Film på projektoren' : 'Projektør-preview'}
                         </span>
+                        {currentSlide.layout === 'film' && currentSlide.film ? (
+                            <FilmForhandsvisning sti={currentSlide.film} />
+                        ) : (
                         <h1 className="text-4xl font-bold mb-6">{currentSlide.title}</h1>
+                        )}
 
                         {isTaskPause && currentSlide.taskPrompt && (
                             <div className="text-2xl text-amber-100 leading-relaxed mb-6">

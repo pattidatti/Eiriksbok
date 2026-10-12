@@ -8,6 +8,11 @@ import { SlideEraTimeline } from './SlideEraTimeline';
 import { resolveTimelineConfig } from './resolveTimelineConfig';
 import { computeNext, computePrev } from './presentationNav';
 
+// Filmspilleren er tung (visualer, 3D); den lastes først når et film-lysbilde vises.
+const FilmLysbilde = React.lazy(() =>
+    import('../../features/film/FilmPage').then((m) => ({ default: m.FilmLysbilde }))
+);
+
 interface ProjectorViewProps {
     data: PresentationData;
 }
@@ -26,15 +31,19 @@ export const ProjectorView: React.FC<ProjectorViewProps> = ({ data }) => {
 
     // Keyboard navigation. Bound once via a ref so handlers always reach the
     // latest closures without re-attaching listeners.
-    const navRef = React.useRef({ next, prev, toggleBlackout });
+    const erFilm = currentSlide?.layout === 'film' && !!currentSlide.film;
+    const navRef = React.useRef({ next, prev, toggleBlackout, erFilm });
     React.useEffect(() => {
-        navRef.current = { next, prev, toggleBlackout };
+        navRef.current = { next, prev, toggleBlackout, erFilm };
     });
     React.useEffect(() => {
         const handler = (e: KeyboardEvent) => {
             const target = e.target as HTMLElement | null;
             if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA')) return;
 
+            // På film-lysbildet styrer mellomrom og piler filmen. Presenterklikkere sender
+            // PageDown/PageUp, og de blar fortsatt i lysbildene.
+            if (navRef.current.erFilm && (e.key === ' ' || e.key === 'ArrowRight' || e.key === 'ArrowLeft')) return;
             if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
                 e.preventDefault();
                 navRef.current.next();
@@ -83,6 +92,14 @@ export const ProjectorView: React.FC<ProjectorViewProps> = ({ data }) => {
                 onClick={toggleBlackout}
                 title="Trykk for å vise igjen (B)"
             />
+        );
+    }
+
+    if (erFilm) {
+        return (
+            <Suspense fallback={<div className="fixed inset-0 bg-slate-100" />}>
+                <FilmLysbilde key={currentSlide.film} sti={currentSlide.film!} forrige={prev} neste={next} />
+            </Suspense>
         );
     }
 

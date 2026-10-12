@@ -1,3 +1,5 @@
+import { FilmKnapp } from '../../../features/film/StiFilm';
+import { filmerI } from '../../../features/film/stiFilmer';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Check, ChevronDown, GraduationCap, Library } from 'lucide-react';
@@ -108,12 +110,13 @@ export function DeepDiveCard({
                                     <div className="grid sm:grid-cols-2 gap-2">
                                         {deepDive.articles.map((a) => {
                                             const read = readUrls.includes(a.url);
+                                            const film = filmerI([], [a.url])[0];
                                             return (
+                                                <div key={a.url} className="relative">
                                                 <Link
-                                                    key={a.url}
                                                     to={a.url}
                                                     onClick={() => onRead(a.url)}
-                                                    className={`flex items-center gap-3 rounded-xl border-2 px-3 py-3 font-semibold transition ${
+                                                    className={`flex h-full items-center gap-3 ${film ? 'pr-28' : ''} rounded-xl border-2 px-3 py-3 font-semibold transition ${
                                                         read
                                                             ? 'border-emerald-200 bg-emerald-50 text-emerald-900'
                                                             : 'border-violet-200 bg-white text-violet-800 hover:border-violet-400 hover:shadow-md'
@@ -128,6 +131,12 @@ export function DeepDiveCard({
                                                         {a.title}
                                                     </span>
                                                 </Link>
+                                                {film && (
+                                                    <span className="absolute right-3 top-1/2 -translate-y-1/2">
+                                                        <FilmKnapp sti={film} />
+                                                    </span>
+                                                )}
+                                                </div>
                                             );
                                         })}
                                     </div>

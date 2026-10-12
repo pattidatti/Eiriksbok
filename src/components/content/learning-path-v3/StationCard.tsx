@@ -1,3 +1,5 @@
+import { FilmKnapp } from '../../../features/film/StiFilm';
+import { filmerI } from '../../../features/film/stiFilmer';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, BookOpen, Check, Star, X } from 'lucide-react';
@@ -429,15 +431,20 @@ export function StationCard({
                                                     <BookOpen className="w-4 h-4" /> Vil du vite
                                                     mer?
                                                 </span>
-                                                {station.readMore.map((l) => (
-                                                    <Link
-                                                        key={l.url}
-                                                        to={l.url}
-                                                        className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-700 font-semibold hover:border-indigo-300 hover:bg-indigo-50"
-                                                    >
-                                                        {l.title}
-                                                    </Link>
-                                                ))}
+                                                {station.readMore.map((l) => {
+                                                    const film = filmerI([], [l.url])[0];
+                                                    return (
+                                                        <span key={l.url} className="inline-flex items-center gap-1.5">
+                                                            <Link
+                                                                to={l.url}
+                                                                className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-indigo-700 font-semibold hover:border-indigo-300 hover:bg-indigo-50"
+                                                            >
+                                                                {l.title}
+                                                            </Link>
+                                                            {film && <FilmKnapp sti={film} />}
+                                                        </span>
+                                                    );
+                                                })}
                                             </div>
                                         )}
                                     </div>

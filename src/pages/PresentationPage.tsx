@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { useLesson } from '../hooks/useLesson';
 import { mapContentToPresentation } from '../utils/presentationUtils';
+import { filmerISteg, filmerIStasjon, leggInnFilmLysbilder } from '../features/film/stiFilmer';
 import { PresentationController } from '../components/presentation/PresentationController';
 import { ProjectorView } from '../components/presentation/ProjectorView';
 import { useNavigate } from 'react-router-dom';
@@ -46,7 +47,22 @@ export const PresentationPage: React.FC = () => {
     // Level 1: Auto-generate or Use Curated
     const presentationData = React.useMemo(() => {
         if (!lesson) return null;
-        return mapContentToPresentation(lesson, lesson.id || lessonId || 'unknown');
+        // Filmer til artiklene i stien får et eget lysbilde i steget de hører til.
+        const filmer = new Map<string, string[]>();
+        for (const steg of lesson.learningPathData?.steps || []) {
+            const f = filmerISteg(steg);
+            if (f.length) filmer.set(steg.id, f);
+        }
+        for (const fase of lesson.learningPathV3Data?.phases || []) {
+            for (const stasjon of fase.stations) {
+                const f = filmerIStasjon(stasjon);
+                if (f.length) filmer.set(stasjon.id, f);
+            }
+        }
+        return leggInnFilmLysbilder(
+            mapContentToPresentation(lesson, lesson.id || lessonId || 'unknown'),
+            filmer
+        );
     }, [lesson, lessonId]);
 
     if (isLoading) {

@@ -12,12 +12,15 @@ import {
     ArrowRight,
     Brain,
     Monitor,
+    Clapperboard,
 } from 'lucide-react';
 import type { LearningPathData, LearningPathStep } from '../../types';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { getComponent } from '../ComponentRegistry';
 import { CopyTasksButton } from './CopyTasksButton';
 import { LazyComponentSlot } from './LazyComponentSlot';
+import { FilmKnapp } from '../../features/film/StiFilm';
+import { filmerISteg } from '../../features/film/stiFilmer';
 
 interface LearningPathProps {
     data: LearningPathData;
@@ -72,6 +75,11 @@ export const LearningPath: React.FC<LearningPathProps> = ({ data }) => {
             : `/${subjectId}/${topicId}/present/${stiId}`;
     }, [params, data.id]);
 
+    const antallFilmer = React.useMemo(
+        () => new Set(data.steps.flatMap(filmerISteg)).size,
+        [data.steps]
+    );
+
     return (
         <div className="max-w-4xl mx-auto py-8 px-6">
             <header className="mb-10 text-center">
@@ -86,6 +94,12 @@ export const LearningPath: React.FC<LearningPathProps> = ({ data }) => {
                     <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
                         {renderInlineMarkdown(data.description, entries)}
                     </p>
+                    {antallFilmer > 0 && (
+                        <div className="mt-4"><p className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-1.5 text-sm font-semibold text-indigo-700 ring-1 ring-indigo-100">
+                            <Clapperboard className="w-4 h-4" />
+                            {antallFilmer === 1 ? 'Én artikkel i stien finnes som film' : `${antallFilmer} artikler i stien finnes som film`}
+                        </p></div>
+                    )}
                     {hasPresentation && presentationTarget && (
                         <motion.button
                             onClick={() => navigate(presentationTarget)}
@@ -169,9 +183,9 @@ export const LearningPath: React.FC<LearningPathProps> = ({ data }) => {
                                             );
                                         })()}
 
-                                        {step.links && step.links.length > 0 && (
-                                            <div className="flex flex-wrap gap-3 mb-6">
-                                                {step.links.map((link, i) => {
+                                        {((step.links && step.links.length > 0) || filmerISteg(step).length > 0) && (
+                                            <div className="flex flex-wrap items-center gap-3 mb-6">
+                                                {(step.links || []).map((link, i) => {
                                                     const isExternal = link.external || link.url.startsWith('http');
 
                                                     if (isExternal) {
@@ -199,6 +213,9 @@ export const LearningPath: React.FC<LearningPathProps> = ({ data }) => {
                                                         </Link>
                                                     );
                                                 })}
+                                                {filmerISteg(step).map((sti) => (
+                                                    <FilmKnapp key={sti} sti={sti} stor />
+                                                ))}
                                             </div>
                                         )}
 

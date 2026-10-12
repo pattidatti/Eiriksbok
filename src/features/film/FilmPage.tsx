@@ -1,7 +1,9 @@
 import {
     Suspense,
+    createContext,
     createElement,
     useCallback,
+    useContext,
     useEffect,
     useLayoutEffect,
     useRef,
@@ -12,6 +14,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
     ArrowLeft,
+    ArrowRight,
     Maximize,
     Minimize,
     Pause,
@@ -68,7 +71,45 @@ export function FilmPage() {
     return <FilmSpiller manus={manus} />;
 }
 
+/** Satt når filmen går som et lysbilde på projektoren: da navigerer knappene mellom lysbildene. */
+const LysbildeNav = createContext<{ forrige: () => void; neste: () => void } | null>(null);
+
+/** Filmen som et lysbilde i presentasjonsmodus (ProjectorView). */
+export function FilmLysbilde({
+    sti,
+    forrige,
+    neste,
+}: {
+    sti: string;
+    forrige: () => void;
+    neste: () => void;
+}) {
+    const [manus, setManus] = useState<FilmManus | null>(null);
+    useEffect(() => {
+        let aktiv = true;
+        hentManus(sti).then((d) => aktiv && setManus(d));
+        return () => {
+            aktiv = false;
+        };
+    }, [sti]);
+    if (!manus) return <div className="fixed inset-0 z-50 bg-slate-100" />;
+    return (
+        <LysbildeNav.Provider value={{ forrige, neste }}>
+            <FilmSpiller manus={manus} />
+        </LysbildeNav.Provider>
+    );
+}
+
+/** Stien eleven kom fra (?fra=/fag/emne/sti), eller null. Bare interne stier godtas. */
+function useFraSti() {
+    const [sok] = useSearchParams();
+    const fra = sok.get('fra');
+    return fra && fra.startsWith('/') && !fra.startsWith('//') ? fra : null;
+}
+
 function FilmSpiller({ manus }: { manus: FilmManus }) {
+    const fraSti = useFraSti();
+    const lysbilde = useContext(LysbildeNav);
     const f = useFilmNarrator(manus);
     const rammeRef = useRef<HTMLDivElement>(null);
     const [fullskjerm, setFullskjerm] = useState(false);
@@ -124,18 +165,36 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
             {!fullskjerm && (
                 // Liggende mobil har for lite høyde til topplinja; der går filmen foran.
                 <header className="h-12 shrink-0 [@media(max-height:500px)]:hidden flex items-center gap-3 px-3 sm:px-5 bg-white border-b border-slate-200">
-                    <Link
-                        to={manus.kilde}
-                        className="flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-indigo-600"
-                    >
-                        <ArrowLeft className="w-4 h-4" /> Til artikkelen
-                    </Link>
+                    {lysbilde ? (
+                        <button
+                            onClick={lysbilde.forrige}
+                            className="flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-indigo-600"
+                        >
+                            <ArrowLeft className="w-4 h-4" /> Forrige lysbilde
+                        </button>
+                    ) : (
+                        <Link
+                            to={fraSti ?? manus.kilde}
+                            className="flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-indigo-600"
+                        >
+                            <ArrowLeft className="w-4 h-4" /> {fraSti ? 'Tilbake til stien' : 'Til artikkelen'}
+                        </Link>
+                    )}
                     <div className="flex-1 min-w-0 text-center truncate font-black text-slate-900">
                         {manus.tittel}
                     </div>
-                    <div className="hidden sm:block text-sm font-semibold text-slate-500 w-40 text-right truncate">
-                        {kapittel}
-                    </div>
+                    {lysbilde ? (
+                        <button
+                            onClick={lysbilde.neste}
+                            className="flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-indigo-600"
+                        >
+                            Neste lysbilde <ArrowRight className="w-4 h-4" />
+                        </button>
+                    ) : (
+                        <div className="hidden sm:block text-sm font-semibold text-slate-500 w-40 text-right truncate">
+                            {kapittel}
+                        </div>
+                    )}
                 </header>
             )}
 
@@ -375,6 +434,8 @@ function Sluttskjerm({
     omigjen: () => void;
     spill: () => void;
 }) {
+    const fraSti = useFraSti();
+    const lysbilde = useContext(LysbildeNav);
     return (
         <div
             className="absolute inset-0 z-10 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center gap-6"
@@ -382,12 +443,30 @@ function Sluttskjerm({
         >
             <h2 className="text-3xl md:text-5xl font-black text-slate-900">Slutt</h2>
             <div className="flex flex-wrap justify-center gap-3">
-                <Link
-                    to={manus.kilde}
-                    className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white text-lg font-bold shadow-lg hover:bg-indigo-700"
-                >
-                    <BookOpen className="w-5 h-5" /> Les artikkelen og ta quizen
-                </Link>
+                {lysbilde && (
+                    <button
+                        onClick={lysbilde.neste}
+                        className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white text-lg font-bold shadow-lg hover:bg-indigo-700"
+                    >
+                        Neste lysbilde <ArrowRight className="w-5 h-5" />
+                    </button>
+                )}
+                {fraSti && !lysbilde && (
+                    <Link
+                        to={fraSti}
+                        className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-600 text-white text-lg font-bold shadow-lg hover:bg-emerald-700"
+                    >
+                        <ArrowLeft className="w-5 h-5" /> Tilbake til stien
+                    </Link>
+                )}
+                {!lysbilde && (
+                    <Link
+                        to={manus.kilde}
+                        className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white text-lg font-bold shadow-lg hover:bg-indigo-700"
+                    >
+                        <BookOpen className="w-5 h-5" /> Les artikkelen og ta quizen
+                    </Link>
+                )}
                 <button
                     onClick={() => {
                         omigjen();

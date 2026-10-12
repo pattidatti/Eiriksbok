@@ -515,6 +515,7 @@ export type SlideLayout =
     | 'quote'      // Large quote focus
     | 'discussion' // Discussion prompts/tasks focus
     | 'task-pause' // Students work in the learning path; teacher pauses
+    | 'film'       // Artikkelfilm spilles av på projektoren (settes inn automatisk, se stiFilmer.ts)
     | 'summary';   // Wrap-up points
 
 export type SlidePhase = 'opptakt' | 'konfrontasjon' | 'resolusjon';
@@ -558,6 +559,7 @@ export interface Slide {
     // Symbiosis with the learning path
     linksToStepId?: string;       // The learning-path step this slide belongs to
     phase?: SlidePhase;           // Which act of the 3-act arc this slide belongs to
+    film?: string;                // Artikkel-stien til filmen på et 'film'-lysbilde
     pauseForTask?: boolean;       // Marks a slide where students work in the path
     taskPrompt?: string;          // Short task prompt shown big on projector for task-pause slides
     suggestedMinutes?: number;    // Optional teacher hint for how long the pause should last
