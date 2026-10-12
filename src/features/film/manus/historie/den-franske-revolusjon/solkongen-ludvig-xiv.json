@@ -1,0 +1,278 @@
+{
+    "id": "solkongen-ludvig-xiv",
+    "tittel": "Ludvig 14.: Solkongen i Versailles",
+    "kilde": "/historie/den-franske-revolusjon/solkongen-ludvig-xiv",
+    "bilde": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "morgen",
+            "kapittel": "Morgen i Versailles",
+            "visual": { "type": "SolkongenSlott", "props": { "modus": "morgen" } },
+            "replikker": [
+                { "si": "Det er morgen utenfor Paris. Sola står opp over et enormt slott. Det heter Versailles." },
+                { "si": "Midt i slottet ligger et soverom. Der våkner kongen." },
+                {
+                    "si": "Han er ikke alene. Rundt sengen står adelsmenn i fine klær og venter. Å få være med når kongen står opp, er en stor ære."
+                },
+                { "si": "Hver bevegelse følger faste regler. Hvordan du kler deg, og hvordan du snakker." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "LUDVIG 14.",
+                    "undertittel": "Solkongen i Versailles",
+                    "bilde": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-hero.webp",
+                    "tall": [{ "verdi": 72, "etikett": "år som konge", "fraBeat": 1 }],
+                    "sporsmal": { "tekst": "Hvordan temmer du de farligste mennene i landet?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kongen heter Ludvig 14. Han kalte seg Solkongen.",
+                    "uttale": "Kongen heter Ludvig den fjortende. Han kalte seg Solkongen."
+                },
+                { "si": "Han satt på tronen i Frankrike i 72 år, fra 1643 til 1715." },
+                {
+                    "si": "Dette er historien om en gutt som ble jaget fra sin egen hovedstad. Og om hvordan han brukte et slott til å temme de farligste mennene i landet."
+                }
+            ]
+        },
+        {
+            "id": "barn",
+            "kapittel": "Konge som barn",
+            "visual": { "type": "SolkongenBane", "props": { "modus": "barn" } },
+            "replikker": [
+                { "si": "Ludvig ble født i 1638. Da han var fire år gammel, døde faren." },
+                { "si": "I 1643 ble Ludvig konge. Men et barn kan ikke styre et land." },
+                {
+                    "si": "Derfor styrte moren hans, Anna av Østerrike, sammen med kardinal Mazarin. En kardinal er en av de høyeste lederne i den katolske kirken."
+                },
+                {
+                    "si": "Kongen hadde fått mange embetsmenn, altså folk som styrte landet for ham."
+                },
+                {
+                    "si": "Det likte ikke adelen, de rike familiene med store gårder og titler som hertug og greve. De var vant til å bestemme selv."
+                }
+            ]
+        },
+        {
+            "id": "fronden",
+            "kapittel": "Fronden",
+            "visual": { "type": "SolkongenKart", "props": { "modus": "fronden" } },
+            "replikker": [
+                {
+                    "si": "I 1648 ble adelen så sint at det brøt ut en rekke opprør. De fikk navnet Fronden, og varte til 1653."
+                },
+                { "si": "Først gjorde adelsmennene i parlamentet i Paris opprør. Parlamentet var en forsamling av mektige embetsmenn. Folk bygde barrikader i gatene." },
+                {
+                    "si": "Hoffet, altså alle som bodde og arbeidet rundt kongen, måtte flykte fra Paris. De flyktet til slottet St. Germain.",
+                    "uttale": "Hoffet, altså alle som bodde og arbeidet rundt kongen, måtte flykte fra Paris. De flyktet til slottet Sang Sjermang."
+                },
+                {
+                    "si": "Så tok de aller mektigste adelsmennene over, med støtte fra Spania. Prinsen av Condé førte åpen krig mot kongens hær.",
+                    "uttale": "Så tok de aller mektigste adelsmennene over, med støtte fra Spania. Prinsen av Kongde førte åpen krig mot kongens hær."
+                },
+                {
+                    "si": "Til slutt vant kongens side, fordi opprørerne var uenige. Men gutten på tronen glemte det aldri. Han stolte aldri på adelen igjen."
+                }
+            ]
+        },
+        {
+            "id": "enevelde",
+            "kapittel": "Staten, det er jeg",
+            "visual": { "type": "SolkongenBane", "props": { "modus": "enevelde" } },
+            "replikker": [
+                { "si": "I 1661 døde Mazarin. Ludvig var 22 år, og nå ville han styre selv." },
+                {
+                    "si": "Han fikk finansministeren Fouquet dømt til fengsel på livstid. Og han gjorde parlamentet i Paris svakere.",
+                    "uttale": "Han fikk finansministeren Fukeh dømt til fengsel på livstid. Og han gjorde parlamentet i Paris svakere."
+                },
+                {
+                    "si": "Ludvig mente at makten hans kom fra Gud. Det kaller vi eneveldet: én person har all makt, og svarer bare til Gud."
+                },
+                {
+                    "si": "Han skal ha sagt: Staten, det er jeg. Men ingen vet sikkert om han faktisk sa det."
+                }
+            ]
+        },
+        {
+            "id": "colbert",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Colbert gjør Frankrike rikt",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Høy toll", "tekst": "på ferdige varer fra utlandet", "fraBeat": 1 },
+                        { "ikon": "fabrikk", "tittel": "Franske verksteder", "tekst": "lager varene selv og selger dem", "fraBeat": 2 },
+                        { "ikon": "hest", "tittel": "Veier og kanaler", "tekst": "og nye handelskompanier", "fraBeat": 3 },
+                        { "ikon": "skip", "tittel": "Over 200 krigsskip", "tekst": "Frankrikes første moderne flåte", "fraBeat": 4 }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ludvig hadde dyktige hjelpere. Den viktigste var Colbert, som styrte statens penger. Han ville gjøre Frankrike like rikt som Nederland.",
+                    "uttale": "Ludvig hadde dyktige hjelpere. Den viktigste var Kolbær, som styrte statens penger. Han ville gjøre Frankrike like rikt som Nederland."
+                },
+                { "si": "Han la høy toll på ferdige varer fra utlandet. Men råvarer fikk komme inn gratis." },
+                {
+                    "si": "Da kunne franske verksteder lage varene selv og selge dem. Denne tanken kalles merkantilisme."
+                },
+                { "si": "Colbert bygde veier og kanaler, og startet handelskompanier.", "uttale": "Kolbær bygde veier og kanaler, og startet handelskompanier." },
+                { "si": "Han lot også bygge en stor krigsflåte. Da han døde, hadde den over 200 krigsskip." }
+            ]
+        },
+        {
+            "id": "sol",
+            "kapittel": "Solen og slottet",
+            "visual": { "type": "SolkongenBane", "props": { "modus": "sol" } },
+            "replikker": [
+                { "si": "Ludvig valgte solen som sitt eget merke." },
+                { "si": "Solen hørte sammen med Apollon, den greske guden for fred og kunst." },
+                {
+                    "si": "Tanken var enkel. Slik planetene går rundt solen, skulle hele Frankrike dreie seg om kongen."
+                }
+            ]
+        },
+        {
+            "id": "vekst",
+            "visual": { "type": "SolkongenSlott", "props": { "modus": "vekst" } },
+            "replikker": [
+                { "si": "Det tydeligste beviset er Versailles. Først var det bare en jakthytte, som faren hadde gjort om til et lite slott." },
+                { "si": "Fra 1669 lot Ludvig det vokse til et enormt slott." },
+                {
+                    "si": "Det ble bygd i barokk. Det er en byggestil med mye pynt, gull og store, dramatiske rom."
+                },
+                {
+                    "si": "På det meste arbeidet rundt 40 000 mennesker på byggeplassen. Mange ble skadet eller døde i ulykker."
+                }
+            ]
+        },
+        {
+            "id": "speil",
+            "visual": { "type": "SolkongenSlott", "props": { "modus": "speil" } },
+            "replikker": [
+                { "si": "Det mest kjente rommet er Speilsalen. Den er 73 meter lang." },
+                { "si": "Langs den ene veggen står 17 buede speil. De er laget av 357 mindre speilglass." },
+                { "si": "Her gikk hoffolkene hver dag, og her ble store seremonier holdt." }
+            ]
+        },
+        {
+            "id": "aksen",
+            "visual": { "type": "SolkongenSlott", "props": { "modus": "sol" } },
+            "replikker": [
+                { "si": "Og soverommet til kongen? Det ble lagt midt i slottet, på linja fra øst til vest." },
+                { "si": "Sola står opp i øst, går over himmelen og går ned i vest. Kongens rom lå på den samme linja." },
+                { "si": "Kongen fulgte solens vei, akkurat som solguden Apollon. Hele bygningen sa det samme: Kongen er sentrum i alt." }
+            ]
+        },
+        {
+            "id": "gullbur",
+            "kapittel": "Et gullbur",
+            "visual": { "type": "SolkongenBane", "props": { "modus": "gullbur" } },
+            "replikker": [
+                {
+                    "si": "I 1682 flyttet Ludvig hoffet og hele regjeringen fra Paris til Versailles. Minst 3000 mennesker skulle bo fast i slottet."
+                },
+                { "si": "Hver dag var det mellom 3000 og 10 000 mennesker der." },
+                {
+                    "si": "Og her er det smarte trikset. Adelen som hadde gjort opprør, ble nå invitert til Versailles. Dagene gikk med konserter, ball, teater og kortspill."
+                },
+                {
+                    "si": "Alle ville stå så nær kongen som mulig og vinne gunsten hans. Det betyr at kongen likte dem og ga dem fordeler."
+                },
+                {
+                    "si": "Tenk på det som et gullbur. Buret var vakkert, og adelen var glad for å være der."
+                },
+                {
+                    "si": "Men den som bruker dagen på å kjempe om å stå nær kongen, har ikke tid til å samle en hær hjemme."
+                }
+            ]
+        },
+        {
+            "id": "tro",
+            "kapittel": "Én konge, én tro",
+            "visual": { "type": "SolkongenKart", "props": { "modus": "tro" } },
+            "replikker": [
+                {
+                    "si": "Ludvig ville ikke bare ha én makt. Han ville også ha én tro. I Frankrike bodde mange protestanter, som ble kalt hugenotter."
+                },
+                {
+                    "si": "I 1598 hadde en tidligere konge gitt dem rett til å tro som de ville. Det sto i ediktet i Nantes. Et edikt er en lov fra kongen.",
+                    "uttale": "I femten nittiåtte hadde en tidligere konge gitt dem rett til å tro som de ville. Det sto i ediktet i Nang. Et edikt er en lov fra kongen."
+                },
+                { "si": "Ludvig prøvde først å tvinge dem til å bli katolikker, blant annet med soldater. I 1685 tok han bort hele ediktet." },
+                {
+                    "si": "Flere hundre tusen hugenotter flyktet. Til Nederland, Sveits, England og koloniene i Amerika."
+                },
+                {
+                    "si": "Mange av dem var dyktige håndverkere. Dermed mistet Frankrike mange dyktige arbeidsfolk."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "Krig og mer krig",
+            "visual": { "type": "SolkongenKart", "props": { "modus": "krig" } },
+            "replikker": [
+                { "si": "Ludvig ville også gjøre Frankrike større. Han førte krig nesten hele tiden." },
+                { "si": "I krigen fra 1667 til 1668 vant han deler av Flandern." },
+                { "si": "Etter en lang krig mot Nederland fikk han Franche-Comté, øst i landet. Og fra 1681 til 1683 fikk han byen Strasbourg.", "uttale": "Etter en lang krig mot Nederland fikk han Frangsj-Komteh, øst i landet. Og fra seksten åttién til seksten åttitre fikk han byen Strasbur." },
+                { "si": "Men lykken snudde. I krigen fra 1688 til 1697 mistet Frankrike noe av det det hadde vunnet." },
+                { "si": "I 1701 begynte en ny stor krig. Da var økonomien ødelagt, og folk var urolige." },
+                {
+                    "si": "Krigene og slottet kostet enormt mye. Adelen og kirken slapp mye av skatten. Det var vanlige folk som betalte mest."
+                }
+            ]
+        },
+        {
+            "id": "arv",
+            "kapittel": "En lang arv",
+            "visual": { "type": "SolkongenBane", "props": { "modus": "arv" } },
+            "replikker": [
+                { "si": "Ludvig 14. døde i 1715. Solkongen var borte.", "uttale": "Ludvig den fjortende døde i sytten femten. Solkongen var borte." },
+                {
+                    "si": "Både sønnen og sønnesønnen hans var døde før ham. Den nye kongen ble oldebarnet hans. Han var bare fem år gammel."
+                },
+                {
+                    "si": "Versailles var sentrum for makten helt fram til 1789. Det året startet den franske revolusjon."
+                },
+                {
+                    "si": "I oktober 1789 marsjerte kvinner fra Paris til Versailles. De tvang kongefamilien med seg tilbake til byen."
+                },
+                {
+                    "si": "Speilsalen fikk en rolle igjen i 1919. Der ble fredsavtalen etter første verdenskrig skrevet under. I dag er slottet et museum."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En gutt som ble jaget fra Paris", "fraBeat": 0 },
+                        { "tekst": "ble en konge med all makt.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Han brukte ikke bare soldater.", "fraBeat": 1 },
+                        { "tekst": "Han brukte et slott, en sol og faste regler.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Et vakkert bur er fortsatt et bur.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Ludvig var en gutt som ble jaget fra sin egen hovedstad. Han endte som en konge med all makt." },
+                {
+                    "si": "Etterpå temmet han adelen uten soldater. Han ga dem fester, regler og en plass nær seg selv."
+                },
+                {
+                    "si": "Så neste gang noen gir deg noe flott, kan du spørre: Hva får jeg, og hva gir jeg fra meg?"
+                }
+            ]
+        }
+    ]
+}
