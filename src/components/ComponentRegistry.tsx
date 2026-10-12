@@ -80,6 +80,7 @@ const Bondetinget = lazy(() => import('./content/interactive/Bondetinget').then(
 const Klageveien = lazy(() => import('./content/interactive/Klageveien').then(m => ({ default: m.Klageveien })));
 const Papirlos = lazy(() => import('./content/interactive/Papirlos').then(m => ({ default: m.Papirlos })));
 const Vennenettet = lazy(() => import('./content/interactive/Vennenettet').then(m => ({ default: m.Vennenettet })));
+const Hoffbanen = lazy(() => import('./content/interactive/Hoffbanen').then(m => ({ default: m.Hoffbanen })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
 const Hvalregnskapet = lazy(() => import('./content/interactive/Hvalregnskapet').then(m => ({ default: m.Hvalregnskapet })));
 const KongensSegl = lazy(() => import('./content/interactive/KongensSegl').then(m => ({ default: m.KongensSegl })));
@@ -1034,6 +1035,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Klageveien,
     Papirlos,
     Vennenettet,
+    Hoffbanen,
     BrentJord,
     Hvalregnskapet,
     KongensSegl,

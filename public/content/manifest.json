@@ -5491,6 +5491,20 @@
           "image": "/images/den-franske-revolusjon/intro-hero.webp",
           "lessons": [
             {
+              "id": "solkongen-ludvig-xiv",
+              "title": "Ludvig 14.: Solkongen i Versailles",
+              "description": "Hvordan en gutt som ble jaget fra Paris under Fronden, ble en konge med all makt og temmet adelen i Versailles.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "frankrike",
+                "eneveldet",
+                "kongemakt",
+                "versailles",
+                "1600-tallet"
+              ],
+              "createdDate": "2026-10-12T00:00:00Z"
+            },
+            {
               "id": "intro",
               "title": "Den franske revolusjon",
               "description": "En kort introduksjon til hendelsene 1789-1799 og hvordan de formet moderne demokrati.",

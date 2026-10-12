@@ -1,5 +1,5 @@
 {
-  "buildId": 108296504723937,
+  "buildId": 245596299134400,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2209,6 +2209,9 @@
     ],
     "robespierre-og-skrekkveldet": [
       "content/historie/den-franske-revolusjon/robespierre-og-skrekkveldet.json"
+    ],
+    "solkongen-ludvig-xiv": [
+      "content/historie/den-franske-revolusjon/solkongen-ludvig-xiv.json"
     ],
     "stormingen-av-bastillen": [
       "content/historie/den-franske-revolusjon/stormingen-av-bastillen.json"
@@ -5605,6 +5608,7 @@
     "historie/den-franske-revolusjon/menneskerettighetserklaeringen": "content/historie/den-franske-revolusjon/menneskerettighetserklaeringen.json",
     "historie/den-franske-revolusjon/napoleon": "content/historie/den-franske-revolusjon/napoleon.json",
     "historie/den-franske-revolusjon/robespierre-og-skrekkveldet": "content/historie/den-franske-revolusjon/robespierre-og-skrekkveldet.json",
+    "historie/den-franske-revolusjon/solkongen-ludvig-xiv": "content/historie/den-franske-revolusjon/solkongen-ludvig-xiv.json",
     "historie/den-franske-revolusjon/stormingen-av-bastillen": "content/historie/den-franske-revolusjon/stormingen-av-bastillen.json",
     "historie/den-franske-revolusjon/wienerkongressen": "content/historie/den-franske-revolusjon/wienerkongressen.json",
     "historie/den-kalde-krigen/atomvapenkapplopet": "content/historie/den-kalde-krigen/atomvapenkapplopet.json",
