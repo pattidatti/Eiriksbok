@@ -3752,6 +3752,22 @@
               ],
               "createdDate": "2026-10-08T03:19:32+02:00",
               "lastUpdated": "2026-10-08T09:39:02+02:00"
+            },
+            {
+              "id": "misjonsbevegelsen",
+              "title": "Misjonsbevegelsen: Fra syforeningen i Lyngdal til Madagaskar",
+              "description": "Hvordan Det Norske Misjonsselskap sendte nordmenn ut i verden, og hvordan kvinneforeningene for misjon ble Norges første store kvinnebevegelse.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "norge",
+                "religion",
+                "kristendom",
+                "misjon",
+                "kvinner",
+                "kolonialisme",
+                "madagaskar"
+              ],
+              "createdDate": "2026-10-13T00:00:00Z"
             }
           ]
         },

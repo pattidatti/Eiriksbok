@@ -1,5 +1,5 @@
 {
-  "buildId": 245596299134400,
+  "buildId": 277197014296785,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2736,6 +2736,9 @@
     ],
     "koronapandemien": [
       "content/historie/norge-i-moderne-tid/koronapandemien.json"
+    ],
+    "misjonsbevegelsen": [
+      "content/historie/norge-i-moderne-tid/misjonsbevegelsen.json"
     ],
     "nasjonale-minoriteter": [
       "content/historie/norge-i-moderne-tid/nasjonale-minoriteter.json"
@@ -5783,6 +5786,7 @@
     "historie/norge-i-moderne-tid/innvandringen-til-norge": "content/historie/norge-i-moderne-tid/innvandringen-til-norge.json",
     "historie/norge-i-moderne-tid/kapplopet-mot-sydpolen": "content/historie/norge-i-moderne-tid/kapplopet-mot-sydpolen.json",
     "historie/norge-i-moderne-tid/koronapandemien": "content/historie/norge-i-moderne-tid/koronapandemien.json",
+    "historie/norge-i-moderne-tid/misjonsbevegelsen": "content/historie/norge-i-moderne-tid/misjonsbevegelsen.json",
     "historie/norge-i-moderne-tid/nasjonale-minoriteter": "content/historie/norge-i-moderne-tid/nasjonale-minoriteter.json",
     "historie/norge-i-moderne-tid/oljealderen": "content/historie/norge-i-moderne-tid/oljealderen.json",
     "historie/norge-i-moderne-tid/riksretten-1884": "content/historie/norge-i-moderne-tid/riksretten-1884.json",
