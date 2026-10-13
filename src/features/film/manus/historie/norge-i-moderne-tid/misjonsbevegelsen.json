@@ -1,0 +1,335 @@
+{
+    "id": "misjonsbevegelsen",
+    "tittel": "Misjonsbevegelsen: Fra syforeningen i Lyngdal til Madagaskar",
+    "kilde": "/historie/norge-i-moderne-tid/misjonsbevegelsen",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "lyngdal",
+            "kapittel": "Lyngdal, 1844",
+            "visual": { "type": "MisjonStua", "props": { "modus": "bordet" } },
+            "replikker": [
+                { "si": "Vi er i Lyngdal, langt sør i Norge. Året er 1844." },
+                {
+                    "si": "Rundt et bord sitter en gruppe bondekvinner. De skal arbeide sammen en hel dag."
+                },
+                { "si": "Lederen heter Gustava Kielland. Hun er gift med presten i bygda." },
+                {
+                    "si": "Men det de lager, skal ikke brukes i Lyngdal. Det skal hjelpe misjonærer på den andre siden av jorda."
+                },
+                {
+                    "si": "Denne lille foreningen ble et forbilde for tusenvis av andre."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MISJON",
+                    "undertittel": "Misjonsbevegelsen: fra syforeningen i Lyngdal til Madagaskar",
+                    "bilde": "/images/placeholder.webp",
+                    "sporsmal": { "tekst": "Hjelp, makt eller begge deler?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om misjonsbevegelsen." },
+                {
+                    "si": "Det var en av de største folkebevegelsene i Norge på 1800-tallet, altså noe svært mange vanlige folk var med på."
+                },
+                {
+                    "si": "Den sendte nordmenn ut i verden. Og den forandret livet i bygdene her hjemme."
+                },
+                {
+                    "si": "Og vi skal spørre: Var misjonen hjelp, makt, eller begge deler?"
+                }
+            ]
+        },
+        {
+            "id": "misjon",
+            "kapittel": "Hva er misjon?",
+            "visual": { "type": "MisjonKart", "props": { "modus": "begrep" } },
+            "replikker": [
+                {
+                    "si": "Hva betyr egentlig misjon? Misjon betyr å spre et religiøst budskap på en planlagt måte."
+                },
+                { "si": "Kristendommen spredte seg i stor grad nettopp gjennom misjon." },
+                {
+                    "si": "Det finnes to typer. Ytremisjon betyr å reise til steder der folk ikke er kristne."
+                },
+                {
+                    "si": "Indremisjon betyr å styrke troen hos folk som allerede bor i et kristent land, som Norge."
+                },
+                {
+                    "si": "Misjonærene bygde også skoler, drev helsearbeid og hjalp fattige."
+                },
+                {
+                    "si": "Og få land har sendt ut så mange misjonærer som Norge, sammenlignet med hvor mange som bor her."
+                }
+            ]
+        },
+        {
+            "id": "plakaten",
+            "kapittel": "1842",
+            "visual": { "type": "MisjonPlakat" },
+            "replikker": [
+                {
+                    "si": "For å forstå hvorfor bevegelsen vokste, må vi til 1842. Da skjedde to ting samtidig."
+                },
+                {
+                    "si": "Den første var at en gammel lov forsvant. Den het konventikkelplakaten, og den var fra 1741."
+                },
+                {
+                    "si": "Loven satte strenge regler for kristne møter utenfor kirken. Det var for eksempel forbudt å reise rundt og preke."
+                },
+                {
+                    "si": "Hans Nielsen Hauge var lekpredikant, altså en vanlig mann som preket uten å være prest. Han fikk en lang fengselsstraff."
+                },
+                { "si": "I 1842 ble loven tatt bort. Nå kunne folk samles friere." }
+            ]
+        },
+        {
+            "id": "stavanger",
+            "visual": { "type": "MisjonKart", "props": { "modus": "stavanger" } },
+            "replikker": [
+                {
+                    "si": "Den andre tingen skjedde samme år. Den 8. august 1842 ble Det Norske Misjonsselskap stiftet i Stavanger.",
+                    "uttale": "Den andre tingen skjedde samme år. Den åttende august 1842 ble Det Norske Misjonsselskap stiftet i Stavanger."
+                },
+                {
+                    "si": "Det er Norges eldste misjonsorganisasjon. Hovedkontoret ligger fortsatt i Stavanger."
+                },
+                {
+                    "si": "Mange av dem som sto bak, var haugianere, altså folk som fulgte Hans Nielsen Hauge."
+                },
+                {
+                    "si": "Allerede året etter, i 1843, startet selskapet en skole i Stavanger. Der fikk misjonærene utdannelse."
+                }
+            ]
+        },
+        {
+            "id": "zululand",
+            "kapittel": "Zululand",
+            "visual": { "type": "MisjonKart", "props": { "modus": "zululand" } },
+            "replikker": [
+                {
+                    "si": "Den første misjonæren selskapet sendte ut, het Hans Schreuder. Han var født i Sogndal i 1817."
+                },
+                {
+                    "si": "I 1843 ble han sendt til Zululand. Det er et område som i dag er en del av Sør-Afrika."
+                },
+                {
+                    "si": "Han ble den første norske misjonæren i Sør-Afrika. Men arbeidet gikk tregt."
+                },
+                {
+                    "si": "I 1847 ble han sendt til Hongkong for å se om han kunne starte misjon i Kina. Han ble advart mot det, og dro tilbake til Afrika."
+                },
+                {
+                    "si": "Først i 1850, sju år etter at han ble sendt ut, fikk misjonen en fast stasjon."
+                },
+                {
+                    "si": "I 1866 ble Schreuder biskop, en av de øverste lederne i kirken. Men han ble uenig med selskapet, blant annet om dåp. I 1872 brøt han ut og startet sin egen misjon."
+                }
+            ]
+        },
+        {
+            "id": "madagaskar",
+            "kapittel": "Madagaskar",
+            "visual": { "type": "MisjonKart", "props": { "modus": "madagaskar" } },
+            "replikker": [
+                {
+                    "si": "Det største misjonslandet ble Madagaskar. Det er en stor øy øst for Afrika."
+                },
+                {
+                    "si": "Den norske misjonen der startet i 1866. Nordmennene bygde kirker, skoler og helsetilbud."
+                },
+                {
+                    "si": "Sentrum var byen Antsirabe. Der handlet arbeidet blant annet om jordbruk, helse og skole."
+                }
+            ]
+        },
+        {
+            "id": "frankrike",
+            "visual": { "type": "MisjonKart", "props": { "modus": "frankrike" } },
+            "replikker": [
+                {
+                    "si": "Men mens misjonærene arbeidet på øya, kjempet europeiske stormakter, store og mektige land, om den."
+                },
+                {
+                    "si": "I 1885 ble Madagaskar et fransk protektorat. Det betyr at Frankrike holdt oppsyn med landet og bestemte mye der."
+                },
+                { "si": "I 1895 okkuperte Frankrike øya. Det betyr at de tok den med soldater." },
+                { "si": "Og i 1896 ble Madagaskar en fransk koloni." }
+            ]
+        },
+        {
+            "id": "to-sider",
+            "kapittel": "To sider",
+            "visual": { "type": "MisjonVekt", "props": { "modus": "kolonitid" } },
+            "replikker": [
+                {
+                    "si": "Misjonen skjedde i den samme tiden som Europa tok makten over store deler av verden."
+                },
+                {
+                    "si": "Mange steder var misjonen en del av det kolonimaktene gjorde. Andre steder gikk misjonærer imot kolonimaktene."
+                },
+                {
+                    "si": "Misjonærene ville at folk skulle bli kristne og legge bort sin gamle religion."
+                },
+                {
+                    "si": "Samtidig holdt de norske skolene og kirkene liv i gassisk, språket til folk på Madagaskar. Ellers tok fransk mer og mer over."
+                },
+                {
+                    "si": "Misjonsskolen i Stavanger tok inn afrikanske studenter allerede fra 1860-tallet. I 1950 ble kirken misjonen hadde bygd på Madagaskar, selvstendig."
+                },
+                {
+                    "si": "Hvordan skal vi se på misjonen i dag? Som hjelp, som makt, eller som en blanding av begge deler?"
+                }
+            ]
+        },
+        {
+            "id": "syforeningene",
+            "kapittel": "Syforeningene",
+            "visual": { "type": "MisjonStua", "props": { "modus": "vekst" } },
+            "replikker": [
+                {
+                    "si": "Misjonærene trengte penger. Pengene kom fra vanlige folk i små foreninger i Norge."
+                },
+                {
+                    "si": "Det fantes noen få kvinneforeninger før Lyngdal: i Christiania i 1839, i Drammen i 1840 og i Trondheim i 1843."
+                },
+                { "si": "Men det var etter Lyngdal at bevegelsen tok fart." },
+                {
+                    "si": "I 1882 var det 1700 foreninger for kvinner. Mennene hadde bare 830."
+                },
+                { "si": "I 1904 fantes det hele 3500 kvinneforeninger." },
+                {
+                    "si": "Misjonskvinnene blir kalt Norges første og største folkelige kvinnebevegelse."
+                }
+            ]
+        },
+        {
+            "id": "kvinnene",
+            "visual": { "type": "MisjonVekt", "props": { "modus": "kvinner" } },
+            "replikker": [
+                {
+                    "si": "Foreningene lærte kvinnene noe nytt. De holdt møter, samlet inn penger og bestemte sammen hva de skulle gjøre."
+                },
+                {
+                    "si": "Kvinner hadde nesten ingen plass i politikken på 1800-tallet. Dette var en sjelden sjanse."
+                },
+                {
+                    "si": "Derfor regner forskere misjonskvinnene som en av røttene til kvinnekampen, kampen for at kvinner skal ha de samme rettighetene som menn."
+                },
+                {
+                    "si": "Men det var tydelige grenser. I de fleste misjonsorganisasjonene var det bare menn som fikk preke."
+                },
+                {
+                    "si": "Misjonsselskapet var imot kvinnelige prester. Men i 1904 fikk kvinnene stemmerett i selskapet."
+                },
+                {
+                    "si": "Ute på misjonsfeltene ble kvinnene viktige i helsearbeidet. Mange utdannet seg til sykepleiere og leger for å kunne reise ut."
+                }
+            ]
+        },
+        {
+            "id": "bedehuset",
+            "kapittel": "Bedehuset",
+            "visual": { "type": "MisjonStua", "props": { "modus": "bedehus" } },
+            "replikker": [
+                {
+                    "si": "Når foreningene skulle møtes, trengte de et sted å være. Derfor ble det bygd bedehus over hele landet."
+                },
+                {
+                    "si": "Et bedehus er et lite forsamlingshus der folk samles til andakt og møter. Andakt er en kort stund med bønn. Men bedehuset er ikke en kirke."
+                },
+                {
+                    "si": "Haugianerne var med på å bygge bro mellom kirken og bedehusene."
+                },
+                { "si": "Mange bygder har fortsatt et gammelt bedehus i dag." }
+            ]
+        },
+        {
+            "id": "toppen",
+            "visual": { "type": "MisjonStolper", "props": { "modus": "topp" } },
+            "replikker": [
+                {
+                    "si": "Bevegelsen fortsatte å vokse. I 1940 var det rundt 4500 misjonsforeninger i Norge."
+                },
+                { "si": "Til sammen hadde de omtrent 112 500 medlemmer." },
+                {
+                    "si": "Noen mener at det virkelige tallet var enda høyere. Det kommer an på hvordan man teller."
+                }
+            ]
+        },
+        {
+            "id": "krigen",
+            "visual": { "type": "MisjonKart", "props": { "modus": "krig" } },
+            "replikker": [
+                {
+                    "si": "Men samme år, i 1940, okkuperte Tyskland Norge. Nazistene tok over Misjonsselskapet."
+                },
+                { "si": "Pengene fra Norge til misjonsfeltene stoppet." },
+                {
+                    "si": "Arbeidet fortsatte likevel, med støtte fra blant annet Sverige og USA."
+                }
+            ]
+        },
+        {
+            "id": "i-dag",
+            "kapittel": "I dag",
+            "visual": { "type": "MisjonStolper", "props": { "modus": "idag" } },
+            "replikker": [
+                {
+                    "si": "I dag er misjonsbevegelsen mye mindre. Mange av de små foreningene er slått sammen eller lagt ned."
+                },
+                {
+                    "si": "Misjonsselskapet hadde rundt 2800 lokale foreninger i 2006. I 2017 var det rundt 1500."
+                },
+                {
+                    "si": "I de samme årene gikk antallet misjonærer ned fra rundt 100 til 40."
+                },
+                {
+                    "si": "Mange kjenner nok selskapet best fra gjenbruksbutikkene. De startet i 1998."
+                },
+                {
+                    "si": "Pengene misjonen får fra staten gjennom Norad i dag, går til helse og utvikling. De skal holdes atskilt fra prekenen om troen."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En historie om tro.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Om makt", "fraBeat": 1 },
+                        { "tekst": "i kolonitiden.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Om hjelp:", "fraBeat": 2 },
+                        { "tekst": "skoler, helse og et språk som levde videre.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Vanlige kvinner rundt et kjøkkenbord", "fraBeat": 3 },
+                        { "tekst": "lærte å drive en organisasjon.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Misjonsbevegelsen er altså en historie om tro."
+                },
+                {
+                    "si": "Den er en historie om makt, fordi misjonen var en del av kolonitiden."
+                },
+                {
+                    "si": "Den er en historie om hjelp: skoler, helse og et språk som fikk leve videre."
+                },
+                {
+                    "si": "Og den er en historie om vanlige kvinner i små bygder. Rundt et kjøkkenbord lærte de å drive en organisasjon."
+                }
+            ]
+        }
+    ]
+}
