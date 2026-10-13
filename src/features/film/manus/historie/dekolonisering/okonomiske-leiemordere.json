@@ -1,0 +1,409 @@
+{
+    "id": "okonomiske-leiemordere",
+    "tittel": "Økonomiske leiemordere: Slik kjøpes et helt land",
+    "kilde": "/historie/dekolonisering/okonomiske-leiemordere",
+    "bilde": "/images/historie/dekolonisering/okonomiske-leiemordere_hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "landet",
+            "kapittel": "Mannen med kofferten",
+            "visual": {
+                "type": "LeiemordereLandet",
+                "props": {
+                    "modus": "ankomst"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du skal ta kontroll over et helt land."
+                },
+                {
+                    "si": "Du ser kanskje for deg soldater, stridsvogner og bomber."
+                },
+                {
+                    "si": "Men hva om den farligste mannen ikke har gevær? Hva om han har dress, stresskoffert og kalkulator?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ØKONOMISKE LEIEMORDERE",
+                    "undertittel": "Slik kjøpes et helt land",
+                    "bilde": "/images/historie/dekolonisering/okonomiske-leiemordere_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Kan et lån være farligere enn en hær?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En amerikaner ved navn John Perkins kaller seg selv en tidligere økonomisk leiemorder."
+                },
+                {
+                    "si": "En leiemorder dreper for penger. En økonomisk leiemorder dreper ikke mennesker direkte."
+                },
+                {
+                    "si": "I stedet bruker han lån, lureri og store tall. Målet er å fange fattige land i en felle de aldri kommer ut av."
+                }
+            ]
+        },
+        {
+            "id": "rapporten",
+            "visual": {
+                "type": "LeiemordereTavle",
+                "props": {
+                    "modus": "rapport"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "På 1970-tallet fikk Perkins jobb i et stort amerikansk konsulentselskap. Tittelen hans var sjeføkonom."
+                },
+                {
+                    "si": "Han skulle reise til fattige land og regne ut hvor mye de ville tjene på å bygge veier, kraftverk og havner."
+                },
+                {
+                    "si": "Men Perkins forteller at jobben egentlig var noe annet. Tallene i rapportene hans var blåst opp med vilje."
+                },
+                {
+                    "si": "Da tok landene opp lån de umulig kunne betale tilbake. I 2004 fortalte han alt i en bok som ble en bestselger."
+                }
+            ]
+        },
+        {
+            "id": "trapp-1",
+            "kapittel": "Oppskriften",
+            "visual": {
+                "type": "LeiemordereTrapp",
+                "props": {
+                    "fra": 1
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Perkins beskriver en fast oppskrift. Den fungerer som en trapp: går ikke det første trinnet, går du til det neste."
+                },
+                {
+                    "si": "Trinn én: velg et land som har noe Vesten vil ha, som olje."
+                },
+                {
+                    "si": "Trinn to: lov enorm vekst hvis landet bygger noe stort og dyrt."
+                },
+                {
+                    "si": "Trinn tre: få landet til å låne mye penger av Verdensbanken eller IMF. Det er to store organisasjoner som låner ut penger til land."
+                }
+            ]
+        },
+        {
+            "id": "lanet",
+            "visual": {
+                "type": "LeiemordereLandet",
+                "props": {
+                    "modus": "lan"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg et lite land med mye olje. Vi kaller det Petrolia. Petrolia har lånt en stor haug med penger."
+                },
+                {
+                    "si": "Trinn fire: pengene går til vestlige selskaper som kommer og bygger prosjektet."
+                },
+                {
+                    "si": "Kraftverket reiser seg. Men se hvor pengene havner. De seiler hjem igjen."
+                },
+                {
+                    "si": "Det eneste som blir igjen i Petrolia, er gjelden."
+                }
+            ]
+        },
+        {
+            "id": "gjelden",
+            "visual": {
+                "type": "LeiemordereLandet",
+                "props": {
+                    "modus": "gjeld"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Trinn fem: vent. Den lovede veksten kommer aldri, og gjelden vokser og vokser."
+                },
+                {
+                    "si": "Til slutt kan ikke Petrolia betale."
+                },
+                {
+                    "si": "Da krever du olje i stedet."
+                },
+                {
+                    "si": "Og du krever militærbaser og lojalitet. Lojalitet betyr at landet gjør som du sier."
+                }
+            ]
+        },
+        {
+            "id": "trapp-2",
+            "visual": {
+                "type": "LeiemordereTrapp",
+                "props": {
+                    "fra": 4
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men hva om lederen i landet sier nei? Da kommer trinn seks: sjakalene."
+                },
+                {
+                    "si": "Sjakalene er agenter som organiserer kupp, eller får uvennlige ledere fjernet. Et kupp er når noen tar makten med tvang."
+                },
+                {
+                    "si": "Og hvis sjakalene mislykkes, er siste utvei en vanlig militær invasjon."
+                },
+                {
+                    "si": "Kjernen i hele oppskriften er enkel: gjeld er kontroll. Et land som skylder deg penger, gjør som du sier."
+                }
+            ]
+        },
+        {
+            "id": "iran",
+            "kapittel": "Iran og Chile",
+            "visual": {
+                "type": "LeiemordereKart",
+                "props": {
+                    "modus": "iran"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et av de tydeligste eksemplene skjedde i Iran. Landet hadde mye olje, men et britisk selskap kontrollerte den."
+                },
+                {
+                    "si": "I april 1951 ble Mohammad Mossadeq statsminister. Han ville at oljen skulle tilhøre Iran selv. Det kalles å nasjonalisere."
+                },
+                {
+                    "si": "Vesten ble rasende. Fra april 1953 laget CIA, den hemmelige tjenesten til USA, en plan for å fjerne ham."
+                },
+                {
+                    "si": "Den 15. august krevde sjahen, kongen i Iran, at Mossadeq skulle gå av. Han ble arrestert.",
+                    "uttale": "Den femtende august krevde sjahen, kongen i Iran, at Mossadeq skulle gå av. Han ble arrestert."
+                },
+                {
+                    "si": "Dette var sjakalene i arbeid, lenge før Perkins fikk jobben sin."
+                }
+            ]
+        },
+        {
+            "id": "chile",
+            "visual": {
+                "type": "LeiemordereKart",
+                "props": {
+                    "modus": "chile"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så til Chile. Der vant Salvador Allende valget i 1970."
+                },
+                {
+                    "si": "Han ville at de store kobbergruvene skulle gi penger til vanlige chilenere, ikke til amerikanske selskaper."
+                },
+                {
+                    "si": "USAs president Nixon ga CIA ordre om å hindre ham. I notatene fra det møtet står det: Få økonomien til å skrike."
+                },
+                {
+                    "si": "Den 11. september 1973 ble Allende styrtet i et militærkupp. Generalen Augusto Pinochet tok makten.",
+                    "uttale": "Den ellevte september 1973 ble Allende styrtet i et militærkupp. Generalen Augusto Pinochet tok makten."
+                }
+            ]
+        },
+        {
+            "id": "pinochet",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 3000,
+                            "farget": 0,
+                            "farge": "#475569",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Pinochet styrer Chile fram til 1990",
+                            "restEtikett": "politiske motstandere"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 3000,
+                            "farget": 3000,
+                            "farge": "#475569",
+                            "tittel": "Om lag 3000 politiske motstandere",
+                            "fargeEtikett": "drept eller forsvant"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Pinochet styrte Chile som diktator helt fram til 1990."
+                },
+                {
+                    "si": "Om lag 3000 politiske motstandere ble drept eller forsvant."
+                },
+                {
+                    "si": "Igjen ser vi mønsteret. En leder som ville beholde landets rikdom selv, ble fjernet."
+                }
+            ]
+        },
+        {
+            "id": "verden",
+            "kapittel": "Mange land",
+            "visual": {
+                "type": "LeiemordereKart",
+                "props": {
+                    "modus": "verden"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Iran og Chile er ikke de eneste. Det samme mønsteret går igjen i mange land etter andre verdenskrig."
+                },
+                {
+                    "si": "I Guatemala tok presidenten nesten 90 000 hektar jord fra et amerikansk fruktselskap. I 1954 ble han styrtet."
+                },
+                {
+                    "si": "I Kongo ble statsminister Patrice Lumumba drept i januar 1961. Belgia, og trolig også USA, var med på drapet."
+                },
+                {
+                    "si": "Perkins forteller selv at han jobbet i land som Indonesia, Ecuador og Panama."
+                },
+                {
+                    "si": "USA sa ofte at de stanset kommunisme. Men bak lå det også et ønske om å kontrollere olje, kobber og andre ressurser."
+                }
+            ]
+        },
+        {
+            "id": "eliten",
+            "visual": {
+                "type": "LeiemordereLandet",
+                "props": {
+                    "modus": "elite"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Oppskriften virker sjelden uten hjelp fra noen på innsiden."
+                },
+                {
+                    "si": "Ofte fantes det en liten, rik elite i landet. Eliten er de få på toppen, med mye penger og makt."
+                },
+                {
+                    "si": "De fikk byggekontrakter, gode jobber og makt."
+                },
+                {
+                    "si": "Vanlige folk satt igjen med gjelden. Slik ble landets egne ledere en del av fellen."
+                }
+            ]
+        },
+        {
+            "id": "renter",
+            "kapittel": "I dag",
+            "visual": {
+                "type": "LeiemordereTavle",
+                "props": {
+                    "modus": "renter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Skjer dette fortsatt? Selve gjeldsfellen finnes i hvert fall fortsatt."
+                },
+                {
+                    "si": "Renter er prisen du betaler for å låne. Land i det globale sør betaler i snitt omtrent dobbelt så mye i renter som de rike landene."
+                },
+                {
+                    "si": "Da blir det for lite igjen til helse, skole og utvikling. Budsjettene klarer ikke å holde tritt."
+                },
+                {
+                    "si": "Mange mener at også Kina bruker lån til store prosjekter i Afrika og Asia for å få makt. Den som eier gjelden, har makten."
+                }
+            ]
+        },
+        {
+            "id": "kilder",
+            "kapittel": "Kan vi tro ham?",
+            "visual": {
+                "type": "LeiemordereTavle",
+                "props": {
+                    "modus": "kilder"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men kan vi tro på alt Perkins forteller? Her må vi være kritiske."
+                },
+                {
+                    "si": "Det han forteller om Iran og Chile, er godt dokumentert. Historikere og hemmelige amerikanske papirer som er blitt offentlige, viser det samme."
+                },
+                {
+                    "si": "Men boken er hans egen fortelling om sitt eget liv. Flere av historiene har vi bare hans ord for."
+                },
+                {
+                    "si": "Noen mener han overdriver og gjør verden enklere enn den er. En god historiker tror ikke blindt på én kilde, men sammenligner flere."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Koloniene ble frie.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Men penger, lån og makt styrte dem fortsatt.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Kolonimakt uten kolonier:",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "nykolonialisme.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Et lån kan bygge et land.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Spør alltid: Hvem eier gjelden?",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Likevel peker boken på noe sant. Rike land og store selskaper har brukt penger, lån og makt til å styre fattigere land, lenge etter at koloniene ble frie."
+                },
+                {
+                    "si": "Det kalles nykolonialisme. Det er kolonimakt uten kolonier."
+                },
+                {
+                    "si": "Et lån kan bygge veier, kraftverk og havner. Men neste gang du hører om et stort lån til et fattig land, kan du spørre: Hvem eier gjelden?"
+                }
+            ]
+        }
+    ]
+}
