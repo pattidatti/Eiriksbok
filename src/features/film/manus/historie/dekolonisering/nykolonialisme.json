@@ -1,0 +1,212 @@
+{
+    "id": "nykolonialisme",
+    "tittel": "Nykolonialisme: Kolonimakt uten kolonier",
+    "kilde": "/historie/dekolonisering/nykolonialisme",
+    "bilde": "/images/historie/dekolonisering/nykolonialisme_hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "frie",
+            "kapittel": "Fri på papiret",
+            "visual": { "type": "NykolonialismeMarionett", "props": { "modus": "flagg" } },
+            "replikker": [
+                { "si": "Tenk deg et land som har vært koloni i mange år. Det betyr at et land i Europa har styrt det. Nå blir det endelig fritt." },
+                { "si": "Det nye flagget går til topps. Folk jubler, for nå skal de bestemme selv." },
+                { "si": "Men snart oppdager mange av de nye landene noe rart. De bestemmer ikke helt over sin egen økonomi." },
+                { "si": "Det er som om noen andre fortsatt trekker i trådene." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NY\u00adKOLONI\u00adALISME",
+                    "undertittel": "Kolonimakt uten kolonier",
+                    "bilde": "/images/historie/dekolonisering/nykolonialisme_hero.webp",
+                    "sporsmal": { "tekst": "Hvem trekker i trådene?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "På 1900-tallet ble nesten alle koloniene i verden frie. Likevel fortsatte mønsteret. Dette kaller vi nykolonialisme." },
+                { "si": "I denne filmen skal vi se hvordan det virker, og om et land kan slippe unna." }
+            ]
+        },
+        {
+            "id": "ny",
+            "kapittel": "Samme mål, nye klær",
+            "visual": { "type": "NykolonialismeSkifte", "props": { "modus": "gammel" } },
+            "replikker": [
+                { "si": "Ordet ny betyr at det er en moderne utgave av noe gammelt." },
+                { "si": "I den vanlige kolonitiden styrte land som Storbritannia og Frankrike andre land direkte. De sendte guvernører og soldater." },
+                { "si": "I nykolonialismen er kontrollen mer skjult. Den skjer gjennom penger, lån, handel og store selskaper." },
+                { "si": "Ingen erobrer landet åpent. Men de gamle kolonimaktene beholder mye av makten over de tidligere koloniene." }
+            ]
+        },
+        {
+            "id": "malet",
+            "visual": { "type": "NykolonialismeSkifte", "props": { "modus": "bytte" } },
+            "replikker": [
+                { "si": "Det viktigste å forstå er dette: Målet har ikke forandret seg." },
+                { "si": "Både den gamle og den nye kolonimakten vil ha det samme. De vil ha kontroll over andre lands ressurser og rikdom." },
+                { "si": "Det som har endret seg, er metoden. Soldater er byttet ut med lån." },
+                { "si": "Og flagg er byttet ut med merkevarer, de kjente logoene på varene i butikken." }
+            ]
+        },
+        {
+            "id": "verktoy",
+            "kapittel": "Fire verktøy",
+            "visual": { "type": "NykolonialismeMarionett", "props": { "modus": "verktoy" } },
+            "replikker": [
+                { "si": "Den nye kolonimakten har fire verktøy. Til sammen blir de et helt system." },
+                { "si": "Det første er gjeld." },
+                { "si": "Det andre er store selskaper." },
+                { "si": "Det tredje er kupp, når alt annet feiler." },
+                { "si": "Og det fjerde er selve handelen." }
+            ]
+        },
+        {
+            "id": "gjeld",
+            "kapittel": "Gjeld",
+            "visual": { "type": "NykolonialismeRegnskap", "props": { "modus": "felle" } },
+            "replikker": [
+                { "si": "Det mektigste verktøyet er gjeld." },
+                { "si": "Et fattig land får tilbud om et stort lån til et flott prosjekt." },
+                { "si": "Men så klarer ikke landet å betale tilbake." },
+                { "si": "Da må det gjøre som långiveren sier. Den som skylder penger, er ikke helt fri." }
+            ]
+        },
+        {
+            "id": "renter",
+            "visual": { "type": "NykolonialismeRegnskap", "props": { "modus": "renter" } },
+            "replikker": [
+                { "si": "Gjeld er ikke bare historie. Når du låner penger, må du betale renter. Det er en ekstra sum for å få låne." },
+                { "si": "Land i det globale sør, altså de fattigere landene, betaler i snitt omtrent dobbelt så mye i renter som de rike industrilandene." },
+                { "si": "Da blir det mindre igjen til resten. Budsjettene til helse og skole klarer ikke å holde tritt." }
+            ]
+        },
+        {
+            "id": "guatemala",
+            "kapittel": "Selskaper",
+            "visual": { "type": "NykolonialismeKart", "props": { "modus": "selskap" } },
+            "replikker": [
+                { "si": "Det andre verktøyet er store selskaper. Noen av dem er like mektige som stater." },
+                { "si": "I Guatemala hadde det amerikanske fruktselskapet United Fruit enorm makt. Det eide store plantasjer, altså svære gårder med frukt." },
+                { "si": "Så tok president Jacobo Árbenz nesten 90 000 hektar plantasjejord fra selskapet." },
+                { "si": "Selskapet hadde stor innflytelse over amerikanske politikere. Det var med på å utløse et kupp mot Árbenz i 1954. Et kupp er når noen tar makten med tvang." }
+            ]
+        },
+        {
+            "id": "vekt",
+            "visual": { "type": "NykolonialismeRegnskap", "props": { "modus": "vekt" } },
+            "replikker": [
+                { "si": "Store selskaper har ofte mye mer penger og makt enn regjeringen de forhandler med." },
+                { "si": "Da er det ikke to like parter som møtes." },
+                { "si": "Selskapet kan true med å flytte jobbene og pengene sine et annet sted, hvis det ikke får viljen sin." }
+            ]
+        },
+        {
+            "id": "kupp",
+            "kapittel": "Kupp",
+            "visual": { "type": "NykolonialismeKart", "props": { "modus": "kupp" } },
+            "replikker": [
+                { "si": "Hvis en leder nekter å samarbeide, finnes det et siste verktøy: kupp." },
+                { "si": "I Iran ble statsminister Mossadeq styrtet i 1953. Han hadde nasjonalisert oljen, det vil si at staten tok den over. CIA og britisk etterretning, hemmelige tjenester fra USA og Storbritannia, sto bak kuppet." },
+                { "si": "I Chile ble president Allende styrtet i 1973, i et kupp med støtte fra CIA. Han hadde nasjonalisert kobbergruvene." },
+                { "si": "I Kongo ble statsminister Lumumba drept i januar 1961. Senere kom det fram at Belgia, og trolig også USA, var med på drapet." },
+                { "si": "I Indonesia kom et kuppforsøk i 1965. Etterpå fulgte massedrap på folk som ble kalt kommunister. Anslagene går fra 500 000 til 1 200 000 drepte." },
+                { "si": "Som regel skjedde det i det skjulte. Det skulle se ut som landets eget valg." }
+            ]
+        },
+        {
+            "id": "handel",
+            "kapittel": "Ulik handel",
+            "visual": { "type": "NykolonialismeKart", "props": { "modus": "kakao" } },
+            "replikker": [
+                { "si": "Det fjerde verktøyet er selve handelen." },
+                { "si": "Fattige land selger ofte billige råvarer, som kakao, kobber eller olje. Råvarer er det som kommer rett fra naturen." },
+                { "si": "Rike land kjøper råvarene, lager dyre ferdigvarer av dem, og selger dem tilbake." },
+                { "si": "En kakaobonde i Ghana får noen få kroner. Sjokoladen i butikken koster mange ganger så mye." },
+                { "si": "Slik renner verdien hele tiden fra sør mot nord, helt uten tvang." },
+                { "si": "Mønsteret er arvet fra kolonitiden. Kolonimaktene laget varene hjemme, og koloniene fikk ofte ikke egen industri." }
+            ]
+        },
+        {
+            "id": "fortsatt",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Skjer det fortsatt?",
+                    "punkter": [
+                        { "ikon": "snakk", "tittel": "Ja, mange mener det", "fraBeat": 0 },
+                        { "ikon": "penger", "tittel": "Renter på gammel gjeld", "tekst": "spiser mye av inntektene", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Lån fra Kina", "tekst": "til prosjekter i Afrika og Asia", "fraBeat": 2 },
+                        { "ikon": "stjerne", "tittel": "Samme metode", "tekst": "men aktørene kan være nye", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Skjer dette fortsatt? Ja, mange mener det." },
+                { "si": "Fattige land bruker fortsatt mye av inntektene sine på å betale renter på gammel gjeld." },
+                { "si": "Og det er ikke bare Vesten lenger. Mange peker på at også Kina gir store lån til prosjekter i Afrika og Asia, for å få kontroll og innflytelse." },
+                { "si": "Metoden er den samme, men aktørene kan være nye." }
+            ]
+        },
+        {
+            "id": "norge",
+            "kapittel": "Kan et land slippe unna?",
+            "visual": { "type": "NykolonialismeKart", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Men vi skal ikke male alt helt svart. Noen land har klart å bryte ut av fellen." },
+                { "si": "Mange forskere snakker om en ressursforbannelse. Det betyr at land med mye olje og mineraler ofte får dårlig styring og lite utvikling." },
+                { "si": "Men det går an å unngå. Da Norge fant olje, beholdt staten kontrollen over inntektene." },
+                { "si": "Pengene ble lagt i oljefondet. Siden 2012 har det vært verdens største statlige fond." },
+                { "si": "Det er nesten det motsatte av en bananrepublikk, der et fremmed selskap har makten." }
+            ]
+        },
+        {
+            "id": "sankara",
+            "visual": { "type": "NykolonialismeKart", "props": { "modus": "sankara" } },
+            "replikker": [
+                { "si": "Men det kan koste dyrt å si nei. Thomas Sankara var president i Burkina Faso fra 1983." },
+                { "si": "I juli 1987 holdt han en tale til de andre afrikanske lederne. Han ba dem gå sammen om å nekte å betale gjelden." },
+                { "si": "Han mente at gjelden stammet fra kolonitiden. De som nå lånte dem penger, var de samme som en gang hadde kolonisert dem." },
+                { "si": "Bare noen måneder senere, i oktober 1987, ble han drept i et militærkupp." },
+                { "si": "Sankara ble en helt for mange afrikanere. Men frihet fra den nye kolonimakten kommer sjelden gratis." }
+            ]
+        },
+        {
+            "id": "omhu",
+            "kapittel": "Bruk ordet med omhu",
+            "visual": { "type": "NykolonialismeMarionett", "props": { "modus": "egne" } },
+            "replikker": [
+                { "si": "Til slutt en advarsel. Ordet nykolonialisme er sterkt, men det kan også misbrukes." },
+                { "si": "Noen forklarer alt som skjer i fattige land med skjulte planer fra Vesten." },
+                { "si": "De glemmer at landene også har egne ledere, egne valg og egen korrupsjon. Korrupsjon er når ledere misbruker makten til å berike seg selv." },
+                { "si": "Virkeligheten er som regel mer rotete enn én enkel forklaring." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Nykolonialisme er et verktøy,", "fraBeat": 0 },
+                        { "tekst": "ikke en fasit.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Frihet på papiret", "fraBeat": 1 },
+                        { "tekst": "er ikke alltid frihet i praksis.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Hvert land for seg.", "fraBeat": 2 },
+                        { "tekst": "Flere kilder før dommen.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "En god historiker bruker ordet som et verktøy, ikke som en fasit." },
+                { "si": "Det hjelper oss å se et ekte mønster. Makt og rikdom henger ofte sammen, og frihet på papiret er ikke alltid frihet i praksis." },
+                { "si": "Men hvert land og hver hendelse må undersøkes for seg, med flere kilder, før vi feller en dom." }
+            ]
+        }
+    ]
+}
