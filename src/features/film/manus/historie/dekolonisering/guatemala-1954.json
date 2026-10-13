@@ -1,0 +1,352 @@
+{
+    "id": "guatemala-1954",
+    "tittel": "Bananrepublikken: Da et fruktselskap styrtet en regjering",
+    "kilde": "/historie/dekolonisering/guatemala-1954",
+    "bilde": "/images/historie/dekolonisering/guatemala-1954_hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 100,
+            "begrunnelse": "Prosentene i artikkelen (83 og 93 prosent) er tegnet som 100 prikker. Ingen ny påstand."
+        }
+    ],
+    "scener": [
+        {
+            "id": "plantasjen",
+            "kapittel": "Bananlandet",
+            "visual": { "type": "GuatemalaPlantasje", "props": { "modus": "plantasje" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg rad etter rad med bananplanter, så langt du kan se. Det er varmt og fuktig."
+                },
+                {
+                    "si": "Gjennom plantasjen går en jernbane. Toget er fullt av grønne bananer."
+                },
+                {
+                    "si": "Ved kysten venter et skip. Bananene skal over havet, til USA."
+                },
+                {
+                    "si": "Men hvem eier egentlig alt dette? Jorda, toget og skipet? Det er ikke folket som bor her."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "GUATEMALA",
+                    "undertittel": "Da et fruktselskap styrtet en regjering, 1954",
+                    "bilde": "/images/historie/dekolonisering/guatemala-1954_hero.webp",
+                    "sporsmal": { "tekst": "Kan et selskap velte et helt land?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Guatemala i 1954." },
+                {
+                    "si": "Det året ble en folkevalgt president tvunget bort. Men det var ikke et annet land som sto bak."
+                },
+                { "si": "Det var et fruktselskap. Hvordan kunne det skje?" }
+            ]
+        },
+        {
+            "id": "kartet",
+            "visual": { "type": "GuatemalaKart", "props": { "modus": "land" } },
+            "replikker": [
+                {
+                    "si": "Guatemala er et lite land i Mellom-Amerika, mellom Nord- og Sør-Amerika."
+                },
+                { "si": "Lenger mot nord ligger USA, den store naboen." },
+                {
+                    "si": "På 1950-tallet ble Guatemala ofte kalt en bananrepublikk. Det er et land som lever av å selge én eneste vare."
+                },
+                {
+                    "si": "Og det er et land som egentlig styres av utenlandske selskaper. I Guatemala var varen bananer, og selskapet var amerikansk."
+                }
+            ]
+        },
+        {
+            "id": "blekkspruten",
+            "kapittel": "Blekkspruten",
+            "visual": { "type": "GuatemalaPlantasje", "props": { "modus": "blekksprut" } },
+            "replikker": [
+                {
+                    "si": "Selskapet het United Fruit Company. Det var ikke noe vanlig firma."
+                },
+                {
+                    "si": "Det eide rundt 240 000 hektar jord i Guatemala. Det aller meste av den lå ubrukt."
+                },
+                { "si": "Selskapet kontrollerte også jernbanen og skipene." },
+                {
+                    "si": "Og telegrafen, som sendte beskjeder langt av gårde gjennom ledninger."
+                },
+                {
+                    "si": "Folk kalte selskapet el pulpo, blekkspruten. Armene nådde inn overalt.",
+                    "uttale": "Folk kalte selskapet el polpo, blekkspruten. Armene nådde inn overalt."
+                }
+            ]
+        },
+        {
+            "id": "revolusjonen",
+            "kapittel": "Jorda",
+            "visual": { "type": "GuatemalaTavle", "props": { "modus": "revolusjon" } },
+            "replikker": [
+                {
+                    "si": "I 1944 skjedde noe stort. Etter store protester ble diktatoren Ubico styrtet."
+                },
+                {
+                    "si": "Læreren Juan José Arévalo vant valget. Han fikk 86 prosent av stemmene."
+                },
+                {
+                    "si": "I mars 1951 tok Jacobo Árbenz over som folkevalgt president.",
+                    "uttale": "I mars nitten femtien tok Jacobo Arbens over som folkevalgt president."
+                },
+                {
+                    "si": "Tiåret fra 1944 til 1954 kalles i Guatemala for Revolusjonen. Begge presidentene ville gjøre landet moderne."
+                }
+            ]
+        },
+        {
+            "id": "reformen",
+            "visual": { "type": "GuatemalaPlantasje", "props": { "modus": "reform" } },
+            "replikker": [
+                {
+                    "si": "Árbenz så et urettferdig land. Noen få rike eide nesten all jorda, og de fattige bøndene hadde ingenting.",
+                    "uttale": "Arbens så et urettferdig land. Noen få rike eide nesten all jorda, og de fattige bøndene hadde ingenting."
+                },
+                {
+                    "si": "Derfor kom en ny lov i 1952. Det kalles en jordreform, en endring av hvem som eier jorda."
+                },
+                {
+                    "si": "Staten kunne ta over store eiendommer som lå ubrukt, og gi jorda videre til fattige bønder."
+                },
+                {
+                    "si": "Bare i 1953 tok staten nær 90 000 hektar fra United Fruit. For bøndene som fikk jord, var Árbenz en helt.",
+                    "uttale": "Bare i nitten femtitre tok staten nær nitti tusen hektar fra United Fruit. For bøndene som fikk jord, var Arbens en helt."
+                }
+            ]
+        },
+        {
+            "id": "prisen",
+            "visual": { "type": "GuatemalaTavle", "props": { "modus": "pris" } },
+            "replikker": [
+                {
+                    "si": "Men United Fruit hadde gjort et triks. I papirene til myndighetene oppga selskapet en svært lav verdi på jorda si."
+                },
+                { "si": "Lav verdi betydde lav skatt." },
+                {
+                    "si": "Nå brukte Árbenz selskapets eget tall. Han tilbød 1,2 millioner dollar for jorda.",
+                    "uttale": "Nå brukte Arbens selskapets eget tall. Han tilbød én komma to millioner dollar for jorda."
+                },
+                {
+                    "si": "United Fruit forlangte 16 millioner. Selskapet følte seg lurt, og det raste."
+                }
+            ]
+        },
+        {
+            "id": "brodrene",
+            "kapittel": "Kuppet",
+            "visual": { "type": "GuatemalaTavle", "props": { "modus": "brodre" } },
+            "replikker": [
+                {
+                    "si": "Og United Fruit hadde mektige venner i Washington."
+                },
+                { "si": "USAs utenriksminister het John Foster Dulles." },
+                { "si": "Sjefen for CIA, USAs hemmelige etterretningstjeneste, het Allen Dulles. De to var brødre." },
+                {
+                    "si": "Begge hadde jobbet i advokatfirmaet som var United Fruits viktigste i Washington."
+                },
+                {
+                    "si": "Det var de to brødrene som fikk president Eisenhower med på at Árbenz måtte fjernes.",
+                    "uttale": "Det var de to brødrene som fikk president Eisenhower med på at Arbens måtte fjernes."
+                }
+            ]
+        },
+        {
+            "id": "kommunist",
+            "visual": { "type": "GuatemalaKart", "props": { "modus": "kaldkrig" } },
+            "replikker": [
+                {
+                    "si": "Dette var under den kalde krigen. USA og Sovjetunionen var fiender, og begge var redde for den andre."
+                },
+                {
+                    "si": "United Fruit og vennene deres malte Árbenz som en farlig kommunist. Han hadde støtte fra kommunister i Guatemala.",
+                    "uttale": "United Fruit og vennene deres malte Arbens som en farlig kommunist. Han hadde støtte fra kommunister i Guatemala."
+                },
+                {
+                    "si": "Men påstandene om at han hadde bånd til Sovjetunionen, ble aldri bevist."
+                },
+                {
+                    "si": "I august 1953 sa USA ja til en hemmelig operasjon. Den fikk 2,7 millioner dollar.",
+                    "uttale": "I august nitten femtitre sa USA ja til en hemmelig operasjon. Den fikk to komma sju millioner dollar."
+                }
+            ]
+        },
+        {
+            "id": "radioen",
+            "visual": { "type": "GuatemalaTavle", "props": { "modus": "radio" } },
+            "replikker": [
+                {
+                    "si": "CIA brukte ikke en stor hær. De brukte triks."
+                },
+                {
+                    "si": "En hemmelig radiostasjon kalt Frihetens stemme lot som om den var opprørere inne i Guatemala."
+                },
+                {
+                    "si": "Den fortalte at hele landet hadde reist seg mot regjeringen. Det var ikke sant."
+                },
+                { "si": "CIA sendte også egne fly over landet. Det hele var et skuespill." },
+                {
+                    "si": "Men det virket, og presset ble for stort. Den 27. juni 1954 trakk Árbenz seg.",
+                    "uttale": "Men det virket, og presset ble for stort. Den tjuesjuende juni nitten femtifire trakk Arbens seg."
+                }
+            ]
+        },
+        {
+            "id": "tilbake",
+            "kapittel": "Prisen",
+            "visual": { "type": "GuatemalaPlantasje", "props": { "modus": "tilbake" } },
+            "replikker": [
+                {
+                    "si": "CIA satte oberst Carlos Castillo Armas inn som ny leder."
+                },
+                {
+                    "si": "Han rullet reformene tilbake. Jorda gikk fra de fattige bøndene og tilbake til blekkspruten."
+                },
+                { "si": "Selskapet fikk det som det ville. Men freden i Guatemala var borte." }
+            ]
+        },
+        {
+            "id": "borgerkrigen",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 100,
+                            "farge": "#57534e",
+                            "tittel": "Borgerkrig fra 1960 til 1996: 36 år",
+                            "fargeEtikett": "grupper: alle ofrene"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 83,
+                            "farge": "#b45309",
+                            "restFarge": "#94a3b8",
+                            "tittel": "83 prosent av ofrene var mayaer",
+                            "fargeEtikett": "mayaer",
+                            "restEtikett": "andre"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 93,
+                            "farge": "#b91c1c",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Overgrepene: staten sto bak 93",
+                            "fargeEtikett": "staten",
+                            "restEtikett": "andre"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Guatemala falt ned i en borgerkrig, en krig mellom folk i samme land. Den varte i 36 år, fra 1960 til 1996. Opp mot 200 000 mennesker ble drept."
+                },
+                {
+                    "si": "Tenk deg at alle ofrene er delt i hundre like store grupper. 83 av gruppene var mayaer, urfolket i Guatemala."
+                },
+                {
+                    "si": "Og hvem sto bak overgrepene? Del dem også i hundre grupper. Staten selv sto bak 93 av dem."
+                }
+            ]
+        },
+        {
+            "id": "che",
+            "visual": { "type": "GuatemalaKart", "props": { "modus": "che" } },
+            "replikker": [
+                {
+                    "si": "I desember 1953 kom en ung lege fra Argentina til Guatemala. Han het Che Guevara.",
+                    "uttale": "I desember nitten femtitre kom en ung lege fra Argentina til Guatemala. Han het Tsje Gevara."
+                },
+                {
+                    "si": "Han var i landet i ni måneder, og han så kuppet med egne øyne."
+                },
+                {
+                    "si": "Det gjorde ham enda sikrere på at revolusjon var nødvendig. Slik kan ett kupp i et lite land sette spor i hele verdenshistorien."
+                }
+            ]
+        },
+        {
+            "id": "monsteret",
+            "visual": { "type": "GuatemalaKart", "props": { "modus": "monster" } },
+            "replikker": [
+                {
+                    "si": "Kjenner du igjen mønsteret? Det samme skjedde i Iran og i Chile."
+                },
+                {
+                    "si": "En folkevalgt leder ville dele landets rikdom mer rettferdig. Han ble fjernet fordi det truet pengene og makten til USA og andre rike land."
+                },
+                {
+                    "si": "Forskjellen er at i Guatemala var det et privat selskap som styrte det hele."
+                },
+                {
+                    "si": "I 1999 sa USAs president Bill Clinton rett ut at USAs støtte til voldelige styrker i Guatemala hadde vært feil. Men da var skaden for lengst skjedd."
+                }
+            ]
+        },
+        {
+            "id": "kildene",
+            "kapittel": "Hvem tjente?",
+            "visual": { "type": "GuatemalaTavle", "props": { "modus": "arkiv" } },
+            "replikker": [
+                {
+                    "si": "United Fruit malte Árbenz som kommunist for å få viljen sin. Lenge var det den offisielle historien.",
+                    "uttale": "United Fruit malte Arbens som kommunist for å få viljen sin. Lenge var det den offisielle historien."
+                },
+                {
+                    "si": "Først senere ble hemmelige amerikanske dokumenter frigitt. Da så vi hvor stor rolle selskapet og CIA hadde spilt."
+                },
+                {
+                    "si": "Derfor er det lurt å spørre: Hvem tjente på historien vi fikk høre?"
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Jord, tog, skip og telegraf.", "fraBeat": 0 },
+                        { "tekst": "Alt i samme hånd.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Jord til fattige bønder", "fraBeat": 1 },
+                        { "tekst": "ble kalt kommunisme.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ikke en hær, men en radio", "fraBeat": 2 },
+                        { "tekst": "og et skuespill.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Spør alltid:", "fraBeat": 3 },
+                        { "tekst": "Hvem tjente på historien?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et selskap som eier jorda, toget, skipene og telegrafen, sitter med nøklene til et helt land."
+                },
+                {
+                    "si": "Da en president ville gi ubrukt jord til fattige bønder, ble det kalt kommunisme."
+                },
+                {
+                    "si": "Kuppet trengte ingen stor hær. Det holdt med en radio, noen fly og et skuespill."
+                },
+                {
+                    "si": "Prisen betalte folket i Guatemala i mange tiår etterpå. Så neste gang du hører en historie om et land langt borte, spør: Hvem tjente på den?"
+                }
+            ]
+        }
+    ]
+}
