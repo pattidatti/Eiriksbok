@@ -1,0 +1,490 @@
+{
+    "id": "hugenottene",
+    "tittel": "Hugenottene: Troen som kongen kunne ta tilbake",
+    "kilde": "/historie/reformasjonen/hugenottene",
+    "bilde": "/images/reformasjonen/hugenottene-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "bryllup",
+            "kapittel": "Blodbryllupet",
+            "visual": {
+                "type": "HugenotteneBy",
+                "props": {
+                    "modus": "bryllup"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Paris, august 1572. Byen er full av gjester, og gatene er pyntet til fest."
+                },
+                {
+                    "si": "Prinsesse Margrete, søsteren til kongen, skal gifte seg med Henrik av Navarra. Hun er katolikk. Han er protestant."
+                },
+                {
+                    "si": "Bryllupet skal vise at de to gruppene kan leve i fred. De har kjempet mot hverandre i ti år."
+                },
+                {
+                    "si": "Mange protestanter er i byen for å feire. Noen dager senere er tusenvis av dem drept."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "HUGENOTTENE",
+                    "undertittel": "Troen som kongen kunne ta tilbake",
+                    "bilde": "/images/reformasjonen/hugenottene-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Å bli tålt, eller å ha en rettighet?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om hugenottene, de franske protestantene."
+                },
+                {
+                    "si": "De var en minoritet, altså en mindre gruppe, i et land der de fleste var katolikker."
+                },
+                {
+                    "si": "Og historien handler om et spørsmål som fortsatt er viktig i dag: Hva er forskjellen på å bli tålt, og å ha en rettighet?"
+                }
+            ]
+        },
+        {
+            "id": "hvem",
+            "kapittel": "Hvem var de?",
+            "visual": {
+                "type": "HugenotteneKart",
+                "props": {
+                    "modus": "hvem"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Reformasjonen startet i Tyskland, men den spredte seg raskt til Frankrike."
+                },
+                {
+                    "si": "De fleste franske protestantene fulgte læren til Jean Calvin, som selv var fransk."
+                },
+                {
+                    "si": "Motstanderne kalte dem hugenotter. Navnet betyr trolig forbundsfelle, altså en som har sluttet seg til en gruppe."
+                },
+                {
+                    "si": "Hugenottene var aldri flertallet. Men de sto sterkt blant handelsfolk og håndverkere i byene, og noen adelsfolk ble også hugenotter."
+                },
+                {
+                    "si": "Det ga dem penger, kunnskap og våpen. For kongen og den katolske kirken var det en farlig blanding."
+                }
+            ]
+        },
+        {
+            "id": "hoffet",
+            "kapittel": "Bartolomeusnatten",
+            "visual": {
+                "type": "HugenotteneKart",
+                "props": {
+                    "modus": "hoffet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fra 1562 ble striden mellom katolikker og hugenotter til en lang rekke kriger."
+                },
+                {
+                    "si": "Bak det som skjedde i Paris i 1572, sto Katarina av Medici, moren til kongen og bruden."
+                },
+                {
+                    "si": "Hun var redd for at hugenottlederen Gaspard de Coligny fikk for mye makt over sønnen hennes, kong Karl 9."
+                },
+                {
+                    "si": "Først prøvde hun å få Coligny drept, men han ble bare lettere såret."
+                },
+                {
+                    "si": "Da fortalte hun kongen at hugenottene planla et opprør. Til slutt ga kongen ordre om å drepe dem."
+                }
+            ]
+        },
+        {
+            "id": "natten",
+            "visual": {
+                "type": "HugenotteneKart",
+                "props": {
+                    "modus": "natten"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Drapene startet tidlig om morgenen 24. august 1572, på bartolomeusdagen."
+                },
+                {
+                    "si": "Coligny og rundt 3000 hugenotter ble drept i Paris."
+                },
+                {
+                    "si": "Drapene spredte seg til andre byer, som Lyon, Bourges og Rouen."
+                },
+                {
+                    "si": "Til sammen ble rundt 7000 protestanter drept. Flere tusen ble tvunget til å bli katolikker."
+                },
+                {
+                    "si": "Det som skjedde, kalles Bartolomeusnatten, eller blodbryllupet i Paris."
+                }
+            ]
+        },
+        {
+            "id": "henrik",
+            "kapittel": "Kongen som byttet tro",
+            "visual": {
+                "type": "HugenotteneHenrik"
+            },
+            "replikker": [
+                {
+                    "si": "Men brudgommen overlevde. Henrik av Navarra var født i 1553 og var oppdratt som protestant."
+                },
+                {
+                    "si": "Han reddet livet sitt ved å gå over til den katolske troen. I 1576 flyktet han fra hoffet og ble leder for hugenottene igjen."
+                },
+                {
+                    "si": "I 1589 døde kong Henrik 3., og Henrik av Navarra ble kong Henrik 4. Men han fikk ikke styre hele landet med en gang."
+                },
+                {
+                    "si": "I 1593 gikk Henrik over til den katolske troen en gang til. Han skal ha sagt: Paris er vel en messe verd."
+                },
+                {
+                    "si": "En messe er den katolske gudstjenesten. Det var verdt å bytte tro for å få makten. I 1595 hadde han full kontroll over Frankrike."
+                }
+            ]
+        },
+        {
+            "id": "edikt",
+            "kapittel": "Ediktet i Nantes",
+            "visual": {
+                "type": "HugenotteneEdikt",
+                "props": {
+                    "modus": "gitt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et edikt er en lov som kongen bestemmer helt alene."
+                },
+                {
+                    "si": "I 1598 skrev Henrik 4. under ediktet i Nantes. Det skulle gi fred etter mer enn 30 år med religionskriger."
+                },
+                {
+                    "si": "Ingen kunne tvinge hugenottene til å bytte tro. De fikk holde gudstjenester på bestemte steder, og staten betalte prestene deres."
+                },
+                {
+                    "si": "For å være sikre på at kongen holdt ord, fikk de beholde rundt 100 byer med murer og soldater."
+                }
+            ]
+        },
+        {
+            "id": "murbyer",
+            "visual": {
+                "type": "HugenotteneBy",
+                "props": {
+                    "modus": "murby"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En av dem var havnebyen La Rochelle, ute ved Atlanterhavet."
+                },
+                {
+                    "si": "Med murer og egne soldater kunne hugenottene forsvare seg selv, om kongen skulle snu."
+                }
+            ]
+        },
+        {
+            "id": "svakhet",
+            "visual": {
+                "type": "HugenotteneEdikt",
+                "props": {
+                    "modus": "svakhet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men ediktet hadde en svakhet. Det var ment som en midlertidig løsning for å sikre freden."
+                },
+                {
+                    "si": "Friheten hvilte på at kongen ville gi den."
+                },
+                {
+                    "si": "Henrik 4. ble selv drept av en katolikk i 1610. Hva ville kongene etter ham gjøre?"
+                }
+            ]
+        },
+        {
+            "id": "richelieu",
+            "kapittel": "Bit for bit",
+            "visual": {
+                "type": "HugenotteneBy",
+                "props": {
+                    "modus": "richelieu"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1629 tok kardinal Richelieu, kongens mektige minister, byene med murer fra hugenottene."
+                },
+                {
+                    "si": "Nå kunne de ikke lenger stå imot kongen."
+                },
+                {
+                    "si": "De kunne fortsatt tro og gå til gudstjeneste. Men de kunne ikke lenger forsvare seg selv."
+                }
+            ]
+        },
+        {
+            "id": "dragonader",
+            "visual": {
+                "type": "HugenotteneGate",
+                "props": {
+                    "modus": "dragonader"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så kom Ludvig 14., solkongen. Fra 1681 presset han protestantene til å gi opp troen sin."
+                },
+                {
+                    "si": "Det verste våpenet var dragonadene. Dragoner var soldater til hest."
+                },
+                {
+                    "si": "Kongen sendte soldatene for å bo hjemme hos hugenott-familier. Familien måtte gi dem mat og penger."
+                },
+                {
+                    "si": "Når pengene var brukt opp, solgte eller knuste soldatene møblene. De som nektet å bli katolikker, ble slått og plaget."
+                },
+                {
+                    "si": "Når mannen i huset ga opp troen sin, flyttet soldatene videre til neste hus."
+                }
+            ]
+        },
+        {
+            "id": "virket",
+            "visual": {
+                "type": "HugenotteneGate",
+                "props": {
+                    "modus": "virket"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Metoden virket. I området Poitou ble 38 000 nye katolikker registrert på noen få måneder i 1681."
+                },
+                {
+                    "si": "I 1685 meldte hele landsbyer seg som katolikker bare fordi de hørte at soldatene var på vei."
+                },
+                {
+                    "si": "Tre av fire hugenotter ga opp troen sin på grunn av dragonadene."
+                }
+            ]
+        },
+        {
+            "id": "opphevet",
+            "kapittel": "1685",
+            "visual": {
+                "type": "HugenotteneEdikt",
+                "props": {
+                    "modus": "tatt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1685 tok Ludvig 14. det siste steget. Han opphevet ediktet i Nantes."
+                },
+                {
+                    "si": "Å oppheve betyr at loven ikke gjelder lenger. Nå var all protestantisk gudstjeneste forbudt."
+                },
+                {
+                    "si": "Prestene fikk to uker på å bli katolikker, eller forlate landet."
+                },
+                {
+                    "si": "Av rundt 700 prester reiste 560 ut av landet. 140 ga opp troen sin."
+                }
+            ]
+        },
+        {
+            "id": "forbudt",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Forbudt å flykte",
+                    "punkter": [
+                        {
+                            "ikon": "hus",
+                            "tittel": "Ingen fikk reise ut",
+                            "tekst": "det var forbudt å forlate landet",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "skip",
+                            "tittel": "Menn: galeiene",
+                            "tekst": "krigsskip der fangene måtte ro",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Kvinner: fengsel",
+                            "tekst": "og alle mistet det de eide",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Hjelperne",
+                            "tekst": "fra 1687 kunne de dømmes til døden",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For vanlige hugenotter var reglene enda strengere. De fikk ikke lov til å forlate landet."
+                },
+                {
+                    "si": "Menn som ble tatt på flukt, ble sendt til galeiene. Det var store krigsskip der fangene måtte ro."
+                },
+                {
+                    "si": "Kvinner ble satt i fengsel, og alle mistet det de eide."
+                },
+                {
+                    "si": "Fra 1687 kunne de som hjalp flyktninger over grensen, bli dømt til døden."
+                }
+            ]
+        },
+        {
+            "id": "flukt",
+            "kapittel": "Den store flukten",
+            "visual": {
+                "type": "HugenotteneKart",
+                "props": {
+                    "modus": "flukt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Likevel flyktet de. De gjemte seg hos andre protestanter og betalte smuglere for å vise veien."
+                },
+                {
+                    "si": "Opptil 200 000 hugenotter forlot Frankrike mellom 1685 og 1715."
+                },
+                {
+                    "si": "De fra nord og vest reiste helst til England og Nederland."
+                },
+                {
+                    "si": "De fra sør flyktet til Genève i Sveits. I 1687 kom det opptil 350 flyktninger dit hver eneste dag."
+                },
+                {
+                    "si": "Mange reiste videre til Tyskland. I Brandenburg ble de tatt svært godt imot."
+                },
+                {
+                    "si": "Andre dro enda lenger, til Nord-Amerika, Sverige og Sør-Afrika."
+                }
+            ]
+        },
+        {
+            "id": "gave",
+            "visual": {
+                "type": "HugenotteneKart",
+                "props": {
+                    "modus": "gave"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For landene som tok imot dem, var flyktningene en gave. Mange var dyktige håndverkere, særlig innen tekstil."
+                },
+                {
+                    "si": "Andre var leger, lærere og soldater. De hjalp til med å bygge opp igjen industrien i Tyskland etter trettiårskrigen."
+                },
+                {
+                    "si": "Frankrike tapte på det samme. I noen yrker forsvant så mye kunnskap at landet måtte hente møbelsnekkere fra Tyskland."
+                }
+            ]
+        },
+        {
+            "id": "rettighet",
+            "kapittel": "Tålt eller rettighet",
+            "visual": {
+                "type": "HugenotteneEdikt",
+                "props": {
+                    "modus": "rettighet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "De hugenottene som ble igjen i Frankrike, måtte holde troen sin skjult i mange tiår."
+                },
+                {
+                    "si": "I 1787 kom et toleranseedikt. Å tolerere betyr å tåle. Nå kunne protestanter gifte seg lovlig."
+                },
+                {
+                    "si": "Men de fikk fortsatt ikke holde gudstjeneste åpent, eller jobbe i staten."
+                },
+                {
+                    "si": "Så kom den franske revolusjonen i 1789. Nå fikk alle samvittighetsfrihet, altså rett til å tro det de ville."
+                },
+                {
+                    "si": "Grunnloven fra 1791 ga full religionsfrihet. Hugenottene hadde fått fulle rettigheter som borgere."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ediktet i Nantes var en gave fra én konge.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "En senere konge kunne ta det tilbake.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Rettighetene fra 1789 sto skrevet",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "for alle mennesker.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Å bli tålt kan tas fra deg.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "En rettighet gjelder for alle.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ediktet i Nantes var en gave fra én konge, og en senere konge kunne ta det tilbake."
+                },
+                {
+                    "si": "Rettighetene fra revolusjonen var noe annet. De sto skrevet som rettigheter for alle mennesker, ikke som en tjeneste kongen gjorde en gruppe."
+                },
+                {
+                    "si": "Det som bare blir tålt, kan tas fra deg. En rettighet gjelder for alle."
+                }
+            ]
+        }
+    ]
+}
