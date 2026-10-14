@@ -1,0 +1,450 @@
+{
+    "id": "mao-og-revolusjonen",
+    "tittel": "Mao Zedong: Revolusjonens far",
+    "kilde": "/historie/kinas-historie/mao-og-revolusjonen",
+    "bilde": "/images/kinas-historie/mao-og-revolusjonen-hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 100,
+            "begrunnelse": "Artikkelen skriver «Hundre år med ydmykelse» med bokstaver. Samme tall, bare skrevet med sifre i tittelkortet."
+        }
+    ],
+    "scener": [
+        {
+            "id": "porten",
+            "kapittel": "Porten",
+            "visual": {
+                "type": "MaoKina",
+                "props": {
+                    "modus": "port"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er første oktober 1949. Vi står i Beijing, foran en stor, rød port. Den heter Den himmelske freds port."
+                },
+                {
+                    "si": "Oppe på porten står en mann. Han heter Mao Zedong."
+                },
+                {
+                    "si": "Han sier at landet har fått et nytt navn: Folkerepublikken Kina."
+                },
+                {
+                    "si": "Ti dager før, på et stort møte, hadde han sagt ordene som skulle bli stående: Det kinesiske folket har reist seg!"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MAO",
+                    "undertittel": "Revolusjonens far",
+                    "bilde": "/images/kinas-historie/mao-og-revolusjonen-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 100,
+                            "etikett": "år med ydmykelse, nå over",
+                            "fraBeat": 1,
+                            "tone": "rod"
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hva betød det at folket hadde reist seg?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mao ledet kommunistene i Kina. Han var 55 år gammel."
+                },
+                {
+                    "si": "For Kina betød dagen slutten på rundt hundre år med ydmykelse. Andre land hadde tråkket på Kina: europeiske stormakter, japanske soldater og så en lang borgerkrig."
+                },
+                {
+                    "si": "Men hva betød det egentlig at folket hadde reist seg? Det kom an på hvem du spurte."
+                }
+            ]
+        },
+        {
+            "id": "hvem",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Folket har reist seg. Hva betyr det?",
+                    "punkter": [
+                        {
+                            "ikon": "hus",
+                            "tittel": "For bøndene",
+                            "tekst": "jord å dyrke",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "For de som tenker og skriver",
+                            "tekst": "frihet til å bygge et nytt Kina",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "For godseierne og kritikerne",
+                            "tekst": "noe helt annet",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For bøndene betød det jord."
+                },
+                {
+                    "si": "For de som tenkte og skrev, lærerne og forfatterne, betød det frihet til å bygge et nytt Kina."
+                },
+                {
+                    "si": "Men for de rike godseierne, og for dem som kritiserte kommunistpartiet, betød det noe helt annet."
+                },
+                {
+                    "si": "For å forstå hvorfor, må vi tilbake til der det hele begynte."
+                }
+            ]
+        },
+        {
+            "id": "livet",
+            "kapittel": "Bondegutten",
+            "visual": {
+                "type": "MaoKart",
+                "props": {
+                    "modus": "livet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mao ble født 26. desember 1893 i Shaoshan. Det er en liten landsby i Hunan-provinsen, langt inne i Kina.",
+                    "uttale": "Mao ble født tjuesjette desember atten nittitre i Shaoshan. Det er en liten landsby i Hunan-provinsen, langt inne i Kina."
+                },
+                {
+                    "si": "Faren var en rik bonde, og familien hadde nok mat. Men i 1912 falt keiserdømmet. Kina hadde ikke lenger en keiser, og krig og kaos fulgte."
+                },
+                {
+                    "si": "Den unge Mao leste og tenkte. Han ble rasende på all urettferdigheten han så rundt seg."
+                },
+                {
+                    "si": "I 1921 ble Kinas kommunistparti stiftet i Shanghai. Mao var med, som utsending fra Hunan."
+                },
+                {
+                    "si": "I over 20 år bygde han en hær av bønder. Han overlevde den lange marsjen, en enorm vandring gjennom ulendt terreng."
+                },
+                {
+                    "si": "Til slutt slo han motstanderne sine. I 1949 sto han i Beijing som hersker over verdens mest folkerike land."
+                }
+            ]
+        },
+        {
+            "id": "bondeland",
+            "kapittel": "Jorda",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 4,
+                            "farget": 3,
+                            "farge": "#65a30d",
+                            "restFarge": "#94a3b8",
+                            "tittel": "De aller fleste bodde på landet",
+                            "fargeEtikett": "på landsbygda",
+                            "restEtikett": "i byen"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 4,
+                            "farget": 3,
+                            "farge": "#65a30d",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Selv i 1990: 75 prosent på landet",
+                            "fargeEtikett": "på landsbygda",
+                            "restEtikett": "i byen"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det første Mao gjorde, handlet om jord. Kina var et bondeland. De aller fleste bodde på landsbygda."
+                },
+                {
+                    "si": "Selv så sent som i 1990 bodde tre av fire kinesere på landet. Det er 75 prosent."
+                }
+            ]
+        },
+        {
+            "id": "jorda",
+            "visual": {
+                "type": "MaoKina",
+                "props": {
+                    "modus": "jord"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg en landsby. Bøndene jobber på åkrene hver eneste dag."
+                },
+                {
+                    "si": "Men jorda er ikke deres. Den eies av en rik godseier, en som eier mye jord og leier den ut. Bøndene betaler, og forblir fattige."
+                },
+                {
+                    "si": "Fra 1950 tok staten jorda fra godseierne. Den ble delt opp og gitt til fattige bønder."
+                },
+                {
+                    "si": "Nå eide bønder jord som aldri hadde eid noe før. Rikdommen ble fordelt på en ny måte. Det var et stort skifte i historien."
+                }
+            ]
+        },
+        {
+            "id": "prisen",
+            "visual": {
+                "type": "MaoTavle",
+                "props": {
+                    "modus": "prisen"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men prisen var blodig. Godseierne ble stilt foran folkemøter, der landsbyfolket ropte ut anklagene sine."
+                },
+                {
+                    "si": "Mange godseiere ble henrettet."
+                },
+                {
+                    "si": "Ingen vet de nøyaktige tallene. Men under borgerkrigen og de første årene etter revolusjonen ble flere millioner mennesker drept."
+                },
+                {
+                    "si": "Landreformen var frigjøring og terror på én gang."
+                }
+            ]
+        },
+        {
+            "id": "partiet",
+            "kapittel": "Partiet",
+            "visual": {
+                "type": "MaoTavle",
+                "props": {
+                    "modus": "partiet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1938 hadde Mao sagt: Den politiske makten kommer fra geværet. Han mente det."
+                },
+                {
+                    "si": "Nå bygde han en ettpartistat. Det betyr et land der bare ett parti får styre, og der partiet styrer alt."
+                },
+                {
+                    "si": "Avisene skriver det partiet vil ha skrevet."
+                },
+                {
+                    "si": "Skolene lærer barna kommunismen og Maos tanker."
+                },
+                {
+                    "si": "Kunstnerne maler lykkelige arbeidere og smilende bønder. Ingen andre partier får stille til valg, og ingen kan kritisere Mao åpent uten fare."
+                },
+                {
+                    "si": "Dette var ikke tilfeldig. Mao hadde sett land der motstanderne fikk vokse seg sterke. Den feilen ville han ikke gjøre."
+                }
+            ]
+        },
+        {
+            "id": "korea",
+            "kapittel": "Koreakrigen",
+            "visual": {
+                "type": "MaoKart",
+                "props": {
+                    "modus": "korea"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Bare noen måneder senere kom den første store prøven. 25. juni 1950 angrep Nord-Korea Sør-Korea.",
+                    "uttale": "Bare noen måneder senere kom den første store prøven. Tjuefemte juni nitten femti angrep Nord-Korea Sør-Korea."
+                },
+                {
+                    "si": "De gikk over grensen ved den 38. breddegraden, en tenkt linje tvers over landet.",
+                    "uttale": "De gikk over grensen ved den trettiåttende breddegraden, en tenkt linje tvers over landet."
+                },
+                {
+                    "si": "USA gikk inn i krigen på Sør-Koreas side."
+                },
+                {
+                    "si": "Styrkene til FN rykket helt fram mot grensen til Kina. Nå bestemte Mao seg for å handle."
+                },
+                {
+                    "si": "I november 1950 gikk kinesiske soldater inn i krigen. Til sammen deltok rundt 300 000 kinesere."
+                }
+            ]
+        },
+        {
+            "id": "sonnen",
+            "visual": {
+                "type": "MaoKart",
+                "props": {
+                    "modus": "vapenhvile"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det var en enorm risiko. Kina var utslitt etter mange år med krig, og Mao visste det."
+                },
+                {
+                    "si": "Likevel sendte han soldatene, og blant dem sin egen sønn. Mao Anying var offiser, og han døde i et luftangrep i november 1950."
+                },
+                {
+                    "si": "Mao fikk beskjeden. Han sa lite, og fortsatte å lede krigen."
+                },
+                {
+                    "si": "27. juli 1953 ble partene enige om å slutte å skyte. Korea ble fortsatt delt, omtrent langs den samme linja.",
+                    "uttale": "Tjuesjuende juli nitten femtitre ble partene enige om å slutte å skyte. Korea ble fortsatt delt, omtrent langs den samme linja."
+                },
+                {
+                    "si": "Ingen hadde vunnet. Men Kina hadde vist at landet kunne stå imot verdens mektigste militærmakt."
+                }
+            ]
+        },
+        {
+            "id": "blomster",
+            "kapittel": "Hundre blomster",
+            "visual": {
+                "type": "MaoTavle",
+                "props": {
+                    "modus": "blomster"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1956 overrasket Mao alle. Han ba folk si hva de mente, også om partiet."
+                },
+                {
+                    "si": "La hundre blomster blomstre, sa han. La hundre tankeskoler konkurrere. Blomstene var nye tanker og ideer."
+                },
+                {
+                    "si": "Kritikken kom, og den var mye sterkere enn Mao hadde ventet. Professorer, journalister og folk i staten pekte på partiets feil."
+                },
+                {
+                    "si": "De klaget på korrupsjon, altså at folk med makt tok imot penger og tjenester. De klaget på at folk ble holdt nede."
+                },
+                {
+                    "si": "De stolte på Maos ord. Det var en feil."
+                }
+            ]
+        },
+        {
+            "id": "fellen",
+            "visual": {
+                "type": "MaoTavle",
+                "props": {
+                    "modus": "fellen"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Svaret ble en ny kampanje mot alle som hadde kritisert. Partiet kalte dem høyrefolk, og kampanjen ble kalt anti-høyrekampanjen."
+                },
+                {
+                    "si": "Hundretusener av lærde og skrivende mennesker ble arrestert."
+                },
+                {
+                    "si": "Hundre blomster-kampanjen var blitt en felle. Eller i det minste ble den brukt som én."
+                }
+            ]
+        },
+        {
+            "id": "strateg",
+            "kapittel": "Strateg eller sjef?",
+            "visual": {
+                "type": "MaoTavle",
+                "props": {
+                    "modus": "dom"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva var Mao best til? Historikerne er enige om én ting: Han var en genial strateg, en som legger planer for å vinne."
+                },
+                {
+                    "si": "Han vant borgerkrigen mot alle odds. Han holdt landet samlet, og han bygde en stat ut av ruinene."
+                },
+                {
+                    "si": "Men som administrator, altså som sjef for den daglige driften av et land, var han en katastrofe."
+                },
+                {
+                    "si": "Han forsto ikke økonomi. Han lyttet ikke til ekspertene som advarte ham. Han lot ideene styre der kunnskap burde styrt."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Det kinesiske folket har reist seg.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Men hva det betød, kom an på hvem du var.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Jord til bøndene.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Terror mot godseierne.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "En genial strateg.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "En sjef som ikke ville lytte.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Neste gang: Det store spranget.",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "Den verste hungersnøden i historien.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det kinesiske folket har reist seg, sa Mao. Men hva det betød, kom helt an på hvem du var."
+                },
+                {
+                    "si": "Den samme reformen ga jord til de fattige og døden til mange godseiere."
+                },
+                {
+                    "si": "Mao kunne vinne en krig. Men da han ville gjøre Kina til en stormakt på rekordtid, lyttet han ikke."
+                },
+                {
+                    "si": "Det endte i den verste hungersnøden i menneskenes historie. Den historien kan du lese i neste artikkel."
+                }
+            ]
+        }
+    ]
+}
