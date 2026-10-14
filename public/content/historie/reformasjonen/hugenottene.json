@@ -5,7 +5,7 @@
   "year": "1562-1789",
   "category": "Religionskriger",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/reformasjonen/hugenottene-hero.webp",
   "details": [
     "Hugenottene var franske protestanter. Tusenvis av dem ble drept under Bartolomeusnatten i 1572.",
     "Ediktet i Nantes ga dem rettigheter i 1598, men Ludvig 14. tok rettighetene tilbake i 1685.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/reformasjonen/hugenottene-01.webp",
       "alt": "Bryllupsfest i Paris i 1572 med gjester i gater",
       "caption": "Bryllupet mellom Henrik av Navarra og Margrete av Valois skulle skape fred mellom katolikker og protestanter."
     },
@@ -112,7 +112,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/reformasjonen/hugenottene-02.webp",
       "alt": "Flyktende familie med kjerre på en fjellvei",
       "caption": "Hugenottene måtte flykte i det skjulte. Mange flyktet til Genève i Sveits."
     },
@@ -157,7 +157,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/reformasjonen/hugenottene-03.webp",
       "alt": "Gammel protestantisk kirke i en fransk landsby",
       "caption": "I dag kan franske protestanter holde gudstjeneste åpent. Det tok mer enn 200 år å komme dit."
     },
