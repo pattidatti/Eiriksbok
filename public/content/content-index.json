@@ -1,5 +1,5 @@
 {
-  "buildId": 277197014296785,
+  "buildId": 161062746184088,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2872,6 +2872,9 @@
     ],
     "30-aarskrigen": [
       "content/historie/reformasjonen/30-aarskrigen.json"
+    ],
+    "hugenottene": [
+      "content/historie/reformasjonen/hugenottene.json"
     ],
     "kalvin-og-kalvinismen": [
       "content/historie/reformasjonen/kalvin-og-kalvinismen.json"
@@ -5830,6 +5833,7 @@
     "historie/perserriket/perserkrigene": "content/historie/perserriket/perserkrigene.json",
     "historie/perserriket/zarathustra-og-zoroastrismen": "content/historie/perserriket/zarathustra-og-zoroastrismen.json",
     "historie/reformasjonen/30-aarskrigen": "content/historie/reformasjonen/30-aarskrigen.json",
+    "historie/reformasjonen/hugenottene": "content/historie/reformasjonen/hugenottene.json",
     "historie/reformasjonen/kalvin-og-kalvinismen": "content/historie/reformasjonen/kalvin-og-kalvinismen.json",
     "historie/reformasjonen/martin-luther": "content/historie/reformasjonen/martin-luther.json",
     "historie/reformasjonen/mottreformasjonen": "content/historie/reformasjonen/mottreformasjonen.json",
