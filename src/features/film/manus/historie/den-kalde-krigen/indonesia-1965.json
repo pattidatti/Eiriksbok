@@ -1,0 +1,457 @@
+{
+    "id": "indonesia-1965",
+    "tittel": "Jakarta-metoden: Indonesias glemte tragedie",
+    "kilde": "/historie/den-kalde-krigen/indonesia-1965",
+    "bilde": "/images/historie/den-kalde-krigen/indonesia-1965_hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 1000,
+            "begrunnelse": "Målestokk i prikkfeltet: hver prikk står for tusen mennesker, så 500 og 1000 prikker viser anslagene fra artikkelen (500 000 til over en million)."
+        }
+    ],
+    "scener": [
+        {
+            "id": "oyriket",
+            "kapittel": "Et fritt land",
+            "visual": {
+                "type": "IndonesiaKart",
+                "props": {
+                    "modus": "oyriket"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg et land som ikke er ett stykke land, men et helt hav fullt av øyer. Det er Indonesia, i Sørøst-Asia."
+                },
+                {
+                    "si": "Øyriket er enormt, og det er rikt. Her er det olje, gummi og mange andre ressurser."
+                },
+                {
+                    "si": "I lang tid styrte Nederland landet som en koloni. Men i 1949 rev Indonesia seg løs og ble fritt."
+                },
+                {
+                    "si": "Den nye lederen het Sukarno. Nå skulle han styre det enorme øyriket."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "JAKARTA-METODEN",
+                    "undertittel": "Indonesias glemte tragedie",
+                    "bilde": "/images/historie/den-kalde-krigen/indonesia-1965_hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 500000,
+                            "etikett": "til over en million drepte (minst)",
+                            "fraBeat": 1,
+                            "tone": "rod"
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvorfor husker så få det?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om Jakarta-metoden. Jakarta er hovedstaden i Indonesia."
+                },
+                {
+                    "si": "I 1965 startet et av de største massedrapene etter andre verdenskrig. Mellom 500 000 og over en million mennesker ble drept."
+                },
+                {
+                    "si": "Likevel har nesten ingen hørt om det. I denne filmen skal vi finne ut hva som skjedde, hvem som tjente på det, og hvorfor det ble glemt."
+                },
+                {
+                    "si": "Vi forteller det rolig, og med respekt for dem som døde."
+                }
+            ]
+        },
+        {
+            "id": "mellom",
+            "visual": {
+                "type": "IndonesiaKart",
+                "props": {
+                    "modus": "mellom"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Verden var delt i to. På den ene siden sto USA, på den andre Sovjetunionen."
+                },
+                {
+                    "si": "Sukarno ville ikke velge side. Han ville styre landet sitt selv, uten å ta ordre fra noen av dem."
+                },
+                {
+                    "si": "Indonesia hadde også et av verdens største kommunistpartier. Det het PKI."
+                },
+                {
+                    "si": "I 1955 holdt Indonesia et stort møte i byen Bandung. Land i Asia og Afrika som nettopp var blitt frie, møttes for å stå sammen."
+                },
+                {
+                    "si": "For mange ble Sukarno et symbol på et stolt og fritt sør. Men en sterk leder med et stort kommunistparti var akkurat det Vesten fryktet mest."
+                }
+            ]
+        },
+        {
+            "id": "domino",
+            "kapittel": "Den kalde krigens frykt",
+            "visual": {
+                "type": "IndonesiaDomino"
+            },
+            "replikker": [
+                {
+                    "si": "Dette var den kalde krigen. USA var livredd for at flere land skulle bli kommunistiske og havne på Sovjetunionens side."
+                },
+                {
+                    "si": "Amerikanerne snakket om dominoeffekten. Se for deg en rad med dominobrikker."
+                },
+                {
+                    "si": "Dytter du på den første, faller den neste, og den neste. Slik trodde USA at landene i Sørøst-Asia ville bli kommunistiske, ett etter ett."
+                },
+                {
+                    "si": "Den samme frykten lå bak Vietnamkrigen."
+                },
+                {
+                    "si": "Og Indonesia var en av de største brikkene av alle. Mange i Vesten mente at et knust kommunistparti der var verdt nesten hva som helst."
+                }
+            ]
+        },
+        {
+            "id": "selskapene-ute",
+            "visual": {
+                "type": "IndonesiaKart",
+                "props": {
+                    "modus": "stengt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det handlet ikke bare om frykt. Indonesia hadde olje, gummi og skoger som vestlige selskaper gjerne ville tjene penger på."
+                },
+                {
+                    "si": "Men Sukarno holdt selskapene på avstand. Han ville at landet skulle bestemme selv over rikdommen sin."
+                },
+                {
+                    "si": "For Vesten var han et problem, både for politikken og for pengene."
+                }
+            ]
+        },
+        {
+            "id": "kuppet",
+            "kapittel": "Et massedrap",
+            "visual": {
+                "type": "IndonesiaPapir",
+                "props": {
+                    "modus": "avis"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så, i oktober 1965, skjer det noe. Noen offiserer prøver å ta makten, men kuppet mislykkes. Flere offiserer blir drept."
+                },
+                {
+                    "si": "Hæren ledes av general Suharto. Han peker raskt på én skyldig: hele kommunistpartiet PKI."
+                },
+                {
+                    "si": "Det ble startskuddet for noe forferdelig."
+                }
+            ]
+        },
+        {
+            "id": "hele-landet",
+            "visual": {
+                "type": "IndonesiaKart",
+                "props": {
+                    "modus": "hele-landet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I månedene etterpå ble mennesker som var mistenkt for å være kommunister, jaktet på over hele landet."
+                },
+                {
+                    "si": "Det skjedde over hele landet. Ingen steder var trygge."
+                },
+                {
+                    "si": "Det var ikke bare politikere som ble rammet. Det var vanlige bønder, lærere og fagforeningsfolk. Fagforeninger er grupper av arbeidere som står sammen for bedre lønn."
+                }
+            ]
+        },
+        {
+            "id": "tallene",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1000,
+                            "farget": 0,
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Hver prikk er tusen mennesker",
+                            "restEtikett": "prikker"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1000,
+                            "farget": 500,
+                            "farge": "#7f1d1d",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Minst 500 000 drepte",
+                            "fargeEtikett": "prikker = 500 000 drept",
+                            "restEtikett": "prikker: høyeste anslag"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1000,
+                            "farget": 1000,
+                            "farge": "#7f1d1d",
+                            "tittel": "Kanskje over en million",
+                            "fargeEtikett": "prikker = en million drept"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvor mange ble drept? Ingen vet det helt sikkert, og anslagene varierer. Her står hver prikk for tusen mennesker."
+                },
+                {
+                    "si": "De fleste forskere mener at minst 500 000 mennesker ble drept."
+                },
+                {
+                    "si": "Andre anslag sier over en million."
+                },
+                {
+                    "si": "Bak hver eneste prikk står tusen mennesker med navn. En bonde, en lærer, en mor, en sønn."
+                }
+            ]
+        },
+        {
+            "id": "listene",
+            "visual": {
+                "type": "IndonesiaPapir",
+                "props": {
+                    "modus": "liste"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det som gjør historien enda mørkere, er dette: Flere vestlige land visste hva som foregikk."
+                },
+                {
+                    "si": "Likevel støttet de det som skjedde. USA ga blant annet hæren lister med navn på mistenkte."
+                },
+                {
+                    "si": "For Vesten var Suharto en venn. En alliert, altså en som står på samme side, og som kunne stanse kommunismen."
+                }
+            ]
+        },
+        {
+            "id": "naboene",
+            "visual": {
+                "type": "IndonesiaPapir",
+                "props": {
+                    "modus": "naboer"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det var heller ikke bare soldater som drepte."
+                },
+                {
+                    "si": "Vanlige mennesker ble presset eller skremt til å angi naboene sine. Å angi betyr å peke ut noen til dem som har makten."
+                },
+                {
+                    "si": "Noen ble også presset til å drepe. Frykt og propaganda forandret et helt samfunn på kort tid."
+                },
+                {
+                    "si": "Det er en av de skumleste lærdommene fra denne historien. Det kan gå fort når folk blir redde nok."
+                }
+            ]
+        },
+        {
+            "id": "selskapene-inn",
+            "kapittel": "Hvem tjente på det?",
+            "visual": {
+                "type": "IndonesiaKart",
+                "props": {
+                    "modus": "apent"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1967 hadde Suharto tatt hele makten. Og nå gjorde han noe som Sukarno aldri ville gjort."
+                },
+                {
+                    "si": "Han åpnet landet på vidt gap for vestlige selskaper. Olje, gruver og skoger ble lagt ut til utenlandske investorer, folk som kjøper seg inn for å tjene penger."
+                },
+                {
+                    "si": "Allerede i 1967 fikk det amerikanske selskapet Freeport rett til en av verdens største gull- og kobbergruver."
+                },
+                {
+                    "si": "Et land som hadde holdt Vesten på avstand, ble plutselig en lydig partner. Lederen som sa nei, var byttet ut. Og dørene sto åpne."
+                }
+            ]
+        },
+        {
+            "id": "metoden",
+            "visual": {
+                "type": "IndonesiaKart",
+                "props": {
+                    "modus": "jakarta"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men hvorfor heter det Jakarta-metoden?"
+                },
+                {
+                    "si": "Senere ville hæren i land som Chile og Argentina skremme sine egne motstandere."
+                },
+                {
+                    "si": "Da ble ordet Jakarta malt på vegger, som en advarsel: Det samme kan skje her."
+                },
+                {
+                    "si": "Slik ble navnet på en by til navnet på en metode. En oppskrift andre land kopierte."
+                }
+            ]
+        },
+        {
+            "id": "glemt",
+            "kapittel": "Hvorfor glemte vi?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvorfor er det så lite kjent?",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "De som sto bak, beholdt makten",
+                            "tekst": "i Indonesia i flere tiår",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "Vesten ville glemme sin rolle",
+                            "tekst": "landene som hadde støttet drapene",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor er denne tragedien så lite kjent?"
+                },
+                {
+                    "si": "En grunn er at de som sto bak, beholdt makten i Indonesia i flere tiår. De ville ikke at historien skulle fortelles."
+                },
+                {
+                    "si": "En annen grunn er at vestlige land som hadde støttet drapene, heller ikke hadde lyst til å minnes sin egen rolle."
+                }
+            ]
+        },
+        {
+            "id": "stillheten",
+            "visual": {
+                "type": "IndonesiaPapir",
+                "props": {
+                    "modus": "stille"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For de overlevende og familiene deres er dette ikke fjern historie."
+                },
+                {
+                    "si": "Mange levde i flere tiår med frykt. De ble stemplet som forrædere, folk som har sviktet landet sitt."
+                },
+                {
+                    "si": "De kunne ikke sørge åpent over dem de hadde mistet."
+                },
+                {
+                    "si": "Å fortelle historien riktig er en måte å vise dem respekt på."
+                }
+            ]
+        },
+        {
+            "id": "arkivet",
+            "visual": {
+                "type": "IndonesiaPapir",
+                "props": {
+                    "modus": "arkiv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mye av det vi vet i dag, kom først fram da hemmelige dokumenter ble gjort kjent."
+                },
+                {
+                    "si": "Og da de overlevende endelig torde å fortelle hva de hadde opplevd."
+                },
+                {
+                    "si": "Det minner oss om at de som vinner, ofte får bestemme hvilken historie som blir fortalt."
+                },
+                {
+                    "si": "Det samme så vi i Iran og i Chile. De viktigste hendelsene kan bli holdt skjult i lang tid."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Et fritt land som ikke ville velge side.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Et av de største massedrapene etter krigen.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Frykt og propaganda",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "kan forandre et helt samfunn.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Det som blir glemt,",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "er ofte det noen ville skjule.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Indonesia var et fritt land som ikke ville velge side. Det endte med et av de største massedrapene etter andre verdenskrig."
+                },
+                {
+                    "si": "Historien viser hvor fort frykt og propaganda kan forandre et helt samfunn, og hvor langt stormakter kan gå for å vinne."
+                },
+                {
+                    "si": "Og den viser noe til: Det som blir glemt, er ofte det noen ville skjule. Derfor er det viktig å spørre hvem som forteller historien."
+                }
+            ]
+        }
+    ]
+}
