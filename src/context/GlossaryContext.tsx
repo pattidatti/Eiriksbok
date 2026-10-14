@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useEffect } from 'react';
 
 export interface GlossaryEntry {
     term: string;
@@ -17,6 +17,8 @@ export interface GlossaryContextType {
     entries: GlossaryEntry[];
     isLoading: boolean;
     getEntry: (term: string) => GlossaryEntry | undefined;
+    // Ordlista (glossary.json) hentes først når en komponent ber om den, ikke ved oppstart.
+    requestLoad: () => void;
 }
 
 export const GlossaryContext = createContext<GlossaryContextType | undefined>(undefined);
@@ -26,5 +28,7 @@ export const useGlossary = () => {
     if (context === undefined) {
         throw new Error('useGlossary must be used within a GlossaryProvider');
     }
+    const { requestLoad } = context;
+    useEffect(requestLoad, [requestLoad]);
     return context;
 };

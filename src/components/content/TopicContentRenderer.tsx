@@ -9,6 +9,7 @@ import { QuoteBlock } from '../QuoteBlock';
 import { GrammarRuleCard } from './interactive/GrammarRuleCard';
 import { WritingFix } from '../WritingFix';
 import { getComponent } from '../ComponentRegistry';
+import { LazyComponentSlot } from './LazyComponentSlot';
 import type { TopicContentBlock } from '../../types';
 
 /**
@@ -210,7 +211,9 @@ export const TopicContentRenderer: React.FC<TopicContentRendererProps> = ({ cont
                         if (RegistryComponent) {
                             return (
                                 <motion.div key={index} variants={item} className="my-8">
-                                    <RegistryComponent {...(block.props ?? {})} />
+                                    <LazyComponentSlot name={block.component || ''}>
+                                        <RegistryComponent {...(block.props ?? {})} />
+                                    </LazyComponentSlot>
                                 </motion.div>
                             );
                         }

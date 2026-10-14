@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Volume2, ChevronDown, Info, CheckCircle2, XCircle, Pause, Play, Square, PenLine } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { getComponent } from './ComponentRegistry';
+import { LazyComponentSlot } from './content/LazyComponentSlot';
 import { useGlossary } from '../context/GlossaryContext';
 import type { Concept, ContentBlock, RawContentBlock } from '../types';
 import { CONTENT_BLOCK_TYPES } from '../types';
@@ -578,9 +579,9 @@ export const ArticleContent: React.FC<ArticleContentProps> = React.memo(({ conte
                         if (!QuizComp) return null;
                         return (
                             <div key={index} className="my-12">
-                                <QuizComp
-                                    questions={b.questions || []}
-                                />
+                                <LazyComponentSlot name="Quiz">
+                                    <QuizComp questions={b.questions || []} />
+                                </LazyComponentSlot>
                             </div>
                         );
                     }

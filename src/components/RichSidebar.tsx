@@ -9,6 +9,29 @@ import type { SidebarConfig } from '../types';
 import type { RelatedLesson } from '../hooks/useRelatedContent';
 import type { ArticleHeading } from '../utils/articleHeadings';
 import { TableOfContents } from './TableOfContents';
+import { usePrefetchLesson } from '../hooks/usePrefetchLesson';
+
+// Egen komponent så hver lenke får sin egen prefetch-hook, som leksjonskortene.
+const RelatedArticleLink: React.FC<{ article: RelatedLesson }> = ({ article }) => {
+    const prefetchHandlers = usePrefetchLesson(article.url);
+    return (
+        <Link
+            to={article.url}
+            {...prefetchHandlers}
+            className="block py-2 px-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:border-indigo-200 hover:shadow-md hover:bg-slate-50 transition-all duration-300 group relative overflow-hidden"
+        >
+            <div className="absolute top-0 right-0 w-0.5 h-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="flex flex-col">
+                <span className="font-bold text-slate-700 group-hover:text-indigo-700 transition-colors text-sm truncate pr-2">
+                    {article.title}
+                </span>
+                {article.date && (
+                    <span className="text-[10px] text-slate-400 font-medium">{article.date}</span>
+                )}
+            </div>
+        </Link>
+    );
+};
 
 interface RichSidebarProps {
     details: string[];
@@ -246,26 +269,10 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
                         <ExpandableSection title="Relatert innhold" defaultOpen={true}>
                             <div className="space-y-3">
                                 {relatedArticles.map((article) => (
-                                    <Link
-                                        // url, ikke id: KRLE gjenbruker samme artikkel-id
-                                        // (overgangsriter, bonn, frelse ...) på tvers av
-                                        // religionene, så id-er kolliderer i denne lista.
-                                        key={article.url}
-                                        to={article.url}
-                                        className="block py-2 px-3 rounded-lg bg-white border border-slate-100 shadow-sm hover:border-indigo-200 hover:shadow-md hover:bg-slate-50 transition-all duration-300 group relative overflow-hidden"
-                                    >
-                                        <div className="absolute top-0 right-0 w-0.5 h-full bg-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                        <div className="flex flex-col">
-                                            <span className="font-bold text-slate-700 group-hover:text-indigo-700 transition-colors text-sm truncate pr-2">
-                                                {article.title}
-                                            </span>
-                                            {article.date && (
-                                                <span className="text-[10px] text-slate-400 font-medium">
-                                                    {article.date}
-                                                </span>
-                                            )}
-                                        </div>
-                                    </Link>
+                                    // url, ikke id: KRLE gjenbruker samme artikkel-id
+                                    // (overgangsriter, bonn, frelse ...) på tvers av
+                                    // religionene, så id-er kolliderer i denne lista.
+                                    <RelatedArticleLink key={article.url} article={article} />
                                 ))}
                             </div>
                         </ExpandableSection>

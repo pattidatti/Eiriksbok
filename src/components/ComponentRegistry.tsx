@@ -1,23 +1,23 @@
 import React, { lazy } from 'react';
 
-// Static imports for core/lightweight components (optional, but keep them here for now)
-import { GovernmentExplorer } from './GovernmentExplorer';
-import { HistoryLongLines } from './HistoryLongLines';
-import { Quiz } from './Quiz';
-import { EICSimulation } from './EICSimulation';
-import { FactBox } from './FactBox';
-import { TimelineComponent } from './TimelineComponent';
-import { PlotGraph } from './PlotGraph';
-import { QuoteBlock } from './QuoteBlock';
-import { Kildeliste } from './Kildeliste';
-import { Comparison } from './Comparison';
-import { WritingFix } from './WritingFix';
-import { LineChart } from './LineChart';
-import { EmperorStats } from './EmperorStats';
-import { LinkButton } from './tools/LinkButton';
-import { WaveMap } from './content/interactive/WaveMap';
-import { Gallery } from './Gallery';
-import { MapCarousel } from './MapCarousel';
+// Alle komponenter lastes ved behov. Artikler uten graf skal ikke betale for chart.js.
+const GovernmentExplorer = lazy(() => import('./GovernmentExplorer').then(m => ({ default: m.GovernmentExplorer })));
+const HistoryLongLines = lazy(() => import('./HistoryLongLines').then(m => ({ default: m.HistoryLongLines })));
+const Quiz = lazy(() => import('./Quiz').then(m => ({ default: m.Quiz })));
+const EICSimulation = lazy(() => import('./EICSimulation').then(m => ({ default: m.EICSimulation })));
+const FactBox = lazy(() => import('./FactBox').then(m => ({ default: m.FactBox })));
+const TimelineComponent = lazy(() => import('./TimelineComponent').then(m => ({ default: m.TimelineComponent })));
+const PlotGraph = lazy(() => import('./PlotGraph').then(m => ({ default: m.PlotGraph })));
+const QuoteBlock = lazy(() => import('./QuoteBlock').then(m => ({ default: m.QuoteBlock })));
+const Kildeliste = lazy(() => import('./Kildeliste').then(m => ({ default: m.Kildeliste })));
+const Comparison = lazy(() => import('./Comparison').then(m => ({ default: m.Comparison })));
+const WritingFix = lazy(() => import('./WritingFix').then(m => ({ default: m.WritingFix })));
+const LineChart = lazy(() => import('./LineChart').then(m => ({ default: m.LineChart })));
+const EmperorStats = lazy(() => import('./EmperorStats').then(m => ({ default: m.EmperorStats })));
+const LinkButton = lazy(() => import('./tools/LinkButton').then(m => ({ default: m.LinkButton })));
+const WaveMap = lazy(() => import('./content/interactive/WaveMap').then(m => ({ default: m.WaveMap })));
+const Gallery = lazy(() => import('./Gallery').then(m => ({ default: m.Gallery })));
+const MapCarousel = lazy(() => import('./MapCarousel').then(m => ({ default: m.MapCarousel })));
 
 // Lazy-loaded components for better performance
 // Interactive Content
