@@ -5899,6 +5899,23 @@
               ],
               "createdDate": "2026-05-23T03:22:54+02:00",
               "lastUpdated": "2026-08-01T06:03:21+02:00"
+            },
+            {
+              "id": "hugenottene",
+              "title": "Hugenottene: Troen som kongen kunne ta tilbake",
+              "description": "De franske protestantene fikk frihet av én konge og mistet den til en annen, helt til revolusjonen gjorde troen til en rettighet for alle.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "reformasjonen",
+                "frankrike",
+                "hugenotter",
+                "religionsfrihet",
+                "flyktninger",
+                "1500-tallet",
+                "1600-tallet"
+              ],
+              "createdDate": "2026-10-14T00:00:00Z"
             }
           ]
         },
