@@ -1,0 +1,380 @@
+{
+    "id": "store-spranget",
+    "tittel": "Det store spranget og kulturrevolusjonen",
+    "kilde": "/historie/kinas-historie/store-spranget",
+    "bilde": "/images/kinas-historie/store-spranget-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "gryta",
+            "kapittel": "Gryta",
+            "visual": { "type": "SprangetLandsby", "props": { "modus": "jern" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du er bonde i Kina i 1958. Du bor i en liten landsby, langt fra byene."
+                },
+                {
+                    "si": "En dag kommer partiets folk. De tar grytene, spaklene og knivene. Alt av jern."
+                },
+                {
+                    "si": "Jernet skal smeltes om til stål, i en enkel ovn i bakgården."
+                },
+                {
+                    "si": "Du lurer på hva familien skal lage mat i nå. Men du tør ikke spørre."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DET STORE SPRANGET",
+                    "undertittel": "og kulturrevolusjonen",
+                    "bilde": "/images/kinas-historie/store-spranget-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 15,
+                            "etikett": "år for å gå forbi Storbritannia",
+                            "fraBeat": 1
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne en plan ende i katastrofe?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette var Det store spranget fremover. Det var Mao Zedongs store plan for å gjøre Kina rikt og sterkt."
+                },
+                {
+                    "si": "Målet var å gå forbi Storbritannia i tung industri, som stål og maskiner, regnet per innbygger. Og det på bare 15 år."
+                },
+                {
+                    "si": "I stedet ble det en av de verste katastrofene i historien. I denne filmen skal vi finne ut hvorfor."
+                }
+            ]
+        },
+        {
+            "id": "kollektiv",
+            "kapittel": "Mao tar kontroll",
+            "visual": { "type": "SprangetLandsby", "props": { "modus": "kollektiv" } },
+            "replikker": [
+                {
+                    "si": "Kommunistpartiet tok makten i Kina i 1949. Lederen het Mao Zedong."
+                },
+                {
+                    "si": "Mao ville forme landet etter Sovjetunionen. Bøndene skulle ikke lenger eie sin egen jord."
+                },
+                {
+                    "si": "Gårdene ble slått sammen til kollektiver. Et kollektiv er en stor fellesgård der hundrevis av familier jobber sammen."
+                },
+                {
+                    "si": "Bøndene fikk ikke betalt i mat eller penger. De fikk poeng for arbeidet. Da var det lite som fikk folk til å slite hardt."
+                }
+            ]
+        },
+        {
+            "id": "ovnene",
+            "visual": { "type": "SprangetLandsby", "props": { "modus": "ovner" } },
+            "replikker": [
+                {
+                    "si": "I 1958 satte Mao i gang Det store spranget. Kina skulle bli et moderne industriland på rekordtid."
+                },
+                { "si": "Over hele landsbygda bygde folk små stålovner." },
+                { "si": "For å fyre i ovnene hogde de ned skogen." },
+                {
+                    "si": "Men stålet som kom ut, var nesten ubrukelig. Og mens bøndene passet ovnene, sto ingen på åkeren."
+                }
+            ]
+        },
+        {
+            "id": "loyn",
+            "kapittel": "Ingen turte",
+            "visual": { "type": "SprangetRapport", "props": { "modus": "kjede" } },
+            "replikker": [
+                {
+                    "si": "Målene var umulige å nå. Og det farligste var at ingen turte å si det."
+                },
+                {
+                    "si": "En lokal leder som meldte inn en liten avling, kunne bli stemplet som sabotør. Det betyr en som med vilje ødelegger for landet."
+                },
+                {
+                    "si": "Så lederne løy. På vei opp gjennom systemet ble avlingen meldt inn mye større enn den var."
+                },
+                { "si": "Til slutt fikk Mao i Beijing rapporter om rekordavlinger." }
+            ]
+        },
+        {
+            "id": "kornet",
+            "visual": { "type": "SprangetRapport", "props": { "modus": "korn" } },
+            "replikker": [
+                {
+                    "si": "Staten trodde på tallene. Når avlingen var så stor, kunne staten kreve mer korn."
+                },
+                { "si": "Kornet ble sendt til byene, og til andre land." },
+                {
+                    "si": "Men den store avlingen fantes bare på papiret. Igjen i landsbyen var det nesten ingenting."
+                },
+                {
+                    "si": "Folk spiste bark og gress. Til slutt var det ingenting igjen å spise."
+                }
+            ]
+        },
+        {
+            "id": "kurve",
+            "kapittel": "Hungersnøden",
+            "visual": { "type": "SprangetRapport", "props": { "modus": "kurve" } },
+            "replikker": [
+                {
+                    "si": "Se hvor mye korn Kina faktisk høstet. I 1958 var det rundt 200 millioner tonn."
+                },
+                { "si": "Året etter falt det til 170 millioner tonn." },
+                { "si": "I 1960 var det bare 143 millioner tonn." },
+                {
+                    "si": "Det tok mange år å komme seg. I 1963 var avlingen fortsatt mindre enn i 1958."
+                }
+            ]
+        },
+        {
+            "id": "sult",
+            "visual": { "type": "SprangetLandsby", "props": { "modus": "tom" } },
+            "replikker": [
+                {
+                    "si": "Mellom 1959 og 1961 rammet en hungersnød Kina. Det betyr at folk sultet i hele landet."
+                },
+                {
+                    "si": "Tørke og flom gjorde det verre. Men hovedårsaken var politikken."
+                },
+                { "si": "Familier mistet barna sine. Landsbyer ble tomme." },
+                {
+                    "si": "Ingen vet nøyaktig hvor mange som døde. Trolig var det titalls millioner. Anslagene starter på rundt 20 millioner, og noen er mye høyere."
+                },
+                {
+                    "si": "I Kina i dag er det fortsatt ikke lov å snakke fritt om dette."
+                }
+            ]
+        },
+        {
+            "id": "comeback",
+            "kapittel": "Mao slår tilbake",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Etter katastrofen",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Mao mister makt",
+                            "tekst": "i partiet",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Deng og Liu styrer",
+                            "tekst": "praktiske ledere",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Litt egen jord igjen",
+                            "tekst": "og maten kommer sakte tilbake",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Forrædere!",
+                            "tekst": "mener Mao, og slår tilbake",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Etter katastrofen mistet Mao noe av makten sin i partiet." },
+                {
+                    "si": "To andre ledere, Deng Xiaoping og Liu Shaoqi, tok over den daglige styringen."
+                },
+                {
+                    "si": "Bøndene fikk lov til å dyrke litt for seg selv igjen. Sakte kom produksjonen i gang."
+                },
+                {
+                    "si": "Men Mao så på Deng og Liu som forrædere. Han mente de ville føre kapitalismen tilbake. Det er et system der folk eier bedrifter og tjener penger selv."
+                }
+            ]
+        },
+        {
+            "id": "gardistene",
+            "kapittel": "Kulturrevolusjonen",
+            "visual": { "type": "SprangetKart", "props": { "modus": "garde" } },
+            "replikker": [
+                {
+                    "si": "I april 1966 satte Mao i gang kulturrevolusjonen. Gammel kultur skulle fjernes, og et nytt kommunistisk samfunn skulle bygges."
+                },
+                {
+                    "si": "Men det egentlige målet var å knuse motstanderne hans og få full kontroll igjen."
+                },
+                {
+                    "si": "Mao vendte seg rett til ungdommen. I mai 1966 dannet elever og studenter i Beijing de første gruppene av rødegardister."
+                },
+                {
+                    "si": "Bevegelsen spredte seg over hele landet. På det meste var rundt elleve millioner unge med."
+                },
+                {
+                    "si": "De fikk røde armbind og Maos lille røde, en bok med sitater fra Mao. Og de fikk makt."
+                }
+            ]
+        },
+        {
+            "id": "fire-gamle",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "De fire gamle",
+                    "punkter": [
+                        {
+                            "ikon": "hus",
+                            "tittel": "Gamle skikker",
+                            "tekst": "tradisjoner og høytider",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Gamle vaner",
+                            "tekst": "slik folk alltid hadde levd",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Gamle tenkemåter",
+                            "tekst": "alt som smakte av fortiden",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Gamle ideer",
+                            "tekst": "bøker, templer og statuer",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Rødegardistene ropte et slagord fra Mao selv: Det er riktig å gjøre opprør. De gikk løs på det de kalte de fire gamle. Gamle skikker var den første."
+                },
+                { "si": "Gamle vaner skulle også bort." },
+                { "si": "Det samme med gamle måter å tenke på." },
+                {
+                    "si": "Og gamle ideer. De stormet skoler og templer, brant bøker, knuste statuer og tømte bibliotekene."
+                }
+            ]
+        },
+        {
+            "id": "veggen",
+            "visual": { "type": "SprangetVegg", "props": { "modus": "angrep" } },
+            "replikker": [
+                {
+                    "si": "Angrepene rammet først godseiere, rike bønder og fabrikkeiere. Og folk med utdanning, som de kalte borgerlige intellektuelle."
+                },
+                {
+                    "si": "Senere ble også partimedlemmer anklaget, hvis de ble sett på som upålitelige."
+                },
+                {
+                    "si": "Rødegardistene hengte opp veggaviser. Det er store plakater på en vegg, med kritikk av navngitte mennesker."
+                },
+                {
+                    "si": "Lærere ble dratt ut av klasserommet. De måtte stå foran folkemengder som skrek anklager mot dem."
+                }
+            ]
+        },
+        {
+            "id": "leirene",
+            "visual": { "type": "SprangetKart", "props": { "modus": "leirer" } },
+            "replikker": [
+                {
+                    "si": "Leger, forfattere og kunstnere ble sendt til leirer på landsbygda. Der skulle de omskoleres, altså lære å tenke på nytt."
+                },
+                { "si": "Mange av dem overlevde ikke." },
+                {
+                    "si": "Selv presidenten i Kina, Liu Shaoqi, døde i fengsel i 1969 etter mishandling."
+                },
+                {
+                    "si": "Frykten gikk helt inn i familiene. Barn anklaget foreldrene sine. Det var tryggere å være lojal mot Mao enn mot sin egen familie."
+                }
+            ]
+        },
+        {
+            "id": "skolen",
+            "kapittel": "Den tapte generasjonen",
+            "visual": { "type": "SprangetVegg", "props": { "modus": "skole" } },
+            "replikker": [
+                { "si": "Universiteter og videregående skoler ble stengt i flere år." },
+                {
+                    "si": "En hel generasjon vokste opp uten ordentlig skolegang. De kalles den tapte generasjonen. Over hundre millioner mennesker ble rammet på en eller annen måte."
+                },
+                {
+                    "si": "Til slutt var landet i kaos. Fra august 1968 tvang myndighetene rødegardistene til å stoppe, med hæren i ryggen."
+                },
+                {
+                    "si": "Men kulturrevolusjonen var ikke over før i 1976. Kinas egne myndigheter kaller årene fra 1966 til 1976 for tiårskatastrofen."
+                }
+            ]
+        },
+        {
+            "id": "deng",
+            "kapittel": "Etter Mao",
+            "visual": { "type": "SprangetKart", "props": { "modus": "deng" } },
+            "replikker": [
+                {
+                    "si": "I september 1976 døde Mao. Kina var utmattet etter to store katastrofer på under 20 år."
+                },
+                {
+                    "si": "Bare uker senere ble Banden av fire arrestert. Det var de fire lederne som hadde drevet kulturrevolusjonen videre, med Maos kone Jiang Qing i spissen."
+                },
+                {
+                    "si": "Deng Xiaoping var blitt sendt til tvangsarbeid i 1967. Nå kom han tilbake. Fra desember 1978 var han Kinas mektigste mann."
+                },
+                {
+                    "si": "Han åpnet landet for handel. Men partiet skulle fortsatt bestemme over alt."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "En plan på papiret ble til sult for millioner.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Frykt fikk elever til å gå løs på lærerne sine.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Det farligste var at ingen turte å si sannheten.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det store spranget viser hvordan en plan på papiret kunne bli til sult for millioner."
+                },
+                {
+                    "si": "Kulturrevolusjonen viser hvordan frykt kunne få elever til å gå løs på lærerne sine, og barn på foreldrene."
+                },
+                {
+                    "si": "Og begge viser hva som skjer når ingen tør å si sannheten til den som har makten."
+                }
+            ]
+        }
+    ]
+}
