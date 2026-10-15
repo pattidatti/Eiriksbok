@@ -5,7 +5,7 @@
   "year": "1716-1727",
   "category": "Samemisjonen",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dansketiden/thomas-von-westen-hero.webp",
   "details": [
     "Thomas von Westen ledet den dansk-norske misjonen blant samene fra 1716 til han døde i 1727.",
     "Han prekte på samisk og startet skoler, men fikk også samene til å levere fra seg trommene sine.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/thomas-von-westen-01.webp",
       "alt": "Prest skriver brev ved et bord i et naust i Finnmark",
       "caption": "Thomas von Westen skrev mange brev og rapporter fra misjonsreisene sine. Mange av dem gikk tapt i bybranner i København."
     },
@@ -92,7 +92,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/thomas-von-westen-02.webp",
       "alt": "Samisk tromme med malte figurer på reinskinn",
       "caption": "De samiske trommene var viktige i den gamle troen. Mange av dem ble samlet inn eller brent under misjonen."
     },
@@ -149,7 +149,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/thomas-von-westen-03.webp",
       "alt": "Minneplate på steinvegg inne i Nidarosdomen",
       "caption": "Thomas von Westen ble gravlagt i Nidarosdomen. 200 år etter at han døde, fikk han en minneplate der."
     },
