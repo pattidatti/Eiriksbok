@@ -1,5 +1,5 @@
 {
-  "buildId": 161062746184088,
+  "buildId": 2385920814611,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2119,6 +2119,9 @@
     ],
     "store-nordiske-krig": [
       "content/historie/dansketiden/store-nordiske-krig.json"
+    ],
+    "thomas-von-westen": [
+      "content/historie/dansketiden/thomas-von-westen.json"
     ],
     "trelasthandelen": [
       "content/historie/dansketiden/trelasthandelen.json"
@@ -5584,6 +5587,7 @@
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
     "historie/dansketiden/pietismen": "content/historie/dansketiden/pietismen.json",
     "historie/dansketiden/store-nordiske-krig": "content/historie/dansketiden/store-nordiske-krig.json",
+    "historie/dansketiden/thomas-von-westen": "content/historie/dansketiden/thomas-von-westen.json",
     "historie/dansketiden/trelasthandelen": "content/historie/dansketiden/trelasthandelen.json",
     "historie/dekolonisering/amerikanske-borgerkrigen": "content/historie/dekolonisering/amerikanske-borgerkrigen.json",
     "historie/dekolonisering/apartheid-syd-afrika": "content/historie/dekolonisering/apartheid-syd-afrika.json",

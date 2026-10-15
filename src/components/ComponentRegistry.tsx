@@ -83,6 +83,7 @@ const Vennenettet = lazy(() => import('./content/interactive/Vennenettet').then(
 const Hoffbanen = lazy(() => import('./content/interactive/Hoffbanen').then(m => ({ default: m.Hoffbanen })));
 const Syforeningen = lazy(() => import('./content/interactive/Syforeningen').then(m => ({ default: m.Syforeningen })));
 const Toleransebarometeret = lazy(() => import('./content/interactive/Toleransebarometeret').then(m => ({ default: m.Toleransebarometeret })));
+const MisjonensToSider = lazy(() => import('./content/interactive/MisjonensToSider').then(m => ({ default: m.MisjonensToSider })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
 const Hvalregnskapet = lazy(() => import('./content/interactive/Hvalregnskapet').then(m => ({ default: m.Hvalregnskapet })));
 const KongensSegl = lazy(() => import('./content/interactive/KongensSegl').then(m => ({ default: m.KongensSegl })));
@@ -1040,6 +1041,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Hoffbanen,
     Syforeningen,
     Toleransebarometeret,
+    MisjonensToSider,
     BrentJord,
     Hvalregnskapet,
     KongensSegl,

@@ -3400,6 +3400,23 @@
                 "lekmannsbevegelse"
               ],
               "createdDate": "2026-10-11T00:00:00Z"
+            },
+            {
+              "id": "thomas-von-westen",
+              "title": "Thomas von Westen: Misjonæren som prekte på samisk og tok trommene",
+              "description": "Presten som ledet samemisjonen fra 1716 brukte samisk språk i kirke og skole, men fikk også samene til å gi fra seg trommene sine.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "norge",
+                "dansketiden",
+                "samer",
+                "misjon",
+                "samisk-religion",
+                "pietisme",
+                "1700-tallet"
+              ],
+              "createdDate": "2026-10-15T00:00:00Z"
             }
           ]
         },
