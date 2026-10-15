@@ -1,0 +1,379 @@
+{
+    "id": "thomas-von-westen",
+    "tittel": "Thomas von Westen: Misjonæren som prekte på samisk og tok trommene",
+    "kilde": "/historie/dansketiden/thomas-von-westen",
+    "bilde": "/images/dansketiden/thomas-von-westen-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "brevet",
+            "kapittel": "Brevet fra nord",
+            "visual": { "type": "WestenKart", "props": { "modus": "brev" } },
+            "replikker": [
+                {
+                    "si": "Hammerfest, 30. juli 1716. Helt nord i Norge sitter en prest og skriver et brev hjem.",
+                    "uttale": "Hammerfest, trettiende juli 1716. Helt nord i Norge sitter en prest og skriver et brev hjem."
+                },
+                { "si": "Det han har sett i Finnmark, skremmer ham." },
+                { "si": "Samene han har møtt, er døpt. De går til nattverd, der de får brød og vin i kirken." },
+                {
+                    "si": "Men mange av dem er også døpt på nytt av en noaide, en samisk religiøs leder. Da har de fått et nytt navn."
+                },
+                {
+                    "si": "Presten skriver at dette er forskrekkelig. Han heter Thomas von Westen, og han er sendt nordover for å gjøre noe med det."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "THOMAS VON WESTEN",
+                    "undertittel": "Misjonæren som prekte på samisk og tok trommene",
+                    "bilde": "/images/dansketiden/thomas-von-westen-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kan begge deler være sant?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om samemisjonen på 1700-tallet, og mannen som ledet den."
+                },
+                {
+                    "si": "Han var den første som tok samisk språk på alvor i kirken. Han var også mannen som fikk samene til å levere fra seg trommene sine."
+                },
+                { "si": "Begge deler er sant. I denne filmen skal vi se hvordan." }
+            ]
+        },
+        {
+            "id": "presten",
+            "kapittel": "En streng prest",
+            "visual": { "type": "WestenKart", "props": { "modus": "prest" } },
+            "replikker": [
+                {
+                    "si": "Thomas von Westen ble født i Trondheim i 1682. Han studerte teologi i København, altså læren om Gud og kristen tro."
+                },
+                {
+                    "si": "Så ble han prest i Romsdal. Han hørte til pietismen, en retning i kirken som krevde et strengt og rent liv."
+                },
+                {
+                    "si": "I 1713 gikk han sammen med andre prester i en gruppe som kalte seg Syvstjernen. De mente at kirken hadde sviktet samene i nord."
+                },
+                {
+                    "si": "Biskopen i Trondheim var skeptisk. Han syntes samene burde høre prekenen på dansk, ikke på samisk."
+                },
+                { "si": "Da skrev von Westen et brev rett til kongen, Frederik den fjerde." }
+            ]
+        },
+        {
+            "id": "kollegiet",
+            "visual": { "type": "WestenKart", "props": { "modus": "kollegiet" } },
+            "replikker": [
+                {
+                    "si": "Kongen likte planen. I 1714 opprettet han Misjonskollegiet."
+                },
+                { "si": "Det var et kontor som skulle styre misjonen. Misjon betyr å reise ut for å spre en tro." },
+                { "si": "Kontoret skulle drive misjon i India, på Grønland og blant samene." },
+                {
+                    "si": "Den 28. februar 1716 ble von Westen leder for misjonen blant samene. Han hadde ikke engang søkt på jobben.",
+                    "uttale": "Den tjueåttende februar 1716 ble von Westen leder for misjonen blant samene. Han hadde ikke engang søkt på jobben."
+                }
+            ]
+        },
+        {
+            "id": "troen",
+            "kapittel": "Hvorfor omvende samene?",
+            "visual": { "type": "WestenTromme", "props": { "modus": "tro" } },
+            "replikker": [
+                {
+                    "si": "Men hvorfor ville kongen omvende samene? Det betyr å få dem til å bytte tro."
+                },
+                { "si": "Samene var allerede døpt, men mange holdt fast på den gamle troen sin." },
+                {
+                    "si": "I den samiske troen var naturen full av liv. Fjell, steiner, kilder og sjøer kunne ha en åndelig kraft."
+                },
+                { "si": "Det fantes mange guder, som solguden Beaivi." },
+                {
+                    "si": "En noaide kunne få kontakt med gudene og åndene. Og et viktig redskap for noaiden var trommen."
+                }
+            ]
+        },
+        {
+            "id": "grensene",
+            "visual": { "type": "WestenKart", "props": { "modus": "grenser" } },
+            "replikker": [
+                {
+                    "si": "For en streng kristen prest var dette avgudsdyrkelse. Det betyr å tilbe falske guder."
+                },
+                { "si": "Men det handlet ikke bare om tro." },
+                {
+                    "si": "Langt nord var grensene mellom Danmark-Norge, Sverige og Russland lenge uklare. Hvem eide egentlig landet?"
+                },
+                {
+                    "si": "En prest var også kongens mann. Misjonen skulle gjøre samene lojale mot kongen."
+                }
+            ]
+        },
+        {
+            "id": "reisene",
+            "kapittel": "Prekener på samisk",
+            "visual": { "type": "WestenKart", "props": { "modus": "reiser" } },
+            "replikker": [
+                {
+                    "si": "Von Westen gjorde tre lange misjonsreiser nordover mellom 1716 og 1723."
+                },
+                { "si": "På de to første kom han helt til Øst-Finnmark." },
+                { "si": "Og han prekte på samisk, med stor innlevelse." },
+                {
+                    "si": "Det var nytt. Husk at biskopen hadde ment at samene skulle høre prekenen på dansk."
+                }
+            ]
+        },
+        {
+            "id": "skolen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Skole på samisk",
+                    "punkter": [
+                        {
+                            "ikon": "hus",
+                            "tittel": "Seminaret, 1717",
+                            "tekst": "skole i Trondheim for prester og lærere",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Isaac Olsen",
+                            "tekst": "lærer som oversatte til samisk",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Iver (17) og Sivert (23)",
+                            "tekst": "unge samer som ble lærere",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Ni gutter til, 1719",
+                            "tekst": "skulle læres opp på samme måte",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Egen skole",
+                            "tekst": "før de fleste andre i Norge",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Han satset også på skole. I 1717 fikk han ansvaret for et nytt seminar i Trondheim, en skole for prester og lærere."
+                },
+                {
+                    "si": "Med seg fra Finnmark hadde han læreren Isaac Olsen. Olsen kunne samisk, og nå skulle han oversette kristne tekster."
+                },
+                {
+                    "si": "Von Westen tok også med unge samer sørover. I 1716 fulgte Iver Paulsen, 17 år, og Sivert Henrichsen, 23 år, med til Trondheim."
+                },
+                {
+                    "si": "Begge ble senere lærere i Finnmark. I 1719 kom han hjem med ni samiske gutter til."
+                },
+                {
+                    "si": "Slik fikk samene sin egen skole før de fleste andre i Norge."
+                }
+            ]
+        },
+        {
+            "id": "to-sider",
+            "kapittel": "Trommene skal leveres",
+            "visual": { "type": "WestenToSider", "props": { "modus": "streng" } },
+            "replikker": [
+                {
+                    "si": "Huset hans i Trondheim sto åpent. Da den svenske hæren kom til Trøndelag i 1718, bodde sørsamer på flukt hjemme hos ham."
+                },
+                {
+                    "si": "Men von Westen var ikke mild. Han holdt strenge prekener om synd og straff."
+                },
+                {
+                    "si": "Han ville ha streng kirkelig tukt. Det betyr at kirken skulle straffe dem som ikke fulgte reglene."
+                },
+                {
+                    "si": "Store norske leksikon skriver at han ikke hadde problemer med å bruke harde og hensynsløse metoder."
+                }
+            ]
+        },
+        {
+            "id": "rana",
+            "visual": { "type": "WestenKart", "props": { "modus": "trommer" } },
+            "replikker": [
+                {
+                    "si": "Den tredje reisen, i 1722 og 1723, gikk fra Tromsø og sørover langs kysten."
+                },
+                { "si": "I Rana fikk han samene til å levere fra seg trommene sine." },
+                { "si": "Trommene ble samlet inn og sendt hele veien til København." }
+            ]
+        },
+        {
+            "id": "kassen",
+            "visual": { "type": "WestenTromme", "props": { "modus": "innsamling" } },
+            "replikker": [
+                {
+                    "si": "Nå ligger trommen, noaidens viktigste redskap, i en kasse på vei sørover."
+                },
+                {
+                    "si": "Misjonærene skrev ned det de visste om trommene, og de tegnet av symbolene på skinnet."
+                },
+                {
+                    "si": "De ødela også hellige steder i naturen, som sieidier. En sieidi er en hellig stein der folk ga gaver til kreftene i naturen."
+                },
+                {
+                    "si": "Alle måtte gå i kirken. De som fortsatte med de gamle ritualene, kunne bli straffet."
+                },
+                {
+                    "si": "Fram til 1814 sendte staten mer enn 130 misjonærer til de samiske områdene."
+                }
+            ]
+        },
+        {
+            "id": "brannen",
+            "kapittel": "Bålet i København",
+            "visual": { "type": "WestenTromme", "props": { "modus": "brann" } },
+            "replikker": [
+                {
+                    "si": "Flere hundre trommer forsvant fra samene på 1600- og 1700-tallet."
+                },
+                { "si": "Noen ble brent. Andre havnet i samlinger og på museer langt borte." },
+                {
+                    "si": "I 1728, året etter at von Westen døde, brant store deler av København."
+                },
+                {
+                    "si": "Brannen tok også huset til Misjonskollegiet. Rundt 100 trommer gikk opp i flammer."
+                },
+                {
+                    "si": "Mange av brevene og rapportene han selv skrev, brant også, i 1728 og i 1795."
+                }
+            ]
+        },
+        {
+            "id": "kildene",
+            "kapittel": "Kildene",
+            "visual": { "type": "WestenManuskript" },
+            "replikker": [
+                {
+                    "si": "Hvordan vet vi i dag hva samene trodde på før misjonen?"
+                },
+                {
+                    "si": "Det meste som ble skrevet ned den gangen, er skrevet av misjonærene selv. De skrev om alt de fant, for å bekjempe det."
+                },
+                {
+                    "si": "I januar 1723 besøkte von Westen presten Johan Randulf i Nærøy. Randulf skrev ned samtalen. Teksten kalles Nærøymanuskriptet."
+                },
+                {
+                    "si": "Den forklarer figurene på en tromme. Slik ble teksten en viktig kilde til samisk tro."
+                },
+                {
+                    "si": "Men misjonærene så på troen som noe ondt, og forsto den ofte dårlig. Randulf skrev at samene fanget og stekte små djevler. Det har aldri vært en samisk skikk."
+                },
+                {
+                    "si": "Og vi har nesten ingen tekster der samene selv forteller. Kildene viser troen med blikket til dem som ville få den bort."
+                }
+            ]
+        },
+        {
+            "id": "etterpa",
+            "kapittel": "Hva skjedde etterpå?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Etter von Westen",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "1727",
+                            "tekst": "dør, hele formuen brukt på misjonen",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Seminaret stenger",
+                            "tekst": "ny biskop vil ha dansk",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "1752",
+                            "tekst": "ny skole for samisk språk",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "1800-tallet",
+                            "tekst": "fornorsking",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Von Westen døde i Trondheim i 1727. Da hadde han brukt hele formuen sin på misjonen."
+                },
+                {
+                    "si": "Den nye biskopen ville at samene skulle få prekenen på dansk. Seminaret ble lagt ned noen år senere."
+                },
+                {
+                    "si": "I 1752 startet en ny skole for samisk språk i Trondheim. Der jobbet den første samen i Norge med høyere utdanning."
+                },
+                {
+                    "si": "Men etter hvert gikk kirken og staten over til norsk. På 1800-tallet ble det en bevisst politikk for å gjøre samene norske."
+                }
+            ]
+        },
+        {
+            "id": "minnet",
+            "visual": { "type": "WestenToSider", "props": { "modus": "minne" } },
+            "replikker": [
+                { "si": "I dag blir von Westen husket på to måter." },
+                {
+                    "si": "Han har blitt kalt samenes apostel. En apostel er en som reiser rundt og sprer troen. I 1927 hang Norges Samemisjon opp en minneplate over ham i Nidarosdomen."
+                },
+                { "si": "Samtidig er han et symbol på en misjon som tok fra samene troen deres." },
+                {
+                    "si": "Han gikk foran, fordi han forsto at samisk språk var viktig. Men metodene hans var svært brutale."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "To sider",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Han ga samene språket i kirken.", "fraBeat": 0 },
+                        { "tekst": "Og han tok trommene fra dem.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Du trenger ikke velge.", "fraBeat": 1 },
+                        { "tekst": "Begge deler er sant.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Hvem skrev kilden?", "fraBeat": 2 },
+                        { "tekst": "Og hva ville de?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Von Westen ga samene språket sitt i kirken. Og han tok trommene fra dem."
+                },
+                {
+                    "si": "Du trenger ikke velge mellom de to bildene. En historie kan ha to sider som begge er sanne."
+                },
+                {
+                    "si": "Og når du leser en gammel kilde, spør alltid: Hvem skrev den, og hva ville de?"
+                }
+            ]
+        }
+    ]
+}
