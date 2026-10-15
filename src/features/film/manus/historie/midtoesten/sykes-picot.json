@@ -1,0 +1,269 @@
+{
+    "id": "sykes-picot",
+    "tittel": "Sykes-Picot: Da Vesten tegnet Midtøstens kart",
+    "kilde": "/historie/midtoesten/sykes-picot",
+    "bilde": "/images/midtoesten/sykes-picot-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "bordet",
+            "kapittel": "En linjal og et kart",
+            "visual": { "type": "SykesPicotBordet", "props": { "modus": "tegn" } },
+            "replikker": [
+                { "si": "Tenk deg et rom i 1916. På bordet ligger et stort kart." },
+                {
+                    "si": "To menn bøyer seg over kartet: briten Mark Sykes og franskmannen Georges-Picot. Begge er diplomater, folk som forhandler for landet sitt."
+                },
+                { "si": "De har en blyant og en linjal." },
+                { "si": "Med noen få streker deler de et stort område mellom seg." },
+                {
+                    "si": "Linjene de trakk, finnes fortsatt. Og de er en del av grunnen til at det er krig og splittelse i Midtøsten i dag."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SYKES-PICOT",
+                    "undertittel": "Da Vesten tegnet Midtøstens kart",
+                    "bilde": "/images/midtoesten/sykes-picot-hero.webp",
+                    "sporsmal": { "tekst": "Hvem fikk bestemme over Midtøsten?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Avtalen deres kalles Sykes-Picot, etter de to mennene." },
+                {
+                    "si": "Hvordan kunne to europeere tegne grensene for millioner av mennesker som bodde langt unna? Det skal vi finne ut nå."
+                }
+            ]
+        },
+        {
+            "id": "osmansk",
+            "kapittel": "Et rike faller",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "osmansk" } },
+            "replikker": [
+                {
+                    "si": "Før 1. verdenskrig var Midtøsten en del av Det osmanske riket. Riket hadde styrt der i hundrevis av år."
+                },
+                { "si": "Det strakte seg fra dagens Tyrkia, gjennom hele Midtøsten og ned til Arabia." },
+                {
+                    "si": "Her bodde arabere, kurdere, armenere og jøder. Kristne og muslimer levde side om side."
+                },
+                {
+                    "si": "Men det fantes ikke noe land som het Irak eller Syria. Det fantes bare provinser, en slags fylker i det store riket."
+                }
+            ]
+        },
+        {
+            "id": "krigen",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "krig" } },
+            "replikker": [
+                { "si": "I 1914 brøt 1. verdenskrig ut." },
+                { "si": "Osmanerne valgte side. De gikk sammen med Tyskland og Østerrike-Ungarn." },
+                { "si": "På den andre siden sto Storbritannia og Frankrike." },
+                {
+                    "si": "Det skulle vise seg å bli et dyrt valg. Britene så en sjanse: Kunne de få araberne til å gjøre opprør mot osmanerne?"
+                }
+            ]
+        },
+        {
+            "id": "lofte",
+            "kapittel": "Løftet til araberne",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "lofte" } },
+            "replikker": [
+                {
+                    "si": "Mellom 1915 og 1916 sendte briten Henry McMahon brev til Husain bin Ali, en mektig leder i Mekka."
+                },
+                {
+                    "si": "Løftet i brevene var enkelt. Kjemp mot osmanerne, så får dere egne stater og styre dere selv etter krigen."
+                },
+                { "si": "Husain trodde på løftet. I 1916 startet han det store arabiske opprøret." },
+                {
+                    "si": "Tusenvis av arabiske krigere kjempet mot osmanerne. Noen ganger sammen med briten T.E. Lawrence, kjent som Lawrence av Arabia.",
+                    "uttale": "Tusenvis av arabiske krigere kjempet mot osmanerne. Noen ganger sammen med briten T. E. Lawrence, kjent som Lawrence av Arabia."
+                },
+                { "si": "Araberne vant slag etter slag. De trodde de kjempet for sin egen framtid." }
+            ]
+        },
+        {
+            "id": "avtalen",
+            "kapittel": "Den hemmelige avtalen",
+            "visual": { "type": "SykesPicotBordet", "props": { "modus": "deling" } },
+            "replikker": [
+                {
+                    "si": "Men mens araberne kjempet i ørkenen, møttes Sykes og Picot i all hemmelighet."
+                },
+                {
+                    "si": "I mai 1916 ble de enige. Når osmanerne har tapt, deler Storbritannia og Frankrike Midtøsten mellom seg."
+                },
+                { "si": "Frankrike skulle få Syria og Libanon." },
+                { "si": "Storbritannia skulle få Irak og Palestina." },
+                { "si": "Og araberne, som var lovet å styre seg selv? De ble ikke spurt." }
+            ]
+        },
+        {
+            "id": "balfour",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "balfour" } },
+            "replikker": [
+                { "si": "I 1917 kom enda et løfte. Denne gangen til en helt annen gruppe." },
+                {
+                    "si": "Den britiske utenriksministeren Arthur Balfour skrev et brev til Lord Rothschild. Han var en leder i den sionistiske bevegelsen, som ville ha et eget hjemland for jødene."
+                },
+                { "si": "I brevet lovet Balfour at Storbritannia skulle støtte et jødisk hjemland i Palestina." },
+                {
+                    "si": "Men i Palestina bodde det allerede folk. Arabere, jøder og kristne hadde bodd der i generasjoner."
+                }
+            ]
+        },
+        {
+            "id": "tre-lofter",
+            "visual": { "type": "SykesPicotBrev" },
+            "replikker": [
+                { "si": "Se på de tre løftene britene ga på bare noen få år." },
+                { "si": "Til araberne: Dere skal få styre dere selv." },
+                { "si": "Til franskmennene: Vi deler Midtøsten mellom oss." },
+                { "si": "Til jødene: Dere skal få et hjemland i Palestina." },
+                {
+                    "si": "Alle tre handlet delvis om det samme området. Palestina var nå lovet bort to ganger."
+                }
+            ]
+        },
+        {
+            "id": "mandat",
+            "kapittel": "Mandatene",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "mandat" } },
+            "replikker": [
+                { "si": "I 1918 var krigen over, og osmanerne hadde tapt." },
+                {
+                    "si": "På store møter i Paris i 1919 og i San Remo i 1920 ble den hemmelige planen gjort til virkelighet."
+                },
+                {
+                    "si": "Det nye Folkeforbundet, et samarbeid mellom landene etter krigen, laget noe som het mandater."
+                },
+                {
+                    "si": "Et mandat betydde at et europeisk land skulle styre området. Egentlig var det kolonistyre, at et fremmed land bestemmer over deg."
+                },
+                {
+                    "si": "Storbritannia fikk Irak og Palestina. Frankrike fikk Syria og Libanon. Araberne, som hadde kjempet for friheten sin, fikk ingenting."
+                }
+            ]
+        },
+        {
+            "id": "irak",
+            "kapittel": "Grenser uten logikk",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "irak" } },
+            "replikker": [
+                { "si": "Da linjene ble trukket, brydde ingen seg om hvem som faktisk bodde der." },
+                {
+                    "si": "Ta Irak. I sør bodde sjiamuslimer. Sjia og sunni er de to største retningene i islam."
+                },
+                { "si": "I midten bodde sunnimuslimer." },
+                { "si": "Og i nord bodde kurdere." },
+                {
+                    "si": "De hadde ulike språk og ulike tradisjoner. De hadde aldri styrt seg selv som ett folk. Nå ble de presset inn i én stat."
+                }
+            ]
+        },
+        {
+            "id": "europa",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "europa" } },
+            "replikker": [
+                { "si": "Tenk deg at det samme skjedde her i Europa." },
+                { "si": "Noen tar nordmenn, franskmenn og grekere, og setter dem sammen i én stat." },
+                { "si": "Så sier de: Dette er nå ett land. Kall det hva dere vil." }
+            ]
+        },
+        {
+            "id": "kurdere",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "kurdere" } },
+            "replikker": [
+                { "si": "Kurderne ble rammet ekstra hardt." },
+                {
+                    "si": "De er en av de største folkegruppene i verden som ikke har sitt eget land."
+                },
+                {
+                    "si": "Området der kurderne bodde, ble delt mellom fire land: Tyrkia, Irak, Syria og Iran."
+                },
+                { "si": "Kampen deres for å styre seg selv preger Midtøsten fortsatt i dag." }
+            ]
+        },
+        {
+            "id": "arv",
+            "kapittel": "Arven",
+            "visual": { "type": "SykesPicotKart", "props": { "modus": "arv" } },
+            "replikker": [
+                {
+                    "si": "Mange av de vanskeligste konfliktene i Midtøsten har røtter i årene fra 1916 til 1923."
+                },
+                { "si": "I Irak ble sjia, sunni og kurdere tvunget sammen, uten at noen spurte dem." },
+                {
+                    "si": "Grensene til Syria ble trukket for å passe franskmennene, ikke folket som bodde der."
+                },
+                {
+                    "si": "I Libanon måtte kristne, sjiamuslimer og sunnimuslimer dele på makta. Det har flere ganger endt i borgerkrig."
+                },
+                {
+                    "si": "Og konflikten om Palestina startet med de løftene britene ga mellom 1915 og 1917, løfter som ikke kunne holdes samtidig."
+                }
+            ]
+        },
+        {
+            "id": "skyld",
+            "visual": { "type": "SykesPicotBordet", "props": { "modus": "arv" } },
+            "replikker": [
+                {
+                    "si": "Staten Israel ble opprettet i 1948. Men striden om landet startet tretti år før, med en linjal og et kart."
+                },
+                {
+                    "si": "Noen historikere mener at Sykes-Picot får for mye skyld. Problemene i Midtøsten har mange årsaker."
+                },
+                { "si": "Det stemmer. Grenser forteller aldri hele historien." },
+                {
+                    "si": "Men tenk om folkene selv hadde fått tegne grensene. Ville Irak, Syria og Libanon hatt like mange konflikter da?"
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "To diplomater. En linjal. Et kart.", "fraBeat": 0 },
+                        {
+                            "tekst": "Millioner av mennesker ble aldri spurt.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        { "tekst": "Tre løfter om det samme landet.", "fraBeat": 1 },
+                        {
+                            "tekst": "De kunne ikke holdes samtidig.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Linjene står der fortsatt.", "fraBeat": 2 },
+                        {
+                            "tekst": "Folk i Midtøsten lever med følgene i dag.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "To europeiske diplomater tegnet linjer på et kart. Millioner av mennesker som bodde der, ble aldri spurt."
+                },
+                {
+                    "si": "Britene ga tre løfter om det samme landet. Det var umulig å holde dem alle samtidig."
+                },
+                {
+                    "si": "Grensene står der fortsatt. Og det er folkene i Midtøsten som lever med følgene."
+                }
+            ]
+        }
+    ]
+}
