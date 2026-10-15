@@ -1,0 +1,323 @@
+{
+    "id": "kina-supermakt",
+    "tittel": "Kina som supermakt",
+    "kilde": "/historie/kinas-historie/kina-supermakt",
+    "bilde": "/images/kinas-historie/kina-supermakt-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "havn",
+            "kapittel": "Verdens fabrikk",
+            "visual": { "type": "SupermaktHavn", "props": { "modus": "havn" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg en havn i Kina. Kranene løfter container etter container om bord i et gigantisk skip."
+                },
+                {
+                    "si": "I containerne ligger mobiltelefoner, klær og møbler. Alt skal ut til butikker over hele verden."
+                },
+                { "si": "Omtrent en tredjedel av alle varene verden lager, kommer fra Kina." },
+                {
+                    "si": "For ikke så lenge siden var Kina et fattig land som sydde billige T-skjorter. Nå er det en supermakt."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KINA SOM SUPERMAKT",
+                    "undertittel": "Fra verdens fabrikk til rival til USA",
+                    "bilde": "/images/kinas-historie/kina-supermakt-hero.webp",
+                    "tall": [
+                        { "verdi": 200, "etikett": "ganger så mange som i Norge", "fraBeat": 0 },
+                        {
+                            "verdi": 400,
+                            "etikett": "millioner ut av fattigdom",
+                            "fraBeat": 1,
+                            "tone": "gronn"
+                        }
+                    ],
+                    "sporsmal": { "tekst": "Hvordan skjedde det så fort?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kina har 1,4 milliarder innbyggere. Det er nesten 200 ganger så mange som i Norge.",
+                    "uttale": "Kina har en komma fire milliarder innbyggere. Det er nesten to hundre ganger så mange som i Norge."
+                },
+                { "si": "Siden 1980 har over 400 millioner kinesere kommet seg ut av fattigdom." },
+                {
+                    "si": "Hvordan kunne det skje så fort? Og hva betyr det for resten av verden?"
+                }
+            ]
+        },
+        {
+            "id": "wto",
+            "visual": { "type": "SupermaktKart", "props": { "modus": "verden" } },
+            "replikker": [
+                {
+                    "si": "Alt endret seg i desember 2001. Da ble Kina med i Verdens handelsorganisasjon, WTO."
+                },
+                {
+                    "si": "WTO er en klubb av land som skal gjøre handel lettere. Nå fikk kinesiske varer mye lettere vei ut i verden."
+                },
+                {
+                    "si": "Utenlandske selskaper strømmet til Kina for å bygge fabrikker. Lønningene var lave, og arbeiderne var mange."
+                },
+                {
+                    "si": "Snart ble Kina kalt verdens fabrikk. Stedet der alt fra mobiltelefoner til møbler blir laget."
+                }
+            ]
+        },
+        {
+            "id": "byene",
+            "visual": { "type": "SupermaktHavn", "props": { "modus": "by" } },
+            "replikker": [
+                {
+                    "si": "Fabrikkene trengte arbeidere. Hundrevis av millioner kinesere flyttet fra landsbygda til byene."
+                },
+                {
+                    "si": "I 1990 bodde 75 prosent av folket på landet. Det er tre av fire."
+                },
+                { "si": "I 2023 var det bare 35 prosent. Litt over én av tre." },
+                {
+                    "si": "Det ble bygd skyskrapere, motorveier og høyhastighetstog. Landet forandret seg på bare noen tiår."
+                },
+                {
+                    "si": "En hel generasjon vokste opp med bedre mat og bedre skole enn foreldrene hadde hatt."
+                }
+            ]
+        },
+        {
+            "id": "energi",
+            "visual": { "type": "SupermaktHavn", "props": { "modus": "energi" } },
+            "replikker": [
+                { "si": "Alle fabrikkene og byene trenger strøm. Veldig mye strøm." },
+                {
+                    "si": "Ingen land lager mer strøm av vannkraft enn Kina. Det vil si strøm fra vann som renner gjennom en demning."
+                },
+                { "si": "Kina er også størst på vindkraft og solkraft." },
+                {
+                    "si": "Rundt 30 prosent av all vannkraft, vindkraft og solkraft i verden lages i Kina."
+                }
+            ]
+        },
+        {
+            "id": "xi",
+            "kapittel": "Xi Jinping",
+            "visual": { "type": "SupermaktTid", "props": { "modus": "xi" } },
+            "replikker": [
+                {
+                    "si": "I 2012 fikk Kina en ny leder, Xi Jinping. Han ble sjef for kommunistpartiet, partiet som styrer Kina. I 2013 ble han president.",
+                    "uttale": "I 2012 fikk Kina en ny leder, Sji Jinping. Han ble sjef for kommunistpartiet, partiet som styrer Kina. I 2013 ble han president."
+                },
+                {
+                    "si": "Xi snakket om Kinas drøm. For vanlige folk betydde det å komme seg ut av fattigdom og inn i middelklassen, altså få en trygg jobb og et godt liv.",
+                    "uttale": "Sji snakket om Kinas drøm. For vanlige folk betydde det å komme seg ut av fattigdom og inn i middelklassen, altså få en trygg jobb og et godt liv."
+                },
+                {
+                    "si": "For landet betydde det å gå fra fattig land til en stadig rikere supermakt."
+                }
+            ]
+        },
+        {
+            "id": "makt",
+            "visual": { "type": "SupermaktTid", "props": { "modus": "makt" } },
+            "replikker": [
+                {
+                    "si": "Men Xi har også strammet grepet. Aviser og internett blir sensurert. Det betyr at staten bestemmer hva folk får lese.",
+                    "uttale": "Men Sji har også strammet grepet. Aviser og internett blir sensurert. Det betyr at staten bestemmer hva folk får lese."
+                },
+                { "si": "Den som kritiserer regjeringen, må holde munn eller havner i fengsel." },
+                {
+                    "si": "Før kunne en president bare sitte i to perioder. Den regelen hadde Deng Xiaoping, en tidligere leder i Kina, innført.",
+                    "uttale": "Før kunne en president bare sitte i to perioder. Den regelen hadde Deng Siaoping, en tidligere leder i Kina, innført."
+                },
+                {
+                    "si": "I 2018 ble grensen fjernet. Nå kan Xi i praksis sitte resten av livet.",
+                    "uttale": "I 2018 ble grensen fjernet. Nå kan Sji i praksis sitte resten av livet."
+                },
+                {
+                    "si": "Det gjør ham til den mektigste lederen siden Mao, som styrte Kina fra 1949 til han døde i 1976."
+                }
+            ]
+        },
+        {
+            "id": "silkevei",
+            "kapittel": "Den nye silkeveien",
+            "visual": { "type": "SupermaktKart", "props": { "modus": "silkevei" } },
+            "replikker": [
+                {
+                    "si": "I 2013 startet Xi et enormt prosjekt. Det heter Belte og vei, og blir ofte kalt den nye silkeveien.",
+                    "uttale": "I 2013 startet Sji et enormt prosjekt. Det heter Belte og vei, og blir ofte kalt den nye silkeveien."
+                },
+                {
+                    "si": "Kina bygger havner, jernbaner, veier, broer og kraftverk i andre land."
+                },
+                {
+                    "si": "Det skjer i Asia, Afrika og Latin-Amerika, og helt inn i Europa. Over 140 land er med."
+                },
+                {
+                    "si": "Kina låner ut penger og sender ingeniører. Til gjengjeld får kinesiske selskaper jobbene, og Kina får makt."
+                }
+            ]
+        },
+        {
+            "id": "gjeldsfelle",
+            "visual": { "type": "SupermaktKart", "props": { "modus": "srilanka" } },
+            "replikker": [
+                {
+                    "si": "Tilhengerne sier at fattige land får veier og havner som de ikke har råd til selv."
+                },
+                {
+                    "si": "Kritikerne advarer mot en gjeldsfelle. Et land som ikke klarer å betale tilbake, kan miste kontrollen over viktige havner."
+                },
+                {
+                    "si": "Det skjedde på Sri Lanka. Landet greide ikke å betale tilbake et stort lån, et milliardlån."
+                },
+                {
+                    "si": "I 2017 gikk Sri Lanka med på å leie ut havnen i Hambantota til Kina. I 99 år."
+                },
+                {
+                    "si": "Kina sier at dette ikke er noen felle. Kina viser til at det har slettet gjeld for fattige land."
+                }
+            ]
+        },
+        {
+            "id": "taiwan",
+            "kapittel": "Taiwan og Hong Kong",
+            "visual": { "type": "SupermaktKart", "props": { "modus": "taiwan" } },
+            "replikker": [
+                {
+                    "si": "Sørøst for det kinesiske fastlandet ligger øya Taiwan. Der bor 23,4 millioner mennesker.",
+                    "uttale": "Sørøst for det kinesiske fastlandet ligger øya Taiwan. Der bor tjuetre komma fire millioner mennesker."
+                },
+                {
+                    "si": "Taiwan har frie valg. Presidenten velges for fire år, og kan bare velges på nytt én gang."
+                },
+                {
+                    "si": "Kina mener at Taiwan er en del av Kina. Men Taiwan ser seg selv som et eget land."
+                },
+                {
+                    "si": "USA selger våpen til Taiwan. Striden mellom Kina, Taiwan og USA er en av de farligste i verden."
+                }
+            ]
+        },
+        {
+            "id": "hongkong",
+            "visual": { "type": "SupermaktTid", "props": { "modus": "hongkong" } },
+            "replikker": [
+                {
+                    "si": "Hong Kong var en britisk koloni fra 1841. Det betyr at byen ble styrt av Storbritannia."
+                },
+                {
+                    "si": "Den første juli 1997 fikk Kina byen tilbake. Kina lovet at Hong Kong skulle få styre mye selv i 50 år."
+                },
+                {
+                    "si": "Ett land, to systemer, kalte de det. Hong Kong skulle ha sin egen økonomi og sine egne domstoler."
+                },
+                {
+                    "si": "I 2019 gikk store mengder folk ut i gatene. De protesterte mot en ny lov om utlevering, altså å sende mistenkte ut av Hong Kong."
+                },
+                {
+                    "si": "I 2020 vedtok Kina en sikkerhetslov. Mange frykter at frihetene i Hong Kong smuldrer bort."
+                }
+            ]
+        },
+        {
+            "id": "huawei",
+            "kapittel": "Teknologikrigen",
+            "visual": { "type": "SupermaktBrikke", "props": { "modus": "nett" } },
+            "replikker": [
+                { "si": "USA og Kina kjemper ikke med våpen. De kjemper om teknologi." },
+                {
+                    "si": "Det kinesiske selskapet Huawei er blant de beste i verden på 5G. Det er teknologien som gjør mobilnettet superraskt.",
+                    "uttale": "Det kinesiske selskapet Huawei er blant de beste i verden på fem G. Det er teknologien som gjør mobilnettet superraskt."
+                },
+                {
+                    "si": "Huawei har levert utstyr til mobilnettet i blant annet Norge, Sverige og Nederland."
+                },
+                {
+                    "si": "Men USA mener at Huawei kan spionere for den kinesiske staten. USA presser andre land til å holde utstyret ute."
+                }
+            ]
+        },
+        {
+            "id": "brikker",
+            "visual": { "type": "SupermaktBrikke", "props": { "modus": "brikke" } },
+            "replikker": [
+                {
+                    "si": "Den viktigste kampen handler om halvledere. Det er bittesmå brikker som sitter inni all elektronikk."
+                },
+                {
+                    "si": "Uten de beste brikkene kan du ikke bygge de kraftigste datamaskinene. Dem trenger man til kunstig intelligens og til militæret."
+                },
+                {
+                    "si": "Derfor har USA forbudt å selge de mest avanserte brikkene til Kina."
+                },
+                {
+                    "si": "Kina svarer med å bruke enorme summer på å lage sine egne. Den som vinner, kan få mest makt i mange år framover."
+                }
+            ]
+        },
+        {
+            "id": "midten",
+            "kapittel": "Midtens rike",
+            "visual": { "type": "SupermaktTid", "props": { "modus": "historie" } },
+            "replikker": [
+                {
+                    "si": "For å forstå Kina må vi se langt tilbake. I hundrevis av år var Kina verdens mektigste rike."
+                },
+                { "si": "Kineserne fant opp papiret, trykkekunsten og kruttet." },
+                {
+                    "si": "De kalte landet sitt Zhongguo, Midtens rike. De trodde de bodde i sentrum av verden.",
+                    "uttale": "De kalte landet sitt Tsjong-guo, Midtens rike. De trodde de bodde i sentrum av verden."
+                },
+                {
+                    "si": "Så kom hundre år med ydmykelse, altså å bli gjort liten. Opiumskrigene på 1800-tallet, Japan som invaderte på 1930-tallet, og borgerkrig.",
+                    "uttale": "Så kom hundre år med ydmykelse, altså å bli gjort liten. Opiumskrigene på attenhundretallet, Japan som invaderte på nittentrettitallet, og borgerkrig."
+                },
+                {
+                    "si": "Kinas drøm handler om å komme tilbake dit de mener de alltid hørte hjemme. I sentrum av verden."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ett tyngdepunkt?", "fraBeat": 0 },
+                        { "tekst": "Ikke lenger.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "To giganter:", "fraBeat": 1 },
+                        { "tekst": "USA og Kina.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Partner i klimakampen.", "fraBeat": 2 },
+                        {
+                            "tekst": "Rival om teknologi og makt.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        { "tekst": "Hvem som vinner,", "fraBeat": 3 },
+                        { "tekst": "påvirker alle land på jorda.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For Norge og andre små land betyr dette at verden ikke lenger har ett tyngdepunkt."
+                },
+                { "si": "To giganter, USA og Kina, konkurrerer om å forme framtiden." },
+                {
+                    "si": "Kina er en partner når verden skal kjempe mot klimaendringene. Og en konkurrent om teknologi og makt."
+                },
+                {
+                    "si": "Hvem som vinner, og på hvilke vilkår, vil påvirke alle land på jorda. Også Norge."
+                }
+            ]
+        }
+    ]
+}
