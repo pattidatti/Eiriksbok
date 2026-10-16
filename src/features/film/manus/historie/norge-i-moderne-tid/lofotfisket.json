@@ -1,0 +1,219 @@
+{
+    "id": "lofotfisket",
+    "tittel": "Lofotfisket: Tusen år med skrei",
+    "kilde": "/historie/norge-i-moderne-tid/lofotfisket",
+    "bilde": "/images/norge-i-moderne-tid/lofotfisket-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "trollfjorden",
+            "kapittel": "Trollfjorden",
+            "visual": { "type": "LofotfisketFjorden", "props": { "modus": "slaget" } },
+            "replikker": [
+                { "si": "Trollfjorden i Lofoten, den sjette mars 1890. Fjorden er trang, og den er full av torsk." },
+                { "si": "Men tvers over fjorden henger en not, et kjempestort nett. Den stenger alle andre ute." },
+                { "si": "Det er eierne av noen dampskip. De vil ha fisken for seg selv." },
+                { "si": "Utenfor ligger mange små båter. Så går det løs. Flere tusen fiskere bryter gjennom sperringen." },
+                { "si": "Mannskapet på dampskipene sprøyter vann på dem med slanger. Men fiskerne vinner, og drar av gårde med store fangster." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "LOFOTFISKET",
+                    "undertittel": "Tusen år med skrei",
+                    "bilde": "/images/norge-i-moderne-tid/lofotfisket-hero.webp",
+                    "tall": [{ "verdi": 32000, "etikett": "fiskere i 1896", "fraBeat": 1 }],
+                    "sporsmal": { "tekst": "Hvorfor sloss de om én liten fjord?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Lofotfisket, et av de eldste fiskeriene i Norge." },
+                { "si": "Det har gitt mat og penger til folk langs hele kysten. I 1896 var hele 32 000 fiskere med." },
+                { "si": "Men hvorfor sloss tusenvis av menn om én liten fjord? Svaret er en fisk." }
+            ]
+        },
+        {
+            "id": "skrei",
+            "kapittel": "Fisken",
+            "visual": { "type": "LofotfisketKart", "props": { "modus": "skrei" } },
+            "replikker": [
+                { "si": "Fisken heter skrei. Skrei er torsk som lever store deler av livet i Barentshavet, nord for Norge." },
+                { "si": "Når torsken er voksen, svømmer den sørover langs kysten for å gyte, altså legge egg." },
+                { "si": "Skreien gyter mange steder mellom Haugesund og Finnmark. Men det meste gyter ved Lofoten og Vesterålen." },
+                { "si": "De fleste kommer inn i Vestfjorden, på innsiden av Lofoten, i februar og mars." },
+                { "si": "Eggene og de små larvene driver med havstrømmen tilbake til Barentshavet. Slik går det i ring, år etter år." },
+                { "si": "For folk langs kysten var det som en gave: en enorm matkilde som svømte rett inn til dem." }
+            ]
+        },
+        {
+            "id": "hjell",
+            "kapittel": "Tørrfisken",
+            "visual": { "type": "LofotfisketFjorden", "props": { "modus": "hjell" } },
+            "replikker": [
+                { "si": "Men torsk råtner fort. Hva gjør du da?" },
+                { "si": "I Lofoten fant folk en løsning tidlig. De hengte fisken opp på store stativ av tre. De kalles hjeller." },
+                { "si": "Vinden og kulda tørket fisken, så den ikke råtnet. Den kunne lagres lenge. Det ble tørrfisk." },
+                { "si": "Ordet torsk kommer faktisk av et gammelt norrønt ord som betyr tørrfisk." }
+            ]
+        },
+        {
+            "id": "handel",
+            "visual": { "type": "LofotfisketKart", "props": { "modus": "handel" } },
+            "replikker": [
+                { "si": "Tørrfisken tålte lange reiser, og den ble en av de viktigste varene Norge solgte." },
+                { "si": "På 1300-tallet var over 80 prosent av alt Norge solgte til utlandet, tørrfisk. Tenk deg: åtte av ti varer var tørket torsk." },
+                { "si": "Kong Håkon Håkonsson bestemte at handelen fra Nord-Norge skulle gå gjennom Bergen. Utlendinger fikk ikke seile lenger nord." },
+                { "si": "Derfor fraktet nordlendingene fisken sørover på store fraktbåter. De kaltes jekter." },
+                { "si": "Mot slutten av middelalderen gikk det mer enn 200 jekter mellom Nord-Norge og Bergen." },
+                { "si": "Fra 1300-tallet til 1754 solgte hanseatene, tyske kjøpmenn i Bergen, fisken videre ut i Europa." }
+            ]
+        },
+        {
+            "id": "rorbu",
+            "kapittel": "Livet på fisket",
+            "visual": { "type": "LofotfisketFjorden", "props": { "modus": "rorbu" } },
+            "replikker": [
+                { "si": "Etter jul seilte gutter og menn til Lofoten fra hele kysten." },
+                { "si": "Familien hadde fylt lofotkista, en stor trekiste med ullklær, votter, flatbrød og annen mat." },
+                { "si": "Kona ble igjen hjemme med gården, dyrene, barna og de gamle. Altfor mange menn kom aldri hjem igjen." },
+                { "si": "I Lofoten bodde fiskerne i rorbuer, enkle hus ved sjøen." },
+                { "si": "Båten var en nordlandsbåt, en lett trebåt som man både rodde og seilte." },
+                { "si": "Fra 1500-tallet til slutten av 1800-tallet ble nesten all torsk i Norge fisket fra slike båter. Mellom 85 og 90 prosent." }
+            ]
+        },
+        {
+            "id": "redskap",
+            "visual": { "type": "LofotfisketHavdeling", "props": { "modus": "redskap" } },
+            "replikker": [
+                { "si": "Fiskerne hadde tre viktige redskaper: juksa, garn og line." },
+                { "si": "Juksa er et håndsnøre med en krok. Fiskeren holder snøret i hånda." },
+                { "si": "Garn er et nett som står i sjøen. Fisken setter seg fast i maskene." },
+                { "si": "Line er et langt tau med mange kroker og agn på." }
+            ]
+        },
+        {
+            "id": "vaereier",
+            "kapittel": "Hvem eier havet?",
+            "visual": { "type": "LofotfisketHavdeling", "props": { "modus": "vaereier" } },
+            "replikker": [
+                { "si": "Når så mange båter skal fiske på samme sted, blir det trangt." },
+                { "si": "Garn, line og juksa fungerer dårlig på samme plass. Mange fryktet at line og not ville ødelegge garna." },
+                { "si": "I 1753 ble alle redskaper unntatt juksa forbudt. Men de nye redskapene fanget mer, og forbudet virket ikke." },
+                { "si": "Et annet problem var væreierne. De eide fiskeværene, de små fiskeplassene langs kysten." },
+                { "si": "Væreieren bestemte hvem som fikk fiske på hans del av havet. Fiskerne var nesten som livegne, altså ikke helt frie." }
+            ]
+        },
+        {
+            "id": "lofotloven",
+            "kapittel": "Lofotloven",
+            "visual": { "type": "LofotfisketHavdeling", "props": { "modus": "loven" } },
+            "replikker": [
+                { "si": "I 1857 vedtok Stortinget en ny lov, Lofotloven. Bak den sto sjøoffiseren og stortingsmannen Ketil Motzfeldt." },
+                { "si": "Hovedideen var fritt hav og fritt fiske. Væreierne mistet makten over havet. Alle fikk fiske." },
+                { "si": "Men fritt betydde ikke at alt var lov. Havet ble delt i felt, ett for hvert redskap. Det kalles havdeling." },
+                { "si": "Ingen fikk være på fiskefeltet om natten." },
+                { "si": "Et oppsyn, en egen gruppe, passet på reglene fra januar til fisket sluttet i april." },
+                { "si": "Mange var imot loven i starten, men stemningen snudde raskt. Ingen ville tilbake." }
+            ]
+        },
+        {
+            "id": "dampskip",
+            "kapittel": "Trollfjordslaget",
+            "visual": { "type": "LofotfisketFjorden", "props": { "modus": "dampskip" } },
+            "replikker": [
+                { "si": "Men så kom ny teknologi. På slutten av 1800-tallet begynte noen å fiske med dampskip og store nøter." },
+                { "si": "En not er et kjempestort nett som kan omringe en hel stim med fisk." },
+                { "si": "I 1888 kastet dampskipet Spitsbergen en stor not i Lofoten. Fangsten ble liten, men fiskerne ble redde." },
+                { "si": "I februar 1890 kom skreien inn i Raftsundet. Nyheten gikk fort med telegrafen, tidens raskeste beskjeder. Båtene strømmet til." },
+                { "si": "Det lå is i fjorden. Skipseieren Ole Johan Kaarbø ville ha én krone per båt for å bryte isen. Altfor dyrt, syntes fiskerne." },
+                { "si": "Men Kaarbø hadde en annen plan: sperre Trollfjorden med en not og ta fangsten selv." }
+            ]
+        },
+        {
+            "id": "etter-slaget",
+            "visual": { "type": "LofotfisketFjorden", "props": { "modus": "is" } },
+            "replikker": [
+                { "si": "Slik begynte slaget. Dagen etter ble det så kaldt at fjorden frøs til, og kampen tok slutt." },
+                { "si": "Trollfjordslaget ble en kamp mellom det gamle fisket i små nordlandsbåter og det nye fisket med dampskip." },
+                { "si": "Det minner om den industrielle revolusjonen, da maskiner endret hvordan folk jobbet." },
+                { "si": "I 1897 kom en ny lofotlov. Den passet på fiskerne i de åpne båtene." }
+            ]
+        },
+        {
+            "id": "i-dag",
+            "kapittel": "Lofotfisket i dag",
+            "visual": { "type": "LofotfisketFangst", "props": { "modus": "fiskere" } },
+            "replikker": [
+                { "si": "Lofotfisket finnes fortsatt, men det har forandret seg mye. Fra 1880 til 1900 kom rundt 30 000 fiskere hvert år." },
+                { "si": "Etter andre verdenskrig var 15 000 til 20 000 fiskere med hvert år." },
+                { "si": "Siden 1990-tallet har tallet ligget mellom 2000 og 4000." },
+                { "si": "Båtene har motor, og mange fiskere bor om bord. Rorbuene leies ut til turister." }
+            ]
+        },
+        {
+            "id": "regler",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Striden om havet fortsatte",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Forbud mot not", "tekst": "på Lofothavet, fra 1959", "fraBeat": 0 },
+                        { "ikon": "hval", "tittel": "Kvoter", "tekst": "hver båt får en bestemt mengde, fra 1990", "fraBeat": 1 },
+                        { "ikon": "skip", "tittel": "Kystvakten passer på", "tekst": "oppsynet ble lagt ned etter 2011", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Striden fortsatte. I 1959 ble not forbudt på Lofothavet, etter krav fra andre fiskere." },
+                { "si": "Siden 1990 er torskefisket styrt med kvoter. En kvote betyr at hver båt bare får fiske en bestemt mengde." },
+                { "si": "Oppsynet ble lagt ned etter 2011. Nå passer Kystvakten og Fiskeridirektoratet på reglene." }
+            ]
+        },
+        {
+            "id": "fangst",
+            "kapittel": "Fisk nok til alle?",
+            "visual": { "type": "LofotfisketFangst", "props": { "modus": "fangst" } },
+            "replikker": [
+                { "si": "Fangsten går opp og ned. I 1974 tok fiskerne 146 000 tonn." },
+                { "si": "I 1988 var det bare 18 450 tonn." },
+                { "si": "I toppåret 2014 tok fiskerne 69 200 tonn." },
+                { "si": "De siste årene har fangsten gått ned igjen. Mindre skrei har kommet inn på innsiden av Lofoten." }
+            ]
+        },
+        {
+            "id": "newfoundland",
+            "visual": { "type": "LofotfisketKart", "props": { "modus": "atlanter" } },
+            "replikker": [
+                { "si": "Vestfjorden har gjennom tidene vært skreiens mest stabile gytested." },
+                { "si": "Andre steder, som ved Newfoundland, ble torsken fisket altfor hardt." },
+                { "si": "Folk tok mer fisk enn det ble født ny fisk. Det kalles overbeskatning." },
+                { "si": "Det viser hvor viktig det er å ha regler for et felles hav." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Hver vinter kommer skreien.", "fraBeat": 0 },
+                        { "tekst": "Av seg selv, år etter år.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Men når mange deler samme hav,", "fraBeat": 1 },
+                        { "tekst": "trengs det felles regler.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Fra Lofotloven til kvotene:", "fraBeat": 2 },
+                        { "tekst": "å dele havet, så det er fisk igjen.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I tusen år har skreien kommet til Lofoten hver vinter, helt av seg selv." },
+                { "si": "Men Lofotfisket har lært oss noe viktig. Når mange skal dele det samme havet, trenger de felles regler." },
+                { "si": "Fra Lofotloven til kvotene i dag handler det om det samme: å dele havet, så det er fisk igjen i morgen." }
+            ]
+        }
+    ]
+}
