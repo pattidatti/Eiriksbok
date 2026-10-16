@@ -1,0 +1,358 @@
+{
+    "id": "israel-og-palestina",
+    "tittel": "Israel og Palestina: Et land, to folk",
+    "kilde": "/historie/midtoesten/israel-og-palestina",
+    "bilde": "/images/midtoesten/israel-og-palestina-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "landet",
+            "visual": { "type": "IsraelPalestinaModell", "props": { "modus": "landet" } },
+            "replikker": [
+                {
+                    "si": "Helt øst i Middelhavet ligger et lite stykke land. Havet ligger på den ene siden, nabolandene på den andre."
+                },
+                { "si": "I dag ligger Israel, Vestbredden og Gaza her." },
+                {
+                    "si": "Likevel er det et av de mest omstridte stedene i verden. Omstridt betyr at flere krangler om det."
+                },
+                { "si": "For to folk kaller det samme landet hjemme." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ISRAEL OG PALESTINA",
+                    "undertittel": "Et land, to folk",
+                    "sporsmal": {
+                        "tekst": "Hvorfor er det så vanskelig å finne fred?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Israel og Palestina." },
+                {
+                    "si": "Noen konflikter er enkle. Den ene siden har rett, og den andre tar feil. Denne er ikke sånn."
+                },
+                {
+                    "si": "Her har begge sider rett i mye. Og det er nettopp derfor det er så vanskelig å finne en løsning."
+                }
+            ]
+        },
+        {
+            "id": "to-folk",
+            "visual": { "type": "IsraelPalestinaTo", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "Tenk deg to folk som står på hver sin side av det samme landet." },
+                { "si": "De har to ulike historier om hvem landet tilhører." },
+                {
+                    "si": "Begge har opplevd forferdelige ting. Begge bærer på et traume, et dypt sår som ikke gror."
+                },
+                { "si": "Og begge mener de har rett til å bo akkurat her." }
+            ]
+        },
+        {
+            "id": "herzl",
+            "kapittel": "En drøm i Europa",
+            "visual": { "type": "IsraelPalestinaKart", "props": { "modus": "herzl" } },
+            "replikker": [
+                { "si": "Historien begynner i Europa, på slutten av 1800-tallet." },
+                {
+                    "si": "Mange jøder levde der som et mindretall, og de ble ofte forfulgt. Mannen Theodor Herzl mente at jøder aldri ville bli trygge så lenge det var slik."
+                },
+                {
+                    "si": "Løsningen hans var en egen stat for jøder. Bevegelsen kalles sionismen, og den var politisk, ikke bare religiøs."
+                },
+                { "si": "Herzl så først på Argentina og Uganda." },
+                {
+                    "si": "Men valget falt på det gamle landet Israel. På arabisk heter det samme området Palestina."
+                },
+                {
+                    "si": "Der bodde det allerede rundt 500 000 arabiske palestinere. Det bodde jøder der også, men de var klart færre."
+                }
+            ]
+        },
+        {
+            "id": "balfour",
+            "visual": { "type": "IsraelPalestinaKart", "props": { "modus": "balfour" } },
+            "replikker": [
+                { "si": "På den tiden styrte det britiske imperiet store deler av Midtøsten." },
+                {
+                    "si": "I 1917 sendte den britiske utenriksministeren Balfour et brev til den jødiske lederen Lord Rothschild."
+                },
+                {
+                    "si": "Brevet lovet britisk støtte til et nasjonalt hjem for jøder i Palestina."
+                },
+                {
+                    "si": "Men det sto også at ingenting skulle skade rettighetene til dem som allerede bodde der."
+                },
+                { "si": "Palestinerne ble ikke spurt. Og løftet viste seg å være umulig å holde." }
+            ]
+        },
+        {
+            "id": "mandat",
+            "kapittel": "Britisk styre",
+            "visual": { "type": "IsraelPalestinaKart", "props": { "modus": "mandat" } },
+            "replikker": [
+                {
+                    "si": "Fra 1920 til 1948 styrte Storbritannia Palestina. Det kaltes et mandat, et oppdrag fra Folkeforbundet."
+                },
+                {
+                    "si": "I disse årene kom hundretusener av jøder til landet. Mange flyktet fra antisemittisme, altså hat mot jøder, i Europa."
+                },
+                {
+                    "si": "Araberne som bodde der, ble urolige. De fryktet å bli presset ut av sitt eget hjemland."
+                },
+                { "si": "Det brøt ut voldsomme opprør og angrep, fra begge sider." }
+            ]
+        },
+        {
+            "id": "holocaust",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Under andre verdenskrig drepte nazistene seks millioner jøder.",
+                            "fraBeat": 0
+                        },
+                        { "tekst": "De som overlevde, hadde ingen steder å gå.", "fraBeat": 1 },
+                        { "tekst": "Presset for en jødisk stat ble enormt.", "fraBeat": 2 },
+                        {
+                            "tekst": "Uten en egen stat er jøder alltid sårbare.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så kom Holocaust. Under andre verdenskrig drepte nazistene seks millioner jøder."
+                },
+                {
+                    "si": "De som overlevde leirene, hadde ingen steder å gå. Mange land i Europa tok ikke imot dem."
+                },
+                { "si": "Nå snudde verden seg. Presset for å lage en jødisk stat ble enormt." },
+                {
+                    "si": "For sionistene var dette beviset på at Herzl hadde hatt rett. Uten en egen stat ville jøder alltid være sårbare."
+                }
+            ]
+        },
+        {
+            "id": "deling",
+            "kapittel": "Delingen",
+            "visual": { "type": "IsraelPalestinaKart", "props": { "modus": "deling" } },
+            "replikker": [
+                { "si": "I 1947 bestemte FN at Palestina skulle deles i to stater." },
+                {
+                    "si": "Én jødisk stat og én arabisk stat. Jerusalem skulle bli en internasjonal by, styrt av FN."
+                },
+                { "si": "Jødene sa ja til planen." },
+                { "si": "Palestinerne og de arabiske landene sa nei." },
+                {
+                    "si": "De syntes det var urettferdig å gi bort halvparten av landet sitt. Mange av dem som skulle få det, hadde kommet utenfra."
+                }
+            ]
+        },
+        {
+            "id": "krigen-1948",
+            "visual": { "type": "IsraelPalestinaKart", "props": { "modus": "1948" } },
+            "replikker": [
+                {
+                    "si": "Den 14. mai 1948 sto David Ben-Gurion fram og erklærte at staten Israel var født."
+                },
+                {
+                    "si": "Dagen etter gikk fem land til angrep: Egypt, Jordan, Syria, Irak og Libanon."
+                },
+                {
+                    "si": "De arabiske lederne lovet å knuse den nye staten. Men det gikk ikke slik."
+                },
+                { "si": "Israel vant krigen, og endte med mer land enn FN-planen hadde gitt." },
+                { "si": "Egypt tok kontroll over Gaza, og Jordan over Vestbredden." }
+            ]
+        },
+        {
+            "id": "nakba",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 700,
+                            "farget": 700,
+                            "farge": "#0f766e",
+                            "tittel": "Rundt 700 000 palestinere",
+                            "fargeEtikett": "hver prikk er 1000 mennesker"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 700,
+                            "farget": 700,
+                            "farge": "#b45309",
+                            "tittel": "Flyktet eller drevet ut av hjemmene sine",
+                            "fargeEtikett": "på flukt"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 700,
+                            "farget": 700,
+                            "farge": "#b91c1c",
+                            "tittel": "Nakba: katastrofen",
+                            "fargeEtikett": "1948"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men for palestinerne var prisen enorm. Hver prikk her er tusen mennesker."
+                },
+                { "si": "Rundt 700 000 palestinere flyktet eller ble drevet ut av hjemmene sine." },
+                { "si": "Palestinerne kaller dette nakba. Det betyr katastrofen." },
+                { "si": "Det er et sår som fortsatt ikke har grodd." }
+            ]
+        },
+        {
+            "id": "seks-dager",
+            "kapittel": "Seks dager",
+            "visual": { "type": "IsraelPalestinaModell", "props": { "modus": "1967" } },
+            "replikker": [
+                {
+                    "si": "Vi hopper fram til juni 1967. Israel frykter at nabolandene planlegger et nytt angrep, og slår til først."
+                },
+                {
+                    "si": "På bare seks dager vinner den israelske hæren over Egypt, Jordan og Syria."
+                },
+                { "si": "Fra Egypt tar Israel Sinai-halvøya og Gazastripen." },
+                { "si": "Fra Jordan tar Israel Vestbredden og Øst-Jerusalem." },
+                { "si": "Og fra Syria tar Israel Golanhøydene." },
+                { "si": "Området Israel styrer, blir mer enn tre ganger så stort." }
+            ]
+        },
+        {
+            "id": "okkupasjon",
+            "visual": { "type": "IsraelPalestinaModell", "props": { "modus": "bosetninger" } },
+            "replikker": [
+                {
+                    "si": "Nå bor det en million palestinere på Vestbredden og i Gaza, under israelsk okkupasjon. Det betyr at et annet lands hær styrer der de bor."
+                },
+                {
+                    "si": "FNs sikkerhetsråd vedtok resolusjon 242. Den krevde at Israel skulle trekke seg ut av områdene."
+                },
+                { "si": "Det har ikke skjedd." },
+                {
+                    "si": "I stedet har Israel gjennom mange år bygd jødiske bosetninger, altså nye byer og landsbyer, på Vestbredden."
+                },
+                {
+                    "si": "De fleste land i verden mener at bosetningene bryter folkeretten, reglene landene i verden har blitt enige om."
+                }
+            ]
+        },
+        {
+            "id": "oslo",
+            "kapittel": "Fred i Oslo",
+            "visual": { "type": "IsraelPalestinaTo", "props": { "modus": "oslo" } },
+            "replikker": [
+                { "si": "På 1990-tallet kom det største håpet om fred. Og det startet i Oslo." },
+                {
+                    "si": "Her møttes Israel og PLO i hemmelighet. PLO er den palestinske frigjøringsorganisasjonen, ledet av Yasser Arafat."
+                },
+                {
+                    "si": "I 1993 ble Oslo-avtalen signert. For første gang godtok Israel og PLO hverandre offisielt."
+                },
+                {
+                    "si": "Arafat og Israels statsminister Yitzhak Rabin håndhilste foran Det hvite hus, med president Clinton mellom seg."
+                },
+                { "si": "Begge fikk Nobels fredspris." }
+            ]
+        },
+        {
+            "id": "rabin",
+            "visual": { "type": "IsraelPalestinaTo", "props": { "modus": "rabin" } },
+            "replikker": [
+                { "si": "Men freden varte ikke." },
+                {
+                    "si": "Den 4. november 1995 ble Rabin skutt og drept av en ung israeler. Han var nasjonalist, og mente fredsavtalen var et svik mot det jødiske folk."
+                },
+                { "si": "Med Rabin forsvant mye av viljen til å gi og ta." },
+                {
+                    "si": "Forhandlingene stoppet opp, volden økte, og de to folkene stolte stadig mindre på hverandre."
+                }
+            ]
+        },
+        {
+            "id": "i-dag",
+            "kapittel": "I dag",
+            "visual": { "type": "IsraelPalestinaKart", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "Hvordan ser det ut i dag?" },
+                {
+                    "si": "Vestbredden styres delvis av palestinernes egne myndigheter, kalt PA. Men Israel kontrollerer store deler av området."
+                },
+                { "si": "Der bor det nå over 700 000 jødiske bosettere, og tallet vokser." },
+                {
+                    "si": "Gaza ble forlatt av Israel i 2005. Siden 2007 har Hamas styrt der. Hamas er en islamistisk bevegelse, som vil styre etter islam."
+                },
+                {
+                    "si": "Hamas godtar ikke at Israel finnes, og har skutt raketter mot israelske byer. Israel og Egypt har stengt grensene rundt Gaza."
+                }
+            ]
+        },
+        {
+            "id": "perspektiver",
+            "kapittel": "Hvem har rett?",
+            "visual": { "type": "IsraelPalestinaTo", "props": { "modus": "perspektiv" } },
+            "replikker": [
+                { "si": "Så hvordan ser konflikten ut fra hver side?" },
+                {
+                    "si": "Mange israelere sier: Israel er det eneste stedet der jøder kan beskytte seg selv. Etter Holocaust er det ikke et ønske, men en nødvendighet."
+                },
+                {
+                    "si": "Mange palestinere sier: Vi har bodd her i generasjoner. Vi ble drevet ut i 1948, og okkupasjonen har vart siden 1967."
+                },
+                {
+                    "si": "Og FN sier: Bosettingene på okkupert land er ulovlige, og begge parter har brutt folkeretten."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "To stater, side om side, i fred.", "fraBeat": 0 },
+                        { "tekst": "For hvert år blir det vanskeligere.", "fraBeat": 1 },
+                        {
+                            "tekst": "Ekstremistene på begge sider er sterkere enn fredskreftene.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "To folk med to historier. Og begge har rett.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "De fleste land i verden ønsker en tostatsløsning. Det betyr to egne stater som lever side om side i fred."
+                },
+                {
+                    "si": "Men for hvert år som går, blir det vanskeligere. Bosetningene vokser, og tilliten er lav."
+                },
+                { "si": "Ekstremistene på begge sider er sterkere enn dem som vil ha fred." },
+                {
+                    "si": "Det er to folk med to historier om det samme landet. Og det er derfor det er så vanskelig: Begge har rett."
+                }
+            ]
+        }
+    ]
+}
