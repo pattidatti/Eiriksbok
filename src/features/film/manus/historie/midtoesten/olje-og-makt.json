@@ -1,0 +1,490 @@
+{
+    "id": "olje-og-makt",
+    "tittel": "Olje og makt: Ressursen som endret alt",
+    "kilde": "/historie/midtoesten/olje-og-makt",
+    "bilde": "/images/midtoesten/olje-og-makt-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "ventilen",
+            "kapittel": "Ventilen",
+            "visual": {
+                "type": "OljeFelt",
+                "props": {
+                    "modus": "ventil"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Oktober 1973. Ute i ørkenen i Midtøsten pumper oljefeltene opp olje."
+                },
+                {
+                    "si": "Gjennom lange rør renner oljen ut til skipene som frakter den til Europa og USA."
+                },
+                {
+                    "si": "Så skjer det noe. De arabiske oljelandene skrur igjen ventilen."
+                },
+                {
+                    "si": "Eksporten til USA og Nederland stanser, helt eller delvis."
+                },
+                {
+                    "si": "Oljen er ikke slutt. Den ligger der fortsatt under sanden. Men noen har bestemt seg for å holde den tilbake."
+                }
+            ]
+        },
+        {
+            "id": "helg",
+            "visual": {
+                "type": "OljeHelg"
+            },
+            "replikker": [
+                {
+                    "si": "Langt unna, i Norge, merker folk det fort."
+                },
+                {
+                    "si": "Folk står i kø for å fylle tanken med det lille som er igjen."
+                },
+                {
+                    "si": "Fra 5. desember blir det forbudt å kjøre bil i helgene."
+                },
+                {
+                    "si": "Tenk deg en søndag der veiene er helt tomme for biler. Alt på grunn av olje."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "OLJE OG MAKT",
+                    "undertittel": "Ressursen som endret alt",
+                    "bilde": "/images/midtoesten/olje-og-makt-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 48,
+                            "etikett": "prosent av verdens oljereserver ligger i Midtøsten",
+                            "fraBeat": 2
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvem bestemmer over oljen?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er en film om olje."
+                },
+                {
+                    "si": "Olje er ikke bare drivstoff til biler og fly. Olje er makt."
+                },
+                {
+                    "si": "Nesten halvparten av all olje vi vet om i verden ligger i Midtøsten. 48 prosent."
+                },
+                {
+                    "si": "Så hvem bestemmer over all denne oljen? Og hva gjør oljen med landene som har den?"
+                }
+            ]
+        },
+        {
+            "id": "funn",
+            "kapittel": "Andres olje",
+            "visual": {
+                "type": "OljeKart",
+                "props": {
+                    "modus": "funn"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Historien starter i 1908. Britiske ingeniører pumper opp olje ved landsbyen Masjed-e Suleiman i Persia.",
+                    "uttale": "Historien starter i 1908. Britiske ingeniører pumper opp olje ved landsbyen Masjed-e-Solejman i Persia."
+                },
+                {
+                    "si": "Persia er det landet vi i dag kaller Iran."
+                },
+                {
+                    "si": "I 1927 gjør Irak sitt store oljefunn."
+                },
+                {
+                    "si": "Og i 1938 finner de olje i Saudi-Arabia."
+                },
+                {
+                    "si": "Funn etter funn viser det samme. Her ligger noen av de rikeste oljeområdene i hele verden."
+                }
+            ]
+        },
+        {
+            "id": "eiere",
+            "visual": {
+                "type": "OljeFelt",
+                "props": {
+                    "modus": "eiere"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men hvem eier oljen? I begynnelsen er svaret enkelt. Ikke folket som bor der."
+                },
+                {
+                    "si": "Britiske og amerikanske selskaper bestemmer over pumpene, rørene og prisene."
+                },
+                {
+                    "si": "Den britiske staten kjøper seg inn i selskapet Anglo-Persian Oil Company. Det blir senere oljeselskapet BP.",
+                    "uttale": "Den britiske staten kjøper seg inn i selskapet Anglo-Persian Oil Company. Det blir senere oljeselskapet B P."
+                },
+                {
+                    "si": "Iranske arbeidere sliter på oljefeltene. Men pengene seiler av gårde til den britiske staten."
+                }
+            ]
+        },
+        {
+            "id": "opec",
+            "kapittel": "OPEC",
+            "visual": {
+                "type": "OljeKart",
+                "props": {
+                    "modus": "opec"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 16. september 1960 møtes fem land i Bagdad, hovedstaden i Irak."
+                },
+                {
+                    "si": "Det er Iran, Irak, Kuwait, Saudi-Arabia og Venezuela i Sør-Amerika."
+                },
+                {
+                    "si": "Sammen starter de OPEC. Det betyr Organisasjonen av oljeeksporterende land. Altså land som selger olje til andre.",
+                    "uttale": "Sammen starter de Opek. Det betyr Organisasjonen av oljeeksporterende land. Altså land som selger olje til andre."
+                },
+                {
+                    "si": "Målet er at de skal bli enige om oljen, slik at prisene blir stabile og inntektene jevne."
+                }
+            ]
+        },
+        {
+            "id": "egen",
+            "visual": {
+                "type": "OljeKart",
+                "props": {
+                    "modus": "egen"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå tar landene oljen sin tilbake. Det kalles å nasjonalisere. Staten tar over selskapene fra utlendingene."
+                },
+                {
+                    "si": "I Libya tar Muammar Gaddafi makten i 1969. I årene etter tar landet over oljeindustrien.",
+                    "uttale": "I Libya tar Muammar Gaddafi makten i 1969. I årene etter tar landet over oljeindustrien."
+                },
+                {
+                    "si": "Irak tar over oljeselskapet IPC i 1972.",
+                    "uttale": "Irak tar over oljeselskapet I P C i 1972."
+                },
+                {
+                    "si": "Saudi-Arabia eier 60 prosent av oljeselskapet Aramco i 1974. Fra 1980 eier landet hele selskapet."
+                },
+                {
+                    "si": "Meldingen er klar. Oljen tilhører landet den kommer fra."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "Olje som våpen",
+            "visual": {
+                "type": "OljeKart",
+                "props": {
+                    "modus": "krig"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 6. oktober 1973 angriper Egypt og Syria Israel. Det kalles Yom Kippur-krigen.",
+                    "uttale": "Den sjette oktober 1973 angriper Egypt og Syria Israel. Det kalles Jom Kippur-krigen."
+                },
+                {
+                    "si": "USA og andre vestlige land støtter Israel."
+                },
+                {
+                    "si": "Som svar bruker de arabiske oljelandene oljen som et pressmiddel. Et pressmiddel er noe du bruker for å tvinge andre til å gjøre som du vil."
+                },
+                {
+                    "si": "De kutter produksjonen med fem prosent hver måned. Det var dette som stengte ventilen i starten av filmen."
+                }
+            ]
+        },
+        {
+            "id": "pris",
+            "visual": {
+                "type": "OljePris"
+            },
+            "replikker": [
+                {
+                    "si": "Hva skjer når det kommer mindre olje ut på markedet? Prisen stiger. Og den stiger fort."
+                },
+                {
+                    "si": "Først blir oljeprisen doblet. Så blir den omtrent firedoblet."
+                },
+                {
+                    "si": "I januar 1974 koster et fat olje 11,65 dollar. Et fat er en stor tønne olje.",
+                    "uttale": "I januar 1974 koster et fat olje elleve dollar og sekstifem cent. Et fat er en stor tønne olje."
+                },
+                {
+                    "si": "Allerede tidlig i 1974 er leveransene normale igjen. Men skrekken sitter i. Verden har forstått at olje er et politisk våpen."
+                }
+            ]
+        },
+        {
+            "id": "nordsjoen",
+            "visual": {
+                "type": "OljeKart",
+                "props": {
+                    "modus": "nordsjoen"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter krisen leter vestlige land etter olje hjemme hos seg selv. Bilene blir bygd for å bruke mindre bensin."
+                },
+                {
+                    "si": "Norge hadde allerede funnet olje. Ekofisk i Nordsjøen ble erklært drivverdig lille julaften 1969. Det betyr at det lønner seg å hente den opp."
+                },
+                {
+                    "si": "Produksjonen kom i gang i 1971."
+                },
+                {
+                    "si": "Men da prisen ble firedoblet, regnet staten på nytt. I 1975 kom en lov som ga mye høyere skatt på oljen fra norsk havbunn."
+                }
+            ]
+        },
+        {
+            "id": "rikdom",
+            "kapittel": "Velsignelse eller forbannelse?",
+            "visual": {
+                "type": "OljeKart",
+                "props": {
+                    "modus": "kontrast"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For Gulf-statene, landene rundt Persiabukta, gir oljen en enorm rikdom. Det gjelder Saudi-Arabia, Kuwait og De forente arabiske emirater."
+                },
+                {
+                    "si": "Pengene går til skoler, sykehus og jobber i staten. Staten betaler også en del av prisen på varer folk trenger."
+                },
+                {
+                    "si": "Dubai går fra å være en liten by ved kysten til en by full av skyskrapere. Det tar bare noen få tiår."
+                },
+                {
+                    "si": "Qatar var et fattig land før olje og gass. I dag er det blant de rikeste i verden, med gratis utdanning."
+                },
+                {
+                    "si": "Jemen ligger på den samme halvøya. Det er et av de fattigste landene i den arabiske verden."
+                },
+                {
+                    "si": "Forskjellen handler ikke om hvor landene ligger. Den handler om hvem som har oljen."
+                }
+            ]
+        },
+        {
+            "id": "forbannelse",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Oljeforbannelsen",
+                    "punkter": [
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Bare én vare",
+                            "tekst": "andre næringer blir ikke bygd opp",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "Prisen faller",
+                            "tekst": "og hele landet faller med den",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Pengene går til toppen",
+                            "tekst": "kongehus og eliter, ikke vanlige folk",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men olje er ikke alltid en velsignelse. Økonomer snakker om oljeforbannelsen."
+                },
+                {
+                    "si": "Land som tjener nesten alt på én vare, slutter gjerne å bygge opp andre måter å tjene penger på."
+                },
+                {
+                    "si": "Så når oljeprisen faller, faller hele landet med den."
+                },
+                {
+                    "si": "Og pengene havner ofte på toppen, hos kongehus og eliter. Elite betyr de få som har mest makt. Vanlige folk ser lite av rikdommen."
+                }
+            ]
+        },
+        {
+            "id": "petrodollar",
+            "kapittel": "Petrodollar",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 100,
+                            "farge": "#16a34a",
+                            "tittel": "Petrodollar: oljen betales i dollar",
+                            "fargeEtikett": "dollar"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 90,
+                            "farge": "#b45309",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Saudi-Arabia, eksport: 90 % fra olje",
+                            "fargeEtikett": "fra olje",
+                            "restEtikett": "alt annet"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 70,
+                            "farge": "#b45309",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Statens inntekter: 70 til 80 % fra olje",
+                            "fargeEtikett": "fra olje",
+                            "restEtikett": "alt annet"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når Vesten kjøper olje, betaler de i dollar. Disse pengene kalles petrodollar."
+                },
+                {
+                    "si": "Se på Saudi-Arabia. Rundt 90 prosent av pengene landet tjener på å selge til utlandet, kommer fra olje."
+                },
+                {
+                    "si": "Og 70 til 80 prosent av alle pengene staten får inn, kommer også fra olje."
+                }
+            ]
+        },
+        {
+            "id": "dilemma",
+            "visual": {
+                "type": "OljeVekt"
+            },
+            "replikker": [
+                {
+                    "si": "Dette gir vestlige land et vanskelig valg."
+                },
+                {
+                    "si": "Saudi-Arabia er et absolutt monarki. Det betyr at kongen styrer, og folket har ingen frie valg."
+                },
+                {
+                    "si": "Likevel er landet en av de viktigste vennene til Vesten."
+                },
+                {
+                    "si": "Grunnen er enkel. Ingen vestlig regjering vil miste oljen og pengene derfra."
+                },
+                {
+                    "si": "Hvordan krever du demokrati og menneskerettigheter av et land du trenger oljen fra?"
+                }
+            ]
+        },
+        {
+            "id": "klima",
+            "kapittel": "Olje og klima",
+            "visual": {
+                "type": "OljeFelt",
+                "props": {
+                    "modus": "klima"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Olje skaper også et problem for hele verden: klimaendringer."
+                },
+                {
+                    "si": "Midtøsten er blant stedene som rammes hardest. Her er det allerede noen av de høyeste temperaturene i verden, og de stiger."
+                },
+                {
+                    "si": "Tørke og mangel på vann truer jordbruket og drikkevannet."
+                },
+                {
+                    "si": "Saudi-Arabia lager all strømmen sin fra olje og gass. Ingen andre land i G20, en gruppe av verdens største økonomier, gjør det.",
+                    "uttale": "Saudi-Arabia lager all strømmen sin fra olje og gass. Ingen andre land i G tjue, en gruppe av verdens største økonomier, gjør det."
+                },
+                {
+                    "si": "Men landet har startet planer for fornybar energi, som sol, og for kjernekraft. De vet at oljealderen tar slutt en dag."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Olje formet Midtøsten.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Midtøstens olje formet verden.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Den som eier oljen,",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "kan skru igjen ventilen.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Oljen under sanden er ikke bare drivstoff.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Den er makt.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Olje formet Midtøsten. Og oljen fra Midtøsten formet resten av verden."
+                },
+                {
+                    "si": "Først eide utlendingene den. Så tok landene den tilbake, og lærte at den som eier oljen, kan skru igjen ventilen."
+                },
+                {
+                    "si": "Oljen under ørkensanden har aldri bare vært drivstoff. Den er makt, politikk og skjebne på en gang."
+                }
+            ]
+        }
+    ]
+}
