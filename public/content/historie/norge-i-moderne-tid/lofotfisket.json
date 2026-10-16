@@ -5,7 +5,7 @@
   "year": "1857",
   "category": "Fiske og næringsliv",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/norge-i-moderne-tid/lofotfisket-hero.webp",
   "details": [
     "Hver vinter svømmer skreien fra Barentshavet til Lofoten for å gyte, og tusenvis av fiskere har reist etter den i flere hundre år.",
     "Tørrfisken var Norges viktigste eksportvare i middelalderen.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/lofotfisket-01.webp",
       "alt": "Hundrevis av robåter og dampskip i en trang fjord om vinteren",
       "caption": "Trollfjordslaget i 1890 ble en heltehistorie om fiskerne i de små båtene som tok opp kampen mot de store dampskipene."
     },
@@ -72,7 +72,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/lofotfisket-02.webp",
       "alt": "Rorbuer og hjeller med tørrfisk i et snødekt fiskevær",
       "caption": "Fisken ble hengt på hjeller for å tørke i den kalde vinden. Tørrfisken kunne lagres og fraktes langt."
     },
@@ -145,7 +145,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/norge-i-moderne-tid/lofotfisket-03.webp",
       "alt": "Moderne fiskebåt i Vestfjorden med Lofotveggen i bakgrunnen",
       "caption": "I dag fisker færre båter i Lofoten, men skreien kommer fortsatt hver vinter."
     },
