@@ -1,0 +1,533 @@
+{
+    "id": "iran-revolusjonen",
+    "tittel": "Den iranske revolusjonen 1979",
+    "kilde": "/historie/midtoesten/iran-revolusjonen",
+    "bilde": "/images/midtoesten/iran-revolusjonen-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "avreise",
+            "kapittel": "Januar 1979",
+            "visual": {
+                "type": "IranKart",
+                "props": {
+                    "modus": "flukt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er januar 1979, i Teheran, hovedstaden i Iran. Kongen av landet pakker koffertene sine."
+                },
+                {
+                    "si": "Kongen kalles sjahen. Vesten, altså USA og Europa, har støttet ham i tre tiår. Nå flykter han fra sitt eget folk."
+                },
+                {
+                    "si": "Noen uker senere lander et annet fly i Teheran. Om bord sitter en 76 år gammel religiøs leder."
+                },
+                {
+                    "si": "Millioner av mennesker står i gatene og jubler for ham."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DEN IRANSKE REVOLUSJONEN",
+                    "undertittel": "Året som snudde Midtøsten på hodet",
+                    "bilde": "/images/midtoesten/iran-revolusjonen-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne en gammel mann i eksil velte en konge?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om den iranske revolusjonen."
+                },
+                {
+                    "si": "Det som skjedde i Iran i 1979, snudde opp ned på hele Midtøsten. Det påvirker verden den dag i dag."
+                },
+                {
+                    "si": "Hvordan kunne en gammel mann som bodde i et annet land, velte en konge med hær, hemmelig politi og oljepenger?"
+                }
+            ]
+        },
+        {
+            "id": "reformer",
+            "kapittel": "Sjahen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Den hvite revolusjonen",
+                    "punkter": [
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Kvinner får stemme",
+                            "tekst": "ved valg",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Jord til bønder",
+                            "tekst": "delt ut av staten",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Fabrikker og universiteter",
+                            "tekst": "landet blir moderne",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "Oljepenger",
+                            "tekst": "strømmer inn",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sjahen hadde styrt Iran siden 1941. På 1960-tallet satte han i gang store endringer. Han kalte dem den hvite revolusjonen."
+                },
+                {
+                    "si": "Kvinner fikk stemmerett, altså lov til å stemme ved valg."
+                },
+                {
+                    "si": "Jord ble delt ut til bønder."
+                },
+                {
+                    "si": "Fabrikker og universiteter ble bygd. Landet ble raskt mer moderne, og religionen fikk mindre plass i styringen av landet."
+                },
+                {
+                    "si": "Og oljepengene strømmet inn. For mange som bodde i byene, ble livet bedre."
+                }
+            ]
+        },
+        {
+            "id": "savak",
+            "visual": {
+                "type": "IranMakt",
+                "props": {
+                    "modus": "sjah"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men det fantes en mørk side. Sjahen styrte som diktator. Det betyr at han bestemte alt, og at folket ikke kunne velge ham bort."
+                },
+                {
+                    "si": "Han hadde et hemmelig politi som het SAVAK. De fengslet og torturerte folk som kritiserte sjahen. Noen ble drept, andre bare forsvant."
+                },
+                {
+                    "si": "Religiøse ledere ble tvunget til å tie."
+                },
+                {
+                    "si": "Mange mente at oljepengene havnet hos en liten gruppe rike og hos vestlige selskaper. Ikke hos vanlige folk."
+                },
+                {
+                    "si": "Korrupsjonen var lett å se. Det betyr at makthaverne tok penger og fordeler for seg selv. Og gapet mellom fattig og rik ble større."
+                }
+            ]
+        },
+        {
+            "id": "eksil",
+            "kapittel": "Kassettbåndene",
+            "visual": {
+                "type": "IranKart",
+                "props": {
+                    "modus": "eksil"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sjahens farligste kritiker var ayatollah Ruhollah Khomeini. En ayatollah er en av de fremste religiøse lederne. Khomeini var den mektigste av dem i Iran."
+                },
+                {
+                    "si": "Han hadde kritisert sjahen åpent siden 1960-tallet. Nå levde han i eksil, altså utenfor hjemlandet sitt."
+                },
+                {
+                    "si": "Først bodde han i nabolandet Irak. Senere flyttet han til en liten by utenfor Paris, i Frankrike."
+                },
+                {
+                    "si": "Sjahen trodde Khomeini var ufarlig så lenge han var langt borte. Det skulle vise seg å være en stor feil."
+                }
+            ]
+        },
+        {
+            "id": "kassett",
+            "visual": {
+                "type": "IranKassett"
+            },
+            "replikker": [
+                {
+                    "si": "I Frankrike spilte Khomeini inn talene sine på kassettbånd."
+                },
+                {
+                    "si": "Båndene ble smuglet over grensen og inn i Iran."
+                },
+                {
+                    "si": "Der ble de kopiert, igjen og igjen, og sendt videre fra moské til moské."
+                },
+                {
+                    "si": "Det fantes ikke internett. Likevel hørte millioner av iranere stemmen hans, i kjellere og bakgårder."
+                },
+                {
+                    "si": "Han sa at sjahen var korrupt, at USA styrte Iran, og at et islamsk styre var løsningen."
+                },
+                {
+                    "si": "Kanskje er dette den første revolusjonen i historien som ble ledet med lydopptak."
+                }
+            ]
+        },
+        {
+            "id": "opproret",
+            "kapittel": "Opprøret",
+            "visual": {
+                "type": "IranKart",
+                "props": {
+                    "modus": "opprør"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1978 eksploderte uroen. Demonstrasjoner startet i én by."
+                },
+                {
+                    "si": "Så spredte de seg fra by til by, over hele landet."
+                },
+                {
+                    "si": "Oljearbeiderne gikk til streik. Da stanset landets viktigste inntekt."
+                },
+                {
+                    "si": "Basarene stengte dørene. En basar er en gammel markedsplass, og basarene var hjertet i økonomien i Iran."
+                }
+            ]
+        },
+        {
+            "id": "fall",
+            "visual": {
+                "type": "IranMakt",
+                "props": {
+                    "modus": "fall"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sjahen prøvde å slå ned protestene med makt. I september 1978 skjøt hæren inn i en folkemengde i Teheran. Dusinvis ble drept."
+                },
+                {
+                    "si": "Dagen fikk navnet Svart fredag. Den gjorde folk enda mer rasende."
+                },
+                {
+                    "si": "Men til slutt sviktet sjahens viktigste støtte. Soldater er også sønner og brødre. Mange nektet å skyte på sitt eget folk."
+                },
+                {
+                    "si": "I januar 1979 sa hæren at den ikke lenger tok side. Da var det over."
+                },
+                {
+                    "si": "Sjahen forlot Iran den 16. januar 1979. Han kom aldri tilbake."
+                }
+            ]
+        },
+        {
+            "id": "hjemkomst",
+            "kapittel": "Den islamske republikken",
+            "visual": {
+                "type": "IranKart",
+                "props": {
+                    "modus": "hjemkomst"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 1. februar 1979 landet Khomeinis fly i Teheran."
+                },
+                {
+                    "si": "Over fem millioner mennesker sto i gatene for å ta imot ham."
+                },
+                {
+                    "si": "En journalist spurte hva han følte etter 14 år i eksil. Khomeini svarte: Ingenting."
+                },
+                {
+                    "si": "Det kalde svaret sa mye om mannen."
+                }
+            ]
+        },
+        {
+            "id": "faqih",
+            "visual": {
+                "type": "IranMakt",
+                "props": {
+                    "modus": "faqih"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Khomeini innførte et helt nytt styresett. Det heter velayet-e faqih, som betyr de islamske lærdes styre.",
+                    "uttale": "Khomeini innførte et helt nytt styresett. Det heter velajet e fakih, som betyr de islamske lærdes styre."
+                },
+                {
+                    "si": "Tanken er at en høyt utdannet religiøs leder skal styre staten. Bare han forstår Guds lov godt nok."
+                },
+                {
+                    "si": "Khomeini ble den øverste lederen. Han sto over presidenten, over parlamentet og over hæren."
+                },
+                {
+                    "si": "Iran ble ikke et demokrati. Det ble en islamsk republikk, der religionen hadde siste ord i alt."
+                },
+                {
+                    "si": "En iransk student sa det slik: Vi ville ha frihet. Vi fikk Khomeini."
+                }
+            ]
+        },
+        {
+            "id": "gisler",
+            "kapittel": "Gisselkrisen",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "GISSELKRISEN",
+                    "undertittel": "52 amerikanere tatt som gisler",
+                    "bilde": "/images/midtoesten/iran-revolusjonen-02.webp",
+                    "sporsmal": {
+                        "tekst": "Kravet: Send sjahen tilbake!",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I november 1979 stormet iranske studenter den amerikanske ambassaden i Teheran."
+                },
+                {
+                    "si": "De tok 52 diplomater og ansatte som gisler. Et gissel er en fange som brukes for å presse fram et krav."
+                },
+                {
+                    "si": "Kravet var at USA skulle sende sjahen tilbake, så han kunne stilles for retten i Iran. Sjahen var da i USA for å få behandling på sykehus."
+                }
+            ]
+        },
+        {
+            "id": "carter",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#64748b",
+                            "tittel": "444 dager som fanger",
+                            "fargeEtikett": "gisler"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#334155",
+                            "tittel": "Presidenten får dem ikke fri",
+                            "fargeEtikett": "fortsatt fanget"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#b45309",
+                            "tittel": "Redningen mislykkes i ørkenen",
+                            "fargeEtikett": "fortsatt fanget"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#0d9488",
+                            "tittel": "Fri i januar 1981",
+                            "fargeEtikett": "løslatt"
+                        },
+                        {
+                            "fraBeat": 4,
+                            "total": 52,
+                            "farget": 52,
+                            "farge": "#0d9488",
+                            "tittel": "Men forholdet var knust",
+                            "fargeEtikett": "løslatt"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "USA nektet. Gislene ble holdt fanget i 444 dager."
+                },
+                {
+                    "si": "Gisselkrisen ble en ydmykelse for USA. President Jimmy Carter greide ikke å få dem fri."
+                },
+                {
+                    "si": "En militær redningsaksjon gikk galt ute i ørkenen. Åtte amerikanske soldater mistet livet."
+                },
+                {
+                    "si": "Gislene slapp ikke fri før Ronald Reagan ble president i januar 1981."
+                },
+                {
+                    "si": "Forholdet mellom USA og Iran var knust. Det er det fortsatt."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "Krig",
+            "visual": {
+                "type": "IranKart",
+                "props": {
+                    "modus": "krig"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I september 1980 invaderte nabolandet Irak Iran. Irak ble ledet av Saddam Hussein."
+                },
+                {
+                    "si": "Irak var redd for at revolusjonen skulle spre seg til sjia-muslimene i Irak."
+                },
+                {
+                    "si": "Saudi-Arabia og de fleste arabiske landene støttet Irak. USA støttet også Irak. Irak brukte kjemiske våpen i krigen, som giftgass."
+                },
+                {
+                    "si": "Krigen varte i åtte år. Den kostet trolig opp mot en million liv."
+                }
+            ]
+        },
+        {
+            "id": "splittelse",
+            "visual": {
+                "type": "IranKart",
+                "props": {
+                    "modus": "splittelse"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Krigen viste en dyp splittelse i islam, mellom to retninger: sunni og sjia."
+                },
+                {
+                    "si": "Irak og Saudi-Arabia var sunni-dominerte. Det betyr at sunni-muslimer hadde makten der."
+                },
+                {
+                    "si": "Iran er det største sjia-landet i verden."
+                },
+                {
+                    "si": "Denne striden mellom sunni-arabiske land og sjia-Iran driver krig og konflikt den dag i dag, fra Jemen til Syria og Libanon."
+                }
+            ]
+        },
+        {
+            "id": "hvorfor",
+            "kapittel": "Hvorfor 1979 forandret alt",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Fire ting 1979 forandret",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "Folket veltet en diktator",
+                            "tekst": "som USA støttet",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "En islamistisk stat",
+                            "tekst": "den eneste som har overlevd",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "bombe",
+                            "tittel": "Sunni mot sjia",
+                            "tekst": "fra Jemen til Libanon",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Iran mot USA",
+                            "tekst": "sanksjoner og atomforhandlinger",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange regner 1979 som det viktigste enkeltåret i moderne Midtøsten-historie. Hvorfor?"
+                },
+                {
+                    "si": "For det første viste revolusjonen at folket kunne velte en diktator som USA støttet."
+                },
+                {
+                    "si": "For det andre skapte den en islamistisk stat, styrt etter religionens regler. Det er den eneste som har overlevd til i dag."
+                },
+                {
+                    "si": "For det tredje satte den i gang striden mellom sunni og sjia i hele regionen."
+                },
+                {
+                    "si": "Og for det fjerde gjorde den Iran og USA til fiender. Det merkes fortsatt i sanksjoner, altså straff som handelsforbud, i atomforhandlinger og i krig."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "De jublet for frihet",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "og rettferdighet.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Et religiøst styre tok over.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Like brutalt mot kritikere som sjahen.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Men forandringen de satte i gang,",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "kan ingen ta tilbake.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange av dem som jublet i februar 1979, angret senere bittert. De hadde drømt om frihet og rettferdighet."
+                },
+                {
+                    "si": "Men et religiøst styre tok over revolusjonen. Det forfulgte kritikere like brutalt som sjahen hadde gjort."
+                },
+                {
+                    "si": "Likevel er én ting sikker. Forandringen de satte i gang, kan ingen ta tilbake."
+                }
+            ]
+        }
+    ]
+}
