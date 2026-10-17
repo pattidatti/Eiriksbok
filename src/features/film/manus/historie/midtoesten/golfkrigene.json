@@ -1,0 +1,226 @@
+{
+    "id": "golfkrigene",
+    "tittel": "Golfkrigene: Fra Kuwait til Irak",
+    "kilde": "/historie/midtoesten/golfkrigene",
+    "bilde": "/images/midtoesten/golfkrigene-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "grensen",
+            "kapittel": "2. august 1990",
+            "visual": { "type": "GolfSand", "props": { "modus": "invasjon" } },
+            "replikker": [
+                { "si": "Det er den 2. august 1990. Vi står i ørkenen, ved grensen mellom Irak og Kuwait." },
+                { "si": "Så begynner motorene å dure. Irakske stridsvogner ruller over grensen." },
+                { "si": "Kuwait er et lite land. På under 12 timer er hele landet okkupert." },
+                { "si": "Kongen flykter til Saudi-Arabia. Verden er i sjokk, ikke bare over at det skjer, men over hvor fort det går." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "GOLFKRIGENE",
+                    "undertittel": "Fra Kuwait til Irak",
+                    "bilde": "/images/midtoesten/golfkrigene-hero.webp",
+                    "tall": [
+                        { "verdi": 38, "etikett": "dager luftkrig", "fraBeat": 1 },
+                        { "verdi": 100, "etikett": "timer bakkekrig", "fraBeat": 1 },
+                        { "verdi": 8, "etikett": "år i Irak, 2003-2011", "fraBeat": 2, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hvorfor er freden vanskeligere enn krigen?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er starten på golfkrigene. Det er to kriger, og begge handler om Irak." },
+                { "si": "Den første, i 1991, var over fort: 38 dager med bomber fra lufta, og bare 100 timer på bakken." },
+                { "si": "Den andre startet i 2003. De siste amerikanske soldatene dro ikke hjem før i 2011." },
+                { "si": "I denne filmen skal vi se hvorfor den ene krigen gikk så fort, og hvorfor den andre aldri ga fred." }
+            ]
+        },
+        {
+            "id": "venn",
+            "kapittel": "Vestens venn",
+            "visual": { "type": "GolfKart", "props": { "modus": "venn" } },
+            "replikker": [
+                { "si": "Men la oss spole tilbake. På 1980-tallet var Iraks leder, Saddam Hussein, Vestens venn." },
+                { "si": "Han førte krig mot nabolandet Iran i åtte år, fra 1980 til 1988." },
+                { "si": "USA hatet Iran etter revolusjonen der i 1979. Derfor var Saddam nyttig." },
+                { "si": "USA delte hemmelig informasjon med ham. Vestlige land solgte ham våpen, og også kjemiske stoffer. Dem brukte han mot iranske soldater og mot sitt eget folk." }
+            ]
+        },
+        {
+            "id": "rumaila",
+            "kapittel": "Et land på randen",
+            "visual": { "type": "GolfFelt" },
+            "replikker": [
+                { "si": "Etter krigen mot Iran var Irak nesten konkurs. Det betyr at landet ikke hadde penger til å betale det det skyldte." },
+                { "si": "Saddam hadde lånt store summer fra nabolandene. Også Kuwait hadde lånt Irak penger." },
+                { "si": "Under grensen ligger et stort oljefelt, Rumaila. Saddam sa at Kuwait pumpet opp olje som egentlig var Iraks." },
+                { "si": "Han krevde at Kuwait slettet gjelden, og at oljeprisen skulle opp. Kuwait sa nei." }
+            ]
+        },
+        {
+            "id": "olje",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Kuwait: et lite land",
+                            "restEtikett": "resten av verden"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 10,
+                            "farge": "#0f172a",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Kuwait: nesten 10 prosent",
+                            "fargeEtikett": "under Kuwait",
+                            "restEtikett": "resten av verden"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Kuwait er lite, omtrent like stort som Vestfold og Telemark til sammen." },
+                { "si": "Men under sanden ligger nesten 10 prosent av all olje vi vet om i verden." },
+                { "si": "Det var mye av grunnen til at verden reagerte så kraftig da Saddam tok landet." }
+            ]
+        },
+        {
+            "id": "koalisjon",
+            "kapittel": "Verden samler seg",
+            "visual": { "type": "GolfKart", "props": { "modus": "koalisjon" } },
+            "replikker": [
+                { "si": "FNs sikkerhetsråd, der de mektigste landene i verden sitter, krevde at Irak trakk seg ut." },
+                { "si": "Saddam nektet. Da ga FN lov til å bruke militær makt for å frigjøre Kuwait." },
+                { "si": "35 land stilte opp i en koalisjon, altså et samarbeid mellom land. USA ledet an." },
+                { "si": "Saudi-Arabia lot koalisjonen bruke landet sitt som base. Utover høsten 1990 samlet de flere hundre tusen soldater der." }
+            ]
+        },
+        {
+            "id": "luft",
+            "kapittel": "Ørkenstorm",
+            "visual": { "type": "GolfKart", "props": { "modus": "luft" } },
+            "replikker": [
+                { "si": "Den 17. januar 1991 startet Operasjon Desert Storm. Navnet betyr ørkenstorm." },
+                { "si": "I 38 dager bombet koalisjonens fly Iraks militære stillinger, veier og strøm, og stedene der hæren ble styrt fra." },
+                { "si": "Irak svarte med Scud-raketter, raketter som kan nå langt, mot Israel og Saudi-Arabia." },
+                { "si": "Saddam ville dra Israel inn i krigen. Da håpet han at de arabiske landene skulle forlate koalisjonen. Det lyktes ikke." }
+            ]
+        },
+        {
+            "id": "omringing",
+            "kapittel": "100 timer på bakken",
+            "visual": { "type": "GolfSand", "props": { "modus": "omringing" } },
+            "replikker": [
+                { "si": "Den 24. februar 1991 startet krigen på bakken." },
+                { "si": "Alle ventet et angrep rett inn i Kuwait. Men det var en bløff, et luremanøver." },
+                { "si": "Den egentlige styrken svingte langt mot vest, inn i Irak." },
+                { "si": "Så svingte den østover, bak de irakske soldatene. Slik ble de omringet, altså stengt inne fra alle kanter." },
+                { "si": "Mange irakske soldater ga opp. Etter uker med bomber hadde de verken mat, vann eller utstyr som virket." }
+            ]
+        },
+        {
+            "id": "tid",
+            "visual": { "type": "GolfTid" },
+            "replikker": [
+                { "si": "Etter 100 timer erklærte president George H.W. Bush våpenhvile. Kuwait var fritt." },
+                { "si": "Luftkrigen varte i 38 dager. Bakkekrigen varte i litt over fire døgn." },
+                { "si": "Koalisjonen hadde rundt 700 000 soldater og 2 000 fly. Den mistet under 300 soldater." }
+            ]
+        },
+        {
+            "id": "valget",
+            "kapittel": "Stopp eller fortsett?",
+            "visual": { "type": "GolfKart", "props": { "modus": "valg" } },
+            "replikker": [
+                { "si": "Nå kom det store spørsmålet. Skulle koalisjonen kjøre videre helt til Bagdad og fjerne Saddam?" },
+                { "si": "FN hadde gitt lov til én ting: å frigjøre Kuwait. Ikke å bytte ut lederen i Irak." },
+                { "si": "De arabiske landene i koalisjonen ville aldri gått med på det. Og USA var redd for et tomrom der ingen styrte landet." },
+                { "si": "Koalisjonen stoppet. Saddam satt fortsatt med makten." }
+            ]
+        },
+        {
+            "id": "sanksjoner",
+            "kapittel": "Sanksjonene",
+            "visual": { "type": "GolfKart", "props": { "modus": "sanksjoner" } },
+            "replikker": [
+                { "si": "Saddam slo brutalt ned opprør fra sjiamuslimer, en av de to store retningene i islam, i sør og kurdere i nord." },
+                { "si": "FN innførte strenge sanksjoner, altså straffetiltak. Irak fikk nesten ikke kjøpe varer fra andre land, og pengene fra oljen ble sperret." },
+                { "si": "Tanken var å presse Saddam. Men det var vanlige folk som fikk det verst. Sykehusene manglet medisiner." },
+                { "si": "Hundretusener av barn døde av sykdommer som burde vært lette å behandle. Saddam satt trygt i palasset sitt." }
+            ]
+        },
+        {
+            "id": "pastand",
+            "kapittel": "En ny krig",
+            "visual": { "type": "GolfBevis", "props": { "modus": "pastand" } },
+            "replikker": [
+                { "si": "Så kom 11. september 2001. Terrorgruppa al-Qaida angrep New York og Washington." },
+                { "si": "Irak sto ikke bak angrepet. Det gjorde al-Qaida, som holdt til i Afghanistan." },
+                { "si": "Likevel pekte USA mot Irak. De sa at Saddam hadde masseødeleggelsesvåpen, altså våpen som kan drepe svært mange mennesker på én gang." },
+                { "si": "Bevisene var tynne. Men i februar 2003 sa USAs utenriksminister Colin Powell til FN: Vi vet at Saddam Hussein har masseødeleggelsesvåpen." }
+            ]
+        },
+        {
+            "id": "invasjon",
+            "visual": { "type": "GolfKart", "props": { "modus": "invasjon" } },
+            "replikker": [
+                { "si": "I mars 2003 invaderte USA og Storbritannia Irak. Denne gangen uten lov fra FN." },
+                { "si": "Planen het sjokk og ærefrykt: et angrep så stort og så raskt at all motstand skulle bryte sammen." },
+                { "si": "Bagdad falt på tre uker. Saddam flyktet." },
+                { "si": "I desember 2003 ble han funnet i et skjul i jorda. Han ble henrettet i 2006." }
+            ]
+        },
+        {
+            "id": "funn",
+            "kapittel": "Å vinne freden",
+            "visual": { "type": "GolfBevis", "props": { "modus": "funn" } },
+            "replikker": [
+                { "si": "Men masseødeleggelsesvåpnene dukket aldri opp. Irak hadde dem ikke." },
+                { "si": "Grunnen til hele krigen var borte. Og USA satt fast i et land de ikke hadde lagt noen plan for." }
+            ]
+        },
+        {
+            "id": "kaos",
+            "visual": { "type": "GolfKart", "props": { "modus": "kaos" } },
+            "replikker": [
+                { "si": "Landet hadde ingen stat som virket lenger. Grupper med gammelt hat seg imellom sloss om makta." },
+                { "si": "Mange gikk fra glede over at Saddam var borte, til sinne over at fremmede soldater var i landet." },
+                { "si": "Sjia-militser, altså væpnede grupper av sjiamuslimer, kjempet mot USA. Sunni-islamister laget grupper som senere ble til IS, Den islamske stat." },
+                { "si": "Da de siste amerikanske soldatene dro i 2011, hadde volden kostet hundretusener av liv." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "1991: et klart mål, og FN med på laget.", "fraBeat": 0 },
+                        { "tekst": "Kuwait ble fritt.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "2003: uten FN, uten bevis, uten plan.", "fraBeat": 1 },
+                        { "tekst": "Freden kostet mer enn krigen.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Det er lett å vinne en krig.", "fraBeat": 2 },
+                        { "tekst": "Det er mye vanskeligere å vinne freden.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I 1991 hadde krigen et klart mål, og FN var med på laget. Kuwait ble fritt på kort tid." },
+                { "si": "I 2003 hadde USA ikke FN med seg, våpnene fantes ikke, og ingen hadde en plan for dagen etter. Kaoset etterpå kostet mer enn selve invasjonen." },
+                { "si": "Golfkrigene lærer oss noe viktig. Det er lett å vinne en krig. Det er mye vanskeligere å vinne freden." }
+            ]
+        }
+    ]
+}
