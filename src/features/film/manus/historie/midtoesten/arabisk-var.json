@@ -1,0 +1,385 @@
+{
+    "id": "arabisk-var",
+    "tittel": "Den arabiske våren",
+    "kilde": "/historie/midtoesten/arabisk-var",
+    "bilde": "/images/midtoesten/arabisk-var-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "gata",
+            "kapittel": "En fruktselger",
+            "visual": { "type": "ArabiskVarGata", "props": { "modus": "morgen" } },
+            "replikker": [
+                {
+                    "si": "Det er morgen den 17. desember 2010. Vi står i en liten by i Tunisia som heter Sidi Bouzid."
+                },
+                {
+                    "si": "En ung mann stiller vogna si med frukt og grønnsaker på fortauet. Han heter Mohamed Bouazizi, og han er 26 år."
+                },
+                {
+                    "si": "Han har solgt frukt siden han var ti. Familien hans lever av pengene han tjener."
+                },
+                {
+                    "si": "Så kommer en byråkrat, en som jobber for kommunen. Hun krever at han betaler bestikkelse, altså penger under bordet."
+                },
+                { "si": "Han nekter. Da slår hun ham og tar varene hans." },
+                {
+                    "si": "Bouazizi går til kommunehuset for å klage. Men ingen vil ta imot ham."
+                }
+            ]
+        },
+        {
+            "id": "ilden",
+            "visual": { "type": "ArabiskVarGata", "props": { "modus": "kveld" } },
+            "replikker": [
+                {
+                    "si": "Det han gjør etterpå, er forferdelig. Han kjøper bensin, går tilbake til fortauet og setter fyr på seg selv."
+                },
+                {
+                    "si": "Bouazizi var ingen politiker. Han holdt ingen taler. Han var en ung mann som ble ydmyket, altså gjort til skamme, en gang for mye."
+                },
+                {
+                    "si": "Millioner av arabere kjente seg igjen. De ble styrt av diktatorer, og sjefene tok imot penger under bordet. Det kalles korrupsjon."
+                },
+                {
+                    "si": "Bouazizi døde av brannskadene 4. januar 2011. Da hadde protestene allerede spredt seg over hele Tunisia."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DEN ARABISKE VÅREN",
+                    "undertittel": "Opprørene som skulle gi frihet",
+                    "bilde": "/images/midtoesten/arabisk-var-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor fikk bare ett land demokrati?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Det som skjedde etterpå, kaller vi den arabiske våren." },
+                {
+                    "si": "Navnet betyr en ny begynnelse, som når våren kommer etter en lang vinter."
+                },
+                {
+                    "si": "Unge mennesker krevde demokrati, slutt på korrupsjon og et bedre liv. I noen land lyktes de. I andre endte det i krig."
+                },
+                {
+                    "si": "I denne filmen skal vi finne ut hvorfor bare ett land klarte å bygge et demokrati."
+                }
+            ]
+        },
+        {
+            "id": "spredning",
+            "kapittel": "Ilden sprer seg",
+            "visual": { "type": "ArabiskVarKart", "props": { "modus": "spredning" } },
+            "replikker": [
+                { "si": "Ilden fra Sidi Bouzid spredte seg. Først over hele Tunisia." },
+                { "si": "Så videre til nabolandene Libya og Egypt." },
+                { "si": "Og så til Jemen, Bahrain og Syria." },
+                {
+                    "si": "Innen et år hadde folket veltet regjeringene i fire land: Tunisia, Egypt, Libya og Jemen."
+                }
+            ]
+        },
+        {
+            "id": "nett",
+            "visual": { "type": "ArabiskVarKart", "props": { "modus": "nett" } },
+            "replikker": [
+                { "si": "Én ting var ny denne gangen: Twitter og Facebook." },
+                {
+                    "si": "Med mobilen kunne unge mennesker avtale tid og sted for neste protest, med en gang."
+                },
+                {
+                    "si": "Regjeringene styrte aviser og TV. Men internett klarte de ikke å stanse, i hvert fall ikke fort nok."
+                },
+                {
+                    "si": "Videoer fra gatene gikk verden rundt på sekunder. Hele verden fulgte med, direkte."
+                }
+            ]
+        },
+        {
+            "id": "tunisia",
+            "kapittel": "Tunisia",
+            "visual": { "type": "ArabiskVarVeier", "props": { "land": "tunisia" } },
+            "replikker": [
+                {
+                    "si": "Tunisia først. President Ben Ali hadde styrt landet med hard hånd siden 1987."
+                },
+                {
+                    "si": "Han prøvde å slå ned protestene med politi og trusler. Det virket ikke."
+                },
+                {
+                    "si": "Den 14. januar 2011 flyktet han til Saudi-Arabia. Han var den første arabiske diktatoren som ble felt av sitt eget folk."
+                },
+                {
+                    "si": "Tunisia holdt valg og fikk en ny grunnlov, altså landets viktigste lov. Folket bygde opp et demokrati som virket."
+                },
+                {
+                    "si": "Veien var humpete, med flere kriser. Men Tunisia er det eneste landet som klarte overgangen til demokrati."
+                }
+            ]
+        },
+        {
+            "id": "tahrir",
+            "kapittel": "Egypt",
+            "visual": { "type": "ArabiskVarTorget", "props": { "sted": "tahrir" } },
+            "replikker": [
+                {
+                    "si": "I Egypt samlet folk seg på Tahrir-plassen, midt i hovedstaden Kairo."
+                },
+                { "si": "Til slutt sto en million egyptere på plassen." },
+                {
+                    "si": "I 18 dager holdt de ut. Så gikk president Hosni Mubarak av, i februar 2011. Verden jublet."
+                },
+                {
+                    "si": "Men demokratiet varte ikke lenge. Det muslimske brorskap, et parti som ville styre etter islam, vant valget."
+                },
+                {
+                    "si": "Presidenten deres, Mohamed Morsi, begynte å samle makt. I 2013 tok hæren over landet med makt. Det kalles et statskupp."
+                },
+                {
+                    "si": "Siden har general Abdel Fattah el-Sisi styrt Egypt. Han fengsler motstanderne sine, og mange blir torturert."
+                }
+            ]
+        },
+        {
+            "id": "libya",
+            "kapittel": "Libya",
+            "visual": { "type": "ArabiskVarKart", "props": { "modus": "libya" } },
+            "replikker": [
+                { "si": "I Libya hadde Muammar Gaddafi styrt helt siden 1969." },
+                {
+                    "si": "Da opprørerne reiste seg i 2011, bombet han sine egne byer. Da kom NATO, et militært samarbeid mellom vestlige land, og stanset ham med fly."
+                },
+                {
+                    "si": "Opprørerne vant. I oktober 2011 ble Gaddafi drept av motstanderne sine."
+                },
+                {
+                    "si": "Men så? Etter 42 år der én mann bestemte alt, fantes det ingen stat som virket."
+                },
+                {
+                    "si": "Væpnede grupper, stammer og regjeringer som kjempet mot hverandre, delte landet mellom seg. Libya er fortsatt ikke en normal stat."
+                }
+            ]
+        },
+        {
+            "id": "bahrain",
+            "kapittel": "Bahrain",
+            "visual": { "type": "ArabiskVarTorget", "props": { "sted": "pearl" } },
+            "replikker": [
+                {
+                    "si": "Bahrain er en liten, oljerik øystat i Persiabukta. I februar 2011 marsjerte folk til Pearl-rundkjøringen i hovedstaden Manama."
+                },
+                {
+                    "si": "Islam har to store retninger, sunni og sjia. De fleste som protesterte, var sjiamuslimer, mens kongefamilien er sunnimuslimer."
+                },
+                {
+                    "si": "Kongen ba om hjelp, og Saudi-Arabia sendte 1500 soldater over grensen.",
+                    "uttale": "Kongen ba om hjelp, og Saudi-Arabia sendte femten hundre soldater over grensen."
+                },
+                {
+                    "si": "Opprøret ble slått ned, og mange ble arrestert. Pearl-monumentet midt i rundkjøringen ble revet."
+                },
+                {
+                    "si": "Resten av verden så stort sett en annen vei. Bahrain er nemlig base for den femte flåten til USA, en stor del av marinen deres."
+                }
+            ]
+        },
+        {
+            "id": "syria",
+            "kapittel": "Syria",
+            "visual": { "type": "ArabiskVarKart", "props": { "modus": "syria" } },
+            "replikker": [
+                {
+                    "si": "I Syria begynte det fredelig. I byen Daraa dukket det opp graffiti på veggene. Tenåringer ble arrestert, og folk protesterte."
+                },
+                {
+                    "si": "President Bashar al-Assad svarte med å skyte. I stedet for å trekke seg tilbake, trappet han opp."
+                },
+                {
+                    "si": "Protestene ble til geriljakrig, altså kamp i små grupper, og til slutt til full borgerkrig."
+                },
+                {
+                    "si": "På den ene siden sto Assad, støttet av Russland og Iran. På den andre siden sto hundrevis av opprørsgrupper med helt ulike mål."
+                },
+                {
+                    "si": "I kaoset vokste terrorgruppen IS fram. IS tok over land i Syria og Irak, og lokket til seg unge menn fra hele verden."
+                }
+            ]
+        },
+        {
+            "id": "flukt",
+            "visual": { "type": "ArabiskVarKart", "props": { "modus": "flukt" } },
+            "replikker": [
+                { "si": "Borgerkrigen i Syria varte i nesten fjorten år." },
+                {
+                    "si": "Millioner av syrere flyktet til nabolandene Tyrkia, Libanon og Jordan."
+                },
+                {
+                    "si": "I 2015 krysset hundretusener Middelhavet for å komme til Europa. Det var den største flyktningkrisen i Europa siden andre verdenskrig."
+                },
+                {
+                    "si": "Assad holdt seg ved makten helt til desember 2024. Da falt styret hans på elleve dager, og han flyktet til Moskva."
+                }
+            ]
+        },
+        {
+            "id": "omfang",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 528,
+                            "farget": 0,
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Hver prikk er tusen mennesker",
+                            "restEtikett": "tusen mennesker"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 528,
+                            "farget": 528,
+                            "farge": "#475569",
+                            "tittel": "Over 528 000 døde i krigen",
+                            "fargeEtikett": "tusen døde"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 528,
+                            "farget": 64,
+                            "farge": "#dc2626",
+                            "restFarge": "#475569",
+                            "tittel": "Over 64 000 døde i fengslene",
+                            "fargeEtikett": "tusen døde i fengslene",
+                            "restEtikett": "tusen døde ellers i krigen"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Først etter at Assad falt, ble fengslene og massegravene åpnet. Da ble det synlig hvor mange som var drept."
+                },
+                {
+                    "si": "En syrisk gruppe som passer på menneskerettighetene, anslår at over 528 000 mennesker mistet livet."
+                },
+                { "si": "Over 64 000 av dem døde i fengslene til Assad." }
+            ]
+        },
+        {
+            "id": "galt",
+            "kapittel": "Hva gikk galt?",
+            "visual": { "type": "ArabiskVarVeier", "props": { "land": "alle" } },
+            "replikker": [
+                { "si": "La oss se på landene igjen. Tunisia fikk demokrati." },
+                { "si": "Egypt fikk hæren tilbake ved makten. Libya fikk kaos." },
+                { "si": "I Bahrain ble opprøret knust. Syria fikk en borgerkrig." },
+                {
+                    "si": "Hvorfor gikk det så galt? Demokrati er mer enn å kaste en diktator. Det trenger frie domstoler, partier og folk som organiserer seg."
+                },
+                {
+                    "si": "Slikt tar generasjoner å bygge. Der det manglet, grep hæren, islamistiske grupper eller andre land inn i stedet."
+                }
+            ]
+        },
+        {
+            "id": "stormakter",
+            "visual": { "type": "ArabiskVarKart", "props": { "modus": "stormakter" } },
+            "replikker": [
+                {
+                    "si": "Store land blandet seg også inn. Saudi-Arabia og Iran kjempet om makt gjennom opprørere og regjeringer."
+                },
+                { "si": "USA og Russland sto på hver sin side i Syria." },
+                {
+                    "si": "Vestlige land gikk inn i Libya. Men da Gaddafi var borte, dro de, uten noen plan for hva som skulle skje etterpå."
+                }
+            ]
+        },
+        {
+            "id": "hvorfor-tunisia",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvorfor klarte Tunisia det?",
+                    "punkter": [
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Mer likt folk",
+                            "tekst": "færre skiller mellom grupper",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Flere bodde i byer",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Hæren holdt seg utenfor",
+                            "tekst": "den tok ikke makten",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Så hvorfor klarte Tunisia det? Det finnes tre mulige grunner. Den første: Folket i Tunisia var mer likt hverandre." },
+                {
+                    "si": "Det var færre skiller mellom grupper som kunne slåss om makten."
+                },
+                { "si": "Flere bodde i byer." },
+                {
+                    "si": "Og hæren valgte å holde seg utenfor. Men husk: Tunisia er unntaket, ikke regelen."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En fruktselger i en liten by", "fraBeat": 0 },
+                        {
+                            "tekst": "startet noe som spredte seg over hele Midtøsten.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        { "tekst": "Å kaste en diktator tok uker.", "fraBeat": 1 },
+                        {
+                            "tekst": "Å bygge et demokrati tar generasjoner.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "«Vi ropte frihet og fikk en krig.", "fraBeat": 2 },
+                        { "tekst": "Vi ropte demokrati og fikk diktatorer tilbake.»", "fraBeat": 2 },
+                        { "tekst": "«Men vi ropte,", "fraBeat": 3 },
+                        {
+                            "tekst": "og det kan ingen ta fra oss.»",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En fruktselger i en liten by startet noe som spredte seg over hele Midtøsten."
+                },
+                {
+                    "si": "Men å kaste en diktator tok bare uker. Å bygge et demokrati tar generasjoner."
+                },
+                {
+                    "si": "En syrisk aktivist sa det slik i 2013: Vi ropte frihet og fikk en krig. Vi ropte demokrati og fikk diktatorer tilbake."
+                },
+                { "si": "Men vi ropte, og det kan ingen ta fra oss." }
+            ]
+        }
+    ]
+}
