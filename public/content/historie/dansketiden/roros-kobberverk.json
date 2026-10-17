@@ -6,7 +6,7 @@
   "year": "1644-1977",
   "category": "Dansketiden",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dansketiden/roros-kobberverk-hero.webp",
   "details": [
     "Røros kobberverk var i drift i 333 år, fra 1644 til 1977, og var et av de største gruveselskapene i Norge.",
     "Kongen ga verket en sirkel på 45 kilometer, circumferensen, der skogen, vannet og bøndenes arbeid måtte tjene verket.",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/roros-kobberverk-01.webp",
       "alt": "Hester med sleder på vei over snødekt vidde mot røykende bergstad",
       "caption": "Om vinteren fraktet hester og sleder malm, kull og ved over frosne vann og myrer til smeltehytta."
     },
@@ -94,7 +94,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/roros-kobberverk-02.webp",
       "alt": "Svarte slagghauger og trehus i bergstaden Røros",
       "caption": "Slagghaugene i Røros er rester av steinen som ble smeltet i hytta. De er fortsatt en del av bybildet."
     },
@@ -140,7 +140,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/roros-kobberverk-03.webp",
       "alt": "Røros kirke i stein over trehusene i bergstaden",
       "caption": "Røros kirke, som ble bygd på 1780-tallet, har plass til 1800 mennesker. Den kalles «Bergstadens ziir», som betyr bergstadens pryd."
     },
