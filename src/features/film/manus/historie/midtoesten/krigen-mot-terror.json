@@ -1,0 +1,407 @@
+{
+    "id": "krigen-mot-terror",
+    "tittel": "11. september og krigen mot terror",
+    "kilde": "/historie/midtoesten/krigen-mot-terror",
+    "bilde": "/images/midtoesten/krigen-mot-terror-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 903, "begrunnelse": "Antall prikker i prikkfeltet: 900 for krigene (900 000 i artikkelen) pluss 3 for 11. september (3000 i artikkelen)." },
+        { "tall": 1000, "begrunnelse": "Målestokk i prikkfeltet: én prikk er 1000 mennesker, regnet ut fra 3000 og 900 000 i artikkelen." }
+    ],
+    "scener": [
+        {
+            "id": "morgen",
+            "kapittel": "Morgenen",
+            "visual": { "type": "TerrorKart", "props": { "modus": "usa" } },
+            "klokke": ["08.46", "08.46", null, null, null],
+            "replikker": [
+                {
+                    "si": "Det er tirsdag morgen, 11. september 2001. Klokka er 08.46 i New York.",
+                    "uttale": "Det er tirsdag morgen, ellevte september 2001. Klokka er fjorten på ni i New York."
+                },
+                {
+                    "si": "Et passasjerfly treffer det ene tårnet i World Trade Center. Det er ikke en ulykke."
+                },
+                {
+                    "si": "Den morgenen kaprer 19 menn fire passasjerfly. Å kapre betyr å ta kontrollen over flyet med makt."
+                },
+                {
+                    "si": "To fly treffer tårnene i New York. Ett treffer Pentagon, forsvarsdepartementet til USA. Det fjerde styrter i en åker i Pennsylvania, etter at passasjerene prøver å ta tilbake kontrollen."
+                },
+                {
+                    "si": "Nesten 3000 mennesker mister livet. Det er det dødeligste terrorangrepet i historien."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "11. SEPTEMBER",
+                    "undertittel": "og krigen mot terror",
+                    "bilde": "/images/midtoesten/krigen-mot-terror-hero.webp",
+                    "tall": [
+                        { "verdi": 3000, "etikett": "døde 11. september", "fraBeat": 1, "tone": "rod" },
+                        { "verdi": 20, "etikett": "år med krig etterpå", "fraBeat": 2 }
+                    ],
+                    "sporsmal": { "tekst": "Hva fikk verden igjen for krigen?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Angrepene forandret verden." },
+                { "si": "De drepte nesten 3000 mennesker på én morgen." },
+                { "si": "Og de satte i gang en krig som skulle vare i 20 år." },
+                {
+                    "si": "I denne filmen skal vi se hvem som stod bak, hvordan USA svarte, og hva verden fikk igjen for krigen."
+                }
+            ]
+        },
+        {
+            "id": "hvem",
+            "kapittel": "Hvem stod bak?",
+            "visual": { "type": "TerrorKart", "props": { "modus": "sovjet" } },
+            "replikker": [
+                {
+                    "si": "Bak angrepene stod al-Qaida, en terrorgruppe ledet av Osama bin Laden."
+                },
+                {
+                    "si": "Gruppa vokste fram i Afghanistan. I 1979 invaderte Sovjetunionen landet, altså gikk inn med soldater."
+                },
+                {
+                    "si": "Krigere fra hele den muslimske verden strømmet til for å kjempe mot Sovjet. Bin Laden var en av dem."
+                },
+                {
+                    "si": "USA og Saudi-Arabia ga dem penger og våpen. De ville stoppe at kommunismen, Sovjets styresett, spredte seg."
+                },
+                {
+                    "si": "I 1989 trakk Sovjet seg ut. Men krigerne satt igjen med trening, kontakter og et nytt mål: Vesten, altså USA og Europa."
+                }
+            ]
+        },
+        {
+            "id": "hvorfor",
+            "visual": { "type": "TerrorKart", "props": { "modus": "motiv" } },
+            "replikker": [
+                {
+                    "si": "Bin Laden mente at USA blandet seg for mye inn i muslimske land. Særlig da amerikanske soldater kom til Saudi-Arabia under Gulfkrigen i 1990."
+                },
+                {
+                    "si": "Han erklærte jihad mot USA. Det betyr hellig krig."
+                },
+                {
+                    "si": "Fra Afghanistan planla al-Qaida angrepene i hemmelighet i flere år. Taliban, som styrte landet, lot dem holde på."
+                },
+                {
+                    "si": "Kaprerne øvde til og med i flysimulatorer, maskiner der man lærer å fly uten å gå i lufta."
+                }
+            ]
+        },
+        {
+            "id": "krig-ide",
+            "kapittel": "USA svarer",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Krigen mot terror",
+                    "undertittel": "Ikke mot ett land, men mot en idé",
+                    "bilde": "/images/midtoesten/krigen-mot-terror-02.webp",
+                    "sporsmal": { "tekst": "Når er terror beseiret?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "President George W. Bush svarte med en gang. Han erklærte krigen mot terror."
+                },
+                {
+                    "si": "Det var ikke en krig mot ett land. Det var en krig mot en idé, mot det å bruke terror for å få makt."
+                },
+                {
+                    "si": "Men en slik krig har ingen klar slutt. Når er terror beseiret? Ingen visste svaret."
+                }
+            ]
+        },
+        {
+            "id": "afghanistan",
+            "kapittel": "Afghanistan 2001",
+            "visual": { "type": "TerrorFjell", "props": { "modus": "invasjon" } },
+            "replikker": [
+                {
+                    "si": "I oktober 2001 gikk USA og allierte land inn i Afghanistan med soldater."
+                },
+                {
+                    "si": "Målet var klart: fjerne Taliban, som beskyttet al-Qaida, og ta bin Laden."
+                },
+                {
+                    "si": "Taliban falt fortere enn mange trodde. Innen desember hadde USA kontroll over Kabul, hovedstaden, og de store byene."
+                },
+                {
+                    "si": "Men bin Laden flyktet opp i fjellene ved Tora Bora, nær grensen til Pakistan. Han slapp unna."
+                },
+                {
+                    "si": "Det tok ti år før amerikanske spesialsoldater fant ham i Pakistan og drepte ham, i 2011."
+                }
+            ]
+        },
+        {
+            "id": "irak",
+            "kapittel": "Irak 2003",
+            "visual": { "type": "TerrorKart", "props": { "modus": "irak" } },
+            "replikker": [
+                {
+                    "si": "I mars 2003 invaderte USA et nytt land: Irak. Denne gangen var verden mye mindre enig."
+                },
+                {
+                    "si": "Regjeringen til Bush sa at Iraks diktator, Saddam Hussein, hadde masseødeleggelsesvåpen. Det er våpen som kan drepe svært mange mennesker på en gang."
+                },
+                {
+                    "si": "De sa også at Saddam samarbeidet med al-Qaida."
+                },
+                {
+                    "si": "Begge påstandene var feil. Det fantes ingen slike våpen, og ingen ekte kobling."
+                },
+                {
+                    "si": "Saddam var faktisk en bitter fiende av grupper som al-Qaida."
+                }
+            ]
+        },
+        {
+            "id": "kaos",
+            "visual": { "type": "TerrorKart", "props": { "modus": "kaos" } },
+            "replikker": [
+                { "si": "Saddam Hussein ble styrtet, og senere henrettet." },
+                {
+                    "si": "Men i flere tiår hadde han holdt landet sammen med vold og frykt. Da han falt, brøt gammelt hat mellom ulike grupper ut i åpen strid."
+                },
+                {
+                    "si": "Amerikanerne hadde ingen god plan for hva som skulle skje etter krigen. Landet gled ut i borgerkrig."
+                },
+                {
+                    "si": "Ut av ruinene vokste en ny og enda mer brutal gruppe: Den islamske stat, kjent som IS."
+                }
+            ]
+        },
+        {
+            "id": "to-kriger",
+            "visual": { "type": "TerrorTo" },
+            "replikker": [
+                { "si": "La oss sette de to krigene side om side." },
+                {
+                    "si": "Krigen i Afghanistan hadde støtte fra FN. I Irak ga FN ingen godkjenning, og Frankrike og Tyskland nektet å være med."
+                },
+                {
+                    "si": "I Afghanistan holdt al-Qaida til. Grunnene til å gå inn i Irak viste seg å være feil."
+                },
+                {
+                    "si": "Begge stedene falt den gamle makten raskt. Men i Irak kom kaos og borgerkrig etterpå."
+                },
+                {
+                    "si": "Og arven? I Irak vokste IS fram. Og i Afghanistan, det skal vi snart se."
+                }
+            ]
+        },
+        {
+            "id": "omdomme",
+            "kapittel": "Prisen",
+            "visual": { "type": "TerrorKart", "props": { "modus": "omdomme" } },
+            "replikker": [
+                {
+                    "si": "Etter 11. september hadde USA hele verdens medfølelse. Landet var blitt angrepet.",
+                    "uttale": "Etter ellevte september hadde USA hele verdens medfølelse. Landet var blitt angrepet."
+                },
+                {
+                    "si": "Men i fengselet Abu Ghraib i Irak mishandlet og ydmyket amerikanske soldater irakiske fanger. Bildene gikk verden rundt."
+                },
+                {
+                    "si": "På Guantanamo-basen på Cuba holdt USA mistenkte terrorister fanget i årevis, uten rettssak. Det var i strid med internasjonal lov."
+                },
+                { "si": "Mange av fangene hadde aldri gjort noe galt." },
+                { "si": "Underveis mistet USA mye av den medfølelsen landet hadde fått." }
+            ]
+        },
+        {
+            "id": "dode",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 903,
+                            "farget": 3,
+                            "farge": "#475569",
+                            "restFarge": "#e2e8f0",
+                            "tittel": "Én prikk = 1000 mennesker",
+                            "fargeEtikett": "tusen døde 11. september",
+                            "restEtikett": "hva kom etterpå? Én prikk er tusen mennesker"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 903,
+                            "farget": 3,
+                            "farge": "#475569",
+                            "restFarge": "#b91c1c",
+                            "tittel": "Krigene etterpå: minst 900 000 drept",
+                            "fargeEtikett": "tusen døde 11. september",
+                            "restEtikett": "tusen drept i krigene etter 2001"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på disse tre prikkene. Hver prikk er 1000 mennesker, og til sammen er det de som døde 11. september.",
+                    "uttale": "Se på disse tre prikkene. Hver prikk er tusen mennesker, og til sammen er det de som døde ellevte september."
+                },
+                {
+                    "si": "Og her er krigene i Afghanistan, Irak og Pakistan etter 2001. Minst 900 000 mennesker ble drept, blant dem titusener av sivile."
+                },
+                {
+                    "si": "Sivile er vanlige folk som ikke er soldater. Enda flere døde av sult, sykdom og ødelagte samfunn."
+                }
+            ]
+        },
+        {
+            "id": "regning",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Krigen mot terror i tall",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "8000 milliarder dollar",
+                            "tekst": "brukte USA til sammen",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "38 millioner på flukt",
+                            "tekst": "drevet hjemmefra av krigene",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "20 år i Afghanistan",
+                            "tekst": "den lengste krigen i USAs historie",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "USA brukte rundt 8000 milliarder dollar på krigene." },
+                { "si": "Rundt 38 millioner mennesker måtte flykte fra hjemmene sine." },
+                {
+                    "si": "Og krigen i Afghanistan varte i 20 år. Det er den lengste krigen i USAs historie."
+                }
+            ]
+        },
+        {
+            "id": "kabul",
+            "kapittel": "Tilbake til start",
+            "visual": { "type": "TerrorFjell", "props": { "modus": "kabul" } },
+            "replikker": [
+                {
+                    "si": "Spol fram til august 2021. USA trekker de siste soldatene ut av Afghanistan."
+                },
+                {
+                    "si": "På flyplassen i Kabul prøver desperate afghanere å komme seg med de siste flyene ut."
+                },
+                { "si": "Taliban marsjerer inn i Kabul uten kamp." },
+                {
+                    "si": "Det er de samme Taliban som styrte landet i 1996, og som ble jaget i 2001."
+                },
+                {
+                    "si": "Etter 20 år, over 2300 milliarder dollar og tusenvis av liv, er alt tilbake der det startet."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærte verden?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hva lærte verden?",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "Våpen kan styrte",
+                            "tekst": "men ikke bygge et demokrati",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Ha en plan for etterpå",
+                            "tekst": "ellers kan noe verre vokse fram",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "bombe",
+                            "tittel": "Terror er en taktikk",
+                            "tekst": "ikke en hær du kan bombe bort",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Frykt er farlig",
+                            "tekst": "også for demokratier",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva lærte verden? For det første: Militærmakt kan styrte en regjering, men den kan ikke bygge et demokrati."
+                },
+                {
+                    "si": "Invaderer du et land uten plan for etterpå, sitter ingen igjen med kontrollen. Da kan noe verre vokse fram."
+                },
+                {
+                    "si": "Terror kan ikke beseires med bomber alene. Terror er en måte å kjempe på, ikke en hær."
+                },
+                {
+                    "si": "Og kanskje viktigst: Frykt kan få demokratier til å gjøre ting de senere angrer på, som å fengsle uskyldige uten rettssak."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Én morgen. Fire fly.", "fraBeat": 0 },
+                        { "tekst": "To lange kriger.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "En liten gruppe med enkle midler", "fraBeat": 1 },
+                        {
+                            "tekst": "utfordret verdens mektigste land.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Bomber alene beseirer ikke terror.", "fraBeat": 2 },
+                        {
+                            "tekst": "For terror er en taktikk, ikke en hær.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Angrepene 11. september satte i gang to lange og dyre kriger.",
+                    "uttale": "Angrepene ellevte september satte i gang to lange og dyre kriger."
+                },
+                {
+                    "si": "De viste at en liten gruppe, med enkle midler, kan utfordre verdens mektigste supermakt."
+                },
+                {
+                    "si": "Leksen er ikke enkel. Men den er viktig å forstå."
+                }
+            ]
+        }
+    ]
+}
