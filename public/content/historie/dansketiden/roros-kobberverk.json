@@ -1,0 +1,247 @@
+{
+  "id": "roros-kobberverk",
+  "title": "Røros kobberverk: da et helt landskap jobbet for kobberet",
+  "layout": "rich",
+  "subject": "historie",
+  "year": "1644-1977",
+  "category": "Dansketiden",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Røros kobberverk var i drift i 333 år, fra 1644 til 1977, og var et av de største gruveselskapene i Norge.",
+    "Kongen ga verket en sirkel på 45 kilometer, circumferensen, der skogen, vannet og bøndenes arbeid måtte tjene verket.",
+    "Smeltingen slukte skogen, og både bønder, kvinner, kjørekarer og sørsamiske reindriftsfamilier ble preget av verket."
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er midtvinter på Rørosvidda for over 300 år siden. Det er så kaldt at snøen knirker. Ut av mørket kommer en lang rekke hester med sleder. Lasset er tungt: stein fra gruvene, sekker med trekull og ved. Foran ligger bergstaden Røros. Der stiger det røyk opp fra smeltehytta dag og natt. Hvorfor slet så mange mennesker i kulden for et lite fjellsamfunn langt fra kysten? Svaret er et rødbrunt metall: kobber."
+    },
+    {
+      "type": "text",
+      "content": "I 333 år, fra 1644 til 1977, var Røros kobberverk et av de største gruveselskapene i Norge (Berg et al., 2026). Men denne historien handler ikke bare om én gruve. Den handler om hvordan ett verk tok over et helt landskap, og om alle menneskene som ble dratt inn i arbeidet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hester med sleder på vei over snødekt vidde mot røykende bergstad",
+      "caption": "Om vinteren fraktet hester og sleder malm, kull og ved over frosne vann og myrer til smeltehytta."
+    },
+    {
+      "type": "header",
+      "text": "Kobberet i fjellet"
+    },
+    {
+      "type": "text",
+      "content": "Kobber er et rødbrunt metall som er lett å forme. Det meste av kobberet fra Norge ble solgt til utlandet, men noe ble brukt her hjemme, for eksempel på kirketårn (Johannessen, 2024). I 1644 begynte Lorentz Lossius å bryte malm på Rørosvidda (Berg et al., 2026). Malm er stein med metall i. Prøvedriften startet i fjellet Rauhammaren, og verket regner 1644 som startåret sitt (Stokkan & Haugen, 2026). Allerede året etter tok de i bruk gruva Storwartz, som ble verkets viktigste gruveområde."
+    },
+    {
+      "type": "text",
+      "content": "Norge var på denne tiden en del av Danmark-Norge, og kongen satt i København. Kongen var svært interessert i bergverk, fordi metall betydde penger og våpen. Men gruvedrift krevde kunnskap som fantes i utlandet. Derfor hentet de inn tyske eksperter og tyske fagarbeidere for å drive bergverkene (Johannessen, 2024). Du kan lese mer om hvordan kongen bygde opp sølvbyen Kongsberg i artikkelen om [Christian IV](/historie/dansketiden/christian-iv)."
+    },
+    {
+      "type": "header",
+      "text": "En sirkel på 45 kilometer"
+    },
+    {
+      "type": "text",
+      "content": "I 1646 tok Joachim Irgens over verket, og han fikk store rettigheter fra kongen. Disse rettighetene kalles privilegier. Verket fikk en sirkel med en radius på fire gamle mil, det vil si 45,2 kilometer, rundt gruva. Innenfor denne sirkelen fikk verket velge først når det gjaldt alle mineraler, all skog og alle elver og vann (Berg et al., 2026). Sirkelen fikk navnet circumferensen, et latinsk ord for omkrets."
+    },
+    {
+      "type": "text",
+      "content": "Til gjengjeld fikk kongen en tiendedel av alt kobberet, i tillegg til toll og andre avgifter (Berg et al., 2026). Samme år, i 1646, sto den første smeltehytta klar (Stokkan & Haugen, 2026). Smeltehytta var hjertet i verket. Her ble malmen varmet opp så kraftig at kobberet skilte seg fra steinen."
+    },
+    {
+      "type": "text",
+      "content": "Det spesielle med circumferensen var at den gjorde bøndene i hele området til en del av verket. Bøndene som bodde innenfor sirkelen, måtte frakte varer og brenne trekull for verket. De fikk betalt, men de kunne ikke si nei (Berg et al., 2026). Dette kalles pliktarbeid. Det samme systemet fantes ved flere norske bergverk på denne tiden (Johannessen, 2024)."
+    },
+    {
+      "type": "component",
+      "name": "CircumferensenKart",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Livet i gruva"
+    },
+    {
+      "type": "text",
+      "content": "Nede i gruvene jobbet bergmennene. Jobben deres var å bryte malmen løs fra fjellet. Det var tungt og farlig arbeid. På 1600- og 1700-tallet brukte de en metode som heter fyrsetting. Da tente de store bål inntil fjellveggen. Varmen gjorde at fjellet sprakk opp, og da ble det lettere å bryte malmen løs (Norges verdensarv, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Senere boret bergmennene hull i fjellet for hånd og sprengte med krutt. Enda senere kom dynamitten (Norges verdensarv, u.å.). Den rikeste gruva var Nye Storwartz, som ble funnet i 1708. Den alene ga rundt 40 000 tonn kobber (Berg et al., 2026). Den siste gruva i Storwartz-feltet, Olavsgruva, var i drift helt til sommeren 1972 (Rørosmuseet, u.å.). I dag kan du gå inn i den som besøkende."
+    },
+    {
+      "type": "text",
+      "content": "Bergmennene hadde ikke bare én jobb. Alle arbeiderne ved verket hadde en egen liten gård med dyr. Mennene var i gruva eller ved smeltehytta mesteparten av tiden, så det var kvinnene som drev det meste av gårdsarbeidet (Norges verdensarv, u.å.). Uten kvinnenes arbeid hjemme hadde ikke familiene klart seg."
+    },
+    {
+      "type": "header",
+      "text": "Skogen som forsvant"
+    },
+    {
+      "type": "text",
+      "content": "For å smelte malm trengte verket enorme mengder ved og trekull. Trekull lages ved å brenne ved langsomt med lite luft, slik at det blir et brensel som gir mye varme. Smeltehytta slukte skog i et tempo naturen ikke klarte å holde følge med. Allerede rundt 1670 var skogen innenfor 25 kilometer fra smeltehytta hugget ut. Tidlig på 1700-tallet måtte det meste av veden og kullet hentes utenfor circumferensen (Berg et al., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Røyken fra smeltingen forurenset lufta. Den gjorde det også vanskeligere for ny skog å vokse opp (Berg et al., 2026). Mange av dem som besøker Røros i dag, legger merke til de store haugene med svart slagg i byen (Norges verdensarv, u.å.). Slagg er restene av steinen etter at kobberet er smeltet ut. Haugene er spor etter flere hundre år med tungindustri på fjellet."
+    },
+    {
+      "type": "text",
+      "content": "Verket fant en smart løsning på skogmangelen. I 1743 bygde de en ny smeltehytte ved innsjøen Femunden, der det fortsatt var mye skog. Det var rett og slett billigere å frakte malmen til skogen enn å frakte kullet til Røros (Norges verdensarv, u.å.). Når skogen tok slutt ett sted, flyttet verket etter den. Det samme sultne behovet for tre preget også store deler av Norge gjennom [trelasthandelen](/historie/dansketiden/trelasthandelen)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Svarte slagghauger og trehus i bergstaden Røros",
+      "caption": "Slagghaugene i Røros er rester av steinen som ble smeltet i hytta. De er fortsatt en del av bybildet."
+    },
+    {
+      "type": "header",
+      "text": "Kjørekarene og vinterveien"
+    },
+    {
+      "type": "text",
+      "content": "Alt som verket trengte, måtte fraktes. Malm skulle fra gruvene til smeltehytta, og kull og ved skulle fra skogen. Det var kjørekarene som gjorde denne jobben, med hest og slede. Vinteren var den beste tiden, fordi de da kunne kjøre rett over frosne vann og myrer. «Uten kjørekarene og hestene hadde kobberverket stoppet opp», skriver Norges verdensarv (u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Den viktigste veien het Vinterleden. Den gikk mellom Røros og gruvebyen Falun i Sverige. En tur fram og tilbake var omtrent 85 mil, og den kunne ta over seks uker (Norges verdensarv, u.å.). Det ferdige kobberet ble kjørt til Trondheim. Mye av verket var eid av kjøpmenn fra Trondheim, og de solgte kobberet videre, mest til Amsterdam. Der lå den viktigste markedsplassen for kobber i Europa (Johannessen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Kjøringen endret seg først da moderne teknikk kom. I 1877 åpnet Rørosbanen, og da kunne verket bruke koks i stedet for trekull. Koks er et brensel laget av steinkull, og verket kjøpte det fra utlandet. Kullbrenningen tok slutt. Rundt år 1900 kom taubaner som fraktet malmen, og da mistet de fleste bøndene jobben med malmkjøring (Berg et al., 2026)."
+    },
+    {
+      "type": "header",
+      "text": "De som var der først"
+    },
+    {
+      "type": "text",
+      "content": "Rørosvidda var ikke et tomt landskap da verket kom. Sørsamiske familier hadde fulgt reinflokkene sine her lenge før noen begynte å grave etter kobber. Reinen ga dem kjøtt, bein, horn, skinn og reinost. Verket gjorde store inngrep i naturen, og det ble konkurranse om skogen, beitene og andre ressurser (Norges verdensarv, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "I dag er Røros et kjerneområde for sørsamisk språk og kultur, og fra 2018 er kommunen offisielt tospråklig. I 2025 startet et arbeid for at den samiske historien også skal bli en tydelig del av verdensarven (Stokkan & Haugen, 2026). Du kan lese om hvordan staten senere prøvde å gjøre samene norske, i artikkelen om [fornorskingen av samene](/historie/norge-i-moderne-tid/fornorskingen-av-samene)."
+    },
+    {
+      "type": "header",
+      "text": "Slutten på 333 år"
+    },
+    {
+      "type": "text",
+      "content": "Mot slutten gikk det tyngre for verket. I 1953 brant smeltehytta, og etter det ble kobberet sendt til Sverige for å smeltes der. Fra midten av 1930-tallet var staten den største eieren. Men i 1977 gikk verket konkurs. Det betyr at selskapet ikke lenger kunne betale det det skyldte, og gruvedriften var over. Gjennom alle årene hadde verket produsert rundt 118 000 tonn kobber (Berg et al., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Bergstaden ble likevel ikke glemt. I 1980 kom Røros på UNESCOs verdensarvliste. Det betyr at verden er enig om at stedet er så viktig at det må tas vare på for alle mennesker (Stokkan & Haugen, 2026). I 2010 ble hele circumferensen, med Femundshytta og Vinterleden, tatt med i verdensarven. Området er på rundt 5000 kvadratkilometer (Norges verdensarv, u.å.). Det viser at det ikke er nok å bevare bare byen. Historien om kobberet er historien om et helt landskap."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Røros kirke i stein over trehusene i bergstaden",
+      "caption": "Røros kirke, som ble bygd på 1780-tallet, har plass til 1800 mennesker. Den kalles «Bergstadens ziir», som betyr bergstadens pryd."
+    },
+    {
+      "type": "text",
+      "content": "Røros kirke er et godt bilde på hvor viktig verket ble. Den er en av de største kirkene i landet, med 1800 sitteplasser (Stokkan & Haugen, 2026). Et fjellsamfunn bygde altså en av landets største kirker, takket være kobberet i fjellet."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Berg, B. I., Gvein, Ø. & Indseth, A. (2026). *Røros kobberverk*. Store norske leksikon. Hentet 17.10.2026 fra [snl.no/Røros_kobberverk](https://snl.no/R%C3%B8ros_kobberverk)",
+          "Johannessen, F. E. (2024). *Nye næringer: trelast og bergverk*. Norgeshistorie, Universitetet i Oslo. Hentet 17.10.2026 fra [norgeshistorie.no](https://www.norgeshistorie.no/kirkestat/1105-nye-naringer-trelast-og-bergverk.html)",
+          "Norges verdensarv. (u.å.). *Røros bergstad og Circumferensen*. Hentet 17.10.2026 fra [norgesverdensarv.no/roros-bergstad](https://norgesverdensarv.no/roros-bergstad)",
+          "Rørosmuseet. (u.å.). *Nyberget og Olavsgruva*. Hentet 17.10.2026 fra [rorosmuseet.no/nyberget-og-olavsgruva](https://rorosmuseet.no/nyberget-og-olavsgruva)",
+          "Stokkan, J. & Haugen, M. O. (2026). *Røros - kommune i Trøndelag*. Store norske leksikon. Hentet 17.10.2026 fra [snl.no/Røros](https://snl.no/R%C3%B8ros)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilke år var Røros kobberverk i drift, og hvor mange år ble det til sammen?",
+          "Hva var circumferensen, og hvilke rettigheter fikk verket innenfor den?",
+          "Hva var fyrsetting, og hvorfor brukte bergmennene denne metoden?",
+          "Hvorfor bygde verket en ny smeltehytte ved Femunden i 1743?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor verket trengte så mye skog. Hva skjedde med skogen rundt Røros?",
+          "Bøndene i circumferensen fikk betalt, men kunne ikke si nei til arbeidet. Var dette rettferdig? Begrunn svaret.",
+          "Hvorfor tror du kvinnenes arbeid på gårdene var like viktig for verket som arbeidet i gruva?",
+          "Hvordan påvirket kobberverket de sørsamiske familiene som bodde på vidda før verket kom?"
+        ],
+        "gaaVidere": [
+          "I dag diskuterer vi nye gruver i Norge, for eksempel for å finne metaller til batterier. Finn et eksempel på en slik sak og sammenlign den med Røros: hvem tjener på gruva, og hvem må gi fra seg noe?",
+          "Skriv en kort dagboktekst som en kjørekar på vei over Vinterleden en kald vinternatt. Hva ser, hører og tenker du på?",
+          "Diskuter i klassen: Hvorfor tror du UNESCO valgte å verne hele circumferensen og ikke bare byen Røros?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvor lenge var Røros kobberverk i drift?",
+            "options": [
+              "I omtrent 50 år",
+              "I 333 år, fra 1644 til 1977",
+              "I omtrent 100 år, fra 1800 til 1900",
+              "Det er fortsatt i drift i dag"
+            ],
+            "answer": "I 333 år, fra 1644 til 1977"
+          },
+          {
+            "question": "Hva var circumferensen?",
+            "options": [
+              "En kirke i Røros",
+              "En sirkel på 45 km rundt gruva der verket hadde førsterett til skog, vann og mineraler",
+              "En vei mellom Røros og Trondheim",
+              "Navnet på den største gruva"
+            ],
+            "answer": "En sirkel på 45 km rundt gruva der verket hadde førsterett til skog, vann og mineraler"
+          },
+          {
+            "question": "Hvorfor forsvant skogen rundt Røros?",
+            "options": [
+              "Den brant ned i en stor skogbrann",
+              "Bøndene trengte mer plass til åkre",
+              "Smeltehytta brukte enorme mengder ved og trekull",
+              "Reinflokkene spiste den opp"
+            ],
+            "answer": "Smeltehytta brukte enorme mengder ved og trekull"
+          },
+          {
+            "question": "Hvem drev det meste av gårdsarbeidet hos arbeiderfamiliene?",
+            "options": [
+              "Bergmennene",
+              "Kvinnene",
+              "Kongens tjenere",
+              "De tyske ekspertene"
+            ],
+            "answer": "Kvinnene"
+          },
+          {
+            "question": "Når kom Røros på UNESCOs verdensarvliste?",
+            "options": [
+              "1877",
+              "1953",
+              "1977",
+              "1980"
+            ],
+            "answer": "1980"
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
