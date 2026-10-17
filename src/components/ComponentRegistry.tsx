@@ -134,6 +134,7 @@ const RomanExpansionMap = lazy(() => import('./content/interactive/RomanExpansio
 const Tiltakspakken = lazy(() => import('./content/interactive/Tiltakspakken').then(m => ({ default: m.Tiltakspakken })));
 const MaktDragkampen = lazy(() => import('./content/interactive/MaktDragkampen').then(m => ({ default: m.MaktDragkampen })));
 const Opprorstavla1968 = lazy(() => import('./content/interactive/Opprorstavla1968').then(m => ({ default: m.Opprorstavla1968 })));
+const CircumferensenKart = lazy(() => import('./content/interactive/CircumferensenKart').then(m => ({ default: m.CircumferensenKart })));
 const TrolleyProblem = lazy(() => import('./content/interactive/TrolleyProblem').then(m => ({ default: m.TrolleyProblem })));
 const Varslingskjeden = lazy(() => import('./content/interactive/Varslingskjeden').then(m => ({ default: m.Varslingskjeden })));
 const EisenhowersValg = lazy(() => import('./content/interactive/EisenhowersValg').then(m => ({ default: m.EisenhowersValg })));
@@ -652,6 +653,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MaktDragkampen,
     Opprorstavla1968,
     TrolleyProblem,
+    CircumferensenKart,
     Varslingskjeden,
     EisenhowersValg,
     MediciValg,

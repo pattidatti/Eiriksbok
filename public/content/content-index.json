@@ -1,5 +1,5 @@
 {
-  "buildId": 11619443662483,
+  "buildId": 155130487652358,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2116,6 +2116,9 @@
     ],
     "pietismen": [
       "content/historie/dansketiden/pietismen.json"
+    ],
+    "roros-kobberverk": [
+      "content/historie/dansketiden/roros-kobberverk.json"
     ],
     "store-nordiske-krig": [
       "content/historie/dansketiden/store-nordiske-krig.json"
@@ -5589,6 +5592,7 @@
     "historie/dansketiden/lofthusreisingen": "content/historie/dansketiden/lofthusreisingen.json",
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
     "historie/dansketiden/pietismen": "content/historie/dansketiden/pietismen.json",
+    "historie/dansketiden/roros-kobberverk": "content/historie/dansketiden/roros-kobberverk.json",
     "historie/dansketiden/store-nordiske-krig": "content/historie/dansketiden/store-nordiske-krig.json",
     "historie/dansketiden/thomas-von-westen": "content/historie/dansketiden/thomas-von-westen.json",
     "historie/dansketiden/trelasthandelen": "content/historie/dansketiden/trelasthandelen.json",
