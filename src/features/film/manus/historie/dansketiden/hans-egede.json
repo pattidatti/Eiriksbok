@@ -1,0 +1,470 @@
+{
+    "id": "hans-egede",
+    "tittel": "Hans Egede: Presten som lette etter et folk som var borte",
+    "kilde": "/historie/dansketiden/hans-egede",
+    "bilde": "/images/dansketiden/hans-egede-hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 50,
+            "begrunnelse": "Målestokk i prikkfeltet: folket i området tegnet som 100 prikker, og «kanskje halvert» (artikkelen) vist som 50 av 100. Ingen ny påstand."
+        }
+    ],
+    "vurdering": {
+        "dato": "2026-10-18",
+        "viser": 4,
+        "lesbart": 3,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "ankomst",
+            "lyd": "hav",
+            "kapittel": "Sommeren 1721",
+            "visual": {
+                "type": "EgedeFjord",
+                "props": {
+                    "modus": "ankomst"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er sommeren 1721. Et lite seilskip ligger for anker ved en ø på vestkysten av Grønland."
+                },
+                {
+                    "si": "Om bord står en prest fra Nord-Norge, sammen med familien sin."
+                },
+                {
+                    "si": "Han har reist over havet for å finne et folk han har lest om i gamle bøker: nordboerne."
+                },
+                {
+                    "si": "Det er etterkommerne etter de norrøne, som bodde på Grønland i vikingtiden. Han vil gi dem den lutherske troen fra Danmark-Norge."
+                },
+                {
+                    "si": "Men det presten ikke vet, er at de han leter etter, har vært borte i nesten 300 år."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "HANS EGEDE",
+                    "undertittel": "Presten som lette etter et folk som var borte",
+                    "bilde": "/images/dansketiden/hans-egede-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Apostel eller kolonist?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Presten het Hans Egede. Han kom fram den 3. juli 1721."
+                },
+                {
+                    "si": "Reisen hans er grunnen til at Grønland i dag hører til Danmark."
+                },
+                {
+                    "si": "På Grønland er han en av personene folk er mest uenige om i hele historien."
+                },
+                {
+                    "si": "Noen kaller ham Grønlands apostel, mannen som brakte kristendommen. Andre ser ham som mannen som startet koloniseringen."
+                }
+            ]
+        },
+        {
+            "id": "prest",
+            "lyd": "stille",
+            "kapittel": "En prest fra Lofoten",
+            "visual": {
+                "type": "EgedeKart",
+                "props": {
+                    "modus": "prest"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hans Egede ble født i Harstad i 1686. Han studerte teologi, læren om Gud, i København."
+                },
+                {
+                    "si": "I 1707 ble han prest i Vågan i Lofoten. Der hørte han om Grønland."
+                },
+                {
+                    "si": "Han visste at det en gang hadde bodd norrøne folk der. Han ble sikker på at de fortsatt levde, og at de trengte en prest."
+                },
+                {
+                    "si": "I 1710 skrev han til biskopene. Året etter skrev han til kongen, Frederik 4., med planen sin."
+                },
+                {
+                    "si": "Det tok lang tid. I 1717 sa han opp jobben som prest for å jobbe med saken på heltid."
+                },
+                {
+                    "si": "I 1720 startet et handelskompani i Bergen som skulle betale reisen. Egede la selv inn 300 riksdaler av sine egne penger."
+                }
+            ]
+        },
+        {
+            "id": "nordboerne",
+            "kapittel": "Folket som var borte",
+            "visual": {
+                "type": "EgedeKart",
+                "props": {
+                    "modus": "nordboerne"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For å forstå hvorfor Egede lette forgjeves, må vi tilbake til vikingtiden."
+                },
+                {
+                    "si": "Eirik Raude kom til Grønland i 982. Rundt 985 kom en flåte på 25 skip med folk som ville bo der."
+                },
+                {
+                    "si": "De bygde gårder i to områder: Austerbygd og Vesterbygd."
+                },
+                {
+                    "si": "Forskerne har funnet rester etter mer enn 290 gårder. Kanskje bodde det rundt 4000 mennesker der på det meste."
+                },
+                {
+                    "si": "I 1261 ble bygdene en del av Norgesveldet, riket til den norske kongen."
+                }
+            ]
+        },
+        {
+            "id": "borte",
+            "visual": {
+                "type": "EgedeKart",
+                "props": {
+                    "modus": "thule"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så ble det stille. Etter svartedauden sluttet de faste handelsreisene fra Norge."
+                },
+                {
+                    "si": "De yngste sporene etter folk i Austerbygd er fra rundt 1450. Hvorfor de forsvant, er et stort spørsmål."
+                },
+                {
+                    "si": "Men Grønland var ikke tomt. Allerede på 1200-tallet hadde Thule-folket kommet dit."
+                },
+                {
+                    "si": "De var flinke til å fange sel og hval, og de brukte kajakk og hundeslede."
+                },
+                {
+                    "si": "Thule-folket er forfedrene til inuittene på Grønland i dag. Det var dem Egede møtte."
+                }
+            ]
+        },
+        {
+            "id": "soket",
+            "lyd": "vind",
+            "kapittel": "Planen møter virkeligheten",
+            "visual": {
+                "type": "EgedeFjord",
+                "props": {
+                    "modus": "ruiner"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Egede reiste fra Bergen i mai 1721, med tre skip og rundt 40 mennesker."
+                },
+                {
+                    "si": "De slo seg ned på en liten ø og kalte stedet Håbets Havn."
+                },
+                {
+                    "si": "Egede lette etter nordboerne. I fjordene lenger sør fant han ruiner av gamle gårder."
+                },
+                {
+                    "si": "Men ingen mennesker. Han trodde at den største bygda deres måtte ligge på østkysten."
+                }
+            ]
+        },
+        {
+            "id": "ordene",
+            "lyd": "stille",
+            "visual": {
+                "type": "EgedeOrdene",
+                "props": {
+                    "modus": "poul"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når folket du kom for å hjelpe ikke finnes, hva gjør du da?"
+                },
+                {
+                    "si": "Egede bestemte seg for å bli likevel, og heller prøve å gjøre inuittene kristne."
+                },
+                {
+                    "si": "Men det var vanskelig. Han lærte aldri språket deres skikkelig."
+                },
+                {
+                    "si": "Det var barna hans, særlig sønnen Poul, som lærte grønlandsk. De hjalp ham å forklare det han ville si."
+                },
+                {
+                    "si": "I begynnelsen ble bare noen få barn døpt, og voksne sjelden."
+                }
+            ]
+        },
+        {
+            "id": "godthab",
+            "lyd": "vind",
+            "visual": {
+                "type": "EgedeFjord",
+                "props": {
+                    "modus": "godthab"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Pengene ble også et problem. Handelskompaniet i Bergen gikk konkurs i 1727."
+                },
+                {
+                    "si": "Året etter, i 1728, flyttet kolonien til et nytt sted, Godthåb. Det er der hovedstaden Nuuk ligger i dag."
+                },
+                {
+                    "si": "I 1730 døde kong Frederik 4. Den nye kongen, Christian 6., ville nesten legge ned hele kolonien."
+                },
+                {
+                    "si": "Han ombestemte seg først etter at Egede ba ham fortsette."
+                }
+            ]
+        },
+        {
+            "id": "koppene",
+            "lyd": "stille",
+            "kapittel": "Koppene kommer",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 1,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Én kommer hjem fra Danmark",
+                            "fargeEtikett": "smittet",
+                            "restEtikett": "friske"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 100,
+                            "farge": "#ea580c",
+                            "tittel": "Smitten sprer seg over hele området",
+                            "fargeEtikett": "folket i området"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 50,
+                            "farge": "#64748b",
+                            "restFarge": "#dc2626",
+                            "tittel": "1733 og 1734: kanskje halvert",
+                            "fargeEtikett": "igjen",
+                            "restEtikett": "borte"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det verste skjedde i 1733. En grønlender som hadde vært på besøk i Danmark, kom hjem med kopper."
+                },
+                {
+                    "si": "Kopper er en dødelig og svært smittsom sykdom. Smitten spredte seg over hele området der Egede hadde arbeidet."
+                },
+                {
+                    "si": "Ifølge Store norske leksikon ble folketallet i området kanskje halvert i 1733 og 1734."
+                },
+                {
+                    "si": "Tenk deg folket som hundre prikker. Kanskje var bare halvparten igjen."
+                }
+            ]
+        },
+        {
+            "id": "avreise",
+            "lyd": "hav",
+            "visual": {
+                "type": "EgedeFjord",
+                "props": {
+                    "modus": "avreise"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kona hans, Gertrud, stelte de syke så godt hun kunne."
+                },
+                {
+                    "si": "Hun ble helt utslitt av arbeidet, og døde i desember 1735."
+                },
+                {
+                    "si": "Sommeren 1736 holdt Egede en siste preken. Så reiste han hjem for godt, med kista til kona om bord."
+                },
+                {
+                    "si": "Han kom aldri tilbake. I København ble han i 1740 biskop over Grønland, og han døde i Danmark i 1758."
+                }
+            ]
+        },
+        {
+            "id": "misjon",
+            "lyd": "stille",
+            "kapittel": "Misjonær eller kolonist?",
+            "visual": {
+                "type": "EgedeVekt"
+            },
+            "replikker": [
+                {
+                    "si": "Egede kom for å spre kristendommen. Men han gjorde mer enn det."
+                },
+                {
+                    "si": "Han kjempet hardt mot den gamle troen til inuittene, og mot angakkuq, de religiøse lederne deres."
+                },
+                {
+                    "si": "Misjonærene forbød også tradisjonelle tegn, som tatoveringer."
+                },
+                {
+                    "si": "Egede snakket stygt om inuittene, brukte trusler og straff, og mente til og med at de kunne brukes som slaver."
+                },
+                {
+                    "si": "På samme tid reiste misjonæren Thomas von Westen rundt blant samene i Norge. Han prekte på samisk, men tok også trommene fra folk."
+                },
+                {
+                    "si": "Begge ville få et urfolk, folket som bodde der før andre kom, til å legge bort den gamle troen."
+                }
+            ]
+        },
+        {
+            "id": "brodet",
+            "visual": {
+                "type": "EgedeOrdene",
+                "props": {
+                    "modus": "brod"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Egede trodde at et ord inuittene sa, var et ja til at Gud fantes."
+                },
+                {
+                    "si": "Historikere i dag tror at de egentlig sa: jeg vet ikke."
+                },
+                {
+                    "si": "Folk på Grønland dyrket ikke korn, og de visste ikke hva brød var."
+                },
+                {
+                    "si": "Derfor endret han bønnen: Gi oss i dag vårt daglige brød. Den ble til: Gi oss i dag vårt daglige sel."
+                }
+            ]
+        },
+        {
+            "id": "kiel",
+            "kapittel": "Det som varte",
+            "visual": {
+                "type": "EgedeKart",
+                "props": {
+                    "modus": "kiel"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Egede reiste hjem, men kolonien ble værende. Grønland ble styrt fra København."
+                },
+                {
+                    "si": "Ved Kielfreden i 1814 ble Norge tatt fra Danmark. Men Danmark beholdt de gamle norske skattlandene: Island, Færøyene og Grønland."
+                },
+                {
+                    "si": "Det gjorde mange nordmenn sinte."
+                },
+                {
+                    "si": "Grønland var en dansk koloni helt til 1953. Da ble landet en del av selve Danmark."
+                },
+                {
+                    "si": "Den 1. mai 1979 fikk Grønland hjemmestyre: sitt eget folkevalgte parlament."
+                },
+                {
+                    "si": "I 2008 stemte 75,5 prosent ja til mer selvstyre. Men Danmark bestemmer fortsatt over utenrikspolitikk, forsvar og penger."
+                }
+            ]
+        },
+        {
+            "id": "statuen",
+            "lyd": "vind",
+            "kapittel": "En statue som deler et land",
+            "visual": {
+                "type": "EgedeStatuen"
+            },
+            "replikker": [
+                {
+                    "si": "På en høyde over Nuuk står en stor statue av Hans Egede."
+                },
+                {
+                    "si": "Den er blitt rødmalt og tagget med ordet avkoloniser. Det betyr å gjøre seg fri fra kolonimakten."
+                },
+                {
+                    "si": "En gang ble den til og med halshugget. I en avstemning etterpå ville flertallet la den stå, men få stemte."
+                },
+                {
+                    "si": "I 1971, 250 år etter at Egede kom, ble det holdt fest, og den danske dronningen kom på besøk."
+                },
+                {
+                    "si": "Men i 2021, på 300-årsdagen, valgte myndighetene på Grønland å ikke feire."
+                },
+                {
+                    "si": "Synet hadde endret seg. På 1970-tallet var mange takknemlige for kristendommen. I dag spør flere hva det kostet."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Begge bildene av Egede er sanne.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "En modig prest som mistet kona si på Grønland.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Starten på over 200 år med styre fra et land langt borte.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Hvem forteller historien?",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Begge bildene av Egede er sanne på en gang."
+                },
+                {
+                    "si": "Han var en modig og hardt arbeidende prest, som mistet kona si på Grønland."
+                },
+                {
+                    "si": "Han var også mannen som startet over 200 år med styre fra et land langt borte, og som så ned på folket han kom til."
+                },
+                {
+                    "si": "Hvordan du ser på ham, avhenger mye av hvem som forteller historien."
+                }
+            ]
+        }
+    ]
+}
