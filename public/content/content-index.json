@@ -1,5 +1,5 @@
 {
-  "buildId": 155130487652358,
+  "buildId": 107350461176944,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2104,6 +2104,9 @@
     ],
     "eneveldet": [
       "content/historie/dansketiden/eneveldet.json"
+    ],
+    "hans-egede": [
+      "content/historie/dansketiden/hans-egede.json"
     ],
     "hans-nielsen-hauge": [
       "content/historie/dansketiden/hans-nielsen-hauge.json"
@@ -5588,6 +5591,7 @@
     "historie/antikkens-hellas/peloponneskrigen": "content/historie/antikkens-hellas/peloponneskrigen.json",
     "historie/dansketiden/christian-iv": "content/historie/dansketiden/christian-iv.json",
     "historie/dansketiden/eneveldet": "content/historie/dansketiden/eneveldet.json",
+    "historie/dansketiden/hans-egede": "content/historie/dansketiden/hans-egede.json",
     "historie/dansketiden/hans-nielsen-hauge": "content/historie/dansketiden/hans-nielsen-hauge.json",
     "historie/dansketiden/lofthusreisingen": "content/historie/dansketiden/lofthusreisingen.json",
     "historie/dansketiden/nodsarene": "content/historie/dansketiden/nodsarene.json",
