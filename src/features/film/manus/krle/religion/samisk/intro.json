@@ -1,0 +1,211 @@
+{
+    "id": "samisk-religion",
+    "tittel": "Samisk religion: trommen, naturen og forfedrene",
+    "kilde": "/krle/religion/samisk/intro",
+    "bilde": "/images/samisk/intro-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-18", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "fjellet",
+            "lyd": "vind",
+            "kapittel": "Fjellet",
+            "visual": { "type": "SamiskFjellet", "props": { "modus": "fjell" } },
+            "replikker": [
+                { "si": "Tenk deg at du står på et fjell i Nord-Norge. Det er juni, men snøen ligger fortsatt i kløftene." },
+                { "si": "Under deg står en lavvu, et samisk telt. Røyken siver opp." },
+                { "si": "Du føler at noen ser på deg. Men det er ingen mennesker i nærheten." },
+                { "si": "For samene som bodde her før, var den følelsen helt forståelig. Naturen var ikke tom. Den var full av ånder som fulgte med." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SAMISK RELIGION",
+                    "undertittel": "Trommen, naturen og forfedrene",
+                    "bilde": "/images/samisk/intro-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan overlevde troen?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er samisk religion, den gamle troen til samene." },
+                { "si": "Det er en av de eldste religiøse tradisjonene i Norge." },
+                { "si": "Den ble nesten utslettet. I denne filmen skal vi se hva troen gikk ut på, hvem som prøvde å ta den bort, og hvordan den overlevde." }
+            ]
+        },
+        {
+            "id": "sieidi",
+            "kapittel": "Hellig natur",
+            "visual": { "type": "SamiskFjellet", "props": { "modus": "sieidi" } },
+            "replikker": [
+                { "si": "Samisk religion hadde ingen kirker, ingen hellig bok og ingen prester som leste en preken." },
+                { "si": "Troen lå i landskapet selv. Fjell, steiner, trær og vannkilder hadde sin egen ånd." },
+                { "si": "En stein eller en foss kunne være et sieidi. Det er en offerstein ute i naturen." },
+                { "si": "Der la folk igjen gaver for å takke åndene." }
+            ]
+        },
+        {
+            "id": "verdener",
+            "lyd": "stille",
+            "visual": { "type": "SamiskVerdener", "props": { "modus": "verdener" } },
+            "replikker": [
+                { "si": "Verden var større enn det øyet kunne se. Menneskenes verden var bare én av flere." },
+                { "si": "Ved siden av lå de dødes rike, Jábmiid áibmu. Der fortsatte forfedrene å leve.", "uttale": "Ved siden av lå de dødes rike, Jaabmiid aaibmu. Der fortsatte forfedrene å leve." },
+                { "si": "Det fantes også det gode Sáivu, en egen verden for dyrene, en himmel og en underverden.", "uttale": "Det fantes også det gode Saaivu, en egen verden for dyrene, en himmel og en underverden." },
+                { "si": "Verdenene hang sammen. Det gikk an å reise mellom dem, hvis man visste hvordan." }
+            ]
+        },
+        {
+            "id": "noaiden",
+            "lyd": "vind",
+            "kapittel": "Noaiden",
+            "visual": { "type": "SamiskFjellet", "props": { "modus": "siida" } },
+            "replikker": [
+                { "si": "Samene levde i små slektsfellesskap. Et slikt fellesskap heter en siida." },
+                { "si": "I hver siida fantes det gjerne en noaide. Noaiden var litt lege og litt prest, en bro mellom menneskene og åndene." },
+                { "si": "Når noen ble syke, eller når reinflokken forsvant, gikk folk til noaiden." },
+                { "si": "De gikk også dit når de trengte råd om det som skulle komme." }
+            ]
+        },
+        {
+            "id": "reisen",
+            "lyd": "rom",
+            "visual": { "type": "SamiskVerdener", "props": { "modus": "reise" } },
+            "replikker": [
+                { "si": "Noaiden slo på trommen for å komme i transe. Transe er en slags dyp drøm." },
+                { "si": "Da forlot frisjelen kroppen. Frisjelen er den delen av sjelen som kan reise. Kroppen lå livløs igjen, mens sjelen reiste til de andre verdenene." },
+                { "si": "Der kunne noaiden snakke med forfedrene i de dødes rike, eller hente hjelp hos hjelpeåndene sine." },
+                { "si": "Så kom sjelen tilbake til kroppen, med svar til folket." }
+            ]
+        },
+        {
+            "id": "bjornen",
+            "lyd": "vind",
+            "kapittel": "Alt har en ånd",
+            "visual": { "type": "SamiskFjellet", "props": { "modus": "bjorn" } },
+            "replikker": [
+                { "si": "Et tre er ikke bare et tre. Og en bjørn er ikke bare et dyr. Bjørnen var et hellig dyr." },
+                { "si": "Jegerne sa ikke navnet dens rett ut. De trodde bjørnen forsto vanlig prat, men ikke omskrivninger, altså andre ord for den. Derfor fantes det rundt tjue andre navn på den." },
+                { "si": "Etter en vellykket bjørnejakt kom lange seremonier. Jegerne ba bjørnen om unnskyldning for at de hadde drept den." },
+                { "si": "Alle beina ble gravd ned. Dem trengte bjørnen når den skulle bli født på nytt." }
+            ]
+        },
+        {
+            "id": "balanse",
+            "lyd": "stille",
+            "visual": { "type": "SamiskVerdener", "props": { "modus": "balanse" } },
+            "replikker": [
+                { "si": "Denne måten å se naturen på kalles animisme. Det betyr at alt levende har en åndelig kraft, og det har også steiner og vann." },
+                { "si": "Tror du på dette, kan du ikke bare ta fra naturen. Du må alltid gi noe tilbake." },
+                { "si": "Et godt liv handlet om balanse, ikke om å eie mest." }
+            ]
+        },
+        {
+            "id": "joik",
+            "visual": { "type": "SamiskVerdener", "props": { "modus": "joik" } },
+            "replikker": [
+                { "si": "Joiken er en bønn formet som sang. Du joiker ikke om fjellet. Du joiker fjellet." },
+                { "si": "En joik skal på et vis være den personen, det dyret eller det stedet du joiker." },
+                { "si": "Fikk du din egen joik, fikk du et slags tonenavn. En lyd som var bare din." }
+            ]
+        },
+        {
+            "id": "misjonen",
+            "kapittel": "Misjonen",
+            "visual": { "type": "SamiskKart", "props": { "modus": "misjon" } },
+            "replikker": [
+                { "si": "På 1600- og 1700-tallet sendte den dansk-norske kongen og kirken misjonærer nordover." },
+                { "si": "Den mest kjente var Thomas von Westen. Han gjorde tre misjonsreiser til Nord-Norge, fra 1716 til 1723.", "uttale": "Den mest kjente var Thomas von Westen. Han gjorde tre misjonsreiser til Nord-Norge, fra sytten seksten til sytten tjuetre." },
+                { "si": "Målet var klart: Samene skulle bli kristne." },
+                { "si": "Det handlet ikke bare om å lære nye bønner. Hele den gamle troen skulle brytes ned." }
+            ]
+        },
+        {
+            "id": "trommene",
+            "visual": { "type": "SamiskKart", "props": { "modus": "trommer" } },
+            "replikker": [
+                { "si": "Misjonærene samlet inn runebommer, de samiske trommene, fra hele Sápmi." },
+                { "si": "Noen ble brent. Andre havnet i samlinger i København." },
+                { "si": "Flere hundre trommer forsvant fra de samiske områdene. I dag finnes det bare rundt hundre igjen i hele verden." },
+                { "si": "Noaidene ble jaktet på. Noen ble dømt til døden for trolldom. Joiken ble kalt synd, og sieidiene ble veltet." }
+            ]
+        },
+        {
+            "id": "overlevde",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Likevel forsvant ikke alt",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Myter og skikker", "tekst": "overlevde helt til vår tid", "fraBeat": 0 },
+                        { "ikon": "hus", "tittel": "Respekt for naturen", "tekst": "båret videre i familiene", "fraBeat": 1 },
+                        { "ikon": "lampe", "tittel": "Fra 1970-tallet", "tekst": "ny interesse for den gamle troen", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Likevel forsvant ikke alt. Noen myter og skikker overlevde helt fram til vår tid." },
+                { "si": "Respekten for naturen ble båret videre i familiene." },
+                { "si": "Og fra 1970-tallet har interessen for den gamle samiske religionen vokst igjen." }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "I dag",
+            "visual": { "type": "SamiskKart", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "I dag er de fleste samer kristne." },
+                { "si": "Mange er med i den læstadianske vekkelsen. Det er en kristen bevegelse som vokste fram rundt den svensk-samiske presten Lars Levi Læstadius på midten av 1800-tallet." },
+                { "si": "Den spredte seg i de samisk- og finsktalende områdene i nord." },
+                { "si": "De siste tiårene har det også vokst fram en ny interesse for den gamle troen. Fra 1990-tallet har noen kalt de nye bevegelsene for samisk sjamanisme, etter sjamanen, altså noaiden." },
+                { "si": "Nye runebommer blir laget igjen. Ikke for å reise til åndeverdenen, men som instrumenter og som tegn på samisk identitet." }
+            ]
+        },
+        {
+            "id": "forsoning",
+            "kapittel": "Forsoning",
+            "visual": { "type": "SamiskForsoning" },
+            "replikker": [
+                { "si": "Fornorsking betyr at språket og kulturen til samene ble motarbeidet og byttet ut med norsk." },
+                { "si": "I 2018 satte Stortinget ned en kommisjon som skulle granske denne politikken. Rapporten kom i 2023." },
+                { "si": "I 2024 sa Kirkemøtet, det øverste organet i Den norske kirke, at også kirken var med på fornorskingen. De vedtok en plan med 29 tiltak for forsoning." },
+                { "si": "Samtidig diskuteres det hvem som eier de gamle runebommene." }
+            ]
+        },
+        {
+            "id": "trommen-hjem",
+            "visual": { "type": "SamiskKart", "props": { "modus": "tilbake" } },
+            "replikker": [
+                { "si": "I 1691 ble trommen til noaiden Anders Poulsen tatt fra ham." },
+                { "si": "Trommen ble Danmarks eiendom." },
+                { "si": "I 2022 ga Danmark fra seg eierskapet. Nå eies trommen av et samisk museum." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Nesten utslettet.", "fraBeat": 0 },
+                        { "tekst": "Men den har overlevd.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "En levende tro, og en del av det å være same.", "fraBeat": 1 },
+                        { "tekst": "Klima, natur og bærekraft:", "fraBeat": 2 },
+                        { "tekst": "samisk tradisjon har allerede sagt noe viktig.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Du tar ikke uten å gi tilbake.", "fraBeat": 3 },
+                        { "tekst": "Du er en del av naturen.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Samisk religion ble nesten utslettet. Men den har overlevd." },
+                { "si": "I dag er den både en levende tro og en del av det å være same." },
+                { "si": "Og når vi snakker om klima og natur, har samisk tradisjon allerede sagt noe viktig." },
+                { "si": "Du tar ikke uten å gi tilbake. Du eier ikke naturen. Du er en del av den." }
+            ]
+        }
+    ]
+}
