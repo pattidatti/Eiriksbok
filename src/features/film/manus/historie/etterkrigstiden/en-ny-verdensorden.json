@@ -82,6 +82,7 @@
         },
         {
             "id": "havna",
+            "lyd": "hav",
             "visual": { "type": "VerdensordenHavna" },
             "replikker": [
                 { "si": "Men her må granskeren i deg våkne. Vi reiser til Hambantota på Sri Lanka." },
@@ -93,6 +94,7 @@
         },
         {
             "id": "gjeldsfelle",
+            "lyd": "stille",
             "visual": {
                 "type": "Punktkort",
                 "props": {

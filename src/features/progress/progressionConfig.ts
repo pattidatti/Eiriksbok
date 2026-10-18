@@ -57,6 +57,7 @@ export const DEFAULT_PROGRESSION_CONFIG: ProgressionConfig = {
         'microgame-played': 15,
         'philosophy-quest': 60,
         'comparison-task': 25,
+        'film-watched': 30,
     },
     repeatBonusFactor: 0.15,
     repeatBonusMin: 5,

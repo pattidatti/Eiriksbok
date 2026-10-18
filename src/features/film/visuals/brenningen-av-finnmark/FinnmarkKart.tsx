@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
@@ -235,8 +235,19 @@ const TALL: Partial<Record<Modus, (Tall[] | undefined)[]>> = {
 
 export function FinnmarkKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'retrett';
-    const { geographies } = useAtlasWorld();
     const hele = modus === 'tromso';
+    // Det fine kartet bare for landene i bildet (se useFilmVerden).
+    const { geographies } = useFilmVerden(
+        hele
+            ? [
+                  [2, 57],
+                  [34, 73],
+              ]
+            : [
+                  [14, 66],
+                  [34, 72],
+              ]
+    );
 
     // Satt for hånd: utsnittet skal fylle venstre del av bildet, kortene står til høyre.
     const projeksjon = useMemo(

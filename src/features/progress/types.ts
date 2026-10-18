@@ -15,7 +15,8 @@ export type ActivityKind =
     | 'virkemiddel-exercise'
     | 'microgame-played'
     | 'philosophy-quest'
-    | 'comparison-task';
+    | 'comparison-task'
+    | 'film-watched';
 
 // Input til recordActivity() - det en modul vet i fullføringsøyeblikket
 export interface ActivityInput {

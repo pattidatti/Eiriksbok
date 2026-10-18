@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoNaturalEarth1, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -190,7 +190,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
 
 export function NykolonialismeKart({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'kupp';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(() => lagProjeksjon(modus), [modus]);
     const sti = useMemo(() => geoPath(projeksjon), [projeksjon]);
     const p = (ll: LngLat) => projeksjon(ll) as [number, number];

@@ -7,6 +7,10 @@
         {
             "tall": 1000,
             "begrunnelse": "Målestokk i prikkfeltet: hver prikk står for tusen mennesker, så 500 og 1000 prikker viser anslagene fra artikkelen (500 000 til over en million)."
+        },
+        {
+            "tall": 500,
+            "begrunnelse": "Antall prikker i prikkfeltet: 500 prikker à 1000 = 500 000 drepte, som i artikkelen."
         }
     ],
     "scener": [

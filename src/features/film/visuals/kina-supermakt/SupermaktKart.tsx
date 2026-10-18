@@ -2,7 +2,8 @@ import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Anchor, Building2, Factory, Landmark, TrainFront, Vote, Zap } from 'lucide-react';
 import { geoNaturalEarth1, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld, type GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import type { GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { TelleTall, Teller } from '../shared';
 
@@ -139,7 +140,7 @@ const RUTER: { navn: string; punkter: LngLat[]; type: 'land' | 'sjo' }[] = [
 
 export function SupermaktKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'verden';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(
         () =>
             geoNaturalEarth1().fitExtent(

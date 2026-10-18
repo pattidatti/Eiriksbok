@@ -2,7 +2,8 @@ import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Coins, Lock } from 'lucide-react';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld, type GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import type { GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
@@ -79,7 +80,7 @@ const OVERSKRIFT: Record<Modus, string[]> = {
 
 export function DengKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'sone';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(
         () =>
             geoMercator().fitExtent(

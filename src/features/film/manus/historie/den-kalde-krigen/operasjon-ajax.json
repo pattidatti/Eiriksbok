@@ -9,6 +9,7 @@
     "scener": [
         {
             "id": "oljefeltet",
+            "lyd": "vind",
             "kapittel": "Oljen",
             "visual": { "type": "AjaxOljefelt", "props": { "modus": "olje" } },
             "replikker": [
@@ -20,6 +21,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -70,6 +72,7 @@
         },
         {
             "id": "nasjonaliser",
+            "lyd": "vind",
             "visual": { "type": "AjaxOljefelt", "props": { "modus": "nasjonaliser" } },
             "replikker": [
                 { "si": "Mossadeq mente noe enkelt. Oljen ligger i Iran, så den bør tilhøre iranerne." },
@@ -91,6 +94,7 @@
         },
         {
             "id": "kald-krig",
+            "lyd": "stille",
             "kapittel": "Et kupp i hemmelighet",
             "visual": { "type": "AjaxKart", "props": { "modus": "kald" } },
             "replikker": [
@@ -103,6 +107,7 @@
         },
         {
             "id": "teateret",
+            "lyd": "rom",
             "visual": { "type": "AjaxTeateret", "props": { "modus": "kupp" } },
             "replikker": [
                 { "si": "CIA er USAs hemmelige tjeneste. Agenten Kermit Roosevelt reiste til Iran med kofferter fulle av penger." },
@@ -123,6 +128,7 @@
         },
         {
             "id": "seier",
+            "lyd": "stille",
             "kapittel": "August 1953",
             "visual": { "type": "AjaxOljefelt", "props": { "modus": "seier" } },
             "replikker": [

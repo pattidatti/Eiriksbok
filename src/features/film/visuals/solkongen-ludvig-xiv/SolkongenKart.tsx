@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -133,7 +133,7 @@ const MÅL: { ll: LngLat; navn: string }[] = [
 
 export function SolkongenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'fronden';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const projeksjon = useMemo(
         () =>

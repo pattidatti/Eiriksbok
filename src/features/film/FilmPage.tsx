@@ -15,22 +15,34 @@ import { AnimatePresence, motion } from 'framer-motion';
 import {
     ArrowLeft,
     ArrowRight,
+    AudioLines,
     Maximize,
     Minimize,
     Pause,
     Play,
-    RotateCcw,
     SkipBack,
     SkipForward,
     Volume2,
     VolumeX,
-    BookOpen,
 } from 'lucide-react';
 import type { FilmManus } from './types';
 import { useFilmNarrator, type FlatReplikk } from './useFilmNarrator';
 import { hentVisual } from './visuals';
 import { hentManus, merkSomSett } from './filmIndex';
 import { ErrorBoundary } from '../../components/ErrorBoundary';
+import { FilmSlutt } from './FilmSlutt';
+import { sporFilm } from '../../lib/analytics';
+import { useProgressStore } from '../progress/useProgressStore';
+import { useFilmAmbiens } from './useFilmAmbiens';
+
+const AMBIENS_NOKKEL = 'eiriksbok-film-bakgrunnslyd';
+function lesAmbiensValg() {
+    try {
+        return localStorage.getItem(AMBIENS_NOKKEL) !== 'av';
+    } catch {
+        return true;
+    }
+}
 
 /**
  * Artikkelfilm: spiller av en artikkel som fortalt film med animasjoner, 2D/3D-
@@ -121,14 +133,62 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
     const beat = laast ? Number(sok.get('beat') ?? 0) : f.beat;
 
     useEffect(() => {
-        if (f.status === 'ferdig') merkSomSett(manus.kilde);
-    }, [f.status, manus.kilde]);
+        if (f.status !== 'ferdig' || laast) return;
+        merkSomSett(manus.kilde);
+        sporFilm(manus.kilde, { type: 'ferdig' });
+        const [fag, emne] = manus.kilde.replace(/^\//, '').split('/');
+        useProgressStore.getState().recordActivity({
+            kind: 'film-watched',
+            activityId: manus.kilde.replace(/^\//, ''),
+            subjectId: fag,
+            topicId: emne,
+            title: manus.tittel,
+        });
+    }, [f.status, manus.kilde, manus.tittel, laast]);
+
+    // Måling: én start per avspilling, og hver scene telles første gang den nås. Gir
+    // frafallskurven i /admin/stats (Aktivitet -> Filmer).
+    const maaltRef = useRef<{ startet: boolean; scener: Set<number> }>({
+        startet: false,
+        scener: new Set(),
+    });
+    useEffect(() => {
+        if (laast || f.status !== 'spiller') return;
+        const m = maaltRef.current;
+        if (!m.startet) {
+            m.startet = true;
+            sporFilm(manus.kilde, { type: 'start' });
+        }
+        if (!m.scener.has(f.scene)) {
+            m.scener.add(f.scene);
+            sporFilm(manus.kilde, { type: 'scene', scene: f.scene });
+        }
+    }, [f.status, f.scene, manus.kilde, laast]);
+    useEffect(() => {
+        // «Se igjen» etter slutt er en ny avspilling.
+        if (f.status === 'ferdig') maaltRef.current = { startet: false, scener: new Set() };
+    }, [f.status]);
+
+    const [ambiens, setAmbiensState] = useState(lesAmbiensValg);
+    const setAmbiens = useCallback((paa: boolean) => {
+        setAmbiensState(paa);
+        try {
+            localStorage.setItem(AMBIENS_NOKKEL, paa ? 'paa' : 'av');
+        } catch {
+            // valget huskes bare denne gangen
+        }
+    }, []);
+    useFilmAmbiens({
+        manus,
+        scene: f.scene,
+        spiller: !laast && f.status === 'spiller',
+        paa: ambiens && f.lydPaa,
+    });
 
     const scene = manus.scener[sceneNr];
     const Visual = hentVisual(scene.visual.type);
     const playing = laast || f.status === 'spiller';
     const klokke = scene.klokke?.[Math.min(beat, scene.klokke.length - 1)] ?? null;
-    const kapittel = kapittelFor(manus, f.scene);
 
     const byttFullskjerm = useCallback(() => {
         if (document.fullscreenElement) document.exitFullscreen?.();
@@ -191,9 +251,8 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
                             Neste lysbilde <ArrowRight className="w-4 h-4" />
                         </button>
                     ) : (
-                        <div className="hidden sm:block text-sm font-semibold text-slate-500 w-40 text-right truncate">
-                            {kapittel}
-                        </div>
+                        // Kapittelet står i kontrollinja under bildet.
+                        <div className="hidden sm:block w-40" />
                     )}
                 </header>
             )}
@@ -245,22 +304,6 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
                                 </motion.div>
                             </AnimatePresence>
 
-                            {/* Kapittelskilt når et nytt kapittel starter */}
-                            <AnimatePresence>
-                                {scene.kapittel && beat === 0 && (laast || f.status !== 'klar') && (
-                                    <motion.div
-                                        key={scene.id}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ delay: 0.4 }}
-                                        className="absolute top-[4%] left-[3%] px-4 py-1.5 rounded-full bg-white/90 text-slate-900 text-sm md:text-lg font-black shadow"
-                                    >
-                                        {scene.kapittel}
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-
                             {/* Klokka */}
                             <AnimatePresence>
                                 {klokke && (
@@ -287,10 +330,14 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
 
                             {!laast && f.status === 'klar' && <Startskjerm manus={manus} f={f} />}
                             {f.status === 'ferdig' && (
-                                <Sluttskjerm
+                                <FilmSlutt
                                     manus={manus}
-                                    omigjen={() => f.gaTilScene(0)}
-                                    spill={f.play}
+                                    fraSti={fraSti}
+                                    lysbilde={lysbilde}
+                                    omigjen={() => {
+                                        f.gaTilScene(0);
+                                        f.play();
+                                    }}
                                 />
                             )}
                             {f.status === 'pause' && (
@@ -334,6 +381,8 @@ function FilmSpiller({ manus }: { manus: FilmManus }) {
                 f={f}
                 fullskjerm={fullskjerm}
                 byttFullskjerm={byttFullskjerm}
+                ambiens={ambiens}
+                setAmbiens={setAmbiens}
             />
         </div>
     );
@@ -425,72 +474,20 @@ function Startskjerm({ manus, f }: { manus: FilmManus; f: Narrator }) {
     );
 }
 
-function Sluttskjerm({
-    manus,
-    omigjen,
-    spill,
-}: {
-    manus: FilmManus;
-    omigjen: () => void;
-    spill: () => void;
-}) {
-    const fraSti = useFraSti();
-    const lysbilde = useContext(LysbildeNav);
-    return (
-        <div
-            className="absolute inset-0 z-10 bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center gap-6"
-            onClick={(e) => e.stopPropagation()}
-        >
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900">Slutt</h2>
-            <div className="flex flex-wrap justify-center gap-3">
-                {lysbilde && (
-                    <button
-                        onClick={lysbilde.neste}
-                        className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white text-lg font-bold shadow-lg hover:bg-indigo-700"
-                    >
-                        Neste lysbilde <ArrowRight className="w-5 h-5" />
-                    </button>
-                )}
-                {fraSti && !lysbilde && (
-                    <Link
-                        to={fraSti}
-                        className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-600 text-white text-lg font-bold shadow-lg hover:bg-emerald-700"
-                    >
-                        <ArrowLeft className="w-5 h-5" /> Tilbake til stien
-                    </Link>
-                )}
-                {!lysbilde && (
-                    <Link
-                        to={manus.kilde}
-                        className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-indigo-600 text-white text-lg font-bold shadow-lg hover:bg-indigo-700"
-                    >
-                        <BookOpen className="w-5 h-5" /> Les artikkelen og ta quizen
-                    </Link>
-                )}
-                <button
-                    onClick={() => {
-                        omigjen();
-                        spill();
-                    }}
-                    className="flex items-center gap-2 px-6 py-3 rounded-2xl bg-white border-2 border-slate-200 text-slate-800 text-lg font-bold hover:border-indigo-300"
-                >
-                    <RotateCcw className="w-5 h-5" /> Se igjen
-                </button>
-            </div>
-        </div>
-    );
-}
-
 function Kontroller({
     manus,
     f,
     fullskjerm,
     byttFullskjerm,
+    ambiens,
+    setAmbiens,
 }: {
     manus: FilmManus;
     f: Narrator;
     fullskjerm: boolean;
     byttFullskjerm: () => void;
+    ambiens: boolean;
+    setAmbiens: (paa: boolean) => void;
 }) {
     const knapp =
         'w-10 h-10 shrink-0 flex items-center justify-center rounded-full text-slate-700 hover:bg-slate-100 disabled:opacity-30';
@@ -552,6 +549,20 @@ function Kontroller({
                 )}
             </button>
             <button
+                className={`${knapp} hidden sm:flex`}
+                onClick={() => setAmbiens(!ambiens)}
+                disabled={!f.lydPaa}
+                aria-label={ambiens ? 'Slå av bakgrunnslyd' : 'Slå på bakgrunnslyd'}
+                aria-pressed={ambiens}
+                title={ambiens ? 'Bakgrunnslyd av' : 'Bakgrunnslyd på'}
+            >
+                {ambiens && f.lydPaa ? (
+                    <AudioLines className="w-5 h-5" />
+                ) : (
+                    <AudioLines className="w-5 h-5 opacity-35" />
+                )}
+            </button>
+            <button
                 className={knapp}
                 onClick={byttFullskjerm}
                 aria-label="Fullskjerm"
@@ -597,6 +608,7 @@ function Tidslinje({ manus, f }: { manus: FilmManus; f: Narrator }) {
         return { s, i, start, slutt };
     });
     const total = f.totalTid || 1;
+    const kapittel = kapittelFor(manus, f.scene);
     const fmt = (s: number) =>
         `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
@@ -623,6 +635,23 @@ function Tidslinje({ manus, f }: { manus: FilmManus; f: Narrator }) {
                         </button>
                     );
                 })}
+            </div>
+            {/* Kapittelet står her, utenfor bildet, så det aldri dekker grafikken. Det
+                blinker opp når et nytt kapittel starter. */}
+            <div className="hidden md:flex w-44 justify-end overflow-hidden">
+                <AnimatePresence mode="popLayout" initial={false}>
+                    <motion.span
+                        key={kapittel}
+                        initial={{ opacity: 0, y: 10, backgroundColor: 'rgba(99,102,241,0.18)' }}
+                        animate={{ opacity: 1, y: 0, backgroundColor: 'rgba(99,102,241,0)' }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.4, backgroundColor: { duration: 2.5 } }}
+                        className="truncate rounded-full px-2.5 py-0.5 text-sm font-bold text-slate-700"
+                        title={kapittel}
+                    >
+                        {kapittel}
+                    </motion.span>
+                </AnimatePresence>
             </div>
             <div className="hidden sm:block text-xs font-bold text-slate-500 tabular-nums w-20 text-right">
                 {fmt(tid)} / {fmt(total)}

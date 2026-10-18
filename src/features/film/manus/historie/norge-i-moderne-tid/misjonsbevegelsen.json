@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "lyngdal",
+            "lyd": "rom",
             "kapittel": "Lyngdal, 1844",
             "visual": { "type": "MisjonStua", "props": { "modus": "bordet" } },
             "replikker": [
@@ -25,6 +26,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -191,6 +193,7 @@
         },
         {
             "id": "syforeningene",
+            "lyd": "rom",
             "kapittel": "Syforeningene",
             "visual": { "type": "MisjonStua", "props": { "modus": "vekst" } },
             "replikker": [
@@ -212,6 +215,7 @@
         },
         {
             "id": "kvinnene",
+            "lyd": "stille",
             "visual": { "type": "MisjonVekt", "props": { "modus": "kvinner" } },
             "replikker": [
                 {
@@ -236,6 +240,7 @@
         },
         {
             "id": "bedehuset",
+            "lyd": "rom",
             "kapittel": "Bedehuset",
             "visual": { "type": "MisjonStua", "props": { "modus": "bedehus" } },
             "replikker": [
@@ -253,6 +258,7 @@
         },
         {
             "id": "toppen",
+            "lyd": "stille",
             "visual": { "type": "MisjonStolper", "props": { "modus": "topp" } },
             "replikker": [
                 {

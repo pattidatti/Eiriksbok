@@ -103,7 +103,11 @@ export const RichSidebar: React.FC<RichSidebarProps> = React.memo(({ details, ti
 
     return (
         <div className="space-y-8">
-            <div className="sticky top-8">
+            {/* Sidebaren er ofte flere skjermer høy. Uten høydetak kan sticky aldri
+                holde den i ro: ved artikkelslutten låses den til bunnen av rutenettet
+                og blir dratt med hver gang noe i artikkelen vokser (f.eks. Kilder).
+                Derfor skjermhøyde + egen scroll på desktop. */}
+            <div className="sticky top-8 lg:top-20 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:overscroll-contain lg:pr-2">
                 {/* Desktop: Audio Player & Key Info */}
                 <div className="hidden md:block space-y-4 mb-8">
                     {film && (

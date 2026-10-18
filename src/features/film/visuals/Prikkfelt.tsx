@@ -62,7 +62,8 @@ export function Prikkfelt({ beat, props }: VisualProps<Props>) {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -8 }}
-                        className="text-3xl md:text-5xl font-black text-slate-900 text-center px-4"
+                        // Lange titler får mindre skrift, så de holder seg på én linje i toppen.
+                        className={`${steg.tittel.length > 30 ? 'text-3xl md:text-4xl' : 'text-3xl md:text-5xl'} font-black leading-tight text-slate-900 text-center px-4`}
                     >
                         {steg.tittel}
                     </motion.h2>
@@ -102,7 +103,7 @@ export function Prikkfelt({ beat, props }: VisualProps<Props>) {
                     );
                 })}
             </svg>
-            <div className="h-[14%] flex items-start justify-center gap-6 text-lg md:text-2xl font-bold">
+            <div className="h-[14%] flex items-start justify-center gap-4 px-4 text-lg md:text-xl font-bold">
                 {steg.total > 0 && steg.farget > 0 && (
                     <Forklaring
                         farge={steg.farge ?? '#2563eb'}
@@ -135,7 +136,7 @@ function Forklaring({ farge, tall, tekst }: { farge: string; tall: number; tekst
                 style={{ background: farge, transition: 'background 500ms' }}
             />
             <span className="tabular-nums text-slate-900">{formatTall(tall)}</span>
-            {tekst && <span className="text-slate-500 font-semibold">{tekst}</span>}
+            {tekst && <span className="text-slate-500 font-semibold whitespace-nowrap">{tekst}</span>}
         </motion.div>
     );
 }

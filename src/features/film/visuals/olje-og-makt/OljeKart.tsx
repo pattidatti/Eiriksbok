@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -322,7 +322,7 @@ const KORT: Record<Modus, ({ tekst: string; tone?: 'lys' | 'rod' | 'gronn' | 'gu
 
 export function OljeKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'funn';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(() => lagProjeksjon(modus), [modus]);
     const sti = useMemo(() => geoPath(projeksjon), [projeksjon]);
     const p = (ll: LngLat) => projeksjon(ll) as [number, number];

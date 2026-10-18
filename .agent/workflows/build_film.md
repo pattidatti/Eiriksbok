@@ -31,6 +31,15 @@ hvor ofte bildet skifter.
 - **Uten stemme i det hele tatt går filmen i tekstmodus:** hver replikk står så lenge det tar å
   lese den. Filmen må derfor fungere uten lyd.
 - **Teksting ligger i eget felt UNDER bildet.** Hele 16:9-flaten er din, også nederste kant.
+  Kapittelnavnet står i kontrollinja under bildet, ikke i bildet, så det aldri dekker
+  grafikken din.
+- **Sluttskjermen lager seg selv.** Etter filmen får eleven tre spørsmål hentet fra
+  artikkelens egen `Quiz` (de som filmen dekker best), en lenke til artikkelen og kildene i
+  artikkelens `Kildeliste`. Du skriver ingenting til den. Filmen gir XP (`film-watched`) og
+  måles i `/admin/stats` (Aktivitet -> Filmer): hvor mange som starter, ser ferdig, og hvilken
+  scene de gir seg på.
+- **Bakgrunnslyd** settes per scene med `lyd` (se tabellen under). Den lages i nettleseren,
+  ligger svakt under stemmen og har egen av-knapp. Et dypt, mykt slag markerer nytt kapittel.
 - **Filer, og hvorfor de ligger der:**
 
 | Hva | Hvor |
@@ -78,11 +87,13 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
 |---|---|
 | `kilde` | Artikkelens sti, nøyaktig. |
 | `bilde` | Artikkelens `heroImage`. Startskjermen og Tittelkort bruker det. |
-| `kapittel` | Settes på første scene i hver del. Blir skilt i bildet og navn i tidslinja. 4-7 kapitler. |
+| `kapittel` | Settes på første scene i hver del. Vises i kontrollinja under bildet, med et kapittelslag i lyden. 4-7 kapitler. |
+| `lyd` | Valgfri. Bakgrunnslyd fra denne scenen til en senere scene setter en annen: `hav`, `vind`, `storm`, `ild`, `regn`, `rom` (lav klang, innendørs og alvor) eller `stille`. Sett den der filmen er et sted (havet, vidda, en brann, en sal), og `stille` når den går over til kart og tall. Ikke på folkemord og terror mot sivile. |
 | `klokke` | Valgfri. Én verdi per replikk (`null` = skjul). Bare klokkeslett som står i artikkelen, pluss minuttene rett før for oppbygging. |
 | `si` | Teksten som vises og leses. 1-3 korte setninger. Stemmen leser én setning om gangen, og Chrome kutter en ytring etter ca. 15 sekunder, så ingen setning over 30 ord høyt (et tall som «1825» teller fire). `validate-film` stopper lengre setninger. |
 | `uttale` | Når stemmen skal si noe annet enn tekstingen: klokkeslett («tjue på tolv»), forkortelser, tall stemmen leser feil. |
-| `utenforArtikkel` | Hvert tall i filmen som ikke står i artikkelen, med begrunnelse og kilde. Helst tom. |
+| `utenforArtikkel` | Hvert tall i filmen som ikke står i artikkelen, med begrunnelse og kilde. Helst tom. Også målestokker i prikkfelt (700 prikker = 700 000) og tall regnet ut fra artikkelen. |
+| `vurdering` | Skrives av nattrutinen etter den uavhengige vurderingen: `{ "dato", "viser", "lesbart", "variasjon", "forstaelig", "tro", "sum" }`. Forbedringskjøringen velger filmen med lavest sum. |
 
 ### Lengde og tempo
 
@@ -90,6 +101,9 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
 - **Bildet skal endre seg på hver beat.** Noe nytt dukker opp, noe flytter seg, et tall teller
   opp. En beat der bildet står stille mens stemmen snakker, er en død beat.
 - **Ny visual minst hvert 40. sekund.** Bytt mellom 3D, kart, data og store setninger.
+- **Samme visual i høyst 4 scener, og høyst ett Punktkort.** (Tittelkort og Sluttkort teller
+  ikke.) `validate-film` stopper filmen som bryter det. Et kart med sju moduser er fortsatt ett
+  kart for eleven. Punktkort er lysbilder; vis heller det som skjer.
 - **Begynn i en scene, ikke med en tittel.** Titanic åpner på havet klokka 23.38, og tittelen
   kommer i scene 2. Første setning skal sette eleven et sted.
 - **Slutt med hva det betyr.** Sluttkort med 2-4 store setninger, og den siste er uthevet.
@@ -103,7 +117,9 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
 - **Bare fakta fra artikkelen.** Artikkelen er kildebelagt, filmen er det ikke. Du skriver om
   for øret, du legger ikke til nye fakta. Et nytt tall krever `utenforArtikkel` med kilde, og
   da bør det være en sammenligning (fjell, fotballbaner), ikke en ny påstand.
-  `validate-film` sjekker at alle tall står i artikkelen.
+  `validate-film` sjekker at alle tall står i artikkelen, også tall skrevet med ord («ti år»,
+  «tjue»), og at «19» står som eget tall (ikke bare inni «1912»). Påstander uten tall fanger
+  den ikke. Dem tar faktasjekken i §5.
 
 ---
 
@@ -115,7 +131,7 @@ Alle tar `fraBeat`: elementet vises fra den replikken (0-basert) og ut scenen.
 
 | Visual | Bruk når | Props |
 |---|---|---|
-| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn'}]`, `sporsmal?: {tekst, fraBeat}` |
+| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler). Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). |
 | `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. |
 | `Livbater` | Kapasitet mot bruk (seter, plasser, senger) | `bater: [{navn, plasser, brukt, fraBeat}]` |
 | `Andeler` | Andel per gruppe som stolper, til slutt to grupper som ringer | `tittel`, `kilde?`, `rader: [{etikett, reddet, totalt, fraBeat, farge}]`, `sammenlign?: {fraBeat, venstre, hoyre}` |
@@ -141,7 +157,16 @@ Velg det artikkelen handler om **og som kan vises**:
 - **Et forløp i 3D:** kollisjon, utbrudd, slag, bygging, forfall. Kamera og objekter endrer seg
   per beat.
 - **Et kart (d3-geo):** hvor ting skjedde, ruter, fronter, grenser som flytter seg. Hent
-  verdenskartet med `useAtlasWorld()` (lokalt, aldri CDN).
+  verdenskartet med `useFilmVerden()` fra `src/features/film/kart/` (lokalt, aldri CDN):
+  - Uten argument gir det det grove kartet (1:110 mill.). Det holder for verden og store regioner.
+  - Zoomer kartet inn på et lite område (en landsdel, en fjord, en by), gi utsnittet:
+    `useFilmVerden([[vest, sør], [øst, nord]])`. Da får du det fine kartet (1:50 mill., med
+    fjorder og øyer), men bare landene i utsnittet. Har kartet flere moduser, gi utsnittet for
+    modusen, eller `undefined` for de vide. Aldri hele verden i fint kart: det ga over ett
+    sekund per bilde på Chromebook-nivå.
+  - Zoomer kartet så langt inn at landegrensene ikke lenger forteller hvor vi er, legg på
+    `<Oversiktskart utsnitt={...} omrade={...} etikett="Norge" />` fra samme mappe: et lite
+    kart i hjørnet med en rød ramme rundt utsnittet. Se `RorosKart.tsx`.
 - **Et snitt eller en mekanisme i SVG:** hvordan noe virker (skottene, en dampmaskin, en
   demning, et parlament).
 
@@ -199,6 +224,20 @@ streng.
 7. **Oppdiktede klokkeslett.** 00.45 og 01.30 sto ikke i artikkelen. Bruk `null`.
 8. **Telleanimasjoner som ikke teller.** En overgang på en verdi som allerede er der ved
    montering, animerer ikke. Start fra 0 og sett målet etter montering.
+9. **Merkelapp under overskriften.** Bykart og 3D-merker havner lett oppå filmens egen
+   overskrift øverst i midten, eller i bildekanten når kameraet flytter seg. `shots-film`
+   finner det nå (se §5). Skjul merket i beatene der kameraet står for nær.
+10. **`motion.text` med `y`** blir en transform i tillegg til attributtet, så etiketten flyttes
+    dobbelt. Animer bare `opacity` på SVG-tekst.
+11. **`vectorEffect="non-scaling-stroke"` + animert `pathLength`** i et kart som skaleres med
+    `transform` gir en brutt linje. Bruk `strokeWidth={n / skala}` på linjer som tegnes opp.
+12. **`geoNaturalEarth1().fitExtent` med en Polygon-ramme** gir hele verden (feil vinding).
+    Bruk `MultiPoint` med hjørnene.
+13. **Komponentnavn med Æ/Ø/Å først** (`Åker`) regnes ikke som komponent av hooks-linten.
+    Bruk ASCII-forbokstav.
+14. **Heltebilde med slagord** på politisk følsomme tema: Tittelkort viser bildet i flere
+    beats. Sjekk bildet, eller dropp `bilde`. Sett aldri sitattegn eller utropstegn på
+    parafraser i merkelapper.
 
 ---
 
@@ -217,13 +256,19 @@ streng.
 ## 5. Portene (alt må være grønt før PR)
 
 ```bash
-node scripts/validate-film.mjs <fag>/<emne>/<leksjon>      # skjema, props, beats, tall, språk
+node scripts/validate-film.mjs <fag>/<emne>/<leksjon>      # skjema, props, beats, tall, variasjon, språk
 npx tsc -b && npx eslint src/features/film                   # kompilerer og lint
-node scripts/shots-film.mjs <fag>/<emne>/<leksjon> --port 5173   # bilder + avspilling, krever Vite
+node scripts/shots-film.mjs <fag>/<emne>/<leksjon> --port 5173   # bilder + overlapp + avspilling, krever Vite
+node scripts/film-grunnlag.mjs <fag>/<emne>/<leksjon> > /tmp/grunnlag.md   # artikkel + replikker til vurderingen
 ```
 
 `shots-film` lager ett kontaktark per scene i `.screenshots/film/<leksjon>/ark-sNN.png`. **Se på
 hvert ark** og sjekk mot rubrikken. Les arkene, ikke enkeltbildene.
+
+`shots-film` måler også all tekst i bildet (også merkelapper over 3D) og stopper når tekst
+overlapper annen tekst eller er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
+mappe. Rett dem og ta de scenene på nytt med `--scener 3,7`: de andre scenenes bilder og ark
+blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken ikke.
 
 ### Rubrikken (5 akser, 1-5, terskel 19/25 og ingen akse under 3)
 
@@ -235,16 +280,26 @@ hvert ark** og sjekk mot rubrikken. Les arkene, ikke enkeltbildene.
 | **Forståelig** | En 14-åring henger med uten artikkelen. Fagord forklart. Kort tale. |
 | **Tro mot artikkelen** | Ingen nye fakta. Tall stemmer med bildene. Tonen passer emnet. |
 
-Vurderingen gjøres av en **fersk underagent** som ikke har skrevet filmen. Den får manuset og
-kontaktarkene, ikke koden. Den svarer med score per akse og en liste konkrete rettelser
-(«scene 4 beat 2: kameraet er inni skorsteinen - flytt til ...»). Rett dem og vurder på nytt,
-maks tre runder.
+Vurderingen gjøres av **to ferske underagenter** som ikke har skrevet filmen og ikke ser koden:
+
+1. **Faktasjekkeren** får `grunnlag.md` (artikkelen + replikkene). Den går gjennom hver
+   replikk og lister alt som ikke står i artikkelen, er skjerpet, har mistet en presisering
+   («Afghanistan-krigen *alene*»), eller kan misforstås når to tall står etter hverandre.
+   Svar per replikk: `scene.beat: problem -> forslag`. Ingen funn er et gyldig svar.
+2. **Vurdereren** får `grunnlag.md`, kontaktarkene og `overlapp.txt`. Den scorer rubrikken og
+   lister konkrete rettelser («scene 4 beat 2: kameraet er inni skorsteinen - flytt til ...»).
+   Står det noe i `overlapp.txt`, kan Lesbart ikke få mer enn 3. Den skal bruke hele skalaen:
+   4 betyr «ingen merkbare feil», 5 betyr «på høyde med Titanic».
+
+Rett alt fra faktasjekkeren, så vurdererens punkter, og vurder på nytt. Maks tre runder.
 
 ---
 
 ## 6. Sjekkliste før PR
 
-- [ ] `validate-film`, `tsc -b`, `eslint src/features/film` og `shots-film` er grønne.
+- [ ] `validate-film`, `tsc -b`, `eslint src/features/film` og `shots-film` (også overlapp) er grønne.
+- [ ] Faktasjekken har gått gjennom alle replikker mot artikkelen, og funnene er rettet.
+- [ ] `vurdering` er skrevet inn i manuset.
 - [ ] Hvert kontaktark sett. Ingen tom beat, ikke noe inni modellen, ingenting kuttet.
 - [ ] Uavhengig vurdering >= 19/25 (eller PR merket «(under terskel)», se rutinen).
 - [ ] PR-en inneholder BARE manus-fila og `src/features/film/visuals/<film-id>/`.

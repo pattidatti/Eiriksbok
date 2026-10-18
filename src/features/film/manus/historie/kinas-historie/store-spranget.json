@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "gryta",
+            "lyd": "ild",
             "kapittel": "Gryta",
             "visual": { "type": "SprangetLandsby", "props": { "modus": "jern" } },
             "replikker": [
@@ -26,6 +27,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -78,6 +80,7 @@
         },
         {
             "id": "ovnene",
+            "lyd": "ild",
             "visual": { "type": "SprangetLandsby", "props": { "modus": "ovner" } },
             "replikker": [
                 {
@@ -92,6 +95,7 @@
         },
         {
             "id": "loyn",
+            "lyd": "stille",
             "kapittel": "Ingen turte",
             "visual": { "type": "SprangetRapport", "props": { "modus": "kjede" } },
             "replikker": [
@@ -140,6 +144,7 @@
         },
         {
             "id": "sult",
+            "lyd": "vind",
             "visual": { "type": "SprangetLandsby", "props": { "modus": "tom" } },
             "replikker": [
                 {
@@ -159,6 +164,7 @@
         },
         {
             "id": "comeback",
+            "lyd": "stille",
             "kapittel": "Mao slår tilbake",
             "visual": {
                 "type": "Punktkort",

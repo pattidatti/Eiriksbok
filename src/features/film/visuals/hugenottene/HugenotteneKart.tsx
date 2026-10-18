@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
@@ -219,7 +219,7 @@ function landfarge(modus: Modus, beat: number, id: string): string {
 
 export function HugenotteneKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'hvem';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const nærme = modus === 'hoffet' || modus === 'natten';
 
     const projeksjon = useMemo(

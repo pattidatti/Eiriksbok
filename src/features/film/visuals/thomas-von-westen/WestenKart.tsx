@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -148,7 +148,7 @@ const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
 
 export function WestenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'brev';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const projeksjon = useMemo(() => {
         const [a, b] = UTSNITT[modus];

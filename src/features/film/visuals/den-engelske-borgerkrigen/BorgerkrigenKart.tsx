@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
@@ -192,7 +192,7 @@ const KORT: Record<Modus, Kort[][]> = {
 
 export function BorgerkrigenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'krig';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const projeksjon = useMemo(
         () =>

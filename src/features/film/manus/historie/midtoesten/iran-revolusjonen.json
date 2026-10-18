@@ -160,6 +160,7 @@
         },
         {
             "id": "kassett",
+            "lyd": "rom",
             "visual": {
                 "type": "IranKassett"
             },
@@ -186,6 +187,7 @@
         },
         {
             "id": "opproret",
+            "lyd": "stille",
             "kapittel": "Opprøret",
             "visual": {
                 "type": "IranKart",

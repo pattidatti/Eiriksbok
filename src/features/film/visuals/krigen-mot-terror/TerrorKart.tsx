@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Plane } from 'lucide-react';
 import { geoMercator, geoNaturalEarth1, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
@@ -145,7 +145,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
 
 export function TerrorKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'usa';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(() => lagProjeksjon(modus), [modus]);
     const sti = useMemo(() => geoPath(projeksjon), [projeksjon]);
     const p = (ll: LngLat) => projeksjon(ll) as [number, number];
@@ -212,7 +212,7 @@ function Usa({ beat, p }: { beat: number; p: P }) {
             {beat <= 1 && <Etikett pos={p(STED.newYork)} tekst="New York" dy={-80} dx={beat === 1 ? 90 : 0} stor />}
             {beat >= 2 && (
                 <>
-                    <Etikett pos={p([-76.5, 42.2])} tekst="USA" farge="#475569" stor />
+                    <Etikett pos={p([-81, 41.3])} tekst="USA" farge="#475569" stor />
                     <Etikett pos={p([-77.3, 38.0])} tekst="Washington" farge="#475569" dy={60} />
                 </>
             )}

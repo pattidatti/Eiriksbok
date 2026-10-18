@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "morgen",
+            "lyd": "rom",
             "kapittel": "Morgen i Versailles",
             "visual": { "type": "SolkongenSlott", "props": { "modus": "morgen" } },
             "replikker": [
@@ -43,6 +44,7 @@
         },
         {
             "id": "barn",
+            "lyd": "stille",
             "kapittel": "Konge som barn",
             "visual": { "type": "SolkongenBane", "props": { "modus": "barn" } },
             "replikker": [
@@ -140,6 +142,7 @@
         },
         {
             "id": "vekst",
+            "lyd": "rom",
             "visual": { "type": "SolkongenSlott", "props": { "modus": "vekst" } },
             "replikker": [
                 { "si": "Det tydeligste beviset er Versailles. Først var det bare en jakthytte, som faren hadde gjort om til et lite slott." },
@@ -172,6 +175,7 @@
         },
         {
             "id": "gullbur",
+            "lyd": "stille",
             "kapittel": "Et gullbur",
             "visual": { "type": "SolkongenBane", "props": { "modus": "gullbur" } },
             "replikker": [

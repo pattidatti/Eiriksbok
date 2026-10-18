@@ -1,7 +1,8 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld, type GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import type { GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import { Teller } from '../shared';
 import type { VisualProps } from '../../types';
 
@@ -97,7 +98,7 @@ const FLUKT: LngLat[] = [
 
 export function NansenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'liv';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const projeksjon: GeoProjection = useMemo(() => {
         const [a, b] = UTSNITT[modus];

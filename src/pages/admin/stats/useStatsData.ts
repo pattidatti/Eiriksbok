@@ -10,12 +10,14 @@ import { db } from '../../../lib/firebase';
 import { useManifest } from '../../../hooks/useManifest';
 import {
     byggDagsserie,
+    byggFilmrader,
     byggSideregister,
     byggSiderader,
     dagsnokkel,
     sisteDager,
     tomStats,
     type DagPunkt,
+    type FilmRad,
     type RaaStats,
     type SideRad,
 } from './statsModel';
@@ -34,6 +36,7 @@ const SOK_TILBAKE = 500;
 export interface StatsData {
     raa: RaaStats;
     siderader: SideRad[];
+    filmrader: FilmRad[];
     serie: DagPunkt[];
     dager: string[];
     laster: boolean;
@@ -74,6 +77,7 @@ export const useStatsData = (): StatsData => {
             onValue(ref(db, 'analytics/browsers'), sett('browsers')),
             onValue(ref(db, 'analytics/activity'), sett('activity')),
             onValue(ref(db, 'analytics/quiz'), sett('quiz')),
+            onValue(ref(db, 'analytics/film'), sett('film')),
             onValue(ref(db, 'analytics/zero_hits'), sett('zeroHits')),
             onValue(ref(db, 'analytics/unique_users'), sett('uniqueUsers')),
             onValue(ref(db, 'analytics/active_users'), sett('activeUsers')),
@@ -98,6 +102,7 @@ export const useStatsData = (): StatsData => {
     const siderader = useMemo(() => byggSiderader(raa, register), [raa, register]);
     const dager = useMemo(() => sisteDager(DAGER_TILBAKE), []);
     const serie = useMemo(() => byggDagsserie(raa, dager), [raa, dager]);
+    const filmrader = useMemo(() => byggFilmrader(raa, register), [raa, register]);
 
-    return { raa, siderader, serie, dager, laster };
+    return { raa, siderader, filmrader, serie, dager, laster };
 };

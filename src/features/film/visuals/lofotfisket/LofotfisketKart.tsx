@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -116,7 +116,15 @@ const OVERSKRIFT: Record<Modus, string[]> = {
 
 export function LofotfisketKart({ beat, playing, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'skrei';
-    const { geographies } = useAtlasWorld();
+    // Det fine kartet i Norge og Nord-Europa. Atlanterhavet er stort nok for det grove.
+    const { geographies } = useFilmVerden(
+        modus === 'atlanter'
+            ? undefined
+            : [
+                  [-3, 52],
+                  [47, 76],
+              ]
+    );
 
     const projeksjon: GeoProjection = useMemo(() => {
         const utsnitt: Record<Modus, [LngLat, LngLat]> = {

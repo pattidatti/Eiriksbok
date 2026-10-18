@@ -3,7 +3,12 @@
     "tittel": "Israel og Palestina: Et land, to folk",
     "kilde": "/historie/midtoesten/israel-og-palestina",
     "bilde": "/images/midtoesten/israel-og-palestina-hero.webp",
-    "utenforArtikkel": [],
+    "utenforArtikkel": [
+        {
+            "tall": 700,
+            "begrunnelse": "Antall prikker i prikkfeltet: 700 prikker à 1000 = 700 000 palestinere, som i artikkelen."
+        }
+    ],
     "scener": [
         {
             "id": "landet",

@@ -4,11 +4,13 @@
     "kilde": "/historie/industriell-revolusjon/titanic",
     "bilde": "/images/industriell-revolusjon/titanic-hero.webp",
   "utenforArtikkel": [
-    { "tall": 2469, "begrunnelse": "Galdhøpiggens høyde i meter, brukt som sammenligning for dybden. Kartverket." }
+    { "tall": 2469, "begrunnelse": "Galdhøpiggens høyde i meter, brukt som sammenligning for dybden. Kartverket." },
+    { "tall": "tusen", "begrunnelse": "Regnet ut fra artikkelen: vraket ligger på 3800 meter og Galdhøpiggen er 2469 meter, så toppen ville vært 1331 meter under vannet." }
   ],
     "scener": [
         {
             "id": "natt",
+            "lyd": "hav",
             "kapittel": "Natten",
             "visual": { "type": "TitanicHavet", "props": { "modus": "kollisjon" } },
             "klokke": ["23.38", "23.39", "23.40", "23.40", "23.41"],
@@ -70,6 +72,7 @@
         },
         {
             "id": "klasser",
+            "lyd": "stille",
             "visual": { "type": "TitanicKlasser" },
             "replikker": [
                 {
@@ -214,6 +217,7 @@
         },
         {
             "id": "synker",
+            "lyd": "hav",
             "kapittel": "Klokka 02.20",
             "visual": { "type": "TitanicHavet", "props": { "modus": "synker" } },
             "klokke": [null, null, "02.20", "02.20"],
@@ -233,6 +237,7 @@
         },
         {
             "id": "redning",
+            "lyd": "stille",
             "visual": { "type": "TitanicKart" },
             "klokke": ["02.20", "04.10", "08.30", "08.30"],
             "replikker": [
@@ -399,6 +404,7 @@
         },
         {
             "id": "vraket",
+            "lyd": "rom",
             "kapittel": "Vraket",
             "visual": {
                 "type": "Dypet",
@@ -418,6 +424,7 @@
         },
         {
             "id": "laerdom",
+            "lyd": "stille",
             "kapittel": "Hva lærer vi?",
             "visual": {
                 "type": "Sluttkort",

@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "gruva",
+            "lyd": "vind",
             "kapittel": "Kobberlandet",
             "visual": {
                 "type": "ChileGruva",
@@ -34,6 +35,7 @@
         },
         {
             "id": "kartet",
+            "lyd": "stille",
             "visual": {
                 "type": "ChileKart",
                 "props": {
@@ -228,6 +230,7 @@
         },
         {
             "id": "palasset",
+            "lyd": "rom",
             "kapittel": "11. september",
             "visual": {
                 "type": "ChilePalasset"
@@ -266,6 +269,7 @@
         },
         {
             "id": "forsvunne",
+            "lyd": "stille",
             "visual": {
                 "type": "Prikkfelt",
                 "props": {

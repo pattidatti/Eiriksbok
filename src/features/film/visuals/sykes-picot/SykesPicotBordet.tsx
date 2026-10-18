@@ -4,7 +4,8 @@ import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath } from 'd3-geo';
-import { useAtlasWorld, type GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import type { GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import { guessTier } from '../../../../components/microgames/kit/quality';
 import type { VisualProps } from '../../types';
 
@@ -517,7 +518,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
 
 export function SykesPicotBordet({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'tegn';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const dpr = useMemo<[number, number]>(
         () => (guessTier().tier === 'lav' ? [1, 1] : [1, 1.5]),
         []

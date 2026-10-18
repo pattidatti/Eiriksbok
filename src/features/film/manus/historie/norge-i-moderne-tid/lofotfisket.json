@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "trollfjorden",
+            "lyd": "hav",
             "kapittel": "Trollfjorden",
             "visual": { "type": "LofotfisketFjorden", "props": { "modus": "slaget" } },
             "replikker": [
@@ -37,6 +38,7 @@
         },
         {
             "id": "skrei",
+            "lyd": "stille",
             "kapittel": "Fisken",
             "visual": { "type": "LofotfisketKart", "props": { "modus": "skrei" } },
             "replikker": [
@@ -50,6 +52,7 @@
         },
         {
             "id": "hjell",
+            "lyd": "vind",
             "kapittel": "Tørrfisken",
             "visual": { "type": "LofotfisketFjorden", "props": { "modus": "hjell" } },
             "replikker": [
@@ -61,6 +64,7 @@
         },
         {
             "id": "handel",
+            "lyd": "stille",
             "visual": { "type": "LofotfisketKart", "props": { "modus": "handel" } },
             "replikker": [
                 { "si": "Tørrfisken tålte lange reiser, og den ble en av de viktigste varene Norge solgte." },
@@ -73,6 +77,7 @@
         },
         {
             "id": "rorbu",
+            "lyd": "hav",
             "kapittel": "Livet på fisket",
             "visual": { "type": "LofotfisketFjorden", "props": { "modus": "rorbu" } },
             "replikker": [
@@ -86,6 +91,7 @@
         },
         {
             "id": "redskap",
+            "lyd": "stille",
             "visual": { "type": "LofotfisketHavdeling", "props": { "modus": "redskap" } },
             "replikker": [
                 { "si": "Fiskerne hadde tre viktige redskaper: juksa, garn og line." },
@@ -121,6 +127,7 @@
         },
         {
             "id": "dampskip",
+            "lyd": "hav",
             "kapittel": "Trollfjordslaget",
             "visual": { "type": "LofotfisketFjorden", "props": { "modus": "dampskip" } },
             "replikker": [
@@ -144,6 +151,7 @@
         },
         {
             "id": "i-dag",
+            "lyd": "stille",
             "kapittel": "Lofotfisket i dag",
             "visual": { "type": "LofotfisketFangst", "props": { "modus": "fiskere" } },
             "replikker": [

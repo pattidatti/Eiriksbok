@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, animate, motion } from 'framer-motion';
 import { geoEquirectangular, geoMercator, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -55,7 +55,7 @@ const STASJONER: LngLat[] = Array.from({ length: 32 }, (_, i) => {
 
 export function HvalfangstKart({ beat, playing, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'nord';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const projeksjon: GeoProjection = useMemo(() => {
         if (modus === 'nord') {

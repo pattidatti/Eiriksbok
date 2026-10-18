@@ -6,6 +6,7 @@
     "scener": [
         {
             "id": "aker",
+            "lyd": "vind",
             "kapittel": "Våren 1796",
             "visual": { "type": "HaugeNettet", "props": { "modus": "aker" } },
             "replikker": [
@@ -45,6 +46,7 @@
         },
         {
             "id": "loven",
+            "lyd": "stille",
             "kapittel": "Forbudt å preke",
             "visual": { "type": "HaugeTavla", "props": { "modus": "lov" } },
             "replikker": [
@@ -159,6 +161,7 @@
         },
         {
             "id": "fengsel",
+            "lyd": "rom",
             "kapittel": "Ti år bak murene",
             "visual": { "type": "HaugeNettet", "props": { "modus": "fengsel" } },
             "replikker": [
@@ -174,6 +177,7 @@
         },
         {
             "id": "salt",
+            "lyd": "stille",
             "visual": { "type": "HaugeKart", "props": { "modus": "salt" } },
             "replikker": [
                 {

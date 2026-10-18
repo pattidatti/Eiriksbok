@@ -243,3 +243,35 @@ export const sporSok = (query: string, resultsCount: number, type: 'text' | 'tag
         })
         .catch(() => {});
 };
+
+/**
+ * Artikkelfilmer. Per film telles start, hvor mange som nådde hver scene, og hvor
+ * mange som så den ferdig. Scene-tellerne gir frafallskurven: faller tallet brått
+ * fra scene 4 til 5, er det der elevene gir seg. Spilleren kaller hver hendelse én
+ * gang per avspilling. Minitesten på sluttskjermen lagres som sum, slik som `sporQuiz`.
+ */
+export type FilmHendelse =
+    | { type: 'start' }
+    | { type: 'scene'; scene: number }
+    | { type: 'ferdig' }
+    | { type: 'quiz'; riktige: number; antall: number };
+
+export const sporFilm = (sti: string, h: FilmHendelse): void => {
+    const noekkel = safeKey(sti);
+    if (!noekkel) return;
+    const dag = dagsnokkel();
+    const o: Record<string, Verdi> = {};
+    if (h.type === 'start') {
+        o[`film/${noekkel}/start`] = incr(1);
+        o[`daily/${dag}/filmStart`] = incr(1);
+    } else if (h.type === 'scene') {
+        o[`film/${noekkel}/scener/${Math.max(0, Math.min(60, Math.floor(h.scene)))}`] = incr(1);
+    } else if (h.type === 'ferdig') {
+        o[`film/${noekkel}/ferdig`] = incr(1);
+        o[`daily/${dag}/filmFerdig`] = incr(1);
+    } else if (h.antall > 0) {
+        o[`film/${noekkel}/quizForsok`] = incr(1);
+        o[`film/${noekkel}/quizPoengSum`] = incr(Math.round((h.riktige / h.antall) * 100));
+    }
+    skriv(o);
+};

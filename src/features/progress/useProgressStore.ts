@@ -219,6 +219,7 @@ const KIND_COUNTERS: Record<string, string> = {
     'microgame-played': 'microgamesPlayed',
     'philosophy-quest': 'philosophyQuests',
     'comparison-task': 'comparisonTasks',
+    'film-watched': 'filmsWatched',
 };
 
 export const useProgressStore = create<ProgressState>()(

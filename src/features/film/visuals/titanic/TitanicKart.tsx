@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo, useState } from 'react';
 import { animate, motion, useMotionValue, useMotionValueEvent } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -20,7 +20,7 @@ const CARPATHIA_START: LngLat = [-49.1, 41.15];
 const ZOOM = 4;
 
 export function TitanicKart({ beat, playing }: VisualProps) {
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const projeksjon = useMemo(
         () =>

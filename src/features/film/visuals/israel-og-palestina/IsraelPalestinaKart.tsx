@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoContains, geoMercator, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -183,7 +183,7 @@ function frø(n: number) {
 
 export function IsraelPalestinaKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'herzl';
-    const { geographies: verden } = useAtlasWorld();
+    const { geographies: verden } = useFilmVerden();
     // Fransk Guyana ligger i samme geometri som Frankrike. Ta den bort, så bare Europa farges.
     const geographies = useMemo(
         () =>

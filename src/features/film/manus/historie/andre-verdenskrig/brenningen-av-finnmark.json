@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "kaia",
+            "lyd": "vind",
             "kapittel": "Kaia",
             "visual": {
                 "type": "FinnmarkBygda",
@@ -69,6 +70,7 @@
         },
         {
             "id": "retrett",
+            "lyd": "stille",
             "kapittel": "En hær på vei hjem",
             "visual": {
                 "type": "FinnmarkKart",
@@ -168,6 +170,7 @@
         },
         {
             "id": "brentjord",
+            "lyd": "ild",
             "kapittel": "Brent jord",
             "visual": {
                 "type": "FinnmarkBygda",
@@ -192,6 +195,7 @@
         },
         {
             "id": "omfang",
+            "lyd": "stille",
             "visual": {
                 "type": "FinnmarkKart",
                 "props": {
@@ -340,6 +344,7 @@
         },
         {
             "id": "gjemte",
+            "lyd": "vind",
             "kapittel": "De som gjemte seg",
             "visual": {
                 "type": "FinnmarkGamme"
@@ -392,6 +397,7 @@
         },
         {
             "id": "planen",
+            "lyd": "stille",
             "visual": {
                 "type": "Punktkort",
                 "props": {

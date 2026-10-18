@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { Award, Gamepad2, Target } from 'lucide-react';
+import { Award, Clapperboard, Gamepad2, Target } from 'lucide-react';
 import {
     aktivitetNavn,
     formatDagKort,
     formatTall,
     summerDagsfelt,
     type DagPunkt,
+    type FilmRad,
     type RaaStats,
     type SideRad,
 } from '../statsModel';
@@ -19,10 +20,11 @@ interface Props {
     serie: DagPunkt[];
     dager: string[];
     siderader: SideRad[];
+    filmrader: FilmRad[];
     vindu: number;
 }
 
-export const Aktivitet: React.FC<Props> = ({ raa, serie, dager, siderader, vindu }) => {
+export const Aktivitet: React.FC<Props> = ({ raa, serie, dager, siderader, filmrader, vindu }) => {
     const utsnitt = useMemo(() => serie.slice(-vindu), [serie, vindu]);
     const dagerNaa = useMemo(() => dager.slice(-vindu), [dager, vindu]);
 
@@ -186,6 +188,77 @@ export const Aktivitet: React.FC<Props> = ({ raa, serie, dager, siderader, vindu
                                 <tr>
                                     <td colSpan={4} className="py-10 text-center text-sm text-slate-400">
                                         Ingen quizer fullført ennå.
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+            </Kort>
+            <Kort
+                tittel="Filmer"
+                ikon={<Clapperboard className="h-4 w-4" />}
+                hjelp="Stolpene viser hvor stor andel av dem som startet filmen, som nådde hver scene. Et brått fall viser hvor elevene gir seg."
+            >
+                <div className="max-h-[480px] overflow-auto rounded-xl border border-slate-100">
+                    <table className="w-full text-left">
+                        <thead className="sticky top-0 bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
+                            <tr>
+                                <th className="px-4 py-3 font-medium">Film</th>
+                                <th className="px-4 py-3 text-right font-medium">Startet</th>
+                                <th className="px-4 py-3 text-right font-medium">Sett ferdig</th>
+                                <th className="px-4 py-3 font-medium">Scene for scene</th>
+                                <th className="px-4 py-3 text-right font-medium">Minitest</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                            {filmrader.map((r) => (
+                                <tr key={r.noekkel} className="hover:bg-slate-50/60">
+                                    <td className="px-4 py-3">
+                                        <Link to={`/film${r.sti}`} className="flex items-center gap-2.5 hover:text-indigo-600">
+                                            <span
+                                                className="h-2 w-2 shrink-0 rounded-full"
+                                                style={{ background: fagFarge(r.fagId) }}
+                                            />
+                                            <span className="min-w-0">
+                                                <span className="block truncate font-medium text-slate-900">
+                                                    {r.tittel}
+                                                </span>
+                                                <span className="block truncate text-xs text-slate-400">
+                                                    {r.verstScene !== null
+                                                        ? `Flest gir seg ved scene ${r.verstScene + 1}`
+                                                        : r.fagTittel}
+                                                </span>
+                                            </span>
+                                        </Link>
+                                    </td>
+                                    <td className="px-4 py-3 text-right font-mono text-sm text-slate-600">
+                                        {r.start}
+                                    </td>
+                                    <td className="px-4 py-3 text-right font-mono text-sm font-semibold text-slate-900">
+                                        {Math.round((r.ferdig / r.start) * 100)} %
+                                    </td>
+                                    <td className="px-4 py-3">
+                                        <div className="flex h-8 items-end gap-px" aria-label="Andel som nådde hver scene">
+                                            {r.frafall.map((andel, i) => (
+                                                <div
+                                                    key={i}
+                                                    title={`Scene ${i + 1}: ${Math.round(andel * 100)} %`}
+                                                    className={`w-2 rounded-sm ${i === r.verstScene ? 'bg-rose-500' : 'bg-indigo-400'}`}
+                                                    style={{ height: `${Math.max(4, andel * 100)}%` }}
+                                                />
+                                            ))}
+                                        </div>
+                                    </td>
+                                    <td className="px-4 py-3 text-right font-mono text-sm text-slate-600">
+                                        {r.quizSnitt !== null ? `${Math.round(r.quizSnitt * 100)} %` : '-'}
+                                    </td>
+                                </tr>
+                            ))}
+                            {filmrader.length === 0 && (
+                                <tr>
+                                    <td colSpan={5} className="py-10 text-center text-sm text-slate-400">
+                                        Ingen filmer startet ennå.
                                     </td>
                                 </tr>
                             )}

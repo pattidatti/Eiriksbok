@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { geoMercator, geoPath } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -16,7 +16,7 @@ const JAPAN = 392;
 const GULL = '#f59e0b';
 
 export function FrelseKart({ beat }: VisualProps) {
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(
         () =>
             geoMercator().fitExtent(

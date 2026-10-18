@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "natt",
+            "lyd": "rom",
             "kapittel": "Spørsmålet",
             "visual": { "type": "SkapelseKosmos", "props": { "modus": "natt" } },
             "replikker": [
@@ -17,6 +18,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -47,6 +49,7 @@
         },
         {
             "id": "ingenting",
+            "lyd": "rom",
             "kapittel": "En Gud som vil",
             "visual": { "type": "SkapelseKosmos", "props": { "modus": "ord" } },
             "replikker": [
@@ -59,6 +62,7 @@
         },
         {
             "id": "dager",
+            "lyd": "stille",
             "visual": { "type": "SkapelseDager", "props": { "modus": "bibel" } },
             "replikker": [
                 { "si": "Jødedommen og kristendommen leser den samme teksten, første Mosebok." },
@@ -117,6 +121,7 @@
         },
         {
             "id": "ring",
+            "lyd": "rom",
             "kapittel": "Tiden går i ring",
             "visual": { "type": "SkapelseKosmos", "props": { "modus": "ring" } },
             "replikker": [
@@ -129,6 +134,7 @@
         },
         {
             "id": "purusha",
+            "lyd": "stille",
             "visual": { "type": "SkapelseTreTyper", "props": { "fokus": "urvesen" } },
             "replikker": [
                 { "si": "Hinduismen har ikke én skapelsesfortelling, men flere som lever side om side." },
@@ -184,6 +190,7 @@
         },
         {
             "id": "bigbang",
+            "lyd": "rom",
             "kapittel": "Og de som ikke tror?",
             "visual": { "type": "SkapelseKosmos", "props": { "modus": "bigbang" } },
             "replikker": [
@@ -196,6 +203,7 @@
         },
         {
             "id": "slutt",
+            "lyd": "stille",
             "kapittel": "Hva betyr det?",
             "visual": {
                 "type": "Sluttkort",

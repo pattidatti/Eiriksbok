@@ -7,7 +7,14 @@ interface Props {
     tittel: string;
     undertittel?: string;
     bilde?: string;
-    tall?: { verdi: number; etikett: string; fraBeat: number; tone?: 'rod' | 'gronn' }[];
+    /** `omtrent: false` for eksakte tall (52 gisler). Uten feltet står «ca.» foran. */
+    tall?: {
+        verdi: number;
+        etikett: string;
+        fraBeat: number;
+        tone?: 'rod' | 'gronn';
+        omtrent?: boolean;
+    }[];
     sporsmal?: { tekst: string; fraBeat: number };
 }
 
@@ -55,7 +62,7 @@ export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
                             etikett={t.etikett}
                             tone={t.tone}
                             forsinkelse={i * 0.6}
-                            prefiks="ca. "
+                            prefiks={t.omtrent === false ? '' : 'ca. '}
                         />
                     ))}
                 </div>

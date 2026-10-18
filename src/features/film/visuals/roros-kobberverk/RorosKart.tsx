@@ -1,7 +1,9 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, animate, motion } from 'framer-motion';
 import { geoCircle, geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld, type GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import type { GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
+import { Oversiktskart } from '../../kart/Oversiktskart';
 import type { VisualProps } from '../../types';
 import { frø } from './felles3d';
 
@@ -111,7 +113,11 @@ interface Vindu {
 
 export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'sirkel';
-    const { geographies } = useAtlasWorld();
+    // Det fine kartet: utsnittet zoomer helt inn på Rørosvidda, der det grove blir klumper.
+    const { geographies } = useFilmVerden([
+        [-2, 50],
+        [20, 66.5],
+    ]);
 
     // Ett fast grunnkart over Nord-Europa. Utsnittet flyttes ved å skalere hele kartet.
     const proj = useMemo(
@@ -141,7 +147,8 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
         return { x: (a[0] + b[0]) / 2, y: (a[1] + b[1]) / 2, w };
     };
 
-    const mål = vinduFor(utsnittFor(modus, beat));
+    const utsnittNaa = utsnittFor(modus, beat);
+    const mål = vinduFor(utsnittNaa);
     const [vindu, setVindu] = useState<Vindu>(mål);
     const naa = useRef(vindu);
     useEffect(() => {
@@ -334,7 +341,8 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
                     </motion.g>
                 )}
                 {(modus === 'femunden' || (modus === 'sirkel' && beat >= 1)) && (
-                    <g transform={skjerm([12.1, 62.05])}>
+                    // I «sirkel» ligger sørenden av sjøen i bildekanten, så navnet står lenger nord.
+                    <g transform={skjerm(modus === 'sirkel' ? [12.05, 62.28] : [12.1, 62.05])}>
                         <Etikett tekst="Femunden" x={26} dy={0} anker="start" farge="#1e40af" />
                     </g>
                 )}
@@ -407,6 +415,16 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
                     </motion.div>
                 )}
             </AnimatePresence>
+            {/* Når kartet er zoomet helt inn, viser oversikten hvor i Norge vi er. */}
+            <Oversiktskart
+                utsnitt={[utsnittNaa.sv, utsnittNaa.no]}
+                omrade={[
+                    [3, 57.5],
+                    [26, 71.5],
+                ]}
+                synlig={utsnittNaa.no[0] - utsnittNaa.sv[0] < 4}
+                etikett="Norge"
+            />
         </div>
     );
 }

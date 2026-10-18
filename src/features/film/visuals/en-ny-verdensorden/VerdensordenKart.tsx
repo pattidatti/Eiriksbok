@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoNaturalEarth1, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
@@ -205,7 +205,7 @@ const BRIKKER: Record<Modus, (string | [string, 'rod'])[]> = {
 
 export function VerdensordenKart({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'start';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(() => lagProjeksjon(modus), [modus]);
     const sti = useMemo(() => geoPath(projeksjon), [projeksjon]);
     const p = (ll: LngLat) => projeksjon(ll) as [number, number];

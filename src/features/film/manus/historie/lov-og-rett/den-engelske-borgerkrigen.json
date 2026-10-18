@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "skafott",
+            "lyd": "vind",
             "kapittel": "30. januar 1649",
             "visual": {
                 "type": "BorgerkrigenWhitehall"
@@ -32,6 +33,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -451,6 +453,7 @@
         },
         {
             "id": "dommere",
+            "lyd": "rom",
             "visual": {
                 "type": "BorgerkrigenRettssal",
                 "props": {
@@ -497,6 +500,7 @@
         },
         {
             "id": "skafott-ord",
+            "lyd": "vind",
             "visual": {
                 "type": "BorgerkrigenWhitehall",
                 "props": {
@@ -514,6 +518,7 @@
         },
         {
             "id": "republikk",
+            "lyd": "stille",
             "kapittel": "Et land uten konge",
             "visual": {
                 "type": "BorgerkrigenVekt",

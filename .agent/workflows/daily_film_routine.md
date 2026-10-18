@@ -7,6 +7,9 @@ Du er filmskaperen i Gravity Eiriksbok (https://bok.haaland.de/), et norsk digit
 artikkel fortalt som film, med nettleserens stemme, teksting og 2D- og 3D-grafikk som viser det
 stemmen sier. Referansen er Titanic (`/film/historie/industriell-revolusjon/titanic`).
 
+**Unntak: kjøringen kl. 22 UTC forbedrer en eksisterende film** i stedet for å lage en ny (se
+Jobb 1d). Alle de andre jobbene gjelder likt, med den filmen i stedet for en ny.
+
 ## KRITISKE KRAV
 
 1. **Følg `.agent/workflows/build_film.md`.** Den er fasiten for manusformat, visualer, tone,
@@ -65,6 +68,8 @@ PR-en «(ikke visuelt kontrollert)» og si det i rapporten.
 
 ## Jobb 1: Velg artikkel
 
+Er klokka 22 UTC (`[ "$(date -u +%H)" -ge 20 ]`), gå rett til 1d.
+
 Rutinen kjører fire ganger i døgnet. Kjøringen kl. 10 UTC lager film til det nyeste innholdet,
 så artikkelen på forsiden har film samme dag. De tre andre tar etterslepet.
 
@@ -105,6 +110,27 @@ historie, musikk og til slutt samfunnskunnskap. Innenfor hver gruppe kommer arti
 ferdig heltebilde først. Ta den første som ikke er opptatt og ikke står under «Hopp over».
 Ikke hopp over en artikkel bare fordi den er vanskelig å vise. Finn det som kan vises (et sted,
 et forløp, tall, en ting, mennesker som står mot hverandre).
+
+### 1d. Forbedring (bare kjøringen kl. 22 UTC)
+
+```bash
+node scripts/film-forbedring.mjs --antall 5
+```
+
+Ta den første som ikke er opptatt. Køen gir filmer som aldri er vurdert (de som bryter
+variasjonsreglene mest først), så filmer under 22/25. For den filmen:
+
+1. Kjør Jobb 4 slik den står: full `shots-film`, faktasjekk og vurdering. Det er
+   utgangspunktet.
+2. Rett i denne rekkefølgen: faktafeil, tekst i `overlapp.txt`, variasjonsfeil fra
+   `validate-film` (bytt ut gjentatte scener med en ny visual eller en annen generell, gjør
+   ekstra Punktkort om til noe som skjer), og så vurdererens punkter.
+3. Sett `lyd` på scenene der filmen er et sted, om den mangler.
+4. Lengden ligger fast: ikke kort ned eller legg til replikker for å nå et ordtall. Endre
+   replikker bare når faktasjekken krever det. Hver endret replikk lager stemmen på nytt.
+
+PR-tittel `film-forbedring: <Tittel> (<fag>)`. Samme smale diff: manuset og filmens egen
+visuals-mappe.
 
 ### Hopp over
 
@@ -147,15 +173,27 @@ node scripts/validate-film.mjs <sti> && npx tsc -b && npx eslint src/features/fi
 
 ```bash
 source /tmp/pw.env && node scripts/shots-film.mjs <sti> --port 5173
+node scripts/film-grunnlag.mjs <sti> > /tmp/grunnlag.md
 ```
 
-Les hvert `ark-sNN.png` i `.screenshots/film/<leksjon>/`. Rett det du ser selv (guiden §3c er
-lista over vanlige feil), og ta bilder av de scenene på nytt (`--scener 3,7`).
+Les hvert `ark-sNN.png` i `.screenshots/film/<leksjon>/` og `overlapp.txt`. Rett det du ser
+selv (guiden §3c er lista over vanlige feil), og ta de scenene på nytt (`--scener 3,7`). De andre
+scenenes ark blir liggende, så settet er alltid helt.
 
-Når du er fornøyd: start en **fersk underagent** som vurderer. Gi den guidens §5 (rubrikken),
-manuset og stiene til kontaktarkene, ikke koden. Den skal svare med score per akse og konkrete
-rettelser. Rett, ta nye bilder, vurder på nytt. **Maks tre vurderinger.** Ved 19/25 og ingen
-akse under 3 er filmen godkjent.
+Når du er fornøyd: start **to ferske underagenter** etter guidens §5, i samme melding:
+
+- **Faktasjekkeren** får `/tmp/grunnlag.md` og instruksen i §5 punkt 1. Ikke kontaktarkene.
+- **Vurdereren** får `/tmp/grunnlag.md`, guidens §5 (rubrikken), stiene til alle kontaktarkene
+  og `overlapp.txt`. Ikke koden.
+
+Rett alle faktafunn, så vurdererens punkter. Ta nye bilder, vurder på nytt. **Maks tre
+vurderinger.** Ved 19/25 og ingen akse under 3 er filmen godkjent.
+
+Skriv den siste vurderingen inn i manuset, rett etter `utenforArtikkel`:
+
+```json
+"vurdering": { "dato": "2026-10-18", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+```
 
 **Når noe ikke blir grønt** (tsc, lint, validator, eller en visual som krasjer), gå ned trappa.
 Ikke start på nytt:
@@ -210,5 +248,11 @@ Kommentar på issue #12:
 - Vurdering: <Viser/Lesbart/Variasjon/Forståelig/Tro> = <sum>/25, runder: <n>
 - Forenklet: <hva som ble tatt ned i trappa, eller «ingenting»>
 - Hoppet over: <artikler og hvorfor, eller «ingen»>
-- Lærdom til guiden: <én ting som burde stått i build_film.md, eller «ingen»>
+- Faktasjekk: <antall funn, og de viktigste rettelsene>
+- Lærdom til guiden: <én NY ting som burde stått i build_film.md, eller «ingen». Sjekk guiden
+  og de siste rapportene først: en lærdom som alt står der eller alt er meldt, skal ikke
+  meldes igjen>
 ```
+
+Lærdommene leses av vedlikeholdsrutinen `eiriksbok-film-vedlikehold` (mandager), som retter
+verktøyene og guiden. Du retter dem ikke selv i en film-PR.

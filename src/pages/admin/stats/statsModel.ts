@@ -52,6 +52,16 @@ export interface QuizRad {
     perfekte?: number;
 }
 
+/** Én artikkelfilm (`analytics/film/{side}`, skrevet av `sporFilm`). */
+export interface FilmMaling {
+    start?: number;
+    ferdig?: number;
+    /** Scene-indeks -> hvor mange avspillinger som nådde den. RTDB kan gi en liste. */
+    scener?: Record<string, number> | number[];
+    quizForsok?: number;
+    quizPoengSum?: number;
+}
+
 export interface NullTreff {
     query?: string;
     antall?: number;
@@ -67,6 +77,7 @@ export interface RaaStats {
     browsers: Record<string, number>;
     activity: Record<string, number>;
     quiz: Record<string, QuizRad>;
+    film: Record<string, FilmMaling>;
     zeroHits: Record<string, NullTreff>;
     uniqueUsers: Record<string, UniqueUser>;
     activeUsers: Record<string, AktivLeser>;
@@ -83,6 +94,7 @@ export const tomStats = (): RaaStats => ({
     browsers: {},
     activity: {},
     quiz: {},
+    film: {},
     zeroHits: {},
     uniqueUsers: {},
     activeUsers: {},
@@ -374,6 +386,7 @@ export const AKTIVITET_NAVN: Record<string, string> = {
     'microgame-played': 'Mikrospill',
     'philosophy-quest': 'Filosofi-oppdrag',
     'comparison-task': 'Sammenligning',
+    'film-watched': 'Film sett',
 };
 
 export const aktivitetNavn = (kind: string): string => AKTIVITET_NAVN[kind] ?? kind;
@@ -415,3 +428,57 @@ export const byggBrukersegment = (
         totalt: Object.keys(brukere).length,
     };
 };
+
+// --- Filmer -----------------------------------------------------------------
+
+export interface FilmRad extends SideInfo {
+    noekkel: string;
+    start: number;
+    ferdig: number;
+    /** Andel av startene som nådde hver scene (0-1), i scenerekkefølge. */
+    frafall: number[];
+    /** Scenen der flest falt fra (største fall fra forrige scene), eller null. */
+    verstScene: number | null;
+    quizForsok: number;
+    quizSnitt: number | null;
+}
+
+export const byggFilmrader = (raa: RaaStats, reg: Record<string, SideInfo>): FilmRad[] =>
+    Object.entries(raa.film)
+        .map(([noekkel, m]) => {
+            const start = m?.start ?? 0;
+            const scener = m?.scener ?? {};
+            const tall = Object.entries(scener)
+                .filter(([, v]) => typeof v === 'number')
+                .map(([k, v]) => [Number(k), v as number] as const)
+                .sort((a, b) => a[0] - b[0]);
+            const sisteScene = tall.length ? tall[tall.length - 1][0] : -1;
+            const naadd = new Map(tall);
+            const frafall = start
+                ? Array.from({ length: sisteScene + 1 }, (_, i) =>
+                      Math.min(1, (naadd.get(i) ?? 0) / start)
+                  )
+                : [];
+            let verstScene: number | null = null;
+            let verstFall = 0.05;
+            for (let i = 1; i < frafall.length; i++) {
+                const fall = frafall[i - 1] - frafall[i];
+                if (fall > verstFall) {
+                    verstFall = fall;
+                    verstScene = i;
+                }
+            }
+            const quizForsok = m?.quizForsok ?? 0;
+            return {
+                ...slaOppSide(noekkel, reg),
+                noekkel,
+                start,
+                ferdig: m?.ferdig ?? 0,
+                frafall,
+                verstScene,
+                quizForsok,
+                quizSnitt: quizForsok > 0 ? (m?.quizPoengSum ?? 0) / 100 / quizForsok : null,
+            };
+        })
+        .filter((r) => r.start > 0)
+        .sort((a, b) => b.start - a.start);

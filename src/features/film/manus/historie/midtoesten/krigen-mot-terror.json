@@ -122,6 +122,7 @@
         },
         {
             "id": "afghanistan",
+            "lyd": "vind",
             "kapittel": "Afghanistan 2001",
             "visual": { "type": "TerrorFjell", "props": { "modus": "invasjon" } },
             "replikker": [
@@ -144,6 +145,7 @@
         },
         {
             "id": "irak",
+            "lyd": "stille",
             "kapittel": "Irak 2003",
             "visual": { "type": "TerrorKart", "props": { "modus": "irak" } },
             "replikker": [
@@ -299,6 +301,7 @@
         },
         {
             "id": "kabul",
+            "lyd": "vind",
             "kapittel": "Tilbake til start",
             "visual": { "type": "TerrorFjell", "props": { "modus": "kabul" } },
             "replikker": [
@@ -313,12 +316,13 @@
                     "si": "Det er de samme Taliban som styrte landet i 1996, og som ble jaget i 2001."
                 },
                 {
-                    "si": "Etter 20 år, over 2300 milliarder dollar og tusenvis av liv, er alt tilbake der det startet."
+                    "si": "Bare krigen i Afghanistan kostet USA over 2300 milliarder dollar. Etter 20 år og tusenvis av liv er alt tilbake der det startet."
                 }
             ]
         },
         {
             "id": "laerdom",
+            "lyd": "stille",
             "kapittel": "Hva lærte verden?",
             "visual": {
                 "type": "Punktkort",

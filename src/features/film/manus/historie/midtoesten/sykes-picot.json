@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "bordet",
+            "lyd": "rom",
             "kapittel": "En linjal og et kart",
             "visual": { "type": "SykesPicotBordet", "props": { "modus": "tegn" } },
             "replikker": [
@@ -23,6 +24,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -89,6 +91,7 @@
         },
         {
             "id": "avtalen",
+            "lyd": "rom",
             "kapittel": "Den hemmelige avtalen",
             "visual": { "type": "SykesPicotBordet", "props": { "modus": "deling" } },
             "replikker": [
@@ -105,6 +108,7 @@
         },
         {
             "id": "balfour",
+            "lyd": "stille",
             "visual": { "type": "SykesPicotKart", "props": { "modus": "balfour" } },
             "replikker": [
                 { "si": "I 1917 kom enda et løfte. Denne gangen til en helt annen gruppe." },
@@ -211,6 +215,7 @@
         },
         {
             "id": "skyld",
+            "lyd": "rom",
             "visual": { "type": "SykesPicotBordet", "props": { "modus": "arv" } },
             "replikker": [
                 {
@@ -227,6 +232,7 @@
         },
         {
             "id": "laerdom",
+            "lyd": "stille",
             "kapittel": "Hva lærer vi?",
             "visual": {
                 "type": "Sluttkort",

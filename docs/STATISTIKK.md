@@ -8,7 +8,8 @@ Hvordan Eiriksbok måler egen bruk, hvor tallene havner, og hva dashbordet på
 ## Kort fortalt
 
 - **Hva måles:** sidevisninger, lesetid, unike enheter per dag, søk, fullførte
-  oppgaver, quizresultater og hvilke klokkeslett siden brukes.
+  oppgaver, quizresultater, hvor langt elevene ser filmene, og hvilke klokkeslett
+  siden brukes.
 - **Hva måles ikke:** navn, e-post, IP, innlogging. Alt er knyttet til en
   tilfeldig id i `localStorage` på enheten - ikke til en person. Tømmer eleven
   nettleserdata, blir enheten talt som ny.
@@ -40,6 +41,8 @@ tegning.
 | `analytics/devices/{klasse}` · `browsers/{navn}` | tellere | `sporDagensBesok` |
 | `analytics/activity/{type}` | teller totalt | `sporAktivitet` |
 | `analytics/quiz/{side}` | `{forsok, poengSum, perfekte}` | `sporQuiz` (hopper over Quiz Battle - pin-en er ny hver runde) |
+| `analytics/film/{side}` | `{start, ferdig, scener/{n}, quizForsok, quizPoengSum}` | `sporFilm` (filmspilleren; `scener/{n}` = avspillinger som nådde scene n, gir frafallskurven) |
+| `analytics/daily/{dag}/filmStart` · `filmFerdig` | tellere | `sporFilm` |
 | `analytics/zero_hits/{ord}` | `{query, antall, sist}` | `sporSok` |
 | `analytics/searches/{push}` | `{query, type, timestamp, resultsCount}` | `sporSok` |
 | `analytics/unique_users/{anonId}` | `{firstSeen, lastSeen, device}` | `usePresence` |
@@ -106,7 +109,7 @@ utregningen (`statsModel.ts`). Panelene tegner - de regner ikke på egen hånd.
 | **Fag** | Fag mot fag, og **dekningsgrad**: hvor stor andel av artiklene i faget som er åpnet minst én gang. «Aldri åpnet» lister artiklene ingen har vært innom. |
 | **Publikum** | Unike enheter, andel som kommer tilbake, enhets- og nettleserfordeling, og hvem som er inne akkurat nå. |
 | **Søk** | Hva det søkes etter - og **søk uten treff**, som er den mest direkte listen over innhold som mangler. |
-| **Aktivitet** | Hva som faktisk fullføres, og quizresultater sortert med det vanskeligste først. |
+| **Aktivitet** | Hva som faktisk fullføres, quizresultater sortert med det vanskeligste først, og filmene: hvor mange som starter, ser ferdig, og hvor de gir seg. |
 
 Tidsvelgeren (7/30/60 dager) styrer alt som måles per dag. Totaler - som «mest
 lest» - er hele historikken, og kortene sier det selv.

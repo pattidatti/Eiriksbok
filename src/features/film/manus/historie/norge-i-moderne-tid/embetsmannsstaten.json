@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "salen",
+            "lyd": "rom",
             "kapittel": "1833",
             "visual": { "type": "EmbetsmannSalen", "props": { "modus": "valg" } },
             "replikker": [
@@ -24,6 +25,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -207,6 +209,7 @@
         },
         {
             "id": "valget",
+            "lyd": "rom",
             "visual": { "type": "EmbetsmannSalen", "props": { "modus": "regjering" } },
             "replikker": [
                 {
@@ -223,6 +226,7 @@
         },
         {
             "id": "seire",
+            "lyd": "stille",
             "kapittel": "Hva fikk bøndene til?",
             "visual": {
                 "type": "Punktkort",
@@ -283,6 +287,7 @@
         },
         {
             "id": "slutten",
+            "lyd": "rom",
             "kapittel": "1884",
             "visual": { "type": "EmbetsmannSalen", "props": { "modus": "slutt" } },
             "replikker": [
@@ -302,6 +307,7 @@
         },
         {
             "id": "veien",
+            "lyd": "stille",
             "visual": { "type": "EmbetsmannsTidslinje" },
             "replikker": [
                 {

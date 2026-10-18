@@ -8,7 +8,7 @@ import {
     type GeoPath,
     type GeoProjection,
 } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
@@ -122,7 +122,7 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
 
 export function VerdenKart({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'kjemper';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(() => lagProjeksjon(modus), [modus]);
     const sti = useMemo(() => geoPath(projeksjon), [projeksjon]);
     const p = (ll: LngLat) => projeksjon(ll) as [number, number];

@@ -495,7 +495,11 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
             <BlaBrikker modus={modus} beat={beat} playing={playing} />
             <SvarteBrikker modus={modus} beat={beat} playing={playing} />
             {modus === 'invasjon' && <Flyktning beat={beat} playing={playing} />}
-            {!(modus === 'kabul' && (beat === 4 || beat === 1)) && <Merke pos={[0, 8.2, 0]} tekst="Kabul" />}
+            {/* Kabul-merket skjules når kameraet står så nær at det havner under overskriften (beat 1),
+                og når kameraet er ved Tora Bora og byen ligger i bildekanten (beat 3-4). */}
+            {(modus === 'kabul' ? beat !== 4 && beat !== 1 : beat === 0 || beat === 2) && (
+                <Merke pos={[0, 8.2, 0]} tekst="Kabul" />
+            )}
             {visTora && <Merke pos={[TORA_BORA.x, 6, TORA_BORA.z]} tekst="Tora Bora" farge="#9a3412" />}
             {(visTora || (modus === 'kabul' && beat === 4)) && (
                 <Merke pos={[GRENSE_X + 8, 2.5, -6]} tekst="Pakistan" farge="#166534" />

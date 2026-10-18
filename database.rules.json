@@ -85,6 +85,17 @@
                     ".write": true
                 }
             },
+            "film": {
+                ".read": true,
+                "$id": {
+                    ".write": true,
+                    "scener": {
+                        "$scene": {
+                            ".validate": "$scene.matches(/^[0-9]{1,2}$/) && newData.isNumber()"
+                        }
+                    }
+                }
+            },
             "zero_hits": {
                 ".read": true,
                 "$ord": {

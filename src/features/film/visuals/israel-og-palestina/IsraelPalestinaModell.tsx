@@ -4,7 +4,7 @@ import { Html } from '@react-three/drei';
 import * as THREE from 'three';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoContains } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import { guessTier } from '../../../../components/microgames/kit/quality';
 import type { VisualProps } from '../../types';
 
@@ -434,7 +434,7 @@ export function IsraelPalestinaModell({ beat, playing, props }: VisualProps<{ mo
         () => (guessTier().tier === 'lav' ? [1, 1] : [1, 1.5]),
         []
     );
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
 
     const stykker = useMemo(() => {
         const ut: { navn: string; geo: THREE.ExtrudeGeometry }[] = [];

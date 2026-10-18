@@ -12,6 +12,9 @@ export interface FilmReplikk {
     uttale?: string;
 }
 
+/** Bakgrunnslyd under stemmen (se useFilmAmbiens.ts). «stille» skrur den av. */
+export type FilmLyd = 'hav' | 'vind' | 'storm' | 'ild' | 'regn' | 'rom' | 'stille';
+
 export interface FilmScene {
     id: string;
     /** Kapittelnavn i tidslinja nederst. Scener uten kapittel hører til forrige. */
@@ -20,6 +23,8 @@ export interface FilmScene {
         type: string;
         props?: Record<string, unknown>;
     };
+    /** Bakgrunnslyd fra denne scenen og fram til en scene setter en annen. */
+    lyd?: FilmLyd;
     /** Klokkeslett som vises i hjørnet, ett per beat (null = skjul). */
     klokke?: (string | null)[];
     replikker: FilmReplikk[];
@@ -33,6 +38,19 @@ export interface FilmManus {
     bilde?: string;
     /** Tall i filmen som ikke står i artikkelen, med begrunnelse (sjekkes av validate-film). */
     utenforArtikkel?: { tall: number | string; begrunnelse: string }[];
+    /**
+     * Siste uavhengige vurdering (rubrikken i build_film.md §5). Forbedringskjøringen i
+     * nattrutinen velger filmen med lavest sum, så den som er svakest blir løftet først.
+     */
+    vurdering?: {
+        dato: string;
+        viser: number;
+        lesbart: number;
+        variasjon: number;
+        forstaelig: number;
+        tro: number;
+        sum: number;
+    };
     scener: FilmScene[];
 }
 

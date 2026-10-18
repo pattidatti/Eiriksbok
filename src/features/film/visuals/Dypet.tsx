@@ -195,7 +195,7 @@ export function Dypet({ beat, props }: VisualProps<Props>) {
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute right-[6%] top-[42%] px-6 py-3 rounded-2xl bg-white/95 shadow-xl text-2xl md:text-3xl font-black text-slate-900"
+                    className="absolute right-[3%] top-[44%] max-w-[16rem] px-6 py-3 rounded-2xl bg-white/95 shadow-xl text-center text-2xl md:text-3xl font-black leading-tight text-slate-900"
                 >
                     Skipet som ikke kunne synke
                 </motion.div>

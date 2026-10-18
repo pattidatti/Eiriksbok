@@ -1,7 +1,8 @@
 import { memo, useMemo, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoContains, geoMercator, geoPath, type GeoPath } from 'd3-geo';
-import { useAtlasWorld, type GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import type { GeoFeature } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 import { frø } from './felles3d';
@@ -48,7 +49,7 @@ const PRIKKER = 140;
 
 export function SprangetKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'garde';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const kina = geographies.find((g) => String(g.id) === KINA);
 
     const projeksjon = useMemo(

@@ -82,6 +82,7 @@
         },
         {
             "id": "troen",
+            "lyd": "rom",
             "kapittel": "Hvorfor omvende samene?",
             "visual": { "type": "WestenTromme", "props": { "modus": "tro" } },
             "replikker": [
@@ -100,6 +101,7 @@
         },
         {
             "id": "grensene",
+            "lyd": "stille",
             "visual": { "type": "WestenKart", "props": { "modus": "grenser" } },
             "replikker": [
                 {
@@ -240,6 +242,7 @@
         },
         {
             "id": "brannen",
+            "lyd": "ild",
             "kapittel": "Bålet i København",
             "visual": { "type": "WestenTromme", "props": { "modus": "brann" } },
             "replikker": [
@@ -260,6 +263,7 @@
         },
         {
             "id": "kildene",
+            "lyd": "stille",
             "kapittel": "Kildene",
             "visual": { "type": "WestenManuskript" },
             "replikker": [

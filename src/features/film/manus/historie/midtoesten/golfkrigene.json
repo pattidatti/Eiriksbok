@@ -7,6 +7,7 @@
     "scener": [
         {
             "id": "grensen",
+            "lyd": "vind",
             "kapittel": "2. august 1990",
             "visual": { "type": "GolfSand", "props": { "modus": "invasjon" } },
             "replikker": [
@@ -18,6 +19,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -119,6 +121,7 @@
         },
         {
             "id": "omringing",
+            "lyd": "vind",
             "kapittel": "100 timer på bakken",
             "visual": { "type": "GolfSand", "props": { "modus": "omringing" } },
             "replikker": [
@@ -131,6 +134,7 @@
         },
         {
             "id": "tid",
+            "lyd": "stille",
             "visual": { "type": "GolfTid" },
             "replikker": [
                 { "si": "Etter 100 timer erklærte president George H.W. Bush våpenhvile. Kuwait var fritt." },

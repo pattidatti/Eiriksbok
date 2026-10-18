@@ -44,7 +44,7 @@ const VINDUER = [
 ];
 
 export const StatsPage: React.FC = () => {
-    const { raa, siderader, serie, dager, laster } = useStatsData();
+    const { raa, siderader, filmrader, serie, dager, laster } = useStatsData();
     const [fane, setFane] = useState<FaneId>('oversikt');
     const [vindu, setVindu] = useState(30);
 
@@ -132,6 +132,7 @@ export const StatsPage: React.FC = () => {
                                 serie={serie}
                                 dager={dager}
                                 siderader={siderader}
+                                filmrader={filmrader}
                                 vindu={vindu}
                             />
                         )}

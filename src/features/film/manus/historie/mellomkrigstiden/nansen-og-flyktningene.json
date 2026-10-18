@@ -9,6 +9,7 @@
     "scener": [
         {
             "id": "stasjonen",
+            "lyd": "vind",
             "kapittel": "Sergej",
             "visual": { "type": "NansenStasjon", "props": { "modus": "uten" } },
             "replikker": [
@@ -25,6 +26,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -117,6 +119,7 @@
         },
         {
             "id": "stasjonen-igjen",
+            "lyd": "vind",
             "visual": { "type": "NansenStasjon", "props": { "modus": "med" } },
             "replikker": [
                 { "si": "Tenk på Sergej igjen. Nå har han et Nansenpass i lomma." },
@@ -127,6 +130,7 @@
         },
         {
             "id": "sult",
+            "lyd": "stille",
             "kapittel": "Nye kriser",
             "visual": {
                 "type": "Prikkfelt",

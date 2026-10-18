@@ -9,6 +9,10 @@
 //   node scripts/validate-film.mjs                       # alle filmer
 //   node scripts/validate-film.mjs historie/andre-verdenskrig/d-dagen
 //
+// Variasjonsreglene (samme visual i høyst MAKS_SCENER_PER_VISUAL scener, høyst ett
+// Punktkort) er feil når én film sjekkes, slik nattrutinen gjør. I helsjekken av alle
+// filmer er de advarsler, for filmene fra før reglene kom bryter dem.
+//
 // Exit 1 ved feil. Advarsler stopper ikke.
 
 import fs from 'node:fs';
@@ -29,6 +33,16 @@ const GENERELLE = {
     Sluttkort: { krav: ['setninger'], lister: { setninger: ['tekst', 'fraBeat'] } },
 };
 const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe'];
+const MAKS_SCENER_PER_VISUAL = 4;
+const MAKS_PUNKTKORT = 1;
+/** Bakgrunnslyden en scene kan ha (se useFilmAmbiens.ts). */
+const LYDER = ['hav', 'vind', 'storm', 'ild', 'regn', 'rom', 'stille'];
+/** Tallord som må stå i artikkelen, akkurat som sifre. «hundre» og «tusen» sjekkes når de står alene. */
+const TALLORD = {
+    ti: 10, elleve: 11, tolv: 12, tretten: 13, fjorten: 14, femten: 15, seksten: 16, sytten: 17,
+    atten: 18, nitten: 19, tjue: 20, tretti: 30, 'førti': 40, femti: 50, seksti: 60, sytti: 70,
+    'åtti': 80, nitti: 90, hundre: 100, tusen: 1000,
+};
 /** Ca. 12 sekunder tale. Lengre enkeltsetninger risikerer å bli kuttet av Chrome. */
 const MAKS_TALTE_ORD_PER_SETNING = 30;
 
@@ -92,7 +106,19 @@ function tallI(tekst) {
     return ut;
 }
 
-function sjekk(fil, visualer) {
+/** Tallord i teksten («ti år», «tusen mennesker») som [ordet, tallet]. Vage «flere hundre» telles ikke. */
+function tallordI(tekst) {
+    const ut = [];
+    const ord = tekst.toLowerCase().split(/[^a-zæøå0-9]+/).filter(Boolean);
+    ord.forEach((o, i) => {
+        if (!(o in TALLORD)) return;
+        if ((o === 'hundre' || o === 'tusen') && /^(flere|mange|noen|par|hundre|ett|et|to|tre|fire|fem|seks|sju|syv|åtte|ni)$/.test(ord[i - 1] ?? '')) return;
+        ut.push([o, TALLORD[o]]);
+    });
+    return ut;
+}
+
+function sjekk(fil, visualer, streng) {
     const feil = [];
     const adv = [];
     const rel = path.relative(MANUS_DIR, fil).replace(/\.json$/, '');
@@ -112,11 +138,15 @@ function sjekk(fil, visualer) {
 
     const artikkel = fs.existsSync(artikkelFil) ? JSON.parse(fs.readFileSync(artikkelFil, 'utf8')) : {};
     const fasit = artikkelTekst(artikkel);
+    // Hele tall, ikke tekstbiter: «19» skal ikke godkjennes fordi «1912» står i artikkelen.
+    const fasitTall = tallI(fasit);
+    const fasitOrd = new Set(fasit.toLowerCase().split(/[^a-zæøå0-9]+/).filter(Boolean));
     const tillatt = new Set((m.utenforArtikkel ?? []).map((u) => String(u.tall)));
     for (const u of m.utenforArtikkel ?? []) if (!u.begrunnelse) feil.push(`utenforArtikkel ${u.tall} mangler begrunnelse`);
 
     let ord = 0;
     const brukte = new Set();
+    const antallPerVisual = new Map();
     const ids = new Set();
     m.scener.forEach((s, i) => {
         const hvor = `scene ${i} (${s.id ?? '?'})`;
@@ -150,6 +180,8 @@ function sjekk(fil, visualer) {
             feil.push(`${hvor}: ${visualer.get(type)}`);
         }
         brukte.add(type);
+        antallPerVisual.set(type, (antallPerVisual.get(type) ?? 0) + 1);
+        if (s.lyd !== undefined && !LYDER.includes(s.lyd)) feil.push(`${hvor}: ukjent lyd "${s.lyd}" (lov: ${LYDER.join(', ')})`);
         if (s.klokke && s.klokke.length !== antall) feil.push(`${hvor}: klokke har ${s.klokke.length} verdier, men scenen har ${antall} replikker`);
 
         // Fakta i props.
@@ -157,7 +189,9 @@ function sjekk(fil, visualer) {
             if (Array.isArray(x)) x.forEach(gaa);
             else if (x && typeof x === 'object')
                 for (const [k, v] of Object.entries(x)) {
-                    if (FAKTA_PROPS.has(k) && typeof v === 'number' && v >= 10 && !fasit.includes(String(v)) && !tillatt.has(String(v)))
+                    // 10 og 100 er grunntall i «ni av ti»-prikkfelt, ikke fakta.
+                    if (type === 'Prikkfelt' && (k === 'total' || k === 'farget') && (v === 10 || v === 100)) continue;
+                    if (FAKTA_PROPS.has(k) && typeof v === 'number' && v >= 10 && !fasitTall.has(String(v)) && !tillatt.has(String(v)))
                         feil.push(`${hvor}: tallet ${v} (props.${k}) står ikke i artikkelen - rett det, eller før det i utenforArtikkel med begrunnelse`);
                     else gaa(v);
                 }
@@ -179,7 +213,13 @@ function sjekk(fil, visualer) {
                 if (ENGELSK_ERSTATNING.test(tekst)) feil.push(`${h}: aa/oe/ae i stedet for å/ø/æ ("${tekst.match(ENGELSK_ERSTATNING)[0]}")`);
             }
             for (const t of tallI(r.si)) {
-                if (!fasit.includes(t) && !tillatt.has(t)) feil.push(`${h}: tallet ${t} står ikke i artikkelen - rett det, eller før det i utenforArtikkel med begrunnelse`);
+                if (!fasitTall.has(t) && !tillatt.has(t)) feil.push(`${h}: tallet ${t} står ikke i artikkelen - rett det, eller før det i utenforArtikkel med begrunnelse`);
+            }
+            // «Hver prikk er tusen mennesker» er målestokken, ikke en påstand.
+            const maalestokk = /\b(hver|én|en)\s+(prikk|figur|rute|merke)\b/i.test(r.si);
+            for (const [o, v] of maalestokk ? [] : tallordI(r.si)) {
+                if (!fasitOrd.has(o) && !fasitTall.has(String(v)) && !tillatt.has(String(v)) && !tillatt.has(o))
+                    feil.push(`${h}: «${o}» (${v}) står ikke i artikkelen, verken som ord eller tall - rett det, eller før det i utenforArtikkel`);
             }
             // Stemmen leser én setning om gangen, og Chrome kutter en ytring etter ca. 15 sekunder.
             // Tall teller som fire ord, for «1825» blir «atten hundre og tjuefem» høyt.
@@ -197,6 +237,14 @@ function sjekk(fil, visualer) {
 
     if (ord < 550 || ord > 1100) feil.push(`manuset er ${ord} ord (skal være 550-1100, rundt 4-7 minutter)`);
     if (m.scener.length < 10) adv.push(`bare ${m.scener.length} scener (sikt på 12-16)`);
+    const variasjon = streng ? feil : adv;
+    for (const [type, n] of antallPerVisual) {
+        if (type === 'Sluttkort' || type === 'Tittelkort') continue;
+        if (type === 'Punktkort' && n > MAKS_PUNKTKORT)
+            variasjon.push(`Punktkort brukes i ${n} scener (maks ${MAKS_PUNKTKORT}) - vis det heller som noe som skjer`);
+        else if (n > MAKS_SCENER_PER_VISUAL)
+            variasjon.push(`${type} brukes i ${n} scener (maks ${MAKS_SCENER_PER_VISUAL}) - bytt bilde oftere`);
+    }
     const egne = [...brukte].filter((t) => !GENERELLE[t]);
     if (egne.length === 0) feil.push('filmen har ingen egen visual - minst én signaturvisual skal være laget for emnet');
     return { feil, adv, ord, scener: m.scener.length, egne };
@@ -211,7 +259,7 @@ if (filer.length === 0) {
     process.exit(1);
 }
 for (const fil of filer) {
-    const r = sjekk(fil, visualer);
+    const r = sjekk(fil, visualer, filer.length === 1);
     const navn = path.relative(MANUS_DIR, fil);
     console.log(`\n${r.feil.length ? '✗' : '✓'} ${navn}${r.ord ? `  (${r.scener} scener, ${r.ord} ord, egne visualer: ${r.egne.join(', ') || 'ingen'})` : ''}`);
     for (const f of r.feil) console.log(`  FEIL  ${f}`);

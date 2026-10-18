@@ -11,6 +11,13 @@
 //
 // Ut: .screenshots/film/<leksjon>/sNN-bM.png og .screenshots/film/<leksjon>/ark-sNN.png
 // Les arkene (ett bilde per scene), ikke enkeltbildene.
+//
+// Med --scener tas bare de scenene på nytt. Bildene og arkene for de andre scenene blir
+// liggende, så vurdereren alltid kan få hele settet.
+//
+// Hvert bilde sjekkes også for tekst som overlapper annen tekst eller er kuttet i
+// bildekanten (målt i DOM, også merkelapper over 3D-lerretet). Funnene står i
+// overlapp.txt og stopper skriptet. Tekst tegnet inne i WebGL ser sjekken ikke.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,8 +39,72 @@ const kunScener = opt('scener', null)?.split(',').map(Number);
 const ROT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const manus = JSON.parse(fs.readFileSync(path.join(ROT, 'src/features/film/manus', `${sti}.json`), 'utf8'));
 const ut = path.join(ROT, '.screenshots/film', path.basename(sti));
-fs.rmSync(ut, { recursive: true, force: true });
-fs.mkdirSync(ut, { recursive: true });
+if (kunScener) {
+    // Bare scenene som tas på nytt. Resten av settet beholdes til vurderingen.
+    fs.mkdirSync(ut, { recursive: true });
+    const nr = new Set(kunScener.map((n) => String(n).padStart(2, '0')));
+    for (const f of fs.readdirSync(ut)) {
+        const m = f.match(/^(?:ark-)?s(\d{2})/);
+        if (m && nr.has(m[1])) fs.rmSync(path.join(ut, f));
+    }
+} else {
+    fs.rmSync(ut, { recursive: true, force: true });
+    fs.mkdirSync(ut, { recursive: true });
+}
+
+/**
+ * Tekst som overlapper annen tekst, eller som går ut over bildekanten. Kjøres i siden.
+ * Hver tekstnode måles med Range (den faktiske teksten, ikke boksen rundt). Tekst som
+ * nesten er usynlig (opacity < 0,35) teller ikke, for det er bevisst dempet bakgrunn.
+ */
+function finnOverlapp() {
+    const rot = document.querySelector('.aspect-video');
+    if (!rot) return [];
+    const R = rot.getBoundingClientRect();
+    const bokser = [];
+    const gaa = document.createTreeWalker(rot, NodeFilter.SHOW_TEXT);
+    let n;
+    while ((n = gaa.nextNode())) {
+        const tekst = n.textContent.replace(/\s+/g, ' ').trim();
+        if (!tekst) continue;
+        let o = 1;
+        let skjult = false;
+        for (let e = n.parentElement; e && e !== rot.parentElement; e = e.parentElement) {
+            const cs = getComputedStyle(e);
+            if (cs.display === 'none' || cs.visibility === 'hidden') skjult = true;
+            o *= parseFloat(cs.opacity || '1');
+        }
+        if (skjult || o < 0.35) continue;
+        const r = document.createRange();
+        r.selectNodeContents(n);
+        for (const b of r.getClientRects()) {
+            if (b.width < 3 || b.height < 3) continue;
+            // Helt utenfor bildet (et sted kartet har zoomet forbi) er ikke synlig og ikke en feil.
+            if (b.right <= R.left || b.left >= R.right || b.bottom <= R.top || b.top >= R.bottom) continue;
+            bokser.push({ tekst, node: n, b });
+        }
+    }
+    const funn = [];
+    for (const { tekst, b } of bokser) {
+        const ut = Math.max(R.left - b.left, b.right - R.right, R.top - b.top, b.bottom - R.bottom);
+        if (ut > 4) funn.push(`«${tekst.slice(0, 50)}» er kuttet i bildekanten`);
+    }
+    for (let i = 0; i < bokser.length; i++) {
+        for (let j = i + 1; j < bokser.length; j++) {
+            const a = bokser[i];
+            const c = bokser[j];
+            if (a.node === c.node) continue;
+            const w = Math.min(a.b.right, c.b.right) - Math.max(a.b.left, c.b.left);
+            const h = Math.min(a.b.bottom, c.b.bottom) - Math.max(a.b.top, c.b.top);
+            if (w <= 2 || h <= 4) continue;
+            const minste = Math.min(a.b.width * a.b.height, c.b.width * c.b.height);
+            if ((w * h) / minste < 0.15) continue;
+            funn.push(`«${a.tekst.slice(0, 50)}» overlapper «${c.tekst.slice(0, 50)}»`);
+        }
+    }
+    return [...new Set(funn)];
+}
+const overlapp = [];
 
 const browser = await chromium.launch({
     args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'],
@@ -64,6 +135,7 @@ for (const [si, sc] of manus.scener.entries()) {
         if (await page.getByText('Mangler visual').count()) feil.push(`scene ${si}: Mangler visual ${sc.visual.type}`);
         if (await page.getByText(/Noe gikk galt/).count()) feil.push(`scene ${si} beat ${b}: ErrorBoundary slo inn`);
         await page.screenshot({ path: path.join(ut, `s${String(si).padStart(2, '0')}-b${b}.png`) });
+        for (const o of await page.evaluate(finnOverlapp)) overlapp.push(`scene ${si} (${sc.visual.type}) beat ${b}: ${o}`);
     }
     const filer = fs
         .readdirSync(ut)
@@ -94,6 +166,12 @@ if (!kunScener) {
 
 await browser.close();
 console.log(`\nBilder: ${path.relative(ROT, ut)}/ (les ark-sNN.png)`);
+fs.writeFileSync(path.join(ut, 'overlapp.txt'), overlapp.join('\n') + (overlapp.length ? '\n' : ''));
+if (overlapp.length) {
+    console.log(`\nTekst som overlapper eller er kuttet (${overlapp.length}, også i overlapp.txt):`);
+    for (const o of overlapp) console.log(`  ${o}`);
+    feil.push(`${overlapp.length} tekstoverlapp - flytt merkelappene og ta scenene på nytt med --scener`);
+}
 if (feil.length) {
     console.log(`\n${feil.length} feil:\n` + [...new Set(feil)].map((f) => `  ${f}`).join('\n'));
     process.exit(1);

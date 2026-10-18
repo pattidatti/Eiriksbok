@@ -1,7 +1,7 @@
 import { memo, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { geoConicConformal, geoPath, type GeoPath, type GeoProjection } from 'd3-geo';
-import { useAtlasWorld } from '../../../../components/atlas/useAtlasWorld';
+import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 import { Brikke, GassRor, GassStil, RUSSLAND_ROD } from './felles';
 
@@ -202,7 +202,7 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
 
 export function RusslandKart({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
     const modus = props.modus ?? 'sammenbrudd';
-    const { geographies } = useAtlasWorld();
+    const { geographies } = useFilmVerden();
     const projeksjon = useMemo(() => lagProjeksjon(modus), [modus]);
     const sti = useMemo(() => geoPath(projeksjon), [projeksjon]);
     const p = (ll: LngLat) => projeksjon(ll) as [number, number];
