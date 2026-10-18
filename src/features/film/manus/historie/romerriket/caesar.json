@@ -1,0 +1,543 @@
+{
+    "id": "caesar",
+    "tittel": "Julius Cæsar: Mannen som knuste republikken",
+    "kilde": "/historie/romerriket/caesar",
+    "bilde": "/images/romerriket/caesar-hero.webp",
+    "utenforArtikkel": [],
+    "scener": [
+        {
+            "id": "elva",
+            "kapittel": "Ved elva",
+            "visual": {
+                "type": "CaesarRubicon",
+                "props": {
+                    "modus": "elva"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er januar, år 49 før vår tidsregning. Vi står ved en liten elv i Nord-Italia."
+                },
+                {
+                    "si": "Ved elvebredden står en mann. Bak ham står soldatene hans. De vil følge ham hvor som helst."
+                },
+                {
+                    "si": "Langt der framme ligger Roma. Byen har gjort ham rik og berømt. Men den har også gjort ham hatet."
+                },
+                {
+                    "si": "Krysser han elva med soldatene, bryter han loven. Sender han soldatene hjem, blir han sannsynligvis drept."
+                },
+                {
+                    "si": "Elva heter Rubicon. Hva ville du gjort?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "JULIUS CÆSAR",
+                    "undertittel": "Mannen som knuste republikken",
+                    "bilde": "/images/romerriket/caesar-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne én mann knuse en hel republikk?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mannen heter Gaius Julius Cæsar."
+                },
+                {
+                    "si": "Roma var en republikk. Det betyr at landet ikke hadde en konge. Det ble styrt av senatet, et råd av mektige menn, og av ledere som ble valgt."
+                },
+                {
+                    "si": "I denne filmen skal vi finne ut hvordan én mann kunne knuse hele republikken."
+                }
+            ]
+        },
+        {
+            "id": "ung",
+            "kapittel": "Veien til toppen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Den unge Cæsar",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Født 13. juli år 100 fvt.",
+                            "tekst": "i en gammel, men ikke rik familie",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Smart og sjarmerende",
+                            "tekst": "en god taler, og sulten på makt",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "Enorme lån",
+                            "tekst": "til festspill og bestikkelser",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Konsul år 59 fvt.",
+                            "tekst": "men dypt i gjeld",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar ble født den 13. juli, år 100 før vår tidsregning. Familien var gammel og fin, men ikke spesielt rik, og faren døde da Cæsar var 16 år."
+                },
+                {
+                    "si": "Gutten var smart, sjarmerende og god til å holde taler. Og han var sulten. Hundrevis av familier kjempet om noen få toppjobber."
+                },
+                {
+                    "si": "Cæsar lånte enorme summer. Han betalte for store fester og leker for folket, og han betalte folk for å stemme på ham. Det kalles bestikkelser."
+                },
+                {
+                    "si": "I år 59 ble han valgt til konsul, en av de øverste lederne i Roma. Men gjelden var så stor at fiendene håpet han ville gå konkurs."
+                }
+            ]
+        },
+        {
+            "id": "gallia",
+            "kapittel": "Åtte år i Gallia",
+            "visual": {
+                "type": "CaesarKart",
+                "props": {
+                    "modus": "gallia"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar hadde en enkel plan. Bli guvernør, altså sjef, for et område utenfor Italia. Slå et folk i krig, og send gull og slaver hjem."
+                },
+                {
+                    "si": "Fra år 58 til år 50 ledet han romerske soldater gjennom Gallia. I dag er det Frankrike og Belgia."
+                },
+                {
+                    "si": "Krig var den raskeste veien til å bli rik."
+                },
+                {
+                    "si": "Fra Gallia gikk det gull og slaver tilbake til Roma, år etter år."
+                }
+            ]
+        },
+        {
+            "id": "boka",
+            "visual": {
+                "type": "CaesarKart",
+                "props": {
+                    "modus": "virkelighet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar skrev selv en bok om krigen. Den heter De bello Gallico, og elever over hele Europa leser den fortsatt i latintimene."
+                },
+                {
+                    "si": "I boka er Cæsar alltid den smarteste og den modigste. Det er alltid han som redder dagen."
+                },
+                {
+                    "si": "Virkeligheten var blodigere. Han brente landsbyer og sultet ut byer."
+                },
+                {
+                    "si": "Da den siste store motstanden var knust, var svært mange gallere drept eller ført bort som slaver."
+                }
+            ]
+        },
+        {
+            "id": "helt",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Cæsar etter Gallia",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Svært rik",
+                            "tekst": "gull og slaver fra Gallia",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "En helt i Roma",
+                            "tekst": "populær blant folket",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "En hær som elsket ham",
+                            "tekst": "han delte byttet og kjempet ved siden av dem",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter krigen i Gallia var Cæsar blitt svært rik."
+                },
+                {
+                    "si": "I Roma var han en helt."
+                },
+                {
+                    "si": "Og soldatene elsket ham. Han delte byttet rettferdig, og han kjempet ved siden av dem."
+                }
+            ]
+        },
+        {
+            "id": "senatet",
+            "kapittel": "Valget ved Rubicon",
+            "visual": {
+                "type": "CaesarSenatet",
+                "props": {
+                    "modus": "frykt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men i senatet ble de livredde. En general med så mye penger, så mange soldater og så mange venner blant folket?"
+                },
+                {
+                    "si": "Det var akkurat den typen mann republikken var bygd for å stoppe."
+                },
+                {
+                    "si": "I år 49 krevde senatet at Cæsar ga fra seg hæren og kom hjem som en vanlig mann."
+                }
+            ]
+        },
+        {
+            "id": "valgene",
+            "visual": {
+                "type": "CaesarRubicon",
+                "props": {
+                    "modus": "valg"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Og loven var klar. Ingen general fikk krysse elva Rubicon med hæren sin. Gjorde han det, var det høyforræderi, altså forræderi mot hele staten."
+                },
+                {
+                    "si": "Cæsar visste hva som ventet i Roma hvis han kom uten soldater. Fiender som hatet ham, anklager om krigsforbrytelser, og sannsynligvis dødsstraff."
+                },
+                {
+                    "si": "Han hadde tre valg, og alle var dårlige. Han kunne sende hæren hjem og dra alene. Da ville han trolig bli drept."
+                },
+                {
+                    "si": "Eller han kunne krysse elva med hæren og bryte loven."
+                },
+                {
+                    "si": "Alle valgene var dårlige."
+                }
+            ]
+        },
+        {
+            "id": "krysser",
+            "visual": {
+                "type": "CaesarRubicon",
+                "props": {
+                    "modus": "krysser"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar trekker pusten. Så sier han tre ord på latin: Alea iacta est."
+                },
+                {
+                    "si": "Det betyr: Terningen er kastet. Nå er valget tatt, og det kan ikke tas tilbake."
+                },
+                {
+                    "si": "Soldatene vasser over elva. Nå er det borgerkrig, krig mellom romere."
+                }
+            ]
+        },
+        {
+            "id": "borgerkrig",
+            "kapittel": "Alene på toppen",
+            "visual": {
+                "type": "CaesarKart",
+                "props": {
+                    "modus": "borgerkrig"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Borgerkrigen varte i fire år."
+                },
+                {
+                    "si": "Cæsar jaget motstanderne sine fra Italia til Hellas, og videre til Egypt og Spania."
+                },
+                {
+                    "si": "Han vant alle slagene."
+                },
+                {
+                    "si": "I år 45 var støvet lagt. Cæsar sto alene på toppen."
+                }
+            ]
+        },
+        {
+            "id": "diktator",
+            "visual": {
+                "type": "CaesarSenatet",
+                "props": {
+                    "modus": "diktator"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Året etter ga senatet ham en ny tittel: dictator perpetuo. Det betyr diktator på livstid."
+                },
+                {
+                    "si": "I republikken var diktator en tittel for nødsituasjoner. En leder fikk all makt, men bare i en kort periode."
+                },
+                {
+                    "si": "Diktator på livstid var noe helt nytt. Cæsar var nå en konge i alt unntatt navnet."
+                }
+            ]
+        },
+        {
+            "id": "makten",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hva Cæsar gjorde med makta",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "Jord til soldatene",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Romersk borgerskap",
+                            "tekst": "til folk i provinsene",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Store byggeprosjekter",
+                            "tekst": "arbeid til de fattige",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "En ny kalender",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar brukte makta si. Soldatene hans fikk jord."
+                },
+                {
+                    "si": "Folk i provinsene, områdene Roma hadde erobret, fikk bli romerske borgere."
+                },
+                {
+                    "si": "Han startet store byggeprosjekter, så de fattige fikk arbeid."
+                },
+                {
+                    "si": "Og han lagde en ny kalender. Den bruker vi nesten fortsatt."
+                }
+            ]
+        },
+        {
+            "id": "kalender",
+            "visual": {
+                "type": "CaesarKalender"
+            },
+            "replikker": [
+                {
+                    "si": "Den gamle romerske kalenderen var rotete og stemte dårlig. I år 46 innførte Cæsar den julianske kalenderen."
+                },
+                {
+                    "si": "Av fire år har tre 365 dager. Det fjerde året har 366. Det er skuddåret."
+                },
+                {
+                    "si": "Kalenderen ble bare litt justert i 1582, drøyt 1600 år senere. Det er den vi bruker i dag.",
+                    "uttale": "Kalenderen ble bare litt justert i femten åttito, drøyt seksten hundre år senere. Det er den vi bruker i dag."
+                },
+                {
+                    "si": "Og måneden Cæsar ble født i, fikk navnet hans: Julius. På norsk heter den juli."
+                },
+                {
+                    "si": "Augustus, som du snart skal møte, fikk august oppkalt etter seg. To måneder bærer fortsatt navnene deres."
+                }
+            ]
+        },
+        {
+            "id": "idene",
+            "kapittel": "Idene mars",
+            "visual": {
+                "type": "CaesarSenatet",
+                "props": {
+                    "modus": "idene"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 15. mars, år 44, går Cæsar til møte i senatet. Romerne kalte dagen Idene mars."
+                },
+                {
+                    "si": "Senere romerske forfattere skriver at han var advart. Men Cæsar trodde ikke på spådommer."
+                },
+                {
+                    "si": "Inne i senatet venter rundt seksti menn. De har dolker gjemt under klærne. Lederne heter Cassius og Brutus."
+                },
+                {
+                    "si": "Da Cæsar ser vennen sin Brutus blant dem, gir han opp. Også du, Brutus? skal han ha sagt."
+                },
+                {
+                    "si": "Cæsar blir stukket anslagsvis 23 ganger. Bare ett av stikkene var dødelig."
+                }
+            ]
+        },
+        {
+            "id": "etterpa",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Etter drapet",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Morderne",
+                            "tekst": "trodde de hadde reddet republikken",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Folket raste",
+                            "tekst": "mot senatorene som drepte Cæsar",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hest",
+                            "tittel": "En ny borgerkrig",
+                            "tekst": "enda verre enn den forrige",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Augustus",
+                            "tekst": "Romas første keiser",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Morderne trodde de hadde reddet republikken. De tok grusomt feil."
+                },
+                {
+                    "si": "Folket elsket Cæsar, og de hatet senatorene som hadde drept ham."
+                },
+                {
+                    "si": "Roma kastet seg ut i en ny borgerkrig, enda verre enn den forrige."
+                },
+                {
+                    "si": "Cæsars adopterte sønn, Oktavian, vant til slutt. Han ble Romas første keiser, under navnet Augustus. Republikken var borte for godt."
+                }
+            ]
+        },
+        {
+            "id": "navnet",
+            "kapittel": "Et navn som ble en tittel",
+            "visual": {
+                "type": "CaesarKart",
+                "props": {
+                    "modus": "navnet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar levde bare i 56 år. Men navnet hans har levd i over 2000."
+                },
+                {
+                    "si": "Romerne uttalte navnet hans omtrent som Kaisar.",
+                    "uttale": "Romerne uttalte navnet hans omtrent som kaisar."
+                },
+                {
+                    "si": "I Tyskland ble keiseren kalt Kaiser. I Russland ble han kalt tsar."
+                },
+                {
+                    "si": "Begge ordene kommer rett fra navnet Cæsar."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Penger, soldater og folket på sin side.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Nok til å knuse en republikk.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Morderne ville redde republikken.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "De fikk en keiser.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Å krysse sin Rubicon:",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "et valg som ikke kan tas tilbake.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Én person kan endre alt.",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "På godt og vondt.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cæsar hadde penger, soldater og folket på sin side. Det var nok til å knuse en hel republikk."
+                },
+                {
+                    "si": "De som drepte ham, ville redde republikken. I stedet fikk Roma en keiser."
+                },
+                {
+                    "si": "Når noen i dag krysser sin Rubicon, tar de et valg som ikke kan tas tilbake."
+                },
+                {
+                    "si": "Cæsars liv viser at én person, på rett sted til rett tid, kan endre alt. På godt og vondt."
+                }
+            ]
+        }
+    ]
+}
