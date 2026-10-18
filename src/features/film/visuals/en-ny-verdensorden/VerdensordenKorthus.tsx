@@ -348,7 +348,7 @@ export function VerdensordenKorthus({ beat, playing, props }: VisualProps<{ modu
                     >
                         <div className="text-xl font-bold text-amber-300 mb-2">Kina, India og Brasil spør:</div>
                         <div className="text-4xl font-black leading-tight">
-                            «Hvorfor skal vi følge Vestens regler, når Vesten ikke klarer å følge dem selv?»
+                            «Hvorfor skal vi følge Vestens økonomiske regler, når Vesten ikke klarer å følge dem selv?»
                         </div>
                     </motion.div>
                 )}

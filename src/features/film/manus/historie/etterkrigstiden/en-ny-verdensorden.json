@@ -4,11 +4,12 @@
     "kilde": "/historie/etterkrigstiden/en-ny-verdensorden",
     "bilde": "/images/etterkrigstiden/en-ny-verdensorden-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-18", "viser": 4, "lesbart": 4, "variasjon": 5, "forstaelig": 4, "tro": 4, "sum": 21 },
     "scener": [
         {
             "id": "sporsmalet",
             "kapittel": "Hvem bestemmer?",
-            "visual": { "type": "VerdensordenKart", "props": { "modus": "start" } },
+            "visual": { "type": "VerdensordenPoler", "props": { "modus": "start" } },
             "replikker": [
                 { "si": "Tenk deg at du er journalist. Du skal granske ett spørsmål: Hvem bestemmer i verden?" },
                 { "si": "I år 2000 var svaret enkelt. USA var alene på toppen." },
@@ -29,8 +30,8 @@
                 }
             },
             "replikker": [
-                { "si": "Denne filmen handler om årene etter 2008, da verden fikk flere sjefer." },
-                { "si": "For å forstå hvor makten flytter seg, må du gjøre som en ekte gransker. Følg pengene, følg råvarene og følg teknologien." }
+                { "si": "Filmen handler om årene etter 2008, da verden sakte gikk fra én sjef til flere maktsentre." },
+                { "si": "Gjør som en ekte gransker: Følg pengene, følg råvarene og følg teknologien." }
             ]
         },
         {
@@ -38,7 +39,7 @@
             "kapittel": "2008: Tilliten sprekker",
             "visual": { "type": "VerdensordenKorthus", "props": { "modus": "krise" } },
             "replikker": [
-                { "si": "Historien starter i USA. Bankene lånte ut penger til folk som skulle kjøpe hus, men mange av dem kunne aldri betale tilbake." },
+                { "si": "Det starter i USA. Bankene lånte ut penger til folk som skulle kjøpe hus, men mange kunne aldri betale tilbake." },
                 { "si": "Så pakket bankene lånene sammen og solgte dem videre, som om de var trygge. Det ble et høyt korthus av dårlige lån." },
                 { "si": "Den 15. september 2008 gikk storbanken Lehman Brothers konkurs. Konkurs betyr at banken ikke lenger kunne betale det den skyldte." },
                 { "si": "Da korthuset falt, dro det med seg banker over hele verden." },
@@ -50,9 +51,9 @@
             "visual": { "type": "VerdensordenKorthus", "props": { "modus": "redning" } },
             "replikker": [
                 { "si": "Så kom det som gjorde folk sinte." },
-                { "si": "Statene brukte skattebetalernes penger på å redde bankene som hadde skapt krisen. Krisepakkene kostet rundt 700 milliarder dollar." },
-                { "si": "Vanlige folk betalte regningen, mens mange banksjefer slapp unna." },
-                { "si": "Land som Kina, India og Brasil stilte et ubehagelig spørsmål: Hvorfor skal vi følge Vestens regler, når Vesten ikke klarer å følge dem selv?" }
+                { "si": "Statene brukte skattebetalernes penger på å redde bankene som hadde skapt krisen. I USA kostet krisepakkene rundt 700 milliarder dollar." },
+                { "si": "Vanlige folk betalte, mens mange banksjefer slapp unna." },
+                { "si": "Kina, India og Brasil stilte et ubehagelig spørsmål: Hvorfor skal vi følge Vestens økonomiske regler, når Vesten ikke klarer å følge dem selv?" }
             ]
         },
         {
@@ -61,8 +62,8 @@
             "visual": { "type": "VerdensordenKart", "props": { "modus": "brics" } },
             "replikker": [
                 { "si": "Etter 2008 begynte flere store land å samarbeide utenfor Vestens klubber." },
-                { "si": "Brasil, Russland, India, Kina og Sør-Afrika dannet gruppen BRICS. Navnet er forbokstavene i landene." },
-                { "si": "I 2015 startet de sin egen bank, som et alternativ til Verdensbanken og IMF, som låner ut penger til land. De vil også handle med hverandre uten amerikanske dollar." },
+                { "si": "Brasil, Russland, India, Kina og Sør-Afrika dannet gruppen BRICS. Navnet er forbokstavene i landenes navn." },
+                { "si": "I 2015 startet de sin egen utviklingsbank, som et alternativ til Verdensbanken og IMF, som låner ut penger til land. De vil også handle med hverandre uten amerikanske dollar." },
                 { "si": "Den 1. januar 2024 ble klubben større. Egypt, Etiopia, Iran og De forente arabiske emirater ble med." },
                 { "si": "Indonesia kom med i 2025. Nå har medlemslandene nesten halvparten av alle menneskene i verden." },
                 { "si": "Beskjeden til Vesten er tydelig: Dere bestemmer ikke lenger alene. Land som en gang var kolonier, vil sitte ved bordet der reglene lages." }
@@ -75,7 +76,7 @@
             "replikker": [
                 { "si": "Ingen har flyttet mer makt med penger enn Kina." },
                 { "si": "I 2013 startet Kina Belte og vei, verdens største byggeprosjekt." },
-                { "si": "Kina låner ut penger til fattige land, som bygger havner, jernbaner og motorveier, ofte med kinesiske selskaper." },
+                { "si": "Kina låner ut penger til fattige land, som bygger havner, jernbaner og motorveier, ofte bygget av kinesiske selskaper." },
                 { "si": "Rundt 150 land har skrevet under på å bli med." },
                 { "si": "For mange er det en gyllen sjanse. De får veier og havner de aldri hadde hatt råd til." }
             ]
@@ -89,7 +90,7 @@
                 { "si": "Her bygde Sri Lanka en stor havn, betalt med lån fra Kina." },
                 { "si": "Men havna fikk aldri nok skip til å lønne seg." },
                 { "si": "Sri Lanka klarte ikke å betale ned lånene. Gjelda ble liggende." },
-                { "si": "I 2017 leide Sri Lanka derfor bort havna til et kinesisk statlig selskap. Avtalen varer i 99 år." }
+                { "si": "I 2017 leide Sri Lanka derfor bort kontrollen over havna til et kinesisk statlig selskap. Avtalen varer i 99 år." }
             ]
         },
         {
@@ -101,29 +102,29 @@
                     "tittel": "Gave eller gjeldsfelle?",
                     "punkter": [
                         { "ikon": "penger", "tittel": "Oppskriften", "tekst": "Store lån, store bygg, gjeld som ikke kan betales", "fraBeat": 0 },
-                        { "ikon": "avtale", "tittel": "Kritikerne", "tekst": "Gjeldsfelle: landet kan miste havner og ressurser", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Kritikerne", "tekst": "Gjeldsfelle: landet kan miste kontrollen over en havn", "fraBeat": 1 },
                         { "ikon": "fabrikk", "tittel": "Kina", "tekst": "Vi bygger det Vesten aldri bygde, og landene ba selv om lånene", "fraBeat": 2 },
-                        { "ikon": "lampe", "tittel": "Forskerne", "tekst": "Det meste av gjelda kom fra Sri Lankas egne store planer", "fraBeat": 3 }
+                        { "ikon": "lampe", "tittel": "Forskerne", "tekst": "Det meste av gjelda kom fra Sri Lankas egne planer, ikke bare fra Kina", "fraBeat": 3 }
                     ]
                 }
             },
             "replikker": [
-                { "si": "Høres oppskriften kjent ut? Store lån, store bygg og land som ikke klarer å betale. Vesten brukte nesten samme oppskrift på 1970-tallet." },
-                { "si": "Kritikere kaller det gjeldsfellediplomati. Det betyr at et land som ikke kan betale gjelda, kan miste kontrollen over havner og ressurser." },
+                { "si": "Høres det kjent ut? Store lån, store bygg og gjeld som ikke kan betales. Vesten brukte nesten samme oppskrift på 1970-tallet." },
+                { "si": "Kritikere kaller det gjeldsfellediplomati. Det betyr at et land som ikke kan betale gjelda, kan miste kontrollen over for eksempel en havn." },
                 { "si": "Kina svarer at de bygger det Vesten aldri bygde, og at landene selv har bedt om lånene." },
-                { "si": "Forskere sier at det meste av gjelda kom fra Sri Lankas egne store planer. Hvem har rett? Det krangler historikere fortsatt om." }
+                { "si": "Forskere peker på at det meste av gjelda kom fra Sri Lankas egne store planer, ikke bare fra Kina. Hvem har rett? Det krangler historikere fortsatt om." }
             ]
         },
         {
             "id": "ressurser",
             "kapittel": "Kampen om ressursene",
-            "visual": { "type": "VerdensordenKart", "props": { "modus": "ressurser" } },
+            "visual": { "type": "VerdensordenMobil" },
             "replikker": [
                 { "si": "På 1900-tallet handlet verdenspolitikk ofte om olje. I dag har nye ressurser blitt like viktige." },
-                { "si": "Sjeldne jordarter er metaller som trengs i alt fra mobiler til vindmøller. I 2022 sto Kina for rundt 70 prosent av dem." },
-                { "si": "Kobolt trengs i batterier til elbiler. I 2023 sto DR Kongo alene for rundt tre firedeler av koboltet i verden." },
-                { "si": "Databrikker er hjernen i all moderne teknologi. De mest avanserte lages på Taiwan." },
-                { "si": "Og olje og gass er fortsatt et maktmiddel. Det ser verden tydelig når kriger og kriser rammer." }
+                { "si": "Sjeldne jordarter er metaller som trengs i alt fra mobiler til vindmøller. I 2022 sto Kina for rundt 70 prosent av verdens produksjon." },
+                { "si": "Kobolt trengs i batterier til elbiler. I 2023 sto DR Kongo alene for rundt tre firedeler av verdens koboltproduksjon." },
+                { "si": "Databrikker er hjernen i all moderne teknologi. De aller fleste av de mest avanserte lages på Taiwan." },
+                { "si": "Og olje og gass er fortsatt makt, særlig når kriger og kriser rammer." }
             ]
         },
         {
@@ -150,13 +151,13 @@
         {
             "id": "pandemien",
             "kapittel": "Pandemien",
-            "visual": { "type": "VerdensordenKart", "props": { "modus": "pandemi" } },
+            "visual": { "type": "VerdensordenKjede" },
             "replikker": [
                 { "si": "I 2020 stengte covid-19-pandemien verden. Fabrikker i Kina stoppet." },
                 { "si": "Plutselig manglet Europa og USA alt fra munnbind til databrikker." },
                 { "si": "Bilfabrikker måtte stanse fordi én liten del manglet." },
                 { "si": "Verden hadde gjort seg avhengig av lange forsyningskjeder. Det betyr at varene reiser gjennom mange land før de er ferdige, og hvert ledd kan svikte." },
-                { "si": "Etterpå flyttet mange land produksjon hjem igjen. Globaliseringen gikk i revers for første gang på flere tiår." }
+                { "si": "Etterpå begynte mange land å flytte produksjon hjem, eller til land de stoler på. Globaliseringen gikk i revers for første gang på flere tiår." }
             ]
         },
         {
@@ -164,8 +165,8 @@
             "kapittel": "Krig og nye blokker",
             "visual": { "type": "VerdensordenKart", "props": { "modus": "blokker" } },
             "replikker": [
-                { "si": "Den 24. februar 2022 gikk Russland til fullskala angrep på Ukraina. Det ble den største krigen i Europa siden 1945." },
-                { "si": "Vesten svarte ikke med soldater, men med sanksjoner. Det er straffetiltak som stenger et land ute fra banker og markeder." },
+                { "si": "Den 24. februar 2022 gikk Russland til et stort angrep på hele Ukraina. Det ble den største krigen i Europa siden 1945." },
+                { "si": "Vesten svarte ikke med soldater, men med sanksjoner. Det er straffetiltak som skulle svekke Russlands økonomi og teknologi." },
                 { "si": "Igjen ser vi at penger brukes som våpen." },
                 { "si": "Men mange land i Asia, Afrika og Sør-Amerika nektet å velge side." },
                 { "si": "Og Russland vendte mer av næringslivet sitt mot Kina, India og landene i sør." }
@@ -173,18 +174,7 @@
         },
         {
             "id": "handelskrig",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "USA mot Kina",
-                    "punkter": [
-                        { "ikon": "penger", "tittel": "2018: Toll", "tekst": "USA legger toll på kinesiske varer", "fraBeat": 0 },
-                        { "ikon": "skip", "tittel": "Kina svarer", "tekst": "Samme slags toll på amerikanske varer", "fraBeat": 1 },
-                        { "ikon": "lampe", "tittel": "Eksportkontroll", "tekst": "Kina nektes den mest avanserte teknologien", "fraBeat": 2 },
-                        { "ikon": "snakk", "tittel": "Ny kald krig?", "tekst": "Men de handler enormt mye med hverandre", "fraBeat": 3 }
-                    ]
-                }
-            },
+            "visual": { "type": "VerdensordenToll" },
             "replikker": [
                 { "si": "Samtidig havnet USA og Kina i en handelskrig. I 2018 økte USA tollen på en rekke kinesiske varer. Toll er en ekstra avgift på varer fra et annet land." },
                 { "si": "Kina svarte med samme slags toll på amerikanske varer." },
@@ -207,11 +197,11 @@
         {
             "id": "mobilen",
             "kapittel": "Hva fant granskeren?",
-            "visual": { "type": "VerdensordenKart", "props": { "modus": "mobil" } },
+            "visual": { "type": "VerdensordenPoler", "props": { "modus": "funnet" } },
             "replikker": [
-                { "si": "Så hva fant granskeren ut? Verden i 2026 har ikke lenger én sjef." },
+                { "si": "Hva fant granskeren ut? Verden i 2026 har ikke lenger én sjef." },
                 { "si": "USA er fortsatt sterkest, men Kina puster dem i nakken. India vokser raskt, og BRICS krever nye regler." },
-                { "si": "Og neste gang du plukker opp mobilen, holder du verdenspolitikk i hånda." },
+                { "si": "Neste gang du plukker opp mobilen, holder du verdenspolitikk i hånda." },
                 { "si": "Kinesiske jordarter, kobolt fra Kongo, databrikker fra Taiwan og amerikansk programvare." }
             ]
         },
@@ -222,7 +212,7 @@
                 "props": {
                     "setninger": [
                         { "tekst": "Makt flyttes sjelden med bomber alene.", "fraBeat": 0 },
-                        { "tekst": "Den flyttes med lån, havner, databrikker og handel.", "fraBeat": 1 },
+                        { "tekst": "Den flyttes med lån, havner, databrikker, rørledninger og handel.", "fraBeat": 1 },
                         { "tekst": "Historien er ikke ferdig skrevet.", "fraBeat": 2 },
                         { "tekst": "Du kommer til å leve midt i den.", "fraBeat": 2, "uthevet": true }
                     ]
@@ -231,7 +221,7 @@
             "replikker": [
                 { "si": "Makt flyttes sjelden med bomber alene." },
                 { "si": "Den flyttes med lån, havner, databrikker, rørledninger og handelsavtaler." },
-                { "si": "Historien om den nye verdensordenen er ikke ferdig skrevet. Den skrives akkurat nå, og du kommer til å leve midt i den." }
+                { "si": "Historien er ikke ferdig skrevet. Den skrives nå, og du kommer til å leve midt i den." }
             ]
         }
     ]
