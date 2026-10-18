@@ -3432,6 +3432,23 @@
                 "verdensarv"
               ],
               "createdDate": "2026-10-17T00:00:00Z"
+            },
+            {
+              "id": "hans-egede",
+              "title": "Hans Egede: Presten som lette etter et folk som var borte",
+              "description": "Presten fra Lofoten reiste til Grønland i 1721 for å finne nordboerne, men fant inuittene - og startet koloniseringen av Grønland.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "norge",
+                "dansketiden",
+                "gronland",
+                "misjon",
+                "kolonisering",
+                "inuitter",
+                "1700-tallet"
+              ],
+              "createdDate": "2026-10-18T00:00:00Z"
             }
           ]
         },
