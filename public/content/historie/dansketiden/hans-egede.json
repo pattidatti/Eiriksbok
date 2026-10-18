@@ -5,7 +5,7 @@
   "year": "1721-1736",
   "category": "Grønland",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dansketiden/hans-egede-hero.webp",
   "details": [
     "Hans Egede reiste til Grønland i 1721 for å finne etterkommerne etter nordboerne, men de var borte.",
     "Han ble værende og prøvde å gjøre inuittene kristne. Kolonien han startet, ble begynnelsen på dansk styre over Grønland.",
@@ -22,7 +22,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/hans-egede-01.webp",
       "alt": "Lite seilskip ved snødekt kyst på Vest-Grønland",
       "caption": "Egede kom til Grønland i juli 1721. Han lette etter nordboerne, men fant et land der inuittene hadde bodd i flere hundre år."
     },
@@ -89,7 +89,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/hans-egede-02.webp",
       "alt": "Prest og kone steller syke i torvhus om vinteren",
       "caption": "Koppene i 1733 og 1734 tok livet av mange av inuittene der Egede arbeidet. Kona Gertrud døde etter å ha stelt de syke."
     },
@@ -135,7 +135,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dansketiden/hans-egede-03.webp",
       "alt": "Statue av Hans Egede på en høyde over Nuuk",
       "caption": "Statuen av Hans Egede står på en høyde over Nuuk. Den er blitt rødmalt og tagget med ordet «avkoloniser»."
     },
