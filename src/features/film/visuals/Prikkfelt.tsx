@@ -12,6 +12,12 @@ interface Steg {
     tittel: string;
     fargeEtikett?: string;
     restEtikett?: string;
+    /**
+     * `false` skjuler tallene i forklaringen og viser bare etikettene. Bruk det når
+     * prikkene er en skala (100 like store grupper, «tusenvis») og ikke en telling, så
+     * «99 folket i området» ikke ser ut som en ny påstand.
+     */
+    visTall?: boolean;
 }
 
 interface Props {
@@ -107,14 +113,14 @@ export function Prikkfelt({ beat, props }: VisualProps<Props>) {
                 {steg.total > 0 && steg.farget > 0 && (
                     <Forklaring
                         farge={steg.farge ?? '#2563eb'}
-                        tall={steg.farget}
+                        tall={steg.visTall === false ? undefined : steg.farget}
                         tekst={steg.fargeEtikett}
                     />
                 )}
                 {rest > 0 && (
                     <Forklaring
                         farge={steg.restFarge ?? '#cbd5e1'}
-                        tall={rest}
+                        tall={steg.visTall === false ? undefined : rest}
                         tekst={steg.restEtikett}
                     />
                 )}
@@ -123,7 +129,7 @@ export function Prikkfelt({ beat, props }: VisualProps<Props>) {
     );
 }
 
-function Forklaring({ farge, tall, tekst }: { farge: string; tall: number; tekst?: string }) {
+function Forklaring({ farge, tall, tekst }: { farge: string; tall?: number; tekst?: string }) {
     return (
         <motion.div
             layout
@@ -135,7 +141,9 @@ function Forklaring({ farge, tall, tekst }: { farge: string; tall: number; tekst
                 className="w-4 h-4 rounded-full"
                 style={{ background: farge, transition: 'background 500ms' }}
             />
-            <span className="tabular-nums text-slate-900">{formatTall(tall)}</span>
+            {tall !== undefined && (
+                <span className="tabular-nums text-slate-900">{formatTall(tall)}</span>
+            )}
             {tekst && <span className="text-slate-500 font-semibold whitespace-nowrap">{tekst}</span>}
         </motion.div>
     );

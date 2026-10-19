@@ -7,15 +7,31 @@ interface Props {
     tittel: string;
     undertittel?: string;
     bilde?: string;
-    /** `omtrent: false` for eksakte tall (52 gisler). Uten feltet står «ca.» foran. */
+    /**
+     * `omtrent: false` for eksakte tall (52 gisler). Uten feltet står «ca.» foran.
+     * `prefiks` erstatter «ca.» når artikkelen sier noe annet: «minst», «over», «opptil».
+     */
     tall?: {
         verdi: number;
         etikett: string;
         fraBeat: number;
         tone?: 'rod' | 'gronn';
         omtrent?: boolean;
+        prefiks?: string;
     }[];
     sporsmal?: { tekst: string; fraBeat: number };
+}
+
+/**
+ * Skriftstørrelse etter det lengste ordet. Med sperring 0.18em rommer text-8xl bare rundt
+ * ti tegn i bildets bredde, så «MISJONSBEVEGELSEN» ble kuttet i begge kanter.
+ */
+function tittelKlasse(tittel: string) {
+    const lengst = Math.max(...tittel.split(/\s+/).map((o) => o.length));
+    if (lengst <= 9) return 'text-6xl md:text-8xl';
+    if (lengst <= 12) return 'text-5xl md:text-7xl';
+    if (lengst <= 16) return 'text-4xl md:text-6xl';
+    return 'text-4xl md:text-5xl';
 }
 
 /** Tittel over et bilde som sakte zoomer inn, med tall og spørsmål som dukker opp. */
@@ -40,7 +56,7 @@ export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
                     initial={{ opacity: 0, letterSpacing: '0.6em' }}
                     animate={{ opacity: 1, letterSpacing: '0.18em' }}
                     transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-white font-black text-6xl md:text-8xl drop-shadow-2xl"
+                    className={`text-white font-black ${tittelKlasse(props.tittel)} drop-shadow-2xl`}
                 >
                     {props.tittel}
                 </motion.h1>
@@ -62,7 +78,13 @@ export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
                             etikett={t.etikett}
                             tone={t.tone}
                             forsinkelse={i * 0.6}
-                            prefiks={t.omtrent === false ? '' : 'ca. '}
+                            prefiks={
+                                t.prefiks !== undefined
+                                    ? t.prefiks && `${t.prefiks} `
+                                    : t.omtrent === false
+                                      ? ''
+                                      : 'ca. '
+                            }
                         />
                     ))}
                 </div>

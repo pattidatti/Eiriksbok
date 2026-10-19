@@ -131,8 +131,8 @@ Alle tar `fraBeat`: elementet vises fra den replikken (0-basert) og ut scenen.
 
 | Visual | Bruk når | Props |
 |---|---|---|
-| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler). Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). |
-| `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. |
+| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false, prefiks?}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler, 72 år), `prefiks: "minst"` / `"over"` når artikkelen sier det (skriv da ikke «minst» i etiketten). Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). Skriften krymper selv for lange ord, men hold `tittel` kort og legg resten i `undertittel`. |
+| `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?, visTall?: false}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. Forklaringen viser `farget` og `total - farget` foran etikettene; er prikkene en skala (100 like store grupper, «tusenvis»), sett `visTall: false` og la stemmen si skalaen. En andel av noe annet enn figurene (hvem som sto bak, ikke hvem som ble rammet) trenger et eget bilde. |
 | `Livbater` | Kapasitet mot bruk (seter, plasser, senger) | `bater: [{navn, plasser, brukt, fraBeat}]` |
 | `Andeler` | Andel per gruppe som stolper, til slutt to grupper som ringer | `tittel`, `kilde?`, `rader: [{etikett, reddet, totalt, fraBeat, farge}]`, `sammenlign?: {fraBeat, venstre, hoyre}` |
 | `Punktkort` | 2-4 følger, regler eller grunner | `tittel`, `punkter: [{ikon, tittel, tekst?, fraBeat}]`. Ikon: `livbat`, `radio`, `is`, `avtale`, `skip`, `penger`, `hest`, `haer`, `stjerne` |
@@ -238,6 +238,18 @@ streng.
 14. **Heltebilde med slagord** på politisk følsomme tema: Tittelkort viser bildet i flere
     beats. Sjekk bildet, eller dropp `bilde`. Sett aldri sitattegn eller utropstegn på
     parafraser i merkelapper.
+15. **Krim tegnes som russisk** i verdenskartet. Handler filmen om tiden før 2014, tegn `KRIM`
+    fra `src/features/film/kart/grenser.ts` over Russland i Ukrainas farge.
+16. **Kjegleprojeksjon tilpasset to hjørner** (`geoConicConformal`) kutter sørkanten, fordi
+    breddegradene bøyer seg. Tilpass med `rammePunkter(sørvest, nordøst)` fra samme fil (et
+    rutenett som `MultiPoint`). Det løser også punkt 12.
+17. **`rotate` med `transformOrigin` på en SVG-`<g>`** (framer-motion) roterte en målernål rundt
+    feil punkt. Regn ut endepunktet og animer `x2`/`y2` direkte.
+18. **Vilkårlige Tailwind-klasser** (`h-[15rem]`) i en ny visual-fil ble ikke laget i en
+    dev-server som allerede kjørte, og boksen fikk null høyde. Bruk inline `style` for faste mål.
+19. **Merkelapper i et stolpediagram** legges utenfor stolpeområdet, ikke oppå stolpene.
+20. **For mange ord etter faktasjekken.** Rettelser gjør replikkene lengre, og en film nær 1100
+    ord går over taket. Kort ned fyllord og gjentakelser, aldri presiseringene faktasjekken ba om.
 
 ---
 
@@ -266,7 +278,8 @@ node scripts/film-grunnlag.mjs <fag>/<emne>/<leksjon> > /tmp/grunnlag.md   # art
 hvert ark** og sjekk mot rubrikken. Les arkene, ikke enkeltbildene.
 
 `shots-film` måler også all tekst i bildet (også merkelapper over 3D) og stopper når tekst
-overlapper annen tekst eller er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
+overlapper annen tekst (også to merkelapper på samme linje som så vidt går inn i hverandre)
+eller er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
 mappe. Rett dem og ta de scenene på nytt med `--scener 3,7`: de andre scenenes bilder og ark
 blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken ikke.
 
