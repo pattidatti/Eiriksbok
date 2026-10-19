@@ -172,7 +172,13 @@ function sjekk(fil, visualer, streng) {
                     if (liste === 'punkter' && el.ikon && !IKONER.includes(el.ikon)) feil.push(`${hvor}: ukjent ikon "${el.ikon}" (lov: ${IKONER.join(', ')})`);
                 }
             }
-            if (type === 'Prikkfelt') for (const st of p.steg ?? []) if (st.farget > st.total) feil.push(`${hvor}: Prikkfelt farget > total`);
+            if (type === 'Prikkfelt')
+                for (const st of p.steg ?? []) {
+                    if (st.farget > st.total) feil.push(`${hvor}: Prikkfelt farget > total`);
+                    // Uten tall er etiketten alt eleven ser i forklaringen.
+                    if (st.visTall === false && ((st.farget > 0 && !st.fargeEtikett) || (st.total > st.farget && !st.restEtikett)))
+                        feil.push(`${hvor}: Prikkfelt-steget «${st.tittel}» har visTall: false, men mangler fargeEtikett/restEtikett`);
+                }
             if (type === 'Livbater') for (const b of p.bater ?? []) if (b.brukt > b.plasser) feil.push(`${hvor}: Livbater brukt > plasser`);
         } else if (!visualer.has(type)) {
             feil.push(`${hvor}: ukjent visual "${type}" (verken generell eller fil i src/features/film/visuals/<film>/${type}.tsx)`);

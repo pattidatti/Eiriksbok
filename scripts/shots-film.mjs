@@ -94,11 +94,24 @@ function finnOverlapp() {
             const a = bokser[i];
             const c = bokser[j];
             if (a.node === c.node) continue;
+            // Linjeboksen er høyere enn bokstavene (plass til Å og g). Tett stablet tekst, et
+            // stort tall over etiketten sin, har boksene oppå hverandre uten at bokstavene
+            // rører. Sammenlign derfor bare det midterste av hver boks.
+            const kutt = (b) => ({ top: b.top + b.height * 0.18, bottom: b.bottom - b.height * 0.18 });
+            const ka = kutt(a.b);
+            const kc = kutt(c.b);
             const w = Math.min(a.b.right, c.b.right) - Math.max(a.b.left, c.b.left);
-            const h = Math.min(a.b.bottom, c.b.bottom) - Math.max(a.b.top, c.b.top);
+            const h = Math.min(ka.bottom, kc.bottom) - Math.max(ka.top, kc.top);
             if (w <= 2 || h <= 4) continue;
-            const minste = Math.min(a.b.width * a.b.height, c.b.width * c.b.height);
-            if ((w * h) / minste < 0.15) continue;
+            // To merkelapper på samme linje som går inn i hverandre (en tidslinje der «...ned en
+            // kommisjon» møter «rapporten kommer») er en feil selv om overlappet er smalt.
+            // Linjer over hverandre (et stort tall over etiketten sin) er det ikke, selv om
+            // linjeboksene deres overlapper: da ligger midtpunktene for langt fra hverandre.
+            const midtA = (a.b.top + a.b.bottom) / 2;
+            const midtC = (c.b.top + c.b.bottom) / 2;
+            const sammeLinje = Math.abs(midtA - midtC) < Math.min(a.b.height, c.b.height) / 2;
+            const minste = Math.min(a.b.width * a.b.height, c.b.width * c.b.height) * 0.64;
+            if (!sammeLinje && (w * h) / minste < 0.15) continue;
             funn.push(`«${a.tekst.slice(0, 50)}» overlapper «${c.tekst.slice(0, 50)}»`);
         }
     }
