@@ -1,5 +1,5 @@
 {
-  "buildId": 107350461176944,
+  "buildId": 159551170896810,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2029,6 +2029,9 @@
     ],
     "mansa-musa-og-mali": [
       "content/historie/afrikanske-riker/mansa-musa-og-mali.json"
+    ],
+    "shaka-og-zulu-riket": [
+      "content/historie/afrikanske-riker/shaka-og-zulu-riket.json"
     ],
     "songhai-riket": [
       "content/historie/afrikanske-riker/songhai-riket.json"
@@ -5566,6 +5569,7 @@
     "historie/afrikanske-riker/ghana-riket": "content/historie/afrikanske-riker/ghana-riket.json",
     "historie/afrikanske-riker/kusj-og-nubia": "content/historie/afrikanske-riker/kusj-og-nubia.json",
     "historie/afrikanske-riker/mansa-musa-og-mali": "content/historie/afrikanske-riker/mansa-musa-og-mali.json",
+    "historie/afrikanske-riker/shaka-og-zulu-riket": "content/historie/afrikanske-riker/shaka-og-zulu-riket.json",
     "historie/afrikanske-riker/songhai-riket": "content/historie/afrikanske-riker/songhai-riket.json",
     "historie/afrikanske-riker/stor-zimbabwe": "content/historie/afrikanske-riker/stor-zimbabwe.json",
     "historie/afrikanske-riker/swahili-kysten": "content/historie/afrikanske-riker/swahili-kysten.json",

@@ -8420,6 +8420,20 @@
               ],
               "createdDate": "2026-09-21T04:07:48+02:00",
               "lastUpdated": "2026-09-21T07:33:22+02:00"
+            },
+            {
+              "id": "shaka-og-zulu-riket",
+              "title": "Shaka og Zulu-riket: Hvem fikk skylda?",
+              "description": "Shaka gjorde zuluene til en stormakt i det sørlige Afrika, men fikk lenge skylda for krigene som kalles mfecane.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "afrika",
+                "sør-afrika",
+                "zulu",
+                "kolonialisering",
+                "kildekritikk"
+              ],
+              "createdDate": "2026-10-19T00:00:00Z"
             }
           ]
         }
