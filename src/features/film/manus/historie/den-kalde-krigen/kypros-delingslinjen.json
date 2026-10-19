@@ -1,0 +1,274 @@
+{
+    "id": "kypros-delingslinjen",
+    "tittel": "Kypros: Europas siste delte by",
+    "kilde": "/historie/den-kalde-krigen/kypros-delingslinjen",
+    "bilde": "/images/lessons/den-kalde-krigen/kypros-delingslinjen.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-19", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "gata",
+            "lyd": "vind",
+            "visual": { "type": "KyprosGata", "props": { "modus": "by" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du går gjennom Nicosia, hovedstaden på øya Kypros. Rundt deg er det kafeer, butikker og travle gater."
+                },
+                {
+                    "si": "Så stopper alt. Midt i byen går det en stripe med piggtråd, sandsekker og forlatte hus."
+                },
+                { "si": "På denne siden bor gresk-kyprioter. Her ligger Kypros, et land som er med i EU." },
+                {
+                    "si": "På den andre siden ligger Nord-Kypros. Det er en stat som bare ett land i verden godtar: Tyrkia."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KYPROS",
+                    "undertittel": "Europas siste delte by",
+                    "bilde": "/images/lessons/den-kalde-krigen/kypros-delingslinjen.webp",
+                    "tall": [
+                        {
+                            "verdi": 180,
+                            "etikett": "km lang grense",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        }
+                    ],
+                    "sporsmal": { "tekst": "Hvordan ble en øy delt i to?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Nicosia er den eneste delte hovedstaden i Europa i dag." },
+                {
+                    "si": "Hele øya er delt av en grense som er 180 kilometer lang. Den kalles den grønne linjen."
+                },
+                {
+                    "si": "Hvordan kunne en øy der to folk levde sammen, bli delt i to? Og hvorfor er den fortsatt delt?"
+                }
+            ]
+        },
+        {
+            "id": "linjen",
+            "kapittel": "Den grønne linjen",
+            "lyd": "stille",
+            "visual": { "type": "KyprosKart", "props": { "modus": "linje" } },
+            "replikker": [
+                { "si": "Her ser du hele øya Kypros, ovenfra." },
+                {
+                    "si": "Den grønne linjen går tvers over øya, fra kyst til kyst. Den går rett gjennom Nicosia."
+                },
+                { "si": "Nord for linjen ligger Nord-Kypros. Sør for linjen ligger Kypros." },
+                {
+                    "si": "Linjen er en buffersone. Det betyr et belte mellom de to sidene der soldatene deres ikke får være."
+                },
+                { "si": "FN har hatt en egen styrke på øya helt siden 1964." }
+            ]
+        },
+        {
+            "id": "sonen",
+            "lyd": "vind",
+            "visual": { "type": "KyprosGata", "props": { "modus": "sone" } },
+            "replikker": [
+                { "si": "La oss se nærmere på sonen." },
+                {
+                    "si": "Inne i Nicosia er den bare noen meter bred. Ute på landet kan den være over 7 kilometer bred.",
+                    "uttale": "Inne i Nicosia er den bare noen meter bred. Ute på landet kan den være over sju kilometer bred."
+                },
+                {
+                    "si": "Inne i sonen står hus som har stått tomme siden 1974. Markene har grodd igjen."
+                },
+                { "si": "FN-styrken passer på sonen, så de to sidene holdes fra hverandre." }
+            ]
+        },
+        {
+            "id": "folk",
+            "kapittel": "To folk",
+            "lyd": "stille",
+            "visual": { "type": "KyprosKart", "props": { "modus": "folk" } },
+            "replikker": [
+                { "si": "Men hvordan begynte det? Kypros har alltid vært hjem for to folk." },
+                {
+                    "si": "Om lag 78 prosent av folket på øya er gresk-kyprioter. Om lag 18 prosent er tyrkisk-kyprioter."
+                },
+                {
+                    "si": "I årtusener levde de side om side, blandet i byer og landsbyer over hele øya."
+                },
+                { "si": "I 1878 tok Storbritannia over Kypros fra Det osmanske riket." },
+                {
+                    "si": "I 1960 ble Kypros selvstendig. Den nye grunnloven var komplisert. Den skulle sikre at begge folkene fikk plass i regjeringen, men den felles staten holdt ikke lenge."
+                }
+            ]
+        },
+        {
+            "id": "kupp",
+            "kapittel": "1974",
+            "visual": { "type": "KyprosKart", "props": { "modus": "1974" } },
+            "replikker": [
+                {
+                    "si": "Sommeren 1974 ble Hellas styrt av en militærjunta. Det betyr en gruppe offiserer som har tatt makten."
+                },
+                {
+                    "si": "15. juli 1974 gjorde juntaen et kupp på Kypros. Den tok makten med våpen, og president Makarios ble styrtet.",
+                    "uttale": "Femtende juli 1974 gjorde juntaen et kupp på Kypros. Den tok makten med våpen, og president Makarios ble styrtet."
+                },
+                { "si": "Målet var å slå sammen Kypros og Hellas. Det kalles enosis." },
+                {
+                    "si": "Fem dager seinere invaderte den tyrkiske hæren nordkysten. Tyrkia sa at de ville beskytte tyrkisk-kypriotene."
+                },
+                {
+                    "si": "Da våpenhvilen kom i august, styrte Tyrkia rundt 37 prosent av øya. Det var den nordlige delen."
+                }
+            ]
+        },
+        {
+            "id": "flukt",
+            "visual": { "type": "KyprosKart", "props": { "modus": "flukt" } },
+            "replikker": [
+                { "si": "Nå begynte den store flukten." },
+                { "si": "Over 160 000 gresk-kyprioter flyktet sørover." },
+                { "si": "Over 45 000 tyrkisk-kyprioter flyktet nordover." },
+                {
+                    "si": "Naboer som hadde bodd side om side i generasjoner, forlot hjem, jorder og graver. Det skjedde i løpet av uker."
+                },
+                {
+                    "si": "I 1983 erklærte nord seg som egen stat, Nord-Kypros. Bare Tyrkia godtar den."
+                }
+            ]
+        },
+        {
+            "id": "varosha",
+            "kapittel": "Spøkelsesbyen",
+            "lyd": "hav",
+            "visual": { "type": "KyprosVarosha", "props": { "modus": "for" } },
+            "replikker": [
+                { "si": "I nord, ved byen Famagusta, ligger Varosha." },
+                {
+                    "si": "I 1974 var Varosha en ferieby med 40 000 innbyggere, hoteller, butikker og en av de fineste strendene på Kypros."
+                },
+                { "si": "Kjente stjerner som Elizabeth Taylor og Brigitte Bardot hadde feriert her." },
+                {
+                    "si": "Da de tyrkiske styrkene nærmet seg, flyktet folk i panikk. De regnet med å komme tilbake om noen dager."
+                },
+                { "si": "Noen dager ble til 50 år." }
+            ]
+        },
+        {
+            "id": "stengt",
+            "visual": { "type": "KyprosVarosha", "props": { "modus": "stengt" } },
+            "replikker": [
+                { "si": "Tyrkia stengte Varosha og gjorde byen til militær sone." },
+                {
+                    "si": "I flere tiår sto varene på hyllene i butikkene. Klærne hang til tørk. Bilene rustet sakte i gatene."
+                },
+                {
+                    "si": "I 2020 åpnet Tyrkia deler av byen. Det skapte stor uro i resten av verden."
+                },
+                {
+                    "si": "FNs sikkerhetsråd krevde at byen skulle gis tilbake til dem som bodde der før."
+                },
+                { "si": "Husene forfaller. Hvem de tilhører, er fortsatt ikke løst." }
+            ]
+        },
+        {
+            "id": "apning",
+            "kapittel": "Grensen åpnes",
+            "lyd": "vind",
+            "visual": { "type": "KyprosGata", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "April 2003. For første gang på 29 år åpner grensen." },
+                {
+                    "si": "Lange køer står ved overgangene. Den første uken gikk folk over grensen 100 000 ganger."
+                },
+                { "si": "Eldre kyprioter gikk over for å se husene de hadde forlatt som unge." },
+                {
+                    "si": "Noen fant alt slik de hadde etterlatt det. Andre fant fremmede familier som bodde der nå."
+                }
+            ]
+        },
+        {
+            "id": "valget",
+            "kapittel": "Nei til planen",
+            "lyd": "stille",
+            "visual": { "type": "KyprosValget" },
+            "replikker": [
+                {
+                    "si": "I 2004 stemte folket på Kypros over en plan fra FN. Den skulle samle øya igjen."
+                },
+                { "si": "Tyrkisk-kypriotene stemte ja." },
+                { "si": "Gresk-kypriotene stemte nei. Hele 76 prosent var imot planen." },
+                {
+                    "si": "Kort etter ble Kypros med i EU. En delt øy ble med i en union som skulle stå for samling."
+                }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "I dag",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Kypros i dag",
+                    "punkter": [
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Forhandlinger",
+                            "tekst": "fortsetter, uten resultat",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Fremmed hær",
+                            "tekst": "det eneste EU-landet med det",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Nicosia",
+                            "tekst": "Europas eneste delte hovedstad",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I dag forhandler de to sidene fortsatt. Men de har ikke kommet fram til noe." },
+                {
+                    "si": "Kypros er det eneste EU-landet der en fremmed hær har soldater på landets område."
+                },
+                { "si": "Og Nicosia er fortsatt den eneste delte hovedstaden i Europa." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Berlinmuren viste at slike grenser kan falle raskt.", "fraBeat": 0 },
+                        { "tekst": "Murene i Belfast viser at de også kan stå i generasjoner.", "fraBeat": 1 },
+                        { "tekst": "På Kypros deler grensen familier og minner.", "fraBeat": 2 },
+                        {
+                            "tekst": "En grense er ikke bare en strek på et kart. Den lever i folk.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Berlinmuren viste at slike grenser kan falle raskt." },
+                { "si": "Murene i Belfast viser at de også kan stå i generasjoner." },
+                {
+                    "si": "På Kypros har grensen stått siden 1974. Den deler ikke bare et land, men familier og minner."
+                },
+                { "si": "En grense er ikke bare en strek på et kart. Den lever i folk." }
+            ]
+        }
+    ]
+}
