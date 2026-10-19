@@ -5,31 +5,17 @@ import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
- * Kartet over Midtøsten fra 1914 til i dag, i åtte modus:
+ * Kartet over Midtøsten fra 1914 til 1920, i fire modus:
  * «osmansk»: Det osmanske riket, folkene som bodde der, og landene som ikke fantes ennå.
- * «krig»: 1. verdenskrig. Osmanerne på Tysklands side, Storbritannia og Frankrike på den andre.
  * «lofte»: brevene til Mekka, løftet om arabiske stater og det arabiske opprøret.
- * «balfour»: brevet fra London om et jødisk hjemland i Palestina.
  * «mandat»: Paris og San Remo, og mandatene som deler området mellom britene og franskmennene.
  * «irak»: tre folkegrupper presset inn i én stat.
- * «europa»: det samme gjort med nordmenn, franskmenn og grekere.
- * «kurdere»: kurdernes område delt mellom fire land.
- * «arv»: konfliktene som har røtter i grensene.
  */
 
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus =
-    | 'osmansk'
-    | 'krig'
-    | 'lofte'
-    | 'balfour'
-    | 'mandat'
-    | 'irak'
-    | 'europa'
-    | 'kurdere'
-    | 'arv';
+type Modus = 'osmansk' | 'lofte' | 'mandat' | 'irak';
 
 const TYRKIA = 792;
 const SYRIA = 760;
@@ -40,12 +26,8 @@ const JORDAN = 400;
 const IRAK = 368;
 const KUWAIT = 414;
 const SAUDI = 682;
-const IRAN = 364;
 const STORBRITANNIA = 826;
 const FRANKRIKE = 250;
-const NORGE = 578;
-const HELLAS = 300;
-const SENTRALMAKTER = [276, 40, 348, 203, 703];
 const OSMANSK = [TYRKIA, SYRIA, LIBANON, ISRAEL, PALESTINA, JORDAN, IRAK, KUWAIT];
 const ARABISK = [SYRIA, LIBANON, ISRAEL, PALESTINA, JORDAN, IRAK, SAUDI, KUWAIT];
 const FRANSK_MANDAT = [SYRIA, LIBANON];
@@ -60,23 +42,6 @@ const STED = {
     akko: [35.1, 32.9] as LngLat,
     kirkuk: [44.4, 35.5] as LngLat,
 };
-
-/** Kurdernes område, grovt tegnet: der Tyrkia, Irak, Syria og Iran møtes. */
-const KURDISTAN: LngLat[] = [
-    [37.2, 37.4],
-    [38.6, 38.6],
-    [40.6, 39.6],
-    [43.4, 40],
-    [45, 38.8],
-    [46.6, 37],
-    [47.4, 35.4],
-    [46.2, 34.2],
-    [44.6, 34.6],
-    [43.4, 35.6],
-    [42, 36.4],
-    [40, 36.6],
-    [38.2, 36.5],
-];
 
 /** Hijaz, kyststripa langs Rødehavet ned mot Mekka, grovt tegnet. */
 const HIJAZ: LngLat[] = [
@@ -120,20 +85,12 @@ function lagProjeksjon(modus: Modus): GeoProjection {
             { type: 'MultiPoint', coordinates: [a, b] } as never
         );
     switch (modus) {
-        case 'krig':
         case 'lofte':
-        case 'balfour':
             return utsnitt([-12, 14], [56, 58]);
         case 'mandat':
             return utsnitt([-6, 20], [54, 56]);
         case 'irak':
             return utsnitt([36.5, 28.8], [50, 38.2]);
-        case 'europa':
-            return utsnitt([-14, 35], [34, 70]);
-        case 'kurdere':
-            return utsnitt([30, 29], [54, 42]);
-        case 'arv':
-            return utsnitt([28, 25], [52, 39]);
         default:
             return utsnitt([25, 15], [57, 42]);
     }
@@ -143,21 +100,11 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
     switch (modus) {
         case 'osmansk':
             return OSMANSK.includes(id) ? FARGE.osmansk : FARGE.land;
-        case 'krig':
-            if (OSMANSK.includes(id)) return FARGE.osmansk;
-            if (beat >= 1 && SENTRALMAKTER.includes(id)) return FARGE.osmanskLys;
-            if (beat >= 2 && id === STORBRITANNIA) return FARGE.britisk;
-            if (beat >= 2 && id === FRANKRIKE) return FARGE.fransk;
-            return FARGE.land;
         case 'lofte':
             if (id === STORBRITANNIA) return FARGE.britisk;
             if (beat >= 1 && ARABISK.includes(id))
                 return beat >= 4 ? FARGE.arabisk : FARGE.arabiskLys;
             if (OSMANSK.includes(id)) return FARGE.osmansk;
-            return FARGE.land;
-        case 'balfour':
-            if (id === STORBRITANNIA) return FARGE.britisk;
-            if (beat >= 2 && (id === ISRAEL || id === PALESTINA)) return FARGE.jodisk;
             return FARGE.land;
         case 'mandat':
             if (beat === 0 && OSMANSK.includes(id)) return FARGE.tapt;
@@ -169,21 +116,6 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
             return FARGE.land;
         case 'irak':
             return id === IRAK ? '#f5f5f4' : FARGE.land;
-        case 'europa':
-            if (beat >= 1 && [NORGE, FRANKRIKE, HELLAS].includes(id)) return FARGE.europa;
-            return FARGE.land;
-        case 'kurdere':
-            if (beat >= 2 && [TYRKIA, IRAK, SYRIA, IRAN].includes(id)) return '#e7e5e4';
-            return FARGE.land;
-        case 'arv': {
-            const rekke = [IRAK, SYRIA, LIBANON, ISRAEL];
-            const i = rekke.indexOf(id === PALESTINA ? ISRAEL : id);
-            if (i < 0) return FARGE.land;
-            if (beat === 0) return FARGE.tapt;
-            if (i + 1 === beat) return FARGE.merket;
-            if (i + 1 < beat) return '#fde68a';
-            return FARGE.tapt;
-        }
     }
 }
 
@@ -194,24 +126,12 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Mange folk side om side' },
         { tekst: 'Ingen «Irak». Ingen «Syria».' },
     ],
-    krig: [
-        { tekst: '1914: 1. verdenskrig' },
-        { tekst: 'Osmanerne velger Tysklands side' },
-        { tekst: 'Mot Storbritannia og Frankrike' },
-        { tekst: 'Britene ser en sjanse', rod: true },
-    ],
     lofte: [
         { tekst: 'Brev til Mekka' },
         { tekst: 'Løftet: egne arabiske stater' },
         { tekst: '1916: Det arabiske opprøret' },
         { tekst: 'Tusenvis av krigere' },
         { tekst: 'Seier etter seier' },
-    ],
-    balfour: [
-        { tekst: '1917: Et nytt løfte' },
-        { tekst: 'Brev fra Balfour til Rothschild' },
-        { tekst: 'Et jødisk hjemland i Palestina' },
-        { tekst: 'Men folk bodde der allerede', rod: true },
     ],
     mandat: [
         { tekst: '1918: Osmanerne har tapt' },
@@ -226,24 +146,6 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Midten: sunnimuslimer' },
         { tekst: 'Nord: kurdere' },
         { tekst: 'Tre folk, én stat', rod: true },
-    ],
-    europa: [
-        { tekst: 'Tenk deg det samme i Europa' },
-        { tekst: 'Nordmenn, franskmenn og grekere' },
-        { tekst: '«Kall det hva dere vil»', rod: true },
-    ],
-    kurdere: [
-        { tekst: 'Kurderne' },
-        { tekst: 'Et stort folk uten eget land' },
-        { tekst: 'Delt mellom fire land', rod: true },
-        { tekst: 'Kampen fortsetter i dag' },
-    ],
-    arv: [
-        { tekst: 'Røtter i 1916 til 1923' },
-        { tekst: 'Irak: tvunget sammen' },
-        { tekst: 'Syria: grenser for Frankrike' },
-        { tekst: 'Libanon: borgerkrig' },
-        { tekst: 'Palestina: to løfter', rod: true },
     ],
 };
 
@@ -342,50 +244,6 @@ export function SykesPicotKart({ beat, props }: VisualProps<{ modus?: Modus }>) 
                     </>
                 )}
 
-                {modus === 'krig' && (
-                    <>
-                        <Etikett pos={p([42, 30])} tekst="Osmanerne" farge="#7c2d12" />
-                        {beat >= 1 && (
-                            <Etikett
-                                pos={p([22, 45.5])}
-                                tekst="Tyskland og Østerrike-Ungarn"
-                                farge="#9a3412"
-                            />
-                        )}
-                        {beat >= 2 && (
-                            <>
-                                <Etikett
-                                    pos={p([-11, 49.5])}
-                                    tekst="Storbritannia"
-                                    farge={FARGE.britisk}
-                                />
-                                <Etikett
-                                    pos={p([-6, 44.5])}
-                                    tekst="Frankrike"
-                                    farge={FARGE.fransk}
-                                />
-                            </>
-                        )}
-                        {beat >= 3 && (
-                            <>
-                                <Pil
-                                    fra={p(STED.london)}
-                                    til={p([41, 25])}
-                                    farge={FARGE.britisk}
-                                    bue={0.18}
-                                />
-                                <Etikett
-                                    pos={p([45, 22])}
-                                    tekst="Araberne?"
-                                    farge={FARGE.arabisk}
-                                    stor
-                                    forsinkelse={1.6}
-                                />
-                            </>
-                        )}
-                    </>
-                )}
-
                 {modus === 'lofte' && (
                     <>
                         <Punkt pos={p(STED.mekka)} farge="#111827" />
@@ -439,45 +297,6 @@ export function SykesPicotKart({ beat, props }: VisualProps<{ modus?: Modus }>) 
                     </>
                 )}
 
-                {modus === 'balfour' && (
-                    <>
-                        <Etikett pos={p([-8, 49.5])} tekst="London" farge={FARGE.britisk} />
-                        <Punkt pos={p(STED.palestina)} farge={FARGE.jodisk} />
-                        {beat === 1 && <Brev fra={p(STED.london)} til={p(STED.palestina)} />}
-                        {beat >= 2 && (
-                            <Etikett
-                                pos={p([29, 29])}
-                                tekst="Palestina"
-                                farge={FARGE.jodisk}
-                                stor
-                                linjeTil={p(STED.palestina)}
-                            />
-                        )}
-                        {beat >= 3 && (
-                            <>
-                                <Etikett
-                                    pos={p([44, 35])}
-                                    tekst="Arabere"
-                                    farge="#14532d"
-                                    forsinkelse={0.2}
-                                />
-                                <Etikett
-                                    pos={p([44, 32])}
-                                    tekst="Jøder"
-                                    farge={FARGE.jodisk}
-                                    forsinkelse={0.7}
-                                />
-                                <Etikett
-                                    pos={p([44, 29])}
-                                    tekst="Kristne"
-                                    farge="#1e3a8a"
-                                    forsinkelse={1.2}
-                                />
-                            </>
-                        )}
-                    </>
-                )}
-
                 {modus === 'mandat' && (
                     <>
                         {beat === 0 && (
@@ -526,121 +345,6 @@ export function SykesPicotKart({ beat, props }: VisualProps<{ modus?: Modus }>) 
                 )}
 
                 {modus === 'irak' && irak && <IrakBand irak={irak} sti={sti} p={p} beat={beat} />}
-
-                {modus === 'europa' && (
-                    <>
-                        {beat >= 1 && (
-                            <>
-                                <Etikett pos={p([9, 62.5])} tekst="Nordmenn" farge="#ffffff" mork />
-                                <Etikett
-                                    pos={p([2.5, 46.6])}
-                                    tekst="Franskmenn"
-                                    farge="#ffffff"
-                                    mork
-                                    forsinkelse={0.5}
-                                />
-                                <Etikett
-                                    pos={p([22, 39.6])}
-                                    tekst="Grekere"
-                                    farge="#ffffff"
-                                    mork
-                                    forsinkelse={1}
-                                />
-                            </>
-                        )}
-                        {beat >= 2 && (
-                            <>
-                                <Lenke
-                                    punkter={[p([9, 61]), p([2.5, 47]), p([22, 39.5]), p([9, 61])]}
-                                />
-                                <Etikett
-                                    pos={p([16, 52])}
-                                    tekst="Ett land?"
-                                    farge={FARGE.europa}
-                                    stor
-                                    forsinkelse={1.2}
-                                />
-                            </>
-                        )}
-                    </>
-                )}
-
-                {modus === 'kurdere' && (
-                    <>
-                        <Omrade sti={sti} ring={KURDISTAN} farge={FARGE.kurdisk} />
-                        <Etikett pos={p([42.3, 37.6])} tekst="Kurdere" farge="#ffffff" mork stor />
-                        {beat >= 2 && (
-                            <>
-                                <Etikett
-                                    pos={p([33, 39.5])}
-                                    tekst="Tyrkia"
-                                    farge="#44403c"
-                                    forsinkelse={0.2}
-                                />
-                                <Etikett
-                                    pos={p([43, 31.5])}
-                                    tekst="Irak"
-                                    farge="#44403c"
-                                    forsinkelse={0.7}
-                                />
-                                <Etikett
-                                    pos={p([37.4, 33.6])}
-                                    tekst="Syria"
-                                    farge="#44403c"
-                                    forsinkelse={1.2}
-                                />
-                                <Etikett
-                                    pos={p([52.5, 33])}
-                                    tekst="Iran"
-                                    farge="#44403c"
-                                    forsinkelse={1.7}
-                                />
-                            </>
-                        )}
-                        {beat >= 3 && <Puls pos={p([42.3, 37.6])} farge={FARGE.kurdisk} />}
-                    </>
-                )}
-
-                {modus === 'arv' && (
-                    <>
-                        {beat >= 1 && (
-                            <Etikett
-                                pos={p([47.5, 29.5])}
-                                tekst="Irak"
-                                farge={beat === 1 ? '#78350f' : '#a16207'}
-                                stor={beat === 1}
-                                linjeTil={p([43.5, 33])}
-                            />
-                        )}
-                        {beat >= 2 && (
-                            <Etikett
-                                pos={p([43.5, 37.8])}
-                                tekst="Syria"
-                                farge={beat === 2 ? '#78350f' : '#a16207'}
-                                stor={beat === 2}
-                                linjeTil={p([38.6, 35.2])}
-                            />
-                        )}
-                        {beat >= 3 && (
-                            <Etikett
-                                pos={p([31, 35.5])}
-                                tekst="Libanon"
-                                farge={beat === 3 ? '#78350f' : '#a16207'}
-                                stor={beat === 3}
-                                linjeTil={p([35.8, 33.9])}
-                            />
-                        )}
-                        {beat >= 4 && (
-                            <Etikett
-                                pos={p([31, 30])}
-                                tekst="Palestina"
-                                farge="#78350f"
-                                stor
-                                linjeTil={p([35, 31.5])}
-                            />
-                        )}
-                    </>
-                )}
             </svg>
 
             <AnimatePresence mode="wait">
@@ -923,39 +627,6 @@ function Linje({ fra, til }: { fra: [number, number]; til: [number, number] }) {
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.4, delay: 0.4 }}
-        />
-    );
-}
-
-function Lenke({ punkter }: { punkter: [number, number][] }) {
-    const d = punkter.map((q, i) => `${i ? 'L' : 'M'} ${q[0]} ${q[1]}`).join(' ');
-    return (
-        <motion.path
-            d={d}
-            fill="none"
-            stroke={FARGE.europa}
-            strokeWidth={7}
-            strokeDasharray="20 14"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.6 }}
-        />
-    );
-}
-
-function Omrade({ sti, ring, farge }: { sti: GeoPath; ring: LngLat[]; farge: string }) {
-    const d = sti({ type: 'Polygon', coordinates: [[...ring, ring[0]]] } as never) ?? '';
-    return (
-        <motion.path
-            d={d}
-            fill={farge}
-            fillOpacity={0.55}
-            stroke={farge}
-            strokeWidth={5}
-            strokeDasharray="12 8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
         />
     );
 }

@@ -2,9 +2,12 @@ import { motion } from 'framer-motion';
 import type { VisualProps } from '../../types';
 
 /**
- * De tre løftene britene ga, som tre brev på et bord. Beat 0: tre lukkede brev. Beat 1-3: ett brev
- * åpnes om gangen, med hvem det gikk til og hva det lovet. Beat 4: brevene løftes opp, og tre streker
- * møtes i det samme området: Palestina, lovet bort to ganger.
+ * Brevene britene skrev, på et bord. To modus:
+ * «tre» (standard): de tre løftene. Beat 0: tre lukkede brev. Beat 1-3: ett brev åpnes om gangen,
+ * med hvem det gikk til og hva det lovet. Beat 4: brevene løftes opp, og tre streker møtes i det
+ * samme området: Palestina, lovet bort to ganger.
+ * «balfour»: ett brev fra 1917. Det åpnes, løftet leses, og så viser bordet folkene som alt bodde
+ * i Palestina.
  */
 
 const B = 1600;
@@ -44,7 +47,8 @@ const KORT_B = 420;
 const KORT_H = 470;
 const MÅL: [number, number] = [800, 770];
 
-export function SykesPicotBrev({ beat }: VisualProps) {
+export function SykesPicotBrev({ beat, props }: VisualProps<{ modus?: 'tre' | 'balfour' }>) {
+    if (props.modus === 'balfour') return <Balfour beat={beat} />;
     const samlet = beat >= 4;
     return (
         <div className="absolute inset-0 overflow-hidden" style={{ background: '#e7dcc6' }}>
@@ -302,6 +306,227 @@ export function SykesPicotBrev({ beat }: VisualProps) {
                     >
                         {UNDERTEKST[beat]}
                     </motion.text>
+                )}
+            </svg>
+        </div>
+    );
+}
+
+const FOLK = [
+    { navn: 'Arabere', farge: '#15803d' },
+    { navn: 'Jøder', farge: '#7c3aed' },
+    { navn: 'Kristne', farge: '#1d4ed8' },
+];
+
+/** Balfour-brevet alene: lukket, åpnet, løftet, og folkene som bodde der fra før. */
+function Balfour({ beat }: { beat: number }) {
+    const apent = beat >= 1;
+    const tilSide = beat >= 3;
+    const x = 800 - 280;
+    return (
+        <div className="absolute inset-0 overflow-hidden" style={{ background: '#e7dcc6' }}>
+            <svg
+                viewBox={`0 0 ${B} ${H}`}
+                className="absolute inset-0 w-full h-full"
+                preserveAspectRatio="xMidYMid meet"
+            >
+                {Array.from({ length: 9 }, (_, i) => (
+                    <line
+                        key={i}
+                        x1={0}
+                        x2={B}
+                        y1={60 + i * 100}
+                        y2={70 + i * 100}
+                        stroke="#d6c7a8"
+                        strokeWidth={3}
+                    />
+                ))}
+
+                <motion.g
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ opacity: 1, y: 0, x: tilSide ? -330 : 0 }}
+                    transition={{ type: 'spring', stiffness: 110, damping: 20 }}
+                >
+                    <rect x={x + 10} y={140} width={560} height={640} rx={16} fill="#00000022" />
+                    <rect
+                        x={x}
+                        y={130}
+                        width={560}
+                        height={640}
+                        rx={16}
+                        fill={apent ? '#faf5ff' : '#fffbeb'}
+                        stroke={apent ? '#7c3aed' : '#a16207'}
+                        strokeWidth={6}
+                        style={{ transition: 'fill 0.6s' }}
+                    />
+                    {!apent && (
+                        <>
+                            <path
+                                d={`M ${x} 130 L ${x + 280} 400 L ${x + 560} 130`}
+                                fill="none"
+                                stroke="#a16207"
+                                strokeWidth={6}
+                            />
+                            <circle cx={x + 280} cy={400} r={44} fill="#991b1b" />
+                            <text
+                                x={x + 280}
+                                y={640}
+                                textAnchor="middle"
+                                fontSize={110}
+                                fontWeight={900}
+                                fill="#a16207"
+                            >
+                                1917
+                            </text>
+                        </>
+                    )}
+                    {apent && (
+                        <motion.g
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <text
+                                x={x + 280}
+                                y={220}
+                                textAnchor="middle"
+                                fontSize={60}
+                                fontWeight={900}
+                                fill="#7c3aed"
+                            >
+                                1917
+                            </text>
+                            <text
+                                x={x + 280}
+                                y={290}
+                                textAnchor="middle"
+                                fontSize={40}
+                                fontWeight={800}
+                                fill="#1f2937"
+                            >
+                                Fra Balfour
+                            </text>
+                            <text
+                                x={x + 280}
+                                y={340}
+                                textAnchor="middle"
+                                fontSize={34}
+                                fontWeight={600}
+                                fill="#475569"
+                            >
+                                til Rothschild
+                            </text>
+                            <line
+                                x1={x + 60}
+                                x2={x + 500}
+                                y1={385}
+                                y2={385}
+                                stroke="#7c3aed"
+                                strokeWidth={4}
+                            />
+                            {beat === 1 &&
+                                ['Sionistene vil ha', 'et eget hjemland', 'for jødene'].map(
+                                    (l, j) => (
+                                        <motion.text
+                                            key={l}
+                                            x={x + 280}
+                                            y={480 + j * 56}
+                                            textAnchor="middle"
+                                            fontSize={40}
+                                            fontWeight={700}
+                                            fill="#4c1d95"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ delay: 0.8 + j * 0.2 }}
+                                        >
+                                            {l}
+                                        </motion.text>
+                                    )
+                                )}
+                            {beat >= 2 &&
+                                ['Britene støtter', 'et jødisk hjemland', 'i Palestina'].map(
+                                    (l, j) => (
+                                        <motion.text
+                                            key={l}
+                                            x={x + 280}
+                                            y={480 + j * 60}
+                                            textAnchor="middle"
+                                            fontSize={46}
+                                            fontWeight={900}
+                                            fill="#111827"
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ delay: 0.4 + j * 0.3 }}
+                                        >
+                                            {l}
+                                        </motion.text>
+                                    )
+                                )}
+                        </motion.g>
+                    )}
+                </motion.g>
+
+                {tilSide && (
+                    <>
+                        <motion.text
+                            x={1130}
+                            y={230}
+                            textAnchor="middle"
+                            fontSize={46}
+                            fontWeight={900}
+                            fill="#7f1d1d"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                        >
+                            Bodde der allerede:
+                        </motion.text>
+                        {FOLK.map((f, i) => (
+                            <motion.g
+                                key={f.navn}
+                                initial={{ opacity: 0, x: 80 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{
+                                    delay: 1 + i * 0.4,
+                                    type: 'spring',
+                                    stiffness: 140,
+                                    damping: 18,
+                                }}
+                            >
+                                <rect
+                                    x={900}
+                                    y={290 + i * 150}
+                                    width={460}
+                                    height={120}
+                                    rx={60}
+                                    fill={f.farge}
+                                />
+                                <text
+                                    x={1130}
+                                    y={368 + i * 150}
+                                    textAnchor="middle"
+                                    fontSize={52}
+                                    fontWeight={900}
+                                    fill="#ffffff"
+                                >
+                                    {f.navn}
+                                </text>
+                            </motion.g>
+                        ))}
+                        <motion.text
+                            x={1130}
+                            y={790}
+                            textAnchor="middle"
+                            fontSize={38}
+                            fontWeight={700}
+                            fill="#44403c"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 2.4 }}
+                        >
+                            i generasjoner
+                        </motion.text>
+                    </>
                 )}
             </svg>
         </div>
