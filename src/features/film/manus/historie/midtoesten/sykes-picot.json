@@ -4,6 +4,7 @@
     "kilde": "/historie/midtoesten/sykes-picot",
     "bilde": "/images/midtoesten/sykes-picot-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-19", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 5, "tro": 5, "sum": 22 },
     "scener": [
         {
             "id": "bordet",
@@ -60,7 +61,7 @@
         },
         {
             "id": "krigen",
-            "visual": { "type": "SykesPicotKart", "props": { "modus": "krig" } },
+            "visual": { "type": "SykesPicotLag" },
             "replikker": [
                 { "si": "I 1914 brøt 1. verdenskrig ut." },
                 { "si": "Osmanerne valgte side. De gikk sammen med Tyskland og Østerrike-Ungarn." },
@@ -109,7 +110,7 @@
         {
             "id": "balfour",
             "lyd": "stille",
-            "visual": { "type": "SykesPicotKart", "props": { "modus": "balfour" } },
+            "visual": { "type": "SykesPicotBrev", "props": { "modus": "balfour" } },
             "replikker": [
                 { "si": "I 1917 kom enda et løfte. Denne gangen til en helt annen gruppe." },
                 {
@@ -172,7 +173,7 @@
         },
         {
             "id": "europa",
-            "visual": { "type": "SykesPicotKart", "props": { "modus": "europa" } },
+            "visual": { "type": "SykesPicotFolk", "props": { "modus": "europa" } },
             "replikker": [
                 { "si": "Tenk deg at det samme skjedde her i Europa." },
                 { "si": "Noen tar nordmenn, franskmenn og grekere, og setter dem sammen i én stat." },
@@ -181,7 +182,7 @@
         },
         {
             "id": "kurdere",
-            "visual": { "type": "SykesPicotKart", "props": { "modus": "kurdere" } },
+            "visual": { "type": "SykesPicotFolk", "props": { "modus": "kurdere" } },
             "replikker": [
                 { "si": "Kurderne ble rammet ekstra hardt." },
                 {
@@ -196,7 +197,7 @@
         {
             "id": "arv",
             "kapittel": "Arven",
-            "visual": { "type": "SykesPicotKart", "props": { "modus": "arv" } },
+            "visual": { "type": "SykesPicotFolk", "props": { "modus": "arv" } },
             "replikker": [
                 {
                     "si": "Mange av de vanskeligste konfliktene i Midtøsten har røtter i årene fra 1916 til 1923."
@@ -206,7 +207,7 @@
                     "si": "Grensene til Syria ble trukket for å passe franskmennene, ikke folket som bodde der."
                 },
                 {
-                    "si": "I Libanon måtte kristne, sjiamuslimer og sunnimuslimer dele på makta. Det har flere ganger endt i borgerkrig."
+                    "si": "I Libanon måtte kristne, sjiamuslimer og sunnimuslimer dele på makta. Måten de delte den på, har flere ganger endt i borgerkrig."
                 },
                 {
                     "si": "Og konflikten om Palestina startet med de løftene britene ga mellom 1915 og 1917, løfter som ikke kunne holdes samtidig."
@@ -244,7 +245,7 @@
                             "fraBeat": 0,
                             "uthevet": true
                         },
-                        { "tekst": "Tre løfter om det samme landet.", "fraBeat": 1 },
+                        { "tekst": "Tre løfter om delvis det samme området.", "fraBeat": 1 },
                         {
                             "tekst": "De kunne ikke holdes samtidig.",
                             "fraBeat": 1,
@@ -264,7 +265,7 @@
                     "si": "To europeiske diplomater tegnet linjer på et kart. Millioner av mennesker som bodde der, ble aldri spurt."
                 },
                 {
-                    "si": "Britene ga tre løfter om det samme landet. Det var umulig å holde dem alle samtidig."
+                    "si": "Britene ga tre løfter som delvis gjaldt det samme området. Det var umulig å holde dem alle samtidig."
                 },
                 {
                     "si": "Grensene står der fortsatt. Og det er folkene i Midtøsten som lever med følgene."
