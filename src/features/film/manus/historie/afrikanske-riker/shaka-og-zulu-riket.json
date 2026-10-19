@@ -1,0 +1,554 @@
+{
+    "id": "shaka-og-zulu-riket",
+    "tittel": "Shaka og Zulu-riket: Hvem fikk skylda?",
+    "kilde": "/historie/afrikanske-riker/shaka-og-zulu-riket",
+    "utenforArtikkel": [
+        {
+            "tall": 460,
+            "begrunnelse": "Regnet ut fra artikkelen: rundt 60 hvite og 400 afrikanske soldater overlevde."
+        },
+        {
+            "tall": 14000000,
+            "begrunnelse": "«Over 14 millioner» fra artikkelen, skrevet som tall i telleren."
+        }
+    ],
+    "vurdering": {
+        "dato": "2026-10-19",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "leir",
+            "lyd": "vind",
+            "kapittel": "Isandlwana",
+            "visual": {
+                "type": "ZuluSandkasse",
+                "props": {
+                    "modus": "leir"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er ettermiddag, 22. januar 1879. Vi står under et bratt fjell som heter Isandlwana, i dagens Sør-Afrika.",
+                    "uttale": "Det er ettermiddag, tjueandre januar atten syttini. Vi står under et bratt fjell som heter Isandlwana, i dagens Sør-Afrika."
+                },
+                {
+                    "si": "Her ligger en britisk leir. Soldatene har gevær og kanoner."
+                },
+                {
+                    "si": "Men de har ikke gravd grøfter, og ikke bygd noen vegg rundt leiren."
+                },
+                {
+                    "si": "Så kommer rundt 25 000 krigere fra Zulu-riket over åsene."
+                }
+            ]
+        },
+        {
+            "id": "tap",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1700,
+                            "farget": 1700,
+                            "farge": "#b91c1c",
+                            "tittel": "Omtrent 1700 mann i leiren",
+                            "fargeEtikett": "i leiren"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1700,
+                            "farget": 460,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Rundt 460 overlevde",
+                            "fargeEtikett": "rundt 460 overlevde",
+                            "restEtikett": "resten overlevde ikke",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1700,
+                            "farget": 460,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Et imperium har tapt",
+                            "fargeEtikett": "rundt 460 overlevde",
+                            "restEtikett": "resten overlevde ikke",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Omtrent 1700 mann var i leiren den morgenen."
+                },
+                {
+                    "si": "Bare rundt 60 hvite og 400 afrikanske soldater overlevde."
+                },
+                {
+                    "si": "Det britiske imperiet hadde tapt et slag mot et afrikansk rike."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SHAKA",
+                    "undertittel": "og Zulu-riket",
+                    "tall": [
+                        {
+                            "verdi": 60,
+                            "etikett": "år tilbake i tid",
+                            "fraBeat": 0
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvem fikk skylda?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvordan klarte et afrikansk rike det? Vi må gå rundt 60 år tilbake, til en mann som het Shaka."
+                },
+                {
+                    "si": "Han gjorde en liten klan til den sterkeste militærmakten i det sørlige Afrika."
+                },
+                {
+                    "si": "Men dette er også en historie om hvem som fikk fortelle den."
+                }
+            ]
+        },
+        {
+            "id": "klan",
+            "kapittel": "Shaka",
+            "visual": {
+                "type": "ZuluKart",
+                "props": {
+                    "modus": "klan"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Zuluene var først bare én av mange klaner. En klan er en stor slekt med samme forfar."
+                },
+                {
+                    "si": "Zulu-klanen ble grunnlagt i 1709. Den var liten, og måtte bøye seg for sterkere naboer."
+                },
+                {
+                    "si": "Shaka ble født rundt 1787. Faren, Senzangakhona, var høvding for zuluene. Moren het Nandi."
+                },
+                {
+                    "si": "Faren jaget Nandi bort. Hos slekta hennes ble Shaka mobbet fordi han var en gutt uten far."
+                },
+                {
+                    "si": "Rundt 1802 kom en hungersnød. Da flyttet de videre til Mthethwa-folket og høvdingen Dingiswayo."
+                }
+            ]
+        },
+        {
+            "id": "makt",
+            "visual": {
+                "type": "ZuluKart",
+                "props": {
+                    "modus": "makt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hos Dingiswayo ble Shaka soldat, og en av de beste hærførerne."
+                },
+                {
+                    "si": "I 1816 skulle halvbroren Sigujana ta over etter faren. Men Shaka drepte ham og tok makta selv."
+                },
+                {
+                    "si": "Så ble Dingiswayo drept av Zwide, høvdingen for Ndwandwe-folket. Da tok Shaka over hæren hans."
+                },
+                {
+                    "si": "I 1818 møtte han Ndwandwe-hæren ved elva Mhlathuze. Shaka lot som om han trakk seg tilbake."
+                },
+                {
+                    "si": "Fienden ble sliten av å jage ham. Så slo han til, og vant."
+                }
+            ]
+        },
+        {
+            "id": "krigere",
+            "kapittel": "Bøffelhornene",
+            "visual": {
+                "type": "ZuluKrigere"
+            },
+            "replikker": [
+                {
+                    "si": "Shaka forandret måten zuluene kjempet på. Før kastet krigerne lange spyd på avstand."
+                },
+                {
+                    "si": "Shaka ville ha nærkamp. Krigerne fikk et kort stikkespyd som de beholdt i hånda."
+                },
+                {
+                    "si": "De bar store skjold av kuhud og kjempet tett i tett."
+                },
+                {
+                    "si": "Shaka forbød sandaler, så soldatene kunne løpe fort over steinete bakke."
+                },
+                {
+                    "si": "Unge menn i samme alder havnet i samme avdeling. De bodde og øvde sammen."
+                }
+            ]
+        },
+        {
+            "id": "horn",
+            "lyd": "vind",
+            "visual": {
+                "type": "ZuluSandkasse",
+                "props": {
+                    "modus": "horn"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hæren stilte seg opp som hodet til en bøffel. Det kalles bøffelhornene."
+                },
+                {
+                    "si": "Brystet i midten gikk mot fienden og holdt den fast."
+                },
+                {
+                    "si": "Samtidig løp to horn rundt på sidene og omringet den."
+                },
+                {
+                    "si": "Hæren ble raskere enn naboenes, og bedre til å følge ordre."
+                }
+            ]
+        },
+        {
+            "id": "riket",
+            "lyd": "stille",
+            "visual": {
+                "type": "ZuluKart",
+                "props": {
+                    "modus": "riket"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Shaka styrte fra 1816 til 1828."
+                },
+                {
+                    "si": "Over hundre små høvdingdømmer ble lagt inn under riket."
+                },
+                {
+                    "si": "I 1824 strakte riket seg langs kysten, fra elva Pongola til forbi elva Tugela."
+                },
+                {
+                    "si": "Den lille klanen var blitt den sterkeste militærmakten i det sørlige Afrika."
+                },
+                {
+                    "si": "I 1828 ble Shaka drept av to halvbrødre og livvakten sin. Men riket han hadde bygd, overlevde ham."
+                }
+            ]
+        },
+        {
+            "id": "mfecane",
+            "kapittel": "Mfecane",
+            "visual": {
+                "type": "ZuluRegion",
+                "props": {
+                    "modus": "mfecane"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mens Zulu-riket vokste, ble hele det sørlige Afrika kastet ut i krig og flukt."
+                },
+                {
+                    "si": "Det varte omtrent fra 1815 til 1840, og kalles mfecane. Det betyr knusingen eller spredningen."
+                },
+                {
+                    "si": "Hele folk flyttet. Hærføreren Mzilikazi brøt med Shaka og grunnla Ndebele-riket i dagens Zimbabwe."
+                },
+                {
+                    "si": "Moshoeshoe samlet folk på flukt på fjellet Thaba Bosiu i 1824. Riket hans ble til Lesotho."
+                },
+                {
+                    "si": "Og Soshangane grunnla Gaza-riket i dagens Mosambik."
+                }
+            ]
+        },
+        {
+            "id": "tomtland",
+            "visual": {
+                "type": "ZuluSkylda",
+                "props": {
+                    "modus": "tomtland"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Eldre bøker skrev at én til to millioner mennesker døde."
+                },
+                {
+                    "si": "I dag mener historikerne at de tallene er altfor høye."
+                },
+                {
+                    "si": "Mye land så tomt ut, men folk hadde ofte flyktet eller gjemt seg."
+                },
+                {
+                    "si": "Likevel døde tusenvis i krig og hungersnød."
+                }
+            ]
+        },
+        {
+            "id": "skylda",
+            "kapittel": "Hvem fikk skylda?",
+            "visual": {
+                "type": "ZuluSkylda",
+                "props": {
+                    "modus": "skylda"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvem hadde skylda for mfecane? Lenge var svaret enkelt: Shaka."
+                },
+                {
+                    "si": "De første fortellingene, mange skrevet av europeere, sa at zuluene var voldelige. Det bildet ble brukt som grunn til at Europa skulle ta over landet."
+                },
+                {
+                    "si": "I 1966 skrev John Omer-Cooper at mfecane også handlet om at afrikanere bygde nye, sterke stater. Men Shaka sto fortsatt i midten."
+                },
+                {
+                    "si": "I 1988 mente Julian Cobbing at historien om Shaka var et alibi, altså en unnskyldning."
+                },
+                {
+                    "si": "Den skulle skjule hvem som egentlig hadde skylda. Ifølge Cobbing var det europeerne."
+                }
+            ]
+        },
+        {
+            "id": "arsaker",
+            "visual": {
+                "type": "ZuluRegion",
+                "props": {
+                    "modus": "arsaker"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Cobbing pekte på portugisiske slavehandlere i Delagoa-bukta, i dagens Mosambik."
+                },
+                {
+                    "si": "Og på bøndene i den britiske Kappkolonien. Begge jaktet på arbeidsfolk."
+                },
+                {
+                    "si": "Andre historikere mente at Cobbing gikk for langt. I dag peker de på flere ting som virket sammen."
+                },
+                {
+                    "si": "En hard tørke, særlig fra 1809 til 1823. Og mais, som trenger mer vann enn kornet de dyrket før."
+                },
+                {
+                    "si": "Høvdinger sloss om elfenben og beite. Og på slutten av 1820-årene ble over 1000 mennesker i året sendt ut fra Delagoa-bukta."
+                },
+                {
+                    "si": "Historikerne er fortsatt uenige om hva som veide tyngst."
+                }
+            ]
+        },
+        {
+            "id": "kilder",
+            "visual": {
+                "type": "ZuluSkylda",
+                "props": {
+                    "modus": "kilder"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det samme gjelder Shaka selv. Vi vet om ham fra muntlige fortellinger og noen få europeere som møtte ham."
+                },
+                {
+                    "si": "Den viktigste er dagboka til Henry Francis Fynn. Han kjente Shaka godt, og beskrev ham som klok, ofte vennlig og i stand til å være raus."
+                },
+                {
+                    "si": "Men det finnes mørke historier. Da moren Nandi døde i 1827, skal mange ha blitt drept fordi de ikke sørget nok."
+                },
+                {
+                    "si": "Var Shaka en grusom tyrann, en dyktig statsbygger, eller begge deler? Det kommer an på hvilke kilder du stoler på."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "1879",
+            "visual": {
+                "type": "ZuluRegion",
+                "props": {
+                    "modus": "krig"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Femti år senere ville Storbritannia samle koloniene sine og de to boer-republikkene i én stat."
+                },
+                {
+                    "si": "Boerne var hvite nybyggere. Zulu-riket sto i veien."
+                },
+                {
+                    "si": "Guvernøren Bartle Frere sendte falske rapporter til London om at zulukongen Cetshwayo var en tyrann."
+                },
+                {
+                    "si": "11. desember 1878 krevde britene at Cetshwayo skulle legge ned hæren, betale 500 kveg i bot og slippe inn misjonærer. Han fikk 30 dager.",
+                    "uttale": "Ellevte desember atten syttiåtte krevde britene at Cetshwayo skulle legge ned hæren, betale fem hundre kveg i bot og slippe inn misjonærer. Han fikk tretti dager."
+                },
+                {
+                    "si": "11. januar 1879 marsjerte britene inn i Zululand.",
+                    "uttale": "Ellevte januar atten syttini marsjerte britene inn i Zululand."
+                }
+            ]
+        },
+        {
+            "id": "slaget",
+            "lyd": "vind",
+            "visual": {
+                "type": "ZuluSandkasse",
+                "props": {
+                    "modus": "slag"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tilbake ved Isandlwana gjorde den britiske sjefen, Lord Chelmsford, en stor feil."
+                },
+                {
+                    "si": "Han delte styrkene sine og dro av gårde for å lete etter zuluene."
+                },
+                {
+                    "si": "Leiren han lot være igjen, hadde ingen grøfter og ingen vegg."
+                },
+                {
+                    "si": "Zuluene angrep med bøffelhornene, den samme taktikken som Shaka hadde lært dem."
+                },
+                {
+                    "si": "Minst 1000 zulukrigere døde, men de vant slaget."
+                }
+            ]
+        },
+        {
+            "id": "delt",
+            "visual": {
+                "type": "ZuluSandkasse",
+                "props": {
+                    "modus": "delt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men britene kom tilbake med maskingevær, og 4. juli 1879 ble zuluhæren slått ved Ulundi.",
+                    "uttale": "Men britene kom tilbake med maskingevær, og fjerde juli atten syttini ble zuluhæren slått ved Ulundi."
+                },
+                {
+                    "si": "Cetshwayo ble tatt til fange og sendt i eksil, bort fra landet sitt."
+                },
+                {
+                    "si": "Britene delte riket i tretten små deler, som begynte å krige mot hverandre."
+                },
+                {
+                    "si": "I 1897 ble Zululand en del av den britiske kolonien Natal."
+                }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "I dag",
+            "visual": {
+                "type": "ZuluRegion",
+                "props": {
+                    "modus": "idag"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Zulu-riket forsvant, men folket ble værende."
+                },
+                {
+                    "si": "Under apartheid, da den hvite minoriteten styrte og skilte folk etter hudfarge, laget regimet et eget område for zuluene: KwaZulu."
+                },
+                {
+                    "si": "I 1994 ble KwaZulu slått sammen med Natal til provinsen KwaZulu-Natal."
+                },
+                {
+                    "si": "I dag er zuluene den største folkegruppen i Sør-Afrika, med over 14 millioner mennesker."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Et afrikansk rike",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "like sterkt som en europeisk hær.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Isandlwana:",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "en kolonimakt kunne tape.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hvem forteller historien?",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Én mann er sjelden",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "hele forklaringen.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Afrikanske riker kunne være like godt organisert og like sterke som europeiske hærer, i hvert fall en stund."
+                },
+                {
+                    "si": "Isandlwana viser at en kolonimakt kunne tape."
+                },
+                {
+                    "si": "Men det er også viktig hvem som forteller. I over hundre år fikk Shaka skylda for alt."
+                },
+                {
+                    "si": "Det betyr ikke at Shaka var snill. Men én mann er sjelden hele forklaringen når et helt område havner i krig."
+                }
+            ]
+        }
+    ]
+}
