@@ -1,0 +1,298 @@
+{
+    "id": "peace-lines-belfast",
+    "tittel": "Peace Lines: Murene som deler Belfast",
+    "kilde": "/historie/den-kalde-krigen/peace-lines-belfast",
+    "bilde": "/images/lessons/den-kalde-krigen/peace-lines-belfast.webp",
+    "utenforArtikkel": [
+        { "tall": 350, "begrunnelse": "Målestokk i prikkfeltet: 350 prikker for over 3500 drepte, regnet ut fra artikkelen." }
+    ],
+    "vurdering": { "dato": "2026-10-19", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "porten",
+            "lyd": "vind",
+            "kapittel": "Portene",
+            "visual": { "type": "BelfastMuren", "props": { "modus": "kveld" } },
+            "klokke": ["20.58", "20.59", "21.00", "21.00", "21.01"],
+            "replikker": [
+                { "si": "Det er kveld i Belfast, en by i Nord-Irland. Her ligger to nabolag side om side." },
+                { "si": "Men mellom dem står en mur av stål og betong. Noen slike murer er åtte meter høye." },
+                {
+                    "si": "Klokka ni om kvelden låses porten i muren. Da er nabolagene stengt av fra hverandre. Hver eneste kveld."
+                },
+                { "si": "På den ene siden bor katolikker. På den andre siden bor protestanter. Det er to ulike grener av kristendommen." },
+                { "si": "Mange familier her har aldri snakket med naboene på den andre siden av muren." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "PEACE LINES",
+                    "undertittel": "Murene som deler Belfast, 1969 til i dag",
+                    "tall": [{ "verdi": 99, "etikett": "står fortsatt", "fraBeat": 2, "omtrent": false }],
+                    "sporsmal": { "tekst": "Hvorfor står murene fortsatt?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Murene kalles Peace Lines. Det er engelsk og betyr fredslinjer." },
+                { "si": "De første ble satt opp i 1969. De skulle bare stå en kort stund." },
+                { "si": "I dag står det fortsatt 99 slike sperringer i Belfast." },
+                { "si": "Hvorfor bygger en by murer mellom naboer? Og hvorfor står de fortsatt, lenge etter at freden kom?" }
+            ]
+        },
+        {
+            "id": "deling",
+            "lyd": "stille",
+            "kapittel": "En delt øy",
+            "visual": { "type": "BelfastKart", "props": { "modus": "deling" } },
+            "replikker": [
+                { "si": "For å forstå murene må vi tilbake i tid. Irland var lenge en del av det britiske riket. Mange irer ville styre seg selv." },
+                { "si": "I 1916 gjorde irske nasjonalister opprør i Dublin. Nasjonalister er folk som kjemper for et eget land. Opprøret ble slått ned, og lederne ble henrettet." },
+                { "si": "I 1920 ble øya delt i to. Sør fikk etter hvert styre seg selv. Det ble seinere landet Irland." },
+                { "si": "Men de seks fylkene i nord ble værende i Storbritannia. Det er Nord-Irland." },
+                { "si": "Der bodde både katolikker som ville ha ett samlet Irland, og protestanter som ville være britiske." }
+            ]
+        },
+        {
+            "id": "ulikhet",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Katolikker i Nord-Irland",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Jobb", "tekst": "vanskeligere å få", "fraBeat": 1 },
+                        { "ikon": "hus", "tittel": "Bolig", "tekst": "protestanter fikk gå først", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Valg", "tekst": "valgkretsene tegnet mot dem", "fraBeat": 3 },
+                        { "ikon": "haer", "tittel": "Som i USA", "tekst": "folk begynte å protestere", "fraBeat": 4 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I Nord-Irland ble katolikkene i mange år behandlet som annenrangs borgere." },
+                { "si": "De hadde vanskeligere for å få jobb." },
+                { "si": "Når kommunen delte ut boliger, fikk protestanter gå først." },
+                { "si": "Og valgkretsene var tegnet slik at katolikkenes stemmer telte mindre." },
+                { "si": "Det lignet det som skjedde med de svarte i USA i de samme årene. Og som i USA begynte folk å protestere." }
+            ]
+        },
+        {
+            "id": "protest",
+            "visual": { "type": "BelfastKart", "props": { "modus": "protest" } },
+            "replikker": [
+                { "si": "I 1968 startet en bevegelse for like rettigheter. Folk krevde å bli behandlet likt. De krevde ikke at Nord-Irland skulle forlate Storbritannia." },
+                { "si": "Men protestene ble møtt med vold, både fra politiet og fra lojalister. Lojalister er protestanter som vil holde fast på båndet til Storbritannia." },
+                { "si": "I 1969 sendte Storbritannia inn hæren. Først skulle soldatene beskytte katolikkene." },
+                { "si": "Mange katolikker jublet da soldatene kom. Men det varte ikke lenge." }
+            ]
+        },
+        {
+            "id": "august",
+            "kapittel": "Murene reiser seg",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1500,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Belfast, august 1969",
+                            "restEtikett": "familier"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1500,
+                            "farget": 1500,
+                            "farge": "#dc2626",
+                            "tittel": "Over 1500 familier jaget fra hjemmet",
+                            "fargeEtikett": "familier på flukt"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1500,
+                            "farget": 1500,
+                            "farge": "#7c2d12",
+                            "tittel": "Noen få dager. En av de største tvangsflyttingene",
+                            "fargeEtikett": "familier på flukt"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I august 1969 ble volden i Belfast mye verre. Lojalistiske folkemengder angrep katolske nabolag, og hus ble brent ned." },
+                { "si": "Over 1500 familier måtte flykte fra hjemmene sine." },
+                { "si": "Alt skjedde i løpet av noen få dager. Det var en av de største tvangsflyttingene i Vest-Europa etter andre verdenskrig. Tvangsflytting betyr at folk blir jaget fra hjemmet sitt." }
+            ]
+        },
+        {
+            "id": "bygging",
+            "lyd": "vind",
+            "visual": { "type": "BelfastMuren", "props": { "modus": "bygging" } },
+            "replikker": [
+                { "si": "Britiske soldater satte raskt opp sperringer mellom nabolagene. Først var det piggtråd og enkle sperringer." },
+                { "si": "Det var ment som en løsning for en kort stund." },
+                { "si": "Men sperringene ble til murer av betong og stål." },
+                { "si": "Murene vokste seg høyere. Noen ble hele åtte meter høye." },
+                { "si": "Og de ble stående." }
+            ]
+        },
+        {
+            "id": "sider",
+            "visual": { "type": "BelfastMuren", "props": { "modus": "sider" } },
+            "replikker": [
+                { "si": "På begge sider av murene laget noen grupper sine egne små hærer." },
+                { "si": "På katolsk side kjempet IRA. Det står for Den irske republikanske hær." },
+                { "si": "På protestantisk side kjempet lojalistiske grupper, som UVF." },
+                { "si": "Det var en kald fred i gatene. Den ble holdt oppe av frykt." }
+            ]
+        },
+        {
+            "id": "troubles",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 350,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "The Troubles, 1968 til 1998",
+                            "restEtikett": "1 prikk = 10 mennesker"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 350,
+                            "farget": 350,
+                            "farge": "#dc2626",
+                            "tittel": "Over 3500 mennesker drept",
+                            "fargeEtikett": "1 prikk = 10 drepte"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Konflikten fikk navnet the Troubles. Det er engelsk og betyr urolighetene. Her står hver prikk for ti mennesker." },
+                { "si": "Konflikten varte fra 1968 til fredsavtalen i 1998. I løpet av de årene døde over 3500 mennesker." }
+            ]
+        },
+        {
+            "id": "derry",
+            "kapittel": "Bloody Sunday",
+            "visual": { "type": "BelfastKart", "props": { "modus": "derry" } },
+            "replikker": [
+                { "si": "Søndag 30. januar 1972 gikk tusenvis av mennesker i et fredelig demonstrasjonstog i Derry. Derry er en by nordvest i Nord-Irland." },
+                { "si": "De protesterte mot internering. Det betyr at folk ble kastet i fengsel uten rettssak og uten dom." },
+                { "si": "Mange av dem som satt i fengsel, var uskyldige. Demonstrantene hadde ingen våpen." },
+                { "si": "Da åpnet britiske fallskjermsoldater ild mot folkemengden." }
+            ]
+        },
+        {
+            "id": "fjorten",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 14,
+                            "farget": 14,
+                            "farge": "#475569",
+                            "tittel": "14 drept, alle ubevæpnet",
+                            "fargeEtikett": "drept"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 14,
+                            "farget": 14,
+                            "farge": "#0d9488",
+                            "tittel": "2010: Drapene var ulovlige",
+                            "fargeEtikett": "uskyldige"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 14,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Etterpå: tusenvis meldte seg inn i IRA",
+                            "restEtikett": "drepte"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "14 mennesker ble drept. De fleste var tenåringer og unge menn. Alle var ubevæpnet." },
+                { "si": "Den britiske regjeringen forsvarte soldatene i mange år. Først i 2010, etter en undersøkelse som varte i tolv år, sa statsminister David Cameron at drapene var ulovlige og at ofrene var uskyldige." },
+                { "si": "Dagen fikk navnet Bloody Sunday, den blodige søndagen. Rett etter meldte tusenvis av unge menn seg inn i IRA." }
+            ]
+        },
+        {
+            "id": "fred",
+            "kapittel": "En skjør fred",
+            "visual": { "type": "BelfastKart", "props": { "modus": "fred" } },
+            "replikker": [
+                { "si": "På 1990-tallet begynte forhandlinger om fred. USA hjalp til. President Bill Clinton sendte en egen utsending for å presse begge sider til forhandlingsbordet." },
+                { "si": "I 1994 erklærte IRA våpenhvile. Det betyr at de sluttet å bruke våpen, i alle fall for en stund." },
+                { "si": "Regjeringene i Irland og Storbritannia samarbeidet tettere enn de hadde gjort før." },
+                { "si": "På langfredag, 10. april 1998, ble Belfast-avtalen skrevet under. Den kalles også Good Friday Agreement." }
+            ]
+        },
+        {
+            "id": "avtalen",
+            "visual": { "type": "BelfastAvtalen" },
+            "replikker": [
+                { "si": "Hva sto det i avtalen?" },
+                { "si": "IRA og de lojalistiske gruppene la ned våpnene." },
+                { "si": "Nord-Irland fikk sitt eget parlament. Der skulle begge gruppene dele på makten." },
+                { "si": "For første gang på lenge hadde folk på begge sider noe å håpe på." },
+                { "si": "Men én ting ble de ikke enige om: murene. Folk ville bestemme selv. Og mange ville beholde dem." }
+            ]
+        },
+        {
+            "id": "idag",
+            "lyd": "vind",
+            "kapittel": "Murene som ble",
+            "visual": { "type": "BelfastMuren", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "I dag har det gått mer enn 25 år siden fredsavtalen. Men 99 Peace Lines står fortsatt i Belfast." },
+                { "si": "Noen har blitt lavere og kortere. Noen er fjernet." },
+                { "si": "Men mange står like høye som før. Og portene låses fortsatt om natta." },
+                { "si": "Mange som bor ved murene, vil selv beholde dem. Frykten sitter dypt." },
+                { "si": "Mange barn som har vokst opp etter freden, kjenner nesten ingen fra den andre siden." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Berlinmuren ble åpnet på én natt.", "fraBeat": 0 },
+                        { "tekst": "Folk krevde det, og makten ga etter.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "I Belfast kom aldri den dagen.", "fraBeat": 1 },
+                        { "tekst": "Freden er stille, forsiktig og uferdig.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Krigen tok slutt i gatene.", "fraBeat": 2 },
+                        { "tekst": "Men splittelsen lever videre i hodene.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Hva gjør vi med freden", "fraBeat": 3 },
+                        { "tekst": "når krigen er over?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Berlinmuren ble åpnet på én natt i november 1989. Folk krevde det, og makten ga etter." },
+                { "si": "I Belfast finnes ingen slik dag. Her er freden stille, forsiktig og uferdig." },
+                { "si": "Splittelse lever videre i hodene til folk, lenge etter at bombene har stilnet." },
+                { "si": "Så hva gjør vi med freden, når krigen er over?" }
+            ]
+        }
+    ]
+}
