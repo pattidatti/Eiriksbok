@@ -1,0 +1,244 @@
+{
+    "id": "global-handel-oversikt",
+    "tittel": "Verden er én maskin",
+    "kilde": "/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt",
+    "bilde": "/images/lessons/handel/global-handel-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-20", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 3, "sum": 19 },
+    "scener": [
+        {
+            "id": "varen",
+            "lyd": "stille",
+            "kapittel": "Én vare, mange land",
+            "visual": { "type": "GlobalHandelKart", "props": { "modus": "reise" } },
+            "replikker": [
+                { "si": "Tenk på den siste tingen du kjøpte. Kanskje en t-skjorte, en mobil eller maten til middag." },
+                { "si": "Den har mest sannsynlig vært på en lang reise før den havnet hos deg." },
+                { "si": "Kanskje ble den tegnet i ett land, og fikk deler fra et annet." },
+                { "si": "Så ble den sydd i et tredje land. Til slutt ble den solgt i en butikk i Norge." },
+                { "si": "Reisen kan gå over flere kontinenter, altså flere verdensdeler." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "VERDEN ER ÉN MASKIN",
+                    "undertittel": "Slik finner varene veien til deg",
+                    "bilde": "/images/lessons/handel/global-handel-hero.webp",
+                    "tall": [
+                        { "verdi": 80, "etikett": "prosent av handelen går med skip", "fraBeat": 1, "prefiks": "over" },
+                        { "verdi": 13, "etikett": "prosent går gjennom én kanal", "fraBeat": 2, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hva skjer når én del av maskinen stopper?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Slik henger hele verden sammen. Derfor kan vi si at verden er én stor maskin." },
+                { "si": "Over 80 prosent av alt som handles mellom land, fraktes med skip." },
+                { "si": "Og rundt 13 prosent av verdenshandelen går gjennom én eneste smal kanal." },
+                { "si": "I denne filmen skal vi se hvordan maskinen virker, og hva som skjer når den stopper opp." }
+            ]
+        },
+        {
+            "id": "maskin",
+            "kapittel": "Maskinen",
+            "visual": { "type": "GlobalHandelMaskin", "props": { "modus": "maskin" } },
+            "replikker": [
+                { "si": "Tenk deg en stor maskin med tannhjul som griper inn i hverandre." },
+                { "si": "Først hentes råvarer, altså ting fra naturen før de er gjort om til noe. De fraktes til fabrikker et annet sted." },
+                { "si": "Fabrikkene lager ferdige varer. Varene sendes videre til kjøpere over hele verden." },
+                { "si": "Ved siden av varene flyter penger, data og energi hele tiden, i egne strømmer." },
+                { "si": "Ingen del av maskinen virker alene. Ingen land er selvforsynt. Det betyr at ingen land lager alt det trenger selv." }
+            ]
+        },
+        {
+            "id": "avhengig",
+            "visual": { "type": "GlobalHandelMaskin", "props": { "modus": "avhengig" } },
+            "replikker": [
+                { "si": "Landene er altså avhengige av hverandre. Det kalles interdependens, som betyr gjensidig avhengighet." },
+                { "si": "Stopper ett tannhjul, kjennes det i de andre også." },
+                { "si": "Men den samme avhengigheten er også en grunnmur for velstanden vår. Velstand betyr at folk har det godt, med nok penger og ting." }
+            ]
+        },
+        {
+            "id": "ricardo",
+            "kapittel": "Ricardos idé",
+            "visual": { "type": "GlobalHandelMaskin", "props": { "modus": "ricardo" } },
+            "replikker": [
+                { "si": "Hvorfor tjener landene på å handle? En britisk økonom, David Ricardo, forklarte det i 1817." },
+                { "si": "Tenk deg to land. Det ene landet er best til å lage alt." },
+                { "si": "Likevel lønner det seg at hvert land satser på det det er relativt best til. Det sterke landet tar det det er aller best til, og det svake landet tar det det er minst dårlig til." },
+                { "si": "Så bytter de varer med hverandre. Da kan begge land få mer enn de ville klart alene." },
+                { "si": "Ideen kalles komparativt fortrinn. Komparativt betyr sammenlignet." }
+            ]
+        },
+        {
+            "id": "havet",
+            "lyd": "hav",
+            "kapittel": "Havet",
+            "visual": { "type": "GlobalHandelHav", "props": { "modus": "hav" } },
+            "replikker": [
+                { "si": "De fleste av disse varene reiser på samme måte: over havet." },
+                { "si": "Hvorfor? Fordi det er svært billig å frakte på sjøen, regnet per tonn last." },
+                { "si": "Ett stort skip kan ta enormt mye last på én eneste tur." },
+                { "si": "Derfor blir det billig å frakte hvert tonn med varer over havet." }
+            ]
+        },
+        {
+            "id": "boksen",
+            "lyd": "stille",
+            "kapittel": "Boksen",
+            "visual": { "type": "GlobalHandelBoks", "props": { "modus": "boks" } },
+            "replikker": [
+                { "si": "Lasten ligger i containere. Det er store metallbokser som alle er laget etter de samme målene." },
+                { "si": "Fra 1960-årene tok de for alvor av. Mange kaller det containerrevolusjonen." },
+                { "si": "Målene er helt faste. Hjørnene er bestemt helt ned til millimeteren." },
+                { "si": "En container som er 20 fot lang, kalles 1 TEU. All containerfrakt telles i den enheten." },
+                { "si": "Lås to slike sammen, og de får nøyaktig samme ytre mål som én container på 40 fot." }
+            ]
+        },
+        {
+            "id": "kranen",
+            "lyd": "hav",
+            "visual": { "type": "GlobalHandelBoks", "props": { "modus": "kran" } },
+            "replikker": [
+                { "si": "Det smarte er at den samme boksen passer overalt." },
+                { "si": "Kranen løfter den rett fra skipet og over på toget." },
+                { "si": "Fra toget går den rett over på en lastebil. Ingen trenger å pakke om lasten." },
+                { "si": "Derfor ble lasting og lossing mye raskere og billigere. Det er en av de viktigste forandringene i industriens historie, men få tenker over hvor viktig den var." }
+            ]
+        },
+        {
+            "id": "flaskehalser",
+            "lyd": "stille",
+            "kapittel": "Flaskehalsene",
+            "visual": { "type": "GlobalHandelKart", "props": { "modus": "flaskehalser" } },
+            "replikker": [
+                { "si": "Men skipene kan ikke seile hvor som helst. Noen steder må mange av skipene gjennom det samme trange stedet." },
+                { "si": "Slike steder kalles flaskehalser. Tenk på halsen på en flaske: alt som skal ut, må gjennom den smale åpningen." },
+                { "si": "Suezkanalen i Egypt." },
+                { "si": "Hormuzstredet mellom Iran og Oman." },
+                { "si": "Malakkastredet mellom Malaysia og Indonesia. Og Panamakanalen." },
+                { "si": "På slike steder kan én enkelt hendelse ramme hele planeten." }
+            ]
+        },
+        {
+            "id": "ever-given",
+            "lyd": "vind",
+            "kapittel": "Mars 2021",
+            "visual": { "type": "GlobalHandelHav", "props": { "modus": "kanal" } },
+            "replikker": [
+                { "si": "Suezkanalen alene står for rundt 13 prosent av verdenshandelen." },
+                { "si": "I mars 2021 gikk det store containerskipet Ever Given på grunn i kanalen.", "uttale": "I mars 2021 gikk det store containerskipet Ever Givven på grunn i kanalen." },
+                { "si": "Skipet satt fast og sperret hele kanalen i nesten en uke." },
+                { "si": "Bak det vokste køen. Skip etter skip måtte stoppe og vente." }
+            ]
+        },
+        {
+            "id": "koen",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KØEN I SUEZ",
+                    "undertittel": "Mars 2021",
+                    "tall": [
+                        { "verdi": 400, "etikett": "skip i kø", "fraBeat": 0, "prefiks": "over" },
+                        { "verdi": 10, "etikett": "milliarder dollar i varer forsinket hvert døgn", "fraBeat": 1, "prefiks": "6 til", "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Ett skip som satt fast. Hele verden merket det.", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Over 400 skip ble liggende i kø på begge sider av kanalen." },
+                { "si": "Analytikere, folk som regner på økonomien, anslo at varer for 6 til 10 milliarder dollar ble forsinket hvert eneste døgn." },
+                { "si": "Ett skip som satt fast i én kanal, og hele verden merket det." }
+            ]
+        },
+        {
+            "id": "wto",
+            "kapittel": "Hvem bestemmer?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Reglene for handelen",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "WTO", "tekst": "Verdens handelsorganisasjon", "fraBeat": 0 },
+                        { "ikon": "haer", "tittel": "164 medlemmer", "tekst": "felles kjøreregler for handel", "fraBeat": 1 },
+                        { "ikon": "penger", "tittel": "Avtaler og toll", "tekst": "toll er en avgift på varer fra andre land", "fraBeat": 2 },
+                        { "ikon": "fabrikk", "tittel": "Kina blir med, 2001", "tekst": "handelen skjøt fart", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Hvem bestemmer over all denne handelen? Mye styres av WTO, Verdens handelsorganisasjon." },
+                { "si": "WTO arbeider for felles kjøreregler for handel mellom land. Organisasjonen har 164 medlemmer." },
+                { "si": "I tillegg lager land handelsavtaler med hverandre. Og de kan sette opp toll, en avgift på varer fra andre land." },
+                { "si": "Handelen skjøt fart da store land ble knyttet tettere til systemet. Kina ble medlem i 2001." }
+            ]
+        },
+        {
+            "id": "press",
+            "kapittel": "Maskinen under press",
+            "visual": { "type": "GlobalHandelMaskin", "props": { "modus": "press" } },
+            "replikker": [
+                { "si": "Men nå knirker det i maskinen." },
+                { "si": "USA og Kina har en handelskrig. I tillegg kom Brexit, og sanksjoner mot Russland. Sanksjoner er straffetiltak som begrenser eller stopper handel.", "uttale": "USA og Kina har en handelskrig. I tillegg kom Breksit, og sanksjoner mot Russland. Sanksjoner er straffetiltak som begrenser eller stopper handel." },
+                { "si": "Pandemien viste hvor sårbare de lange forsyningskjedene er. En forsyningskjede er hele reisen en vare gjør, fra råvare til butikk." },
+                { "si": "Krigen i Ukraina kuttet mye av gassen som Europa fikk. Og land kjemper om halvledere, de små brikkene i mobiler og datamaskiner." },
+                { "si": "Derfor vil mange land lage mer hjemme igjen. Det kalles deglobalisering, eller reshoring.", "uttale": "Derfor vil mange land lage mer hjemme igjen. Det kalles deglobalisering, eller ri-sjåring." }
+            ]
+        },
+        {
+            "id": "norge",
+            "lyd": "hav",
+            "kapittel": "Norge",
+            "visual": { "type": "GlobalHandelKart", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Og hvor passer Norge inn i maskinen? Vi er et lite land, men langt fra uviktig." },
+                { "si": "Norge er en av verdens største eksportører av naturgass. Å eksportere betyr å selge varer til utlandet." },
+                { "si": "Av all gassen i Europa som ligger under bakken og kan hentes opp, er 57 prosent norsk." },
+                { "si": "Vi er også en stor sjøfartsnasjon, med mange skip som frakter varer. Og i 2025 solgte Norge sjømat for 181,5 milliarder kroner." },
+                { "si": "Fisken og sjømaten gikk til over 150 land." }
+            ]
+        },
+        {
+            "id": "sarbar",
+            "lyd": "stille",
+            "visual": { "type": "GlobalHandelKart", "props": { "modus": "sarbar" } },
+            "replikker": [
+                { "si": "Norge har en liten og åpen økonomi. Vi er svært avhengige av å selge råvarer til utlandet." },
+                { "si": "Uten olje og gass ville vi solgt varer for mindre penger enn vi kjøper varer for. Det kalles underskudd på varehandelen." },
+                { "si": "Og oljeprisen kan svinge mye over tid." },
+                { "si": "Derfor merker vi det godt her hjemme når prisene faller ute i verden." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Den siste tingen du kjøpte,", "fraBeat": 0 },
+                        { "tekst": "var en del av en enorm maskin.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Når land bytter det de er best til,", "fraBeat": 1 },
+                        { "tekst": "kan alle få mer.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Men ett skip som sitter fast", "fraBeat": 2 },
+                        { "tekst": "kan forsinke varer over hele verden.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Neste gang du holder en ting:", "fraBeat": 3 },
+                        { "tekst": "Hvor har den vært?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Den siste tingen du kjøpte, var en liten del av en enorm maskin." },
+                { "si": "Maskinen kan gjøre oss rikere, fordi land kan bytte det de er best til." },
+                { "si": "Men den gjør oss også sårbare. Ett skip som sitter fast, kan forsinke varer over hele verden." },
+                { "si": "Så neste gang du holder en t-skjorte eller en mobil, kan du spørre: Hvor har den vært?" }
+            ]
+        }
+    ]
+}
