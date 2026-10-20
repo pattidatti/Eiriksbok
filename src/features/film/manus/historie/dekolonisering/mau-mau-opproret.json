@@ -1,0 +1,424 @@
+{
+    "id": "mau-mau-opproret",
+    "tittel": "Mau Mau-opprøret: Kampen om jorda i Kenya",
+    "kilde": "/historie/dekolonisering/mau-mau-opproret",
+    "utenforArtikkel": [
+        {
+            "tall": 115,
+            "begrunnelse": "Målestokk i prikkfeltet: én prikk er rundt 100 mennesker, så 11 503 drepte opprørere blir 115 prikker. Regnet ut fra artikkelen."
+        },
+        {
+            "tall": 230,
+            "begrunnelse": "Målestokk i prikkfeltet: dobbelt så mange som 115 prikker, fordi mange historikere mener tallet trolig er dobbelt så høyt. Regnet ut fra artikkelen."
+        },
+        {
+            "tall": 231,
+            "begrunnelse": "Målestokk i prikkfeltet: 230 prikker for opprørerne (anslaget) pluss én prikk for de rundt 100 europeerne og asiatene."
+        },
+        {
+            "tall": 116,
+            "begrunnelse": "Målestokk i prikkfeltet: 115 prikker for opprørerne pluss én prikk for de rundt 100 europeerne og asiatene."
+        }
+    ],
+    "vurdering": { "dato": "2026-10-20", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "natt",
+            "lyd": "vind",
+            "kapittel": "Natten i skogen",
+            "visual": { "type": "MauMauLandskap", "props": { "modus": "skog" } },
+            "replikker": [
+                { "si": "Det er natt i skogen på skråningene av Mount Kenya." },
+                {
+                    "si": "En ung mann har nettopp tatt en ed. Han har lovet å kjempe til jorda er tilbake hos folket hans."
+                },
+                { "si": "Han vet at hvis britene tar ham, kan han bli hengt." },
+                { "si": "Og han er ikke alene. Han er en av mange tusen." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MAU MAU",
+                    "undertittel": "Kampen om jorda i Kenya, 1952-1960",
+                    "sporsmal": { "tekst": "Hvorfor kom opprøret, og hvem betalte prisen?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Mau Mau-opprøret." },
+                {
+                    "si": "Det var en væpnet kamp mot kolonistyret, altså britene som styrte Kenya, i Øst-Afrika. Den startet i 1952."
+                },
+                {
+                    "si": "Vi skal finne ut hvorfor opprøret kom, og hvordan britene slo det ned. Og hvorfor de mer enn 60 år senere måtte betale erstatning, altså penger for skaden, til ofrene."
+                }
+            ]
+        },
+        {
+            "id": "navn",
+            "visual": { "type": "MauMauTavle", "props": { "modus": "navn" } },
+            "replikker": [
+                { "si": "Britene kalte kjemperne Mau Mau." },
+                {
+                    "si": "Selv kalte de seg Kenya Land and Freedom Army. Det betyr Kenyas land- og frihetshær."
+                },
+                {
+                    "si": "Allerede navnet forteller hva kampen handlet om: jord og frihet. De fleste som kjempet, var kikuyuer, et av folkene i Kenya."
+                }
+            ]
+        },
+        {
+            "id": "afrika",
+            "kapittel": "Et land fullt av nybyggere",
+            "visual": { "type": "MauMauKart", "props": { "modus": "afrika" } },
+            "replikker": [
+                {
+                    "si": "Vi spoler tilbake. På Berlin-konferansen i 1884 og 1885 forhandlet europeiske stormakter om hvem som skulle få Øst-Afrika."
+                },
+                { "si": "Kenya havnet hos britene. Landet ble en britisk koloni." },
+                { "si": "Fra 1903 kom europeiske nybyggere til Kenya i stort antall." },
+                { "si": "De ville ha den beste jorda: det fruktbare høylandet." }
+            ]
+        },
+        {
+            "id": "jord",
+            "lyd": "vind",
+            "visual": { "type": "MauMauLandskap", "props": { "modus": "jord" } },
+            "replikker": [
+                { "si": "I 1915 kom en lov som tok fra afrikanerne de siste rettighetene til jorda." },
+                {
+                    "si": "Mange kikuyuer måtte flytte inn i reservater. Det er områder som var satt av til afrikanere."
+                },
+                {
+                    "si": "Se på forskjellen. Rundt 3000 europeiske familier eide mer jord enn den ene millionen kikuyuer i reservatene til sammen."
+                },
+                {
+                    "si": "Hele økonomien i kolonien var bygd rundt de store gårdene til de hvite nybyggerne."
+                }
+            ]
+        },
+        {
+            "id": "veier",
+            "lyd": "stille",
+            "kapittel": "De fredelige veiene",
+            "visual": { "type": "MauMauTavle", "props": { "modus": "veier" } },
+            "replikker": [
+                { "si": "Kenyanerne prøvde først å få endringer på fredelig vis." },
+                {
+                    "si": "I 1921 startet de en forening for å klage på kolonistyret. Året etter ble foreningen forbudt."
+                },
+                {
+                    "si": "Under andre verdenskrig kjempet mange afrikanere for Storbritannia. De håpet å få jord etterpå. Det fikk de ikke."
+                },
+                {
+                    "si": "Partiet KAU, ledet av Jomo Kenyatta, ville gi afrikanere mer makt uten vold. Men mange mistet tålmodigheten.",
+                    "uttale": "Partiet K A U, ledet av Jomo Kenyatta, ville gi afrikanere mer makt uten vold. Men mange mistet tålmodigheten."
+                }
+            ]
+        },
+        {
+            "id": "ed",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Tenk deg 100 voksne kikuyuer",
+                            "restEtikett": "voksne kikuyuer",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 90,
+                            "farge": "#b45309",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Rundt 90 av 100 hadde tatt eden",
+                            "fargeEtikett": "hadde tatt eden",
+                            "restEtikett": "ikke"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I stedet begynte folk å samles i hemmelighet. De avla eder, altså høytidelige løfter om å holde sammen og kjempe."
+                },
+                {
+                    "si": "Tenk deg 100 voksne kikuyuer. I midten av 1952 hadde rundt 90 av dem tatt en slik ed."
+                }
+            ]
+        },
+        {
+            "id": "unntak",
+            "lyd": "rom",
+            "kapittel": "Unntakstilstand",
+            "visual": { "type": "MauMauTavle", "props": { "modus": "krig" } },
+            "replikker": [
+                {
+                    "si": "I oktober 1952 ble høvdingen Waruhiu drept. Han samarbeidet med britene."
+                },
+                {
+                    "si": "To uker senere erklærte den britiske guvernøren unntakstilstand. Det betyr at vanlige lover settes til side."
+                },
+                {
+                    "si": "Nå kunne politiet arrestere folk, sperre dem inne og flytte dem med makt, uten rettssak."
+                },
+                {
+                    "si": "Britene passet på å ikke kalle det en krig. I en krig måtte de nemlig følge de internasjonale reglene for hvordan fanger skal behandles."
+                },
+                { "si": "I stedet kalte de det en nødsituasjon. Og fiendene kalte de terrorister." }
+            ]
+        },
+        {
+            "id": "kenyatta",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Jomo Kenyatta",
+                    "undertittel": "Arrestert i 1952",
+                    "tall": [
+                        { "verdi": 7, "etikett": "års straffarbeid", "fraBeat": 1, "omtrent": false, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Vitnene i rettssaken var betalt.", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Jomo Kenyatta ble arrestert sammen med mange andre ledere i KAU. Ifølge Store norske leksikon hadde han ingen kobling til opprøret.",
+                    "uttale": "Jomo Kenyatta ble arrestert sammen med mange andre ledere i K A U. Ifølge Store norske leksikon hadde han ingen kobling til opprøret."
+                },
+                { "si": "Likevel ble han dømt til sju års straffarbeid, altså tvangsarbeid som straff." },
+                { "si": "Og vitnene i rettssaken hadde fått betalt." }
+            ]
+        },
+        {
+            "id": "skogen",
+            "lyd": "vind",
+            "kapittel": "Krigen i skogen",
+            "visual": { "type": "MauMauKart", "props": { "modus": "skogen" } },
+            "replikker": [
+                {
+                    "si": "Mange av opprørerne flyktet til de tette skogene rundt Mount Kenya og fjellområdet Nyandarua."
+                },
+                {
+                    "si": "I midten av 1954 var det mellom 18 000 og 24 000 kjempere der. Omtrent én av ti var kvinner."
+                },
+                { "si": "En av de viktigste lederne var Dedan Kimathi." },
+                {
+                    "si": "Opprøret var også en borgerkrig blant kikuyuene. Noen kikuyuer var lojale mot britene og fikk våpen av dem."
+                },
+                {
+                    "si": "Opprørerne drepte rundt 2000 afrikanere som de mente sto på britenes side. Det verste angrepet var i landsbyen Lari i mars 1953. Der ble minst 97 mennesker drept."
+                }
+            ]
+        },
+        {
+            "id": "leirer",
+            "lyd": "stille",
+            "kapittel": "Leirer og piggtråd",
+            "visual": { "type": "MauMauKart", "props": { "modus": "leirer" } },
+            "replikker": [
+                { "si": "Britene slo hardt tilbake." },
+                {
+                    "si": "I 1954 stengte de de afrikanske bydelene i Nairobi i fire uker for å lete etter opprørere."
+                },
+                { "si": "Rundt 25 000 menn ble sendt til fangeleirer." },
+                {
+                    "si": "Gjennom 1950-tallet satt rundt 150 000 mennesker i slike leirer. De fleste fikk aldri noen rettssak."
+                }
+            ]
+        },
+        {
+            "id": "landsby",
+            "lyd": "vind",
+            "visual": { "type": "MauMauLandskap", "props": { "modus": "landsby" } },
+            "replikker": [
+                {
+                    "si": "På landsbygda ble rundt 1,2 millioner kikuyuer tvunget til å flytte inn i rundt 850 nye landsbyer.",
+                    "uttale": "På landsbygda ble rundt en komma to millioner kikuyuer tvunget til å flytte inn i rundt åtte hundre og femti nye landsbyer."
+                },
+                { "si": "Rundt landsbyene sto det piggtrådgjerder og vakttårn." },
+                {
+                    "si": "Britene ville hindre at folk ga mat og våpen til kjemperne i skogen."
+                },
+                {
+                    "si": "Historikeren Caroline Elkins har gått gjennom kildene fra leirene. Hun fant tortur, seksuell vold, og fanger som ble tvunget til å bli kristne."
+                },
+                {
+                    "si": "Over 1000 mennesker ble hengt etter rettssaker der de ikke kunne anke. Det betyr at de ikke kunne be om en ny dom."
+                }
+            ]
+        },
+        {
+            "id": "dode",
+            "lyd": "stille",
+            "kapittel": "Hvor mange døde?",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1,
+                            "farget": 1,
+                            "farge": "#2563eb",
+                            "tittel": "Rundt 100 europeere og asiater døde",
+                            "fargeEtikett": "europeere og asiater",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 116,
+                            "farget": 1,
+                            "farge": "#2563eb",
+                            "restFarge": "#dc2626",
+                            "tittel": "11 503 opprørere drept, ifølge britene",
+                            "fargeEtikett": "europeere og asiater",
+                            "restEtikett": "drepte opprørere",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 231,
+                            "farget": 1,
+                            "farge": "#2563eb",
+                            "restFarge": "#dc2626",
+                            "tittel": "Trolig dobbelt så mange, mener mange historikere",
+                            "fargeEtikett": "europeere og asiater",
+                            "restEtikett": "drepte opprørere, trolig tall",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvem var mest i fare? Gjennom hele krigen døde det rundt 100 europeere og asiater. Hver prikk her er rundt 100 mennesker."
+                },
+                {
+                    "si": "Ifølge de offisielle britiske tallene ble 11 503 opprørere drept.",
+                    "uttale": "Ifølge de offisielle britiske tallene ble elleve tusen fem hundre og tre opprørere drept."
+                },
+                {
+                    "si": "Mange historikere mener at det riktige tallet trolig er dobbelt så høyt. Og ingen vet hvor mange som døde av sult, sykdom og mishandling i leirene og landsbyene."
+                }
+            ]
+        },
+        {
+            "id": "hola",
+            "lyd": "rom",
+            "kapittel": "Hola",
+            "visual": { "type": "MauMauKart", "props": { "modus": "hola" } },
+            "replikker": [
+                {
+                    "si": "I slutten av 1956 ble Dedan Kimathi tatt til fange. Da var den væpnede kampen slått ned. Men leirene fantes fortsatt."
+                },
+                {
+                    "si": "Den tredje mars 1959, i leiren Hola, skulle vaktene tvinge fangene til tungt arbeid. Elleve fanger ble slått i hjel."
+                },
+                {
+                    "si": "Nyheten nådde det britiske parlamentet. Ministeren for koloniene kalte drapene tragiske og sjokkerende."
+                },
+                {
+                    "si": "Politikeren Enoch Powell sa at Storbritannia ikke kunne ha lavere standarder i Afrika enn hjemme. Mange historikere mener Hola ble et vendepunkt."
+                }
+            ]
+        },
+        {
+            "id": "fri",
+            "kapittel": "Fra fange til president",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "FANGE OG PRESIDENT",
+                    "undertittel": "Kenya, 1960-1963",
+                    "tall": [
+                        { "verdi": 7, "etikett": "års straffarbeid, så president", "fraBeat": 2, "omtrent": false, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Men hvem skulle eie jorda?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I januar 1960 ble unntakstilstanden opphevet. Samme år gikk britene med på å forhandle."
+                },
+                { "si": "I 1963 ble Kenya selvstendig." },
+                {
+                    "si": "Og landets første president? Det ble Jomo Kenyatta. Mannen britene hadde dømt til straffarbeid."
+                },
+                {
+                    "si": "Men jordspørsmålet ble ikke løst. Mange av konfliktene om jord fra kolonitida finnes fortsatt i Kenya i dag."
+                }
+            ]
+        },
+        {
+            "id": "retten",
+            "lyd": "rom",
+            "kapittel": "Ofrene går til retten",
+            "visual": { "type": "MauMauTavle", "props": { "modus": "unnskyldning" } },
+            "replikker": [
+                {
+                    "si": "Lenge skjedde det ingenting. Så gikk fire kenyanere til sak mot den britiske staten i London, på vegne av flere tusen andre."
+                },
+                {
+                    "si": "I juni 2013 sa den britiske utenriksministeren at kenyanere var blitt utsatt for tortur og mishandling. Regjeringen beklaget oppriktig."
+                },
+                {
+                    "si": "Storbritannia betalte til sammen 19,9 millioner pund, fordelt på 5228 personer.",
+                    "uttale": "Storbritannia betalte til sammen nitten komma ni millioner pund, fordelt på fem tusen to hundre og tjueåtte personer."
+                },
+                {
+                    "si": "Men regjeringen nektet for at den var juridisk ansvarlig, altså skyldig etter loven. Er det en ekte unnskyldning?"
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Nødsituasjon og terrorister,", "fraBeat": 0 },
+                        { "tekst": "eller en hær for land og frihet?", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Begge sider brukte vold.", "fraBeat": 1 },
+                        {
+                            "tekst": "Bare den ene hadde tatt jorda fra den andre.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Det som aldri ble godtatt hjemme,", "fraBeat": 2 },
+                        { "tekst": "skjedde i koloniene.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Sannheten kan komme fram", "fraBeat": 3 },
+                        { "tekst": "lenge etterpå.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Historien om Mau Mau viser at ordene vi bruker, er viktige. Var det en nødsituasjon med terrorister, eller en hær for land og frihet?"
+                },
+                {
+                    "si": "Begge sider brukte vold. Men bare den ene siden hadde tatt jorda fra den andre."
+                },
+                {
+                    "si": "Den viser også at et imperium kunne gjøre ting i koloniene som aldri ville blitt godtatt hjemme."
+                },
+                {
+                    "si": "Og den viser at sannheten kan komme fram lenge etterpå, når ofrene får fortelle og historikerne leser kildene på nytt."
+                }
+            ]
+        }
+    ]
+}
