@@ -39,6 +39,7 @@ const AtlasPage = React.lazy(routeFactories.AtlasPage);
 const ChronoGamePage = React.lazy(routeFactories.ChronoGamePage);
 const KunnskapsloypaPage = React.lazy(routeFactories.KunnskapsloypaPage);
 const KjedereaksjonenPage = React.lazy(routeFactories.KjedereaksjonenPage);
+const HundenSpisteLeksaPage = React.lazy(routeFactories.HundenSpisteLeksaPage);
 const RhetoricGamePage = React.lazy(routeFactories.RhetoricGamePage);
 const HangmanPage = React.lazy(routeFactories.HangmanPage);
 const CrosswordPage = React.lazy(routeFactories.CrosswordPage);
@@ -144,6 +145,7 @@ const router = createBrowserRouter([
       { path: "oving/chrono", element: <ChronoGamePage /> },
       { path: "oving/loype", element: <KunnskapsloypaPage /> },
       { path: "oving/kjedereaksjonen", element: <KjedereaksjonenPage /> },
+      { path: "oving/hunden-spiste-leksa", element: <HundenSpisteLeksaPage /> },
       { path: "oving/retorikk", element: <RhetoricGamePage /> },
       { path: "oving/hengemann", element: <HangmanPage /> },
       { path: "oving/kryssord", element: <CrosswordPage /> },

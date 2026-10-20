@@ -37,6 +37,7 @@ export const routeFactories: Record<string, PageFactory> = {
     ChronoGamePage: () => import('./pages/ChronoGamePage'),
     KunnskapsloypaPage: () => import('./pages/KunnskapsloypaPage'),
     KjedereaksjonenPage: () => import('./pages/KjedereaksjonenPage'),
+    HundenSpisteLeksaPage: () => import('./pages/HundenSpisteLeksaPage'),
     StatsPage: () => import('./pages/admin/StatsPage').then(module => ({ default: module.StatsPage })),
     AdminDashboard: () => import('./pages/admin/AdminDashboard').then(module => ({ default: module.AdminDashboard })),
     ContentInventory: () => import('./pages/admin/ContentInventory').then(module => ({ default: module.ContentInventory })),

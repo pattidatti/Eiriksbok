@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor, Mic, Clapperboard } from 'lucide-react';
+import { Brain, HelpCircle, Clock, MessageCircle, Gamepad2, Plane, History, Users, Search, Compass, Hourglass, Castle, Swords, Pen, Rocket, Landmark, GraduationCap, Globe2, Map, Sparkles, Mountain, Link2, Grid3x3, Wallet, Anchor, Mic, Clapperboard, Dog } from 'lucide-react';
 import { DailyReviewCard } from '../components/review/DailyReviewCard';
 
 export const PracticePage: React.FC = () => {
@@ -84,6 +84,14 @@ export const PracticePage: React.FC = () => {
             icon: Link2,
             color: 'bg-amber-500',
             link: '/oving/kjedereaksjonen'
+        },
+        {
+            id: 'hunden-spiste-leksa',
+            title: 'Hunden spiste leksa',
+            description: 'Finn på unnskyldninger, kjøp medskyldige og klatr fra klasserommet til universet. Men når læreren spør, lønner det seg å faktisk ha lest.',
+            icon: Dog,
+            color: 'bg-rose-600',
+            link: '/oving/hunden-spiste-leksa'
         },
         {
             id: 'historiske-spill',
