@@ -4,34 +4,27 @@ import {
     Coins,
     DoorClosed,
     DoorOpen,
-    EyeOff,
     Factory,
     FlaskConical,
-    Hourglass,
     Landmark,
     Lock,
     Rat,
     Shield,
     Store,
-    TrendingUp,
     Wheat,
     type LucideIcon,
 } from 'lucide-react';
 import type { VisualProps } from '../../types';
-import { TelleTall } from '../shared';
 
 /**
  * Store, enkle tavler til Deng-filmen.
  * - «katt»: svart katt, hvit katt og musa.
  * - «fire»: de fire moderniseringene.
- * - «bonde»: høsten går til staten, så kan bonden selge en del selv.
  * - «navn»: partiet styrer politikken, markedet styrer butikkene.
- * - «vekst»: hykleri eller det som virker, ni prosent i året, nest størst.
  * - «frihet»: to dører. Den økonomiske går opp, den politiske er låst.
- * - «xi»: Xi Jinping bygger videre på modellen.
  */
 
-type Modus = 'katt' | 'fire' | 'bonde' | 'navn' | 'vekst' | 'frihet' | 'xi';
+type Modus = 'katt' | 'fire' | 'navn' | 'frihet';
 
 const OVERSKRIFT: Record<Modus, string[]> = {
     katt: ['«Bare den fanger mus»', 'Fargen: ideologien', 'Musa: resultatet'],
@@ -41,16 +34,13 @@ const OVERSKRIFT: Record<Modus, string[]> = {
         'Forsvar og vitenskap',
         'Hent kunnskap og penger fra verden',
     ],
-    bonde: ['Før: staten bestemmer', 'Nå: selg en del selv', 'Mer mat, egne penger'],
     navn: [
         'Kommunisme + marked = ?',
         'Ikke kapitalisme, sa Deng',
         '1993: sosialistisk markedsøkonomi',
         'To deler av samfunnet, to sjefer',
     ],
-    vekst: ['Hykleri eller det som virker?', 'Vekst siden 1978', 'Verdens nest største økonomi'],
     frihet: ['Dengs grense', 'Økonomisk frihet: ja', 'Politisk frihet: aldri'],
-    xi: ['Xi Jinping', 'Dengs modell', 'En hardere utgave', '2018: grensen forsvinner'],
 };
 
 export function DengTavle({ beat, props }: VisualProps<{ modus?: Modus }>) {
@@ -73,11 +63,8 @@ export function DengTavle({ beat, props }: VisualProps<{ modus?: Modus }>) {
             <div className="absolute inset-x-0 top-[20%] bottom-[6%] flex items-center justify-center px-[5%]">
                 {modus === 'katt' && <Katt beat={beat} />}
                 {modus === 'fire' && <Fire beat={beat} />}
-                {modus === 'bonde' && <Bonde beat={beat} />}
                 {modus === 'navn' && <Navn beat={beat} />}
-                {modus === 'vekst' && <Vekst beat={beat} />}
                 {modus === 'frihet' && <Frihet beat={beat} />}
-                {modus === 'xi' && <Xi beat={beat} />}
             </div>
         </div>
     );
@@ -221,83 +208,6 @@ function Fire({ beat }: { beat: number }) {
     );
 }
 
-function Bonde({ beat }: { beat: number }) {
-    const selv = beat >= 1;
-    const BUNTER = 10;
-    const tilBonde = 4;
-    return (
-        <div className="w-full flex items-center justify-center gap-10">
-            <div className="flex flex-col items-center gap-3">
-                <div className="w-64 h-48 rounded-3xl bg-red-700 text-white flex flex-col items-center justify-center shadow-xl">
-                    <Landmark className="w-20 h-20" />
-                    <span className="font-display font-black text-3xl mt-2">Staten</span>
-                </div>
-                <div className="grid grid-cols-5 gap-2 min-h-[7rem]">
-                    {Array.from({ length: BUNTER }, (_, i) => {
-                        const tilStaten = !selv || i < BUNTER - tilBonde;
-                        return (
-                            <motion.div
-                                key={i}
-                                animate={{ opacity: tilStaten ? 1 : 0, scale: tilStaten ? 1 : 0.4 }}
-                                transition={{ delay: 0.3 + i * 0.05 }}
-                            >
-                                <Wheat className="w-12 h-12 text-amber-600" strokeWidth={2.4} />
-                            </motion.div>
-                        );
-                    })}
-                </div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-                <span className="text-2xl font-bold text-slate-500">høsten</span>
-                <span className="text-6xl font-black text-slate-400">←</span>
-                <motion.span
-                    animate={{ opacity: selv ? 1 : 0 }}
-                    className="text-6xl font-black text-teal-600"
-                >
-                    →
-                </motion.span>
-                <motion.span
-                    animate={{ opacity: selv ? 1 : 0 }}
-                    className="text-2xl font-bold text-teal-700"
-                >
-                    en del
-                </motion.span>
-            </div>
-            <motion.div
-                animate={{ opacity: selv ? 1 : 0.25 }}
-                transition={{ duration: 0.8 }}
-                className="flex flex-col items-center gap-3"
-            >
-                <div className="w-64 h-48 rounded-3xl bg-teal-600 text-white flex flex-col items-center justify-center shadow-xl">
-                    <Store className="w-20 h-20" />
-                    <span className="font-display font-black text-3xl mt-2">Selges selv</span>
-                </div>
-                <div className="flex gap-2 min-h-[7rem] items-start">
-                    {Array.from({ length: tilBonde }, (_, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: -60 }}
-                            animate={{ opacity: selv ? 1 : 0, x: selv ? 0 : -60 }}
-                            transition={{ delay: 0.6 + i * 0.15 }}
-                        >
-                            {beat >= 2 ? (
-                                <Coins className="w-12 h-12 text-amber-500" strokeWidth={2.4} />
-                            ) : (
-                                <Wheat className="w-12 h-12 text-amber-600" strokeWidth={2.4} />
-                            )}
-                        </motion.div>
-                    ))}
-                </div>
-                <Inn vis={beat >= 2} forsinkelse={0.8}>
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white shadow text-2xl font-black text-teal-700">
-                        <TrendingUp className="w-8 h-8" /> Matproduksjonen steg
-                    </div>
-                </Inn>
-            </motion.div>
-        </div>
-    );
-}
-
 function Navn({ beat }: { beat: number }) {
     return (
         <div className="w-full flex flex-col items-center gap-8">
@@ -380,81 +290,6 @@ function Navn({ beat }: { beat: number }) {
     );
 }
 
-function Vekst({ beat }: { beat: number }) {
-    if (beat === 0) {
-        return (
-            <div className="flex gap-8 items-center">
-                <Inn forsinkelse={0.3}>
-                    <div className="w-[22rem] p-6 rounded-3xl bg-white shadow-xl text-center">
-                        <div className="text-2xl font-semibold text-slate-500">Kritikerne</div>
-                        <div className="font-display font-black text-5xl text-red-700 mt-2">
-                            Hykleri
-                        </div>
-                        <div className="text-2xl text-slate-600 mt-2">
-                            si én ting, gjør noe annet
-                        </div>
-                    </div>
-                </Inn>
-                <span className="text-4xl font-black text-slate-400">eller</span>
-                <Inn forsinkelse={1.6}>
-                    <div className="w-[22rem] p-6 rounded-3xl bg-white shadow-xl text-center">
-                        <div className="text-2xl font-semibold text-slate-500">Tilhengerne</div>
-                        <div className="font-display font-black text-5xl text-teal-700 mt-2">
-                            Det virker
-                        </div>
-                        <div className="text-2xl text-slate-600 mt-2">det eneste som virket</div>
-                    </div>
-                </Inn>
-            </div>
-        );
-    }
-    if (beat === 1) {
-        return (
-            <Inn forsinkelse={0.2}>
-                <div className="flex flex-col items-center gap-3">
-                    <TrendingUp className="w-28 h-28 text-teal-600" />
-                    <div className="font-display font-black text-[9rem] leading-none text-slate-900 tabular-nums">
-                        over <TelleTall verdi={9} varighet={1.6} forsinkelse={0.5} /> %
-                    </div>
-                    <div className="text-3xl font-semibold text-slate-600">
-                        vekst i året i snitt, siden 1978
-                    </div>
-                </div>
-            </Inn>
-        );
-    }
-    return (
-        <div className="flex items-end gap-6">
-            {[
-                { plass: 2, h: 'h-56', farge: 'bg-red-700', navn: 'Kina' },
-                { plass: 1, h: 'h-72', farge: 'bg-slate-300', navn: '' },
-                { plass: 3, h: 'h-40', farge: 'bg-slate-300', navn: '' },
-            ].map((p, i) => (
-                <motion.div
-                    key={p.plass}
-                    initial={{ opacity: 0, y: 60 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 + i * 0.3 }}
-                    className="flex flex-col items-center gap-3"
-                >
-                    <span className="font-display font-black text-4xl text-slate-900 min-h-[3rem]">
-                        {p.navn}
-                    </span>
-                    <div
-                        className={`w-52 ${p.h} ${p.farge} rounded-t-2xl flex items-start justify-center pt-4 shadow-xl`}
-                    >
-                        <span
-                            className={`font-display font-black text-6xl ${p.plass === 2 ? 'text-white' : 'text-slate-500'}`}
-                        >
-                            {p.plass}
-                        </span>
-                    </div>
-                </motion.div>
-            ))}
-        </div>
-    );
-}
-
 function Frihet({ beat }: { beat: number }) {
     return (
         <div className="flex gap-16 items-stretch">
@@ -506,83 +341,6 @@ function Frihet({ beat }: { beat: number }) {
                     </span>
                 </Inn>
             </motion.div>
-        </div>
-    );
-}
-
-function Xi({ beat }: { beat: number }) {
-    const pilarer = ['Sterk vekst', 'Sterk stat', 'Lite rom for uenighet'];
-    const hardere: { ikon: LucideIcon; tekst: string }[] = [
-        { ikon: Landmark, tekst: 'Mer makt samlet hos Xi' },
-        { ikon: EyeOff, tekst: 'Strengere sensur av internett og medier' },
-    ];
-    return (
-        <div className="w-full flex flex-col items-center gap-6">
-            <Inn forsinkelse={0.2}>
-                <div className="px-8 py-3 rounded-2xl bg-red-700 text-white shadow-xl text-center">
-                    <div className="font-display font-black text-4xl">Xi Jinping</div>
-                    <div className="text-2xl font-semibold text-red-100">leder Kina i dag</div>
-                </div>
-            </Inn>
-            {beat === 0 && (
-                <Inn forsinkelse={1}>
-                    <div className="flex items-center gap-4 text-3xl font-black">
-                        <span className="text-slate-500">bygger videre på</span>
-                        <span className="px-5 py-2 rounded-2xl bg-white shadow-xl text-slate-900">
-                            Dengs modell
-                        </span>
-                    </div>
-                </Inn>
-            )}
-            {beat === 1 && (
-                <div className="flex gap-6">
-                    {pilarer.map((p, i) => (
-                        <Inn key={p} vis={beat >= 1} forsinkelse={0.3 + i * 0.6}>
-                            <div className="w-72 px-5 py-6 rounded-2xl bg-white shadow-xl text-center font-display font-black text-3xl text-slate-800">
-                                {p}
-                            </div>
-                        </Inn>
-                    ))}
-                </div>
-            )}
-            {beat === 2 && (
-                <div className="flex gap-6">
-                    {hardere.map((h, i) => (
-                        <Inn key={h.tekst} forsinkelse={0.3 + i * 1.2}>
-                            <div className="w-[26rem] px-5 py-5 rounded-2xl bg-slate-900 text-white shadow-xl flex items-center gap-4">
-                                <h.ikon className="w-14 h-14 shrink-0 text-red-400" />
-                                <span className="font-display font-black text-3xl">{h.tekst}</span>
-                            </div>
-                        </Inn>
-                    ))}
-                </div>
-            )}
-            {beat >= 3 && (
-                <Inn forsinkelse={0.3}>
-                    <div className="px-8 py-5 rounded-3xl bg-white shadow-xl flex items-center gap-6">
-                        <div className="relative">
-                            <Hourglass className="w-20 h-20 text-slate-700" />
-                            <motion.div
-                                initial={{ scaleX: 0 }}
-                                animate={{ scaleX: 1 }}
-                                transition={{ delay: 1, duration: 0.5 }}
-                                className="absolute left-[-15%] right-[-15%] top-1/2 h-2.5 bg-red-600 origin-left rotate-[-30deg] rounded"
-                            />
-                        </div>
-                        <div>
-                            <div className="text-2xl font-semibold text-slate-500">
-                                Grensen for hvor lenge
-                            </div>
-                            <div className="font-display font-black text-3xl text-slate-900">
-                                en president kan sitte
-                            </div>
-                            <div className="font-display font-black text-3xl text-red-700">
-                                er borte
-                            </div>
-                        </div>
-                    </div>
-                </Inn>
-            )}
         </div>
     );
 }
