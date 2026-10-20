@@ -26,6 +26,7 @@ export const FULL_WIDTH_PATHS = [
     '/musikk/gitarstudio',
     '/himmel',
     '/oving/kjedereaksjonen',
+    '/oving/hunden-spiste-leksa',
     '/oving/kryssord',
     '/oving/pengeliv',
     '/oving/auditoriet',
