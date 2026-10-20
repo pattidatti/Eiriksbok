@@ -1,5 +1,5 @@
 {
-  "buildId": 159551170896810,
+  "buildId": 84135395483757,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2170,6 +2170,9 @@
     ],
     "latin-amerika": [
       "content/historie/dekolonisering/latin-amerika.json"
+    ],
+    "mau-mau-opproret": [
+      "content/historie/dekolonisering/mau-mau-opproret.json"
     ],
     "midtosten-mandater": [
       "content/historie/dekolonisering/midtosten-mandater.json"
@@ -5616,6 +5619,7 @@
     "historie/dekolonisering/jim-crow-lovene": "content/historie/dekolonisering/jim-crow-lovene.json",
     "historie/dekolonisering/kongo": "content/historie/dekolonisering/kongo.json",
     "historie/dekolonisering/latin-amerika": "content/historie/dekolonisering/latin-amerika.json",
+    "historie/dekolonisering/mau-mau-opproret": "content/historie/dekolonisering/mau-mau-opproret.json",
     "historie/dekolonisering/midtosten-mandater": "content/historie/dekolonisering/midtosten-mandater.json",
     "historie/dekolonisering/nykolonialisme": "content/historie/dekolonisering/nykolonialisme.json",
     "historie/dekolonisering/okonomiske-leiemordere": "content/historie/dekolonisering/okonomiske-leiemordere.json",

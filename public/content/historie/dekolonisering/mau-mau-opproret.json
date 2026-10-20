@@ -1,0 +1,311 @@
+{
+  "id": "mau-mau-opproret",
+  "title": "Mau Mau-opprøret: Kampen om jorda i Kenya",
+  "layout": "rich",
+  "year": "1952-1960",
+  "category": "Afrika",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Rundt 3000 europeiske familier eide mer jord i Kenya enn én million kikuyuer til sammen.",
+    "Fra 1952 kjempet tusenvis av kenyanere mot det britiske kolonistyret, som svarte med fangeleirer, tortur og tvangsflytting.",
+    "I 1963 ble Kenya selvstendig. I 2013 beklaget Storbritannia overgrepene og betalte erstatning."
+  ],
+  "factChecked": "2026-10-20",
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er natt i skogen på skråningene av Mount Kenya. En ung mann har tatt en ed. Han har lovet å kjempe til jorda er tilbake hos folket hans. Han vet at hvis britene tar ham, kan han bli hengt."
+    },
+    {
+      "type": "text",
+      "content": "Han er en av mange tusen. Britene kalte dem Mau Mau. Selv kalte de seg Kenya Land and Freedom Army, altså Kenyas land- og frihetshær (Eriksen, 2024). Allerede navnet viser at dette var en kamp om to ting: jord og frihet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kenyanske frihetskjempere i skogen ved Mount Kenya",
+      "caption": "1950-tallet: Tusenvis av kenyanere gikk til skogene for å kjempe mot det britiske kolonistyret."
+    },
+    {
+      "type": "text",
+      "content": "Mau Mau-opprøret var en væpnet kamp mot det britiske kolonistyret i Kenya. Det startet i 1952. Det var mest kikuyuene, et av folkene i Kenya, som kjempet. I denne artikkelen skal du se hvorfor opprøret kom, hvordan britene slo det ned, og hvorfor Storbritannia mer enn 60 år senere måtte betale erstatning til ofrene."
+    },
+    {
+      "type": "header",
+      "text": "Et land fullt av nybyggere"
+    },
+    {
+      "type": "text",
+      "content": "På Berlin-konferansen i 1884-1885 forhandlet europeiske stormakter om hvem som skulle få Øst-Afrika (South African History Online, 2016). Kenya havnet hos britene. Du kan lese mer om dette i artikkelen om [kappløpet om Afrika](/historie/kolonialisering/kapplopet-om-afrika). Fra 1903 kom europeiske nybyggere til Kenya i stort antall (South African History Online, 2016). De ville ha den beste jorda: det fruktbare høylandet."
+    },
+    {
+      "type": "text",
+      "content": "I 1915 kom en lov som tok fra afrikanerne de siste rettighetene de hadde til jorda (South African History Online, 2016). Mange kikuyuer måtte flytte inn i reservater, altså områder som var satt av til afrikanere."
+    },
+    {
+      "type": "text",
+      "content": "Forskjellen var enorm. Rundt 3000 europeiske familier eide mer jord enn den ene millionen kikuyuer i reservatene til sammen (South African History Online, 2016). Hele koloniens økonomi var bygget rundt de store gårdene til de hvite nybyggerne (Eriksen, 2024)."
+    },
+    {
+      "type": "header",
+      "text": "De fredelige veiene ble stengt"
+    },
+    {
+      "type": "text",
+      "content": "Kenyanerne prøvde først å få endringer på fredelig vis. I 1921 startet de en forening, East African Association, for å klage på kolonistyret. Foreningen ble forbudt året etter (South African History Online, 2016)."
+    },
+    {
+      "type": "text",
+      "content": "Under [andre verdenskrig](/historie/andre-verdenskrig/oversikt) kjempet mange afrikanere for Storbritannia. De håpet å få jord og mer å si når krigen var over. Det fikk de ikke (Eriksen, 2024). I stedet tok hvite nybyggere over enda mer av høylandet. Mange unge kikuyuer var uten arbeid, og prisene steg."
+    },
+    {
+      "type": "text",
+      "content": "Partiet Kenya African Union, forkortet KAU, ble ledet av Jomo Kenyatta. Det ville gi afrikanere mer makt uten vold. Men mange mistet tålmodigheten. De begynte å samles i hemmelighet og avla eder, altså høytidelige løfter om å holde sammen og kjempe. Ifølge South African History Online (2016) hadde rundt 90 prosent av de voksne kikuyuene tatt en slik ed i midten av 1952."
+    },
+    {
+      "type": "component",
+      "name": "VeienTilSkogen",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Unntakstilstand"
+    },
+    {
+      "type": "text",
+      "content": "I oktober 1952 ble høvdingen Waruhiu drept. Han samarbeidet med britene. To uker senere erklærte den britiske guvernøren unntakstilstand (South African History Online, 2016). Unntakstilstand betyr at vanlige lover settes til side. Nå kunne politiet arrestere folk, sperre dem inne og flytte dem med makt, uten rettssak (Eriksen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Britene unngikk med vilje å kalle det en krig. Hvis det var en krig, måtte de følge de internasjonale reglene for hvordan fanger skal behandles (Eriksen, 2024). I stedet kalte de det en «nødsituasjon», og fiendene kalte de terrorister."
+    },
+    {
+      "type": "text",
+      "content": "Jomo Kenyatta ble arrestert sammen med mange andre KAU-ledere. Ifølge Store norske leksikon hadde han ingen kobling til opprøret. Likevel ble han dømt til sju års straffarbeid etter en rettssak der vitnene var betalt (Eriksen, 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Krigen i skogen"
+    },
+    {
+      "type": "text",
+      "content": "Mange av opprørerne flyktet til de tette skogene rundt Mount Kenya og fjellområdet Nyandarua. I midten av 1954 var det mellom 18 000 og 24 000 kjempere der. Omtrent én av ti var kvinner (Eriksen, 2024). Den kjente lederen Dedan Kimathi ble en av de viktigste kommandantene."
+    },
+    {
+      "type": "text",
+      "content": "Opprøret var også en borgerkrig blant kikuyuene. Britene fikk hjelp av kikuyuer som var lojale mot kolonistyret. De fikk våpen og ble lovet slipp for skatt, eller jord og kveg som var tatt fra familiene til opprørerne (Eriksen, 2024). Opprørerne drepte rundt 2000 afrikanere som de mente sto på britenes side (Eriksen, 2024). Det verste angrepet skjedde i landsbyen Lari 26. mars 1953. Der ble minst 97 mennesker drept (South African History Online, 2016)."
+    },
+    {
+      "type": "text",
+      "content": "Vestlige aviser skrev lite om volden fra kolonimakten (Eriksen, 2024). Men gjennom hele krigen døde det rundt 100 europeere og asiater, og bare 32 av dem var sivile (Eriksen, 2024). Dette er viktig å huske når vi tenker på hvem som var mest i fare."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Mau Mau-opprøret i årstall",
+        "content": "1903: Europeiske nybyggere kommer til Kenya i stort antall.\n1915: En ny lov tar fra afrikanerne de siste rettighetene til jorda.\n1952: Høvdingen Waruhiu blir drept, og britene erklærer unntakstilstand. Kenyatta blir arrestert.\n1953: Massakren i Lari.\n1956: Dedan Kimathi blir tatt til fange. Den væpnede kampen er slått ned.\n1959: Elleve fanger blir slått i hjel i Hola-leiren.\n1960: Unntakstilstanden blir opphevet.\n1963: Kenya blir selvstendig.\n2013: Storbritannia beklager overgrepene og betaler erstatning."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Leirer og piggtråd"
+    },
+    {
+      "type": "text",
+      "content": "Britene slo hardt tilbake. I 1954 stengte de de afrikanske bydelene i Nairobi i fire uker for å finne opprørere (South African History Online, 2016). Rundt 25 000 menn ble sendt til fangeleirer (Eriksen, 2024). Gjennom 1950-tallet satt rundt 150 000 mennesker i slike leirer. De fleste fikk aldri noen rettssak."
+    },
+    {
+      "type": "text",
+      "content": "På landsbygda ble rundt 1,2 millioner kikuyuer tvunget til å flytte inn i rundt 850 «nye landsbyer». Landsbyene hadde piggtrådgjerder og vakttårn (Eriksen, 2024). Britene ville hindre at folk ga mat og våpen til kjemperne i skogen. Alle kikuyuer måtte også betale en egen skatt som gikk til kolonihæren."
+    },
+    {
+      "type": "text",
+      "content": "Den amerikanske historikeren Caroline Elkins har gått gjennom kildene fra leirene. Hun fant tortur, seksuell vold og at fanger ble tvunget til å bli kristne (Eriksen, 2024). Over 1000 mennesker ble hengt etter rettssaker der de ikke kunne anke, altså ikke kunne be om en ny dom (Eriksen, 2024)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Fangeleir med piggtrådgjerde og vakttårn i Kenya",
+      "caption": "Gjennom 1950-tallet satt rundt 150 000 kenyanere i britiske fangeleirer, de fleste uten rettssak."
+    },
+    {
+      "type": "header",
+      "text": "Hvor mange døde?"
+    },
+    {
+      "type": "text",
+      "content": "Ifølge de offisielle britiske tallene ble 11 503 opprørere drept (South African History Online, 2016). Mange historikere mener at det riktige tallet trolig er dobbelt så høyt (Eriksen, 2024). Ingen vet hvor mange som døde av sult, sykdom og mishandling i leirene og landsbyene."
+    },
+    {
+      "type": "text",
+      "content": "Tallene viser hvor ulikt krigen rammet. På den ene siden døde rundt 100 europeere og asiater. På den andre siden døde titusenvis av afrikanere."
+    },
+    {
+      "type": "header",
+      "text": "Hola: drapene som ikke kunne skjules"
+    },
+    {
+      "type": "text",
+      "content": "Dedan Kimathi ble såret og tatt til fange i slutten av 1956. Han ble hengt i februar 1957 (Eriksen, 2024). Da var den væpnede kampen slått ned. Men leirene fantes fortsatt."
+    },
+    {
+      "type": "text",
+      "content": "3. mars 1959 skjedde det noe i leiren Hola som forandret alt. Vaktene skulle tvinge fangene til å gjøre tungt arbeid. Elleve fanger ble slått i hjel (Toye, 2014). Nyheten nådde det britiske parlamentet. Alan Lennox-Boyd, ministeren med ansvar for koloniene, kalte drapene «tragiske og sjokkerende»."
+    },
+    {
+      "type": "text",
+      "content": "I oktober 1959 holdt politikeren Enoch Powell en kjent tale i parlamentet. Han sa at Storbritannia ikke kunne ha lavere standarder i Afrika enn hjemme (Toye, 2014). Mange historikere mener at Hola var et vendepunkt på veien mot et selvstendig Kenya (Toye, 2014)."
+    },
+    {
+      "type": "header",
+      "text": "Fra fange til president"
+    },
+    {
+      "type": "text",
+      "content": "Unntakstilstanden ble opphevet i januar 1960. Samme år gikk britene med på å forhandle (Eriksen, 2024). Kenyatta ble den viktigste lederen i forhandlingene. I 1963 ble Kenya selvstendig, og Kenyatta ble landets første president (Eriksen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Mannen britene hadde dømt til straffarbeid, var nå landets leder. Kenya var en del av en stor bølge av land som ble frie på denne tiden. Du kan lese om en annen av dem i artikkelen om [Ghana og panafrikanismen](/historie/dekolonisering/ghana-panafrikanisme), og om flere væpnede kamper i artikkelen om [frigjøringskrigene](/historie/dekolonisering/frigjoringskrigene)."
+    },
+    {
+      "type": "text",
+      "content": "Men jordspørsmålet ble ikke løst. Mange av konfliktene om jord fra kolonitida finnes fortsatt i Kenya i dag (Eriksen, 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Ofrene går til retten"
+    },
+    {
+      "type": "text",
+      "content": "Lenge skjedde det ingenting. Men fire kenyanere gikk til sak mot den britiske staten i London. De gjorde det på vegne av flere tusen andre (Eriksen, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "I juni 2013 kom svaret. Utenriksministeren William Hague sa i parlamentet at regjeringen innrømmet at kenyanere var blitt utsatt for tortur og annen mishandling. «Den britiske regjeringen beklager oppriktig at disse overgrepene skjedde», sa han (Hague, 2013). Storbritannia betalte til sammen 19,9 millioner pund til 5228 personer, og lovet å støtte et minnesmerke i Nairobi (Hague, 2013)."
+    },
+    {
+      "type": "text",
+      "content": "Men Hague sa også noe annet: Regjeringen nektet fortsatt for at den var juridisk ansvarlig, altså skyldig etter loven (Hague, 2013). De beklaget, men innrømmet ikke skyld. Bare de som fortsatt levde 60 år senere, og som kunne bevise at de var blitt mishandlet, fikk penger (Eriksen, 2024). Er det en ekte unnskyldning? Det er et spørsmål folk fortsatt diskuterer."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Eldre kenyanere ved Mau Mau-minnesmerket i Nairobi",
+      "caption": "Minnesmerket i Nairobi ble avduket i 2015, to år etter avtalen med Storbritannia."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor dette er viktig"
+    },
+    {
+      "type": "text",
+      "content": "Historien om Mau Mau viser at ordene vi bruker, er viktige. Britene kalte det en «nødsituasjon» og opprørerne «terrorister». Kjemperne selv kalte seg en hær for land og frihet. Begge sider brukte vold. Men bare den ene siden hadde tatt jorda fra den andre."
+    },
+    {
+      "type": "text",
+      "content": "Den viser også hvordan et [imperium](/historie/kolonialisering/britisk-imperium) kunne gjøre ting i koloniene som aldri ville blitt godtatt hjemme. Det var det Enoch Powell pekte på i 1959. Og den viser at sannheten kan komme fram lenge etterpå, når ofrene får fortelle og historikerne leser kildene på nytt."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Eriksen, T. L. (2024). *Mau Mau*. Store norske leksikon. Hentet 20.10.2026 fra [https://snl.no/Mau_Mau](https://snl.no/Mau_Mau)",
+          "Hague, W. (2013). *Statement to Parliament on settlement of Mau Mau claims*. GOV.UK. [https://www.gov.uk/government/news/statement-to-parliament-on-settlement-of-mau-mau-claims](https://www.gov.uk/government/news/statement-to-parliament-on-settlement-of-mau-mau-claims)",
+          "South African History Online. (2016). *The Mau Mau Uprising*. Hentet 20.10.2026 fra [https://www.sahistory.org.za/article/mau-mau-uprising](https://www.sahistory.org.za/article/mau-mau-uprising)",
+          "Toye, R. (2014). *Rhetoric and imperial decline: Arguing the Hola Camp massacre of 1959*. Imperial & Global Forum. [https://imperialglobalexeter.com/2014/05/19/rhetoric-and-imperial-decline-arguing-the-hola-camp-massacre-of-1959/](https://imperialglobalexeter.com/2014/05/19/rhetoric-and-imperial-decline-arguing-the-hola-camp-massacre-of-1959/)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva kalte opprørerne seg selv, og hvem var det som ga dem navnet Mau Mau?",
+          "Hvor mye jord hadde de rundt 3000 europeiske familiene sammenlignet med kikuyuene i reservatene?",
+          "Hva betyr unntakstilstand, og hva kunne politiet gjøre da den ble innført i 1952?",
+          "Hva skjedde i Hola-leiren 3. mars 1959?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor mange kikuyuer mistet troen på at fredelige metoder kunne gi dem jorda tilbake.",
+          "Hvorfor ville britene ikke kalle det en krig? Hva tjente de på det?",
+          "Opprøret var også en borgerkrig blant kikuyuene. Hvorfor tror du noen kikuyuer valgte britenes side?",
+          "Hague sa at regjeringen «beklager oppriktig», men nektet for juridisk ansvar. Er det en ekte unnskyldning? Begrunn svaret."
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Kan det noen gang være riktig å bruke vold for å få tilbake jord som er tatt fra deg? Bruk eksempler fra artikkelen.",
+          "Skriv et kort brev fra en tidligere fange i en britisk leir til den britiske regjeringen i 2013. Hva vil hen at regjeringen skal forstå?",
+          "Finn et annet land der en tidligere kolonimakt har beklaget noe den gjorde. Sammenlign med det Storbritannia gjorde overfor Kenya."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva handlet Mau Mau-opprøret først og fremst om?",
+            "options": [
+              "Religion",
+              "Jord og frihet",
+              "Olje",
+              "Handel med Kina"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Kjemperne kalte seg Kenyas land- og frihetshær. De ville ha tilbake jorda som de europeiske nybyggerne hadde tatt."
+          },
+          {
+            "question": "Hvem ble Kenyas første president i 1963?",
+            "options": [
+              "Dedan Kimathi",
+              "Waruhiu",
+              "Jomo Kenyatta",
+              "Kwame Nkrumah"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Jomo Kenyatta ble dømt til sju års straffarbeid i 1952, men ledet senere forhandlingene og ble Kenyas første president."
+          },
+          {
+            "question": "Hvorfor unngikk britene å kalle det en krig?",
+            "options": [
+              "Fordi det var så få kjempere",
+              "Fordi de da måtte følge de internasjonale reglene for krigsfanger",
+              "Fordi krigen foregikk i skogen",
+              "Fordi FN forbød det"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I en krig gjelder internasjonale regler for hvordan fanger skal behandles. Ved å kalle det en nødsituasjon kunne britene holde folk i leirer uten rettssak."
+          },
+          {
+            "question": "Hva skjedde i Hola-leiren i 1959?",
+            "options": [
+              "Fangene rømte",
+              "Elleve fanger ble slått i hjel av vaktene",
+              "Kenyatta ble sluppet fri",
+              "Leiren ble stengt av FN"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Elleve fanger ble slått i hjel da vaktene ville tvinge dem til tungt arbeid. Mange historikere mener Hola var et vendepunkt på veien mot selvstendighet."
+          },
+          {
+            "question": "Hva gjorde Storbritannia i 2013?",
+            "options": [
+              "Ga jorda tilbake til kikuyuene",
+              "Innrømmet tortur, beklaget og betalte erstatning til over 5000 personer",
+              "Nektet for at noe galt hadde skjedd",
+              "Ba Kenya om unnskyldning i FN"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Storbritannia innrømmet tortur og mishandling og betalte 19,9 millioner pund til 5228 personer, men nektet for juridisk ansvar."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
