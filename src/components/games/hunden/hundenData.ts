@@ -63,21 +63,22 @@ export interface Producer {
     c: number;
     r: number;
     s: string;
+    ic: string; // figuren som står på skrivebordet
 }
 
 export const P: Producer[] = [
-    { n: 'Hund', p: 'Hunder', d: 'Spiser leksene. Har aldri gjort noe galt i hele sitt liv.', c: 15, r: 0.1, s: 'HU' },
-    { n: 'Lillebror', p: 'Lillebrødre', d: 'Får skylda for alt. Er tre år og kan ikke forsvare seg.', c: 100, r: 1, s: 'LB' },
-    { n: 'Magevondt-maskin', p: 'Maskiner', d: 'Lager plutselig vondt i magen. Virker bare mellom 08:15 og 14:30.', c: 1100, r: 8, s: 'MV' },
-    { n: 'Wifi-sabotør', p: 'Sabotører', d: '«Jeg leverte, men det lastet aldri opp.»', c: 12000, r: 47, s: 'WF' },
-    { n: 'Bestemors bursdag', p: 'Bestemødre', d: 'Bestemor fyller år igjen. Fjerde gang denne måneden.', c: 130000, r: 260, s: 'BM' },
-    { n: 'Unnskyldningsfabrikk', p: 'Fabrikker', d: 'Lager «jeg glemte boka på skolen» på samlebånd.', c: 1.4e6, r: 1400, s: 'UF' },
-    { n: 'Lobbyist på Stortinget', p: 'Lobbyister', d: 'Jobber for at retten til å glemme skal stå i Grunnloven.', c: 2e7, r: 7800, s: 'LO' },
-    { n: 'Tidsmaskin', p: 'Tidsmaskiner', d: 'Reiser tilbake og sørger for at leksa aldri ble gitt.', c: 3.3e8, r: 44000, s: 'TM' },
-    { n: 'Unnskyldningsreligion', p: 'Menigheter', d: 'Tusenvis av tilhengere. Hellig dag: innleveringsfristen.', c: 5.1e9, r: 260000, s: 'UR' },
-    { n: 'Parallelt univers', p: 'Universer', d: 'Et univers der læreren glemte å gi lekser. Hentet hit.', c: 7.5e10, r: 1.6e6, s: 'PU' },
-    { n: 'Diplomat til lærerværelset', p: 'Diplomater', d: 'Forhandler om frister ved kaffemaskinen. Ingen får skyte.', c: 1e12, r: 1e7, s: 'DI' },
-    { n: 'Avskaffelse av tirsdag', p: 'Avskaffede tirsdager', d: 'Ingen tirsdag, ingen frist. Kalenderen protesterer.', c: 1.4e13, r: 6.5e7, s: 'TI' },
+    { n: 'Hund', p: 'Hunder', d: 'Spiser leksene. Har aldri gjort noe galt i hele sitt liv.', c: 15, r: 0.1, s: 'HU', ic: '🐕' },
+    { n: 'Lillebror', p: 'Lillebrødre', d: 'Får skylda for alt. Er tre år og kan ikke forsvare seg.', c: 100, r: 1, s: 'LB', ic: '👶' },
+    { n: 'Magevondt-maskin', p: 'Maskiner', d: 'Lager plutselig vondt i magen. Virker bare mellom 08:15 og 14:30.', c: 1100, r: 8, s: 'MV', ic: '🤢' },
+    { n: 'Wifi-sabotør', p: 'Sabotører', d: '«Jeg leverte, men det lastet aldri opp.»', c: 12000, r: 47, s: 'WF', ic: '📡' },
+    { n: 'Bestemors bursdag', p: 'Bestemødre', d: 'Bestemor fyller år igjen. Fjerde gang denne måneden.', c: 130000, r: 260, s: 'BM', ic: '🎂' },
+    { n: 'Unnskyldningsfabrikk', p: 'Fabrikker', d: 'Lager «jeg glemte boka på skolen» på samlebånd.', c: 1.4e6, r: 1400, s: 'UF', ic: '🏭' },
+    { n: 'Lobbyist på Stortinget', p: 'Lobbyister', d: 'Jobber for at retten til å glemme skal stå i Grunnloven.', c: 2e7, r: 7800, s: 'LO', ic: '💼' },
+    { n: 'Tidsmaskin', p: 'Tidsmaskiner', d: 'Reiser tilbake og sørger for at leksa aldri ble gitt.', c: 3.3e8, r: 44000, s: 'TM', ic: '⏳' },
+    { n: 'Unnskyldningsreligion', p: 'Menigheter', d: 'Tusenvis av tilhengere. Hellig dag: innleveringsfristen.', c: 5.1e9, r: 260000, s: 'UR', ic: '🕯️' },
+    { n: 'Parallelt univers', p: 'Universer', d: 'Et univers der læreren glemte å gi lekser. Hentet hit.', c: 7.5e10, r: 1.6e6, s: 'PU', ic: '🌀' },
+    { n: 'Diplomat til lærerværelset', p: 'Diplomater', d: 'Forhandler om frister ved kaffemaskinen. Ingen får skyte.', c: 1e12, r: 1e7, s: 'DI', ic: '🕊️' },
+    { n: 'Avskaffelse av tirsdag', p: 'Avskaffede tirsdager', d: 'Ingen tirsdag, ingen frist. Kalenderen protesterer.', c: 1.4e13, r: 6.5e7, s: 'TI', ic: '📅' },
 ];
 
 const PU = [
@@ -112,24 +113,25 @@ export interface Upgrade {
     hq?: number; // lynprøve-belønning ×
     ht?: number; // ekstra sekunder på lynprøven
     pi?: number; // dobler én medskyldig
+    ic?: string; // klistremerket som havner på leksearket
 }
 
 export const UP: Upgrade[] = [
-    { id: 'c1', n: 'Blyant med viskelær', d: 'Visker ut alle bevis.', e: 'Klikk ×2', c: 100, q: (s) => s.clicks >= 15, cm: 2 },
-    { id: 'c2', n: 'Kurs i å finne på ting', d: 'Lærer deg å lyve om andre enn deg selv.', e: 'Klikk ×2', c: 600, q: (s) => s.clicks >= 60, cm: 2 },
-    { id: 'gs', n: 'Gullstjernemagnet', d: 'Læreren deler ut stjerner som aldri før.', e: 'Gullstjerner kommer dobbelt så ofte', c: 2e5, q: (s) => s.goldClicks >= 1, gf: 2 },
-    { id: 'c3', n: 'Løgnerens penn', d: 'Skriver ting som aldri har skjedd.', e: 'Klikk gir +1 % av det du lager per sekund', c: 12000, q: (s) => s.owned.some((x) => x >= 10), cp: 0.01 },
-    { id: 'c4', n: 'Teater på onsdager', d: '«Ja, og så spiste hunden den.»', e: 'Klikk ×2 og +1 % av /s', c: 150000, q: (s) => s.clicks >= 400, cm: 2, cp: 0.01 },
-    { id: 'g1', n: 'Felles unnskyldningsdokument', d: 'Hele klassen skriver i det. Ingen leser det.', e: 'All produksjon ×1,5', c: 5e5, q: (s) => s.era >= 1, gm: 1.5 },
-    { id: 'gd', n: 'Langfriminutt', d: 'Friminuttet varer til det er over.', e: 'Gullstjerner virker dobbelt så lenge', c: 8e6, q: (s) => s.goldClicks >= 3, gdur: 2 },
-    { id: 'h1', n: 'Lesehest', d: 'Du leste faktisk kapitlet. Læreren er i sjokk.', e: 'Lynprøver gir dobbelt så mye', c: 1e6, q: (s) => s.honest >= 2, hq: 2 },
-    { id: 'c5', n: 'Doktorgrad i bortforklaring', d: 'Tittel: «Det var ikke meg (2026)».', e: 'Klikk gir +2 % av /s', c: 2e7, q: (s) => s.era >= 2, cp: 0.02 },
-    { id: 'h2', n: 'Lånekort på biblioteket', d: 'Du vet hvor svarene står.', e: '+5 sekunder på lynprøver', c: 4e7, q: (s) => s.honest >= 5, ht: 5 },
-    { id: 'g2', n: 'Unnskyldning på abonnement', d: '49 kr i måneden. Første lekse er gratis.', e: 'All produksjon ×2', c: 5e8, q: (s) => s.era >= 2, gm: 2 },
-    { id: 'h3', n: 'Skriveboka er full', d: 'Hver side er brukt. Ekte notater.', e: 'Lynprøver gir dobbelt så mye', c: 2e9, q: (s) => s.honest >= 10, hq: 2 },
-    { id: 'c6', n: 'Tunge av sølv', d: 'Snakker seg ut av alt, også fysikkens lover.', e: 'Klikk ×3', c: 3e9, q: (s) => s.era >= 3, cm: 3 },
-    { id: 'c7', n: 'Penn som skriver gjennom tiden', d: 'Unnskyldningen er levert før leksa ble gitt.', e: 'Klikk gir +3 % av /s', c: 5e11, q: (s) => s.era >= 4, cp: 0.03 },
-    { id: 'g3', n: 'FN-veto mot lekser', d: 'Fem land stemte mot. Alle hadde glemt leksa.', e: 'All produksjon ×2', c: 5e12, q: (s) => s.era >= 4, gm: 2 },
+    { id: 'c1', n: 'Blyant med viskelær', d: 'Visker ut alle bevis.', e: 'Klikk ×2', c: 100, q: (s) => s.clicks >= 15, cm: 2, ic: '✏️' },
+    { id: 'c2', n: 'Kurs i å finne på ting', d: 'Lærer deg å lyve om andre enn deg selv.', e: 'Klikk ×2', c: 600, q: (s) => s.clicks >= 60, cm: 2, ic: '📚' },
+    { id: 'gs', n: 'Gullstjernemagnet', d: 'Læreren deler ut stjerner som aldri før.', e: 'Gullstjerner kommer dobbelt så ofte', c: 2e5, q: (s) => s.goldClicks >= 1, gf: 2, ic: '🧲' },
+    { id: 'c3', n: 'Løgnerens penn', d: 'Skriver ting som aldri har skjedd.', e: 'Klikk gir +1 % av det du lager per sekund', c: 12000, q: (s) => s.owned.some((x) => x >= 10), cp: 0.01, ic: '🖋️' },
+    { id: 'c4', n: 'Teater på onsdager', d: '«Ja, og så spiste hunden den.»', e: 'Klikk ×2 og +1 % av /s', c: 150000, q: (s) => s.clicks >= 400, cm: 2, cp: 0.01, ic: '🎭' },
+    { id: 'g1', n: 'Felles unnskyldningsdokument', d: 'Hele klassen skriver i det. Ingen leser det.', e: 'All produksjon ×1,5', c: 5e5, q: (s) => s.era >= 1, gm: 1.5, ic: '📄' },
+    { id: 'gd', n: 'Langfriminutt', d: 'Friminuttet varer til det er over.', e: 'Gullstjerner virker dobbelt så lenge', c: 8e6, q: (s) => s.goldClicks >= 3, gdur: 2, ic: '🔔' },
+    { id: 'h1', n: 'Lesehest', d: 'Du leste faktisk kapitlet. Læreren er i sjokk.', e: 'Lynprøver gir dobbelt så mye', c: 1e6, q: (s) => s.honest >= 2, hq: 2, ic: '📖' },
+    { id: 'c5', n: 'Doktorgrad i bortforklaring', d: 'Tittel: «Det var ikke meg (2026)».', e: 'Klikk gir +2 % av /s', c: 2e7, q: (s) => s.era >= 2, cp: 0.02, ic: '🎓' },
+    { id: 'h2', n: 'Lånekort på biblioteket', d: 'Du vet hvor svarene står.', e: '+5 sekunder på lynprøver', c: 4e7, q: (s) => s.honest >= 5, ht: 5, ic: '📇' },
+    { id: 'g2', n: 'Unnskyldning på abonnement', d: '49 kr i måneden. Første lekse er gratis.', e: 'All produksjon ×2', c: 5e8, q: (s) => s.era >= 2, gm: 2, ic: '💳' },
+    { id: 'h3', n: 'Skriveboka er full', d: 'Hver side er brukt. Ekte notater.', e: 'Lynprøver gir dobbelt så mye', c: 2e9, q: (s) => s.honest >= 10, hq: 2, ic: '📓' },
+    { id: 'c6', n: 'Tunge av sølv', d: 'Snakker seg ut av alt, også fysikkens lover.', e: 'Klikk ×3', c: 3e9, q: (s) => s.era >= 3, cm: 3, ic: '👅' },
+    { id: 'c7', n: 'Penn som skriver gjennom tiden', d: 'Unnskyldningen er levert før leksa ble gitt.', e: 'Klikk gir +3 % av /s', c: 5e11, q: (s) => s.era >= 4, cp: 0.03, ic: '🌠' },
+    { id: 'g3', n: 'FN-veto mot lekser', d: 'Fem land stemte mot. Alle hadde glemt leksa.', e: 'All produksjon ×2', c: 5e12, q: (s) => s.era >= 4, gm: 2, ic: '🌐' },
 ];
 P.forEach((p, i) => {
     for (let t = 0; t < 4; t++) {

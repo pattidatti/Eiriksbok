@@ -27,6 +27,8 @@ export interface HundenCallbacks {
     onNewEra?: (era: number, name: string) => void;
     /** «← Øving»-knappen. Uten denne er den en vanlig lenke. */
     onExit?: () => void;
+    /** Artikkelstiene eleven har lest, nyeste først. Lynprøven spør om disse. */
+    getReadArticles?: () => string[];
 }
 
 interface Buff {
@@ -78,14 +80,21 @@ const MARKUP = `
         <div id="hsl-bankLbl">unnskyldninger</div>
         <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span></div>
       </div>
-      <div id="hsl-sheetWrap">
-        <button id="hsl-sheet" aria-label="Finn på en unnskyldning">
-          <span class="t" id="hsl-sheetTitle">Lekse: Sidemål s. 47</span>
-          <span class="n">Navn: ____________</span>
-          <span class="empty">(arket er helt tomt)</span>
-          <span class="ring"></span>
-          <span class="grade">?</span>
-        </button>
+      <div id="hsl-mark" aria-hidden="true"></div>
+      <div id="hsl-desk">
+        <div class="gang left" id="hsl-gangL"></div>
+        <div id="hsl-sheetWrap">
+          <button id="hsl-sheet" aria-label="Finn på en unnskyldning">
+            <span class="t" id="hsl-sheetTitle">Lekse: Sidemål s. 47</span>
+            <span class="n">Navn: ____________</span>
+            <span class="empty" id="hsl-empty">(arket er helt tomt)</span>
+            <span class="lines" id="hsl-lines"></span>
+            <span class="ring"></span>
+            <span class="stickers" id="hsl-stickers"></span>
+            <span class="grade" id="hsl-grade" title="Karakteren stiger når du består lynprøver">?</span>
+          </button>
+        </div>
+        <div class="gang right" id="hsl-gangR"></div>
       </div>
       <div id="hsl-flow" class="off"><div class="row"><span>Flyt</span><span id="hsl-flowX">×1,0</span></div><div class="bar"><i id="hsl-flowBar"></i></div></div>
       <div id="hsl-buffs"></div>
@@ -220,12 +229,24 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         opts: [] as { t: string; h: boolean }[],
         q: null as LynQuestion | null,
     };
-    let decks: LynDecks = { bank: [], concepts: [] };
-    const deckPos = { bank: 0, concepts: 0 };
-    loadLynQuestions().then((d) => {
-        if (!destroyed) decks = d;
-    });
-    const quizReady = () => decks.bank.length + decks.concepts.length > 0;
+    let decks: LynDecks = { readQuiz: [], readConcepts: [], general: [], readArticles: 0 };
+    const deckPos = { readQuiz: 0, readConcepts: 0, general: 0 };
+    // Feil besvarte spørsmål kommer tilbake etter et par andre
+    const retry: { q: LynQuestion; due: number }[] = [];
+    let readKey = '';
+    function reloadQuestions() {
+        const paths = cb.getReadArticles?.() ?? [];
+        const key = paths.slice(0, 30).join('|');
+        if (key === readKey && decks.general.length) return;
+        readKey = key;
+        loadLynQuestions(paths).then((d) => {
+            if (destroyed) return;
+            decks = d;
+            deckPos.readQuiz = deckPos.readConcepts = deckPos.general = 0;
+        });
+    }
+    reloadQuestions();
+    const quizReady = () => decks.readQuiz.length + decks.readConcepts.length + decks.general.length > 0;
 
     /* ================= Formler ================= */
     function prodMult(i: number) {
@@ -671,7 +692,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         b.className = 'prod';
         b.hidden = true;
         b.dataset.tip = 'p' + i;
-        b.innerHTML = `<span class="st">${p.s}</span><span style="min-width:0"><span class="pn"></span><span class="pc"></span></span><span class="po">0</span>`;
+        b.innerHTML = `<span class="st">${p.ic}</span><span style="min-width:0"><span class="pn"></span><span class="pc"></span></span><span class="po">0</span>`;
         b.addEventListener('click', () => buyProd(i));
         prodsEl.appendChild(b);
         return {
@@ -722,6 +743,15 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         ring(x, y, '#f2b705', 110);
         addShake(3);
         floatText(u.n, x, y - 10, { size: 20, col: COL.red });
+        renderDesk();
+        // Oppgraderingen skal synes der den virker: på arket eller på figurene
+        const target = u.pi !== undefined ? tiles[u.pi].el : stickersEl.querySelector<HTMLElement>(`[data-id="${u.id}"]`);
+        if (target) {
+            restart(target, 'lvl');
+            const [tx, ty] = center(target);
+            burst(tx, ty, 18, { gold: true });
+            ring(tx, ty, '#f2b705', 70);
+        }
         hideTip();
         uiTick();
     }
@@ -740,7 +770,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 b.dataset.tip = 'u:' + u.id;
                 b.dataset.id = u.id;
                 b.innerHTML = '<span class="un"></span><span class="uc"></span>';
-                (b.querySelector('.un') as HTMLElement).textContent = u.n;
+                (b.querySelector('.un') as HTMLElement).textContent = `${upgIcon(u.id)} ${u.n}`;
                 (b.querySelector('.uc') as HTMLElement).textContent = fmt(u.c);
                 b.addEventListener('click', () => buyUpg(u.id, b));
                 g.appendChild(b);
@@ -762,6 +792,148 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         sfx.reveal();
         uiTick();
     });
+
+    /* ================= Skrivebordet: oppgraderingene synes ================= */
+    // Tre lag gjør framgangen synlig uten å lese tall:
+    //  1. «Gjengen»: hver medskyldig står som figurer ved siden av arket, flere
+    //     jo flere du eier, større og med stjerner for hver oppgradering.
+    //  2. Klistremerker: hver vanlig oppgradering klistres på leksearket.
+    //  3. Arket fylles med unnskyldninger etter hvert, og karakteren i hjørnet
+    //     stiger når du består lynprøver.
+    const MARKS = ['🏫', '🚪', '🏢', '🏛️', '🌍', '🌌'];
+    const LINE_AT = [15, 200, 3e3, 4e4, 6e5, 1e7, 2e8, 5e9];
+    const upgIcon = (id: string) => {
+        const u = UPI[id];
+        return u.ic ?? (u.pi !== undefined ? P[u.pi].ic : '⭐');
+    };
+    const hash = (str: string) => {
+        let h = 2166136261;
+        for (let i = 0; i < str.length; i++) h = Math.imul(h ^ str.charCodeAt(i), 16777619);
+        return (h >>> 0) / 4294967296;
+    };
+    const stickersEl = $('#hsl-stickers');
+    const linesEl = $('#hsl-lines');
+    const gradeEl = $('#hsl-grade');
+    const tiles = P.map((p, i) => {
+        const el = document.createElement('div');
+        el.className = 'tile';
+        el.hidden = true;
+        el.dataset.tip = 'p' + i;
+        el.innerHTML = '<div class="pile"></div><div class="lab"><span class="nm"></span><span class="cnt"></span><span class="stars"></span></div>';
+        (el.querySelector('.nm') as HTMLElement).textContent = p.n;
+        $(i % 2 ? '#hsl-gangR' : '#hsl-gangL').appendChild(el);
+        return {
+            el,
+            pile: el.querySelector('.pile') as HTMLElement,
+            cnt: el.querySelector('.cnt') as HTMLElement,
+            stars: el.querySelector('.stars') as HTMLElement,
+            shown: 0,
+            tier: -1,
+        };
+    });
+    let stickerKey: string | null = null;
+    let linesShown = -1;
+    let gradeWas = '';
+    function renderDesk() {
+        P.forEach((p, i) => {
+            const t = tiles[i];
+            const own = S.owned[i];
+            t.el.hidden = own === 0;
+            const tier = [0, 1, 2, 3].filter((k) => S.upg[`p${i}_${k}`]).length;
+            const want = Math.min(own, 10);
+            if (want < t.shown || tier !== t.tier) {
+                t.pile.innerHTML = '';
+                t.shown = 0;
+            }
+            if (tier !== t.tier) {
+                t.tier = tier;
+                t.el.style.setProperty('--sz', 24 + tier * 3 + 'px');
+                t.el.classList.toggle('max', tier >= 4);
+                t.stars.textContent = '★'.repeat(tier);
+            }
+            const animate = t.pile.childElementCount > 0 || S.played > 1;
+            while (t.shown < want) {
+                const k = t.shown++;
+                const f = document.createElement('span');
+                f.className = 'fig' + (animate ? ' drop' : '');
+                f.textContent = p.ic;
+                // Venstre gjeng stables inn mot arket fra høyre, høyre gjeng fra venstre
+                // To rader à fem, bakerste rad litt forskjøvet så alle synes
+                const row = k < 5 ? 1 : 0;
+                f.style[i % 2 ? 'left' : 'right'] = (k % 5) * 19 + row * 9 + 'px';
+                f.style.top = row * 12 + Math.round(hash(`${i}:${k}`) * 4) + 'px';
+                f.style.zIndex = String(row + 1);
+                const d = hash(`d${i}:${k}`) * 2;
+                f.style.animationDelay = animate ? `0s, ${(0.45 + d).toFixed(2)}s` : `${d.toFixed(2)}s`;
+                t.pile.appendChild(f);
+            }
+            t.cnt.textContent = own > 1 ? `×${own}` : '';
+        });
+
+        // Klistremerker: alle kjøpte oppgraderinger som ikke hører til én figur
+        const ids = Object.keys(S.upg).filter((id) => UPI[id] && UPI[id].pi === undefined);
+        const key = ids.join(',');
+        if (key !== stickerKey) {
+            const had = new Set(Array.from(stickersEl.children).map((c) => (c as HTMLElement).dataset.id));
+            stickersEl.innerHTML = '';
+            for (const id of ids) {
+                const st = document.createElement('span');
+                st.className = 'sticker' + (stickerKey !== null && !had.has(id) ? ' stamp' : '');
+                st.dataset.id = id;
+                st.textContent = upgIcon(id);
+                st.style.left = 8 + hash(id) * 72 + '%';
+                st.style.top = 34 + hash(id + 'y') * 50 + '%';
+                st.style.rotate = Math.round((hash(id + 'r') - 0.5) * 50) + 'deg';
+                st.title = UPI[id].n;
+                stickersEl.appendChild(st);
+            }
+            stickerKey = key;
+        }
+
+        // Unnskyldninger skrevet på arket. Nullstilles når du bytter skole.
+        const n = LINE_AT.filter((x) => S.runTotal >= x).length;
+        if (n !== linesShown) {
+            const grow = n > linesShown && linesShown >= 0;
+            linesEl.innerHTML = '';
+            for (let k = 0; k < n; k++) {
+                const l = document.createElement('span');
+                l.className = 'ln' + (grow && k === n - 1 ? ' write' : '');
+                l.textContent = EXCUSES[(S.school * 7 + k * 5) % EXCUSES.length] + '.';
+                l.style.top = 46 + 28 * (k + 3) - 23 + 'px';
+                linesEl.appendChild(l);
+            }
+            $('#hsl-empty').hidden = n > 0;
+            linesShown = n;
+        }
+
+        // Karakteren (1-6) stiger med beståtte lynprøver
+        const grade = S.honest >= 20 ? '6' : S.honest >= 10 ? '5' : S.honest >= 4 ? '4' : S.honest >= 1 ? '3' : '?';
+        if (grade !== gradeWas) {
+            if (gradeWas) restart(gradeEl, 'stamp');
+            gradeEl.textContent = grade;
+            gradeWas = grade;
+        }
+    }
+
+    // Produksjonen synes: små tall stiger opp fra figurene som jobber
+    let puffT = 0;
+    function puffTick(dt: number) {
+        puffT -= dt;
+        if (puffT > 0 || S.set.reduce) return;
+        puffT = 0.55;
+        const total = pps();
+        if (total <= 0) return;
+        let r = Math.random() * total;
+        for (let i = 0; i < P.length; i++) {
+            const out = S.owned[i] * rate(i);
+            if ((r -= out) > 0) continue;
+            const pile = tiles[i].pile;
+            const b = pile.getBoundingClientRect();
+            if (!b.width) return;
+            floatText('+' + fmt(out * 0.55, true), b.left + rnd(10, Math.min(b.width, 130)), b.top, { size: 14, col: COL.ink, life: 0.8, vy: -55 });
+            return;
+        }
+    }
 
     /* ================= UI-oppdatering ================= */
     let shopWas = false;
@@ -799,7 +971,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                     r.b.classList.remove('myst');
                     r.b.classList.add('new');
                     r.shown = true;
-                    r.st.textContent = P[i].s;
+                    r.st.textContent = P[i].ic;
                     if (i > 0 && S.played > 2) {
                         sfx.reveal();
                         toast(`Ny medskyldig: ${P[i].n}`);
@@ -829,6 +1001,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             }
         }
         renderUpgs();
+        renderDesk();
         // prestisje
         const pb = $('#hsl-prestBtn');
         const g = rykteGainable();
@@ -855,6 +1028,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const sm = document.createElement('small');
         sm.textContent = schoolName();
         tag.append(sm);
+        $('#hsl-mark').textContent = MARKS[S.era];
         requestAnimationFrame(readCols);
     }
     function checkEra() {
@@ -970,10 +1144,14 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const tEl = $('#hsl-teacher');
     const baseReward = () => Math.max(pps() * 45, clickPow() * 30, 60);
     function nextQuestion(): LynQuestion | null {
-        // Ca. hvert tredje spørsmål fra artiklenes egne quizer, resten begreper
-        const useBank = decks.bank.length > 0 && (decks.concepts.length === 0 || Math.random() < 0.35);
-        const deck = useBank ? decks.bank : decks.concepts;
-        const key = useBank ? 'bank' : 'concepts';
+        const due = retry.findIndex((r) => r.due <= S.honestTries);
+        if (due >= 0) return retry.splice(due, 1)[0].q;
+        // Det eleven har lest først. Artikkelens egne quizspørsmål er laget for å
+        // sjekke at teksten er forstått, så de får forrang foran begrepene.
+        let key: 'readQuiz' | 'readConcepts' | 'general' = 'general';
+        if (decks.readQuiz.length && (!decks.readConcepts.length || Math.random() < 0.65)) key = 'readQuiz';
+        else if (decks.readConcepts.length) key = 'readConcepts';
+        const deck = decks[key];
         if (!deck.length) return null;
         const q = deck[deckPos[key] % deck.length];
         deckPos[key]++;
@@ -1030,7 +1208,12 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         S.honestTries++;
         tEl.innerHTML = `<div class="who">Lærer Tønnessen:</div><div class="say">«Jaså? Bevis det.»</div>${q.prompt ? '<div class="def"></div>' : ''}<div class="opts quiz"></div><div class="tbar"><i></i></div>`;
         const say = tEl.querySelector('.say') as HTMLElement;
-        say.textContent = q.prompt ? `«Jaså? ${q.question}»` : `«Jaså? Da kan du sikkert svare på dette: ${q.question}»`;
+        const intro = q.fromRead
+            ? `Jaså? Du har lest «${q.source}». Da kan du svare på dette:`
+            : decks.readArticles === 0
+              ? 'Jaså? Du har ikke lest noe i boka ennå, så du får et spørsmål fra hvor som helst:'
+              : 'Jaså? Da kan du sikkert svare på dette:';
+        say.textContent = `«${intro} ${q.question}»`;
         if (q.prompt) (tEl.querySelector('.def') as HTMLElement).textContent = q.prompt;
         const opts = tEl.querySelector('.opts') as HTMLElement;
         q.options.forEach((t, k) => {
@@ -1072,6 +1255,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 S.honestStreak >= 3 ? `Riktig! ${S.honestStreak} på rad. Læreren må sette seg ned.` : 'Riktig! Læreren besvimte av sjokk.';
         } else {
             S.honestStreak = 0;
+            retry.push({ q, due: S.honestTries + 2 });
             addBuff({ id: 'sus', label: 'Avslørt: produksjon ×0,5', prod: 0.5, t: 20, bad: true });
             sfx.deny();
             addShake(6);
@@ -1079,12 +1263,13 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             (res.firstChild as HTMLElement).textContent = k === null ? 'For treg! Avslørt i 20 sek.' : 'Feil! Avslørt i 20 sek.';
             (res.querySelector('.fasit') as HTMLElement).textContent = `Riktig svar: ${q.options[q.correct]}`;
         }
-        if (q.source) {
-            const src = document.createElement('div');
-            src.className = 'src';
-            src.textContent = `Fra artikkelen «${q.source}»`;
-            res.appendChild(src);
-        }
+        const src = document.createElement('div');
+        src.className = 'src';
+        if (q.fromRead) src.textContent = `Fra «${q.source}», som du har lest.${right ? '' : ' Spørsmålet kommer igjen snart.'}`;
+        else if (decks.readArticles === 0) src.textContent = 'Tips: Les en artikkel i boka. Neste gang spør læreren om den.';
+        else if (q.source) src.textContent = `Fra artikkelen «${q.source}»`;
+        if (src.textContent) res.appendChild(src);
+        renderDesk();
         const row = document.createElement('div');
         row.className = 'row';
         const ok = document.createElement('button');
@@ -1514,6 +1699,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             const s = (Date.now() - hiddenAt) / 1000;
             hiddenAt = 0;
             if (s > 2) catchUp(s, s > 60);
+            reloadQuestions();
             lastT = performance.now();
         }
     });
@@ -1571,6 +1757,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             }
         }
         checkEra();
+        puffTick(dt);
         saveT += dt;
         if (saveT > 10) {
             saveT = 0;

@@ -1,7 +1,7 @@
 // «Hunden spiste leksa» (`/oving/hunden-spiste-leksa`) - et idle-spill der eleven
 // samler unnskyldninger og klatrer fra klasserommet til universet. Læreren dukker
 // opp og krever en forklaring; den som svarer «jeg gjorde den faktisk» må bevise
-// det med et spørsmål fra boka. Selve spillet lever i src/components/games/hunden/.
+// det med et spørsmål fra noe eleven har lest. Selve spillet lever i src/components/games/hunden/.
 
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -28,6 +28,13 @@ const HundenSpisteLeksaPage = () => {
                 });
             },
             onExit: () => navigate('/oving'),
+            // Lynprøven spør om det eleven har lest, nyeste først. Samme kilde
+            // som Kryssordets «det du har lest»: article-read:<fag>/<emne>/<leksjon>.
+            getReadArticles: () =>
+                Object.entries(useProgressStore.getState().firstCompletions)
+                    .filter(([key]) => key.startsWith('article-read:'))
+                    .sort((a, b) => b[1] - a[1])
+                    .map(([key]) => key.slice('article-read:'.length)),
         });
     }, [navigate]);
 
