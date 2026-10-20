@@ -19,6 +19,7 @@ import {
     type State,
 } from './hundenData';
 import { loadLynQuestions, type LynDecks, type LynQuestion } from './hundenQuiz';
+import { createScene, DISCOVERIES } from './hundenScene';
 
 const KEY = 'hunden-spiste-leksa-v1';
 
@@ -74,15 +75,14 @@ const MARKUP = `
   <div id="hsl-ticker" class="off" aria-live="off"><span class="lbl">SISTE NYTT</span><div class="track"><span class="msg" id="hsl-tickMsg"></span></div></div>
   <main id="hsl-main" class="solo">
     <section id="hsl-stage">
+      <canvas id="hsl-scene" aria-hidden="true"></canvas>
       <div id="hsl-eraTag">Klasserom 10B</div>
       <div id="hsl-counter" class="off">
         <div><span id="hsl-bankNum">0</span></div>
         <div id="hsl-bankLbl">unnskyldninger</div>
         <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span></div>
       </div>
-      <div id="hsl-mark" aria-hidden="true"></div>
       <div id="hsl-desk">
-        <div class="gang left" id="hsl-gangL"></div>
         <div id="hsl-sheetWrap">
           <button id="hsl-sheet" aria-label="Finn på en unnskyldning">
             <span class="t" id="hsl-sheetTitle">Lekse: Sidemål s. 47</span>
@@ -94,7 +94,6 @@ const MARKUP = `
             <span class="grade" id="hsl-grade" title="Karakteren stiger når du består lynprøver">?</span>
           </button>
         </div>
-        <div class="gang right" id="hsl-gangR"></div>
       </div>
       <div id="hsl-flow" class="off"><div class="row"><span>Flyt</span><span id="hsl-flowX">×1,0</span></div><div class="bar"><i id="hsl-flowBar"></i></div></div>
       <div id="hsl-buffs"></div>
@@ -174,6 +173,7 @@ function normalize(o: Partial<State>, reduce: boolean): State {
     s.upg = o.upg ?? {};
     s.perks = o.perks ?? {};
     s.hints = o.hints ?? {};
+    s.seen = o.seen ?? {};
     return s;
 }
 
@@ -598,6 +598,46 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const stage = $('#hsl-stage');
     const modal = $('#hsl-modal');
     const headlineEl = $('#hsl-headline');
+    /* ================= Scenen: rommet og gjengen ================= */
+    const sceneCv = $<HTMLCanvasElement>('#hsl-scene');
+    // Uten figurer i rommet finnes det ingen oppførsel å låse opp
+    const tierOf = (i: number) => (S.owned[i] > 0 ? [0, 1, 2, 3].filter((k) => S.upg[`p${i}_${k}`]).length : 0);
+    const scene = createScene(
+        sceneCv,
+        () => ({
+            owned: S.owned,
+            tier: tierOf,
+            era: S.era,
+            upg: S.upg,
+            flow,
+            frenzy: buffs.some((b) => b.id === 'frenzy'),
+            storm: buffs.some((b) => b.id === 'storm'),
+            sus: buffs.some((b) => b.id === 'sus'),
+            teacher: teach.on,
+            reduce: S.set.reduce,
+            sheet: () => {
+                const c = sceneCv.getBoundingClientRect();
+                const r = sheet.getBoundingClientRect();
+                return { x: r.left - c.left, y: r.top - c.top, w: r.width, h: r.height };
+            },
+        }),
+        {
+            discover: (id, text) => {
+                if (S.seen[id]) return;
+                S.seen[id] = 1;
+                const n = Object.keys(S.seen).length;
+                toast(`✨ Oppdagelse ${n}/${Object.keys(DISCOVERIES).length}: ${text}`, 'disc');
+            },
+        }
+    );
+    scene.resize();
+    const ro = new ResizeObserver(() => scene.resize());
+    ro.observe(sceneCv);
+    cleanups.push(() => {
+        ro.disconnect();
+        scene.destroy();
+    });
+
     const spr = { sx: 1, sy: 1, vx: 0, vy: 0, rot: 0, vr: 0, b: 1, vb: 0 };
     let shake = 0;
     function addShake(a: number) {
@@ -610,9 +650,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         void f.offsetWidth;
         f.classList.add('go');
     }
-    function toast(t: string) {
+    function toast(t: string, cls = '') {
         const d = document.createElement('div');
-        d.className = 'toast';
+        d.className = 'toast ' + cls;
         d.textContent = t;
         $('#hsl-toasts').appendChild(d);
         later(() => d.remove(), 2900);
@@ -654,6 +694,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             return;
         }
         sfx.click();
+        scene.onClick(...scene.toLocal(x, y));
         const red = flow > 0.85;
         spr.vy -= 3.2;
         spr.vx += 2.6;
@@ -717,6 +758,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         S.bank -= c;
         S.owned[i] += k;
         sfx.buy();
+        scene.onBuy(i, k);
         restart(r.b, 'flashbuy');
         const [x, y] = center(r.st);
         burst(x, y, 8 + Math.min(k, 20));
@@ -745,7 +787,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         floatText(u.n, x, y - 10, { size: 20, col: COL.red });
         renderDesk();
         // Oppgraderingen skal synes der den virker: på arket eller på figurene
-        const target = u.pi !== undefined ? tiles[u.pi].el : stickersEl.querySelector<HTMLElement>(`[data-id="${u.id}"]`);
+        scene.onUpgrade(u.id);
+        const target = stickersEl.querySelector<HTMLElement>(`[data-id="${u.id}"]`);
         if (target) {
             restart(target, 'lvl');
             const [tx, ty] = center(target);
@@ -794,13 +837,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     });
 
     /* ================= Skrivebordet: oppgraderingene synes ================= */
-    // Tre lag gjør framgangen synlig uten å lese tall:
-    //  1. «Gjengen»: hver medskyldig står som figurer ved siden av arket, flere
-    //     jo flere du eier, større og med stjerner for hver oppgradering.
-    //  2. Klistremerker: hver vanlig oppgradering klistres på leksearket.
-    //  3. Arket fylles med unnskyldninger etter hvert, og karakteren i hjørnet
-    //     stiger når du består lynprøver.
-    const MARKS = ['🏫', '🚪', '🏢', '🏛️', '🌍', '🌌'];
+    // Gjengen og rommet lever i hundenScene.ts. På selve arket synes:
+    //  1. Klistremerker: hver vanlig oppgradering klistres på leksearket.
+    //  2. Arket fylles med unnskyldninger etter hvert.
+    //  3. Karakteren i hjørnet stiger når du består lynprøver.
     const LINE_AT = [15, 200, 3e3, 4e4, 6e5, 1e7, 2e8, 5e9];
     const upgIcon = (id: string) => {
         const u = UPI[id];
@@ -814,62 +854,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const stickersEl = $('#hsl-stickers');
     const linesEl = $('#hsl-lines');
     const gradeEl = $('#hsl-grade');
-    const tiles = P.map((p, i) => {
-        const el = document.createElement('div');
-        el.className = 'tile';
-        el.hidden = true;
-        el.dataset.tip = 'p' + i;
-        el.innerHTML = '<div class="pile"></div><div class="lab"><span class="nm"></span><span class="cnt"></span><span class="stars"></span></div>';
-        (el.querySelector('.nm') as HTMLElement).textContent = p.n;
-        $(i % 2 ? '#hsl-gangR' : '#hsl-gangL').appendChild(el);
-        return {
-            el,
-            pile: el.querySelector('.pile') as HTMLElement,
-            cnt: el.querySelector('.cnt') as HTMLElement,
-            stars: el.querySelector('.stars') as HTMLElement,
-            shown: 0,
-            tier: -1,
-        };
-    });
     let stickerKey: string | null = null;
     let linesShown = -1;
     let gradeWas = '';
     function renderDesk() {
-        P.forEach((p, i) => {
-            const t = tiles[i];
-            const own = S.owned[i];
-            t.el.hidden = own === 0;
-            const tier = [0, 1, 2, 3].filter((k) => S.upg[`p${i}_${k}`]).length;
-            const want = Math.min(own, 10);
-            if (want < t.shown || tier !== t.tier) {
-                t.pile.innerHTML = '';
-                t.shown = 0;
-            }
-            if (tier !== t.tier) {
-                t.tier = tier;
-                t.el.style.setProperty('--sz', 24 + tier * 3 + 'px');
-                t.el.classList.toggle('max', tier >= 4);
-                t.stars.textContent = '★'.repeat(tier);
-            }
-            const animate = t.pile.childElementCount > 0 || S.played > 1;
-            while (t.shown < want) {
-                const k = t.shown++;
-                const f = document.createElement('span');
-                f.className = 'fig' + (animate ? ' drop' : '');
-                f.textContent = p.ic;
-                // Venstre gjeng stables inn mot arket fra høyre, høyre gjeng fra venstre
-                // To rader à fem, bakerste rad litt forskjøvet så alle synes
-                const row = k < 5 ? 1 : 0;
-                f.style[i % 2 ? 'left' : 'right'] = (k % 5) * 19 + row * 9 + 'px';
-                f.style.top = row * 12 + Math.round(hash(`${i}:${k}`) * 4) + 'px';
-                f.style.zIndex = String(row + 1);
-                const d = hash(`d${i}:${k}`) * 2;
-                f.style.animationDelay = animate ? `0s, ${(0.45 + d).toFixed(2)}s` : `${d.toFixed(2)}s`;
-                t.pile.appendChild(f);
-            }
-            t.cnt.textContent = own > 1 ? `×${own}` : '';
-        });
-
         // Klistremerker: alle kjøpte oppgraderinger som ikke hører til én figur
         const ids = Object.keys(S.upg).filter((id) => UPI[id] && UPI[id].pi === undefined);
         const key = ids.join(',');
@@ -912,26 +900,6 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (gradeWas) restart(gradeEl, 'stamp');
             gradeEl.textContent = grade;
             gradeWas = grade;
-        }
-    }
-
-    // Produksjonen synes: små tall stiger opp fra figurene som jobber
-    let puffT = 0;
-    function puffTick(dt: number) {
-        puffT -= dt;
-        if (puffT > 0 || S.set.reduce) return;
-        puffT = 0.55;
-        const total = pps();
-        if (total <= 0) return;
-        let r = Math.random() * total;
-        for (let i = 0; i < P.length; i++) {
-            const out = S.owned[i] * rate(i);
-            if ((r -= out) > 0) continue;
-            const pile = tiles[i].pile;
-            const b = pile.getBoundingClientRect();
-            if (!b.width) return;
-            floatText('+' + fmt(out * 0.55, true), b.left + rnd(10, Math.min(b.width, 130)), b.top, { size: 14, col: COL.ink, life: 0.8, vy: -55 });
-            return;
         }
     }
 
@@ -1028,7 +996,6 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const sm = document.createElement('small');
         sm.textContent = schoolName();
         tag.append(sm);
-        $('#hsl-mark').textContent = MARKS[S.era];
         requestAnimationFrame(readCols);
     }
     function checkEra() {
@@ -1042,6 +1009,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             const [x, y] = center(sheet);
             burst(x, y, 60, { gold: true, power: 1.6 });
             ring(x, y, '#f2b705', 300);
+            scene.onEra();
             if (S.era > S.maxEra) {
                 S.maxEra = S.era;
                 showHeadline(e.h ?? '', e.sub ?? '', e.u);
@@ -1118,6 +1086,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         endGold();
         S.goldClicks++;
         sfx.gold();
+        scene.onGold();
         burst(x, y, 50, { gold: true, power: 1.4 });
         ring(x, y, '#f2b705', 200);
         addShake(8);
@@ -1239,6 +1208,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         bar?.remove();
         const [x, y] = center(tEl);
         const res = document.createElement('div');
+        scene.onQuiz(right);
         if (right) {
             S.honest++;
             S.honestStreak++;
@@ -1442,7 +1412,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
   <div class="set"><span>Mindre bevegelse<br><small style="color:var(--muted)">Skrur av risting, blink og de fleste partikler</small></span><button class="btn" id="sRed"></button></div>
   <div class="set"><span>Lagring<br><small style="color:var(--muted)">Lagres automatisk i nettleseren. Ta med deg spillet med en kode.</small></span><span class="row" style="margin:0"><button class="btn" id="sExp">Lag kode</button><button class="btn" id="sImp">Bruk kode</button></span></div>
   <div id="sBox"></div>
-  <div class="stats" style="margin-top:12px">Spilletid: <b>${fmtT(S.played)}</b><br>Klikk: <b>${NF0.format(S.clicks)}</b><br>Unnskyldninger totalt: <b>${fmt(S.allTotal)}</b><br>Lynprøver bestått: <b>${S.honest} av ${S.honestTries}</b>${honestPct}<br>Skolebytter: <b>${S.resets}</b> · Gullstjerner: <b>${S.goldClicks}</b></div>
+  <div class="stats" style="margin-top:12px">Spilletid: <b>${fmtT(S.played)}</b><br>Klikk: <b>${NF0.format(S.clicks)}</b><br>Unnskyldninger totalt: <b>${fmt(S.allTotal)}</b><br>Oppdagelser: <b>${Object.keys(S.seen).length} av ${Object.keys(DISCOVERIES).length}</b><br>Lynprøver bestått: <b>${S.honest} av ${S.honestTries}</b>${honestPct}<br>Skolebytter: <b>${S.resets}</b> · Gullstjerner: <b>${S.goldClicks}</b></div>
   <div class="row" style="justify-content:space-between"><button class="btn" id="sReset" style="border-color:var(--red);color:var(--red)">Slett alt</button><button class="btn big" id="sClose">Lukk</button></div>`,
             (c) => {
                 const q = (s: string) => c.querySelector(s) as HTMLElement;
@@ -1757,7 +1727,6 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             }
         }
         checkEra();
-        puffTick(dt);
         saveT += dt;
         if (saveT > 10) {
             saveT = 0;
@@ -1793,6 +1762,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             shake = 0;
             stage.style.transform = '';
         }
+        scene.update(dt);
         drawParts(dt);
     }
     function frame(t: number) {

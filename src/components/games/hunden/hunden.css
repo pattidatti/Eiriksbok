@@ -67,7 +67,7 @@
 .hsl #hsl-main.solo { grid-template-columns: minmax(0, 1fr) 0; }
 
 /* Scene */
-.hsl #hsl-stage { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-width: 0; min-height: 0; }
+.hsl #hsl-stage { position: relative; overflow: hidden; border: 2px solid var(--fg); border-radius: 6px; box-shadow: 6px 6px 0 var(--fg); background: var(--panel); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-width: 0; min-height: 0; }
 .hsl #hsl-eraTag { position: absolute; top: 4px; left: 4px; font: 400 15px var(--display); background: var(--fg); color: var(--paper); padding: 4px 12px; rotate: -2deg; border-radius: 2px; max-width: calc(100% - 8px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .hsl #hsl-eraTag small { font: 600 12px var(--ui); opacity: 0.75; margin-left: 8px; }
 .hsl #hsl-counter { text-align: center; transition: opacity 0.4s; }
@@ -108,23 +108,16 @@
 .hsl .buff.bad { background: #ffd2d2; border-color: var(--red); }
 .hsl .buff.good { background: #c9f2cf; border-color: #2a7a32; }
 
-/* Skrivebordet: gjengen, klistremerker og tekst på arket */
-.hsl #hsl-mark { position: absolute; left: 0; bottom: 0; font-size: min(20vh, 16vw); line-height: 1; opacity: 0.16; rotate: -8deg; pointer-events: none; }
-.hsl #hsl-desk { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 14px; width: 100%; }
-.hsl .gang { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-.hsl .gang.left { align-items: flex-end; }
-.hsl .gang.right { align-items: flex-start; }
-.hsl .tile { --sz: 24px; position: relative; width: min(100%, 180px); padding: 2px 6px 3px; border-radius: 6px; animation: hslPopIn 0.4s cubic-bezier(0.2, 1.6, 0.4, 1); }
-.hsl .tile.max { background: color-mix(in srgb, var(--hl) 35%, transparent); box-shadow: 0 0 0 2px var(--gold), 0 0 16px rgba(242, 183, 5, 0.45); }
-.hsl .tile.lvl { animation: hslLvl 0.6s ease-out; }
-.hsl .tile .pile { position: relative; height: calc(var(--sz) + 16px); }
-.hsl .tile .fig { position: absolute; font-size: var(--sz); line-height: 1; animation: hslBob 2.4s ease-in-out infinite; filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.18)); }
-.hsl .tile .fig.drop { animation: hslDrop 0.45s cubic-bezier(0.2, 1.5, 0.4, 1), hslBob 2.4s ease-in-out 0.45s infinite; }
-.hsl .tile .lab { display: flex; gap: 6px; align-items: baseline; font: 700 12px var(--ui); color: var(--muted); white-space: nowrap; overflow: hidden; }
-.hsl .gang.left .tile .lab { justify-content: flex-end; }
-.hsl .tile .nm { overflow: hidden; text-overflow: ellipsis; }
-.hsl .tile .cnt { font: 400 14px var(--display); color: var(--ink); }
-.hsl .tile .stars { color: var(--gold); letter-spacing: -1px; font-size: 13px; }
+/* Scenen: rommet og gjengen tegnes bak alt annet på scenen */
+.hsl #hsl-scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.hsl #hsl-stage > :not(#hsl-scene) { position: relative; z-index: 1; }
+.hsl #hsl-stage > #hsl-eraTag { position: absolute; z-index: 2; }
+.hsl #hsl-counter { background: color-mix(in srgb, var(--panel) 78%, transparent); border-radius: 10px; padding: 4px 14px 6px; backdrop-filter: blur(2px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); }
+.hsl #hsl-flow { background: color-mix(in srgb, var(--panel) 80%, transparent); border-radius: 8px; padding: 2px 8px 6px; }
+.hsl .toast.disc { background: linear-gradient(90deg, #6a3df0, #e0457b); color: #fff; box-shadow: 3px 3px 0 #23252c; font-size: 15px; animation-duration: 4s; }
+
+/* Klistremerker og tekst på arket */
+.hsl #hsl-desk { position: relative; z-index: 1; display: flex; justify-content: center; width: 100%; }
 .hsl #hsl-sheet .lines { position: absolute; inset: 0; pointer-events: none; }
 .hsl #hsl-sheet .ln { position: absolute; left: 46px; right: 10px; font: 700 clamp(12px, 1.2vw, 15px)/23px var(--hand); color: #1f43b5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; rotate: -0.6deg; }
 .hsl #hsl-sheet .ln.write { animation: hslWrite 0.9s steps(18) both; }
@@ -272,9 +265,6 @@
     .hsl #hsl-main, .hsl #hsl-main.solo { grid-template-columns: minmax(0, 1fr); }
     .hsl #hsl-stage { min-height: 70vh; padding-top: 40px; }
     .hsl #hsl-sheet, .hsl #hsl-flow { width: clamp(200px, 55vw, 280px); }
-    .hsl #hsl-desk { grid-template-columns: 1fr 1fr; }
-    .hsl #hsl-sheetWrap { grid-column: 1 / -1; grid-row: 1; justify-self: center; }
-    .hsl .tile { width: min(100%, 160px); }
     .hsl #hsl-shop { overflow: visible; }
     .hsl #hsl-shop.off { display: none; }
 }

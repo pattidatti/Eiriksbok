@@ -32,6 +32,7 @@ export interface State {
     honest: number;
     honestTries: number;
     honestStreak: number;
+    seen: Record<string, 1>; // oppdagelser på scenen
 }
 
 /* ================= BALANSE - juster tallene her ================= */
@@ -296,5 +297,6 @@ export function freshState(reduce: boolean): State {
         honest: 0,
         honestTries: 0,
         honestStreak: 0,
+        seen: {},
     };
 }
