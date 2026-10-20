@@ -1,0 +1,288 @@
+{
+    "id": "tema-og-budskap",
+    "tittel": "Tema og budskap: Det teksten egentlig handler om",
+    "kilde": "/norsk/analyse/tema-og-budskap",
+    "bilde": "/images/lessons/norsk/analyse/tema-og-budskap-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-20",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 3,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "regnet",
+            "lyd": "regn",
+            "kapittel": "Et bilde",
+            "visual": { "type": "TemaGatebildet", "props": { "modus": "regn" } },
+            "replikker": [
+                { "si": "Tenk deg et bilde. En gutt sitter helt alene ute i regnet." },
+                {
+                    "si": "Hva ser du? En gutt, og regn. Det er det vi faktisk kan se og ta på."
+                },
+                { "si": "Men kanskje kjenner du noe mer. Han ser ensom ut." },
+                {
+                    "si": "Det du ser, og det du kjenner, er to forskjellige ting. Det er det denne filmen handler om."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Tema og budskap",
+                    "undertittel": "Den usynlige tråden i teksten",
+                    "bilde": "/images/lessons/norsk/analyse/tema-og-budskap-hero.webp",
+                    "sporsmal": { "tekst": "Hva handler teksten egentlig om?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du leser en bok, ser en film eller spiller et spill, følger du med på hva som skjer med personene."
+                },
+                {
+                    "si": "Men når du er ferdig, sitter du kanskje igjen med en følelse, eller en tanke som kverner i hodet."
+                },
+                {
+                    "si": "Det er fordi teksten har noe som lever ved siden av handlingen. Det kaller vi temaet."
+                }
+            ]
+        },
+        {
+            "id": "lagene",
+            "kapittel": "Tre lag",
+            "visual": { "type": "TemaLagene", "props": { "modus": "oversikt" } },
+            "replikker": [
+                { "si": "Vi kan tenke på en tekst som tre lag, oppå hverandre." },
+                {
+                    "si": "Nederst ligger motivet. Det er det konkrete som skjer, det du kan se."
+                },
+                {
+                    "si": "I midten ligger temaet. Det er det teksten handler om på et dypere plan."
+                },
+                {
+                    "si": "Øverst ligger budskapet. Det er det forfatteren vil fortelle deg om temaet."
+                }
+            ]
+        },
+        {
+            "id": "motivet",
+            "kapittel": "Motivet",
+            "visual": { "type": "TemaSondag" },
+            "replikker": [
+                { "si": "La oss starte nederst, med motivet." },
+                {
+                    "si": "Motivet er den enkle gjenfortellingen. Det svarer på spørsmålet: Hva skjer?"
+                },
+                {
+                    "si": "Ta novellen Å drepe et barn av Stig Dagerman, fra 1948. En novelle er en kort fortelling."
+                },
+                {
+                    "si": "Motivet er en bilulykke en solfylt søndag. En lykkelig mann i bil kjører i hjel et barn."
+                },
+                {
+                    "si": "Motivet er råmaterialet. Uten noe konkret som skjer, har vi ingenting å tolke."
+                }
+            ]
+        },
+        {
+            "id": "skolen",
+            "lyd": "vind",
+            "kapittel": "Temaet",
+            "visual": { "type": "TemaGatebildet", "props": { "modus": "skole" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg en annen historie. En jente flytter til en ny by, og hun kjenner ingen på skolen."
+                },
+                {
+                    "si": "Det er handlingen. Den hører til akkurat denne jenta, på akkurat denne skolen."
+                },
+                {
+                    "si": "Men hva handler den om? Kanskje ensomhet. Kanskje det å stå utenfor."
+                },
+                {
+                    "si": "Eller kanskje om å finne ut hvem du er, når alt rundt deg er nytt. Det kaller vi identitet."
+                }
+            ]
+        },
+        {
+            "id": "universell",
+            "lyd": "stille",
+            "visual": { "type": "TemaTraaden", "props": { "modus": "universell" } },
+            "replikker": [
+                { "si": "Handlingen er ulik i hver eneste bok. Men temaene går igjen." },
+                {
+                    "si": "Vi sier at temaene er universelle. Det betyr at alle mennesker kjenner dem igjen, uansett tid og sted."
+                },
+                { "si": "Svik. Identitet. Og det at vi alle en dag skal dø." },
+                {
+                    "si": "Slike temaer har mennesker skrevet om i tusenvis av år. Og en god tekst kan ha flere temaer flettet sammen."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "Budskapet",
+            "visual": { "type": "TemaLagene", "props": { "modus": "krig" } },
+            "replikker": [
+                { "si": "Mange blander tema og budskap. Men de er ikke det samme." },
+                { "si": "Temaet svarer på spørsmålet: Hva handler teksten om?" },
+                { "si": "Budskapet svarer på: Hva vil forfatteren fortelle oss om det?" },
+                { "si": "Er temaet krig, kan budskapet være at krig er meningsløst." },
+                { "si": "Eller at vi må kjempe for fred. Samme tema, to helt ulike budskap." }
+            ]
+        },
+        {
+            "id": "par",
+            "visual": { "type": "TemaTraaden", "props": { "modus": "par" } },
+            "replikker": [
+                {
+                    "si": "Et tema er ofte bare ett ord. Et budskap er en hel setning, en mening om temaet."
+                },
+                {
+                    "si": "Temaet kjærlighet kan ha budskapet: Den sanne kjærligheten krever oppofrelse. Du må gi opp noe for den du er glad i."
+                },
+                {
+                    "si": "Temaet miljøvern kan ha budskapet: Menneskets grådighet ødelegger naturen vår."
+                },
+                {
+                    "si": "Og temaet ansvar: Små valg kan få følger for andre, følger som ikke kan gjøres om."
+                }
+            ]
+        },
+        {
+            "id": "linjene",
+            "visual": { "type": "TemaMellomLinjene" },
+            "replikker": [
+                { "si": "Hvor lett er det å finne budskapet? Det kommer an på teksten." },
+                {
+                    "si": "I eldre tekster, som folkeeventyr og fabler, sies moralen ofte rett ut til slutt. Moralen er det teksten vil lære deg."
+                },
+                { "si": "I moderne bøker er budskapet ofte gjemt mellom linjene." },
+                {
+                    "si": "Kanskje vil forfatteren bare få deg til å tenke over et problem, uten å gi deg et fasitsvar."
+                },
+                {
+                    "si": "Da er det du som må tolke. Du må argumentere for hva du mener er budskapet."
+                }
+            ]
+        },
+        {
+            "id": "sirkelen",
+            "kapittel": "Sirkelen",
+            "visual": { "type": "TemaSirkelen", "props": { "modus": "sirkel" } },
+            "replikker": [
+                { "si": "Hvordan finner du tema og budskap? Du jobber deg rundt i en sirkel." },
+                {
+                    "si": "Først leser du hele teksten én gang. Da får du et bilde av helheten."
+                },
+                { "si": "Så ser du på detaljene. Ordvalg, titler, kontraster." },
+                {
+                    "si": "Detaljene endrer bildet ditt av helheten. Og slik fortsetter du, fram og tilbake."
+                },
+                {
+                    "si": "Dette kalles den hermeneutiske sirkelen. Et vanskelig navn på noe enkelt: Du går fram og tilbake mellom delene og helheten."
+                }
+            ]
+        },
+        {
+            "id": "sporene",
+            "visual": { "type": "TemaSirkelen", "props": { "modus": "spor" } },
+            "replikker": [
+                { "si": "Her er sporene du skal lete etter." },
+                {
+                    "si": "Tittelen. Forfatteren gir deg ofte en gave i tittelen. Hva sier den om innholdet?"
+                },
+                {
+                    "si": "Starten og slutten. Hvordan begynner konflikten, og hvordan blir den løst?"
+                },
+                {
+                    "si": "Kontraster, altså motsetninger, som lys og mørke eller rik og fattig. De peker ofte rett mot temaet."
+                },
+                { "si": "Og symboler. Det er ting eller farger som betyr mer enn seg selv." }
+            ]
+        },
+        {
+            "id": "byen",
+            "lyd": "vind",
+            "kapittel": "Jeg ser",
+            "visual": { "type": "TemaGatebildet", "props": { "modus": "by" } },
+            "replikker": [
+                {
+                    "si": "La oss prøve på et dikt. Det heter Jeg ser, og Sigbjørn Obstfelder ga det ut i 1893."
+                },
+                {
+                    "si": "Motivet er enkelt. En mann står og ser på husene, himmelen og menneskene rundt seg."
+                },
+                { "si": "Han ser de gråblå skyene. De høye husene. De tusende vinduene." },
+                {
+                    "si": "Men han kjenner seg ikke igjen. Han føler at han har havnet på feil klode."
+                }
+            ]
+        },
+        {
+            "id": "tolkningen",
+            "lyd": "stille",
+            "visual": { "type": "TemaLagene", "props": { "modus": "obstfelder" } },
+            "replikker": [
+                {
+                    "si": "Han gjentar ordene jeg ser, igjen og igjen. Det bygger opp en avstand. Han ser på, men han er ikke med."
+                },
+                {
+                    "si": "Temaet er utenforskap og fremmedgjøring. Å føle seg fremmed, og ikke høre til."
+                },
+                { "si": "Han er omgitt av tusenvis av mennesker, og likevel alene." },
+                {
+                    "si": "Og budskapet? Én tolkning er at det moderne mennesket har mistet sin plass, og ikke føler seg hjemme noe sted."
+                },
+                { "si": "Diktet stiller oss et spørsmål: Hvor er vi egentlig hjemme?" }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Motivet er det som skjer.", "fraBeat": 0 },
+                        { "tekst": "Temaet er det det betyr.", "fraBeat": 0, "uthevet": true },
+                        {
+                            "tekst": "Budskapet er hva forfatteren vil si om det.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Å tolke er ikke å finne en fasit.", "fraBeat": 2 },
+                        {
+                            "tekst": "Det er en samtale om hva det vil si å være menneske.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        { "tekst": "Spør deg selv:", "fraBeat": 3 },
+                        {
+                            "tekst": "Hva handler dette egentlig om?",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Motivet er det som skjer. Temaet er det det betyr." },
+                { "si": "Og budskapet er hva forfatteren vil si om temaet." },
+                {
+                    "si": "Å tolke en tekst er ikke å finne en ferdig fasit. Det er å gå inn i en samtale med forfatteren om hva det vil si å være menneske."
+                },
+                {
+                    "si": "Så neste gang en historie blir sittende i hodet ditt, spør deg selv: Hva handler dette egentlig om?"
+                }
+            ]
+        }
+    ]
+}
