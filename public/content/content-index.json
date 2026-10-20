@@ -1,5 +1,5 @@
 {
-  "buildId": 84135395483757,
+  "buildId": 214630118248563,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -418,6 +418,9 @@
     "concept-det-universelle-rettferdighetens-hus": [
       "content/concepts/det-universelle-rettferdighetens-hus.json"
     ],
+    "concept-devaluering": [
+      "content/concepts/devaluering.json"
+    ],
     "concept-devsirme": [
       "content/concepts/devsirme.json"
     ],
@@ -573,6 +576,9 @@
     ],
     "concept-gemara": [
       "content/concepts/gemara.json"
+    ],
+    "concept-generalstreik": [
+      "content/concepts/generalstreik.json"
     ],
     "concept-generasjon": [
       "content/concepts/generasjon.json"
@@ -982,6 +988,9 @@
     "concept-liberalisme": [
       "content/concepts/liberalisme.json"
     ],
+    "concept-libertarianisme": [
+      "content/concepts/libertarianisme.json"
+    ],
     "concept-logos": [
       "content/concepts/logos.json"
     ],
@@ -1300,6 +1309,9 @@
     "concept-perestrojka": [
       "content/concepts/perestrojka.json"
     ],
+    "concept-peronisme": [
+      "content/concepts/peronisme.json"
+    ],
     "concept-pesach": [
       "content/concepts/pesach.json"
     ],
@@ -1329,6 +1341,9 @@
     ],
     "concept-population-registration-act": [
       "content/concepts/population-registration-act.json"
+    ],
+    "concept-populisme": [
+      "content/concepts/populisme.json"
     ],
     "concept-pragmatisme": [
       "content/concepts/pragmatisme.json"
@@ -1602,6 +1617,9 @@
     ],
     "concept-sivilisasjon": [
       "content/concepts/sivilisasjon.json"
+    ],
+    "concept-sjokkterapi": [
+      "content/concepts/sjokkterapi.json"
     ],
     "concept-skagerrak": [
       "content/concepts/skagerrak.json"
@@ -4234,6 +4252,9 @@
     "jan-hus": [
       "content/people/jan-hus.json"
     ],
+    "javier-milei": [
+      "content/people/javier-milei.json"
+    ],
     "jean-jacques-rousseau": [
       "content/people/jean-jacques-rousseau.json"
     ],
@@ -4795,6 +4816,9 @@
     "komparativt-fortrinn": [
       "content/samfunnskunnskap/okonomi/komparativt-fortrinn.json"
     ],
+    "milei-argentina": [
+      "content/samfunnskunnskap/okonomi/milei-argentina.json"
+    ],
     "naturlig-rente": [
       "content/samfunnskunnskap/okonomi/naturlig-rente.json"
     ],
@@ -5035,6 +5059,7 @@
     "concepts/det-oestindiske-kompani.json/det-oestindiske-kompani": "content/concepts/det-oestindiske-kompani.json",
     "concepts/det-styrende-rad.json/det-styrende-rad": "content/concepts/det-styrende-rad.json",
     "concepts/det-universelle-rettferdighetens-hus.json/det-universelle-rettferdighetens-hus": "content/concepts/det-universelle-rettferdighetens-hus.json",
+    "concepts/devaluering.json/devaluering": "content/concepts/devaluering.json",
     "concepts/devsirme.json/devsirme": "content/concepts/devsirme.json",
     "concepts/dhammapada.json/dhammapada": "content/concepts/dhammapada.json",
     "concepts/dharma.json/dharma": "content/concepts/dharma.json",
@@ -5087,6 +5112,7 @@
     "concepts/frontfagmodellen.json/frontfagmodellen": "content/concepts/frontfagmodellen.json",
     "concepts/fullmaktsloven.json/fullmaktsloven": "content/concepts/fullmaktsloven.json",
     "concepts/gemara.json/gemara": "content/concepts/gemara.json",
+    "concepts/generalstreik.json/generalstreik": "content/concepts/generalstreik.json",
     "concepts/generasjon.json/generasjon": "content/concepts/generasjon.json",
     "concepts/ghazi.json/ghazi": "content/concepts/ghazi.json",
     "concepts/gig-okonomi.json/gig-okonomi": "content/concepts/gig-okonomi.json",
@@ -5223,6 +5249,7 @@
     "concepts/lekmannsbevegelse.json/lekmannsbevegelse": "content/concepts/lekmannsbevegelse.json",
     "concepts/lex-salica.json/lex-salica": "content/concepts/lex-salica.json",
     "concepts/liberalisme.json/liberalisme": "content/concepts/liberalisme.json",
+    "concepts/libertarianisme.json/libertarianisme": "content/concepts/libertarianisme.json",
     "concepts/logos.json/logos": "content/concepts/logos.json",
     "concepts/lojalitet.json/lojalitet": "content/concepts/lojalitet.json",
     "concepts/lydighet.json/lydighet": "content/concepts/lydighet.json",
@@ -5329,6 +5356,7 @@
     "concepts/pengeskaping.json/pengeskaping": "content/concepts/pengeskaping.json",
     "concepts/penicillin.json/penicillin": "content/concepts/penicillin.json",
     "concepts/perestrojka.json/perestrojka": "content/concepts/perestrojka.json",
+    "concepts/peronisme.json/peronisme": "content/concepts/peronisme.json",
     "concepts/pesach.json/pesach": "content/concepts/pesach.json",
     "concepts/petrodollar.json/petrodollar": "content/concepts/petrodollar.json",
     "concepts/pietisme.json/pietisme": "content/concepts/pietisme.json",
@@ -5339,6 +5367,7 @@
     "concepts/polyteisme.json/polyteisme": "content/concepts/polyteisme.json",
     "concepts/pontifex-maximus.json/pontifex-maximus": "content/concepts/pontifex-maximus.json",
     "concepts/population-registration-act.json/population-registration-act": "content/concepts/population-registration-act.json",
+    "concepts/populisme.json/populisme": "content/concepts/populisme.json",
     "concepts/pragmatisme.json/pragmatisme": "content/concepts/pragmatisme.json",
     "concepts/president-republikk.json/president-republikk": "content/concepts/president-republikk.json",
     "concepts/prestedommet.json/prestedommet": "content/concepts/prestedommet.json",
@@ -5430,6 +5459,7 @@
     "concepts/sionisme.json/sionisme": "content/concepts/sionisme.json",
     "concepts/sira.json/sira": "content/concepts/sira.json",
     "concepts/sivilisasjon.json/sivilisasjon": "content/concepts/sivilisasjon.json",
+    "concepts/sjokkterapi.json/sjokkterapi": "content/concepts/sjokkterapi.json",
     "concepts/skagerrak.json/skagerrak": "content/concepts/skagerrak.json",
     "concepts/skapelsesmyte.json/skapelsesmyte": "content/concepts/skapelsesmyte.json",
     "concepts/skyttergravskrig.json/skyttergravskrig": "content/concepts/skyttergravskrig.json",
@@ -6310,6 +6340,7 @@
     "people/ivar-aasen.json/ivar-aasen": "content/people/ivar-aasen.json",
     "people/james-watt.json/james-watt": "content/people/james-watt.json",
     "people/jan-hus.json/jan-hus": "content/people/jan-hus.json",
+    "people/javier-milei.json/javier-milei": "content/people/javier-milei.json",
     "people/jean-jacques-rousseau.json/jean-jacques-rousseau": "content/people/jean-jacques-rousseau.json",
     "people/jean-paul-sartre.json/jean-paul-sartre": "content/people/jean-paul-sartre.json",
     "people/jeanne-d-arc.json/jeanne-d-arc": "content/people/jeanne-d-arc.json",
@@ -6502,6 +6533,7 @@
     "samfunnskunnskap/okonomi/hvordan-penger-blir-til": "content/samfunnskunnskap/okonomi/hvordan-penger-blir-til.json",
     "samfunnskunnskap/okonomi/inflasjon-og-rente": "content/samfunnskunnskap/okonomi/inflasjon-og-rente.json",
     "samfunnskunnskap/okonomi/komparativt-fortrinn": "content/samfunnskunnskap/okonomi/komparativt-fortrinn.json",
+    "samfunnskunnskap/okonomi/milei-argentina": "content/samfunnskunnskap/okonomi/milei-argentina.json",
     "samfunnskunnskap/okonomi/naturlig-rente": "content/samfunnskunnskap/okonomi/naturlig-rente.json",
     "samfunnskunnskap/okonomi/okonomiske-skoler": "content/samfunnskunnskap/okonomi/okonomiske-skoler.json",
     "samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel": "content/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel.json",

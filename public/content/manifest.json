@@ -1252,6 +1252,20 @@
               ],
               "createdDate": "2026-08-18T00:00:00+02:00",
               "lastUpdated": "2026-08-19T07:34:55+02:00"
+            },
+            {
+              "id": "milei-argentina",
+              "title": "Javier Milei: Motorsaga i Argentina",
+              "description": "Prisene steg 211 prosent på ett år. Så kom en økonom med motorsag. Hvem betalte for å stoppe inflasjonen?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "argentina",
+                "inflasjon",
+                "politikk",
+                "populisme"
+              ],
+              "createdDate": "2026-10-20T00:00:00+02:00"
             }
           ]
         },
