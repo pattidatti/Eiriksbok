@@ -4,13 +4,15 @@
     "kilde": "/historie/kinas-historie/deng-og-reformene",
     "bilde": "/images/kinas-historie/deng-og-reformene-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-20", "viser": 4, "lesbart": 4, "variasjon": 5, "forstaelig": 4, "tro": 4, "sum": 21 },
     "scener": [
         {
             "id": "grensebyen",
+            "lyd": "vind",
             "kapittel": "Grensebyen",
             "visual": { "type": "DengShenzhen", "props": { "modus": "grenseby" } },
             "replikker": [
-                { "si": "Det er 1979. Vi står i en liten by helt sør i Kina. Byen heter Shenzhen." },
+                { "si": "Det er 1979. Vi står i en liten by sør i Kina, like ved Hongkong. Byen heter Shenzhen." },
                 { "si": "Rundt 30 000 mennesker bor her. Byen ligger sør i Guangdong-provinsen." },
                 { "si": "Byen er nesten bare en tollstasjon. Her går veien inn i Kina fra Hongkong, like på den andre siden av grensa." },
                 { "si": "Men snart skal denne lille byen forandre hele landet." }
@@ -39,11 +41,12 @@
         },
         {
             "id": "katten",
+            "lyd": "stille",
             "visual": { "type": "DengTavle", "props": { "modus": "katt" } },
             "replikker": [
                 { "si": "Deng skal ha sagt: Det spiller ingen rolle om katten er svart eller hvit, bare den fanger mus." },
                 { "si": "Fargen på katten er ideologien, altså ideene om hvordan samfunnet skal være. Kommunisme eller kapitalisme." },
-                { "si": "Musa er resultatet. Mat på bordet, jobber og penger. Det var det eneste Deng brydde seg om." }
+                { "si": "Musa er resultatet. Mat på bordet, jobber og penger. Det var resultatene Deng brydde seg om." }
             ]
         },
         {
@@ -52,7 +55,7 @@
             "visual": { "type": "DengKurve" },
             "replikker": [
                 { "si": "Deng hadde kjempet sammen med Mao i mange tiår. I 1966 var han en av de mektigste mennene i Kina." },
-                { "si": "Men så kom kulturrevolusjonen. Deng ble kalt han som følger den kapitalistiske veien. I 1967 mistet han alle jobbene sine i partiet." },
+                { "si": "Men så kom kulturrevolusjonen. Deng ble kalt han som følger den kapitalistiske veien. I 1967 mistet han alle vervene sine, altså alle de viktige jobbene han hadde." },
                 { "si": "I 1973 fikk han komme tilbake. I 1976 ble han kastet ut igjen." },
                 { "si": "I 1977 var han tilbake enda en gang." },
                 { "si": "I desember 1978 vant Deng maktkampen mot Maos etterfølger. Nå var han Kinas mektigste mann. Og han hadde en plan." }
@@ -71,15 +74,17 @@
         },
         {
             "id": "bondene",
-            "visual": { "type": "DengTavle", "props": { "modus": "bonde" } },
+            "lyd": "vind",
+            "visual": { "type": "DengAker" },
             "replikker": [
-                { "si": "Først endret Deng livet på landsbygda. Før bestemte staten nesten alt bøndene dyrket." },
-                { "si": "Nå fikk bøndene etter hvert lov til å selge en del av det de dyrket selv." },
-                { "si": "Da lønte det seg å jobbe hardere. Matproduksjonen steg, og mange bønder tjente egne penger for første gang." }
+                { "si": "Så kom landsbygda. Før styrte staten det meste av det som ble produsert. Nå fikk staten mindre makt, men den styrte fortsatt mye." },
+                { "si": "Bøndene fikk etter hvert lov til å selge en del av det de dyrket selv." },
+                { "si": "Matproduksjonen steg, og mange bønder tjente egne penger for første gang." }
             ]
         },
         {
             "id": "sonen",
+            "lyd": "stille",
             "kapittel": "Shenzhen",
             "visual": { "type": "DengKart", "props": { "modus": "sone" } },
             "replikker": [
@@ -106,7 +111,7 @@
             "replikker": [
                 { "si": "Planen var å prøve ut reglene i små soner først." },
                 { "si": "Når noe virket, ble det utvidet til resten av økonomien. Litt og litt, ikke alt på en gang." },
-                { "si": "Fra slutten av 1970-tallet ble Kina gradvis åpnet mot resten av verden." }
+                { "si": "Fra 1978 ble økonomien i Kina gradvis åpnet mot resten av verden." }
             ]
         },
         {
@@ -116,17 +121,28 @@
             "replikker": [
                 { "si": "Men vent litt. Et kommunistisk parti som slipper løs markedet. Er ikke det rart?" },
                 { "si": "Deng nektet å bruke ordet kapitalisme. Likevel fikk markedet bestemme over stadig mer." },
-                { "si": "Fra 1992 ble det lov å eie egne bedrifter. I 1993 fikk modellen et offisielt navn: sosialistisk markedsøkonomi. Sosialistisk betyr at staten skal ha mye makt over samfunnet." },
+                { "si": "Fra 1992 ble det lov å eie egne bedrifter. I 1993 fikk modellen et offisielt navn: sosialistisk markedsøkonomi. Navnet skulle vise at partiet fortsatt styrte, selv om markedet fikk mer plass." },
                 { "si": "Partiet bestemte fortsatt over politikken. Men i butikkene, på fabrikkene og i bankene var det prisene og fortjenesten som styrte." }
             ]
         },
         {
             "id": "tallene",
-            "visual": { "type": "DengTavle", "props": { "modus": "vekst" } },
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "HYKLERI?",
+                    "undertittel": "Eller det eneste som virket",
+                    "bilde": "/images/kinas-historie/deng-og-reformene-hero.webp",
+                    "tall": [
+                        { "verdi": 9, "etikett": "prosent vekst i året i snitt, siden 1978", "fraBeat": 1, "tone": "gronn", "prefiks": "over" }
+                    ],
+                    "sporsmal": { "tekst": "I dag: verdens nest største økonomi", "fraBeat": 2 }
+                }
+            },
             "replikker": [
                 { "si": "Kritikere kalte det hykleri, altså å si én ting og gjøre noe annet. Tilhengerne sa at det var det eneste som virket." },
                 { "si": "Tallene ga Deng rett. Siden 1978 har Kinas økonomi vokst med over ni prosent i året i snitt." },
-                { "si": "I dag er Kina verdens nest største økonomi." }
+                { "si": "Målt i verdien av alt landet produserer, er Kina i dag verdens nest største økonomi." }
             ]
         },
         {
@@ -137,7 +153,7 @@
                 { "si": "Men ikke alle vant like mye. Byene langs kysten vokste raskt. Distriktene inne i landet ble hengende etter." },
                 { "si": "Rundt 300 millioner mennesker flyttet fra landsbygda til byene for å jobbe i fabrikker og på byggeplasser." },
                 { "si": "Korrupsjon ble et stort problem. Korrupsjon betyr at folk med makt tar imot penger for å gi andre fordeler." },
-                { "si": "Og jobben er ikke ferdig. I 2024 levde fortsatt rundt 15 prosent av kineserne for under 8,30 dollar om dagen.", "uttale": "Og jobben er ikke ferdig. I 2024 levde fortsatt rundt 15 prosent av kineserne for under åtte dollar og tretti cent om dagen." }
+                { "si": "Og fattigdommen er ikke borte. I 2024 levde fortsatt rundt 15 prosent av kineserne for under 8,30 dollar om dagen.", "uttale": "Og fattigdommen er ikke borte. I 2024 levde fortsatt rundt 15 prosent av kineserne for under åtte dollar og tretti cent om dagen." }
             ]
         },
         {
@@ -162,17 +178,28 @@
         {
             "id": "hongkong",
             "kapittel": "Arven",
-            "visual": { "type": "DengKart", "props": { "modus": "hongkong" } },
+            "visual": { "type": "DengArv" },
             "replikker": [
-                { "si": "Deng trakk seg fra den daglige ledelsen i 1987, og i 1989 ga han fra seg sin siste jobb i partiet. Likevel bestemte han mye i det skjulte." },
+                { "si": "Deng trakk seg fra den daglige ledelsen i 1987, og i 1989 ga han fra seg sin siste jobb i partiet. Likevel hadde han fortsatt mye makt bak kulissene." },
                 { "si": "Han hadde jobbet med spørsmålet om Hongkong helt siden 1979. Byen var britisk, men Kina ville ha den tilbake." },
                 { "si": "Deng døde i Beijing 19. februar 1997." },
-                { "si": "Fire måneder senere, 1. juli 1997, ble Hongkong levert tilbake til Kina. Deng rakk aldri å se det." }
+                { "si": "Drøyt fire måneder senere, 1. juli 1997, ble Hongkong levert tilbake til Kina. Deng rakk aldri å se det." }
             ]
         },
         {
             "id": "xi",
-            "visual": { "type": "DengTavle", "props": { "modus": "xi" } },
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Xi Jinping: Dengs modell, bare hardere",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Xi Jinping leder Kina i dag", "tekst": "Han bygger videre på Dengs modell.", "fraBeat": 0 },
+                        { "ikon": "fabrikk", "tittel": "Sterk vekst, sterk stat", "tekst": "Lite rom for de som er uenige.", "fraBeat": 1 },
+                        { "ikon": "snakk", "tittel": "Mer makt, strengere sensur", "tekst": "Sensuren av internett og medier er strammet inn.", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "2018: grensen er borte", "tekst": "Ingen grense lenger for hvor lenge en president kan sitte.", "fraBeat": 3 }
+                    ]
+                }
+            },
             "replikker": [
                 { "si": "Lederen i Kina i dag heter Xi Jinping. Han bygger videre på modellen til Deng." },
                 { "si": "Sterk vekst i økonomien. En sterk stat. Lite rom for de som er uenige." },
@@ -188,7 +215,7 @@
                 "props": {
                     "setninger": [
                         { "tekst": "En liten grenseby ble en storby.", "fraBeat": 0 },
-                        { "tekst": "Kina åpnet seg for verden.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Nesten 800 millioner ut av ekstrem fattigdom.", "fraBeat": 0, "uthevet": true },
                         { "tekst": "Frihet til å kjøpe og selge.", "fraBeat": 1 },
                         { "tekst": "Men ikke frihet til å være uenig.", "fraBeat": 1, "uthevet": true },
                         { "tekst": "Katten fanger fortsatt mus.", "fraBeat": 2 },
@@ -197,7 +224,7 @@
                 }
             },
             "replikker": [
-                { "si": "Deng forandret Kina. En liten grenseby ble en storby, og hundrevis av millioner kom ut av fattigdom." },
+                { "si": "Deng forandret Kina. En liten grenseby ble en storby, og nesten 800 millioner kom ut av ekstrem fattigdom." },
                 { "si": "Men han ga folket bare én slags frihet. Frihet til å handle, ikke frihet til å si imot." },
                 { "si": "Kina i dag er Dengs modell, bare strengere. Økonomien vokser, men staten passer enda bedre på hva folk sier. Katten fanger fortsatt mus, men den har skarpe klør." }
             ]

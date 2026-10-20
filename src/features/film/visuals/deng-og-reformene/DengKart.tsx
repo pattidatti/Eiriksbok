@@ -13,10 +13,9 @@ import { Teller } from '../shared';
  * - «utvide»: det som virker i sonen, sprer seg utover landet.
  * - «flytting»: kysten vokser, innlandet henger etter, og folk flytter mot byene.
  * - «beijing»: partiet styrer politikken, og Den himmelske freds plass i 1989.
- * - «hongkong»: Deng trekker seg, dør, og Hongkong blir levert tilbake.
  */
 
-type Modus = 'sone' | 'utvide' | 'flytting' | 'beijing' | 'hongkong';
+type Modus = 'sone' | 'utvide' | 'flytting' | 'beijing';
 type LngLat = [number, number];
 type Proj = (ll: LngLat) => [number, number];
 
@@ -45,10 +44,6 @@ const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
         [106, 33],
         [126, 44],
     ],
-    hongkong: [
-        [107, 19],
-        [122, 27],
-    ],
 };
 
 const OVERSKRIFT: Record<Modus, string[]> = {
@@ -69,12 +64,6 @@ const OVERSKRIFT: Record<Modus, string[]> = {
         'Markedet blir friere, men ikke politikken',
         '1989: Den himmelske freds plass',
         'Juni 1989: slått ned av militæret',
-    ],
-    hongkong: [
-        'Deng trekker seg tilbake',
-        'Fra 1979: Deng jobber med Hongkong-saken',
-        '19. februar 1997: Deng dør',
-        '1. juli 1997: Hongkong tilbake til Kina',
     ],
 };
 
@@ -146,7 +135,6 @@ export function DengKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
                 {modus === 'utvide' && <Utvide beat={beat} p={p} />}
                 {modus === 'flytting' && <Flytting beat={beat} p={p} />}
                 {modus === 'beijing' && <Beijing beat={beat} p={p} />}
-                {modus === 'hongkong' && <Hongkong beat={beat} p={p} />}
             </svg>
 
             <AnimatePresence mode="wait">
@@ -218,39 +206,6 @@ export function DengKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
                             <div className="mt-3 text-2xl font-semibold text-red-300">
                                 Deng støttet at militæret slo dem ned
                             </div>
-                        </div>
-                    </Kort>
-                )}
-                {modus === 'hongkong' && beat === 0 && (
-                    <Kort key="trekker" side="hoyre">
-                        <div className="flex flex-col gap-3">
-                            {[
-                                ['1987', 'går ut av den daglige ledelsen'],
-                                ['1989', 'gir fra seg siste jobb i partiet'],
-                            ].map(([år, t], i) => (
-                                <motion.div
-                                    key={år}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: 0.5 + i * 1.4 }}
-                                    className="px-5 py-3 rounded-2xl bg-white/95 shadow-xl"
-                                >
-                                    <span className="font-display font-black text-3xl text-red-700">
-                                        {år}
-                                    </span>
-                                    <span className="ml-3 text-2xl font-semibold text-slate-700">
-                                        {t}
-                                    </span>
-                                </motion.div>
-                            ))}
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 3.6 }}
-                                className="px-5 py-2 rounded-2xl bg-slate-900/85 text-white text-2xl font-bold"
-                            >
-                                men bestemmer mye i det skjulte
-                            </motion.div>
                         </div>
                     </Kort>
                 )}
@@ -580,65 +535,6 @@ function Beijing({ beat, p }: { beat: number; p: Proj }) {
             >
                 Den himmelske freds plass
             </motion.text>
-        </>
-    );
-}
-
-function Hongkong({ beat, p }: { beat: number; p: Proj }) {
-    const [x, y] = p(HONGKONG);
-    const tilbake = beat >= 3;
-    return (
-        <>
-            <motion.g
-                initial={{ opacity: 0 }}
-                animate={{ opacity: beat === 2 ? 0.45 : 0 }}
-                transition={{ duration: 1 }}
-            >
-                <rect x={0} y={0} width={B} height={H} fill="#0f172a" />
-            </motion.g>
-            <motion.circle
-                cx={x}
-                cy={y}
-                stroke="#fff"
-                strokeWidth={6}
-                initial={{ r: 0 }}
-                animate={{ r: beat >= 1 ? 34 : 0, fill: tilbake ? '#dc2626' : '#1d4ed8' }}
-                transition={{ duration: 1.2 }}
-            />
-            <motion.text
-                x={x}
-                y={y - 60}
-                textAnchor="middle"
-                fontSize={48}
-                fontWeight={900}
-                stroke="#fff"
-                strokeWidth={8}
-                paintOrder="stroke"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: beat >= 1 ? 1 : 0, fill: tilbake ? '#991b1b' : '#1e3a8a' }}
-                transition={{ duration: 1.2 }}
-            >
-                Hongkong
-            </motion.text>
-            <motion.text
-                x={x}
-                y={y + 90}
-                textAnchor="middle"
-                fontSize={36}
-                fontWeight={800}
-                stroke="#fff"
-                strokeWidth={7}
-                paintOrder="stroke"
-                initial={{ opacity: 0 }}
-                animate={{
-                    opacity: beat >= 1 ? 1 : 0,
-                    fill: tilbake ? '#991b1b' : '#1e3a8a',
-                }}
-                transition={{ duration: 1 }}
-            >
-                {tilbake ? 'tilbake til Kina' : 'britisk'}
-            </motion.text>
-            <Etikett ll={[111, 25]} p={p} tekst="KINA" farge="#991b1b" />
         </>
     );
 }
