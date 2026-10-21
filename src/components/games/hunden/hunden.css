@@ -76,6 +76,13 @@
 .hsl #hsl-bankLbl { font: 700 clamp(17px, 1.8vw, 22px) var(--hand); color: var(--fg); margin-top: 2px; }
 .hsl #hsl-ppsline { font: 600 14px var(--ui); color: var(--muted); margin-top: 6px; display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; padding: 2px 8px; }
 .hsl #hsl-ppsline b { color: var(--fg); font-variant-numeric: tabular-nums; }
+.hsl #hsl-next { position: absolute; z-index: 2; top: 42px; left: 10px; width: 250px; background: color-mix(in srgb, var(--panel) 85%, transparent); border-radius: 8px; padding: 4px 10px 7px; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); transition: opacity 0.4s; }
+.hsl #hsl-next.off { opacity: 0; }
+.hsl #hsl-next .row { display: flex; justify-content: space-between; gap: 10px; font: 700 13px var(--ui); color: var(--fg); margin-bottom: 3px; }
+.hsl #hsl-next .row span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hsl #hsl-next .bar { height: 10px; border: 2px solid var(--fg); border-radius: 8px; overflow: hidden; background: var(--panel); }
+.hsl #hsl-next .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--hl), #f2b705); transition: width 0.2s linear; }
+.hsl #hsl-next.done .bar { display: none; }
 
 .hsl #hsl-sheetWrap { position: relative; will-change: transform; }
 .hsl #hsl-sheet {
@@ -111,7 +118,7 @@
 /* Scenen: rommet og gjengen tegnes bak alt annet på scenen */
 .hsl #hsl-scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .hsl #hsl-stage > :not(#hsl-scene) { position: relative; z-index: 1; }
-.hsl #hsl-stage > #hsl-eraTag { position: absolute; z-index: 2; }
+.hsl #hsl-stage > #hsl-eraTag, .hsl #hsl-stage > #hsl-next { position: absolute; z-index: 2; }
 .hsl #hsl-counter { background: color-mix(in srgb, var(--panel) 78%, transparent); border-radius: 10px; padding: 4px 14px 6px; backdrop-filter: blur(2px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); }
 .hsl #hsl-flow { background: color-mix(in srgb, var(--panel) 80%, transparent); border-radius: 8px; padding: 2px 8px 6px; }
 .hsl .toast.disc { background: linear-gradient(90deg, #6a3df0, #e0457b); color: #fff; box-shadow: 3px 3px 0 #23252c; font-size: 15px; animation-duration: 4s; }
@@ -260,6 +267,7 @@
 .hsl.calm #hsl-headline .np { rotate: 0deg; }
 
 @media (max-width: 860px) {
+    .hsl #hsl-stage > #hsl-next { position: relative; top: auto; left: auto; width: min(100%, 320px); }
     .hsl { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
     .hsl #hsl-app { height: auto; min-height: calc(100dvh - 64px); }
     .hsl #hsl-main, .hsl #hsl-main.solo { grid-template-columns: minmax(0, 1fr); }

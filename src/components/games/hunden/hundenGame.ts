@@ -82,6 +82,7 @@ const MARKUP = `
         <div id="hsl-bankLbl">unnskyldninger</div>
         <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span><span title="Alle unnskyldninger du har funnet på, også før skolebytter">totalscore: <b id="hsl-total">0</b></span></div>
       </div>
+      <div id="hsl-next" class="off" title="Unnskyldninger du har funnet på siden forrige skolebytte"><div class="row"><span id="hsl-nextName"></span><span id="hsl-nextNum"></span></div><div class="bar"><i id="hsl-nextBar"></i></div></div>
       <div id="hsl-desk">
         <div id="hsl-sheetWrap">
           <button id="hsl-sheet" aria-label="Finn på en unnskyldning">
@@ -919,6 +920,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (cOn !== counterWas) {
             counterWas = cOn;
             $('#hsl-counter').classList.toggle('off', !cOn);
+            $('#hsl-next').classList.toggle('off', !cOn);
             if (cOn) bankNum.animate([{ scale: 0.3 }, { scale: 1 }], { duration: 400, easing: 'cubic-bezier(.2,1.6,.4,1)' });
         }
         const tOn = S.allTotal >= 30;
@@ -929,6 +931,21 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         }
         $('#hsl-pps').textContent = fmt(pps(), true);
         $('#hsl-total').textContent = fmt(S.allTotal);
+        // Neste område: noe å jobbe mot
+        const nextEra = ERAS[S.era + 1];
+        const nextEl = $('#hsl-next');
+        nextEl.classList.toggle('done', !nextEra);
+        if (nextEra) {
+            const goal = BAL.eras[S.era + 1];
+            const from = BAL.eras[S.era];
+            const frac = Math.min(1, Math.max(0, (S.runTotal - from) / (goal - from)));
+            $('#hsl-nextName').textContent = `Neste område: ${nextEra.n}`;
+            $('#hsl-nextNum').textContent = `${fmt(S.runTotal)} / ${fmt(goal)}`;
+            $('#hsl-nextBar').style.width = (frac * 100).toFixed(1) + '%';
+        } else {
+            $('#hsl-nextName').textContent = `Du har nådd det siste området: ${ERAS[S.era].n}`;
+            $('#hsl-nextNum').textContent = '';
+        }
         $('#hsl-ppc').textContent = fmt(clickPow(), true);
         // medskyldige
         while (S.rev < P.length - 1 && (S.owned[S.rev + 1] > 0 || S.runTotal >= P[S.rev + 1].c * 0.5)) S.rev++;
