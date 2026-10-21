@@ -38,7 +38,7 @@ function kameraFor(modus: Modus, beat: number, t: number) {
             case 1:
                 return { pos: v(0, 5.5, -4 - t * 0.2), se: v(0, 3.4, -24) };
             case 2:
-                return { pos: v(13 - t * 0.2, 6.5, -9), se: v(-2, 3, -24) };
+                return { pos: v(9 - t * 0.2, 6.5, -9), se: v(-2, 3, -24) };
             default:
                 return { pos: v(2.6, 3.2, -14.8), se: v(0, 2.6, BRADSHAW_Z) };
         }
