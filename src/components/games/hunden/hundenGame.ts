@@ -1809,7 +1809,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             const hh = hintEl.offsetHeight;
             let top = r.top - hh - 16;
             let cls = 'above';
-            if (top < 8) {
+            // Lappen skal aldri havne over spillet, bak menylinja til nettstedet
+            const minTop = Math.max(8, root.getBoundingClientRect().top + 6);
+            if (top < minTop) {
                 top = r.bottom + 16;
                 cls = 'below';
             }
@@ -1863,7 +1865,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             left = Math.max(8, Math.min(W - tipBox.offsetWidth - 8, r.left));
             top = r.bottom + 8;
         }
-        top = Math.min(top, H - tipBox.offsetHeight - 8);
+        top = Math.max(root.getBoundingClientRect().top + 6, Math.min(top, H - tipBox.offsetHeight - 8));
         tipBox.style.left = left + 'px';
         tipBox.style.top = top + 'px';
     }
