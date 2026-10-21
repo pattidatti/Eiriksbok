@@ -118,7 +118,7 @@
 /* Scenen: rommet og gjengen tegnes bak alt annet på scenen */
 .hsl #hsl-scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 .hsl #hsl-stage > :not(#hsl-scene) { position: relative; z-index: 1; }
-.hsl #hsl-stage > #hsl-eraTag, .hsl #hsl-stage > #hsl-next { position: absolute; z-index: 2; }
+.hsl #hsl-stage > #hsl-eraTag, .hsl #hsl-stage > #hsl-next, .hsl #hsl-stage > #hsl-verb { position: absolute; z-index: 2; }
 .hsl #hsl-counter { background: color-mix(in srgb, var(--panel) 78%, transparent); border-radius: 10px; padding: 4px 14px 6px; backdrop-filter: blur(2px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12); }
 .hsl #hsl-flow { background: color-mix(in srgb, var(--panel) 80%, transparent); border-radius: 8px; padding: 2px 8px 6px; }
 .hsl .toast.disc { background: linear-gradient(90deg, #6a3df0, #e0457b); color: #fff; box-shadow: 3px 3px 0 #23252c; font-size: 15px; animation-duration: 4s; }
@@ -266,7 +266,84 @@
 .hsl.calm * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 .hsl.calm #hsl-headline .np { rotate: 0deg; }
 
+
+/* Verbet: én knapp per område, øverst til høyre på scenen */
+.hsl #hsl-verb { top: 10px; right: 10px; display: grid; grid-template-columns: auto auto; column-gap: 8px; align-items: center; text-align: left; padding: 6px 12px 6px 8px; box-shadow: 3px 3px 0 var(--fg); }
+.hsl #hsl-verb .vi { grid-row: span 2; font-size: 26px; line-height: 1; }
+.hsl #hsl-verb .vn { font: 400 16px var(--display); }
+.hsl #hsl-verb .vc { font: 700 12px var(--ui); color: var(--muted); }
+.hsl #hsl-verb.ready { background: var(--hl); color: #23252c; animation: hslReady 1.6s ease-in-out infinite; }
+.hsl #hsl-verb.ready .vc { color: #5a4a00; }
+.hsl #hsl-verb:not(.ready) { opacity: 0.75; }
+.hsl #hsl-verb.used { animation: hslStamp 0.5s cubic-bezier(0.2, 1.6, 0.4, 1); }
+
+/* En medskyldig som hopper fra butikken og inn i rommet */
+.hsl .hsl-fly { position: fixed; left: 0; top: 0; z-index: 55; font-size: 34px; line-height: 1; margin: -17px 0 0 -17px; pointer-events: none; filter: drop-shadow(2px 3px 0 rgba(0, 0, 0, 0.25)); }
+
+/* Butikken: milepæl-mål, «har råd»-blink og hemmelige oppgraderinger */
+.hsl .prod .pw { display: grid; justify-items: end; line-height: 1; }
+.hsl .prod .pm { font: 700 11px var(--ui); color: var(--muted); margin-top: 2px; white-space: nowrap; }
+.hsl .prod.afford, .hsl .upg.afford { animation: hslAfford 0.7s ease-out; }
+.hsl .prod.ms { animation: hslMs 1.2s ease-out; }
+.hsl .upg.locked { opacity: 1; border-style: dashed; border-color: var(--muted); background: transparent; color: var(--muted); cursor: default; animation: none; }
+.hsl .upg.locked .uc { font: 400 14px/1.2 var(--hand); color: var(--muted); }
+.hsl .toast.ms { background: #f2efe6; color: #1b1b1b; border: 1px solid #bbb; box-shadow: 4px 4px 0 #23252c; font: 700 15px var(--ui); rotate: -1deg; animation-duration: 5s; }
+.hsl .toast.ev { background: #1565c0; color: #fff; box-shadow: 3px 3px 0 #23252c; font-size: 15px; animation-duration: 4s; }
+
+/* Superunnskyldning */
+.hsl #hsl-sheet.crit { animation: hslCrit 0.5s ease-out; }
+
+/* Arket slites etter hvert */
+.hsl #hsl-sheet .wear { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; border-radius: 3px; }
+.hsl #hsl-sheet .wear i { position: absolute; display: block; }
+.hsl #hsl-sheet .wear i.stamp { animation: hslStamp 0.6s cubic-bezier(0.2, 1.6, 0.4, 1); }
+.hsl #hsl-sheet .wear .paw { left: 14%; bottom: 20%; width: 40px; height: 40px; opacity: 0.35;
+    background: radial-gradient(circle at 50% 70%, #6b4a2b 0 9px, transparent 10px), radial-gradient(circle at 22% 30%, #6b4a2b 0 4px, transparent 5px),
+        radial-gradient(circle at 42% 14%, #6b4a2b 0 4px, transparent 5px), radial-gradient(circle at 62% 14%, #6b4a2b 0 4px, transparent 5px), radial-gradient(circle at 80% 30%, #6b4a2b 0 4px, transparent 5px); rotate: -20deg; }
+.hsl #hsl-sheet .wear .coffee { left: 8%; top: 52%; width: 64px; height: 64px; border-radius: 50%; border: 6px solid rgba(120, 72, 30, 0.22); border-right-color: rgba(120, 72, 30, 0.1); background: radial-gradient(circle, rgba(120, 72, 30, 0.07), transparent 70%); }
+.hsl #hsl-sheet .wear .tape { left: 34%; top: -6px; width: 72px; height: 22px; background: rgba(255, 240, 160, 0.7); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); rotate: -4deg; }
+.hsl #hsl-sheet .wear .ketchup { right: 18%; top: 58%; width: 30px; height: 22px; border-radius: 50% 40% 55% 45%; background: rgba(200, 30, 30, 0.55); box-shadow: 14px 8px 0 -6px rgba(200, 30, 30, 0.5), -10px 12px 0 -7px rgba(200, 30, 30, 0.45); }
+.hsl #hsl-sheet .wear .ear { right: 0; top: 0; width: 34px; height: 34px; background: linear-gradient(225deg, #c9c4b8 0 48%, #ece8de 50%, transparent 52%); box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.12); }
+.hsl #hsl-sheet .wear .burn { left: 40%; bottom: -14px; width: 70px; height: 34px; border-radius: 50% 50% 0 0; background: radial-gradient(ellipse at 50% 100%, #2b1a0e 0 35%, #7a4a20 48%, rgba(122, 74, 32, 0.25) 62%, transparent 72%); }
+.hsl #hsl-sheet .wear .tape2 { left: -12px; bottom: 26%; width: 64px; height: 20px; background: rgba(190, 230, 255, 0.65); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); rotate: 62deg; }
+
+/* Tilfeldige hendelser: samme plass som læreren, aldri samtidig */
+.hsl #hsl-event { position: fixed; z-index: 56; left: 50%; bottom: 24px; translate: -50% 0; width: min(500px, calc(100vw - 32px)); background: #fff; color: #23252c; border: 3px solid #1565c0; border-radius: 6px; box-shadow: 6px 6px 0 #23252c; padding: 14px 16px; animation: hslTeachIn 0.45s cubic-bezier(0.2, 1.3, 0.4, 1); }
+.hsl #hsl-event .who { font: 400 17px var(--display); color: #1565c0; }
+.hsl #hsl-event .say { font: 700 19px/1.25 var(--hand); margin: 4px 0 10px; }
+.hsl #hsl-event .opts { display: flex; gap: 8px; flex-wrap: wrap; }
+.hsl #hsl-event .opts button { flex: 1 1 120px; border: 2px solid #23252c; border-radius: 4px; background: #fff; padding: 8px 10px; font: 700 15px var(--ui); }
+.hsl #hsl-event .opts button:hover { background: #ffe14a; }
+.hsl #hsl-event .prog { position: relative; flex: 1; height: 26px; border: 2px solid #23252c; border-radius: 6px; overflow: hidden; background: #eef3fb; }
+.hsl #hsl-event .prog i { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, #8fd19e, #2a7a32); transition: width 0.1s; }
+.hsl #hsl-event .prog span { position: relative; display: block; text-align: center; font: 700 14px/22px var(--ui); }
+.hsl #hsl-event .tbar { height: 8px; border-radius: 4px; background: #eee; margin-top: 10px; overflow: hidden; }
+.hsl #hsl-event .tbar i { display: block; height: 100%; background: #1565c0; width: 100%; }
+
+/* Snakkebobler fra figurene i rommet */
+.hsl #hsl-bubbles { position: fixed; inset: 0; pointer-events: none; z-index: 54; }
+.hsl .bubble { position: absolute; translate: -50% -100%; max-width: 220px; background: #fff; color: #23252c; border: 2px solid #23252c; border-radius: 14px; padding: 6px 10px; font: 700 15px/1.2 var(--hand); box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2); animation: hslBubble 2.6s ease forwards; text-align: center; }
+.hsl .bubble::after { content: ''; position: absolute; left: 50%; bottom: -9px; width: 14px; height: 14px; background: #fff; border-right: 2px solid #23252c; border-bottom: 2px solid #23252c; translate: -50% 0; rotate: 45deg; }
+
+/* Rapportkortet */
+.hsl #hsl-modal .report { background: #fbf8ef; border: 1px solid #d8d0bd; padding: 14px 16px; margin: -4px 0 4px; }
+.hsl #hsl-modal .report h2 { margin: 0; }
+.hsl #hsl-modal .rc-sub { font: 600 13px var(--ui); color: var(--muted); margin-bottom: 8px; }
+.hsl #hsl-modal .rc-row { display: grid; grid-template-columns: minmax(0, 1fr) 64px; align-items: center; padding: 6px 0; border-bottom: 1px solid #e3dccb; }
+.hsl #hsl-modal .rc-row b { display: block; font: 700 15px var(--ui); }
+.hsl #hsl-modal .rc-row small { font: 400 14px var(--hand); color: #666; }
+.hsl #hsl-modal .rc-row .g { justify-self: center; font: 400 32px/1 var(--display); color: #d7262e; rotate: -8deg; animation: hslStamp 0.5s cubic-bezier(0.2, 1.6, 0.4, 1) both; }
+.hsl #hsl-modal .rc-row .g.word { font-size: 17px; }
+.hsl #hsl-modal .rc-say { font: 700 17px/1.3 var(--hand); color: #1f43b5; margin: 10px 0 6px; }
+
+@keyframes hslAfford { 0% { box-shadow: inset 0 0 0 3px #2a7a32; background: #c9f2cf; } 100% { box-shadow: inset 0 0 0 0 transparent; } }
+@keyframes hslMs { 0%, 40% { background: #ffe14a; scale: 1.03; } 100% { background: transparent; scale: 1; } }
+@keyframes hslCrit { 0% { scale: 1.18; filter: brightness(1.4) saturate(1.6); } 100% { scale: 1; filter: none; } }
+@keyframes hslReady { 0%, 100% { box-shadow: 3px 3px 0 var(--fg); } 50% { box-shadow: 3px 3px 0 var(--fg), 0 0 0 6px rgba(242, 183, 5, 0.35); } }
+@keyframes hslBubble { 0% { opacity: 0; scale: 0.5; } 10% { opacity: 1; scale: 1.05; } 16% { scale: 1; } 85% { opacity: 1; } 100% { opacity: 0; translate: -50% -130%; } }
+
 @media (max-width: 860px) {
+    .hsl #hsl-stage > #hsl-verb { position: relative; top: auto; right: auto; }
     .hsl #hsl-stage > #hsl-next { position: relative; top: auto; left: auto; width: min(100%, 320px); }
     .hsl { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
     .hsl #hsl-app { height: auto; min-height: calc(100dvh - 64px); }
@@ -276,3 +353,4 @@
     .hsl #hsl-shop { overflow: visible; }
     .hsl #hsl-shop.off { display: none; }
 }
+.hsl.calm .bubble { animation: none; }

@@ -37,6 +37,8 @@ export interface Scene {
     onGold: () => void;
     onQuiz: (right: boolean) => void;
     toLocal: (clientX: number, clientY: number) => [number, number];
+    /** Klikk i rommet: figuren som ble truffet hopper og svarer. Scenekoordinater inn og ut. */
+    poke: (x: number, y: number) => { kind: string; x: number; y: number } | null;
     destroy: () => void;
 }
 
@@ -1720,6 +1722,31 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
         toLocal(cx, cy) {
             const r = canvas.getBoundingClientRect();
             return [cx - r.left, cy - r.top];
+        },
+        poke(x, y) {
+            let best: Actor | null = null;
+            let bd = Infinity;
+            for (const a of actors) {
+                if (a.gone || a.kind === 'factory' || a.kind === 'belt') continue;
+                // Gående figurer står med føttene på a.y, de andre er sentrert
+                const d = Math.min(Math.hypot(x - a.x, y - a.y), Math.hypot(x - a.x, y - (a.y - a.size * 0.5)));
+                if (d < a.size * 1.1 && d < bd) {
+                    bd = d;
+                    best = a;
+                }
+            }
+            if (!best) return null;
+            const a = best;
+            if (!input().reduce) {
+                for (let k = 0; k < 6; k++) {
+                    const ang = rnd(0, Math.PI * 2);
+                    part({ k: 'emo', txt: '✨', x: a.x, y: a.y - a.size * 0.6, vx: Math.cos(ang) * 110, vy: Math.sin(ang) * 110 - 60, g: 220, life: 0.7, size: U * 0.45 });
+                }
+                part({ k: 'ring', x: a.x, y: a.y - a.size * 0.4, life: 0.45, size: U * 1.8, col: '#ffffff' });
+                a.dir = -a.dir;
+                a.timer = Math.min(a.timer, 0.3);
+            }
+            return { kind: a.kind, x: a.x, y: a.y - a.size * 1.1 };
         },
         destroy() {
             actors = [];

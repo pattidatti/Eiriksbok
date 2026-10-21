@@ -6,15 +6,21 @@
 
 import {
     BAL,
+    CRIT_EXCUSES,
     ERAS,
     EXCUSES,
     HEAD,
+    MS_HEAD,
     P,
     PERKS,
+    POKE,
+    REPORT_SAY,
     SCHOOLS,
     TSAY,
     UP,
     UPI,
+    VERBS,
+    freshRun,
     freshState,
     type State,
 } from './hundenData';
@@ -91,12 +97,14 @@ const MARKUP = `
             <span class="empty" id="hsl-empty">(arket er helt tomt)</span>
             <span class="lines" id="hsl-lines"></span>
             <span class="ring"></span>
+            <span class="wear" id="hsl-wear"></span>
             <span class="stickers" id="hsl-stickers"></span>
             <span class="grade" id="hsl-grade" title="Karakteren stiger når du består lynprøver">?</span>
           </button>
         </div>
       </div>
       <div id="hsl-flow" class="off"><div class="row"><span>Flyt</span><span id="hsl-flowX">×1,0</span></div><div class="bar"><i id="hsl-flowBar"></i></div></div>
+      <button class="btn" id="hsl-verb" hidden><span class="vi"></span><span class="vn"></span><small class="vc"></small></button>
       <div id="hsl-buffs"></div>
     </section>
     <aside id="hsl-shop" class="off" aria-label="Butikk">
@@ -120,6 +128,8 @@ const MARKUP = `
 <div id="hsl-tip" hidden></div>
 <div id="hsl-toasts"></div>
 <div id="hsl-flash"></div>
+<div id="hsl-bubbles"></div>
+<div id="hsl-event" hidden></div>
 <div id="hsl-headline" hidden></div>
 <div id="hsl-modal" hidden></div>
 `;
@@ -175,6 +185,7 @@ function normalize(o: Partial<State>, reduce: boolean): State {
     s.perks = o.perks ?? {};
     s.hints = o.hints ?? {};
     s.seen = o.seen ?? {};
+    s.run = Object.assign(freshRun(), o.run ?? {});
     return s;
 }
 
@@ -250,8 +261,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const quizReady = () => decks.readQuiz.length + decks.readConcepts.length + decks.general.length > 0;
 
     /* ================= Formler ================= */
+    // Milepæler: 10, 25, 50 ... av samme medskyldig gjør hver av dem flinkere
+    const msCount = (owned: number) => BAL.msAt.filter((x) => owned >= x).length;
     function prodMult(i: number) {
-        let m = 1;
+        let m = Math.pow(BAL.msMult, msCount(S.owned[i]));
         for (let t = 0; t < 4; t++) if (S.upg[`p${i}_${t}`]) m *= 2;
         return m;
     }
@@ -329,6 +342,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     let NOISE: AudioBuffer | null = null;
     let lastClickSnd = 0;
     let buyChain = 0;
+    let lastAfford = 0;
     let lastBuy = 0;
     function ac(): AudioContext | null {
         if (!S.set.sound) return null;
@@ -441,6 +455,28 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         burn() {
             noise({ dur: 1.2, vol: 0.18, freq: 600, q: 0.3 });
             tone(110, { type: 'sawtooth', dur: 1.2, vol: 0.08, slide: 0.4 });
+        },
+        crit() {
+            [784, 988, 1175, 1568].forEach((f, k) => tone(f, { type: 'square', dur: 0.12, vol: 0.06, delay: k * 0.04 }));
+            noise({ dur: 0.25, vol: 0.1, freq: 5000, q: 0.6 });
+            tone(196, { type: 'sawtooth', dur: 0.3, vol: 0.05, slide: 2.5 });
+        },
+        afford() {
+            const n = performance.now();
+            if (n - lastAfford < 900) return;
+            lastAfford = n;
+            tone(1175, { type: 'triangle', dur: 0.09, vol: 0.05 });
+            tone(1568, { type: 'triangle', dur: 0.12, vol: 0.04, delay: 0.06 });
+        },
+        whoosh() {
+            noise({ dur: 0.9, vol: 0.14, freq: 700, q: 0.4 });
+            tone(220, { type: 'sine', dur: 0.9, vol: 0.06, slide: 4 });
+        },
+        land() {
+            noise({ dur: 0.08, vol: 0.07, freq: 900, q: 0.8 });
+        },
+        pop() {
+            tone(rnd(600, 900), { type: 'triangle', dur: 0.1, vol: 0.08, slide: 1.6 });
         },
     };
 
@@ -651,12 +687,12 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         void f.offsetWidth;
         f.classList.add('go');
     }
-    function toast(t: string, cls = '') {
+    function toast(t: string, cls = '', ms = cls ? 4100 : 2900) {
         const d = document.createElement('div');
         d.className = 'toast ' + cls;
         d.textContent = t;
         $('#hsl-toasts').appendChild(d);
-        later(() => d.remove(), 2900);
+        later(() => d.remove(), ms);
     }
     function center(el: Element): [number, number] {
         const r = el.getBoundingClientRect();
@@ -666,6 +702,57 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         el.classList.remove(cls);
         void (el as HTMLElement).offsetWidth;
         el.classList.add(cls);
+    }
+    // Det eleven faktisk har gjort, til nyhetslinja
+    const feats: string[] = [];
+    function feat(t: string) {
+        feats.unshift(t);
+        if (feats.length > 6) feats.length = 6;
+    }
+    // En figur som hopper i en bue fra (x, y) og lander på gulvet i rommet
+    let flying = 0;
+    function flyIn(ic: string, x: number, y: number, land: () => void) {
+        if (S.set.reduce || flying >= 6) return land();
+        flying++;
+        const st = stage.getBoundingClientRect();
+        const tx = st.left + st.width * rnd(0.12, 0.88);
+        const ty = st.top + st.height * rnd(0.8, 0.9);
+        const peak = Math.min(y, ty) - rnd(120, 200);
+        const f = document.createElement('span');
+        f.className = 'hsl-fly';
+        f.textContent = ic;
+        root.appendChild(f);
+        const at = (t: number) => {
+            // kvadratisk bezier gjennom et toppunkt midt mellom start og mål
+            const mx = (x + tx) / 2;
+            const px = (1 - t) * (1 - t) * x + 2 * (1 - t) * t * mx + t * t * tx;
+            const py = (1 - t) * (1 - t) * y + 2 * (1 - t) * t * peak + t * t * ty;
+            return `translate(${px}px, ${py}px) rotate(${(tx > x ? 1 : -1) * t * 540}deg) scale(${1 + Math.sin(t * Math.PI) * 0.6})`;
+        };
+        const frames = Array.from({ length: 13 }, (_, k) => ({ transform: at(k / 12) }));
+        const anim = f.animate(frames, { duration: 650, easing: 'cubic-bezier(.3,.1,.6,1)' });
+        anim.onfinish = () => {
+            f.remove();
+            flying--;
+            if (destroyed) return;
+            sfx.land();
+            burst(tx, ty, 8);
+            land();
+        };
+    }
+    function milestone(i: number, m: number) {
+        const k = BAL.msAt.indexOf(m);
+        const line = MS_HEAD[i][k] ?? `${P[i].p} har nådd ${m}`;
+        sfx.upg();
+        addShake(5);
+        const r = rows[i];
+        const [x, y] = center(r.st);
+        burst(x, y, 30, { gold: true });
+        ring(x, y, '#f2b705', 120);
+        restart(r.b, 'ms');
+        scene.onUpgrade(`p${i}_0`);
+        toast(`📰 ${m} ${P[i].p.toLowerCase()}! ${line}. Hver lager ${NF0.format((BAL.msMult - 1) * 100)} % mer.`, 'ms', 5000);
+        feat(`${line}`);
     }
 
     /* ================= Klikk ================= */
@@ -683,9 +770,14 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (now - lastManual < BAL.minClickGap) return;
             lastManual = now;
         }
-        const v = clickPow();
+        if (!auto) eventClick();
+        let v = clickPow();
+        // Superunnskyldning: et sjeldent klikk som er verdt mye mer
+        const crit = !auto && Math.random() < BAL.critChance;
+        if (crit) v *= BAL.critMult;
         earn(v);
         S.clicks++;
+        if (!auto) S.run.clicks++;
         if (S.era >= 1 && !auto) {
             flow = Math.min(1, flow + BAL.flowGain);
             flowIdle = 0;
@@ -701,6 +793,18 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         spr.vx += 2.6;
         spr.vr += rnd(-60, 60);
         spr.vb += 2.2;
+        if (crit) {
+            S.run.crits++;
+            sfx.crit();
+            addShake(7);
+            burst(x, y, 34, { gold: true, power: 1.3 });
+            ring(x, y, '#f2b705', 160);
+            floatText(`SUPERUNNSKYLDNING! +${fmt(v, true)}`, x, y - 30, { col: COL.red, size: 32, life: 1.5 });
+            const [cx2, cy2] = center(sheet);
+            floatText('«' + pick(CRIT_EXCUSES) + '»', cx2, cy2 - 150, { font: 'hand', size: 22, col: COL.fg, life: 2.4, vy: -40 });
+            restart(sheet, 'crit');
+            return;
+        }
         burst(x, y, red ? 10 : 6);
         floatText('+' + fmt(v, true), x, y - 16, { col: red ? COL.red : COL.ink, size: red ? 30 : 24 });
         if (red) ring(x, y, COL.red, 90);
@@ -734,7 +838,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         b.className = 'prod';
         b.hidden = true;
         b.dataset.tip = 'p' + i;
-        b.innerHTML = `<span class="st">${p.ic}</span><span style="min-width:0"><span class="pn"></span><span class="pc"></span></span><span class="po">0</span>`;
+        b.innerHTML = `<span class="st">${p.ic}</span><span style="min-width:0"><span class="pn"></span><span class="pc"></span></span><span class="pw"><span class="po">0</span><span class="pm"></span></span>`;
         b.addEventListener('click', () => buyProd(i));
         prodsEl.appendChild(b);
         return {
@@ -742,8 +846,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             pn: b.querySelector('.pn') as HTMLElement,
             pc: b.querySelector('.pc') as HTMLElement,
             po: b.querySelector('.po') as HTMLElement,
+            pm: b.querySelector('.pm') as HTMLElement,
             st: b.querySelector('.st') as HTMLElement,
             shown: false,
+            ok: true, // første oppdatering skal ikke blinke
         };
     });
     function buyProd(i: number) {
@@ -757,11 +863,15 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             return;
         }
         S.bank -= c;
+        const before = S.owned[i];
         S.owned[i] += k;
         sfx.buy();
-        scene.onBuy(i, k);
         restart(r.b, 'flashbuy');
         const [x, y] = center(r.st);
+        // Den nye medskyldige løper fra butikken og inn i rommet før den dukker opp der
+        flyIn(P[i].ic, x, y, () => scene.onBuy(i, k));
+        const hit = BAL.msAt.filter((m) => before < m && S.owned[i] >= m);
+        if (hit.length) milestone(i, hit[hit.length - 1]);
         burst(x, y, 8 + Math.min(k, 20));
         ring(x, y, COL.ink, 60);
         floatText(`+${k} ${k === 1 ? P[i].n : P[i].p}`, x + 40, y - 6, { size: 18, col: COL.ink });
@@ -799,15 +909,20 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         hideTip();
         uiTick();
     }
+    // Den neste hemmelige oppgraderingen vises som «???» med et hint om hva som låser den opp
+    const lockedUpgs = () => UP.filter((u) => u.hint && !S.upg[u.id] && !u.q(S)).sort((a, b) => a.c - b.c).slice(0, 1);
+    const upgOk = new Set<string>();
     function renderUpgs() {
         const av = availUpgs();
         const shown = av.slice(0, 8);
-        const key = shown.map((u) => u.id).join(',');
-        $('#hsl-upgSect').hidden = av.length === 0;
+        const locked = lockedUpgs();
+        const key = shown.map((u) => u.id).join(',') + '|' + locked.map((u) => u.id).join(',');
+        $('#hsl-upgSect').hidden = av.length === 0 && locked.length === 0;
         const g = $('#hsl-upgs');
         if (key !== upgKey) {
             upgKey = key;
             g.innerHTML = '';
+            upgOk.clear();
             for (const u of shown) {
                 const b = document.createElement('button');
                 b.className = 'upg';
@@ -819,12 +934,28 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 b.addEventListener('click', () => buyUpg(u.id, b));
                 g.appendChild(b);
             }
+            for (const u of locked) {
+                const b = document.createElement('div');
+                b.className = 'upg locked';
+                b.innerHTML = '<span class="un">❔ ???</span><span class="uc"></span>';
+                (b.querySelector('.uc') as HTMLElement).textContent = u.hint as string;
+                g.appendChild(b);
+            }
             $('#hsl-upgMore').textContent = av.length > 8 ? `+${av.length - 8} til venter` : '';
             $('#hsl-upgCount').textContent = av.length ? `${av.length} tilgjengelig` : '';
         }
         for (const b of Array.from(g.children) as HTMLElement[]) {
-            const u = UPI[b.dataset.id as string];
-            b.classList.toggle('ok', S.bank >= u.c);
+            if (!b.dataset.id) continue;
+            const u = UPI[b.dataset.id];
+            const ok = S.bank >= u.c;
+            b.classList.toggle('ok', ok);
+            if (ok && !upgOk.has(u.id)) {
+                upgOk.add(u.id);
+                if (S.played > 3) {
+                    restart(b, 'afford');
+                    sfx.afford();
+                }
+            } else if (!ok) upgOk.delete(u.id);
         }
     }
     const amtEl = $('#hsl-amt');
@@ -855,6 +986,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const stickersEl = $('#hsl-stickers');
     const linesEl = $('#hsl-lines');
     const gradeEl = $('#hsl-grade');
+    const wearEl = $('#hsl-wear');
+    const WEAR = ['paw', 'coffee', 'tape', 'ketchup', 'ear', 'burn', 'tape2'];
+    let wearShown = -1;
     let stickerKey: string | null = null;
     let linesShown = -1;
     let gradeWas = '';
@@ -893,6 +1027,20 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             }
             $('#hsl-empty').hidden = n > 0;
             linesShown = n;
+        }
+
+        // Arket slites etter hvert: poteavtrykk, kaffe, tape, ketsjup ... Nytt ark på ny skole.
+        const w = BAL.wear.filter((x) => S.runTotal >= x).length;
+        if (w !== wearShown) {
+            const grow = w > wearShown && wearShown >= 0;
+            wearEl.innerHTML = '';
+            for (let k = 0; k < w; k++) {
+                const m = document.createElement('i');
+                m.className = WEAR[k] + (grow && k === w - 1 ? ' stamp' : '');
+                wearEl.appendChild(m);
+            }
+            if (grow) sfx.land();
+            wearShown = w;
         }
 
         // Karakteren (1-6) stiger med beståtte lynprøver
@@ -965,10 +1113,21 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 }
                 const k = amtFor(i);
                 const c = costOf(i, k);
+                const ok = S.bank >= c;
                 r.pn.textContent = P[i].n + (k > 1 ? ` ×${k}` : '');
-                r.pc.textContent = fmt(c);
+                // Hvor lenge til du har råd: noe å vente på
+                const perSec = pps();
+                const eta = (c - S.bank) / perSec;
+                r.pc.textContent = ok || !(perSec > 0) || eta > 3600 ? fmt(c) : `${fmt(c)} · om ${fmtT(Math.ceil(eta))}`;
                 r.po.textContent = String(S.owned[i]);
-                r.b.classList.toggle('ok', S.bank >= c);
+                const nm = BAL.msAt.find((m) => S.owned[i] < m);
+                r.pm.textContent = S.owned[i] > 0 && nm ? `mål ${nm}` : '';
+                r.b.classList.toggle('ok', ok);
+                if (ok && !r.ok && S.played > 3) {
+                    restart(r.b, 'afford');
+                    sfx.afford();
+                }
+                r.ok = ok;
                 r.b.style.setProperty('--pf', Math.min(100, (S.bank / c) * 100) + '%');
                 r.b.setAttribute('aria-label', `Kjøp ${P[i].n} for ${fmt(c)}`);
             } else if (i === S.rev + 1) {
@@ -988,6 +1147,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         }
         renderUpgs();
         renderDesk();
+        renderVerb();
         // prestisje
         const pb = $('#hsl-prestBtn');
         const g = rykteGainable();
@@ -1016,25 +1176,55 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         tag.append(sm);
         requestAnimationFrame(readCols);
     }
+    // Overgangen: kameraet zoomer ut av rommet, og inn i det neste
+    let traveling = false;
     function checkEra() {
-        while (S.era < ERAS.length - 1 && S.runTotal >= BAL.eras[S.era + 1]) {
-            S.era++;
-            applyEra();
-            const e = ERAS[S.era];
-            sfx.milestone();
-            addShake(14);
-            doFlash();
-            const [x, y] = center(sheet);
-            burst(x, y, 60, { gold: true, power: 1.6 });
-            ring(x, y, '#f2b705', 300);
-            scene.onEra();
-            if (S.era > S.maxEra) {
-                S.maxEra = S.era;
-                showHeadline(e.h ?? '', e.sub ?? '', e.u);
-                cb.onNewEra?.(S.era, e.n);
-            } else toast(`${e.n}: ${e.u ?? ''}`);
-            nextHeadline();
-        }
+        if (traveling || S.era >= ERAS.length - 1 || S.runTotal < BAL.eras[S.era + 1]) return;
+        if (S.set.reduce) return enterEra();
+        traveling = true;
+        sfx.whoosh();
+        const out = stage.animate(
+            [
+                { scale: 1, filter: 'blur(0px)', opacity: 1 },
+                { scale: 0.5, filter: 'blur(8px)', opacity: 0.15 },
+            ],
+            { duration: 480, easing: 'cubic-bezier(.5,0,.9,.4)', fill: 'forwards' }
+        );
+        later(() => {
+            out.cancel();
+            traveling = false;
+            enterEra();
+            stage.animate(
+                [
+                    { scale: 1.6, filter: 'blur(8px)', opacity: 0.15 },
+                    { scale: 1, filter: 'blur(0px)', opacity: 1 },
+                ],
+                { duration: 650, easing: 'cubic-bezier(.2,1.25,.4,1)' }
+            );
+        }, 480);
+    }
+    function enterEra() {
+        S.era++;
+        applyEra();
+        const e = ERAS[S.era];
+        sfx.milestone();
+        addShake(14);
+        doFlash();
+        const [x, y] = center(sheet);
+        burst(x, y, 60, { gold: true, power: 1.6 });
+        ring(x, y, '#f2b705', 300);
+        const [sx, sy] = center(stage);
+        floatText(e.n.toUpperCase(), sx, sy - 40, { size: 44, col: COL.red, life: 2.2, vy: -40 });
+        scene.onEra();
+        feat(`Elev på ${schoolName()} har nådd ${e.n.toLowerCase()}`);
+        if (S.era > S.maxEra) {
+            S.maxEra = S.era;
+            const first = S.era;
+            // Avisa kommer når kameraet har landet i det nye rommet
+            later(() => showHeadline(ERAS[first].h ?? '', ERAS[first].sub ?? '', ERAS[first].u), S.set.reduce ? 0 : 700);
+            cb.onNewEra?.(S.era, e.n);
+        } else toast(`${e.n}: ${e.u ?? ''}`);
+        nextHeadline();
     }
     let headTimer = 0;
     function showHeadline(h: string, sub: string, u?: string, mast?: string) {
@@ -1063,7 +1253,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     function nextHeadline() {
         if (destroyed) return;
         const pool = [...HEAD[S.era], ...(S.era > 0 ? HEAD[S.era - 1] : [])];
-        tickMsg.textContent = pick(pool) + '  •  ' + pick(pool);
+        // Det eleven selv har gjort kommer først på nyhetslinja
+        const own = feats.length ? feats.shift() : null;
+        tickMsg.textContent = (own ?? pick(pool)) + '  •  ' + pick(pool);
         const w = tickMsg.offsetWidth;
         const tw = (tickMsg.parentElement as HTMLElement).offsetWidth;
         tickAnim?.cancel();
@@ -1109,6 +1301,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const [x, y] = center(goldEl);
         endGold();
         S.goldClicks++;
+        S.run.gold++;
+        if (S.goldClicks % 5 === 0) feat(`Elev har fanget ${S.goldClicks} gullstjerner. Læreren lurer på hvor de kommer fra`);
         sfx.gold();
         scene.onGold();
         burst(x, y, 50, { gold: true, power: 1.4 });
@@ -1132,6 +1326,248 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             toast(`Klikkstorm! Klikk ×50 i ${10 * dur} sek. Klikk!`);
         }
     }
+
+    /* ================= Tilfeldige hendelser ================= */
+    // Små avbrudd som bryter rytmen: noen gir bonus med en gang, andre krever et valg
+    // eller en rask innsats. Kommer aldri samtidig med læreren.
+    const evEl = $('#hsl-event');
+    const ev = { on: false, next: BAL.eventFirst as number, t: 0, tMax: 0, id: '', clicks: 0, need: 0, last: '' };
+    const evReward = (sec: number) => Math.max(pps() * sec, clickPow() * sec * 0.7, 40);
+    function endEvent(msg?: string, good?: boolean) {
+        if (!ev.on) return;
+        ev.on = false;
+        ev.next = rnd(BAL.eventMin, BAL.eventMax);
+        if (msg) toast(msg, good ? 'ev' : '');
+        evEl.hidden = true;
+        evEl.innerHTML = '';
+    }
+    function evCard(title: string, text: string, opts: { t: string; go: () => void }[], time: number) {
+        evEl.innerHTML = '<div class="who"></div><div class="say"></div><div class="opts"></div><div class="tbar"><i></i></div>';
+        (evEl.querySelector('.who') as HTMLElement).textContent = title;
+        (evEl.querySelector('.say') as HTMLElement).textContent = text;
+        const o = evEl.querySelector('.opts') as HTMLElement;
+        for (const x of opts) {
+            const b = document.createElement('button');
+            b.textContent = x.t;
+            b.addEventListener('click', () => {
+                if (ev.on) x.go();
+            });
+            o.appendChild(b);
+        }
+        ev.t = ev.tMax = time;
+        evEl.hidden = false;
+        sfx.teacher();
+    }
+    const EVENTS: { id: string; ok: () => boolean; run: () => void }[] = [
+        {
+            id: 'vikar',
+            ok: () => S.owned.some((x) => x > 0),
+            run: () => {
+                addBuff({ id: 'vikar', label: 'Vikar: produksjon ×2', prod: 2, t: 45, good: true });
+                endEvent('🧑‍🏫 Vikar i dag! Ingen sjekker leksene. Produksjon ×2 i 45 sekunder.', true);
+            },
+        },
+        {
+            id: 'brann',
+            ok: () => S.owned.some((x) => x > 0),
+            run: () => {
+                addBuff({ id: 'brann', label: 'Brannøvelse: klikk ×4', click: 4, prod: 0.5, t: 20 });
+                endEvent('🔔 Brannøvelse! De medskyldige står ute i skolegården. Halv produksjon, men klikk ×4 i 20 sekunder.', true);
+                addShake(5);
+            },
+        },
+        {
+            id: 'insp',
+            ok: () => true,
+            run: () => {
+                ev.clicks = 0;
+                ev.need = 25;
+                evCard('Rektor går forbi!', 'Se travel ut! Klikk på leksa 25 ganger før tida går ut.', [], 9);
+                (evEl.querySelector('.opts') as HTMLElement).innerHTML = '<div class="prog"><i></i><span>0 / 25</span></div>';
+            },
+        },
+        {
+            id: 'foreldre',
+            ok: () => S.owned[0] > 0 && S.owned[1] > 0,
+            run: () =>
+                evCard('Foreldremøte', 'Foreldrene vil vite hvorfor leksa mangler. Hvem får skylda?', [
+                    {
+                        t: '🐕 Hunden',
+                        go: () => {
+                            addBuff({ id: 'hund', label: 'Hunden fikk skylda: ×1,5', prod: 1.5, t: 60, good: true });
+                            endEvent('Hunden fikk skylda. Den logrer. Produksjon ×1,5 i 60 sekunder.', true);
+                        },
+                    },
+                    {
+                        t: '👶 Lillebror',
+                        go: () => {
+                            const g = evReward(60);
+                            earn(g);
+                            const [x, y] = center(evEl);
+                            floatText('+' + fmt(g), x, y - 40, { size: 30, col: '#2a7a32', life: 1.5 });
+                            sfx.win();
+                            endEvent(`Lillebror fikk skylda. Han gråter. Du fikk ${fmt(g)} unnskyldninger.`, true);
+                        },
+                    },
+                    {
+                        t: '📡 Wifi-en',
+                        go: () => {
+                            addBuff({ id: 'wifi', label: 'Wifi fikk skylda: klikk ×4', click: 4, t: 20, good: true });
+                            endEvent('Wifi-en fikk skylda. Ingen kan sjekke. Klikk ×4 i 20 sekunder.', true);
+                        },
+                    },
+                ], 12),
+        },
+        {
+            id: 'sulten',
+            ok: () => S.owned[0] >= 5 && S.bank > 0,
+            run: () =>
+                evCard('Hundene er sultne!', 'Gi dem en tidel av unnskyldningene dine, så jobber de tre ganger så hardt i 30 sekunder.', [
+                    {
+                        t: '🍖 Mat hundene',
+                        go: () => {
+                            S.bank *= 0.9;
+                            addBuff({ id: 'mett', label: 'Mette hunder: ×3', prod: 3, t: 30, good: true });
+                            sfx.upg();
+                            endEvent('Nam! Hundene jobber som aldri før. Produksjon ×3 i 30 sekunder.', true);
+                        },
+                    },
+                    { t: 'Nei takk', go: () => endEvent('Hundene ser skuffet på deg.') },
+                ], 10),
+        },
+    ];
+    function startEvent() {
+        const opts = EVENTS.filter((e) => e.id !== ev.last && e.ok());
+        if (!opts.length) return;
+        const e = pick(opts);
+        ev.on = true;
+        ev.id = e.id;
+        ev.last = e.id;
+        S.run.events++;
+        e.run();
+    }
+    function eventClick() {
+        if (!ev.on || ev.id !== 'insp') return;
+        ev.clicks++;
+        const p = evEl.querySelector('.prog');
+        if (p) {
+            (p.querySelector('i') as HTMLElement).style.width = Math.min(100, (ev.clicks / ev.need) * 100) + '%';
+            (p.querySelector('span') as HTMLElement).textContent = `${ev.clicks} / ${ev.need}`;
+        }
+        if (ev.clicks >= ev.need) {
+            const g = evReward(90);
+            earn(g);
+            const [x, y] = center(sheet);
+            burst(x, y, 40, { gold: true });
+            floatText('+' + fmt(g), x, y - 90, { size: 32, col: '#2a7a32', life: 1.6 });
+            sfx.win();
+            feat('Rektor imponert: «Den eleven jobber jo hele tiden»');
+            endEvent(`Rektor nikket fornøyd. Du fikk ${fmt(g)} unnskyldninger.`, true);
+        }
+    }
+    function eventTick(dt: number, paused: boolean) {
+        if (!ev.on) {
+            if (!paused && !teach.on && S.allTotal >= 100) ev.next -= dt;
+            if (ev.next <= 0) startEvent();
+            if (ev.next <= 0) ev.next = 20; // ingen hendelse passet, prøv igjen snart
+            return;
+        }
+        if (paused || evEl.hidden) return;
+        ev.t -= dt;
+        const i = evEl.querySelector<HTMLElement>('.tbar i');
+        if (i) i.style.width = Math.max(0, (ev.t / ev.tMax) * 100) + '%';
+        if (ev.t <= 0) endEvent(ev.id === 'insp' ? 'Rektor så deg gjespe. Ingen bonus denne gangen.' : 'For sent. Foreldrene ga opp og gikk hjem.');
+    }
+
+    /* ================= Verbet: hvert område har sin egen knapp ================= */
+    const verbBtn = $<HTMLButtonElement>('#hsl-verb');
+    let verbCd = 0;
+    let verbUsed = 0;
+    function useVerb() {
+        const v = VERBS[S.era];
+        if (verbCd > 0) {
+            sfx.deny();
+            restart(verbBtn, 'deny');
+            return;
+        }
+        verbCd = v.cd;
+        verbUsed++;
+        const [x, y] = center(verbBtn);
+        sfx.upg();
+        burst(x, y, 30, { gold: true });
+        ring(x, y, '#f2b705', 120);
+        restart(verbBtn, 'used');
+        switch (S.era) {
+            case 0: {
+                const g = evReward(45);
+                earn(g);
+                floatText('+' + fmt(g), x, y - 30, { size: 30, col: COL.ink, life: 1.4 });
+                break;
+            }
+            case 1:
+                flow = 1;
+                addBuff({ id: 'lock', label: 'Flyten står på topp', t: 20, good: true });
+                break;
+            case 2:
+                addBuff({ id: 'law', label: 'Ny lov: produksjon ×3', prod: 3, t: 30, good: true });
+                break;
+            case 3:
+                if (!gold.on) spawnGold();
+                break;
+            case 4:
+                buffs = buffs.filter((b) => !b.bad);
+                addBuff({ id: 'veto', label: 'Veto: klikk ×5', click: 5, t: 15, good: true });
+                addShake(10);
+                break;
+            default: {
+                const g = pps(true) * 600;
+                earn(g);
+                floatText('+' + fmt(g), x, y - 30, { size: 30, col: COL.ink, life: 1.4 });
+                doFlash();
+            }
+        }
+        toast(`${v.ic} ${v.done}`);
+        uiTick();
+    }
+    verbBtn.addEventListener('click', useVerb);
+    function renderVerb() {
+        const v = VERBS[S.era];
+        verbBtn.hidden = !counterWas || S.owned.every((x) => x === 0);
+        (verbBtn.querySelector('.vi') as HTMLElement).textContent = v.ic;
+        (verbBtn.querySelector('.vn') as HTMLElement).textContent = v.n;
+        (verbBtn.querySelector('.vc') as HTMLElement).textContent = verbCd > 0 ? `om ${Math.ceil(verbCd)} s` : 'klar!';
+        verbBtn.classList.toggle('ready', verbCd <= 0);
+        verbBtn.title = v.d;
+    }
+
+    /* ================= Figurene i rommet svarer når du klikker på dem ================= */
+    const bubblesEl = $('#hsl-bubbles');
+    const pokeCd: Record<string, number> = {};
+    stage.addEventListener('pointerdown', (e) => {
+        const t = e.target as HTMLElement;
+        if (t.closest('button, #hsl-counter, #hsl-next, #hsl-eraTag, #hsl-flow, #hsl-buffs')) return;
+        const [lx, ly] = scene.toLocal(e.clientX, e.clientY);
+        const hit = scene.poke(lx, ly);
+        if (!hit) return;
+        sfx.pop();
+        const c = sceneCv.getBoundingClientRect();
+        const b = document.createElement('div');
+        b.className = 'bubble';
+        b.textContent = pick(POKE[hit.kind] ?? ['...']);
+        b.style.left = Math.max(90, Math.min(innerWidth - 90, c.left + hit.x)) + 'px';
+        b.style.top = Math.max(60, c.top + hit.y) + 'px';
+        bubblesEl.appendChild(b);
+        while (bubblesEl.children.length > 3) bubblesEl.firstElementChild?.remove();
+        later(() => b.remove(), 2600);
+        // Litt belønning for å hilse på gjengen, men ikke mer enn hvert femte sekund per figurtype
+        const now = performance.now();
+        if ((pokeCd[hit.kind] ?? 0) < now) {
+            pokeCd[hit.kind] = now + 5000;
+            const g = Math.max(clickPow() * 3, pps() * 2);
+            earn(g);
+            floatText('+' + fmt(g, true), e.clientX, e.clientY - 10, { size: 20, col: COL.fg, life: 1 });
+        }
+    });
 
     /* ================= Læreren og lynprøven ================= */
     const tEl = $('#hsl-teacher');
@@ -1199,6 +1635,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         teach.q = q;
         teach.t = teach.tMax = quizTime();
         S.honestTries++;
+        S.run.tries++;
         tEl.innerHTML = `<div class="who">Lærer Tønnessen:</div><div class="say">«Jaså? Bevis det.»</div>${q.prompt ? '<div class="def"></div>' : ''}<div class="opts quiz"></div><div class="tbar"><i></i></div>`;
         const say = tEl.querySelector('.say') as HTMLElement;
         const intro = q.fromRead
@@ -1235,7 +1672,15 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         scene.onQuiz(right);
         if (right) {
             S.honest++;
+            S.run.honest++;
             S.honestStreak++;
+            feat(
+                S.honestStreak >= 3
+                    ? `Elev svarer riktig ${S.honestStreak} ganger på rad. Lærerne holder krisemøte`
+                    : q.source
+                      ? `Elev kunne svaret om «${q.source}». Læreren er mistenksom`
+                      : 'Elev svarte riktig på lynprøven. Hunden er skuffet'
+            );
             const mult = (BAL.quizBase + Math.min(S.honestStreak - 1, BAL.quizStreakMax)) * quizMult();
             const g = baseReward() * mult;
             earn(g);
@@ -1301,6 +1746,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         { id: 'flow', w: () => S.era >= 1 && headlineEl.hidden, el: () => $('#hsl-flow'), t: 'Klikk raskt for å bygge flyt. Flyt ganger klikkene.', dur: 7, d: () => flow > 0.6 },
         { id: 'honest', w: () => teach.phase === 1 && !!tEl.querySelector('.honest'), el: () => tEl.querySelector<HTMLElement>('.honest'), t: 'Gjorde du leksa? Svarer du riktig på et spørsmål fra boka, får du mye mer.', d: () => teach.phase !== 1 },
         { id: 'teach', w: () => teach.phase === 1, el: () => tEl, t: 'Velg en unnskyldning før tida går ut!', d: () => teach.phase !== 1 },
+        { id: 'verb', w: () => !verbBtn.hidden && verbCd <= 0 && headlineEl.hidden, el: () => verbBtn, t: 'Hvert område har sin egen knapp. Trykk når den er klar.', d: () => verbUsed > 0 },
+        { id: 'poke', w: () => S.owned[0] >= 3 && headlineEl.hidden && !teach.on && !ev.on, el: () => $('#hsl-eraTag'), t: 'Klikk på figurene i rommet. De har noe å si.', dur: 7 },
         { id: 'prest', w: () => S.era >= 3 && headlineEl.hidden, el: () => $('#hsl-prestBtn'), t: 'Bytt skole: start på nytt, men ryktet følger med.', dur: 9, d: () => S.resets > 0 },
     ];
     function setPulse(el: HTMLElement | null) {
@@ -1388,7 +1835,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             const each = rate(i);
             const tot = each * S.owned[i];
             const all = pps();
-            h = `<b>${esc(p.n)}</b><i>${esc(p.d)}</i>Hver: <span class="k">${fmt(each, true)}/s</span><br>Totalt: <span class="k">${fmt(tot, true)}/s</span>${all > 0 ? ` (${NF0.format((tot / all) * 100)} %)` : ''}<br>Eier: ${S.owned[i]}`;
+            const nm = BAL.msAt.find((m) => S.owned[i] < m);
+            const ms = nm ? `<br>Milepæl ved ${nm}: hver lager ${NF0.format((BAL.msMult - 1) * 100)} % mer` : '<br>Alle milepæler nådd';
+            h = `<b>${esc(p.n)}</b><i>${esc(p.d)}</i>Hver: <span class="k">${fmt(each, true)}/s</span><br>Totalt: <span class="k">${fmt(tot, true)}/s</span>${all > 0 ? ` (${NF0.format((tot / all) * 100)} %)` : ''}<br>Eier: ${S.owned[i]}${ms}`;
         } else {
             const u = UPI[k.slice(2)];
             h = `<b>${esc(u.n)}</b><i>${esc(u.d)}</i><span class="k">${esc(u.e)}</span><br>Pris: ${fmt(u.c)}`;
@@ -1517,6 +1966,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                         teach.on = false;
                         teach.phase = 0;
                         tEl.hidden = true;
+                        endEvent();
+                        ev.next = BAL.eventFirst;
+                        verbCd = 0;
                         curHint = null;
                         hintEl.hidden = true;
                         setPulse(null);
@@ -1566,7 +2018,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             (c) => {
                 (c.querySelector('#pClose') as HTMLElement).onclick = closeModal;
                 const go = c.querySelector<HTMLElement>('#pGo');
-                if (go) go.onclick = doPrestige;
+                if (go) go.onclick = openReport;
                 const pk = c.querySelector('#perks') as HTMLElement;
                 for (const p of PERKS) {
                     const d = document.createElement('div');
@@ -1599,6 +2051,48 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         );
     }
     $('#hsl-prestBtn').onclick = openPrestige;
+    // Rapportkortet: hva du fikk til på denne skolen, før alt brennes
+    function openReport() {
+        const g = rykteGainable();
+        const R = S.run;
+        const clamp = (n: number) => Math.max(1, Math.min(6, Math.floor(n)));
+        const team = S.owned.reduce((a, b) => a + b, 0);
+        const gradeRows: [string, string, string][] = [
+            ['Unnskyldningskunst', String(clamp(Math.log10(Math.max(1, S.runTotal)) / 2)), `${fmt(S.runTotal)} unnskyldninger`],
+            ['Klikketeknikk', String(clamp(1 + Math.log10(R.clicks + 1) * 1.25)), `${NF0.format(R.clicks)} klikk, ${R.crits} superunnskyldninger`],
+            ['Ærlighet', R.tries ? String(clamp(1 + Math.round((R.honest / R.tries) * 5))) : 'IV', R.tries ? `${R.honest} av ${R.tries} lynprøver bestått` : 'Ikke vurdert: ingen lynprøver'],
+            ['Samarbeid', String(clamp(1 + Math.log10(team + 1) * 1.3)), `${NF0.format(team)} medskyldige`],
+            ['Gullstjerner', String(R.gold >= 15 ? 6 : R.gold >= 10 ? 5 : R.gold >= 6 ? 4 : R.gold >= 3 ? 3 : R.gold >= 1 ? 2 : 1), `${R.gold} fanget`],
+            ['Orden og oppførsel', 'Nedsatt', 'Hunden'],
+        ];
+        openModal(
+            `<div class="report"><h2>Rapportkort</h2><div class="rc-sub"></div>
+  <div class="rc-rows"></div>
+  <p class="rc-say"></p>
+  <div class="stats">Tid på skolen: <b>${fmtT(R.time)}</b> · Hendelser: <b>${R.events}</b> · Nådde: <b>${esc(ERAS[S.era].n)}</b></div></div>
+  <div class="row" style="justify-content:space-between"><button class="btn" id="rBack">Bli her litt til</button><button class="btn big" id="rGo">Bytt skole (+${g} rykte)</button></div>`,
+            (c) => {
+                (c.querySelector('.rc-sub') as HTMLElement).textContent = `${schoolName()} · skoleåret er over`;
+                (c.querySelector('.rc-say') as HTMLElement).textContent = `Lærerens kommentar: «${pick(REPORT_SAY)}»`;
+                const rowsEl = c.querySelector('.rc-rows') as HTMLElement;
+                gradeRows.forEach(([fag, kar, why], k) => {
+                    const d = document.createElement('div');
+                    d.className = 'rc-row';
+                    d.innerHTML = '<span class="f"><b></b><small></small></span><span class="g"></span>';
+                    (d.querySelector('b') as HTMLElement).textContent = fag;
+                    (d.querySelector('small') as HTMLElement).textContent = why;
+                    const ge = d.querySelector('.g') as HTMLElement;
+                    ge.textContent = kar;
+                    ge.style.animationDelay = 0.25 + k * 0.28 + 's';
+                    if (kar.length > 2) ge.classList.add('word');
+                    rowsEl.appendChild(d);
+                    later(() => sfx.land(), 250 + k * 280);
+                });
+                (c.querySelector('#rBack') as HTMLElement).onclick = closeModal;
+                (c.querySelector('#rGo') as HTMLElement).onclick = doPrestige;
+            }
+        );
+    }
     function doPrestige() {
         const g = rykteGainable();
         if (g < 1) return;
@@ -1618,8 +2112,11 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             S.upg = {};
             S.era = 0;
             S.rev = 0;
+            S.run = freshRun();
             buffs = [];
             flow = 0;
+            verbCd = 0;
+            endEvent();
             if (S.perks.start) {
                 S.owned[0] = 10;
                 S.owned[1] = 5;
@@ -1704,11 +2201,14 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     let raf = 0;
     function update(dt: number) {
         S.played += dt;
+        S.run.time += dt;
         earn(pps() * dt);
         if (S.era >= 1) {
             flowIdle += dt;
-            if (flowIdle > 0.35) flow = Math.max(0, flow - BAL.flowDecay * dt);
+            if (buffs.some((b) => b.id === 'lock')) flow = 1;
+            else if (flowIdle > 0.35) flow = Math.max(0, flow - BAL.flowDecay * dt);
         } else flow = 0;
+        if (verbCd > 0) verbCd -= dt;
         for (const b of buffs) b.t -= dt;
         if (buffs.some((b) => b.t <= 0)) buffs = buffs.filter((b) => b.t > 0);
         if (S.perks.auto) {
@@ -1732,7 +2232,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             goldEl.style.transform = `translate(${gold.x}px,${gold.y}px) rotate(${Math.sin(gold.ph * 3) * 20}deg) scale(${1 + Math.sin(gold.ph * 8) * 0.08})`;
             if (gold.t <= 0 || gold.x < -120 || gold.x > W + 120) endGold();
         }
-        if (S.era >= 2 && !teach.on && !paused) {
+        eventTick(dt, paused);
+        if (S.era >= 2 && !teach.on && !ev.on && !paused) {
             teach.next -= dt;
             if (teach.next <= 0) spawnTeacher();
         }
