@@ -152,6 +152,10 @@ const NF0 = new Intl.NumberFormat('nb-NO', { maximumFractionDigits: 0 });
 const NF1 = new Intl.NumberFormat('nb-NO', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const NF2 = new Intl.NumberFormat('nb-NO', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const UN: [number, string][] = [
+    [1e45, 'hundeziljoner'],
+    [1e42, 'tirsdagsillioner'],
+    [1e39, 'multiversilliarder'],
+    [1e36, 'bestemorilliarder'],
     [1e33, 'gazilliarder'],
     [1e30, 'unnskyldillioner'],
     [1e27, 'lekseliarder'],
@@ -190,6 +194,15 @@ function normalize(o: Partial<State>, reduce: boolean): State {
     s.hints = o.hints ?? {};
     s.seen = o.seen ?? {};
     s.run = Object.assign(freshRun(), o.run ?? {});
+    // v1 regnet rykte med kvadratrot og ga altfor mye. Regn om etter kubikkroten.
+    if ((o.v ?? 1) < 2) {
+        const r = Math.floor(Math.cbrt((s.allTotal || 0) / BAL.rykteDiv));
+        if (s.rykte > r) {
+            s.ryktePts = Math.min(s.ryktePts, r);
+            s.rykte = r;
+        }
+    }
+    s.v = 2;
     return s;
 }
 
@@ -339,8 +352,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         for (const id in S.upg) if (UPI[id]?.ht) t += UPI[id].ht as number;
         return t + 3 * L('lt');
     }
+    // Kubikkrot: ryktet vokser saktere jo lenger du kommer, så prisene i Ryktebørsen holder
+    const rykteFor = (total: number) => Math.floor(Math.cbrt(total / BAL.rykteDiv));
     const rykteGainable = () =>
-        Math.max(0, Math.floor(Math.sqrt(S.allTotal / BAL.rykteDiv)) - S.rykte);
+        Math.max(0, rykteFor(S.allTotal) - S.rykte);
     function earn(x: number) {
         S.bank += x;
         S.runTotal += x;
@@ -1531,12 +1546,24 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 addBuff({ id: 'veto', label: 'Veto: klikk ×5', click: 5, t: 15, good: true });
                 addShake(10);
                 break;
-            default: {
+            case 5: {
                 const g = pps(true) * 480;
                 earn(g);
                 floatText('+' + fmt(g), x, y - 30, { size: 30, col: COL.ink, life: 1.4 });
                 doFlash();
+                break;
             }
+            case 6:
+                addBuff({ id: 'multi', label: 'Bedre univers: ×5', prod: 5, t: 25, good: true });
+                doFlash();
+                break;
+            case 7:
+                for (const b of buffs) if (!b.bad) b.t += 30;
+                addBuff({ id: 'pause', label: 'Klokka står: klikk ×10', click: 10, t: 10, good: true });
+                break;
+            default:
+                addBuff({ id: 'kaffe', label: 'Kaffe med lærerne: ×6', prod: 6, t: 30, good: true });
+                if (!teach.on && !ev.on) teach.next = Math.min(teach.next, 1.5);
         }
         toast(`${v.ic} ${v.done}`);
         uiTick();
@@ -2019,21 +2046,22 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const applyCalm = () => root.classList.toggle('calm', !!S.set.reduce);
 
     /* ================= Prestisje ================= */
-    // Ryktebørsen: varige fordeler (kjøpes én gang) og nivåer (kan kjøpes mange ganger)
+    // Ryktebørsen: nivåer (kan kjøpes mange ganger) og varige fordeler (kjøpes én gang).
+    // Rykte å bruke og fanene står i en linje som blir stående når eleven scroller.
     let perkTab: 'lv' | 'once' = 'lv';
     function rankFx(id: string, lv: number): string {
         switch (id) {
-            case 'lp': return `+${lv * 25} % produksjon`;
-            case 'lc': return `+${lv * 50} % per klikk`;
-            case 'ld': return `${lv * 3} % billigere`;
-            case 'lm': return `+${NF0.format((BAL.msMult + 0.1 * lv - 1) * 100)} % per milepæl`;
-            case 'lg': return `+${lv * 10} % gullstjerner`;
-            case 'lb': return `+${lv * 15} % varighet`;
-            case 'lx': return `${NF0.format((BAL.critChance + 0.01 * lv) * 100)} % sjanse`;
-            case 'lq': return `+${lv * 50} % på lynprøver`;
-            case 'lt': return `+${lv * 3} sekunder`;
-            case 'le': return `+${lv * 15} % hendelser`;
-            case 'ls': return lv ? `start med ${fmt(startBank(lv))}` : 'start med 0';
+            case 'lp': return `+${lv * 25} %`;
+            case 'lc': return `+${lv * 50} %`;
+            case 'ld': return lv ? `-${lv * 3} %` : '0 %';
+            case 'lm': return `+${NF0.format((BAL.msMult + 0.1 * lv - 1) * 100)} %`;
+            case 'lg': return `+${lv * 10} %`;
+            case 'lb': return `+${lv * 15} %`;
+            case 'lx': return `${NF0.format((BAL.critChance + 0.01 * lv) * 100)} %`;
+            case 'lq': return `+${lv * 50} %`;
+            case 'lt': return `+${lv * 3} s`;
+            case 'le': return `+${lv * 15} %`;
+            case 'ls': return fmt(startBank(lv));
         }
         return '';
     }
@@ -2043,49 +2071,77 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         while (k + 1 < RYKTE_TITLES.length && S.rykte >= RYKTE_TITLES[k + 1][0]) k++;
         return { now: RYKTE_TITLES[k][1], next: RYKTE_TITLES[k + 1] };
     }
+    const reqMissing = (id?: string) => (id && !S.perks[id] ? PERKS.find((x) => x.id === id) : undefined);
     function openPrestige() {
         const g = rykteGainable();
         // Ta vare på hvor eleven har scrollet, så et kjøp ikke hopper til toppen
         const keep = modal.hidden ? 0 : (modal.querySelector('.card') as HTMLElement | null)?.scrollTop ?? 0;
         const t = rykteTitle();
+        const canLv = RANKS.filter((rp) => L(rp.id) < rp.max && S.ryktePts >= rankCost(rp, L(rp.id))).length;
+        const canOnce = PERKS.filter((p) => !S.perks[p.id] && !reqMissing(p.req) && S.ryktePts >= p.c).length;
+        const need = Math.pow(S.rykte + 1, 3) * BAL.rykteDiv;
         openModal(
-            `<h2>Bytt skole</h2>
-  <div class="rtitle"><span>Ryktet ditt: <b>${esc(t.now)}</b></span>${t.next ? `<small>Neste tittel ved ${t.next[0]} rykte: ${esc(t.next[1])}</small>` : '<small>Høyere enn dette går det ikke.</small>'}</div>
-  <p>Du mister unnskyldninger, medskyldige og oppgraderinger. Ryktet ditt følger med. Hvert rykte gir <b>+5 % produksjon</b> for alltid, og kan brukes i Ryktebørsen.</p>
-  <div class="row" style="justify-content:space-between"><div><div class="bigno">+${g}</div><small style="color:var(--muted)">rykte hvis du bytter nå · du har ${S.rykte} (${NF0.format(S.rykte * BAL.ryktePct * 100)} % bonus)</small></div>
-  <button class="btn big" id="pGo" ${g < 1 ? 'disabled' : ''}>Brenn alt og bytt skole</button></div>
-  ${g < 1 ? `<p style="color:var(--muted)">Du trenger ${fmt(Math.pow(S.rykte + 1, 2) * BAL.rykteDiv)} unnskyldninger totalt for neste rykte. Du har ${fmt(S.allTotal)}.</p>` : ''}
-  <h2 style="font-size:21px;margin-top:18px">Ryktebørsen <small style="font:600 13px var(--ui);color:var(--muted)">${S.ryktePts} rykte å bruke</small></h2>
-  <div class="ptabs" role="tablist"><button class="btn" data-t="lv">Nivåer</button><button class="btn" data-t="once">Varige fordeler</button></div>
-  <div id="perks"></div><div class="row" style="justify-content:flex-end"><button class="btn" id="pClose">Lukk</button></div>`,
+            `<div class="ph"><h2>Bytt skole</h2><span class="rtitle">${esc(t.now)}${t.next ? `<small>Neste tittel ved ${t.next[0]} rykte: ${esc(t.next[1])}</small>` : ''}</span></div>
+  <div class="pswap">
+    <div><div class="bigno">+${g} <small>rykte</small></div><small>${g > 0 ? 'hvis du bytter skole nå' : `Neste rykte ved ${fmt(need)} unnskyldninger totalt (du har ${fmt(S.allTotal)})`}</small></div>
+    <button class="btn big" id="pGo" ${g < 1 ? 'disabled' : ''}>Brenn alt og bytt skole</button>
+  </div>
+  <p class="pinfo">Du mister unnskyldninger, medskyldige og oppgraderinger. Ryktet blir med: ${S.rykte} rykte gir nå <b>+${NF0.format(S.rykte * BAL.ryktePct * 100)} %</b> produksjon.</p>
+  <div class="pbar">
+    <div class="pts"><span class="pts-ic">🏅</span><span><b>${NF0.format(S.ryktePts)}</b><small>rykte å bruke</small></span></div>
+    <div class="ptabs" role="tablist">
+      <button role="tab" data-t="lv">Nivåer${canLv ? `<i>${canLv}</i>` : ''}</button>
+      <button role="tab" data-t="once">Varige fordeler${canOnce ? `<i>${canOnce}</i>` : ''}</button>
+    </div>
+  </div>
+  <p class="phelp"></p>
+  <div id="perks" class="pgrid"></div>
+  <div id="owned"></div>
+  <div class="row" style="justify-content:flex-end"><button class="btn" id="pClose">Lukk</button></div>`,
             (c) => {
                 c.classList.add('wide');
                 (c.querySelector('#pClose') as HTMLElement).onclick = closeModal;
                 const go = c.querySelector<HTMLElement>('#pGo');
                 if (go) go.onclick = openReport;
+                (c.querySelector('.phelp') as HTMLElement).textContent =
+                    perkTab === 'lv'
+                        ? 'Nivåer kan kjøpes mange ganger. Hvert nivå koster litt mer enn det forrige.'
+                        : 'Varige fordeler kjøpes én gang og gjelder på alle skoler etterpå.';
                 for (const tb of Array.from(c.querySelectorAll<HTMLElement>('.ptabs button'))) {
-                    tb.setAttribute('aria-pressed', String(tb.dataset.t === perkTab));
+                    tb.setAttribute('aria-selected', String(tb.dataset.t === perkTab));
                     tb.onclick = () => {
+                        if (perkTab === tb.dataset.t) return;
                         perkTab = tb.dataset.t as 'lv' | 'once';
                         sfx.reveal();
                         openPrestige();
+                        (modal.querySelector('.card') as HTMLElement).scrollTop = (modal.querySelector('.pbar') as HTMLElement).offsetTop - 10;
                     };
                 }
-                const pk = c.querySelector('#perks') as HTMLElement;
-                const row = (name: string, desc: string, meta: string, label: string, can: boolean, buy?: () => void) => {
+                const grid = c.querySelector('#perks') as HTMLElement;
+                const card = (o: { ic: string; n: string; d: string; state: string; meta?: string; lv?: [number, number]; cost?: number; buy?: () => void }) => {
                     const d = document.createElement('div');
-                    d.className = 'perk';
-                    d.innerHTML = '<div><b></b><span></span><em></em></div>';
-                    (d.querySelector('b') as HTMLElement).textContent = name;
-                    (d.querySelector('span') as HTMLElement).textContent = desc;
-                    (d.querySelector('em') as HTMLElement).textContent = meta;
+                    d.className = 'pcard ' + o.state;
+                    d.innerHTML = '<div class="pc-top"><span class="pc-ic"></span><b></b></div><div class="pc-d"></div><div class="pc-meta"></div><div class="pc-bot"></div>';
+                    (d.querySelector('.pc-ic') as HTMLElement).textContent = o.ic;
+                    (d.querySelector('b') as HTMLElement).textContent = o.n;
+                    (d.querySelector('.pc-d') as HTMLElement).textContent = o.d;
+                    (d.querySelector('.pc-meta') as HTMLElement).textContent = o.meta ?? '';
+                    const bot = d.querySelector('.pc-bot') as HTMLElement;
+                    if (o.lv) {
+                        const pip = document.createElement('span');
+                        pip.className = 'pc-lv';
+                        pip.innerHTML = `<i style="width:${(o.lv[0] / o.lv[1]) * 100}%"></i>`;
+                        const lbl = document.createElement('small');
+                        lbl.textContent = `${o.lv[0]}/${o.lv[1]}`;
+                        bot.append(pip, lbl);
+                    }
                     const b = document.createElement('button');
-                    b.className = 'btn' + (can ? ' ok' : '');
-                    b.textContent = label;
-                    b.disabled = !buy || !can;
-                    if (buy)
+                    b.className = 'btn pc-buy';
+                    b.textContent = o.cost === undefined ? (o.state === 'max' ? 'Maks' : 'Låst') : `🏅 ${NF0.format(o.cost)}`;
+                    b.disabled = o.state !== 'ok';
+                    if (o.buy && o.state === 'ok') {
+                        const buy = o.buy;
                         b.onclick = () => {
-                            if (!can) return;
                             buy();
                             sfx.upg();
                             const [x, y] = center(b);
@@ -2094,32 +2150,56 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                             save();
                             openPrestige();
                         };
-                    d.appendChild(b);
-                    pk.appendChild(d);
+                    }
+                    bot.appendChild(b);
+                    grid.appendChild(d);
                 };
                 if (perkTab === 'lv') {
-                    for (const rp of RANKS) {
+                    // Ferdige nivåer nederst
+                    const list = [...RANKS].sort((a, b) => Number(L(a.id) >= a.max) - Number(L(b.id) >= b.max));
+                    for (const rp of list) {
                         const lv = L(rp.id);
                         const max = lv >= rp.max;
                         const cost = rankCost(rp, lv);
-                        const meta = `Nivå ${lv} av ${rp.max} · nå: ${rankFx(rp.id, lv)}${max ? '' : ` · neste: ${rankFx(rp.id, lv + 1)}`}`;
-                        row(rp.n, rp.d, meta, max ? 'Maks' : `${NF0.format(cost)} rykte`, !max && S.ryktePts >= cost, max ? undefined : () => {
-                            S.ryktePts -= cost;
-                            S.lv[rp.id] = lv + 1;
+                        card({
+                            ic: rp.ic,
+                            n: rp.n,
+                            d: rp.d,
+                            state: max ? 'max' : S.ryktePts >= cost ? 'ok' : 'poor',
+                            meta: max ? `Ferdig: ${rankFx(rp.id, lv)}` : `Nå ${rankFx(rp.id, lv)}  →  neste ${rankFx(rp.id, lv + 1)}`,
+                            lv: [lv, rp.max],
+                            cost: max ? undefined : cost,
+                            buy: () => {
+                                S.ryktePts -= cost;
+                                S.lv[rp.id] = lv + 1;
+                            },
                         });
                     }
                 } else {
-                    for (const p of PERKS) {
-                        if (S.perks[p.id]) {
-                            row(p.n, p.d, '', 'Kjøpt', false);
-                            continue;
-                        }
-                        const req = p.req && !S.perks[p.req] ? PERKS.find((x) => x.id === p.req) : undefined;
-                        row(p.n, p.d, req ? `Krever først: ${req.n}` : '', `${NF0.format(p.c)} rykte`, !req && S.ryktePts >= p.c, req ? undefined : () => {
+                    // Kjøpbare først, så de som krever noe annet først. Kjøpte blir små merker under.
+                    const open = PERKS.filter((p) => !S.perks[p.id] && !reqMissing(p.req));
+                    const locked = PERKS.filter((p) => !S.perks[p.id] && reqMissing(p.req));
+                    for (const p of open)
+                        card({ ic: p.ic, n: p.n, d: p.d, state: S.ryktePts >= p.c ? 'ok' : 'poor', cost: p.c, buy: () => {
                             S.ryktePts -= p.c;
                             S.perks[p.id] = 1;
-                        });
+                        } });
+                    for (const p of locked)
+                        card({ ic: p.ic, n: p.n, d: p.d, state: 'locked', meta: `Krever først: ${(reqMissing(p.req) as { n: string }).n}` });
+                    const owned = PERKS.filter((p) => S.perks[p.id]);
+                    if (owned.length) {
+                        const ow = c.querySelector('#owned') as HTMLElement;
+                        ow.innerHTML = '<h3>Du har allerede</h3><div class="chips"></div>';
+                        const chips = ow.querySelector('.chips') as HTMLElement;
+                        for (const p of owned) {
+                            const ch = document.createElement('span');
+                            ch.className = 'chip';
+                            ch.textContent = `${p.ic} ${p.n}`;
+                            ch.title = p.d;
+                            chips.appendChild(ch);
+                        }
                     }
+                    if (!open.length && !locked.length) grid.innerHTML = '<p class="phelp">Du har kjøpt alle de varige fordelene.</p>';
                 }
                 c.scrollTop = keep;
             }

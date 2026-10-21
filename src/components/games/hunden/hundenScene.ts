@@ -96,6 +96,15 @@ export const DISCOVERIES: Record<string, string> = {
     'era-stortinget': 'Nytt rom: Stortinget.',
     'era-fn': 'Nytt rom: FNs sikkerhetsråd.',
     'era-univers': 'Nytt rom: universet.',
+    'era-multivers': 'Nytt rom: multiverset. Alle rommene på en gang.',
+    'era-tidensende': 'Nytt rom: tidens ende. Klokkene har stoppet.',
+    'era-laerer': 'Nytt rom: lærerværelset. Ingen elev har vært her før.',
+    'hole-swirl': 'Et svart hull har åpnet seg på gulvet. Det sluker lekser.',
+    'clone-walk': 'Det går en kopi av deg rundt i rommet.',
+    'robot-walk': 'Robotlæreren piper og glemmer alt.',
+    'ufo-beam': 'Et romskip stråler opp en lekse.',
+    'mist-drift': 'Glemselens tåke siger inn.',
+    'bang-flash': 'BANG! Universet startet på nytt. Bare litt.',
 };
 
 const EMOJI_FONT = '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Twemoji Mozilla",sans-serif';
@@ -469,6 +478,147 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
             grad.addColorStop(1, '#1a2f4b');
             g.fillStyle = grad;
             g.fillRect(0, ft, W, H - ft);
+        } else if (era === 6) {
+            // Multiverset: rommet delt i striper, hver stripe et eget univers
+            const tints = ['#2a0f3d', '#0f2d3d', '#3d1a0f', '#0f3d22', '#3d0f2c', '#1a1f4d'];
+            const sw = W / tints.length;
+            tints.forEach((c, k) => {
+                const gr = g.createLinearGradient(0, 0, 0, H);
+                gr.addColorStop(0, c);
+                gr.addColorStop(1, '#05060f');
+                g.fillStyle = gr;
+                g.fillRect(k * sw, 0, sw + 1, H);
+            });
+            for (let k = 0; k < 160; k++) {
+                g.fillStyle = `hsla(${(k * 47) % 360},90%,85%,${0.3 + ((k * 31) % 60) / 100})`;
+                g.fillRect((k * 7919) % W, (k * 104729) % (H * 0.9), 2, 2);
+            }
+            // portaler mellom universene
+            for (const [x, y, rr, hue] of [[0.18, 0.28, 0.07, 280], [0.52, 0.18, 0.05, 180], [0.82, 0.32, 0.08, 30]] as const) {
+                const pg = g.createRadialGradient(W * x, H * y, 2, W * x, H * y, W * rr);
+                pg.addColorStop(0, `hsla(${hue},100%,85%,.95)`);
+                pg.addColorStop(0.5, `hsla(${hue},90%,55%,.6)`);
+                pg.addColorStop(1, `hsla(${hue},90%,40%,0)`);
+                g.fillStyle = pg;
+                g.beginPath();
+                g.ellipse(W * x, H * y, W * rr, W * rr * 1.25, 0, 0, Math.PI * 2);
+                g.fill();
+            }
+            g.strokeStyle = 'rgba(255,255,255,.18)';
+            for (let k = 1; k < tints.length; k++) {
+                g.beginPath();
+                g.moveTo(k * sw, 0);
+                g.lineTo(k * sw, H);
+                g.stroke();
+            }
+            const fg = g.createLinearGradient(0, ft, 0, H);
+            fg.addColorStop(0, 'rgba(120,80,200,.35)');
+            fg.addColorStop(1, 'rgba(20,10,40,.8)');
+            g.fillStyle = fg;
+            g.fillRect(0, ft, W, H - ft);
+        } else if (era === 7) {
+            // Tidens ende: mørk rav, stoppede klokker, timeglass
+            const gr = g.createLinearGradient(0, 0, 0, H);
+            gr.addColorStop(0, '#1c1206');
+            gr.addColorStop(1, '#3a2408');
+            g.fillStyle = gr;
+            g.fillRect(0, 0, W, H);
+            for (const [x, y, rr] of [[0.12, 0.25, 0.07], [0.3, 0.12, 0.04], [0.68, 0.2, 0.05], [0.88, 0.34, 0.075], [0.5, 0.4, 0.035]] as const) {
+                const cx = W * x;
+                const cy = H * y;
+                const R = W * rr;
+                g.fillStyle = '#f3e3c0';
+                g.beginPath();
+                g.arc(cx, cy, R, 0, Math.PI * 2);
+                g.fill();
+                g.strokeStyle = '#b8862a';
+                g.lineWidth = Math.max(3, R * 0.12);
+                g.stroke();
+                g.fillStyle = '#3a2408';
+                for (let k = 0; k < 12; k++) {
+                    const a = (k / 12) * Math.PI * 2;
+                    g.fillRect(cx + Math.cos(a) * R * 0.8 - 1.5, cy + Math.sin(a) * R * 0.8 - 1.5, 3, 3);
+                }
+                // alle klokkene stoppet 08:14
+                g.strokeStyle = '#3a2408';
+                g.lineWidth = 3;
+                g.beginPath();
+                g.moveTo(cx, cy);
+                g.lineTo(cx + Math.cos(-Math.PI / 2 + (8.23 / 12) * Math.PI * 2) * R * 0.45, cy + Math.sin(-Math.PI / 2 + (8.23 / 12) * Math.PI * 2) * R * 0.45);
+                g.moveTo(cx, cy);
+                g.lineTo(cx + Math.cos(-Math.PI / 2 + (14 / 60) * Math.PI * 2) * R * 0.7, cy + Math.sin(-Math.PI / 2 + (14 / 60) * Math.PI * 2) * R * 0.7);
+                g.stroke();
+            }
+            const fg = g.createLinearGradient(0, ft, 0, H);
+            fg.addColorStop(0, '#5a3a10');
+            fg.addColorStop(1, '#2a1a06');
+            g.fillStyle = fg;
+            g.fillRect(0, ft, W, H - ft);
+            g.fillStyle = 'rgba(255,210,120,.08)';
+            for (let x = 0; x < W; x += 40) for (let y = ft; y < H; y += 40) if (((x + y) / 40) % 2 === 0) g.fillRect(x, y, 40, 40);
+        } else if (era === 8) {
+            // Lærerværelset: kaffemaskin, sofa, kjøleskap med lapper, oppslagstavle
+            wall(g, '#f1e6d2', '#e2d2b4');
+            // oppslagstavle
+            frame(g, W * 0.05, ft * 0.12, W * 0.24, ft * 0.4, '#8a5a2b', '#c99a62');
+            const notes = [['Leksesjekk:', 'AVLYST'], ['Hvem tok', 'yoghurten min?'], ['Kaffe-', 'listen'], ['Hunden min', 'spiste rettingen']];
+            notes.forEach(([a, b2], k) => {
+                const nx = W * (0.07 + (k % 2) * 0.11);
+                const ny = ft * (0.16 + Math.floor(k / 2) * 0.18);
+                g.fillStyle = ['#fff27a', '#ffd0e0', '#c9f2cf', '#cfe3ff'][k];
+                g.fillRect(nx, ny, W * 0.09, ft * 0.14);
+                g.fillStyle = '#23252c';
+                g.font = `700 ${Math.max(9, W * 0.0105)}px Kalam, cursive`;
+                g.fillText(a, nx + W * 0.045, ny + ft * 0.05);
+                g.fillText(b2, nx + W * 0.045, ny + ft * 0.095);
+                g.fillStyle = '#d7262e';
+                g.beginPath();
+                g.arc(nx + W * 0.045, ny + 4, 3, 0, Math.PI * 2);
+                g.fill();
+            });
+            // kjøleskap
+            g.fillStyle = '#e9eef2';
+            g.fillRect(W * 0.8, ft * 0.1, W * 0.13, ft * 0.9);
+            g.strokeStyle = '#b8c2cc';
+            g.lineWidth = 2;
+            g.strokeRect(W * 0.8, ft * 0.1, W * 0.13, ft * 0.9);
+            g.beginPath();
+            g.moveTo(W * 0.8, ft * 0.42);
+            g.lineTo(W * 0.93, ft * 0.42);
+            g.stroke();
+            g.fillStyle = '#fff27a';
+            g.fillRect(W * 0.82, ft * 0.2, W * 0.07, ft * 0.12);
+            g.fillStyle = '#23252c';
+            g.font = `700 ${Math.max(8, W * 0.009)}px Kalam, cursive`;
+            g.fillText('IKKE RØR', W * 0.855, ft * 0.24);
+            g.fillText('MIN MAT!', W * 0.855, ft * 0.29);
+            // kaffemaskin på benk
+            g.fillStyle = '#9c7a4e';
+            g.fillRect(W * 0.58, ft * 0.5, W * 0.18, ft * 0.06);
+            g.fillStyle = '#2b2b2f';
+            g.fillRect(W * 0.62, ft * 0.28, W * 0.07, ft * 0.22);
+            g.fillStyle = '#d7262e';
+            g.beginPath();
+            g.arc(W * 0.655, ft * 0.34, 4, 0, Math.PI * 2);
+            g.fill();
+            g.fillStyle = '#fff';
+            g.fillRect(W * 0.645, ft * 0.43, W * 0.02, ft * 0.06);
+            // sofa
+            g.fillStyle = '#7a8f6a';
+            g.beginPath();
+            g.roundRect(W * 0.32, ft * 0.62, W * 0.22, ft * 0.3, 12);
+            g.fill();
+            g.fillStyle = '#6a7d5b';
+            g.fillRect(W * 0.33, ft * 0.76, W * 0.2, ft * 0.16);
+            skirting(g, '#9c7a4e');
+            // linoleum
+            const fg = g.createLinearGradient(0, ft, 0, H);
+            fg.addColorStop(0, '#c9c2a8');
+            fg.addColorStop(1, '#a9a28a');
+            g.fillStyle = fg;
+            g.fillRect(0, ft, W, H - ft);
+            g.fillStyle = 'rgba(0,0,0,.05)';
+            for (let x = 0; x < W; x += 30) for (let y = ft; y < H; y += 30) if (((x + y) / 30) % 2 === 0) g.fillRect(x, y, 30, 30);
         } else {
             // Universet: tåker, stjerner, planet med ring
             const grad = g.createLinearGradient(0, 0, 0, H);
@@ -574,8 +724,8 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
     const count = (kind: string) => actors.filter((a) => a.kind === kind && !a.gone).length;
 
     // Hvor mange figurer av hver medskyldig som skal stå i rommet
-    const KINDS = ['dog', 'baby', 'gas', 'dish', 'granny', 'factory', 'lobby', 'portal', 'candle', 'rift', 'dove', 'calendar'];
-    const CAPS = [9, 7, 4, 3, 5, 1, 5, 1, 8, 3, 10, 1];
+    const KINDS = ['dog', 'baby', 'gas', 'dish', 'granny', 'factory', 'lobby', 'portal', 'candle', 'rift', 'dove', 'calendar', 'hole', 'clone', 'robot', 'ufo', 'mist', 'bang'];
+    const CAPS = [9, 7, 4, 3, 5, 1, 5, 1, 8, 3, 10, 1, 3, 6, 5, 4, 4, 1];
     function wanted(i: number, owned: number) {
         if (owned <= 0) return 0;
         if (CAPS[i] === 1) return 1;
@@ -613,16 +763,28 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
             case 'calendar':
                 a = newActor(kind, i, { x: W * 0.09, y: H * 0.34, mode: 'idle', size: U * 2 });
                 break;
+            case 'hole':
+                a = newActor(kind, i, { x: avoid(rnd(W * 0.1, W * 0.9)), y: laneY(rnd(0.2, 0.8)), mode: 'idle', size: U * 1.3 });
+                break;
+            case 'ufo':
+                a = newActor(kind, i, { x: rnd(W * 0.1, W * 0.9), y: H * rnd(0.1, 0.3), mode: 'fly', size: U * 1.3 });
+                break;
+            case 'mist':
+                a = newActor(kind, i, { x: rnd(W * 0.1, W * 0.9), y: H * rnd(0.3, 0.6), mode: 'idle', size: U * 1.8 });
+                break;
+            case 'bang':
+                a = newActor(kind, i, { x: W * 0.9, y: H * 0.42, mode: 'idle', size: U * 1.6, timer: rnd(4, 7) });
+                break;
             default:
                 a = newActor(kind, i, { mode: 'walk' });
         }
         if (entrance && !input().reduce) {
-            if (['dog', 'baby', 'granny', 'lobby', 'gas', 'candle'].includes(kind)) {
+            if (['dog', 'baby', 'granny', 'lobby', 'gas', 'candle', 'clone', 'robot', 'hole'].includes(kind)) {
                 a.drop = 1;
                 a.vy = 0;
             } else a.t = -0.0001; // pop-in via t
         }
-        discover({ dog: 'dog-walk', baby: 'baby-crawl', gas: 'gas-puff', dish: 'wifi-zap', granny: 'granny-walk', factory: 'factory-belt', lobby: 'lobby-walk', portal: 'tm-portal', candle: 'rel-candles', rift: 'rift-open', dove: 'dove-flock', calendar: 'cal-rip' }[kind] as string);
+        discover({ dog: 'dog-walk', baby: 'baby-crawl', gas: 'gas-puff', dish: 'wifi-zap', granny: 'granny-walk', factory: 'factory-belt', lobby: 'lobby-walk', portal: 'tm-portal', candle: 'rel-candles', rift: 'rift-open', dove: 'dove-flock', calendar: 'cal-rip', hole: 'hole-swirl', clone: 'clone-walk', robot: 'robot-walk', ufo: 'ufo-beam', mist: 'mist-drift', bang: 'bang-flash' }[kind] as string);
     }
 
     function reconcile(entrance: boolean) {
@@ -1062,6 +1224,56 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
                 if (a.x < -120 || a.x > W + 120) a.gone = true;
                 break;
             }
+            case 'clone':
+            case 'robot': {
+                walk(U * (a.kind === 'robot' ? 0.9 : 1.4));
+                a.timer -= dt;
+                if (a.timer <= 0) {
+                    a.dir = -a.dir;
+                    a.timer = rnd(2, 6);
+                    if (a.kind === 'robot' && !st.reduce) text(pick(['Bip. Glemt.', 'Leksesjekk: feil 404', 'Bip bop?']), a.x, a.y - a.size * 1.2, '#1565c0', 15, 1.2);
+                }
+                break;
+            }
+            case 'hole': {
+                // Sluker papirbiter som flyr forbi
+                if (!st.reduce && Math.random() < dt * 1.5) part({ k: 'rect', x: a.x + rnd(-120, 120), y: a.y - rnd(40, 140), vx: 0, vy: 0, g: 0, life: 0.8, size: rnd(5, 9), rot: rnd(0, 6), vr: 8, col: '#ffffff' });
+                break;
+            }
+            case 'ufo': {
+                a.x += a.dir * 70 * speed * dt;
+                if (a.x < W * 0.05) a.dir = 1;
+                if (a.x > W * 0.95) a.dir = -1;
+                a.y += Math.sin(a.phase * 2) * 0.4;
+                a.timer -= dt;
+                if (a.timer <= 0) {
+                    a.timer = rnd(4, 8);
+                    a.mode = 'beam';
+                    a.data = 1.2;
+                }
+                if (a.mode === 'beam') {
+                    a.data = (a.data ?? 0) - dt;
+                    if (!st.reduce && Math.random() < dt * 8) part({ k: 'emo', txt: '📄', x: a.x + rnd(-10, 10), y: floorTop() + 20, vy: -140, g: 0, life: 1, size: U * 0.5, fade: true });
+                    if ((a.data ?? 0) <= 0) a.mode = 'fly';
+                }
+                break;
+            }
+            case 'mist': {
+                a.x += Math.sin(a.phase * 0.4 + a.i) * 12 * dt;
+                break;
+            }
+            case 'bang': {
+                a.timer -= dt;
+                if (a.timer <= 0) {
+                    a.timer = rnd(6, 11);
+                    if (!st.reduce) {
+                        confetti(a.x, a.y, 60, 1.4);
+                        shake = Math.max(shake, 8);
+                        text('BANG!', a.x - U, a.y - U * 1.4, '#ff6a00', 30, 1.2);
+                    }
+                }
+                break;
+            }
             case 'teacher': {
                 const target = W * 0.2;
                 if (a.mode === 'in') {
@@ -1105,6 +1317,18 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
                 return '📄';
             case 'mirror':
                 return String.fromCodePoint(a.data ?? 0x1f415);
+            case 'clone':
+                return '🧍';
+            case 'robot':
+                return '🤖';
+            case 'ufo':
+                return '🛸';
+            case 'mist':
+                return '🌫️';
+            case 'bang':
+                return '💥';
+            case 'hole':
+                return '🕳️';
             default:
                 return '❓';
         }
@@ -1113,7 +1337,7 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
     /* ---------- tegning ---------- */
     function drawActor(a: Actor, st: SceneInput) {
         if (a.gone && a.kind !== 'mirror') return;
-        const d = a.kind === 'dove' || a.kind === 'dish' || a.kind === 'portal' || a.kind === 'rift' || a.kind === 'calendar' || a.kind === 'factory' || a.kind === 'belt' ? 1 : depth(a.y);
+        const d = a.kind === 'dove' || a.kind === 'dish' || a.kind === 'portal' || a.kind === 'rift' || a.kind === 'calendar' || a.kind === 'factory' || a.kind === 'belt' || a.kind === 'ufo' || a.kind === 'mist' || a.kind === 'bang' ? 1 : depth(a.y);
         const size = a.size * d;
         const pop = a.t < 0.35 ? Math.min(1, a.t / 0.35) * 1.2 - Math.max(0, a.t / 0.35 - 0.8) : 1;
         const tier = a.i >= 0 ? st.tier(a.i) : 0;
@@ -1286,6 +1510,46 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
                 return;
             }
         }
+        // De nye figurene etter universet
+        if (a.kind === 'hole') {
+            const rg = ctx.createRadialGradient(a.x, a.y + size * 0.2, 2, a.x, a.y + size * 0.2, size);
+            rg.addColorStop(0, 'rgba(0,0,0,.95)');
+            rg.addColorStop(0.6, 'rgba(40,10,80,.7)');
+            rg.addColorStop(1, 'rgba(40,10,80,0)');
+            ctx.fillStyle = rg;
+            ctx.beginPath();
+            ctx.ellipse(a.x, a.y + size * 0.2, size * 1.1 * pop, size * 0.45 * pop, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(190,140,255,.7)';
+            ctx.lineWidth = 2;
+            for (let k = 0; k < 3; k++) {
+                ctx.beginPath();
+                ctx.ellipse(a.x, a.y + size * 0.2, size * (0.4 + k * 0.25), size * (0.15 + k * 0.1), 0, time * (2 + k) + k, time * (2 + k) + k + 2.2);
+                ctx.stroke();
+            }
+            return;
+        }
+        if (a.kind === 'ufo') {
+            if (a.mode === 'beam') {
+                const bg = ctx.createLinearGradient(0, a.y, 0, floorTop() + 30);
+                bg.addColorStop(0, 'rgba(140,255,170,.55)');
+                bg.addColorStop(1, 'rgba(140,255,170,0)');
+                ctx.fillStyle = bg;
+                ctx.beginPath();
+                ctx.moveTo(a.x - size * 0.3, a.y);
+                ctx.lineTo(a.x + size * 0.3, a.y);
+                ctx.lineTo(a.x + size, floorTop() + 30);
+                ctx.lineTo(a.x - size, floorTop() + 30);
+                ctx.fill();
+            }
+            emo('🛸', a.x, a.y, size * pop, { rot: Math.sin(a.phase * 3) * 0.15 });
+            return;
+        }
+        if (a.kind === 'mist' || a.kind === 'bang') {
+            const pulse = a.kind === 'bang' ? 1 + Math.max(0, 0.6 - (a.timer % 7)) * 0.5 + Math.sin(a.phase * 6) * 0.05 : 1;
+            emo(emojiFor(a), a.x, a.y, size * pop * pulse, { alpha: a.kind === 'mist' ? 0.75 : 1 });
+            return;
+        }
         // vanlige figurer
         if (a.kind === 'dove') {
             emo('🕊️', a.x, a.y, size * pop, { flip: a.dir > 0, sy: 0.75 + Math.abs(Math.sin(a.phase * 12)) * 0.35 });
@@ -1411,6 +1675,30 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
                 ctx.arc(x, y, 3, 0, Math.PI * 2);
                 ctx.fill();
             }
+        } else if (st.era === 6) {
+            // portalene pulserer
+            for (const [x, y, hue] of [[0.18, 0.28, 280], [0.52, 0.18, 180], [0.82, 0.32, 30]] as const) {
+                ctx.strokeStyle = `hsla(${hue},100%,80%,${0.4 + 0.3 * Math.sin(time * 3 + x * 10)})`;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.ellipse(W * x, H * y, U * (1.2 + 0.3 * Math.sin(time * 2 + y * 9)), U * (1.5 + 0.3 * Math.sin(time * 2 + y * 9)), time * 0.5, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+        } else if (st.era === 7) {
+            // sand renner i et stort timeglass
+            const hx = W * 0.5;
+            const hy = H * 0.12;
+            ctx.fillStyle = 'rgba(255,210,120,.8)';
+            for (let k = 0; k < 6; k++) ctx.fillRect(hx - 1 + Math.sin(time * 9 + k) * 1.5, hy + ((time * 60 + k * 9) % 50), 2, 3);
+        } else if (st.era === 8) {
+            // damp fra kaffemaskinen
+            for (let k = 0; k < 5; k++) {
+                const t2 = (time * 0.6 + k / 5) % 1;
+                ctx.fillStyle = `rgba(255,255,255,${0.45 * (1 - t2)})`;
+                ctx.beginPath();
+                ctx.arc(W * 0.655 + Math.sin(time * 2 + k) * 6, floorTop() * (0.27 - t2 * 0.2), 4 + t2 * 8, 0, Math.PI * 2);
+                ctx.fill();
+            }
         } else if (st.era === 5) {
             for (let k = 0; k < 30; k++) {
                 const a = 0.5 + 0.5 * Math.sin(time * (1 + (k % 5)) + k);
@@ -1448,7 +1736,7 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
         time += dt;
         const speed = st.frenzy ? 2.4 : st.storm ? 1.6 : 1;
         if (st.era !== lastEra) {
-            if (lastEra >= 0 && st.era > lastEra) discover(['', 'era-rektor', 'era-kommune', 'era-stortinget', 'era-fn', 'era-univers'][st.era]);
+            if (lastEra >= 0 && st.era > lastEra) discover(['', 'era-rektor', 'era-kommune', 'era-stortinget', 'era-fn', 'era-univers', 'era-multivers', 'era-tidensende', 'era-laerer'][st.era] ?? '');
             lastEra = st.era;
         }
         reconcileT -= dt;
