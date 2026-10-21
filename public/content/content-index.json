@@ -1,5 +1,5 @@
 {
-  "buildId": 214630118248563,
+  "buildId": 261822077621039,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2534,6 +2534,9 @@
     ],
     "australia-og-aboriginerne": [
       "content/historie/kolonialisering/australia-og-aboriginerne.json"
+    ],
+    "boerkrigen": [
+      "content/historie/kolonialisering/boerkrigen.json"
     ],
     "britisk-imperium": [
       "content/historie/kolonialisering/britisk-imperium.json"
@@ -5764,6 +5767,7 @@
     "historie/kinas-historie/store-spranget": "content/historie/kinas-historie/store-spranget.json",
     "historie/kinas-historie/tiananmen-1989": "content/historie/kinas-historie/tiananmen-1989.json",
     "historie/kolonialisering/australia-og-aboriginerne": "content/historie/kolonialisering/australia-og-aboriginerne.json",
+    "historie/kolonialisering/boerkrigen": "content/historie/kolonialisering/boerkrigen.json",
     "historie/kolonialisering/britisk-imperium": "content/historie/kolonialisering/britisk-imperium.json",
     "historie/kolonialisering/eic": "content/historie/kolonialisering/eic.json",
     "historie/kolonialisering/europa-erobrer-verden": "content/historie/kolonialisering/europa-erobrer-verden.json",
