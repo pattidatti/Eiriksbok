@@ -221,7 +221,7 @@
 .hsl #hsl-headline h1 { font: 400 clamp(26px, 4.4vw, 46px)/1.05 var(--display); margin: 14px 0 10px; text-wrap: balance; }
 .hsl #hsl-headline p { font: 600 16px/1.4 var(--ui); margin: 0; color: #444; }
 .hsl #hsl-headline .unlock { margin-top: 12px; display: inline-block; background: #ffe14a; padding: 6px 10px; font: 700 15px var(--ui); rotate: -1deg; }
-.hsl #hsl-headline .tap { margin-top: 12px; font: 600 12px var(--ui); color: #777; }
+.hsl #hsl-headline .row { display: flex; justify-content: flex-end; margin-top: 16px; }
 
 .hsl #hsl-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: rgba(10, 12, 25, 0.5); padding: 16px; }
 .hsl #hsl-modal .card { width: min(520px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--panel); color: var(--fg); border: 2px solid var(--fg); border-radius: 6px; box-shadow: 8px 8px 0 var(--fg); padding: 20px; animation: hslPopIn 0.35s cubic-bezier(0.2, 1.5, 0.4, 1); }

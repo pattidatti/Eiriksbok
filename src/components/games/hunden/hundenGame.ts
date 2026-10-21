@@ -80,7 +80,7 @@ const MARKUP = `
       <div id="hsl-counter" class="off">
         <div><span id="hsl-bankNum">0</span></div>
         <div id="hsl-bankLbl">unnskyldninger</div>
-        <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span></div>
+        <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span><span title="Alle unnskyldninger du har funnet på, også før skolebytter">totalscore: <b id="hsl-total">0</b></span></div>
       </div>
       <div id="hsl-desk">
         <div id="hsl-sheetWrap">
@@ -928,6 +928,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (tOn) nextHeadline();
         }
         $('#hsl-pps').textContent = fmt(pps(), true);
+        $('#hsl-total').textContent = fmt(S.allTotal);
         $('#hsl-ppc').textContent = fmt(clickPow(), true);
         // medskyldige
         while (S.rev < P.length - 1 && (S.owned[S.rev + 1] > 0 || S.runTotal >= P[S.rev + 1].c * 0.5)) S.rev++;
@@ -1020,18 +1021,24 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     }
     let headTimer = 0;
     function showHeadline(h: string, sub: string, u?: string, mast?: string) {
-        headlineEl.innerHTML = `<div class="np"><div class="mast"><span>Skoleavisa</span><span>${esc(mast || 'Ekstrautgave')}</span></div><h1></h1><p></p>${u ? '<div class="unlock"></div>' : ''}<div class="tap">Klikk for å lukke</div></div>`;
+        headlineEl.innerHTML = `<div class="np"><div class="mast"><span>Skoleavisa</span><span>${esc(mast || 'Ekstrautgave')}</span></div><h1></h1><p></p>${u ? '<div class="unlock"></div>' : ''}<div class="row"><button class="btn big" disabled>Videre</button></div></div>`;
         (headlineEl.querySelector('h1') as HTMLElement).textContent = h;
         (headlineEl.querySelector('p') as HTMLElement).textContent = sub;
         if (u) (headlineEl.querySelector('.unlock') as HTMLElement).textContent = u;
         headlineEl.hidden = false;
+        // Avisa blir stående til eleven trykker Videre. Knappen våkner etter et lite øyeblikk,
+        // så et klikk som var på vei mot arket ikke lukker avisa før den er lest.
+        const btn = headlineEl.querySelector('button') as HTMLButtonElement;
+        btn.addEventListener('click', closeHeadline);
         clearTimeout(headTimer);
-        headTimer = later(closeHeadline, 6500);
+        headTimer = later(() => {
+            btn.disabled = false;
+            btn.focus();
+        }, 700);
     }
     function closeHeadline() {
         headlineEl.hidden = true;
     }
-    headlineEl.addEventListener('click', closeHeadline);
 
     /* ================= Ticker ================= */
     const tickMsg = $('#hsl-tickMsg');
@@ -1249,8 +1256,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         row.appendChild(ok);
         res.appendChild(row);
         tEl.appendChild(res);
-        // Lengre tid enn ved vanlige svar: fasiten skal rekke å bli lest
-        teach.t = right ? 3.5 : 6;
+        // Svaret blir stående til eleven trykker Videre: fasiten skal rekke å bli lest
+        teach.t = Infinity;
     }
     function failTeacher() {
         if (teach.phase === 3) return answerQuiz(null);
