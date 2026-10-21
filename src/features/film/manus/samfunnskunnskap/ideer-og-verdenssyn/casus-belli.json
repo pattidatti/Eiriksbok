@@ -1,0 +1,326 @@
+{
+    "id": "casus-belli",
+    "tittel": "Casus belli: Historiens farligste argumenter",
+    "kilde": "/samfunnskunnskap/ideer-og-verdenssyn/casus-belli",
+    "bilde": "/images/lessons/ideer/casus_belli_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-21", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "spydet",
+            "lyd": "vind",
+            "kapittel": "Spydet",
+            "visual": { "type": "CasusFetial", "props": {} },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du står ved grensen til Roma, for veldig lenge siden. En prest går helt fram til grensen."
+                },
+                {
+                    "si": "Han er en fetial, en av Romas krigsprester. Han roper over grensen: Roma har blitt urettferdig behandlet, og dere må gjøre det godt igjen."
+                },
+                {
+                    "si": "Så venter Roma. Kildene sier at naboen fikk en frist på 30 eller 33 dager.",
+                    "uttale": "Så venter Roma. Kildene sier at naboen fikk en frist på tretti eller trettitre dager."
+                },
+                {
+                    "si": "Gir ikke naboen etter, erklærer presten krig. Han kaster et spyd over grensen."
+                },
+                {
+                    "si": "Nå mente romerne at gudene var på deres side. Krigen var rettferdig, i hvert fall på papiret."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "CASUS BELLI",
+                    "undertittel": "Historiens farligste argumenter",
+                    "bilde": "/images/lessons/ideer/casus_belli_hero.webp",
+                    "sporsmal": { "tekst": "Ekte grunn, eller påskudd?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Romerne trengte en grunn før de gikk til krig. Det ville nesten alle herskere." },
+                {
+                    "si": "Grunnen har et latinsk navn: casus belli. Det betyr krigstilfelle, en hendelse som kan gi et land grunn til krig.",
+                    "uttale": "Grunnen har et latinsk navn: kasus belli. Det betyr krigstilfelle, en hendelse som kan gi et land grunn til krig."
+                },
+                {
+                    "si": "Ingen hersker vil se ut som en morder eller en tyv. Men er grunnen alltid ekte, eller bare et påskudd?"
+                }
+            ]
+        },
+        {
+            "id": "hellas",
+            "kapittel": "To sannheter",
+            "visual": { "type": "CasusKart", "props": { "modus": "hellas" } },
+            "replikker": [
+                {
+                    "si": "Vi reiser til Hellas i antikken. To mektige greske byer, Athen og Sparta, går til krig mot hverandre."
+                },
+                {
+                    "si": "Krigen kalles Peloponneserkrigen. Begge sider ramset opp grunner: brutte avtaler, og venner som var blitt dårlig behandlet."
+                },
+                {
+                    "si": "Hendelsen som satte i gang krigen, var et angrep på byen Potideia."
+                }
+            ]
+        },
+        {
+            "id": "thukydid",
+            "visual": { "type": "CasusIsfjell", "props": { "modus": "thukydid" } },
+            "replikker": [
+                {
+                    "si": "Historikeren Thukydid skrev om krigen, og han så noe viktig."
+                },
+                {
+                    "si": "Over overflaten ligger det alle kan se: angrepet på Potideia. Det var gnisten."
+                },
+                {
+                    "si": "Men under overflaten lå den egentlige årsaken. Sparta var bekymret fordi Athen ble stadig mektigere."
+                },
+                {
+                    "si": "Det er dette skillet alt handler om. Den offisielle grunnen er det lederne sier. Den egentlige årsaken er det som faktisk driver dem."
+                }
+            ]
+        },
+        {
+            "id": "rubicon",
+            "visual": { "type": "CasusIsfjell", "props": { "modus": "rubicon" } },
+            "replikker": [
+                {
+                    "si": "Romerne kjente også det trikset. I 49 før Kristus krysset Julius Cæsar elva Rubicon med hæren sin."
+                },
+                {
+                    "si": "Han sa at han måtte forsvare rettighetene til tribunene. Tribunene var valgte ledere som skulle passe på folket i Roma."
+                },
+                {
+                    "si": "Men egentlig var det et statskupp. Det betyr å ta makta i et land med våpen, utenom loven."
+                }
+            ]
+        },
+        {
+            "id": "vikinger",
+            "kapittel": "Slå til først",
+            "visual": { "type": "CasusKart", "props": { "modus": "vikinger" } },
+            "replikker": [
+                {
+                    "si": "Noen ganger handler grunnen om noe man er redd for. Da angriper man først, før fienden rekker det. Det kalles preventiv krig."
+                },
+                {
+                    "si": "Historikere har lenge lurt på hvorfor vikingene plutselig begynte å angripe klostre."
+                },
+                {
+                    "si": "I 793 angrep de klosteret på Lindisfarne i England. En ny hypotese, altså en mulig forklaring, peker sørover mot Karl den Store."
+                },
+                {
+                    "si": "Karl styrte en kristen stormakt. I flere tiår kriget han mot sakserne, like sør for Danmark."
+                },
+                {
+                    "si": "Sakserne ble tvunget til å bli kristne, og mange ble sendt bort fra hjemmene sine. Kanskje vikinghøvdingene var redde for å bli de neste."
+                },
+                {
+                    "si": "Da kunne de slå til først for å skremme stormakten. Men husk: Det er bare en mulig forklaring."
+                }
+            ]
+        },
+        {
+            "id": "armada",
+            "kapittel": "Tro og makt",
+            "visual": { "type": "CasusIsfjell", "props": { "modus": "armada" } },
+            "replikker": [
+                {
+                    "si": "I middelalderen og tida etter ble religion den vanligste grunnen til krig."
+                },
+                {
+                    "si": "I 1588 sendte kong Filip den andre av Spania en stor flåte mot England. Den kalles Den spanske armada."
+                },
+                {
+                    "si": "Over overflaten: Filip ville gjøre England katolsk igjen, og hevne at Maria Stuart var blitt henrettet."
+                },
+                {
+                    "si": "Under overflaten: Filip ville også stoppe England, som var i ferd med å bli sterkt på havet."
+                }
+            ]
+        },
+        {
+            "id": "praha",
+            "visual": { "type": "CasusKart", "props": { "modus": "praha" } },
+            "replikker": [
+                {
+                    "si": "Så kommer en av de rareste grunnene i historien. Vi er i Praha, den 23. mai 1618.",
+                    "uttale": "Så kommer en av de rareste grunnene i historien. Vi er i Praha, den tjuetredje mai, seksten atten."
+                },
+                {
+                    "si": "Protestantiske adelsmenn er sinte på keiseren. De kaster to av rådgiverne hans og sekretæren deres ut av et slottsvindu."
+                },
+                {
+                    "si": "De lander i en gammel gjødselhaug, og alle overlever. Hendelsen kalles defenestrasjonen i Praha. Ordet betyr å kaste noen ut av et vindu."
+                },
+                {
+                    "si": "Men den satte i gang et opprør mot keiseren. Det ble starten på 30-årskrigen, som rystet hele Europa.",
+                    "uttale": "Men den satte i gang et opprør mot keiseren. Det ble starten på trettiårskrigen, som rystet hele Europa."
+                }
+            ]
+        },
+        {
+            "id": "europa-1914",
+            "kapittel": "Når verden er enig",
+            "visual": { "type": "CasusKart", "props": { "modus": "1914" } },
+            "replikker": [
+                {
+                    "si": "Noen grunner til krig blir de fleste land enige om, for eksempel når et land angriper en fredelig nabo."
+                },
+                {
+                    "si": "I 1914 ble erkehertug Franz Ferdinand skutt i Sarajevo. Han skulle bli den neste keiseren av Østerrike-Ungarn."
+                },
+                { "si": "Østerrike-Ungarn brukte drapet som casus belli mot Serbia.", "uttale": "Østerrike-Ungarn brukte drapet som kasus belli mot Serbia." },
+                {
+                    "si": "Kort tid etter invaderte Tyskland Belgia. Det brøt London-traktaten, en avtale som lovet at Belgia skulle holde seg utenfor kriger."
+                },
+                {
+                    "si": "Da mente Storbritannia at de hadde en hellig plikt til å gå inn i krigen."
+                },
+                {
+                    "si": "NATO bygger i dag på en lignende tanke, i Artikkel 5: Et angrep på ett medlem er et angrep på alle."
+                }
+            ]
+        },
+        {
+            "id": "kuwait",
+            "visual": { "type": "CasusVerden", "props": { "modus": "kuwait" } },
+            "replikker": [
+                { "si": "Et annet eksempel kom i 1990. Irak invaderte nabolandet Kuwait." },
+                {
+                    "si": "Verden så det som et åpenbart brudd på alle internasjonale regler."
+                },
+                {
+                    "si": "Mange land gikk sammen i en koalisjon, et samarbeid, for å drive Iraks soldater ut. Her var verden enig: Grunnen holdt."
+                }
+            ]
+        },
+        {
+            "id": "gleiwitz",
+            "kapittel": "Falskt flagg",
+            "visual": { "type": "CasusFalskFlagg", "props": { "modus": "gleiwitz" } },
+            "replikker": [
+                {
+                    "si": "Men hva om du vil ha krig, og ikke har noen god grunn? Da kan du lage en selv."
+                },
+                {
+                    "si": "Det kalles et falskt flagg. Du lager et angrep, og later som om det var fienden som gjorde det."
+                },
+                {
+                    "si": "Vi er i Gleiwitz, som den gang lå i Tyskland, den 31. august 1939. Noen SS-menn, fra Hitlers styrker, kler seg i polske uniformer.",
+                    "uttale": "Vi er i Gleiwitz, som den gang lå i Tyskland, den trettiførste august, nitten trettini. Noen SS-menn, fra Hitlers styrker, kler seg i polske uniformer."
+                },
+                {
+                    "si": "Så later de som de angriper radiostasjonen. Det skal se ut som om polakker sto bak."
+                },
+                { "si": "Dagen etter invaderte Tyskland Polen." }
+            ]
+        },
+        {
+            "id": "mukden",
+            "visual": { "type": "CasusFalskFlagg", "props": { "modus": "mukden" } },
+            "replikker": [
+                {
+                    "si": "Japan hadde gjort noe lignende allerede i 1931. Det smalt på en japansk jernbane i Mandsjuria, nordøst i Kina."
+                },
+                {
+                    "si": "Japanske styrker brukte eksplosjonen som påskudd til å ta byen Mukden."
+                },
+                { "si": "De fleste mener at den japanske hæren selv sto bak eksplosjonen." },
+                {
+                    "si": "Folkeforbundet, en slags FN før FN fantes, undersøkte saken. Lytton-kommisjonen slo fast at Japan var angriperen."
+                }
+            ]
+        },
+        {
+            "id": "tonkin",
+            "visual": { "type": "CasusTidslinje", "props": {} },
+            "replikker": [
+                { "si": "Mukden i 1931. Gleiwitz i 1939. Også andre hendelser er blitt brukt som påskudd for krig." },
+                {
+                    "si": "I august 1964 kom Tonkin-episoden, under Vietnamkrigen."
+                },
+                {
+                    "si": "President Johnson i USA brukte den til å få vedtatt Tonkin-resolusjonen. Den ga ham frie hender til å bruke militæret."
+                },
+                { "si": "Hver gang ble én hendelse brukt som døra inn til en krig." }
+            ]
+        },
+        {
+            "id": "irak-2003",
+            "kapittel": "I dag",
+            "visual": { "type": "CasusVerden", "props": { "modus": "irak" } },
+            "replikker": [
+                {
+                    "si": "Ikke alle grunner blir godtatt. I 2003 gikk USA og flere allierte til krig mot Irak."
+                },
+                {
+                    "si": "Grunnen de ga, var at Irak hadde masseødeleggelsesvåpen. Det er våpen som kan drepe svært mange på én gang."
+                },
+                {
+                    "si": "Men FNs våpeninspektører fant ikke bevis for at Irak laget slike våpen. Og det ble aldri funnet noen."
+                },
+                {
+                    "si": "Store deler av verden forkastet grunnen. Denne casus belli holdt ikke.",
+                    "uttale": "Store deler av verden forkastet grunnen. Denne kasus belli holdt ikke."
+                }
+            ]
+        },
+        {
+            "id": "hybrid",
+            "visual": { "type": "CasusIsfjell", "props": { "modus": "hybrid" } },
+            "replikker": [
+                {
+                    "si": "I dag ser vi ofte noe som kalles hybrid krigføring. Det er noe midt mellom krig og fred."
+                },
+                { "si": "Over overflaten ser alt fredelig ut." },
+                {
+                    "si": "Under overflaten skjer det digitale angrep, og forsøk på å påvirke hva folk mener."
+                },
+                {
+                    "si": "Da er det vanskelig å vite når en slik krig har startet. Kan et dataangrep være god nok grunn til krig?"
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Fra Romas spyd til dagens datamaskiner:", "fraBeat": 0 },
+                        { "tekst": "Alle vil ha en god grunn.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Selv de mektigste følger reglene", "fraBeat": 1 },
+                        { "tekst": "eller later som de gjør det.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Kampen om fortellingen", "fraBeat": 2 },
+                        { "tekst": "er viktigere enn noensinne.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Spør alltid:", "fraBeat": 3 },
+                        { "tekst": "Er dette grunnen, eller påskuddet?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fra Romas spyd til dagens datamaskiner: Alle som går til krig, vil ha en god grunn."
+                },
+                {
+                    "si": "Selv de mektigste rikene føler at de må følge reglene. Eller i det minste late som om de gjør det."
+                },
+                {
+                    "si": "Derfor er kampen om fortellingen, om hvem som får forklare hva som skjedde, viktigere enn noensinne."
+                },
+                {
+                    "si": "Så neste gang et land forklarer hvorfor det går til krig, spør deg selv: Er dette den egentlige grunnen, eller bare påskuddet?"
+                }
+            ]
+        }
+    ]
+}
