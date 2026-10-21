@@ -1,0 +1,362 @@
+{
+  "id": "boerkrigen",
+  "tittel": "Boerkrigen: Gull, leirer og en fred uten de svarte",
+  "kilde": "/historie/kolonialisering/boerkrigen",
+  "bilde": "/images/kolonialisering/boerkrigen-hero.webp",
+  "utenforArtikkel": [
+    { "tall": "hundre", "begrunnelse": "Målestokk i prikkfeltet: hver prikk er hundre mennesker (28 000 blir 280 prikker, 4000 blir 40)." },
+    { "tall": 280, "begrunnelse": "Regnet ut: rundt 28 000 døde i leirene, delt på hundre per prikk." },
+    { "tall": 320, "begrunnelse": "Regnet ut: 280 prikker for leirene pluss 40 prikker for de rundt 4000 som falt i kamp." }
+  ],
+  "vurdering": { "dato": "2026-10-21", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "garden",
+      "lyd": "vind",
+      "kapittel": "Sletta",
+      "visual": { "type": "BoerVeld", "props": { "modus": "garden" } },
+      "replikker": [
+        { "si": "Det er 1901, på høysletta i Sør-Afrika. Her ligger en gård med kuer, en åker og et hus." },
+        { "si": "Britiske soldater rir inn på gården." },
+        { "si": "De driver bort kuene og brenner kornet på åkeren." },
+        { "si": "Så setter de fyr på huset. Kvinnene og barna blir satt på en vogn. De skal til en leir med telt bak piggtråd." },
+        { "si": "Mannen i familien er ikke hjemme. Han kjemper mot britene ute på sletta." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "BOERKRIGEN",
+          "undertittel": "Gull, leirer og en fred uten de svarte",
+          "bilde": "/images/kolonialisering/boerkrigen-hero.webp",
+          "tall": [{ "verdi": 30000, "etikett": "gårder brent", "fraBeat": 0, "tone": "rod" }],
+          "sporsmal": { "tekst": "Hvem tapte egentlig da freden ble skrevet?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Slik gikk det med nesten alle gårdene til boerne. Rundt 30 000 gårder ble brent ned til grunnen." },
+        { "si": "Dette er Boerkrigen. Storbritannia kjempet mot to små republikker i Sør-Afrika, fra 1899 til 1902." },
+        { "si": "Krigen startet ikke med brente gårder, men med gull. Og hvem tapte egentlig da freden ble skrevet?" }
+      ]
+    },
+    {
+      "id": "republikker",
+      "kapittel": "To republikker",
+      "visual": { "type": "BoerKart", "props": { "modus": "republikker" } },
+      "replikker": [
+        { "si": "Boerne var hvite etterkommere av nybyggere fra Europa. De kalles også afrikanere." },
+        { "si": "De hadde to egne republikker. Den ene het Transvaal, og den andre het Oranjefristaten." },
+        { "si": "Rundt dem lå britiske kolonier, som Kapp og Natal." },
+        { "si": "Storbritannia var verdens største imperium. Britene ville samle hele det sørlige Afrika under seg." }
+      ]
+    },
+    {
+      "id": "gull",
+      "kapittel": "Gull under bakken",
+      "visual": { "type": "BoerKart", "props": { "modus": "gull" } },
+      "replikker": [
+        { "si": "I 1886 fant man gull i Transvaal." },
+        { "si": "Mange engelsktalende innflyttere kom. De ble kalt uitlanders, altså utlendinger. Boerne var redde for at de skulle ta over landet." },
+        { "si": "Britiske politikere og store selskaper ville kontrollere rikdommene. Mange av selskapene var eid av Cecil Rhodes." },
+        { "si": "I 1896 kom et væpnet angrep inn i Transvaal fra britisk område. Det kalles Jameson-raidet, og det mislyktes." },
+        { "si": "Britene krevde politiske rettigheter, som stemmerett, for uitlanders. Presidenten i Transvaal, Paul Kruger, sa nei." },
+        {
+          "si": "Til slutt sendte boerne et ultimatum, altså et siste krav med en frist. Fristen gikk ut 11. oktober 1899.",
+          "uttale": "Til slutt sendte boerne et ultimatum, altså et siste krav med en frist. Fristen gikk ut den ellevte oktober 1899."
+        }
+      ]
+    },
+    {
+      "id": "beleiring",
+      "kapittel": "Boerne slår først",
+      "visual": { "type": "BoerKart", "props": { "modus": "beleiring" } },
+      "replikker": [
+        { "si": "Dagen etter gikk boerne til angrep, inn i Kapp og Natal." },
+        { "si": "De beleiret tre britiske byer: Kimberley, Ladysmith og Mafeking. Å beleire betyr å omringe en by så ingen kommer inn eller ut." },
+        { "si": "Mafeking var omringet i 217 dager. Inne i byen var over 500 svarte med og forsvarte den." },
+        { "si": "I desember 1899 tapte britene tre slag på rad, ved Stormberg, Magersfontein og Colenso." },
+        { "si": "Perioden kalles den svarte uka. For britene var det et hardt slag." }
+      ]
+    },
+    {
+      "id": "motangrep",
+      "kapittel": "Britene slår tilbake",
+      "visual": { "type": "BoerKart", "props": { "modus": "motangrep" } },
+      "replikker": [
+        { "si": "Britene sendte mange flere soldater. Over 400 000 kjempet på britisk side. Boerne hadde rundt 88 000." },
+        { "si": "Lord Roberts ble ny sjef. I februar og mai 1900 ble de beleirede byene befridd." },
+        {
+          "si": "13. mars 1900 tok britene Bloemfontein, hovedstaden i Oranjefristaten.",
+          "uttale": "Den trettende mars 1900 tok britene Bloemfontein, hovedstaden i Oranjefristaten."
+        },
+        { "si": "Sommeren 1900 tok de Pretoria, hovedstaden i Transvaal." },
+        { "si": "Britene erklærte at de to republikkene nå var britiske. Men krigen var ikke over." }
+      ]
+    },
+    {
+      "id": "gerilja",
+      "lyd": "vind",
+      "kapittel": "Brent jord",
+      "visual": { "type": "BoerVeld", "props": { "modus": "blokkhus" } },
+      "replikker": [
+        { "si": "Boerne delte seg i små grupper. De angrep jernbaner og forsyninger, og så forsvant de igjen." },
+        { "si": "Dette kalles geriljakrig. Den varte i om lag halvannet år til." },
+        { "si": "Gårdene ga soldatene mat. Hver gård ble som en liten festning." },
+        { "si": "Britene svarte med brent jord. Det betyr å ødelegge alt fienden kan bruke. Alle gårder opptil 16 kilometer fra et angrep skulle brennes." },
+        { "si": "Fra november 1900 ble Lord Kitchener sjef. Da ble brenningen enda hardere." },
+        { "si": "Britene bygde også blokkhus, små festninger med soldater. De ble bundet sammen med piggtråd og telefonlinjer." }
+      ]
+    },
+    {
+      "id": "leir",
+      "kapittel": "Leirene",
+      "visual": { "type": "BoerVeld", "props": { "modus": "leir" } },
+      "replikker": [
+        { "si": "De første leirene ble laget i september 1900. Først var de for boere som hadde gitt seg." },
+        { "si": "Men snart ble kvinner og barn fra de brente gårdene sendt dit. De hadde ikke valgt det selv." },
+        { "si": "En historiker skriver at leirene handlet om å knekke motstanden til boerne som fortsatt kjempet." },
+        { "si": "Leirene kalles konsentrasjonsleirer, fordi de samlet, eller konsentrerte, mange mennesker på ett sted." },
+        { "si": "Teltene var overfylte, maten var dårlig, og legehjelpen var svært dårlig." },
+        { "si": "Familiene til boere som fortsatt kjempet, fikk mindre mat enn andre." }
+      ]
+    },
+    {
+      "id": "dodelighet",
+      "lyd": "stille",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "prikk",
+          "steg": [
+            {
+              "fraBeat": 0,
+              "total": 1000,
+              "farget": 0,
+              "restFarge": "#94a3b8",
+              "tittel": "1000 mennesker i en leir",
+              "restEtikett": "mennesker",
+              "visTall": false
+            },
+            {
+              "fraBeat": 1,
+              "total": 1000,
+              "farget": 344,
+              "farge": "#dc2626",
+              "restFarge": "#94a3b8",
+              "tittel": "Leirene, oktober 1901: 344 av 1000",
+              "fargeEtikett": "døde i løpet av et år",
+              "restEtikett": "resten",
+              "visTall": false
+            },
+            {
+              "fraBeat": 2,
+              "total": 1000,
+              "farget": 21,
+              "farge": "#dc2626",
+              "restFarge": "#94a3b8",
+              "tittel": "Byen Glasgow: 21 av 1000",
+              "fargeEtikett": "døde i løpet av et år",
+              "restEtikett": "resten",
+              "visTall": false
+            }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Sykdommer som meslinger og tyfus spredte seg fort. Tenk deg 1000 mennesker i leirene." },
+        { "si": "I oktober 1901 døde det så mange at det tilsvarte 344 av 1000 i løpet av et år." },
+        { "si": "Til sammenligning var tallet for byen Glasgow i Skottland 21 av 1000." }
+      ]
+    },
+    {
+      "id": "dode",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "prikk",
+          "steg": [
+            {
+              "fraBeat": 0,
+              "total": 280,
+              "farget": 280,
+              "farge": "#dc2626",
+              "tittel": "Rundt 28 000 døde i leirene",
+              "fargeEtikett": "døde i leirene",
+              "visTall": false
+            },
+            {
+              "fraBeat": 1,
+              "total": 320,
+              "farget": 280,
+              "farge": "#dc2626",
+              "restFarge": "#475569",
+              "tittel": "Rundt 4000 falt i kamp",
+              "fargeEtikett": "døde i leirene",
+              "restEtikett": "boersoldater falt i kamp",
+              "visTall": false
+            },
+            {
+              "fraBeat": 2,
+              "total": 320,
+              "farget": 280,
+              "farge": "#dc2626",
+              "restFarge": "#cbd5e1",
+              "tittel": "Langt flere døde i leirene",
+              "fargeEtikett": "døde i leirene",
+              "restEtikett": "boersoldater falt i kamp",
+              "visTall": false
+            }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Rundt 28 000 boere døde i leirene. De fleste var kvinner og barn. Hver prikk her er hundre mennesker." },
+        { "si": "Rundt 4000 boersoldater falt i kamp." },
+        { "si": "Langt flere boere døde i leirene enn på slagmarken." }
+      ]
+    },
+    {
+      "id": "hobhouse",
+      "lyd": "vind",
+      "visual": { "type": "BoerVeld", "props": { "modus": "bedre" } },
+      "replikker": [
+        { "si": "Det var en britisk kvinne, Emily Hobhouse, som avslørte forholdene i leirene." },
+        { "si": "Det hun fortalte, førte til at regjeringen sendte en gruppe kvinner for å undersøke leirene." },
+        { "si": "Etter dette ble forholdene bedre." },
+        { "si": "Fra november 1901 tok sivile, altså ikke-militære, myndigheter over leirene fra hæren." }
+      ]
+    },
+    {
+      "id": "svarte",
+      "lyd": "stille",
+      "kapittel": "Ikke bare hvit",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Svarte sørafrikanere i krigen",
+          "punkter": [
+            { "ikon": "hest", "tittel": "Rundt 100 000 for britene", "tekst": "over 10 000 fikk våpen", "fraBeat": 1 },
+            { "ikon": "haer", "tittel": "Minst 10 000 med boerne", "tekst": "ofte som tjenere eller kuskere", "fraBeat": 2 },
+            { "ikon": "penger", "tittel": "Som regel ingen lønn", "tekst": "for dem som ble tvunget til å jobbe", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Krigen blir ofte fortalt som en krig mellom hvite. Men svarte sørafrikanere var med på begge sider." },
+        { "si": "Rundt 100 000 svarte arbeidet for den britiske hæren. Over 10 000 av dem fikk våpen." },
+        { "si": "Minst 10 000 svarte fulgte boernes soldater, ofte som tjenere eller kuskere." },
+        { "si": "De som ble tvunget til å jobbe, fikk som regel ingen lønn." }
+      ]
+    },
+    {
+      "id": "svarteleirer",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "LEIRENE FOR SVARTE",
+          "undertittel": "Også svarte ble sendt i leirer",
+          "tall": [
+            { "verdi": 66, "etikett": "egne leirer", "fraBeat": 0, "omtrent": false },
+            { "verdi": 115000, "etikett": "mennesker satt der", "fraBeat": 1 },
+            { "verdi": 14154, "etikett": "registrerte dødsfall", "fraBeat": 2, "omtrent": false, "tone": "rod" }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Også svarte ble sendt i leirer. Det fantes 66 egne leirer for svarte." },
+        { "si": "Rundt 115 000 mennesker satt der. Britene ville fjerne folk fra jorda så boerne ikke fikk mat, og skaffe arbeidere til gullgruvene." },
+        { "si": "I disse leirene ble 14 154 dødsfall registrert. Det virkelige tallet var trolig høyere, og de fleste som døde, var barn." }
+      ]
+    },
+    {
+      "id": "bordet",
+      "lyd": "rom",
+      "kapittel": "Freden i Vereeniging",
+      "visual": { "type": "BoerBordet", "props": { "modus": "bordet" } },
+      "replikker": [
+        { "si": "Mange svarte, fargede og indiske sørafrikanere hadde et håp." },
+        { "si": "I Kappkolonien gjaldt stemmeretten ikke bare hvite. De håpet at britene ville innføre den i hele Sør-Afrika hvis de vant." },
+        {
+          "si": "31. mai 1902 skrev britene og boerne under på en fredsavtale i Vereeniging.",
+          "uttale": "Den trettiførste mai 1902 skrev britene og boerne under på en fredsavtale i Vereeniging."
+        },
+        { "si": "Boerne måtte godta at republikkene deres ble en del av det britiske imperiet. Men avtalen ga dem også mye." },
+        { "si": "Hvem satt ved bordet? Britene og boerne. De svarte sørafrikanerne hadde ingen plass der." }
+      ]
+    },
+    {
+      "id": "punkt8",
+      "visual": { "type": "BoerBordet", "props": { "modus": "punkt8" } },
+      "replikker": [
+        { "si": "Så kom punkt 8 i avtalen." },
+        { "si": "Det sa at spørsmålet om stemmerett for svarte ikke skulle avgjøres før selvstyret var innført." },
+        { "si": "Det betydde at de hvite kolonistene selv skulle bestemme om svarte fikk stemme." },
+        { "si": "Håpet til de svarte sørafrikanerne ble ikke oppfylt." }
+      ]
+    },
+    {
+      "id": "kostnad",
+      "lyd": "stille",
+      "kapittel": "Hva krigen kostet",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "PRISEN",
+          "undertittel": "Hva krigen kostet Storbritannia",
+          "tall": [
+            { "verdi": 210, "etikett": "millioner pund", "fraBeat": 0, "omtrent": false },
+            { "verdi": 22000, "etikett": "britiske soldater døde", "fraBeat": 1, "tone": "rod" }
+          ],
+          "sporsmal": { "tekst": "«Vi har fått en lekse som imperium»", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Krigen kostet Storbritannia 210 millioner pund." },
+        { "si": "Rundt 22 000 britiske soldater døde. To av tre av dem døde av sykdom, ikke i kamp." },
+        { "si": "Forfatteren Rudyard Kipling sa etterpå: Vi har fått en lekse som imperium. Hæren ble endret, og i 1914 var den langt bedre trent og utstyrt." }
+      ]
+    },
+    {
+      "id": "etter",
+      "lyd": "rom",
+      "kapittel": "En ny stat",
+      "visual": { "type": "BoerBordet", "props": { "modus": "etter" } },
+      "replikker": [
+        { "si": "I 1910 ble de to tidligere boerrepublikkene og de britiske koloniene slått sammen til Den sørafrikanske union." },
+        { "si": "I 1918 ble den hemmelige foreningen Afrikaner Broederbond startet." },
+        { "si": "Partiet som senere ble kalt Nasjonalistpartiet, vant valget i 1948." },
+        { "si": "Partiet innførte apartheid. Det var et system der hvite og ikke-hvite ble holdt atskilt ved lov." }
+      ]
+    },
+    {
+      "id": "laerdom",
+      "lyd": "stille",
+      "kapittel": "Hva lærer vi?",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Krigen startet med gull.", "fraBeat": 0 },
+            { "tekst": "Sivile ble rammet hardest.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Boerne tapte krigen,", "fraBeat": 2 },
+            { "tekst": "men fikk mye ved bordet.", "fraBeat": 2, "uthevet": true },
+            { "tekst": "De svarte var med på begge sider.", "fraBeat": 3 },
+            { "tekst": "Men de fikk ingen plass ved bordet.", "fraBeat": 3, "uthevet": true },
+            { "tekst": "De som skriver freden,", "fraBeat": 4 },
+            { "tekst": "bestemmer hvem som får noe.", "fraBeat": 4, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Boerkrigen viser at kriger ofte handler om ressurser. Her var det gull." },
+        { "si": "Den viser også at en krig kan ramme sivile hardest." },
+        { "si": "Boerne tapte krigen, men fikk mye ved forhandlingsbordet." },
+        { "si": "De svarte var med på begge sider og døde i leirene. Likevel fikk de ingen plass ved bordet." },
+        { "si": "De som skriver freden, bestemmer hvem som får noe. Det forklarer en del av hvorfor Sør-Afrika ble så urettferdig i mange tiår." }
+      ]
+    }
+  ]
+}
