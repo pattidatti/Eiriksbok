@@ -5,11 +5,13 @@
 // at spillet tåler at eleven navigerer bort i SPA-en.
 
 import {
+    ACH,
     BAL,
     CRIT_EXCUSES,
     ERAS,
     EXCUSES,
     HEAD,
+    HUND_HEAD,
     MS_HEAD,
     P,
     PERKS,
@@ -89,7 +91,7 @@ const MARKUP = `
       <div id="hsl-counter" class="off">
         <div><span id="hsl-bankNum">0</span></div>
         <div id="hsl-bankLbl">unnskyldninger</div>
-        <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span><span title="Alle unnskyldninger du har funnet på, også før skolebytter">totalscore: <b id="hsl-total">0</b></span></div>
+        <div id="hsl-ppsline"><span>per sekund: <b id="hsl-pps">0</b></span><span>per klikk: <b id="hsl-ppc">1</b></span><span title="Alle unnskyldninger du har funnet på, også før skolebytter">totalscore: <b id="hsl-total">0</b></span><span id="hsl-miceInfo" hidden></span></div>
       </div>
       <div id="hsl-next" class="off" title="Unnskyldninger du har funnet på siden forrige skolebytte"><div class="row"><span id="hsl-nextName"></span><span id="hsl-nextNum"></span></div><div class="bar"><i id="hsl-nextBar"></i></div></div>
       <div id="hsl-desk">
@@ -109,6 +111,7 @@ const MARKUP = `
       <div id="hsl-flow" class="off"><div class="row"><span>Flyt</span><span id="hsl-flowX">×1,0</span></div><div class="bar"><i id="hsl-flowBar"></i></div></div>
       <button class="btn" id="hsl-verb" hidden><span class="vi"></span><span class="vn"></span><small class="vc"></small></button>
       <div id="hsl-buffs"></div>
+      <div id="hsl-mice"></div>
     </section>
     <aside id="hsl-shop" class="off" aria-label="Butikk">
       <h2>Unnskyldningsbutikken <span id="hsl-amt" role="group" aria-label="Kjøp antall"><button data-a="1" aria-pressed="true">×1</button><button data-a="10" aria-pressed="false">×10</button><button data-a="max" aria-pressed="false">Maks</button></span></h2>
@@ -120,8 +123,9 @@ const MARKUP = `
     <a class="btn" href="/oving" id="hsl-back">← Øving</a>
     <button class="btn" id="hsl-setBtn">Innstillinger</button>
     <button class="btn" id="hsl-sndBtn">Lyd: på</button>
+    <button class="btn" id="hsl-achBtn" hidden></button>
     <span class="sp"></span>
-    <button class="btn big" id="hsl-prestBtn" hidden>Bytt skole</button>
+    <button class="btn big" id="hsl-prestBtn" hidden><span class="pl">Bytt skole</span><span class="pg"></span><i class="pp"><b></b></i></button>
   </footer>
 </div>
 <canvas id="hsl-fx"></canvas>
@@ -194,6 +198,9 @@ function normalize(o: Partial<State>, reduce: boolean): State {
     s.hints = o.hints ?? {};
     s.seen = o.seen ?? {};
     s.run = Object.assign(freshRun(), o.run ?? {});
+    s.ach = o.ach ?? {};
+    s.cnt = o.cnt ?? {};
+    s.mice = Array.isArray(o.mice) ? o.mice.map((x) => +x || 0).slice(0, 12) : [];
     // v1 regnet rykte med kvadratrot og ga altfor mye. Regn om etter kubikkroten.
     if ((o.v ?? 1) < 2) {
         const r = Math.floor(Math.cbrt((s.allTotal || 0) / BAL.rykteDiv));
@@ -284,16 +291,24 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     // Nivåer kjøpt i Ryktebørsen
     const L = (id: string) => S.lv[id] ?? 0;
     const msMult = () => BAL.msMult + 0.1 * L('lm');
+    // Hvor stor hunden er: ett steg per hundeoppgradering, og ett til for kjempehunden
+    const dogStage = () => (S.upg.hv1 ? 1 : 0) + (S.upg.hv2 ? 1 : 0) + (S.upg.hv3 ? 1 : 0) + (S.upg.hv4 ? 1 : 0) + (S.upg.hv5a ? 1 : 0);
+    const achN = () => Object.keys(S.ach).length;
     function prodMult(i: number) {
         let m = Math.pow(msMult(), msCount(S.owned[i]));
+        if (i === 0 && S.upg.hv1) m *= 2;
         for (let t = 0; t < 4; t++) if (S.upg[`p${i}_${t}`]) m *= 2;
         return m;
     }
     function globalMult(noBuff?: boolean) {
         let m = 1 + BAL.ryktePct * S.rykte;
+        // Hvert merke gir +1 %, og hundegodbitene gir mer per merke
+        const n = achN();
+        m *= 1 + 0.01 * n;
         for (const id in S.upg) {
             const u = UPI[id];
             if (u?.gm) m *= u.gm;
+            if (u?.am) m *= 1 + u.am * n;
         }
         if (S.perks.dyn) m *= 2;
         if (S.perks.dyn2) m *= 3;
@@ -338,6 +353,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         let f = 1;
         if (S.upg.gs) f *= 2;
         if (S.perks.star) f *= 2;
+        if (S.upg.hv5b) f *= 1.3;
         f *= 1 + 0.1 * L('lg');
         return f;
     }
@@ -362,6 +378,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         S.allTotal += x;
     }
     const schoolName = () => SCHOOLS[S.school % SCHOOLS.length];
+    const bump = (k: string, n = 1) => (S.cnt[k] = (S.cnt[k] ?? 0) + n);
 
     /* ================= Lyd ================= */
     let AC: AudioContext | null = null;
@@ -487,6 +504,14 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             [784, 988, 1175, 1568].forEach((f, k) => tone(f, { type: 'square', dur: 0.12, vol: 0.06, delay: k * 0.04 }));
             noise({ dur: 0.25, vol: 0.1, freq: 5000, q: 0.6 });
             tone(196, { type: 'sawtooth', dur: 0.3, vol: 0.05, slide: 2.5 });
+        },
+        squeak() {
+            tone(rnd(1800, 2400), { type: 'sine', dur: 0.08, vol: 0.06, slide: 1.4 });
+            tone(rnd(2200, 2800), { type: 'sine', dur: 0.06, vol: 0.05, delay: 0.07, slide: 0.8 });
+        },
+        ach() {
+            [784, 1175, 1568].forEach((f, k) => tone(f, { type: 'triangle', dur: 0.22, vol: 0.09, delay: k * 0.09 }));
+            tone(392, { type: 'triangle', dur: 0.4, vol: 0.05, delay: 0.18 });
         },
         afford() {
             const n = performance.now();
@@ -679,6 +704,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             sus: buffs.some((b) => b.id === 'sus'),
             teacher: teach.on,
             reduce: S.set.reduce,
+            dog: dogStage(),
+            slim: !!S.upg.hv5b,
             sheet: () => {
                 const c = sceneCv.getBoundingClientRect();
                 const r = sheet.getBoundingClientRect();
@@ -822,6 +849,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         spr.vb += 2.2;
         if (crit) {
             S.run.crits++;
+            bump('crits');
             sfx.crit();
             addShake(7);
             burst(x, y, 34, { gold: true, power: 1.3 });
@@ -857,6 +885,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (e.repeat && (e.key === 'Enter' || e.key === ' ')) e.preventDefault();
     });
     sheet.addEventListener('contextmenu', (e) => e.preventDefault());
+    // Til de hemmelige merkene
+    $('#hsl-grade').addEventListener('pointerdown', () => bump('grade'));
+    $('#hsl-eraTag').addEventListener('click', () => bump('tag'));
 
     /* ================= Butikk ================= */
     const prodsEl = $('#hsl-prods');
@@ -924,6 +955,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         addShake(3);
         floatText(u.n, x, y - 10, { size: 20, col: COL.red });
         renderDesk();
+        dogGrew(u.id);
         // Oppgraderingen skal synes der den virker: på arket eller på figurene
         scene.onUpgrade(u.id);
         const target = stickersEl.querySelector<HTMLElement>(`[data-id="${u.id}"]`);
@@ -1179,7 +1211,24 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const pb = $('#hsl-prestBtn');
         const g = rykteGainable();
         pb.hidden = !(S.era >= 3 || S.resets > 0);
-        pb.textContent = g > 0 ? `Bytt skole (+${g} rykte)` : 'Rykte og skolebytte';
+        // Live teller: hvor mye rykte du får nå, og hvor langt det er til neste
+        const f = rykteFor(S.allTotal);
+        const lo = Math.pow(f, 3) * BAL.rykteDiv;
+        const hi = Math.pow(f + 1, 3) * BAL.rykteDiv;
+        const pl = g > 0 ? 'Bytt skole' : 'Rykte og skolebytte';
+        const pg = g > 0 ? `+${NF0.format(g)} rykte` : '';
+        if (pbLbl.textContent !== pl) pbLbl.textContent = pl;
+        if (pbGain.textContent !== pg) pbGain.textContent = pg;
+        pbBar.style.width = Math.min(100, ((S.allTotal - lo) / (hi - lo)) * 100).toFixed(1) + '%';
+        pb.title = `Neste rykte ved ${fmt(hi)} unnskyldninger totalt`;
+        if (g > lastGain && lastGain >= 0 && !pb.hidden && S.played > 3) {
+            restart(pb, 'bump');
+            const [bx, by] = center(pb);
+            floatText(`+${g - lastGain} rykte`, bx, by - 30, { size: 22, col: '#e09a00', life: 1.4 });
+            sfx.reveal();
+        }
+        lastGain = g;
+        syncMice();
         $('#hsl-flow').classList.toggle('off', S.era < 1);
         const bh = buffs
             .map((b) => `<span class="buff${b.bad ? ' bad' : ''}${b.good ? ' good' : ''}">${esc(b.label)} ${Math.ceil(b.t)} s</span>`)
@@ -1189,6 +1238,11 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (tipEl && !tipEl.isConnected) hideTip();
         else if (tipEl) fillTip();
     }
+
+    const pbLbl = $('#hsl-prestBtn .pl');
+    const pbGain = $('#hsl-prestBtn .pg');
+    const pbBar = $('#hsl-prestBtn .pp b');
+    let lastGain = -1;
 
     /* ================= Æra ================= */
     function applyEra() {
@@ -1279,7 +1333,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     let tickAnim: Animation | null = null;
     function nextHeadline() {
         if (destroyed) return;
-        const pool = [...HEAD[S.era], ...(S.era > 0 ? HEAD[S.era - 1] : [])];
+        const dogLines = S.upg.hv5b ? HUND_HEAD[6] : HUND_HEAD[dogStage()];
+        const pool = [...HEAD[S.era], ...(S.era > 0 ? HEAD[S.era - 1] : []), ...dogLines];
         // Det eleven selv har gjort kommer først på nyhetslinja
         const own = feats.length ? feats.shift() : null;
         tickMsg.textContent = (own ?? pick(pool)) + '  •  ' + pick(pool);
@@ -1354,6 +1409,241 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         }
     }
 
+    /* ================= Hunden vokser ================= */
+    // Fire oppgraderinger gjør hunden større. Nyhetslinja forteller historien, og musene
+    // flytter inn. Når hunden er høyere enn rektor, må eleven velge: mer mat eller slankekur.
+    const DOG_NEWS: Record<string, string> = {
+        hv1: '💊 Hunden har fått vitaminer. Den vokser, og musene har merket det.',
+        hv2: '🥤 Proteinpulver! Hunden får ikke plass i kurven lenger.',
+        hv3: '📕 Hunden har spist en ordbok. Nå kan den snakke. Klikk på den.',
+    };
+    function dogGrew(id: string) {
+        if (!/^hv[1-4]$/.test(id)) return;
+        const st = dogStage();
+        HUND_HEAD[st].forEach((l) => feat(l));
+        nextHeadline();
+        addShake(6 + st * 2);
+        sfx.milestone();
+        if (id === 'hv4') {
+            later(
+                () =>
+                    showHeadline(
+                        'HUNDEN ER HØYERE ENN REKTOR',
+                        'Rektor later som ingenting. Lærerne går i sikk-sakk rundt den i gangen. Snart må noen bestemme hva som skal skje med hunden.',
+                        'Hunden lager nå dobbelt så mye. Et valg venter.',
+                        'Ekstrautgave'
+                    ),
+                400
+            );
+            dogAsk = 25;
+        } else toast(DOG_NEWS[id], 'ms', 5000);
+    }
+    let dogAsk = 25;
+    function dogTick(dt: number, paused: boolean) {
+        if (!S.upg.hv4 || S.upg.hv5a || S.upg.hv5b || ev.on || teach.on || paused) return;
+        dogAsk -= dt;
+        if (dogAsk > 0) return;
+        ev.on = true;
+        ev.id = 'hund';
+        evCard('Hunden er for stor for skolen!', 'Rektor krever at noe skjer. Hva gjør du med hunden?', [
+            {
+                t: '🍖 Mat den enda mer',
+                go: () => chooseDog('hv5a', 'Kjempehund! Hunden vokser ut av taket. Produksjon ×1,5 for resten av skolen, og flere mus.'),
+            },
+            {
+                t: '🥗 Slankekur',
+                go: () => chooseDog('hv5b', 'Slankekur! Hunden er sprek og rask. Gullstjerner kommer 30 % oftere, og færre mus.'),
+            },
+        ], 30);
+        evEl.classList.add('dog');
+    }
+    function chooseDog(id: 'hv5a' | 'hv5b', msg: string) {
+        S.upg[id] = 1;
+        evEl.classList.remove('dog');
+        endEvent(msg, true);
+        HUND_HEAD[id === 'hv5a' ? 5 : 6].forEach((l) => feat(l));
+        nextHeadline();
+        const [x, y] = center(sheet);
+        burst(x, y, 50, { gold: true, power: 1.4 });
+        addShake(id === 'hv5a' ? 16 : 6);
+        doFlash();
+        sfx.milestone();
+        upgKey = '';
+        renderDesk();
+        scene.onUpgrade(id);
+    }
+
+    /* ================= Mus ================= */
+    // Musene gnager på unnskyldningene: hver mus spiser 5 % av det du lager. Klikk på en
+    // mus tre ganger, så får du igjen alt den har spist, og litt til. Lønner seg å vente.
+    const miceEl = $('#hsl-mice');
+    const MOUSE_ANG = [160, 20, 125, 55, 195, -15, 100, 80, 230, -50, 145, 35];
+    let mouseT = 30;
+    const mouseEls: HTMLButtonElement[] = [];
+    const mouseHits: number[] = [];
+    function maxMice() {
+        const st = dogStage();
+        if (!st) return 0;
+        if (S.upg.hv5b) return 3;
+        return [0, 2, 3, 5, 7, 10][st];
+    }
+    const mouseEat = () => (S.upg.hv5a ? 0.06 : 0.05);
+    const mouseBack = () => (S.upg.mo2 ? 1.3 : 1.1);
+    function placeMice() {
+        const st = stage.getBoundingClientRect();
+        const r = sheet.getBoundingClientRect();
+        const cx = r.left - st.left + r.width / 2;
+        const cy = r.top - st.top + r.height / 2;
+        mouseEls.forEach((m, k) => {
+            const a = (MOUSE_ANG[k % MOUSE_ANG.length] * Math.PI) / 180;
+            const x = cx + Math.cos(a) * (r.width / 2 + 30) - 22;
+            const y = cy + Math.sin(a) * (r.height / 2 + 22) - 22;
+            m.style.left = x + 'px';
+            m.style.top = y + 'px';
+            m.classList.toggle('flip', Math.cos(a) < 0);
+        });
+    }
+    function addMouseEl(k: number) {
+        const m = document.createElement('button');
+        m.className = 'mouse';
+        m.setAttribute('aria-label', 'Mus som spiser unnskyldningene dine. Klikk tre ganger.');
+        m.innerHTML = '<span class="mi">🐭</span><span class="mb"></span>';
+        m.addEventListener('click', () => hitMouse(mouseEls.indexOf(m)));
+        miceEl.appendChild(m);
+        mouseEls[k] = m;
+        mouseHits[k] = 0;
+    }
+    function syncMice() {
+        while (mouseEls.length > S.mice.length) mouseEls.pop()?.remove();
+        while (mouseEls.length < S.mice.length) addMouseEl(mouseEls.length);
+        placeMice();
+        S.mice.forEach((b, k) => ((mouseEls[k].querySelector('.mb') as HTMLElement).textContent = fmt(b)));
+        const info = $('#hsl-miceInfo');
+        info.hidden = !S.mice.length;
+        info.textContent = `🐭 ×${S.mice.length} spiser ${NF0.format(Math.min(0.5, S.mice.length * mouseEat()) * 100)} %`;
+    }
+    function spawnMouse() {
+        S.mice.push(0);
+        syncMice();
+        const m = mouseEls[mouseEls.length - 1];
+        m.classList.add('in');
+        sfx.squeak();
+    }
+    function hitMouse(k: number) {
+        const m = mouseEls[k];
+        if (k < 0 || !m || m.classList.contains('out')) return;
+        mouseHits[k]++;
+        sfx.squeak();
+        restart(m, 'hit');
+        const [x, y] = center(m);
+        burst(x, y, 5);
+        if (mouseHits[k] < 3) return;
+        // Musa spytter ut alt den har spist, med renter
+        const belly = S.mice[k];
+        const g = belly * mouseBack();
+        if (g > 0) earn(g);
+        bump('mice');
+        if (belly >= pps(true) * 15 && belly > 0) bump('fatmouse');
+        if ((S.cnt.mice ?? 0) % 10 === 0) feat(`Elev har fanget ${S.cnt.mice} mus. Skolens vaktmester er imponert`);
+        S.mice.splice(k, 1);
+        mouseEls.splice(k, 1);
+        mouseHits.splice(k, 1);
+        m.classList.add('out');
+        later(() => m.remove(), 500);
+        burst(x, y, 26, { gold: g > 0 });
+        ring(x, y, '#f2b705', 90);
+        floatText(g > 0 ? `+${fmt(g)}` : 'Piip!', x, y - 24, { size: 26, col: '#2a7a32', life: 1.4 });
+        sfx.win();
+        addShake(3);
+        syncMice();
+    }
+    function miceTick(dt: number, paused: boolean) {
+        const max = maxMice();
+        if (S.mice.length < max && !paused) {
+            mouseT -= dt;
+            if (mouseT <= 0) {
+                mouseT = rnd(25, 55) / (S.upg.mo1 ? 2 : 1) / (S.upg.hv5a ? 1.5 : 1);
+                spawnMouse();
+            }
+        }
+    }
+    // Produksjonen denne bildeoppdateringen: en del går rett i magen på musene
+    function produce(x: number) {
+        if (!S.mice.length) return earn(x);
+        const f = Math.min(0.5, S.mice.length * mouseEat());
+        earn(x * (1 - f));
+        const each = (x * f) / S.mice.length;
+        for (let k = 0; k < S.mice.length; k++) S.mice[k] += each;
+    }
+
+    /* ================= Merker ================= */
+    const achBtn = $('#hsl-achBtn');
+    let achT = 2;
+    function checkAch() {
+        const c = {
+            pps: pps(true),
+            stage: dogStage(),
+            seenAll: Object.keys(S.seen).length >= Object.keys(DISCOVERIES).length,
+            combo: buffs.some((b) => b.id === 'frenzy') && buffs.some((b) => b.id === 'storm'),
+        };
+        const got = ACH.filter((a) => !S.ach[a.id] && a.q(S, c));
+        if (!got.length) return;
+        for (const a of got) S.ach[a.id] = 1;
+        if (got.length > 3) toast(`🏅 ${got.length} nye merker! Hvert merke gir +1 % produksjon.`, 'ach', 5000);
+        else
+            got.forEach((a, k) =>
+                later(() => {
+                    toast(`🏅 Nytt merke: ${a.ic} ${a.n}`, 'ach', 4500);
+                    feat(`Elev på ${schoolName()} har fått merket «${a.n}»`);
+                }, k * 700)
+            );
+        sfx.ach();
+        restart(achBtn, 'bump');
+        renderAchBtn();
+    }
+    function renderAchBtn() {
+        const n = achN();
+        achBtn.hidden = n === 0;
+        achBtn.textContent = `🏅 Merker ${n}/${ACH.length}`;
+    }
+    function openAch() {
+        const n = achN();
+        const godbit = UP.filter((u) => u.am && S.upg[u.id]).length;
+        const bonus = (1 + 0.01 * n) * Math.pow(1 + 0.01 * n, godbit);
+        openModal(
+            `<div class="ph"><h2>Merker</h2><span class="rtitle">${n} av ${ACH.length}</span></div>
+  <div class="amage"><span class="ai">🐕</span><div><b>Hundens mage</b><small>Hvert merke gir +1 % produksjon. Hundegodbiter i butikken gir enda mer per merke. Merkene følger med til alle skoler.</small><div class="bar"><i style="width:${((n / ACH.length) * 100).toFixed(1)}%"></i></div></div><span class="ax">×${NF2.format(bonus)}</span></div>
+  <div class="adet">Pek på et merke for å se hva det er.</div>
+  <div class="agrid"></div>
+  <div class="row" style="justify-content:flex-end"><button class="btn" id="aClose">Lukk</button></div>`,
+            (c) => {
+                c.classList.add('wide');
+                const grid = c.querySelector('.agrid') as HTMLElement;
+                const det = c.querySelector('.adet') as HTMLElement;
+                for (const a of ACH) {
+                    const has = !!S.ach[a.id];
+                    const hide = !has && a.secret;
+                    const b = document.createElement('button');
+                    b.className = 'ach' + (has ? ' has' : '') + (hide ? ' secret' : '');
+                    b.textContent = hide ? '❔' : a.ic;
+                    const show = () => {
+                        det.innerHTML = '<b></b><span></span>';
+                        (det.querySelector('b') as HTMLElement).textContent = hide ? '???' : `${a.ic} ${a.n}`;
+                        (det.querySelector('span') as HTMLElement).textContent = hide ? 'Hemmelig merke. Finn ut selv hvordan du får det.' : (has ? '✔ ' : '') + a.d;
+                        det.classList.toggle('has', has);
+                    };
+                    b.setAttribute('aria-label', hide ? 'Hemmelig merke' : `${a.n}${has ? ', tatt' : ''}`);
+                    b.addEventListener('pointerenter', show);
+                    b.addEventListener('focus', show);
+                    b.addEventListener('click', show);
+                    grid.appendChild(b);
+                }
+                (c.querySelector('#aClose') as HTMLElement).onclick = closeModal;
+            }
+        );
+    }
+    achBtn.onclick = openAch;
+
     /* ================= Tilfeldige hendelser ================= */
     // Små avbrudd som bryter rytmen: noen gir bonus med en gang, andre krever et valg
     // eller en rask innsats. Kommer aldri samtidig med læreren.
@@ -1367,6 +1657,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (msg) toast(msg, good ? 'ev' : '');
         evEl.hidden = true;
         evEl.innerHTML = '';
+        evEl.classList.remove('dog');
     }
     function evCard(title: string, text: string, opts: { t: string; go: () => void }[], time: number) {
         evEl.innerHTML = '<div class="who"></div><div class="say"></div><div class="opts"></div><div class="tbar"><i></i></div>';
@@ -1459,7 +1750,13 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                             endEvent('Nam! Hundene jobber som aldri før. Produksjon ×3 i 30 sekunder.', true);
                         },
                     },
-                    { t: 'Nei takk', go: () => endEvent('Hundene ser skuffet på deg.') },
+                    {
+                        t: 'Nei takk',
+                        go: () => {
+                            bump('stingy');
+                            endEvent('Hundene ser skuffet på deg.');
+                        },
+                    },
                 ], 10),
         },
     ];
@@ -1471,6 +1768,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         ev.id = e.id;
         ev.last = e.id;
         S.run.events++;
+        bump('events');
         e.run();
     }
     function eventClick() {
@@ -1503,6 +1801,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         ev.t -= dt;
         const i = evEl.querySelector<HTMLElement>('.tbar i');
         if (i) i.style.width = Math.max(0, (ev.t / ev.tMax) * 100) + '%';
+        if (ev.t <= 0 && ev.id === 'hund') {
+            dogAsk = 60;
+            return endEvent('Hunden venter fortsatt på svar. Rektor spør igjen om litt.');
+        }
         if (ev.t <= 0) endEvent(ev.id === 'insp' ? 'Rektor så deg gjespe. Ingen bonus denne gangen.' : 'For sent. Foreldrene ga opp og gikk hjem.');
     }
 
@@ -1519,6 +1821,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         }
         verbCd = v.cd * (S.perks.verb ? 0.5 : 1);
         verbUsed++;
+        bump('verbs');
         const [x, y] = center(verbBtn);
         sfx.upg();
         burst(x, y, 30, { gold: true });
@@ -1592,7 +1895,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const c = sceneCv.getBoundingClientRect();
         const b = document.createElement('div');
         b.className = 'bubble';
-        b.textContent = pick(POKE[hit.kind] ?? ['...']);
+        b.textContent = pick(POKE[hit.kind === 'dog' && hit.big ? 'bigdog' : hit.kind] ?? ['...']);
         b.style.left = Math.max(90, Math.min(innerWidth - 90, c.left + hit.x)) + 'px';
         b.style.top = Math.max(60, c.top + hit.y) + 'px';
         bubblesEl.appendChild(b);
@@ -1602,6 +1905,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const now = performance.now();
         if ((pokeCd[hit.kind] ?? 0) < now) {
             pokeCd[hit.kind] = now + 5000;
+            bump('pokes');
             const g = Math.max(clickPow() * 3, pps() * 2);
             earn(g);
             floatText('+' + fmt(g, true), e.clientX, e.clientY - 10, { size: 20, col: COL.fg, life: 1 });
@@ -1659,6 +1963,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         }
         teach.phase = 2;
         teach.t = 1.6;
+        bump('lies');
         const g = baseReward();
         earn(g);
         const [x, y] = center(tEl);
@@ -1710,6 +2015,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const res = document.createElement('div');
         scene.onQuiz(right);
         if (right) {
+            if (teach.tMax - teach.t < 3) bump('fast');
             S.honest++;
             S.run.honest++;
             S.honestStreak++;
@@ -1787,6 +2093,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         { id: 'teach', w: () => teach.phase === 1, el: () => tEl, t: 'Velg en unnskyldning før tida går ut!', d: () => teach.phase !== 1 },
         { id: 'verb', w: () => !verbBtn.hidden && verbCd <= 0 && headlineEl.hidden, el: () => verbBtn, t: 'Hvert område har sin egen knapp. Trykk når den er klar.', d: () => verbUsed > 0 },
         { id: 'poke', w: () => S.owned[0] >= 3 && headlineEl.hidden && !teach.on && !ev.on, el: () => $('#hsl-eraTag'), t: 'Klikk på figurene i rommet. De har noe å si.', dur: 7 },
+        { id: 'mouse', w: () => mouseEls.length > 0 && headlineEl.hidden, el: () => mouseEls[0] ?? null, t: 'En mus spiser av unnskyldningene dine! Klikk på den tre ganger, så får du igjen alt den har spist, og litt til. Jo lenger du venter, jo mer får du.', d: () => (S.cnt.mice ?? 0) > 0 },
+        { id: 'ach', w: () => !achBtn.hidden && achN() >= 3 && headlineEl.hidden, el: () => achBtn, t: 'Du samler merker. Hvert merke gir +1 % produksjon. Se alle her.', dur: 7, d: () => !modal.hidden },
         { id: 'prest', w: () => S.era >= 3 && headlineEl.hidden, el: () => $('#hsl-prestBtn'), t: 'Bytt skole: start på nytt, men ryktet følger med.', dur: 9, d: () => S.resets > 0 },
     ];
     function setPulse(el: HTMLElement | null) {
@@ -1947,6 +2255,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 q('#sClose').onclick = closeModal;
                 const box = q('#sBox');
                 q('#sExp').onclick = () => {
+                    bump('export');
                     save();
                     const code = btoa(unescape(encodeURIComponent(JSON.stringify(S))));
                     box.innerHTML = '<p>Kopier koden og ta vare på den:</p><textarea id="sTxt" readonly></textarea><div class="row"><button class="btn" id="sCopy">Kopier</button><span id="sMsg"></span></div>';
@@ -1978,6 +2287,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                             applyEra();
                             applyCalm();
                             upgKey = '';
+                            renderAchBtn();
                             save();
                             uiTick();
                             closeModal();
@@ -2008,6 +2318,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                         teach.phase = 0;
                         tEl.hidden = true;
                         endEvent();
+                        syncMice();
+                        renderAchBtn();
+                        dogAsk = 25;
                         ev.next = BAL.eventFirst;
                         verbCd = 0;
                         curHint = null;
@@ -2270,6 +2583,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             S.era = startEra;
             S.rev = 0;
             S.run = freshRun();
+            S.mice = [];
+            syncMice();
+            dogAsk = 25;
             buffs = [];
             flow = 0;
             verbCd = 0;
@@ -2359,7 +2675,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     function update(dt: number) {
         S.played += dt;
         S.run.time += dt;
-        earn(pps() * dt);
+        produce(pps() * dt);
         if (S.era >= 1) {
             flowIdle += dt;
             if (buffs.some((b) => b.id === 'lock')) flow = 1;
@@ -2399,6 +2715,13 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (gold.t <= 0 || gold.x < -120 || gold.x > W + 120) endGold();
         }
         eventTick(dt, paused);
+        dogTick(dt, paused);
+        miceTick(dt, paused);
+        achT -= dt;
+        if (achT <= 0) {
+            achT = 1;
+            checkAch();
+        }
         if (S.era >= 2 && !teach.on && !ev.on && !paused) {
             teach.next -= dt;
             if (teach.next <= 0) spawnTeacher();
@@ -2483,6 +2806,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     for (const x of Array.from(amtEl.children) as HTMLElement[])
         x.setAttribute('aria-pressed', String(x.dataset.a === String(S.buy)));
     disp = S.bank;
+    renderAchBtn();
     uiTick();
     if (offSec > 60) catchUp(offSec, true);
     lastT = performance.now();

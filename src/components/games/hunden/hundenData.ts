@@ -35,6 +35,9 @@ export interface State {
     honestStreak: number;
     seen: Record<string, 1>; // oppdagelser på scenen
     run: RunStats; // denne skolen, til rapportkortet
+    ach: Record<string, 1>; // merker. Følger med på alle skoler
+    cnt: Record<string, number>; // tellere for merkene
+    mice: number[]; // hva hver mus har spist så langt
 }
 
 /** Det som skjer på én skole. Nullstilles ved skolebytte og blir rapportkortet. */
@@ -151,6 +154,7 @@ export interface Upgrade {
     pi?: number; // dobler én medskyldig
     ic?: string; // klistremerket som havner på leksearket
     hint?: string; // vises som «???» før oppgraderingen er låst opp
+    am?: number; // all produksjon + så mye per merke
 }
 
 export const UP: Upgrade[] = [
@@ -190,6 +194,25 @@ P.forEach((p, i) => {
         });
     }
 });
+// Hunden vokser: én oppgradering om gangen, hver krever den forrige. Til slutt må eleven velge.
+const nAch = (s: State) => Object.keys(s.ach).length;
+UP.push(
+    { id: 'hv1', n: 'Hundevitamin', d: 'Én tablett om dagen. Hunden har begynt å vokse.', e: 'Hunder ×2. Hunden blir større, og musene finner veien inn', c: 5e4, q: (s) => s.era >= 1 && s.owned[0] >= 15, ic: '💊', hint: 'Ha 15 hunder på rektors kontor. Noe med vitaminer.' },
+    { id: 'hv2', n: 'Proteinpulver i hundematen', d: 'Hunden spiser som tre. Kurven er for liten.', e: 'All produksjon ×1,3. Hunden blir enda større', c: 2e7, q: (s) => !!s.upg.hv1 && s.era >= 2, gm: 1.3, ic: '🥤', hint: 'Gi hunden vitaminer først. Så kommunestyret.' },
+    { id: 'hv3', n: 'Hunden har spist en ordbok', d: 'Den sier «unnskyld» på fire språk.', e: 'All produksjon ×1,5. Hunden kan snakke', c: 5e9, q: (s) => !!s.upg.hv2 && s.era >= 3, gm: 1.5, ic: '📕', hint: 'Hunden må vokse mer. På Stortinget finnes en ordbok.' },
+    { id: 'hv4', n: 'Hunden er høyere enn rektor', d: 'Ingen vet hva den spiser lenger. Bare at det er lekser.', e: 'All produksjon ×2. Rektor krever at noe skjer', c: 1e13, q: (s) => !!s.upg.hv3 && s.era >= 4, gm: 2, ic: '🦴', hint: 'Hunden har spist en ordbok. Neste steg skjer i FN.' },
+    // Valget eleven tar når hunden er for stor. Kjøpes ikke, men settes av hendelsen.
+    { id: 'hv5a', n: 'Kjempehund', d: 'Du matet den mer. Den kan sees fra verdensrommet.', e: 'All produksjon ×1,5 og flere mus', c: 0, q: () => false, gm: 1.5, ic: '🐘' },
+    { id: 'hv5b', n: 'Hunden på slankekur', d: 'Den løper maraton før frokost.', e: 'Gullstjerner kommer 30 % oftere og færre mus', c: 0, q: () => false, ic: '🥗' },
+    { id: 'mo1', n: 'Ost på gulvet', d: 'Musene elsker skolen din.', e: 'Mus kommer dobbelt så ofte', c: 2e6, q: (s) => (s.cnt.mice ?? 0) >= 5, ic: '🧀', hint: 'Fang fem mus.' },
+    { id: 'mo2', n: 'Feite mus', d: 'Jo mer de spiser, jo mer får du igjen.', e: 'Mus gir tilbake 30 % ekstra i stedet for 10 %', c: 5e8, q: (s) => (s.cnt.mice ?? 0) >= 20, ic: '🐀', hint: 'Fang 20 mus.' },
+    // Hundegodbiter: blir bedre jo flere merker du har
+    { id: 'm1', n: 'Hundegodbit', d: 'Hunden spiser merkene dine. Det gjør den sterk.', e: 'All produksjon +1 % per merke', c: 1e5, q: (s) => nAch(s) >= 10, am: 0.01, ic: '🍪', hint: 'Samle 10 merker.' },
+    { id: 'm2', n: 'Tyggebein av gull', d: 'Laget av smeltede medaljer.', e: 'All produksjon +1 % per merke', c: 1e9, q: (s) => nAch(s) >= 25, am: 0.01, ic: '🦴', hint: 'Samle 25 merker.' },
+    { id: 'm3', n: 'Hundekjeks med bacon', d: 'Hunden har aldri vært mer motivert.', e: 'All produksjon +1 % per merke', c: 1e14, q: (s) => nAch(s) >= 45, am: 0.01, ic: '🥓', hint: 'Samle 45 merker.' },
+    { id: 'm4', n: 'Halsbånd med diamanter', d: 'Hunden er nå rikere enn rektor.', e: 'All produksjon +1 % per merke', c: 1e19, q: (s) => nAch(s) >= 70, am: 0.01, ic: '💎', hint: 'Samle 70 merker.' },
+    { id: 'm5', n: 'Hundens egen sofa', d: 'Den ligger der og ser på deg jobbe.', e: 'All produksjon +1 % per merke', c: 1e25, q: (s) => nAch(s) >= 95, am: 0.01, ic: '🛋️', hint: 'Samle 95 merker.' }
+);
 export const UPI: Record<string, Upgrade> = Object.fromEntries(UP.map((u) => [u.id, u]));
 
 export interface Era {
@@ -366,6 +389,8 @@ export const CRIT_EXCUSES = [
 
 /** Det figurene sier når du klikker på dem i rommet. */
 export const POKE: Record<string, string[]> = {
+    bigdog: ['VOFF. (Vinduene rister.)', 'Jeg har lest ordboka. «Unnskyld» er et fint ord.', 'Jeg er ikke stor. Rommet er lite.', 'Er det flere lekser? Jeg er sulten.', 'Ikke si det til rektor, men jeg spiste kantina.'],
+    mouse: ['Piip!', 'Jeg spiste bare litt.', 'Osten var her da jeg kom.'],
     dog: ['Voff. Jeg spiste ikke leksa. Jeg spiste matteboka.', 'Mer papir, takk.', 'Jeg har aldri sett den leksa før.', 'Sidemål smaker best.'],
     baby: ['Det var ikke meg!', 'Jeg er tre år. Jeg vet ingenting.', 'Bæsj.', 'Jeg tegnet bare litt på den.'],
     gas: ['Blubb.', 'Det gjør vondt nå. Akkurat nå.', 'Ring hjem. Si det er magen.'],
@@ -520,5 +545,132 @@ export function freshState(reduce: boolean): State {
         honestStreak: 0,
         seen: {},
         run: freshRun(),
+        ach: {},
+        cnt: {},
+        mice: [],
     };
 }
+
+/* ================= Hunden vokser ================= */
+// Linjer til nyhetslinja for hvert steg. 5 = kjempehund, 6 = slankekur.
+export const HUND_HEAD: string[][] = [
+    [],
+    [
+        'Hunden har vokst to centimeter siden i går. Veterinæren klør seg i hodet',
+        'Hundeeier: «Den er bare stor for alderen»',
+        'Mus observert i klasserommet. Rektor ber elevene ikke mate dem',
+    ],
+    [
+        'Hunden får ikke plass i kurven lenger. Sover nå i gymsalen',
+        'Proteinpulver utsolgt i hele kommunen',
+        'Musene på skolen har startet sin egen fagforening',
+    ],
+    [
+        'Hunden har spist en ordbok og sier nå «unnskyld» på fire språk',
+        'Hunden skrev sin første unnskyldning selv. Læreren godtok den',
+        'Ekspert: «Hunder skal ikke kunne bøye verb»',
+    ],
+    [
+        'Hunden er høyere enn rektor. Rektor later som ingenting',
+        'Hunden får ikke plass i heisen. Heisen er flyttet',
+        'Forskere: «Vi vet ikke hva den spiser lenger. Bare at det er lekser»',
+    ],
+    [
+        'Kjempehunden kan sees fra verdensrommet. Den logrer',
+        'Kjempehunden satte seg ned. Det ble målt som et lite jordskjelv',
+        'Musene bor nå i pelsen til hunden. De betaler husleie',
+    ],
+    [
+        'Hunden har gått ned ti kilo og løper maraton før frokost',
+        'Slankekuren virker. Hunden spiser nå bare lettlekser',
+        'Hunden har fått sitt eget treningsprogram på TV',
+    ],
+];
+
+/* ================= Merker ================= */
+// Hvert merke gir +1 % produksjon, og hundegodbitene i butikken gir enda mer per merke.
+// Merkene følger med deg til alle skoler.
+export interface AchCtx {
+    pps: number;
+    stage: number; // hvor stor hunden er (0-5)
+    seenAll: boolean;
+    combo: boolean; // to gullstjerne-effekter samtidig
+}
+export interface Ach {
+    id: string;
+    n: string;
+    d: string;
+    ic: string;
+    q: (s: State, c: AchCtx) => boolean;
+    secret?: boolean; // vises som «???» til det er tatt
+}
+const cnt = (s: State, k: string) => s.cnt[k] ?? 0;
+export const ACH: Ach[] = [];
+const TOTAL_ACH: [number, string, string, string][] = [
+    [1e3, 'Lærer seg å lyve', '1 000', '🤥'],
+    [1e6, 'Millionær i bortforklaringer', '1 million', '📦'],
+    [1e9, 'Milliardær i bortforklaringer', '1 milliard', '💰'],
+    [1e12, 'Unnskyldningsbanken', '1 billion', '🏦'],
+    [1e15, 'Ingen tror deg lenger', '1 billiard', '🎱'],
+    [1e18, 'Hele jorda har hørt det', '1 trillion', '🌍'],
+    [1e21, 'Løgner i bane rundt sola', '1 trilliard', '🪐'],
+    [1e24, 'Galaktisk bortforklarer', '1 kvadrillion', '🌌'],
+    [1e27, 'Lekseliardær', '1 lekseliard', '♾️'],
+    [1e30, 'Unnskyldillionær', '1 unnskyldillion', '🌊'],
+];
+TOTAL_ACH.forEach(([n, name, txt, ic], k) =>
+    ACH.push({ id: 'tot' + k, n: name, d: `Finn på ${txt} unnskyldninger til sammen.`, ic, q: (s) => s.allTotal >= n })
+);
+const PPS_ACH: [number, string, string, string][] = [
+    [10, 'Hunden jobber', '10', '🐾'],
+    [1e3, 'Egen bedrift', '1 000', '🏢'],
+    [1e6, 'Industrien er i gang', '1 million', '⚙️'],
+    [1e9, 'Samlebånd til månen', '1 milliard', '🚀'],
+    [1e12, 'Kan ikke stoppes', '1 billion', '🌋'],
+    [1e15, 'Fysikken gir opp', '1 billiard', '🧪'],
+    [1e18, 'Universets motor', '1 trillion', '☄️'],
+];
+PPS_ACH.forEach(([n, name, txt, ic], k) =>
+    ACH.push({ id: 'pps' + k, n: name, d: `Lag ${txt} unnskyldninger i sekundet.`, ic, q: (_, c) => c.pps >= n })
+);
+P.forEach((p, i) => {
+    ACH.push({ id: `own${i}a`, n: `25 ${p.p.toLowerCase()}`, d: `Ha 25 ${p.p.toLowerCase()} samtidig.`, ic: p.ic, q: (s) => s.owned[i] >= 25 });
+    ACH.push({ id: `own${i}b`, n: `100 ${p.p.toLowerCase()}`, d: `Ha 100 ${p.p.toLowerCase()} samtidig.`, ic: p.ic, q: (s) => s.owned[i] >= 100 });
+});
+ERAS.forEach((e, k) => {
+    if (k > 0) ACH.push({ id: 'era' + k, n: e.n, d: `Kom deg helt til ${e.n.toLowerCase()}.`, ic: '🗺️', q: (s) => s.maxEra >= k });
+});
+const step = (id: string, ic: string, list: [number, string][], d: (n: number) => string, v: (s: State) => number) =>
+    list.forEach(([n, name], k) => ACH.push({ id: id + k, n: name, d: d(n), ic, q: (s) => v(s) >= n }));
+const nf = (n: number) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+step('clk', '👆', [[100, 'Fingeren varmes opp'], [1000, 'Klikkemaskin'], [10000, 'Senebetennelse'], [50000, 'Fingeren har fått eget liv']], (n) => `Klikk ${nf(n)} ganger på leksa.`, (s) => s.clicks);
+step('crit', '💥', [[1, 'Superunnskyldning'], [25, 'Superhjerne i arbeid'], [100, 'Geni på helt feil område']], (n) => (n === 1 ? 'Lag en superunnskyldning.' : `Lag ${n} superunnskyldninger.`), (s) => cnt(s, 'crits'));
+step('gold', '⭐', [[1, 'Fanget en stjerne'], [10, 'Stjernesamler'], [50, 'Stjernetyv'], [150, 'Melkeveien er tom']], (n) => (n === 1 ? 'Fang en gullstjerne.' : `Fang ${n} gullstjerner.`), (s) => s.goldClicks);
+step('hon', '📖', [[1, 'Gjorde faktisk leksa'], [10, 'Lesehest'], [50, 'Professor i 10B']], (n) => (n === 1 ? 'Svar riktig på en lynprøve.' : `Svar riktig på ${n} lynprøver.`), (s) => s.honest);
+step('streak', '🔥', [[5, 'Fem på rad']], () => 'Svar riktig på fem lynprøver på rad.', (s) => s.honestStreak);
+step('lie', '🤞', [[25, 'Løgnhals'], [100, 'Notorisk']], (n) => `Lur læreren med en unnskyldning ${n} ganger.`, (s) => cnt(s, 'lies'));
+step('res', '🏫', [[1, 'Ny skole, nye muligheter'], [5, 'Skoleturist'], [15, 'Kjent på alle skoler'], [40, 'Har gått på alle skolene i landet']], (n) => (n === 1 ? 'Bytt skole.' : `Bytt skole ${n} ganger.`), (s) => s.resets);
+step('ryk', '🏅', [[100, 'Snakk om byen'], [1000, 'Alle vet hvem du er'], [10000, 'Legenden om hunden']], (n) => `Samle ${nf(n)} rykte.`, (s) => s.rykte);
+step('mus', '🐭', [[1, 'Musefanger'], [25, 'Skadedyrkontroll'], [100, 'Rottefangeren']], (n) => (n === 1 ? 'Fang en mus.' : `Fang ${n} mus.`), (s) => cnt(s, 'mice'));
+step('ev', '🎲', [[10, 'Alltid noe på gang'], [50, 'Dramatisk skoleår']], (n) => `Vær med på ${n} hendelser.`, (s) => cnt(s, 'events'));
+step('poke', '💬', [[10, 'Sosial'], [100, 'Alles venn']], (n) => `Klikk på figurene i rommet ${n} ganger.`, (s) => cnt(s, 'pokes'));
+step('verb', '🔘', [[10, 'Vet hvor knappen er'], [100, 'Knappetrykker']], (n) => `Bruk knappen i et område ${n} ganger.`, (s) => cnt(s, 'verbs'));
+step('upg', '🛒', [[25, 'Godt utstyrt'], [75, 'Alt i butikken']], (n) => `Ha ${n} oppgraderinger på samme skole.`, (s) => Object.keys(s.upg).length);
+step('time', '⏰', [[3600, 'En hel skoletime'], [6 * 3600, 'En hel skoledag']], (n) => `Spill i ${n / 3600 === 1 ? 'en time' : n / 3600 + ' timer'} til sammen.`, (s) => s.played);
+ACH.push(
+    { id: 'seen10', n: 'Nysgjerrig', d: 'Gjør 10 oppdagelser i rommet.', ic: '🔍', q: (s) => Object.keys(s.seen).length >= 10 },
+    { id: 'seenAll', n: 'Har sett alt', d: 'Gjør alle oppdagelsene i rommet.', ic: '🔭', q: (_, c) => c.seenAll },
+    { id: 'dog1', n: 'Hunden vokser', d: 'Gi hunden vitaminer.', ic: '💊', q: (_, c) => c.stage >= 1 },
+    { id: 'dog4', n: 'Høyere enn rektor', d: 'La hunden vokse seg høyere enn rektor.', ic: '🦴', q: (_, c) => c.stage >= 4 },
+    { id: 'dogA', n: 'Kjempehund', d: 'Mat hunden enda mer når den er for stor.', ic: '🐘', q: (s) => !!s.upg.hv5a, secret: true },
+    { id: 'dogB', n: 'Sprek som en hund', d: 'Sett hunden på slankekur.', ic: '🥗', q: (s) => !!s.upg.hv5b, secret: true },
+    { id: 'tag', n: 'Hvor er jeg?', d: 'Klikk på navnet på rommet ti ganger.', ic: '🧭', q: (s) => cnt(s, 'tag') >= 10, secret: true },
+    { id: 'grade', n: 'Klager på karakteren', d: 'Klikk på karakteren på arket ti ganger.', ic: '📝', q: (s) => cnt(s, 'grade') >= 10, secret: true },
+    { id: 'export', n: 'Sikkerhetskopi', d: 'Lag en lagringskode.', ic: '💾', q: (s) => cnt(s, 'export') >= 1, secret: true },
+    { id: 'hand', n: 'Ren håndkraft', d: 'Klikk 300 ganger på én skole uten å kjøpe en eneste medskyldig.', ic: '✋', q: (s) => s.run.clicks >= 300 && s.owned.every((x) => x === 0), secret: true },
+    { id: 'fast', n: 'Lynrask', d: 'Svar riktig på en lynprøve på under tre sekunder.', ic: '⚡', q: (s) => cnt(s, 'fast') >= 1, secret: true },
+    { id: 'combo', n: 'Dobbel flaks', d: 'Ha to gullstjerne-effekter på en gang.', ic: '🍀', q: (_, c) => c.combo, secret: true },
+    { id: 'stingy', n: 'Gjerrig', d: 'Si nei til sultne hunder fem ganger.', ic: '🙅', q: (s) => cnt(s, 'stingy') >= 5, secret: true },
+    { id: 'night', n: 'Nattugle', d: 'Spill etter klokka elleve om kvelden.', ic: '🦉', q: () => { const h = new Date().getHours(); return h >= 23 || h < 5; }, secret: true },
+    { id: 'fatmouse', n: 'Mett mus', d: 'Fang en mus som har spist i mer enn fem minutter.', ic: '🧀', q: (s) => cnt(s, 'fatmouse') >= 1, secret: true }
+);

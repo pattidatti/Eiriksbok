@@ -20,6 +20,8 @@ export interface SceneInput {
     sus: boolean; // læreren mistenker deg
     teacher: boolean; // læreren er i rommet
     reduce: boolean;
+    dog: number; // hvor stor hunden har blitt (0-5)
+    slim: boolean; // hunden er på slankekur
     sheet: () => { x: number; y: number; w: number; h: number } | null; // i scenens koordinater
 }
 
@@ -38,7 +40,7 @@ export interface Scene {
     onQuiz: (right: boolean) => void;
     toLocal: (clientX: number, clientY: number) => [number, number];
     /** Klikk i rommet: figuren som ble truffet hopper og svarer. Scenekoordinater inn og ut. */
-    poke: (x: number, y: number) => { kind: string; x: number; y: number } | null;
+    poke: (x: number, y: number) => { kind: string; x: number; y: number; big: boolean } | null;
     destroy: () => void;
 }
 
@@ -50,6 +52,8 @@ export const DISCOVERIES: Record<string, string> = {
     'dog-house': 'Hundepensjonatet har åpnet. Se hvem som kommer ut.',
     'dog-crown': 'Hundekongen har inntatt rommet.',
     'dog-conga': 'HUNDE-CONGA!',
+    'dog-big': 'Hunden har vokst seg større enn pulten!',
+    'dog-giant': 'Kjempehunden rister hele rommet når den går.',
     'baby-crawl': 'Lillebror kryper rundt.',
     'baby-scribble': 'Lillebror tegner på veggen. Igjen.',
     'baby-talk': 'Lillebror kan snakke: «Det var ikke meg!»',
@@ -722,6 +726,14 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
         return a;
     }
     const count = (kind: string) => actors.filter((a) => a.kind === kind && !a.gone).length;
+    // Den første hunden er «Hunden». Den vokser når eleven kjøper hundeoppgraderingene.
+    const DOG_SCALE = [1, 1.3, 1.65, 2.05, 2.5, 3.1];
+    const bigDog = () => actors.find((a) => a.kind === 'dog' && !a.gone);
+    const dogScale = (a: Actor) => {
+        if (a.kind !== 'dog' || a !== bigDog()) return 1;
+        const st = input();
+        return st.slim ? 2.1 : DOG_SCALE[Math.min(5, st.dog)];
+    };
 
     // Hvor mange figurer av hver medskyldig som skal stå i rommet
     const KINDS = ['dog', 'baby', 'gas', 'dish', 'granny', 'factory', 'lobby', 'portal', 'candle', 'rift', 'dove', 'calendar', 'hole', 'clone', 'robot', 'ufo', 'mist', 'bang'];
@@ -969,6 +981,16 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
                     break;
                 }
                 walk(55 + tier * 12);
+                if (st.dog >= 3 && a === bigDog()) {
+                    discover('dog-big');
+                    // Kjempehunden: hvert skritt kjennes i hele rommet
+                    if (st.dog >= 4 && !st.slim && !st.reduce && Math.random() < dt * 0.8) {
+                        shake = Math.max(shake, st.dog >= 5 ? 4 : 2.5);
+                        dust(a.x, a.y + a.size * 0.4, 6);
+                        text('BOM', a.x, a.y - a.size * dogScale(a) * 0.9, '#6d4c41', 18, 0.7);
+                        if (st.dog >= 5) discover('dog-giant');
+                    }
+                }
                 if (tier >= 2 && Math.random() < dt * 4) paws.push({ x: a.x, y: a.y + a.size * 0.4, age: 0, r: a.dir });
                 a.timer -= dt;
                 if (a.timer <= 0) {
@@ -1569,7 +1591,7 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
             return;
         }
         const chew = a.mode === 'eat' ? 1 + Math.sin(a.phase * 30) * 0.12 : 1;
-        emo(e, a.x, y, size * pop * (a.kind === 'dog' ? 1 + tier * 0.08 : 1), { flip: a.dir > 0, sx: chew, sy: 2 - chew });
+        emo(e, a.x, y - (dogScale(a) - 1) * size * 0.4, size * pop * (a.kind === 'dog' ? (1 + tier * 0.08) * dogScale(a) : 1), { flip: a.dir > 0, sx: chew, sy: 2 - chew });
         if (a.kind === 'granny') emo('🎂', a.x - a.dir * size * 0.45, y - size * 0.05, size * 0.55);
         if (a.kind === 'lobby') emo('💼', a.x + a.dir * size * 0.4, y + size * 0.2, size * 0.45);
         if (tier >= 4 && ['dog', 'baby', 'granny', 'lobby'].includes(a.kind)) {
@@ -2017,8 +2039,9 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
             for (const a of actors) {
                 if (a.gone || a.kind === 'factory' || a.kind === 'belt') continue;
                 // Gående figurer står med føttene på a.y, de andre er sentrert
-                const d = Math.min(Math.hypot(x - a.x, y - a.y), Math.hypot(x - a.x, y - (a.y - a.size * 0.5)));
-                if (d < a.size * 1.1 && d < bd) {
+                const sz = a.size * dogScale(a);
+                const d = Math.min(Math.hypot(x - a.x, y - a.y), Math.hypot(x - a.x, y - (a.y - sz * 0.5)));
+                if (d < sz * 1.1 && d < bd) {
                     bd = d;
                     best = a;
                 }
@@ -2034,7 +2057,8 @@ export function createScene(canvas: HTMLCanvasElement, input: () => SceneInput, 
                 a.dir = -a.dir;
                 a.timer = Math.min(a.timer, 0.3);
             }
-            return { kind: a.kind, x: a.x, y: a.y - a.size * 1.1 };
+            const big = a.kind === 'dog' && a === bigDog() && input().dog >= 3;
+            return { kind: a.kind, x: a.x, y: a.y - a.size * dogScale(a) * 1.1, big };
         },
         destroy() {
             actors = [];

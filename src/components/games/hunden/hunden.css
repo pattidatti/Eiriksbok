@@ -397,6 +397,54 @@
 @keyframes hslReady { 0%, 100% { box-shadow: 3px 3px 0 var(--fg); } 50% { box-shadow: 3px 3px 0 var(--fg), 0 0 0 6px rgba(242, 183, 5, 0.35); } }
 @keyframes hslBubble { 0% { opacity: 0; scale: 0.5; } 10% { opacity: 1; scale: 1.05; } 16% { scale: 1; } 85% { opacity: 1; } 100% { opacity: 0; translate: -50% -130%; } }
 
+/* Mus som gnager på unnskyldningene */
+.hsl #hsl-stage > #hsl-mice { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.hsl .mouse { position: absolute; width: 44px; height: 44px; border: 0; padding: 0; background: none; pointer-events: auto; cursor: pointer; display: grid; place-items: center; }
+.hsl .mouse .mi { font-size: 30px; line-height: 1; display: block; animation: hslGnaw 0.32s ease-in-out infinite alternate; filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.25)); }
+.hsl .mouse.flip .mi { scale: -1 1; }
+.hsl .mouse .mb { position: absolute; top: 40px; left: 50%; translate: -50% 0; font: 700 11px var(--ui); background: var(--fg); color: var(--paper); border-radius: 999px; padding: 1px 6px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hsl .mouse.in { animation: hslMouseIn 0.5s cubic-bezier(0.2, 1.5, 0.4, 1); }
+.hsl .mouse.hit .mi { animation: hslMouseHit 0.25s ease; }
+.hsl .mouse.out { animation: hslMouseOut 0.5s ease-in forwards; pointer-events: none; }
+.hsl .mouse:focus-visible { outline: 3px solid var(--hl); border-radius: 50%; }
+.hsl #hsl-miceInfo { color: #8a5a00; }
+.hsl.calm .mouse .mi { animation: none; }
+@keyframes hslGnaw { from { rotate: -8deg; translate: 0 0; } to { rotate: 8deg; translate: 0 -2px; } }
+@keyframes hslMouseIn { from { scale: 0; opacity: 0; } to { scale: 1; opacity: 1; } }
+@keyframes hslMouseHit { 0% { scale: 1.35; rotate: -20deg; } 100% { scale: 1; } }
+@keyframes hslMouseOut { to { translate: 0 -80px; scale: 1.6; opacity: 0; } }
+
+/* Hendelsen der hunden er for stor */
+.hsl #hsl-event.dog { border-color: #8d6e63; }
+.hsl #hsl-event.dog .who { color: #6d4c41; }
+
+/* Live rykteteller på Bytt skole-knappen */
+.hsl #hsl-prestBtn { position: relative; display: inline-flex; align-items: center; gap: 8px; padding-bottom: 12px; }
+.hsl #hsl-prestBtn .pg { font: 700 14px var(--ui); background: #ffe14a; color: #23252c; border-radius: 999px; padding: 1px 8px; font-variant-numeric: tabular-nums; }
+.hsl #hsl-prestBtn .pg:empty { display: none; }
+.hsl #hsl-prestBtn .pp { position: absolute; left: 10px; right: 10px; bottom: 4px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.3); overflow: hidden; }
+.hsl #hsl-prestBtn .pp b { display: block; height: 100%; width: 0; background: #ffe14a; transition: width 0.3s linear; }
+.hsl #hsl-prestBtn.bump, .hsl #hsl-achBtn.bump { animation: hslBump 0.6s cubic-bezier(0.2, 1.6, 0.4, 1); }
+@keyframes hslBump { 0% { scale: 1.25; } 100% { scale: 1; } }
+
+/* Merker */
+.hsl .toast.ach { background: #ffe14a; color: #23252c; border: 2px solid #23252c; box-shadow: 4px 4px 0 #23252c; font: 700 15px var(--ui); animation-duration: 4.5s; }
+.hsl #hsl-modal .amage { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; border: 2px solid var(--fg); border-radius: 6px; padding: 10px 12px; background: var(--paper); }
+.hsl #hsl-modal .amage .ai { font-size: 34px; }
+.hsl #hsl-modal .amage b { font: 700 15px var(--ui); display: block; }
+.hsl #hsl-modal .amage small { font: 400 14px/1.25 var(--hand); color: var(--muted); display: block; }
+.hsl #hsl-modal .amage .bar { height: 10px; border: 2px solid var(--fg); border-radius: 6px; overflow: hidden; margin-top: 6px; background: var(--panel); }
+.hsl #hsl-modal .amage .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--hl), #f2b705); }
+.hsl #hsl-modal .amage .ax { font: 400 24px var(--display); color: #2a7a32; }
+.hsl #hsl-modal .adet { position: sticky; top: -14px; z-index: 2; min-height: 44px; margin: 10px 0 8px; padding: 7px 10px; border: 2px dashed var(--muted); border-radius: 6px; background: var(--panel); font: 400 15px var(--hand); color: var(--muted); display: flex; flex-direction: column; }
+.hsl #hsl-modal .adet b { font: 700 14px var(--ui); color: var(--fg); }
+.hsl #hsl-modal .adet.has { border-style: solid; border-color: #2a7a32; }
+.hsl #hsl-modal .agrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; }
+.hsl #hsl-modal .ach { aspect-ratio: 1; border: 2px solid var(--line); border-radius: 6px; background: var(--paper); font-size: 22px; line-height: 1; padding: 0; filter: grayscale(1); opacity: 0.35; cursor: pointer; }
+.hsl #hsl-modal .ach.secret { filter: none; opacity: 0.5; font-size: 18px; }
+.hsl #hsl-modal .ach.has { filter: none; opacity: 1; border-color: var(--fg); background: color-mix(in srgb, var(--hl) 30%, var(--panel)); box-shadow: 2px 2px 0 var(--fg); }
+.hsl #hsl-modal .ach:hover, .hsl #hsl-modal .ach:focus-visible { opacity: 1; outline: 3px solid var(--hl); }
+
 @media (max-width: 860px) {
     .hsl #hsl-stage > #hsl-verb { position: relative; top: auto; right: auto; }
     .hsl #hsl-stage > #hsl-next { position: relative; top: auto; left: auto; width: min(100%, 320px); }
