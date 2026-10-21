@@ -5,7 +5,7 @@
   "year": "1952-1960",
   "category": "Afrika",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/dekolonisering/mau-mau-opproret-hero.webp",
   "details": [
     "Rundt 3000 europeiske familier eide mer jord i Kenya enn én million kikuyuer til sammen.",
     "Fra 1952 kjempet tusenvis av kenyanere mot det britiske kolonistyret, som svarte med fangeleirer, tortur og tvangsflytting.",
@@ -23,7 +23,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dekolonisering/mau-mau-opproret-01.webp",
       "alt": "Kenyanske frihetskjempere i skogen ved Mount Kenya",
       "caption": "1950-tallet: Tusenvis av kenyanere gikk til skogene for å kjempe mot det britiske kolonistyret."
     },
@@ -126,7 +126,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dekolonisering/mau-mau-opproret-02.webp",
       "alt": "Fangeleir med piggtrådgjerde og vakttårn i Kenya",
       "caption": "Gjennom 1950-tallet satt rundt 150 000 kenyanere i britiske fangeleirer, de fleste uten rettssak."
     },
@@ -192,7 +192,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/dekolonisering/mau-mau-opproret-03.webp",
       "alt": "Eldre kenyanere ved Mau Mau-minnesmerket i Nairobi",
       "caption": "Minnesmerket i Nairobi ble avduket i 2015, to år etter avtalen med Storbritannia."
     },
