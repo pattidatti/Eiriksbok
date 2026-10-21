@@ -6213,6 +6213,21 @@
               "image": "/images/kolonialisering/irske-hungersnoden-hero.webp",
               "createdDate": "2026-08-07T10:24:06+02:00",
               "lastUpdated": "2026-08-08T00:31:29+02:00"
+            },
+            {
+              "id": "boerkrigen",
+              "title": "Boerkrigen: Gull, leirer og en fred uten de svarte",
+              "description": "Hvorfor Storbritannia og boerne gikk til krig om Sør-Afrika i 1899, hvorfor sivile i leirene betalte prisen, og hvem som fikk noe ut av freden i 1902.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "sør-afrika",
+                "afrika",
+                "storbritannia",
+                "imperialisme",
+                "konsentrasjonsleirer",
+                "kolonialisme"
+              ],
+              "createdDate": "2026-10-21T00:00:00Z"
             }
           ]
         },
