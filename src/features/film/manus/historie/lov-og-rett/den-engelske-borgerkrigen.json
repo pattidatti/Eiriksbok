@@ -4,6 +4,15 @@
     "kilde": "/historie/lov-og-rett/den-engelske-borgerkrigen",
     "bilde": "/images/lov-og-rett/den-engelske-borgerkrigen-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-21",
+        "viser": 4,
+        "lesbart": 3,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
     "scener": [
         {
             "id": "skafott",
@@ -14,7 +23,7 @@
             },
             "replikker": [
                 {
-                    "si": "London, den 30. januar 1649. En stor folkemengde har samlet seg i gatene."
+                    "si": "London, den 30. januar 1649. En folkemengde har samlet seg."
                 },
                 {
                     "si": "Utenfor et stort steinhus, Banqueting House, står et skafott. Det er en plattform for henrettelser."
@@ -63,7 +72,7 @@
         },
         {
             "id": "gud",
-            "kapittel": "Kongen mot parlamentet",
+            "kapittel": "Makt fra Gud",
             "visual": {
                 "type": "BorgerkrigenVekt",
                 "props": {
@@ -166,9 +175,64 @@
             "id": "alene",
             "kapittel": "Elleve år alene",
             "visual": {
-                "type": "BorgerkrigenKart",
+                "type": "BorgerkrigenTidslinje",
                 "props": {
-                    "modus": "skipsskatt"
+                    "fra": 1624,
+                    "til": 1642,
+                    "hvert": 2,
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "ar": 1625,
+                            "dato": "1625",
+                            "tittel": "Karl blir konge",
+                            "farge": "#7e22ce",
+                            "niva": 2
+                        },
+                        {
+                            "fraBeat": 0,
+                            "ar": 1629,
+                            "tilAr": 1640,
+                            "dato": "1629 til 1640",
+                            "tittel": "Uten parlament",
+                            "tekst": "Karl styrer helt alene",
+                            "farge": "#b91c1c",
+                            "niva": 0
+                        },
+                        {
+                            "fraBeat": 1,
+                            "id": "midt",
+                            "ar": 1633,
+                            "utenPunkt": true,
+                            "dato": "Elleveårstyranniet",
+                            "tittel": "Tyrann:",
+                            "tekst": "en hersker som misbruker makta",
+                            "farge": "#b91c1c",
+                            "niva": 1
+                        },
+                        {
+                            "fraBeat": 2,
+                            "id": "midt",
+                            "ar": 1633,
+                            "utenPunkt": true,
+                            "dato": "Skipsskatt",
+                            "tittel": "Før: bare kystbyene",
+                            "tekst": "En gammel skatt",
+                            "farge": "#a16207",
+                            "niva": 1
+                        },
+                        {
+                            "fraBeat": 3,
+                            "id": "midt",
+                            "ar": 1633,
+                            "utenPunkt": true,
+                            "dato": "Skipsskatt",
+                            "tittel": "Nå: hele landet",
+                            "tekst": "Alle må betale",
+                            "farge": "#a16207",
+                            "niva": 1
+                        }
+                    ]
                 }
             },
             "replikker": [
@@ -248,38 +312,60 @@
         {
             "id": "lange-parlamentet",
             "visual": {
-                "type": "BorgerkrigenVekt",
+                "type": "BorgerkrigenTidslinje",
                 "props": {
+                    "fra": 1636,
+                    "til": 1643,
+                    "hvert": 1,
                     "steg": [
                         {
                             "fraBeat": 0,
-                            "vipp": -10,
-                            "konge": "karl",
-                            "fylt": 0.5,
-                            "ekstra": "mynter",
-                            "merkelapp": "Krigen koster penger"
+                            "ar": 1637,
+                            "dato": "1637",
+                            "tittel": "Bønneboka",
+                            "tekst": "Skottene nekter",
+                            "farge": "#1d4ed8",
+                            "niva": 2
+                        },
+                        {
+                            "fraBeat": 0,
+                            "ar": 1639,
+                            "tilAr": 1640.8,
+                            "dato": "1639 og 1640",
+                            "tittel": "Opprør i Skottland",
+                            "tekst": "Krigen koster penger",
+                            "farge": "#1d4ed8",
+                            "niva": 0
                         },
                         {
                             "fraBeat": 1,
-                            "vipp": 6,
-                            "konge": "karl",
-                            "fylt": 1,
-                            "merkelapp": "Nå trenger kongen parlamentet"
+                            "id": "inn",
+                            "ar": 1640.85,
+                            "dato": "1640",
+                            "tittel": "Trenger parlamentet",
+                            "tekst": "Kongen kaller det inn igjen",
+                            "farge": "#0f766e",
+                            "niva": 1
                         },
                         {
                             "fraBeat": 2,
-                            "vipp": 14,
-                            "konge": "karl",
-                            "fylt": 1,
-                            "merkelapp": "November 1640: Det lange parlamentet"
+                            "id": "inn",
+                            "ar": 1640.85,
+                            "tilAr": 1643,
+                            "dato": "November 1640",
+                            "tittel": "Det lange parlamentet",
+                            "tekst": "Tar makt fra kongen",
+                            "farge": "#0f766e",
+                            "niva": 1
                         },
                         {
                             "fraBeat": 3,
-                            "vipp": 22,
-                            "konge": "karl",
-                            "fylt": 1,
-                            "ekstra": "strafford",
-                            "merkelapp": "Mai 1641: Strafford henrettes"
+                            "ar": 1641.35,
+                            "dato": "Mai 1641",
+                            "tittel": "Strafford henrettet",
+                            "tekst": "En av kongens viktigste menn",
+                            "farge": "#b91c1c",
+                            "niva": 2
                         }
                     ]
                 }
@@ -358,7 +444,7 @@
                     "si": "Men parlamentet hadde mer penger og flere folk."
                 },
                 {
-                    "si": "En av lederne het Oliver Cromwell. Han var misfornøyd med hvor dårlig soldatene kjempet, og bygde opp sin egen avdeling av soldater til hest."
+                    "si": "En av lederne het Oliver Cromwell. Han var misfornøyd med hvor dårlig parlamentets soldater kjempet, og bygde opp sin egen avdeling av soldater til hest."
                 },
                 {
                     "si": "I 1645 laget parlamentet en helt ny hær, New Model Army."
@@ -521,34 +607,40 @@
             "lyd": "stille",
             "kapittel": "Et land uten konge",
             "visual": {
-                "type": "BorgerkrigenVekt",
+                "type": "BorgerkrigenTidslinje",
                 "props": {
+                    "fra": 1648,
+                    "til": 1651,
+                    "hvert": 1,
                     "steg": [
                         {
                             "fraBeat": 0,
-                            "vipp": 16,
-                            "konge": "tom",
-                            "fylt": 0.3,
-                            "merkelapp": "Ingen får utrope en ny konge",
-                            "parlamentNavn": "Restparlamentet"
+                            "ar": 1649.08,
+                            "dato": "30. januar 1649",
+                            "tittel": "Kongen henrettet",
+                            "tekst": "Ingen får utrope en ny konge",
+                            "farge": "#7e22ce",
+                            "niva": 2
                         },
                         {
                             "fraBeat": 1,
-                            "vipp": 16,
-                            "konge": "tom",
-                            "fylt": 0.3,
-                            "ekstra": "republikk",
-                            "merkelapp": "7. februar 1649: Kongedømmet avskaffet",
-                            "parlamentNavn": "Restparlamentet"
+                            "ar": 1649.1,
+                            "tilAr": 1651,
+                            "dato": "7. februar 1649",
+                            "tittel": "Republikk",
+                            "tekst": "Et land uten konge",
+                            "farge": "#0f766e",
+                            "niva": 0
                         },
                         {
                             "fraBeat": 2,
-                            "vipp": 8,
-                            "konge": "tom",
-                            "fylt": 0.3,
-                            "ekstra": "sporsmal",
-                            "merkelapp": "Starten på en friere tid?",
-                            "parlamentNavn": "Restparlamentet"
+                            "ar": 1650.3,
+                            "utenPunkt": true,
+                            "dato": "Hva nå?",
+                            "tittel": "En friere tid?",
+                            "farge": "#0f766e",
+                            "niva": 1,
+                            "usikker": true
                         }
                     ]
                 }
@@ -585,47 +677,68 @@
         {
             "id": "cromwell",
             "visual": {
-                "type": "BorgerkrigenVekt",
+                "type": "BorgerkrigenTidslinje",
                 "props": {
+                    "fra": 1648,
+                    "til": 1662,
+                    "hvert": 2,
                     "steg": [
                         {
                             "fraBeat": 0,
-                            "vipp": 0,
-                            "konge": "tom",
-                            "fylt": 0,
-                            "merkelapp": "April 1653: Parlamentet oppløses",
-                            "parlamentNavn": "Oppløst"
+                            "ar": 1649.1,
+                            "tilAr": 1653.3,
+                            "dato": "1649",
+                            "tittel": "Republikk",
+                            "farge": "#0f766e",
+                            "niva": 0
+                        },
+                        {
+                            "fraBeat": 0,
+                            "ar": 1653.3,
+                            "dato": "April 1653",
+                            "tittel": "Parlament oppløst",
+                            "farge": "#b91c1c",
+                            "niva": 2
                         },
                         {
                             "fraBeat": 1,
-                            "vipp": -24,
-                            "konge": "cromwell",
-                            "fylt": 0,
-                            "merkelapp": "Desember 1653: Lord Protector",
-                            "parlamentNavn": "Oppløst"
+                            "ar": 1653.95,
+                            "tilAr": 1658.7,
+                            "dato": "Desember 1653",
+                            "tittel": "Lord Protector",
+                            "tekst": "Cromwell styrer i stedet for en konge",
+                            "farge": "#a16207",
+                            "niva": 1,
+                            "id": "cromwell"
                         },
                         {
                             "fraBeat": 2,
-                            "vipp": -24,
-                            "konge": "cromwell",
-                            "fylt": 0,
-                            "ekstra": "speil",
-                            "merkelapp": "Styrer alene, som kongen gjorde",
-                            "parlamentNavn": "Oppløst"
+                            "ar": 1653.95,
+                            "tilAr": 1658.7,
+                            "dato": "1653 til 1658",
+                            "tittel": "Cromwell styrer alene",
+                            "tekst": "Styrer alene, slik Karl gjorde",
+                            "farge": "#a16207",
+                            "niva": 1,
+                            "id": "cromwell"
                         },
                         {
                             "fraBeat": 3,
-                            "vipp": 0,
-                            "konge": "tom",
-                            "fylt": 0.3,
-                            "merkelapp": "1658: Cromwell dør"
+                            "ar": 1658.7,
+                            "dato": "1658",
+                            "tittel": "Cromwell dør",
+                            "tekst": "Republikken faller",
+                            "farge": "#57534e",
+                            "niva": 2
                         },
                         {
                             "fraBeat": 4,
-                            "vipp": -10,
-                            "konge": "karl2",
-                            "fylt": 0.8,
-                            "merkelapp": "1660: Kongen er tilbake"
+                            "ar": 1660.4,
+                            "dato": "1660",
+                            "tittel": "Konge igjen: Karl 2.",
+                            "tekst": "Sønnen til den henrettede kongen",
+                            "farge": "#7e22ce",
+                            "niva": 0
                         }
                     ]
                 }
@@ -682,7 +795,7 @@
                         {
                             "fraBeat": 3,
                             "vipp": 6,
-                            "konge": "karl2",
+                            "konge": "karl",
                             "fylt": 1,
                             "ekstra": "vilkar",
                             "merkelapp": "1688-1689: kronen mot skrevne vilkår"
@@ -701,7 +814,7 @@
                     "si": "Parlamentet ble et maktsenter som kongene måtte regne med."
                 },
                 {
-                    "si": "Snaut 40 år senere, i 1688 og 1689, ble en ny konge kastet. Parlamentet ga kronen videre bare mot skrevne vilkår."
+                    "si": "Snaut 40 år senere, i 1688 og 1689, ble en ny konge kastet, nesten uten kamp. Parlamentet ga kronen videre bare mot skrevne vilkår."
                 }
             ]
         },
@@ -752,7 +865,7 @@
             },
             "replikker": [
                 {
-                    "si": "Karl mente til siste slutt at en konge ikke kunne dømmes av folket. Makta hans kom jo fra Gud."
+                    "si": "Karl mente til siste slutt at en konge ikke kunne dømmes av folket. For ham kom makta fra Gud."
                 },
                 {
                     "si": "Domstolen sa det motsatte: Selv en konge står under loven."
@@ -761,7 +874,7 @@
                     "si": "I dag kaller vi den tanken rettsstaten. Den er en av grunnsteinene i Grunnloven vår."
                 },
                 {
-                    "si": "Også den som har mest makt, må følge reglene. Den tanken ble satt på prøve i London, en vinterdag i 1649."
+                    "si": "Også den som har mest makt, må følge reglene. Den tanken ble satt på prøve i London vinteren 1649."
                 }
             ]
         }
