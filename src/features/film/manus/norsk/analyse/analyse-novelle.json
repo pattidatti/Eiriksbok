@@ -1,0 +1,333 @@
+{
+    "id": "analyse-novelle",
+    "tittel": "Slik analyserer du en novelle",
+    "kilde": "/norsk/analyse/analyse-novelle",
+    "bilde": "/images/lessons/norsk/analyse/analyse-novelle-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-21",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 3,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "isfjellet",
+            "lyd": "hav",
+            "kapittel": "Isfjellet",
+            "visual": { "type": "NovelleIsfjell", "props": { "modus": "overflate" } },
+            "replikker": [
+                { "si": "Tenk deg at du står på et skip. Rett foran deg flyter et isfjell." },
+                { "si": "Du ser en liten, hvit topp over vannet. Det er alt." },
+                {
+                    "si": "Men under overflaten ligger det meste av isfjellet. Det er mye større enn toppen."
+                },
+                { "si": "En novelle er akkurat som et slikt isfjell." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Novellen",
+                    "undertittel": "Slik analyserer du den",
+                    "bilde": "/images/lessons/norsk/analyse/analyse-novelle-hero.webp",
+                    "sporsmal": { "tekst": "Hva ligger under overflaten?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "En novelle er en kort fortelling." },
+                {
+                    "si": "Det viktigste du må vite om noveller, er at de nesten aldri handler om det de ser ut til å handle om."
+                },
+                {
+                    "si": "I denne filmen lærer du å finne det som ligger under overflaten. Det er det en analyse handler om."
+                }
+            ]
+        },
+        {
+            "id": "teorien",
+            "lyd": "hav",
+            "visual": { "type": "NovelleIsfjell", "props": { "modus": "lag" } },
+            "replikker": [
+                {
+                    "si": "Toppen over vannet er den ytre handlingen. Det er det personene gjør og sier."
+                },
+                {
+                    "si": "Under vannet ligger temaet, følelsene og budskapet. Det er det personene føler og tenker."
+                },
+                {
+                    "si": "Ta et eksempel. På toppen står det bare: En mann kjøper kaffe."
+                },
+                {
+                    "si": "Men under vannet kan det ligge noe helt annet. Mannen er ensom, og han savner noen."
+                },
+                {
+                    "si": "Måten å skrive på blir ofte knyttet til forfatteren Ernest Hemingway. Vi kaller den Isfjell-teorien."
+                }
+            ]
+        },
+        {
+            "id": "dykkeren",
+            "visual": { "type": "NovelleIsfjell", "props": { "modus": "dykker" } },
+            "replikker": [
+                {
+                    "si": "Når du analyserer en novelle, er du en dykker. Du svømmer ned under overflaten."
+                },
+                {
+                    "si": "Der nede leter du etter små spor som forfatteren har lagt igjen til deg."
+                },
+                {
+                    "si": "Du leter etter symboler. Et symbol er en ting som står for noe mer enn seg selv."
+                },
+                {
+                    "si": "Og du leter etter tomrom. Det er det forfatteren ikke skriver, og som du må fylle inn selv."
+                }
+            ]
+        },
+        {
+            "id": "verktoy",
+            "lyd": "stille",
+            "kapittel": "Verktøykassen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Novellens verktøy",
+                    "punkter": [
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Kort og stram",
+                            "tekst": "hvert ord må telle",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "skip",
+                            "tittel": "In medias res",
+                            "tekst": "starter midt i handlingen",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "is",
+                            "tittel": "Det tomme rom",
+                            "tekst": "alt som ikke blir skrevet",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Show, don't tell",
+                            "tekst": "vise, ikke fortelle",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En novelle er kort. Forfatteren har ikke tid til å forklare alt, så hvert eneste ord må telle. Alt som ikke trengs, blir tatt bort."
+                },
+                {
+                    "si": "Det første grepet heter in medias res. Det betyr at historien starter midt i handlingen, uten en innledning som forklarer."
+                },
+                {
+                    "si": "Det andre er det tomme rom. Forfatteren hopper over mye, og du må selv fylle inn hullene med det du vet og tenker."
+                },
+                {
+                    "si": "Det tredje heter show, don't tell. Det er engelsk og betyr: vis, ikke fortell."
+                }
+            ]
+        },
+        {
+            "id": "vis",
+            "visual": { "type": "NovelleTord", "props": { "modus": "vis" } },
+            "replikker": [
+                { "si": "Tenk deg en mann i en novelle. Forfatteren skriver ikke at han var lei seg." },
+                { "si": "I stedet viser han det. Mannen ser ikke andre i øynene." },
+                { "si": "Og hendene hans rister." },
+                {
+                    "si": "Du skjønner at han er lei seg, uten at noen sier det. Det er show, don't tell."
+                }
+            ]
+        },
+        {
+            "id": "faderen",
+            "kapittel": "Faderen",
+            "visual": { "type": "NovelleLivet", "props": { "modus": "dagene" } },
+            "replikker": [
+                {
+                    "si": "Nå skal vi prøve verktøyene på en ekte novelle. Den heter Faderen, og den er skrevet av Bjørnstjerne Bjørnson."
+                },
+                {
+                    "si": "Den handler om Tord Øverås, den mektigste mannen i bygda. Han står hos presten, høy og alvorlig: Jeg har fått en sønn, og vil ha ham over dåpen."
+                },
+                {
+                    "si": "Så hopper historien. Seksten år etter kommer Tord igjen. Sønnen skal konfirmeres, og han skal stå nummer 1."
+                },
+                {
+                    "si": "Så går det åtte nye år. Nå skal sønnen gifte seg med bygdas rikeste jente."
+                },
+                {
+                    "si": "Fjorten dager etter ror far og sønn ut på vannet i stille vær."
+                }
+            ]
+        },
+        {
+            "id": "tidshoppene",
+            "kapittel": "Tidshoppene",
+            "visual": { "type": "NovelleLivet", "props": { "modus": "hoppene" } },
+            "replikker": [
+                {
+                    "si": "Legg merke til farten. Bjørnson hopper over 99 prosent av livet til Tord."
+                },
+                {
+                    "si": "Han viser oss bare fire dager, spredt over et helt liv. Dåp, konfirmasjon, bryllup og en begravelse, eller tiden rett etter den."
+                },
+                { "si": "Hvorfor gjør han det? Fordi all tiden imellom ikke betyr noe for temaet." },
+                {
+                    "si": "Tord bryr seg bare om de store dagene. Det er da han kan vise fram den flinke sønnen sin, og makta si, for hele bygda."
+                },
+                {
+                    "si": "Tidshoppene forteller oss altså hvem Tord er. Han er opptatt av hva andre ser, og av å være best."
+                }
+            ]
+        },
+        {
+            "id": "vannet",
+            "lyd": "hav",
+            "kapittel": "Vendepunktet",
+            "visual": { "type": "NovelleTord", "props": { "modus": "vannet" } },
+            "replikker": [
+                { "si": "Så kommer vendepunktet. Det er stedet der alt snur." },
+                { "si": "Far og sønn ror på vannet. Det er stille vær." },
+                {
+                    "si": "Sønnen står på en planke i båten. Den glir, og han faller i vannet og drukner."
+                },
+                {
+                    "si": "Bjørnson bruker bare noen få ord på ulykken. Resten må du kjenne selv."
+                }
+            ]
+        },
+        {
+            "id": "etterpa",
+            "lyd": "vind",
+            "visual": { "type": "NovelleTord", "props": { "modus": "forEtter" } },
+            "replikker": [
+                {
+                    "si": "Det kunne vel være gått et år. Sent en høstkveld hører presten noen ved døra."
+                },
+                {
+                    "si": "Inn kommer en høy, foroverbøyd mann, mager og hvit i håret. Det er Tord."
+                },
+                {
+                    "si": "Bjørnson skriver aldri at Tord er blitt trist. Før sto Tord rak og stolt. Nå er han bøyd, som om han bærer på noe tungt."
+                },
+                {
+                    "si": "Før kom han midt på dagen, så hele bygda så ham. Nå kommer han i mørket. Han bryr seg ikke lenger om hva bygda ser."
+                },
+                {
+                    "si": "Og det hvite håret? Det viser at sorgen har gjort ham gammel og klokere, brått og brutalt."
+                }
+            ]
+        },
+        {
+            "id": "gaven",
+            "lyd": "stille",
+            "visual": { "type": "NovelleTord", "props": { "modus": "gaven" } },
+            "replikker": [
+                {
+                    "si": "Så sier Tord: Jeg har noe med som jeg gjerne ville gi til de fattige. Det er halvparten av min gård."
+                },
+                {
+                    "si": "En svak analyse sier bare hva som skjer. Tord gir bort halve gården fordi han er trist."
+                },
+                {
+                    "si": "En god analyse spør hvorfor. Gaven er et ytre tegn på en forandring inne i Tord."
+                },
+                {
+                    "si": "Han har forstått at penger og gods ikke er verdt noe uten fred i sjelen."
+                }
+            ]
+        },
+        {
+            "id": "temaet",
+            "lyd": "hav",
+            "kapittel": "Temaet",
+            "visual": { "type": "NovelleIsfjell", "props": { "modus": "faderen" } },
+            "replikker": [
+                {
+                    "si": "Nå kan vi tegne isfjellet for Faderen. På toppen ligger motivet. Det er det som faktisk skjer: En rik bonde mister sønnen sin i en drukningsulykke."
+                },
+                {
+                    "si": "Under vannet ligger temaet. Temaet er hovmod og fall. Hovmod betyr at du er så stolt at du tror du står over alle andre."
+                },
+                {
+                    "si": "Tord trodde han kunne kjøpe seg Guds velsignelse med gaver til kirken. Ulykken knuser den stoltheten."
+                },
+                {
+                    "si": "Aller dypest ligger budskapet: Lidelse kan være en vei til visdom. Tord måtte miste det han elsket mest, for å finne tilbake til seg selv."
+                }
+            ]
+        },
+        {
+            "id": "skriv",
+            "lyd": "stille",
+            "kapittel": "Skriv selv",
+            "visual": { "type": "NovelleLivet", "props": { "modus": "analysen" } },
+            "replikker": [
+                {
+                    "si": "Når du skriver din egen analyse, skal du bruke fagordene. Ikke forklar hva ordene betyr. Bruk dem til å vise noe i teksten."
+                },
+                {
+                    "si": "Fortell om oppbygningen. Faderen viser bare noen få dager i livet til Tord, med store tidshopp imellom."
+                },
+                { "si": "Finn vendepunktet. Det er ulykken på vannet." },
+                {
+                    "si": "Vis hvordan det ytre speiler det indre. Den bøyde ryggen og det hvite håret viser sorgen."
+                },
+                {
+                    "si": "Og avslutt med temaet. Hva handler novellen egentlig om, under overflaten?"
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Husk dette",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Det du leser, er bare toppen.", "fraBeat": 0 },
+                        {
+                            "tekst": "Det meste ligger under vannet.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        { "tekst": "Se etter det forfatteren hopper over,", "fraBeat": 1 },
+                        { "tekst": "og det han viser uten å si det.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Spør alltid:", "fraBeat": 2 },
+                        {
+                            "tekst": "Hva handler dette egentlig om?",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En novelle sier lite, men betyr mye. Det du leser, er bare toppen av isfjellet."
+                },
+                {
+                    "si": "Se etter det forfatteren hopper over, og det han viser uten å si det rett ut."
+                },
+                {
+                    "si": "Og spør deg selv hver gang: Hva handler dette egentlig om? Da er du en dykker."
+                }
+            ]
+        }
+    ]
+}
