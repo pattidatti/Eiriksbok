@@ -47,7 +47,7 @@ export const BAL = {
     teachMin: 75,
     teachMax: 150,
     teachTime: 6, // lærerbesøk: sekunder til å velge
-    quizTime: 15, // sekunder til å svare på lynprøven
+    quizTime: 30, // sekunder til å svare på lynprøven
     quizBase: 5, // lynprøve-belønning = vanlig belønning × (quizBase + rekke)
     quizStreakMax: 5,
     offlineCap: 12 * 3600, // maks offline-tid (sek)
@@ -127,7 +127,7 @@ export const UP: Upgrade[] = [
     { id: 'gd', n: 'Langfriminutt', d: 'Friminuttet varer til det er over.', e: 'Gullstjerner virker dobbelt så lenge', c: 8e6, q: (s) => s.goldClicks >= 3, gdur: 2, ic: '🔔' },
     { id: 'h1', n: 'Lesehest', d: 'Du leste faktisk kapitlet. Læreren er i sjokk.', e: 'Lynprøver gir dobbelt så mye', c: 1e6, q: (s) => s.honest >= 2, hq: 2, ic: '📖' },
     { id: 'c5', n: 'Doktorgrad i bortforklaring', d: 'Tittel: «Det var ikke meg (2026)».', e: 'Klikk gir +2 % av /s', c: 2e7, q: (s) => s.era >= 2, cp: 0.02, ic: '🎓' },
-    { id: 'h2', n: 'Lånekort på biblioteket', d: 'Du vet hvor svarene står.', e: '+5 sekunder på lynprøver', c: 4e7, q: (s) => s.honest >= 5, ht: 5, ic: '📇' },
+    { id: 'h2', n: 'Lånekort på biblioteket', d: 'Du vet hvor svarene står.', e: '+10 sekunder på lynprøver', c: 4e7, q: (s) => s.honest >= 5, ht: 10, ic: '📇' },
     { id: 'g2', n: 'Unnskyldning på abonnement', d: '49 kr i måneden. Første lekse er gratis.', e: 'All produksjon ×2', c: 5e8, q: (s) => s.era >= 2, gm: 2, ic: '💳' },
     { id: 'h3', n: 'Skriveboka er full', d: 'Hver side er brukt. Ekte notater.', e: 'Lynprøver gir dobbelt så mye', c: 2e9, q: (s) => s.honest >= 10, hq: 2, ic: '📓' },
     { id: 'c6', n: 'Tunge av sølv', d: 'Snakker seg ut av alt, også fysikkens lover.', e: 'Klikk ×3', c: 3e9, q: (s) => s.era >= 3, cm: 3, ic: '👅' },
