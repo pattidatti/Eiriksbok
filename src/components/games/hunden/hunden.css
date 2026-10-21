@@ -230,8 +230,8 @@
 .hsl #hsl-headline .unlock { margin-top: 12px; display: inline-block; background: #ffe14a; padding: 6px 10px; font: 700 15px var(--ui); rotate: -1deg; }
 .hsl #hsl-headline .row { display: flex; justify-content: flex-end; margin-top: 16px; }
 
-.hsl #hsl-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: rgba(10, 12, 25, 0.5); padding: 16px; }
-.hsl #hsl-modal .card { width: min(520px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: var(--panel); color: var(--fg); border: 2px solid var(--fg); border-radius: 6px; box-shadow: 8px 8px 0 var(--fg); padding: 20px; animation: hslPopIn 0.35s cubic-bezier(0.2, 1.5, 0.4, 1); }
+.hsl #hsl-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: rgba(10, 12, 25, 0.5); padding: 76px 16px 16px; }
+.hsl #hsl-modal .card { width: min(520px, 100%); max-height: calc(100vh - 92px); overflow: auto; background: var(--panel); color: var(--fg); border: 2px solid var(--fg); border-radius: 6px; box-shadow: 8px 8px 0 var(--fg); padding: 20px; animation: hslPopIn 0.35s cubic-bezier(0.2, 1.5, 0.4, 1); }
 .hsl #hsl-modal h2 { font: 400 26px var(--display); margin: 0 0 8px; }
 .hsl #hsl-modal p { font: 500 15px/1.5 var(--ui); margin: 8px 0; }
 .hsl #hsl-modal .bigno { font: 400 40px var(--display); color: var(--ink); }
@@ -324,6 +324,19 @@
 .hsl #hsl-bubbles { position: fixed; inset: 0; pointer-events: none; z-index: 54; }
 .hsl .bubble { position: absolute; translate: -50% -100%; max-width: 220px; background: #fff; color: #23252c; border: 2px solid #23252c; border-radius: 14px; padding: 6px 10px; font: 700 15px/1.2 var(--hand); box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2); animation: hslBubble 2.6s ease forwards; text-align: center; }
 .hsl .bubble::after { content: ''; position: absolute; left: 50%; bottom: -9px; width: 14px; height: 14px; background: #fff; border-right: 2px solid #23252c; border-bottom: 2px solid #23252c; translate: -50% 0; rotate: 45deg; }
+
+/* Ryktebørsen */
+.hsl #hsl-modal .card.wide { width: min(640px, 100%); }
+.hsl #hsl-modal .rtitle { display: grid; gap: 2px; background: var(--hl); color: #23252c; border: 2px solid var(--fg); border-radius: 4px; padding: 6px 10px; margin: 6px 0 4px; rotate: -0.5deg; }
+.hsl #hsl-modal .rtitle span { font: 700 15px var(--ui); }
+.hsl #hsl-modal .rtitle b { font: 400 18px var(--display); }
+.hsl #hsl-modal .rtitle small { font: 600 12px var(--ui); color: #5a4a00; }
+.hsl #hsl-modal .ptabs { display: flex; gap: 6px; margin: 6px 0 2px; }
+.hsl #hsl-modal .ptabs button[aria-pressed='true'] { background: var(--fg); color: var(--paper); }
+.hsl #hsl-modal .perk em { display: block; font: 700 12px var(--ui); font-style: normal; color: var(--ink); margin-top: 2px; }
+.hsl #hsl-modal .perk em:empty { display: none; }
+.hsl #hsl-modal .perk .btn.ok { background: var(--hl); color: #23252c; }
+.hsl #hsl-modal .perk .btn:disabled { opacity: 0.55; cursor: default; }
 
 /* Rapportkortet */
 .hsl #hsl-modal .report { background: #fbf8ef; border: 1px solid #d8d0bd; padding: 14px 16px; margin: -4px 0 4px; }

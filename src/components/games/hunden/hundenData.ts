@@ -20,6 +20,7 @@ export interface State {
     rykte: number;
     ryktePts: number;
     perks: Record<string, 1>;
+    lv: Record<string, number>; // nivåer kjøpt i Ryktebørsen
     resets: number;
     school: number;
     hints: Record<string, 1>;
@@ -69,9 +70,9 @@ export const BAL = {
     flowMax: 2, // flyt: +per klikk, −per sek, maks ekstra multiplikator
     minClickGap: 40, // ms mellom klikk som teller. Stopper autoklikkere og holdt Enter
     msAt: [10, 25, 50, 100, 200], // milepæler per medskyldig
-    msMult: 1.5, // hver milepæl: medskyldigen lager så mye mer
-    critChance: 0.05, // superunnskyldning: sjanse per klikk
-    critMult: 10,
+    msMult: 1.4, // hver milepæl: medskyldigen lager så mye mer
+    critChance: 0.04, // superunnskyldning: sjanse per klikk
+    critMult: 8,
     eventFirst: 60, // sekunder til første tilfeldige hendelse
     eventMin: 80,
     eventMax: 160,
@@ -342,12 +343,12 @@ export interface Verb {
     done: string; // toast når den brukes
 }
 export const VERBS: Verb[] = [
-    { n: 'Skyld på naboen', ic: '👉', d: 'Gir med en gang det du lager på 45 sekunder.', cd: 60, done: 'Naboen tok skylda. Han vet det ikke ennå.' },
+    { n: 'Skyld på naboen', ic: '👉', d: 'Gir med en gang det du lager på 40 sekunder.', cd: 60, done: 'Naboen tok skylda. Han vet det ikke ennå.' },
     { n: 'Lov å forbedre deg', ic: '🤞', d: 'Flyten holder seg på topp i 20 sekunder.', cd: 90, done: 'Rektor tror på deg. Flyten står stille på topp.' },
     { n: 'Vedta lov', ic: '⚖️', d: 'All produksjon ×3 i 30 sekunder.', cd: 120, done: 'Loven er vedtatt. Lekser er nå frivillige i 30 sekunder.' },
     { n: 'Hold tale', ic: '🎤', d: 'Talen er så lang at en gullstjerne kommer for å stoppe den.', cd: 150, done: 'Du snakket i to timer. En gullstjerne dukker opp.' },
     { n: 'Legg ned veto', ic: '✋', d: 'Fjerner alle straffer og gir klikk ×5 i 15 sekunder.', cd: 120, done: 'VETO! Alle straffer er opphevet.' },
-    { n: 'Spol tiden', ic: '⏩', d: 'Hopper 10 minutter fram. Du får alt du ville laget i mellomtiden.', cd: 180, done: 'Tiden er spolt fram. Ingen merket noe.' },
+    { n: 'Spol tiden', ic: '⏩', d: 'Hopper 8 minutter fram. Du får alt du ville laget i mellomtiden.', cd: 180, done: 'Tiden er spolt fram. Ingen merket noe.' },
 ];
 
 /** Lærerens kommentar på rapportkortet. */
@@ -366,6 +367,7 @@ export interface Perk {
     n: string;
     d: string;
     c: number;
+    req?: string; // må ha kjøpt denne først
 }
 
 export const PERKS: Perk[] = [
@@ -375,6 +377,48 @@ export const PERKS: Perk[] = [
     { id: 'offline', n: 'Sover i timen', d: 'Mens du er borte, jobber de i opptil 24 timer.', c: 8 },
     { id: 'disc', n: 'Rektors svoger', d: 'Alle medskyldige koster 10 % mindre.', c: 12 },
     { id: 'dyn', n: 'Unnskyldningsdynasti', d: 'All produksjon ×2. For alltid.', c: 25 },
+    { id: 'verb', n: 'Talent for timing', d: 'Knappen i hvert område lades dobbelt så fort.', c: 15 },
+    { id: 'autoupg', n: 'Personlig assistent', d: 'Kjøper oppgraderinger for deg så snart du har råd.', c: 40 },
+    { id: 'era1', n: 'Ryktet går foran deg', d: 'Start hver skole rett på rektors kontor.', c: 60 },
+    { id: 'dyn2', n: 'Unnskyldningsimperium', d: 'All produksjon ×3. For alltid.', c: 150, req: 'dyn' },
+    { id: 'era2', n: 'Kjent i kommunen', d: 'Start hver skole i kommunestyret.', c: 300, req: 'era1' },
+    { id: 'era3', n: 'Stortingets yndling', d: 'Start hver skole på Stortinget.', c: 1500, req: 'era2' },
+    { id: 'dyn3', n: 'Unnskyldningsunivers', d: 'All produksjon ×5. For alltid.', c: 4000, req: 'dyn2' },
+];
+
+/** Nivåer i Ryktebørsen: kan kjøpes mange ganger, og blir dyrere for hvert nivå. */
+export interface RankPerk {
+    id: string;
+    n: string;
+    d: string;
+    max: number;
+    c0: number; // pris for første nivå
+    g: number; // prisen ganges med dette per nivå
+}
+export const RANKS: RankPerk[] = [
+    { id: 'lp', n: 'Skolens legende', d: 'All produksjon +25 % per nivå.', max: 30, c0: 2, g: 1.5 },
+    { id: 'lc', n: 'Klikkefinger av stål', d: 'Klikk +50 % per nivå.', max: 20, c0: 2, g: 1.45 },
+    { id: 'ld', n: 'Rabattkort hos svogeren', d: 'Medskyldige koster 3 % mindre per nivå.', max: 10, c0: 4, g: 1.7 },
+    { id: 'lm', n: 'Milepælmester', d: 'Hver milepæl gir 10 prosentpoeng mer per nivå.', max: 6, c0: 6, g: 2.1 },
+    { id: 'lg', n: 'Stjernestøv', d: 'Gullstjerner kommer 10 % oftere per nivå.', max: 10, c0: 3, g: 1.6 },
+    { id: 'lb', n: 'Lang inspirasjon', d: 'Gullstjernene virker 15 % lenger per nivå.', max: 10, c0: 3, g: 1.6 },
+    { id: 'lx', n: 'Superhjerne', d: 'Superunnskyldninger kommer 1 prosentpoeng oftere per nivå.', max: 6, c0: 5, g: 1.9 },
+    { id: 'lq', n: 'Lesehestens rykte', d: 'Lynprøver gir 50 % mer per nivå.', max: 15, c0: 3, g: 1.55 },
+    { id: 'lt', n: 'Tenkepause', d: 'Lynprøven gir 3 sekunder ekstra per nivå.', max: 5, c0: 2, g: 1.8 },
+    { id: 'le', n: 'Alltid noe på gang', d: 'Hendelser kommer 15 % oftere per nivå.', max: 6, c0: 4, g: 1.8 },
+    { id: 'ls', n: 'Sparegris', d: 'Start hver skole med unnskyldninger på bok. Ti ganger mer per nivå.', max: 12, c0: 3, g: 1.75 },
+];
+export const rankCost = (r: RankPerk, lv: number) => Math.ceil(r.c0 * Math.pow(r.g, lv));
+
+/** Tittelen din etter hvor mye rykte du har samlet. */
+export const RYKTE_TITLES: [number, string][] = [
+    [0, 'Ukjent elev'],
+    [5, 'Kjent i gangen'],
+    [25, 'Skolens snakkis'],
+    [100, 'Lokal legende'],
+    [400, 'Rikskjendis'],
+    [1500, 'Verdensberømt'],
+    [5000, 'Unnskyldningenes gud'],
 ];
 
 export const TSAY = [
@@ -400,6 +444,7 @@ export function freshState(reduce: boolean): State {
         rykte: 0,
         ryktePts: 0,
         perks: {},
+        lv: {},
         resets: 0,
         school: 0,
         hints: {},

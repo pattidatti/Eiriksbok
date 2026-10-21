@@ -14,6 +14,9 @@ import {
     P,
     PERKS,
     POKE,
+    RANKS,
+    RYKTE_TITLES,
+    rankCost,
     REPORT_SAY,
     SCHOOLS,
     TSAY,
@@ -183,6 +186,7 @@ function normalize(o: Partial<State>, reduce: boolean): State {
     s.set = Object.assign(freshState(reduce).set, o.set ?? {});
     s.upg = o.upg ?? {};
     s.perks = o.perks ?? {};
+    s.lv = o.lv ?? {};
     s.hints = o.hints ?? {};
     s.seen = o.seen ?? {};
     s.run = Object.assign(freshRun(), o.run ?? {});
@@ -228,6 +232,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     let flowIdle = 9;
     let disp = 0;
     let autoAcc = 0;
+    let autoUpgT = 0;
     let saveT = 0;
     let uiT = 0;
     const gold = { on: false, t: 0, next: BAL.goldFirst, x: 0, y: 0, y0: 0, vx: 0, ph: 0 };
@@ -263,8 +268,11 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     /* ================= Formler ================= */
     // Milepæler: 10, 25, 50 ... av samme medskyldig gjør hver av dem flinkere
     const msCount = (owned: number) => BAL.msAt.filter((x) => owned >= x).length;
+    // Nivåer kjøpt i Ryktebørsen
+    const L = (id: string) => S.lv[id] ?? 0;
+    const msMult = () => BAL.msMult + 0.1 * L('lm');
     function prodMult(i: number) {
-        let m = Math.pow(BAL.msMult, msCount(S.owned[i]));
+        let m = Math.pow(msMult(), msCount(S.owned[i]));
         for (let t = 0; t < 4; t++) if (S.upg[`p${i}_${t}`]) m *= 2;
         return m;
     }
@@ -275,6 +283,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (u?.gm) m *= u.gm;
         }
         if (S.perks.dyn) m *= 2;
+        if (S.perks.dyn2) m *= 3;
+        if (S.perks.dyn3) m *= 5;
+        m *= 1 + 0.25 * L('lp');
         if (!noBuff) for (const b of buffs) if (b.prod) m *= b.prod;
         return m;
     }
@@ -294,12 +305,12 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (u.cm) cm *= u.cm;
             if (u.cp) cp += u.cp;
         }
-        let v = cm * (1 + BAL.ryktePct * S.rykte) + pps() * cp;
+        let v = cm * (1 + BAL.ryktePct * S.rykte) * (1 + 0.5 * L('lc')) + pps() * cp;
         v *= flowMult();
         for (const b of buffs) if (b.click) v *= b.click;
         return v;
     }
-    const disc = () => (S.perks.disc ? 0.9 : 1);
+    const disc = () => (S.perks.disc ? 0.9 : 1) * (1 - 0.03 * L('ld'));
     const unitCost = (i: number) => P[i].c * Math.pow(BAL.costGrowth, S.owned[i]) * disc();
     function costOf(i: number, k: number) {
         const g = BAL.costGrowth;
@@ -314,18 +325,19 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         let f = 1;
         if (S.upg.gs) f *= 2;
         if (S.perks.star) f *= 2;
+        f *= 1 + 0.1 * L('lg');
         return f;
     }
-    const goldDur = () => (S.upg.gd ? 2 : 1);
+    const goldDur = () => (S.upg.gd ? 2 : 1) * (1 + 0.15 * L('lb'));
     function quizMult() {
         let m = 1;
         for (const id in S.upg) if (UPI[id]?.hq) m *= UPI[id].hq as number;
-        return m;
+        return m * (1 + 0.5 * L('lq'));
     }
     function quizTime() {
         let t = BAL.quizTime;
         for (const id in S.upg) if (UPI[id]?.ht) t += UPI[id].ht as number;
-        return t;
+        return t + 3 * L('lt');
     }
     const rykteGainable = () =>
         Math.max(0, Math.floor(Math.sqrt(S.allTotal / BAL.rykteDiv)) - S.rykte);
@@ -751,7 +763,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         ring(x, y, '#f2b705', 120);
         restart(r.b, 'ms');
         scene.onUpgrade(`p${i}_0`);
-        toast(`📰 ${m} ${P[i].p.toLowerCase()}! ${line}. Hver lager ${NF0.format((BAL.msMult - 1) * 100)} % mer.`, 'ms', 5000);
+        toast(`📰 ${m} ${P[i].p.toLowerCase()}! ${line}. Hver lager ${NF0.format((msMult() - 1) * 100)} % mer.`, 'ms', 5000);
         feat(`${line}`);
     }
 
@@ -773,7 +785,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (!auto) eventClick();
         let v = clickPow();
         // Superunnskyldning: et sjeldent klikk som er verdt mye mer
-        const crit = !auto && Math.random() < BAL.critChance;
+        const crit = !auto && Math.random() < BAL.critChance + 0.01 * L('lx');
         if (crit) v *= BAL.critMult;
         earn(v);
         S.clicks++;
@@ -1319,11 +1331,11 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         } else if (r < 0.8) {
             addBuff({ id: 'frenzy', label: 'Inspirasjon ×7', prod: 7, t: 30 * dur });
             floatText('INSPIRASJON ×7', x, y, { size: 30, col: '#e09a00', life: 1.6 });
-            toast(`Inspirasjon! All produksjon ×7 i ${30 * dur} sek`);
+            toast(`Inspirasjon! All produksjon ×7 i ${Math.round(30 * dur)} sek`);
         } else {
             addBuff({ id: 'storm', label: 'Klikkstorm ×50', click: 50, t: 10 * dur });
             floatText('KLIKKSTORM ×50', x, y, { size: 30, col: '#e09a00', life: 1.6 });
-            toast(`Klikkstorm! Klikk ×50 i ${10 * dur} sek. Klikk!`);
+            toast(`Klikkstorm! Klikk ×50 i ${Math.round(10 * dur)} sek. Klikk!`);
         }
     }
 
@@ -1336,7 +1348,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     function endEvent(msg?: string, good?: boolean) {
         if (!ev.on) return;
         ev.on = false;
-        ev.next = rnd(BAL.eventMin, BAL.eventMax);
+        ev.next = rnd(BAL.eventMin, BAL.eventMax) / (1 + 0.15 * L('le'));
         if (msg) toast(msg, good ? 'ev' : '');
         evEl.hidden = true;
         evEl.innerHTML = '';
@@ -1490,7 +1502,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             restart(verbBtn, 'deny');
             return;
         }
-        verbCd = v.cd;
+        verbCd = v.cd * (S.perks.verb ? 0.5 : 1);
         verbUsed++;
         const [x, y] = center(verbBtn);
         sfx.upg();
@@ -1499,7 +1511,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         restart(verbBtn, 'used');
         switch (S.era) {
             case 0: {
-                const g = evReward(45);
+                const g = evReward(40);
                 earn(g);
                 floatText('+' + fmt(g), x, y - 30, { size: 30, col: COL.ink, life: 1.4 });
                 break;
@@ -1520,7 +1532,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 addShake(10);
                 break;
             default: {
-                const g = pps(true) * 600;
+                const g = pps(true) * 480;
                 earn(g);
                 floatText('+' + fmt(g), x, y - 30, { size: 30, col: COL.ink, life: 1.4 });
                 doFlash();
@@ -1836,7 +1848,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             const tot = each * S.owned[i];
             const all = pps();
             const nm = BAL.msAt.find((m) => S.owned[i] < m);
-            const ms = nm ? `<br>Milepæl ved ${nm}: hver lager ${NF0.format((BAL.msMult - 1) * 100)} % mer` : '<br>Alle milepæler nådd';
+            const ms = nm ? `<br>Milepæl ved ${nm}: hver lager ${NF0.format((msMult() - 1) * 100)} % mer` : '<br>Alle milepæler nådd';
             h = `<b>${esc(p.n)}</b><i>${esc(p.d)}</i>Hver: <span class="k">${fmt(each, true)}/s</span><br>Totalt: <span class="k">${fmt(tot, true)}/s</span>${all > 0 ? ` (${NF0.format((tot / all) * 100)} %)` : ''}<br>Eier: ${S.owned[i]}${ms}`;
         } else {
             const u = UPI[k.slice(2)];
@@ -2005,48 +2017,109 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const applyCalm = () => root.classList.toggle('calm', !!S.set.reduce);
 
     /* ================= Prestisje ================= */
+    // Ryktebørsen: varige fordeler (kjøpes én gang) og nivåer (kan kjøpes mange ganger)
+    let perkTab: 'lv' | 'once' = 'lv';
+    function rankFx(id: string, lv: number): string {
+        switch (id) {
+            case 'lp': return `+${lv * 25} % produksjon`;
+            case 'lc': return `+${lv * 50} % per klikk`;
+            case 'ld': return `${lv * 3} % billigere`;
+            case 'lm': return `+${NF0.format((BAL.msMult + 0.1 * lv - 1) * 100)} % per milepæl`;
+            case 'lg': return `+${lv * 10} % gullstjerner`;
+            case 'lb': return `+${lv * 15} % varighet`;
+            case 'lx': return `${NF0.format((BAL.critChance + 0.01 * lv) * 100)} % sjanse`;
+            case 'lq': return `+${lv * 50} % på lynprøver`;
+            case 'lt': return `+${lv * 3} sekunder`;
+            case 'le': return `+${lv * 15} % hendelser`;
+            case 'ls': return lv ? `start med ${fmt(startBank(lv))}` : 'start med 0';
+        }
+        return '';
+    }
+    const startBank = (lv: number) => (lv ? 100 * Math.pow(10, lv) : 0);
+    function rykteTitle() {
+        let k = 0;
+        while (k + 1 < RYKTE_TITLES.length && S.rykte >= RYKTE_TITLES[k + 1][0]) k++;
+        return { now: RYKTE_TITLES[k][1], next: RYKTE_TITLES[k + 1] };
+    }
     function openPrestige() {
         const g = rykteGainable();
+        // Ta vare på hvor eleven har scrollet, så et kjøp ikke hopper til toppen
+        const keep = modal.hidden ? 0 : (modal.querySelector('.card') as HTMLElement | null)?.scrollTop ?? 0;
+        const t = rykteTitle();
         openModal(
             `<h2>Bytt skole</h2>
+  <div class="rtitle"><span>Ryktet ditt: <b>${esc(t.now)}</b></span>${t.next ? `<small>Neste tittel ved ${t.next[0]} rykte: ${esc(t.next[1])}</small>` : '<small>Høyere enn dette går det ikke.</small>'}</div>
   <p>Du mister unnskyldninger, medskyldige og oppgraderinger. Ryktet ditt følger med. Hvert rykte gir <b>+5 % produksjon</b> for alltid, og kan brukes i Ryktebørsen.</p>
   <div class="row" style="justify-content:space-between"><div><div class="bigno">+${g}</div><small style="color:var(--muted)">rykte hvis du bytter nå · du har ${S.rykte} (${NF0.format(S.rykte * BAL.ryktePct * 100)} % bonus)</small></div>
   <button class="btn big" id="pGo" ${g < 1 ? 'disabled' : ''}>Brenn alt og bytt skole</button></div>
   ${g < 1 ? `<p style="color:var(--muted)">Du trenger ${fmt(Math.pow(S.rykte + 1, 2) * BAL.rykteDiv)} unnskyldninger totalt for neste rykte. Du har ${fmt(S.allTotal)}.</p>` : ''}
-  <h2 style="font-size:21px;margin-top:18px">Ryktebørsen <small style="font:600 13px var(--ui);color:var(--muted)">${S.ryktePts} poeng å bruke</small></h2>
+  <h2 style="font-size:21px;margin-top:18px">Ryktebørsen <small style="font:600 13px var(--ui);color:var(--muted)">${S.ryktePts} rykte å bruke</small></h2>
+  <div class="ptabs" role="tablist"><button class="btn" data-t="lv">Nivåer</button><button class="btn" data-t="once">Varige fordeler</button></div>
   <div id="perks"></div><div class="row" style="justify-content:flex-end"><button class="btn" id="pClose">Lukk</button></div>`,
             (c) => {
+                c.classList.add('wide');
                 (c.querySelector('#pClose') as HTMLElement).onclick = closeModal;
                 const go = c.querySelector<HTMLElement>('#pGo');
                 if (go) go.onclick = openReport;
+                for (const tb of Array.from(c.querySelectorAll<HTMLElement>('.ptabs button'))) {
+                    tb.setAttribute('aria-pressed', String(tb.dataset.t === perkTab));
+                    tb.onclick = () => {
+                        perkTab = tb.dataset.t as 'lv' | 'once';
+                        sfx.reveal();
+                        openPrestige();
+                    };
+                }
                 const pk = c.querySelector('#perks') as HTMLElement;
-                for (const p of PERKS) {
+                const row = (name: string, desc: string, meta: string, label: string, can: boolean, buy?: () => void) => {
                     const d = document.createElement('div');
                     d.className = 'perk';
-                    d.innerHTML = '<div><b></b><span></span></div>';
-                    (d.querySelector('b') as HTMLElement).textContent = p.n;
-                    (d.querySelector('span') as HTMLElement).textContent = p.d;
+                    d.innerHTML = '<div><b></b><span></span><em></em></div>';
+                    (d.querySelector('b') as HTMLElement).textContent = name;
+                    (d.querySelector('span') as HTMLElement).textContent = desc;
+                    (d.querySelector('em') as HTMLElement).textContent = meta;
                     const b = document.createElement('button');
-                    b.className = 'btn';
-                    if (S.perks[p.id]) {
-                        b.textContent = 'Kjøpt';
-                        b.disabled = true;
-                    } else {
-                        b.textContent = `${p.c} rykte`;
-                        b.disabled = S.ryktePts < p.c;
+                    b.className = 'btn' + (can ? ' ok' : '');
+                    b.textContent = label;
+                    b.disabled = !buy || !can;
+                    if (buy)
                         b.onclick = () => {
-                            if (S.ryktePts < p.c) return;
-                            S.ryktePts -= p.c;
-                            S.perks[p.id] = 1;
+                            if (!can) return;
+                            buy();
                             sfx.upg();
                             const [x, y] = center(b);
                             burst(x, y, 25, { gold: true });
+                            ring(x, y, '#f2b705', 80);
+                            save();
                             openPrestige();
                         };
-                    }
                     d.appendChild(b);
                     pk.appendChild(d);
+                };
+                if (perkTab === 'lv') {
+                    for (const rp of RANKS) {
+                        const lv = L(rp.id);
+                        const max = lv >= rp.max;
+                        const cost = rankCost(rp, lv);
+                        const meta = `Nivå ${lv} av ${rp.max} · nå: ${rankFx(rp.id, lv)}${max ? '' : ` · neste: ${rankFx(rp.id, lv + 1)}`}`;
+                        row(rp.n, rp.d, meta, max ? 'Maks' : `${NF0.format(cost)} rykte`, !max && S.ryktePts >= cost, max ? undefined : () => {
+                            S.ryktePts -= cost;
+                            S.lv[rp.id] = lv + 1;
+                        });
+                    }
+                } else {
+                    for (const p of PERKS) {
+                        if (S.perks[p.id]) {
+                            row(p.n, p.d, '', 'Kjøpt', false);
+                            continue;
+                        }
+                        const req = p.req && !S.perks[p.req] ? PERKS.find((x) => x.id === p.req) : undefined;
+                        row(p.n, p.d, req ? `Krever først: ${req.n}` : '', `${NF0.format(p.c)} rykte`, !req && S.ryktePts >= p.c, req ? undefined : () => {
+                            S.ryktePts -= p.c;
+                            S.perks[p.id] = 1;
+                        });
+                    }
                 }
+                c.scrollTop = keep;
             }
         );
     }
@@ -2106,11 +2179,13 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             S.ryktePts += g;
             S.resets++;
             S.school = (S.school + 1 + Math.floor(Math.random() * 3)) % SCHOOLS.length;
-            S.bank = 0;
-            S.runTotal = 0;
+            // Sparegris og «Ryktet går foran deg» gir en raskere start
+            S.bank = startBank(L('ls'));
+            const startEra = S.perks.era3 ? 3 : S.perks.era2 ? 2 : S.perks.era1 ? 1 : 0;
+            S.runTotal = BAL.eras[startEra];
             S.owned = P.map(() => 0);
             S.upg = {};
-            S.era = 0;
+            S.era = startEra;
             S.rev = 0;
             S.run = freshRun();
             buffs = [];
@@ -2211,6 +2286,15 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (verbCd > 0) verbCd -= dt;
         for (const b of buffs) b.t -= dt;
         if (buffs.some((b) => b.t <= 0)) buffs = buffs.filter((b) => b.t > 0);
+        // Personlig assistent: kjøper den billigste oppgraderingen du har råd til
+        if (S.perks.autoupg) {
+            autoUpgT += dt;
+            if (autoUpgT > 0.6) {
+                autoUpgT = 0;
+                const u = availUpgs()[0];
+                if (u && S.bank >= u.c) buyUpg(u.id, root.querySelector<HTMLElement>(`.upg[data-id="${u.id}"]`) ?? $('#hsl-upgSect'));
+            }
+        }
         if (S.perks.auto) {
             autoAcc += dt * 4;
             while (autoAcc >= 1) {
