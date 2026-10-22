@@ -1,0 +1,396 @@
+{
+    "id": "analyse-debattinnlegg",
+    "tittel": "Slik analyserer du et debattinnlegg",
+    "kilde": "/norsk/analyse/analyse-debattinnlegg",
+    "bilde": "/images/lessons/norsk/analyse/analyse-debattinnlegg-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-22",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 5,
+        "sum": 21
+    },
+    "scener": [
+        {
+            "id": "avisa",
+            "lyd": "rom",
+            "kapittel": "Etterforskeren",
+            "visual": {
+                "type": "DebattAvis",
+                "props": {
+                    "modus": "apning"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du leser et debattinnlegg. Overskriften roper: Fordummende intelligent teknologi."
+                },
+                {
+                    "si": "Han som skrev det, har et mål. Han vil få deg til å mene det samme som ham."
+                },
+                {
+                    "si": "Din jobb er å være etterforsker. Du skal avsløre hvordan han prøver å få det til."
+                },
+                {
+                    "si": "Bruker han fakta eller følelser? Er han ærlig, eller prøver han å lure deg?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Debattinnlegget",
+                    "undertittel": "Slik ser du gjennom teksten",
+                    "bilde": "/images/lessons/norsk/analyse/analyse-debattinnlegg-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan prøver teksten å påvirke deg?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et debattinnlegg er en tekst der noen sier hva de mener, og prøver å få deg med på det."
+                },
+                {
+                    "si": "I et debattinnlegg er ingenting tilfeldig. Hvert ord og hvert eksempel er valgt for å styre tankene dine."
+                },
+                {
+                    "si": "Å analysere betyr å undersøke hvordan teksten prøver å påvirke deg. Det skal du lære nå."
+                }
+            ]
+        },
+        {
+            "id": "soylene",
+            "kapittel": "Verktøykassen",
+            "visual": {
+                "type": "DebattSoyler",
+                "props": {
+                    "modus": "soyler"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For over 2000 år siden levde en tenker som het Aristoteles. Han beskrev tre måter å overbevise folk på."
+                },
+                {
+                    "si": "Den første heter etos. Den handler om den som snakker: Kan vi stole på ham?"
+                },
+                {
+                    "si": "Den andre heter logos. Den handler om selve saken: fakta, tall og gode grunner."
+                },
+                {
+                    "si": "Den tredje heter patos. Den handler om følelsene til dem som lytter."
+                },
+                {
+                    "si": "Sammen bærer de argumentet. Og de gjelder fortsatt i dag, enten det er på TikTok eller i Aftenposten."
+                }
+            ]
+        },
+        {
+            "id": "verktoy",
+            "visual": {
+                "type": "DebattSoyler",
+                "props": {
+                    "modus": "verktoy"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på hver søyle som et verktøy. Etos bygges ofte med titler, erfaring eller en balansert holdning."
+                },
+                {
+                    "si": "Logos snakker til hodet. Her finner du fakta, tall, forskning, og årsak og virkning."
+                },
+                {
+                    "si": "Patos snakker til hjertet, eller magen. Her finner du sterke ord, personlige historier, humor eller frykt."
+                },
+                {
+                    "si": "Kan du disse tre ordene, har du et slags røntgensyn. Du ser rett gjennom teksten."
+                }
+            ]
+        },
+        {
+            "id": "vekta",
+            "kapittel": "Fakta eller følelser",
+            "visual": {
+                "type": "DebattSoyler",
+                "props": {
+                    "modus": "vekt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I mange debattinnlegg må skribenten finne balansen mellom fornuft og følelser. Tenk deg en vekt."
+                },
+                {
+                    "si": "På den ene siden ligger logos: fakta og logikk som snakker til hodet."
+                },
+                {
+                    "si": "På den andre siden ligger patos: følelser som snakker til hjertet."
+                },
+                {
+                    "si": "Ofte virker de best når de brukes sammen. Fornuft og følelser henger tett sammen."
+                }
+            ]
+        },
+        {
+            "id": "sammenlign",
+            "visual": {
+                "type": "DebattOrd",
+                "props": {
+                    "modus": "tabell"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "La oss sammenligne dem, punkt for punkt. Logos vil overbevise med bevis og logikk. Patos vil engasjere med medfølelse og frykt."
+                },
+                {
+                    "si": "Språket i logos er nøytralt og presist, ofte med tall. Språket i patos er billedlig, ladet og personlig."
+                },
+                {
+                    "si": "Styrken til logos er at den er vanskelig å motsi. Styrken til patos er at den får folk til å handle med en gang."
+                },
+                {
+                    "si": "Men begge har en risiko. Logos kan virke tørt og kjedelig. Patos kan virke manipulerende, altså som om noen styrer deg uten at du merker det."
+                }
+            ]
+        },
+        {
+            "id": "hofmann",
+            "kapittel": "Et ekte innlegg",
+            "visual": {
+                "type": "DebattAvis",
+                "props": {
+                    "modus": "avsender"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå skal vi teste verktøyene på et ekte innlegg. Det heter Fordummende intelligent teknologi."
+                },
+                {
+                    "si": "Det er skrevet av Bjørn Hofmann. Han er professor og arbeider med medisinsk etikk ved NTNU og Universitetet i Oslo."
+                },
+                {
+                    "si": "Det gir ham etos allerede fra start. Vi lar oss lettere overbevise av noen vi tror vi kan stole på."
+                },
+                {
+                    "si": "Hofmann er bekymret. Han mener at kunstig intelligens, eller KI, gjør oss sløve."
+                }
+            ]
+        },
+        {
+            "id": "ordet",
+            "kapittel": "Metaforen",
+            "visual": {
+                "type": "DebattOrd",
+                "props": {
+                    "modus": "tyv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hofmann kaller KI en ferdighetstyv. Han mener den stjeler på to måter."
+                },
+                {
+                    "si": "Den svekker ferdighetene vi allerede har. Og den hindrer oss i å lære nye."
+                },
+                {
+                    "si": "Legg merke til selve ordet. Han har satt sammen to ord: ferdighet og tyv."
+                },
+                {
+                    "si": "Han kunne skrevet: teknologi som svekker ferdighetene våre. Men det er kjedelig."
+                },
+                {
+                    "si": "Ordet ferdighetstyv lager et bilde i hodet ditt. Et slikt bilde kalles en metafor."
+                }
+            ]
+        },
+        {
+            "id": "tyven",
+            "lyd": "rom",
+            "visual": {
+                "type": "DebattSoyler",
+                "props": {
+                    "modus": "tyv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk over hva en tyv er. En kriminell, som tar noe fra deg mot din vilje."
+                },
+                {
+                    "si": "En tyv er en du må beskytte deg mot."
+                },
+                {
+                    "si": "Med dette ordet gjør Hofmann teknologien om til en person. Det kalles å personifisere. KI blir en skurk."
+                },
+                {
+                    "si": "Det vekker følelser. Vi blir redde for å miste noe verdifullt. Det er patos."
+                }
+            ]
+        },
+        {
+            "id": "skriv",
+            "lyd": "stille",
+            "visual": {
+                "type": "DebattOrd",
+                "props": {
+                    "modus": "skriv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du skriver analysen, holder det ikke å peke på ordet. Du må forklare hva ordet gjør."
+                },
+                {
+                    "si": "Svakt: Forfatteren bruker metaforen ferdighetstyv for å vise at KI er dumt."
+                },
+                {
+                    "si": "Sterkt: Metaforen gjør KI til en kriminell. Det skaper patos, fordi vi føler at noe verdifullt blir tatt fra oss."
+                },
+                {
+                    "si": "En god analyse forklarer hvorfor ordet ble valgt, og hvilken virkning det har på leseren."
+                }
+            ]
+        },
+        {
+            "id": "forskning",
+            "kapittel": "Bevisene",
+            "visual": {
+                "type": "DebattAvis",
+                "props": {
+                    "modus": "forskning"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men Hofmann kan ikke bare skremme oss. Han må også bevise at han har rett."
+                },
+                {
+                    "si": "Han skriver: Forskning viser at. Det er logos, for han bruker forskning for å virke troverdig. Vi stoler på eksperter, så vi blir ofte mindre kritiske."
+                },
+                {
+                    "si": "Han nevner også leger. Vi ser for oss en lege som ikke klarer jobben sin, og det er skremmende."
+                },
+                {
+                    "si": "Men vær kritisk. Hvilken forskning? Han nevner ingen kilder."
+                },
+                {
+                    "si": "Påstanden er litt vag, selv om den virker overbevisende der og da. Å peke på svakheter som dette gjør analysen din dypere."
+                }
+            ]
+        },
+        {
+            "id": "trekket",
+            "kapittel": "Det smarte trekket",
+            "visual": {
+                "type": "DebattAvis",
+                "props": {
+                    "modus": "imotegaelse"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En god debattant vet hva motstanderen kommer til å si. Og han svarer før det blir sagt."
+                },
+                {
+                    "si": "Hofmann skriver: Det kan virke meningsløst å lære seg ferdigheter når KI kan gjøre oppgavene raskere og enklere."
+                },
+                {
+                    "si": "Her innrømmer han at KI er nyttig! Skyter han seg selv i foten?"
+                },
+                {
+                    "si": "Nei. Han viser at han forstår motargumentet. Da virker han gjennomtenkt og balansert, og det gir etos."
+                },
+                {
+                    "si": "Dette kalles imøtegåelse. Det gjør motstanderens argumenter svakere, så vi stoler mer på konklusjonen hans: at komforten har en pris."
+                }
+            ]
+        },
+        {
+            "id": "rammen",
+            "kapittel": "Sy det sammen",
+            "visual": {
+                "type": "DebattOrd",
+                "props": {
+                    "modus": "ramme"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Til slutt skal du sette funnene sammen til en hel tekst. Bruk tre spørsmål som ramme."
+                },
+                {
+                    "si": "Hva? Hva mener avsenderen? Det er hovedsynet."
+                },
+                {
+                    "si": "Hvordan? Hvilke virkemidler, altså grep, bruker han? Her kommer etos, logos, patos og metaforene."
+                },
+                {
+                    "si": "Hvorfor? Hvilken virkning har grepene på leseren?"
+                },
+                {
+                    "si": "Ikke bare list opp virkemidler. Vev dem inn, og vis hvordan teksten virker som en helhet."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Røntgensynet",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ikke bare les.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Vær etterforskeren.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hvem snakker?",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Fakta eller følelser?",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hvert ord er valgt.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Ingenting er tilfeldig.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Neste gang du leser et debattinnlegg, ikke bare les det. Vær etterforskeren."
+                },
+                {
+                    "si": "Spør: Hvem snakker, og hvorfor skal jeg stole på hen? Bruker teksten fakta eller følelser?"
+                },
+                {
+                    "si": "Og husk at ingenting er tilfeldig. Hvert ord er valgt for å styre tankene dine i en bestemt retning."
+                }
+            ]
+        }
+    ]
+}
