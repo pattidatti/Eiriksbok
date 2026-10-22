@@ -3,13 +3,15 @@ import type { ReactNode } from 'react';
 import type { VisualProps } from '../../types';
 
 /**
- * Selve spørsmålet, i to modus:
+ * Selve spørsmålet, i tre modus:
  * - teodise: tre påstander som ikke kan stemme samtidig, ordet teodise og hvor gammelt
  *   problemet er.
- * - to-slags: fysisk ondt (ingen bestemte det) mot moralsk ondt (mennesker mot hverandre).
+ * - to-slags: det ingen bestemte (sykdom, ulykker, natur) mot det mennesker gjør mot hverandre.
+ * - monster: mønsteret til slutt. To spor (må forsvare Gud / karma uten gud), sikhismen
+ *   som bro, og forklare mot handle.
  */
 
-type Modus = 'teodise' | 'to-slags';
+type Modus = 'teodise' | 'to-slags' | 'monster';
 
 const FONT = { fontFamily: 'Outfit, Inter, sans-serif' };
 
@@ -216,11 +218,11 @@ function Teodise({ beat }: { beat: number }) {
             <g transform="translate(0 -330)">
                 <Inn vis={beat >= 4} fra={40}>
                     <rect x={80} y={700} width={1440} height={180} rx={30} fill="#ffffff" />
-                    <line x1={200} y1={800} x2={1400} y2={800} stroke="#94a3b8" strokeWidth={8} />
+                    <line x1={280} y1={800} x2={1320} y2={800} stroke="#94a3b8" strokeWidth={8} />
                     <motion.line
-                        x1={200}
+                        x1={280}
                         y1={800}
-                        x2={1400}
+                        x2={1320}
                         y2={800}
                         stroke="#b45309"
                         strokeWidth={8}
@@ -228,9 +230,9 @@ function Teodise({ beat }: { beat: number }) {
                         animate={{ pathLength: beat >= 4 ? 1 : 0 }}
                         transition={{ duration: 2.2, delay: 0.8 }}
                     />
-                    <circle cx={200} cy={800} r={20} fill="#b45309" />
+                    <circle cx={280} cy={800} r={20} fill="#b45309" />
                     <text
-                        x={200}
+                        x={280}
                         y={760}
                         textAnchor="middle"
                         fontSize={40}
@@ -241,10 +243,10 @@ function Teodise({ beat }: { beat: number }) {
                         Epikur
                     </text>
                     <text
-                        x={200}
+                        x={280}
                         y={856}
                         textAnchor="middle"
-                        fontSize={26}
+                        fontSize={32}
                         fontWeight={600}
                         fill="#64748b"
                         style={FONT}
@@ -256,9 +258,9 @@ function Teodise({ beat }: { beat: number }) {
                         animate={{ opacity: beat >= 4 ? 1 : 0 }}
                         transition={{ delay: beat >= 4 ? 2.6 : 0 }}
                     >
-                        <circle cx={1400} cy={800} r={20} fill="#b45309" />
+                        <circle cx={1320} cy={800} r={20} fill="#b45309" />
                         <text
-                            x={1400}
+                            x={1320}
                             y={760}
                             textAnchor="middle"
                             fontSize={40}
@@ -269,10 +271,10 @@ function Teodise({ beat }: { beat: number }) {
                             Leibniz
                         </text>
                         <text
-                            x={1400}
+                            x={1320}
                             y={856}
                             textAnchor="middle"
-                            fontSize={26}
+                            fontSize={32}
                             fontWeight={600}
                             fill="#64748b"
                             style={FONT}
@@ -289,7 +291,7 @@ function Teodise({ beat }: { beat: number }) {
                         fill="#b45309"
                         style={FONT}
                     >
-                        flere hundre år før vår tidsregning
+                        problemet er mye eldre
                     </text>
                 </Inn>
             </g>
@@ -421,7 +423,7 @@ function ToSlags({ beat }: { beat: number }) {
                     fill="#0284c7"
                     style={FONT}
                 >
-                    Fysisk ondt
+                    Ingen valgte det
                 </text>
                 <Termometer x={200} y={470} />
                 <Hus x={420} y={470} />
@@ -509,7 +511,7 @@ function ToSlags({ beat }: { beat: number }) {
                     fill="#b91c1c"
                     style={FONT}
                 >
-                    Moralsk ondt
+                    Mennesker mot mennesker
                 </text>
                 <Person x={1010} y={540} farge="#475569" />
                 <Person x={1350} y={540} farge="#7c2d12" snudd />
@@ -551,6 +553,180 @@ function ToSlags({ beat }: { beat: number }) {
     );
 }
 
+function Tekst({
+    x,
+    y,
+    str,
+    farge = '#0f172a',
+    vekt = 900,
+    children,
+}: {
+    x: number;
+    y: number;
+    str: number;
+    farge?: string;
+    vekt?: number;
+    children: ReactNode;
+}) {
+    return (
+        <text
+            x={x}
+            y={y}
+            textAnchor="middle"
+            fontSize={str}
+            fontWeight={vekt}
+            fill={farge}
+            style={FONT}
+        >
+            {children}
+        </text>
+    );
+}
+
+function Monster({ beat }: { beat: number }) {
+    const ned = beat >= 1;
+    return (
+        <>
+            {/* 0: ikke hvem som svarer best, men hvilket spørsmål */}
+            <motion.g
+                initial={false}
+                animate={{ y: ned ? -110 : 0, scale: ned ? 0.7 : 1 }}
+                transition={{ duration: 0.7 }}
+                style={{ transformOrigin: '800px 200px' }}
+            >
+                <Inn vis={!ned}>
+                    <rect x={260} y={160} width={1080} height={120} rx={30} fill="#e2e8f0" />
+                    <Tekst x={800} y={240} str={52} farge="#64748b">
+                        Hvem svarer best?
+                    </Tekst>
+                    <line
+                        x1={420}
+                        y1={226}
+                        x2={1180}
+                        y2={210}
+                        stroke="#dc2626"
+                        strokeWidth={10}
+                        strokeLinecap="round"
+                    />
+                </Inn>
+                <rect x={160} y={320} width={1280} height={130} rx={30} fill="#1e293b" />
+                <Tekst x={800} y={404} str={56} farge="#fde68a">
+                    Hvilket spørsmål svarer de på?
+                </Tekst>
+            </motion.g>
+
+            {/* 1: abrahamittiske må forsvare Gud */}
+            <Inn vis={beat >= 1}>
+                <rect
+                    x={80}
+                    y={400}
+                    width={560}
+                    height={330}
+                    rx={30}
+                    fill="#ffffff"
+                    stroke="#2563eb"
+                    strokeWidth={beat === 1 ? 8 : 4}
+                />
+                <Tekst x={360} y={460} str={40} farge="#2563eb">
+                    Abrahamittiske
+                </Tekst>
+                <path
+                    d="M 360 500 L 430 526 L 430 590 Q 430 646 360 676 Q 290 646 290 590 L 290 526 Z"
+                    fill="#1e3a8a"
+                />
+                <Tekst x={360} y={604} str={30} farge="#fde68a">
+                    Gud
+                </Tekst>
+                <Tekst x={360} y={714} str={32} farge="#1e293b" vekt={800}>
+                    må forsvare Gud
+                </Tekst>
+            </Inn>
+
+            {/* 2: indiske slipper */}
+            <Inn vis={beat >= 2}>
+                <rect
+                    x={960}
+                    y={400}
+                    width={560}
+                    height={330}
+                    rx={30}
+                    fill="#ffffff"
+                    stroke="#d97706"
+                    strokeWidth={beat === 2 ? 8 : 4}
+                />
+                <Tekst x={1240} y={460} str={40} farge="#d97706">
+                    Indiske
+                </Tekst>
+                <circle cx={1240} cy={590} r={80} fill="none" stroke="#fcd34d" strokeWidth={18} />
+                <Tekst x={1240} y={602} str={32} farge="#92400e">
+                    karma
+                </Tekst>
+                <Tekst x={1240} y={714} str={32} farge="#1e293b" vekt={800}>
+                    ingen gud må svare
+                </Tekst>
+            </Inn>
+
+            {/* 3: sikhismen som bro */}
+            <Inn vis={beat >= 3}>
+                <motion.path
+                    d="M 640 560 Q 800 470 960 560"
+                    fill="none"
+                    stroke="#ea580c"
+                    strokeWidth={16}
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: beat >= 3 ? 1 : 0 }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                />
+                <rect x={660} y={580} width={280} height={120} rx={24} fill="#ea580c" />
+                <Tekst x={800} y={630} str={34} farge="#ffffff">
+                    Sikhismen
+                </Tekst>
+                <Tekst x={800} y={676} str={28} farge="#fff7ed" vekt={700}>
+                    Gud og karma
+                </Tekst>
+            </Inn>
+
+            {/* 4: forklare eller handle, ingen ferdige svar */}
+            <Inn vis={beat >= 4}>
+                <rect
+                    x={80}
+                    y={760}
+                    width={500}
+                    height={110}
+                    rx={26}
+                    fill="#ffffff"
+                    stroke="#94a3b8"
+                    strokeWidth={4}
+                />
+                <Tekst x={330} y={830} str={36} farge="#334155">
+                    Hvorfor finnes den?
+                </Tekst>
+                <rect
+                    x={1020}
+                    y={760}
+                    width={500}
+                    height={110}
+                    rx={26}
+                    fill="#ffffff"
+                    stroke="#94a3b8"
+                    strokeWidth={4}
+                />
+                <Tekst x={1270} y={830} str={36} farge="#334155">
+                    Hva gjør du med den?
+                </Tekst>
+                <rect x={610} y={760} width={380} height={110} rx={26} fill="#dc2626" />
+                <Tekst x={800} y={808} str={32} farge="#ffffff">
+                    Ingen svar
+                </Tekst>
+                <Tekst x={800} y={850} str={32} farge="#ffffff">
+                    er ferdige
+                </Tekst>
+            </Inn>
+        </>
+    );
+}
+
 export function LidelseSporsmal({ beat, props }: VisualProps<{ modus?: Modus }>) {
     const modus: Modus = props.modus ?? 'teodise';
     return (
@@ -560,7 +736,13 @@ export function LidelseSporsmal({ beat, props }: VisualProps<{ modus?: Modus }>)
                 preserveAspectRatio="xMidYMid meet"
                 className="absolute inset-0 w-full h-full"
             >
-                {modus === 'teodise' ? <Teodise beat={beat} /> : <ToSlags beat={beat} />}
+                {modus === 'teodise' ? (
+                    <Teodise beat={beat} />
+                ) : modus === 'monster' ? (
+                    <Monster beat={beat} />
+                ) : (
+                    <ToSlags beat={beat} />
+                )}
             </svg>
         </div>
     );

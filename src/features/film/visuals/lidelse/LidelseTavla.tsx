@@ -98,7 +98,7 @@ function Tavla({
                                     />
                                     <g
                                         transform={`translate(${cx} ${cy}) scale(0.62)`}
-                                        opacity={vist ? 1 : 0.35}
+                                        opacity={vist ? 1 : 0.6}
                                     >
                                         <LidelseSymbol
                                             id={t.id}
@@ -109,9 +109,9 @@ function Tavla({
                                         x={cx}
                                         y={cy + 72}
                                         textAnchor="middle"
-                                        fontSize={24}
+                                        fontSize={26}
                                         fontWeight={700}
-                                        fill={vist ? '#1e293b' : '#a8a29e'}
+                                        fill={vist ? '#1e293b' : '#78716c'}
                                         style={FONT}
                                     >
                                         {t.navn}

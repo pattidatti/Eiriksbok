@@ -4,13 +4,16 @@ import type { ReactNode } from 'react';
 import type { VisualProps } from '../../types';
 
 /**
- * De indiske svarene, i to modus:
+ * De indiske svarene, i fire modus:
  * - karma: en handling som går ut og kommer tilbake, ingen dommer, så hjulet samsara og
  *   veien ut av det.
+ * - fortjent: har den som lider, fortjent det? Tidligere liv er skjult, dårlig karma vaskes
+ *   bort, god karma gis videre, og mennesket velger.
  * - sannheter: buddhismens fire edle sannheter som fire kort, uten en gud i bildet.
+ * - sikh: sikhismen mellom gruppene, én Gud over hjulet, og hukam som vei ut.
  */
 
-type Modus = 'karma' | 'sannheter';
+type Modus = 'karma' | 'fortjent' | 'sannheter' | 'sikh';
 
 const FONT = { fontFamily: 'Outfit, Inter, sans-serif' };
 
@@ -213,7 +216,7 @@ function Karma({ beat, playing }: { beat: number; playing: boolean }) {
                         {[
                             { a: -90, tekst: 'fødsel' },
                             { a: 30, tekst: 'død' },
-                            { a: 150, tekst: 'gjenfødsel' },
+                            { a: 150, tekst: 'ny fødsel' },
                         ].map((n) => {
                             const r = (n.a * Math.PI) / 180;
                             const x = Math.cos(r) * 250;
@@ -223,12 +226,12 @@ function Karma({ beat, playing }: { beat: number; playing: boolean }) {
                                     <circle
                                         cx={x}
                                         cy={y}
-                                        r={62}
+                                        r={76}
                                         fill="#ffffff"
                                         stroke="#d97706"
                                         strokeWidth={6}
                                     />
-                                    <T x={x} y={y + 11} str={30}>
+                                    <T x={x} y={y + 10} str={28}>
                                         {n.tekst}
                                     </T>
                                 </g>
@@ -266,6 +269,206 @@ function Karma({ beat, playing }: { beat: number; playing: boolean }) {
                 </motion.g>
             )}
         </AnimatePresence>
+    );
+}
+
+function Menneske({ x, y, farge = '#b45309' }: { x: number; y: number; farge?: string }) {
+    return (
+        <g transform={`translate(${x} ${y})`}>
+            <circle cx={0} cy={-190} r={40} fill="#e0b98a" />
+            <path d="M -56 -140 Q 0 -158 56 -140 L 66 0 L -66 0 Z" fill={farge} />
+        </g>
+    );
+}
+
+/** Har den som lider, fortjent det? Fire beats, ett svar per beat. */
+function Fortjent({ beat }: { beat: number }) {
+    const titler = [
+        'Har den som lider, fortjent det?',
+        'Ingen vet hva et annet menneske gjorde før',
+        'Karma er ingen låst dom',
+        'God karma kan gis videre',
+    ];
+    const tittel = titler[Math.min(beat, 3)];
+    // Den mørke kulen over mennesket: dårlig karma. Den krymper når den vaskes bort.
+    const kule = beat >= 2 ? 0.35 : 1;
+    return (
+        <>
+            <AnimatePresence mode="wait">
+                <motion.g
+                    key={tittel}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                >
+                    <T x={800} y={96} str={beat === 1 ? 50 : 56} vekt={900}>
+                        {tittel}
+                    </T>
+                </motion.g>
+            </AnimatePresence>
+
+            {/* Mennesket som lider */}
+            <motion.g
+                initial={false}
+                animate={{ x: beat >= 3 ? -240 : 0 }}
+                transition={{ duration: 0.9 }}
+            >
+                <Menneske x={800} y={760} />
+                <motion.circle
+                    cx={800}
+                    cy={440}
+                    r={70}
+                    fill="#44403c"
+                    initial={false}
+                    animate={{ scale: kule, opacity: beat >= 3 ? 0.25 : 1 }}
+                    transition={{ duration: 1.6, delay: beat === 2 ? 1 : 0 }}
+                    style={{ transformOrigin: '800px 440px' }}
+                />
+                <Inn vis={beat === 0}>
+                    <T x={800} y={466} str={80} farge="#fde68a" vekt={900}>
+                        ?
+                    </T>
+                </Inn>
+            </motion.g>
+
+            {/* 0: vekta, fortjent eller ikke */}
+            <Inn vis={beat === 0}>
+                <rect
+                    x={160}
+                    y={560}
+                    width={360}
+                    height={110}
+                    rx={26}
+                    fill="#ffffff"
+                    stroke="#dc2626"
+                    strokeWidth={5}
+                />
+                <T x={340} y={630} str={40} farge="#7f1d1d" vekt={900}>
+                    fortjent?
+                </T>
+            </Inn>
+
+            {/* 1: tidligere liv bak et forheng */}
+            <Inn vis={beat === 1}>
+                {[220, 400, 1200, 1380].map((x, i) => (
+                    <g key={x} opacity={0.5 - i * 0.05}>
+                        <Menneske x={x} y={700} farge="#a8a29e" />
+                    </g>
+                ))}
+                <rect
+                    x={130}
+                    y={420}
+                    width={360}
+                    height={300}
+                    rx={24}
+                    fill="#e7dfd0"
+                    opacity={0.92}
+                />
+                <rect
+                    x={1110}
+                    y={420}
+                    width={360}
+                    height={300}
+                    rx={24}
+                    fill="#e7dfd0"
+                    opacity={0.92}
+                />
+                <T x={310} y={600} str={110} farge="#a8a29e" vekt={900}>
+                    ?
+                </T>
+                <T x={1290} y={600} str={110} farge="#a8a29e" vekt={900}>
+                    ?
+                </T>
+                <T x={310} y={790} str={30} farge="#64748b" vekt={700}>
+                    tidligere liv
+                </T>
+                <T x={1290} y={790} str={30} farge="#64748b" vekt={700}>
+                    tidligere liv
+                </T>
+                <rect x={560} y={810} width={480} height={74} rx={22} fill="#1e293b" />
+                <T x={800} y={860} str={36} farge="#fde68a" vekt={900}>
+                    Mange sier nei
+                </T>
+            </Inn>
+
+            {/* 2: ritualer og pilegrimsreiser vasker */}
+            <Inn vis={beat === 2}>
+                {[0, 1, 2, 3, 4].map((i) => (
+                    <motion.path
+                        key={i}
+                        d="M 0 -18 Q 12 0 0 10 Q -12 0 0 -18 Z"
+                        fill="#0ea5e9"
+                        initial={false}
+                        animate={
+                            beat === 2
+                                ? { y: [240, 420], opacity: [0, 1, 0] }
+                                : { y: 240, opacity: 0 }
+                        }
+                        transition={{
+                            duration: 1.4,
+                            repeat: beat === 2 ? Infinity : 0,
+                            delay: i * 0.28,
+                        }}
+                        style={{ x: 720 + i * 40 }}
+                    />
+                ))}
+                <rect
+                    x={150}
+                    y={330}
+                    width={420}
+                    height={110}
+                    rx={26}
+                    fill="#ffffff"
+                    stroke="#0ea5e9"
+                    strokeWidth={5}
+                />
+                <T x={360} y={400} str={40} farge="#0c4a6e" vekt={900}>
+                    ritualer
+                </T>
+                <rect
+                    x={1030}
+                    y={330}
+                    width={420}
+                    height={110}
+                    rx={26}
+                    fill="#ffffff"
+                    stroke="#0ea5e9"
+                    strokeWidth={5}
+                />
+                <T x={1240} y={400} str={40} farge="#0c4a6e" vekt={900}>
+                    pilegrimsreiser
+                </T>
+                <T x={800} y={850} str={32} farge="#334155" vekt={700}>
+                    i hinduismen: vasker bort dårlig karma
+                </T>
+            </Inn>
+
+            {/* 3: god karma gis videre, og valget */}
+            <Inn vis={beat >= 3}>
+                <Menneske x={1040} y={760} farge="#0f766e" />
+                <motion.circle
+                    r={36}
+                    fill="#facc15"
+                    stroke="#a16207"
+                    strokeWidth={5}
+                    initial={false}
+                    animate={
+                        beat >= 3
+                            ? { cx: [1040, 800, 560], cy: [470, 360, 470] }
+                            : { cx: 1040, cy: 470 }
+                    }
+                    transition={{ duration: 2.2, delay: 0.6, ease: 'easeInOut' }}
+                />
+                <T x={800} y={300} str={30} farge="#334155" vekt={700}>
+                    i noen buddhistiske retninger
+                </T>
+                <rect x={430} y={810} width={740} height={80} rx={24} fill="#0d9488" />
+                <T x={800} y={864} str={40} farge="#ffffff" vekt={900}>
+                    Mennesket kan alltid velge
+                </T>
+            </Inn>
+        </>
     );
 }
 
@@ -340,6 +543,160 @@ function Tegning({ i }: { i: number }) {
                 </g>
             );
     }
+}
+
+/** Sikhismen: mellom gruppene, én Gud over hjulet, mennesket holdt fast, hukam som vei ut. */
+function Sikh({ beat, playing }: { beat: number; playing: boolean }) {
+    const vinkel = useVinkel(playing && beat >= 1, 0.03);
+    const titler = [
+        'Sikhismen: mellom to grupper',
+        'Én Gud og karma',
+        'Holdt fast i kretsløpet',
+        'Veien ut: hukam',
+    ];
+    const tittel = titler[Math.min(beat, 3)];
+    return (
+        <>
+            <AnimatePresence mode="wait">
+                <motion.g
+                    key={tittel}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                >
+                    <T x={800} y={96} str={56} vekt={900}>
+                        {tittel}
+                    </T>
+                </motion.g>
+            </AnimatePresence>
+
+            {/* 0: to grupper som overlapper, sikhismen i midten */}
+            <Inn vis={beat === 0}>
+                <circle cx={600} cy={500} r={260} fill="#2563eb" opacity={0.18} />
+                <circle cx={1000} cy={500} r={260} fill="#d97706" opacity={0.2} />
+                <T x={480} y={500} str={40} farge="#1e3a8a" vekt={900}>
+                    Abrahamittiske
+                </T>
+                <T x={1120} y={500} str={40} farge="#92400e" vekt={900}>
+                    Indiske
+                </T>
+                <rect x={690} y={460} width={220} height={80} rx={40} fill="#ea580c" />
+                <T x={800} y={512} str={36} farge="#ffffff" vekt={900}>
+                    Sikhisme
+                </T>
+            </Inn>
+
+            {/* 1-3: hjulet med Gud over */}
+            <Inn vis={beat >= 1}>
+                <g transform="translate(700 540)">
+                    <circle r={220} fill="none" stroke="#fcd34d" strokeWidth={30} />
+                    <g transform={`rotate(${vinkel})`}>
+                        {[0, 120, 240].map((a) => (
+                            <path
+                                key={a}
+                                d="M 0 -220 l -24 -22 l 0 44 Z"
+                                transform={`rotate(${a + 60})`}
+                                fill="#d97706"
+                            />
+                        ))}
+                    </g>
+                    <T x={0} y={-20} str={34} farge="#92400e" vekt={900}>
+                        karma og
+                    </T>
+                    <T x={0} y={24} str={34} farge="#92400e" vekt={900}>
+                        gjenfødsel
+                    </T>
+                </g>
+                <g transform="translate(1250 300)">
+                    <motion.circle
+                        r={90}
+                        fill="#fef3c7"
+                        initial={false}
+                        animate={{ r: beat >= 1 ? [84, 100, 84] : 84 }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                    />
+                    <circle r={66} fill="#ea580c" />
+                    <T x={0} y={14} str={40} farge="#ffffff" vekt={900}>
+                        Gud
+                    </T>
+                    <T x={0} y={140} str={30} farge="#334155" vekt={700}>
+                        vet alt og kan alt
+                    </T>
+                </g>
+            </Inn>
+
+            {/* 2: mennesket holdt fast av tre ting */}
+            <Inn vis={beat >= 2}>
+                <motion.g
+                    initial={false}
+                    animate={{ x: beat >= 3 ? 330 : 0, y: beat >= 3 ? -40 : 0 }}
+                    transition={{ duration: 1.6, delay: beat >= 3 ? 0.8 : 0 }}
+                >
+                    <g transform="translate(700 320) scale(0.6)">
+                        <circle cx={0} cy={-190} r={40} fill="#e0b98a" />
+                        <path d="M -56 -140 Q 0 -158 56 -140 L 66 0 L -66 0 Z" fill="#b45309" />
+                    </g>
+                </motion.g>
+                <Inn vis={beat === 2}>
+                    {[
+                        { ord: 'lyster', x: 330, y: 400 },
+                        { ord: 'egoisme', x: 300, y: 560 },
+                        { ord: 'uvitenhet', x: 350, y: 720 },
+                    ].map((o) => (
+                        <g key={o.ord}>
+                            <line
+                                x1={o.x + 110}
+                                y1={o.y - 12}
+                                x2={680}
+                                y2={300}
+                                stroke="#78716c"
+                                strokeWidth={6}
+                                strokeDasharray="10 10"
+                            />
+                            <rect
+                                x={o.x - 120}
+                                y={o.y - 50}
+                                width={240}
+                                height={76}
+                                rx={20}
+                                fill="#ffffff"
+                                stroke="#dc2626"
+                                strokeWidth={5}
+                            />
+                            <T x={o.x} y={o.y} str={34} farge="#7f1d1d" vekt={900}>
+                                {o.ord}
+                            </T>
+                        </g>
+                    ))}
+                    <T x={1250} y={800} str={30} farge="#334155" vekt={700}>
+                        egoisme: bare tenke på seg selv
+                    </T>
+                </Inn>
+            </Inn>
+
+            {/* 3: hukam, å leve slik Gud vil, og nåden */}
+            <Inn vis={beat >= 3}>
+                <motion.path
+                    d="M 720 300 Q 860 200 1000 260"
+                    fill="none"
+                    stroke="#0d9488"
+                    strokeWidth={12}
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: beat >= 3 ? 1 : 0 }}
+                    transition={{ duration: 1.4, delay: 0.4 }}
+                />
+                <rect x={130} y={720} width={760} height={120} rx={28} fill="#0d9488" />
+                <T x={510} y={774} str={38} farge="#ffffff" vekt={900}>
+                    hukam: leve slik Gud vil
+                </T>
+                <T x={510} y={818} str={28} farge="#ccfbf1" vekt={700}>
+                    og få del i Guds nåde, en gave
+                </T>
+            </Inn>
+        </>
+    );
 }
 
 function Sannheter({ beat }: { beat: number }) {
@@ -430,7 +787,7 @@ export function LidelseHjulet({ beat, playing, props }: VisualProps<{ modus?: Mo
     return (
         <div
             className="absolute inset-0"
-            style={{ background: modus === 'karma' ? '#fdf6e9' : '#f5efe4' }}
+            style={{ background: modus === 'sannheter' ? '#f5efe4' : '#fdf6e9' }}
         >
             <svg
                 viewBox="0 0 1600 900"
@@ -439,6 +796,10 @@ export function LidelseHjulet({ beat, playing, props }: VisualProps<{ modus?: Mo
             >
                 {modus === 'karma' ? (
                     <Karma beat={beat} playing={playing} />
+                ) : modus === 'fortjent' ? (
+                    <Fortjent beat={beat} />
+                ) : modus === 'sikh' ? (
+                    <Sikh beat={beat} playing={playing} />
                 ) : (
                     <Sannheter beat={beat} />
                 )}
