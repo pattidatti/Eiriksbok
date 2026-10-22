@@ -1,9 +1,13 @@
+import { BOSSES } from './hundenMore';
+
 // Tall og tekster for «Hunden spiste leksa» (`/oving/hunden-spiste-leksa`).
 // Ren data uten DOM: balansen justeres her, motoren ligger i hundenGame.ts.
 
 export interface Settings {
     sound: boolean;
     reduce: boolean;
+    music: boolean;
+    mvol: number; // musikkvolum 0-1
 }
 
 export interface State {
@@ -38,6 +42,24 @@ export interface State {
     ach: Record<string, 1>; // merker. Følger med på alle skoler
     cnt: Record<string, number>; // tellere for merkene
     mice: number[]; // hva hver mus har spist så langt
+    rTotal: number; // unnskyldninger siden forrige kommunebytte. Ryktet regnes av dette
+    boss: Record<string, 1>; // sjefer du har slått (i dette spillet+)
+    bossCd: number; // spilletid før du kan utfordre en sjef igjen
+    ended: number; // ganger du har slått den siste sjefen
+    ng: number; // Hundens hevn: hvor mange ganger du har startet på nytt etter slutten
+    bevis: number; // Hundens hevn: lærerens bevis mot deg (0-1)
+    kommune: number; // ganger du har byttet kommune
+    legende: number; // legendepoeng samlet
+    legPts: number; // legendepoeng å bruke
+    ks: Record<string, number>; // nivåer kjøpt i kommunekassa
+    laws: string[]; // lovene som gjelder (kommunestyret)
+    lawT: number[]; // spilletid da hver lovplass kan byttes igjen
+    stock: { k: number[]; tr: number[]; own: number[]; avg: number[]; unit: number };
+    orbit: number[]; // medskyldige i bane rundt leksa (planetbanen)
+    orbitT: number[];
+    best: { t: string; sc: number }[]; // de beste unnskyldningene fra verkstedet
+    vT: number; // spilletid da verkstedet er klart igjen
+    bluffT: number;
 }
 
 /** Det som skjer på én skole. Nullstilles ved skolebytte og blir rapportkortet. */
@@ -470,6 +492,8 @@ export const PERKS: Perk[] = [
     { id: 'era2', n: 'Kjent i kommunen', d: 'Start hver skole i kommunestyret.', c: 3000, ic: '🏛️', req: 'era1' },
     { id: 'era3', n: 'Stortingets yndling', d: 'Start hver skole på Stortinget.', c: 15000, ic: '🎤', req: 'era2' },
     { id: 'dyn3', n: 'Unnskyldningsunivers', d: 'All produksjon ×5. For alltid.', c: 40000, ic: '🌌', req: 'dyn2' },
+    { id: 'bokorm', n: 'Bokorm', d: 'Ett av de gale svarene i lynprøver og sjefskamper strykes ut.', c: 400, ic: '🐛' },
+    { id: 'svak', n: 'Svakt punkt', d: 'Første riktige svar mot en sjef gjør dobbel skade.', c: 800, ic: '🎯' },
 ];
 
 /** Nivåer i Ryktebørsen: kan kjøpes mange ganger, og blir dyrere for hvert nivå. */
@@ -493,6 +517,8 @@ export const RANKS: RankPerk[] = [
     { id: 'lq', n: 'Lesehestens rykte', d: 'Lynprøver gir 50 % mer per nivå.', max: 15, c0: 30, g: 1.65, ic: '📚' },
     { id: 'lt', n: 'Tenkepause', d: 'Lynprøven gir 3 sekunder ekstra per nivå.', max: 5, c0: 20, g: 1.9, ic: '🤔' },
     { id: 'le', n: 'Alltid noe på gang', d: 'Hendelser kommer 15 % oftere per nivå.', max: 6, c0: 40, g: 1.9, ic: '🎲' },
+    { id: 'lh', n: 'Hjertestyrke', d: 'Ett liv mer i sjefskamper per nivå.', max: 2, c0: 150, g: 4, ic: '❤️' },
+    { id: 'lk', n: 'Kunnskap er makt', d: 'All produksjon +10 % per sjef du har slått, per nivå.', max: 5, c0: 200, g: 2.2, ic: '🧠' },
     { id: 'ls', n: 'Sparegris', d: 'Start hver skole med unnskyldninger på bok. Ti ganger mer per nivå.', max: 12, c0: 30, g: 1.85, ic: '🐷' },
 ];
 export const rankCost = (r: RankPerk, lv: number) => Math.ceil(r.c0 * Math.pow(r.g, lv));
@@ -535,7 +561,7 @@ export function freshState(reduce: boolean): State {
         resets: 0,
         school: 0,
         hints: {},
-        set: { sound: true, reduce },
+        set: { sound: true, reduce, music: true, mvol: 0.5 },
         last: Date.now(),
         buy: 1,
         played: 0,
@@ -548,8 +574,27 @@ export function freshState(reduce: boolean): State {
         ach: {},
         cnt: {},
         mice: [],
+        rTotal: 0,
+        boss: {},
+        bossCd: 0,
+        ended: 0,
+        ng: 0,
+        bevis: 0,
+        kommune: 0,
+        legende: 0,
+        legPts: 0,
+        ks: {},
+        laws: [],
+        lawT: [0, 0, 0],
+        stock: freshStock(),
+        orbit: [-1, -1, -1],
+        orbitT: [0, 0, 0],
+        best: [],
+        vT: 0,
+        bluffT: 0,
     };
 }
+export const freshStock = () => ({ k: [40, 25, 60, 35, 20], tr: [0, 0, 0, 0, 0], own: [0, 0, 0, 0, 0], avg: [0, 0, 0, 0, 0], unit: 0 });
 
 /* ================= Hunden vokser ================= */
 // Linjer til nyhetslinja for hvert steg. 5 = kjempehund, 6 = slankekur.
@@ -673,4 +718,22 @@ ACH.push(
     { id: 'stingy', n: 'Gjerrig', d: 'Si nei til sultne hunder fem ganger.', ic: '🙅', q: (s) => cnt(s, 'stingy') >= 5, secret: true },
     { id: 'night', n: 'Nattugle', d: 'Spill etter klokka elleve om kvelden.', ic: '🦉', q: () => { const h = new Date().getHours(); return h >= 23 || h < 5; }, secret: true },
     { id: 'fatmouse', n: 'Mett mus', d: 'Fang en mus som har spist i mer enn fem minutter.', ic: '🧀', q: (s) => cnt(s, 'fatmouse') >= 1, secret: true }
+);
+BOSSES.forEach((b) =>
+    ACH.push({ id: 'boss_' + b.id, n: b.id === 'b8' ? 'Slutten' : `Slo ${b.n.toLowerCase()}`, d: b.id === 'b8' ? 'Slå den som fant opp lekser.' : `Vinn sjefskampen mot ${b.n.toLowerCase()}.`, ic: b.ic, q: (s) => !!s.boss[b.id] || (b.id === 'b8' && s.ended > 0), secret: b.id === 'b8' })
+);
+ACH.push(
+    { id: 'ng1', n: 'Hundens hevn', d: 'Start Hundens hevn.', ic: '🐕', q: (s) => s.ng >= 1, secret: true },
+    { id: 'ng3', n: 'Hevnen er søt', d: 'Start Hundens hevn tre ganger.', ic: '🍬', q: (s) => s.ng >= 3, secret: true },
+    { id: 'kom1', n: 'Flyttelass', d: 'Bytt kommune.', ic: '🚚', q: (s) => s.kommune >= 1 },
+    { id: 'kom5', n: 'Kjent i hele landet', d: 'Bytt kommune fem ganger.', ic: '🗺️', q: (s) => s.kommune >= 5 },
+    { id: 'verk1', n: 'Snekker', d: 'Lever en unnskyldning fra verkstedet.', ic: '🛠️', q: (s) => cnt(s, 'verk') >= 1 },
+    { id: 'verk25', n: 'Unnskyldningsmester', d: 'Lever 25 unnskyldninger fra verkstedet.', ic: '🏗️', q: (s) => cnt(s, 'verk') >= 25 },
+    { id: 'verk40', n: 'Mesterverk', d: 'Lag en unnskyldning verdt minst 40 poeng.', ic: '🖼️', q: (s) => cnt(s, 'verk40') >= 1 },
+    { id: 'klassiker', n: 'Klassikeren', d: 'Lag den mest kjente unnskyldningen av dem alle.', ic: '📜', q: (s) => cnt(s, 'klassiker') >= 1, secret: true },
+    { id: 'kosmisk', n: 'Den kosmiske', d: 'Lag den største unnskyldningen i universet.', ic: '🌌', q: (s) => cnt(s, 'kosmisk') >= 1, secret: true },
+    { id: 'bluff5', n: 'Pokerfjes', d: 'Vinn alle rundene mot rektor.', ic: '🃏', q: (s) => cnt(s, 'bluff5') >= 1 },
+    { id: 'lov', n: 'Lovgiver', d: 'Vedta en lov i kommunestyret.', ic: '⚖️', q: (s) => cnt(s, 'laws') >= 1 },
+    { id: 'bors10', n: 'Børshai', d: 'Selg aksjer med gevinst ti ganger.', ic: '🦈', q: (s) => cnt(s, 'borsWin') >= 10 },
+    { id: 'align10', n: 'Astronom', d: 'Fang planetene på linje ti ganger.', ic: '🔭', q: (s) => cnt(s, 'align') >= 10 }
 );

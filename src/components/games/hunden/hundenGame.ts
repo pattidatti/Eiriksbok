@@ -27,9 +27,27 @@ import {
     VERBS,
     freshRun,
     freshState,
+    freshStock,
     type State,
 } from './hundenData';
 import { loadLynQuestions, type LynDecks, type LynQuestion } from './hundenQuiz';
+import { createBoss } from './hundenBoss';
+import type { Ctx } from './hundenCtx';
+import { createMini } from './hundenMini';
+import {
+    BOSS_REWARD,
+    BOSSES,
+    END_AT,
+    HEVN_HEAD,
+    HEVN_MULT,
+    KOMMUNE_AT,
+    KOMMUNER,
+    KSHOP,
+    legendeFor,
+    ORBIT_MULT,
+    TREE,
+} from './hundenMore';
+import { createMusic } from './hundenMusic';
 import { createScene, DISCOVERIES } from './hundenScene';
 
 const KEY = 'hunden-spiste-leksa-v1';
@@ -112,6 +130,7 @@ const MARKUP = `
       <button class="btn" id="hsl-verb" hidden><span class="vi"></span><span class="vn"></span><small class="vc"></small></button>
       <div id="hsl-buffs"></div>
       <div id="hsl-mice"></div>
+      <div id="hsl-bevis" hidden title="Lærer Tønnessen samler bevis. Riktige svar på lynprøver sletter bevis."><div class="row"><span>📁 Lærerens bevis</span></div><div class="bar"><i></i></div></div>
     </section>
     <aside id="hsl-shop" class="off" aria-label="Butikk">
       <h2>Unnskyldningsbutikken <span id="hsl-amt" role="group" aria-label="Kjøp antall"><button data-a="1" aria-pressed="true">×1</button><button data-a="10" aria-pressed="false">×10</button><button data-a="max" aria-pressed="false">Maks</button></span></h2>
@@ -123,7 +142,9 @@ const MARKUP = `
     <a class="btn" href="/oving" id="hsl-back">← Øving</a>
     <button class="btn" id="hsl-setBtn">Innstillinger</button>
     <button class="btn" id="hsl-sndBtn">Lyd: på</button>
+    <button class="btn" id="hsl-musBtn">Musikk: på</button>
     <button class="btn" id="hsl-achBtn" hidden></button>
+    <button class="btn" id="hsl-miniBtn" hidden>🎲 Minispill</button>
     <span class="sp"></span>
     <button class="btn big" id="hsl-prestBtn" hidden><span class="pl">Bytt skole</span><span class="pg"></span><i class="pp"><b></b></i></button>
   </footer>
@@ -201,6 +222,16 @@ function normalize(o: Partial<State>, reduce: boolean): State {
     s.ach = o.ach ?? {};
     s.cnt = o.cnt ?? {};
     s.mice = Array.isArray(o.mice) ? o.mice.map((x) => +x || 0).slice(0, 12) : [];
+    // Før kommunebytte fantes, ble ryktet regnet av alt eleven hadde laget
+    if (o.rTotal === undefined) s.rTotal = s.allTotal;
+    s.boss = o.boss ?? {};
+    s.ks = o.ks ?? {};
+    s.laws = Array.isArray(o.laws) ? o.laws : [];
+    s.lawT = Array.isArray(o.lawT) ? o.lawT : [0, 0, 0];
+    s.stock = Object.assign(freshStock(), o.stock ?? {});
+    s.orbit = Array.isArray(o.orbit) ? o.orbit : [-1, -1, -1];
+    s.orbitT = Array.isArray(o.orbitT) ? o.orbitT : [0, 0, 0];
+    s.best = Array.isArray(o.best) ? o.best : [];
     // v1 regnet rykte med kvadratrot og ga altfor mye. Regn om etter kubikkroten.
     if ((o.v ?? 1) < 2) {
         const r = Math.floor(Math.cbrt((s.allTotal || 0) / BAL.rykteDiv));
@@ -290,6 +321,9 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     const msCount = (owned: number) => BAL.msAt.filter((x) => owned >= x).length;
     // Nivåer kjøpt i Ryktebørsen
     const L = (id: string) => S.lv[id] ?? 0;
+    const K = (id: string) => S.ks[id] ?? 0;
+    // Lover fra kommunestyret
+    const law = (id: string) => S.laws.includes(id);
     const msMult = () => BAL.msMult + 0.1 * L('lm');
     // Hvor stor hunden er: ett steg per hundeoppgradering, og ett til for kjempehunden
     const dogStage = () => (S.upg.hv1 ? 1 : 0) + (S.upg.hv2 ? 1 : 0) + (S.upg.hv3 ? 1 : 0) + (S.upg.hv4 ? 1 : 0) + (S.upg.hv5a ? 1 : 0);
@@ -297,6 +331,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     function prodMult(i: number) {
         let m = Math.pow(msMult(), msCount(S.owned[i]));
         if (i === 0 && S.upg.hv1) m *= 2;
+        if (law('bacon')) m *= i === 0 ? 5 : 0.9;
+        if (S.maxEra >= 5 && S.orbit.includes(i)) m *= ORBIT_MULT;
         for (let t = 0; t < 4; t++) if (S.upg[`p${i}_${t}`]) m *= 2;
         return m;
     }
@@ -314,6 +350,12 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (S.perks.dyn2) m *= 3;
         if (S.perks.dyn3) m *= 5;
         m *= 1 + 0.25 * L('lp');
+        // Sjefer du har slått, Hundens hevn og kommunekassa
+        const nb = Object.keys(S.boss).length;
+        m *= Math.pow(BOSS_REWARD, nb) * (1 + 0.1 * L('lk') * nb);
+        m *= Math.pow(HEVN_MULT, S.ng) * Math.pow(2, K('kp'));
+        if (law('fre')) m *= 1.5;
+        if (law('mobil')) m *= 0.8;
         if (!noBuff) for (const b of buffs) if (b.prod) m *= b.prod;
         return m;
     }
@@ -334,6 +376,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             if (u.cp) cp += u.cp;
         }
         let v = cm * (1 + BAL.ryktePct * S.rykte) * (1 + 0.5 * L('lc')) + pps() * cp;
+        if (law('mobil')) v *= 3;
+        if (law('super')) v *= 0.7;
         v *= flowMult();
         for (const b of buffs) if (b.click) v *= b.click;
         return v;
@@ -355,13 +399,15 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (S.perks.star) f *= 2;
         if (S.upg.hv5b) f *= 1.3;
         f *= 1 + 0.1 * L('lg');
+        if (law('kaffe')) f *= 0.8;
         return f;
     }
-    const goldDur = () => (S.upg.gd ? 2 : 1) * (1 + 0.15 * L('lb'));
+    const goldDur = () => (S.upg.gd ? 2 : 1) * (1 + 0.15 * L('lb')) * (law('fri') ? 1.5 : 1);
+    const teachGap = () => rnd(BAL.teachMin, BAL.teachMax) * (law('kaffe') ? 2 : 1) * (law('bib') ? 0.6 : 1);
     function quizMult() {
         let m = 1;
         for (const id in S.upg) if (UPI[id]?.hq) m *= UPI[id].hq as number;
-        return m * (1 + 0.5 * L('lq'));
+        return m * (1 + 0.5 * L('lq')) * (law('fre') ? 0.5 : 1) * (law('bib') ? 3 : 1);
     }
     function quizTime() {
         let t = BAL.quizTime;
@@ -369,12 +415,13 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         return t + 3 * L('lt');
     }
     // Kubikkrot: ryktet vokser saktere jo lenger du kommer, så prisene i Ryktebørsen holder
-    const rykteFor = (total: number) => Math.floor(Math.cbrt(total / BAL.rykteDiv));
+    const rykteFor = (total: number) => Math.floor(Math.cbrt(total / BAL.rykteDiv) * (1 + 0.25 * K('kr')));
     const rykteGainable = () =>
-        Math.max(0, rykteFor(S.allTotal) - S.rykte);
+        Math.max(0, rykteFor(S.rTotal) - S.rykte);
     function earn(x: number) {
         S.bank += x;
         S.runTotal += x;
+        S.rTotal += x;
         S.allTotal += x;
     }
     const schoolName = () => SCHOOLS[S.school % SCHOOLS.length];
@@ -827,7 +874,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (!auto) eventClick();
         let v = clickPow();
         // Superunnskyldning: et sjeldent klikk som er verdt mye mer
-        const crit = !auto && Math.random() < BAL.critChance + 0.01 * L('lx');
+        const crit = !auto && Math.random() < (BAL.critChance + 0.01 * L('lx')) * (law('super') ? 2 : 1);
         if (crit) v *= BAL.critMult;
         earn(v);
         S.clicks++;
@@ -1141,18 +1188,37 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         // Neste område: noe å jobbe mot
         const nextEra = ERAS[S.era + 1];
         const nextEl = $('#hsl-next');
-        nextEl.classList.toggle('done', !nextEra);
-        if (nextEra) {
+        const bw = bossWaiting();
+        nextEl.classList.toggle('boss', bw);
+        nextEl.classList.toggle('done', !nextEra && !!S.boss.b8);
+        nextEl.setAttribute('role', bw ? 'button' : 'status');
+        if (bw) {
+            const b = BOSSES[bossIdx()];
+            const wait = Math.ceil(S.bossCd - S.played);
+            $('#hsl-nextName').textContent = `⚔️ ${b.n}`;
+            $('#hsl-nextNum').textContent = wait > 0 ? `om ${wait} s` : 'Utfordre!';
+            $('#hsl-nextBar').style.width = '100%';
+        } else if (nextEra) {
             const goal = BAL.eras[S.era + 1];
             const from = BAL.eras[S.era];
             const frac = Math.min(1, Math.max(0, (S.runTotal - from) / (goal - from)));
             $('#hsl-nextName').textContent = `Neste område: ${nextEra.n}`;
             $('#hsl-nextNum').textContent = `${fmt(S.runTotal)} / ${fmt(goal)}`;
             $('#hsl-nextBar').style.width = (frac * 100).toFixed(1) + '%';
+        } else if (!S.boss.b8) {
+            const from = BAL.eras[S.era];
+            const frac = Math.min(1, Math.max(0, Math.log(S.runTotal / from) / Math.log(END_AT / from)));
+            $('#hsl-nextName').textContent = 'Den siste leksa';
+            $('#hsl-nextNum').textContent = `${fmt(S.runTotal)} / ${fmt(END_AT)}`;
+            $('#hsl-nextBar').style.width = (frac * 100).toFixed(1) + '%';
         } else {
-            $('#hsl-nextName').textContent = `Du har nådd det siste området: ${ERAS[S.era].n}`;
+            $('#hsl-nextName').textContent = '🐕 Hundens hevn venter. Trykk her';
             $('#hsl-nextNum').textContent = '';
         }
+        miniBtn.hidden = !mini.unlocked();
+        const mr = mini.ready();
+        const ml = `🎲 Minispill${mr ? ` (${mr} klar)` : ''}`;
+        if (miniBtn.textContent !== ml) miniBtn.textContent = ml;
         $('#hsl-ppc').textContent = fmt(clickPow(), true);
         // medskyldige
         while (S.rev < P.length - 1 && (S.owned[S.rev + 1] > 0 || S.runTotal >= P[S.rev + 1].c * 0.5)) S.rev++;
@@ -1253,14 +1319,17 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         tag.innerHTML = '';
         tag.append(e.n);
         const sm = document.createElement('small');
-        sm.textContent = schoolName();
+        sm.textContent = schoolName() + (S.kommune ? ` · ${KOMMUNER[S.kommune % KOMMUNER.length]}` : '') + (S.ng ? ` · Hundens hevn ${S.ng}` : '');
         tag.append(sm);
+        root.classList.toggle('hevn', S.ng > 0);
         requestAnimationFrame(readCols);
     }
     // Overgangen: kameraet zoomer ut av rommet, og inn i det neste
     let traveling = false;
     function checkEra() {
         if (traveling || S.era >= ERAS.length - 1 || S.runTotal < BAL.eras[S.era + 1]) return;
+        // En sjef vokter veien. Slå den først
+        if (!S.boss[BOSSES[S.era].id] || boss.active()) return;
         if (S.set.reduce) return enterEra();
         traveling = true;
         sfx.whoosh();
@@ -1334,7 +1403,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
     function nextHeadline() {
         if (destroyed) return;
         const dogLines = S.upg.hv5b ? HUND_HEAD[6] : HUND_HEAD[dogStage()];
-        const pool = [...HEAD[S.era], ...(S.era > 0 ? HEAD[S.era - 1] : []), ...dogLines];
+        const pool = [...HEAD[S.era], ...(S.era > 0 ? HEAD[S.era - 1] : []), ...dogLines, ...(S.ng ? HEVN_HEAD : [])];
         // Det eleven selv har gjort kommer først på nyhetslinja
         const own = feats.length ? feats.shift() : null;
         tickMsg.textContent = (own ?? pick(pool)) + '  •  ' + pick(pool);
@@ -1394,18 +1463,20 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         const r = Math.random();
         const dur = goldDur();
         if (r < 0.45) {
-            const g = Math.max(pps() * 90, clickPow() * 40, 25);
+            const g = Math.max(pps() * 90, clickPow() * 40, 25) * (K('kg') ? 2 : 1);
             earn(g);
             floatText('+' + fmt(g), x, y, { size: 34, col: '#e09a00', life: 1.6 });
             toast(`Gullstjerne! +${fmt(g)} unnskyldninger`);
         } else if (r < 0.8) {
-            addBuff({ id: 'frenzy', label: 'Inspirasjon ×7', prod: 7, t: 30 * dur });
-            floatText('INSPIRASJON ×7', x, y, { size: 30, col: '#e09a00', life: 1.6 });
-            toast(`Inspirasjon! All produksjon ×7 i ${Math.round(30 * dur)} sek`);
+            const fm = K('kg') ? 14 : 7;
+            addBuff({ id: 'frenzy', label: `Inspirasjon ×${fm}`, prod: fm, t: 30 * dur });
+            floatText(`INSPIRASJON ×${fm}`, x, y, { size: 30, col: '#e09a00', life: 1.6 });
+            toast(`Inspirasjon! All produksjon ×${fm} i ${Math.round(30 * dur)} sek`);
         } else {
-            addBuff({ id: 'storm', label: 'Klikkstorm ×50', click: 50, t: 10 * dur });
-            floatText('KLIKKSTORM ×50', x, y, { size: 30, col: '#e09a00', life: 1.6 });
-            toast(`Klikkstorm! Klikk ×50 i ${Math.round(10 * dur)} sek. Klikk!`);
+            const sm = K('kg') ? 100 : 50;
+            addBuff({ id: 'storm', label: `Klikkstorm ×${sm}`, click: sm, t: 10 * dur });
+            floatText(`KLIKKSTORM ×${sm}`, x, y, { size: 30, col: '#e09a00', life: 1.6 });
+            toast(`Klikkstorm! Klikk ×${sm} i ${Math.round(10 * dur)} sek. Klikk!`);
         }
     }
 
@@ -1487,8 +1558,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (S.upg.hv5b) return 3;
         return [0, 2, 3, 5, 7, 10][st];
     }
-    const mouseEat = () => (S.upg.hv5a ? 0.06 : 0.05);
-    const mouseBack = () => (S.upg.mo2 ? 1.3 : 1.1);
+    const mouseEat = () => (S.upg.hv5a ? 0.06 : 0.05) * (law('mus') ? 2 : 1);
+    const mouseBack = () => (S.upg.mo2 ? 1.3 : 1.1) * (law('mus') ? 2 : 1);
     function placeMice() {
         const st = stage.getBoundingClientRect();
         const r = sheet.getBoundingClientRect();
@@ -1964,6 +2035,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         teach.phase = 2;
         teach.t = 1.6;
         bump('lies');
+        if (S.ng) S.bevis = Math.min(1, S.bevis + 0.08);
         const g = baseReward();
         earn(g);
         const [x, y] = center(tEl);
@@ -1990,9 +2062,16 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         say.textContent = `«${intro} ${q.question}»`;
         if (q.prompt) (tEl.querySelector('.def') as HTMLElement).textContent = q.prompt;
         const opts = tEl.querySelector('.opts') as HTMLElement;
+        // Bokorm: ett galt svar strykes
+        const wrong = q.options.map((_, k) => k).filter((k) => k !== q.correct);
+        const strike = S.perks.bokorm ? pick(wrong) : -1;
         q.options.forEach((t, k) => {
             const b = document.createElement('button');
             b.textContent = t;
+            if (k === strike) {
+                b.disabled = true;
+                b.classList.add('struck');
+            }
             b.addEventListener('click', () => answerQuiz(k));
             opts.appendChild(b);
         });
@@ -2019,6 +2098,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             S.honest++;
             S.run.honest++;
             S.honestStreak++;
+            if (S.ng) S.bevis = Math.max(0, S.bevis - 0.3);
             feat(
                 S.honestStreak >= 3
                     ? `Elev svarer riktig ${S.honestStreak} ganger på rad. Lærerne holder krisemøte`
@@ -2095,6 +2175,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         { id: 'poke', w: () => S.owned[0] >= 3 && headlineEl.hidden && !teach.on && !ev.on, el: () => $('#hsl-eraTag'), t: 'Klikk på figurene i rommet. De har noe å si.', dur: 7 },
         { id: 'mouse', w: () => mouseEls.length > 0 && headlineEl.hidden, el: () => mouseEls[0] ?? null, t: 'En mus spiser av unnskyldningene dine! Klikk på den tre ganger, så får du igjen alt den har spist, og litt til. Jo lenger du venter, jo mer får du.', d: () => (S.cnt.mice ?? 0) > 0 },
         { id: 'ach', w: () => !achBtn.hidden && achN() >= 3 && headlineEl.hidden, el: () => achBtn, t: 'Du samler merker. Hvert merke gir +1 % produksjon. Se alle her.', dur: 7, d: () => !modal.hidden },
+        { id: 'boss', w: () => bossWaiting() && headlineEl.hidden && !boss.active(), el: () => $('#hsl-next'), t: 'En sjef stenger veien videre! Trykk her for å utfordre den. Du slår sjefen ved å svare riktig på spørsmål fra boka.', d: () => boss.active() },
+        { id: 'mini', w: () => !miniBtn.hidden && headlineEl.hidden && !boss.active(), el: () => miniBtn, t: 'Nytt: minispill! Lag dine egne unnskyldninger i verkstedet.', dur: 8, d: () => !modal.hidden },
         { id: 'prest', w: () => S.era >= 3 && headlineEl.hidden, el: () => $('#hsl-prestBtn'), t: 'Bytt skole: start på nytt, men ryktet følger med.', dur: 9, d: () => S.resets > 0 },
     ];
     function setPulse(el: HTMLElement | null) {
@@ -2231,6 +2313,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         openModal(
             `<h2>Innstillinger</h2>
   <div class="set"><span>Lyd</span><button class="btn" id="sSnd"></button></div>
+  <div class="set"><span>Musikk</span><span class="row" style="margin:0"><input type="range" id="sVol" min="0" max="1" step="0.05" aria-label="Musikkvolum"><button class="btn" id="sMus"></button></span></div>
   <div class="set"><span>Mindre bevegelse<br><small style="color:var(--muted)">Skrur av risting, blink og de fleste partikler</small></span><button class="btn" id="sRed"></button></div>
   <div class="set"><span>Lagring<br><small style="color:var(--muted)">Lagres automatisk i nettleseren. Ta med deg spillet med en kode.</small></span><span class="row" style="margin:0"><button class="btn" id="sExp">Lag kode</button><button class="btn" id="sImp">Bruk kode</button></span></div>
   <div id="sBox"></div>
@@ -2241,6 +2324,17 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 const upd = () => {
                     q('#sSnd').textContent = S.set.sound ? 'På' : 'Av';
                     q('#sRed').textContent = S.set.reduce ? 'På' : 'Av';
+                    q('#sMus').textContent = S.set.music ? 'På' : 'Av';
+                };
+                const vol = q('#sVol') as HTMLInputElement;
+                vol.value = String(S.set.mvol);
+                vol.oninput = () => {
+                    S.set.mvol = +vol.value;
+                    music.setVolume(S.set.mvol);
+                };
+                q('#sMus').onclick = () => {
+                    toggleMusic();
+                    upd();
                 };
                 upd();
                 q('#sSnd').onclick = () => {
@@ -2309,31 +2403,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                         const set = S.set;
                         S = freshState(reduceDefault);
                         S.set = set;
-                        buffs = [];
-                        flow = 0;
-                        gold.next = BAL.goldFirst;
-                        gold.on = false;
-                        goldEl.hidden = true;
-                        teach.on = false;
-                        teach.phase = 0;
-                        tEl.hidden = true;
-                        endEvent();
-                        syncMice();
-                        renderAchBtn();
-                        dogAsk = 25;
-                        ev.next = BAL.eventFirst;
-                        verbCd = 0;
-                        curHint = null;
-                        hintEl.hidden = true;
-                        setPulse(null);
-                        shopWas = false;
-                        counterWas = true;
-                        tickerWas = true;
-                        for (const r of rows) {
-                            r.shown = false;
-                            r.b.hidden = true;
-                        }
-                        upgKey = '';
+                        resetRuntime();
                         applyEra();
                         uiTick();
                         closeModal();
@@ -2342,6 +2412,35 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 };
             }
         );
+    }
+    // Alt som lever utenfor lagringen: bonuser, læreren, hendelser, figurer i butikken
+    function resetRuntime() {
+        buffs = [];
+        flow = 0;
+        gold.next = BAL.goldFirst;
+        gold.on = false;
+        goldEl.hidden = true;
+        teach.on = false;
+        teach.phase = 0;
+        tEl.hidden = true;
+        endEvent();
+        syncMice();
+        renderAchBtn();
+        dogAsk = 25;
+        ev.next = BAL.eventFirst;
+        verbCd = 0;
+        curHint = null;
+        hintEl.hidden = true;
+        setPulse(null);
+        shopWas = false;
+        counterWas = true;
+        tickerWas = true;
+        for (const r of rows) {
+            r.shown = false;
+            r.b.hidden = true;
+        }
+        upgKey = '';
+        mini.newSchool();
     }
     $('#hsl-back').addEventListener('click', (e) => {
         if (!cb.onExit) return;
@@ -2356,12 +2455,129 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (S.set.sound) sfx.reveal();
     }
     sndBtn.onclick = toggleSound;
+
+    /* ================= Musikk ================= */
+    const music = createMusic();
+    cleanups.push(() => music.destroy());
+    const musBtn = $('#hsl-musBtn');
+    let musicStarted = false;
+    const renderMusBtn = () => (musBtn.textContent = 'Musikk: ' + (S.set.music ? 'på' : 'av'));
+    function startMusic() {
+        if (!S.set.music || destroyed) return;
+        musicStarted = true;
+        music.setVolume(S.set.mvol);
+        void music.enable();
+    }
+    function toggleMusic() {
+        S.set.music = !S.set.music;
+        renderMusBtn();
+        if (S.set.music) startMusic();
+        else music.disable();
+    }
+    musBtn.onclick = toggleMusic;
+
+    /* ================= Sjefer og minispill ================= */
+    const ctx: Ctx = {
+        S: () => S,
+        root,
+        earn,
+        pps,
+        fmt,
+        fmtT,
+        toast,
+        floatText: (t, x, y, o) => floatText(t, x, y, o ?? {}),
+        burst,
+        ring,
+        shake: addShake,
+        flash: doFlash,
+        sfx,
+        openModal,
+        closeModal,
+        addBuff: (b) => addBuff(b),
+        nextQuestion: () => nextQuestion(),
+        quizTime,
+        feat,
+        bump,
+        later,
+        center,
+        L,
+        K,
+        has: (id) => !!S.perks[id],
+        mini: () => (K('km') ? 2 : 1),
+        refresh: () => {
+            upgKey = '';
+            uiTick();
+        },
+    };
+    const mini = createMini(ctx);
+    const boss = createBoss(ctx, {
+        onWin: (k) => {
+            toast(`⚔️ ${BOSSES[k].n} er slått! All produksjon ×1,25.`, 'ms', 5000);
+            save();
+            uiTick();
+        },
+        onFinal: () => {
+            musicOverride = null;
+            save();
+            uiTick();
+        },
+        music: (song) => (musicOverride = song),
+        credits: () => ({
+            cast: P.map((p, i) => [`${p.ic} ${p.n}`, i === 0 ? 'som seg selv' : 'medskyldig'] as [string, string]),
+            stats: [
+                ['Totalscore', fmt(S.allTotal)],
+                ['Spilletid', fmtT(S.played)],
+                ['Skolebytter', NF0.format(S.resets)],
+                ['Kommuner', NF0.format(S.kommune + 1)],
+                ['Merker', `${achN()} av ${ACH.length}`],
+                ['Lynprøver bestått', NF0.format(S.honest)],
+                ['Mus fanget', NF0.format(S.cnt.mice ?? 0)],
+            ],
+        }),
+        onHevn: askHevn,
+    });
+    cleanups.push(() => {
+        boss.destroy();
+        mini.destroy();
+    });
+    const miniBtn = $('#hsl-miniBtn');
+    miniBtn.onclick = () => mini.open();
+    // Sjefen som stenger veien videre akkurat nå (8 = den siste)
+    const bossIdx = () => (S.era < ERAS.length - 1 ? S.era : 8);
+    function bossWaiting() {
+        if (S.era < ERAS.length - 1) return S.runTotal >= BAL.eras[S.era + 1] && !S.boss[BOSSES[S.era].id];
+        return S.runTotal >= END_AT && !S.boss.b8;
+    }
+    $('#hsl-next').addEventListener('click', () => {
+        if (bossWaiting()) boss.start(bossIdx());
+        else if (S.era === ERAS.length - 1 && S.boss.b8) askHevn();
+    });
+    // Nettleseren slipper ikke ut lyd før eleven har trykket på noe
+    root.addEventListener('pointerdown', () => {
+        if (!musicStarted) startMusic();
+    });
+    // Hvor mye som skjer akkurat nå bestemmer hvor mange lag musikken spiller
+    function musicTick() {
+        if (!musicStarted) return;
+        const idle = (performance.now() - lastManual) / 1000;
+        const hot = flow > 0.85 || buffs.some((b) => b.id === 'frenzy' || b.id === 'storm' || (b.good && (b.prod ?? 1) >= 3));
+        music.set({
+            song: musicSong(),
+            intensity: hot ? 3 : idle > 45 ? 0 : idle > 15 ? 1 : 2,
+            tension: !musicOverride && ((teach.on && (teach.phase === 1 || teach.phase === 3)) || (ev.on && ev.id === 'insp')),
+            duck: !modal.hidden || !headlineEl.hidden,
+            hevn: S.ng > 0 && musicOverride !== 'end',
+        });
+    }
+    let musicOverride: string | null = null;
+    const musicSong = () => musicOverride ?? 'era' + S.era;
     const applyCalm = () => root.classList.toggle('calm', !!S.set.reduce);
 
     /* ================= Prestisje ================= */
     // Ryktebørsen: nivåer (kan kjøpes mange ganger) og varige fordeler (kjøpes én gang).
     // Rykte å bruke og fanene står i en linje som blir stående når eleven scroller.
-    let perkTab: 'lv' | 'once' = 'lv';
+    let perkTab: 'tree' | 'kom' = 'tree';
+    let treeSel = '';
     function rankFx(id: string, lv: number): string {
         switch (id) {
             case 'lp': return `+${lv * 25} %`;
@@ -2375,6 +2591,8 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             case 'lt': return `+${lv * 3} s`;
             case 'le': return `+${lv * 15} %`;
             case 'ls': return fmt(startBank(lv));
+            case 'lh': return `+${lv} liv`;
+            case 'lk': return `+${lv * 10} % per sjef`;
         }
         return '';
     }
@@ -2384,139 +2602,177 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         while (k + 1 < RYKTE_TITLES.length && S.rykte >= RYKTE_TITLES[k + 1][0]) k++;
         return { now: RYKTE_TITLES[k][1], next: RYKTE_TITLES[k + 1] };
     }
-    const reqMissing = (id?: string) => (id && !S.perks[id] ? PERKS.find((x) => x.id === id) : undefined);
+    // Hva en node i talenttreet er: et nivå (kan kjøpes mange ganger) eller en varig fordel
+    function nodeInfo(id: string) {
+        const rp = RANKS.find((x) => x.id === id);
+        if (rp) {
+            const lv = L(id);
+            return { ic: rp.ic, n: rp.n, d: rp.d, lv, max: rp.max, cost: lv < rp.max ? rankCost(rp, lv) : 0, rank: rp };
+        }
+        const p = PERKS.find((x) => x.id === id) as (typeof PERKS)[number];
+        const lv = S.perks[id] ? 1 : 0;
+        return { ic: p.ic, n: p.n, d: p.d, lv, max: 1, cost: lv ? 0 : p.c, rank: null };
+    }
+    const nodeParent = (id: string) => TREE.flatMap((b) => b.nodes).find((x) => x.id === id)?.parent;
+    const nodeOpen = (id: string) => {
+        const par = nodeParent(id);
+        return !par || nodeInfo(par).lv > 0;
+    };
+    const nodeBuyable = (id: string) => {
+        const n = nodeInfo(id);
+        return n.lv < n.max && nodeOpen(id) && S.ryktePts >= n.cost;
+    };
+    function buyNode(id: string) {
+        const n = nodeInfo(id);
+        if (!nodeBuyable(id)) return sfx.deny();
+        S.ryktePts -= n.cost;
+        if (n.rank) S.lv[id] = n.lv + 1;
+        else S.perks[id] = 1;
+        sfx.upg();
+        save();
+    }
     function openPrestige() {
         const g = rykteGainable();
         // Ta vare på hvor eleven har scrollet, så et kjøp ikke hopper til toppen
         const keep = modal.hidden ? 0 : (modal.querySelector('.card') as HTMLElement | null)?.scrollTop ?? 0;
         const t = rykteTitle();
-        const canLv = RANKS.filter((rp) => L(rp.id) < rp.max && S.ryktePts >= rankCost(rp, L(rp.id))).length;
-        const canOnce = PERKS.filter((p) => !S.perks[p.id] && !reqMissing(p.req) && S.ryktePts >= p.c).length;
-        const need = Math.pow(S.rykte + 1, 3) * BAL.rykteDiv;
+        const komOn = S.rykte >= KOMMUNE_AT || S.kommune > 0;
+        if (!komOn) perkTab = 'tree';
+        const canTree = TREE.flatMap((b) => b.nodes).filter((x) => nodeBuyable(x.id)).length;
+        const canKom = KSHOP.filter((k) => K(k.id) < k.max && S.legPts >= k.c(K(k.id))).length;
+        const f = rykteFor(S.rTotal);
+        const need = Math.pow(f + 1, 3) * BAL.rykteDiv;
         openModal(
             `<div class="ph"><h2>Bytt skole</h2><span class="rtitle">${esc(t.now)}${t.next ? `<small>Neste tittel ved ${t.next[0]} rykte: ${esc(t.next[1])}</small>` : ''}</span></div>
   <div class="pswap">
-    <div><div class="bigno">+${g} <small>rykte</small></div><small>${g > 0 ? 'hvis du bytter skole nå' : `Neste rykte ved ${fmt(need)} unnskyldninger totalt (du har ${fmt(S.allTotal)})`}</small></div>
+    <div><div class="bigno">+${g} <small>rykte</small></div><small>${g > 0 ? 'hvis du bytter skole nå' : `Neste rykte ved ${fmt(need)} unnskyldninger (du har ${fmt(S.rTotal)})`}</small></div>
     <button class="btn big" id="pGo" ${g < 1 ? 'disabled' : ''}>Brenn alt og bytt skole</button>
   </div>
   <p class="pinfo">Du mister unnskyldninger, medskyldige og oppgraderinger. Ryktet blir med: ${S.rykte} rykte gir nå <b>+${NF0.format(S.rykte * BAL.ryktePct * 100)} %</b> produksjon.</p>
   <div class="pbar">
-    <div class="pts"><span class="pts-ic">🏅</span><span><b>${NF0.format(S.ryktePts)}</b><small>rykte å bruke</small></span></div>
+    <div class="pts"><span class="pts-ic">${perkTab === 'kom' ? '🏔️' : '🏅'}</span><span><b>${NF0.format(perkTab === 'kom' ? S.legPts : S.ryktePts)}</b><small>${perkTab === 'kom' ? 'legendepoeng' : 'rykte å bruke'}</small></span></div>
     <div class="ptabs" role="tablist">
-      <button role="tab" data-t="lv">Nivåer${canLv ? `<i>${canLv}</i>` : ''}</button>
-      <button role="tab" data-t="once">Varige fordeler${canOnce ? `<i>${canOnce}</i>` : ''}</button>
+      <button role="tab" data-t="tree">Talenttre${canTree ? `<i>${canTree}</i>` : ''}</button>
+      ${komOn ? `<button role="tab" data-t="kom">Kommune${canKom ? `<i>${canKom}</i>` : ''}</button>` : `<button role="tab" disabled title="Samle ${KOMMUNE_AT} rykte">🔒 Kommune</button>`}
     </div>
   </div>
-  <p class="phelp"></p>
-  <div id="perks" class="pgrid"></div>
-  <div id="owned"></div>
+  <div id="pbody"></div>
   <div class="row" style="justify-content:flex-end"><button class="btn" id="pClose">Lukk</button></div>`,
             (c) => {
-                c.classList.add('wide');
+                c.classList.add('wide', 'xwide');
                 (c.querySelector('#pClose') as HTMLElement).onclick = closeModal;
                 const go = c.querySelector<HTMLElement>('#pGo');
                 if (go) go.onclick = openReport;
-                (c.querySelector('.phelp') as HTMLElement).textContent =
-                    perkTab === 'lv'
-                        ? 'Nivåer kan kjøpes mange ganger. Hvert nivå koster litt mer enn det forrige.'
-                        : 'Varige fordeler kjøpes én gang og gjelder på alle skoler etterpå.';
-                for (const tb of Array.from(c.querySelectorAll<HTMLElement>('.ptabs button'))) {
+                for (const tb of Array.from(c.querySelectorAll<HTMLElement>('.ptabs button[data-t]'))) {
                     tb.setAttribute('aria-selected', String(tb.dataset.t === perkTab));
                     tb.onclick = () => {
-                        if (perkTab === tb.dataset.t) return;
-                        perkTab = tb.dataset.t as 'lv' | 'once';
+                        if (perkTab === tb.dataset.t || tb.hasAttribute('disabled')) return;
+                        perkTab = tb.dataset.t as 'tree' | 'kom';
                         sfx.reveal();
                         openPrestige();
                         (modal.querySelector('.card') as HTMLElement).scrollTop = (modal.querySelector('.pbar') as HTMLElement).offsetTop - 10;
                     };
                 }
-                const grid = c.querySelector('#perks') as HTMLElement;
-                const card = (o: { ic: string; n: string; d: string; state: string; meta?: string; lv?: [number, number]; cost?: number; buy?: () => void }) => {
-                    const d = document.createElement('div');
-                    d.className = 'pcard ' + o.state;
-                    d.innerHTML = '<div class="pc-top"><span class="pc-ic"></span><b></b></div><div class="pc-d"></div><div class="pc-meta"></div><div class="pc-bot"></div>';
-                    (d.querySelector('.pc-ic') as HTMLElement).textContent = o.ic;
-                    (d.querySelector('b') as HTMLElement).textContent = o.n;
-                    (d.querySelector('.pc-d') as HTMLElement).textContent = o.d;
-                    (d.querySelector('.pc-meta') as HTMLElement).textContent = o.meta ?? '';
-                    const bot = d.querySelector('.pc-bot') as HTMLElement;
-                    if (o.lv) {
-                        const pip = document.createElement('span');
-                        pip.className = 'pc-lv';
-                        pip.innerHTML = `<i style="width:${(o.lv[0] / o.lv[1]) * 100}%"></i>`;
-                        const lbl = document.createElement('small');
-                        lbl.textContent = `${o.lv[0]}/${o.lv[1]}`;
-                        bot.append(pip, lbl);
-                    }
-                    const b = document.createElement('button');
-                    b.className = 'btn pc-buy';
-                    b.textContent = o.cost === undefined ? (o.state === 'max' ? 'Maks' : 'Låst') : `🏅 ${NF0.format(o.cost)}`;
-                    b.disabled = o.state !== 'ok';
-                    if (o.buy && o.state === 'ok') {
-                        const buy = o.buy;
-                        b.onclick = () => {
-                            buy();
-                            sfx.upg();
-                            const [x, y] = center(b);
-                            burst(x, y, 25, { gold: true });
-                            ring(x, y, '#f2b705', 80);
-                            save();
-                            openPrestige();
-                        };
-                    }
-                    bot.appendChild(b);
-                    grid.appendChild(d);
-                };
-                if (perkTab === 'lv') {
-                    // Ferdige nivåer nederst
-                    const list = [...RANKS].sort((a, b) => Number(L(a.id) >= a.max) - Number(L(b.id) >= b.max));
-                    for (const rp of list) {
-                        const lv = L(rp.id);
-                        const max = lv >= rp.max;
-                        const cost = rankCost(rp, lv);
-                        card({
-                            ic: rp.ic,
-                            n: rp.n,
-                            d: rp.d,
-                            state: max ? 'max' : S.ryktePts >= cost ? 'ok' : 'poor',
-                            meta: max ? `Ferdig: ${rankFx(rp.id, lv)}` : `Nå ${rankFx(rp.id, lv)}  →  neste ${rankFx(rp.id, lv + 1)}`,
-                            lv: [lv, rp.max],
-                            cost: max ? undefined : cost,
-                            buy: () => {
-                                S.ryktePts -= cost;
-                                S.lv[rp.id] = lv + 1;
-                            },
-                        });
-                    }
-                } else {
-                    // Kjøpbare først, så de som krever noe annet først. Kjøpte blir små merker under.
-                    const open = PERKS.filter((p) => !S.perks[p.id] && !reqMissing(p.req));
-                    const locked = PERKS.filter((p) => !S.perks[p.id] && reqMissing(p.req));
-                    for (const p of open)
-                        card({ ic: p.ic, n: p.n, d: p.d, state: S.ryktePts >= p.c ? 'ok' : 'poor', cost: p.c, buy: () => {
-                            S.ryktePts -= p.c;
-                            S.perks[p.id] = 1;
-                        } });
-                    for (const p of locked)
-                        card({ ic: p.ic, n: p.n, d: p.d, state: 'locked', meta: `Krever først: ${(reqMissing(p.req) as { n: string }).n}` });
-                    const owned = PERKS.filter((p) => S.perks[p.id]);
-                    if (owned.length) {
-                        const ow = c.querySelector('#owned') as HTMLElement;
-                        ow.innerHTML = '<h3>Du har allerede</h3><div class="chips"></div>';
-                        const chips = ow.querySelector('.chips') as HTMLElement;
-                        for (const p of owned) {
-                            const ch = document.createElement('span');
-                            ch.className = 'chip';
-                            ch.textContent = `${p.ic} ${p.n}`;
-                            ch.title = p.d;
-                            chips.appendChild(ch);
-                        }
-                    }
-                    if (!open.length && !locked.length) grid.innerHTML = '<p class="phelp">Du har kjøpt alle de varige fordelene.</p>';
-                }
+                const body = c.querySelector('#pbody') as HTMLElement;
+                if (perkTab === 'tree') renderTree(body);
+                else renderKommune(body);
                 c.scrollTop = keep;
             }
         );
+    }
+    function renderTree(body: HTMLElement) {
+        const all = TREE.flatMap((b) => b.nodes.map((x) => x.id));
+        if (!all.includes(treeSel)) treeSel = all.find((id) => nodeBuyable(id)) ?? all[0];
+        const depth = (id: string): number => {
+            const par = nodeParent(id);
+            return par ? depth(par) + 1 : 0;
+        };
+        body.innerHTML =
+            '<p class="phelp">Tre greiner. En gren vokser videre når du har kjøpt det den henger på. Trykk på en ting for å se hva den gjør.</p><div class="tree"></div><div class="tdet"></div>';
+        const tree = body.querySelector('.tree') as HTMLElement;
+        for (const br of TREE) {
+            const col = document.createElement('div');
+            col.className = 'tb';
+            col.innerHTML = `<div class="tb-h"><span>${br.ic}</span><b>${esc(br.n)}</b><small>${esc(br.d)}</small></div>`;
+            for (const nd of br.nodes) {
+                const n = nodeInfo(nd.id);
+                const st = n.lv >= n.max ? 'max' : !nodeOpen(nd.id) ? 'locked' : S.ryktePts >= n.cost ? 'ok' : 'poor';
+                const b = document.createElement('button');
+                b.className = `tn ${st}${n.lv > 0 ? ' has' : ''}${nd.id === treeSel ? ' sel' : ''}`;
+                b.style.setProperty('--d', String(depth(nd.id)));
+                b.innerHTML = `<span class="tn-ic">${st === 'locked' ? '🔒' : n.ic}</span><span class="tn-n"></span><span class="tn-lv">${n.max > 1 ? `${n.lv}/${n.max}` : n.lv ? '✔' : ''}</span>`;
+                (b.querySelector('.tn-n') as HTMLElement).textContent = n.n;
+                b.setAttribute('aria-label', `${n.n}, ${st === 'max' ? 'ferdig' : st === 'locked' ? 'låst' : `koster ${n.cost} rykte`}`);
+                b.onclick = () => {
+                    treeSel = nd.id;
+                    for (const x of Array.from(tree.querySelectorAll('.tn.sel'))) x.classList.remove('sel');
+                    b.classList.add('sel');
+                    sfx.pop();
+                    renderDet();
+                };
+                b.ondblclick = () => {
+                    if (!nodeBuyable(nd.id)) return;
+                    buyNode(nd.id);
+                    openPrestige();
+                };
+                col.appendChild(b);
+            }
+            tree.appendChild(col);
+        }
+        const det = body.querySelector('.tdet') as HTMLElement;
+        function renderDet() {
+            const id = treeSel;
+            const n = nodeInfo(id);
+            const open = nodeOpen(id);
+            const par = nodeParent(id);
+            const done = n.lv >= n.max;
+            const fx = n.rank ? (done ? `Ferdig: ${rankFx(id, n.lv)}` : `Nå ${rankFx(id, n.lv)}  →  neste ${rankFx(id, n.lv + 1)}`) : n.lv ? 'Du har denne.' : 'Kjøpes én gang og gjelder for alltid.';
+            det.innerHTML = `<span class="td-ic">${n.ic}</span><div class="td-t"><b></b><span class="td-d"></span><small class="td-fx"></small></div><button class="btn big td-buy"></button>`;
+            (det.querySelector('b') as HTMLElement).textContent = n.n + (n.max > 1 ? `  (${n.lv}/${n.max})` : '');
+            (det.querySelector('.td-d') as HTMLElement).textContent = n.d;
+            (det.querySelector('.td-fx') as HTMLElement).textContent = !open && par ? `Krever først: ${nodeInfo(par).n}` : fx;
+            const b = det.querySelector('.td-buy') as HTMLButtonElement;
+            b.textContent = done ? 'Ferdig' : !open ? 'Låst' : `Kjøp 🏅 ${NF0.format(n.cost)}`;
+            b.disabled = !nodeBuyable(id);
+            b.onclick = () => {
+                const [x, y] = center(b);
+                buyNode(id);
+                burst(x, y, 25, { gold: true });
+                ring(x, y, '#f2b705', 80);
+                openPrestige();
+            };
+        }
+        renderDet();
+    }
+    function renderKommune(body: HTMLElement) {
+        const gain = legendeFor(S.rykte);
+        body.innerHTML = `<div class="pswap kom"><div><div class="bigno">+${gain} <small>legendepoeng</small></div><small>Flytt til ${esc(KOMMUNER[(S.kommune + 1) % KOMMUNER.length])} kommune. Du mister rykte, talenttreet og (uten «Gammel vane») de varige fordelene. Merkene, sjefene og legendepoengene blir med.</small></div><button class="btn big" id="kGo" ${gain < 1 ? 'disabled' : ''}>Flytt kommune</button></div><div class="pgrid" id="kshop"></div>`;
+        const go = body.querySelector('#kGo') as HTMLElement;
+        go.onclick = () => {
+            body.querySelector('.pswap')?.insertAdjacentHTML('afterend', '<div class="kconf"><b>Er du sikker?</b> Alt rykte og hele talenttreet forsvinner.<button class="btn big" id="kYes">Ja, flytt</button></div>');
+            (body.querySelector('#kYes') as HTMLElement).onclick = doKommune;
+            go.remove();
+        };
+        const grid = body.querySelector('#kshop') as HTMLElement;
+        for (const k of KSHOP) {
+            const lv = K(k.id);
+            const max = lv >= k.max;
+            const cost = k.c(lv);
+            const d = document.createElement('div');
+            d.className = 'pcard ' + (max ? 'max' : S.legPts >= cost ? 'ok' : 'poor');
+            d.innerHTML = `<div class="pc-top"><span class="pc-ic">${k.ic}</span><b></b></div><div class="pc-d"></div><div class="pc-bot">${k.max > 1 ? `<span class="pc-lv"><i style="width:${(lv / k.max) * 100}%"></i></span><small>${lv}/${k.max}</small>` : ''}<button class="btn pc-buy" ${max || S.legPts < cost ? 'disabled' : ''}>${max ? 'Ferdig' : `🏔️ ${cost}`}</button></div>`;
+            (d.querySelector('b') as HTMLElement).textContent = k.n;
+            (d.querySelector('.pc-d') as HTMLElement).textContent = k.d;
+            (d.querySelector('.pc-buy') as HTMLElement).onclick = () => {
+                if (max || S.legPts < cost) return;
+                S.legPts -= cost;
+                S.ks[k.id] = lv + 1;
+                sfx.upg();
+                save();
+                openPrestige();
+            };
+            grid.appendChild(d);
+        }
     }
     $('#hsl-prestBtn').onclick = openPrestige;
     // Rapportkortet: hva du fikk til på denne skolen, før alt brennes
@@ -2561,6 +2817,43 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             }
         );
     }
+    // Ny skole: alt fra denne skolen forsvinner, ryktet og det varige blir med
+    function newSchool() {
+        // Sparegris og «Ryktet går foran deg» gir en raskere start
+        S.bank = startBank(L('ls'));
+        const startEra = K('ke') ? 3 + K('ke') : S.perks.era3 ? 3 : S.perks.era2 ? 2 : S.perks.era1 ? 1 : 0;
+        S.runTotal = BAL.eras[startEra];
+        S.owned = P.map(() => 0);
+        S.upg = {};
+        S.era = startEra;
+        S.maxEra = Math.max(S.maxEra, startEra);
+        S.rev = 0;
+        S.run = freshRun();
+        mini.newSchool();
+        S.mice = [];
+        syncMice();
+        dogAsk = 25;
+        buffs = [];
+        flow = 0;
+        verbCd = 0;
+        endEvent();
+        if (S.perks.start) {
+            S.owned[0] = 10;
+            S.owned[1] = 5;
+            S.rev = 1;
+        }
+        for (const r of rows) {
+            r.shown = false;
+            r.b.hidden = true;
+        }
+        upgKey = '';
+        disp = 0;
+        applyEra();
+        doFlash();
+        sfx.milestone();
+        save();
+        uiTick();
+    }
     function doPrestige() {
         const g = rykteGainable();
         if (g < 1) return;
@@ -2574,38 +2867,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
             S.ryktePts += g;
             S.resets++;
             S.school = (S.school + 1 + Math.floor(Math.random() * 3)) % SCHOOLS.length;
-            // Sparegris og «Ryktet går foran deg» gir en raskere start
-            S.bank = startBank(L('ls'));
-            const startEra = S.perks.era3 ? 3 : S.perks.era2 ? 2 : S.perks.era1 ? 1 : 0;
-            S.runTotal = BAL.eras[startEra];
-            S.owned = P.map(() => 0);
-            S.upg = {};
-            S.era = startEra;
-            S.rev = 0;
-            S.run = freshRun();
-            S.mice = [];
-            syncMice();
-            dogAsk = 25;
-            buffs = [];
-            flow = 0;
-            verbCd = 0;
-            endEvent();
-            if (S.perks.start) {
-                S.owned[0] = 10;
-                S.owned[1] = 5;
-                S.rev = 1;
-            }
-            for (const r of rows) {
-                r.shown = false;
-                r.b.hidden = true;
-            }
-            upgKey = '';
-            disp = 0;
-            applyEra();
-            doFlash();
-            sfx.milestone();
-            save();
-            uiTick();
+            newSchool();
             showHeadline(
                 `ELEV BYTTER TIL ${schoolName().toUpperCase()}. RYKTET ER ALLEREDE DER`,
                 `Lærerne har hørt om «hunden». Ryktet ditt gir nå +${NF0.format(S.rykte * BAL.ryktePct * 100)} % produksjon.`,
@@ -2613,6 +2875,93 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 'Skolebytte'
             );
         }, 650);
+    }
+
+    /* ================= Kommunebytte ================= */
+    function doKommune() {
+        const gain = legendeFor(S.rykte);
+        if (gain < 1) return;
+        closeModal();
+        const [x, y] = center(sheet);
+        sfx.burn();
+        addShake(22);
+        for (let k = 0; k < 6; k++) later(() => burst(x + rnd(-140, 140), y + rnd(-100, 100), 50, { fire: true, power: 1.8 }), k * 110);
+        later(() => {
+            S.legende += gain;
+            S.legPts += gain;
+            S.kommune++;
+            S.rykte = 0;
+            S.ryktePts = 0;
+            S.rTotal = 0;
+            S.lv = {};
+            if (!K('kf')) S.perks = {};
+            S.resets++;
+            S.school = (S.school + 1 + Math.floor(Math.random() * 3)) % SCHOOLS.length;
+            newSchool();
+            showHeadline(
+                `ELEV FLYTTER TIL ${KOMMUNER[S.kommune % KOMMUNER.length].toUpperCase()}. HELE KOMMUNEN ER I SJOKK`,
+                'Ingen her har hørt om hunden. Ennå. Ryktet må bygges opp på nytt, men legenden følger med deg.',
+                `+${gain} legendepoeng. Bruk dem i Kommune-fanen i Ryktebørsen.`,
+                'Kommunebytte'
+            );
+        }, 800);
+    }
+
+    /* ================= Hundens hevn (nytt spill+) ================= */
+    function askHevn() {
+        const m = Math.pow(HEVN_MULT, S.ng + 1);
+        openModal(
+            `<h2>🐕 Hundens hevn</h2>
+  <p>Alt starter på nytt: skoler, rykte, kommuner og sjefer. Du beholder merkene, legendepoengene og kommunekassa.</p>
+  <p>Nå er hunden læreren. Lærer Tønnessen samler bevis mot deg. Blir mappen hennes full, tar hun en fjerdedel av unnskyldningene dine. Svar riktig på lynprøver for å slette bevis.</p>
+  <p>Til gjengjeld lager alt <b>×${NF0.format(m)}</b>. Sjefene har to liv mer, og musikken går i moll.</p>
+  <div class="row" style="justify-content:space-between"><button class="btn" id="hNo">Ikke ennå</button><button class="btn big" id="hYes">Start Hundens hevn</button></div>`,
+            (c) => {
+                (c.querySelector('#hNo') as HTMLElement).onclick = closeModal;
+                (c.querySelector('#hYes') as HTMLElement).onclick = doHevn;
+            }
+        );
+    }
+    function doHevn() {
+        closeModal();
+        const keep = {
+            set: S.set, ach: S.ach, cnt: S.cnt, played: S.played, allTotal: S.allTotal, hints: S.hints, seen: S.seen,
+            legende: S.legende, legPts: S.legPts, ks: S.ks, ng: S.ng + 1, ended: S.ended, best: S.best,
+            goldClicks: S.goldClicks, honest: S.honest, honestTries: S.honestTries, clicks: S.clicks, school: S.school,
+        };
+        S = Object.assign(freshState(reduceDefault), keep);
+        resetRuntime();
+        applyEra();
+        uiTick();
+        save();
+        sfx.burn();
+        addShake(20);
+        doFlash();
+        showHeadline(
+            'HUNDEN ER LÆRER NÅ',
+            'Den deler ut lekser i å apportere. Lærer Tønnessen har begynt å samle bevis mot deg, og hun har kjøpt en mappe. En stor en.',
+            `Hundens hevn ${S.ng}: all produksjon ×${NF0.format(Math.pow(HEVN_MULT, S.ng))}.`,
+            'Nytt spill+'
+        );
+    }
+    // Lærerens bevis (bare i Hundens hevn)
+    const bevisEl = $('#hsl-bevis');
+    function bevisTick(dt: number, paused: boolean) {
+        bevisEl.hidden = !S.ng;
+        if (!S.ng) return;
+        if (!paused && S.owned.some((x) => x > 0)) S.bevis += (dt / 300) * (1 + 0.1 * S.ng);
+        if (S.bevis >= 1) {
+            S.bevis = 0;
+            const taken = S.bank * 0.25;
+            S.bank -= taken;
+            sfx.burn();
+            addShake(14);
+            doFlash();
+            toast(`📁 Lærer Tønnessen konfiskerte ${fmt(taken)} unnskyldninger! Mappen er tømt.`, '', 5000);
+            feat('Lærer Tønnessen la fram bevisene. Eleven mistet en fjerdedel av unnskyldningene');
+        }
+        ($('#hsl-bevis .bar i') as HTMLElement).style.width = S.bevis * 100 + '%';
+        bevisEl.classList.toggle('hot', S.bevis > 0.8);
     }
 
     /* ================= Lagring / offline ================= */
@@ -2679,7 +3028,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (S.era >= 1) {
             flowIdle += dt;
             if (buffs.some((b) => b.id === 'lock')) flow = 1;
-            else if (flowIdle > 0.35) flow = Math.max(0, flow - BAL.flowDecay * dt);
+            else if (flowIdle > 0.35) flow = Math.max(0, flow - BAL.flowDecay * (law('fri') ? 2 : 1) * dt);
         } else flow = 0;
         if (verbCd > 0) verbCd -= dt;
         for (const b of buffs) b.t -= dt;
@@ -2702,7 +3051,10 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         }
         // Avisa og menyer fryser læreren og gullstjerna, så eleven ikke
         // straffes for å lese en overskrift.
-        const paused = !modal.hidden || !headlineEl.hidden;
+        const paused = !modal.hidden || !headlineEl.hidden || boss.active();
+        boss.tick(dt);
+        mini.tick(dt);
+        bevisTick(dt, paused);
         if (!gold.on) {
             if (S.allTotal >= 50 && !paused) gold.next -= dt;
             if (gold.next <= 0) spawnGold();
@@ -2737,7 +3089,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
                 teach.phase = 0;
                 teach.q = null;
                 tEl.hidden = true;
-                teach.next = rnd(BAL.teachMin, BAL.teachMax);
+                teach.next = teachGap();
             }
         }
         checkEra();
@@ -2789,6 +3141,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         if (uiT > 0.1) {
             uiT = 0;
             uiTick();
+            musicTick();
         }
         raf = requestAnimationFrame(frame);
     }
@@ -2801,6 +3154,7 @@ export function mountHunden(root: HTMLElement, cb: HundenCallbacks = {}): () => 
         offSec = (Date.now() - (S.last || Date.now())) / 1000;
     }
     sndBtn.textContent = 'Lyd: ' + (S.set.sound ? 'på' : 'av');
+    renderMusBtn();
     applyCalm();
     applyEra();
     for (const x of Array.from(amtEl.children) as HTMLElement[])
