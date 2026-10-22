@@ -8489,8 +8489,8 @@
                 "kolonialisering",
                 "kildekritikk"
               ],
-<<<<<<< Updated upstream
-              "createdDate": "2026-10-19T00:00:00Z"
+              "createdDate": "2026-10-19T03:22:50+02:00",
+              "lastUpdated": "2026-10-21T07:43:14+02:00"
             },
             {
               "id": "moshoeshoe-og-basotho-riket",
@@ -8505,10 +8505,6 @@
                 "diplomati"
               ],
               "createdDate": "2026-10-22T00:00:00Z"
-=======
-              "createdDate": "2026-10-19T03:22:50+02:00",
-              "lastUpdated": "2026-10-21T07:43:14+02:00"
->>>>>>> Stashed changes
             }
           ]
         }
