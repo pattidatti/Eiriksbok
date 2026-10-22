@@ -1,0 +1,193 @@
+{
+    "id": "hvordan-lage-karakterer",
+    "tittel": "Hvordan lage karakterer: Karaktersmien",
+    "kilde": "/norsk/skrivehjelp/hvordan-lage-karakterer",
+    "bilde": "/images/lessons/norsk/hvordan-lage-karakterer-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-22", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "papir",
+            "kapittel": "Papirfiguren",
+            "lyd": "ild",
+            "visual": { "type": "KarakterSmien", "props": { "modus": "papir" } },
+            "replikker": [
+                { "si": "Se på denne figuren på arbeidsbenken. Den er klippet ut av papir." },
+                { "si": "Snur du den, ser du hvor tynn den er. Fra siden er den nesten bare en strek." },
+                { "si": "Den har ingen personlighet, ingen fortid og ingenting den vil. Den er en papirfigur." },
+                { "si": "I denne filmen skal vi smi den om til et menneske du tror på. Vi gjør det i fem trinn, i Karaktersmien." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Hvordan lage karakterer",
+                    "undertittel": "Karaktersmien",
+                    "bilde": "/images/lessons/norsk/hvordan-lage-karakterer-hero.webp",
+                    "sporsmal": { "tekst": "Hva gjør en karakter levende?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Har du lest en bok der du kjente hovedpersonen like godt som din beste venn?" },
+                { "si": "Eller sett en film der du heiet på en person, selv om hun gjorde store feil? Hva er det som gjør en karakter så levende?" }
+            ]
+        },
+        {
+            "id": "bue",
+            "visual": { "type": "KarakterBue", "props": { "modus": "dynamisk" } },
+            "replikker": [
+                { "si": "En god historie handler sjelden bare om hva som skjer. Det som skjer, kaller vi plottet." },
+                { "si": "Den handler om hvem det skjer med, og hvordan de forandrer seg." },
+                { "si": "En dynamisk karakter forandrer seg på grunn av det hun opplever. Se hvordan linja hennes stiger og skifter farge." },
+                { "si": "En statisk karakter forblir slik hun alltid har vært. Hun er den samme fra start til slutt." }
+            ]
+        },
+        {
+            "id": "funksjon",
+            "kapittel": "Trinn 1: Funksjon",
+            "visual": { "type": "KarakterRoller", "props": { "modus": "funksjon" } },
+            "replikker": [
+                { "si": "Trinn 1 er funksjon. Før du bestemmer øyenfarge eller favorittmat, må du vite hvorfor personen er med i historien." },
+                { "si": "Møt Elias. Han skal være hovedpersonen. Hovedpersonen kalles gjerne protagonisten." },
+                { "si": "Den som kjemper imot hovedpersonen, kalles antagonisten." },
+                { "si": "Vi gir Elias en oppgave: Han skal være en som oppdager noe ingen andre ser." }
+            ]
+        },
+        {
+            "id": "overflate",
+            "kapittel": "Trinn 2: Overflaten",
+            "lyd": "ild",
+            "visual": { "type": "KarakterSmien", "props": { "modus": "overflate" } },
+            "replikker": [
+                { "si": "Trinn 2 er overflaten. Det første leseren ser, er det ytre." },
+                { "si": "Du skal ikke liste opp alt. Velg én eller to ting som sier noe om hvem personen er." },
+                { "si": "Elias får en falmet, rød hettegenser." },
+                { "si": "Og en gammel klokke på håndleddet. Den stoppet for flere år siden, men han nekter å ta den av seg." },
+                { "si": "En slik detalj kaller vi et kjennetegn. Det er den vi husker personen på." }
+            ]
+        },
+        {
+            "id": "setning",
+            "lyd": "stille",
+            "visual": { "type": "KarakterSetning", "props": { "modus": "flat" } },
+            "replikker": [
+                { "si": "Se forskjellen i en tekst. Her er en flat setning: Elias var en vanlig gutt med brunt hår og vanlige klær." },
+                { "si": "Her er en levende: Elias trakk den falmede, røde hettegenseren over hodet og trommet urolig på den gamle klokka." },
+                { "si": "Den levende setningen gjør oss nysgjerrige. Hvorfor går ikke klokka? Hvorfor er den så viktig?" }
+            ]
+        },
+        {
+            "id": "direkte",
+            "visual": { "type": "KarakterSetning", "props": { "modus": "direkte" } },
+            "replikker": [
+                { "si": "Det finnes to måter å vise hvem en person er." },
+                { "si": "Når fortelleren sier det rett ut, for eksempel at Elias er stille og forsiktig, kalles det direkte personskildring." },
+                { "si": "Når vi i stedet forstår personen gjennom det hun sier, gjør, tenker og hvordan hun bruker kroppen, kalles det indirekte personskildring." },
+                { "si": "Ingen trenger å si hvem Elias er. Hettegenseren og klokka får oss til å lure." }
+            ]
+        },
+        {
+            "id": "motor",
+            "kapittel": "Trinn 3: Motoren",
+            "visual": { "type": "KarakterMotor" },
+            "replikker": [
+                { "si": "Trinn 3 er motoren, og kanskje det viktigste trinnet. En karakter må ha en drivkraft, noe som driver den framover." },
+                { "si": "Vi skiller mellom det karakteren vil ha, og det karakteren trenger." },
+                { "si": "Elias vil bare være i fred. Han vil være usynlig, så ingen legger merke til ham." },
+                { "si": "Men det Elias trenger, er å bli sett for den han er." },
+                { "si": "Gapet mellom det han vil og det han trenger, skaper spenning. Det drar i ham fra hver sin kant." }
+            ]
+        },
+        {
+            "id": "skygge",
+            "kapittel": "Trinn 4: Skyggen",
+            "lyd": "rom",
+            "visual": { "type": "KarakterSmien", "props": { "modus": "skygge" } },
+            "replikker": [
+                { "si": "Trinn 4 er skyggen. Ingen er perfekte, og perfekte karakterer er faktisk ganske kjedelige å lese om." },
+                { "si": "Det er feilene og sårbarheten som gjør at vi kjenner oss igjen. Sårbar betyr at noe lett kan såre deg." },
+                { "si": "Hvorfor vil Elias være usynlig? Kanskje han bærer på et Ghost. Det er engelsk for spøkelse: en hendelse fra fortiden som har gjort ham redd.", "uttale": "Hvorfor vil Elias være usynlig? Kanskje han bærer på et goust. Det er engelsk for spøkelse: en hendelse fra fortiden som har gjort ham redd." },
+                { "si": "La oss si at han en gang prøvde å si fra om noe viktig. Men de lo av ham." },
+                { "si": "Nå er han mest redd for å bli gjort narr av igjen. Det er derfor han gjemmer seg i hettegenseren." }
+            ]
+        },
+        {
+            "id": "eventyr",
+            "lyd": "stille",
+            "visual": { "type": "KarakterBue", "props": { "modus": "eventyr" } },
+            "replikker": [
+                { "si": "Her ser du forskjellen på eventyr og romaner." },
+                { "si": "I eventyr er personene som regel enkle typer. Helten er helt, skurken er skurk, og ingen av dem forandrer seg." },
+                { "si": "I en roman er det motsatt. Personene forandrer seg, og derfor føles de mer som mennesker." }
+            ]
+        },
+        {
+            "id": "kontrast",
+            "kapittel": "Trinn 5: Kontrasten",
+            "lyd": "ild",
+            "visual": { "type": "KarakterSmien", "props": { "modus": "sara" } },
+            "replikker": [
+                { "si": "Trinn 5 er kontrasten. En karakter blir tydeligere når hun møter sin motsetning." },
+                { "si": "Elias er stille og forsiktig. Så her kommer Sara. Hun er alt Elias ikke er." },
+                { "si": "Hun snakker høyt, tar plass og bryr seg ikke om hva andre mener." },
+                { "si": "Når de to må samarbeide, oppstår det gnisninger. Det er da historien virkelig begynner å leve." }
+            ]
+        },
+        {
+            "id": "arketyper",
+            "lyd": "stille",
+            "visual": { "type": "KarakterRoller", "props": { "modus": "arketyper" } },
+            "replikker": [
+                { "si": "Noen roller går igjen i fortellinger over hele verden." },
+                { "si": "Helten er den som må gjennom en forandring. Her er det Elias." },
+                { "si": "Her er skyggen en annen person. Den står for det helten frykter, for eksempel en bølle." },
+                { "si": "Hjelperen dytter helten i riktig retning. Det er Sara. Mentoren gir helten kunnskap, for eksempel en bestefar." },
+                { "si": "Psykiateren Carl Gustav Jung kalte slike figurer arketyper. Det er bilder som går igjen, og som er felles for alle mennesker." }
+            ]
+        },
+        {
+            "id": "idkort",
+            "kapittel": "Ferdig smidd",
+            "visual": { "type": "KarakterIdKort", "props": { "modus": "elias-sara" } },
+            "replikker": [
+                { "si": "Etter smien har vi to helt ulike karakterer. Legg ID-kortene deres ved siden av hverandre." },
+                { "si": "Elias har rød hettegenser og et ur som har stoppet. Sara har store, fargerike øredobber som klirrer." },
+                { "si": "Elias vil være usynlig. Sara vil bli hørt og styre showet." },
+                { "si": "Elias trenger å bli sett. Sara trenger å lære å lytte til andre." },
+                { "si": "Elias er redd for å bli ledd av. Sara er redd for å bli glemt. Ser du hvor det kommer til å gnisse?" }
+            ]
+        },
+        {
+            "id": "dintur",
+            "kapittel": "Din tur",
+            "visual": { "type": "KarakterIdKort", "props": { "modus": "egen" } },
+            "replikker": [
+                { "si": "Nå er det din tur. Du trenger ikke vite alt med en gang." },
+                { "si": "Start med en følelse eller et bilde. Gi personen et navn og et kjennetegn." },
+                { "si": "Finn ut hva hun vil, hva hun trenger, og hva hun er redd for." },
+                { "si": "Til slutt: Hvem er hennes rake motsetning?" }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Plottet er hva som skjer. Karakteren er hvem det skjer med.", "fraBeat": 0 },
+                        { "tekst": "En levende karakter vil én ting, men trenger en annen.", "fraBeat": 1 },
+                        { "tekst": "Feil, frykt og gnisninger gjør papir om til mennesker.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Husk dette: Plottet er hva som skjer. Karakteren er hvem det skjer med." },
+                { "si": "En levende karakter vil én ting, men trenger en annen." },
+                { "si": "Og det er feilene, frykten og gnisningene som gjør en papirfigur om til et menneske." }
+            ]
+        }
+    ]
+}
