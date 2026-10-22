@@ -149,6 +149,12 @@
     "link": "/historie/dansketiden/eneveldet",
     "title": "Eneveldet: Da kongen fikk all makt"
   },
+  "brevnettet": {
+    "subjectId": "historie",
+    "topicId": "dansketiden",
+    "link": "/historie/dansketiden/hans-nielsen-hauge",
+    "title": "Hans Nielsen Hauge: Predikanten som bygde et nettverk"
+  },
   "underskriftsrittet": {
     "subjectId": "historie",
     "topicId": "dansketiden",
@@ -616,6 +622,12 @@
     "topicId": "mellomkrigstiden",
     "link": "/historie/mellomkrigstiden/italia",
     "title": "Italia: Fascismens fødsel"
+  },
+  "stempelet": {
+    "subjectId": "historie",
+    "topicId": "mellomkrigstiden",
+    "link": "/historie/mellomkrigstiden/nansen-og-flyktningene",
+    "title": "Fridtjof Nansen og flyktningene: Et pass for de som ikke hørte til"
   },
   "demokrati-lysene-3d": {
     "subjectId": "historie",

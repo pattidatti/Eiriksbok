@@ -1464,6 +1464,12 @@
           "hits": 1
         },
         {
+          "title": "Javier Milei: Motorsaga i Argentina",
+          "url": "/samfunnskunnskap/okonomi/milei-argentina",
+          "subject": "samfunnskunnskap",
+          "hits": 1
+        },
+        {
           "title": "Kjendismakt og influensere",
           "url": "/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt",
           "subject": "samfunnskunnskap",
@@ -1706,6 +1712,12 @@
       "aliases": [],
       "links": [],
       "mentionedIn": [
+        {
+          "title": "Hans Egede: Presten som lette etter et folk som var borte",
+          "url": "/historie/dansketiden/hans-egede",
+          "subject": "historie",
+          "hits": 1
+        },
         {
           "title": "Hvem nådde Amerika først?",
           "url": "/historie/historiens-store-gater/hvem-nadde-amerika-forst",
@@ -3966,6 +3978,34 @@
       "aliasSlugs": []
     },
     {
+      "slug": "javier-milei",
+      "name": "Javier Milei",
+      "definition": "Argentinsk økonom og president fra 2023. Kaller seg anarko-kapitalist og vant valget med en motorsag som symbol på store kutt i staten.",
+      "lifespan": "1970-",
+      "birthYear": 1970,
+      "deathYear": null,
+      "era": "samtid",
+      "subject": null,
+      "topic": null,
+      "tags": [],
+      "aliases": [],
+      "links": [
+        {
+          "title": "Javier Milei: Motorsaga i Argentina",
+          "url": "/samfunnskunnskap/okonomi/milei-argentina"
+        }
+      ],
+      "mentionedIn": [
+        {
+          "title": "Javier Milei: Motorsaga i Argentina",
+          "url": "/samfunnskunnskap/okonomi/milei-argentina",
+          "subject": "samfunnskunnskap",
+          "hits": 11
+        }
+      ],
+      "aliasSlugs": []
+    },
+    {
       "slug": "jean-jacques-rousseau",
       "name": "Jean-Jacques Rousseau",
       "definition": "Fransk filosof som mente at mennesket er født fritt, men er overalt i lenker. Tankene hans inspirerte den franske revolusjon.",
@@ -5356,6 +5396,12 @@
           "url": "/historie/dekolonisering/ghana-panafrikanisme",
           "subject": "historie",
           "hits": 5
+        },
+        {
+          "title": "Mau Mau-opprøret: Kampen om jorda i Kenya",
+          "url": "/historie/dekolonisering/mau-mau-opproret",
+          "subject": "historie",
+          "hits": 1
         }
       ],
       "aliasSlugs": []
@@ -5498,64 +5544,10 @@
       "links": [],
       "mentionedIn": [
         {
-          "title": "Den franske revolusjon",
-          "url": "/historie/den-franske-revolusjon/intro",
-          "subject": "historie",
-          "hits": 2
-        },
-        {
-          "title": "Eneveldet: Da kongen fikk all makt",
-          "url": "/historie/dansketiden/eneveldet",
+          "title": "Det franske imperiet: Pels, allianser og sukker",
+          "url": "/historie/kolonialisering/fransk-kolonirike",
           "subject": "historie",
           "hits": 1
-        },
-        {
-          "title": "Folkemusikk: Hardingfela, slåtter og kveding",
-          "url": "/musikk/musikkhistorie/folkemusikk",
-          "subject": "musikk",
-          "hits": 5
-        },
-        {
-          "title": "Folkenes vår: Revolusjonene i 1848",
-          "url": "/historie/nasjonalstatenes-tid/revolusjonene-1848",
-          "subject": "historie",
-          "hits": 1
-        },
-        {
-          "title": "Gamle toner, nye stemmer",
-          "url": "/musikk/musikkhistorie/gamle-toner-nye-stemmer",
-          "subject": "musikk",
-          "hits": 6
-        },
-        {
-          "title": "Karl den Store: Europas Far",
-          "url": "/historie/vikingtiden/karl-den-store",
-          "subject": "historie",
-          "hits": 5
-        },
-        {
-          "title": "Monarkiet: Fra Guds nåde til folkets konge",
-          "url": "/samfunnskunnskap/styringsformer/monarkiet",
-          "subject": "samfunnskunnskap",
-          "hits": 9
-        },
-        {
-          "title": "Montesquieu",
-          "url": "/krle/filosofi/montesquieu",
-          "subject": "krle",
-          "hits": 1
-        },
-        {
-          "title": "Robespierre og skrekkveldet",
-          "url": "/historie/den-franske-revolusjon/robespierre-og-skrekkveldet",
-          "subject": "historie",
-          "hits": 2
-        },
-        {
-          "title": "Stormingen av Bastillen",
-          "url": "/historie/den-franske-revolusjon/stormingen-av-bastillen",
-          "subject": "historie",
-          "hits": 4
         }
       ],
       "aliasSlugs": []
@@ -6281,6 +6273,12 @@
           "hits": 2
         },
         {
+          "title": "Hans Nielsen Hauge: Predikanten som bygde et nettverk",
+          "url": "/historie/dansketiden/hans-nielsen-hauge",
+          "subject": "historie",
+          "hits": 1
+        },
+        {
           "title": "Hellige tekster: Bøkene som styrer liv",
           "url": "/krle/sammenligning/hellige-tekster",
           "subject": "krle",
@@ -6867,6 +6865,12 @@
           "title": "Ikke-aggresjonsprinsippet",
           "url": "/krle/etikk/non-aggression",
           "subject": "krle",
+          "hits": 2
+        },
+        {
+          "title": "Javier Milei: Motorsaga i Argentina",
+          "url": "/samfunnskunnskap/okonomi/milei-argentina",
+          "subject": "samfunnskunnskap",
           "hits": 2
         },
         {

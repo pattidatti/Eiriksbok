@@ -896,6 +896,10 @@
     },
     {
       "tag": "dekolonisering",
+      "count": 74
+    },
+    {
+      "tag": "økonomi",
       "count": 73
     },
     {
@@ -903,32 +907,28 @@
       "count": 71
     },
     {
-      "tag": "økonomi",
-      "count": 71
-    },
-    {
       "tag": "filosofi",
       "count": 61
+    },
+    {
+      "tag": "kildekritikk",
+      "count": 47
     },
     {
       "tag": "handel",
       "count": 47
     },
     {
-      "tag": "kildekritikk",
-      "count": 46
+      "tag": "religion",
+      "count": 42
     },
     {
       "tag": "antikken",
       "count": 42
     },
     {
-      "tag": "religion",
-      "count": 41
-    },
-    {
       "tag": "politikk",
-      "count": 40
+      "count": 41
     },
     {
       "tag": "kald-krig",
@@ -939,11 +939,11 @@
       "count": 38
     },
     {
-      "tag": "demokrati",
-      "count": 36
+      "tag": "1800-tallet",
+      "count": 37
     },
     {
-      "tag": "1800-tallet",
+      "tag": "demokrati",
       "count": 36
     },
     {
@@ -971,23 +971,23 @@
       "count": 28
     },
     {
+      "tag": "1700-tallet",
+      "count": 28
+    },
+    {
       "tag": "revolusjon",
       "count": 28
+    },
+    {
+      "tag": "kolonialisering",
+      "count": 26
     },
     {
       "tag": "verdensorden",
       "count": 26
     },
     {
-      "tag": "kolonialisering",
-      "count": 25
-    },
-    {
       "tag": "vikingtiden",
-      "count": 25
-    },
-    {
-      "tag": "1700-tallet",
       "count": 25
     },
     {
@@ -1000,6 +1000,10 @@
     },
     {
       "tag": "hverdagsliv",
+      "count": 24
+    },
+    {
+      "tag": "kristendom",
       "count": 24
     },
     {
@@ -1019,10 +1023,6 @@
       "count": 22
     },
     {
-      "tag": "kristendom",
-      "count": 22
-    },
-    {
       "tag": "renessansen",
       "count": 22
     },
@@ -1035,19 +1035,19 @@
       "count": 21
     },
     {
+      "tag": "imperialisme",
+      "count": 21
+    },
+    {
+      "tag": "menneskerettigheter",
+      "count": 21
+    },
+    {
       "tag": "folkemord",
       "count": 21
     },
     {
       "tag": "samfunn",
-      "count": 20
-    },
-    {
-      "tag": "imperialisme",
-      "count": 20
-    },
-    {
-      "tag": "menneskerettigheter",
       "count": 20
     },
     {
@@ -1091,6 +1091,10 @@
       "count": 16
     },
     {
+      "tag": "dansketiden",
+      "count": 16
+    },
+    {
       "tag": "geopolitikk",
       "count": 16
     },
@@ -1099,12 +1103,12 @@
       "count": 15
     },
     {
-      "tag": "fn",
+      "tag": "reformasjonen",
       "count": 15
     },
     {
-      "tag": "reformasjonen",
-      "count": 14
+      "tag": "fn",
+      "count": 15
     },
     {
       "tag": "rettigheter",
@@ -1123,6 +1127,14 @@
       "count": 14
     },
     {
+      "tag": "kongemakt",
+      "count": 13
+    },
+    {
+      "tag": "kolonialisme",
+      "count": 13
+    },
+    {
       "tag": "kollaps",
       "count": 12
     },
@@ -1132,10 +1144,6 @@
     },
     {
       "tag": "globalisering",
-      "count": 12
-    },
-    {
-      "tag": "kongemakt",
       "count": 12
     },
     {
@@ -1167,7 +1175,7 @@
       "count": 11
     },
     {
-      "tag": "dansketiden",
+      "tag": "1500-tallet",
       "count": 11
     },
     {
@@ -1215,15 +1223,7 @@
       "count": 10
     },
     {
-      "tag": "kolonialisme",
-      "count": 10
-    },
-    {
       "tag": "diplomati",
-      "count": 10
-    },
-    {
-      "tag": "1500-tallet",
       "count": 10
     },
     {
@@ -1475,6 +1475,10 @@
       "count": 6
     },
     {
+      "tag": "samer",
+      "count": 6
+    },
+    {
       "tag": "miljø",
       "count": 6
     },
@@ -1539,6 +1543,10 @@
       "count": 5
     },
     {
+      "tag": "gronland",
+      "count": 5
+    },
+    {
       "tag": "kulturarv",
       "count": 5
     },
@@ -1564,6 +1572,10 @@
     },
     {
       "tag": "kommunikasjon",
+      "count": 5
+    },
+    {
+      "tag": "bærekraft",
       "count": 5
     },
     {
@@ -1739,10 +1751,6 @@
       "count": 4
     },
     {
-      "tag": "gronland",
-      "count": 4
-    },
-    {
       "tag": "birkebeinere",
       "count": 4
     },
@@ -1795,6 +1803,10 @@
       "count": 4
     },
     {
+      "tag": "1600-tallet",
+      "count": 4
+    },
+    {
       "tag": "dampmaskin",
       "count": 4
     },
@@ -1823,19 +1835,11 @@
       "count": 4
     },
     {
-      "tag": "samer",
-      "count": 4
-    },
-    {
       "tag": "opprør",
       "count": 4
     },
     {
       "tag": "antarktis",
-      "count": 4
-    },
-    {
-      "tag": "bærekraft",
       "count": 4
     },
     {
@@ -1967,6 +1971,10 @@
       "count": 4
     },
     {
+      "tag": "misjon",
+      "count": 4
+    },
+    {
       "tag": "religionshistorie",
       "count": 4
     },
@@ -1991,6 +1999,10 @@
       "count": 3
     },
     {
+      "tag": "inflasjon",
+      "count": 3
+    },
+    {
       "tag": "ritualer",
       "count": 3
     },
@@ -2011,7 +2023,23 @@
       "count": 3
     },
     {
+      "tag": "religionsfrihet",
+      "count": 3
+    },
+    {
+      "tag": "bergverk",
+      "count": 3
+    },
+    {
+      "tag": "kolonisering",
+      "count": 3
+    },
+    {
       "tag": "stormakt",
+      "count": 3
+    },
+    {
+      "tag": "pietisme",
       "count": 3
     },
     {
@@ -2023,11 +2051,19 @@
       "count": 3
     },
     {
+      "tag": "eneveldet",
+      "count": 3
+    },
+    {
       "tag": "moral",
       "count": 3
     },
     {
       "tag": "medisin",
+      "count": 3
+    },
+    {
+      "tag": "vekkelse",
       "count": 3
     },
     {
@@ -2040,6 +2076,10 @@
     },
     {
       "tag": "nihilisme",
+      "count": 3
+    },
+    {
+      "tag": "nansen",
       "count": 3
     },
     {
@@ -2128,6 +2168,10 @@
     },
     {
       "tag": "metode",
+      "count": 3
+    },
+    {
+      "tag": "nord-norge",
       "count": 3
     },
     {
@@ -2340,10 +2384,6 @@
     },
     {
       "tag": "salt",
-      "count": 2
-    },
-    {
-      "tag": "inflasjon",
       "count": 2
     },
     {
@@ -2659,10 +2699,6 @@
       "count": 2
     },
     {
-      "tag": "religionsfrihet",
-      "count": 2
-    },
-    {
       "tag": "grunnloven",
       "count": 2
     },
@@ -2711,14 +2747,6 @@
       "count": 2
     },
     {
-      "tag": "bergverk",
-      "count": 2
-    },
-    {
-      "tag": "kolonisering",
-      "count": 2
-    },
-    {
       "tag": "gustav-ii-adolf",
       "count": 2
     },
@@ -2740,10 +2768,6 @@
     },
     {
       "tag": "styringsformer",
-      "count": 2
-    },
-    {
-      "tag": "1600-tallet",
       "count": 2
     },
     {
@@ -2811,10 +2835,6 @@
       "count": 2
     },
     {
-      "tag": "pietisme",
-      "count": 2
-    },
-    {
       "tag": "lovgivning",
       "count": 2
     },
@@ -2844,6 +2864,14 @@
     },
     {
       "tag": "plikt",
+      "count": 2
+    },
+    {
+      "tag": "bondeoppror",
+      "count": 2
+    },
+    {
+      "tag": "agder",
       "count": 2
     },
     {
@@ -2948,10 +2976,6 @@
     },
     {
       "tag": "opium",
-      "count": 2
-    },
-    {
-      "tag": "vekkelse",
       "count": 2
     },
     {
@@ -3072,10 +3096,6 @@
     },
     {
       "tag": "amundsen",
-      "count": 2
-    },
-    {
-      "tag": "nansen",
       "count": 2
     },
     {
@@ -3663,6 +3683,14 @@
       "count": 2
     },
     {
+      "tag": "kvinner",
+      "count": 2
+    },
+    {
+      "tag": "flyktninger",
+      "count": 2
+    },
+    {
       "tag": "dap",
       "count": 2
     },
@@ -3676,10 +3704,6 @@
     },
     {
       "tag": "doden",
-      "count": 2
-    },
-    {
-      "tag": "nord-norge",
       "count": 2
     },
     {
@@ -4103,6 +4127,14 @@
       "count": 1
     },
     {
+      "tag": "argentina",
+      "count": 1
+    },
+    {
+      "tag": "populisme",
+      "count": 1
+    },
+    {
       "tag": "innovasjon",
       "count": 1
     },
@@ -4155,15 +4187,39 @@
       "count": 1
     },
     {
-      "tag": "eneveldet",
+      "tag": "haugianere",
       "count": 1
     },
     {
-      "tag": "bondeoppror",
+      "tag": "lekmannsbevegelse",
       "count": 1
     },
     {
-      "tag": "agder",
+      "tag": "samisk-religion",
+      "count": 1
+    },
+    {
+      "tag": "røros",
+      "count": 1
+    },
+    {
+      "tag": "verdensarv",
+      "count": 1
+    },
+    {
+      "tag": "inuitter",
+      "count": 1
+    },
+    {
+      "tag": "madagaskar",
+      "count": 1
+    },
+    {
+      "tag": "lofoten",
+      "count": 1
+    },
+    {
+      "tag": "fiske",
       "count": 1
     },
     {
@@ -4175,10 +4231,6 @@
       "count": 1
     },
     {
-      "tag": "kvinner",
-      "count": 1
-    },
-    {
       "tag": "sjøfart",
       "count": 1
     },
@@ -4187,7 +4239,31 @@
       "count": 1
     },
     {
+      "tag": "mellomkrigstiden",
+      "count": 1
+    },
+    {
+      "tag": "folkeforbundet",
+      "count": 1
+    },
+    {
+      "tag": "nobels-fredspris",
+      "count": 1
+    },
+    {
+      "tag": "versailles",
+      "count": 1
+    },
+    {
+      "tag": "hugenotter",
+      "count": 1
+    },
+    {
       "tag": "slavehandel",
+      "count": 1
+    },
+    {
+      "tag": "konsentrasjonsleirer",
       "count": 1
     },
     {
@@ -4199,11 +4275,11 @@
       "count": 1
     },
     {
-      "tag": "hellige_tekster",
+      "tag": "zulu",
       "count": 1
     },
     {
-      "tag": "misjon",
+      "tag": "hellige_tekster",
       "count": 1
     },
     {

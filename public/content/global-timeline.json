@@ -4624,6 +4624,32 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hugenottene",
+      "title": "Hugenottene: Troen som kongen kunne ta tilbake",
+      "description": "De franske protestantene fikk frihet av én konge og mistet den til en annen, helt til revolusjonen gjorde troen til en rettighet for alle.",
+      "startDate": 1562,
+      "endDate": 1789,
+      "displayDate": "1562-1789",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "reformasjonen",
+      "link": "/historie/reformasjonen/hugenottene",
+      "tags": [
+        "reformasjonen",
+        "frankrike",
+        "hugenotter",
+        "religionsfrihet",
+        "flyktninger",
+        "1500-tallet",
+        "1600-tallet"
+      ],
+      "lat": 46.6,
+      "lng": 2.5,
+      "placeLabel": "Frankrike",
+      "placeCountryId": 250,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "galileo-galilei",
       "title": "Galileo Galilei: Mannen som så himmelen først",
       "description": "Med en hjemmelaget kikkert og et stridig sinn beviste Galileo at jorden beveger seg — og la grunnlaget for moderne vitenskap.",
@@ -5050,6 +5076,55 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "solkongen-ludvig-xiv",
+      "title": "Ludvig 14.: Solkongen i Versailles",
+      "description": "Hvordan en gutt som ble jaget fra Paris under Fronden, ble en konge med all makt og temmet adelen i Versailles.",
+      "startDate": 1643,
+      "endDate": 1715,
+      "displayDate": "1643-1715",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "den-franske-revolusjon",
+      "link": "/historie/den-franske-revolusjon/solkongen-ludvig-xiv",
+      "tags": [
+        "frankrike",
+        "eneveldet",
+        "kongemakt",
+        "versailles",
+        "1600-tallet"
+      ],
+      "lat": 46.6,
+      "lng": 2.5,
+      "placeLabel": "Frankrike",
+      "placeCountryId": 250,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "roros-kobberverk",
+      "title": "Røros kobberverk: da et helt landskap jobbet for kobberet",
+      "description": "Hvordan ett kobberverk på Rørosvidda la beslag på skogen, bøndene og vidda i en sirkel på 45 kilometer i 333 år.",
+      "startDate": 1644,
+      "endDate": 1977,
+      "displayDate": "1644-1977",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/roros-kobberverk",
+      "tags": [
+        "norge",
+        "røros",
+        "bergverk",
+        "dansketiden",
+        "samer",
+        "verdensarv"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "eneveldet",
       "title": "Eneveldet: Da kongen fikk all makt",
       "description": "På fire dager i oktober 1660 mistet adelen makten, og kongen i Danmark-Norge fikk alt. Slik forandret det Norge.",
@@ -5288,6 +5363,32 @@
       ]
     },
     {
+      "id": "thomas-von-westen",
+      "title": "Thomas von Westen: Misjonæren som prekte på samisk og tok trommene",
+      "description": "Presten som ledet samemisjonen fra 1716 brukte samisk språk i kirke og skole, men fikk også samene til å gi fra seg trommene sine.",
+      "startDate": 1716,
+      "endDate": 1727,
+      "displayDate": "1716-1727",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/thomas-von-westen",
+      "tags": [
+        "norge",
+        "dansketiden",
+        "samer",
+        "misjon",
+        "samisk-religion",
+        "pietisme",
+        "1700-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "frihetstiden",
       "title": "Frihetstiden - da riksdagen tok makten fra kongen",
       "description": "I 53 år styrte den svenske riksdagen i stedet for kongen, helt til Gustav 3 tok makten tilbake med et kupp i 1772.",
@@ -5310,6 +5411,32 @@
       "lng": 15,
       "placeLabel": "Sverige",
       "placeCountryId": 752,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "hans-egede",
+      "title": "Hans Egede: Presten som lette etter et folk som var borte",
+      "description": "Presten fra Lofoten reiste til Grønland i 1721 for å finne nordboerne, men fant inuittene - og startet koloniseringen av Grønland.",
+      "startDate": 1721,
+      "endDate": 1736,
+      "displayDate": "1721-1736",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/hans-egede",
+      "tags": [
+        "norge",
+        "dansketiden",
+        "gronland",
+        "misjon",
+        "kolonisering",
+        "inuitter",
+        "1700-tallet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
       "geoConfidence": "tag"
     },
     {
@@ -6084,6 +6211,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hans-nielsen-hauge",
+      "title": "Hans Nielsen Hauge: Predikanten som bygde et nettverk",
+      "description": "Bondesønnen som prekte selv om det var forbudt, satt ti år i fengsel og bygde en bevegelse som overlevde ham.",
+      "startDate": 1796,
+      "endDate": 1824,
+      "displayDate": "1796-1824",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dansketiden",
+      "link": "/historie/dansketiden/hans-nielsen-hauge",
+      "tags": [
+        "norge",
+        "dansketiden",
+        "kristendom",
+        "vekkelse",
+        "haugianere",
+        "lekmannsbevegelse"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "vaksiner-og-antibiotika",
       "title": "Vaksiner og antibiotika: medisinen som forlenget livet",
       "description": "Hvordan Jenners vaksine og Flemings penicillin mer enn doblet forventet levealder - og hvorfor antibiotikaresistens er dagens nye trussel.",
@@ -6539,6 +6691,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "shaka-og-zulu-riket",
+      "title": "Shaka og Zulu-riket: Hvem fikk skylda?",
+      "description": "Shaka gjorde zuluene til en stormakt i det sørlige Afrika, men fikk lenge skylda for krigene som kalles mfecane.",
+      "startDate": 1816,
+      "endDate": 1879,
+      "displayDate": "1816-1879",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/shaka-og-zulu-riket",
+      "tags": [
+        "afrika",
+        "sør-afrika",
+        "zulu",
+        "kolonialisering",
+        "kildekritikk"
+      ],
+      "lat": -29,
+      "lng": 24,
+      "placeLabel": "Sør-Afrika",
+      "placeCountryId": 710,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "marx",
       "title": "Karl Marx",
       "description": "Klassekamp, merverdi og kapitalismens kritikk.",
@@ -6751,6 +6927,32 @@
         "historie",
         "norge",
         "industrialisering"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "misjonsbevegelsen",
+      "title": "Misjonsbevegelsen: Fra syforeningen i Lyngdal til Madagaskar",
+      "description": "Hvordan Det Norske Misjonsselskap sendte nordmenn ut i verden, og hvordan kvinneforeningene for misjon ble Norges første store kvinnebevegelse.",
+      "startDate": 1842,
+      "endDate": null,
+      "displayDate": "1842",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/misjonsbevegelsen",
+      "tags": [
+        "norge",
+        "religion",
+        "kristendom",
+        "misjon",
+        "kvinner",
+        "kolonialisme",
+        "madagaskar"
       ],
       "lat": 60.5,
       "lng": 8.5,
@@ -7084,6 +7286,32 @@
         "vann",
         "oppfinnelser"
       ]
+    },
+    {
+      "id": "lofotfisket",
+      "title": "Lofotfisket: Tusen år med skrei",
+      "description": "Hvordan skreien, tørrfisken og Lofotloven fra 1857 formet livet langs kysten, og hvorfor tusenvis av fiskere sloss om Trollfjorden i 1890.",
+      "startDate": 1857,
+      "endDate": null,
+      "displayDate": "1857",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "norge-i-moderne-tid",
+      "link": "/historie/norge-i-moderne-tid/lofotfisket",
+      "tags": [
+        "norge",
+        "lofoten",
+        "fiske",
+        "økonomi",
+        "1800-tallet",
+        "nord-norge",
+        "bærekraft"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
     },
     {
       "id": "opproret-1857",
@@ -7760,6 +7988,31 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "guess"
+    },
+    {
+      "id": "boerkrigen",
+      "title": "Boerkrigen: Gull, leirer og en fred uten de svarte",
+      "description": "Hvorfor Storbritannia og boerne gikk til krig om Sør-Afrika i 1899, hvorfor sivile i leirene betalte prisen, og hvem som fikk noe ut av freden i 1902.",
+      "startDate": 1899,
+      "endDate": 1902,
+      "displayDate": "1899-1902",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "kolonialisering",
+      "link": "/historie/kolonialisering/boerkrigen",
+      "tags": [
+        "sør-afrika",
+        "afrika",
+        "storbritannia",
+        "imperialisme",
+        "konsentrasjonsleirer",
+        "kolonialisme"
+      ],
+      "lat": -29,
+      "lng": 24,
+      "placeLabel": "Sør-Afrika",
+      "placeCountryId": 710,
+      "geoConfidence": "tag"
     },
     {
       "id": "bokseropproret",
@@ -8595,6 +8848,32 @@
         "fred",
         "diplomati"
       ]
+    },
+    {
+      "id": "nansen-og-flyktningene",
+      "title": "Fridtjof Nansen og flyktningene: Et pass for de som ikke hørte til",
+      "description": "Polarhelten Fridtjof Nansen hjalp krigsfanger hjem, ledet nødhjelp til sultende russere og laget Nansenpasset for flyktninger uten land.",
+      "startDate": 1920,
+      "endDate": 1930,
+      "displayDate": "1920-1930",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "mellomkrigstiden",
+      "link": "/historie/mellomkrigstiden/nansen-og-flyktningene",
+      "tags": [
+        "norge",
+        "mellomkrigstiden",
+        "folkeforbundet",
+        "flyktninger",
+        "nansen",
+        "russland",
+        "nobels-fredspris"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "tag"
     },
     {
       "id": "midtosten-mandater-sub-2",
@@ -10498,6 +10777,31 @@
       "lng": 8.5,
       "placeLabel": "Norge",
       "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "mau-mau-opproret",
+      "title": "Mau Mau-opprøret: Kampen om jorda i Kenya",
+      "description": "Rundt 3000 europeiske familier eide mer jord enn én million kikuyuer. Da de fredelige veiene ble stengt, gikk tusenvis til skogen, og britene svarte med leirer og piggtråd.",
+      "startDate": 1952,
+      "endDate": 1960,
+      "displayDate": "1952-1960",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "dekolonisering",
+      "link": "/historie/dekolonisering/mau-mau-opproret",
+      "tags": [
+        "kenya",
+        "afrika",
+        "kolonialisme",
+        "dekolonisering",
+        "storbritannia",
+        "menneskerettigheter"
+      ],
+      "lat": 0,
+      "lng": 37.9,
+      "placeLabel": "Kenya",
+      "placeCountryId": 404,
       "geoConfidence": "tag"
     },
     {
@@ -13612,6 +13916,30 @@
       "placeLabel": "Russland",
       "placeCountryId": 643,
       "geoConfidence": "tag"
+    },
+    {
+      "id": "milei-argentina",
+      "title": "Javier Milei: Motorsaga i Argentina",
+      "description": "Prisene steg 211 prosent på ett år. Så kom en økonom med motorsag. Hvem betalte for å stoppe inflasjonen?",
+      "startDate": 2023,
+      "endDate": null,
+      "displayDate": "2023",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/milei-argentina",
+      "tags": [
+        "økonomi",
+        "argentina",
+        "inflasjon",
+        "politikk",
+        "populisme"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "global-handel-oversikt",

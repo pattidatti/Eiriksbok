@@ -1560,6 +1560,17 @@
     "id": "det-universelle-rettferdighetens-hus"
   },
   {
+    "term": "Devaluering",
+    "definition": "Når et land bestemmer at valutaen skal bli mindre verdt mot andre valutaer, for eksempel dollar. Varer fra utlandet blir dyrere, mens landets egne varer blir billigere å selge til andre land.",
+    "subject": "samfunnskunnskap",
+    "topic": "okonomi",
+    "tags": [
+      "økonomi",
+      "valuta"
+    ],
+    "id": "devaluering"
+  },
+  {
     "term": "Devşirme",
     "aliases": [
       "devsirme",
@@ -2096,6 +2107,17 @@
       "tekster"
     ],
     "id": "gemara"
+  },
+  {
+    "term": "Generalstreik",
+    "definition": "En streik der arbeidere i mange yrker over hele landet legger ned arbeidet samtidig, ofte i protest mot regjeringen.",
+    "subject": "samfunnskunnskap",
+    "topic": "arbeidsliv",
+    "tags": [
+      "arbeidsliv",
+      "fagforeninger"
+    ],
+    "id": "generalstreik"
   },
   {
     "term": "Generasjon",
@@ -3680,6 +3702,17 @@
     "id": "liberalisme"
   },
   {
+    "term": "Libertarianisme",
+    "definition": "Politisk retning som mener staten skal være så liten som mulig. Folk skal selv bestemme over livet og pengene sine, og markedet skal ordne det meste.",
+    "subject": "samfunnskunnskap",
+    "topic": "okonomi",
+    "tags": [
+      "økonomi",
+      "ideologi"
+    ],
+    "id": "libertarianisme"
+  },
+  {
     "term": "Logos",
     "definition": "En av de tre retoriske appellformene. Handler om logisk argumentasjon, fakta og saklig innhold.",
     "type": "concept",
@@ -4860,6 +4893,17 @@
     "id": "perestrojka"
   },
   {
+    "term": "Peronisme",
+    "definition": "Politisk bevegelse i Argentina oppkalt etter Juan Domingo Perón, president fra 1946. Peronister tror på en sterk stat som tar vare på arbeiderne, men kan være både til høyre og venstre i økonomisk politikk.",
+    "subject": "samfunnskunnskap",
+    "topic": "okonomi",
+    "tags": [
+      "argentina",
+      "politikk"
+    ],
+    "id": "peronisme"
+  },
+  {
     "term": "Pesach",
     "definition": "Den jødiske påsken. Den feirer at israelittene slapp fri fra slaveriet i Egypt.",
     "type": "concept",
@@ -4976,6 +5020,17 @@
     "term": "Population Registration Act",
     "definition": "Sørafrikansk lov fra 1950 som klassifiserte alle innbyggere etter rase. En av apartheid-systemets grunnlover.",
     "id": "population-registration-act"
+  },
+  {
+    "term": "Populisme",
+    "definition": "Politikk som deler samfunnet i to: det vanlige, ærlige folket mot en grådig elite. Populisten lover å ta makten tilbake for folket.",
+    "subject": "samfunnskunnskap",
+    "topic": "styringsformer",
+    "tags": [
+      "politikk",
+      "demokrati"
+    ],
+    "id": "populisme"
   },
   {
     "term": "Pragmatisme",
@@ -6019,6 +6074,17 @@
     "term": "Sivilisasjon",
     "definition": "Et samfunn med byer, skrift, statsmakt og spesialiserte yrker. De tidligste sivilisasjonene oppsto langs store elver for rundt 5000 år siden.",
     "id": "sivilisasjon"
+  },
+  {
+    "term": "Sjokkterapi",
+    "definition": "Økonomisk politikk der en regjering gjør mange store endringer på en gang, som kraftige kutt og fjerning av regler, i stedet for å gjøre dem litt og litt.",
+    "subject": "samfunnskunnskap",
+    "topic": "okonomi",
+    "tags": [
+      "økonomi",
+      "argentina"
+    ],
+    "id": "sjokkterapi"
   },
   {
     "term": "Skagerrak",
