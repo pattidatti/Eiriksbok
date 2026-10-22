@@ -86,6 +86,7 @@ const Toleransebarometeret = lazy(() => import('./content/interactive/Toleranseb
 const MisjonensToSider = lazy(() => import('./content/interactive/MisjonensToSider').then(m => ({ default: m.MisjonensToSider })));
 const EgedesPlan = lazy(() => import('./content/interactive/EgedesPlan').then(m => ({ default: m.EgedesPlan })));
 const MfecaneSkylda = lazy(() => import('./content/interactive/MfecaneSkylda').then(m => ({ default: m.MfecaneSkylda })));
+const FjelletsValg = lazy(() => import('./content/interactive/FjelletsValg').then(m => ({ default: m.FjelletsValg })));
 const VeienTilSkogen = lazy(() => import('./content/interactive/VeienTilSkogen').then(m => ({ default: m.VeienTilSkogen })));
 const BordetIVereeniging = lazy(() => import('./content/interactive/BordetIVereeniging').then(m => ({ default: m.BordetIVereeniging })));
 const Motorsaga = lazy(() => import('./content/interactive/Motorsaga').then(m => ({ default: m.Motorsaga })));
@@ -1052,6 +1053,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     MisjonensToSider,
     EgedesPlan,
     MfecaneSkylda,
+    FjelletsValg,
     VeienTilSkogen,
     BordetIVereeniging,
     Motorsaga,
