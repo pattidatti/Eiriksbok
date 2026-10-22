@@ -1,0 +1,208 @@
+{
+    "id": "moshoeshoe-og-basotho-riket",
+    "tittel": "Moshoeshoe: Kongen som bygde et folk av flyktninger",
+    "kilde": "/historie/afrikanske-riker/moshoeshoe-og-basotho-riket",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-22", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "fangene",
+            "lyd": "vind",
+            "kapittel": "Fangene",
+            "visual": { "type": "MoshoeshoeFjellet", "props": { "modus": "fanger" } },
+            "replikker": [
+                { "si": "Det er 1826. Vi står på toppen av et flatt fjell i det sørlige Afrika. Soldatene til Moshoeshoe fører fanger opp." },
+                { "si": "Dette er ikke vanlige fiender. Noen år tidligere tok folk fra denne gruppen bestefaren til Moshoeshoe, og spiste ham." },
+                { "si": "Krig og sult hadde drevet dem så langt at de spiste mennesker. Alle venter på hva høvdingen skal gjøre." },
+                { "si": "Men Moshoeshoe tar ikke hevn. Fangene får gå gjennom et renselsesritual, en seremoni som skal vaske bort det de har gjort." },
+                { "si": "Så sender han dem hjem. Med kyr, korn og såkorn." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MOSHOESHOE",
+                    "undertittel": "Kongen som bygde et folk av flyktninger",
+                    "sporsmal": { "tekst": "Hvordan bygger man et folk?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Mannen het Moshoeshoe. Han skapte basotho-folket, og landet som i dag heter Lesotho." },
+                { "si": "Han vant flere slag, men det var ikke krigene som gjorde ham stor. Han bygde et folk av flyktninger og fiender. Hvordan klarte han det?" }
+            ]
+        },
+        {
+            "id": "fodt",
+            "lyd": "stille",
+            "kapittel": "En gutt som het Ulykke",
+            "visual": { "type": "MoshoeshoeKart", "props": { "modus": "fodt" } },
+            "replikker": [
+                { "si": "Moshoeshoe ble født rundt 1786, i det som i dag er Lesotho. Det er et lite fjelland i det sørlige Afrika." },
+                { "si": "Han kom til verden mens det var hungersnød. Derfor fikk han navnet Lepoqo. Det betyr ulykker." },
+                { "si": "Som ung ledet han et raid, et overraskende angrep for å ta kveg fra et annet folk. Det blir fortalt at han barberte skjegget av dem han tok kveget fra." },
+                { "si": "Navnet Moshoeshoe skal ligne lyden av en kniv som skjærer skjegg. En klok mann, Mohlomi, lærte ham at en leder først og fremst må være god." },
+                { "si": "I 1820 tok han over etter faren som høvding for en liten gruppe. De bodde først ved fjellet Butha-Buthe." }
+            ]
+        },
+        {
+            "id": "flukt",
+            "kapittel": "Hamringen",
+            "visual": { "type": "MoshoeshoeFolk", "props": { "modus": "flukt" } },
+            "replikker": [
+                { "si": "Akkurat da gikk det sørlige Afrika i oppløsning. På sesotho, språket til basotho, heter denne tiden difaqane. Det betyr omtrent hamringen." },
+                { "si": "Hele folk ble jaget fra hjemmene sine av krig, tørke og sult." },
+                { "si": "Mye av uroen er knyttet til Shaka og Zulu-riket lenger øst. Men det var mange årsaker." },
+                { "si": "I 1822 ble også Butha-Buthe angrepet. Moshoeshoe måtte finne et tryggere sted for folket sitt." }
+            ]
+        },
+        {
+            "id": "festning",
+            "lyd": "vind",
+            "kapittel": "Fjellet om natta",
+            "visual": { "type": "MoshoeshoeFjellet", "props": { "modus": "festning" } },
+            "replikker": [
+                { "si": "I 1824 kom de til fjellet Thaba Bosiu. De kom fram i mørket. Derfor betyr navnet fjellet om natta." },
+                { "si": "Fjellet var en perfekt festning. Toppen er flat, og det var bare sju stier opp. Alle var lette å forsvare." },
+                { "si": "Oppe på toppen fantes det kilder med vann." },
+                { "si": "Og det var plass til rundt 3000 mennesker med dyrene sine." },
+                { "si": "En fiende kunne beleire fjellet lenge, altså omringe det og vente. Folket der oppe ville likevel ikke tørste i hjel." }
+            ]
+        },
+        {
+            "id": "lan",
+            "kapittel": "Et folk av flyktninger",
+            "visual": { "type": "MoshoeshoeFolk", "props": { "modus": "lan" } },
+            "replikker": [
+                { "si": "Folk på flukt fra krigene begynte å komme til Thaba Bosiu. Moshoeshoe hadde ryktet på seg som en klok og omsorgsfull leder." },
+                { "si": "Han tok dem inn. Grupper som hadde mistet alt, fikk låne kyr av ham." },
+                { "si": "For et folk som levde av kveg, betydde det melk, mat og en ny start." }
+            ]
+        },
+        {
+            "id": "ndebele",
+            "visual": { "type": "MoshoeshoeFjellet", "props": { "modus": "ndebele" } },
+            "replikker": [
+                { "si": "Han behandlet fiender på samme måte. Rundt 1831 angrep Ndebele-folket fjellet." },
+                { "si": "Ndebele var et mektig folk. De ble ledet av Mzilikazi, som hadde brutt med Shaka." },
+                { "si": "Basotho slo angrepet tilbake. Etterpå sendte Moshoeshoe Ndebele en gave med kyr." },
+                { "si": "Gaven sa: Vi kan forsvare oss, men vi vil ikke ha en ny krig." }
+            ]
+        },
+        {
+            "id": "fred",
+            "lyd": "stille",
+            "visual": { "type": "MoshoeshoeFolk", "props": { "modus": "fred" } },
+            "replikker": [
+                { "si": "Moshoeshoe satset på avtaler, og på å ta nye grupper inn i folket. Det satset han mer på enn på å erobre." },
+                { "si": "Han skal ha sagt: Fred er som regnet som får gresset til å gro." },
+                { "si": "Mens krig er som vinden som tørker det bort." },
+                { "si": "Etter hvert kunne han samle rundt 5000 krigere. Flyktninger fra mange forskjellige folk var blitt ett folk: basotho." }
+            ]
+        },
+        {
+            "id": "naboer",
+            "kapittel": "Nye naboer",
+            "visual": { "type": "MoshoeshoeKart", "props": { "modus": "naboer" } },
+            "replikker": [
+                { "si": "Nye naboer var på vei. Hvite nybyggere med gevær og hester kom nordover fra Kappkolonien, den britiske kolonien helt sør i Afrika." },
+                { "si": "Moshoeshoe ville vite mer om dem. I 1833 inviterte han misjonærer fra Paris. Tre franskmenn kom, ledet av Eugène Casalis." },
+                { "si": "Misjonærene ga ham råd i møtet med europeerne. De hjalp også til med å skrive ned sesotho, så språket fikk et skriftspråk." },
+                { "si": "Basotho lærte også av fiendene. Da ryttere angrep dem, angrep basotho tilbake fra skjul, og tok geværene og hestene deres. Snart var basotho kjent som dyktige ryttere." },
+                { "si": "Fra 1836 kom boerne, nederlandsktalende bønder som flyttet bort fra britisk styre. De slo seg ned på sletta vest for fjellene." },
+                { "si": "Både boerne og basotho ville ha den fruktbare jorda langs Caledon-elva. I 1848 tok britene over området, og trakk en grense Moshoeshoe ikke kunne godta." }
+            ]
+        },
+        {
+            "id": "bot",
+            "kapittel": "Krig om jorda",
+            "visual": { "type": "MoshoeshoeFolk", "props": { "modus": "bot" } },
+            "replikker": [
+                { "si": "Det ble krig, og basotho vant både i 1851 og 1852." },
+                { "si": "I 1852 krevde den britiske guvernøren en bot på 10 000 kyr og 1000 hester." },
+                { "si": "Moshoeshoe sendte rundt 3000 kyr og noen hester." },
+                { "si": "Det var ikke nok for britene." }
+            ]
+        },
+        {
+            "id": "fristat",
+            "visual": { "type": "MoshoeshoeKart", "props": { "modus": "fristat" } },
+            "replikker": [
+                { "si": "Det ble kamp på Berea-sletta, og britene led store tap mot basotho-rytterne. To år senere trakk britene seg ut." },
+                { "si": "Boerne fikk området og kalte det Oranjefristaten. Nå var det de som ville ha jorda." },
+                { "si": "Mellom 1858 og 1868 kjempet basotho tre kriger mot Oranjefristaten. I den første klarte ikke boerne å ta Thaba Bosiu." },
+                { "si": "I 1865 prøvde de igjen. Men basotho gikk tom for mat, og 11. april 1866 måtte Moshoeshoe godta en fred som kostet ham land.", "uttale": "I 1865 prøvde de igjen. Men basotho gikk tom for mat, og ellevte april 1866 måtte Moshoeshoe godta en fred som kostet ham land." },
+                { "si": "Den tredje krigen begynte i juli 1867. Da tok boerne nesten hele landet." }
+            ]
+        },
+        {
+            "id": "beleiring",
+            "lyd": "vind",
+            "kapittel": "Avtalen",
+            "visual": { "type": "MoshoeshoeFjellet", "props": { "modus": "beleiring" } },
+            "replikker": [
+                { "si": "Bare ett sted sto igjen: fjellet Thaba Bosiu." },
+                { "si": "Boerne hadde prøvd å storme det før. Boerlederen Louw Wepener ble drept da han prøvde." },
+                { "si": "Men Moshoeshoe var nå over 80 år gammel. Han visste at folket ikke kunne vinne med våpen." },
+                { "si": "Så han ba britene om beskyttelse." }
+            ]
+        },
+        {
+            "id": "avtale",
+            "lyd": "stille",
+            "visual": { "type": "MoshoeshoeKart", "props": { "modus": "avtale" } },
+            "replikker": [
+                { "si": "Den 12. mars 1868 ble landet britisk, med navnet Basutoland.", "uttale": "Den tolvte mars 1868 ble landet britisk, med navnet Basutoland." },
+                { "si": "Da måtte Oranjefristaten stanse krigen, for å unngå trøbbel med det britiske imperiet." },
+                { "si": "Men avtalen hadde en høy pris. I 1869 ble grensene trukket på nytt." },
+                { "si": "Den fruktbare jorda vest for Caledon-elva gikk til boerne for godt." },
+                { "si": "Men folket og landet overlevde. Moshoeshoe døde 11. mars 1870, og ble gravlagt på toppen av Thaba Bosiu.", "uttale": "Men folket og landet overlevde. Moshoeshoe døde ellevte mars 1870, og ble gravlagt på toppen av Thaba Bosiu." }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "Lesotho i dag",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Fra Basutoland til Lesotho",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "1884: britisk koloni", "tekst": "styrt direkte fra Storbritannia", "fraBeat": 0 },
+                        { "ikon": "hus", "tittel": "1910: holdt utenfor", "tekst": "ikke med i det nye Sør-Afrika", "fraBeat": 1 },
+                        { "ikon": "haer", "tittel": "Aldri apartheid", "tekst": "slapp systemet som skilte folk etter hudfarge", "fraBeat": 2 },
+                        { "ikon": "stjerne", "tittel": "1966: Lesotho", "tekst": "selvstendig, med Moshoeshoe 2. som konge", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Fra 1884 ble Basutoland styrt direkte som en britisk koloni." },
+                { "si": "Da Sør-Afrika ble samlet til én stat i 1910, ble Basutoland holdt utenfor." },
+                { "si": "Det betydde mye senere. Sør-Afrika fikk apartheid, et system der den hvite minoriteten styrte og skilte folk etter hudfarge. Lesotho ble aldri en del av det." },
+                { "si": "Den 4. oktober 1966 ble landet selvstendig, med navnet Lesotho. Kongen het Moshoeshoe den andre, en etterkommer av grunnleggeren.", "uttale": "Den fjerde oktober 1966 ble landet selvstendig, med navnet Lesotho. Kongen het Moshoeshoe den andre, en etterkommer av grunnleggeren." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Shaka bygde med en hær.", "fraBeat": 0 },
+                        { "tekst": "Moshoeshoe med lånte kyr, gaver og avtaler.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Styrke er ikke bare å vinne slag.", "fraBeat": 1 },
+                        { "tekst": "Det er å få folk til å ville høre til.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Når våpnene ikke strekker til,", "fraBeat": 2 },
+                        { "tekst": "kan en klok avtale redde mye, selv om prisen er høy.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Shaka og Moshoeshoe levde på samme tid, i samme del av verden. Shaka bygde riket med en hær som erobret naboene. Moshoeshoe bygde sitt med en festning, lånte kyr, gaver og avtaler." },
+                { "si": "Historien om Moshoeshoe viser at styrke ikke bare handler om å vinne slag. Det handler også om å få folk til å ville høre til." },
+                { "si": "Og når våpnene ikke strekker til, kan en klok avtale redde det som ellers ville gått tapt. Selv om prisen er høy." }
+            ]
+        }
+    ]
+}
