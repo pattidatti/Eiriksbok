@@ -4,10 +4,20 @@
     "kilde": "/krle/sammenligning/lidelse",
     "bilde": "/images/sammenligning/lidelse-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-22",
+        "viser": 3,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
     "scener": [
         {
             "id": "natt",
             "kapittel": "Natten",
+            "lyd": "vind",
             "visual": {
                 "type": "LidelseByen",
                 "props": {
@@ -19,7 +29,7 @@
                     "si": "Tenk deg en by om natta. Folk sover. Gatene er tomme."
                 },
                 {
-                    "si": "Plutselig begynner bakken å riste. Det er et jordskjelv."
+                    "si": "Plutselig rister bakken. Det er et jordskjelv."
                 },
                 {
                     "si": "Husene raser sammen. På tolv sekunder dør tusen mennesker."
@@ -31,6 +41,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -69,7 +80,7 @@
             },
             "replikker": [
                 {
-                    "si": "Selve tanken er enkel. Hvis Gud er god, vil han fjerne lidelsen."
+                    "si": "Hvis Gud er god, vil han fjerne lidelsen."
                 },
                 {
                     "si": "Og hvis Gud kan alt, klarer han det også."
@@ -112,44 +123,10 @@
         {
             "id": "jodedom",
             "kapittel": "Én god Gud",
+            "lyd": "rom",
             "visual": {
-                "type": "LidelseTavla",
-                "props": {
-                    "brikker": [
-                        {
-                            "fokus": "abrahamittisk",
-                            "tekst": "Én Gud som er god og kan alt",
-                            "fraBeat": 0
-                        },
-                        {
-                            "fokus": "abrahamittisk",
-                            "tekst": "Da må lidelsen forklares",
-                            "fraBeat": 0,
-                            "tone": "rod"
-                        },
-                        {
-                            "fokus": "jodedom",
-                            "tekst": "Ingen ferdig forklaring",
-                            "fraBeat": 1
-                        },
-                        {
-                            "fokus": "jodedom",
-                            "tekst": "Job mister barna, eiendommen og helsa",
-                            "fraBeat": 2
-                        },
-                        {
-                            "fokus": "jodedom",
-                            "tekst": "Vennene: Du har fortjent det",
-                            "fraBeat": 3
-                        },
-                        {
-                            "fokus": "jodedom",
-                            "tekst": "Gud svarer, men forklarer ingenting",
-                            "fraBeat": 4,
-                            "tone": "rod"
-                        }
-                    ]
-                }
+                "type": "LidelseJob",
+                "props": {}
             },
             "replikker": [
                 {
@@ -174,7 +151,9 @@
             "visual": {
                 "type": "LidelseTavla",
                 "props": {
-                    "sett": ["jodedom"],
+                    "sett": [
+                        "jodedom"
+                    ],
                     "brikker": [
                         {
                             "fokus": "kristendom",
@@ -220,7 +199,10 @@
             "visual": {
                 "type": "LidelseTavla",
                 "props": {
-                    "sett": ["jodedom", "kristendom"],
+                    "sett": [
+                        "jodedom",
+                        "kristendom"
+                    ],
                     "brikker": [
                         {
                             "fokus": "islam",
@@ -254,16 +236,17 @@
                     "si": "Koranen sier at mennesket blir satt på prøve med frykt, sult og tap. De som holder ut, får gode nyheter."
                 },
                 {
-                    "si": "Lidelsen beviser altså ikke at Gud ikke finnes. Den hører livet til, fram til dommens dag, da Gud skal dømme alle mennesker."
+                    "si": "Lidelsen beviser ikke at Gud ikke finnes. Den hører livet til, fram til dommens dag, det store oppgjøret."
                 },
                 {
-                    "si": "Hvor mye velger mennesket selv? Svaret ble begge deler: Mennesket har ansvar, og Gud har makten over alt."
+                    "si": "Hvor mye velger mennesket selv? Koranen avgjør det ikke. De lærde holder fast på begge deler: Mennesket har ansvar, og Gud har makten."
                 }
             ]
         },
         {
             "id": "karma",
             "kapittel": "Ingen å forsvare",
+            "lyd": "stille",
             "visual": {
                 "type": "LidelseHjulet",
                 "props": {
@@ -272,7 +255,7 @@
             },
             "replikker": [
                 {
-                    "si": "I de indiske tradisjonene ser det helt annerledes ut. Mye av lidelsen forklares med karma. Ordet betyr handling."
+                    "si": "I de indiske tradisjonene ser det annerledes ut. Mye av lidelsen forklares med karma. Ordet betyr handling."
                 },
                 {
                     "si": "Alt du gjør, slår før eller siden tilbake på deg selv. I dette livet, eller i et senere liv."
@@ -291,38 +274,9 @@
         {
             "id": "ikke-fortjent",
             "visual": {
-                "type": "LidelseTavla",
+                "type": "LidelseHjulet",
                 "props": {
-                    "sett": ["jodedom", "kristendom", "islam"],
-                    "brikker": [
-                        {
-                            "fokus": "hinduisme",
-                            "tekst": "Har den som lider, fortjent det?",
-                            "fraBeat": 0,
-                            "tone": "rod"
-                        },
-                        {
-                            "fokus": "hinduisme",
-                            "tekst": "Ingen vet hva et annet menneske gjorde før",
-                            "fraBeat": 1
-                        },
-                        {
-                            "fokus": "hinduisme",
-                            "tekst": "Ritualer kan vaske bort dårlig karma",
-                            "fraBeat": 2
-                        },
-                        {
-                            "fokus": "buddhisme",
-                            "tekst": "Noen buddhister: god karma kan gis videre",
-                            "fraBeat": 3
-                        },
-                        {
-                            "fokus": "buddhisme",
-                            "tekst": "Mennesket kan alltid velge",
-                            "fraBeat": 3,
-                            "tone": "gronn"
-                        }
-                    ]
+                    "modus": "fortjent"
                 }
             },
             "replikker": [
@@ -350,7 +304,7 @@
             },
             "replikker": [
                 {
-                    "si": "Buddhismen snur hele oppgaven på hodet. Lidelsen er utgangspunktet, ikke noe som må bortforklares."
+                    "si": "Buddhismen snur oppgaven på hodet. Lidelsen er utgangspunktet, ikke noe som må bortforklares."
                 },
                 {
                     "si": "Buddhismen har fire edle sannheter, fire grunnsetninger. Den første: Livet gjør vondt, alt tar slutt, og ingenting varer evig."
@@ -362,44 +316,21 @@
                     "si": "Den tredje sier at lidelsen kan ta slutt. Den fjerde viser veien dit."
                 },
                 {
-                    "si": "Legg merke til én ting: Ingen gud nevnes."
+                    "si": "Legg merke til: Ingen gud nevnes."
                 }
             ]
         },
         {
             "id": "sikhisme",
             "visual": {
-                "type": "LidelseTavla",
+                "type": "LidelseHjulet",
                 "props": {
-                    "sett": ["jodedom", "kristendom", "islam", "hinduisme", "buddhisme"],
-                    "brikker": [
-                        {
-                            "fokus": "sikhisme",
-                            "tekst": "Midt mellom abrahamittiske og indiske",
-                            "fraBeat": 0
-                        },
-                        {
-                            "fokus": "sikhisme",
-                            "tekst": "Én Gud som kan alt, og karma",
-                            "fraBeat": 1
-                        },
-                        {
-                            "fokus": "sikhisme",
-                            "tekst": "Holdt fast av lyster, egoisme og uvitenhet",
-                            "fraBeat": 2
-                        },
-                        {
-                            "fokus": "sikhisme",
-                            "tekst": "Veien ut: leve slik Gud vil (hukam)",
-                            "fraBeat": 3,
-                            "tone": "gronn"
-                        }
-                    ]
+                    "modus": "sikh"
                 }
             },
             "replikker": [
                 {
-                    "si": "Sikhismen ligger midt mellom de abrahamittiske og de indiske religionene."
+                    "si": "Sikhismen ligger mellom de abrahamittiske og de indiske religionene."
                 },
                 {
                     "si": "Den har én Gud som vet alt og kan alt. Men den tok også med seg karma og gjenfødsel fra hinduismen."
@@ -439,7 +370,7 @@
                         },
                         {
                             "fokus": "nyere",
-                            "tekst": "Under femten millioner medlemmer",
+                            "tekst": "Høyst rundt femten millioner medlemmer",
                             "fraBeat": 1
                         },
                         {
@@ -499,7 +430,7 @@
                     "si": "Så tre nyere bevegelser. Bahá'í vokste fram fra sjia-islam, en av de to store retningene i islam. Mormonismen og Jehovas vitner kom fra kristendommen."
                 },
                 {
-                    "si": "Ingen av dem har mer enn rundt femten millioner medlemmer. Og de svarer svært ulikt."
+                    "si": "Ingen av dem har mer enn rundt femten millioner medlemmer. De svarer svært ulikt, og hvor strengt hver enkelt følger læren, varierer."
                 },
                 {
                     "si": "Bahá'í mener at det vonde ikke finnes som noe eget. Det er bare mangel på det gode, akkurat som mørke bare er mangel på lys.",
@@ -512,7 +443,7 @@
                     "si": "Jehovas vitner flytter skylden vekk fra Gud. Lidelsen kom da de første menneskene gjorde opprør."
                 },
                 {
-                    "si": "De mener at Satan styrer verden fram til det siste store slaget, Harmageddon. Etterpå skal jorda bli et paradis."
+                    "si": "De mener at Satan i hemmelighet styrer verden fram til det siste store slaget, Harmageddon. Etterpå skal jorda bli et paradis."
                 }
             ]
         },
@@ -520,57 +451,9 @@
             "id": "monster",
             "kapittel": "Mønsteret",
             "visual": {
-                "type": "LidelseTavla",
+                "type": "LidelseSporsmal",
                 "props": {
-                    "sett": [
-                        "jodedom",
-                        "kristendom",
-                        "islam",
-                        "hinduisme",
-                        "buddhisme",
-                        "sikhisme",
-                        "bahai",
-                        "mormonisme",
-                        "jehovas-vitner"
-                    ],
-                    "brikker": [
-                        {
-                            "fokus": "monster",
-                            "tekst": "Ikke hvem som svarer best",
-                            "fraBeat": 0
-                        },
-                        {
-                            "fokus": "monster",
-                            "tekst": "Men hvilket spørsmål de svarer på",
-                            "fraBeat": 0,
-                            "tone": "gronn"
-                        },
-                        {
-                            "fokus": "monster",
-                            "tekst": "Abrahamittiske: må forsvare Gud",
-                            "fraBeat": 1,
-                            "marker": ["jodedom", "kristendom", "islam"]
-                        },
-                        {
-                            "fokus": "monster",
-                            "tekst": "Indiske: karma, ingen gud må svare",
-                            "fraBeat": 2,
-                            "marker": ["hinduisme", "buddhisme", "sikhisme"]
-                        },
-                        {
-                            "fokus": "monster",
-                            "tekst": "Sikhismen: både Gud og karma",
-                            "fraBeat": 3,
-                            "marker": ["sikhisme"]
-                        },
-                        {
-                            "fokus": "monster",
-                            "tekst": "Ingen av svarene er ferdige",
-                            "fraBeat": 4,
-                            "tone": "rod",
-                            "marker": ["alle"]
-                        }
-                    ]
+                    "modus": "monster"
                 }
             },
             "replikker": [
@@ -594,57 +477,10 @@
         {
             "id": "samisk",
             "kapittel": "To stemmer til",
+            "lyd": "vind",
             "visual": {
-                "type": "LidelseTavla",
-                "props": {
-                    "sett": [
-                        "jodedom",
-                        "kristendom",
-                        "islam",
-                        "hinduisme",
-                        "buddhisme",
-                        "sikhisme",
-                        "bahai",
-                        "mormonisme",
-                        "jehovas-vitner"
-                    ],
-                    "brikker": [
-                        {
-                            "fokus": "samisk",
-                            "tekst": "Fjell, steiner og trær har sin egen kraft",
-                            "fraBeat": 0
-                        },
-                        {
-                            "fokus": "samisk",
-                            "tekst": "Ulykke? Gjør noe: noaiden spør og helbreder",
-                            "fraBeat": 1,
-                            "tone": "gronn"
-                        },
-                        {
-                            "fokus": "samisk",
-                            "tekst": "Misjonærer brente runebommene",
-                            "fraBeat": 2,
-                            "tone": "rod"
-                        },
-                        {
-                            "fokus": "samisk",
-                            "tekst": "Fra rundt 1850: samer skulle bli nordmenn",
-                            "fraBeat": 3,
-                            "tone": "rod"
-                        },
-                        {
-                            "fokus": "samisk",
-                            "tekst": "Unnskyldninger: 1989, 1997, 1999",
-                            "fraBeat": 4
-                        },
-                        {
-                            "fokus": "samisk",
-                            "tekst": "Lever videre i språk, joik og stedsnavn",
-                            "fraBeat": 5,
-                            "tone": "gronn"
-                        }
-                    ]
-                }
+                "type": "LidelseRunebomme",
+                "props": {}
             },
             "replikker": [
                 {
@@ -654,7 +490,7 @@
                     "si": "Blir noen syk, gjelder det å gjøre noe. Noaiden, altså sjamanen, kunne spørre gudene eller de døde om råd og gjøre den syke frisk."
                 },
                 {
-                    "si": "Men her hører også en annen slags lidelse hjemme. Kristne misjonærer samlet inn og brente runebommene, de hellige trommene."
+                    "si": "Her hører også en annen slags lidelse hjemme. Kristne misjonærer samlet inn og brente runebommene, de hellige trommene."
                 },
                 {
                     "si": "Fra rundt 1850 førte Norge en politikk som skulle gjøre samer om til nordmenn.",
@@ -671,6 +507,7 @@
         },
         {
             "id": "humanister",
+            "lyd": "stille",
             "visual": {
                 "type": "LidelseByen",
                 "props": {
@@ -709,11 +546,15 @@
                             "uthevet": true
                         },
                         {
-                            "tekst": "Forsvare Gud, eller slippe det?",
+                            "tekst": "Forsvare Gud?",
                             "fraBeat": 1
                         },
                         {
-                            "tekst": "Forklare lidelsen, eller bekjempe den?",
+                            "tekst": "Ingen gud å forsvare?",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Gjøre noe med lidelsen?",
                             "fraBeat": 1,
                             "uthevet": true
                         },
