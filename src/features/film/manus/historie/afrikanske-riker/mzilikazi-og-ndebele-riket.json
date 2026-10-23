@@ -1,0 +1,307 @@
+{
+    "id": "mzilikazi-og-ndebele-riket",
+    "tittel": "Mzilikazi og Ndebele-riket: Et folk på vandring",
+    "kilde": "/historie/afrikanske-riker/mzilikazi-og-ndebele-riket",
+    "bilde": "/images/afrikanske-riker/mzilikazi-og-ndebele-riket-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-23", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "raidet",
+            "lyd": "vind",
+            "visual": { "type": "MzilikaziFolket", "props": { "modus": "raid" } },
+            "replikker": [
+                {
+                    "si": "Det er juni 1822, i det sørlige Afrika. En hær kommer tilbake fra et raid, et angrep på en høvding lenger inn i landet. De har med seg kyr."
+                },
+                {
+                    "si": "Hæren tilhører zulukongen Shaka, og kyrne skal gå til ham."
+                },
+                {
+                    "si": "En av lederne i hæren heter Mzilikazi. Han gjør noe farlig. Han nekter å gi fra seg kyrne."
+                },
+                {
+                    "si": "Å si nei til Shaka er å sette livet på spill. Mzilikazi vet det. Derfor gjør han det eneste han kan."
+                },
+                {
+                    "si": "Han tar med seg noen hundre krigere og flykter fra Zululand."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MZILIKAZI",
+                    "undertittel": "Et folk på vandring",
+                    "bilde": "/images/afrikanske-riker/mzilikazi-og-ndebele-riket-hero.webp",
+                    "tall": [
+                        { "verdi": 20, "etikett": "år på vandring", "fraBeat": 1, "prefiks": "nesten" }
+                    ],
+                    "sporsmal": { "tekst": "Kan et rike være et folk, og ikke et sted?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er starten på en lang vandring." },
+                {
+                    "si": "Den ender nesten 20 år senere, langt mot nord, i det som i dag er Zimbabwe. Der grunnlegger Mzilikazi et nytt rike: Ndebele-riket."
+                },
+                {
+                    "si": "I denne filmen skal vi se hvordan et rike kan være et folk som flytter, og ikke et sted på kartet."
+                }
+            ]
+        },
+        {
+            "id": "gutten",
+            "kapittel": "Mellom to naboer",
+            "lyd": "stille",
+            "visual": { "type": "MzilikaziKart", "props": { "modus": "fodt" } },
+            "replikker": [
+                {
+                    "si": "Mzilikazi blir født rundt 1790, nær Mkuze, i det som i dag er Sør-Afrika. Noen kilder sier rundt 1795, så vi vet ikke året helt sikkert."
+                },
+                { "si": "Faren heter Mashobane. Han er høvding for Khumalo-folket." },
+                {
+                    "si": "Khumalo-folket bor klemt mellom to mektige naboer. Den ene er Zwide, bestefaren til Mzilikazi. Den andre er Dingiswayo og mthethwa-folket hans."
+                },
+                {
+                    "si": "Mzilikazi vokser opp hos bestefaren. Men så lar Zwide drepe faren hans."
+                },
+                {
+                    "si": "Mzilikazi blir høvding selv, og han velger side. Etter at Dingiswayo dør, slutter han seg til Shaka og blir en av rådgiverne hans."
+                }
+            ]
+        },
+        {
+            "id": "mfecane",
+            "kapittel": "Et folk som vokser",
+            "lyd": "vind",
+            "visual": { "type": "MzilikaziFolket", "props": { "modus": "mfecane" } },
+            "replikker": [
+                {
+                    "si": "Da Mzilikazi flykter, er det sørlige Afrika i full oppløsning. Krig og sult driver hele folk på flukt."
+                },
+                { "si": "Denne tiden kalles mfecane, eller difaqane på språket sesotho." },
+                {
+                    "si": "Mzilikazi er selv et offer for uroen. Han er på flukt fra Shaka."
+                },
+                {
+                    "si": "Men han er også en av dem som skaper mer uro. Krigene hans gjør at enda flere folk må flykte."
+                }
+            ]
+        },
+        {
+            "id": "nord",
+            "lyd": "stille",
+            "visual": { "type": "MzilikaziKart", "props": { "modus": "nord" } },
+            "replikker": [
+                {
+                    "si": "Først slår gruppa seg ned i nærheten av dagens Middelburg. Der bygger Mzilikazi en kongelig landsby."
+                },
+                {
+                    "si": "Han beseirer pedi-folket og dreper fem av sønnene til høvdingen deres."
+                },
+                {
+                    "si": "I 1827 flytter han videre, til fjellene ved Magaliesberg. Der bygger han tre festninger."
+                },
+                {
+                    "si": "Nå strekker riket seg fra Vaal-elva i sør til der Limpopo-elva møter Krokodille-elva i nord."
+                }
+            ]
+        },
+        {
+            "id": "vokser",
+            "lyd": "vind",
+            "visual": { "type": "MzilikaziFolket", "props": { "modus": "vokser" } },
+            "replikker": [
+                {
+                    "si": "Det mest overraskende er hvor fort folket vokser. Det startet med noen hundre krigere."
+                },
+                {
+                    "si": "I 1829 er det rundt 70 000 mennesker i riket. Hvordan er det mulig?"
+                },
+                {
+                    "si": "Mzilikazi tar inn folk fra gruppene han beseirer. Han får også med seg flyktninger fra Zululand."
+                },
+                {
+                    "si": "De unge mennene blir trent i regimenter, store grupper som trener og kjemper sammen. Det har Mzilikazi lært hos Shaka."
+                },
+                {
+                    "si": "Slik blir fiender og fremmede til en del av hæren og folket."
+                },
+                {
+                    "si": "Navnet Ndebele blir forklart som: de som dukker bak skjoldet. Folket blir også kalt matabele."
+                }
+            ]
+        },
+        {
+            "id": "moffat",
+            "kapittel": "Vennen og fiendene",
+            "lyd": "stille",
+            "visual": { "type": "MzilikaziKart", "props": { "modus": "mosega" } },
+            "replikker": [
+                {
+                    "si": "I 1830 får Mzilikazi besøk av Robert Moffat fra Skottland. Moffat er misjonær, en som reiser ut for å spre kristendommen."
+                },
+                {
+                    "si": "De to blir nære venner. Mzilikazi kaller ham kongen av Kuruman. Moffat kommer tilbake flere ganger, helt til 1859."
+                },
+                {
+                    "si": "Også i 1830 angriper regimenter fra Zulu-riket. Shaka er død, og den nye kongen heter Dingane. Men Mzilikazi slår dem ved Sand-elva."
+                },
+                {
+                    "si": "I 1832 flytter han igjen, enda lenger vest. Han gjør Mosega ved Marico-elva til hovedstad."
+                },
+                {
+                    "si": "På veien ødelegger hæren landsbyene til rolong-folket. Ndebele har også angrepet griqua-folket. Det skal bli dyrt."
+                }
+            ]
+        },
+        {
+            "id": "krig",
+            "kapittel": "Fienden med gevær",
+            "visual": { "type": "MzilikaziTidslinje", "props": { "modus": "krig" } },
+            "replikker": [
+                {
+                    "si": "I 1836 kommer en ny gruppe inn i området: voortrekkerne. Det er boere, bønder som snakker nederlandsk."
+                },
+                {
+                    "si": "De drar nordover for å komme seg vekk fra britisk styre i Kappkolonien, lengst sør i Afrika. Griqua og rolong slår seg sammen med dem mot Ndebele."
+                },
+                {
+                    "si": "Den 16. oktober 1836 angriper Ndebele-krigerne voortrekkerne ved Vegkop."
+                },
+                {
+                    "si": "Den 17. januar 1837 slår boerne tilbake og ødelegger Mosega."
+                },
+                {
+                    "si": "I november samme år kommer det avgjørende slaget. Det varer i ni dager."
+                },
+                {
+                    "si": "Ndebele har mange krigere. Men boerne har gevær, og det gir dem en fordel som til slutt avgjør krigen."
+                }
+            ]
+        },
+        {
+            "id": "limpopo",
+            "kapittel": "Over Limpopo",
+            "lyd": "vind",
+            "visual": { "type": "MzilikaziFolket", "props": { "modus": "limpopo" } },
+            "replikker": [
+                {
+                    "si": "For andre gang må Mzilikazi ta med seg hele folket og dra. Rundt 15 000 mennesker går nordover."
+                },
+                { "si": "De krysser Limpopo-elva." },
+                {
+                    "si": "På veien deler folket seg i to grupper, og de mister kontakten med hverandre."
+                },
+                { "si": "Først rundt to år senere er de samlet igjen." }
+            ]
+        },
+        {
+            "id": "bulawayo",
+            "lyd": "stille",
+            "visual": { "type": "MzilikaziKart", "props": { "modus": "bulawayo" } },
+            "replikker": [
+                {
+                    "si": "Se på hele vandringen. Fra Zululand, til Middelburg, Magaliesberg og Mosega, og så over Limpopo."
+                },
+                {
+                    "si": "Folket slår seg ned i Matopo-åsene, i det vestlige Zimbabwe. Mzilikazi kaller hovedstaden sin Bulawayo."
+                },
+                { "si": "Området får navnet Matabeleland." },
+                {
+                    "si": "Her lå det før et stort shona-rike, Rozvi-riket. Mzilikazi tar makten over det."
+                },
+                {
+                    "si": "I det samme landet ligger ruinene etter Stor-Zimbabwe, en steinby som ble bygd flere hundre år tidligere."
+                }
+            ]
+        },
+        {
+            "id": "riket",
+            "kapittel": "Et rike bygd rundt hæren",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Ndebele-riket",
+                    "punkter": [
+                        { "ikon": "hus", "tittel": "Regimentsbyer", "tekst": "hver by hører til et regiment", "fraBeat": 0 },
+                        { "ikon": "haer", "tittel": "Amabutho", "tekst": "regimenter, sjelden over 500 mann", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "Faste lag", "tekst": "folk har ulik status", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Fred i 1852", "tekst": "med boerne i Transvaal", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det nye riket er bygd rundt hæren. Folket bor i regimentsbyer, der hver by hører til et regiment."
+                },
+                {
+                    "si": "Regimentene heter amabutho. De ligner på zulu-regimentene, men er mye mindre. De har sjelden mer enn 500 mann."
+                },
+                { "si": "Samfunnet er også delt inn i faste lag, slik at folk har ulik status." },
+                {
+                    "si": "Riket holder stand. Fra 1847 til 1851 prøver boerne å trenge inn, men Ndebele slår dem tilbake. I 1852 skriver boerne i Transvaal en fredsavtale med Mzilikazi."
+                }
+            ]
+        },
+        {
+            "id": "slutten",
+            "kapittel": "Hva skjedde med riket?",
+            "visual": { "type": "MzilikaziTidslinje", "props": { "modus": "slutt" } },
+            "replikker": [
+                {
+                    "si": "Mzilikazi styrte hardt. En gang valgte rådgiverne hans en ny konge uten ham, og da lot han dem drepe, sammen med sønnene sine. Lobengula overlevde fordi moren gjemte ham."
+                },
+                {
+                    "si": "Mzilikazi dør 9. september 1868 nær Bulawayo, og Lobengula blir konge. Året før er det funnet gull i området, og det gjør europeerne mye mer interessert."
+                },
+                {
+                    "si": "Det er kappløpet om Afrika, da europeiske land deler Afrika mellom seg. I 1890 sender forretningsmannen Cecil Rhodes folk inn, med støtte fra Storbritannia."
+                },
+                { "si": "Lobengula prøver å stå imot, men blir avsatt i 1893." },
+                {
+                    "si": "I 1896 og 1897 gjør Ndebele og shona opprør mot at de hvite tar jorda og kyrne deres. Ndebele får en fredsavtale, shona blir slått. Landet blir kolonien Rhodesia, styrt av hvite."
+                },
+                {
+                    "si": "Mindre enn 30 år etter at Mzilikazi døde, er riket hans borte. Men folket blir værende. I 2006 bor nesten to millioner ndebele i Zimbabwe."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Han som skapte nasjonen",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En røver som etterlot seg ødeleggelse?", "fraBeat": 0 },
+                        { "tekst": "Han bygde også noe.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Mange ulike folk", "fraBeat": 1 },
+                        { "tekst": "ble til ett folk.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Umdabuli we Sizwe:", "fraBeat": 2 },
+                        { "tekst": "han som skapte nasjonen.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Et rike trenger ikke å være et sted.", "fraBeat": 3 },
+                        { "tekst": "Det kan være et folk på vandring.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange husker Mzilikazi som en røver som etterlot seg ødeleggelse der han dro fram. Men han bygde også noe."
+                },
+                {
+                    "si": "Han fikk mange ulike folk til å bli ett folk, og han bygde et sterkt rike med én leder på toppen."
+                },
+                {
+                    "si": "Ndebele kalte ham Umdabuli we Sizwe. Det betyr: han som skapte nasjonen."
+                },
+                {
+                    "si": "Historien om Mzilikazi viser at et rike ikke trenger å være et sted. Det kan være et folk på vandring."
+                }
+            ]
+        }
+    ]
+}
