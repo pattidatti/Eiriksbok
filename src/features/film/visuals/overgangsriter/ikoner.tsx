@@ -189,3 +189,22 @@ export function RiteIkon({ navn }: { navn: string }) {
         </svg>
     );
 }
+
+/** Samme tegning rett inn i en SVG: midtpunkt (x, y) og bredde `str` i viewBox-enheter. */
+export function IkonG({
+    navn,
+    x,
+    y,
+    str = 90,
+}: {
+    navn: string;
+    x: number;
+    y: number;
+    str?: number;
+}) {
+    const [id, tall] = navn.split(':');
+    const tegn = IKONER[id];
+    if (!tegn) return null;
+    const s = str / 80;
+    return <g transform={`translate(${x - str / 2} ${y - str / 2}) scale(${s})`}>{tegn(tall)}</g>;
+}
