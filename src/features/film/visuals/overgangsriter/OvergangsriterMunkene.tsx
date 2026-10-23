@@ -323,7 +323,7 @@ function Begravelse({ beat }: { beat: number }) {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                     x={795}
-                    y={BAKKE - 250}
+                    y={BAKKE - 280}
                     textAnchor="middle"
                     fontSize={34}
                     fontWeight={800}
