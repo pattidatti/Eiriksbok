@@ -1,0 +1,317 @@
+{
+    "id": "bildesprak-og-effekter",
+    "tittel": "Språkets farger: Bilder og effekter",
+    "kilde": "/norsk/virkemidler/bildesprak-og-effekter",
+    "bilde": "/images/lessons/norsk/virkemidler/bilder-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-23",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 3,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "natt",
+            "lyd": "regn",
+            "kapittel": "En skummel natt",
+            "visual": { "type": "BildesprakNatt", "props": { "modus": "vis" } },
+            "replikker": [
+                { "si": "Det var en skummel natt. Det regnet og blåste." },
+                {
+                    "si": "Ser du noe for deg? Kanskje litt. Men ordet skummel forteller deg bare hva du skal føle."
+                },
+                { "si": "Prøv igjen. Vinden ulte rundt hushjørnene som en såret ulv." },
+                { "si": "Regnet pisket mot ruten." },
+                {
+                    "si": "Nå ser du det, hører det og kjenner det. Forfatteren viser deg natta, i stedet for å bare fortelle at den er skummel."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Språkets farger",
+                    "undertittel": "Bilder og effekter",
+                    "bilde": "/images/lessons/norsk/virkemidler/bilder-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan maler forfattere med ord?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Forfattere er egentlig malere. De har bare byttet ut penselen med tastaturet."
+                },
+                {
+                    "si": "Når du leser en god bok, glemmer du at du ser på svarte bokstaver på hvitt papir. Du ser levende scener i stedet."
+                },
+                {
+                    "si": "Det skjer fordi forfatteren bruker språklige bilder. Ordene får hjernen din til å lage sine egne bilder."
+                }
+            ]
+        },
+        {
+            "id": "verktoy",
+            "kapittel": "Verktøykassa",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Verktøykassa",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Bilder",
+                            "tekst": "metafor og sammenligning",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Liv",
+                            "tekst": "besjeling og personifisering",
+                            "fraBeat": 2
+                        },
+                        { "ikon": "is", "tittel": "Dybde", "tekst": "symbol", "fraBeat": 3 },
+                        {
+                            "ikon": "radio",
+                            "tittel": "Rytme",
+                            "tekst": "kontrast og gjentakelse",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I denne filmen åpner vi verktøykassa til forfatteren. Det er sju verktøy, i fire grupper."
+                },
+                { "si": "Bilder: metafor og sammenligning." },
+                { "si": "Liv: besjeling og personifisering." },
+                { "si": "Dybde: symbol." },
+                { "si": "Og rytme: kontrast og gjentakelse." }
+            ]
+        },
+        {
+            "id": "metafor",
+            "kapittel": "Bilder",
+            "visual": { "type": "BildesprakStjerne", "props": { "modus": "metafor" } },
+            "replikker": [
+                { "si": "Det første verktøyet er metaforen. Hør her: Du er en stjerne." },
+                {
+                    "si": "Det er jo ikke sant. Ingen mennesker er en kule av brennende gass ute i verdensrommet."
+                },
+                {
+                    "si": "Men hjernen er lynrask. Den henter fram det en stjerne gjør: Den lyser, den er varm, og alle ser på den."
+                },
+                { "si": "Så flytter hjernen de egenskapene over på personen." },
+                {
+                    "si": "Derfor kalles metaforen en språklig løgn som forteller en dypere sannhet. Den sier det rett ut, uten ordet som."
+                }
+            ]
+        },
+        {
+            "id": "sammenligning",
+            "visual": { "type": "BildesprakStjerne", "props": { "modus": "som" } },
+            "replikker": [
+                {
+                    "si": "Det andre verktøyet er sammenligningen. Den er metaforens forsiktige lillebror. Du skinner som en stjerne."
+                },
+                {
+                    "si": "Her sier vi ikke at du er en stjerne. Vi sier at du ligner på en. Kjennetegnet er ordet som eller lik."
+                },
+                { "si": "Han var som en løve. Da må du selv tenke: På hvilken måte lignet han?" },
+                { "si": "Var han modig? Var han farlig? Eller hadde han bare stort hår?" },
+                {
+                    "si": "Ofte hjelper forfatteren deg med et ekstra ord: Han var modig som en løve. Da vet du hva du skal se etter."
+                }
+            ]
+        },
+        {
+            "id": "forskjell",
+            "visual": { "type": "BildesprakStjerne", "props": { "modus": "par" } },
+            "replikker": [
+                {
+                    "si": "Se forskjellen. Til venstre står metaforene, til høyre sammenligningene."
+                },
+                { "si": "Du er en rose. Du er som en rose." },
+                { "si": "Livet er en reise. Livet ligner på en reise." },
+                { "si": "Han har et hjerte av stein. Hjertet hans er hardt som stein." },
+                {
+                    "si": "Metaforen er direkte, og derfor sterkere. Sammenligningen er forsiktig. Med et ekstra ord tar den deg i hånden og forklarer bildet steg for steg."
+                }
+            ]
+        },
+        {
+            "id": "besjeling",
+            "lyd": "vind",
+            "kapittel": "Liv",
+            "visual": { "type": "BildesprakNatt", "props": { "modus": "besjeling" } },
+            "replikker": [
+                { "si": "Nå skal vi blåse liv i ting som ikke lever. Det kalles besjeling." },
+                {
+                    "si": "Da gir vi menneskelige egenskaper til noe som ikke er et menneske. Det kan gråte, hviske eller gripe."
+                },
+                { "si": "Er hovedpersonen trist og ensom, kan regnet gråte mot ruten." },
+                { "si": "Er helten i fare, kan skogen gripe etter ham med greinene sine." },
+                {
+                    "si": "Vinden hvisket hemmeligheter i trærne. Nå er naturen ikke bare en bakgrunn. Den spiller med i historien."
+                }
+            ]
+        },
+        {
+            "id": "personifisering",
+            "lyd": "stille",
+            "visual": { "type": "BildesprakSkikkelser", "props": { "modus": "personer" } },
+            "replikker": [
+                {
+                    "si": "Personifisering går et steg lenger. Her gir vi en menneskekropp til noe vi ikke kan ta og føle på."
+                },
+                { "si": "Tenk på døden. Egentlig er den bare en tilstand, noe som skjer." },
+                { "si": "Men i bøker og kunst er Døden ofte en mann med svart kappe og ljå." },
+                {
+                    "si": "Tiden kan bli en gammel mann. Og Kjærligheten kan bli en liten gutt med pil og bue. Han heter Amor."
+                },
+                {
+                    "si": "Med en idé kan vi ikke snakke. Med en person kan vi det. Slik blir vanskelige ideer lettere å forstå og huske."
+                }
+            ]
+        },
+        {
+            "id": "sortering",
+            "visual": { "type": "BildesprakSkikkelser", "props": { "modus": "sorter" } },
+            "replikker": [
+                { "si": "Døden banket på døren. Er det besjeling eller personifisering?" },
+                {
+                    "si": "Besjeling gir liv til ting: Huset myste mot veien. Bølgene slo mot stranden."
+                },
+                {
+                    "si": "Personifisering gir liv til ideer: Døden banket på døren. Tiden flyr av gårde."
+                },
+                { "si": "Men de to ligger tett på hverandre. Ofte blir ordene brukt om hverandre." }
+            ]
+        },
+        {
+            "id": "isfjell",
+            "kapittel": "Dybde",
+            "visual": { "type": "BildesprakIsfjell", "props": { "modus": "hjerte" } },
+            "replikker": [
+                { "si": "Et symbol er noe konkret, noe du kan se, som står for en stor idé." },
+                { "si": "Tenk på et isfjell. Over vannet ser du bare toppen. Det er symbolet." },
+                {
+                    "si": "Under overflaten ligger den egentlige meningen. Dette kalles ofte isfjell-metoden."
+                },
+                { "si": "Tegn et hjerte på et papir. Det er bare en form." },
+                { "si": "Men vi vet alle hva det betyr: kjærlighet." }
+            ]
+        },
+        {
+            "id": "blomsten",
+            "visual": { "type": "BildesprakIsfjell", "props": { "modus": "blomst" } },
+            "replikker": [
+                {
+                    "si": "I en bok kan en blomst som visner, vise at et forhold holder på å ta slutt. Eller at en person er syk."
+                },
+                {
+                    "si": "Forfatteren trenger ikke skrive: Hun var syk. Det holder å vise oss blomsten."
+                },
+                {
+                    "si": "Slik slipper teksten å si alt rett ut. Du får gleden av å finne meningen selv."
+                },
+                {
+                    "si": "Derfor kan en god tekst med symboler leses mange ganger. Du oppdager noe nytt hver gang."
+                }
+            ]
+        },
+        {
+            "id": "finn",
+            "visual": { "type": "BildesprakIsfjell", "props": { "modus": "tekst" } },
+            "replikker": [
+                {
+                    "si": "Prøv selv. Hvilke symboler finner du her? Mannen i den svarte kappen gikk forbi."
+                },
+                { "si": "Han holdt en rød rose i hånden, men den visnet da han rørte ved den." },
+                { "si": "Langt borte lyste et fyrtårn." },
+                {
+                    "si": "Den svarte kappen kan stå for døden. Den røde rosen kan stå for kjærlighet. Og fyrtårnet kan stå for håp."
+                }
+            ]
+        },
+        {
+            "id": "kontrast",
+            "kapittel": "Rytme",
+            "visual": { "type": "BildesprakTavle" },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du skriver med hvitt kritt på en hvit tavle. Ingen ville sett noe."
+                },
+                { "si": "Du trenger den svarte tavla for at det hvite skal synes." },
+                {
+                    "si": "Kontrast betyr en tydelig motsetning. Forfattere setter motsetninger opp mot hverandre for å gjøre begge sterkere."
+                },
+                { "si": "Lys mot mørke. Liv mot død. Støy mot stillhet." },
+                {
+                    "si": "Sorg føles tyngre når den kommer rett etter stor glede. Et vers sier det slik: Sorg og glede de vandrer sammen."
+                },
+                { "si": "Kontraster skaper spenning. De hindrer at teksten blir flat og kjedelig." }
+            ]
+        },
+        {
+            "id": "gjentakelse",
+            "lyd": "rom",
+            "visual": { "type": "BildesprakPuls" },
+            "replikker": [
+                {
+                    "si": "Det siste verktøyet er et av de eldste vi har: gjentakelse. Før folk kunne skrive, måtte de huske lange historier utenat."
+                },
+                {
+                    "si": "Derfor er de gamle fortellingene fulle av grep som hjelper hukommelsen. Det aller vanligste er gjentakelse. I dag bruker vi det mest for å gi teksten kraft."
+                },
+                { "si": "Hør på et dikt: Jeg ser på den hvite himmel," },
+                { "si": "jeg ser på de gråblå skyer," },
+                { "si": "jeg ser på den blodige sol." },
+                {
+                    "si": "Hører du pulsen? Den sier: Dette er viktig, følg med. Tenk på refrenget i en sang, den delen du husker best."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Fargene dine",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Språklige bilder er fargene", "fraBeat": 0 },
+                        { "tekst": "du maler med.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Metaforer slår hardt.", "fraBeat": 1 },
+                        { "tekst": "Sammenligninger forklarer forsiktig.", "fraBeat": 1 },
+                        { "tekst": "Symboler gir dybde.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Velg riktig verktøy,", "fraBeat": 2 },
+                        {
+                            "tekst": "og du styrer hva leseren føler.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        { "tekst": "Se etter de usynlige", "fraBeat": 3 },
+                        { "tekst": "penselstrøkene.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Språklige bilder er fargene du maler med. Du trenger ikke bruke alle på én gang."
+                },
+                {
+                    "si": "Metaforer slår hardt. Sammenligninger forklarer forsiktig. Og symboler gir dybde."
+                },
+                { "si": "Velger du riktig verktøy, kan du styre hva leseren føler." },
+                { "si": "Neste gang du leser en tekst, se etter de usynlige penselstrøkene." }
+            ]
+        }
+    ]
+}
