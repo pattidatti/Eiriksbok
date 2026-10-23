@@ -1,0 +1,285 @@
+{
+  "id": "tilbud-og-ettersporsel",
+  "title": "Tilbud og etterspørsel: Slik blir prisen til",
+  "layout": "rich",
+  "year": "Fra 1776 til i dag",
+  "category": "Økonomi",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Prisen på en vare blir til der de som vil kjøpe, møter dem som vil selge. Der ligger likevektsprisen.",
+    "Mer tilbud gir lavere pris, mer etterspørsel gir høyere pris. Derfor er vann billig og diamanter dyre.",
+    "Prisen er et signal: Den forteller bønder og bedrifter hva de skal lage mer av, og kjøperne hva de bør spare på."
+  ],
+  "externalUrl": "https://snl.no/pris",
+  "tags": [
+    "økonomi",
+    "marked",
+    "pris",
+    "tilbud",
+    "etterspørsel"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg at du står i kø for å kjøpe billett til en stor konsert. Billettene blir utsolgt på få minutter. Like etterpå ser du de samme billettene lagt ut på nettet for tre ganger så mye. Og folk kjøper dem. Samme kveld drikker du et glass vann fra springen. Det koster nesten ingenting, selv om du ikke klarer deg mange dager uten vann. Konserten kunne du fint levd uten."
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor er det slik? Hvem bestemmer at en konsertbillett skal være dyr og vann skal være billig? Svaret er at ingen enkelt person bestemmer det. Prisen blir til et sted mellom deg som vil kjøpe, og dem som vil selge. Økonomer kaller det tilbud og etterspørsel. Det er en av de viktigste ideene i hele økonomifaget, og når du forstår den, vil du se den overalt: i butikken, på strømregningen og på jordbærtorget om sommeren."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Folk handler jordbær ved en salgsbod på et torg",
+      "caption": "Jordbærboden på torget: Her møtes de som vil selge, og de som vil kjøpe. Det er der prisen blir til."
+    },
+    {
+      "type": "header",
+      "text": "Vann og diamanter"
+    },
+    {
+      "type": "text",
+      "content": "For 250 år siden lurte en skotsk tenker på det samme spørsmålet. Han het Adam Smith, og i 1776 ga han ut boka som på norsk kalles Nasjonenes velstand. Det var denne boka om økonomi som gjorde ham berømt (Fjeld, 2024). I boka skilte Smith mellom to slags verdi. Bruksverdi er hvor nyttig noe er. Bytteverdi er hvor mye annet du kan få for det, altså hvor mye det koster (Fjeld, 2024)."
+    },
+    {
+      "type": "component",
+      "name": "QuoteBlock",
+      "props": {
+        "text": "Ingenting er mer nyttig enn vann, men du kan nesten ikke kjøpe noe for det. En diamant, derimot, har nesten ingen bruksverdi, men du kan ofte få veldig mye annet i bytte for den.",
+        "author": "Adam Smith i Nasjonenes velstand, 1776 (Smith, 1776/2002, oversatt fra engelsk)"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Dette kalles verdiparadokset. Et paradoks er noe som ser ut som en selvmotsigelse. Hvordan kan det mest nyttige være billig, mens noe nesten unyttig er dyrt? Forklaringen ligger i to ord: hvor mye det finnes, og hvor mange som vil ha det. Vann finnes det mye av i Norge. Diamanter er sjeldne. Det er ikke hvor nyttig noe er alt i alt som bestemmer prisen, men hvor mye ett ekstra glass eller én ekstra stein er verdt for deg."
+    },
+    {
+      "type": "text",
+      "content": "Økonomer har et navn på dette: avtagende marginalnytte. Det betyr at hver ekstra ting du får, som regel gir deg litt mindre glede enn den forrige (Stoltz & Andresen, 2025). Det første glasset vann en varm dag er gull verdt. Det tiende glasset vil du knapt ha. Fordi vi har så mye vann, betaler vi bare for det siste glasset, og det er ikke verdt stort."
+    },
+    {
+      "type": "header",
+      "text": "Etterspørsel: hvor mye folk vil kjøpe"
+    },
+    {
+      "type": "text",
+      "content": "Etterspørsel er hvor mye folk vil kjøpe av en vare til ulike priser. Regelen er enkel: Er prisen høy, vil få kjøpe. Er prisen lav, vil mange kjøpe (Stoltz & Andresen, 2025). Tenk på kantina på skolen. Koster en bolle 50 kroner, kjøper bare de sulteste. Koster den 10 kroner, er bollene borte før friminuttet er over."
+    },
+    {
+      "type": "text",
+      "content": "Men prisen er ikke det eneste som betyr noe. Ifølge Store norske leksikon avhenger etterspørselen også av hvor mye penger folk har, hva folk liker, og hva andre varer koster (Stoltz & Andresen, 2025). Blir pølser plutselig mye dyrere, kjøper flere hamburgere i stedet. Hamburgeren er da en erstatning for pølsa. Får folk høyere lønn, kjøper de som regel mer. Og blir en ny brus populær på TikTok, vil plutselig alle ha den, selv om prisen er den samme."
+    },
+    {
+      "type": "header",
+      "text": "Tilbud: hvor mye selgerne vil selge"
+    },
+    {
+      "type": "text",
+      "content": "Tilbud er den andre siden. Det er hvor mye selgerne vil selge til ulike priser. Her er regelen motsatt: Jo høyere prisen er, jo mer vil selgerne lage og selge (Stoltz, 2025). Det er lett å forstå. Får en jordbærbonde mye betalt per kurv, lønner det seg å plante flere bær, leie inn flere plukkere og kjøre lenger til torget. Er prisen lav, lønner det seg kanskje ikke engang å plukke."
+    },
+    {
+      "type": "text",
+      "content": "Hvor mye en bedrift vil selge, avhenger også av hva det koster å lage varen (Stoltz, 2025). Blir gjødsel, strøm eller lønn til plukkerne dyrere, må bonden ha mer betalt for å tjene penger. Du kan lese mer om hvordan bedrifter og samfunn bestemmer hva som skal lages, i artikkelen om [produksjon](/samfunnskunnskap/okonomi/produksjon)."
+    },
+    {
+      "type": "header",
+      "text": "Der kjøper og selger møtes"
+    },
+    {
+      "type": "text",
+      "content": "Nå kommer det viktigste. Kjøperne vil ha lav pris. Selgerne vil ha høy pris. Et sted midt imellom finnes en pris der like mye blir kjøpt som det blir solgt. Den kalles likevektsprisen. I et marked med mange kjøpere og selgere havner prisen der tilbud og etterspørsel møtes. Store norske leksikon sier at prisen da sørger for at tilbud og etterspørsel blir like store (Onshuus, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor havner prisen akkurat der? Se for deg en jordbærbonde på torget. Setter hun prisen for høyt, går kundene forbi, og hun sitter igjen med kurver som blir dårlige. Neste gang setter hun ned prisen. Setter hun prisen for lavt, blir det kø, og bærene er borte før lunsj. Mange gikk tomhendte hjem, og flere ville gjerne betalt mer. Neste gang setter hun opp prisen. Slik blir prisen dyttet mot likevekten, uten at noen sjef har bestemt den."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Du er jordbærselger i fire dager, og hver dag skjer det noe nytt."
+    },
+    {
+      "type": "component",
+      "name": "Jordbaertorget",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Når noe skjer, flytter prisen seg"
+    },
+    {
+      "type": "text",
+      "content": "Likevekten står ikke stille. Når noe skjer med tilbudet eller etterspørselen, finner prisen et nytt sted. Norske jordbær er et godt eksempel. De første norske jordbærene kommer gjerne rundt sankthans, og fra omkring 1. juli er det jordbær i de fleste butikker. Sesongen kan vare til midten av august (Pettersen, 2011). Når alle bøndene høster på en gang, kommer det mange flere kurver til markedet. Da må bøndene konkurrere om kundene, og prisen faller."
+    },
+    {
+      "type": "text",
+      "content": "Det samme gjelder motsatt vei. Ødelegger en haglbyge mange av bærene, blir det færre kurver. Da blir jordbærene sjeldnere, og prisen stiger. Og hvis en hetebølge gjør at alle vil ha jordbær med is, øker etterspørselen. Også da stiger prisen. Du kan huske det slik:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Mer tilbud gir lavere pris.",
+        "Mindre tilbud gir høyere pris.",
+        "Mer etterspørsel gir høyere pris.",
+        "Mindre etterspørsel gir lavere pris."
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Strømmåler og strømregning på kjøkkenbordet i en norsk bolig",
+      "caption": "Strømprisen bestemmes hver dag av tilbud og etterspørsel. I 2022 ble strømmen dyrere enn noen gang før i Norge."
+    },
+    {
+      "type": "header",
+      "text": "Strømprisen i 2022"
+    },
+    {
+      "type": "text",
+      "content": "Strømmen du bruker hjemme, blir også solgt i et marked. I Norge bestemmes strømprisen av tilbud, etterspørsel og hvor mye strøm som kan fraktes i strømnettet (Store norske leksikon, 2020). Prisen blir satt på nytt hver dag, for strømmen som skal brukes dagen etter. Norge er delt i fem prisområder, og hvert område får sin egen pris (Store norske leksikon, 2020)."
+    },
+    {
+      "type": "text",
+      "content": "I 2022 fikk nordmenn merke hvordan dette virker. Den gjennomsnittlige strømprisen, uten avgifter og nettleie, var 149,6 øre per kilowattime. Det var 78 øre mer enn rekorden fra året før (Holstad, 2023). Hva hadde skjedd? Ifølge Statistisk sentralbyrå var det to hovedgrunner. Det var en stor energikrise i Europa, med svært høye priser på gass. Samtidig var det mindre vann enn vanlig i vannmagasinene i Sør-Norge (Holstad, 2023). Mindre vann betyr at kraftverkene kan lage mindre strøm. Tilbudet gikk ned, og prisen gikk opp. Du kan lese mer om hvordan Norge og Europa er koblet sammen gjennom energi, i artikkelen om [energi og rørledninger](/samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger)."
+    },
+    {
+      "type": "text",
+      "content": "Interessant nok var prisene i Nord-Norge svært lave store deler av året, mens Sør-Norge fikk rekordpriser (Holstad, 2023). Strømnettet klarer ikke å frakte ubegrenset med strøm mellom landsdelene. Derfor kan hvert prisområde få sin egen likevekt."
+    },
+    {
+      "type": "header",
+      "text": "Prisen er et signal"
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å tenke at høye priser bare er noe dumt. Men prisen gjør også en viktig jobb. Den er et signal som forteller alle i markedet hva som skjer, uten at noen trenger å holde møte. En høy jordbærpris sier til bøndene: Folk vil ha mer, plant flere bær neste år! En lav pris sier: Det er nok jordbær nå, kanskje du skal dyrke noe annet. Selgerne vil lage mer når prisen stiger (Stoltz, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Høye priser sender også et signal til kjøperne. Når strømmen blir dyr, lønner det seg å skru ned varmen, dusje kortere og vaske klær når strømmen er billigst. Prisen får folk til å spare på det som er sjeldent. Noen økonomer mener dette signalet er så viktig at staten bør blande seg lite inn i prisene. Andre mener staten må gripe inn når prisene blir urimelige. Du kan lese mer om denne uenigheten i artikkelen om [ulike økonomiske skoler](/samfunnskunnskap/okonomi/okonomiske-skoler)."
+    },
+    {
+      "type": "header",
+      "text": "Når staten bestemmer prisen"
+    },
+    {
+      "type": "text",
+      "content": "Ikke alle priser i Norge blir til fritt på torget. Staten kan påvirke prisene på flere måter. Den kan legge avgifter på en vare for å gjøre den dyrere, gi tilskudd for å gjøre den billigere, eller sette en høyeste pris som ingen får ta mer enn (Onshuus, 2026). Et eksempel er barnehagen. Der har staten bestemt hvor mye foreldrene høyst skal betale (Onshuus, 2026). I 2022 betalte staten også en del av strømregningen til folk gjennom strømstøtten (Holstad, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Når staten setter prisen lavere enn likevekten, kan det oppstå et nytt problem: Flere vil kjøpe enn det finnes varer til. Da må varene fordeles på andre måter enn med pris, for eksempel med kø, loddtrekning eller ventelister. Tenk tilbake på konsertbilletten fra starten. Arrangøren satte en fast pris som var lavere enn det mange var villige til å betale. Derfor ble billettene utsolgt på minutter, og derfor kunne noen selge dem videre for mye mer. Ved å sette prisen under likevekten bestemte arrangøren at de raskeste skulle få billettene, ikke de som betalte mest. Om det er rettferdig, kan du diskutere."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Prisen på en vare blir til der de som vil kjøpe, møter dem som vil selge. Etterspørselen faller når prisen stiger, og tilbudet øker når prisen stiger. Der de to møtes, finner vi likevektsprisen. Når noe skjer, som en god høst, en haglbyge, en hetebølge eller en energikrise, flytter likevekten seg. Derfor er vann billig og diamanter dyre: Det handler ikke om hvor nyttig noe er, men om hvor sjeldent det er og hvor mange som vil ha det. Neste gang du ser en pris gå opp eller ned, kan du spørre deg selv: Var det tilbudet eller etterspørselen som endret seg? Vil du vite hvorfor nesten alle priser stiger litt hvert år, kan du lese om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Fjeld, A. (2024). *Adam Smith*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/Adam_Smith](https://snl.no/Adam_Smith)",
+          "Holstad, M. (2023, 14. februar). *Rekordhøy strømpris i 2022, dempet av strømstøtte*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/energi-og-industri/energi/statistikk/elektrisitetspriser/artikler/rekordhoy-strompris-i-2022--dempet-av-stromstotte)",
+          "Onshuus, H. (2026). *Pris*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/pris](https://snl.no/pris)",
+          "Pettersen, K. (2011, 25. juni). *Jordbærene er her*. Matoppskrift.no. [matoppskrift.no](https://www.matoppskrift.no/artikkel/jordbaerene-er-her)",
+          "Smith, A. (2002). *An inquiry into the nature and causes of the wealth of nations*. Project Gutenberg. [gutenberg.org](https://www.gutenberg.org/ebooks/3300) (Opprinnelig utgitt 1776)",
+          "Stoltz, G. (2025). *Tilbud*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/tilbud](https://snl.no/tilbud)",
+          "Stoltz, G. & Andresen, M. E. (2025). *Etterspørsel*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/etterspørsel](https://snl.no/ettersp%C3%B8rsel)",
+          "Store norske leksikon. (2020). *Strømpriser i Norge*. Hentet 23.10.2026 fra [snl.no](https://snl.no/.temaside/str%C3%B8mpriser-i-norge)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er forskjellen på bruksverdi og bytteverdi, slik Adam Smith forklarte det?",
+          "Hva skjer med etterspørselen etter en vare når prisen stiger? Hva skjer med tilbudet?",
+          "Hva er en likevektspris?",
+          "Nevn de to hovedgrunnene til at strømprisen ble så høy i 2022."
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor vann er billig og diamanter dyre, selv om vann er mye mer nyttig.",
+          "En haglbyge ødelegger jordbærene, og samtidig kommer det en hetebølge. Hva skjer med prisen? Forklar ved å bruke ordene tilbud og etterspørsel.",
+          "Hvorfor kan man si at prisen er et signal? Gi ett eksempel på hvordan prisen kan endre det bønder eller kjøpere gjør.",
+          "Hvorfor ble strømmen dyr i Sør-Norge, mens den var billig i Nord-Norge store deler av 2022?"
+        ],
+        "gaaVidere": [
+          "Finn en vare du selv kjøper ofte. Har prisen endret seg det siste året? Prøv å forklare hvorfor med tilbud og etterspørsel.",
+          "Diskuter i klassen: Bør konsertbilletter selges til den prisen folk er villige til å betale, eller er det mer rettferdig med fast pris og kø? Hvem vinner og hvem taper på hver løsning?",
+          "Skriv et kort innlegg om strømstøtten i 2022: Var det lurt av staten å betale en del av strømregningen, når en høy pris også får folk til å spare strøm?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva skjer vanligvis med etterspørselen når prisen på en vare stiger?",
+            "options": [
+              "Den øker",
+              "Den går ned",
+              "Den forblir helt lik",
+              "Den forsvinner helt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Når prisen stiger, vil færre kjøpe varen. Etterspørselskurven er fallende."
+          },
+          {
+            "question": "Hva er likevektsprisen?",
+            "options": [
+              "Prisen staten bestemmer",
+              "Den laveste prisen en vare kan ha",
+              "Prisen der like mye blir kjøpt som det blir solgt",
+              "Prisen selgeren helst vil ha"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Likevektsprisen er der tilbud og etterspørsel møtes. Da blir alt solgt, og ingen kjøpere går tomhendte hjem."
+          },
+          {
+            "question": "Alle jordbærbøndene høster på en gang rundt sankthans. Hva skjer med prisen?",
+            "options": [
+              "Den går ned, fordi tilbudet øker",
+              "Den går opp, fordi tilbudet øker",
+              "Den går opp, fordi etterspørselen faller",
+              "Ingenting skjer"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Flere kurver på markedet betyr mer tilbud. Bøndene må konkurrere om kundene, og prisen faller."
+          },
+          {
+            "question": "Hvorfor er vann billig og diamanter dyre, ifølge tankegangen i artikkelen?",
+            "options": [
+              "Fordi diamanter er mer nyttige enn vann",
+              "Fordi staten har bestemt det",
+              "Fordi vann finnes i store mengder, mens diamanter er sjeldne",
+              "Fordi Adam Smith satte prisene"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Prisen avhenger av hvor sjeldent noe er og hvor mange som vil ha det, ikke av hvor nyttig det er alt i alt."
+          },
+          {
+            "question": "Hva var en viktig grunn til de høye strømprisene i Sør-Norge i 2022?",
+            "options": [
+              "Det ble bygget for mange kraftverk",
+              "Det var lite vann i vannmagasinene og høye gasspriser i Europa",
+              "Folk sluttet å bruke strøm",
+              "Strømmen ble gratis i Nord-Norge"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ifølge SSB skyldtes de høye prisene energikrisen i Europa med høye gasspriser og lite vann i magasinene i sør."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -1117,6 +1117,20 @@
           ],
           "lessons": [
             {
+              "id": "tilbud-og-ettersporsel",
+              "title": "Tilbud og etterspørsel: Slik blir prisen til",
+              "description": "Hvorfor er vann billig og diamanter dyre? Se hvordan prisen blir til der kjøpere og selgere møtes.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "marked",
+                "pris",
+                "tilbud",
+                "etterspørsel"
+              ],
+              "createdDate": "2026-10-23T00:00:00Z"
+            },
+            {
               "id": "produksjon",
               "title": "Produksjon",
               "description": "Hva bestemmer hva vi lager? Planøkonomi vs. Markedsøkonomi.",

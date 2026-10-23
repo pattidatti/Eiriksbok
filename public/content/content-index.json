@@ -1,5 +1,5 @@
 {
-  "buildId": 178064371499491,
+  "buildId": 192284389009691,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4843,6 +4843,9 @@
     "produksjon": [
       "content/samfunnskunnskap/okonomi/produksjon.json"
     ],
+    "tilbud-og-ettersporsel": [
+      "content/samfunnskunnskap/okonomi/tilbud-og-ettersporsel.json"
+    ],
     "antikken-visjoner": [
       "content/samfunnskunnskap/styringsformer/antikken-visjoner.json"
     ],
@@ -6551,6 +6554,7 @@
     "samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel": "content/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel.json",
     "samfunnskunnskap/okonomi/petrodollaren": "content/samfunnskunnskap/okonomi/petrodollaren.json",
     "samfunnskunnskap/okonomi/produksjon": "content/samfunnskunnskap/okonomi/produksjon.json",
+    "samfunnskunnskap/okonomi/tilbud-og-ettersporsel": "content/samfunnskunnskap/okonomi/tilbud-og-ettersporsel.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
     "samfunnskunnskap/styringsformer/demokrati-ansikter": "content/samfunnskunnskap/styringsformer/demokrati-ansikter.json",
     "samfunnskunnskap/styringsformer/diktaturet": "content/samfunnskunnskap/styringsformer/diktaturet.json",
