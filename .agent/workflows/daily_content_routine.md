@@ -65,9 +65,21 @@ try:
 except FileNotFoundError:
     pass
 
+# Fagbalanse: hvor mange nye artikler hvert fag har fått de siste 14 dagene
+FAG = ['samfunnskunnskap', 'krle', 'norsk', 'musikk', 'historie']
+subject_counts = {fag: 0 for fag in FAG}
+for p in recent_files:
+    parts = p.split('/')
+    if len(parts) >= 4 and parts[2] in subject_counts and not p.endswith('-sti.json'):
+        subject_counts[parts[2]] += 1
+# Færrest artikler først. Ved likt antall gjelder rekkefølgen i FAG.
+fagrekkefolge = sorted(FAG, key=lambda fag: (subject_counts[fag], FAG.index(fag)))
+
 result = {
     'slugs': sorted(recent_slugs),
     'files': sorted(recent_files),
+    'subject_counts': subject_counts,
+    'fagrekkefolge': fagrekkefolge,
     'pr_count': 0,
     'pr_titles': []
 }
@@ -83,6 +95,8 @@ python3 /tmp/inflight/build_set.py
 Settet inneholder:
 - `slugs`: lesson-ID-er lagt til de siste 14 dagene
 - `files`: tilhørende filstier
+- `subject_counts`: antall nye artikler per fag de siste 14 dagene
+- `fagrekkefolge`: dagens fagrekkefølge for Lag 2 og Lag 3 (se «Fagbalanse» i Jobb 1)
 
 **Hjelpefunksjon for senere jobber** - sjekk om en artikkel nylig er lagt til:
 ```python
@@ -104,6 +118,20 @@ Målet er å finne den mest verdifulle artikkelen å skrive i dag. Arbeid deg gj
 
 **KRITISK regel for hele Jobb 1:** Last inn /tmp/inflight/inflight.json. Når du vurderer enhver kandidat (manglende kompetansemål-artikkel, blueprint-artikkel, tidslinjehendelse, dead link, thin topic, eller helt nytt tema), sjekk OM filstien finnes i `inflight['files']` ELLER lesson-ID/normalisert tittel finnes i `inflight['slugs']`. Hvis ja -> behandle kandidaten som om den allerede er dekket; hopp til neste kandidat. Aldri velg en nylig lagt til kandidat.
 
+### Fagbalanse (gjelder Lag 2 og Lag 3)
+
+Historie har mange flere artikler og kandidater enn de andre fagene. Uten en balanseregel ender
+rutinen nesten alltid i historie. Derfor velger Lag 2 og Lag 3 fag etter `fagrekkefolge` i
+/tmp/inflight/inflight.json: faget med færrest nye artikler de siste 14 dagene kommer først. Ved
+likt antall gjelder samfunnskunnskap > krle > norsk > musikk > historie.
+
+- Ta et fag lenger bak i rekkefølgen bare når faget foran ikke har noen gyldig kandidat (ikke
+  nylig lagt til, ikke duplikat og mulig å kildebelegge).
+- Lag 1 (kompetansemål) følger fortsatt sin egen rekkefølge. Manglende kompetansemål-artikler går
+  alltid først.
+- Skriv `subject_counts` og `fagrekkefolge` inn i begrunnelsen for valget, slik at rapporten i
+  Jobb 6 viser hvorfor faget ble valgt.
+
 ### Lag 1: Kompetansemål-gap (høyeste prioritet)
 
 Les disse filene:
@@ -121,13 +149,19 @@ Hvis du finner en manglende artikkel her som ikke er nylig lagt til: velg den og
 
 ### Lag 2: Ekspansjon av eksisterende emner (middels prioritet)
 
-Hvis alle kompetansemål-artikler eksisterer eller er nylig lagt til, let etter hull i eksisterende innhold. Sjekk disse kildene i rekkefølge, og filtrer alltid bort nylig lagt til kandidater:
+Hvis alle kompetansemål-artikler eksisterer eller er nylig lagt til, let etter hull i eksisterende innhold. Filtrer alltid bort nylig lagt til kandidater.
+
+**Velg etter fag, ikke etter kilde.** Ikke stopp ved første kandidat du finner. Gå gjennom fagene i `fagrekkefolge`. For hvert fag: søk i kildene 2a-2d under i den rekkefølgen, og ta første gyldige kandidat i faget. Finner du ingen, gå videre til neste fag. Faget til en kandidat er første del av filstien (`public/content/<fag>/...`). For blueprints er det fagmappen i `File:`-linjene.
+
+Kildene:
 
 **2a. Tidslinjehendelser uten artikkel:**
 Les public/content/global-timeline.json. For hver hendelse med et link-felt: sjekk om den tilsvarende JSON-filen eksisterer. Hendelser som peker til manglende artikler er gode kandidater (men ikke hvis stien er nylig lagt til).
 
 **2b. Blueprint-planlagt innhold:**
 Les alle filer i docs/Design documents/ som ikke er scenario-blueprints (ignorer *-scenario-blueprint.md og *-laeringssti-blueprint.md). Blueprintfiler beskriver planlagte artikler og emner. Se etter artikler som er planlagt i blueprintet men mangler i public/content/. Filtrer bort nylig lagt til.
+
+Samfunnskunnskap har egne blueprints med prefikset `samf-` (økonomi, demografi, personlig økonomi, velferd, rettsstaten, geopolitikk, sosiologi og urfolk). Hver artikkel har en `File:`-linje med full sti. Bygg artiklene i rekkefølgen i blueprintens «Learning Path». Står det «Når den finnes:» foran en lenke, skal lenken bare med hvis artikkelen finnes når du skriver. Første artikkel i et nytt topic oppretter topicet i manifestet (se Jobb 3d).
 
 **2c. Interne lenker som leder til ingenting:**
 Artiklene lenker til hverandre med vanlige markdown-innlenker i brødteksten (`[tekst](/sti)`). Finn slike lenker som peker til artikler som ikke finnes ennå - de er gode kandidater å skrive. Hent ut alle interne lenkemål:
@@ -152,11 +186,11 @@ Eksempel: en lenke peker til /krle/filosofi/utilitarisme. Den eksisterer på /kr
 **2d. Tynne emner:**
 Les public/content/manifest.json og finn topics under historie, samfunnskunnskap og krle som har færre enn 4 artikler. Et tynt emne er en god kandidat for en ny forklarende artikkel. Filtrer bort kandidater som er nylig lagt til.
 
-Hvis du finner en god ekspansjonskandidat i Lag 2 som ikke er nylig lagt til: velg den og gå til Jobb 2.
+Når du har funnet en gyldig kandidat i det første faget i `fagrekkefolge` som har en: velg den og gå til Jobb 2.
 
 ### Lag 3: Nytt emne (lavest prioritet)
 
-Hvis både Lag 1 og Lag 2 er uttomte: forsøk å identifisere et historisk, etisk eller kulturelt tema som er relevant for norsk ungdomsskole og som ikke er dekket i Eiriksbok ennå. Fagprioritet: historie > krle > samfunnsfag. Sjekk at temaet ikke allerede finnes under et annet navn OG at slugifisert tema-navn ikke er i `inflight['slugs']`.
+Hvis både Lag 1 og Lag 2 er uttomte: forsøk å identifisere et samfunnsfaglig, etisk, kulturelt eller historisk tema som er relevant for norsk ungdomsskole og som ikke er dekket i Eiriksbok ennå. Fagprioritet: følg `fagrekkefolge`. Er den ikke tilgjengelig: samfunnskunnskap > krle > historie. Sjekk at temaet ikke allerede finnes under et annet navn OG at slugifisert tema-navn ikke er i `inflight['slugs']`.
 
 Hvis du oppretter et helt nytt topic: legg det til i manifest.json under riktig subject med et nytt topic-objekt (id, title, lessons: []).
 
@@ -567,6 +601,7 @@ gh issue comment 12 --repo pattidatti/eiriksbok --body "**Ny artikkel publisert*
 **Tittel:** [artikkel-tittel]
 **Fag:** [fag] | **Emne:** [topic]
 **Kilde:** [Lag 1/2/3] - [begrunnelse for valget]
+**Fagbalanse siste 14 dager:** [subject_counts fra inflight.json, f.eks. historie 6, krle 3, samfunnskunnskap 2, norsk 1, musikk 0]
 **PR:** $PR_URL
 **Status:** $PR_STATUS
 
