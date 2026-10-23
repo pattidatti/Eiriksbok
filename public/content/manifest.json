@@ -8505,6 +8505,20 @@
                 "diplomati"
               ],
               "createdDate": "2026-10-22T00:00:00Z"
+            },
+            {
+              "id": "mzilikazi-og-ndebele-riket",
+              "title": "Mzilikazi og Ndebele-riket: Et folk på vandring",
+              "description": "Mzilikazi brøt med Shaka, samlet beseirede folk til ett folk og flyttet riket helt til Matabeleland i dagens Zimbabwe.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "afrika",
+                "sør-afrika",
+                "zimbabwe",
+                "mfecane",
+                "ndebele"
+              ],
+              "createdDate": "2026-10-23T00:00:00Z"
             }
           ]
         }

@@ -1,5 +1,5 @@
 {
-  "buildId": 180116058188041,
+  "buildId": 178064371499491,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -2050,6 +2050,9 @@
     ],
     "moshoeshoe-og-basotho-riket": [
       "content/historie/afrikanske-riker/moshoeshoe-og-basotho-riket.json"
+    ],
+    "mzilikazi-og-ndebele-riket": [
+      "content/historie/afrikanske-riker/mzilikazi-og-ndebele-riket.json"
     ],
     "shaka-og-zulu-riket": [
       "content/historie/afrikanske-riker/shaka-og-zulu-riket.json"
@@ -5609,6 +5612,7 @@
     "historie/afrikanske-riker/kusj-og-nubia": "content/historie/afrikanske-riker/kusj-og-nubia.json",
     "historie/afrikanske-riker/mansa-musa-og-mali": "content/historie/afrikanske-riker/mansa-musa-og-mali.json",
     "historie/afrikanske-riker/moshoeshoe-og-basotho-riket": "content/historie/afrikanske-riker/moshoeshoe-og-basotho-riket.json",
+    "historie/afrikanske-riker/mzilikazi-og-ndebele-riket": "content/historie/afrikanske-riker/mzilikazi-og-ndebele-riket.json",
     "historie/afrikanske-riker/shaka-og-zulu-riket": "content/historie/afrikanske-riker/shaka-og-zulu-riket.json",
     "historie/afrikanske-riker/songhai-riket": "content/historie/afrikanske-riker/songhai-riket.json",
     "historie/afrikanske-riker/stor-zimbabwe": "content/historie/afrikanske-riker/stor-zimbabwe.json",

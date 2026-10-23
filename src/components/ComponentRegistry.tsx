@@ -87,6 +87,7 @@ const MisjonensToSider = lazy(() => import('./content/interactive/MisjonensToSid
 const EgedesPlan = lazy(() => import('./content/interactive/EgedesPlan').then(m => ({ default: m.EgedesPlan })));
 const MfecaneSkylda = lazy(() => import('./content/interactive/MfecaneSkylda').then(m => ({ default: m.MfecaneSkylda })));
 const FjelletsValg = lazy(() => import('./content/interactive/FjelletsValg').then(m => ({ default: m.FjelletsValg })));
+const RiketPaVandring = lazy(() => import('./content/interactive/RiketPaVandring').then(m => ({ default: m.RiketPaVandring })));
 const VeienTilSkogen = lazy(() => import('./content/interactive/VeienTilSkogen').then(m => ({ default: m.VeienTilSkogen })));
 const BordetIVereeniging = lazy(() => import('./content/interactive/BordetIVereeniging').then(m => ({ default: m.BordetIVereeniging })));
 const Motorsaga = lazy(() => import('./content/interactive/Motorsaga').then(m => ({ default: m.Motorsaga })));
@@ -1054,6 +1055,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     EgedesPlan,
     MfecaneSkylda,
     FjelletsValg,
+    RiketPaVandring,
     VeienTilSkogen,
     BordetIVereeniging,
     Motorsaga,
