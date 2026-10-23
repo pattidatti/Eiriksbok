@@ -1,0 +1,193 @@
+{
+    "id": "tid-og-struktur",
+    "tittel": "Tidens tannhjul: Slik styrer forfattere tiden",
+    "kilde": "/norsk/virkemidler/tid-og-struktur",
+    "bilde": "/images/lessons/norsk/virkemidler/tid-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-23", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "smellet",
+            "lyd": "rom",
+            "kapittel": "Midt i noe",
+            "visual": { "type": "TidRommet", "props": { "modus": "royk" } },
+            "replikker": [
+                { "si": "Smellet vekket meg. Rommet var fylt av røyk." },
+                { "si": "Hvem er jeg? Hvor er vi, og hva har skjedd? Du aner ingenting." },
+                { "si": "Men du vil vite mer. Du vil fortsette." },
+                { "si": "Akkurat det var meningen. Denne filmen startet midt i noe, helt uten forklaring." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Tidens tannhjul",
+                    "undertittel": "Slik styrer forfattere tiden",
+                    "bilde": "/images/lessons/norsk/virkemidler/tid-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan lurer forfatteren klokka?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Det du nettopp så, er et grep. Forfattere bruker det med vilje." },
+                { "si": "I den virkelige verden går tiden alltid framover. Ett sekund er alltid ett sekund." },
+                { "si": "Men i en fortelling kan forfatteren skru tiden tilbake, hoppe framover eller fryse et øyeblikk." }
+            ]
+        },
+        {
+            "id": "urverket",
+            "kapittel": "Elastisk tid",
+            "visual": { "type": "TidTannhjul" },
+            "replikker": [
+                { "si": "Tenk på tiden i en fortelling som et urverk, fullt av tannhjul." },
+                { "si": "Forfatteren kan bruke ti sider på et kyss som varer i fem sekunder. Da går hjulene nesten ikke." },
+                { "si": "Eller hoppe over hundre år med én eneste setning. Da spinner de rundt." },
+                { "si": "Tiden i en bok er elastisk. Den kan strekkes ut og trykkes sammen, som en strikk." },
+                { "si": "Nå skal vi skru urverket fra hverandre. To av hjulene heter rekkefølge og tempo." }
+            ]
+        },
+        {
+            "id": "totid",
+            "kapittel": "To slags tid",
+            "visual": { "type": "TidToKlokker", "props": { "modus": "begrep" } },
+            "replikker": [
+                { "si": "Først må du kjenne forskjellen på fortalt tid og fortelletid." },
+                { "si": "Fortalt tid er hvor lang tid som går i historien. En bok kan handle om hundre år." },
+                { "si": "Fortelletid er hvor lang tid det tar deg å lese den. Kanskje fem timer." },
+                { "si": "Et kyss varer i fem sekunder. Men forfatteren kan bruke ti sider på å beskrive det." },
+                { "si": "Fortalt tid er hva som faktisk skjer. Fortelletid er hvor mye plass det får på papiret." }
+            ]
+        },
+        {
+            "id": "pangstart",
+            "kapittel": "Rekkefølge",
+            "visual": { "type": "TidLinje", "props": { "modus": "medias" } },
+            "replikker": [
+                { "si": "Nå til rekkefølgen. Her er en historie, fortalt fra begynnelsen til slutten." },
+                { "si": "Det kalles kronologisk. Hendelsene kommer i den rekkefølgen de skjedde, som i et eventyr: Det var en gang." },
+                { "si": "Men mange fortellinger starter her, midt inne i handlingen. Det kalles in medias res." },
+                { "si": "Det er latin og betyr midt inn i begivenhetene. Vi kan kalle det en pangstart." },
+                { "si": "Du lander midt i en krangel, en biljakt, eller rett etter et mord. Du vet ikke hvem personene er." },
+                { "si": "Da må du selv finne ut av sammenhengen. Grepet brukes ofte i krim og i noveller, korte fortellinger som må fange deg fra første side." }
+            ]
+        },
+        {
+            "id": "tilbakeblikk",
+            "kapittel": "Tilbakeblikk",
+            "visual": { "type": "TidLinje", "props": { "modus": "tilbakeblikk" } },
+            "replikker": [
+                { "si": "Noen ganger stopper handlingen helt opp, og vi blir tatt med tilbake i tid. Det kalles et tilbakeblikk." },
+                { "si": "Tenk deg en mann som er redd for vann. Hvorfor er han det?" },
+                { "si": "Det skjønner vi ikke før vi får et tilbakeblikk. Som barn holdt han på å drukne." },
+                { "si": "Nå gir det mening. Tilbakeblikket forklarer hvorfor han er som han er i dag." },
+                { "si": "Et annet eksempel: Alt minnet ham om den sommeren for ti år siden, den gangen hun fortsatt var i live. Fortiden slipper ikke taket." }
+            ]
+        },
+        {
+            "id": "ibsen",
+            "lyd": "rom",
+            "visual": { "type": "TidScenen", "props": { "modus": "ibsen" } },
+            "replikker": [
+                { "si": "Henrik Ibsen brukte tilbakeblikk ofte i skuespillene han skrev om sin egen tid. Et annet ord for det er retrospektiv teknikk." },
+                { "si": "I stykkene hans har det meste skjedd før teppet går opp." },
+                { "si": "Det som skjer på scenen, handler egentlig om å rulle opp gamle hemmeligheter." },
+                { "si": "Hemmeligheter som personene har prøvd å skjule. Tilbakeblikket blir ofte en avsløring." }
+            ]
+        },
+        {
+            "id": "frampek",
+            "lyd": "stille",
+            "kapittel": "Frampek",
+            "visual": { "type": "TidLinje", "props": { "modus": "frampek" } },
+            "replikker": [
+                { "si": "Forfatteren kan også peke framover. Det kalles et frampek, et lite hint om noe som skal skje senere." },
+                { "si": "Det er som en skygge som kastes foran en hendelse." },
+                { "si": "En kniv blir nevnt i første kapittel. Men den blir ikke brukt før i siste kapittel." },
+                { "si": "Eller forfatteren skriver: Han visste ikke da at dette var siste gang han skulle se henne." },
+                { "si": "Nå vet du at noe kommer til å skje. Du vet bare ikke hva, eller når." }
+            ]
+        },
+        {
+            "id": "geveret",
+            "lyd": "rom",
+            "visual": { "type": "TidScenen", "props": { "modus": "gevaer" } },
+            "replikker": [
+                { "si": "Anton Tsjekhov hadde en regel for slike detaljer." },
+                { "si": "Setter du et ladd gevær på scenen, må det avfyres." },
+                { "si": "Ellers lover du leseren noe du ikke har tenkt å holde." },
+                { "si": "Regelen kalles Tsjekhovs gevær. Leseren skal føle at ingenting er tilfeldig." }
+            ]
+        },
+        {
+            "id": "fjellet",
+            "lyd": "vind",
+            "visual": { "type": "TidScenen", "props": { "modus": "fjell" } },
+            "replikker": [
+                { "si": "Et frampek kan også ligge i været. Hør her." },
+                { "si": "Været slo om. Tunge, svarte skyer samlet seg over fjellet de skulle krysse." },
+                { "si": "Ingen har sagt at noe går galt. Men du kjenner det på deg. Stemningen blir uhyggelig." },
+                { "si": "Og når slutten kommer, føles den logisk. Du ble jo advart underveis." }
+            ]
+        },
+        {
+            "id": "glasset",
+            "lyd": "rom",
+            "kapittel": "Sakte film",
+            "visual": { "type": "TidRommet", "props": { "modus": "glass" } },
+            "replikker": [
+                { "si": "Nå til tempo. Har du falt ned fra et tre en gang?" },
+                { "si": "Da føles det ofte som om tiden går i sakte film. Du rekker å tenke tusen tanker på bare ett sekund." },
+                { "si": "Glasset falt." },
+                { "si": "Det roterte langsomt i luften og fanget lyset fra vinduet." },
+                { "si": "Jeg så hver eneste dråpe som løsnet fra kanten, før det traff gulvet." },
+                { "si": "Dette kalles et utvidet øyeblikk. Ett lite sekund blir strukket ut over mange setninger." }
+            ]
+        },
+        {
+            "id": "strukket",
+            "lyd": "stille",
+            "visual": { "type": "TidToKlokker", "props": { "modus": "sakte" } },
+            "replikker": [
+                { "si": "Her blir fortelletiden mye lengre enn den fortalte tiden." },
+                { "si": "Forfatteren zoomer inn på små detaljer. En svettedråpe, en lyd, en følelse." },
+                { "si": "Det er som om teksten roper: Stopp opp! Dette er viktig." },
+                { "si": "Derfor brukes grepet ofte på toppen av spenningskurven, der historien er som mest spennende." }
+            ]
+        },
+        {
+            "id": "tidsreisende",
+            "kapittel": "Tidsreisende",
+            "visual": { "type": "TidTannhjul", "props": { "modus": "grep" } },
+            "replikker": [
+                { "si": "Forfatteren er altså en tidsreisende." },
+                { "si": "En fortelling kan starte midt i handlingen." },
+                { "si": "Den kan hoppe tilbake med et tilbakeblikk, eller peke framover med et frampek." },
+                { "si": "Og den kan strekke ut et øyeblikk, eller hoppe over mange år på et blunk." },
+                { "si": "Slik blir fortellingen mer spennende enn virkeligheten." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Din tur",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "I virkeligheten går tiden bare framover.", "fraBeat": 0 },
+                        { "tekst": "I en fortelling styrer forfatteren klokka.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Skriver du selv?", "fraBeat": 1 },
+                        { "tekst": "Hopp rett inn i det spennende.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Bakgrunnen kan komme senere.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I virkeligheten går tiden bare framover. I en fortelling er det forfatteren som styrer klokka." },
+                { "si": "Når du skriver selv: Ikke vær redd for å hoppe rett inn i det spennende." },
+                { "si": "Bakgrunnen kan du forklare senere." }
+            ]
+        }
+    ]
+}
