@@ -1,0 +1,274 @@
+{
+    "id": "monopol-og-konkurranse",
+    "title": "Monopol og konkurranse: Hvem bestemmer prisen?",
+    "layout": "rich",
+    "year": "Fra 1922 til i dag",
+    "category": "Økonomi",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Et monopol er et marked med bare én selger. Monopolet kan sette prisen selv, og prisen blir ofte høyere enn med konkurranse.",
+        "Tre kjeder har over 96 prosent av dagligvaremarkedet i Norge. Konkurransetilsynet passer på at de ikke samarbeider om prisene.",
+        "Noen monopol er valgt med vilje: Vinmonopolet skal begrense alkoholbruken, ikke selge mest mulig."
+    ],
+    "externalUrl": "https://snl.no/monopol",
+    "tags": [
+        "økonomi",
+        "marked",
+        "pris",
+        "monopol",
+        "konkurranse"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det er den varmeste dagen i sommer, og du har gått langt for å komme til stranda. Du er tørst og vil ha en is. Det finnes bare én kiosk her, og en vanlig is koster 50 kroner. Det er dyrt. Men hva skal du gjøre? Det er ingen andre steder å kjøpe is. Kiosken vet det, og den vet at du vet det."
+        },
+        {
+            "type": "text",
+            "content": "Tenk deg at det åpner en ny kiosk tvers over gata. Plutselig kan du velge. Den første kiosken må gjøre noe for at du ikke skal gå over gata. Kanskje setter den ned prisen. Kanskje får du mer is for pengene. Den lille forskjellen mellom én kiosk og to er det denne artikkelen handler om: forskjellen på monopol og konkurranse."
+        },
+        {
+            "type": "text",
+            "content": "Dette er ikke bare et tankeeksperiment. I Norge eier tre store grupper nesten alle dagligvarebutikkene. Det betyr mye for hva du og familien din betaler for melk, brød og taco hver uke."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "To iskiosker ved siden av hverandre på en solfylt strand",
+            "caption": "Når to kiosker selger det samme, kan kundene velge. Da må kioskene kjempe om dem."
+        },
+        {
+            "type": "header",
+            "text": "Hva er et monopol?"
+        },
+        {
+            "type": "text",
+            "content": "Ordet monopol kommer fra gresk. Mono betyr én, og polein betyr å selge. Et monopol er altså et marked der det bare finnes én selger av en vare eller tjeneste (Stoltz & Andresen, 2025a). Den som har monopol, kan selv bestemme prisen. Kundene kan ikke gå til en annen butikk, for det finnes ingen."
+        },
+        {
+            "type": "text",
+            "content": "Betyr det at monopolet tar så høy pris som mulig? Nei, ikke helt. Setter kiosken prisen altfor høyt, kjøper nesten ingen. Da tjener den lite. Monopolet leter i stedet etter prisen som gir mest overskudd. Ifølge Store norske leksikon velger en monopolist å lage og selge mindre enn den ville gjort hvis den måtte konkurrere (Stoltz & Andresen, 2025a). Prisen blir høyere, og færre får kjøpt varen."
+        },
+        {
+            "type": "text",
+            "content": "Det finnes en annen ulempe også. Når ingen kan ta kundene dine, har du ikke så mye grunn til å bli bedre eller billigere. Leksikonet peker på at et monopol kan miste lysten til å bli mer effektivt, altså til å lage varen billigere og raskere (Stoltz & Andresen, 2025a)."
+        },
+        {
+            "type": "header",
+            "text": "Konkurranse presser prisen ned"
+        },
+        {
+            "type": "text",
+            "content": "Det motsatte av monopol er et marked med mange selgere. Økonomer har en modell for det de kaller fullkommen konkurranse. I denne modellen er det mange kjøpere og mange selgere, alle selger nøyaktig samme vare, alle vet hva prisene er, og hvem som helst kan starte opp eller legge ned (Idsø mfl., 2025). Ingen enkelt selger kan da bestemme prisen. Tar du mer enn de andre, går kundene bare et annet sted."
+        },
+        {
+            "type": "text",
+            "content": "Fullkommen konkurranse er en tenkt idealtilstand. Leksikonet er tydelig på at modellen ikke beskriver hvordan markeder faktisk virker (Idsø mfl., 2025). Men den hjelper oss å forstå retningen: Jo flere som kjemper om de samme kundene, jo mer presses prisen ned mot det varen koster å lage. Du har kanskje lest om hvordan prisen blir til der kjøpere og selgere møtes, i artikkelen om [tilbud og etterspørsel](/samfunnskunnskap/okonomi/tilbud-og-ettersporsel). Konkurranse er grunnen til at dette møtet blir rettferdig for kundene."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv. Først er du alene på stranda. Så får du en konkurrent."
+        },
+        {
+            "type": "component",
+            "name": "Kioskkampen",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Når noen få er store: oligopol"
+        },
+        {
+            "type": "text",
+            "content": "I virkeligheten er de fleste markeder et sted mellom monopol og fullkommen konkurranse. Ofte finnes det noen få store bedrifter som selger nesten alt. Det kalles et oligopol. Oligo betyr få på gresk (Stoltz & Andresen, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "I et oligopol må hver bedrift hele tiden tenke på hva de andre gjør. Setter én bedrift ned prisen, kan de andre gjøre det samme med en gang. Da har den første ikke vunnet noen nye kunder, bare tjent mindre per vare (Stoltz & Andresen, 2025b). Derfor kjemper bedrifter i oligopol ofte med reklame i stedet for med pris. Noen ganger blir den største bedriften en slags prisleder som de andre følger. Resultatet er ifølge leksikonet høyere priser og mindre salg enn i et marked med full konkurranse (Stoltz & Andresen, 2025b)."
+        },
+        {
+            "type": "text",
+            "content": "Dagligvarehandelen i Norge er et godt eksempel. NorgesGruppen hadde 43,5 prosent av markedet i 2024. Coop hadde 29,2 prosent, og Rema 1000 hadde 23,9 prosent (Myrseth, 2025). Til sammen er det over 96 prosent. Næringsministeren skrev i 2025 at det er vanskelig for små og nye butikker å komme inn, og at norske kunder møter høyere priser og mindre utvalg enn kunder i andre land (Myrseth, 2025)."
+        },
+        {
+            "type": "header",
+            "text": "Prisjegerne"
+        },
+        {
+            "type": "text",
+            "content": "Hvordan vet en butikkjede hva de andre tar for varene? Fra 2010 til 2012 ble de tre kjedene enige om å slippe hverandres prisjegere inn i butikkene. En prisjeger er en person som går rundt i en konkurrents butikk og skanner prislappene med en håndholdt skanner. Etter hvert fikk prisjegerne samle inn priser i stor skala (Konkurransetilsynet, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Det høres kanskje uskyldig ut. Prisene står jo på hylla. Men tenk tilbake på oligopolet. Når hver kjede ser nøyaktig og raskt hva de andre gjør, er det lite å vinne på å sette ned prisen. De andre følger etter med en gang. Konkurransetilsynet mente at dette samarbeidet gjorde konkurransen svakere. I 2018 gjennomførte tilsynet uanmeldte besøk hos kjedene og tok med seg dokumenter. I august 2024 fikk Coop, NorgesGruppen og Rema 1000 til sammen 4,9 milliarder kroner i bot, og de måtte slutte med samarbeidet (Konkurransetilsynet, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Kjedene klaget, men i august 2025 ga Konkurranseklagenemnda tilsynet fullt medhold. Fungerende direktør Gjermund Nese sa at ulovlig samarbeid mellom konkurrenter skader forbrukerne (Konkurransetilsynet, 2025). Forbrukerne, det er deg og meg."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Butikkansatt som skanner prislapper i en dagligvarehylle",
+            "caption": "Prisjegere skannet prisene i konkurrentenes butikker. Konkurransetilsynet mente det svekket konkurransen."
+        },
+        {
+            "type": "header",
+            "text": "Vaktbikkja: Konkurransetilsynet"
+        },
+        {
+            "type": "text",
+            "content": "Siden konkurranse er så viktig for prisene, har staten en egen etat som passer på den. Konkurransetilsynet ble opprettet i 1994 og har ligget i Bergen siden 2006 (Tvedt, 2026). Jobben er å fremme effektive markeder og stoppe at noen misbruker makten sin i et marked. Tilsynet kan også stoppe at to store bedrifter slår seg sammen, hvis det vil gi for lite konkurranse (Tvedt, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Du kan tenke på Konkurransetilsynet som dommeren i en fotballkamp. Dommeren bestemmer ikke hvem som skal vinne. Men dommeren passer på at ingen jukser. Konkurrenter har lov til å kjempe hardt om kundene, men de har ikke lov til å bli enige seg imellom om å la være å kjempe."
+        },
+        {
+            "type": "header",
+            "text": "Et monopol staten har valgt: Vinmonopolet"
+        },
+        {
+            "type": "text",
+            "content": "Når monopol stort sett er dårlig for kundene, hvorfor har Norge da et selskap som heter Vinmonopolet? Svaret er at noen monopol er valgt med vilje. Ifølge Store norske leksikon er de vanligste monopolene eid av staten. De har enerett ved lov, og de skal ha andre mål enn å tjene mest mulig penger (Stoltz & Andresen, 2025a)."
+        },
+        {
+            "type": "text",
+            "content": "Vinmonopolet ble startet i 1922 og eies av staten. Det har enerett til å selge vin, brennevin og sterkøl i butikk i Norge. Ved utgangen av 2024 hadde det 351 butikker (Ekberg, 2025). Allerede fra starten var målet å fjerne de private pengeinteressene fra alkoholsalget (Ekberg, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Her snur logikken fra kiosken på stranda på hodet. En vanlig butikk vil selge så mye som mulig. Vinmonopolet vil ikke det. Selskapet skriver selv at det skal være med på å begrense hvor mye alkohol folk drikker, gjennom ansvarlig salg og begrenset tilgang. Derfor har det et begrenset antall butikker, ingen reklame og ingen salgskampanjer (Vinmonopolet, 2025). Det som er en ulempe med monopol i et vanlig marked, færre butikker og høyere terskel for å handle, er nettopp poenget her. Målet er bedre folkehelse, ikke billigere varer."
+        },
+        {
+            "type": "header",
+            "text": "Når én selger er det mest fornuftige"
+        },
+        {
+            "type": "text",
+            "content": "Det finnes også en tredje type monopol, som økonomer kaller naturlig monopol. Det oppstår når det koster så mye å bygge opp noe at det ikke lønner seg å ha flere som konkurrerer (Stoltz & Andresen, 2025a). Tenk på vannrøret inn til huset ditt. Det ville vært sløsing om tre selskaper gravde ned hvert sitt vannrør til hvert eneste hus. Da er det bedre med én eier. Men samtidig må noen passe på at eieren ikke tar for høy pris, for kundene kan jo ikke velge et annet vannrør."
+        },
+        {
+            "type": "text",
+            "content": "Monopoler er ikke noe nytt. Du kan lese om et av de mest kjente eksemplene fra historien i artikkelen om handelskompaniet [VOC](/historie/kolonialisering/voc). Og økonomer har lenge vært uenige om hvor mye staten bør blande seg inn i markedet. Det kan du lese mer om i artikkelen om [økonomiske skoler](/samfunnskunnskap/okonomi/okonomiske-skoler)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Et Vinmonopol-utsalg i en norsk bygate",
+            "caption": "Vinmonopolet er et monopol staten har valgt med vilje. Målet er at folk skal drikke mindre, ikke at selskapet skal selge mest mulig."
+        },
+        {
+            "type": "header",
+            "text": "Oppsummering"
+        },
+        {
+            "type": "text",
+            "content": "Et monopol er et marked med bare én selger. Monopolet kan sette prisen selv, og ofte blir prisen høyere og salget mindre enn med konkurranse. Når flere selger det samme, må de kjempe om kundene, og da presses prisen ned. Mange markeder i Norge, som dagligvarehandelen, har bare noen få store aktører. Derfor passer Konkurransetilsynet på at de ikke samarbeider om prisene, slik tilsynet mente skjedde i prisjegersaken. Men ikke alle monopol er dårlige. Vinmonopolet er et monopol staten har valgt for å begrense alkoholbruken, og naturlige monopol som vannrør er mest fornuftige med én eier."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ekberg, E. (2025). *Vinmonopolet*. Store norske leksikon. Hentet 24.10.2026 fra [snl.no/Vinmonopolet](https://snl.no/Vinmonopolet)",
+                    "Idsø, J., Andresen, M. E. & Onshuus, H. (2025). *Fullkommen konkurranse*. Store norske leksikon. Hentet 24.10.2026 fra [snl.no/fullkommen_konkurranse](https://snl.no/fullkommen_konkurranse)",
+                    "Konkurransetilsynet. (2025, 21. august). *Norwegian Competition Authority decision fully upheld in the price hunter case*. [konkurransetilsynet.no](https://konkurransetilsynet.no/norwegian-competition-authority-decision-fully-upheld-in-the-price-hunter-case/?lang=en)",
+                    "Myrseth, C. T. (2025, 30. april). *Dokument 8:191 S (2024–2025) – representantforslag om å åpne grossistleddet og sikre en mer rettferdig dagligvarehandel* [Brev til Stortingets næringskomité]. Nærings- og fiskeridepartementet. [stortinget.no](https://www.stortinget.no/globalassets/pdf/innstillinger/stortinget/2024-2025/inns-202425-318s-vedlegg.pdf)",
+                    "Stoltz, G. & Andresen, M. E. (2025a). *Monopol*. Store norske leksikon. Hentet 24.10.2026 fra [snl.no/monopol](https://snl.no/monopol)",
+                    "Stoltz, G. & Andresen, M. E. (2025b). *Oligopol*. Store norske leksikon. Hentet 24.10.2026 fra [snl.no/oligopol](https://snl.no/oligopol)",
+                    "Tvedt, K. A. (2026). *Konkurransetilsynet*. Store norske leksikon. Hentet 24.10.2026 fra [snl.no/Konkurransetilsynet](https://snl.no/Konkurransetilsynet)",
+                    "Vinmonopolet. (2025). *Vinmonopolets samfunnsoppdrag*. Hentet 24.10.2026 fra [vinmonopolet.no](https://www.vinmonopolet.no/om-oss/vinmonopolordningen/samfunnsoppdrag)"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr ordet monopol, og hvilket språk kommer det fra?",
+                    "Hva er forskjellen på et monopol og et oligopol?",
+                    "Hvor store deler av dagligvaremarkedet hadde NorgesGruppen, Coop og Rema 1000 i 2024?",
+                    "Hva gjorde prisjegerne, og hvor stor bot fikk kjedene til sammen?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor prisen på is går ned når det åpner en ny kiosk tvers over gata.",
+                    "Hvorfor er det lite å vinne på å sette ned prisen i et oligopol? Bruk dagligvarekjedene som eksempel.",
+                    "Vinmonopolet er et monopol, men staten mener det er bra. Hvorfor er det annerledes enn en kiosk som er alene på stranda?",
+                    "Konkurransetilsynet blir sammenlignet med en dommer i en fotballkamp. Hvor godt synes du sammenligningen passer?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvilken kjede butikkene i nærmiljøet ditt hører til. Hvor mange av dem eies av NorgesGruppen, Coop eller Reitan (Rema 1000)?",
+                    "Diskuter i klassen: Bør Vinmonopolet fortsatt ha enerett, eller bør vanlige butikker få selge vin? Finn argumenter for begge sider.",
+                    "Skriv et kort innlegg: Hva kan staten gjøre for at det skal bli lettere for nye butikkjeder å konkurrere i Norge?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er et monopol?",
+                        "options": [
+                            "Et marked med mange selgere",
+                            "Et marked med bare én selger",
+                            "Et marked uten kjøpere",
+                            "Et marked der staten setter alle priser"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Mono betyr én. I et monopol finnes det bare én selger av en vare eller tjeneste."
+                    },
+                    {
+                        "question": "Hva skjer vanligvis med prisen når en ny konkurrent kommer inn i markedet?",
+                        "options": [
+                            "Den går opp",
+                            "Den går ned",
+                            "Den forblir helt lik",
+                            "Den forsvinner"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Når flere kjemper om de samme kundene, må de sette ned prisen for ikke å miste kundene."
+                    },
+                    {
+                        "question": "Hvorfor fikk Coop, NorgesGruppen og Rema 1000 bot på 4,9 milliarder kroner?",
+                        "options": [
+                            "De solgte alkohol uten lov",
+                            "De slapp hverandres prisjegere inn og delte prisinformasjon",
+                            "De bygde for mange butikker",
+                            "De betalte for lite skatt"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Konkurransetilsynet mente at samarbeidet om prisjegere svekket konkurransen. Konkurranseklagenemnda ga tilsynet medhold i 2025."
+                    },
+                    {
+                        "question": "Hva er målet med Vinmonopolet?",
+                        "options": [
+                            "Å tjene mest mulig penger til staten",
+                            "Å selge billigere vin enn i andre land",
+                            "Å begrense alkoholbruken gjennom begrenset tilgang og ansvarlig salg",
+                            "Å konkurrere med dagligvarebutikkene"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Vinmonopolet er et monopol staten har valgt med vilje. Det har få butikker og ingen reklame for at folk skal drikke mindre."
+                    },
+                    {
+                        "question": "Hva kalles et marked der noen få store bedrifter selger nesten alt?",
+                        "options": [
+                            "Monopol",
+                            "Oligopol",
+                            "Fullkommen konkurranse",
+                            "Naturalhandel"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Oligo betyr få. Dagligvarehandelen i Norge, med tre store kjeder, er et eksempel på et oligopol."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

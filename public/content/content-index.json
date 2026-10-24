@@ -1,5 +1,5 @@
 {
-  "buildId": 192284389009691,
+  "buildId": 6183632085896,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4828,6 +4828,9 @@
     "milei-argentina": [
       "content/samfunnskunnskap/okonomi/milei-argentina.json"
     ],
+    "monopol-og-konkurranse": [
+      "content/samfunnskunnskap/okonomi/monopol-og-konkurranse.json"
+    ],
     "naturlig-rente": [
       "content/samfunnskunnskap/okonomi/naturlig-rente.json"
     ],
@@ -6549,6 +6552,7 @@
     "samfunnskunnskap/okonomi/inflasjon-og-rente": "content/samfunnskunnskap/okonomi/inflasjon-og-rente.json",
     "samfunnskunnskap/okonomi/komparativt-fortrinn": "content/samfunnskunnskap/okonomi/komparativt-fortrinn.json",
     "samfunnskunnskap/okonomi/milei-argentina": "content/samfunnskunnskap/okonomi/milei-argentina.json",
+    "samfunnskunnskap/okonomi/monopol-og-konkurranse": "content/samfunnskunnskap/okonomi/monopol-og-konkurranse.json",
     "samfunnskunnskap/okonomi/naturlig-rente": "content/samfunnskunnskap/okonomi/naturlig-rente.json",
     "samfunnskunnskap/okonomi/okonomiske-skoler": "content/samfunnskunnskap/okonomi/okonomiske-skoler.json",
     "samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel": "content/samfunnskunnskap/okonomi/pengesystem-vs-naturalhandel.json",

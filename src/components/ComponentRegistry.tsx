@@ -92,6 +92,7 @@ const VeienTilSkogen = lazy(() => import('./content/interactive/VeienTilSkogen')
 const BordetIVereeniging = lazy(() => import('./content/interactive/BordetIVereeniging').then(m => ({ default: m.BordetIVereeniging })));
 const Motorsaga = lazy(() => import('./content/interactive/Motorsaga').then(m => ({ default: m.Motorsaga })));
 const Jordbaertorget = lazy(() => import('./content/interactive/Jordbaertorget').then(m => ({ default: m.Jordbaertorget })));
+const Kioskkampen = lazy(() => import('./content/interactive/Kioskkampen').then(m => ({ default: m.Kioskkampen })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
 const Havdelingen = lazy(() => import('./content/interactive/Havdelingen').then(m => ({ default: m.Havdelingen })));
 const Hvalregnskapet = lazy(() => import('./content/interactive/Hvalregnskapet').then(m => ({ default: m.Hvalregnskapet })));
@@ -1061,6 +1062,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     BordetIVereeniging,
     Motorsaga,
     Jordbaertorget,
+    Kioskkampen,
     BrentJord,
     Hvalregnskapet,
     Havdelingen,
