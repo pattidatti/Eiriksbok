@@ -1,0 +1,478 @@
+{
+    "id": "skriv-bedre-historier",
+    "tittel": "Skriv bedre historier",
+    "kilde": "/norsk/skrivehjelp/skriv-bedre-historier",
+    "bilde": "/images/topics/skrivehjelp_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-24", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "venter",
+            "lyd": "vind",
+            "kapittel": "Ørkenen",
+            "visual": {
+                "type": "HistorierScenen",
+                "props": {
+                    "modus": "venter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sola brenner. En gutt sitter alene midt i en ørken."
+                },
+                {
+                    "si": "Han sitter og venter på at noen skal komme og hente ham."
+                },
+                {
+                    "si": "Han venter. Og venter. Ingen kommer."
+                },
+                {
+                    "si": "Er dette spennende å lese om? Ikke egentlig. Ingenting skjer, fordi gutten ikke gjør noe."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Skriv bedre historier",
+                    "undertittel": "Grep du kan lære",
+                    "bilde": "/images/topics/skrivehjelp_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hva gjør en historie spennende?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange tror at gode historier kommer av seg selv, når inspirasjonen slår ned."
+                },
+                {
+                    "si": "Men sannheten er at gode historier bygges. Med grep du kan lære, akkurat som et håndverk."
+                },
+                {
+                    "si": "I denne filmen skal vi se på ti slike grep. Hva er det som gjør at en historie fenger?"
+                }
+            ]
+        },
+        {
+            "id": "agens",
+            "lyd": "vind",
+            "kapittel": "Handling",
+            "visual": {
+                "type": "HistorierScenen",
+                "props": {
+                    "modus": "agens"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "La oss gi gutten i ørkenen en ny sjanse."
+                },
+                {
+                    "si": "Sola brant. Han visste at han ikke kunne bli her."
+                },
+                {
+                    "si": "Han pakket sekken og gikk mot fjellene."
+                },
+                {
+                    "si": "Nå skjer det noe, fordi han selv får det til å skje. Det kalles agens: Hovedpersonen er den som handler."
+                },
+                {
+                    "si": "Gi personen din et problem, og la hen prøve å løse det selv. Ikke la ting bare skje med hen."
+                }
+            ]
+        },
+        {
+            "id": "begynte",
+            "lyd": "stille",
+            "visual": {
+                "type": "HistorierArk",
+                "props": {
+                    "tittel": "Bare si hva som skjer",
+                    "rader": [
+                        {
+                            "svak": "Han begynte å løpe.",
+                            "god": "Han løp.",
+                            "svakFra": 0,
+                            "godFra": 1
+                        },
+                        {
+                            "svak": "Hun begynte å gråte.",
+                            "god": "Hun gråt.",
+                            "svakFra": 2,
+                            "godFra": 2
+                        },
+                        {
+                            "svak": "Han gikk.",
+                            "god": "Han luska. Han tusla. Han slentret.",
+                            "svakFra": 3,
+                            "godFra": 4
+                        }
+                    ],
+                    "hvorfor": "Verbet gjør jobben",
+                    "hvorforFra": 4
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Agens starter helt nede i hver setning. Se på denne: Han begynte å løpe."
+                },
+                {
+                    "si": "Stryk begynte å. Han løp. Nå er vi rett inne i handlingen."
+                },
+                {
+                    "si": "Hun begynte å gråte blir til: Hun gråt. Følelsen treffer hardere uten omveien."
+                },
+                {
+                    "si": "Verbet kan gjøre enda mer. Ta en helt vanlig setning: Han gikk."
+                },
+                {
+                    "si": "Bytt gikk med luska, tusla eller slentret. Da forteller verbet alene hvordan personen har det."
+                }
+            ]
+        },
+        {
+            "id": "plutselig",
+            "lyd": "rom",
+            "visual": {
+                "type": "HistorierScenen",
+                "props": {
+                    "modus": "lyset"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et annet ord du bør stryke, er plutselig. Plutselig gikk lyset."
+                },
+                {
+                    "si": "Ordet varsler leseren om at nå kommer det en overraskelse. Da er ikke overraskelsen like stor lenger."
+                },
+                {
+                    "si": "Prøv heller dette: Et høyt smell fikk ham til å hoppe. Alt ble svart."
+                },
+                {
+                    "si": "Smellet viser at det gikk fort. Det kalles show, don't tell: Vis det som skjer, i stedet for å si det rett ut.",
+                    "uttale": "Smellet viser at det gikk fort. Det kalles show, dont tell: Vis det som skjer, i stedet for å si det rett ut."
+                },
+                {
+                    "si": "Er en person sint, så skriv ikke at hen er sint. La hen knuse et glass, eller snakke med korte, harde setninger."
+                }
+            ]
+        },
+        {
+            "id": "motivasjon",
+            "kapittel": "Det indre livet",
+            "lyd": "stille",
+            "visual": {
+                "type": "HistorierArk",
+                "props": {
+                    "tittel": "Vis hva personen vil",
+                    "notat": {
+                        "tekst": "Vis det, så skjønner leseren det selv",
+                        "fraBeat": 0
+                    },
+                    "rader": [
+                        {
+                            "svak": "Kari gikk inn på biblioteket og så på bøkene.",
+                            "god": "Kari stormet inn på biblioteket. Hun måtte finne den gamle boka før de stengte, ellers ville hemmeligheten være tapt for alltid.",
+                            "svakFra": 1,
+                            "godFra": 2
+                        }
+                    ],
+                    "hvorfor": "Nå vet vi hva som står på spill",
+                    "hvorforFra": 3
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En forteller kan si rett ut hvordan en person er. Eller du kan vise det gjennom det personen sier, gjør og tenker, så leseren skjønner det selv."
+                },
+                {
+                    "si": "Se på denne setningen: Kari gikk inn på biblioteket og så på bøkene. Hvorfor bryr vi oss? Vi gjør ikke det."
+                },
+                {
+                    "si": "Nå: Kari stormet inn på biblioteket. Hun måtte finne den gamle boka før de stengte, ellers ville hemmeligheten være tapt for alltid."
+                },
+                {
+                    "si": "Når vi vet hva personen vil, og hva som står på spill, blir selv et biblioteksbesøk spennende. Motivasjon er motoren i hver scene."
+                }
+            ]
+        },
+        {
+            "id": "replikker",
+            "visual": {
+                "type": "HistorierArk",
+                "props": {
+                    "tittel": "Replikker på ny linje",
+                    "rader": [
+                        {
+                            "svak": "«Bli med ut!» ropte han. «Nei, jeg orker ikke,» svarte hun fra sofaen.",
+                            "god": "«Bli med ut!» ropte han.\n\n«Nei, jeg orker ikke,» svarte hun fra sofaen.",
+                            "svakFra": 1,
+                            "godFra": 2
+                        }
+                    ],
+                    "hvorfor": "Ny person, ny linje",
+                    "hvorforFra": 3,
+                    "notat": {
+                        "tekst": "Hvem sier hva?",
+                        "fraBeat": 0
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dialog er ofte det leseren skummer raskest gjennom. Derfor må det være lett å se hvem som snakker."
+                },
+                {
+                    "si": "Her står to personer i samme avsnitt. Øyet må lete for å finne ut hvem som sier hva."
+                },
+                {
+                    "si": "Del det opp. Han får sin linje, hun får sin."
+                },
+                {
+                    "si": "Regelen er enkel: Hver gang en ny person snakker, starter du på en ny linje."
+                }
+            ]
+        },
+        {
+            "id": "tanker",
+            "visual": {
+                "type": "HistorierArk",
+                "props": {
+                    "tittel": "Tanker på to måter",
+                    "rader": [
+                        {
+                            "svak": "Han lurte på om han burde dra hjem.",
+                            "god": "«Skal jeg dra nå? Hvis jeg blir, kommer jeg til å angre,» tenkte han.",
+                            "svakFra": 0,
+                            "godFra": 2
+                        }
+                    ],
+                    "etiketter": {
+                        "svak": "Tankereferat",
+                        "god": "Indre monolog"
+                    },
+                    "hvorfor": "Bruk begge, men ikke for mye",
+                    "hvorforFra": 3,
+                    "notat": {
+                        "tekst": "Hans egne ord, mens han tenker dem",
+                        "fraBeat": 1
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Du kan oppsummere hva en person tenker. Han lurte på om han burde dra hjem. Det kalles tankereferat."
+                },
+                {
+                    "si": "Eller du kan la oss høre tankene hans, med hans egne ord, akkurat mens han tenker dem."
+                },
+                {
+                    "si": "Skal jeg dra nå? Hvis jeg blir, kommer jeg til å angre, tenkte han. Det kalles indre monolog, og det føles mer nært."
+                },
+                {
+                    "si": "Bruk begge deler for variasjon. Men pass på: For mye indre monolog kan stoppe fremdriften. For lite gjør personene flate."
+                }
+            ]
+        },
+        {
+            "id": "spiral",
+            "lyd": "rom",
+            "visual": {
+                "type": "HistorierSpiral"
+            },
+            "replikker": [
+                {
+                    "si": "Store følelser bør aldri komme ut av det blå. Bygg dem opp, steg for steg, som en spiral."
+                },
+                {
+                    "si": "Det begynte som en liten klump i magen da hun så blikket hans. Var han sint?"
+                },
+                {
+                    "si": "Jo flere minutter som gikk uten at han sa noe, jo tyngre ble luften i rommet."
+                },
+                {
+                    "si": "Til slutt føltes det som om veggene presset seg mot henne, og hun måtte bare komme seg ut."
+                },
+                {
+                    "si": "Fra uro til panikk. Leseren blir dratt med, fordi følelsen vokser litt for hver setning."
+                }
+            ]
+        },
+        {
+            "id": "synsvinkel",
+            "kapittel": "Stil og synsvinkel",
+            "visual": {
+                "type": "HistorierScenen",
+                "props": {
+                    "modus": "snik"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Synsvinkel er hvem vi ser historien gjennom. Her ser vi alt med øynene til en jeg-person som sniker seg over et gulv."
+                },
+                {
+                    "si": "Jeg snek meg lydløst over gulvet. Hjertet mitt hamret så hardt at jeg var sikker på at de hørte det."
+                },
+                {
+                    "si": "Vakten ved døra syntes noe virket galt. Stopp! Hvordan kan jeg vite hva vakten tenker?"
+                },
+                {
+                    "si": "Vi hoppet brått inn i hodet på vakten midt i scenen. Det kalles hodehopping, og da blir det vanskelig å følge én person."
+                },
+                {
+                    "si": "Bedre: Vakten ved døra rørte seg ikke. Hold deg til én synsvinkel om gangen."
+                }
+            ]
+        },
+        {
+            "id": "rolig",
+            "lyd": "stille",
+            "visual": {
+                "type": "HistorierBilder",
+                "props": {
+                    "modus": "rolig"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange prøver å gjøre teksten sterk med store ord: ekstremt, fryktelig, kaotisk."
+                },
+                {
+                    "si": "Hjertet dunket som en tromme. Kroppen var spent som en buestreng. Det blir mye lyd, men lite bilde."
+                },
+                {
+                    "si": "Se på dette i stedet: Hun satt rett i ryggen. Fingrene lekte med glidelåsen. Det var fem minutter igjen."
+                },
+                {
+                    "si": "Ingen store ord. Likevel skjønner vi at hun er nervøs. Små, presise detaljer slår store ord hver gang."
+                }
+            ]
+        },
+        {
+            "id": "klisje",
+            "visual": {
+                "type": "HistorierBilder",
+                "props": {
+                    "modus": "klisje"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "En sammenligning kobler noe til noe annet, som regel med ordet som."
+                },
+                {
+                    "si": "Han var sint som en tyr, rød som en tomat og brølte som en løve."
+                },
+                {
+                    "si": "Disse bildene er brukt så mye at de har mistet kraften. Et slikt utslitt uttrykk kalles en klisjé."
+                },
+                {
+                    "si": "Én uventet sammenligning er sterkere: Raseriet brant som kaldt stål i brystet hans."
+                },
+                {
+                    "si": "Bruk sammenligninger som krydder, ikke som hovedrett."
+                }
+            ]
+        },
+        {
+            "id": "dintur",
+            "kapittel": "Din tur",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Prøv selv",
+                    "punkter": [
+                        {
+                            "ikon": "lampe",
+                            "tittel": "En hemmelighet avsløres",
+                            "tekst": "aktive verb, ingen plutselig",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Fast i en heis",
+                            "tekst": "dialog og indre monolog",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Et gammelt hus",
+                            "tekst": "bare én sammenligning",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Skriving er et håndverk, og håndverk krever øvelse. Her er tre oppgaver du kan prøve."
+                },
+                {
+                    "si": "Skriv en scene der en hemmelighet blir avslørt. Bruk aktive verb, la personen ta et valg, og ikke skriv plutselig."
+                },
+                {
+                    "si": "To personer sitter fast i en heis. Den ene har panikk, den andre skjuler frykten sin. Bruk dialog og indre monolog."
+                },
+                {
+                    "si": "Beskriv et gammelt hus uten ordene gammelt, slitt eller skummelt. Og bruk bare én sammenligning."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "La personen handle.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Ikke vente.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Vis det som skjer.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Ikke si det rett ut.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Gode historier kommer ikke bare av inspirasjon.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "De bygges, setning for setning.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Husk gutten i ørkenen. Historien startet først da han reiste seg og gikk."
+                },
+                {
+                    "si": "Vis det som skjer, med sterke verb og små detaljer, i stedet for å si det rett ut."
+                },
+                {
+                    "si": "Gode historier kommer ikke bare av inspirasjon. De bygges, setning for setning."
+                }
+            ]
+        }
+    ]
+}
