@@ -39,10 +39,10 @@ const TOK: Record<Modus, Rad[]> = {
 };
 
 const OVERSKRIFT: Record<Modus, { ga: string[]; tok: string[] }> = {
-    streng: { ga: ['Det han ga'], tok: ['Det han tok'] },
+    streng: { ga: ['Det han ga'], tok: ['Den harde siden'] },
     minne: {
         ga: ['Det han ga', '«Samenes apostel»'],
-        tok: ['Det han tok', 'Symbol på en misjon som tok troen'],
+        tok: ['Den harde siden', 'Symbol på en misjon som tok troen'],
     },
 };
 
