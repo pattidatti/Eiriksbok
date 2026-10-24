@@ -1131,6 +1131,20 @@
               "createdDate": "2026-10-23T00:00:00Z"
             },
             {
+              "id": "monopol-og-konkurranse",
+              "title": "Monopol og konkurranse: Hvem bestemmer prisen?",
+              "description": "Hva skjer når én selger eier hele markedet, og hvorfor passer staten på konkurransen i dagligvarehandelen?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "marked",
+                "pris",
+                "monopol",
+                "konkurranse"
+              ],
+              "createdDate": "2026-10-24T00:00:00Z"
+            },
+            {
               "id": "produksjon",
               "title": "Produksjon",
               "description": "Hva bestemmer hva vi lager? Planøkonomi vs. Markedsøkonomi.",
