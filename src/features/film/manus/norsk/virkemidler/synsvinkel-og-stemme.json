@@ -1,0 +1,215 @@
+{
+    "id": "synsvinkel-og-stemme",
+    "tittel": "Hvem eier historien? Synsvinkel og stemme",
+    "kilde": "/norsk/virkemidler/synsvinkel-og-stemme",
+    "bilde": "/images/lessons/norsk/virkemidler/synsvinkel-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-24", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "parken",
+            "lyd": "vind",
+            "kapittel": "I parken",
+            "visual": { "type": "SynsvinkelParken", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "En jente sitter alene på en benk i parken. Hun heter Anna, og hun gjemmer ansiktet i hendene." },
+                { "si": "Skuldrene hennes rister svakt." },
+                { "si": "En gutt kommer gående nedover stien. Han heter Jonas." },
+                { "si": "Han stopper et øyeblikk og ser på henne. Så går han raskt videre, uten å si noe." },
+                { "si": "Hva skjedde egentlig her? Det kommer an på hvem som forteller." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Hvem eier historien?",
+                    "undertittel": "Synsvinkel og stemme",
+                    "bilde": "/images/lessons/norsk/virkemidler/synsvinkel-hero.webp",
+                    "sporsmal": { "tekst": "Hvem forteller, og hva får du vite?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Det er ikke bare hva som skjer i en historie som teller. Det er også hvem som forteller den." },
+                { "si": "Valget av synsvinkel er kanskje det viktigste valget en forfatter tar." },
+                { "si": "I denne filmen skal vi se den samme lille scenen gjennom tre ulike linser." }
+            ]
+        },
+        {
+            "id": "kamera",
+            "kapittel": "Forfatterens kamera",
+            "visual": { "type": "SynsvinkelKamera", "props": { "modus": "kamera" } },
+            "replikker": [
+                { "si": "Tenk på en film. Det er kameraet som bestemmer hva du får se." },
+                { "si": "Noen ganger går kameraet helt nært på ansiktet til helten." },
+                { "si": "Andre ganger henger det høyt oppe i lufta, som en fugl." },
+                { "si": "I en bok heter dette synsvinkel. Det er stedet fortelleren eller en av personene ser handlingen fra. Synsvinkelen er forfatterens kamera." },
+                { "si": "Den bestemmer hva vi får vite, hva vi får føle, og hvem vi heier på." }
+            ]
+        },
+        {
+            "id": "voldemort",
+            "visual": { "type": "SynsvinkelKamera", "props": { "modus": "farger" } },
+            "replikker": [
+                { "si": "Tenk deg at Harry Potter var fortalt av Voldemort, skurken i bøkene." },
+                { "si": "Da ville det blitt en helt annen bok. Kanskje en trist historie om en leder som ingen forsto." },
+                { "si": "Hendelsene er de samme. Men synsvinkelen farger sannheten." },
+                { "si": "Forfattere bruker tre hovedlinser. Nå skal vi prøve alle tre på Anna og Jonas." }
+            ]
+        },
+        {
+            "id": "jeg",
+            "lyd": "vind",
+            "kapittel": "Inne i hodet",
+            "visual": { "type": "SynsvinkelParken", "props": { "modus": "jeg" } },
+            "replikker": [
+                { "si": "Den første linsen: Vi kryper inn i hodet til Jonas." },
+                { "si": "Jeg så henne sitte der. Skulle jeg gå bort? Hjertet mitt hamret i brystet som en skremt fugl." },
+                { "si": "Hva om hun ikke ville ha meg der? Jeg senket blikket og gikk forbi." },
+                { "si": "Dette kalles personal synsvinkel. Vi ser verden bare gjennom øynene til én person." },
+                { "si": "Fortelleren sier jeg. Derfor kalles det en jeg-forteller, eller en førstepersonsforteller." }
+            ]
+        },
+        {
+            "id": "jeg-viten",
+            "lyd": "stille",
+            "visual": { "type": "SynsvinkelViten", "props": { "modus": "jeg" } },
+            "replikker": [
+                { "si": "Hva får vi vite nå? Alt om Jonas. Hva han tenker, føler og frykter." },
+                { "si": "Men hva Anna tenker, aner vi ikke, med mindre hun sier det høyt." },
+                { "si": "Det gir stor nærhet. Vi blir nesten venner med Jonas, og vi tar ofte hans parti." },
+                { "si": "Men vi kan også bli lurt. Misforstår Jonas noe, så misforstår vi det også." }
+            ]
+        },
+        {
+            "id": "flue",
+            "lyd": "vind",
+            "kapittel": "Flue på veggen",
+            "visual": { "type": "SynsvinkelParken", "props": { "modus": "flue" } },
+            "replikker": [
+                { "si": "Den andre linsen: Fortelleren står utenfor, som en flue på veggen." },
+                { "si": "Anna satt på benken med ansiktet i hendene. Skuldrene hennes ristet svakt." },
+                { "si": "Jonas stoppet omtrent to meter fra henne og strammet grepet om skolesekken." },
+                { "si": "Så gikk han raskt videre uten å si noe." },
+                { "si": "Dette kalles autoral synsvinkel. Vi får bare det et kamera kan se og høre. Ingen tanker." }
+            ]
+        },
+        {
+            "id": "sint",
+            "lyd": "stille",
+            "visual": { "type": "SynsvinkelTegn", "props": { "modus": "sint" } },
+            "replikker": [
+                { "si": "Med denne linsen får vi aldri vite direkte hva noen føler." },
+                { "si": "Er en person sint, står det ikke: Han var sint." },
+                { "si": "I stedet står det: Han smalt hånden i bordet og ble rød i ansiktet." },
+                { "si": "Da må du være detektiv. Du leser kroppsspråket og replikkene, og finner ut hva som skjer under overflaten." }
+            ]
+        },
+        {
+            "id": "hemingway",
+            "visual": { "type": "SynsvinkelTegn", "props": { "modus": "hemingway" } },
+            "replikker": [
+                { "si": "Forfatteren Ernest Hemingway var en mester i denne stilen." },
+                { "si": "Novellene hans er svært tette. Få personer snakker, og de sier ikke mye." },
+                { "si": "Men de få ordene betyr mye mer enn det som står på overflaten." },
+                { "si": "Her er et eksempel på slik skriving: Han reiste seg brått. Stolen veltet bak ham." },
+                { "si": "Ingen forteller deg hva han føler. Det må du tolke selv." }
+            ]
+        },
+        {
+            "id": "gud",
+            "lyd": "vind",
+            "kapittel": "Fortelleren som vet alt",
+            "visual": { "type": "SynsvinkelParken", "props": { "modus": "gud" } },
+            "replikker": [
+                { "si": "Den tredje linsen: Fortelleren svever over alt, som en gud." },
+                { "si": "Anna trodde hun var helt alene i sorgen. Hun visste ikke at Jonas nettopp hadde kommet rundt hjørnet." },
+                { "si": "Jonas hadde lenge vært hemmelig forelsket i henne. Det stakk i brystet da han så tårene." },
+                { "si": "Men han var redd for å bli avvist, og redselen vant. Han gikk forbi." },
+                { "si": "Det var en avgjørelse han skulle angre på resten av livet." }
+            ]
+        },
+        {
+            "id": "gud-viten",
+            "lyd": "stille",
+            "visual": { "type": "SynsvinkelViten", "props": { "modus": "gud" } },
+            "replikker": [
+                { "si": "Dette kalles allvitende synsvinkel. Fortelleren vet alt om alle personene." },
+                { "si": "Han ser inn i hodet på alle samtidig. Han vet hva som har skjedd før, og ofte hva som skal skje." },
+                { "si": "Han kan hoppe fra sted til sted, og han kan kommentere direkte: Liten visste de at dette var deres siste måltid." },
+                { "si": "Det gir stor frihet til store historier med mange personer. Ulempen er avstand. Vi kommer kanskje ikke like tett på én person." }
+            ]
+        },
+        {
+            "id": "ironi",
+            "lyd": "rom",
+            "visual": { "type": "SynsvinkelHuset", "props": { "modus": "ironi" } },
+            "replikker": [
+                { "si": "Allvitende synsvinkel kan også skape ironi. Her betyr det at du som leser vet mer enn personene i historien." },
+                { "si": "Mens hun gråt på soverommet, satt han i stuen og smilte, uvitende om sorgen." },
+                { "si": "Hun vet ikke at han smiler. Han vet ikke at hun gråter." },
+                { "si": "Men du ser begge rommene. Du vet mer enn dem begge." }
+            ]
+        },
+        {
+            "id": "kjeller",
+            "kapittel": "Kan vi stole på dem?",
+            "visual": { "type": "SynsvinkelHuset", "props": { "modus": "kjeller" } },
+            "replikker": [
+                { "si": "Vanligvis stoler vi på at jeg-personen forteller sannheten. Men hva om den ikke gjør det?" },
+                { "si": "Hør på denne fortelleren: Jeg måtte låse henne inne i kjelleren. Det var det eneste trygge stedet for henne." },
+                { "si": "Er det for å beskytte henne? Eller holder han henne fanget?" },
+                { "si": "Dette kalles en upålitelig forteller. Fortelleren gir oss et skjevt eller feil bilde av det som skjer." }
+            ]
+        },
+        {
+            "id": "dobbel-bunn",
+            "lyd": "stille",
+            "visual": { "type": "SynsvinkelTegn", "props": { "modus": "bunn" } },
+            "replikker": [
+                { "si": "Fortelleren kan være en lystløgner, en som lyver hele tiden." },
+                { "si": "Det kan være et barn som ikke forstår hva de voksne gjør. Eller en morder som prøver å forsvare det han har gjort." },
+                { "si": "Da får historien en dobbel bunn." },
+                { "si": "Øverst ligger det fortelleren sier. Under ligger det du skjønner at faktisk skjer." },
+                { "si": "Du må være på vakt hele tiden og lese mellom linjene. Det gjør slike historier spennende, og litt uhyggelige." }
+            ]
+        },
+        {
+            "id": "linsene",
+            "kapittel": "Tre linser",
+            "visual": { "type": "SynsvinkelViten", "props": { "modus": "alle" } },
+            "replikker": [
+                { "si": "La oss se de tre linsene side om side." },
+                { "si": "Personal: Du er inne i ett hode. Sannheten blir sterk og personlig." },
+                { "si": "Autoral: Du ser bare utsiden. Sannheten blir kald og saklig." },
+                { "si": "Allvitende: Du ser alt og alle. Du får den store oversikten." },
+                { "si": "Det finnes ingen fasit. Bare ulike måter å se verden på." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Jonas gjorde det samme hver gang.", "fraBeat": 0 },
+                        { "tekst": "Han gikk forbi.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Men du så ham på tre ulike måter.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Synsvinkel er ikke bare et teknisk valg.", "fraBeat": 2 },
+                        { "tekst": "Det er et valg om sannhet.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Hvem forteller?", "fraBeat": 3 },
+                        { "tekst": "Og hva får jeg ikke vite?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Jonas gjorde akkurat det samme i alle tre versjonene. Han gikk forbi." },
+                { "si": "Likevel fikk du et helt ulikt bilde av ham, alt etter hvem som fortalte." },
+                { "si": "Synsvinkel er ikke bare et teknisk valg. Det er et valg om sannhet." },
+                { "si": "Så neste gang du leser, spør deg selv: Hvem forteller, og hva får jeg ikke vite?" }
+            ]
+        }
+    ]
+}
