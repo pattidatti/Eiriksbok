@@ -1,5 +1,5 @@
 {
-  "buildId": 6183632085896,
+  "buildId": 28535904724574,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4813,6 +4813,9 @@
     "okonomi-arbeidsspesialisering": [
       "content/samfunnskunnskap/okonomi/arbeidsspesialisering.json"
     ],
+    "bnp": [
+      "content/samfunnskunnskap/okonomi/bnp.json"
+    ],
     "finanskriser": [
       "content/samfunnskunnskap/okonomi/finanskriser.json"
     ],
@@ -6547,6 +6550,7 @@
     "samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer": "content/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot": "content/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot.json",
     "samfunnskunnskap/okonomi/arbeidsspesialisering": "content/samfunnskunnskap/okonomi/arbeidsspesialisering.json",
+    "samfunnskunnskap/okonomi/bnp": "content/samfunnskunnskap/okonomi/bnp.json",
     "samfunnskunnskap/okonomi/finanskriser": "content/samfunnskunnskap/okonomi/finanskriser.json",
     "samfunnskunnskap/okonomi/hvordan-penger-blir-til": "content/samfunnskunnskap/okonomi/hvordan-penger-blir-til.json",
     "samfunnskunnskap/okonomi/inflasjon-og-rente": "content/samfunnskunnskap/okonomi/inflasjon-og-rente.json",
