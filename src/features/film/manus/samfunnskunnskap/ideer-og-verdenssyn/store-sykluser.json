@@ -1,0 +1,379 @@
+{
+    "id": "store-sykluser",
+    "tittel": "De store syklusene: Sivilisasjoners vekst og fall",
+    "kilde": "/samfunnskunnskap/ideer-og-verdenssyn/store-sykluser",
+    "bilde": "/images/ideer/store-sykluser/dalio-big-cycle.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-25", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "stafett",
+            "lyd": "vind",
+            "kapittel": "Stafetten",
+            "visual": { "type": "StoreSykluserBakken", "props": { "modus": "stafett" } },
+            "replikker": [
+                {
+                    "si": "Det er 1600-tallet. Nederland er det mektigste landet i verden."
+                },
+                {
+                    "si": "Men ingen blir på toppen for alltid. Etter nederlenderne tar Storbritannia over."
+                },
+                {
+                    "si": "Fra omtrent 1815 til 1914 er det ro og fred i store deler av områdene britene styrer."
+                },
+                { "si": "I det 20. århundre er det USA som står på toppen." },
+                {
+                    "si": "Og nå vokser en ny utfordrer fram. Er dette tilfeldig, eller følger det et mønster?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DE STORE SYKLUSENE",
+                    "undertittel": "Sivilisasjoners vekst og fall",
+                    "tall": [
+                        { "verdi": 500, "etikett": "år med historie", "fraBeat": 1, "omtrent": false },
+                        { "verdi": 250, "etikett": "år varer et rike", "fraBeat": 2 }
+                    ],
+                    "sporsmal": { "tekst": "Hvorfor stiger og faller land?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Investoren Ray Dalio mener det er et mønster. Det kalles ofte den store syklusen."
+                },
+                {
+                    "si": "Han har studert hvordan de store rikene og pengene deres steg og falt de siste 500 årene."
+                },
+                {
+                    "si": "De viktigste rikene har ofte vart i rundt 250 år. Men det varierer mye, med opptil 150 år i hver retning."
+                },
+                {
+                    "si": "Hva får et land til å stige, og hva får det til å falle?"
+                }
+            ]
+        },
+        {
+            "id": "dalio",
+            "visual": { "type": "StoreSykluserKart", "props": { "modus": "dalio" } },
+            "replikker": [
+                {
+                    "si": "Ray Dalio er en kjent fondsforvalter. Det betyr at han investerer penger for andre."
+                },
+                {
+                    "si": "I 1975 startet han selskapet Bridgewater, i en liten toroms leilighet i New York."
+                },
+                {
+                    "si": "Han studerte mest Nederland, Storbritannia og USA."
+                },
+                {
+                    "si": "Svaret han fant: Stormaktene stiger og faller stort sett på samme måte."
+                }
+            ]
+        },
+        {
+            "id": "leder",
+            "kapittel": "Hva gir makt?",
+            "visual": { "type": "StoreSykluserTarn", "props": { "modus": "leder" } },
+            "replikker": [
+                {
+                    "si": "En syklus starter ofte med en sterk leder. Lederen har fått makten fordi mange liker lederen."
+                },
+                {
+                    "si": "Lederen samler makten og gjør motstanderne svakere."
+                },
+                {
+                    "si": "Så bygger lederen et land som fungerer: lav skatt, personlig frihet, sikker rett til å eie ting og god skole."
+                },
+                {
+                    "si": "Og aller viktigst: Lederen velger hvem som skal ta over, på en fredelig måte, så alle vet hva som skjer."
+                }
+            ]
+        },
+        {
+            "id": "faktorer",
+            "visual": { "type": "StoreSykluserTarn", "props": { "modus": "faktorer" } },
+            "replikker": [
+                {
+                    "si": "Men hvordan måler man makt? Dalio bruker åtte mål, nesten som åtte etasjer i et tårn."
+                },
+                {
+                    "si": "Nederst ligger utdanning. Det er grunnmuren, og det er den som stiger først."
+                },
+                {
+                    "si": "Så kommer ny teknologi, evnen til å konkurrere, hvor mye landet produserer og hvor mye det handler med verden."
+                },
+                {
+                    "si": "Øverst ligger militær styrke, store pengesentre som London og New York, og en valuta som hele verden bruker."
+                }
+            ]
+        },
+        {
+            "id": "kjede",
+            "visual": { "type": "StoreSykluserTarn", "props": { "modus": "kjede" } },
+            "replikker": [
+                {
+                    "si": "Utdanning setter i gang en kjede. Folk lærer mer, og de finner opp nye ting."
+                },
+                { "si": "Da kan landet lage ting bedre og billigere enn andre land." },
+                {
+                    "si": "Fabrikkene, skipene og bøndene leverer mer, og landet selger til hele verden."
+                },
+                {
+                    "si": "Pengene går tilbake til skoler, veier og havner. Men handelen må beskyttes, så hæren og flåten vokser også."
+                }
+            ]
+        },
+        {
+            "id": "nederland",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Nederland på toppen",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Teleskopet, 1608",
+                            "tekst": "Hans Lippershey",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "skip",
+                            "tittel": "Fløyteskipet",
+                            "tekst": "kanskje Europas viktigste handelsskip",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "VOC, 1602",
+                            "tekst": "verdens første aksjeselskap",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Børsen, 1611",
+                            "tekst": "verdens første, i Amsterdam",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på Nederland på 1600-tallet. Der kom oppfinnelser som forandret verden."
+                },
+                {
+                    "si": "I 1608 viste nederlenderen Hans Lippershey fram det første kjente teleskopet med linser."
+                },
+                {
+                    "si": "Fløyteskipet var kanskje det viktigste handelsskipet i Europa på den tida."
+                },
+                {
+                    "si": "I 1602 kom VOC, verdens første aksjeselskap. Det er et firma der mange eier en liten bit hver."
+                },
+                {
+                    "si": "I 1611 åpnet verdens første børs i Amsterdam. Der kunne folk kjøpe og selge bitene."
+                }
+            ]
+        },
+        {
+            "id": "faser",
+            "kapittel": "Sju faser",
+            "visual": { "type": "StoreSykluserBakken", "props": { "modus": "faser" } },
+            "replikker": [
+                {
+                    "si": "Dalio ser hele syklusen som en stor bue. Først opp, så ned. Underveis er det sju faser."
+                },
+                {
+                    "si": "Fase én: Det er fred, og landet bygger seg rikt med hardt arbeid og nye ideer."
+                },
+                {
+                    "si": "Fase to: Folk låner mer og spekulerer, altså satser penger på at prisene skal stige. Gapet mellom rik og fattig vokser."
+                },
+                {
+                    "si": "Fase tre og fire: Boblene sprekker, og staten trykker penger for å redde økonomien."
+                },
+                {
+                    "si": "Fase fem og seks: Indre strid, gjeld og politisk kaos. Til slutt fase sju: krig mot en annen stormakt."
+                }
+            ]
+        },
+        {
+            "id": "toppen",
+            "kapittel": "På toppen",
+            "visual": { "type": "StoreSykluserTarn", "props": { "modus": "topp" } },
+            "replikker": [
+                {
+                    "si": "På toppen er landet rikt, mektig og respektert. Folk har det godt, valutaen er sterk og militæret er best."
+                },
+                {
+                    "si": "Men akkurat nå begynner syklusen å snu, nesten uten at noen merker det."
+                },
+                {
+                    "si": "Folk og stater låner mer enn de tjener, for framtida har alltid sett lys ut."
+                },
+                {
+                    "si": "Aksjer og boliger blir mye dyrere enn de egentlig er verdt. Det kalles en boble, slik det skjedde før børskrakket i 1929."
+                },
+                {
+                    "si": "Det blir lettere å tjene penger på å satse på at prisene stiger enn på å jobbe hardt og lage noe nytt. Andre land kopierer teknologien."
+                }
+            ]
+        },
+        {
+            "id": "gull",
+            "kapittel": "Pengene",
+            "visual": { "type": "StoreSykluserGull" },
+            "replikker": [
+                {
+                    "si": "Dalio har noen prinsipper for hvordan penger virker. Det første: Når sentralbanken lager mer penger, synker verdien av papirpengene."
+                },
+                { "si": "Aksjer, gull og varer blir derimot verdt mer." },
+                {
+                    "si": "Et eksempel: I Bretton Woods-systemet var dollaren låst til gull. For 35 dollar fikk du én unse gull, en fast vekt med gull."
+                },
+                {
+                    "si": "Men søndag 15. august 1971 sa president Nixon at USA ikke lenger ville bytte papirdollar mot gull."
+                },
+                {
+                    "si": "Fra da av var det ikke lenger gullet som satte grensen for hvor mye penger USA kunne trykke. Det la grunnlaget for enorm gjeld."
+                }
+            ]
+        },
+        {
+            "id": "reservevaluta",
+            "visual": { "type": "StoreSykluserKart", "props": { "modus": "dollar" } },
+            "replikker": [
+                { "si": "Tenk deg at alle land bruker én felles betalingsapp." },
+                {
+                    "si": "Landet som eier appen, bestemmer reglene. Det kan betale for varer ved å trykke mer av sine egne penger."
+                },
+                {
+                    "si": "Dette kalles en reservevaluta, de pengene landene bruker når de handler med hverandre. I dag er det dollaren."
+                },
+                {
+                    "si": "Penger er i bunn og grunn tillit. Landet med reservevalutaen har hele verdens tillit."
+                }
+            ]
+        },
+        {
+            "id": "fallet",
+            "lyd": "storm",
+            "kapittel": "Fallet",
+            "visual": { "type": "StoreSykluserBakken", "props": { "modus": "fall" } },
+            "replikker": [
+                {
+                    "si": "Fallet starter ikke med et smell. Det starter med at boblene sprekker."
+                },
+                {
+                    "si": "Finanskrisen kommer, folk mister jobben, og staten må låne enda mer."
+                },
+                {
+                    "si": "Sentralbanken trykker penger, og prisene stiger. Det rammer middelklassen og de fattige hardest, for de eier ikke aksjer eller hus som beskytter dem."
+                },
+                {
+                    "si": "Forskjellene blir til åpen strid. Folk mister tilliten til systemet, og nå er faren for borgerkrig eller revolusjon størst."
+                }
+            ]
+        },
+        {
+            "id": "orden",
+            "lyd": "stille",
+            "visual": { "type": "StoreSykluserKart", "props": { "modus": "orden" } },
+            "replikker": [
+                {
+                    "si": "Dalio skiller mellom to slags orden. Den indre er reglene inne i et land, som grunnloven. Den endres oftest gjennom borgerkrig eller revolusjon."
+                },
+                {
+                    "si": "Den ytre er avtalene mellom land om handel, grenser og allianser. Den endres oftest gjennom krig mellom land."
+                },
+                { "si": "Den siste store endringen kom etter andre verdenskrig." },
+                {
+                    "si": "I 1945 ble verden delt i to leirer: de demokratiske kapitalistene ledet av USA, og de autoritære kommunistene ledet av Sovjetunionen."
+                }
+            ]
+        },
+        {
+            "id": "utfordrer",
+            "kapittel": "Den nye utfordreren",
+            "visual": { "type": "StoreSykluserBakken", "props": { "modus": "utfordrer" } },
+            "replikker": [
+                {
+                    "si": "Mens den gamle stormakten sliter, vokser en ny utfordrer fram."
+                },
+                {
+                    "si": "Dalio kaller dette det farligste punktet i hele syklusen. To stormakter kolliderer om hvem som skal bestemme reglene."
+                },
+                {
+                    "si": "Vestromerrikets fall er kanskje det mest kjente eksempelet. Et rikt rike som hadde strukket seg for langt, og som ikke klarte å forsvare seg."
+                },
+                {
+                    "si": "Den som vinner, setter reglene for neste epoke. Og syklusen begynner på nytt."
+                }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "Hvor er vi i dag?",
+            "visual": {
+                "type": "StoreSykluserKart",
+                "props": { "modus": "idag" }
+            },
+            "replikker": [
+                {
+                    "si": "Hvor er vi i dag? Mange eksperter mener vi er i fase 5 eller 6 av den syklusen vi er i nå."
+                },
+                {
+                    "si": "USA har dype splittelser og høy gjeld, mens en ny utfordrer stiger raskt fram."
+                },
+                {
+                    "si": "Men en nedgang betyr ikke at alt raser sammen over natta. Makten flytter seg sakte."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ingen stormakt blir på toppen for alltid.", "fraBeat": 0 },
+                        {
+                            "tekst": "Suksessen sår frøene til forfall.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        { "tekst": "Skole og nye ideer bygger landet opp.", "fraBeat": 1 },
+                        {
+                            "tekst": "Gjeld, bobler og forskjeller river det ned.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "For å forstå hva som kommer,", "fraBeat": 2 },
+                        {
+                            "tekst": "må du forstå hva som har skjedd før.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ingen stormakt blir på toppen for alltid, og suksessen selv sår frøene til forfall."
+                },
+                {
+                    "si": "Skole, nye ideer og handel bygger et land opp. Gjeld, bobler og store forskjeller river det ned igjen."
+                },
+                {
+                    "si": "Dalios andre prinsipp sier: For å forstå hva som kommer til å skje, må du forstå hva som har skjedd før."
+                }
+            ]
+        }
+    ]
+}
