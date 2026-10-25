@@ -1295,6 +1295,20 @@
               ],
               "createdDate": "2026-10-20T00:00:00+02:00",
               "lastUpdated": "2026-10-21T07:43:14+02:00"
+            },
+            {
+              "id": "bnp",
+              "title": "BNP: Hva er et land verdt?",
+              "description": "Hva måler BNP, hvorfor teller en husbrann mens husarbeid er usynlig, og hvorfor bruker FN også HDI?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "bnp",
+                "velferd",
+                "levekår",
+                "hdi"
+              ],
+              "createdDate": "2026-10-25T00:00:00Z"
             }
           ]
         },
