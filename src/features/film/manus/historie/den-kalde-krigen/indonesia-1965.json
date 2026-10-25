@@ -13,6 +13,15 @@
             "begrunnelse": "Antall prikker i prikkfeltet: 500 prikker à 1000 = 500 000 drepte, som i artikkelen."
         }
     ],
+    "vurdering": {
+        "dato": "2026-10-25",
+        "viser": 3,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
     "scener": [
         {
             "id": "oyriket",
@@ -49,9 +58,10 @@
                     "tall": [
                         {
                             "verdi": 500000,
-                            "etikett": "til over en million drepte (minst)",
+                            "etikett": "drepte, kanskje over en million",
                             "fraBeat": 1,
-                            "tone": "rod"
+                            "tone": "rod",
+                            "prefiks": "minst"
                         }
                     ],
                     "sporsmal": {
@@ -65,10 +75,10 @@
                     "si": "Dette er historien om Jakarta-metoden. Jakarta er hovedstaden i Indonesia."
                 },
                 {
-                    "si": "I 1965 startet et av de største massedrapene etter andre verdenskrig. Mellom 500 000 og over en million mennesker ble drept."
+                    "si": "I 1965 startet et av de største massedrapene etter andre verdenskrig. De fleste forskere mener at mellom 500 000 og over en million mennesker ble drept."
                 },
                 {
-                    "si": "Likevel har nesten ingen hørt om det. I denne filmen skal vi finne ut hva som skjedde, hvem som tjente på det, og hvorfor det ble glemt."
+                    "si": "Likevel er det få som har hørt om det. I denne filmen skal vi finne ut hva som skjedde, hvem som tjente på det, og hvorfor det ble glemt."
                 },
                 {
                     "si": "Vi forteller det rolig, og med respekt for dem som døde."
@@ -121,14 +131,14 @@
                     "si": "Den samme frykten lå bak Vietnamkrigen."
                 },
                 {
-                    "si": "Og Indonesia var en av de største brikkene av alle. Mange i Vesten mente at et knust kommunistparti der var verdt nesten hva som helst."
+                    "si": "Og Indonesia, med et stort kommunistparti og mye rikdom, var et land Vesten fulgte nøye med på."
                 }
             ]
         },
         {
             "id": "selskapene-ute",
             "visual": {
-                "type": "IndonesiaKart",
+                "type": "IndonesiaHavn",
                 "props": {
                     "modus": "stengt"
                 }
@@ -138,7 +148,7 @@
                     "si": "Det handlet ikke bare om frykt. Indonesia hadde olje, gummi og skoger som vestlige selskaper gjerne ville tjene penger på."
                 },
                 {
-                    "si": "Men Sukarno holdt selskapene på avstand. Han ville at landet skulle bestemme selv over rikdommen sin."
+                    "si": "Men Sukarno holdt selskapene på avstand. Han ville styre landet uten å ta ordre fra noen."
                 },
                 {
                     "si": "For Vesten var han et problem, både for politikken og for pengene."
@@ -156,7 +166,7 @@
             },
             "replikker": [
                 {
-                    "si": "Så, i oktober 1965, skjer det noe. Noen offiserer prøver å ta makten, men kuppet mislykkes. Flere offiserer blir drept."
+                    "si": "Så, i oktober 1965, skjer det noe. Noen prøver å ta makten, men kuppet mislykkes. Noen offiserer blir drept."
                 },
                 {
                     "si": "Hæren ledes av general Suharto. Han peker raskt på én skyldig: hele kommunistpartiet PKI."
@@ -176,7 +186,7 @@
             },
             "replikker": [
                 {
-                    "si": "I månedene etterpå ble mennesker som var mistenkt for å være kommunister, jaktet på over hele landet."
+                    "si": "I månedene etterpå ble mennesker som var mistenkt for å være kommunister, jaktet på og drept over hele landet."
                 },
                 {
                     "si": "Det skjedde over hele landet. Ingen steder var trygge."
@@ -209,7 +219,7 @@
                             "restFarge": "#cbd5e1",
                             "tittel": "Minst 500 000 drepte",
                             "fargeEtikett": "prikker = 500 000 drept",
-                            "restEtikett": "prikker: høyeste anslag"
+                            "restEtikett": "prikker til: opp mot en million"
                         },
                         {
                             "fraBeat": 2,
@@ -217,6 +227,14 @@
                             "farget": 1000,
                             "farge": "#7f1d1d",
                             "tittel": "Kanskje over en million",
+                            "fargeEtikett": "prikker = en million drept"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 1000,
+                            "farget": 1000,
+                            "farge": "#7f1d1d",
+                            "tittel": "Hver prikk: tusen mennesker med navn",
                             "fargeEtikett": "prikker = en million drept"
                         }
                     ]
@@ -230,7 +248,7 @@
                     "si": "De fleste forskere mener at minst 500 000 mennesker ble drept."
                 },
                 {
-                    "si": "Andre anslag sier over en million."
+                    "si": "Mange av dem mener at det var over en million."
                 },
                 {
                     "si": "Bak hver eneste prikk står tusen mennesker med navn. En bonde, en lærer, en mor, en sønn."
@@ -284,14 +302,14 @@
             "id": "selskapene-inn",
             "kapittel": "Hvem tjente på det?",
             "visual": {
-                "type": "IndonesiaKart",
+                "type": "IndonesiaHavn",
                 "props": {
                     "modus": "apent"
                 }
             },
             "replikker": [
                 {
-                    "si": "I 1967 hadde Suharto tatt hele makten. Og nå gjorde han noe som Sukarno aldri ville gjort."
+                    "si": "I 1967 hadde Suharto tatt hele makten. Og nå skjedde det store endringer."
                 },
                 {
                     "si": "Han åpnet landet på vidt gap for vestlige selskaper. Olje, gruver og skoger ble lagt ut til utenlandske investorer, folk som kjøper seg inn for å tjene penger."
@@ -323,7 +341,7 @@
                     "si": "Da ble ordet Jakarta malt på vegger, som en advarsel: Det samme kan skje her."
                 },
                 {
-                    "si": "Slik ble navnet på en by til navnet på en metode. En oppskrift andre land kopierte."
+                    "si": "Slik ble navnet på en by til navnet på en metode, en slags oppskrift."
                 }
             ]
         },
@@ -365,10 +383,7 @@
         {
             "id": "stillheten",
             "visual": {
-                "type": "IndonesiaPapir",
-                "props": {
-                    "modus": "stille"
-                }
+                "type": "IndonesiaLys"
             },
             "replikker": [
                 {
@@ -404,7 +419,7 @@
                     "si": "Det minner oss om at de som vinner, ofte får bestemme hvilken historie som blir fortalt."
                 },
                 {
-                    "si": "Det samme så vi i Iran og i Chile. De viktigste hendelsene kan bli holdt skjult i lang tid."
+                    "si": "Det samme så vi i Iran og i Chile. Noen av de viktigste hendelsene kan bli holdt skjult i lang tid."
                 }
             ]
         },
