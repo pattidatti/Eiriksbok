@@ -1,0 +1,224 @@
+{
+    "id": "skyttergravskrig",
+    "tittel": "Skyttergravskrig: Livet i gjørma",
+    "kilde": "/historie/forste-verdenskrig/skyttergravskrig",
+    "bilde": "/images/historie/forste-verdenskrig/skyttergravskrig_hero.webp",
+    "utenforArtikkel": [
+        { "tall": 100, "begrunnelse": "Regnet ut fra artikkelen: 60 prosent av tapene er vist som 60 av 100 merker i prikkfeltet." }
+    ],
+    "vurdering": { "dato": "2026-10-25", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "morgen",
+            "lyd": "regn",
+            "kapittel": "Vestfronten",
+            "visual": { "type": "SkyttergravFront", "props": { "modus": "morgen" } },
+            "replikker": [
+                { "si": "Det er grått morgenlys over et flatt landskap i Flandern og Nord-Frankrike." },
+                { "si": "Det første du legger merke til, er lukten. Våt jord, gass og uvaskede kropper." },
+                { "si": "Overalt er det gjørme, store hull i bakken og piggtråd. Nede i grøftene lever soldatene." },
+                { "si": "Dette er Vestfronten under første verdenskrig. Her varte krigen i grøftene i fire år." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SKYTTERGRAVSKRIG",
+                    "undertittel": "Livet i gjørma",
+                    "bilde": "/images/historie/forste-verdenskrig/skyttergravskrig_hero.webp",
+                    "tall": [
+                        { "verdi": 4, "etikett": "år med stillstand", "fraBeat": 2, "omtrent": false, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hvordan holdt de ut?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "En skyttergrav er en lang, dyp grøft som soldater graver for å gjemme seg for fienden." },
+                { "si": "På Vestfronten gravde begge sider slike grøfter, rett overfor hverandre." },
+                { "si": "I fire år sto krigen nesten stille. Ingen av sidene kom seg fram." },
+                { "si": "Hvordan var det å leve der? Og hvordan holdt soldatene ut?" }
+            ]
+        },
+        {
+            "id": "kart",
+            "lyd": "stille",
+            "visual": { "type": "SkyttergravKart" },
+            "replikker": [
+                { "si": "Høsten 1914 stanset det store tyske angrepet opp." },
+                { "si": "Begge sider prøvde å komme seg rundt fienden, helt til de nådde havet. Ingen klarte det. Dette kalles Kappløpet mot havet." },
+                { "si": "Da grep generalene til spadene. På noen måneder hadde soldatene gravd seg ned." },
+                { "si": "Fronten gikk fra grensa til Sveits i sør til Nordsjøen i nord. Et sammenhengende sår gjennom Europa." },
+                { "si": "Det skulle bare vare en kort stund. I stedet ble det fire år med stillstand, gjørme og død." }
+            ]
+        },
+        {
+            "id": "linjer",
+            "lyd": "vind",
+            "kapittel": "Mer enn en grøft",
+            "visual": { "type": "SkyttergravFront", "props": { "modus": "linjer" } },
+            "replikker": [
+                { "si": "Skyttergraven var et helt system. Fremst lå frontlinjen. Her sto vaktpostene, og herfra startet angrepene." },
+                { "si": "Noen hundre meter bak lå støttelinjen. Der ventet soldater som kunne rykke fram hvis frontlinjen falt." },
+                { "si": "Enda lenger bak lå reservelinjen. Der kunne slitne soldater hvile litt tryggere." },
+                { "si": "Dype grøfter, kalt kommunikasjonsgraver, bandt alle linjene sammen. Gjennom dem bar de mat, ammunisjon og nye soldater fram uten å bli sett." },
+                { "si": "Foran frontlinjen lå Ingenmannsland, området mellom de to fiendene. Det kunne være alt fra noen titalls meter til en kilometer bredt." },
+                { "si": "Det var fullt av hull etter granater, gjørme og lag på lag med piggtråd. Å gå der om dagen var selvmord." }
+            ]
+        },
+        {
+            "id": "sikksakk",
+            "lyd": "stille",
+            "visual": { "type": "SkyttergravSnitt", "props": { "modus": "sikksakk" } },
+            "replikker": [
+                { "si": "Se på frontlinjen ovenfra. Den gikk ikke rett, men i sikksakk." },
+                { "si": "En granat er en bombe som skytes ut fra en kanon. Traff den en rett grøft, kunne den drepe alle i en lang rekke." },
+                { "si": "I en grøft med sikksakk kunne ikke én granat drepe alle i en lang rekke." },
+                { "si": "Og brøt fienden seg inn, kunne de ikke skyte langs hele grøfta. Svingen var i veien." }
+            ]
+        },
+        {
+            "id": "dagen",
+            "lyd": "regn",
+            "kapittel": "Hverdagen",
+            "visual": { "type": "SkyttergravSnitt", "props": { "modus": "dag" } },
+            "replikker": [
+                { "si": "For de fleste soldatene var krigen ikke kamp hele tiden. Den var mest kjedelig, avbrutt av øyeblikk med ren skrekk." },
+                {
+                    "si": "Dagen startet ved daggry med stand-to. Alle sto klare ved geværene, i tilfelle fienden angrep om morgenen.",
+                    "uttale": "Dagen startet ved daggry med stænd tu. Alle sto klare ved geværene, i tilfelle fienden angrep om morgenen."
+                },
+                { "si": "Så kom frokost, våpenpuss og reparasjon av sandsekker. Og pumping av vann. Alltid pumping av vann." },
+                { "si": "I Flandern lå vannet høyt i bakken. Gravde du en halv meter ned, traff du vann." },
+                { "si": "Grøftene ble til gjørmebad. En britisk soldat skrev i 1916: Vi lever i gjørma, vi spiser gjørme, vi drømmer gjørme." }
+            ]
+        },
+        {
+            "id": "fot",
+            "visual": { "type": "SkyttergravSnitt", "props": { "modus": "fot" } },
+            "replikker": [
+                { "si": "Vannet var en fiende like mye som tyskerne. Soldatene sto i iskaldt vann i dagevis." },
+                { "si": "Da kunne de få skyttergravsfot. Føttene hovnet opp og ble følelsesløse." },
+                { "si": "I verste fall fikk de koldbrann. Det betyr at kjøttet dør fordi blodet ikke kommer fram." },
+                { "si": "Løsningen var å smøre føttene inn med hvalfett og skifte sokker to ganger om dagen. Hvis man var heldig." }
+            ]
+        },
+        {
+            "id": "granater",
+            "lyd": "stille",
+            "kapittel": "Granatsjokk",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Tenk deg 100 tap",
+                            "restEtikett": "tap",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 60,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Om lag 60 av hver 100 tap: granater",
+                            "fargeEtikett": "granater",
+                            "restEtikett": "andre årsaker"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 60,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Granatene knuste også sinn",
+                            "fargeEtikett": "granater",
+                            "restEtikett": "andre årsaker"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Den største faren kom ikke fra geværkuler. Den kom fra artilleriet, de store kanonene." },
+                { "si": "Om lag 60 prosent av alle tap i krigen skyldtes granater. Altså omtrent 60 av 100. Tap betyr blant annet soldater som ble drept eller såret." },
+                { "si": "Men granatene gjorde mer enn å drepe kropper. De knuste også sinn." }
+            ]
+        },
+        {
+            "id": "natt",
+            "lyd": "storm",
+            "visual": { "type": "SkyttergravFront", "props": { "modus": "natt" } },
+            "replikker": [
+                { "si": "Under de store slagene, som ved Somme og Verdun, kunne kanonene skyte i dagevis uten stans." },
+                { "si": "Jorda ristet hele tiden. Bråket var så sterkt at det ikke kan beskrives." },
+                { "si": "Du kunne ikke slå tilbake, og du kunne ikke rømme. Du kunne bare sitte og vente på å bli truffet." },
+                { "si": "Soldater begynte å skjelve uten å kunne stoppe. Noen mistet evnen til å snakke, eller ble blinde uten at kroppen var skadet." },
+                { "si": "I starten ble de ofte kalt feiginger. Noen ble stilt for krigsrett, en domstol i hæren, og skutt." },
+                {
+                    "si": "Først senere fikk lidelsen et navn: granatsjokk. I dag kaller vi det PTSD, en skade på sinnet etter noe forferdelig.",
+                    "uttale": "Først senere fikk lidelsen et navn: granatsjokk. I dag kaller vi det pe te es de, en skade på sinnet etter noe forferdelig."
+                }
+            ]
+        },
+        {
+            "id": "avtale",
+            "lyd": "stille",
+            "kapittel": "Lev og la leve",
+            "visual": { "type": "SkyttergravSnitt", "props": { "modus": "avtale" } },
+            "replikker": [
+                {
+                    "si": "Midt i alt dette skjedde noe merkelig. Historikere kaller det Live and let live, som betyr lev og la leve.",
+                    "uttale": "Midt i alt dette skjedde noe merkelig. Historikere kaller det lajv ænd lett liv, som betyr lev og la leve."
+                },
+                { "si": "På rolige deler av fronten ble soldatene på begge sider enige, uten å si det høyt: Vi dreper ikke hvis vi ikke må." },
+                { "si": "Tyske snikskyttere lot være å skyte på briter som hentet vann." },
+                { "si": "Britiske kanoner skjøt på nøyaktig samme sted til samme tid hver dag. Da visste tyskerne hvor de ikke skulle være." },
+                { "si": "Det var ikke fordi de var mot krig. De tenkte: Dreper jeg en av dem, dreper de en av oss." },
+                { "si": "Begge sider levde med regn, rotter, lus og gjørme. Mange hatet sine egne offiserer bak linjene mer enn fienden i den andre grøfta." }
+            ]
+        },
+        {
+            "id": "jul",
+            "lyd": "vind",
+            "kapittel": "Julen 1914",
+            "visual": { "type": "SkyttergravFront", "props": { "modus": "jul" } },
+            "replikker": [
+                { "si": "Det mest kjente eksempelet er julevåpenhvilen i 1914. En våpenhvile er en pause i kampene." },
+                { "si": "Soldater klatret opp av skyttergravene og gikk ut i Ingenmannsland." },
+                { "si": "De ga hverandre gaver. Noen steder sparket de fotball sammen." },
+                { "si": "Generalene ble rasende. De sørget for at det aldri skjedde igjen." },
+                { "si": "Men ønsket om å overleve sammen klarte de aldri helt å stoppe." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ikke bare kamp.", "fraBeat": 0 },
+                        { "tekst": "Gjørme, vann og venting.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Granatene knuste kropper", "fraBeat": 1 },
+                        { "tekst": "og sinn.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Midt i krigen:", "fraBeat": 2 },
+                        { "tekst": "Lev og la leve.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Skyttergravskrigen var ikke bare kamp. Den var gjørme, vann, kulde og venting, dag etter dag." },
+                { "si": "Granatene skadet ikke bare kroppen. De kunne knuse sinnet til selv de sterkeste." },
+                { "si": "Og på rolige deler av fronten lot soldater på begge sider være å drepe hverandre når de ikke måtte." }
+            ]
+        }
+    ]
+}

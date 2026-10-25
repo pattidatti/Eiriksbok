@@ -1,0 +1,51 @@
+import { useRef } from 'react';
+import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
+
+/** Felles 3D-hjelpere for fronten: dempet glidning, frø og kameraet per beat. */
+
+/** Dempet glidning mot et mål, uavhengig av bildefrekvens. */
+export function damp(a: number, b: number, lambda: number, dt: number) {
+    return THREE.MathUtils.lerp(a, b, 1 - Math.exp(-lambda * dt));
+}
+export const v = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+
+/** Enkelt tilfeldig tall med frø, så landskapet ser likt ut hver gang. */
+export function frø(n: number) {
+    const x = Math.sin(n * 127.1 + 311.7) * 43758.5453;
+    return x - Math.floor(x);
+}
+
+export type KameraMål = (beat: number, t: number) => { pos: THREE.Vector3; se: THREE.Vector3 };
+
+/** Kameraet glir mot målet for beaten. Første bilde hopper rett dit. `rist` gir jordskjelv. */
+export function useKamera(mål: KameraMål, beat: number, playing: boolean, rist = 0) {
+    const beatTid = useRef(0);
+    const forrige = useRef(-1);
+    const se = useRef(new THREE.Vector3());
+    const pos = useRef(new THREE.Vector3());
+    const forste = useRef(true);
+    const klokke = useRef(0);
+    useFrame(({ camera }, rawDt) => {
+        const dt = playing ? Math.min(rawDt, 0.05) : 0;
+        if (beat !== forrige.current) {
+            forrige.current = beat;
+            beatTid.current = 0;
+        }
+        beatTid.current += dt;
+        klokke.current += dt;
+        const m = mål(beat, beatTid.current);
+        const k = forste.current ? 1 : 1 - Math.exp(-1.3 * dt);
+        forste.current = false;
+        pos.current.lerp(m.pos, k);
+        se.current.lerp(m.se, k);
+        camera.position.copy(pos.current);
+        if (rist > 0) {
+            const c = klokke.current;
+            camera.position.x += Math.sin(c * 31) * 0.05 * rist;
+            camera.position.y += Math.sin(c * 47 + 1) * 0.04 * rist;
+        }
+        camera.lookAt(se.current);
+    });
+    return beatTid;
+}
