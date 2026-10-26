@@ -51,8 +51,12 @@ node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b
 # Ved «pw fail»:
 printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --ignore-certificate-errors "$@"\n' > /tmp/chromium-wrap && chmod +x /tmp/chromium-wrap
 echo 'export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap' > /tmp/pw.env
-source /tmp/pw.env && node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b.close()})"
+source /tmp/pw.env && node -e "require('playwright').chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }).then(b=>{console.log('pw ok');b.close()})"
 ```
+
+(`launch()` leser ikke variabelen selv, så kontrollen må sende `executablePath`. `shots-film`
+gjør det.) Skal du stoppe dev-serveren, bruk `kill %1` eller PID-en, ikke `pkill -f "vite ..."`:
+mønsteret står i din egen kommandolinje, så pkill dreper shellet ditt også.
 
 Start dev-serveren én gang og la den gå:
 
@@ -128,6 +132,9 @@ variasjonsreglene mest først), så filmer under 22/25. For den filmen:
 3. Sett `lyd` på scenene der filmen er et sted, om den mangler.
 4. Lengden ligger fast: ikke kort ned eller legg til replikker for å nå et ordtall. Endre
    replikker bare når faktasjekken krever det. Hver endret replikk lager stemmen på nytt.
+   Unntak: gjør faktarettelsene at filmen går over 1100 ord og `validate-film` stopper den,
+   kort fyllord og gjentakelser i andre replikker til den er under igjen. Aldri presiseringene
+   faktasjekken ba om (guiden §3c punkt 20).
 
 PR-tittel `film-forbedring: <Tittel> (<fag>)`. Samme smale diff: manuset og filmens egen
 visuals-mappe.

@@ -132,7 +132,7 @@ Alle tar `fraBeat`: elementet vises fra den replikken (0-basert) og ut scenen.
 | Visual | Bruk når | Props |
 |---|---|---|
 | `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false, prefiks?}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler, 72 år), `prefiks: "minst"` / `"over"` når artikkelen sier det (skriv da ikke «minst» i etiketten). Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). Skriften krymper selv for lange ord, men hold `tittel` kort og legg resten i `undertittel`. |
-| `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?, visTall?: false}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. Forklaringen viser `farget` og `total - farget` foran etikettene; er prikkene en skala (100 like store grupper, «tusenvis»), sett `visTall: false` og la stemmen si skalaen. En andel av noe annet enn figurene (hvem som sto bak, ikke hvem som ble rammet) trenger et eget bilde. |
+| `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?, visTall?: false}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. Forklaringen viser `farget` og `total - farget` foran etikettene; er prikkene en skala (100 like store grupper, «tusenvis») eller en rate (344 av 1000 døde, da blir resten «656 levde», en ny påstand), sett `visTall: false` og la stemmen si skalaen. Med tall må `restEtikett` gi mening sammen med `total - farget` («99 friske», ikke «99 folket i området»). En andel av noe annet enn figurene (hvem som sto bak, ikke hvem som ble rammet) trenger et eget bilde. |
 | `Livbater` | Kapasitet mot bruk (seter, plasser, senger) | `bater: [{navn, plasser, brukt, fraBeat}]` |
 | `Andeler` | Andel per gruppe som stolper, til slutt to grupper som ringer | `tittel`, `kilde?`, `rader: [{etikett, reddet, totalt, fraBeat, farge}]`, `sammenlign?: {fraBeat, venstre, hoyre}` |
 | `Punktkort` | 2-4 følger, regler eller grunner | `tittel`, `punkter: [{ikon, tittel, tekst?, fraBeat}]`. Ikon: `livbat`, `radio`, `is`, `avtale`, `skip`, `penger`, `hest`, `haer`, `stjerne` |
@@ -250,6 +250,29 @@ streng.
 19. **Merkelapper i et stolpediagram** legges utenfor stolpeområdet, ikke oppå stolpene.
 20. **For mange ord etter faktasjekken.** Rettelser gjør replikkene lengre, og en film nær 1100
     ord går over taket. Kort ned fyllord og gjentakelser, aldri presiseringene faktasjekken ba om.
+21. **drei-`<Html>` i en skjult `<group>`.** `visible = false` i `useFrame` skjuler ikke
+    `<Html>`. Rendre merkelappen betinget: `{beat <= 1 && <Html ... />}`.
+22. **`strokeDasharray` + animert `pathLength`** blir en hel strek, for framer-motion bruker
+    dasharray til å tegne opp linja. En stiplet linje som skal tegnes opp, trenger en maske,
+    eller en vanlig `path` med `opacity`-overgang.
+23. **Samme `ref` på flere materialer i en `.map()`** peker bare på det siste. Bruk en
+    array-ref: `ref={(m) => { refs.current[i] = m; }}`. Et `useMemo`-materiale som endres i
+    `useFrame` stoppes av lint (react-hooks/immutability); bruk ref.
+24. **`instancedMesh` med matriser satt i `useEffect`** får grensekula fra identitetsmatrisene
+    og forsvinner når kameraet ser bort fra origo. Sett `frustumCulled={false}`.
+25. **Flate former som ligger ned** (`circleGeometry` med `rotation={[-Math.PI / 2, 0, 0]}`)
+    skaleres `[x, z, 1]`, ikke `[x, 1, z]`. Skaleringen skjer før rotasjonen.
+26. **HTML i `foreignObject`** tegnes på en flate på 1000x562, ikke 1600x900. På 1600-flaten
+    blir `text-3xl` ulesbart lite.
+27. **`setState` i en `requestAnimationFrame`-løkke** (en viser som går) holdt
+    `document.fonts` i «loading», og `shots-film` fikk timeout. Skriv attributtene direkte
+    via ref.
+28. **Kameraet under vannflaten i et 3D-snitt** ser toppen gjennom den gjennomsiktige blokken,
+    og alt blekner. Hold kameraet over vannet. DOM-merkelapper plasseres med
+    `vektor.project(kamera)`, ikke regnet for hånd.
+29. **Tekst i et SVG-kort (`rect`)** flyter ut av kortet når teksten er lengre enn du trodde.
+    Mål kortbredden ut fra tekstlengden (ca. 0,55 x skriftstørrelse per tegn), eller bryt
+    teksten. `shots-film` ser ikke tekst mot rammen sin.
 
 ---
 
@@ -278,8 +301,9 @@ node scripts/film-grunnlag.mjs <fag>/<emne>/<leksjon> > /tmp/grunnlag.md   # art
 hvert ark** og sjekk mot rubrikken. Les arkene, ikke enkeltbildene.
 
 `shots-film` måler også all tekst i bildet (også merkelapper over 3D) og stopper når tekst
-overlapper annen tekst (også to merkelapper på samme linje som så vidt går inn i hverandre)
-eller er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
+overlapper annen tekst (også to merkelapper på samme linje som så vidt går inn i hverandre),
+når to SVG-merkelapper på samme linje står kloss inntil hverandre, når SVG-tekst ligger under
+en HTML-boks med bakgrunn, eller når tekst er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
 mappe. Rett dem og ta de scenene på nytt med `--scener 3,7`: de andre scenenes bilder og ark
 blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken ikke.
 
@@ -295,7 +319,15 @@ blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken 
 
 Vurderingen gjøres av **to ferske underagenter** som ikke har skrevet filmen og ikke ser koden:
 
-1. **Faktasjekkeren** får `grunnlag.md` (artikkelen + replikkene). Den går gjennom hver
+`film-grunnlag` tar med alle artikkelens blokker (også sitater, faktabokser, `expandable` og
+interaktive komponenter) og teksten i hver scenes visual-props («Tekst i bildet»). Tekst som
+bare står i filmens egen `data.ts` eller i koden, ser den ikke: lim den inn selv.
+
+Bildene tas på pause, så kontrollinja under bildet viser alltid første kapittel og 0:00. Si
+det til vurdereren, så den ikke melder det som en feil.
+
+1. **Faktasjekkeren** får `grunnlag.md` (artikkelen + replikkene + tekst i bildet). Merkelapper
+   er påstander på lik linje med replikkene. Den går gjennom hver
    replikk og lister alt som ikke står i artikkelen, er skjerpet, har mistet en presisering
    («Afghanistan-krigen *alene*»), eller kan misforstås når to tall står etter hverandre.
    Svar per replikk: `scene.beat: problem -> forslag`. Ingen funn er et gyldig svar.
