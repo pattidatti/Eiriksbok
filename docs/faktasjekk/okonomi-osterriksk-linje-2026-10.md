@@ -3,7 +3,7 @@
 **Omfang:** alle 15 artikler i `public/content/samfunnskunnskap/okonomi/` + filmene
 `src/features/film/manus/samfunnskunnskap/okonomi/{monopol-og-konkurranse,bnp}.json`
 **Undersøkt:** 26. oktober 2026
-**Status:** PLAN — ingenting er endret ennå.
+**Status:** PLAN, godkjent i hovedtrekk 26.10.2026 — innholdet er ikke endret ennå.
 
 ---
 
@@ -38,25 +38,35 @@ tråd med linjen, men **motsies** nå av monopolartikkelen (se K1).
   skole er uenig.
 - **[K] Intern inkonsistens** — artikkelen sier det motsatte av en annen artikkel på siden.
 
-### Viktig nyanse før omskriving
+### Beslutninger (Eirik, 26.10.2026)
 
-Østerriksk skole er ikke samlet om monopol. **Mises** (og senere Kirzner) mente at
-monopolpriser *kan* oppstå på et fritt marked. **Rothbard** (og Armentano, Hoppe,
-DiLorenzo) mente at monopolpris bare finnes når staten hindrer konkurranse, og avviste
-naturlig monopol som begrep (Herbener-artikkelen i QJAE 2010 oppsummerer splittelsen).
-Når artikkelen skrives om, bør den si «Rothbard og flere østerrikske økonomer», ikke
-«den østerrikske skolen mener».
+1. **Østerriksk syn er fasit.** Artiklene forklarer økonomien slik østerriksk skole gjør.
+   Hovedstrømssynet (SNL/læreboka) gjengis kort og korrekt — slik at elevene vet hva
+   «naturlig monopol» eller «konjunkturledighet» betyr når de møter det på prøve — og
+   svares deretter på.
+2. **Ved tvil: Rothbard.** Der østerrikerne er uenige (monopolpris, bankreserver), følger
+   siden Rothbard. Mises/Kirzner-synet på monopolpris nevnes ikke i elevteksten.
+   Bakgrunn: Mises og Kirzner mente monopolpriser kan oppstå på et fritt marked; Rothbard,
+   Armentano, Hoppe og DiLorenzo at monopol bare finnes når staten hindrer konkurranse
+   (Herbener-artikkelen i QJAE 2010 oppsummerer splittelsen).
+3. **Monopolfilmen skrives på nytt, BNP-filmen redigeres** (se steg 3 og 5).
 
-### Anbefalt grep (ikke bekreftet av deg ennå)
+**Konsekvens som må med:** `okonomiske-skoler` sier i dag at Økonomi-Verden er «en
+konsistent modell — men ikke den eneste mulige», og at skolene «ikke er uenige om fakta».
+Det kolliderer med beslutning 1 og må skrives om (nytt steg 6b).
 
-Gjør det samme som `okonomiske-skoler` allerede gjør: østerriksk forklaring som
-hovedlinse, hovedstrømsforklaringen markert som et annet syn. Ikke slett SNL-stoffet —
-det er det elevene møter i læreboka og på prøver. Poenget er å slutte å framstille det
-som eneste svar.
+**Gjengivelsen av hovedstrømmen må være ordentlig, ikke en stråmann.** Vurderingskriteriene
+for samfunnsfag 10. trinn (`docs/laereplaner/samfunnsfag-10-trinn.md`) gir toppkarakter
+for å bruke ulike perspektiver «for å belyse hendelser og fenomener nyansert». Eleven må
+kunne forklare motsynet for å kunne avvise det.
 
 ---
 
 ## 2. Feilliste
+
+> Fiks-linjene under ble skrevet før beslutningene i kapittel 1. Der en fiks sier «vis
+> uenigheten» eller «legg til motsynet», gjelder nå: hovedstrømmen gjengis kort, og det
+> østerrikske svaret står som artikkelens konklusjon.
 
 ### 2.1 `monopol-og-konkurranse.json` (artikkel og film har nesten identisk tekst)
 
@@ -260,15 +270,24 @@ DiLorenzo) før naturlig monopol; skriv om oppsummering, `details`, quiz 0 og 4,
 Nye kilder: Hayek 1946, Hayek 1968, Kirzner 1973, Rothbard 1962, DiLorenzo 1996,
 Armentano 1982, Konkurransetilsynet 2018 og 2026.
 
-**Steg 3 — Monopol, film.** Speil steg 2 i manus:
-- scene 2 (definisjonen), 5 (fullkommen konkurranse), 6–7 (+ tollvern), 9 (rettssaken),
-  10 (motsyn til tilsynet), 13 (naturlig monopol som omstridt), 14 (ny slutt).
-- Visuelt: `MonopolSak.tsx` (nytt trinn i tidslinjen), `MonopolVann.tsx` (tekst/etiketter),
-  vurder ny modus i `MonopolKjeder.tsx` for tollmur.
-- Lyd: `film-lyd.yml` lager stemmen på nytt for endrede replikker (kjøres hver time).
-  Hold øye med tegnkvoten (800 000 tegn/mnd).
+**Steg 3 — Monopol, film: nytt manus.** Plottet snur. I dag er historien «monopol er
+dårlig → staten passer på → noen monopol er gode». Den nye historien er «hva hindrer kiosk
+nummer to? → staten». 9–10 av 15 scener måtte vært skrevet om, og konklusjonen blir den
+motsatte. Redigering gir et lappeteppe; nytt manus etter `build_film.md` er ryddigere.
+- Ikke slett manuset og vent på filmrutina: køen har 371 artikler, samfunnskunnskap
+  sist, fire filmer i døgnet. Filmen ville vært borte i flere måneder. Lag den manuelt
+  med samme workflow straks artikkelen er ferdig, og erstatt den gamle fila.
+- Gjenbruk visualer som passer den nye historien: `MonopolStranda` (én kiosk / to /
+  mange — kjernen i nytt plot), `MonopolPris`, `MonopolKjeder` (`andeler`, `prisjeger`).
+- Bygg om: `MonopolSak` (rettssaken, nytt trinn i tidslinjen), `MonopolVann` (skal vise
+  konkurrerende gass-/lysselskaper før konsesjonene, ikke «én eier er best»).
+- Trolig nytt: tollmur rundt dagligvare (ny modus i `MonopolKjeder` eller egen visual),
+  kommunal tillatelse som stenger kiosk nr. 2.
+- Utgår: `MonopolDommer` (eller gjenbrukes med motsynet), `MonopolVin` i dagens form.
+- Lyd: `film-lyd.yml` lager stemmen for nytt manus (kjøres hver time). Hold øye med
+  tegnkvoten (800 000 tegn/mnd).
 - Kjør `scripts/validate-film.mjs`: alle tall i manus må stå i artikkelen, så
-  artikkelen må oppdateres først (f.eks. «12. oktober 2026», «29 %»).
+  artikkelen må være ferdig først.
 
 **Språk (gjelder alle steg):** Nytt stoff skal holde 14-årings-kravet i `CLAUDE.md`.
 Hayek, Bastiat og Rothbard må forklares med konkrete bilder (kiosk, knust rute, brann),
@@ -277,15 +296,25 @@ forklaring i samme setning.
 
 **Steg 4 — Arbeidsledighet.** A1 og A2. Ingen film.
 
-**Steg 5 — BNP, artikkel og film.** B1, B2, B5 (prioritert), B3, B4 (kan vente).
-Film: scene 0, 3, 5, 6, 7. Visuelt: `BnpTeller.tsx` / `BnpPlenen.tsx` for Bastiat-replikken.
+**Steg 5 — BNP, artikkel og film: redigering.** Plottet (plenen, termometeret) holder;
+BNP-artikkelen sier ikke noe østerrikerne er uenige i som fakta, den mangler deres kritikk.
+B1, B2, B5 prioritert; B3 og B4 tas også, siden østerriksk syn nå er fasit.
+Film: endre replikker i scene 0, 3, 5 og 6; skriv scene 7 om til Bastiat («det du ser og
+det du ikke ser»); ny scene om at offentlige tjenester telles til kostpris; slutten (13–14)
+justeres så termometeret måler feil ting, ikke bare for lite. Visuelt: `BnpTeller.tsx` /
+`BnpPlenen.tsx` for Bastiat-scenen.
 
-**Steg 6 — Småfiks.** T1–T3, P1–P2, MI1.
+**Steg 6 — Småfiks.** T1–T3, P1–P2 (Rothbard: 100 % reserver), MI1.
+
+**Steg 6b — `okonomiske-skoler`.** Skriv om innledningen («de fire skolene er ikke uenige
+om fakta»), seksjonen om Økonomi-Verden («ikke den eneste mulige») og gå-videre-oppgaven
+om hva modellen «ikke får med seg», så artikkelen sier at siden bygger på østerriksk skole
+fordi den forklarer økonomien best. De tre andre skolene beholdes som beskrivelser.
 
 **Steg 7 — Hindre at det skjer igjen.** Legg en linje i `docs/CONTENT_STYLE_GUIDE.md`
 (eller tilsvarende sjekkliste for agentene) om at økonomiartikler skal følge linsen i
-`okonomiske-skoler`: østerriksk forklaring først, hovedstrøm markert som eget syn, SNL
-alene er ikke nok teorigrunnlag. Det er sannsynligvis derfor de nyeste skled ut — alle
+`okonomiske-skoler`: østerriksk skole er fasit (Rothbard ved tvil), hovedstrømmen gjengis
+kort og presist og besvares, SNL alene er ikke nok teorigrunnlag. Det er sannsynligvis derfor de nyeste skled ut — alle
 fire bygger teoridelen kun på SNL.
 
 **Steg 8 — Kontroll.** Bygg, se gjennom filmene, sjekk at alle nye kilder er med i
@@ -295,13 +324,7 @@ fire bygger teoridelen kun på SNL.
 
 ## 4. Åpne spørsmål til Eirik
 
-1. **Fasit eller linse?** Skal østerriksk syn presenteres som *riktig* svar, eller som
-   hovedlinse med hovedstrømmen som markert motsyn (slik `okonomiske-skoler` gjør)?
-   Planen over forutsetter det siste.
-2. **Mises eller Rothbard på monopol?** Planen nevner splittelsen. Vil du heller at siden
-   tar Rothbards linje fullt ut?
-3. **Omfang i filmene:** Full speiling av artikkelendringene (ca. 8 av 15 scener i
-   monopolfilmen), eller bare M1 + M2 + ny slutt, og resten kun i artikkelen?
+Besvart 26.10.2026 — se «Beslutninger» i kapittel 1. Ingen åpne spørsmål.
 
 ---
 
