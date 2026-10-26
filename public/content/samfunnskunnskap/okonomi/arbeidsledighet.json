@@ -1,293 +1,308 @@
 {
-  "id": "arbeidsledighet",
-  "title": "Arbeidsledighet: Hvorfor finner ikke alle jobb?",
-  "layout": "rich",
-  "year": "Fra 1930-tallet til i dag",
-  "category": "Økonomi",
-  "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
-  "details": [
-    "Du er arbeidsledig hvis du er uten jobb og aktivt leter etter en. I september 2026 var 4,6 prosent av arbeidsstyrken ledige ifølge SSB.",
-    "Folk kan bli ledige fordi de er mellom to jobber, fordi jobben bare finnes deler av året, fordi det er nedgangstider, eller fordi jobben har forsvunnet.",
-    "Hver type ledighet trenger sin egen løsning: jobbformidling, lavere rente eller ny utdanning."
-  ],
-  "externalUrl": "https://snl.no/arbeidsledighet",
-  "factChecked": "2026-10-26",
-  "tags": [
-    "økonomi",
-    "arbeidsledighet",
-    "arbeidsliv",
-    "nav",
-    "konjunktur"
-  ],
-  "content": [
-    {
-      "type": "text",
-      "content": "Det er mandag morgen på et lite sted langs kysten. Fabrikken som har ligget ved kaia i femti år, kaller alle de ansatte inn til møte. Beskjeden er kort: Fabrikken skal legges ned. Over hundre mennesker går hjem den dagen uten å vite hva de skal leve av. Noen av dem er foreldrene til elever på den lokale ungdomsskolen."
-    },
-    {
-      "type": "text",
-      "content": "Samtidig kan det godt finnes ledige jobber et annet sted i landet, kanskje på et sykehus eller i et byggefirma. Hvordan kan det være ledige jobber og ledige folk på samme tid? I denne artikkelen skal du finne ut hva arbeidsledighet er, hvorfor folk mister jobben, og hva samfunnet kan gjøre med det."
-    },
-    {
-      "type": "image",
-      "src": "/images/placeholder.webp",
-      "alt": "Arbeidere går ut porten til en nedlagt fabrikk",
-      "caption": "Når en stor arbeidsplass legges ned, kan et helt lokalsamfunn merke det."
-    },
-    {
-      "type": "header",
-      "text": "Hva betyr det å være arbeidsledig?"
-    },
-    {
-      "type": "text",
-      "content": "Å være arbeidsledig betyr ikke bare at du ikke har en jobb. Du er arbeidsledig hvis du er gammel nok til å jobbe, ikke har jobb, og aktivt leter etter en. En pensjonist er altså ikke arbeidsledig. Det er heller ikke en person som ikke vil ha jobb, eller som ikke kan jobbe fordi hen er syk (Stokke mfl., 2026)."
-    },
-    {
-      "type": "text",
-      "content": "Ledigheten oppgis i prosent av arbeidsstyrken. Arbeidsstyrken er alle som har jobb, pluss alle som er arbeidsledige (Stokke mfl., 2026). Hvis 100 personer enten jobber eller leter etter jobb, og 5 av dem ikke finner noe, er ledigheten 5 prosent."
-    },
-    {
-      "type": "header",
-      "text": "To tall for det samme"
-    },
-    {
-      "type": "text",
-      "content": "Hver måned kommer det to tall for hvor mange som er arbeidsledige i Norge (Horgen, 2026). Det ene tallet kommer fra Nav. Det er alle som har meldt seg som helt ledige og jobbsøkere hos Nav. Det andre tallet kommer fra Statistisk sentralbyrå (SSB). SSB ringer og spør et stort utvalg av befolkningen om de har jobb. Denne undersøkelsen heter arbeidskraftundersøkelsen, eller AKU."
-    },
-    {
-      "type": "component",
-      "name": "FactBox",
-      "props": {
-        "title": "Tre krav for å telle som ledig hos SSB",
-        "content": "For å telle som arbeidsledig i SSBs undersøkelse må du oppfylle alle disse tre kravene: Du er uten arbeid. Du har lett aktivt etter jobb de siste fire ukene. Du kan begynne i en jobb i løpet av to uker. Kravene følger regler fra FNs arbeidsorganisasjon (ILO), slik at land kan sammenlignes (Stokke mfl., 2026)."
-      }
-    },
-    {
-      "type": "text",
-      "content": "I september 2026 var 141 000 personer arbeidsledige ifølge SSB. Det er 4,6 prosent av arbeidsstyrken, og ledigheten har ligget rundt dette nivået siden midten av 2025 (Horgen & Røv, 2026). Tallet fra Nav er som regel mye lavere. Hvorfor?"
-    },
-    {
-      "type": "text",
-      "content": "Grunnen er at mange ledige aldri melder seg hos Nav. Det gjelder særlig unge og studenter som leter etter en deltidsjobb. De har sjelden rett til penger fra Nav, og da er det lite å hente på å melde seg (Stokke mfl., 2026). I 2025 var til sammen 171 000 personer ledige i minst én av de to tellingene. Bare 28 000 av dem, omtrent én av seks, var med i begge (Horgen, 2026). De to tallene teller altså ganske ulike grupper."
-    },
-    {
-      "type": "header",
-      "text": "Fire grunner til å stå uten jobb"
-    },
-    {
-      "type": "text",
-      "content": "Økonomer deler arbeidsledighet inn i ulike typer etter hva som er årsaken. Store norske leksikon nevner fire (Stokke mfl., 2026):"
-    },
-    {
-      "type": "list",
-      "items": [
-        "Friksjonsledighet: Du er mellom to jobber. Det tar litt tid å finne en ny jobb, selv om det finnes ledige stillinger.",
-        "Sesongledighet: Jobben finnes bare deler av året, for eksempel i fiske eller turisme.",
-        "Konjunkturledighet: Det er nedgangstider. Folk og bedrifter kjøper mindre, og da trenger bedriftene færre ansatte.",
-        "Strukturledighet: Det du kan, passer ikke lenger med det arbeidsgiverne trenger. Det skjer ofte når ny teknologi tar over en jobb, eller når en hel bransje krymper."
-      ]
-    },
-    {
-      "type": "text",
-      "content": "Ordet friksjon betyr gnisninger. Det er som når to ting ikke glir helt fritt mot hverandre. Konjunktur betyr hvordan det går med økonomien akkurat nå, om det er gode eller dårlige tider. Struktur handler om hvordan næringslivet er bygd opp, altså hvilke jobber som finnes i et land."
-    },
-    {
-      "type": "text",
-      "content": "Nå er det din tur. Her møter du tre personer som har mistet jobben. Finn ut hvorfor, og velg hjelpen som virker."
-    },
-    {
-      "type": "component",
-      "name": "Ledighetslegen",
-      "props": {}
-    },
-    {
-      "type": "header",
-      "text": "Ulike årsaker, ulike medisiner"
-    },
-    {
-      "type": "text",
-      "content": "Det viktigste å huske er at hver type ledighet trenger sin egen løsning, omtrent som en lege må vite hva som feiler deg før hen kan gi riktig medisin. Ved friksjonsledighet hjelper det at det er lett å finne informasjon om ledige jobber, og at noen hjelper folk og jobber å finne hverandre (Stokke mfl., 2026)."
-    },
-    {
-      "type": "text",
-      "content": "Ved konjunkturledighet må staten og Norges Bank få fart på økonomien igjen (Stokke mfl., 2026). Norges Bank kan sette ned renten, slik at det blir billigere å låne penger. Da bruker folk og bedrifter mer, og bedriftene trenger flere ansatte. Du kan lese mer om dette i artikkelen om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente). Staten kan også bruke mer penger selv, for eksempel på å bygge veier og skoler."
-    },
-    {
-      "type": "text",
-      "content": "Ved strukturledighet hjelper ikke lavere rente. Jobben er borte for godt. Da trenger folk kurs og ny utdanning, slik at de kan lære noe arbeidsgiverne faktisk trenger (Stokke mfl., 2026). Dette blir trolig enda viktigere i årene som kommer, når roboter og kunstig intelligens tar over flere oppgaver. Det kan du lese mer om i artikkelen [Roboter, gig og frihet](/samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv)."
-    },
-    {
-      "type": "header",
-      "text": "Da oljeprisen falt"
-    },
-    {
-      "type": "text",
-      "content": "Norge fikk kjenne på dette for ikke så lenge siden. Fra midten av 2014 til slutten av 2015 falt prisen på olje fra godt over 100 dollar til under 40 dollar per fat. I noen deler av landet steg arbeidsledigheten kraftig (Ellingsen & Galaasen, 2021)."
-    },
-    {
-      "type": "text",
-      "content": "Rogaland, der mye av oljeindustrien ligger, ble hardt rammet. Ledigheten i fylket nådde en topp på 4,5 prosent i 2016. Samtidig falt andelen av befolkningen som hadde jobb, fra om lag 71 til 67 prosent (Ellingsen & Galaasen, 2021)."
-    },
-    {
-      "type": "image",
-      "src": "/images/placeholder.webp",
-      "alt": "Oljeplattform i Nordsjøen i grått vær",
-      "caption": "Da oljeprisen falt i 2014 og 2015, mistet mange i oljebransjen jobben."
-    },
-    {
-      "type": "text",
-      "content": "Mot slutten av 2019 var ledigheten i Rogaland tilbake på samme nivå som før oljeprisen falt. Men andelen som hadde jobb, hadde ikke kommet tilbake (Ellingsen & Galaasen, 2021). Hvordan kan det henge sammen? Svaret er at noen av dem som mistet jobben, sluttet å lete. Da teller de ikke lenger som arbeidsledige, men de har heller ikke jobb."
-    },
-    {
-      "type": "header",
-      "text": "Hva gjør Nav?"
-    },
-    {
-      "type": "text",
-      "content": "Nav er etaten som hjelper folk som står uten jobb. Har du mistet jobben, kan du få dagpenger. Det er penger fra staten mens du leter etter ny jobb. For å få dagpenger må du blant annet ha mistet minst halvparten av arbeidstiden din, og du må ha tjent minst 204 824 kroner det siste året (Nav, 2026)."
-    },
-    {
-      "type": "text",
-      "content": "Dagpengene er 62,4 prosent av det du tjente før (Nav, 2026). Du får altså mindre enn lønnen din, og det er med vilje. Pengene skal hjelpe deg gjennom en vanskelig tid, men det skal fortsatt lønne seg å komme i jobb. Du må også melde deg som jobbsøker og sende et meldekort til Nav hver 14. dag, der du forteller hva du har gjort (Nav, 2026). I tillegg har Nav kurs og andre tiltak som skal hjelpe folk tilbake i arbeid (Stokke mfl., 2026)."
-    },
-    {
-      "type": "header",
-      "text": "Hvorfor er det så viktig å komme raskt i jobb?"
-    },
-    {
-      "type": "text",
-      "content": "Å miste jobben handler om mer enn penger. En jobb gir mange folk venner, en grunn til å stå opp om morgenen, og en følelse av å være til nytte. Forskere i Norges Bank har sett på hva som skjedde med folk etter oljekrisen. De fant at det å miste jobben kan gi lavere inntekt og mindre sjanse for å ha jobb i mange år etterpå, kanskje for alltid (Ellingsen & Galaasen, 2021)."
-    },
-    {
-      "type": "text",
-      "content": "De som ble hardest rammet, var folk som hadde lav inntekt og lite fast arbeid fra før. Mange av dem mistet jobben, fant ikke noe nytt der de bodde, og falt til slutt helt ut av arbeidslivet (Ellingsen & Galaasen, 2021). Folk med jobb i det offentlige, som lærere og sykepleiere, ble lite berørt (Ellingsen & Galaasen, 2021). Derfor er det et mål å hjelpe folk tilbake i jobb før de gir opp."
-    },
-    {
-      "type": "header",
-      "text": "Et blikk bakover"
-    },
-    {
-      "type": "text",
-      "content": "Arbeidsledighet er ikke noe nytt. Under den store krisen på 1930-tallet var det svært mange som sto uten jobb. I 1933 var hele 33,4 prosent av medlemmene i fagforeningene i Norge uten arbeid. Det er én av tre (Stokke mfl., 2026). Du kan lese om hvordan krisen startet i artikkelen om [det store krakket](/historie/mellomkrigstiden/borskrakk)."
-    },
-    {
-      "type": "text",
-      "content": "Fra 1965 til 1976 var ledigheten i Norge svært lav, mellom 0,6 og 1,4 prosent i året (Stokke mfl., 2026). Våren 2020 kom en ny type sjokk. Under [koronapandemien](/historie/norge-i-moderne-tid/koronapandemien) stengte mange arbeidsplasser, og svært mange ble permittert. Å være permittert betyr at du er sendt hjem fra jobben for en periode, men at du ikke har mistet den for godt. Nav teller permitterte som ledige fra første dag, mens SSB regner dem som om de har jobb de første tre månedene. Derfor skjøt Nav-tallet i været, mens SSB-tallet holdt seg ganske stabilt (Horgen, 2026)."
-    },
-    {
-      "type": "image",
-      "src": "/images/placeholder.webp",
-      "alt": "Ungdom på jobbintervju i et lyst kontor",
-      "caption": "Å komme raskt i jobb igjen er viktig, både for den som er ledig og for samfunnet."
-    },
-    {
-      "type": "header",
-      "text": "Oppsummering"
-    },
-    {
-      "type": "text",
-      "content": "Du er arbeidsledig hvis du er uten jobb og aktivt leter etter en. I Norge måles ledigheten på to måter: Nav teller dem som melder seg, mens SSB spør et utvalg av befolkningen. Folk kan bli ledige fordi de er mellom to jobber, fordi jobben bare finnes deler av året, fordi det er nedgangstider, eller fordi jobben deres har forsvunnet. Hver årsak trenger sin egen løsning, fra jobbformidling til lavere rente og ny utdanning. Oljekrisen viser at det å miste jobben kan få følger i mange år, og derfor er det viktig å hjelpe folk raskt tilbake i arbeid."
-    },
-    {
-      "type": "component",
-      "name": "Kildeliste",
-      "props": {
-        "sources": [
-          "Ellingsen, N. & Galaasen, S. M. (2021). *Langvarige konsekvenser i arbeidsmarkedet* (Staff Memo nr. 1/2021). Norges Bank. [norges-bank.no](https://www.norges-bank.no/contentassets/3a517c60b8c1456bb3d01fb7912e1f28/sm_staff-memo-2021-1.pdf)",
-          "Horgen, E. H. (2026). *Hvorfor ulike arbeidsledighetstall?* Statistisk sentralbyrå. Hentet 26.10.2026 fra [ssb.no](https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/hvorfor-ulike-arbeidsledighetstall)",
-          "Horgen, E. & Røv, V. (2026). *Arbeidsledigheten på 4,6 prosent i september*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/arbeid-og-lonn/sysselsetting/statistikk/arbeidskraftundersokelsen/artikler/arbeidsledigheten-pa-4-6-prosent-i-september)",
-          "Nav. (2026). *Dagpenger*. Hentet 26.10.2026 fra [nav.no/dagpenger](https://www.nav.no/dagpenger)",
-          "Stokke, T. A., Stoltz, G., Barth, E. & Falch, T. (2026). *Arbeidsledighet*. Store norske leksikon. Hentet 26.10.2026 fra [snl.no/arbeidsledighet](https://snl.no/arbeidsledighet)"
-        ]
-      }
-    },
-    {
-      "type": "component",
-      "name": "Oppgaver",
-      "props": {
-        "forstaa": [
-          "Hva skal til for at en person regnes som arbeidsledig?",
-          "Hvilke to måter måles arbeidsledigheten på i Norge, og hvem står bak hver av dem?",
-          "Nevn de fire typene arbeidsledighet som Store norske leksikon beskriver.",
-          "Hvor stor del av lønnen sin får en person i dagpenger fra Nav?"
-        ],
-        "reflekter": [
-          "Forklar hvorfor tallet fra SSB som regel er høyere enn tallet fra Nav.",
-          "Hvorfor hjelper ikke lavere rente en person som har mistet jobben til et dataprogram? Hva hjelper i stedet?",
-          "Etter oljekrisen gikk ledigheten i Rogaland ned igjen, men andelen som hadde jobb, kom ikke tilbake. Forklar hvordan det kan henge sammen.",
-          "Dagpengene er lavere enn lønnen man hadde. Er det rettferdig? Begrunn svaret ditt."
-        ],
-        "gaaVidere": [
-          "Finn det nyeste tallet for arbeidsledighet på ssb.no eller nav.no. Har ledigheten gått opp eller ned siden september 2026? Skriv et kort avsnitt om hva du fant.",
-          "Diskuter i klassen: Hvilke jobber tror dere vil forsvinne de neste tjue årene, og hvilke nye jobber kan komme? Hva betyr det for valget av utdanning?",
-          "Tenk deg at du er ordfører på et sted der den største fabrikken legges ned. Skriv en plan med tre tiltak som kan hjelpe de som mister jobben."
-        ]
-      }
-    },
-    {
-      "type": "component",
-      "name": "Quiz",
-      "props": {
-        "questions": [
-          {
-            "question": "Hvem regnes som arbeidsledig?",
-            "options": [
-              "Alle som ikke har jobb",
-              "En pensjonist som ikke jobber",
-              "En person uten jobb som aktivt leter etter arbeid",
-              "En person som er syk og ikke kan jobbe"
-            ],
-            "correctAnswer": 2,
-            "explanation": "Du er arbeidsledig hvis du er uten jobb og aktivt leter etter en. Pensjonister og syke regnes ikke som ledige."
-          },
-          {
-            "question": "Hvorfor er arbeidsledigheten høyere i SSBs tall enn i Navs tall?",
-            "options": [
-              "Fordi SSB regner med pensjonister",
-              "Fordi mange ledige, særlig unge og studenter, ikke melder seg hos Nav",
-              "Fordi Nav bare teller folk i Oslo",
-              "Fordi SSB teller alle som har deltidsjobb"
-            ],
-            "correctAnswer": 1,
-            "explanation": "Mange unge og studenter har ikke rett til penger fra Nav og melder seg derfor ikke. SSBs undersøkelse fanger dem opp."
-          },
-          {
-            "question": "Sara mister jobben fordi et dataprogram nå gjør arbeidet hennes. Hvilken type ledighet er dette?",
-            "options": [
-              "Friksjonsledighet",
-              "Sesongledighet",
-              "Konjunkturledighet",
-              "Strukturledighet"
-            ],
-            "correctAnswer": 3,
-            "explanation": "Når det du kan ikke lenger passer med det arbeidsgiverne trenger, for eksempel på grunn av ny teknologi, kalles det strukturledighet."
-          },
-          {
-            "question": "Hva hjelper best mot konjunkturledighet?",
-            "options": [
-              "Lavere rente og at staten bruker mer penger",
-              "At alle tar ny utdanning",
-              "At folk flytter til utlandet",
-              "Å stenge flere bedrifter"
-            ],
-            "correctAnswer": 0,
-            "explanation": "Konjunkturledighet skyldes nedgangstider. Lavere rente og mer pengebruk fra staten kan få fart på økonomien igjen."
-          },
-          {
-            "question": "Hva skjedde med ledigheten i Rogaland etter at oljeprisen falt i 2014?",
-            "options": [
-              "Den gikk ned",
-              "Den steg og nådde en topp på 4,5 prosent i 2016",
-              "Den ble uendret",
-              "Den steg til over 30 prosent"
-            ],
-            "correctAnswer": 1,
-            "explanation": "Ledigheten i Rogaland steg kraftig og nådde en topp på 4,5 prosent i 2016."
-          }
-        ]
-      }
-    }
-  ],
-  "timeline": []
+    "id": "arbeidsledighet",
+    "title": "Arbeidsledighet: Hvorfor finner ikke alle jobb?",
+    "layout": "rich",
+    "year": "Fra 1930-tallet til i dag",
+    "category": "Økonomi",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Du er arbeidsledig hvis du er uten jobb og aktivt leter etter en. I september 2026 var 4,6 prosent av arbeidsstyrken ledige ifølge SSB.",
+        "Folk kan bli ledige fordi de er mellom to jobber, fordi jobben bare finnes deler av året, fordi det er nedgangstider, eller fordi jobben har forsvunnet.",
+        "Den østerrikske skolen mener at nedgangstider er regningen for en tid da lånene var for billige, og at lavere rente bare starter en ny boble."
+    ],
+    "externalUrl": "https://snl.no/arbeidsledighet",
+    "factChecked": "2026-10-26",
+    "tags": [
+        "økonomi",
+        "arbeidsledighet",
+        "arbeidsliv",
+        "nav",
+        "konjunktur"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det er mandag morgen på et lite sted langs kysten. Fabrikken som har ligget ved kaia i femti år, kaller alle de ansatte inn til møte. Beskjeden er kort: Fabrikken skal legges ned. Over hundre mennesker går hjem den dagen uten å vite hva de skal leve av. Noen av dem er foreldrene til elever på den lokale ungdomsskolen."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig kan det godt finnes ledige jobber et annet sted i landet, kanskje på et sykehus eller i et byggefirma. Hvordan kan det være ledige jobber og ledige folk på samme tid? I denne artikkelen skal du finne ut hva arbeidsledighet er, hvorfor folk mister jobben, og hva samfunnet kan gjøre med det."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Arbeidere går ut porten til en nedlagt fabrikk",
+            "caption": "Når en stor arbeidsplass legges ned, kan et helt lokalsamfunn merke det."
+        },
+        {
+            "type": "header",
+            "text": "Hva betyr det å være arbeidsledig?"
+        },
+        {
+            "type": "text",
+            "content": "Å være arbeidsledig betyr ikke bare at du ikke har en jobb. Du er arbeidsledig hvis du er gammel nok til å jobbe, ikke har jobb, og aktivt leter etter en. En pensjonist er altså ikke arbeidsledig. Det er heller ikke en person som ikke vil ha jobb, eller som ikke kan jobbe fordi hen er syk (Stokke mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Ledigheten oppgis i prosent av arbeidsstyrken. Arbeidsstyrken er alle som har jobb, pluss alle som er arbeidsledige (Stokke mfl., 2026). Hvis 100 personer enten jobber eller leter etter jobb, og 5 av dem ikke finner noe, er ledigheten 5 prosent."
+        },
+        {
+            "type": "header",
+            "text": "To tall for det samme"
+        },
+        {
+            "type": "text",
+            "content": "Hver måned kommer det to tall for hvor mange som er arbeidsledige i Norge (Horgen, 2026). Det ene tallet kommer fra Nav. Det er alle som har meldt seg som helt ledige og jobbsøkere hos Nav. Det andre tallet kommer fra Statistisk sentralbyrå (SSB). SSB ringer og spør et stort utvalg av befolkningen om de har jobb. Denne undersøkelsen heter arbeidskraftundersøkelsen, eller AKU."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Tre krav for å telle som ledig hos SSB",
+                "content": "For å telle som arbeidsledig i SSBs undersøkelse må du oppfylle alle disse tre kravene: Du er uten arbeid. Du har lett aktivt etter jobb de siste fire ukene. Du kan begynne i en jobb i løpet av to uker. Kravene følger regler fra FNs arbeidsorganisasjon (ILO), slik at land kan sammenlignes (Stokke mfl., 2026)."
+            }
+        },
+        {
+            "type": "text",
+            "content": "I september 2026 var 141 000 personer arbeidsledige ifølge SSB. Det er 4,6 prosent av arbeidsstyrken, og ledigheten har ligget rundt dette nivået siden midten av 2025 (Horgen & Røv, 2026). Tallet fra Nav er som regel mye lavere. Hvorfor?"
+        },
+        {
+            "type": "text",
+            "content": "Grunnen er at mange ledige aldri melder seg hos Nav. Det gjelder særlig unge og studenter som leter etter en deltidsjobb. De har sjelden rett til penger fra Nav, og da er det lite å hente på å melde seg (Stokke mfl., 2026). I 2025 var til sammen 171 000 personer ledige i minst én av de to tellingene. Bare 28 000 av dem, omtrent én av seks, var med i begge (Horgen, 2026). De to tallene teller altså ganske ulike grupper."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor står folk uten jobb?"
+        },
+        {
+            "type": "text",
+            "content": "Økonomer deler arbeidsledighet inn i ulike typer etter hva som er årsaken. Store norske leksikon nevner fire (Stokke mfl., 2026):"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Friksjonsledighet: Du er mellom to jobber. Det tar litt tid å finne en ny jobb, selv om det finnes ledige stillinger.",
+                "Sesongledighet: Jobben finnes bare deler av året, for eksempel i fiske eller turisme.",
+                "Konjunkturledighet: Det er nedgangstider. Bedriftene selger mindre enn de hadde regnet med, og trenger færre ansatte.",
+                "Strukturledighet: Det du kan, passer ikke lenger med det arbeidsgiverne trenger. Det skjer ofte når ny teknologi tar over en jobb, eller når en hel bransje krymper."
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Ordet friksjon betyr gnisninger. Det er som når to ting ikke glir helt fritt mot hverandre. Konjunktur betyr hvordan det går med økonomien akkurat nå, om det er gode eller dårlige tider. Struktur handler om hvordan næringslivet er bygd opp, altså hvilke jobber som finnes i et land."
+        },
+        {
+            "type": "text",
+            "content": "Ludwig von Mises, en av de store økonomene i den østerrikske skolen, la til en grunn som lærebøkene ofte glemmer. Han mente at i et fritt marked kan den som vil ha jobb, nesten alltid finne en, hvis hen er villig til å ta en annen lønn, et annet yrke eller flytte. Men hvis lover eller avtaler tvinger lønna høyere enn det markedet ville gitt, blir noen stående uten jobb. Mises kalte det ledighet skapt av regler, ikke av markedet (Mises, 1949/1998)."
+        },
+        {
+            "type": "text",
+            "content": "Nå er det din tur. Her møter du tre personer som har mistet jobben. Finn ut hvorfor, og velg hjelpen som virker."
+        },
+        {
+            "type": "component",
+            "name": "Ledighetslegen",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Ulike årsaker, ulike medisiner"
+        },
+        {
+            "type": "text",
+            "content": "Det viktigste å huske er at hver type ledighet trenger sin egen løsning, omtrent som en lege må vite hva som feiler deg før hen kan gi riktig medisin. Ved friksjonsledighet hjelper det at det er lett å finne informasjon om ledige jobber, og at noen hjelper folk og jobber å finne hverandre (Stokke mfl., 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Ved konjunkturledighet sier mange lærebøker at staten og Norges Bank må få fart på økonomien igjen (Stokke mfl., 2026). Norges Bank kan sette ned renten, slik at det blir billigere å låne penger, og staten kan bruke mer penger selv, for eksempel på å bygge veier og skoler."
+        },
+        {
+            "type": "text",
+            "content": "Den østerrikske skolen, som denne boka bygger på, mener at det er feil medisin. Nedgangstidene er regningen for oppgangen før dem. Da renten var lavere enn den ville vært i et fritt marked, startet bedrifter prosjekter som bare lønte seg med billige lån. Når renten stiger igjen, viser det seg at kundene ikke var der. Friedrich Hayek kalte dette feilinvesteringer (Hayek, 1931/2008)."
+        },
+        {
+            "type": "text",
+            "content": "Setter Norges Bank ned renten på nytt, starter det bare en ny runde med feilinvesteringer, og neste krise blir større. Bedre er det å la lønn og priser tilpasse seg, slik at folk og penger flytter dit kundene faktisk er. Du kan lese mer om dette i artiklene om [den naturlige renten](/samfunnskunnskap/okonomi/naturlig-rente) og [finanskriser](/samfunnskunnskap/okonomi/finanskriser)."
+        },
+        {
+            "type": "text",
+            "content": "Ved strukturledighet hjelper ikke lavere rente. Jobben er borte for godt. Da trenger folk kurs og ny utdanning, slik at de kan lære noe arbeidsgiverne faktisk trenger (Stokke mfl., 2026). Dette blir trolig enda viktigere i årene som kommer, når roboter og kunstig intelligens tar over flere oppgaver. Det kan du lese mer om i artikkelen [Roboter, gig og frihet](/samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv)."
+        },
+        {
+            "type": "header",
+            "text": "Da oljeprisen falt"
+        },
+        {
+            "type": "text",
+            "content": "Norge fikk kjenne på dette for ikke så lenge siden. Fra midten av 2014 til slutten av 2015 falt prisen på olje fra godt over 100 dollar til under 40 dollar per fat. I noen deler av landet steg arbeidsledigheten kraftig (Ellingsen & Galaasen, 2021)."
+        },
+        {
+            "type": "text",
+            "content": "Rogaland, der mye av oljeindustrien ligger, ble hardt rammet. Ledigheten i fylket nådde en topp på 4,5 prosent i 2016. Samtidig falt andelen av befolkningen som hadde jobb, fra om lag 71 til 67 prosent (Ellingsen & Galaasen, 2021)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Oljeplattform i Nordsjøen i grått vær",
+            "caption": "Da oljeprisen falt i 2014 og 2015, mistet mange i oljebransjen jobben."
+        },
+        {
+            "type": "text",
+            "content": "Mot slutten av 2019 var ledigheten i Rogaland tilbake på samme nivå som før oljeprisen falt. Men andelen som hadde jobb, hadde ikke kommet tilbake (Ellingsen & Galaasen, 2021). Hvordan kan det henge sammen? Svaret er at noen av dem som mistet jobben, sluttet å lete. Da teller de ikke lenger som arbeidsledige, men de har heller ikke jobb."
+        },
+        {
+            "type": "header",
+            "text": "Hva gjør Nav?"
+        },
+        {
+            "type": "text",
+            "content": "Nav er etaten som hjelper folk som står uten jobb. Har du mistet jobben, kan du få dagpenger. Det er penger fra staten mens du leter etter ny jobb. For å få dagpenger må du blant annet ha mistet minst halvparten av arbeidstiden din, og du må ha tjent minst 204 824 kroner det siste året (Nav, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Dagpengene er 62,4 prosent av det du tjente før (Nav, 2026). Du får altså mindre enn lønnen din, og det er med vilje. Pengene skal hjelpe deg gjennom en vanskelig tid, men det skal fortsatt lønne seg å komme i jobb. Du må også melde deg som jobbsøker og sende et meldekort til Nav hver 14. dag, der du forteller hva du har gjort (Nav, 2026). I tillegg har Nav kurs og andre tiltak som skal hjelpe folk tilbake i arbeid (Stokke mfl., 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor er det så viktig å komme raskt i jobb?"
+        },
+        {
+            "type": "text",
+            "content": "Å miste jobben handler om mer enn penger. En jobb gir mange folk venner, en grunn til å stå opp om morgenen, og en følelse av å være til nytte. Forskere i Norges Bank har sett på hva som skjedde med folk etter oljekrisen. De fant at det å miste jobben kan gi lavere inntekt og mindre sjanse for å ha jobb i mange år etterpå, kanskje for alltid (Ellingsen & Galaasen, 2021)."
+        },
+        {
+            "type": "text",
+            "content": "De som ble hardest rammet, var folk som hadde lav inntekt og lite fast arbeid fra før. Mange av dem mistet jobben, fant ikke noe nytt der de bodde, og falt til slutt helt ut av arbeidslivet (Ellingsen & Galaasen, 2021). Folk med jobb i det offentlige, som lærere og sykepleiere, ble lite berørt (Ellingsen & Galaasen, 2021). Derfor er det et mål å hjelpe folk tilbake i jobb før de gir opp."
+        },
+        {
+            "type": "header",
+            "text": "Et blikk bakover"
+        },
+        {
+            "type": "text",
+            "content": "Arbeidsledighet er ikke noe nytt. Under den store krisen på 1930-tallet var det svært mange som sto uten jobb. I 1933 var hele 33,4 prosent av medlemmene i fagforeningene i Norge uten arbeid. Det er én av tre (Stokke mfl., 2026). Du kan lese om hvordan krisen startet i artikkelen om [det store krakket](/historie/mellomkrigstiden/borskrakk)."
+        },
+        {
+            "type": "text",
+            "content": "Fra 1965 til 1976 var ledigheten i Norge svært lav, mellom 0,6 og 1,4 prosent i året (Stokke mfl., 2026). Våren 2020 kom en ny type sjokk. Under [koronapandemien](/historie/norge-i-moderne-tid/koronapandemien) stengte mange arbeidsplasser, og svært mange ble permittert. Å være permittert betyr at du er sendt hjem fra jobben for en periode, men at du ikke har mistet den for godt. Nav teller permitterte som ledige fra første dag, mens SSB regner dem som om de har jobb de første tre månedene. Derfor skjøt Nav-tallet i været, mens SSB-tallet holdt seg ganske stabilt (Horgen, 2026)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom på jobbintervju i et lyst kontor",
+            "caption": "Å komme raskt i jobb igjen er viktig, både for den som er ledig og for samfunnet."
+        },
+        {
+            "type": "header",
+            "text": "Oppsummering"
+        },
+        {
+            "type": "text",
+            "content": "Du er arbeidsledig hvis du er uten jobb og aktivt leter etter en. I Norge måles ledigheten på to måter: Nav teller dem som melder seg, mens SSB spør et utvalg av befolkningen. Folk kan bli ledige fordi de er mellom to jobber, fordi jobben bare finnes deler av året, fordi det er nedgangstider, eller fordi jobben deres har forsvunnet. Mises la til at regler som tvinger lønna over markedsnivået, også kan holde folk utenfor. Lærebøkene sier ofte at lavere rente hjelper mot nedgangstider. Den østerrikske skolen mener at nedgangstidene er regningen for en tid da lånene var for billige, og at lavere rente bare starter en ny boble. Oljekrisen viser at det å miste jobben kan få følger i mange år, og derfor er det viktig at folk raskt kommer tilbake i arbeid."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Ellingsen, N. & Galaasen, S. M. (2021). *Langvarige konsekvenser i arbeidsmarkedet* (Staff Memo nr. 1/2021). Norges Bank. [norges-bank.no](https://www.norges-bank.no/contentassets/3a517c60b8c1456bb3d01fb7912e1f28/sm_staff-memo-2021-1.pdf)",
+                    "Hayek, F. A. (2008). *Prices and production*. I *Prices and production and other works*. Ludwig von Mises Institute. (Opprinnelig utgitt 1931) [mises.org](https://mises.org/library/book/prices-and-production-and-other-works)",
+                    "Horgen, E. & Røv, V. (2026). *Arbeidsledigheten på 4,6 prosent i september*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/arbeid-og-lonn/sysselsetting/statistikk/arbeidskraftundersokelsen/artikler/arbeidsledigheten-pa-4-6-prosent-i-september)",
+                    "Horgen, E. H. (2026). *Hvorfor ulike arbeidsledighetstall?* Statistisk sentralbyrå. Hentet 26.10.2026 fra [ssb.no](https://www.ssb.no/arbeid-og-lonn/sysselsetting/artikler/hvorfor-ulike-arbeidsledighetstall)",
+                    "Mises, L. von (1998). *Human action: A treatise on economics* (Scholar's ed.), kap. XXI.4. Ludwig von Mises Institute. (Opprinnelig utgitt 1949) [mises.org](https://mises.org/online-book/human-action/chapter-xxi-work-and-wages/4-catallactic-unemployment)",
+                    "Nav. (2026). *Dagpenger*. Hentet 26.10.2026 fra [nav.no/dagpenger](https://www.nav.no/dagpenger)",
+                    "Stokke, T. A., Stoltz, G., Barth, E. & Falch, T. (2026). *Arbeidsledighet*. Store norske leksikon. Hentet 26.10.2026 fra [snl.no/arbeidsledighet](https://snl.no/arbeidsledighet)"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva skal til for at en person regnes som arbeidsledig?",
+                    "Hvilke to måter måles arbeidsledigheten på i Norge, og hvem står bak hver av dem?",
+                    "Nevn de fire typene arbeidsledighet som Store norske leksikon beskriver, og den grunnen Ludwig von Mises la til.",
+                    "Hvor stor del av lønnen sin får en person i dagpenger fra Nav?"
+                ],
+                "reflekter": [
+                    "Forklar hvorfor tallet fra SSB som regel er høyere enn tallet fra Nav.",
+                    "Lærebøkene sier at lavere rente hjelper mot nedgangstider. Hvorfor mener den østerrikske skolen at det bare gjør den neste krisen verre?",
+                    "Hvorfor hjelper ikke lavere rente en person som har mistet jobben til et dataprogram? Hva hjelper i stedet?",
+                    "Etter oljekrisen gikk ledigheten i Rogaland ned igjen, men andelen som hadde jobb, kom ikke tilbake. Forklar hvordan det kan henge sammen.",
+                    "Dagpengene er lavere enn lønnen man hadde. Er det rettferdig? Begrunn svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Finn det nyeste tallet for arbeidsledighet på ssb.no eller nav.no. Har ledigheten gått opp eller ned siden september 2026? Skriv et kort avsnitt om hva du fant.",
+                    "Diskuter i klassen: Hvilke jobber tror dere vil forsvinne de neste tjue årene, og hvilke nye jobber kan komme? Hva betyr det for valget av utdanning?",
+                    "Tenk deg at du er ordfører på et sted der den største fabrikken legges ned. Skriv en plan med tre tiltak som kan hjelpe de som mister jobben."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvem regnes som arbeidsledig?",
+                        "options": [
+                            "Alle som ikke har jobb",
+                            "En pensjonist som ikke jobber",
+                            "En person uten jobb som aktivt leter etter arbeid",
+                            "En person som er syk og ikke kan jobbe"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Du er arbeidsledig hvis du er uten jobb og aktivt leter etter en. Pensjonister og syke regnes ikke som ledige."
+                    },
+                    {
+                        "question": "Hvorfor er arbeidsledigheten høyere i SSBs tall enn i Navs tall?",
+                        "options": [
+                            "Fordi SSB regner med pensjonister",
+                            "Fordi mange ledige, særlig unge og studenter, ikke melder seg hos Nav",
+                            "Fordi Nav bare teller folk i Oslo",
+                            "Fordi SSB teller alle som har deltidsjobb"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Mange unge og studenter har ikke rett til penger fra Nav og melder seg derfor ikke. SSBs undersøkelse fanger dem opp."
+                    },
+                    {
+                        "question": "Sara mister jobben fordi et dataprogram nå gjør arbeidet hennes. Hvilken type ledighet er dette?",
+                        "options": [
+                            "Friksjonsledighet",
+                            "Sesongledighet",
+                            "Konjunkturledighet",
+                            "Strukturledighet"
+                        ],
+                        "correctAnswer": 3,
+                        "explanation": "Når det du kan ikke lenger passer med det arbeidsgiverne trenger, for eksempel på grunn av ny teknologi, kalles det strukturledighet."
+                    },
+                    {
+                        "question": "Hva mener den østerrikske skolen er årsaken til nedgangstider og konjunkturledighet?",
+                        "options": [
+                            "At folk er for gjerrige",
+                            "Feilinvesteringer fra en tid da renten var for lav",
+                            "At det finnes for mange ledige jobber",
+                            "At folk tar for mye utdanning"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Da renten var lavere enn i et fritt marked, startet bedrifter prosjekter som bare lønte seg med billige lån. Når renten stiger, viser det seg at kundene ikke var der."
+                    },
+                    {
+                        "question": "Hva skjedde med ledigheten i Rogaland etter at oljeprisen falt i 2014?",
+                        "options": [
+                            "Den gikk ned",
+                            "Den steg og nådde en topp på 4,5 prosent i 2016",
+                            "Den ble uendret",
+                            "Den steg til over 30 prosent"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Ledigheten i Rogaland steg kraftig og nådde en topp på 4,5 prosent i 2016."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

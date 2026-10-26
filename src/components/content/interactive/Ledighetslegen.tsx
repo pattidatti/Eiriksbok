@@ -33,13 +33,13 @@ interface Person {
 }
 
 const ARSAKER: Valg[] = [
-    { id: 'konjunktur', tekst: 'Nedgangstider: folk kjøper mindre' },
+    { id: 'konjunktur', tekst: 'Nedgangstider etter en tid med billige lån' },
     { id: 'struktur', tekst: 'Jobben finnes ikke lenger' },
     { id: 'friksjon', tekst: 'Mellom to jobber' },
 ];
 
 const MEDISINER: Valg[] = [
-    { id: 'konjunktur', tekst: 'Lavere rente og flere oppdrag fra staten' },
+    { id: 'konjunktur', tekst: 'La lønn og priser tilpasse seg, uten nye billige lån' },
     { id: 'struktur', tekst: 'Kurs og ny utdanning' },
     { id: 'friksjon', tekst: 'Oversikt over ledige jobber og hjelp til å søke' },
 ];
@@ -55,17 +55,17 @@ const PERSONER: Person[] = [
         navn: 'Ali, 45 år',
         emoji: '🛋️',
         historie:
-            'Ali lager sofaer på en møbelfabrikk. Det er dårlige tider, og folk har mindre penger. De kjøper færre sofaer, og fabrikken sier opp 30 av de ansatte.',
+            'Ali lager sofaer på en møbelfabrikk. Da renten var lav, lånte folk mye og kjøpte nye hjem og møbler, og fabrikken bygde ut. Nå har renten steget. Folk kjøper færre sofaer, og fabrikken sier opp 30 av de ansatte.',
         arsak: 'konjunktur',
         arsakForklaring:
-            'Ali kan jobben sin, og sofaer trengs fortsatt. Problemet er at folk kjøper mindre akkurat nå. Det kalles konjunkturledighet.',
+            'Ali kan jobben sin. Problemet er at fabrikken vokste mens lånene var billige, og nå viser det seg at det ikke er nok kunder til alle sofaene. Det kalles konjunkturledighet.',
         medisinForklaring: {
             konjunktur:
-                'Riktig! Lavere rente gir folk mer penger å bruke. Når de kjøper sofaer igjen, trenger fabrikken Ali tilbake.',
+                'Riktig, sett med østerrikske briller! Nye billige lån ville bare blåst opp en ny boble. Når lønn og priser får tilpasse seg, flytter folk og penger dit kundene faktisk er, og Ali finner ny jobb der.',
             struktur:
-                'Ali trenger ikke lære noe nytt. Han kan jobben. Det fabrikken mangler, er kunder.',
+                'Ali kan jobben sin, og det trengs fortsatt sofaer. Det er ikke faget hans som er problemet, men at fabrikken ble for stor mens lånene var billige.',
             friksjon:
-                'En jobbliste hjelper lite når nesten ingen bedrifter ansetter. Det er for få jobber, ikke for lite informasjon.',
+                'En jobbliste hjelper litt, men først må økonomien rydde opp etter oppgangen. Jobbene må flytte dit kundene faktisk er.',
         },
     },
     {
@@ -78,7 +78,7 @@ const PERSONER: Person[] = [
             'Det går fint med firmaet. Men jobben til Sara er borte for godt, fordi en maskin gjør den. Det kalles strukturledighet.',
         medisinForklaring: {
             konjunktur:
-                'Lavere rente får ikke jobben tilbake. Dataprogrammet gjør den fortsatt, uansett hvor mye folk handler.',
+                'Billige lån får ikke jobben tilbake. Dataprogrammet gjør den fortsatt, uansett hvor mye folk handler.',
             struktur:
                 'Riktig! Sara må lære noe nytt som arbeidsgiverne trenger. Kurs og ny utdanning er veien til en ny jobb.',
             friksjon:
@@ -95,7 +95,7 @@ const PERSONER: Person[] = [
             'Det finnes jobber, og Jonas kan faget. Det tar bare litt tid å finne hverandre. Det kalles friksjonsledighet.',
         medisinForklaring: {
             konjunktur:
-                'Det er ikke mangel på jobber i byen. Lavere rente løser ikke problemet til Jonas.',
+                'Det er ikke mangel på jobber i byen. Lønn, priser og renter er ikke problemet til Jonas.',
             struktur: 'Jonas har akkurat tatt utdanningen sin. Han trenger ikke en ny.',
             friksjon:
                 'Riktig! Når Jonas lett finner de ledige jobbene og får hjelp til å søke, blir ventetiden kortere.',
