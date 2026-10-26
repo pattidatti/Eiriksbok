@@ -60,7 +60,7 @@
         },
         {
             "type": "text",
-            "content": "Mange lærebøker måler konkurranse mot en modell som kalles fullkommen konkurranse. I modellen er det mange kjøpere og mange selgere, alle selger nøyaktig samme vare, alle vet alle prisene, og hvem som helst kan starte opp eller legge ned (Idsø mfl., 2025). Jo nærmere et marked er denne modellen, jo bedre er det, sier læreboka."
+            "content": "Mange lærebøker måler konkurranse mot en modell som kalles fullkommen konkurranse. I modellen er det mange kjøpere og mange selgere, alle selger nøyaktig samme vare, alle vet alle prisene, og hvem som helst kan starte opp eller legge ned (Idsø mfl., 2025). Lærebøkene bruker modellen som et mål å sammenligne virkelige markeder med (Idsø mfl., 2025)."
         },
         {
             "type": "text",
@@ -93,7 +93,7 @@
         },
         {
             "type": "text",
-            "content": "Tilsynet pekte på tollen og reglene for landbruket som to av hovedgrunnene til at det er så få store matprodusenter i Norge, færre enn i nabolandene. Tollen gjør det også vanskeligere for utenlandske kjeder å bruke at de kjøper inn billig i store mengder (Konkurransetilsynet, 2018). Med andre ord: En del av muren rundt de tre kjedene er bygget av staten. Du kan lese mer om hvorfor toll gjør begge sider av en handel fattigere, i artikkelen om [komparative fortrinn](/samfunnskunnskap/okonomi/komparativt-fortrinn)."
+            "content": "Tilsynet pekte på tollen og reglene for landbruket som vesentlige årsaker til at produksjonen av mat i Norge er samlet på færre hender enn i nabolandene. Tollen gjør det også vanskeligere for utenlandske kjeder å bruke at de kjøper inn billig i store mengder (Konkurransetilsynet, 2018). Med andre ord: En del av muren rundt de tre kjedene er bygget av staten. Du kan lese mer om hvorfor toll gjør begge sider av en handel fattigere, i artikkelen om [komparative fortrinn](/samfunnskunnskap/okonomi/komparativt-fortrinn)."
         },
         {
             "type": "header",
@@ -105,7 +105,7 @@
         },
         {
             "type": "text",
-            "content": "Konkurransetilsynet mente at dette gjorde konkurransen svakere. Når hver kjede ser raskt hva de andre gjør, er det lite å vinne på å sette ned prisen, for de andre følger etter med en gang. I august 2024 fikk Coop, NorgesGruppen og Rema 1000 til sammen 4,9 milliarder kroner i bot, og i august 2025 ga Konkurranseklagenemnda tilsynet medhold (Konkurransetilsynet, 2025)."
+            "content": "Konkurransetilsynet mente at dette gjorde konkurransen svakere. Når hver kjede ser raskt hva de andre gjør, er det lite å vinne på å sette ned prisen, for de andre følger etter med en gang. I august 2024 fikk Coop, NorgesGruppen og Rema 1000 til sammen 4,9 milliarder kroner i bot, og i august 2025 ga Konkurranseklagenemnda, som behandler klager på tilsynet, tilsynet medhold (Konkurransetilsynet, 2025)."
         },
         {
             "type": "text",
@@ -279,7 +279,7 @@
                         "explanation": "Kjedene saksøkte staten i november 2025. Saken går i Gulating lagmannsrett fra 12. oktober til 14. desember 2026."
                     },
                     {
-                        "question": "Hvilken grunn til at få kjeder dominerer, pekte Konkurransetilsynet selv på i 2018?",
+                        "question": "Hva skrev Konkurransetilsynet selv i 2018 om hva som skjermer norsk dagligvare mot konkurranse fra utlandet?",
                         "options": [
                             "At nordmenn ikke liker å bytte butikk",
                             "Høy toll på mat og reglene for landbruket",
@@ -287,7 +287,7 @@
                             "At kjedene har for lite reklame"
                         ],
                         "correctAnswer": 1,
-                        "explanation": "Tilsynet skrev at 29 prosent av dagligvaresalget er beskyttet av høy toll, og at tollen og landbruksreglene er hovedgrunner til at det er få store matprodusenter."
+                        "explanation": "Tilsynet skrev at 29 prosent av dagligvaresalget er beskyttet av høy toll, og at tollen og landbruksreglene er vesentlige årsaker til at matproduksjonen er samlet på få hender."
                     },
                     {
                         "question": "Hva fant Thomas DiLorenzo ut om de naturlige monopolene i amerikanske byer?",

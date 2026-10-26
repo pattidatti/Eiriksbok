@@ -17,7 +17,7 @@
         "friedman"
     ],
     "details": [
-        "Klassisk og østerriksk skole mener markedet koordinerer seg selv",
+        "Østerriksk skole mener markedet ordner seg selv gjennom prisene",
         "Keynesianere mener staten må gripe inn i kriser",
         "Monetarister mener pengemengden er det avgjørende styringsverktøyet",
         "Post-keynesianere fokuserer på finansiell ustabilitet og ulikhet"
@@ -28,7 +28,7 @@
         {
             "id": "oesterriksk-skole",
             "term": "Østerriksk skole",
-            "aliases": ["østerrikske økonomer", "østerriksk økonomi", "klassisk skole"],
+            "aliases": ["østerrikske økonomer", "østerriksk økonomi"],
             "definition": "Økonomiretning som mener markedet koordinerer seg selv gjennom prissignaler, og at statlige inngrep - særlig i renten - skaper feilinvesteringer og kriser."
         },
         {
@@ -161,12 +161,12 @@
             "name": "FactBox",
             "props": {
                 "title": "De fire store skolene",
-                "content": "Østerriksk/klassisk: markedet ordner opp selv, statlige inngrep skaper kriser. Keynesiansk: markedet kan svikte alvorlig, staten må gripe inn. Monetarisme: styr pengemengden stabilt, resten ordner seg. Post-keynesiansk: finanssektoren skaper ustabilitet, ulikhet er et strukturproblem."
+                "content": "Østerriksk: markedet ordner opp selv, statlige inngrep skaper kriser. Keynesiansk: markedet kan svikte alvorlig, staten må gripe inn. Monetarisme: styr pengemengden stabilt, resten ordner seg. Post-keynesiansk: finanssektoren skaper ustabilitet, ulikhet er et strukturproblem."
             }
         },
         {
             "type": "header",
-            "content": "1. Klassisk og østerriksk skole"
+            "content": "1. Østerriksk skole"
         },
         {
             "type": "text",
@@ -178,8 +178,8 @@
         },
         {
             "type": "quote",
-            "content": "Å tro at sentralplanleggere kan sette en bedre rente enn markedet er å tro at noen få mennesker vet mer enn alle de millionene som sparer og låner.",
-            "author": "Basert på Friedrich Hayek",
+            "content": "Den kunnskapen vi må bruke, finnes aldri samlet på ett sted, men bare som spredte biter av ufullstendig og ofte motstridende kunnskap som hvert enkelt menneske har.",
+            "author": "Friedrich Hayek (oversatt)",
             "source": "The Use of Knowledge in Society (1945)"
         },
         {
@@ -331,7 +331,7 @@
         },
         {
             "type": "text",
-            "content": "Både artiklene i denne boka og Økonomi-Verden bygger på den østerrikske skolen. Det betyr at for lav rente bygger bobler, at et fritt marked retter opp feil over tid, og at pengetrykking fører til inflasjon. Vi har valgt den fordi den forklarer både oppgangen og krakket. Østerrikerne mener at de andre skolene forklarer hvorfor krisen kom, men ikke hvorfor det gikk så bra rett før."
+            "content": "Både artiklene i denne boka og Økonomi-Verden bygger på den østerrikske skolen. Det betyr at for lav rente bygger bobler, at et fritt marked retter opp feil over tid, og at pengetrykking fører til inflasjon. Vi har valgt den fordi den forklarer både oppgangen og krakket."
         },
         {
             "type": "text",
@@ -339,7 +339,7 @@
         },
         {
             "type": "text",
-            "content": "Den østerrikske skolen har svar. Murray Rothbard mente at krisen på 1930-tallet ble så lang nettopp fordi staten grep inn. I USA presset president Herbert Hoover bedriftene til å holde lønningene oppe mens prisene falt, og da ble det dyrere å ansette folk (Rothbard, 1963/2000). Til monetaristene sier østerrikerne at det ikke bare er mengden nye penger som betyr noe, men hvor de havner først."
+            "content": "Den østerrikske skolen har svar. Murray Rothbard mente at krisen på 1930-tallet ble så lang nettopp fordi staten grep inn. I USA presset president Herbert Hoover bedriftene til å holde lønningene oppe mens prisene falt, og da ble det dyrere å ansette folk (Rothbard, 1963/2000). Til monetaristene sier østerrikerne at det ikke bare er mengden nye penger som betyr noe, men hvor de havner først. Og til post-keynesianerne: Boblene i finanssektoren vokser fordi sentralbanken holder renten for lav og bankene kan lage nye penger. Problemet er den billige kreditten, ikke markedet."
         },
         {
             "type": "text",

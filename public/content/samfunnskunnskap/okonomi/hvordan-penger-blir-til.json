@@ -148,7 +148,7 @@
     },
     {
       "type": "text",
-      "content": "Legg merke til hva dette målet betyr. Stiger prisene med 2 prosent i året, er pengene dine bare verdt halvparten etter om lag 35 år. Økonomer i den østerrikske skolen mener at det er rart å kalle dette stabil pengeverdi. Pengene blir mindre verdt hvert år, med vilje (Rothbard, 1963/2010)."
+      "content": "Legg merke til hva dette målet betyr. Stiger prisene med 2 prosent i året, er pengene dine bare verdt halvparten etter om lag 35 år. Rothbard skrev før Norge fikk et slikt mål, men han mente at inflasjon betyr at pengene blir gjort mindre verdt (Rothbard, 1963/2010). Med det synet er det rart å kalle 2 prosent i året for stabil pengeverdi."
     },
     {
       "type": "header",
@@ -176,7 +176,7 @@
         "En bank låner ikke ut andres innskudd. Den skriver et innskudd og et gjeldsbrev samtidig.",
         "Betaler du ned lånet, slettes pengene igjen.",
         "Lønnsomhet, kredittrisiko og likviditetsrisiko begrenser hvor mye bankene kan lage.",
-        "Norges Bank styrer helheten med styringsrenta, med et mål om rundt 2 prosent prisvekst."
+        "Norges Bank styrer helheten med styringsrenta, med et mål om rundt 2 prosent prisvekst. Den østerrikske skolen mener at nye penger fra billige lån presser renten for lavt og skaper feilinvesteringer."
       ]
     },
     {
@@ -316,7 +316,7 @@
         "fiatpenge",
         "fiat-penger"
       ],
-      "definition": "Penger som ikke kan byttes inn i gull eller sølv. De er verdt noe fordi vi stoler på at andre godtar dem, og fordi sentralbanken holder verdien stabil."
+      "definition": "Penger som ikke kan byttes inn i gull eller sølv. De er verdt noe fordi vi stoler på at andre godtar dem, og fordi sentralbanken bestemmer hvor raskt det lages nye."
     }
   ],
   "quiz": [

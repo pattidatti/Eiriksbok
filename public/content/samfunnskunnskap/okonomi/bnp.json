@@ -49,7 +49,7 @@
         },
         {
             "type": "text",
-            "content": "Trikset har en bakside. Når vi trekker fra alt bedriftene kjøper av hverandre, forsvinner bonden og mølla ut av tallet. Økonomer i den østerrikske skolen er opptatt av nettopp disse leddene, altså alle omveiene en vare går før den når deg. Den amerikanske økonomen Mark Skousen mente derfor at BNP gir et skjevt bilde. Det ser ut som om økonomien mest handler om det vi kjøper i butikken. Men bedriftene bruker mer penger på å kjøpe av hverandre i leddene før, enn vi bruker i butikken (Skousen, 1990; Gross output, 2026). Siden 2014 har statistikkbyrået i USA også regnet ut et tall der alle leddene er med (Gross output, 2026)."
+            "content": "Trikset har en bakside. Når vi trekker fra alt bedriftene kjøper av hverandre, forsvinner bonden og mølla ut av tallet. Økonomer i den østerrikske skolen er opptatt av nettopp disse leddene, altså alle omveiene en vare går før den når deg. Den amerikanske økonomen Mark Skousen mente derfor at BNP gir et skjevt bilde. Det ser ut som om økonomien mest handler om det vi kjøper i butikken. Men bedriftene bruker mer penger på å kjøpe av hverandre i leddene før, enn vi bruker i butikken (Skousen, 1990; Gross output, 2026). Siden 2014 regner statistikkbyrået i USA ut et slikt tall hvert kvartal, der mange av leddene er med (Gross output, 2026)."
         },
         {
             "type": "text",
@@ -89,7 +89,7 @@
         },
         {
             "type": "text",
-            "content": "Legg merke til at offentlige tjenester telles etter hva de koster, ikke etter hva noen ville betalt for dem. Den amerikanske økonomen Murray Rothbard mente at dette er en svakhet. Når du kjøper en sykkel, vet vi at du synes den er verdt prisen, for du betaler frivillig. Offentlige tjenester betales med skatt, og da vet ingen hva folk ville betalt. Bruker staten mer penger, vokser BNP av seg selv, enten pengene ble brukt godt eller dårlig (Rothbard, 1962/2009)."
+            "content": "Legg merke til at offentlige tjenester telles etter hva de koster, ikke etter hva noen ville betalt for dem. Den amerikanske økonomen Murray Rothbard mente at det er feil å regne dem som produksjon i det hele tatt. Når du kjøper en sykkel, vet vi at du synes den er verdt prisen, for du betaler frivillig. Offentlige tjenester betales med skatt, og da vet ingen hva folk ville betalt. Bruker staten mer penger, vokser BNP av seg selv, enten pengene ble brukt godt eller dårlig. Rothbard ville derfor trekke statens utgifter fra, for å se hva som var igjen av det private folk faktisk lager (Rothbard, 1970/2009)."
         },
         {
             "type": "text",
@@ -110,7 +110,7 @@
         },
         {
             "type": "text",
-            "content": "Brannen er akkurat det samme. BNP teller arbeidet med å slukke og bygge opp igjen, men huset som brant, blir aldri trukket fra. Det er derfor tallet heter brutto. Et land kan få høyere BNP samtidig som det blir fattigere."
+            "content": "Brannen er akkurat det samme. BNP teller arbeidet med å slukke og bygge opp igjen, men huset som brant, blir aldri trukket fra. BNP måler bare hva som lages i løpet av året, ikke hva vi eier, så tapet blir usynlig i tallet. Et land kan få høyere BNP samtidig som det blir fattigere."
         },
         {
             "type": "header",
@@ -182,7 +182,7 @@
                     "Gross output. (2026). I *Wikipedia*. Hentet 26.10.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Gross_output)",
                     "Husby, T. B., Eggen, Ø. & Skatvik, F. (2024). *Human Development Index*. Store norske leksikon. Hentet 25.10.2026 fra [snl.no/Human_Development_Index](https://snl.no/Human_Development_Index)",
                     "Reiakvam, J. & Skoglund, T. (2009). Ulønnet arbeid skaper store verdier. *Samfunnsspeilet*, (2). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/ulonnet-arbeid-skaper-store-verdier--30906)",
-                    "Rothbard, M. N. (2009). *Man, economy, and state with Power and market* (2. utg.), appendiks om offentlige utgifter i nasjonalregnskapet. Ludwig von Mises Institute. (Opprinnelig utgitt 1962) [mises.org](https://mises.org/online-book/man-economy-and-state-power-and-market/5-binary-intervention-government-expenditures/appendix-role-government-expenditures-national-product-statistics)",
+                    "Rothbard, M. N. (2009). *Power and market*, appendiks om offentlige utgifter i nasjonalregnskapet. I *Man, economy, and state with Power and market* (2. utg.). Ludwig von Mises Institute. (Opprinnelig utgitt 1970) [mises.org](https://mises.org/online-book/man-economy-and-state-power-and-market/5-binary-intervention-government-expenditures/appendix-role-government-expenditures-national-product-statistics)",
                     "Skoglund, T. (2004). *Kunnskapsbank for analyse av norsk økonomi*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/kunnskapsbank-for-analyse-av-norsk-okonomi)",
                     "Skousen, M. (1990). *The structure of production*. New York University Press.",
                     "Statistisk sentralbyrå [SSB]. (u.å.). *Norsk økonomi*. Hentet 25.10.2026 fra [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/faktaside/norsk-okonomi)",
@@ -204,7 +204,7 @@
                 "reflekter": [
                     "Forklar med egne ord hvorfor man ikke kan legge sammen prisen på kornet, melet og brødet når man regner ut BNP.",
                     "Hvorfor øker en husbrann BNP? Bruk Bastiats historie om den knuste ruta til å forklare hvorfor samfunnet likevel blir fattigere.",
-                    "Rothbard mente at offentlige tjenester ikke burde telles etter hva de koster. Forklar hvorfor, og si om du er enig.",
+                    "Rothbard mente at statens utgifter burde trekkes fra BNP, ikke legges til. Forklar hvorfor.",
                     "Qatar har nesten like høy inntekt per innbygger som Norge, men havner langt lavere på HDI-lista. Hva kan forklare det?",
                     "Husarbeid var med i regnestykket før 1952. Var det lurt å ta det ut? Begrunn svaret ditt."
                 ],

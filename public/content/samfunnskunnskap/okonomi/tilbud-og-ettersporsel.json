@@ -56,11 +56,11 @@
     },
     {
       "type": "text",
-      "content": "Økonomer har et navn på dette: avtagende marginalnytte. Det betyr at hver ekstra ting du får, som regel gir deg litt mindre glede enn den forrige (Stoltz & Andresen, 2025). Det første glasset vann en varm dag er gull verdt. Det tiende glasset vil du knapt ha. Fordi vi har så mye vann, betaler vi bare for det siste glasset, og det er ikke verdt stort."
+      "content": "Økonomer har et navn på dette: avtagende marginalnytte. Det betyr at hver ekstra ting du får, som regel gir deg litt mindre glede enn den forrige (Stoltz & Andresen, 2025). Det første glasset vann en varm dag er gull verdt. Det tiende glasset vil du knapt ha. Fordi vi har så mye vann, er det verdien av det siste glasset som bestemmer prisen, og det er ikke verdt stort."
     },
     {
       "type": "text",
-      "content": "En av dem som løste paradokset, var den østerrikske økonomen Carl Menger. I 1871 viste han at verdien ikke ligger i tingen selv, men i hvor viktig den neste biten er for den som skal bruke den. Det handler ikke om å måle glede i tall. Du rangerer det du ønsker deg: Det første glasset vann en varm dag står øverst på lista, det tiende står langt nede. Med denne tanken grunnla Menger den østerrikske skolen i økonomi, som denne boka bygger på (Menger, 1871/2007)."
+      "content": "En av dem som løste paradokset, var den østerrikske økonomen Carl Menger. I 1871 viste han at verdien ikke ligger i tingen selv, men i hvor viktig den neste biten er for den som skal bruke den. Senere østerrikere, som Ludwig von Mises og Murray Rothbard, la vekt på at det ikke handler om å måle glede i tall. Du rangerer det du ønsker deg: Det første glasset vann en varm dag står øverst på lista, det tiende står langt nede. Med denne tanken grunnla Menger den østerrikske skolen i økonomi, som denne boka bygger på (Menger, 1871/2007)."
     },
     {
       "type": "header",
@@ -188,7 +188,7 @@
     },
     {
       "type": "text",
-      "content": "Prisen på en vare blir til der de som vil kjøpe, møter dem som vil selge. Etterspørselen faller når prisen stiger, og tilbudet øker når prisen stiger. Der de to møtes, finner vi likevektsprisen. Når noe skjer, som en god høst, en haglbyge, en hetebølge eller en energikrise, flytter likevekten seg. Derfor er vann billig og diamanter dyre: Det handler ikke om hvor nyttig noe er, men om hvor sjeldent det er og hvor mange som vil ha det. Neste gang du ser en pris gå opp eller ned, kan du spørre deg selv: Var det tilbudet eller etterspørselen som endret seg? Vil du vite hvorfor nesten alle priser stiger litt hvert år, kan du lese om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+      "content": "Prisen på en vare blir til der de som vil kjøpe, møter dem som vil selge. Etterspørselen faller når prisen stiger, og tilbudet øker når prisen stiger. Der de to møtes, finner vi likevektsprisen. Når noe skjer, som en god høst, en haglbyge, en hetebølge eller en energikrise, flytter likevekten seg. Derfor er vann billig og diamanter dyre: Det handler ikke om hvor nyttig noe er, men om hvor sjeldent det er og hvor mange som vil ha det. Prisen er et signal som samler kunnskap ingen enkeltperson har, og derfor mener den østerrikske skolen at staten bør la prisene være i fred. Neste gang du ser en pris gå opp eller ned, kan du spørre deg selv: Var det tilbudet eller etterspørselen som endret seg? Vil du vite hvorfor nesten alle priser stiger litt hvert år, kan du lese om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
     },
     {
       "type": "component",
@@ -257,7 +257,7 @@
               "Prisen selgeren helst vil ha"
             ],
             "correctAnswer": 2,
-            "explanation": "Likevektsprisen er der tilbud og etterspørsel møtes. Da blir alt solgt, og ingen kjøpere går tomhendte hjem."
+            "explanation": "Likevektsprisen er der tilbud og etterspørsel møtes, og like mye blir kjøpt som solgt. Bonden finner den ved å prøve seg fram."
           },
           {
             "question": "Alle jordbærbøndene høster på en gang rundt sankthans. Hva skjer med prisen?",
