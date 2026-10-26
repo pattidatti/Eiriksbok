@@ -3,7 +3,18 @@
 **Omfang:** alle 15 artikler i `public/content/samfunnskunnskap/okonomi/` + filmene
 `src/features/film/manus/samfunnskunnskap/okonomi/{monopol-og-konkurranse,bnp}.json`
 **Undersøkt:** 26. oktober 2026
-**Status:** PLAN, godkjent i hovedtrekk 26.10.2026 — innholdet er ikke endret ennå.
+**Status:** ANVENDT 26.10.2026. Dokumentet står igjen som begrunnelse og kildegrunnlag.
+
+> Gjennomført: alle punkter i feillista (M1–M7, A1–A2, B1–B5, T1–T3, P1–P2, MI1, K1–K2),
+> steg 6b (`okonomiske-skoler`) og steg 7 (stilguide §6 + `plan_article.md`). Monopolfilmen
+> har fått nytt manus og ny visual (`MonopolGass` erstatter `MonopolVann`, nye moduser `forbud`
+> og `toll`); BNP-filmen er redigert. Tre interaktive komponenter er justert i samme linje:
+> `Kioskkampen`, `Ledighetslegen` og `BnpMaaleren`.
+>
+> Ikke gjort i skyøkten: `shots-film` (Chromium kunne ikke lastes ned), så kontaktarkene for de
+> to filmene er ikke sett. `vurdering` er fjernet fra begge manusene til de er vurdert på nytt.
+> Prisjegersaken: følg med på dom fra Gulating lagmannsrett etter 14.12.2026 og oppdater
+> artikkel, film og quiz.
 
 ---
 
