@@ -1,257 +1,294 @@
 {
-  "id": "bnp",
-  "title": "BNP: Hva er et land verdt?",
-  "layout": "rich",
-  "year": "Fra 1952 til i dag",
-  "category": "Økonomi",
-  "readTime": "10 min lesning",
-  "heroImage": "/images/okonomi/bnp-hero.webp",
-  "details": [
-    "BNP er verdien av alle varer og tjenester et land lager på ett år. I Norge regner SSB det ut.",
-    "BNP teller det som blir betalt for. Husarbeid, barnepass i familien og dugnad er usynlig, mens en husbrann øker BNP.",
-    "FN bruker også HDI, som måler levealder, utdanning og inntekt. Et rikt land er ikke alltid best på alt."
-  ],
-  "externalUrl": "https://snl.no/bruttonasjonalprodukt",
-  "factChecked": "2026-10-25",
-  "tags": [
-    "økonomi",
-    "bnp",
-    "velferd",
-    "levekår",
-    "hdi"
-  ],
-  "content": [
-    {
-      "type": "text",
-      "content": "Det er lørdag, og naboen spør om du kan klippe plenen hennes. Du bruker en time, og hun gir deg 200 kroner. Gratulerer: Du har akkurat gjort Norge litt rikere, i hvert fall på papiret. Uken etter klipper du plenen hjemme. Du bruker like lang tid, og plenen blir like fin. Men denne gangen får du ikke betalt. Og da har du, ifølge tallene, ikke bidratt med noe som helst."
-    },
-    {
-      "type": "text",
-      "content": "Det høres rart ut. Men det er slik et av de viktigste tallene i økonomien fungerer. Tallet heter BNP, og politikere, journalister og økonomer bruker det hele tiden for å si hvor godt det går med et land. I denne artikkelen skal du finne ut hva BNP måler, hvorfor det er nyttig, og hva det ikke får med seg."
-    },
-    {
-      "type": "image",
-      "src": "/images/placeholder.webp",
-      "alt": "Ungdom klipper en plen i en norsk hage",
-      "caption": "Klipper du naboens plen for penger, teller det i BNP. Klipper du din egen, gjør det ikke."
-    },
-    {
-      "type": "header",
-      "text": "Hva er BNP?"
-    },
-    {
-      "type": "text",
-      "content": "BNP er en forkortelse for bruttonasjonalprodukt. Det er verdien av alt et land lager av varer og tjenester i løpet av ett år. En vare er noe du kan ta på, som en sykkel eller et brød. En tjeneste er noe noen gjør for deg, som en hårklipp eller en busstur. Store norske leksikon forklarer BNP enkelt: Det er den samlede produksjonen i et land (Thøgersen, 2025)."
-    },
-    {
-      "type": "text",
-      "content": "Det er ett triks i utregningen. Tenk på et brød. Bonden dyrker kornet, mølla lager mel, og bakeren baker brødet. Hvis vi la sammen prisen på kornet, melet og brødet, ville vi telt det samme kornet tre ganger. Derfor trekker man fra det bedriftene kjøper av hverandre underveis. Det som blir igjen, er verdien av det som selges til den som faktisk bruker varen til slutt, altså deg (Thøgersen, 2025)."
-    },
-    {
-      "type": "text",
-      "content": "I Norge er det Statistisk sentralbyrå (SSB) som regner ut BNP. Det skjer i det som kalles nasjonalregnskapet, et slags regnskap for hele landet (Thøgersen, 2025). SSB beskriver BNP som et samlet mål på verdiskapingen i samfunnet, og skriver at tallet ofte brukes som et mål på hvor rikt et land er (Skoglund, 2004)."
-    },
-    {
-      "type": "header",
-      "text": "Når prisene stiger"
-    },
-    {
-      "type": "text",
-      "content": "Én ting kan lure oss. Hvis alle prisene i butikken går opp med ti prosent, ser det ut som om vi har laget mer, selv om vi har laget akkurat like mange brød. Derfor skiller økonomer mellom to typer BNP. Nominelt BNP regnes i dagens priser. Reelt BNP holder prisene fast, slik at vi bare ser om vi faktisk har laget mer (Thøgersen, 2025). Du kan lese mer om hvorfor prisene stiger i artikkelen om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
-    },
-    {
-      "type": "header",
-      "text": "BNP per innbygger"
-    },
-    {
-      "type": "text",
-      "content": "Et stort land med mange mennesker lager selvsagt mer enn et lite land. Derfor deler man ofte BNP på antall innbyggere. Da får man BNP per innbygger. Ifølge leksikonet er dette det beste tallet hvis vi vil vite hvor mye varer og tjenester hver person har tilgang til (Thøgersen, 2025)."
-    },
-    {
-      "type": "text",
-      "content": "For Norge var BNP per innbygger 932 583 kroner i 2024 (Statistisk sentralbyrå [SSB], u.å.). Det betyr ikke at hver nordmann tjente nesten en million kroner. Tallet er hele landets produksjon delt likt på alle, også på babyer og pensjonister. Når SSB tar hensyn til at ting koster mer i Norge enn i andre land, var BNP per innbygger 63 prosent høyere enn gjennomsnittet i EU (SSB, u.å.). Norge er altså et av de rikeste landene i verden, målt på denne måten."
-    },
-    {
-      "type": "header",
-      "text": "Hva teller, og hva teller ikke?"
-    },
-    {
-      "type": "text",
-      "content": "Nå tilbake til plenen. Regelen er at BNP i hovedsak teller det som blir betalt for. Det gjelder også offentlige tjenester, som skole og barnehage. De telles med etter hva det koster å drive dem (Thøgersen, 2025). Men en hel del arbeid blir ikke med. Det gjelder ulønnet arbeid, som husarbeid, barnepass i familien og frivillig arbeid i idrettslaget. Svart arbeid, som er arbeid folk skjuler for staten for å slippe skatt, kommer heller ikke med (Thøgersen, 2025)."
-    },
-    {
-      "type": "text",
-      "content": "Prøv selv. Hvilke av disse situasjonene får BNP til å stige?"
-    },
-    {
-      "type": "component",
-      "name": "BnpMaaleren",
-      "props": {}
-    },
-    {
-      "type": "text",
-      "content": "Husbrannen er den mest overraskende. Leksikonet bruker nettopp dette eksempelet: En brann øker BNP, fordi brannvesenet og helsepersonell rykker ut og får betalt for jobben. Likevel blir ingen gladere av at huset brenner (Thøgersen, 2025). BNP spør bare om det skjer noe som koster penger, ikke om det er bra for oss."
-    },
-    {
-      "type": "header",
-      "text": "Det usynlige arbeidet"
-    },
-    {
-      "type": "text",
-      "content": "Hvor mye er alt det ulønnede arbeidet verdt? SSB har prøvd å regne det ut. De så på hvor mye tid folk bruker på matlaging, vasking, barnepass og å fikse ting hjemme. Så ga de timene en pris, altså hva det ville kostet å betale en fagarbeider for å gjøre det samme. Resultatet var at husarbeidet i år 2000 var verdt rundt 24 prosent av BNP. Om lag 60 prosent av dette arbeidet ble gjort av kvinner (Reiakvam & Skoglund, 2009)."
-    },
-    {
-      "type": "text",
-      "content": "Husarbeidet var faktisk med i regnestykket en gang. Den norske statistikeren Anders Nicolai Kiær anslo i 1912 at kvinners ulønnede husarbeid var verdt 15 prosent av inntekten i landet. Under og etter andre verdenskrig ble husarbeidet regnet med, helt fram til 1949. Men FN laget felles regler i 1952, og der ble husarbeidet holdt utenfor. Grunnen var at alle land skulle regne likt, slik at tallene kunne sammenlignes (Reiakvam & Skoglund, 2009)."
-    },
-    {
-      "type": "image",
-      "src": "/images/placeholder.webp",
-      "alt": "Familie som lager middag sammen på et kjøkken",
-      "caption": "Matlaging, vasking og barnepass hjemme er mye arbeid. Men det blir ikke med i BNP."
-    },
-    {
-      "type": "header",
-      "text": "Rik på papiret, men har alle det godt?"
-    },
-    {
-      "type": "text",
-      "content": "Leksikonet mener at BNP er et dårlig mål på hvor godt folk har det. BNP sier ingenting om hvordan pengene er fordelt, hvor mye fritid folk har, om de er friske, eller om lufta er ren (Thøgersen, 2025). Tenk deg at alle i Norge måtte jobbe tolv timer hver dag. BNP ville trolig steget, men det er vanskelig å tro at livet ville blitt bedre (Thøgersen, 2025)."
-    },
-    {
-      "type": "text",
-      "content": "Derfor har FN laget et annet mål, som heter HDI. Det står for Human Development Index, eller indeks for menneskelig utvikling. HDI ser på tre ting: hvor lenge folk lever, hvor mye skole de får, og hvor mye penger de har. To økonomer, Mahbub ul Haq fra Pakistan og Amartya Sen fra India, utviklet målet, og FN har brukt det siden 1990 (Husby mfl., 2024). Du kan lese mer om HDI og forskjellene i verden i artikkelen om [levekår rundt om i verden](/samfunnskunnskap/demografi/km-6-levekaar-verden)."
-    },
-    {
-      "type": "text",
-      "content": "Når vi sammenligner listene, får vi noen overraskelser. I FNs rapport fra 2025 er Qatar et av landene i verden med høyest inntekt per innbygger, nesten like høy som Norge. Men på HDI-lista havner Qatar først på 43. plass. Der kommer Norge på 2. plass, rett bak Island (FNs utviklingsprogram [UNDP], 2025). Én grunn er skolen: En voksen i Qatar har i snitt gått 10,8 år på skole, mens en voksen i Norge har gått 13,1 år (UNDP, 2025). Penger alene gjør altså ikke at et land kommer høyt på lista."
-    },
-    {
-      "type": "header",
-      "text": "Et termometer, ikke en fasit"
-    },
-    {
-      "type": "text",
-      "content": "Betyr dette at BNP er ubrukelig? Nei. Leksikonet peker på at land med høyt BNP ofte også gjør det godt på andre måter. Folk lever lenger, flere kan lese, færre barn dør, og folk har mer fritid og bedre helse (Thøgersen, 2025). Et høyt BNP gir et land penger til sykehus, skoler og veier. Mange land med lavt BNP sliter med [fattigdom](/samfunnskunnskap/demografi/fattigdom), og da er det å få BNP til å vokse ofte et viktig mål."
-    },
-    {
-      "type": "text",
-      "content": "En god måte å tenke på BNP er som et termometer. Et termometer forteller deg om du har feber, og det er nyttig. Men det forteller ikke om du er glad, om du har venner, eller om du sover godt. BNP måler hvor mye et land produserer og selger. Det måler ikke alt som gjør livet godt. Vil du forstå hvordan bedrifter bestemmer hva de skal lage, kan du lese om [produksjon](/samfunnskunnskap/okonomi/produksjon) og om hvordan [prisen blir til](/samfunnskunnskap/okonomi/tilbud-og-ettersporsel)."
-    },
-    {
-      "type": "image",
-      "src": "/images/placeholder.webp",
-      "alt": "Travel norsk handlegate med butikker og mennesker",
-      "caption": "BNP måler hvor mye et land lager og selger. Men det forteller ikke hvor godt folk har det."
-    },
-    {
-      "type": "header",
-      "text": "Oppsummering"
-    },
-    {
-      "type": "text",
-      "content": "BNP er verdien av alle varer og tjenester et land lager på ett år. I Norge regner SSB det ut. BNP per innbygger brukes for å sammenligne land, og Norge ligger svært høyt. Men BNP teller bare det som blir betalt for, pluss offentlige tjenester. Husarbeid, barnepass i familien og dugnad er usynlig, mens en husbrann øker BNP. Derfor bruker FN også HDI, som ser på levealder og utdanning i tillegg til penger. BNP er et nyttig termometer, men ikke en fasit på hvor godt folk har det."
-    },
-    {
-      "type": "component",
-      "name": "Kildeliste",
-      "props": {
-        "sources": [
-          "FNs utviklingsprogram [UNDP]. (2025). *Human Development Report 2025. Statistical annex, Table 1: Human Development Index and its components*. Hentet 25.10.2026 fra [hdr.undp.org](https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_HDI_Table.pdf)",
-          "Husby, T. B., Eggen, Ø. & Skatvik, F. (2024). *Human Development Index*. Store norske leksikon. Hentet 25.10.2026 fra [snl.no/Human_Development_Index](https://snl.no/Human_Development_Index)",
-          "Reiakvam, J. & Skoglund, T. (2009). Ulønnet arbeid skaper store verdier. *Samfunnsspeilet*, (2). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/ulonnet-arbeid-skaper-store-verdier--30906)",
-          "Skoglund, T. (2004). *Kunnskapsbank for analyse av norsk økonomi*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/kunnskapsbank-for-analyse-av-norsk-okonomi)",
-          "Statistisk sentralbyrå [SSB]. (u.å.). *Norsk økonomi*. Hentet 25.10.2026 fra [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/faktaside/norsk-okonomi)",
-          "Thøgersen, J. (2025). *Bruttonasjonalprodukt*. Store norske leksikon. Hentet 25.10.2026 fra [snl.no/bruttonasjonalprodukt](https://snl.no/bruttonasjonalprodukt)"
-        ]
-      }
-    },
-    {
-      "type": "component",
-      "name": "Oppgaver",
-      "props": {
-        "forstaa": [
-          "Hva står forkortelsen BNP for, og hva måler det?",
-          "Hvem regner ut BNP i Norge?",
-          "Hva var BNP per innbygger i Norge i 2024?",
-          "Nevn tre typer arbeid som ikke teller i BNP."
-        ],
-        "reflekter": [
-          "Forklar med egne ord hvorfor man ikke kan legge sammen prisen på kornet, melet og brødet når man regner ut BNP.",
-          "Hvorfor øker en husbrann BNP, mens bestemors barnepass ikke gjør det? Hva sier det om hva BNP måler?",
-          "Qatar har nesten like høy inntekt per innbygger som Norge, men havner langt lavere på HDI-lista. Hva kan forklare det?",
-          "Husarbeid var med i regnestykket før 1952. Var det lurt å ta det ut? Begrunn svaret ditt."
-        ],
-        "gaaVidere": [
-          "Før en logg over alt du og familien gjør av ulønnet arbeid i én dag. Hvor mange timer blir det, og hva ville det kostet å betale noen for å gjøre det?",
-          "Diskuter i klassen: Hvis du skulle lage et nytt mål på hvor godt et land har det, hvilke tre ting ville du målt? Hvorfor akkurat de?",
-          "Finn BNP per innbygger og HDI-plassering for et land du er nysgjerrig på. Sammenlign med Norge og skriv et kort avsnitt om hva tallene sier, og hva de ikke sier."
-        ]
-      }
-    },
-    {
-      "type": "component",
-      "name": "Quiz",
-      "props": {
-        "questions": [
-          {
-            "question": "Hva er BNP?",
-            "options": [
-              "Summen av alle pengene i bankene i et land",
-              "Verdien av alle varer og tjenester et land lager på ett år",
-              "Hvor mye skatt staten får inn",
-              "Hvor mye et land eksporterer"
-            ],
-            "correctAnswer": 1,
-            "explanation": "BNP, bruttonasjonalprodukt, er den samlede produksjonen av varer og tjenester i et land i løpet av ett år."
-          },
-          {
-            "question": "Hvilken av disse situasjonene teller i BNP?",
-            "options": [
-              "Du klipper plenen hjemme",
-              "Bestemor passer lillesøster gratis",
-              "Brannvesenet slukker en husbrann",
-              "Du er fotballtrener på dugnad"
-            ],
-            "correctAnswer": 2,
-            "explanation": "Brannfolkene får betalt for jobben, og da teller det i BNP. Ulønnet arbeid hjemme og dugnad teller ikke."
-          },
-          {
-            "question": "Hvorfor ble ulønnet husarbeid tatt ut av regnestykket i 1952?",
-            "options": [
-              "Fordi det var for lite verdt",
-              "Fordi FN ville at alle land skulle regne likt",
-              "Fordi kvinner sluttet å gjøre husarbeid",
-              "Fordi staten ville skjule tallene"
-            ],
-            "correctAnswer": 1,
-            "explanation": "FN laget felles regler i 1952. For at tallene skulle kunne sammenlignes mellom land, ble husarbeidet holdt utenfor."
-          },
-          {
-            "question": "Hvilke tre ting måler HDI?",
-            "options": [
-              "Levealder, utdanning og inntekt",
-              "Eksport, import og skatt",
-              "Befolkning, areal og militærmakt",
-              "Lykke, vær og fritid"
-            ],
-            "correctAnswer": 0,
-            "explanation": "HDI ser på hvor lenge folk lever, hvor mye skole de får, og hvor mye penger de har."
-          },
-          {
-            "question": "Hva er forskjellen på nominelt og reelt BNP?",
-            "options": [
-              "Nominelt BNP gjelder bare staten",
-              "Reelt BNP holder prisene fast, så prisstigning ikke ser ut som vekst",
-              "Reelt BNP teller med husarbeid",
-              "Det er ingen forskjell"
-            ],
-            "correctAnswer": 1,
-            "explanation": "Nominelt BNP regnes i dagens priser. Reelt BNP holder prisene fast, slik at vi ser om vi faktisk har laget mer."
-          }
-        ]
-      }
-    }
-  ],
-  "timeline": []
+    "id": "bnp",
+    "title": "BNP: Hva er et land verdt?",
+    "layout": "rich",
+    "year": "Fra 1952 til i dag",
+    "category": "Økonomi",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/okonomi/bnp-hero.webp",
+    "details": [
+        "BNP er verdien av alle varer og tjenester et land lager på ett år. I Norge regner SSB det ut.",
+        "BNP teller det som blir betalt for. Husarbeid og dugnad er usynlig, mens en husbrann øker BNP, selv om huset som brant, aldri blir trukket fra.",
+        "FN bruker også HDI, som måler levealder, utdanning og inntekt. Et rikt land er ikke alltid best på alt."
+    ],
+    "externalUrl": "https://snl.no/bruttonasjonalprodukt",
+    "factChecked": "2026-10-26",
+    "tags": [
+        "økonomi",
+        "bnp",
+        "velferd",
+        "levekår",
+        "hdi"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Det er lørdag, og naboen spør om du kan klippe plenen hennes. Du bruker en time, og hun gir deg 200 kroner. Gratulerer: Du har akkurat fått BNP i Norge til å vokse litt. Uken etter klipper du plenen hjemme. Du bruker like lang tid, og plenen blir like fin. Men denne gangen får du ikke betalt. Og da har du, ifølge tallene, ikke bidratt med noe som helst."
+        },
+        {
+            "type": "text",
+            "content": "Det høres rart ut. Men det er slik et av de viktigste tallene i økonomien fungerer. Tallet heter BNP, og politikere, journalister og økonomer bruker det hele tiden for å si hvor godt det går med et land. I denne artikkelen skal du finne ut hva BNP måler, hvorfor det er nyttig, og hva det ikke får med seg."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom klipper en plen i en norsk hage",
+            "caption": "Klipper du naboens plen for penger, teller det i BNP. Klipper du din egen, gjør det ikke."
+        },
+        {
+            "type": "header",
+            "text": "Hva er BNP?"
+        },
+        {
+            "type": "text",
+            "content": "BNP er en forkortelse for bruttonasjonalprodukt. Det er verdien av alt et land lager av varer og tjenester i løpet av ett år. En vare er noe du kan ta på, som en sykkel eller et brød. En tjeneste er noe noen gjør for deg, som en hårklipp eller en busstur. Store norske leksikon forklarer BNP enkelt: Det er den samlede produksjonen i et land (Thøgersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Det er ett triks i utregningen. Tenk på et brød. Bonden dyrker kornet, mølla lager mel, og bakeren baker brødet. Hvis vi la sammen prisen på kornet, melet og brødet, ville vi telt det samme kornet tre ganger. Derfor trekker man fra det bedriftene kjøper av hverandre underveis. Det som blir igjen, er verdien av det som selges til den som faktisk bruker varen til slutt, altså deg (Thøgersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Trikset har en bakside. Når vi trekker fra alt bedriftene kjøper av hverandre, forsvinner bonden og mølla ut av tallet. Økonomer i den østerrikske skolen er opptatt av nettopp disse leddene, altså alle omveiene en vare går før den når deg. Den amerikanske økonomen Mark Skousen mente derfor at BNP gir et skjevt bilde. Det ser ut som om økonomien mest handler om det vi kjøper i butikken. Men bedriftene bruker mer penger på å kjøpe av hverandre i leddene før, enn vi bruker i butikken (Skousen, 1990; Gross output, 2026). Siden 2014 har statistikkbyrået i USA også regnet ut et tall der alle leddene er med (Gross output, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I Norge er det Statistisk sentralbyrå (SSB) som regner ut BNP. Det skjer i det som kalles nasjonalregnskapet, et slags regnskap for hele landet (Thøgersen, 2025). SSB beskriver BNP som et samlet mål på verdiskapingen i samfunnet, og skriver at tallet ofte brukes som et mål på hvor rikt et land er (Skoglund, 2004)."
+        },
+        {
+            "type": "header",
+            "text": "Når prisene stiger"
+        },
+        {
+            "type": "text",
+            "content": "Én ting kan lure oss. Hvis alle prisene i butikken går opp med ti prosent, ser det ut som om vi har laget mer, selv om vi har laget akkurat like mange brød. Derfor skiller økonomer mellom to typer BNP. Nominelt BNP regnes i dagens priser. Reelt BNP holder prisene fast, slik at vi bare ser om vi faktisk har laget mer (Thøgersen, 2025). Du kan lese mer om hvorfor prisene stiger i artikkelen om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+        },
+        {
+            "type": "header",
+            "text": "BNP per innbygger"
+        },
+        {
+            "type": "text",
+            "content": "Et stort land med mange mennesker lager selvsagt mer enn et lite land. Derfor deler man ofte BNP på antall innbyggere. Da får man BNP per innbygger. Ifølge leksikonet er dette det beste tallet hvis vi vil vite hvor mye varer og tjenester hver person har tilgang til (Thøgersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "For Norge var BNP per innbygger 932 583 kroner i 2024 (Statistisk sentralbyrå [SSB], u.å.). Det betyr ikke at hver nordmann tjente nesten en million kroner. Tallet er hele landets produksjon delt likt på alle, også på babyer og pensjonister. Når SSB tar hensyn til at ting koster mer i Norge enn i andre land, var BNP per innbygger 63 prosent høyere enn gjennomsnittet i EU (SSB, u.å.). Norge er altså et av de rikeste landene i verden, målt på denne måten."
+        },
+        {
+            "type": "text",
+            "content": "Husk også at en stor del av dette kommer fra olje og gass. Derfor regner SSB også ut BNP for Fastlands-Norge. Det er alt som lages i Norge, unntatt utvinning av olje og gass, rørtransport og utenriks sjøfart. Slik får vi et bedre bilde av resten av økonomien (SSB, 2017)."
+        },
+        {
+            "type": "header",
+            "text": "Hva teller, og hva teller ikke?"
+        },
+        {
+            "type": "text",
+            "content": "Nå tilbake til plenen. Regelen er at BNP i hovedsak teller det som blir betalt for. Det gjelder også offentlige tjenester, som skole og barnehage. De telles med etter hva det koster å drive dem (Thøgersen, 2025). Men en hel del arbeid blir ikke med. Det gjelder ulønnet arbeid, som husarbeid, barnepass i familien og frivillig arbeid i idrettslaget. Svart arbeid, som er arbeid folk skjuler for staten for å slippe skatt, kommer heller ikke med (Thøgersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Legg merke til at offentlige tjenester telles etter hva de koster, ikke etter hva noen ville betalt for dem. Den amerikanske økonomen Murray Rothbard mente at dette er en svakhet. Når du kjøper en sykkel, vet vi at du synes den er verdt prisen, for du betaler frivillig. Offentlige tjenester betales med skatt, og da vet ingen hva folk ville betalt. Bruker staten mer penger, vokser BNP av seg selv, enten pengene ble brukt godt eller dårlig (Rothbard, 1962/2009)."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv. Hvilke av disse situasjonene får BNP til å stige?"
+        },
+        {
+            "type": "component",
+            "name": "BnpMaaleren",
+            "props": {}
+        },
+        {
+            "type": "text",
+            "content": "Husbrannen er den mest overraskende. Leksikonet bruker nettopp dette eksempelet: En brann øker BNP, fordi brannvesenet og helsepersonell rykker ut og får betalt for jobben. Likevel blir ingen gladere av at huset brenner (Thøgersen, 2025). BNP spør bare om det skjer noe som koster penger, ikke om det er bra for oss."
+        },
+        {
+            "type": "text",
+            "content": "Den franske økonomen Frédéric Bastiat forklarte allerede i 1850 hvorfor det er feil å tro at en ulykke er bra for økonomien. Han skrev om en gutt som knuser ruta i farens butikk. Glassmesteren får en jobb, og det er det alle ser. Det ingen ser, er skoene eller boka butikkeieren ville kjøpt for de samme pengene. Han ender opp med én rute, mens han uten ulykken ville hatt både ruta og skoene (Bastiat, 1850/2016)."
+        },
+        {
+            "type": "text",
+            "content": "Brannen er akkurat det samme. BNP teller arbeidet med å slukke og bygge opp igjen, men huset som brant, blir aldri trukket fra. Det er derfor tallet heter brutto. Et land kan få høyere BNP samtidig som det blir fattigere."
+        },
+        {
+            "type": "header",
+            "text": "Det usynlige arbeidet"
+        },
+        {
+            "type": "text",
+            "content": "Hvor mye er alt det ulønnede arbeidet verdt? SSB har prøvd å regne det ut. De så på hvor mye tid folk bruker på matlaging, vasking, barnepass og å fikse ting hjemme. Så ga de timene en pris, altså hva det ville kostet å betale en fagarbeider for å gjøre det samme. Resultatet var at husarbeidet i år 2000 var verdt rundt 24 prosent av BNP. Om lag 60 prosent av dette arbeidet ble gjort av kvinner (Reiakvam & Skoglund, 2009)."
+        },
+        {
+            "type": "text",
+            "content": "Husarbeidet var faktisk med i regnestykket en gang. Den norske statistikeren Anders Nicolai Kiær anslo i 1912 at kvinners ulønnede husarbeid var verdt 15 prosent av inntekten i landet. Under og etter andre verdenskrig ble husarbeidet regnet med, helt fram til 1949. Men FN laget felles regler i 1952, og der ble husarbeidet holdt utenfor. Grunnen var at alle land skulle regne likt, slik at tallene kunne sammenlignes (Reiakvam & Skoglund, 2009)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Familie som lager middag sammen på et kjøkken",
+            "caption": "Matlaging, vasking og barnepass hjemme er mye arbeid. Men det blir ikke med i BNP."
+        },
+        {
+            "type": "header",
+            "text": "Rik på papiret, men har alle det godt?"
+        },
+        {
+            "type": "text",
+            "content": "Leksikonet mener at BNP er et dårlig mål på hvor godt folk har det. BNP sier ingenting om hvordan pengene er fordelt, hvor mye fritid folk har, om de er friske, eller om lufta er ren (Thøgersen, 2025). Tenk deg at alle i Norge måtte jobbe tolv timer hver dag. BNP ville trolig steget, men det er vanskelig å tro at livet ville blitt bedre (Thøgersen, 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Derfor har FN laget et annet mål, som heter HDI. Det står for Human Development Index, eller indeks for menneskelig utvikling. HDI ser på tre ting: hvor lenge folk lever, hvor mye skole de får, og hvor mye penger de har. To økonomer, Mahbub ul Haq fra Pakistan og Amartya Sen fra India, utviklet målet, og FN har brukt det siden 1990 (Husby mfl., 2024). Du kan lese mer om HDI og forskjellene i verden i artikkelen om [levekår rundt om i verden](/samfunnskunnskap/demografi/km-6-levekaar-verden)."
+        },
+        {
+            "type": "text",
+            "content": "Når vi sammenligner listene, får vi noen overraskelser. I FNs rapport fra 2025 er Qatar et av landene i verden med høyest inntekt per innbygger, nesten like høy som Norge. Men på HDI-lista havner Qatar først på 43. plass. Der kommer Norge på 2. plass, rett bak Island (FNs utviklingsprogram [UNDP], 2025). Én grunn er skolen: En voksen i Qatar har i snitt gått 10,8 år på skole, mens en voksen i Norge har gått 13,1 år (UNDP, 2025). Penger alene gjør altså ikke at et land kommer høyt på lista."
+        },
+        {
+            "type": "header",
+            "text": "Et termometer, ikke en fasit"
+        },
+        {
+            "type": "text",
+            "content": "Betyr dette at BNP er ubrukelig? Nei. Leksikonet peker på at land med høyt BNP ofte også gjør det godt på andre måter. Folk lever lenger, flere kan lese, færre barn dør, og folk har mer fritid og bedre helse (Thøgersen, 2025). Et høyt BNP gir et land penger til sykehus, skoler og veier. Mange land med lavt BNP sliter med [fattigdom](/samfunnskunnskap/demografi/fattigdom), og da er det å få BNP til å vokse ofte et viktig mål."
+        },
+        {
+            "type": "text",
+            "content": "En god måte å tenke på BNP er som et termometer. Et termometer forteller deg om du har feber, og det er nyttig. Men det forteller ikke om du er glad, om du har venner, eller om du sover godt. BNP måler hvor mye et land produserer og selger. Det måler ikke alt som gjør livet godt, og det kan vise feber der det bare har brent. Vil du forstå hvordan bedrifter bestemmer hva de skal lage, kan du lese om [produksjon](/samfunnskunnskap/okonomi/produksjon) og om hvordan [prisen blir til](/samfunnskunnskap/okonomi/tilbud-og-ettersporsel)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Travel norsk handlegate med butikker og mennesker",
+            "caption": "BNP måler hvor mye et land lager og selger. Men det forteller ikke hvor godt folk har det."
+        },
+        {
+            "type": "header",
+            "text": "Oppsummering"
+        },
+        {
+            "type": "text",
+            "content": "BNP er verdien av alle varer og tjenester et land lager på ett år. I Norge regner SSB det ut, og bruker også BNP for Fastlands-Norge, uten olje og gass. Norge ligger svært høyt. Men BNP teller bare det som blir betalt for, pluss offentlige tjenester, som telles etter hva de koster. Husarbeid og dugnad er usynlig, mens en husbrann øker BNP. Bastiat viste at det vi ikke ser, også teller: pengene som ellers ville blitt brukt på noe annet, og huset som er borte. FN bruker også HDI, som ser på levealder og utdanning. BNP er et nyttig termometer, men ikke en fasit på hvor godt folk har det."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Bastiat, F. (2016). *That which is seen, and that which is not seen*. Wikisource. (Opprinnelig utgitt 1850) [en.wikisource.org](https://en.wikisource.org/wiki/That_Which_Is_Seen,_and_That_Which_Is_Not_Seen)",
+                    "FNs utviklingsprogram [UNDP]. (2025). *Human Development Report 2025. Statistical annex, Table 1: Human Development Index and its components*. Hentet 25.10.2026 fra [hdr.undp.org](https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Statistical_Annex_HDI_Table.pdf)",
+                    "Gross output. (2026). I *Wikipedia*. Hentet 26.10.2026 fra [en.wikipedia.org](https://en.wikipedia.org/wiki/Gross_output)",
+                    "Husby, T. B., Eggen, Ø. & Skatvik, F. (2024). *Human Development Index*. Store norske leksikon. Hentet 25.10.2026 fra [snl.no/Human_Development_Index](https://snl.no/Human_Development_Index)",
+                    "Reiakvam, J. & Skoglund, T. (2009). Ulønnet arbeid skaper store verdier. *Samfunnsspeilet*, (2). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/ulonnet-arbeid-skaper-store-verdier--30906)",
+                    "Rothbard, M. N. (2009). *Man, economy, and state with Power and market* (2. utg.), appendiks om offentlige utgifter i nasjonalregnskapet. Ludwig von Mises Institute. (Opprinnelig utgitt 1962) [mises.org](https://mises.org/online-book/man-economy-and-state-power-and-market/5-binary-intervention-government-expenditures/appendix-role-government-expenditures-national-product-statistics)",
+                    "Skoglund, T. (2004). *Kunnskapsbank for analyse av norsk økonomi*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/kunnskapsbank-for-analyse-av-norsk-okonomi)",
+                    "Skousen, M. (1990). *The structure of production*. New York University Press.",
+                    "Statistisk sentralbyrå [SSB]. (u.å.). *Norsk økonomi*. Hentet 25.10.2026 fra [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/faktaside/norsk-okonomi)",
+                    "Statistisk sentralbyrå. (2017, oppdatert 2024). *Hva er egentlig BNP?* [ssb.no](https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/hva-er-egentlig-bnp)",
+                    "Thøgersen, J. (2025). *Bruttonasjonalprodukt*. Store norske leksikon. Hentet 25.10.2026 fra [snl.no/bruttonasjonalprodukt](https://snl.no/bruttonasjonalprodukt)"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva står forkortelsen BNP for, og hva måler det?",
+                    "Hvem regner ut BNP i Norge?",
+                    "Hva var BNP per innbygger i Norge i 2024?",
+                    "Nevn tre typer arbeid som ikke teller i BNP."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor man ikke kan legge sammen prisen på kornet, melet og brødet når man regner ut BNP.",
+                    "Hvorfor øker en husbrann BNP? Bruk Bastiats historie om den knuste ruta til å forklare hvorfor samfunnet likevel blir fattigere.",
+                    "Rothbard mente at offentlige tjenester ikke burde telles etter hva de koster. Forklar hvorfor, og si om du er enig.",
+                    "Qatar har nesten like høy inntekt per innbygger som Norge, men havner langt lavere på HDI-lista. Hva kan forklare det?",
+                    "Husarbeid var med i regnestykket før 1952. Var det lurt å ta det ut? Begrunn svaret ditt."
+                ],
+                "gaaVidere": [
+                    "Før en logg over alt du og familien gjør av ulønnet arbeid i én dag. Hvor mange timer blir det, og hva ville det kostet å betale noen for å gjøre det?",
+                    "Diskuter i klassen: Hvis du skulle lage et nytt mål på hvor godt et land har det, hvilke tre ting ville du målt? Hvorfor akkurat de?",
+                    "Finn BNP per innbygger og HDI-plassering for et land du er nysgjerrig på. Sammenlign med Norge og skriv et kort avsnitt om hva tallene sier, og hva de ikke sier."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er BNP?",
+                        "options": [
+                            "Summen av alle pengene i bankene i et land",
+                            "Verdien av alle varer og tjenester et land lager på ett år",
+                            "Hvor mye skatt staten får inn",
+                            "Hvor mye et land eksporterer"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "BNP, bruttonasjonalprodukt, er den samlede produksjonen av varer og tjenester i et land i løpet av ett år."
+                    },
+                    {
+                        "question": "Hvilken av disse situasjonene teller i BNP?",
+                        "options": [
+                            "Du klipper plenen hjemme",
+                            "Bestemor passer lillesøster gratis",
+                            "Brannvesenet slukker en husbrann",
+                            "Du er fotballtrener på dugnad"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Brannfolkene får betalt for jobben, og da teller det i BNP. Men huset som brant, trekkes ikke fra. Ulønnet arbeid hjemme og dugnad teller ikke."
+                    },
+                    {
+                        "question": "Hvorfor ble ulønnet husarbeid tatt ut av regnestykket i 1952?",
+                        "options": [
+                            "Fordi det var for lite verdt",
+                            "Fordi FN ville at alle land skulle regne likt",
+                            "Fordi kvinner sluttet å gjøre husarbeid",
+                            "Fordi staten ville skjule tallene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "FN laget felles regler i 1952. For at tallene skulle kunne sammenlignes mellom land, ble husarbeidet holdt utenfor."
+                    },
+                    {
+                        "question": "Hvilke tre ting måler HDI?",
+                        "options": [
+                            "Levealder, utdanning og inntekt",
+                            "Eksport, import og skatt",
+                            "Befolkning, areal og militærmakt",
+                            "Lykke, vær og fritid"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "HDI ser på hvor lenge folk lever, hvor mye skole de får, og hvor mye penger de har."
+                    },
+                    {
+                        "question": "Hva er forskjellen på nominelt og reelt BNP?",
+                        "options": [
+                            "Nominelt BNP gjelder bare staten",
+                            "Reelt BNP holder prisene fast, så prisstigning ikke ser ut som vekst",
+                            "Reelt BNP teller med husarbeid",
+                            "Det er ingen forskjell"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Nominelt BNP regnes i dagens priser. Reelt BNP holder prisene fast, slik at vi ser om vi faktisk har laget mer."
+                    },
+                    {
+                        "question": "Hva var poenget i Bastiats historie om den knuste ruta?",
+                        "options": [
+                            "At glassmestere tjener for lite",
+                            "At ulykker gjør samfunnet rikere fordi noen får jobb",
+                            "At vi må regne med det vi ikke ser: det pengene ellers ville blitt brukt på",
+                            "At butikker bør ha sterkere glass"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Glassmesteren får jobb, men butikkeieren mister skoene han ellers ville kjøpt. Han ender med én rute i stedet for både rute og sko."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
 }

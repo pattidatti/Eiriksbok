@@ -9,7 +9,8 @@ import type { VisualProps } from '../../types';
 /**
  * To hus med hver sin plen i 3D. «plen»: du klipper naboens plen for 200 kroner (teller i
  * BNP), så din egen (teller ikke). «brann»: naboens hus brenner, brannbilen og ambulansen
- * kommer, og BNP stiger likevel. Ingen mennesker i nærheten av brannen.
+ * kommer, og BNP stiger likevel, selv om huset er borte (Bastiat: det vi ser og det vi ikke
+ * ser). Ingen mennesker i nærheten av brannen.
  * Alt styres av (beat, beatTid), så bildet tåler at eleven hopper.
  */
 
@@ -25,11 +26,11 @@ const OVERSKRIFT: Record<Modus, string[]> = {
     plen: [
         'Lørdag: naboen spør om hjelp',
         'En time med klipping',
-        'Norge ble litt rikere',
+        'BNP ble litt større',
         'Uka etter: plenen hjemme',
         'Ingen betaling, ikke med i BNP',
     ],
-    brann: ['Et hus brenner', 'Brannvesenet og ambulansen kommer', 'Ingen blir gladere', 'BNP spør bare om det koster penger'],
+    brann: ['Et hus brenner', 'Brannvesenet og ambulansen kommer', 'Det vi ser', 'Det vi ikke ser', 'Huset trekkes aldri fra'],
 };
 
 /** Naboens hus står til venstre, ditt til høyre. */
@@ -480,7 +481,7 @@ function BnpKort({ modus, beat }: { modus: Modus; beat: number }) {
     } else {
         linje = 'BNP ↑';
         if (beat === 2) tone = 'rod';
-        under = beat === 2 ? 'men ingen blir gladere' : beat >= 3 ? 'stiger, selv om huset er ødelagt' : beat >= 1 ? 'brannfolk og ambulanse får lønn' : 'en brann øker BNP';
+        under = beat === 2 ? 'det vi ser: noen får betalt' : beat >= 3 ? 'stiger, selv om huset er borte' : beat >= 1 ? 'brannfolk og ambulanse får lønn' : 'en brann øker BNP';
     }
     return (
         <AnimatePresence mode="wait">

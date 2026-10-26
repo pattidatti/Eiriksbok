@@ -4,18 +4,30 @@
     "kilde": "/samfunnskunnskap/okonomi/bnp",
     "bilde": "/images/okonomi/bnp-hero.webp",
     "utenforArtikkel": [],
-    "vurdering": { "dato": "2026-10-25", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "plenen",
             "lyd": "vind",
             "kapittel": "To plener",
-            "visual": { "type": "BnpPlenen", "props": { "modus": "plen" } },
+            "visual": {
+                "type": "BnpPlenen",
+                "props": {
+                    "modus": "plen"
+                }
+            },
             "replikker": [
-                { "si": "Det er lørdag. Naboen spør om du kan klippe plenen hennes." },
-                { "si": "Du bruker en time. Plenen blir fin, og hun gir deg 200 kroner." },
-                { "si": "Gratulerer! Du har akkurat gjort Norge litt rikere. I hvert fall på papiret." },
-                { "si": "Uka etter klipper du plenen hjemme. Du bruker like lang tid, og plenen blir like fin." },
+                {
+                    "si": "Det er lørdag. Naboen spør om du kan klippe plenen hennes."
+                },
+                {
+                    "si": "Du bruker en time. Plenen blir fin, og hun gir deg 200 kroner."
+                },
+                {
+                    "si": "Gratulerer! Du har akkurat fått BNP i Norge til å vokse litt."
+                },
+                {
+                    "si": "Uka etter klipper du plenen hjemme. Du bruker like lang tid, og plenen blir like fin."
+                },
                 {
                     "si": "Men nå får du ikke betalt. Og da har du, ifølge tallene, ikke bidratt med noe som helst."
                 }
@@ -30,11 +42,16 @@
                     "tittel": "BNP",
                     "undertittel": "Hva er et land verdt?",
                     "bilde": "/images/okonomi/bnp-hero.webp",
-                    "sporsmal": { "tekst": "Hva måler BNP, og hva glemmer det?", "fraBeat": 2 }
+                    "sporsmal": {
+                        "tekst": "Hva måler BNP, og hva glemmer det?",
+                        "fraBeat": 2
+                    }
                 }
             },
             "replikker": [
-                { "si": "Det høres rart ut. Men slik virker et av de viktigste tallene i økonomien." },
+                {
+                    "si": "Det høres rart ut. Men slik virker et av de viktigste tallene i økonomien."
+                },
                 {
                     "si": "Tallet heter BNP. Politikere, journalister og økonomer bruker det hele tiden for å si hvor godt det går med et land."
                 },
@@ -46,12 +63,25 @@
         {
             "id": "ordet",
             "kapittel": "Hva er BNP?",
-            "visual": { "type": "BnpBrodet", "props": { "modus": "ordet" } },
+            "visual": {
+                "type": "BnpBrodet",
+                "props": {
+                    "modus": "ordet"
+                }
+            },
             "replikker": [
-                { "si": "BNP er en forkortelse for bruttonasjonalprodukt." },
-                { "si": "Det er verdien av alt et land lager av varer og tjenester i løpet av ett år." },
-                { "si": "En vare er noe du kan ta på, som en sykkel eller et brød." },
-                { "si": "En tjeneste er noe noen gjør for deg, som en hårklipp eller en busstur." },
+                {
+                    "si": "BNP er en forkortelse for bruttonasjonalprodukt."
+                },
+                {
+                    "si": "Det er verdien av alt et land lager av varer og tjenester i løpet av ett år."
+                },
+                {
+                    "si": "En vare er noe du kan ta på, som en sykkel eller et brød."
+                },
+                {
+                    "si": "En tjeneste er noe noen gjør for deg, som en hårklipp eller en busstur."
+                },
                 {
                     "si": "I Norge er det Statistisk sentralbyrå, SSB, som regner ut BNP. Det skjer i nasjonalregnskapet, et slags regnskap for hele landet."
                 }
@@ -59,14 +89,25 @@
         },
         {
             "id": "brodet",
-            "visual": { "type": "BnpBrodet", "props": { "modus": "kjede" } },
+            "visual": {
+                "type": "BnpBrodet",
+                "props": {
+                    "modus": "kjede"
+                }
+            },
             "replikker": [
-                { "si": "Men det er ett triks i utregningen. Tenk på et brød." },
-                { "si": "Bonden dyrker kornet. Mølla lager mel. Og bakeren baker brødet." },
+                {
+                    "si": "Men det er ett triks i utregningen. Tenk på et brød."
+                },
+                {
+                    "si": "Bonden dyrker kornet. Mølla lager mel. Og bakeren baker brødet."
+                },
                 {
                     "si": "Legger vi sammen prisen på kornet, melet og brødet, teller vi det samme kornet tre ganger."
                 },
-                { "si": "Derfor trekker man fra det bedriftene kjøper av hverandre underveis." },
+                {
+                    "si": "Derfor trekker man fra det bedriftene kjøper av hverandre underveis."
+                },
                 {
                     "si": "Det som blir igjen, er verdien av det som selges til den som bruker varen til slutt. Altså deg."
                 }
@@ -75,7 +116,12 @@
         {
             "id": "priser",
             "kapittel": "Når prisene stiger",
-            "visual": { "type": "BnpBrodet", "props": { "modus": "priser" } },
+            "visual": {
+                "type": "BnpBrodet",
+                "props": {
+                    "modus": "priser"
+                }
+            },
             "replikker": [
                 {
                     "si": "Én ting kan lure oss. Tenk deg at alle prisene i butikken går opp med ti prosent."
@@ -83,17 +129,27 @@
                 {
                     "si": "Da ser det ut som om vi har laget mer, selv om vi har laget akkurat like mange brød."
                 },
-                { "si": "Derfor finnes det to typer BNP. Nominelt BNP regnes i dagens priser." },
-                { "si": "Reelt BNP holder prisene fast. Da ser vi bare om vi faktisk har laget mer." }
+                {
+                    "si": "Derfor finnes det to typer BNP. Nominelt BNP regnes i dagens priser."
+                },
+                {
+                    "si": "Reelt BNP holder prisene fast. Da ser vi bare om vi faktisk har laget mer."
+                }
             ]
         },
         {
             "id": "kaka",
             "kapittel": "Per innbygger",
-            "visual": { "type": "BnpKaka" },
+            "visual": {
+                "type": "BnpKaka"
+            },
             "replikker": [
-                { "si": "Et stort land med mange mennesker lager selvsagt mer enn et lite land." },
-                { "si": "Derfor deler man ofte BNP på antall innbyggere. Da får man BNP per innbygger." },
+                {
+                    "si": "Et stort land med mange mennesker lager selvsagt mer enn et lite land."
+                },
+                {
+                    "si": "Derfor deler man ofte BNP på antall innbyggere. Da får man BNP per innbygger."
+                },
                 {
                     "si": "For Norge var BNP per innbygger 932 583 kroner i 2024.",
                     "uttale": "For Norge var BNP per innbygger ni hundre og trettito tusen, fem hundre og åttitre kroner i tjuetjuefire."
@@ -104,19 +160,23 @@
                 {
                     "si": "Ting koster mer i Norge enn i andre land. Når SSB tar hensyn til det, var BNP per innbygger 63 prosent høyere enn snittet i EU."
                 },
-                { "si": "Norge er altså et av de rikeste landene i verden, målt på denne måten." }
+                {
+                    "si": "Mye av dette kommer fra olje og gass. Derfor regner SSB også ut BNP for Fastlands-Norge, uten olje og gass."
+                }
             ]
         },
         {
             "id": "teller",
             "kapittel": "Hva teller?",
-            "visual": { "type": "BnpTeller" },
+            "visual": {
+                "type": "BnpTeller"
+            },
             "replikker": [
                 {
                     "si": "Tilbake til plenen. Regelen er at BNP i hovedsak teller det som blir betalt for."
                 },
                 {
-                    "si": "Det gjelder også offentlige tjenester, som skole og barnehage. De telles med etter hva det koster å drive dem."
+                    "si": "Det gjelder også skole og barnehage. De telles etter hva de koster, ikke etter hva noen ville betalt. Økonomen Murray Rothbard mente at det er en svakhet."
                 },
                 {
                     "si": "Men mye arbeid blir ikke med. Husarbeid, barnepass i familien og frivillig arbeid i idrettslaget."
@@ -124,21 +184,36 @@
                 {
                     "si": "Svart arbeid kommer heller ikke med. Det er arbeid folk skjuler for staten for å slippe skatt."
                 },
-                { "si": "Prøv selv. Hva med en husbrann? Får den BNP til å stige?" }
+                {
+                    "si": "Prøv selv. Hva med en husbrann? Får den BNP til å stige?"
+                }
             ]
         },
         {
             "id": "brann",
             "lyd": "ild",
-            "visual": { "type": "BnpPlenen", "props": { "modus": "brann" } },
+            "visual": {
+                "type": "BnpPlenen",
+                "props": {
+                    "modus": "brann"
+                }
+            },
             "replikker": [
-                { "si": "Svaret overrasker mange. En husbrann øker BNP." },
+                {
+                    "si": "Svaret overrasker mange. En husbrann øker BNP."
+                },
                 {
                     "si": "Brannvesenet og helsepersonell rykker ut, og de får betalt for jobben."
                 },
-                { "si": "Likevel blir ingen gladere av at huset brenner." },
                 {
-                    "si": "BNP spør bare om det skjer noe som koster penger. Ikke om det er bra for oss."
+                    "si": "Økonomen Frédéric Bastiat forklarte i 1850 hvorfor det er feil å tro at ulykker er bra. Han skrev om en gutt som knuser ruta i en butikk, og glassmesteren som får jobb. Det er det vi ser.",
+                    "uttale": "Økonomen Frederik Bastia forklarte i atten femti hvorfor det er feil å tro at ulykker er bra. Han skrev om en gutt som knuser ruta i en butikk, og glassmesteren som får jobb. Det er det vi ser."
+                },
+                {
+                    "si": "Det vi ikke ser, er skoene eieren ville kjøpt for de samme pengene. Han ender med én rute, i stedet for både rute og sko."
+                },
+                {
+                    "si": "Brannen er det samme. BNP teller arbeidet med å bygge opp igjen, men trekker aldri fra huset som brant."
                 }
             ]
         },
@@ -201,22 +276,32 @@
                 {
                     "si": "De så på hvor mye tid folk bruker på matlaging, vasking, barnepass og å fikse ting hjemme. Så ga de timene en pris: hva det ville kostet å betale en fagarbeider."
                 },
-                { "si": "Svaret var at husarbeidet i år 2000 var verdt rundt 24 prosent av BNP." },
-                { "si": "Om lag 60 prosent av dette arbeidet ble gjort av kvinner." }
+                {
+                    "si": "Svaret var at husarbeidet i år 2000 var verdt rundt 24 prosent av BNP."
+                },
+                {
+                    "si": "Om lag 60 prosent av dette arbeidet ble gjort av kvinner."
+                }
             ]
         },
         {
             "id": "historien",
-            "visual": { "type": "BnpTidslinje" },
+            "visual": {
+                "type": "BnpTidslinje"
+            },
             "replikker": [
-                { "si": "Husarbeidet var faktisk med i regnestykket en gang." },
+                {
+                    "si": "Husarbeidet var faktisk med i regnestykket en gang."
+                },
                 {
                     "si": "Den norske statistikeren Anders Nicolai Kiær anslo i 1912 at kvinners ulønnede husarbeid var verdt 15 prosent av inntekten i landet."
                 },
                 {
                     "si": "Under og etter andre verdenskrig ble husarbeidet regnet med, helt fram til 1949."
                 },
-                { "si": "Men i 1952 laget FN felles regler. Der ble husarbeidet holdt utenfor." },
+                {
+                    "si": "Men i 1952 laget FN felles regler. Der ble husarbeidet holdt utenfor."
+                },
                 {
                     "si": "Grunnen var at alle land skulle regne likt, slik at tallene kunne sammenlignes."
                 }
@@ -225,22 +310,36 @@
         {
             "id": "blind",
             "kapittel": "Har alle det godt?",
-            "visual": { "type": "BnpTermometer", "props": { "modus": "blind" } },
+            "visual": {
+                "type": "BnpTermometer",
+                "props": {
+                    "modus": "blind"
+                }
+            },
             "replikker": [
-                { "si": "BNP sier ingenting om hvordan pengene er fordelt." },
+                {
+                    "si": "BNP sier ingenting om hvordan pengene er fordelt."
+                },
                 {
                     "si": "Det sier heller ikke hvor mye fritid folk har, om de er friske, eller om lufta er ren."
                 },
                 {
                     "si": "Tenk deg at alle i Norge måtte jobbe tolv timer hver dag. BNP ville trolig steget."
                 },
-                { "si": "Men det er vanskelig å tro at livet ville blitt bedre." }
+                {
+                    "si": "Men det er vanskelig å tro at livet ville blitt bedre."
+                }
             ]
         },
         {
             "id": "hdi",
             "kapittel": "Et annet mål",
-            "visual": { "type": "BnpKart", "props": { "modus": "hdi" } },
+            "visual": {
+                "type": "BnpKart",
+                "props": {
+                    "modus": "hdi"
+                }
+            },
             "replikker": [
                 {
                     "si": "Derfor har FN laget et annet mål. Det heter HDI, en indeks for menneskelig utvikling."
@@ -255,9 +354,16 @@
         },
         {
             "id": "qatar",
-            "visual": { "type": "BnpKart", "props": { "modus": "qatar" } },
+            "visual": {
+                "type": "BnpKart",
+                "props": {
+                    "modus": "qatar"
+                }
+            },
             "replikker": [
-                { "si": "Når vi sammenligner listene, får vi en overraskelse." },
+                {
+                    "si": "Når vi sammenligner listene, får vi en overraskelse."
+                },
                 {
                     "si": "I FNs rapport fra 2025 har Qatar nesten like høy inntekt per innbygger som Norge."
                 },
@@ -267,22 +373,33 @@
                 {
                     "si": "Én grunn er skolen. En voksen i Qatar har i snitt gått 10,8 år på skole. En voksen i Norge har gått 13,1 år."
                 },
-                { "si": "Penger alene gjør altså ikke at et land kommer høyt på lista." }
+                {
+                    "si": "Penger alene gjør altså ikke at et land kommer høyt på lista."
+                }
             ]
         },
         {
             "id": "termometer",
             "kapittel": "Et termometer",
-            "visual": { "type": "BnpTermometer", "props": { "modus": "termometer" } },
+            "visual": {
+                "type": "BnpTermometer",
+                "props": {
+                    "modus": "termometer"
+                }
+            },
             "replikker": [
-                { "si": "Betyr dette at BNP er ubrukelig? Nei." },
+                {
+                    "si": "Betyr dette at BNP er ubrukelig? Nei."
+                },
                 {
                     "si": "Land med høyt BNP gjør det ofte godt på andre måter også. Folk lever lenger, flere kan lese, og færre barn dør."
                 },
                 {
                     "si": "Et høyt BNP gir penger til sykehus, skoler og veier. Mange land med lavt BNP sliter med fattigdom, og der er det ofte et viktig mål å få BNP til å vokse."
                 },
-                { "si": "Tenk på BNP som et termometer. Det forteller deg om du har feber, og det er nyttig." },
+                {
+                    "si": "Tenk på BNP som et termometer. Det forteller deg om du har feber, og det er nyttig."
+                },
                 {
                     "si": "Men det forteller ikke om du er glad, om du har venner, eller om du sover godt."
                 }
@@ -295,24 +412,54 @@
                 "type": "Sluttkort",
                 "props": {
                     "setninger": [
-                        { "tekst": "BNP er verdien av alle varer og tjenester", "fraBeat": 0 },
-                        { "tekst": "et land lager på ett år.", "fraBeat": 0, "uthevet": true },
-                        { "tekst": "Naboens plen teller.", "fraBeat": 1 },
-                        { "tekst": "Egen plen, middag og dugnad teller ikke.", "fraBeat": 1, "uthevet": true },
-                        { "tekst": "Derfor trenger vi flere mål,", "fraBeat": 2 },
-                        { "tekst": "som HDI.", "fraBeat": 2, "uthevet": true },
-                        { "tekst": "Et nyttig termometer.", "fraBeat": 3 },
-                        { "tekst": "Men ingen fasit på hvor godt folk har det.", "fraBeat": 3, "uthevet": true }
+                        {
+                            "tekst": "BNP er verdien av alle varer og tjenester",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "et land lager på ett år.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Naboens plen teller.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Egen plen, middag og dugnad teller ikke.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Husk det du ikke ser:",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "huset som brant, trekkes aldri fra.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Et nyttig termometer.",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "Men ingen fasit på hvor godt folk har det.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
                     ]
                 }
             },
             "replikker": [
-                { "si": "BNP er verdien av alle varer og tjenester et land lager på ett år." },
+                {
+                    "si": "BNP er verdien av alle varer og tjenester et land lager på ett år."
+                },
                 {
                     "si": "Plenen hos naboen teller. Plenen hjemme, middagen og dugnaden i idrettslaget teller ikke."
                 },
                 {
-                    "si": "Derfor trenger vi flere mål, som HDI, som også ser på hvor lenge folk lever og hvor mye skole de får."
+                    "si": "Husk det du ikke ser. En brann øker BNP, men huset som brant, trekkes aldri fra."
                 },
                 {
                     "si": "BNP er et nyttig termometer. Men det er ikke en fasit på hvor godt folk har det."

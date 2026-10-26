@@ -44,7 +44,7 @@ const SITUASJONER: Situasjon[] = [
         teller: true,
         kroner: 1500,
         forklaring:
-            'Barnehagen er en offentlig tjeneste. Den telles med i BNP etter hva det koster å drive den.',
+            'Barnehagen er en offentlig tjeneste. Den telles med i BNP etter hva det koster å drive den, selv om ingen vet hva foreldrene ville betalt for den selv.',
     },
     {
         tekst: 'Bestemor passer lillesøster en hel dag, gratis.',
@@ -58,7 +58,7 @@ const SITUASJONER: Situasjon[] = [
         teller: true,
         kroner: 40000,
         forklaring:
-            'Overraskende? Brannen gjør ingen gladere. Men brannfolkene og helsepersonellet får betalt for jobben. Det øker BNP.',
+            'Overraskende? Brannfolkene og helsepersonellet får betalt, og det øker BNP. Men huset som brant, trekkes ikke fra. Samfunnet er fattigere, selv om tallet stiger.',
     },
     {
         tekst: 'Du er trener for et fotballag på dugnad, uten lønn.',
