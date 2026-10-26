@@ -1,0 +1,494 @@
+{
+    "id": "arbeidsledighet",
+    "tittel": "Arbeidsledighet: Hvorfor finner ikke alle jobb?",
+    "kilde": "/samfunnskunnskap/okonomi/arbeidsledighet",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-26",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "fabrikken",
+            "lyd": "hav",
+            "kapittel": "Mandag morgen",
+            "visual": {
+                "type": "ArbeidsledighetBygda",
+                "props": {
+                    "modus": "nedlegging"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er mandag morgen på et lite sted langs kysten. Ved kaia ligger en fabrikk som har vært der i femti år."
+                },
+                {
+                    "si": "Alle de ansatte kalles inn til møte. Beskjeden er kort: Fabrikken skal legges ned."
+                },
+                {
+                    "si": "Over hundre mennesker går hjem uten å vite hva de skal leve av. Noen av dem er foreldre til elever på ungdomsskolen."
+                },
+                {
+                    "si": "Samtidig kan det finnes ledige jobber et annet sted i landet, kanskje på et sykehus eller i et byggefirma."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ARBEIDSLEDIGHET",
+                    "undertittel": "Hvorfor finner ikke alle jobb?",
+                    "bilde": "/images/placeholder.webp",
+                    "tall": [
+                        {
+                            "verdi": 141000,
+                            "etikett": "arbeidsledige i Norge, september 2026 (SSB)",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Ledige jobber og ledige folk, samtidig?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Denne filmen handler om å stå uten jobb."
+                },
+                {
+                    "si": "I september 2026 var 141 000 mennesker i Norge arbeidsledige, ifølge SSB."
+                },
+                {
+                    "si": "Hvordan kan det være ledige jobber og ledige folk på samme tid?"
+                }
+            ]
+        },
+        {
+            "id": "hvem",
+            "kapittel": "Hvem er ledig?",
+            "visual": {
+                "type": "ArbeidsledighetHvem"
+            },
+            "replikker": [
+                {
+                    "si": "Å være arbeidsledig betyr ikke bare at du ikke har en jobb."
+                },
+                {
+                    "si": "Du må være gammel nok til å jobbe, være uten jobb, og aktivt lete etter en."
+                },
+                {
+                    "si": "En pensjonist er altså ikke ledig. Heller ikke en som ikke vil ha jobb."
+                },
+                {
+                    "si": "Den som er for syk til å jobbe, er heller ikke ledig. Bare den som leter, teller."
+                }
+            ]
+        },
+        {
+            "id": "prosent",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 100,
+                            "farge": "#2563eb",
+                            "tittel": "Arbeidsstyrken",
+                            "fargeEtikett": "har jobb eller leter etter jobb"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 5,
+                            "farge": "#dc2626",
+                            "restFarge": "#2563eb",
+                            "tittel": "5 av dem finner ikke jobb",
+                            "fargeEtikett": "ledige",
+                            "restEtikett": "har jobb"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 5,
+                            "farge": "#dc2626",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Ledigheten er 5 prosent",
+                            "fargeEtikett": "ledige",
+                            "restEtikett": "har jobb"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ledigheten måles i prosent av arbeidsstyrken: alle som har jobb, pluss alle som er arbeidsledige."
+                },
+                {
+                    "si": "Tenk deg 100 slike personer. 5 av dem leter, men finner ikke noe."
+                },
+                {
+                    "si": "Da er ledigheten 5 prosent."
+                }
+            ]
+        },
+        {
+            "id": "to-tall",
+            "kapittel": "To tall",
+            "visual": {
+                "type": "ArbeidsledighetTelling",
+                "props": {
+                    "modus": "to"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hver måned kommer det to tall for hvor mange som er ledige i Norge."
+                },
+                {
+                    "si": "Det ene kommer fra Nav. Nav teller alle som har meldt seg som helt ledige og jobbsøkere."
+                },
+                {
+                    "si": "Det andre kommer fra Statistisk sentralbyrå, SSB. SSB ringer mange folk og spør om de har jobb."
+                },
+                {
+                    "si": "Denne undersøkelsen heter arbeidskraftundersøkelsen, eller AKU.",
+                    "uttale": "Denne undersøkelsen heter arbeidskraftundersøkelsen, eller A K U."
+                },
+                {
+                    "si": "Hos SSB er du ledig hvis du er uten arbeid, har lett aktivt etter jobb de siste fire ukene, og kan begynne innen to uker."
+                }
+            ]
+        },
+        {
+            "id": "ulike-grupper",
+            "visual": {
+                "type": "ArbeidsledighetTelling",
+                "props": {
+                    "modus": "venn"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I september 2026 var ledigheten 4,6 prosent, ifølge SSB. Tallet fra Nav er som regel mye lavere.",
+                    "uttale": "I september 2026 var ledigheten fire komma seks prosent, ifølge SSB. Tallet fra Nav er som regel mye lavere."
+                },
+                {
+                    "si": "Hvorfor? Mange ledige melder seg aldri hos Nav, særlig unge og studenter som leter etter en deltidsjobb."
+                },
+                {
+                    "si": "De har sjelden rett til penger fra Nav, så det er lite å hente på å melde seg."
+                },
+                {
+                    "si": "I 2025 var 171 000 mennesker ledige i minst én av de to tellingene. Men bare 28 000 av dem var med i begge."
+                },
+                {
+                    "si": "Det er omtrent én av seks. Tallene teller altså ganske ulike grupper."
+                }
+            ]
+        },
+        {
+            "id": "fire-typer",
+            "kapittel": "Fire grunner",
+            "visual": {
+                "type": "ArbeidsledighetFire",
+                "props": {
+                    "modus": "typer"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor mister folk jobben? Økonomer, de som forsker på økonomi, deler ledigheten inn etter årsak. Store norske leksikon nevner fire typer."
+                },
+                {
+                    "si": "Den første er friksjonsledighet. Du er mellom to jobber, og det tar litt tid å finne en ny. Friksjon betyr gnisninger."
+                },
+                {
+                    "si": "Den andre er sesongledighet. Jobben finnes bare deler av året, som i fiske eller turisme."
+                },
+                {
+                    "si": "Den tredje er konjunkturledighet. Konjunktur betyr hvordan det går med økonomien. I nedgangstider kjøper folk mindre, og bedriftene trenger færre ansatte."
+                },
+                {
+                    "si": "Den fjerde er strukturledighet. Det du kan, passer ikke lenger med det arbeidsgiverne trenger. Ofte har ny teknologi tatt over, eller en hel bransje har krympet."
+                }
+            ]
+        },
+        {
+            "id": "medisin",
+            "kapittel": "Riktig medisin",
+            "visual": {
+                "type": "ArbeidsledighetFire",
+                "props": {
+                    "modus": "medisin"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hver type ledighet trenger sin egen løsning, akkurat som hver sykdom trenger sin egen medisin."
+                },
+                {
+                    "si": "Er du mellom to jobber, er det nyttig at noen hjelper folk og ledige jobber å finne hverandre."
+                },
+                {
+                    "si": "I nedgangstider kan Norges Bank sette ned renten. Da blir det billigere å låne, folk og bedrifter bruker mer, og bedriftene trenger flere ansatte."
+                },
+                {
+                    "si": "Staten kan også bruke mer penger, for eksempel på å bygge veier og skoler."
+                },
+                {
+                    "si": "Men er jobben borte for godt, hjelper ikke lavere rente. Da trenger folk kurs og ny utdanning."
+                }
+            ]
+        },
+        {
+            "id": "oljeprisen",
+            "kapittel": "Da oljeprisen falt",
+            "visual": {
+                "type": "ArbeidsledighetOlje",
+                "props": {
+                    "modus": "pris"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Norge fikk kjenne på dette for ikke lenge siden."
+                },
+                {
+                    "si": "Fra midten av 2014 til slutten av 2015 falt prisen på olje. Den gikk fra godt over 100 dollar til under 40 dollar per fat."
+                },
+                {
+                    "si": "Mange i oljebransjen mistet jobben. I noen deler av landet steg arbeidsledigheten kraftig."
+                }
+            ]
+        },
+        {
+            "id": "rogaland",
+            "visual": {
+                "type": "ArbeidsledighetOlje",
+                "props": {
+                    "modus": "kart"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Rogaland, der mye av oljeindustrien ligger, ble hardt rammet."
+                },
+                {
+                    "si": "Ledigheten i fylket nådde en topp på 4,5 prosent i 2016.",
+                    "uttale": "Ledigheten i fylket nådde en topp på fire komma fem prosent i 2016."
+                },
+                {
+                    "si": "Samtidig falt andelen av befolkningen som hadde jobb, fra om lag 71 til 67 prosent."
+                }
+            ]
+        },
+        {
+            "id": "gapet",
+            "visual": {
+                "type": "ArbeidsledighetOlje",
+                "props": {
+                    "modus": "gapet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mot slutten av 2019 var ledigheten i Rogaland tilbake på samme nivå som før oljeprisen falt."
+                },
+                {
+                    "si": "Men andelen som hadde jobb, hadde ikke kommet tilbake."
+                },
+                {
+                    "si": "Hvordan henger det sammen? Noen av dem som mistet jobben, sluttet å lete."
+                },
+                {
+                    "si": "Da teller de ikke som arbeidsledige. Men de har heller ikke jobb."
+                }
+            ]
+        },
+        {
+            "id": "dagpenger",
+            "kapittel": "Hva gjør Nav?",
+            "visual": {
+                "type": "ArbeidsledighetTelling",
+                "props": {
+                    "modus": "dagpenger"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nav hjelper folk som står uten jobb. Mister du jobben, kan du få dagpenger: penger fra staten mens du leter etter ny jobb."
+                },
+                {
+                    "si": "Da må du blant annet ha mistet minst halvparten av arbeidstiden, og ha tjent minst 204 824 kroner det siste året.",
+                    "uttale": "Da må du blant annet ha mistet minst halvparten av arbeidstiden, og ha tjent minst to hundre og fire tusen, åtte hundre og tjuefire kroner det siste året."
+                },
+                {
+                    "si": "Dagpengene er 62,4 prosent av det du tjente før. Du får altså mindre enn lønnen din.",
+                    "uttale": "Dagpengene er sekstito komma fire prosent av det du tjente før. Du får altså mindre enn lønnen din."
+                },
+                {
+                    "si": "Det er med vilje. Det skal fortsatt lønne seg å komme i jobb."
+                },
+                {
+                    "si": "Du må også sende et meldekort til Nav hver 14. dag, om hva du har gjort.",
+                    "uttale": "Du må også sende et meldekort til Nav hver fjortende dag, om hva du har gjort."
+                },
+                {
+                    "si": "Nav har også kurs og annen hjelp for å komme tilbake i arbeid."
+                }
+            ]
+        },
+        {
+            "id": "etterpa",
+            "lyd": "hav",
+            "kapittel": "Raskt tilbake",
+            "visual": {
+                "type": "ArbeidsledighetBygda",
+                "props": {
+                    "modus": "etterpa"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Å miste jobben handler om mer enn penger. En jobb gir venner, en grunn til å stå opp om morgenen, og en følelse av å være til nytte."
+                },
+                {
+                    "si": "Forskere i Norges Bank så på hva som skjedde med folk etter oljekrisen."
+                },
+                {
+                    "si": "De fant at det å miste jobben kan gi lavere inntekt og mindre sjanse for jobb i mange år etterpå. Kanskje for alltid."
+                },
+                {
+                    "si": "Hardest rammet var folk med lav inntekt og lite fast arbeid. Mange fant ikke ny jobb der de bodde, og falt helt ut."
+                },
+                {
+                    "si": "Folk med jobb i det offentlige, som lærere og sykepleiere, ble lite berørt."
+                },
+                {
+                    "si": "Derfor er målet å hjelpe folk tilbake i jobb før de gir opp."
+                }
+            ]
+        },
+        {
+            "id": "bakover",
+            "lyd": "stille",
+            "kapittel": "Et blikk bakover",
+            "visual": {
+                "type": "ArbeidsledighetHistorie"
+            },
+            "replikker": [
+                {
+                    "si": "Arbeidsledighet er ikke noe nytt."
+                },
+                {
+                    "si": "Under den store krisen på 1930-tallet sto svært mange uten jobb. I 1933 var 33,4 prosent av medlemmene i fagforeningene uten arbeid. En fagforening er en forening der arbeidere står sammen.",
+                    "uttale": "Under den store krisen på 1930-tallet sto svært mange uten jobb. I 1933 var trettitre komma fire prosent av medlemmene i fagforeningene uten arbeid. En fagforening er en forening der arbeidere står sammen."
+                },
+                {
+                    "si": "Det er én av tre."
+                },
+                {
+                    "si": "Fra 1965 til 1976 var ledigheten svært lav, mellom 0,6 og 1,4 prosent i året.",
+                    "uttale": "Fra 1965 til 1976 var ledigheten svært lav, mellom null komma seks og én komma fire prosent i året."
+                },
+                {
+                    "si": "I dag måler SSB ledigheten på en annen måte. I september 2026 var den 4,6 prosent.",
+                    "uttale": "I dag måler SSB ledigheten på en annen måte. I september 2026 var den fire komma seks prosent."
+                }
+            ]
+        },
+        {
+            "id": "korona",
+            "visual": {
+                "type": "ArbeidsledighetTelling",
+                "props": {
+                    "modus": "korona"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Våren 2020 kom koronapandemien. Mange arbeidsplasser stengte, og svært mange ble permittert."
+                },
+                {
+                    "si": "Permittert betyr at du er sendt hjem fra jobben en periode, men ikke har mistet den for godt."
+                },
+                {
+                    "si": "Nav teller permitterte som ledige fra første dag. SSB regner dem som om de har jobb de første tre månedene."
+                },
+                {
+                    "si": "Derfor skjøt Nav-tallet i været, mens SSB-tallet holdt seg ganske stabilt."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Uten jobb, og leter etter en.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Nav og SSB teller på hver sin måte.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Fire grunner til å stå uten jobb.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Ulike grunner, ulike medisiner.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Å miste jobben kan følge deg i mange år.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Hjelp folk tilbake,",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "før de gir opp.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Du er arbeidsledig hvis du er uten jobb og leter etter en. Nav og SSB teller ulikt."
+                },
+                {
+                    "si": "Folk mister jobben av ulike grunner, og hver grunn trenger sin egen løsning."
+                },
+                {
+                    "si": "Oljekrisen viser at det å miste jobben kan få følger i mange år."
+                },
+                {
+                    "si": "Derfor er det viktig å hjelpe folk raskt tilbake i arbeid, før de gir opp."
+                }
+            ]
+        }
+    ]
+}
