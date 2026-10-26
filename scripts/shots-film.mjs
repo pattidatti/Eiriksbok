@@ -15,8 +15,9 @@
 // Med --scener tas bare de scenene på nytt. Bildene og arkene for de andre scenene blir
 // liggende, så vurdereren alltid kan få hele settet.
 //
-// Hvert bilde sjekkes også for tekst som overlapper annen tekst eller er kuttet i
-// bildekanten (målt i DOM, også merkelapper over 3D-lerretet). Funnene står i
+// Hvert bilde sjekkes også for tekst som overlapper annen tekst, er kuttet i bildekanten,
+// står kloss inntil en annen SVG-merkelapp eller ligger under en HTML-boks (målt i DOM, også
+// merkelapper over 3D-lerretet). Funnene står i
 // overlapp.txt og stopper skriptet. Tekst tegnet inne i WebGL ser sjekken ikke.
 
 import fs from 'node:fs';
@@ -102,6 +103,14 @@ function finnOverlapp() {
             const kc = kutt(c.b);
             const w = Math.min(a.b.right, c.b.right) - Math.max(a.b.left, c.b.left);
             const h = Math.min(ka.bottom, kc.bottom) - Math.max(ka.top, kc.top);
+            // To SVG-merkelapper på samme linje som står kloss inntil hverandre, leses som én
+            // tekst («Hvalfett» + «To ganger om dagen»), selv om de ikke overlapper.
+            const tA = a.node.parentElement?.closest('text');
+            const tC = c.node.parentElement?.closest('text');
+            if (tA && tC && tA !== tC && h > 4 && w <= 2 && -w < 10) {
+                funn.push(`«${a.tekst.slice(0, 50)}» står kloss inntil «${c.tekst.slice(0, 50)}»`);
+                continue;
+            }
             if (w <= 2 || h <= 4) continue;
             // To merkelapper på samme linje som går inn i hverandre (en tidslinje der «...ned en
             // kommisjon» møter «rapporten kommer») er en feil selv om overlappet er smalt.
@@ -113,6 +122,26 @@ function finnOverlapp() {
             const minste = Math.min(a.b.width * a.b.height, c.b.width * c.b.height) * 0.64;
             if (!sammeLinje && (w * h) / minste < 0.15) continue;
             funn.push(`«${a.tekst.slice(0, 50)}» overlapper «${c.tekst.slice(0, 50)}»`);
+        }
+    }
+    // SVG-tekst som ligger under en HTML-boks med bakgrunn (et faktakort over kartet). Tekst
+    // mot tekst fanger ikke det, for boksen kan ha annen tekst eller ingen.
+    for (const { tekst, node, b } of bokser) {
+        const svg = node.parentElement?.closest('svg');
+        if (!svg) continue;
+        const x = (b.left + b.right) / 2;
+        const y = (b.top + b.bottom) / 2;
+        if (x < R.left || x > R.right || y < R.top || y > R.bottom) continue;
+        const topp = document.elementFromPoint(x, y);
+        if (!topp || topp instanceof SVGElement || topp.tagName === 'CANVAS' || topp.contains(svg) || topp.contains(node)) continue;
+        for (let e = topp; e && !e.contains(svg); e = e.parentElement) {
+            const cs = getComputedStyle(e);
+            const alfa = cs.backgroundColor.match(/[\d.]+/g)?.[3];
+            const dekker = cs.backgroundColor !== 'transparent' && (alfa === undefined || parseFloat(alfa) > 0.5);
+            if (dekker && parseFloat(cs.opacity) > 0.5) {
+                funn.push(`«${tekst.slice(0, 50)}» ligger under en boks («${(e.textContent ?? '').trim().slice(0, 30)}»)`);
+                break;
+            }
         }
     }
     return [...new Set(funn)];
