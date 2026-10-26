@@ -1,0 +1,609 @@
+{
+    "id": "forste-verdenskrig-oversikt",
+    "tittel": "Første verdenskrig: En oversikt",
+    "kilde": "/historie/forste-verdenskrig/oversikt",
+    "bilde": "/images/historie/forste-verdenskrig/oversikt_hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 700,
+            "begrunnelse": "Målestokk: 70 millioner mobiliserte som 700 prikker, én prikk per 100 000 mennesker."
+        },
+        {
+            "tall": 600,
+            "begrunnelse": "Målestokk: 60 millioner europeere som 600 prikker."
+        },
+        {
+            "tall": 90,
+            "begrunnelse": "Målestokk: over 9 millioner falne soldater som 90 prikker."
+        },
+        {
+            "tall": 70,
+            "begrunnelse": "Målestokk: 7 millioner døde sivile som 70 prikker (og 70 millioner mobiliserte)."
+        },
+        {
+            "tall": 160,
+            "begrunnelse": "Regnet ut fra artikkelen: 9 millioner soldater og 7 millioner sivile, som prikker (90 + 70)."
+        },
+        {
+            "tall": 100000,
+            "begrunnelse": "Målestokken i prikkfeltet: én prikk er 100 000 mennesker."
+        },
+        {
+            "tall": 1400000,
+            "begrunnelse": "Artikkelen skriver «nesten 1,4 millioner soldater»; dette er samme tall skrevet ut for telleren."
+        },
+        {
+            "tall": 2000000,
+            "begrunnelse": "Artikkelen skriver «over 2 millioner soldater»; dette er samme tall skrevet ut for telleren."
+        },
+        {
+            "tall": "tretti",
+            "begrunnelse": "Artikkelen skriver «en trettiårsperiode med konflikt»."
+        },
+        {
+            "tall": "hundre",
+            "begrunnelse": "Målestokk: jordas overflate som 100 prikker, én per prosent, for å vise artikkelens «nesten 80 prosent»."
+        },
+        {
+            "tall": 770,
+            "begrunnelse": "Regnet ut fra artikkelen: 700 prikker for de 70 millioner mobiliserte pluss 70 prikker for 7 millioner sivile (100 000 per prikk)."
+        }
+    ],
+    "vurdering": {
+        "dato": "2026-10-26",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "bryllup",
+            "lyd": "rom",
+            "kapittel": "Den vakre tiden",
+            "visual": {
+                "type": "OversiktFettere"
+            },
+            "replikker": [
+                {
+                    "si": "Berlin, 1913. Det er et stort bryllup, og tre av de mektigste mennene i Europa møtes."
+                },
+                {
+                    "si": "Det er kong George av Storbritannia, keiser Wilhelm av Tyskland og tsar Nicholas av Russland. Tsar er det russiske ordet for keiser."
+                },
+                {
+                    "si": "De tre er i nær slekt. Kong George og keiser Wilhelm er begge barnebarn av dronning Victoria, og George og Nicholas er fettere."
+                },
+                {
+                    "si": "Bare ett år senere er landene deres i krig med hverandre."
+                },
+                {
+                    "si": "Hvordan kunne det skje?"
+                }
+            ]
+        },
+        {
+            "id": "imperiene",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Hele jordas overflate",
+                            "restEtikett": "jordas overflate",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 80,
+                            "farge": "#2563eb",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Nesten 80 prosent styrt av imperiene",
+                            "fargeEtikett": "styrt av de store imperiene",
+                            "restEtikett": "resten",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 80,
+                            "farge": "#ca8a04",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Europas stormakter var på topp",
+                            "fargeEtikett": "styrt av de store imperiene",
+                            "restEtikett": "resten",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Årene før krigen kalles ofte den vakre tiden. Europa var rikt og sterkt. Tenk deg hele jordas overflate som hundre prikker."
+                },
+                {
+                    "si": "De store imperiene, altså riker som styrer over mange andre land og folk, styrte nesten 80 prosent av jordas overflate."
+                },
+                {
+                    "si": "Europa nærmest eide verden. Og folk trodde at framtiden bare ville bli bedre."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DEN STORE KRIGEN",
+                    "undertittel": "Første verdenskrig, 1914-1918",
+                    "bilde": "/images/historie/forste-verdenskrig/oversikt_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne en trygg verden falle sammen så fort?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Folk den gang kalte den Den store krigen. I dag kaller vi den første verdenskrig."
+                },
+                {
+                    "si": "Den varte fra 1914 til 1918. For første gang var land fra alle verdensdeler med i samme krig."
+                },
+                {
+                    "si": "I denne filmen skal vi finne ut hvordan en verden som virket så trygg, kunne falle sammen så fort."
+                }
+            ]
+        },
+        {
+            "id": "grunner",
+            "kapittel": "Hvorfor krig?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Viktige grunner til krigen",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Kamp om kolonier",
+                            "tekst": "i Afrika og Asia",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Nasjonalisme",
+                            "tekst": "folk ville ha sitt eget land",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Enorme hærer",
+                            "tekst": "stormaktene rustet opp",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Allianser",
+                            "tekst": "løfter om å hjelpe hverandre",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor ble det krig? Historikere diskuterer det fortsatt. Men de fleste peker på flere ting som hadde bygd seg opp i mange år."
+                },
+                {
+                    "si": "Stormaktene konkurrerte om kolonier i Afrika og Asia. Kolonier er land som blir styrt av et annet land. Kampen skapte mistillit og fiendskap."
+                },
+                {
+                    "si": "Mange folk ville ha sitt eget land. Det kalles nasjonalisme. Særlig på Balkan truet det de gamle rikene med mange folkegrupper, som Østerrike-Ungarn."
+                },
+                {
+                    "si": "Stormaktene bygde opp enorme hærer for å være trygge."
+                },
+                {
+                    "si": "Og de lovet å hjelpe hverandre hvis noen ble angrepet. Slike avtaler kalles allianser."
+                }
+            ]
+        },
+        {
+            "id": "allianser",
+            "lyd": "stille",
+            "visual": {
+                "type": "OversiktKart",
+                "props": {
+                    "modus": "allianser"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Europa ble delt i to lag."
+                },
+                {
+                    "si": "På den ene siden sto Ententen: Frankrike, Storbritannia og Russland. Senere kom blant andre Italia og USA med."
+                },
+                {
+                    "si": "På den andre siden sto Sentralmaktene: Tyskland, Østerrike-Ungarn og Det osmanske riket."
+                },
+                {
+                    "si": "Tanken var at ingen ville tørre å angripe, når det betydde krig mot flere land samtidig."
+                },
+                {
+                    "si": "Men alliansene virket som en felle. En krangel mellom to land kunne raskt dra med seg resten av Europa."
+                }
+            ]
+        },
+        {
+            "id": "sarajevo",
+            "kapittel": "Sarajevo",
+            "visual": {
+                "type": "OversiktKart",
+                "props": {
+                    "modus": "sarajevo"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så kom gnisten. Sarajevo, 28. juni 1914."
+                },
+                {
+                    "si": "Erkehertug Franz Ferdinand kjører gjennom byen. Han er arving til tronen i Østerrike-Ungarn."
+                },
+                {
+                    "si": "En ung serbisk nasjonalist, Gavrilo Princip, skyter og dreper ham."
+                },
+                {
+                    "si": "Drapet setter i gang en kjedereaksjon. Det ene landet etter det andre går inn i krigen."
+                },
+                {
+                    "si": "Den britiske utenriksministeren Edward Grey sa: Lyset slukkes over hele Europa. Vi vil ikke se det tennes igjen i vår levetid."
+                }
+            ]
+        },
+        {
+            "id": "fronter",
+            "lyd": "vind",
+            "kapittel": "Krigen",
+            "visual": {
+                "type": "OversiktKart",
+                "props": {
+                    "modus": "fronter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tyske soldater rykket fram mot Paris. Men høsten 1914 ble de stoppet utenfor byen."
+                },
+                {
+                    "si": "Da gravde begge sider seg ned i lange grøfter, som kalles skyttergraver. De gikk fra grensa til Sveits helt opp til Nordsjøen."
+                },
+                {
+                    "si": "Her sto krigen nesten stille. Slagene ved Verdun og Somme i 1916 ble symboler på en meningsløs sløsing med menneskeliv."
+                },
+                {
+                    "si": "I øst var fronten mye lengre. Der kjempet Russland mot Tyskland og Østerrike-Ungarn over enorme områder."
+                },
+                {
+                    "si": "Det ble også kjempet høyt oppe i Alpene, i Midtøsten og i koloniene i Afrika."
+                },
+                {
+                    "si": "Og på havet prøvde Tyskland å sulte ut Storbritannia med ubåter."
+                }
+            ]
+        },
+        {
+            "id": "vaapen",
+            "lyd": "stille",
+            "visual": {
+                "type": "OversiktVaapen"
+            },
+            "replikker": [
+                {
+                    "si": "Krigen ble et møte mellom gammelt og nytt."
+                },
+                {
+                    "si": "I begynnelsen red offiserer til hest, i fargesterke uniformer og med sverd."
+                },
+                {
+                    "si": "Ved slutten ble stridsvogner og fly brukt i stor skala."
+                },
+                {
+                    "si": "Og ubåter, flammekastere og giftgass."
+                },
+                {
+                    "si": "Gammeldags måter å krige på, mot moderne våpen fra fabrikkene. Det var det som gjorde krigen så dødelig."
+                }
+            ]
+        },
+        {
+            "id": "totalkrig",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "TOTAL KRIG",
+                    "undertittel": "Britisk fabrikk, 1916",
+                    "bilde": "/images/historie/forste-verdenskrig/oversikt_industriell_krig.webp"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Krigen ble ikke bare kjempet ved fronten. Det var en total krig. Det betyr at hele folket måtte være med."
+                },
+                {
+                    "si": "Her lager kvinner granater til kanonene, i en britisk fabrikk i 1916."
+                },
+                {
+                    "si": "Også de som var igjen hjemme, ble en del av krigen."
+                }
+            ]
+        },
+        {
+            "id": "tap",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 700,
+                            "farget": 700,
+                            "farge": "#475569",
+                            "tittel": "Over 70 millioner soldater",
+                            "fargeEtikett": "soldater",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 700,
+                            "farget": 600,
+                            "farge": "#2563eb",
+                            "restFarge": "#94a3b8",
+                            "tittel": "60 millioner fra Europa",
+                            "fargeEtikett": "fra Europa",
+                            "restEtikett": "fra resten av verden",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 700,
+                            "farget": 90,
+                            "farge": "#dc2626",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Over 9 millioner soldater falt",
+                            "fargeEtikett": "soldater som falt",
+                            "restEtikett": "de andre soldatene",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 770,
+                            "farget": 160,
+                            "farge": "#7f1d1d",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Og 7 millioner sivile døde",
+                            "fargeEtikett": "døde soldater og sivile",
+                            "restEtikett": "soldater som overlevde",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 4,
+                            "total": 770,
+                            "farget": 160,
+                            "farge": "#7f1d1d",
+                            "restFarge": "#f59e0b",
+                            "tittel": "Den tapte generasjon",
+                            "fargeEtikett": "døde soldater og sivile",
+                            "restEtikett": "soldater som kom hjem",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Over 70 millioner ble soldater i krigen. Hver prikk her er hundre tusen mennesker."
+                },
+                {
+                    "si": "60 millioner av dem kom fra Europa."
+                },
+                {
+                    "si": "Mer enn 9 millioner soldater falt."
+                },
+                {
+                    "si": "I tillegg døde 7 millioner sivile, altså folk som ikke var soldater. De døde i krigshandlinger, av sult eller av sykdom."
+                },
+                {
+                    "si": "Mange som kom hjem, var merket for livet, på kroppen eller i sinnet. De unge mennene ble kalt den tapte generasjon."
+                }
+            ]
+        },
+        {
+            "id": "hver-dag",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DØDE SOLDATER",
+                    "tall": [
+                        {
+                            "verdi": 6000,
+                            "etikett": "døde hver dag",
+                            "fraBeat": 0,
+                            "tone": "rod"
+                        },
+                        {
+                            "verdi": 1400000,
+                            "etikett": "franske, ca. 4 % av folket",
+                            "fraBeat": 1,
+                            "prefiks": "nesten",
+                            "tone": "rod"
+                        },
+                        {
+                            "verdi": 2000000,
+                            "etikett": "tyske",
+                            "fraBeat": 2,
+                            "prefiks": "over",
+                            "tone": "rod"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk på det per dag. I snitt døde rundt 6000 soldater hver eneste dag krigen varte."
+                },
+                {
+                    "si": "Frankrike mistet nesten 1,4 millioner soldater. Det var rundt 4 prosent av hele befolkningen."
+                },
+                {
+                    "si": "Tyskland mistet over 2 millioner soldater."
+                }
+            ]
+        },
+        {
+            "id": "vendepunkt",
+            "kapittel": "1917",
+            "visual": {
+                "type": "OversiktVekt"
+            },
+            "replikker": [
+                {
+                    "si": "Lenge sto krigen fast. Ingen av sidene klarte å vinne."
+                },
+                {
+                    "si": "Så kom 1917, et vendepunkt. I Russland brøt det ut revolusjon, altså at folket veltet makthaverne. Russland trakk seg ut av krigen."
+                },
+                {
+                    "si": "Nå kunne Tyskland flytte mange soldater fra øst til vest."
+                },
+                {
+                    "si": "Men samme år hadde også USA gått inn i krigen, med friske soldater og store fabrikker. Vektskåla tippet sakte over til Ententen."
+                },
+                {
+                    "si": "Våren 1918 satset Tyskland alt på et siste stort angrep, før amerikanerne kom fram i full styrke."
+                },
+                {
+                    "si": "Men angrepet stoppet opp. Høsten 1918 falt Sentralmaktene sammen, én etter én. Presset hjemme ble for stort, og også i Tyskland brøt det ut revolusjon."
+                }
+            ]
+        },
+        {
+            "id": "imperier",
+            "lyd": "rom",
+            "kapittel": "Slutten",
+            "visual": {
+                "type": "OversiktKart",
+                "props": {
+                    "modus": "imperier"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den 11. november 1918 ble våpnene stille. Det kalles en våpenhvile, altså en avtale om å slutte å skyte."
+                },
+                {
+                    "si": "Krigen førte til at fire store imperier gikk i oppløsning."
+                },
+                {
+                    "si": "Tyskland og Østerrike-Ungarn."
+                },
+                {
+                    "si": "Det osmanske riket og Russland."
+                },
+                {
+                    "si": "Husker du de tre fra bryllupet? Keiseren i Tyskland og tsaren i Russland mistet makta. Rikene deres var borte."
+                }
+            ]
+        },
+        {
+            "id": "versailles",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "VERSAILLES",
+                    "undertittel": "Freden i 1919",
+                    "bilde": "/images/historie/forste-verdenskrig/oversikt_fredsavtale.webp",
+                    "sporsmal": {
+                        "tekst": "Slutten på alle kriger?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Året etter ble freden skrevet under i Versailles i Frankrike. Der tegnet de kartet over Europa på nytt."
+                },
+                {
+                    "si": "Men freden var skjør."
+                },
+                {
+                    "si": "Mange tyskere følte at fredsavtalen ydmyket dem, altså tråkket på dem. Sinnet gjorde det lettere for ekstreme politikere å få folk med seg."
+                },
+                {
+                    "si": "Mange hadde håpet at dette skulle bli krigen som gjorde slutt på alle kriger. Men slik sett ble den heller starten på tretti år med konflikt."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "1913: Framtiden ser lys ut.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Ett år senere: krig.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Kolonier, nasjonalisme, hærer, løfter.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Så kom skuddene i Sarajevo.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "En trygg verden kan falle fort.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Og en skjør fred kan starte nye konflikter.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1913 trodde folk at framtiden bare ville bli bedre."
+                },
+                {
+                    "si": "Kamp om kolonier, nasjonalisme, store hærer og et nett av løfter. Så kom skuddene i Sarajevo."
+                },
+                {
+                    "si": "En verden som virket trygg, falt sammen på kort tid. Og freden etterpå var så skjør at nye konflikter fulgte."
+                }
+            ]
+        }
+    ]
+}
