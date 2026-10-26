@@ -18,11 +18,11 @@
                 "phase": "Prolog: Den Gamle Verden",
                 "title": "Europa før stormen",
                 "type": "fakta",
-                "content": "Forestill deg at året er 1913. Europa er verdens ubestridte sentrum, en plass preget av en urokkelig tro på fremtiden. Jernbaner krysser grensene, elektrisiteten lyser opp byene, og folk lever i en fred som har vart så lenge at de har glemt hvordan krig smaker. Denne perioden kalles *Belle Époque* – den vakre tiden.\n\nDu beveger deg i en verden styrt av store keiserriker. De tre mektigste mennene i Europa – kongen av Storbritannia, keiseren av Tyskland og tsaren av Russland – er fettere. De skriver vennlige brev til hverandre og møtes i store familiebesøk. Ingen ser for seg at disse familiebåndene snart skal rives i stykker.\n\nI dette første steget skal du utforske hvordan denne 'perfekte' verdenen så ut på overflaten, før du lærer om de mørke spenningene som kokte under jorden. Se etter informasjon om hvem som egentlig styrte hva, og hvorfor freden var skjørere enn den så ut.",
+                "content": "Forestill deg at året er 1913. Europa er verdens ubestridte sentrum, en plass preget av en urokkelig tro på fremtiden. Jernbaner krysser grensene, elektrisiteten lyser opp byene, og folk lever i en fred som har vart så lenge at de har glemt hvordan krig smaker. Denne perioden kalles *Belle Époque* – den vakre tiden.\n\nDu beveger deg i en verden styrt av store keiserriker. De tre mektigste mennene i Europa – kongen av Storbritannia, keiseren av Tyskland og tsaren av Russland – er i nær slekt. Kongen er fetter av både keiseren og tsaren. De skriver vennlige brev til hverandre og møtes i store familiebesøk. Ingen ser for seg at disse familiebåndene snart skal rives i stykker.\n\nI dette første steget skal du utforske hvordan denne 'perfekte' verdenen så ut på overflaten, før du lærer om de mørke spenningene som kokte under jorden. Se etter informasjon om hvem som egentlig styrte hva, og hvorfor freden var skjørere enn den så ut.",
                 "tasks": [
                     "Les artikkelen [Oversikt over krigen: Stille før stormen](/historie/forste-verdenskrig/oversikt)",
                     "Hvilken periode kalles 'Belle Époque'? (Fakta)",
-                    "Nevn tre stormakter som var styrt av fettere i 1913. (Fakta)",
+                    "Nevn tre stormakter som var styrt av slektninger i 1913. (Fakta)",
                     "Hva betydde det at Europa 'eide' verden på denne tiden? (Forståelse)",
                     "Hvorfor tror du det er farlig å glemme hva krig er? (Refleksjon)",
                     "Hvordan kan langvarig fred gjøre et samfunn sårbar for krig? (Analyse)"
@@ -584,17 +584,17 @@
                     "id": "pres-belle-epoque",
                     "title": "Den vakre tiden",
                     "layout": "content",
-                    "summary": "Europa i 1913 - tre fettere styrte verden",
+                    "summary": "Europa i 1913 - tre slektninger på tronene",
                     "phase": "opptakt",
                     "linksToStepId": "step-0",
                     "year": 1913,
                     "points": [
                         { "id": "p1", "text": "Belle Époque: lang fred, tro på fremtiden", "type": "bullet" },
-                        { "id": "p2", "text": "Tre fettere på Europas troner: George, Wilhelm, Nikolaj", "type": "bullet" },
+                        { "id": "p2", "text": "Tre slektninger på Europas troner: George, Wilhelm, Nikolaj", "type": "bullet" },
                         { "id": "p3", "text": "Under overflaten: nasjonalisme, kappløp, allianser", "type": "bullet" }
                     ],
                     "image": "/images/historie/forste-verdenskrig/oversikt_1913_monarker.webp",
-                    "teacherNotes": "Forklar at de tre mektigste mennene i Europa var fettere. Kongene møttes til familiebryllup og skrev vennlige brev. Likevel endte de opp med å slakte hverandres folk.\n\nDen lange freden hadde gjort folk blinde for hva krig faktisk var. Mange trodde på en kort, ren og heroisk krig.",
+                    "teacherNotes": "Forklar at de tre mektigste mennene i Europa var i nær slekt: George var fetter av både Wilhelm og Nikolaj. Kongene møttes til familiebryllup og skrev vennlige brev. Likevel endte de opp med å slakte hverandres folk.\n\nDen lange freden hadde gjort folk blinde for hva krig faktisk var. Mange trodde på en kort, ren og heroisk krig.",
                     "talkingPoints": [
                         "Hvorfor kan lang fred faktisk gjøre et samfunn mer sårbart for krig?",
                         "Hva ville du tenkt om sjefen din var fetter til sjefen for nabolandet?"

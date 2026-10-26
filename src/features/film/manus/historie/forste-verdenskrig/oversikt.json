@@ -34,7 +34,7 @@
         },
         {
             "tall": 2000000,
-            "begrunnelse": "Artikkelen skriver «over 2 millioner soldater»; dette er samme tall skrevet ut for telleren."
+            "begrunnelse": "Artikkelen skriver «rundt 2 millioner soldater»; dette er samme tall skrevet ut for telleren."
         },
         {
             "tall": "tretti",
@@ -42,7 +42,7 @@
         },
         {
             "tall": "hundre",
-            "begrunnelse": "Målestokk: jordas overflate som 100 prikker, én per prosent, for å vise artikkelens «nesten 80 prosent»."
+            "begrunnelse": "Målestokk: landjorda som 100 prikker, én per prosent, for å vise artikkelens «over 80 prosent»."
         },
         {
             "tall": 770,
@@ -97,8 +97,8 @@
                             "total": 100,
                             "farget": 0,
                             "restFarge": "#94a3b8",
-                            "tittel": "Hele jordas overflate",
-                            "restEtikett": "jordas overflate",
+                            "tittel": "Hele landjorda",
+                            "restEtikett": "landjorda",
                             "visTall": false
                         },
                         {
@@ -107,8 +107,8 @@
                             "farget": 80,
                             "farge": "#2563eb",
                             "restFarge": "#cbd5e1",
-                            "tittel": "Nesten 80 prosent styrt av imperiene",
-                            "fargeEtikett": "styrt av de store imperiene",
+                            "tittel": "Over 80 prosent styrt fra Europa",
+                            "fargeEtikett": "styrt fra Europa",
                             "restEtikett": "resten",
                             "visTall": false
                         },
@@ -119,7 +119,7 @@
                             "farge": "#ca8a04",
                             "restFarge": "#cbd5e1",
                             "tittel": "Europas stormakter var på topp",
-                            "fargeEtikett": "styrt av de store imperiene",
+                            "fargeEtikett": "styrt fra Europa",
                             "restEtikett": "resten",
                             "visTall": false
                         }
@@ -128,10 +128,10 @@
             },
             "replikker": [
                 {
-                    "si": "Årene før krigen kalles ofte den vakre tiden. Europa var rikt og sterkt. Tenk deg hele jordas overflate som hundre prikker."
+                    "si": "Årene før krigen kalles ofte den vakre tiden. Europa var rikt og sterkt. Tenk deg alt landet på jorda som hundre prikker."
                 },
                 {
-                    "si": "De store imperiene, altså riker som styrer over mange andre land og folk, styrte nesten 80 prosent av jordas overflate."
+                    "si": "De europeiske stormaktene og koloniene deres dekket over 80 prosent av landet på jorda. Kolonier er land som blir styrt av et annet land."
                 },
                 {
                     "si": "Europa nærmest eide verden. Og folk trodde at framtiden bare ville bli bedre."
@@ -381,7 +381,7 @@
                             "farget": 90,
                             "farge": "#dc2626",
                             "restFarge": "#cbd5e1",
-                            "tittel": "Over 9 millioner soldater falt",
+                            "tittel": "Rundt 9 millioner soldater falt",
                             "fargeEtikett": "soldater som falt",
                             "restEtikett": "de andre soldatene",
                             "visTall": false
@@ -392,7 +392,7 @@
                             "farget": 160,
                             "farge": "#7f1d1d",
                             "restFarge": "#cbd5e1",
-                            "tittel": "Og 7 millioner sivile døde",
+                            "tittel": "Og minst 7 millioner sivile døde",
                             "fargeEtikett": "døde soldater og sivile",
                             "restEtikett": "soldater som overlevde",
                             "visTall": false
@@ -419,10 +419,10 @@
                     "si": "60 millioner av dem kom fra Europa."
                 },
                 {
-                    "si": "Mer enn 9 millioner soldater falt."
+                    "si": "Rundt 9 millioner soldater falt."
                 },
                 {
-                    "si": "I tillegg døde 7 millioner sivile, altså folk som ikke var soldater. De døde i krigshandlinger, av sult eller av sykdom."
+                    "si": "I tillegg døde minst 7 millioner sivile, altså folk som ikke var soldater. De døde i krigshandlinger, av sult eller av sykdom."
                 },
                 {
                     "si": "Mange som kom hjem, var merket for livet, på kroppen eller i sinnet. De unge mennene ble kalt den tapte generasjon."
@@ -444,7 +444,7 @@
                         },
                         {
                             "verdi": 1400000,
-                            "etikett": "franske, ca. 4 % av folket",
+                            "etikett": "franske, ca. 3,5 % av folket",
                             "fraBeat": 1,
                             "prefiks": "nesten",
                             "tone": "rod"
@@ -453,7 +453,7 @@
                             "verdi": 2000000,
                             "etikett": "tyske",
                             "fraBeat": 2,
-                            "prefiks": "over",
+                            "prefiks": "rundt",
                             "tone": "rod"
                         }
                     ]
@@ -464,10 +464,10 @@
                     "si": "Tenk på det per dag. I snitt døde rundt 6000 soldater hver eneste dag krigen varte."
                 },
                 {
-                    "si": "Frankrike mistet nesten 1,4 millioner soldater. Det var rundt 4 prosent av hele befolkningen."
+                    "si": "Frankrike mistet nesten 1,4 millioner soldater. Det var rundt 3,5 prosent av hele befolkningen."
                 },
                 {
-                    "si": "Tyskland mistet over 2 millioner soldater."
+                    "si": "Tyskland mistet rundt 2 millioner soldater."
                 }
             ]
         },
