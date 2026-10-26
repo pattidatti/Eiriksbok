@@ -23,3 +23,11 @@ Dette dokumentet definerer reglene for skriving og formatering av artikler for �
 - Hver seksjon bør også være lesbar for seg selv, slik at man kan lese den uten å ha lest resten av emnet. 
 - Hver artikkel bør være rundt 900-1200 ord lang. Avhengig av emnet. Noen emner krever mer forklaring enn andre.
 - Ingen avsnitt skal bestå av bare en setning og en liste. Det må være en forklarende tekst som utdyper poenget.
+
+## 6. Økonomi: sidens linje
+- Økonomiartiklene bygger på den østerrikske skolen (Menger, Mises, Hayek, Rothbard). Den forklaringen er artikkelens svar og konklusjon. Der østerrikerne er uenige seg imellom, følger vi Rothbard.
+- Hovedstrømssynet (læreboka, Store norske leksikon) gjengis kort og korrekt, slik at eleven kjenner begrepene fra prøver og lærebøker, og besvares så. Ingen stråmenn: eleven skal kunne forklare motsynet.
+- SNL alene er ikke nok teorigrunnlag i økonomi. SNL gir hovedstrømssynet. Hent den østerrikske forklaringen fra primærkilder (mises.org har de fleste verkene gratis) og sjekk mot `okonomiske-skoler`, `naturlig-rente` og `finanskriser`.
+- Typiske feller: naturlig monopol som fakta, fullkommen konkurranse som ideal, lavere rente eller statlig pengebruk som medisin mot nedgangstider, «stabil pengeverdi» om 2 prosent inflasjon, og konkurransemyndigheter som nøytrale dommere.
+- Bakgrunn og eksempler: `docs/faktasjekk/okonomi-osterriksk-linje-2026-10.md`.
+

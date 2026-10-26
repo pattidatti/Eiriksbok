@@ -154,7 +154,7 @@
         },
         {
             "type": "text",
-            "content": "Det viktige er at de fire skolene ikke er uenige om fakta. De er uenige om hvilke antakelser som er riktige. Hvem bør vi stole på - markedet eller staten? Hva skaper inflasjon? Kan kriser kurere seg selv? Svaret avhenger av hvilke briller du setter på."
+            "content": "De fire skolene ser de samme tallene, men forklarer dem ulikt. Hvem bør vi stole på - markedet eller staten? Hva skaper inflasjon? Kan kriser kurere seg selv? I denne boka bygger vi på den østerrikske skolen, fordi vi mener den gir de beste svarene. Men for å forstå debattene på tv og i avisene må du kjenne alle fire."
         },
         {
             "type": "component",
@@ -327,24 +327,28 @@
         },
         {
             "type": "header",
-            "content": "Hva betyr dette for Økonomi-Verden?"
+            "content": "Hvorfor bygger denne boka på den østerrikske skolen?"
         },
         {
             "type": "text",
-            "content": "Simuleringen bygger inn antakelser fra den østerrikske skolen. Det betyr at i denne modellen vil for lav rente bygge bobler, frimarkedet uten inngrep vil holde seg stabilt over tid, og pengetrykk vil føre til inflasjon. Det er en konsistent modell - men ikke den eneste mulige."
+            "content": "Både artiklene i denne boka og Økonomi-Verden bygger på den østerrikske skolen. Det betyr at for lav rente bygger bobler, at et fritt marked retter opp feil over tid, og at pengetrykking fører til inflasjon. Vi har valgt den fordi den forklarer både oppgangen og krakket. Østerrikerne mener at de andre skolene forklarer hvorfor krisen kom, men ikke hvorfor det gikk så bra rett før."
         },
         {
             "type": "text",
-            "content": "En keynesianer ville sagt: ja, men hva med 1930-tallet, da markedet ikke selv klarte å skape jobber igjen? En monetarist ville sagt: pengemengden er det viktigste, ikke renten alene. En post-keynesianer ville sagt: dere ser ikke etter bobler der de faktisk vokser, i finanssektoren."
+            "content": "De andre skolene har sine innvendinger. En keynesianer ville sagt: ja, men hva med 1930-tallet, da markedet ikke selv klarte å skape jobber igjen? En monetarist ville sagt: pengemengden er det viktigste, ikke renten alene. En post-keynesianer ville sagt: dere ser ikke etter bobler der de faktisk vokser, i finanssektoren."
         },
         {
             "type": "text",
-            "content": "Når du spiller, tenk kritisk: hva viser modellen deg, og hva får den ikke med seg? Det er en bedre øvelse i samfunnskunnskap enn å pugge svar."
+            "content": "Den østerrikske skolen har svar. Murray Rothbard mente at krisen på 1930-tallet ble så lang nettopp fordi staten grep inn. I USA presset president Herbert Hoover bedriftene til å holde lønningene oppe mens prisene falt, og da ble det dyrere å ansette folk (Rothbard, 1963/2000). Til monetaristene sier østerrikerne at det ikke bare er mengden nye penger som betyr noe, men hvor de havner først."
+        },
+        {
+            "type": "text",
+            "content": "Når du spiller, prøv rådene fra alle fire skolene og se hva som skjer. Kan du forklare hvorfor den østerrikske medisinen virker i modellen, og hva de andre skolene ville innvendt? Det er en bedre øvelse i samfunnskunnskap enn å pugge svar."
         },
         {
             "type": "list",
             "items": [
-                "Alle fire skolene ser de samme tallene - de er uenige om hvilke antakelser som er riktige",
+                "Alle fire skolene ser de samme tallene, men forklarer dem ulikt. Denne boka bygger på den østerrikske skolen",
                 "Østerriksk skole: markedet vet best, sentralbankinngrep skaper kriser",
                 "Keynesiansk skole: markedet kan svikte, staten må stimulere etterspørselen",
                 "Monetarisme: stabil pengemengdevekst er nøkkelen til stabil økonomi",
@@ -377,7 +381,7 @@
                     "En keynesianer og en østerriksk økonom ser begge at arbeidsledigheten stiger til 10 prosent. Hvorfor gir de helt ulike råd om hva som bør gjøres?"
                 ],
                 "gaaVidere": [
-                    "Økonomi-Verden-simuleringen er bygget på antakelser fra den østerrikske skolen. Skriv en kort tekst der du forklarer hva modellen kan vise deg, og hva den ikke får med seg.",
+                    "Økonomi-Verden bygger på den østerrikske skolen. Velg en av krisene i artikkelen og forklar hvordan den østerrikske skolen forklarer den. Hva ville en keynesianer innvendt, og hva ville du svart?",
                     "Tenk deg at prisene i Norge plutselig stiger 8 prosent på ett år. Velg to av skolene og skriv hva hver av dem ville rådet politikerne til å gjøre.",
                     "Diskuter i klassen: Bør staten gripe inn når det er krise i økonomien, eller bør markedet få ordne opp selv? Bruk argumenter fra minst to av skolene."
                 ]
@@ -397,6 +401,7 @@
                     "Munthe, P. (2024). *Friedrich August von Hayek*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Friedrich_August_von_Hayek)",
                     "Munthe, P. (2025). *Milton Friedman*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/Milton_Friedman)",
                     "Richardson, G. (2013). *The Great Depression*. Federal Reserve History. Hentet 08.08.2026 fra [federalreservehistory.org](https://www.federalreservehistory.org/essays/great-depression)",
+                    "Rothbard, M. N. (2000). *America's great depression* (5. utg.). Ludwig von Mises Institute. (Opprinnelig utgitt 1963) [mises.org](https://mises.org/library/book/americas-great-depression)",
                     "Stoltz, G. (2024). *John Maynard Keynes*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/John_Maynard_Keynes)",
                     "Thøgersen, J. (2025). *Multiplikator - økonomi*. Store norske leksikon. Hentet 08.08.2026 fra [snl.no](https://snl.no/multiplikator_-_%C3%B8konomi)"
                 ]

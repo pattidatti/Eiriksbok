@@ -59,6 +59,10 @@
       "content": "Økonomer har et navn på dette: avtagende marginalnytte. Det betyr at hver ekstra ting du får, som regel gir deg litt mindre glede enn den forrige (Stoltz & Andresen, 2025). Det første glasset vann en varm dag er gull verdt. Det tiende glasset vil du knapt ha. Fordi vi har så mye vann, betaler vi bare for det siste glasset, og det er ikke verdt stort."
     },
     {
+      "type": "text",
+      "content": "En av dem som løste paradokset, var den østerrikske økonomen Carl Menger. I 1871 viste han at verdien ikke ligger i tingen selv, men i hvor viktig den neste biten er for den som skal bruke den. Det handler ikke om å måle glede i tall. Du rangerer det du ønsker deg: Det første glasset vann en varm dag står øverst på lista, det tiende står langt nede. Med denne tanken grunnla Menger den østerrikske skolen i økonomi, som denne boka bygger på (Menger, 1871/2007)."
+    },
+    {
       "type": "header",
       "text": "Etterspørsel: hvor mye folk vil kjøpe"
     },
@@ -93,6 +97,10 @@
     {
       "type": "text",
       "content": "Hvorfor havner prisen akkurat der? Se for deg en jordbærbonde på torget. Setter hun prisen for høyt, går kundene forbi, og hun sitter igjen med kurver som blir dårlige. Neste gang setter hun ned prisen. Setter hun prisen for lavt, blir det kø, og bærene er borte før lunsj. Mange gikk tomhendte hjem, og flere ville gjerne betalt mer. Neste gang setter hun opp prisen. Slik blir prisen dyttet mot likevekten, uten at noen sjef har bestemt den."
+    },
+    {
+      "type": "text",
+      "content": "Den østerrikske skolen kaller dette markedsprosessen. Ingen vet på forhånd hva den riktige prisen er, heller ikke bonden. Hun prøver seg fram og retter feilene sine, dag for dag. Likevekten er noe hun hele tiden jakter på, ikke et sted markedet står stille (Kirzner, 1973)."
     },
     {
       "type": "text",
@@ -156,7 +164,11 @@
     },
     {
       "type": "text",
-      "content": "Høye priser sender også et signal til kjøperne. Når strømmen blir dyr, lønner det seg å skru ned varmen, dusje kortere og vaske klær når strømmen er billigst. Prisen får folk til å spare på det som er sjeldent. Noen økonomer mener dette signalet er så viktig at staten bør blande seg lite inn i prisene. Andre mener staten må gripe inn når prisene blir urimelige. Du kan lese mer om denne uenigheten i artikkelen om [ulike økonomiske skoler](/samfunnskunnskap/okonomi/okonomiske-skoler)."
+      "content": "Økonomen Friedrich Hayek mente at dette er det viktigste prisene gjør. Ingen enkeltperson vet alt om været, gjødsla, plukkerne og hva folk har lyst på. Kunnskapen er spredt på tusenvis av mennesker. Prisen samler den i ett tall som alle kan forstå (Hayek, 1945)."
+    },
+    {
+      "type": "text",
+      "content": "Høye priser sender også et signal til kjøperne. Når strømmen blir dyr, lønner det seg å skru ned varmen, dusje kortere og vaske klær når strømmen er billigst. Prisen får folk til å spare på det som er sjeldent. Den østerrikske skolen mener derfor at staten bør la prisene være i fred. Et inngrep ødelegger signalet, og da vet verken bøndene eller kjøperne hva som er sjeldent. Andre økonomer mener staten må gripe inn når prisene blir urimelige. Du kan lese mer om denne uenigheten i artikkelen om [ulike økonomiske skoler](/samfunnskunnskap/okonomi/okonomiske-skoler)."
     },
     {
       "type": "header",
@@ -184,12 +196,15 @@
       "props": {
         "sources": [
           "Fjeld, A. (2024). *Adam Smith*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/Adam_Smith](https://snl.no/Adam_Smith)",
+          "Hayek, F. A. (1945). The use of knowledge in society. *American Economic Review, 35*(4), 519–530.",
           "Holstad, M. (2023, 14. februar). *Rekordhøy strømpris i 2022, dempet av strømstøtte*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/energi-og-industri/energi/statistikk/elektrisitetspriser/artikler/rekordhoy-strompris-i-2022--dempet-av-stromstotte)",
+          "Kirzner, I. M. (1973). *Competition and entrepreneurship*. University of Chicago Press.",
+          "Menger, C. (2007). *Principles of economics*. Ludwig von Mises Institute. (Opprinnelig utgitt 1871) [mises.org](https://mises.org/library/book/principles-economics)",
           "Onshuus, H. (2026). *Pris*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/pris](https://snl.no/pris)",
           "Pettersen, K. (2011, 25. juni). *Jordbærene er her*. Matoppskrift.no. [matoppskrift.no](https://www.matoppskrift.no/artikkel/jordbaerene-er-her)",
           "Smith, A. (2002). *An inquiry into the nature and causes of the wealth of nations*. Project Gutenberg. [gutenberg.org](https://www.gutenberg.org/ebooks/3300) (Opprinnelig utgitt 1776)",
-          "Stoltz, G. (2025). *Tilbud*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/tilbud](https://snl.no/tilbud)",
           "Stoltz, G. & Andresen, M. E. (2025). *Etterspørsel*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/etterspørsel](https://snl.no/ettersp%C3%B8rsel)",
+          "Stoltz, G. (2025). *Tilbud*. Store norske leksikon. Hentet 23.10.2026 fra [snl.no/tilbud](https://snl.no/tilbud)",
           "Store norske leksikon. (2020). *Strømpriser i Norge*. Hentet 23.10.2026 fra [snl.no](https://snl.no/.temaside/str%C3%B8mpriser-i-norge)"
         ]
       }
@@ -281,5 +296,6 @@
       }
     }
   ],
-  "timeline": []
+  "timeline": [],
+  "factChecked": "2026-10-26"
 }

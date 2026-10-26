@@ -6,7 +6,7 @@
   "heroImage": "/images/samfunnskunnskap/okonomi/hvordan-penger-blir-til-hero.webp",
   "layout": "rich",
   "readTime": "9 min lesning",
-  "factChecked": "2026-08-18",
+  "factChecked": "2026-10-26",
   "tags": [
     "økonomi",
     "penger",
@@ -88,6 +88,10 @@
       "content": "Det samme skjer motsatt vei. Når du betaler ned på lånet, slettes de bankpengene som ble skapt da lånet ble gitt (Norges Bank, u.å.-a). Pengemengden i Norge puster altså inn og ut med hvor mye vi låner. Låner vi mer enn vi betaler tilbake, vokser den. Betaler vi ned mer enn vi låner, krymper den (Store norske leksikon, 2023)."
     },
     {
+      "type": "text",
+      "content": "Den østerrikske skolen, som denne boka bygger på, ser en fare her. Når bankene lager nye penger ved å låne ut, ser det ut som om folk har spart mer enn de har. Renten blir lavere enn den naturlige renten, og bedrifter starter prosjekter som ikke holder når renten stiger igjen. Murray Rothbard mente derfor at bankene bare burde låne ut penger som folk faktisk har spart (Rothbard, 1983/2008). Les mer i artikkelen om [den naturlige renten](/samfunnskunnskap/okonomi/naturlig-rente)."
+    },
+    {
       "type": "image",
       "src": "/images/samfunnskunnskap/okonomi/hvordan-penger-blir-til-02.webp",
       "alt": "Bankrådgiver signerer boliglån med ungt par ved skrivebord",
@@ -141,6 +145,10 @@
     {
       "type": "text",
       "content": "Sammenhengen er enkel når du først ser den. Settes styringsrenta opp, blir det dyrere for bankene å skaffe penger, og dermed dyrere for deg å låne. Færre tar opp lån. Da blir det laget færre nye penger, og prisveksten dempes. En komité på fem personer møtes åtte ganger i året og bestemmer hvor renta skal ligge. Hva som så skjer med prisene i butikken, står i [Inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva dette målet betyr. Stiger prisene med 2 prosent i året, er pengene dine bare verdt halvparten etter om lag 35 år. Økonomer i den østerrikske skolen mener at det er rart å kalle dette stabil pengeverdi. Pengene blir mindre verdt hvert år, med vilje (Rothbard, 1963/2010)."
     },
     {
       "type": "header",
@@ -247,6 +255,7 @@
       "name": "Kildeliste",
       "props": {
         "sources": [
+          "*Sentralbankloven. Lov om Norges Bank og pengevesenet mv. (LOV-2019-06-21-31)*. (2019). Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/2019-06-21-31)",
           "Bestemmelse om pengepolitikken. (2019). *FOR-2019-12-13-1775*. Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/dokument/INS/forskrift/2019-12-13-1775)",
           "Bårdsen, G. & Stoltz, G. (2026). *Inflasjon*. Store norske leksikon. Hentet 18.08.2026 fra [snl.no/inflasjon](https://snl.no/inflasjon)",
           "Finansavtaleloven. (2024). *Lov om endringer i finansavtaleloven mv. (forbrukeres rett til kontant betaling mv.) (LOV-2024-06-07-29)*. Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/lov/2024-06-07-29/kapI)",
@@ -256,7 +265,8 @@
           "Norges Bank. (u.å.-a). *Hvordan skapes penger?* Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/kort-forklart/penger/hvordan-skapes-penger/)",
           "Norges Bank. (u.å.-b). *Penger*. Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/en/explainers/money/)",
           "Norges Bank. (u.å.-c). *Styringsrenten*. Hentet 18.08.2026 fra [norges-bank.no](https://www.norges-bank.no/tema/pengepolitikk/Styringsrenten/)",
-          "*Sentralbankloven. Lov om Norges Bank og pengevesenet mv. (LOV-2019-06-21-31)*. (2019). Lovdata. Hentet 18.08.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/2019-06-21-31)",
+          "Rothbard, M. N. (2008). *The mystery of banking* (2. utg.). Ludwig von Mises Institute. (Opprinnelig utgitt 1983) [mises.org](https://mises.org/library/book/mystery-banking)",
+          "Rothbard, M. N. (2010). *What has government done to our money?* Ludwig von Mises Institute. (Opprinnelig utgitt 1963) [mises.org](https://mises.org/library/book/what-has-government-done-our-money)",
           "Store norske leksikon. (2023). *Pengemengde*. Hentet 18.08.2026 fra [snl.no/pengemengde](https://snl.no/pengemengde)"
         ]
       }
