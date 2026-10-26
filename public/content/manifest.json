@@ -1309,6 +1309,20 @@
                 "hdi"
               ],
               "createdDate": "2026-10-25T00:00:00Z"
+            },
+            {
+              "id": "arbeidsledighet",
+              "title": "Arbeidsledighet: Hvorfor finner ikke alle jobb?",
+              "description": "Hvorfor står folk uten jobb, hvordan måles ledigheten, og hvorfor trenger ulike typer ledighet ulike løsninger?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "arbeidsledighet",
+                "arbeidsliv",
+                "nav",
+                "konjunktur"
+              ],
+              "createdDate": "2026-10-26T00:00:00Z"
             }
           ]
         },

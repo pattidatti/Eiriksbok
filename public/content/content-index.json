@@ -1,5 +1,5 @@
 {
-  "buildId": 28535904724574,
+  "buildId": 193908956892753,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4810,6 +4810,9 @@
     "ytringsvett-vs-ytringsmot": [
       "content/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot.json"
     ],
+    "arbeidsledighet": [
+      "content/samfunnskunnskap/okonomi/arbeidsledighet.json"
+    ],
     "okonomi-arbeidsspesialisering": [
       "content/samfunnskunnskap/okonomi/arbeidsspesialisering.json"
     ],
@@ -6549,6 +6552,7 @@
     "samfunnskunnskap/mennesket-kultur-samfunn/km-9-identitet-mangfald": "content/samfunnskunnskap/mennesket-kultur-samfunn/km-9-identitet-mangfald.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer": "content/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer.json",
     "samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot": "content/samfunnskunnskap/mennesket-kultur-samfunn/ytringsvett-vs-ytringsmot.json",
+    "samfunnskunnskap/okonomi/arbeidsledighet": "content/samfunnskunnskap/okonomi/arbeidsledighet.json",
     "samfunnskunnskap/okonomi/arbeidsspesialisering": "content/samfunnskunnskap/okonomi/arbeidsspesialisering.json",
     "samfunnskunnskap/okonomi/bnp": "content/samfunnskunnskap/okonomi/bnp.json",
     "samfunnskunnskap/okonomi/finanskriser": "content/samfunnskunnskap/okonomi/finanskriser.json",
