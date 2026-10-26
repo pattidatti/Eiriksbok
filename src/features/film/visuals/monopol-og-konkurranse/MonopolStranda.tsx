@@ -7,12 +7,13 @@ import { guessTier } from '../../../../components/microgames/kit/quality';
 import type { VisualProps } from '../../types';
 
 /**
- * Stranda i 3D: kioskene som selger is. Tre modus: én kiosk alene (monopol), en ny kiosk
- * tvers over gata (konkurranse), og mange like kiosker langs stranda (fullkommen
- * konkurranse). Kundene går dit beaten sier, så bildet tåler at eleven hopper.
+ * Stranda i 3D: kioskene som selger is. Fire modus: én kiosk alene, en ny kiosk tvers over
+ * gata (konkurranse), mange kiosker langs stranda (lærebokas modell mot ekte kappløp), og
+ * kiosk nummer to som blir forbudt (enerett). Kundene går dit beaten sier, så bildet tåler
+ * at eleven hopper.
  */
 
-type Modus = 'alene' | 'to' | 'mange';
+type Modus = 'alene' | 'to' | 'mange' | 'forbud';
 
 const v = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
 
@@ -24,11 +25,17 @@ const OVERSKRIFT: Record<Modus, string[]> = {
     alene: ['Den varmeste dagen i sommer', 'Bare én kiosk', 'En vanlig is: 50 kr', 'Ingen andre steder å kjøpe is'],
     to: ['En ny kiosk åpner tvers over gata', 'Nå kan du velge', 'Kiosk 1 må gjøre noe', 'Lavere pris, eller mer is?'],
     mange: [
-        'Fullkommen konkurranse',
-        'Alle selger nøyaktig samme is',
-        'Hvem som helst kan starte eller legge ned',
+        'Lærebokas modell: fullkommen konkurranse',
+        'Alle selger samme is og vet alt fra før',
+        'Ekte kappløp: noen prøver noe nytt',
         'Tar du mer, går kundene videre',
-        'Prisen presses ned',
+        'Prisen ned, isen bedre',
+    ],
+    forbud: [
+        'Høy pris lokker nye selgere',
+        'Men hva om kiosk nummer to er forbudt?',
+        'Enerett: bare én får lov',
+        'Da kan prisen holde seg høy',
     ],
 };
 
@@ -76,7 +83,7 @@ function kameraFor(modus: Modus, beat: number, t: number) {
                 return { pos: v(10, 30 + t * 0.5, 46), se: v(-3, 0, 2) };
         }
     }
-    if (modus === 'to') {
+    if (modus === 'to' || modus === 'forbud') {
         switch (beat) {
             case 0:
                 return { pos: v(20, 10, 26), se: v(0, 1.5, 6) };
@@ -235,6 +242,7 @@ function duFor(modus: Modus, beat: number, t: number) {
         if (beat === 0) return v(Math.max(2, 18 - t * 2.2), 0, 6.5);
         return foran(KIOSK_1, 3.4);
     }
+    if (modus === 'forbud') return beat === 0 ? v(0.6, 0, 6.4) : foran(KIOSK_1, 3.6, 0.4);
     if (modus === 'to') {
         if (beat === 0) return v(14, 0, 6);
         if (beat === 1) return v(0, 0, 6);
@@ -249,6 +257,12 @@ function kunderFor(modus: Modus, beat: number): THREE.Vector3[] {
     if (modus === 'alene') {
         /* Alle står i kø ved den ene kiosken. */
         return [0, 1, 2, 3, 4].map((i) => foran(KIOSK_1, 4.6 + i * 1.1, 1.4 + (i % 2) * 0.3));
+    }
+    if (modus === 'forbud') {
+        if (beat >= 1) return [0, 1, 2, 3, 4, 5].map((i) => foran(KIOSK_1, 4.6 + i * 1.1, 1.4 + (i % 2) * 0.3));
+        return [0, 1, 2, 3, 4, 5].map((i) =>
+            i % 2 ? foran(KIOSK_2, 3.4 + Math.floor(i / 2) * 1.1, -0.6) : foran(KIOSK_1, 3.4 + Math.floor(i / 2) * 1.1, 1.6)
+        );
     }
     if (modus === 'to') {
         if (beat === 0) return [0, 1, 2, 3, 4, 5].map((i) => foran(KIOSK_1, 4.6 + i * 1.1, 1.4 + (i % 2) * 0.3));
@@ -383,6 +397,25 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
                     <Kiosk plass={KIOSK_2} vist farge={mat.bla} skilt={beat === 2 ? null : 'Kiosk 2'} />
                 </>
             )}
+            {modus === 'forbud' && (
+                <>
+                    <Kiosk
+                        plass={KIOSK_1}
+                        vist
+                        farge={mat.rod}
+                        skilt={beat === 2 ? 'Enerett' : 'Is: 50 kr'}
+                        skiltTone={beat >= 3 ? 'rod' : 'vanlig'}
+                    />
+                    <Kiosk plass={KIOSK_2} vist={beat === 0} farge={mat.bla} skilt="Kiosk 2" />
+                    {beat >= 1 && (
+                        <Html position={[KIOSK_2.x, 2.2, KIOSK_2.z]} center zIndexRange={[10, 0]}>
+                            <div className="px-4 py-2 rounded-xl bg-red-600 text-white shadow-lg font-black whitespace-nowrap text-xl border-4 border-white">
+                                FORBUDT Å ÅPNE
+                            </div>
+                        </Html>
+                    )}
+                </>
+            )}
             {modus === 'mange' &&
                 MANGE.map((k, i) => (
                     <Kiosk
@@ -394,7 +427,7 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
                             beat === 3 && i === DYR
                                 ? 'Dyrere'
                                 : beat === 2 && i === NY
-                                  ? 'Ny kiosk'
+                                  ? 'Nyhet: softis'
                                   : beat === 1 && i % 3 === 0
                                     ? 'Samme is'
                                     : beat === 2 && i % 3 === 0
@@ -452,7 +485,7 @@ export function MonopolStranda({ beat, playing, props }: VisualProps<{ modus?: M
                     </motion.div>
                     <div>
                         <div className="text-2xl font-black text-slate-900">Prisen</div>
-                        <div className="text-lg font-semibold text-slate-600">ned mot det isen koster å lage</div>
+                        <div className="text-lg font-semibold text-slate-600">og isen blir bedre</div>
                     </div>
                 </motion.div>
             )}

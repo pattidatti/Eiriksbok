@@ -5,9 +5,10 @@ import type { VisualProps } from '../../types';
  * De få store. «oligopol»: tre store butikker der én setter ned prisen og de andre følger
  * etter med en gang. «andeler»: dagligvaremarkedet i Norge som én lang handlelapp delt
  * mellom de tre kjedene. «prisjeger»: prisjegerne som skanner prislappene hos hverandre.
+ * «toll»: tollmuren ved grensa som stopper billig mat og nye kjeder fra utlandet.
  */
 
-type Modus = 'oligopol' | 'andeler' | 'prisjeger';
+type Modus = 'oligopol' | 'andeler' | 'prisjeger' | 'toll';
 
 const OVERSKRIFT: Record<Modus, string[]> = {
     oligopol: [
@@ -31,6 +32,12 @@ const OVERSKRIFT: Record<Modus, string[]> = {
         'Priser i stor skala',
         'Prisene står jo på hylla',
         'De andre følger etter med en gang',
+    ],
+    toll: [
+        'Hvorfor kommer ingen nye inn?',
+        'Toll: en avgift på mat fra utlandet',
+        '29 prosent bak tollmuren',
+        'En mur bygget av staten',
     ],
 };
 
@@ -345,6 +352,104 @@ function Skanner({ playing }: { playing: boolean }) {
     );
 }
 
+const MUR_X = 760;
+const TOLL_BUTIKK = [1060, 1270, 1480];
+
+/** Lastebil med mat fra utlandet. */
+function Lastebil({ x }: { x: number }) {
+    return (
+        <g transform={`translate(${x} ${GULV})`}>
+            <rect x={-170} y={-170} width={230} height={140} rx={10} fill="#16a34a" stroke="#334155" strokeWidth={5} />
+            <text x={-55} y={-112} textAnchor="middle" fontSize={30} fontWeight={900} fill="#fff">
+                billig mat
+            </text>
+            <text x={-55} y={-70} textAnchor="middle" fontSize={26} fontWeight={700} fill="#dcfce7">
+                ny kjede
+            </text>
+            <rect x={64} y={-120} width={86} height={90} rx={10} fill="#15803d" stroke="#334155" strokeWidth={5} />
+            <rect x={84} y={-108} width={50} height={36} rx={4} fill="#e0f2fe" />
+            {[-120, 10, 110].map((hx) => (
+                <circle key={hx} cx={hx} cy={-22} r={24} fill="#1f2937" />
+            ))}
+        </g>
+    );
+}
+
+function Toll({ beat, playing }: { beat: number; playing: boolean }) {
+    const mur = beat >= 1;
+    return (
+        <>
+            <text x={60} y={570} fontSize={40} fontWeight={800} fill="#475569">
+                Utlandet
+            </text>
+            <text x={1540} y={570} textAnchor="end" fontSize={40} fontWeight={800} fill="#475569">
+                Norge
+            </text>
+            <line x1={MUR_X} y1={380} x2={MUR_X} y2={GULV} stroke="#94a3b8" strokeWidth={4} strokeDasharray="10 10" />
+            {TOLL_BUTIKK.map((x, i) => (
+                <g key={x}>
+                    <Butikk x={x} farge={FARGER[i]} navn="" s={0.62} />
+                </g>
+            ))}
+            <motion.g
+                initial={false}
+                animate={
+                    beat >= 3 && playing
+                        ? { x: [0, 250, 190, 0] }
+                        : { x: beat === 0 ? 120 : 0 }
+                }
+                transition={beat >= 3 ? { duration: 3, repeat: Infinity, ease: 'easeInOut' } : { duration: 1.2 }}
+            >
+                <Lastebil x={330} />
+            </motion.g>
+            {beat === 0 && (
+                <motion.text
+                    x={MUR_X}
+                    y={470}
+                    textAnchor="middle"
+                    fontSize={130}
+                    fontWeight={900}
+                    fill="#0f172a"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                >
+                    ?
+                </motion.text>
+            )}
+            <motion.g initial={false} animate={{ y: mur ? 0 : 520, opacity: mur ? 1 : 0 }} transition={{ duration: 1.1 }}>
+                <rect x={MUR_X - 60} y={290} width={120} height={GULV - 290} fill="#b45309" stroke="#334155" strokeWidth={6} />
+                {Array.from({ length: 7 }, (_, r) => (
+                    <line key={r} x1={MUR_X - 60} y1={350 + r * 60} x2={MUR_X + 60} y2={350 + r * 60} stroke="#78350f" strokeWidth={4} />
+                ))}
+                <rect x={MUR_X - 90} y={300} width={180} height={70} rx={12} fill="#fff" stroke="#0f172a" strokeWidth={5} />
+                <text x={MUR_X} y={350} textAnchor="middle" fontSize={44} fontWeight={900} fill="#0f172a">
+                    TOLL
+                </text>
+            </motion.g>
+            {beat >= 2 && (
+                <motion.g initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                    <rect x={940} y={170} width={600} height={170} rx={18} fill="#fff" stroke="#b45309" strokeWidth={6} />
+                    <text x={1240} y={262} textAnchor="middle" fontSize={84} fontWeight={900} fill="#b45309">
+                        29 %
+                    </text>
+                    <text x={1240} y={318} textAnchor="middle" fontSize={28} fontWeight={700} fill="#334155">
+                        av dagligvaresalget har høy toll
+                    </text>
+                </motion.g>
+            )}
+            {beat >= 3 && (
+                <motion.g initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }} style={{ originX: `${MUR_X}px`, originY: '470px' }}>
+                    <rect x={MUR_X - 120} y={430} width={240} height={80} rx={14} fill="#dc2626" />
+                    <text x={MUR_X} y={485} textAnchor="middle" fontSize={40} fontWeight={900} fill="#fff">
+                        STATEN
+                    </text>
+                </motion.g>
+            )}
+        </>
+    );
+}
+
 export function MonopolKjeder({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
     const modus: Modus = props.modus ?? 'oligopol';
     const linjer = OVERSKRIFT[modus];
@@ -355,6 +460,7 @@ export function MonopolKjeder({ beat, playing, props }: VisualProps<{ modus?: Mo
                 {modus === 'oligopol' && <Oligopol beat={beat} playing={playing} />}
                 {modus === 'andeler' && <Andeler beat={beat} playing={playing} />}
                 {modus === 'prisjeger' && <Prisjeger beat={beat} playing={playing} />}
+                {modus === 'toll' && <Toll beat={beat} playing={playing} />}
             </svg>
             <AnimatePresence mode="wait">
                 <motion.div

@@ -3,16 +3,16 @@ import type { VisualProps } from '../../types';
 
 /**
  * Konkurransetilsynet som dommer på en fotballbane sett ovenfra. Lagene er bedriftene. To
- * store som vil slå seg sammen, får fløyta. Til slutt håndhilser lagene for å la være å
- * kjempe, og dommeren viser rødt kort.
+ * store som vil slå seg sammen, får fløyta, og vi spør om dommeren egentlig er nøytral
+ * (Armentano). Til slutt håndhilser lagene om prisen, og dommeren viser rødt kort.
  */
 
 const OVERSKRIFT = [
     'Staten har et eget kontor',
     'Konkurransetilsynet',
     'To store vil slå seg sammen',
-    'Dommeren passer på at ingen jukser',
-    'Lov å kjempe. Ikke lov å avtale å la være.',
+    'Dommer eller spiller?',
+    'Avtaler om pris er forbudt',
 ];
 
 const ROD = ['#dc2626', '#dc2626', '#dc2626'];
@@ -149,7 +149,7 @@ export function MonopolDommer({ beat, playing }: VisualProps) {
                     transition={{ delay: 1.6 }}
                     className="absolute left-1/2 bottom-[7%] -translate-x-1/2 px-5 py-2 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-red-700 whitespace-nowrap"
                 >
-                    Stopp: det gir for lite konkurranse
+                    Stopp, selv om varene kunne blitt billigere?
                 </motion.div>
             )}
             {beat === 3 && (
@@ -160,10 +160,10 @@ export function MonopolDommer({ beat, playing }: VisualProps) {
                     className="absolute left-1/2 bottom-[7%] -translate-x-1/2 flex gap-4"
                 >
                     <div className="px-4 py-2 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-slate-500 whitespace-nowrap line-through">
-                        bestemmer hvem som vinner
+                        nøytral dommer
                     </div>
-                    <div className="px-4 py-2 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-teal-700 whitespace-nowrap">
-                        passer på at ingen jukser
+                    <div className="px-4 py-2 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-red-700 whitespace-nowrap">
+                        stopper laget som scorer flest mål?
                     </div>
                 </motion.div>
             )}

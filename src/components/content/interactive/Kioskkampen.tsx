@@ -145,16 +145,16 @@ export function Kioskkampen({ title = 'Kioskkampen: Alene eller med konkurrent?'
     } else if (phase === 'avtale-svar') {
         melding = sagJa
             ? {
-                  tekst: 'Stopp! Det er forbudt for konkurrenter å avtale priser seg imellom. Konkurransetilsynet kan gi store bøter. Kundene ville betalt dobbelt så mye.',
+                  tekst: 'Stopp! I Norge er det forbudt for konkurrenter å avtale priser, og Konkurransetilsynet kan gi store bøter. Avtalen ville uansett vært skjør: Med høy pris lønner det seg å jukse, og nye kiosker vil komme til stranda.',
                   tone: 'feil',
               }
             : {
-                  tekst: 'Riktig valg! En slik avtale er ulovlig. Konkurransetilsynet passer på at konkurrenter ikke samarbeider om prisene.',
+                  tekst: 'Riktig valg! En slik avtale er ulovlig i Norge. Og den ville trolig ikke holdt: Med høy pris lønner det seg å jukse, og nye kiosker vil komme til stranda.',
                   tone: 'ok',
               };
     } else {
         melding = {
-            tekst: 'Konkurranse presser prisen ned. Det er derfor staten passer på at konkurransen ikke forsvinner.',
+            tekst: 'Konkurranse presser prisen ned. Det eneste som trengs, er at ingen hindrer kiosk nummer to i å åpne.',
             tone: 'ok',
         };
     }

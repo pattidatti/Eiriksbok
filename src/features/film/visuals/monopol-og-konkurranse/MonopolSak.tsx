@@ -2,23 +2,24 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { VisualProps } from '../../types';
 
 /**
- * Prisjegersaken som tidslinje: tilsynet mistenker samarbeidet, besøket i 2018, boten i
- * august 2024, medholdet i august 2025, og hvem det til slutt handler om.
+ * Prisjegersaken som tidslinje: tilsynet mener samarbeidet svekket konkurransen, boten i
+ * august 2024, medholdet i august 2025, søksmålet i november 2025 og rettssaken høsten 2026.
  */
 
 const OVERSKRIFT = [
-    'Samarbeidet svekket konkurransen',
-    '2018: uanmeldt besøk',
+    'Tilsynet: samarbeidet svekket konkurransen',
     'August 2024: boten',
-    'August 2025: fullt medhold',
-    'Det skader forbrukerne',
+    'August 2025: medhold i klagenemnda',
+    'November 2025: kjedene saksøker staten',
+    'Høsten 2026: saken går i retten',
 ];
 
 const STASJONER = [
-    { år: '2010 til 2012', x: 260, fraBeat: 0 },
-    { år: '2018', x: 640, fraBeat: 1 },
-    { år: 'Aug. 2024', x: 1000, fraBeat: 2 },
-    { år: 'Aug. 2025', x: 1340, fraBeat: 3 },
+    { år: '2010 til 2012', x: 220, fraBeat: 0 },
+    { år: 'Aug. 2024', x: 530, fraBeat: 1 },
+    { år: 'Aug. 2025', x: 840, fraBeat: 2 },
+    { år: 'Nov. 2025', x: 1150, fraBeat: 3 },
+    { år: 'Høsten 2026', x: 1410, fraBeat: 4 },
 ];
 const FARGER = ['#ea580c', '#2563eb', '#7c3aed'];
 const LINJE_Y = 790;
@@ -29,7 +30,7 @@ function Tidslinje({ beat }: { beat: number }) {
             <line x1={120} y1={LINJE_Y} x2={1480} y2={LINJE_Y} stroke="#cbd5e1" strokeWidth={10} strokeLinecap="round" />
             {STASJONER.map((s, i) => {
                 const aktiv = beat >= s.fraBeat;
-                const nå = Math.min(beat, 3) === i;
+                const nå = Math.min(beat, 4) === i;
                 return (
                     <g key={s.år}>
                         <motion.circle
@@ -78,32 +79,6 @@ function Panel({ beat, playing }: { beat: number; playing: boolean }) {
     if (beat === 1)
         return (
             <g>
-                <rect x={480} y={240} width={300} height={400} rx={14} fill="#fff" stroke="#334155" strokeWidth={6} />
-                <text x={630} y={300} textAnchor="middle" fontSize={34} fontWeight={800} fill="#334155">
-                    kjedens kontor
-                </text>
-                <rect x={1040} y={300} width={240} height={360} rx={14} fill="#0f172a" />
-                <text x={1160} y={350} textAnchor="middle" fontSize={30} fontWeight={800} fill="#fff">
-                    tilsynet
-                </text>
-                {[0, 1, 2, 3].map((i) => (
-                    <motion.g
-                        key={i}
-                        initial={{ x: 0, y: 0, opacity: 1 }}
-                        animate={{ x: 520, y: 40, opacity: 1 }}
-                        transition={{ duration: 1.4, delay: 0.5 + i * 0.45, ease: 'easeInOut' }}
-                    >
-                        <rect x={550} y={340 + i * 64} width={160} height={50} rx={6} fill="#fde68a" stroke="#92400e" strokeWidth={4} />
-                    </motion.g>
-                ))}
-                <text x={800} y={710} textAnchor="middle" fontSize={36} fontWeight={800} fill="#334155">
-                    Uanmeldt: uten å si fra først
-                </text>
-            </g>
-        );
-    if (beat === 2)
-        return (
-            <g>
                 <motion.g initial={{ scale: 2.2, opacity: 0, rotate: -14 }} animate={{ scale: 1, opacity: 1, rotate: -6 }} transition={{ type: 'spring', stiffness: 220, damping: 14 }} style={{ originX: '800px', originY: '400px' }}>
                     <rect x={330} y={220} width={940} height={300} rx={24} fill="#fff" stroke="#dc2626" strokeWidth={14} />
                     <text x={800} y={340} textAnchor="middle" fontSize={100} fontWeight={900} fill="#dc2626">
@@ -123,7 +98,7 @@ function Panel({ beat, playing }: { beat: number; playing: boolean }) {
                 ))}
             </g>
         );
-    if (beat === 3)
+    if (beat === 2)
         return (
             <g>
                 <text x={450} y={335} textAnchor="middle" fontSize={44} fontWeight={800} fill="#475569">
@@ -144,28 +119,56 @@ function Panel({ beat, playing }: { beat: number; playing: boolean }) {
                 <motion.g initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.8 }} style={{ originX: '600px', originY: '520px' }}>
                     <rect x={260} y={440} width={680} height={150} rx={22} fill="#0d9488" />
                     <text x={600} y={515} textAnchor="middle" fontSize={46} fontWeight={900} fill="#fff">
-                        Tilsynet fikk helt rett
+                        Tilsynet fikk medhold
                     </text>
                     <text x={600} y={565} textAnchor="middle" fontSize={30} fontWeight={700} fill="#ccfbf1">
-                        fullt medhold i Konkurranseklagenemnda
+                        i Konkurranseklagenemnda
+                    </text>
+                </motion.g>
+            </g>
+        );
+    if (beat === 3)
+        return (
+            <g>
+                {['Coop', 'NorgesGruppen', 'Rema 1000'].map((n, i) => (
+                    <motion.g key={n} initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.2 }}>
+                        <rect x={200} y={250 + i * 110} width={360} height={80} rx={40} fill={FARGER[[1, 0, 2][i]]} />
+                        <text x={380} y={303 + i * 110} textAnchor="middle" fontSize={36} fontWeight={800} fill="#fff">
+                            {n}
+                        </text>
+                    </motion.g>
+                ))}
+                <motion.path d="M 610 400 L 960 400" stroke="#475569" strokeWidth={12} markerEnd="url(#sak-pil)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.9, delay: 0.9 }} />
+                <text x={785} y={370} textAnchor="middle" fontSize={34} fontWeight={800} fill="#475569">
+                    saksøker
+                </text>
+                <motion.g initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.6 }} style={{ originX: '1200px', originY: '400px' }}>
+                    <path d="M 1040 300 L 1200 220 L 1360 300 Z" fill="#334155" />
+                    <rect x={1050} y={300} width={300} height={220} fill="#e2e8f0" stroke="#334155" strokeWidth={6} />
+                    {[0, 1, 2, 3].map((i) => (
+                        <rect key={i} x={1075 + i * 70} y={320} width={34} height={180} fill="#94a3b8" />
+                    ))}
+                    <text x={1200} y={580} textAnchor="middle" fontSize={44} fontWeight={900} fill="#0f172a">
+                        Staten
                     </text>
                 </motion.g>
             </g>
         );
     return (
         <g>
-            <text x={800} y={290} textAnchor="middle" fontSize={56} fontWeight={900} fill="#0f172a">
-                Ulovlig samarbeid skader forbrukerne
+            <rect x={400} y={210} width={800} height={110} rx={18} fill="#78350f" />
+            <text x={800} y={282} textAnchor="middle" fontSize={50} fontWeight={900} fill="#fff">
+                Gulating lagmannsrett, Bergen
             </text>
-            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
-                <motion.g key={i} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 + i * 0.15 }}>
-                    <circle cx={440 + i * 120} cy={420} r={30} fill={i === 3 ? '#ef4444' : '#64748b'} />
-                    <rect x={410 + i * 120} y={460} width={60} height={110} rx={22} fill={i === 3 ? '#ef4444' : '#64748b'} />
-                </motion.g>
-            ))}
-            <motion.text x={800} y={650} textAnchor="middle" fontSize={48} fontWeight={900} fill="#ef4444" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.8 }}>
-                Det er deg og meg
+            <motion.text x={800} y={420} textAnchor="middle" fontSize={56} fontWeight={900} fill="#0f172a" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+                12. oktober til 14. desember 2026
             </motion.text>
+            <motion.g initial={{ opacity: 0, scale: 0.7 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 1.4 }} style={{ originX: '800px', originY: '560px' }}>
+                <rect x={520} y={500} width={560} height={120} rx={22} fill="#fff" stroke="#0f172a" strokeWidth={6} />
+                <text x={800} y={578} textAnchor="middle" fontSize={50} fontWeight={900} fill="#0f172a">
+                    Ingen dom ennå
+                </text>
+            </motion.g>
         </g>
     );
 }

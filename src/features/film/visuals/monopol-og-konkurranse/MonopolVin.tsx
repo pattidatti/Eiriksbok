@@ -2,16 +2,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { VisualProps } from '../../types';
 
 /**
- * Vinmonopolet: et monopol staten har valgt. Butikken med statens merke, enerett (andre
- * butikker får ikke selge), de 351 butikkene som små ruter, og de private pengene som
- * holdes utenfor alkoholsalget.
+ * Vinmonopolet: et ekte monopol med enerett ved lov. Butikken med statens merke, enerett
+ * (andre butikker får ikke selge), de 351 butikkene som små ruter, og målet: at folk skal
+ * drikke mindre.
  */
 
 const OVERSKRIFT = [
-    'Et monopol med vilje?',
+    'Et ekte monopol',
     'Vinmonopolet: startet i 1922, eid av staten',
     'Enerett: 351 butikker, ingen andre',
-    'Ingen private penger i alkoholsalget',
+    'Få butikker. Det er meningen.',
 ];
 
 const GRONN = '#166534';
@@ -108,25 +108,14 @@ export function MonopolVin({ beat, playing }: VisualProps) {
                         </text>
                     </g>
                 )}
-                {beat >= 3 &&
-                    [0, 1, 2].map((i) => (
-                        <motion.g
-                            key={i}
-                            initial={{ x: 0, opacity: 0 }}
-                            animate={playing ? { x: [0, 120], opacity: [0, 1, 0] } : { opacity: 1 }}
-                            transition={{ duration: 2, repeat: Infinity, delay: i * 0.6 }}
-                        >
-                            <circle cx={1000 + i * 120} cy={720} r={40} fill="#facc15" stroke="#a16207" strokeWidth={6} />
-                            <text x={1000 + i * 120} y={735} textAnchor="middle" fontSize={40} fontWeight={900} fill="#a16207">
-                                kr
-                            </text>
-                        </motion.g>
-                    ))}
                 {beat >= 3 && (
-                    <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-                        <line x1={940} y1={660} x2={1340} y2={790} stroke="#dc2626" strokeWidth={14} strokeLinecap="round" />
-                        <text x={1180} y={850} textAnchor="middle" fontSize={34} fontWeight={800} fill="#dc2626">
-                            private pengeinteresser
+                    <motion.g initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+                        <rect x={880} y={640} width={600} height={170} rx={20} fill="#fff" stroke={GRONN} strokeWidth={6} />
+                        <text x={1180} y={710} textAnchor="middle" fontSize={40} fontWeight={900} fill="#0f172a">
+                            Ingen reklame. Ingen salg.
+                        </text>
+                        <text x={1180} y={775} textAnchor="middle" fontSize={36} fontWeight={800} fill={GRONN}>
+                            Folk skal drikke mindre.
                         </text>
                     </motion.g>
                 )}

@@ -2,17 +2,18 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { VisualProps } from '../../types';
 
 /**
- * Naturlig monopol som snitt gjennom gata: husene over bakken, vannrørene i jorda under.
- * Først ett rør, så hva det koster å grave, så tre selskaper med hvert sitt rør til hvert
- * hus, og til slutt ett rør igjen med noen som passer på prisen.
+ * Myten om det naturlige monopolet, som snitt gjennom gata: husene over bakken, gassrørene i
+ * jorda under. Først lærebokas ett rør og tre dyre rør, så de tre gasselskapene som faktisk
+ * konkurrerte i Baltimore i 1880, tallene fra New York og Chicago, og til slutt byen som gir
+ * ett selskap enerett (DiLorenzo, 1996).
  */
 
 const OVERSKRIFT = [
-    'Naturlig monopol',
-    'Dyrt å bygge',
-    'Tre selskaper, tre rør til hvert hus?',
-    'Sløsing. Bedre med én eier.',
-    'Noen må passe på prisen',
+    'Lærebokas eksempel: naturlig monopol',
+    'For dyrt med tre rør?',
+    'Baltimore 1880: tre gasselskaper',
+    'New York og Chicago: mange flere',
+    'Byen ga ett selskap enerett',
 ];
 
 const HUS = [260, 540, 820, 1100, 1380];
@@ -67,10 +68,10 @@ function Ror({ y, farge, synlig, forsinkelse = 0 }: { y: number; farge: string; 
     );
 }
 
-export function MonopolVann({ beat, playing }: VisualProps) {
+export function MonopolGass({ beat, playing }: VisualProps) {
     const tekst = OVERSKRIFT[Math.min(beat, OVERSKRIFT.length - 1)];
-    const tre = beat >= 2;
-    const bare1 = beat >= 3;
+    const tre = beat >= 1;
+    const bare1 = beat >= 4;
     return (
         <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-sky-100 to-sky-50">
             <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" className="absolute inset-0 w-full h-full">
@@ -80,11 +81,11 @@ export function MonopolVann({ beat, playing }: VisualProps) {
                 {HUS.map((x) => (
                     <Hus key={x} x={x} />
                 ))}
-                {/* Det første røret er alltid der. De to andre kommer på beat 2. */}
+                {/* Det første røret er alltid der. De to andre kommer på beat 1 og forsvinner på beat 4. */}
                 <Ror y={RØR[0].y} farge={RØR[0].farge} synlig />
                 {tre && <Ror y={RØR[1].y} farge={RØR[1].farge} synlig={!bare1} forsinkelse={0.2} />}
                 {tre && <Ror y={RØR[2].y} farge={RØR[2].farge} synlig={!bare1} forsinkelse={0.7} />}
-                {/* Graving: en grøft som åpner seg og penger som renner ut */}
+                {/* Lærebokas argument: graving koster */}
                 {beat === 1 && (
                     <g>
                         <motion.rect
@@ -111,39 +112,49 @@ export function MonopolVann({ beat, playing }: VisualProps) {
                         ))}
                     </g>
                 )}
-                {beat >= 4 && (
-                    <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-                        <rect x={1100} y={560} width={220} height={60} rx={14} fill="#fff" stroke="#0f172a" strokeWidth={5} />
-                        <text x={1210} y={602} textAnchor="middle" fontSize={34} fontWeight={900} fill="#0f172a">
-                            pris: passe?
+                {/* Navn på selskapene langs rørene */}
+                {beat >= 2 &&
+                    RØR.map((r, i) => (
+                        <motion.g key={r.y} initial={{ opacity: 0 }} animate={{ opacity: bare1 && i > 0 ? 0 : 1 }} transition={{ delay: 0.3 + i * 0.3 }}>
+                            <rect x={1360} y={r.y - 26} width={200} height={52} rx={12} fill="#fff" stroke={r.farge} strokeWidth={5} />
+                            <text x={1460} y={r.y + 12} textAnchor="middle" fontSize={30} fontWeight={900} fill={r.farge}>
+                                {`Selskap ${['A', 'B', 'C'][i]}`}
+                            </text>
+                        </motion.g>
+                    ))}
+                {beat === 3 && (
+                    <motion.g initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                        <rect x={230} y={140} width={1140} height={108} rx={20} fill="#fff" stroke="#0f172a" strokeWidth={6} />
+                        <text x={800} y={210} textAnchor="middle" fontSize={42} fontWeight={900} fill="#0f172a">
+                            New York 1887: 6 selskaper · Chicago 1907: 45
                         </text>
                     </motion.g>
                 )}
                 {beat >= 4 && (
-                    <motion.g initial={{ opacity: 0, scale: 0.6 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 }} style={{ originX: '1400px', originY: '640px' }}>
-                        <circle cx={1440} cy={640} r={60} fill="#fff" stroke="#0f172a" strokeWidth={8} />
-                        <path d="M 1410 640 L 1432 664 L 1475 612" fill="none" stroke="#0d9488" strokeWidth={12} strokeLinecap="round" />
+                    <motion.g
+                        initial={{ opacity: 0, scale: 1.8, rotate: -12 }}
+                        animate={{ opacity: 1, scale: 1, rotate: -6 }}
+                        transition={{ type: 'spring', stiffness: 220, damping: 14, delay: 0.6 }}
+                        style={{ originX: '340px', originY: '280px' }}
+                    >
+                        <rect x={80} y={170} width={520} height={220} rx={16} fill="#fff" stroke="#dc2626" strokeWidth={10} />
+                        <text x={340} y={265} textAnchor="middle" fontSize={64} fontWeight={900} fill="#dc2626">
+                            ENERETT
+                        </text>
+                        <text x={340} y={335} textAnchor="middle" fontSize={32} fontWeight={800} fill="#dc2626">
+                            gitt av byen
+                        </text>
                     </motion.g>
                 )}
             </svg>
-            {beat >= 3 && (
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8 }}
-                    className="absolute left-[4%] bottom-[6%] px-4 py-2 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-blue-700 whitespace-nowrap"
-                >
-                    Én eier, ett rør
-                </motion.div>
-            )}
             {beat >= 4 && (
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
+                    transition={{ delay: 1.2 }}
                     className="absolute right-[4%] bottom-[6%] px-4 py-2 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-slate-800 whitespace-nowrap"
                 >
-                    Du kan ikke velge et annet rør
+                    Ikke naturlig. Vedtatt.
                 </motion.div>
             )}
             <AnimatePresence mode="wait">
