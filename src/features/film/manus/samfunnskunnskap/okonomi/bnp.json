@@ -176,7 +176,7 @@
                     "si": "Tilbake til plenen. Regelen er at BNP i hovedsak teller det som blir betalt for."
                 },
                 {
-                    "si": "Det gjelder også skole og barnehage. De telles etter hva de koster, ikke etter hva noen ville betalt. Økonomen Murray Rothbard mente at det er en svakhet."
+                    "si": "Det gjelder også skole og barnehage. De telles etter hva de koster. Rothbard mente det er en svakhet: De betales med skatt, så ingen vet hva folk ville betalt for dem."
                 },
                 {
                     "si": "Men mye arbeid blir ikke med. Husarbeid, barnepass i familien og frivillig arbeid i idrettslaget."
@@ -206,8 +206,8 @@
                     "si": "Brannvesenet og helsepersonell rykker ut, og de får betalt for jobben."
                 },
                 {
-                    "si": "Økonomen Frédéric Bastiat forklarte i 1850 hvorfor det er feil å tro at ulykker er bra. Han skrev om en gutt som knuser ruta i en butikk, og glassmesteren som får jobb. Det er det vi ser.",
-                    "uttale": "Økonomen Frederik Bastia forklarte i atten femti hvorfor det er feil å tro at ulykker er bra. Han skrev om en gutt som knuser ruta i en butikk, og glassmesteren som får jobb. Det er det vi ser."
+                    "si": "Økonomen Frédéric Bastiat forklarte i 1850 hvorfor ulykker ikke er bra for økonomien. Han skrev om en gutt som knuser ruta i en butikk, og glassmesteren som får jobb. Det er det vi ser.",
+                    "uttale": "Økonomen Frederik Bastia forklarte i atten femti hvorfor ulykker ikke er bra for økonomien. Han skrev om en gutt som knuser ruta i en butikk, og glassmesteren som får jobb. Det er det vi ser."
                 },
                 {
                     "si": "Det vi ikke ser, er skoene eieren ville kjøpt for de samme pengene. Han ender med én rute, i stedet for både rute og sko."
@@ -368,7 +368,7 @@
                     "si": "I FNs rapport fra 2025 har Qatar nesten like høy inntekt per innbygger som Norge."
                 },
                 {
-                    "si": "Men på HDI-lista havner Qatar først på plass nummer 43. Norge kommer på andre plass, rett bak Island."
+                    "si": "Men på HDI-lista havner Qatar bare på plass nummer 43. Norge kommer på andre plass, rett bak Island."
                 },
                 {
                     "si": "Én grunn er skolen. En voksen i Qatar har i snitt gått 10,8 år på skole. En voksen i Norge har gått 13,1 år."

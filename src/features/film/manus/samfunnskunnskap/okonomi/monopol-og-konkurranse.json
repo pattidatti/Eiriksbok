@@ -55,13 +55,13 @@
             },
             "replikker": [
                 {
-                    "si": "Tenk deg at det åpner en kiosk til tvers over gata. Den lille forskjellen mellom én kiosk og to er det denne filmen handler om."
+                    "si": "Den lille forskjellen mellom én kiosk og to er det denne filmen handler om."
                 },
                 {
                     "si": "Og det skjer i virkeligheten. I Norge eier tre store grupper nesten alle dagligvarebutikkene, altså butikkene som selger mat."
                 },
                 {
-                    "si": "Det betyr mye for hva familien din betaler for melk, brød og taco. Så spørsmålet er: Hva hindrer kiosk nummer to?"
+                    "si": "Det betyr mye for hva familien din betaler for mat. Så spørsmålet er: Hva hindrer kiosk nummer to?"
                 }
             ]
         },
@@ -76,7 +76,7 @@
             },
             "replikker": [
                 {
-                    "si": "Tilbake på stranda. En ny kiosk åpner tvers over gata."
+                    "si": "En ny kiosk åpner tvers over gata."
                 },
                 {
                     "si": "Plutselig kan du velge."
@@ -125,13 +125,13 @@
             },
             "replikker": [
                 {
-                    "si": "Den østerrikske skolen, som denne boka bygger på, ser det annerledes. Er isen dyr, ser andre at her er det penger å tjene. Så kommer kiosk nummer to."
+                    "si": "Den østerrikske skolen, som denne boka bygger på, ser det annerledes. Er isen dyr, ser andre at her er det penger å tjene."
                 },
                 {
                     "si": "Men tenk deg at kiosk nummer to blir forbudt. Ingen andre får lov til å åpne."
                 },
                 {
-                    "si": "Det kalles en enerett. Økonomen Murray Rothbard mente at dette er et ekte monopol: at staten forbyr alle andre å selge det samme."
+                    "si": "Det kalles en enerett. Økonomen Murray Rothbard mente at dette er et ekte monopol: at staten forbyr alle andre å selge."
                 },
                 {
                     "si": "Bare da kan prisen holde seg høy over tid. Uten forbudet lokker den høye prisen nye selgere til."
@@ -154,10 +154,10 @@
                     "si": "I modellen selger alle nøyaktig samme is, og alle vet alle prisene fra før."
                 },
                 {
-                    "si": "Økonomen Friedrich Hayek så hva som mangler: Ingen prøver noe nytt. Ekte konkurranse er et kappløp, der noen finner ut at folk vil ha softis."
+                    "si": "Økonomen Friedrich Hayek så hva som mangler: Ingen prøver å lage en bedre is. Ekte konkurranse er et kappløp, der selgerne prøver seg fram og finner ut at folk vil ha softis."
                 },
                 {
-                    "si": "Og tar en kiosk mer enn de andre, går kundene videre."
+                    "si": "Den som ikke følger med, mister kundene til kiosken ved siden av."
                 },
                 {
                     "si": "Kappløpet presser prisen ned og gjør isen bedre. Det trenger bare én ting: at ingen stenger nye løpere ute."
@@ -176,7 +176,7 @@
             },
             "replikker": [
                 {
-                    "si": "Fra stranda til butikken. Dagligvarehandelen i Norge er et marked med noen få store. Det kalles et oligopol, for oligo betyr få."
+                    "si": "Dagligvarehandelen i Norge er et marked med noen få store. Det kalles et oligopol, for oligo betyr få."
                 },
                 {
                     "si": "NorgesGruppen hadde 43,5 prosent av markedet i 2024."
@@ -188,7 +188,7 @@
                     "si": "Til sammen er det over 96 prosent. Nesten hele markedet."
                 },
                 {
-                    "si": "Næringsministeren skrev i 2025 at det er vanskelig for nye butikker å komme inn. Norske kunder møter høyere priser og mindre utvalg enn i andre land."
+                    "si": "Næringsministeren skrev i 2025 at det er vanskelig for små og nye butikker å komme inn. Ministeren skrev også at norske kunder møter høyere priser og mindre utvalg enn i andre land."
                 }
             ]
         },
@@ -202,7 +202,7 @@
             },
             "replikker": [
                 {
-                    "si": "Så hvorfor kommer det ikke nye kjeder inn og tar kundene? Det er Rothbards spørsmål igjen."
+                    "si": "Så hvorfor kommer det ikke nye kjeder inn og tar kundene?"
                 },
                 {
                     "si": "En stor del av svaret ligger ved grensa. Norge har høy toll på mange matvarer. Toll er en avgift staten legger på varer fra utlandet."
@@ -211,7 +211,7 @@
                     "si": "Konkurransetilsynet skrev selv i 2018 at 29 prosent av alt som selges i dagligvarebutikkene, er beskyttet av høy toll."
                 },
                 {
-                    "si": "Tollen gjør det vanskeligere for utenlandske kjeder å konkurrere. En del av muren rundt de tre kjedene er bygget av staten."
+                    "si": "Tollen gjør det vanskeligere for utenlandske kjeder å bruke at de kjøper billig inn i store mengder. En del av muren rundt de tre kjedene er bygget av staten."
                 }
             ]
         },
@@ -235,13 +235,13 @@
                     "si": "En prisjeger er en person som går rundt i en konkurrents butikk og skanner prislappene."
                 },
                 {
-                    "si": "Etter hvert samlet de inn priser i stor skala."
+                    "si": "Etter hvert fikk prisjegerne samle inn veldig mange priser."
                 },
                 {
-                    "si": "Kjedene mener det er vanlig konkurranse. Prisene står jo på hylla. Hvordan skal du ta kundene fra konkurrenten hvis du ikke vet hva den tar?"
+                    "si": "Kjedene mener at prisjegere ikke skader konkurransen. Prisene står jo på hylla. Og hvordan skal du ta kundene fra konkurrenten hvis du ikke vet hva den tar?"
                 },
                 {
-                    "si": "Konkurransetilsynet mener noe annet. Når alle ser raskt hva de andre gjør, følger de andre etter med en gang hvis én setter ned prisen."
+                    "si": "Konkurransetilsynet mener noe annet. Når alle ser raskt hva de andre gjør, er det lite å vinne på å sette ned prisen. De andre følger jo etter med en gang."
                 }
             ]
         },
@@ -258,13 +258,13 @@
                     "si": "I august 2024 fikk Coop, NorgesGruppen og Rema 1000 til sammen 4,9 milliarder kroner i bot."
                 },
                 {
-                    "si": "Kjedene klaget. I august 2025 ga Konkurranseklagenemnda tilsynet medhold."
+                    "si": "I august 2025 fikk tilsynet rett i Konkurranseklagenemnda, som behandler klager på tilsynet."
                 },
                 {
                     "si": "Men saken er ikke over. I november 2025 saksøkte de tre kjedene staten."
                 },
                 {
-                    "si": "Nå går saken i Gulating lagmannsrett i Bergen, høsten 2026. Da filmen ble laget, var det ingen dom."
+                    "si": "Nå går saken i Gulating lagmannsrett i Bergen, en domstol, fra oktober til desember 2026. Da filmen ble laget, var det ingen dom."
                 }
             ]
         },
@@ -284,10 +284,10 @@
                     "si": "Tilsynet kan stoppe at to store bedrifter slår seg sammen, hvis det mener det gir for lite konkurranse."
                 },
                 {
-                    "si": "Tilsynet blir ofte kalt en dommer. Men økonomen Dominick Armentano fant at konkurranselovene i USA ofte beskyttet dem som tapte kappløpet, ikke kundene. En dommer som stopper laget som scorer flest mål, er ikke nøytral."
+                    "si": "Tilsynet kalles ofte dommeren i en fotballkamp. Men økonomen Dominick Armentano fant at konkurranselovene i USA ofte beskyttet dem som tapte kappløpet, ikke kundene. En dommer som stopper laget som scorer flest mål, er ikke nøytral."
                 },
                 {
-                    "si": "Én ting er alle enige om: Det er forbudt i Norge å avtale priser med en konkurrent. Rothbard mente at slike avtaler sjelden holder lenge, for det lønner seg å jukse."
+                    "si": "Tilsynet og østerrikerne er enige om én ting: Det er forbudt i Norge å avtale priser med en konkurrent. Rothbard mente at slike avtaler sjelden holder lenge i et fritt marked, for det lønner seg å jukse."
                 }
             ]
         },
@@ -308,7 +308,7 @@
                     "si": "Det har enerett til å selge vin, brennevin og sterkøl i butikk. Ved utgangen av 2024 hadde det 351 butikker. Her er kiosk nummer to forbudt ved lov."
                 },
                 {
-                    "si": "Vinmonopolet skal begrense hvor mye folk drikker. Derfor har det få butikker og ingen reklame. Monopolet virker akkurat slik monopoler virker, men her er det meningen."
+                    "si": "Vinmonopolet skriver selv at det skal være med på å begrense hvor mye folk drikker. Derfor har det få butikker og ingen reklame. Akkurat slik monopoler virker, men her er det meningen."
                 }
             ]
         },
@@ -319,10 +319,10 @@
             },
             "replikker": [
                 {
-                    "si": "Mange lærebøker snakker også om naturlige monopol. Tenk på røret inn til huset ditt."
+                    "si": "Mange lærebøker snakker også om naturlige monopol: noe er så dyrt å bygge at det ikke lønner seg å ha flere som konkurrerer. Tenk på røret inn til huset ditt."
                 },
                 {
-                    "si": "Det ville vært sløsing om tre selskaper gravde hvert sitt rør til hvert hus, sier læreboka. Derfor bør ett selskap få enerett."
+                    "si": "Det ville vært sløsing om tre selskaper gravde hvert sitt rør, sier læreboka. Derfor bør ett selskap få enerett."
                 },
                 {
                     "si": "Økonomen Thomas DiLorenzo sjekket historien. I Baltimore kjempet tre gasselskaper mot hverandre i 1880."
@@ -370,13 +370,13 @@
             },
             "replikker": [
                 {
-                    "si": "Læreboka sier at et monopol er et marked med én selger. Den østerrikske skolen sier at et monopol er en enerett, der staten forbyr andre å selge."
+                    "si": "Læreboka sier at et monopol er et marked med én selger. Den østerrikske skolen sier at et monopol er en enerett."
                 },
                 {
                     "si": "Uten et slikt forbud lokker høy pris nye selgere til. Kappløpet mellom dem presser prisen ned og gjør varene bedre."
                 },
                 {
-                    "si": "Høy toll er en grunn til at få klarer å utfordre de tre store kjedene. Og de naturlige monopolene i amerikanske byer kom med enerett fra byen."
+                    "si": "Høy toll er en grunn til at få klarer å utfordre de tre store kjedene. Og de naturlige monopolene i amerikanske byer hadde konkurranse helt til byen ga ett selskap enerett."
                 },
                 {
                     "si": "Så neste gang du ser at noen er alene om å selge noe, spør deg selv: Hva hindrer kiosk nummer to?"
