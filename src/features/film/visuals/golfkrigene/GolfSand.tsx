@@ -13,11 +13,14 @@ import type { VisualProps } from '../../types';
  *   over hele Kuwait (landet blir rødt), og en gyllen pil viser at kongen flykter sørover.
  * «omringing»: februar 1991. Bløffen går rett mot Kuwait, hovedstyrken svinger langt vest
  *   inn i Irak og så østover bak de irakske styrkene. Til slutt hvite flagg.
+ * «valg»: våren 1991. Kuwait er fritt (grønt), koalisjonen står nord for grensen, og veien
+ *   mot Bagdad ligger åpen. FN-mandatet gjelder bare Kuwait, de arabiske allierte holder seg
+ *   i Saudi-Arabia, og pila mot Bagdad blekner når koalisjonen stopper.
  *
  * Ingen skudd, ingen mennesker. Bare kjøretøy som flytter seg.
  */
 
-type Modus = 'invasjon' | 'omringing';
+type Modus = 'invasjon' | 'omringing' | 'valg';
 type P2 = [number, number];
 
 const v = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
@@ -62,6 +65,8 @@ const FARGE = {
     sand: '#e2c48e',
     kuwait: '#efd7a6',
     okkupert: '#dc2626',
+    fritt: '#16a34a',
+    alliert: '#15803d',
     hav: '#3b8fc4',
     irak: '#7f1d1d',
     koalisjon: '#1d4ed8',
@@ -87,6 +92,17 @@ function kamera(modus: Modus, beat: number, t: number) {
                 return { pos: v(5, 24, 21), se: v(0, 0, 1.5) };
             default:
                 return { pos: v(-5, 30, 30), se: v(1, 0, 5) };
+        }
+    }
+    if (modus === 'valg') {
+        switch (beat) {
+            case 0:
+            case 3:
+                return { pos: v(10 - t * 0.2, 20, 26), se: v(-13, 0, -22) };
+            case 1:
+                return { pos: v(6, 15, 17), se: v(0, 0, 1) };
+            default:
+                return { pos: v(-2, 30, 34), se: v(-8, 0, 0) };
         }
     }
     switch (beat) {
@@ -252,7 +268,13 @@ function Oljetarn({ pos }: { pos: P2 }) {
     );
 }
 
-function Land({ okkupert, playing }: { okkupert: boolean; playing: boolean }) {
+function Land({
+    tilstand,
+    playing,
+}: {
+    tilstand: 'fri' | 'okkupert' | 'frigjort';
+    playing: boolean;
+}) {
     const kuwaitGeo = useMemo(() => new THREE.ShapeGeometry(formFra(KUWAIT)), []);
     const buktaGeo = useMemo(() => new THREE.ShapeGeometry(formFra(BUKTA)), []);
     useEffect(
@@ -265,10 +287,13 @@ function Land({ okkupert, playing }: { okkupert: boolean; playing: boolean }) {
     const mat = useRef<THREE.MeshStandardMaterial>(null);
     const andel = useRef(-1);
     const fra = useMemo(() => new THREE.Color(FARGE.kuwait), []);
-    const til = useMemo(() => new THREE.Color(FARGE.okkupert), []);
+    const til = useMemo(
+        () => new THREE.Color(tilstand === 'frigjort' ? FARGE.fritt : FARGE.okkupert),
+        [tilstand]
+    );
     useFrame((_, rawDt) => {
         const dt = playing ? Math.min(rawDt, 0.05) : 0;
-        const mal = okkupert ? 0.75 : 0;
+        const mal = tilstand === 'fri' ? 0 : 0.75;
         andel.current = andel.current < 0 ? mal : damp(andel.current, mal, 0.8, dt);
         mat.current?.color.copy(fra).lerp(til, andel.current);
     });
@@ -352,7 +377,7 @@ function Merke({
     return (
         <Html position={pos} center zIndexRange={[10, 0]}>
             <div
-                className="px-3 py-1 rounded-lg bg-white/95 shadow-lg text-lg font-black whitespace-nowrap uppercase tracking-wide"
+                className="px-3 py-1 rounded-lg bg-white/95 shadow-lg text-2xl font-black whitespace-nowrap uppercase tracking-wide"
                 style={{ color: farge }}
             >
                 {tekst}
@@ -409,6 +434,11 @@ const HOVED_PIL = [
     v(-24, 0.3, -9),
     v(-9, 0.3, -9),
 ];
+const VALG_STILLING = rute(8, -1, -8, 4, 2, 2.2);
+const ALLIERTE = rute(4, -14, 9, 4, 2, 2.2);
+const BAGDAD = v(-34, 0, -46);
+const BAGDAD_PIL = [v(-1, 0.3, -11), v(-12, 0.3, -24), v(-24, 0.3, -36), v(-32, 0.3, -43)];
+
 const BLOFF_PIL = [v(2, 0.3, 11.5), v(2, 0.3, 8.5), v(2, 0.3, 6.6)];
 const FLUKT_PIL = [v(4.5, 0.3, 1), v(4, 0.3, 7), v(2, 0.3, 14)];
 
@@ -448,14 +478,72 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
             <ambientLight intensity={0.65} />
             <directionalLight position={[30, 40, 18]} intensity={1.5} color="#fff2d6" />
             <hemisphereLight args={['#fde7c0', '#8a6a3c', 0.45]} />
-            <Land okkupert={modus === 'invasjon' && beat >= 2} playing={playing} />
+            <Land
+                tilstand={
+                    modus === 'valg'
+                        ? 'frigjort'
+                        : modus === 'invasjon' && beat >= 2
+                          ? 'okkupert'
+                          : 'fri'
+                }
+                playing={playing}
+            />
             {oljetarn.map((p, i) => (
                 <Oljetarn key={i} pos={p} />
             ))}
             <Merke pos={[-22, 0.5, -12]} tekst="Irak" farge={FARGE.irak} />
             <Merke pos={[1, 0.5, 1.5]} tekst="Kuwait" farge="#0f172a" />
-            <Merke pos={[-16, 0.5, 15]} tekst="Saudi-Arabia" farge="#166534" />
-            <Merke pos={[17, 0.5, 2]} tekst="Persiabukta" farge="#1e3a8a" />
+            {!(modus === 'invasjon' && beat === 2) && !(modus === 'valg' && beat !== 2) && (
+                <Merke pos={[-16, 0.5, 15]} tekst="Saudi-Arabia" farge="#166534" />
+            )}
+            {!(modus === 'omringing' && beat === 1) &&
+                !(modus === 'invasjon' && beat === 2) &&
+                modus !== 'valg' && (
+                    <Merke pos={[17, 0.5, 2]} tekst="Persiabukta" farge="#1e3a8a" />
+                )}
+
+            {modus === 'valg' && (
+                <>
+                    <Bagdad />
+                    <Merke
+                        pos={[BAGDAD.x, 3.4, BAGDAD.z]}
+                        tekst={beat >= 3 ? 'Bagdad: Saddam sitter' : 'Bagdad'}
+                        farge={beat >= 3 ? '#7f1d1d' : '#0f172a'}
+                    />
+                    {VALG_STILLING.map((s, i) => (
+                        <Stridsvogn
+                            key={`v${i}`}
+                            mal={s}
+                            farge={FARGE.koalisjon}
+                            playing={playing}
+                        />
+                    ))}
+                    {beat >= 2 &&
+                        ALLIERTE.map((s, i) => (
+                            <Stridsvogn
+                                key={`a${i}`}
+                                mal={s}
+                                farge={FARGE.alliert}
+                                playing={playing}
+                            />
+                        ))}
+                    {beat <= 2 && (
+                        <Pil
+                            punkter={BAGDAD_PIL}
+                            andel={beat === 0 ? 1 : 0.55}
+                            farge="#60a5fa"
+                            playing={playing}
+                        />
+                    )}
+                    {beat === 1 && (
+                        <Merke pos={[1, 2.6, 1.5]} tekst="FN: bare Kuwait" farge="#14532d" />
+                    )}
+                    {beat === 2 && (
+                        <Merke pos={[-14, 2.6, 6]} tekst="Arabiske allierte: nei" farge="#14532d" />
+                    )}
+                    {beat >= 3 && <Stopp />}
+                </>
+            )}
 
             {modus === 'invasjon' && (
                 <>
@@ -517,6 +605,48 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
     );
 }
 
+/** Bagdad langt unna: en klynge lave hus og en kuppel. */
+function Bagdad() {
+    const hus: [number, number, number][] = [
+        [-1.6, -0.8, 1.6],
+        [0.4, -1.2, 2.2],
+        [1.8, 0.2, 1.4],
+        [-0.6, 1.2, 1.2],
+        [1.0, 1.6, 1.8],
+        [-2.2, 0.8, 1.0],
+    ];
+    return (
+        <group position={[BAGDAD.x, 0, BAGDAD.z]}>
+            {hus.map(([x, z, h], i) => (
+                <mesh key={i} position={[x, h / 2, z]}>
+                    <boxGeometry args={[1.2, h, 1.2]} />
+                    <meshStandardMaterial color="#f5e6c8" flatShading />
+                </mesh>
+            ))}
+            <mesh position={[0, 1.6, 0]}>
+                <sphereGeometry args={[1.1, 12, 8, 0, Math.PI * 2, 0, Math.PI / 2]} />
+                <meshStandardMaterial color="#0e7490" flatShading />
+            </mesh>
+        </group>
+    );
+}
+
+/** Et rødt stoppskilt foran kolonnen. */
+function Stopp() {
+    return (
+        <group position={[-3, 0, -13.5]}>
+            <mesh position={[0, 1.8, 0]}>
+                <cylinderGeometry args={[0.12, 0.12, 3.6, 6]} />
+                <meshStandardMaterial color="#475569" />
+            </mesh>
+            <mesh position={[0, 3.6, 0]} rotation={[Math.PI / 2, 0, 0]}>
+                <cylinderGeometry args={[1.5, 1.5, 0.2, 8]} />
+                <meshStandardMaterial color="#dc2626" emissive="#991b1b" emissiveIntensity={0.4} />
+            </mesh>
+        </group>
+    );
+}
+
 const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     invasjon: [
         { tekst: 'Grensen, 2. august 1990' },
@@ -528,8 +658,14 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: '24. februar 1991' },
         { tekst: 'Bløffen: rett mot Kuwait' },
         { tekst: 'Hovedstyrken svinger vest' },
-        { tekst: 'Så østover: omringet' },
+        { tekst: 'Bak dem: omringet' },
         { tekst: 'Soldatene gir opp' },
+    ],
+    valg: [
+        { tekst: 'Videre til Bagdad?' },
+        { tekst: 'FN: bare frigjør Kuwait' },
+        { tekst: 'Redd for et tomrom' },
+        { tekst: 'Koalisjonen stopper', rod: true },
     ],
 };
 

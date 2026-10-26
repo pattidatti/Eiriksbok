@@ -4,6 +4,7 @@
     "kilde": "/historie/midtoesten/golfkrigene",
     "bilde": "/images/midtoesten/golfkrigene-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-26", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 20 },
     "scener": [
         {
             "id": "grensen",
@@ -27,9 +28,9 @@
                     "undertittel": "Fra Kuwait til Irak",
                     "bilde": "/images/midtoesten/golfkrigene-hero.webp",
                     "tall": [
-                        { "verdi": 38, "etikett": "dager luftkrig", "fraBeat": 1 },
-                        { "verdi": 100, "etikett": "timer bakkekrig", "fraBeat": 1 },
-                        { "verdi": 8, "etikett": "år i Irak, 2003-2011", "fraBeat": 2, "tone": "rod" }
+                        { "verdi": 38, "etikett": "dager luftkrig", "fraBeat": 1, "omtrent": false },
+                        { "verdi": 100, "etikett": "timer bakkekrig", "fraBeat": 1, "omtrent": false },
+                        { "verdi": 8, "etikett": "år i Irak, 2003-2011", "fraBeat": 2, "tone": "rod", "omtrent": false }
                     ],
                     "sporsmal": { "tekst": "Hvorfor er freden vanskeligere enn krigen?", "fraBeat": 3 }
                 }
@@ -57,9 +58,9 @@
             "kapittel": "Et land på randen",
             "visual": { "type": "GolfFelt" },
             "replikker": [
-                { "si": "Etter krigen mot Iran var Irak nesten konkurs. Det betyr at landet ikke hadde penger til å betale det det skyldte." },
+                { "si": "Etter krigen mot Iran var Irak nesten konkurs. Det betyr at landet nesten ikke hadde penger igjen til å betale det det skyldte." },
                 { "si": "Saddam hadde lånt store summer fra nabolandene. Også Kuwait hadde lånt Irak penger." },
-                { "si": "Under grensen ligger et stort oljefelt, Rumaila. Saddam sa at Kuwait pumpet opp olje som egentlig var Iraks." },
+                { "si": "Et oljefelt, Rumaila, strekker seg over grensen. Saddam sa at Kuwait pumpet opp olje som egentlig var Iraks." },
                 { "si": "Han krevde at Kuwait slettet gjelden, og at oljeprisen skulle opp. Kuwait sa nei." }
             ]
         },
@@ -76,7 +77,8 @@
                             "farget": 0,
                             "restFarge": "#94a3b8",
                             "tittel": "Kuwait: et lite land",
-                            "restEtikett": "resten av verden"
+                            "restEtikett": "resten av verden",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 1,
@@ -85,6 +87,16 @@
                             "farge": "#0f172a",
                             "restFarge": "#94a3b8",
                             "tittel": "Kuwait: nesten 10 prosent",
+                            "fargeEtikett": "under Kuwait",
+                            "restEtikett": "resten av verden"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 10,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Oljen: derfor reagerte verden",
                             "fargeEtikett": "under Kuwait",
                             "restEtikett": "resten av verden"
                         }
@@ -102,10 +114,10 @@
             "kapittel": "Verden samler seg",
             "visual": { "type": "GolfKart", "props": { "modus": "koalisjon" } },
             "replikker": [
-                { "si": "FNs sikkerhetsråd, der de mektigste landene i verden sitter, krevde at Irak trakk seg ut." },
+                { "si": "FNs sikkerhetsråd, den delen av FN som skal passe på freden i verden, krevde at Irak trakk seg ut." },
                 { "si": "Saddam nektet. Da ga FN lov til å bruke militær makt for å frigjøre Kuwait." },
                 { "si": "35 land stilte opp i en koalisjon, altså et samarbeid mellom land. USA ledet an." },
-                { "si": "Saudi-Arabia lot koalisjonen bruke landet sitt som base. Utover høsten 1990 samlet de flere hundre tusen soldater der." }
+                { "si": "Saudi-Arabia lot koalisjonen bruke landet sitt som base. Utover høsten 1990 samlet de flere hundre tusen soldater i området." }
             ]
         },
         {
@@ -114,9 +126,9 @@
             "visual": { "type": "GolfKart", "props": { "modus": "luft" } },
             "replikker": [
                 { "si": "Den 17. januar 1991 startet Operasjon Desert Storm. Navnet betyr ørkenstorm." },
-                { "si": "I 38 dager bombet koalisjonens fly Iraks militære stillinger, veier og strøm, og stedene der hæren ble styrt fra." },
+                { "si": "I 38 dager bombet koalisjonens fly Iraks militære stillinger, veier og annet landet trengte, og stedene der hæren ble styrt fra." },
                 { "si": "Irak svarte med Scud-raketter, raketter som kan nå langt, mot Israel og Saudi-Arabia." },
-                { "si": "Saddam ville dra Israel inn i krigen. Da håpet han at de arabiske landene skulle forlate koalisjonen. Det lyktes ikke." }
+                { "si": "Saddam ville dra Israel inn i krigen. Da håpet han at koalisjonen skulle splittes. Det lyktes ikke." }
             ]
         },
         {
@@ -126,10 +138,10 @@
             "visual": { "type": "GolfSand", "props": { "modus": "omringing" } },
             "replikker": [
                 { "si": "Den 24. februar 1991 startet krigen på bakken." },
-                { "si": "Alle ventet et angrep rett inn i Kuwait. Men det var en bløff, et luremanøver." },
+                { "si": "Koalisjonen lot som om den skulle angripe rett inn i Kuwait. Men det var en bløff, et luremanøver." },
                 { "si": "Den egentlige styrken svingte langt mot vest, inn i Irak." },
-                { "si": "Så svingte den østover, bak de irakske soldatene. Slik ble de omringet, altså stengt inne fra alle kanter." },
-                { "si": "Mange irakske soldater ga opp. Etter uker med bomber hadde de verken mat, vann eller utstyr som virket." }
+                { "si": "Planen var å komme bak de irakske soldatene. Slik skulle de bli omringet, altså stengt inne fra alle kanter." },
+                { "si": "Irakske soldater ga opp i massevis. Etter uker med bomber manglet mange mat, vann eller utstyr som virket." }
             ]
         },
         {
@@ -144,8 +156,9 @@
         },
         {
             "id": "valget",
+            "lyd": "vind",
             "kapittel": "Stopp eller fortsett?",
-            "visual": { "type": "GolfKart", "props": { "modus": "valg" } },
+            "visual": { "type": "GolfSand", "props": { "modus": "valg" } },
             "replikker": [
                 { "si": "Nå kom det store spørsmålet. Skulle koalisjonen kjøre videre helt til Bagdad og fjerne Saddam?" },
                 { "si": "FN hadde gitt lov til én ting: å frigjøre Kuwait. Ikke å bytte ut lederen i Irak." },
@@ -155,8 +168,9 @@
         },
         {
             "id": "sanksjoner",
+            "lyd": "stille",
             "kapittel": "Sanksjonene",
-            "visual": { "type": "GolfKart", "props": { "modus": "sanksjoner" } },
+            "visual": { "type": "GolfLandet", "props": { "modus": "sanksjoner" } },
             "replikker": [
                 { "si": "Saddam slo brutalt ned opprør fra sjiamuslimer, en av de to store retningene i islam, i sør og kurdere i nord." },
                 { "si": "FN innførte strenge sanksjoner, altså straffetiltak. Irak fikk nesten ikke kjøpe varer fra andre land, og pengene fra oljen ble sperret." },
@@ -196,10 +210,10 @@
         },
         {
             "id": "kaos",
-            "visual": { "type": "GolfKart", "props": { "modus": "kaos" } },
+            "visual": { "type": "GolfLandet", "props": { "modus": "kaos" } },
             "replikker": [
-                { "si": "Landet hadde ingen stat som virket lenger. Grupper med gammelt hat seg imellom sloss om makta." },
-                { "si": "Mange gikk fra glede over at Saddam var borte, til sinne over at fremmede soldater var i landet." },
+                { "si": "Landet hadde ingen stat som virket lenger. Grupper som hatet hverandre fra før, sto nå mot hverandre." },
+                { "si": "Mange var først lettet over at Saddam var borte. Men de ble fort sinte over at fremmede soldater var i landet." },
                 { "si": "Sjia-militser, altså væpnede grupper av sjiamuslimer, kjempet mot USA. Sunni-islamister laget grupper som senere ble til IS, Den islamske stat." },
                 { "si": "Da de siste amerikanske soldatene dro i 2011, hadde volden kostet hundretusener av liv." }
             ]
@@ -213,8 +227,8 @@
                     "setninger": [
                         { "tekst": "1991: et klart mål, og FN med på laget.", "fraBeat": 0 },
                         { "tekst": "Kuwait ble fritt.", "fraBeat": 0, "uthevet": true },
-                        { "tekst": "2003: uten FN, uten bevis, uten plan.", "fraBeat": 1 },
-                        { "tekst": "Freden kostet mer enn krigen.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "2003: uten FN, med tynne bevis, uten plan.", "fraBeat": 1 },
+                        { "tekst": "Mangelen på plan kostet mer enn invasjonen.", "fraBeat": 1, "uthevet": true },
                         { "tekst": "Det er lett å vinne en krig.", "fraBeat": 2 },
                         { "tekst": "Det er mye vanskeligere å vinne freden.", "fraBeat": 2, "uthevet": true }
                     ]
@@ -222,7 +236,7 @@
             },
             "replikker": [
                 { "si": "I 1991 hadde krigen et klart mål, og FN var med på laget. Kuwait ble fritt på kort tid." },
-                { "si": "I 2003 hadde USA ikke FN med seg, våpnene fantes ikke, og ingen hadde en plan for dagen etter. Kaoset etterpå kostet mer enn selve invasjonen." },
+                { "si": "I 2003 hadde USA ikke FN med seg, og våpnene fantes ikke. Krigen manglet en plan for dagen etter, og det kostet mer enn selve invasjonen." },
                 { "si": "Golfkrigene lærer oss noe viktig. Det er lett å vinne en krig. Det er mye vanskeligere å vinne freden." }
             ]
         }

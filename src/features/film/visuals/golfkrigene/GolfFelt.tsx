@@ -279,7 +279,7 @@ function Kiste({ beat }: { beat: number }) {
                 fontWeight={900}
                 fill="#fde68a"
             >
-                {beat === 0 ? 'Kassa: tom' : 'Gjeld'}
+                {beat === 0 ? 'Nesten tom' : 'Gjeld'}
             </text>
             {beat === 1 &&
                 [
