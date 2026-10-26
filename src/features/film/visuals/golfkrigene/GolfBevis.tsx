@@ -5,7 +5,7 @@ import type { VisualProps } from '../../types';
  * Saksmappa mot Irak.
  * «pastand»: 11. september, hvem som sto bak, påstanden om masseødeleggelsesvåpen med tynne
  *   bevis, og Colin Powells ord i FN.
- * «funn»: lagrene blir lett gjennom én etter én og er tomme. Stempel: IKKE FUNNET.
+ * «funn»: lagrene blir søkt gjennom én etter én og er tomme. Stempel: IKKE FUNNET.
  */
 
 type Modus = 'pastand' | 'funn';
@@ -114,7 +114,7 @@ function Funn({ beat }: { beat: number }) {
         <div className="relative">
             <Mappe>
                 <div className="text-xl font-bold uppercase tracking-widest text-stone-500 mb-4">
-                    Lett gjennom
+                    Søkt gjennom
                 </div>
                 <div className="grid grid-cols-6 gap-3">
                     {Array.from({ length: 12 }, (_, i) => (
@@ -135,20 +135,23 @@ function Funn({ beat }: { beat: number }) {
                         </motion.div>
                     ))}
                 </div>
-                <div className="mt-6 text-4xl font-black text-slate-900">
-                    Masseødeleggelsesvåpen funnet: 0
-                </div>
+                {beat === 0 ? (
+                    <div className="mt-6 text-4xl font-black text-slate-900">
+                        Masseødeleggelsesvåpen funnet: 0
+                    </div>
+                ) : (
+                    <div className="mt-6 flex justify-center">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 2.2, rotate: -12 }}
+                            animate={{ opacity: 1, scale: 1, rotate: -4 }}
+                            transition={{ type: 'spring', stiffness: 240, damping: 16, delay: 0.3 }}
+                            className="px-8 py-2 border-[8px] border-red-600 text-red-600 bg-white/80 rounded-2xl text-5xl font-black tracking-wider whitespace-nowrap"
+                        >
+                            IKKE FUNNET
+                        </motion.div>
+                    </div>
+                )}
             </Mappe>
-            {beat >= 1 && (
-                <motion.div
-                    initial={{ opacity: 0, scale: 2.2, rotate: -18 }}
-                    animate={{ opacity: 1, scale: 1, rotate: -10 }}
-                    transition={{ type: 'spring', stiffness: 240, damping: 16, delay: 0.3 }}
-                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-8 py-3 border-[8px] border-red-600 text-red-600 bg-white/80 rounded-2xl text-6xl font-black tracking-wider whitespace-nowrap"
-                >
-                    IKKE FUNNET
-                </motion.div>
-            )}
         </div>
     );
 }

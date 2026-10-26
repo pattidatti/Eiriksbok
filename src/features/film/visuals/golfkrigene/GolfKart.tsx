@@ -472,7 +472,7 @@ export function GolfKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
                 {modus === 'invasjon' && (
                     <>
                         <Etikett pos={p([41.2, 31.3])} tekst="Irak" farge="#7f1d1d" stor />
-                        <By pos={bag} navn="Bagdad" />
+                        <By pos={bag} navn={beat < 2 ? 'Bagdad' : ''} />
                         <Etikett pos={p([48.8, 28.6])} tekst="Kuwait" farge="#1e3a8a" />
                         <Pil
                             fra={p([46.9, 29.8])}
