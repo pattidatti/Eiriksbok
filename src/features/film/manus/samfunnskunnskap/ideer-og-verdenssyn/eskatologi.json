@@ -1,0 +1,485 @@
+{
+    "id": "eskatologi",
+    "tittel": "Eskatologi: Historien om verdens undergang",
+    "kilde": "/samfunnskunnskap/ideer-og-verdenssyn/eskatologi",
+    "bilde": "/images/lessons/ideer/eskatologi_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-26", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 5, "tro": 4, "sum": 21 },
+    "scener": [
+        {
+            "id": "leirbal",
+            "lyd": "ild",
+            "kapittel": "Hvordan ender det?",
+            "visual": {
+                "type": "EskatologiVerden",
+                "props": {
+                    "modus": "leirbal"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg et leirbål for tusenvis av år siden. Folk sitter og stirrer inn i flammene."
+                },
+                {
+                    "si": "Ett spørsmål har fulgt mennesker siden den gang: Hvordan ender det egentlig?"
+                },
+                {
+                    "si": "Slukner sola en dag? Går hele verden under?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ESKATOLOGI",
+                    "undertittel": "Læren om de siste ting",
+                    "sporsmal": {
+                        "tekst": "Hvorfor er vi så opptatt av slutten?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Læren om hvordan verden ender, heter eskatologi."
+                },
+                {
+                    "si": "Ordet kommer fra gresk. Eschatos betyr ytterst eller siste, og logos betyr lære.",
+                    "uttale": "Ordet kommer fra gresk. Eskatos betyr ytterst eller siste, og logos betyr lære."
+                },
+                {
+                    "si": "Det handler både om hva som skjer med oss etter døden, og om hvordan verden går under og blir ny."
+                },
+                {
+                    "si": "Så hvorfor er vi så opptatt av slutten?"
+                }
+            ]
+        },
+        {
+            "id": "hjul",
+            "kapittel": "Hjul eller pil",
+            "visual": {
+                "type": "EskatologiTid",
+                "props": {
+                    "modus": "hjul"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mennesker har sett tiden på to måter. Den første er et hjul."
+                },
+                {
+                    "si": "Verden blir skapt, blomstrer, forfaller og går under. Så blir den født på nytt fra asken."
+                },
+                {
+                    "si": "I hinduismen deler man tiden i fire enorme verdensaldre, yugaer. For hver av dem blir livet kortere og mindre lykkelig."
+                },
+                {
+                    "si": "Vi lever nå i den fjerde, kaliyuga. Når den er over, går verden under. Så begynner hjulet på nytt."
+                },
+                {
+                    "si": "Her er slutten ikke en tragedie, men en renselse."
+                }
+            ]
+        },
+        {
+            "id": "pil",
+            "visual": {
+                "type": "EskatologiTid",
+                "props": {
+                    "modus": "pil"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I Midtøsten vokste det fram en annen tanke. Her er tiden ikke et hjul, men en pil."
+                },
+                {
+                    "si": "Pila starter i skapelsen og flyr mot et mål i enden av historien. Da er det over. Ingen ny runde."
+                },
+                {
+                    "si": "Dette synet finner vi i zoroastrismen, jødedommen, kristendommen og islam."
+                },
+                {
+                    "si": "Da får hvert valg enorm tyngde. Du har bare én sjanse før dommen faller."
+                }
+            ]
+        },
+        {
+            "id": "persia",
+            "kapittel": "Lys mot mørke",
+            "visual": {
+                "type": "EskatologiKart",
+                "props": {
+                    "modus": "persia"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Noen av de eldste røttene til tanken om dommedag finner vi i Persia, dagens Iran."
+                },
+                {
+                    "si": "Der levde profeten Zarathustra. Ingen vet sikkert når, men det var lenge før vår tidsregning."
+                },
+                {
+                    "si": "Zarathustra lærte at verden ikke er tilfeldig. Den er en slagmark mellom godt og ondt."
+                }
+            ]
+        },
+        {
+            "id": "vekt",
+            "visual": {
+                "type": "EskatologiTid",
+                "props": {
+                    "modus": "vekt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "På den ene siden: Ahura Mazda, guden for lyset og det gode. På den andre: Angra Mainyu, fyrsten over mørket og det onde."
+                },
+                {
+                    "si": "Hvert eneste menneske er dratt inn i kampen og må velge side."
+                },
+                {
+                    "si": "Ved tidens ende skal en frelser komme, Saoshyant. Alle de døde skal stå opp igjen."
+                },
+                {
+                    "si": "Så smelter en mektig ild alle jordens metaller. De rettferdige blir ikke svidd, men løgnerne må gjennom en vond renselse."
+                },
+                {
+                    "si": "Legg merke til formen: Historien har en slutt, og valgene dine avgjør hvor du havner. Den formen kommer igjen i jødedommen, kristendommen og islam."
+                }
+            ]
+        },
+        {
+            "id": "vinter",
+            "lyd": "vind",
+            "kapittel": "Ragnarok",
+            "visual": {
+                "type": "EskatologiVerden",
+                "props": {
+                    "modus": "vinter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Lenger nord fortalte vikingene en mye mørkere historie: ragnarok."
+                },
+                {
+                    "si": "Selv gudene Odin og Tor visste at de en dag skulle tape. De var underlagt skjebnen, som vikingene kalte Urd."
+                },
+                {
+                    "si": "Ragnarok begynner med menneskene: tre år med ondskap og krig. Bror kjemper mot bror."
+                },
+                {
+                    "si": "Så kommer Fimbulvinteren: tre vintre på rad. Jorda fryser, og menneskelivet tar slutt."
+                }
+            ]
+        },
+        {
+            "id": "kaos",
+            "lyd": "storm",
+            "visual": {
+                "type": "EskatologiVerden",
+                "props": {
+                    "modus": "kaos"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå slipper jotnene og monstrene løs. Ulvene Skoll og Hate sluker sola og månen."
+                },
+                {
+                    "si": "Stjernene forsvinner fra himmelen."
+                },
+                {
+                    "si": "Midgardsormen stiger opp av havet."
+                },
+                {
+                    "si": "De fleste gudene dør. Odin blir slukt av Fenrisulven. Tor dreper Midgardsormen, men dør selv av giften."
+                },
+                {
+                    "si": "Til slutt setter Surt, en jotne av flammer, fyr på hele verden."
+                }
+            ]
+        },
+        {
+            "id": "ny-jord",
+            "lyd": "hav",
+            "visual": {
+                "type": "EskatologiVerden",
+                "props": {
+                    "modus": "ny"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men husk hjulet. Fortellingen om ragnarok slutter ikke i mørke."
+                },
+                {
+                    "si": "Etter brannen stiger en ny, grønn jord opp av havet, med fossefall og åkre som sår seg selv."
+                },
+                {
+                    "si": "To mennesker overlever. De heter Liv og Livtrase."
+                },
+                {
+                    "si": "De gjemmer seg i skogen Hoddmimes holt og lever av morgenduggen."
+                },
+                {
+                    "si": "Den gamle, ødelagte verden måtte bort, så en ny kunne komme."
+                }
+            ]
+        },
+        {
+            "id": "dom",
+            "lyd": "stille",
+            "kapittel": "Dommens dag",
+            "visual": {
+                "type": "EskatologiKart",
+                "props": {
+                    "modus": "dom"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I jødedommen, kristendommen og islam ender historien hos en rettferdig dommer."
+                },
+                {
+                    "si": "I islam er dommens dag en grunnleggende del av troen, helt fra Muhammad begynte å forkynne."
+                },
+                {
+                    "si": "Da skal alle stå opp igjen og stilles for Guds domstol. Så venter frelse eller straff."
+                },
+                {
+                    "si": "I kristendommen er Johannes' åpenbaring den mest kjente teksten om slutten."
+                },
+                {
+                    "si": "Den forteller om sju segl. Når de fire første brytes, kommer fire ryttere: erobring, krig, sult og død."
+                },
+                {
+                    "si": "Det høres skummelt ut. Men for de første kristne under romermakten var det et håp: Gud skulle gripe inn."
+                }
+            ]
+        },
+        {
+            "id": "datoer",
+            "visual": {
+                "type": "EskatologiTeller",
+                "props": {
+                    "modus": "regnestykker"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange har prøvd å regne ut når slutten kommer. Også Isaac Newton regnet, selv om han advarte mot å sette datoer."
+                },
+                {
+                    "si": "Han fant en periode på 1260 år i bibelske profetier, og telte fra år 800."
+                },
+                {
+                    "si": "Svaret ble år 2060. Men Newton trodde ikke at jorda skulle bli ødelagt, bare at en ny tidsalder skulle begynne."
+                },
+                {
+                    "si": "I USA regnet William Miller seg fram til at Jesus skulle komme tilbake i 1843 eller 1844."
+                },
+                {
+                    "si": "Titusener trodde på ham. Da ingenting skjedde, sluttet de fleste. Det ble kalt den store skuffelsen."
+                },
+                {
+                    "si": "Men noen ga ikke opp. I 1863 ble Syvendedags Adventistsamfunnet dannet for de rundt 3500 som var igjen."
+                }
+            ]
+        },
+        {
+            "id": "ozon",
+            "kapittel": "Moderne dommedag",
+            "visual": {
+                "type": "EskatologiKart",
+                "props": {
+                    "modus": "ozon"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Selv i vitenskapens tid har følelsen av dommedag ikke forsvunnet."
+                },
+                {
+                    "si": "Fra rundt 1970 ble mange redde for at ozonlaget skulle bli ødelagt. Det skjermer oss mot skadelig stråling."
+                },
+                {
+                    "si": "I 1985 fant forskerne et hull i ozonlaget over Antarktis. Gasser fra spraybokser og kjøleindustri brøt ozonet ned."
+                },
+                {
+                    "si": "Denne gangen handlet verden sammen. I 1987 kom Montreal-protokollen, som satte grenser for utslippene."
+                },
+                {
+                    "si": "Beregninger tyder på at ozonlaget kan bli like sterkt som på 1980-tallet en gang mellom 2025 og 2050. Men det er usikkert."
+                }
+            ]
+        },
+        {
+            "id": "y2k",
+            "visual": {
+                "type": "EskatologiTeller",
+                "props": {
+                    "modus": "y2k"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mot år 2000 kom en ny frykt, om datamaskiner."
+                },
+                {
+                    "si": "For å spare plass brukte programmerere bare to sifre på årstallet. Da kunne 00 bli lest som 1900, ikke 2000.",
+                    "uttale": "For å spare plass brukte programmerere bare to sifre på årstallet. Da kunne null null bli lest som nitten hundre, ikke to tusen."
+                },
+                {
+                    "si": "Problemet var ekte, men frykten ble mye større. Mange trodde at datasystemene ville svikte, og at samfunnet delvis ville stoppe opp."
+                },
+                {
+                    "si": "Da klokka slo tolv, skjedde nesten ingenting. Mange systemer var testet på forhånd."
+                },
+                {
+                    "si": "Etterpå har folk kranglet: Reddet forberedelsene oss, eller var faren aldri så stor?"
+                }
+            ]
+        },
+        {
+            "id": "klima",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Klimakrisen: vår tids store fortelling",
+                    "punkter": [
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Advarselen fra de vise",
+                            "tekst": "i dag: forskerne",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "vann",
+                            "tittel": "Tegnene i naturen",
+                            "tekst": "oversvømmelser og tørke",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Kravet om å endre seg",
+                            "tekst": "for å unngå undergangen",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Klimaendringene er vår tids store fortelling om slutten."
+                },
+                {
+                    "si": "Først advarselen fra de vise. I dag er det forskerne."
+                },
+                {
+                    "si": "Så tegnene i naturen, som oversvømmelser og tørke."
+                },
+                {
+                    "si": "Og til slutt kravet om at vi må endre oss for å unngå undergangen."
+                },
+                {
+                    "si": "Det er en fornuftig frykt. Men den virker som ragnarok: Vi føler at vi lever i en avgjørende tid."
+                }
+            ]
+        },
+        {
+            "id": "fortelling",
+            "kapittel": "Hvorfor slutten?",
+            "visual": {
+                "type": "EskatologiTid",
+                "props": {
+                    "modus": "fortelling"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor finnes tanken om slutten i så mange samfunn? Forskere peker på flere grunner. Her er to av dem."
+                },
+                {
+                    "si": "Den første: Vi liker fortellinger. En fortelling uten slutt føles uferdig og meningsløs."
+                },
+                {
+                    "si": "Når historien har et mål, får også ditt eget liv en plass i noe større."
+                },
+                {
+                    "si": "Den andre er kontroll. Når pest, krig eller sult rammer, føles det som om verden går under uansett."
+                },
+                {
+                    "si": "Da gir troen på slutten en forklaring: Dette er ikke tilfeldig kaos, men en plan. Det gjør lidelsen lettere å bære."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ikke en lære om død,",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "men om hva som har verdi.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Når alt annet forsvinner:",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Hva er verdt å ta vare på?",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hver generasjon",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "speider mot horisonten.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Alt har en ende.",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "Derfor betyr det som er her nå.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kanskje handler læren om slutten ikke om død, men om hva som har verdi."
+                },
+                {
+                    "si": "Når vi ser for oss slutten, må vi spørre: Hva er verdt å ta vare på?"
+                },
+                {
+                    "si": "Hver generasjon ser trolig tegn på slutten. Det ligger i vår natur å speide mot horisonten."
+                },
+                {
+                    "si": "Og kanskje er det fordi alt har en ende, at vi setter pris på det vakre her og nå."
+                }
+            ]
+        }
+    ]
+}
