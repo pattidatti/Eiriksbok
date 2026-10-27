@@ -4,6 +4,15 @@
     "kilde": "/historie/midtoesten/iran-revolusjonen",
     "bilde": "/images/midtoesten/iran-revolusjonen-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-27",
+        "viser": 3,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
     "scener": [
         {
             "id": "avreise",
@@ -16,7 +25,7 @@
             },
             "replikker": [
                 {
-                    "si": "Det er januar 1979, i Teheran, hovedstaden i Iran. Kongen av landet pakker koffertene sine."
+                    "si": "Det er januar 1979, i Iran. Kongen av landet pakker koffertene sine."
                 },
                 {
                     "si": "Kongen kalles sjahen. Vesten, altså USA og Europa, har støttet ham i tre tiår. Nå flykter han fra sitt eget folk."
@@ -59,36 +68,7 @@
             "id": "reformer",
             "kapittel": "Sjahen",
             "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "Den hvite revolusjonen",
-                    "punkter": [
-                        {
-                            "ikon": "snakk",
-                            "tittel": "Kvinner får stemme",
-                            "tekst": "ved valg",
-                            "fraBeat": 1
-                        },
-                        {
-                            "ikon": "hus",
-                            "tittel": "Jord til bønder",
-                            "tekst": "delt ut av staten",
-                            "fraBeat": 2
-                        },
-                        {
-                            "ikon": "fabrikk",
-                            "tittel": "Fabrikker og universiteter",
-                            "tekst": "landet blir moderne",
-                            "fraBeat": 3
-                        },
-                        {
-                            "ikon": "penger",
-                            "tittel": "Oljepenger",
-                            "tekst": "strømmer inn",
-                            "fraBeat": 4
-                        }
-                    ]
-                }
+                "type": "IranReformer"
             },
             "replikker": [
                 {
@@ -145,7 +125,7 @@
             },
             "replikker": [
                 {
-                    "si": "Sjahens farligste kritiker var ayatollah Ruhollah Khomeini. En ayatollah er en av de fremste religiøse lederne. Khomeini var den mektigste av dem i Iran."
+                    "si": "Sjahens mest kjente kritiker var ayatollah Ruhollah Khomeini. En ayatollah er en av de fremste religiøse lederne. Khomeini var den mektigste av dem i Iran."
                 },
                 {
                     "si": "Han hadde kritisert sjahen åpent siden 1960-tallet. Nå levde han i eksil, altså utenfor hjemlandet sitt."
@@ -197,10 +177,10 @@
             },
             "replikker": [
                 {
-                    "si": "I 1978 eksploderte uroen. Demonstrasjoner startet i én by."
+                    "si": "I 1978 eksploderte uroen. Folk gikk ut i gatene for å protestere."
                 },
                 {
-                    "si": "Så spredte de seg fra by til by, over hele landet."
+                    "si": "Demonstrasjonene spredte seg fra by til by."
                 },
                 {
                     "si": "Oljearbeiderne gikk til streik. Da stanset landets viktigste inntekt."
@@ -226,7 +206,7 @@
                     "si": "Dagen fikk navnet Svart fredag. Den gjorde folk enda mer rasende."
                 },
                 {
-                    "si": "Men til slutt sviktet sjahens viktigste støtte. Soldater er også sønner og brødre. Mange nektet å skyte på sitt eget folk."
+                    "si": "Men til slutt nektet hæren å fortsette. Soldater er også sønner og brødre. Mange nektet å skyte på sitt eget folk."
                 },
                 {
                     "si": "I januar 1979 sa hæren at den ikke lenger tok side. Da var det over."
@@ -240,10 +220,7 @@
             "id": "hjemkomst",
             "kapittel": "Den islamske republikken",
             "visual": {
-                "type": "IranKart",
-                "props": {
-                    "modus": "hjemkomst"
-                }
+                "type": "IranHjemkomst"
             },
             "replikker": [
                 {
@@ -274,7 +251,7 @@
                     "uttale": "Khomeini innførte et helt nytt styresett. Det heter velajet e fakih, som betyr de islamske lærdes styre."
                 },
                 {
-                    "si": "Tanken er at en høyt utdannet religiøs leder skal styre staten. Bare han forstår Guds lov godt nok."
+                    "si": "Tanken er at en høyt utdannet religiøs leder skal styre staten, fordi bare han forstår Guds lov godt nok."
                 },
                 {
                     "si": "Khomeini ble den øverste lederen. Han sto over presidenten, over parlamentet og over hæren."
@@ -375,7 +352,7 @@
                     "si": "En militær redningsaksjon gikk galt ute i ørkenen. Åtte amerikanske soldater mistet livet."
                 },
                 {
-                    "si": "Gislene slapp ikke fri før Ronald Reagan ble president i januar 1981."
+                    "si": "Gislene slapp ikke fri før Ronald Reagan ble president i januar 1981. Folk har diskutert det tidspunktet helt siden."
                 },
                 {
                     "si": "Forholdet mellom USA og Iran var knust. Det er det fortsatt."
@@ -409,10 +386,7 @@
         {
             "id": "splittelse",
             "visual": {
-                "type": "IranKart",
-                "props": {
-                    "modus": "splittelse"
-                }
+                "type": "IranSplittelse"
             },
             "replikker": [
                 {
@@ -451,7 +425,7 @@
                         },
                         {
                             "ikon": "bombe",
-                            "tittel": "Sunni mot sjia",
+                            "tittel": "Sunni-land mot sjia-Iran",
                             "tekst": "fra Jemen til Libanon",
                             "fraBeat": 3
                         },
@@ -475,7 +449,7 @@
                     "si": "For det andre skapte den en islamistisk stat, styrt etter religionens regler. Det er den eneste som har overlevd til i dag."
                 },
                 {
-                    "si": "For det tredje satte den i gang striden mellom sunni og sjia i hele regionen."
+                    "si": "For det tredje satte den i gang rivaliseringen mellom sunni-arabiske land og sjia-Iran i hele regionen."
                 },
                 {
                     "si": "Og for det fjerde gjorde den Iran og USA til fiender. Det merkes fortsatt i sanksjoner, altså straff som handelsforbud, i atomforhandlinger og i krig."
