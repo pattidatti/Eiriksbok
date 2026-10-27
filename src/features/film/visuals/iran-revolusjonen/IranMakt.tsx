@@ -56,7 +56,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'En lærd religiøs leder' },
         { tekst: 'Over alle andre' },
         { tekst: 'Ikke et demokrati', rod: true },
-        { tekst: 'Frihet?' },
+        { tekst: 'Frihet?', rod: true },
     ],
 };
 
@@ -70,7 +70,14 @@ export function IranMakt({ beat, props }: VisualProps<{ modus?: Modus }>) {
                 className="absolute inset-0 w-full h-full"
                 preserveAspectRatio="xMidYMid meet"
             >
-                {modus === 'faqih' ? <Faqih beat={beat} /> : <Bygning modus={modus} beat={beat} />}
+                {modus === 'faqih' ? (
+                    // Under sitatet tones skjemaet helt bort, så teksten ikke ligger under boksen.
+                    <motion.g initial={false} animate={{ opacity: beat >= 4 ? 0 : 1 }}>
+                        {beat < 4 && <Faqih beat={beat} />}
+                    </motion.g>
+                ) : (
+                    <Bygning modus={modus} beat={beat} />
+                )}
             </svg>
             <AnimatePresence mode="wait">
                 <motion.div

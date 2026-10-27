@@ -186,7 +186,7 @@ export function IranKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
                         {beat === 1 && (
                             <Etikett
                                 pos={p([44, 31])}
-                                tekst="Han kommer aldri tilbake"
+                                tekst="Vesten støttet ham i tre tiår"
                                 farge="#7f1d1d"
                                 forsinkelse={1.6}
                             />
