@@ -1,0 +1,283 @@
+{
+  "id": "skatt",
+  "title": "Skatt: Hvorfor betaler vi, og hvem betaler mest?",
+  "layout": "rich",
+  "year": "Fra 1100-tallet til i dag",
+  "category": "Økonomi",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Skatt er penger vi betaler til fellesskapet uten å få noe bestemt tilbake. Pengene betaler for skole, sykehus, veier og trygd.",
+    "Moms er en flat skatt på 25 prosent som alle betaler når de handler. Skatten på lønn er progressiv: jo mer du tjener, jo større del betaler du.",
+    "Hvor høy skatten skal være, og hvem som skal betale mest, er et politisk spørsmål om rettferdighet."
+  ],
+  "externalUrl": "https://snl.no/skatt",
+  "factChecked": "2026-10-27",
+  "tags": [
+    "økonomi",
+    "skatt",
+    "moms",
+    "velferd",
+    "ulikhet"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Du har sikkert betalt skatt i dag uten å tenke over det. Kanskje kjøpte du et par hodetelefoner til 500 kroner. Av de 500 kronene gikk 100 kroner rett videre til staten. Det er moms, en skatt som er bakt inn i nesten alt du kjøper. Butikken tar inn pengene for staten, og du ser dem ikke på prislappen."
+    },
+    {
+      "type": "text",
+      "content": "Når du begynner å jobbe, kommer det en ny type skatt i tillegg: skatt på lønnen. Men hvorfor må vi egentlig betale? Hva brukes pengene til? Og hvorfor betaler noen en mye større del av lønnen sin enn andre? I denne artikkelen skal du finne svarene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom betaler for hodetelefoner i en butikk",
+      "caption": "En del av det du betaler i butikken, går til staten som moms."
+    },
+    {
+      "type": "header",
+      "text": "Hva er skatt?"
+    },
+    {
+      "type": "text",
+      "content": "Store norske leksikon forklarer skatt som betalinger til det offentlige uten direkte motytelse (Skar & Bjørkheim, 2026). Det betyr at du ikke får en bestemt vare eller tjeneste tilbake for akkurat de pengene du betaler. Når du kjøper en pizza, får du en pizza. Når du betaler skatt, får du ingen pizza. Pengene går i en felles pott."
+    },
+    {
+      "type": "text",
+      "content": "Mange skiller mellom skatt og avgift, men de fleste avgifter er også skatter. Moms er et eksempel. Det samme gjelder avgifter på alkohol og på utslipp som skader miljøet (Skar & Bjørkheim, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Økonomer deler skattene i to grupper. Direkte skatter er skatter på det du tjener og det du eier, for eksempel inntektsskatt og formuesskatt. Det er meningen at den som betaler, også skal bære kostnaden. Indirekte skatter, som moms, betales av butikken eller bedriften, men det er meningen at kunden skal bære kostnaden gjennom en høyere pris (Skar & Bjørkheim, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor betaler vi skatt?"
+    },
+    {
+      "type": "text",
+      "content": "Skatten har tre viktige jobber. Den første er å betale for det vi har sammen. Skolen du går på, sykehuset, veiene, politiet, domstolene, forsvaret og pengene folk får fra staten når de er syke eller ledige, betales med skattepenger (Skar & Bjørkheim, 2026). Når noen mister jobben og får dagpenger fra Nav, er det skattepenger som hjelper dem. Det kan du lese mer om i artikkelen om [arbeidsledighet](/samfunnskunnskap/okonomi/arbeidsledighet)."
+    },
+    {
+      "type": "text",
+      "content": "Den andre jobben er å jevne ut forskjeller. Når de som tjener mye betaler en større del av lønnen sin, blir avstanden mellom rik og fattig mindre (Skar & Bjørkheim, 2026). Den tredje jobben er å endre hva folk gjør. Høy skatt på alkohol og utslipp gjør dem dyrere, og da kjøper folk mindre av det (Skar & Bjørkheim, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Hvor kommer så pengene fra? I statsbudsjettet for 2026 regnet staten med å få inn 515 milliarder kroner i skatt på inntekt og formue, 514 milliarder i arbeidsgiveravgift og trygdeavgift, og 421 milliarder i moms. I tillegg kom 557 milliarder kroner fra olje og gass (Skar & Bjørkheim, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Skatt er ikke noe nytt",
+        "content": "Den eldste skatten vi kjenner til i Norge, heter leidang og er fra 1100-tallet. På 1270-tallet gjorde kong Magnus Lagabøte den om til en fast skatt. Staten innførte skatt på inntekt og formue i 1892, og fra 1895 ble inntektsskatten progressiv. Momsen kom i 1970 (Skar & Bjørkheim, 2026)."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Momsen: skatten alle betaler"
+    },
+    {
+      "type": "text",
+      "content": "Moms er en forkortelse for merverdiavgift. Den vanlige satsen er 25 prosent, og den regnes av prisen før moms. Matvarer har 15 prosent moms, mens kinobilletter og bussbilletter har 12 prosent. Bøker og aviser har ingen moms (Skar, 2026). Hodetelefonene fra starten kostet altså 400 kroner før moms. 25 prosent av 400 kroner er 100 kroner, og da blir prisen 500 kroner."
+    },
+    {
+      "type": "text",
+      "content": "Momsen legges på i hvert ledd fra fabrikk til butikk. Hver bedrift legger moms på det den selger, og trekker fra momsen den selv har betalt for det den har kjøpt inn. Forskjellen sender bedriften til staten (Skar, 2026). Til slutt er det du som kunde som betaler hele momsen, gjennom prisen."
+    },
+    {
+      "type": "text",
+      "content": "Momsen er en flat skatt. Det betyr at alle betaler samme prosent, uansett hvor mye de tjener (Skar, 2026). En student og en millionær betaler like mye moms på en melk."
+    },
+    {
+      "type": "header",
+      "text": "Skatt på lønnen: en trapp"
+    },
+    {
+      "type": "text",
+      "content": "Skatten på lønn virker annerledes. Den er progressiv. Det betyr at jo mer du tjener, jo større del av inntekten din går til skatt (Skar & Bjørkheim, 2026). Det motsatte er flat skatt, der alle betaler like stor andel, uansett hvor mye de tjener."
+    },
+    {
+      "type": "text",
+      "content": "Skatten på lønn i Norge består av flere deler. Den største er en skatt på 22 prosent av det som kalles alminnelig inntekt (Skatteetaten, 2026a). Det er lønnen din minus noen fradrag. Et fradrag er et beløp du slipper å betale skatt av. Alle får et personfradrag på 114 540 kroner (Skatteetaten, 2026c). I tillegg får de som jobber et minstefradrag. Det er 46 prosent av lønnen, men aldri mer enn 95 700 kroner (Skatteetaten, 2026b). Fradragene gjør at de som tjener lite, betaler lite eller ingenting."
+    },
+    {
+      "type": "text",
+      "content": "Så kommer trygdeavgiften. Den er 7,6 prosent av lønnen og er med på å betale for folketrygden, altså blant annet pensjoner og sykepenger (Skatteetaten, 2026e). Den siste delen er trinnskatten. Den virker som en trapp med fem trinn. De første 226 100 kronene betaler du ingen trinnskatt av. Av det du tjener over dette, betaler du 1,7 prosent. Over 318 300 kroner blir satsen 4 prosent, og slik fortsetter det. På det øverste trinnet, over 1 467 200 kroner, er satsen 17,8 prosent (Skatteetaten, 2026d)."
+    },
+    {
+      "type": "text",
+      "content": "Her gjør mange en feil. De tror at hvis lønnen går over en grense, må de betale den høyere satsen av hele lønnen. Slik er det ikke. Den høyere satsen gjelder bare de kronene som ligger over grensen. Derfor lønner det seg alltid å tjene en krone mer, selv om du kommer opp på et nytt trinn."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Trapp med fem trinn og mynter på hvert trinn",
+      "caption": "Trinnskatten er som en trapp: jo høyere opp lønnen når, jo høyere sats på de øverste kronene."
+    },
+    {
+      "type": "header",
+      "text": "Flat eller progressiv?"
+    },
+    {
+      "type": "text",
+      "content": "Hva betyr dette i praksis? Her møter du tre personer med ulik lønn. Først betaler de flat skatt, så progressiv skatt. I begge ordningene får fellesskapet like mye penger til sammen. Se hva som skjer med hver enkelt."
+    },
+    {
+      "type": "component",
+      "name": "Skattevekta",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste å se er forskjellen på kroner og andel. Med flat skatt betaler direktøren flest kroner, fordi hun tjener mest. Men hun betaler like stor del av lønnen som butikkmedarbeideren. Med progressiv skatt betaler direktøren både flest kroner og størst andel. Da kan de med lavere lønn betale mindre."
+    },
+    {
+      "type": "header",
+      "text": "Hvor mye betaler folk egentlig?"
+    },
+    {
+      "type": "text",
+      "content": "Statistisk sentralbyrå (SSB) samler inn tall for skatten til alle som bor i Norge. I 2024 betalte de som var 17 år eller eldre, i gjennomsnitt 173 500 kroner i skatt. Gjennomsnittlig bruttoinntekt, altså inntekt før skatt, var 632 600 kroner (Statistisk sentralbyrå, 2026). Det betyr at en vanlig person betalte omtrent en fjerdedel av inntekten sin i skatt og trygdeavgift. Da er ikke momsen i butikken regnet med."
+    },
+    {
+      "type": "header",
+      "text": "Bør de rike betale mer?"
+    },
+    {
+      "type": "text",
+      "content": "Hvor mye skatt folk skal betale, er et av de spørsmålene partiene krangler mest om. Det finnes ikke ett riktig svar, fordi det handler om hva du mener er rettferdig."
+    },
+    {
+      "type": "text",
+      "content": "De som vil ha høy og progressiv skatt, sier gjerne at de som har mest, også klarer å bidra mest. De mener at små forskjeller mellom folk gjør samfunnet tryggere, og at alle har nytte av gode skoler og sykehus. Les mer om hvorfor Norge har små lønnsforskjeller i artikkelen om [lønn og ulikhet](/samfunnskunnskap/arbeidsliv/lonn-og-ulikhet)."
+    },
+    {
+      "type": "text",
+      "content": "De som vil ha lavere skatt, sier gjerne at folk bør få beholde mer av pengene de selv har tjent. Noen mener at høy skatt gjør at det lønner seg mindre å jobbe hardt eller starte en bedrift. Andre igjen går lenger og spør om staten i det hele tatt har rett til å ta pengene dine. Den tanken kan du utforske i artikkelen [NAP: Ikke-aggresjon](/krle/etikk/non-aggression)."
+    },
+    {
+      "type": "text",
+      "content": "Hvor høy skatten skal være, og hvem som skal betale mest, bestemmer Stortinget hvert år når det vedtar statsbudsjettet. Hvordan Norge bygde ut fellesskapet etter krigen, kan du lese om i artikkelen om [velferdsstaten](/historie/norge-i-moderne-tid/velferdsstaten)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Politikere debatterer i en lys stortingssal",
+      "caption": "Hvert år bestemmer Stortinget hvor høy skatten skal være."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Skatt er penger vi betaler til fellesskapet uten å få noe bestemt tilbake. Pengene betaler for skole, sykehus, veier og trygd, de jevner ut forskjeller, og de kan få folk til å endre vaner. Moms er en flat skatt som alle betaler når de handler. Skatten på lønn er progressiv: jo mer du tjener, jo større del betaler du. Hvor høy skatten skal være, og hvem som skal betale mest, er et politisk valg som handler om hva vi mener er rettferdig."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Skar, H. (2026). *Merverdiavgift*. Store norske leksikon. Hentet 27.10.2026 fra [snl.no/merverdiavgift](https://snl.no/merverdiavgift)",
+          "Skar, H. & Bjørkheim, J. B. (2026). *Skatt*. Store norske leksikon. Hentet 27.10.2026 fra [snl.no/skatt](https://snl.no/skatt)",
+          "Skatteetaten. (2026a). *Alminnelig inntekt*. Hentet 27.10.2026 fra [skatteetaten.no/satser/alminnelig-inntekt](https://www.skatteetaten.no/satser/alminnelig-inntekt/)",
+          "Skatteetaten. (2026b). *Minstefradrag*. Hentet 27.10.2026 fra [skatteetaten.no/satser/minstefradrag](https://www.skatteetaten.no/satser/minstefradrag/)",
+          "Skatteetaten. (2026c). *Personfradrag*. Hentet 27.10.2026 fra [skatteetaten.no/satser/personfradrag](https://www.skatteetaten.no/satser/personfradrag/)",
+          "Skatteetaten. (2026d). *Trinnskatt*. Hentet 27.10.2026 fra [skatteetaten.no/satser/trinnskatt](https://www.skatteetaten.no/satser/trinnskatt/)",
+          "Skatteetaten. (2026e). *Trygdeavgift*. Hentet 27.10.2026 fra [skatteetaten.no/satser/trygdeavgift](https://www.skatteetaten.no/satser/trygdeavgift/)",
+          "Statistisk sentralbyrå. (2026). *Skatt for personer*. Hentet 27.10.2026 fra [ssb.no](https://www.ssb.no/inntekt-og-forbruk/skatt-for-personer/statistikk/skatt-for-personer)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvordan forklarer Store norske leksikon hva skatt er?",
+          "Nevn tre ting skattepengene brukes til.",
+          "Hva er den vanlige momssatsen i Norge, og hvilke varer har lavere moms?",
+          "Hva er forskjellen på en direkte og en indirekte skatt?"
+        ],
+        "reflekter": [
+          "Forklar forskjellen på flat og progressiv skatt med dine egne ord. Bruk et eksempel med to personer.",
+          "Mange tror at de taper penger hvis lønnen går opp på et nytt trinn i trinnskatten. Forklar hvorfor det ikke stemmer.",
+          "Momsen er en flat skatt. Hvem tror du merker momsen mest: en som tjener lite eller en som tjener mye? Begrunn svaret.",
+          "Skatt på alkohol og utslipp skal få folk til å endre vaner. Synes du det er riktig at staten bruker skatt på denne måten?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Bør de som tjener mest, betale en større del av lønnen sin i skatt? Finn minst to argumenter for og to mot.",
+          "Prøv verktøyet [Pengeliv](/oving/pengeliv) og se hvor mye som går til skatt gjennom et helt liv. Skriv et kort avsnitt om hva som overrasket deg.",
+          "Finn ut hva to ulike partier mener om skatt i dag. Lag en tabell som viser hvor de er enige og uenige."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er skatt?",
+            "options": [
+              "Betaling for en vare du kjøper",
+              "Betalinger til det offentlige uten at du får noe bestemt tilbake",
+              "Et lån fra staten",
+              "Penger du får fra Nav"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Skatt er betalinger til det offentlige uten direkte motytelse. Pengene går i en felles pott."
+          },
+          {
+            "question": "Hva betyr det at en skatt er progressiv?",
+            "options": [
+              "Alle betaler like mye i kroner",
+              "Alle betaler like stor andel",
+              "Jo mer du tjener, jo større andel betaler du",
+              "Bare de rike betaler skatt"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ved progressiv skatt øker skatteprosenten når inntekten øker."
+          },
+          {
+            "question": "Hva er den vanlige momssatsen i Norge?",
+            "options": [
+              "12 prosent",
+              "15 prosent",
+              "22 prosent",
+              "25 prosent"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Den vanlige satsen er 25 prosent. Matvarer har 15 prosent, og blant annet kino og buss har 12 prosent."
+          },
+          {
+            "question": "Lønnen din går så vidt over en grense i trinnskatten. Hva skjer?",
+            "options": [
+              "Du betaler den høyere satsen av hele lønnen",
+              "Du betaler den høyere satsen bare av kronene over grensen",
+              "Du slipper trinnskatt",
+              "Du mister personfradraget"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Den høyere satsen gjelder bare de kronene som ligger over grensen. Det lønner seg alltid å tjene mer."
+          },
+          {
+            "question": "Når fikk Norge moms?",
+            "options": [
+              "1895",
+              "1945",
+              "1970",
+              "1992"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Merverdiavgiften ble innført i 1970."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
