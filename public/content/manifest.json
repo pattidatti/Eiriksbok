@@ -1128,7 +1128,8 @@
                 "tilbud",
                 "etterspørsel"
               ],
-              "createdDate": "2026-10-23T00:00:00Z"
+              "createdDate": "2026-10-23T15:03:37+02:00",
+              "lastUpdated": "2026-10-24T07:41:42+02:00"
             },
             {
               "id": "monopol-og-konkurranse",
@@ -1142,7 +1143,8 @@
                 "monopol",
                 "konkurranse"
               ],
-              "createdDate": "2026-10-24T00:00:00Z"
+              "createdDate": "2026-10-24T03:17:25+02:00",
+              "lastUpdated": "2026-10-24T07:41:42+02:00"
             },
             {
               "id": "produksjon",
@@ -1308,7 +1310,8 @@
                 "levekår",
                 "hdi"
               ],
-              "createdDate": "2026-10-25T00:00:00Z"
+              "createdDate": "2026-10-25T02:21:10+01:00",
+              "lastUpdated": "2026-10-25T07:37:03+01:00"
             },
             {
               "id": "arbeidsledighet",
@@ -1322,7 +1325,23 @@
                 "nav",
                 "konjunktur"
               ],
-              "createdDate": "2026-10-26T00:00:00Z"
+              "createdDate": "2026-10-26T02:21:36+01:00",
+              "lastUpdated": "2026-10-26T02:21:36+01:00"
+            },
+            {
+              "id": "skatt",
+              "title": "Skatt: Hvorfor betaler vi, og hvem betaler mest?",
+              "description": "Hva er skatt, hva brukes pengene til, og hvorfor betaler noen en større del av lønnen sin enn andre?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "skatt",
+                "moms",
+                "velferd",
+                "ulikhet"
+              ],
+              "createdDate": "2026-10-27T01:12:03.846Z",
+              "lastUpdated": "2026-10-27T01:12:17.311Z"
             }
           ]
         },
@@ -4453,7 +4472,7 @@
               "link": "/historie/forste-verdenskrig/ww1-sti",
               "icon": "map",
               "createdDate": "2026-01-18T18:32:30+01:00",
-              "lastUpdated": "2026-07-21T21:28:37+02:00"
+              "lastUpdated": "2026-10-26T21:47:07+01:00"
             },
             {
               "id": "ww1-vestfront",
@@ -4524,7 +4543,7 @@
                 "oversikt"
               ],
               "createdDate": "2025-12-21T14:35:48+01:00",
-              "lastUpdated": "2026-07-13T08:18:49+02:00"
+              "lastUpdated": "2026-10-26T21:47:07+01:00"
             },
             {
               "id": "opptakt",
@@ -6294,7 +6313,7 @@
                 "kolonialisme"
               ],
               "createdDate": "2026-10-21T03:27:39+02:00",
-              "lastUpdated": "2026-10-21T07:43:14+02:00"
+              "lastUpdated": "2026-10-22T07:42:07+02:00"
             }
           ]
         },
@@ -8560,7 +8579,8 @@
                 "kolonialisering",
                 "diplomati"
               ],
-              "createdDate": "2026-10-22T00:00:00Z"
+              "createdDate": "2026-10-22T03:20:48+02:00",
+              "lastUpdated": "2026-10-23T07:42:00+02:00"
             },
             {
               "id": "mzilikazi-og-ndebele-riket",
@@ -8574,7 +8594,8 @@
                 "mfecane",
                 "ndebele"
               ],
-              "createdDate": "2026-10-23T00:00:00Z"
+              "createdDate": "2026-10-23T03:24:57+02:00",
+              "lastUpdated": "2026-10-23T07:42:00+02:00"
             }
           ]
         }
@@ -8646,7 +8667,7 @@
                     "intro"
                   ],
                   "createdDate": "2025-12-21T13:37:14+01:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-23T07:42:00+02:00"
                 },
                 {
                   "id": "sentrale-trekk",
@@ -8658,7 +8679,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-25T07:37:03+01:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -8671,7 +8692,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-10-18T07:43:33+02:00"
+                  "lastUpdated": "2026-10-22T07:42:07+02:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -8684,7 +8705,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-08-30T07:39:26+02:00"
+                  "lastUpdated": "2026-10-22T07:42:07+02:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -8697,7 +8718,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-22T07:42:07+02:00"
                 },
                 {
                   "id": "frelse",
@@ -8736,7 +8757,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-24T07:41:42+02:00"
                 },
                 {
                   "id": "skapelse",
@@ -8749,7 +8770,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-02T22:54:02+01:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-25T07:37:03+01:00"
                 },
                 {
                   "id": "paulus-og-misjonen",
@@ -8763,7 +8784,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-05-09T01:23:05+00:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-24T07:41:42+02:00"
                 },
                 {
                   "id": "kirkesamfunn",
@@ -8778,7 +8799,7 @@
                     "okumenikk"
                   ],
                   "createdDate": "2026-05-09T18:26:01+00:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-23T07:42:00+02:00"
                 },
                 {
                   "id": "sakramentene",
@@ -8793,7 +8814,7 @@
                     "ritual"
                   ],
                   "createdDate": "2026-05-11T01:14:17+00:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-24T07:41:42+02:00"
                 },
                 {
                   "id": "baptistene",
@@ -8822,7 +8843,7 @@
                     "pinse"
                   ],
                   "createdDate": "2026-05-26T20:28:26+02:00",
-                  "lastUpdated": "2026-09-02T07:43:35+02:00"
+                  "lastUpdated": "2026-10-24T07:41:42+02:00"
                 }
               ]
             },
