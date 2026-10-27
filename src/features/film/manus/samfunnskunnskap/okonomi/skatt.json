@@ -1,0 +1,440 @@
+{
+    "id": "skatt",
+    "tittel": "Skatt: Hvorfor betaler vi, og hvem betaler mest?",
+    "kilde": "/samfunnskunnskap/okonomi/skatt",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-27", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "butikken",
+            "lyd": "rom",
+            "kapittel": "Du har betalt skatt i dag",
+            "visual": {
+                "type": "SkattPotten",
+                "props": {
+                    "modus": "butikk"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Du står i en butikk. På disken ligger et par nye hodetelefoner. Prisen er 500 kroner."
+                },
+                {
+                    "si": "Du betaler, og butikken legger pengene i kassa."
+                },
+                {
+                    "si": "Men 100 av de 500 kronene blir ikke i butikken. De går rett videre til staten."
+                },
+                {
+                    "si": "Det er moms, en skatt som er bakt inn i nesten alt du kjøper. Du ser den ikke på prislappen, men du har betalt den."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SKATT",
+                    "undertittel": "Hvorfor betaler vi, og hvem betaler mest?",
+                    "sporsmal": {
+                        "tekst": "Hvorfor betaler noen en større del enn andre?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Denne filmen handler om skatt."
+                },
+                {
+                    "si": "Når du begynner å jobbe, kommer det en ny skatt i tillegg: skatt på lønnen."
+                },
+                {
+                    "si": "Hvorfor må vi betale? Hva brukes pengene til? Og hvorfor betaler noen en mye større del av lønnen sin enn andre?"
+                }
+            ]
+        },
+        {
+            "id": "pizza",
+            "kapittel": "Hva er skatt?",
+            "visual": {
+                "type": "SkattPotten",
+                "props": {
+                    "modus": "pott"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du kjøper en pizza, får du en pizza tilbake for pengene."
+                },
+                {
+                    "si": "Når du betaler skatt, får du ingen pizza. Du får ikke noe bestemt tilbake for akkurat de pengene."
+                },
+                {
+                    "si": "I stedet går pengene fra alle i en stor, felles pott."
+                },
+                {
+                    "si": "Store norske leksikon sier det slik: Skatt er betalinger til det offentlige uten direkte motytelse. Motytelse betyr noe du får igjen."
+                }
+            ]
+        },
+        {
+            "id": "fellesskapet",
+            "kapittel": "Tre jobber",
+            "visual": {
+                "type": "SkattPotten",
+                "props": {
+                    "modus": "ut"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Skatten har tre viktige jobber. Den første er å betale for det vi har sammen."
+                },
+                {
+                    "si": "Skolen du går på, og sykehuset der du blir lappet sammen."
+                },
+                {
+                    "si": "Veiene, politiet, domstolene og forsvaret."
+                },
+                {
+                    "si": "Og pengene folk får fra staten når de er syke eller uten jobb. Får noen dagpenger fra Nav, er det skattepenger som hjelper dem."
+                }
+            ]
+        },
+        {
+            "id": "utjevne",
+            "visual": {
+                "type": "SkattJobber"
+            },
+            "replikker": [
+                {
+                    "si": "Den andre jobben er å jevne ut forskjeller."
+                },
+                {
+                    "si": "Når de som tjener mye, betaler en større del av lønnen sin, blir avstanden mellom rik og fattig mindre."
+                },
+                {
+                    "si": "Den tredje jobben er å endre hva folk gjør."
+                },
+                {
+                    "si": "Høy skatt på alkohol og utslipp gjør dem dyrere. Og da kjøper folk mindre av det."
+                }
+            ]
+        },
+        {
+            "id": "inntekter",
+            "visual": {
+                "type": "SkattInntekter"
+            },
+            "replikker": [
+                {
+                    "si": "Hvor kommer pengene fra? Se på hva staten regnet med å få inn i 2026."
+                },
+                {
+                    "si": "515 milliarder kroner i skatt på inntekt og formue."
+                },
+                {
+                    "si": "514 milliarder i arbeidsgiveravgift og trygdeavgift."
+                },
+                {
+                    "si": "421 milliarder i moms."
+                },
+                {
+                    "si": "Og i tillegg 557 milliarder kroner fra olje og gass."
+                }
+            ]
+        },
+        {
+            "id": "historie",
+            "visual": {
+                "type": "SkattHistorie"
+            },
+            "replikker": [
+                {
+                    "si": "Skatt er ikke noe nytt. Den eldste skatten vi kjenner til i Norge, heter leidang. Den er fra 1100-tallet."
+                },
+                {
+                    "si": "På 1270-tallet gjorde kong Magnus Lagabøte den om til en fast skatt."
+                },
+                {
+                    "si": "I 1892 innførte staten skatt på inntekt og formue. Fra 1895 ble inntektsskatten progressiv. Det ordet kommer vi tilbake til."
+                },
+                {
+                    "si": "Og i 1970 kom momsen."
+                }
+            ]
+        },
+        {
+            "id": "satser",
+            "kapittel": "Momsen",
+            "visual": {
+                "type": "SkattMoms",
+                "props": {
+                    "modus": "satser"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Moms er en forkortelse for merverdiavgift. Den vanlige satsen er 25 prosent av prisen før moms."
+                },
+                {
+                    "si": "Hodetelefonene kostet altså 400 kroner før moms. 25 prosent av 400 er 100. Da blir prisen 500 kroner."
+                },
+                {
+                    "si": "Matvarer har lavere moms, 15 prosent."
+                },
+                {
+                    "si": "Kinobilletter og bussbilletter har 12 prosent."
+                },
+                {
+                    "si": "Og bøker og aviser har ingen moms i det hele tatt."
+                }
+            ]
+        },
+        {
+            "id": "kjeden",
+            "visual": {
+                "type": "SkattMoms",
+                "props": {
+                    "modus": "kjede"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Momsen legges på i hvert ledd, fra fabrikken til butikken."
+                },
+                {
+                    "si": "Hver bedrift legger moms på det den selger. Så trekker den fra momsen den selv betalte da den kjøpte inn. Forskjellen sender den til staten."
+                },
+                {
+                    "si": "Til slutt er det du som kunde som betaler hele momsen, gjennom prisen."
+                },
+                {
+                    "si": "Momsen er en flat skatt. Alle betaler samme prosent, uansett hvor mye de tjener."
+                },
+                {
+                    "si": "En student og en millionær betaler like mye moms på en melk."
+                }
+            ]
+        },
+        {
+            "id": "lonnen",
+            "kapittel": "Skatt på lønnen",
+            "visual": {
+                "type": "SkattTrapp",
+                "props": {
+                    "modus": "deler"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Skatten på lønn er satt sammen av flere deler. Den største er 22 prosent av det som kalles alminnelig inntekt."
+                },
+                {
+                    "si": "Det er lønnen din minus noen fradrag. Et fradrag er et beløp du slipper å betale skatt av."
+                },
+                {
+                    "si": "Alle får et personfradrag på 114 540 kroner."
+                },
+                {
+                    "si": "De som jobber, får også et minstefradrag. Det er 46 prosent av lønnen, men aldri mer enn 95 700 kroner."
+                },
+                {
+                    "si": "Så kommer trygdeavgiften på 7,6 prosent av lønnen. Den er med på å betale for folketrygden, blant annet pensjoner og sykepenger."
+                }
+            ]
+        },
+        {
+            "id": "trappa",
+            "visual": {
+                "type": "SkattTrapp",
+                "props": {
+                    "modus": "trapp"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den siste delen heter trinnskatt. Den virker som en trapp med fem trinn."
+                },
+                {
+                    "si": "De første 226 100 kronene du tjener, betaler du ingen trinnskatt av."
+                },
+                {
+                    "si": "Av det du tjener over det, betaler du 1,7 prosent."
+                },
+                {
+                    "si": "Over 318 300 kroner blir satsen 4 prosent. Og slik fortsetter det oppover."
+                },
+                {
+                    "si": "På det øverste trinnet, over 1 467 200 kroner, er satsen 17,8 prosent."
+                }
+            ]
+        },
+        {
+            "id": "feilen",
+            "visual": {
+                "type": "SkattTrapp",
+                "props": {
+                    "modus": "feil"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Her gjør mange en feil."
+                },
+                {
+                    "si": "De tror at hvis lønnen går over en grense, må de betale den høyere satsen av hele lønnen."
+                },
+                {
+                    "si": "Slik er det ikke. Den høyere satsen gjelder bare de kronene som ligger over grensen."
+                },
+                {
+                    "si": "Derfor lønner det seg alltid å tjene en krone mer, selv om du kommer opp på et nytt trinn."
+                }
+            ]
+        },
+        {
+            "id": "flat",
+            "kapittel": "Flat eller progressiv?",
+            "visual": {
+                "type": "SkattFlat"
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg tre personer med ulik lønn. Lengst til høyre står en direktør. Hun tjener mest."
+                },
+                {
+                    "si": "Først betaler alle flat skatt, altså samme del av lønnen. Direktøren betaler flest kroner, fordi hun tjener mest."
+                },
+                {
+                    "si": "Men hun betaler like stor del av lønnen som butikkmedarbeideren."
+                },
+                {
+                    "si": "Så bytter vi til progressiv skatt. Jo mer du tjener, jo større del av lønnen går til skatt. Fellesskapet får like mye penger til sammen."
+                },
+                {
+                    "si": "Nå betaler direktøren både flest kroner og størst del. Og de med lavere lønn kan betale mindre."
+                }
+            ]
+        },
+        {
+            "id": "ssb",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "2024",
+                    "undertittel": "17 år og eldre, i gjennomsnitt",
+                    "tall": [
+                        {
+                            "verdi": 632600,
+                            "etikett": "kroner i inntekt før skatt",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        },
+                        {
+                            "verdi": 173500,
+                            "etikett": "kroner i skatt",
+                            "fraBeat": 2,
+                            "omtrent": false,
+                            "tone": "rod"
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Omtrent en fjerdedel, uten momsen",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvor mye betaler folk egentlig? Statistisk sentralbyrå, SSB, samler inn tall for skatten til alle som bor i Norge."
+                },
+                {
+                    "si": "I 2024 tjente de som var 17 år eller eldre, i gjennomsnitt 632 600 kroner før skatt."
+                },
+                {
+                    "si": "De betalte i gjennomsnitt 173 500 kroner i skatt."
+                },
+                {
+                    "si": "En vanlig person betalte altså omtrent en fjerdedel av inntekten sin i skatt og trygdeavgift. Da er ikke momsen i butikken regnet med."
+                }
+            ]
+        },
+        {
+            "id": "debatten",
+            "kapittel": "Hvem skal betale mest?",
+            "visual": {
+                "type": "SkattDebatt"
+            },
+            "replikker": [
+                {
+                    "si": "Hvor mye skatt folk skal betale, er noe av det partiene krangler mest om. Det finnes ikke ett riktig svar."
+                },
+                {
+                    "si": "Noen vil ha høy og progressiv skatt. De sier at de som har mest, også klarer å bidra mest, og at små forskjeller gjør samfunnet tryggere."
+                },
+                {
+                    "si": "Andre vil ha lavere skatt. De sier at folk bør få beholde mer av pengene de selv har tjent."
+                },
+                {
+                    "si": "Noen mener også at høy skatt gjør at det lønner seg mindre å jobbe hardt eller starte en bedrift."
+                },
+                {
+                    "si": "Hvert år bestemmer Stortinget hvor høy skatten skal være, når det vedtar statsbudsjettet."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Skatt er penger til fellesskapet.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Du får ikke noe bestemt tilbake.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Momsen er flat.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Skatten på lønn er en trapp.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hvem skal betale mest?",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Det er et valg om hva som er rettferdig.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Skatt er penger vi betaler til fellesskapet, uten å få noe bestemt tilbake. De betaler for skole, sykehus, veier og trygd."
+                },
+                {
+                    "si": "Momsen er flat: Alle betaler samme prosent, uansett hvor mye de tjener. Skatten på lønn er progressiv: Jo mer du tjener, jo større del betaler du."
+                },
+                {
+                    "si": "Hvor høy skatten skal være, og hvem som skal betale mest, er et politisk valg. Det handler om hva vi mener er rettferdig."
+                }
+            ]
+        }
+    ]
+}
