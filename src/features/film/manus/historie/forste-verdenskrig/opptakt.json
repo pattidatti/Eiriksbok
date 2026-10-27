@@ -1,0 +1,405 @@
+{
+    "id": "forste-verdenskrig-opptakt",
+    "tittel": "Opptakten: Veien mot katastrofen",
+    "kilde": "/historie/forste-verdenskrig/opptakt",
+    "bilde": "/images/historie/forste-verdenskrig/opptakt_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-27",
+        "viser": 4,
+        "lesbart": 3,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "sarajevo",
+            "kapittel": "Sarajevo",
+            "visual": {
+                "type": "OpptaktKart",
+                "props": {
+                    "modus": "sarajevo"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er den 28. juni 1914. Vi er i Europa, like før en storm."
+                },
+                {
+                    "si": "Vi zoomer inn mot sørøst, til byen Sarajevo i Bosnia. Her kjører en bil med en viktig gjest gjennom gatene."
+                },
+                {
+                    "si": "Gjesten er Franz Ferdinand. Han er tronarving i Østerrike-Ungarn. Det betyr at han skal bli keiser en dag."
+                },
+                {
+                    "si": "Men han blir aldri keiser. Samme dag blir han og kona Sophie skutt og drept."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "OPPTAKTEN",
+                    "undertittel": "Veien mot katastrofen",
+                    "bilde": "/images/historie/forste-verdenskrig/opptakt_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne to skudd starte en verdenskrig?",
+                        "fraBeat": 1
+                    },
+                    "tall": [
+                        {
+                            "verdi": 4,
+                            "etikett": "år med krig",
+                            "fraBeat": 0,
+                            "omtrent": false,
+                            "tone": "rod"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Noen uker senere er nesten hele Europa i krig. En krig som skal vare i fire år."
+                },
+                {
+                    "si": "Hvordan kunne et mord i en by som få hadde hørt om, kaste hele verden ut i krig?"
+                },
+                {
+                    "si": "Svaret ligger ikke bare i skuddene. Det ligger i mange år med spenning før 1914."
+                }
+            ]
+        },
+        {
+            "id": "trykkoker",
+            "kapittel": "En trykkoker",
+            "visual": {
+                "type": "OpptaktTrykkoker",
+                "props": {
+                    "modus": "bygger"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg Europa i 1914 som en trykkoker. Det er en tett gryte der trykket stiger og stiger inni."
+                },
+                {
+                    "si": "En ting som presset på, var kampen om kolonier, altså land i andre deler av verden som stormaktene tok og styrte."
+                },
+                {
+                    "si": "En annen var alliansene. Landene lovet å hjelpe hverandre i krig."
+                },
+                {
+                    "si": "Så var det rustningskappløpet. Landene kappet om å ha flest soldater og våpen."
+                },
+                {
+                    "si": "Og så nasjonalismen. Folkegrupper ville ha sitt eget land."
+                },
+                {
+                    "si": "Trykket var så høyt at det bare trengtes en gnist."
+                }
+            ]
+        },
+        {
+            "id": "stormakter",
+            "kapittel": "Stormaktene",
+            "lyd": "stille",
+            "visual": {
+                "type": "OpptaktKart",
+                "props": {
+                    "modus": "stormakter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "På starten av 1900-tallet var Europa verdens sentrum. Her var pengene, hærene og makta."
+                },
+                {
+                    "si": "Tre av de største stormaktene konkurrerte: Storbritannia, Frankrike og Tyskland. En stormakt er et land med mye makt."
+                },
+                {
+                    "si": "De hadde delt nesten hele Afrika og store deler av Asia mellom seg. Jakten på kolonier skapte gnisninger."
+                },
+                {
+                    "si": "Tyskland var et ungt land. Det ble samlet til ett rike først i 1871. Industrien og hæren vokste fort."
+                },
+                {
+                    "si": "Tyskerne følte at de kom for sent da verden ble delt opp. Keiser Wilhelm den andre krevde en plass i solen for Tyskland."
+                },
+                {
+                    "si": "Det skremte Storbritannia. Britene var redde for å miste makta på verdenshavene."
+                }
+            ]
+        },
+        {
+            "id": "allianser",
+            "kapittel": "To leirer",
+            "visual": {
+                "type": "OpptaktDomino",
+                "props": {
+                    "modus": "allianser"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For å være trygge inngikk landene allianser. En allianse er en avtale om å hjelpe hverandre."
+                },
+                {
+                    "si": "På den ene siden sto Trippelententen: Storbritannia, Frankrike og Russland."
+                },
+                {
+                    "si": "På den andre siden sto Trippelalliansen: Tyskland, Østerrike-Ungarn og Italia. Italia byttet riktignok side i 1915."
+                },
+                {
+                    "si": "Tanken var maktbalanse. Ingen ville våge å starte en krig hvis fienden hadde mektige venner."
+                },
+                {
+                    "si": "Men det var en farlig bakside. Når alle har lovet å hjelpe, kan en liten krangel mellom to land trekke med seg alle."
+                }
+            ]
+        },
+        {
+            "id": "balkan",
+            "kapittel": "Kruttønna",
+            "visual": {
+                "type": "OpptaktKart",
+                "props": {
+                    "modus": "balkan"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sørøst i Europa ligger Balkan. Her var det ekstra urolig."
+                },
+                {
+                    "si": "Det osmanske riket, et gammelt og stort rike, hadde styrt her lenge. Nå holdt det på å gå i oppløsning."
+                },
+                {
+                    "si": "Da oppsto et tomrom. Både Østerrike-Ungarn og Russland ville fylle det."
+                },
+                {
+                    "si": "Samtidig hadde nye land som Serbia, Bulgaria og Hellas revet seg løs. De drømte om å bli større."
+                },
+                {
+                    "si": "Balkan ble kalt Europas kruttønne. Det er en tønne full av krutt, der en liten gnist får alt til å smelle."
+                }
+            ]
+        },
+        {
+            "id": "serbia",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Tre syn på Serbia",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "Slavere",
+                            "tekst": "en stor folkegruppe i Øst-Europa og på Balkan",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Serbia",
+                            "tekst": "ville samle alle slavere på Balkan i ett rike",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Østerrike-Ungarn",
+                            "tekst": "var redd for opprør blant sine egne slavere",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Russland",
+                            "tekst": "så seg som slavernes beskytter og støttet Serbia",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ett land skilte seg ut: Serbia. Slavere er en stor gruppe folk i Øst-Europa og på Balkan."
+                },
+                {
+                    "si": "Serbia ville samle alle slavere på Balkan i ett stort rike. Det fikk senere navnet Jugoslavia."
+                },
+                {
+                    "si": "Det skremte nabolandet Østerrike-Ungarn. Der bodde mange folkegrupper, også mange slavere. Østerrike-Ungarn var redd for at de skulle gjøre opprør."
+                },
+                {
+                    "si": "Russland så på seg selv som slavernes beskytter. Russerne støttet Serbia."
+                }
+            ]
+        },
+        {
+            "id": "skuddene",
+            "kapittel": "Skuddene",
+            "lyd": "rom",
+            "visual": {
+                "type": "OpptaktKart",
+                "props": {
+                    "modus": "attentat"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tilbake til Sarajevo. Bosnia var nylig tatt over av Østerrike-Ungarn, og mange serbere mislikte det sterkt."
+                },
+                {
+                    "si": "Unge nasjonalister, folk som ville at serberne skulle ha sitt eget land, planla å drepe Franz Ferdinand. De fikk hjelp av en hemmelig serbisk gruppe, Den sorte hånd."
+                },
+                {
+                    "si": "Besøket startet med en bombe mot bilene. Den bommet."
+                },
+                {
+                    "si": "Senere kjørte bilen feil og stoppet tilfeldigvis rett foran en av de andre i gruppa, 19 år gamle Gavrilo Princip."
+                },
+                {
+                    "si": "Han skjøt to skudd på kloss hold. Ingen visste det da, men det var startskuddet for en verdenskrig."
+                }
+            ]
+        },
+        {
+            "id": "julikrisen",
+            "kapittel": "Juli-krisen",
+            "lyd": "stille",
+            "visual": {
+                "type": "OpptaktDomino",
+                "props": {
+                    "modus": "juli"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Skuddene startet en krise som varte hele juli 1914. Den kalles Juli-krisen."
+                },
+                {
+                    "si": "Østerrike-Ungarn ville bli kvitt trusselen fra Serbia en gang for alle. Men først trengte de ryggdekning, altså støtte, fra Tyskland."
+                },
+                {
+                    "si": "Den 5. juli lovet Tyskland full støtte, uansett hva Østerrike-Ungarn gjorde. Det kalles en blankofullmakt."
+                },
+                {
+                    "si": "Den 23. juli sendte Østerrike-Ungarn et ultimatum til Serbia. Det er et siste krav: gjør dette, ellers blir det krig."
+                },
+                {
+                    "si": "Kravene var så harde at Østerrike-Ungarn regnet med at Serbia ville si nei."
+                },
+                {
+                    "si": "Serbia godtok de fleste kravene, men ikke alle. Det var ikke nok."
+                },
+                {
+                    "si": "Den 28. juli erklærte Østerrike-Ungarn krig mot Serbia. Den første brikken hadde falt."
+                }
+            ]
+        },
+        {
+            "id": "dominoene",
+            "visual": {
+                "type": "OpptaktDomino",
+                "props": {
+                    "modus": "kjede"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå begynte løftene og krigsplanene å styre alt, nesten som et tog uten bremser."
+                },
+                {
+                    "si": "Russland ville ikke se Serbia bli knust. Russland mobiliserte, det vil si kalte inn soldatene sine."
+                },
+                {
+                    "si": "Tyskland krevde at Russland skulle stoppe. Russerne nektet, og den 1. august erklærte Tyskland krig mot Russland."
+                },
+                {
+                    "si": "Frankrike, som var i allianse med Russland, begynte å mobilisere. Den 3. august erklærte Tyskland krig mot Frankrike."
+                },
+                {
+                    "si": "Tyskland hadde en plan, Schlieffen-planen. Frankrike skulle slås ut raskt, før Russland var klar. Den raskeste veien til Paris gikk gjennom Belgia, et nøytralt land som ikke var med på noen side."
+                },
+                {
+                    "si": "Den 4. august marsjerte tyske soldater inn i Belgia. Storbritannia hadde lovet å passe på Belgia, og erklærte krig mot Tyskland."
+                },
+                {
+                    "si": "På under en uke hadde en lokal konflikt på Balkan dratt nesten hele Europa inn i en storkrig."
+                }
+            ]
+        },
+        {
+            "id": "jul",
+            "visual": {
+                "type": "OpptaktTrykkoker",
+                "props": {
+                    "modus": "smell"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I mange hovedsteder jublet folk. Soldatene marsjerte ut til blomster og jubel."
+                },
+                {
+                    "si": "De var sikre på at de skulle være hjemme igjen før jul."
+                },
+                {
+                    "si": "De tok feil. Krigen varte i fire år."
+                }
+            ],
+            "kapittel": "Før jul?"
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Kolonier, allianser, våpen og nasjonalisme.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Trykket bygde seg opp i mange år.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Løftene skulle hindre krig,",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "men dro nesten hele Europa inn.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "To skudd var bare gnisten.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Krutt var det nok av fra før.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Første verdenskrig kom ikke ut av ingenting. Trykket hadde bygd seg opp i mange år."
+                },
+                {
+                    "si": "Alliansene skulle hindre krig. I stedet dro de nesten hele Europa med seg."
+                },
+                {
+                    "si": "Skuddene i Sarajevo var bare gnisten. Kruttet lå klart fra før."
+                }
+            ]
+        }
+    ]
+}
