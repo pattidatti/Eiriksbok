@@ -1,0 +1,479 @@
+{
+    "id": "forste-verdenskrig-krigens-lop",
+    "tittel": "Krigens løp: Fra bevegelse til stillstand",
+    "kilde": "/historie/forste-verdenskrig/krigens-lop",
+    "bilde": "/images/historie/forste-verdenskrig/krigens_lop_hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 700,
+            "begrunnelse": "Målestokk i prikkfeltet: 700 prikker, der hver prikk er 1000 soldater, til sammen artikkelens 700 000."
+        },
+        {
+            "tall": 1000,
+            "begrunnelse": "Målestokk i prikkfeltet: hver prikk er 1000 soldater."
+        }
+    ],
+    "vurdering": {
+        "dato": "2026-10-27",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "august",
+            "visual": {
+                "type": "KrigensLopKart",
+                "props": {
+                    "modus": "schlieffen"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er august 1914. Krigen har akkurat startet, og nesten alle tror det samme: Dette blir en kort krig."
+                },
+                {
+                    "si": "Tyske soldater roper at de skal være i Paris om noen uker."
+                },
+                {
+                    "si": "Tyskland har en plan. Den heter Schlieffen-planen, og den handler om fart.",
+                    "uttale": "Tyskland har en plan. Den heter Schliiffen-planen, og den handler om fart."
+                },
+                {
+                    "si": "Hæren skal marsjere raskt gjennom Belgia, svinge ned i Nord-Frankrike og omringe Paris."
+                },
+                {
+                    "si": "Frankrike skal gi seg før den russiske hæren i øst rekker å bli farlig. Den var så stor at den ble kalt dampveivalsen."
+                },
+                {
+                    "si": "I starten ser det ut til å virke. Tyskerne presser fienden tilbake, nesten helt til Paris."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KRIGENS LØP",
+                    "undertittel": "Fra bevegelse til stillstand, 1914-1918",
+                    "bilde": "/images/historie/forste-verdenskrig/krigens_lop_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvorfor ble den korte krigen så lang?",
+                        "fraBeat": 1
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men det ble ingen kort krig. Det ble fire lange år."
+                },
+                {
+                    "si": "I denne filmen skal vi se hvordan en krig i full fart stoppet helt opp, og hva som til slutt avgjorde den."
+                }
+            ]
+        },
+        {
+            "id": "marne",
+            "kapittel": "1914: Fronten fryser",
+            "visual": {
+                "type": "KrigensLopKart",
+                "props": {
+                    "modus": "marne"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Franskmennene kjempet hardere enn tyskerne hadde ventet. Og russerne angrep i øst raskere enn planlagt."
+                },
+                {
+                    "si": "I september 1914 kommer slaget ved Marne. Der klarer franske og britiske soldater å stoppe tyskerne. Schlieffen-planen har feilet.",
+                    "uttale": "I september 1914 kommer slaget ved Marne. Der klarer franske og britiske soldater å stoppe tyskerne. Schliiffen-planen har feilet."
+                },
+                {
+                    "si": "Nå prøver begge sider å løpe rundt hverandre, for å komme seg bak fienden. Det kalles kappløpet mot havet."
+                },
+                {
+                    "si": "Ingen klarer det. Ved Nordsjøen er det ikke mer land å løpe rundt."
+                },
+                {
+                    "si": "Så graver soldatene seg ned. På noen få måneder går det en sammenhengende linje av skyttergraver fra grensen til Sveits helt opp til kysten av Flandern."
+                },
+                {
+                    "si": "Dette er Vestfronten. Den skal knapt flytte seg de neste fire årene."
+                }
+            ]
+        },
+        {
+            "id": "gjorma",
+            "lyd": "regn",
+            "kapittel": "Over toppen",
+            "visual": {
+                "type": "KrigensLopIngenmannsland",
+                "props": {
+                    "modus": "landskap"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvordan så det ut der? Soldatene bodde i grøfter i bakken, ofte fulle av vann og gjørme."
+                },
+                {
+                    "si": "Det var lus og rotter overalt. Mange ble syke, og mange fikk skyttergravsfot, en sykdom i føttene."
+                },
+                {
+                    "si": "Rett overfor, bare et stykke unna, lå fiendens grøfter."
+                },
+                {
+                    "si": "Mellom dem lå Ingenmannsland. Et øde, ødelagt område, fullt av piggtråd og hull etter granater."
+                }
+            ]
+        },
+        {
+            "id": "angrep",
+            "lyd": "stille",
+            "visual": {
+                "type": "KrigensLopIngenmannsland",
+                "props": {
+                    "modus": "angrep"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et angrep gikk ofte på samme måte. Først skjøt kanonene mot fiendens linjer i dagevis, noen ganger i ukevis."
+                },
+                {
+                    "si": "Målet var å ødelegge piggtråden og drepe dem som forsvarte seg."
+                },
+                {
+                    "si": "Så blåste offiserene i fløyta. Soldatene klatret opp av grøfta og løp mot fienden. Det kaltes å gå over toppen."
+                },
+                {
+                    "si": "Men ofte hadde kanonene ikke klart å knuse fiendens bunkere, de sterke tilfluktsrommene under bakken."
+                },
+                {
+                    "si": "Da ble soldatene møtt av fiendens maskingevær. De løp rett inn i en vegg av kuler."
+                },
+                {
+                    "si": "Tapene var enorme. Og gevinsten var ofte bare noen få hundre meter."
+                }
+            ]
+        },
+        {
+            "id": "verdun",
+            "kapittel": "1916: Slaktehuset",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 700,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Verdun, 1916",
+                            "restEtikett": "hver prikk: 1000 soldater",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 700,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Forsvar byen, uansett pris",
+                            "restEtikett": "hver prikk: 1000 soldater",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 700,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "«Blø den franske hæren hvit»",
+                            "restEtikett": "hver prikk: 1000 soldater",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 700,
+                            "farget": 700,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Ti måneder: rundt 700 000",
+                            "visTall": false,
+                            "fargeEtikett": "drept eller skadet"
+                        },
+                        {
+                            "fraBeat": 4,
+                            "total": 700,
+                            "farget": 700,
+                            "farge": "#7f1d1d",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Et symbol, til en forferdelig pris",
+                            "visTall": false,
+                            "fargeEtikett": "drept eller skadet"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1916 angriper Tyskland den franske festningsbyen Verdun. Sjefen for hæren heter Erich von Falkenhayn."
+                },
+                {
+                    "si": "Målet er ikke egentlig å ta byen. Frankrike skal tvinges til å forsvare den, uansett hva det koster."
+                },
+                {
+                    "si": "Falkenhayn vil blø den franske hæren hvit. Han vil at så mange franske soldater skal dø at hæren blir for svak til å kjempe videre."
+                },
+                {
+                    "si": "Slaget varer i ti måneder. Hver prikk her er tusen soldater. Rundt 700 000 soldater blir drept eller skadet."
+                },
+                {
+                    "si": "Verdun ble et symbol på at Frankrike ikke ga seg. Men prisen var forferdelig."
+                }
+            ]
+        },
+        {
+            "id": "somme",
+            "visual": {
+                "type": "KrigensLopIngenmannsland",
+                "props": {
+                    "modus": "somme"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For å hjelpe franskmennene ved Verdun angriper britene lenger nord, ved elven Somme."
+                },
+                {
+                    "si": "Først skyter kanonene mot tyskerne i en hel uke. Men de tyske stillingene står nesten urørt."
+                },
+                {
+                    "si": "Den første juli 1916 går britene over toppen. Nesten 20 000 britiske soldater dør den første dagen."
+                },
+                {
+                    "si": "Det er den blodigste dagen i hele Storbritannias militære historie."
+                },
+                {
+                    "si": "Da slaget slutter i november, er over en million menn på begge sider drept eller såret. Og fronten har nesten ikke flyttet seg."
+                }
+            ]
+        },
+        {
+            "id": "fronter",
+            "kapittel": "Andre fronter",
+            "visual": {
+                "type": "KrigensLopKart",
+                "props": {
+                    "modus": "fronter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Krigen foregikk ikke bare i Frankrike. I øst kjempet Tyskland og Østerrike-Ungarn mot Russland."
+                },
+                {
+                    "si": "Østfronten var så lang at skyttergraver ikke kunne dekke alt. Her var krigen mer i bevegelse."
+                },
+                {
+                    "si": "Tyskerne vant store seire, som ved Tannenberg. Men russerne holdt ut lenge."
+                },
+                {
+                    "si": "I sør kjempet Italia mot Østerrike, høyt oppe i fjellene i Alpene."
+                },
+                {
+                    "si": "Og i Midtøsten ledet den britiske offiseren T.E. Lawrence arabiske stammer i opprør mot Det osmanske riket.",
+                    "uttale": "Og i Midtøsten ledet den britiske offiseren Lawrence arabiske stammer i opprør mot Det osmanske riket."
+                }
+            ]
+        },
+        {
+            "id": "blokade",
+            "lyd": "hav",
+            "kapittel": "Krigen til sjøs",
+            "visual": {
+                "type": "KrigensLopHav",
+                "props": {
+                    "modus": "blokade"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Også på havet var det krig. Den britiske marinen var sterkest på overflaten."
+                },
+                {
+                    "si": "Britiske krigsskip stengte veien inn til de tyske havnene. Det kalles en blokade. Snart ble det mangel på mat i Tyskland."
+                },
+                {
+                    "si": "Tyskland svarte med ubåter. De skulle senke skipene som fraktet varer til Storbritannia."
+                },
+                {
+                    "si": "I 1917 går Tyskland enda lenger. Nå skal ubåtene senke alle skip som nærmer seg Storbritannia, også skip fra land som ikke er med i krigen."
+                },
+                {
+                    "si": "Dette ble kalt uinnskrenket ubåtkrig. Det var et sjansespill, og det skulle få store følger."
+                }
+            ]
+        },
+        {
+            "id": "russland",
+            "lyd": "stille",
+            "kapittel": "1917: Vendepunktet",
+            "visual": {
+                "type": "KrigensLopToFronter"
+            },
+            "replikker": [
+                {
+                    "si": "I 1917 skjer to ting som snur hele krigen. Den første skjer i øst."
+                },
+                {
+                    "si": "Russland bryter sammen. Det er mangel på mat, tapene er enorme, og mange er lei tsaren, keiseren i Russland. Det blir revolusjon."
+                },
+                {
+                    "si": "Den nye regjeringen slutter fred med Tyskland. Nå kan Tyskland flytte alle soldatene sine fra øst til vest."
+                }
+            ]
+        },
+        {
+            "id": "usa",
+            "lyd": "hav",
+            "visual": {
+                "type": "KrigensLopHav",
+                "props": {
+                    "modus": "usa"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men gleden varer ikke lenge. De tyske ubåtene har senket flere amerikanske skip."
+                },
+                {
+                    "si": "Samtidig får britene tak i et hemmelig tysk telegram, Zimmermann-telegrammet. Der ber Tyskland Mexico om å angripe USA.",
+                    "uttale": "Samtidig får britene tak i et hemmelig tysk telegram, Simmermann-telegrammet. Der ber Tyskland Mexico om å angripe USA."
+                },
+                {
+                    "si": "Nå er det nok for amerikanerne. I april 1917 erklærer USA krig mot Tyskland."
+                },
+                {
+                    "si": "Verdens største industrimakt, landet med mest fabrikker og produksjon, er nå på de alliertes side."
+                }
+            ]
+        },
+        {
+            "id": "1918",
+            "lyd": "stille",
+            "kapittel": "1918: Avgjørelsen",
+            "visual": {
+                "type": "KrigensLopKart",
+                "props": {
+                    "modus": "1918"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Våren 1918 er et kappløp mot klokka. Tyskland må vinne i vest før amerikanerne kommer for fullt."
+                },
+                {
+                    "si": "Tyskerne setter i gang Michael-offensiven, en rekke store angrep. De bryter gjennom og truer Paris igjen."
+                },
+                {
+                    "si": "Men soldatene er utslitte, og det kommer ikke nok mat og våpen fram. Angrepet stopper opp."
+                },
+                {
+                    "si": "I august slår de allierte tilbake, med friske amerikanske soldater og hundrevis av stridsvogner. Det kalles de hundre dagene."
+                },
+                {
+                    "si": "Den tyske hæren blir presset bakover, og soldatene mister troen på seier."
+                },
+                {
+                    "si": "Hjemme i Tyskland gjør matrosene opprør. Keiser Wilhelm den andre må flykte, og den nye regjeringen ber om fred."
+                }
+            ]
+        },
+        {
+            "id": "vogna",
+            "lyd": "vind",
+            "kapittel": "Klokka 11",
+            "visual": {
+                "type": "KrigensLopVogn"
+            },
+            "klokke": [
+                null,
+                null,
+                "11.00",
+                "11.00"
+            ],
+            "replikker": [
+                {
+                    "si": "Til slutt møtes de i en jernbanevogn, inne i Compiègne-skogen i Frankrike.",
+                    "uttale": "Til slutt møtes de i en jernbanevogn, inne i Kompjenj-skogen i Frankrike."
+                },
+                {
+                    "si": "Der signerer de en våpenhvile. Det betyr at alle skal slutte å skyte."
+                },
+                {
+                    "si": "Klokka 11.00, den ellevte november 1918, blir det stille ved fronten.",
+                    "uttale": "Klokka elleve, den ellevte november 1918, blir det stille ved fronten."
+                },
+                {
+                    "si": "Krigen er over. Men freden gjenstår å vinne."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "De trodde krigen ville bli kort.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Den varte i fire år.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Piggtråd, bunkere og maskingevær",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "stoppet nesten alle angrep.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "En ny type krig:",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "hærer og hele land ble slitt ut.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ved starten trodde nesten alle at krigen ville bli kort og ærefull. Den ble fire år i gjørma."
+                },
+                {
+                    "si": "Piggtråd, bunkere og maskingevær stoppet nesten alle angrep. Derfor sto fronten stille."
+                },
+                {
+                    "si": "Dette var en ny type krig. Det handlet om å slite ut fienden, både hæren og landet bak den, i fire lange år."
+                }
+            ]
+        }
+    ]
+}
