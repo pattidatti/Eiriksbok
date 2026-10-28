@@ -1317,7 +1317,7 @@
               "id": "arbeidsledighet",
               "title": "Arbeidsledighet: Hvorfor finner ikke alle jobb?",
               "description": "Hvorfor står folk uten jobb, hvordan måles ledigheten, og hvorfor trenger ulike typer ledighet ulike løsninger?",
-              "image": "/images/placeholder.webp",
+              "image": "/images/okonomi/arbeidsledighet-hero.webp",
               "tags": [
                 "økonomi",
                 "arbeidsledighet",
@@ -1332,7 +1332,7 @@
               "id": "skatt",
               "title": "Skatt: Hvorfor betaler vi, og hvem betaler mest?",
               "description": "Hva er skatt, hva brukes pengene til, og hvorfor betaler noen en større del av lønnen sin enn andre?",
-              "image": "/images/placeholder.webp",
+              "image": "/images/okonomi/skatt-hero.webp",
               "tags": [
                 "økonomi",
                 "skatt",
@@ -1347,7 +1347,7 @@
               "id": "oljefondet",
               "title": "Oljefondet: Hvorfor sparer Norge oljepengene i utlandet?",
               "description": "Hvor kommer oljepengene fra, hvorfor investeres de i utlandet, og hvor mye kan staten bruke hvert år?",
-              "image": "/images/placeholder.webp",
+              "image": "/images/okonomi/oljefondet-hero.webp",
               "tags": [
                 "økonomi",
                 "oljefondet",
