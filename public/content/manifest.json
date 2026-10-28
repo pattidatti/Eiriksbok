@@ -1341,7 +1341,22 @@
                 "ulikhet"
               ],
               "createdDate": "2026-10-27T01:12:03.846Z",
-              "lastUpdated": "2026-10-27T01:12:17.311Z"
+              "lastUpdated": "2026-10-27T02:26:08+01:00"
+            },
+            {
+              "id": "oljefondet",
+              "title": "Oljefondet: Hvorfor sparer Norge oljepengene i utlandet?",
+              "description": "Hvor kommer oljepengene fra, hvorfor investeres de i utlandet, og hvor mye kan staten bruke hvert år?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "økonomi",
+                "oljefondet",
+                "handlingsregelen",
+                "olje",
+                "etikk"
+              ],
+              "createdDate": "2026-10-28T01:17:41.700Z",
+              "lastUpdated": "2026-10-28T01:17:34.545Z"
             }
           ]
         },
