@@ -1,0 +1,508 @@
+{
+    "id": "oljefondet",
+    "tittel": "Oljefondet: Hvorfor sparer Norge oljepengene i utlandet?",
+    "kilde": "/samfunnskunnskap/okonomi/oljefondet",
+    "bilde": "/images/okonomi/oljefondet-hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 102,
+            "begrunnelse": "Antall figurer i stemmebildet: 85 + 17 stemmer, regnet ut fra artikkelen."
+        }
+    ],
+    "vurdering": { "dato": "2026-10-28", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "plattform",
+            "lyd": "hav",
+            "kapittel": "Nordsjøen",
+            "visual": {
+                "type": "OljefondetReisen",
+                "props": {
+                    "modus": "plattform"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Vi er ute i Nordsjøen. Her står en oljeplattform, midt på havet."
+                },
+                {
+                    "si": "Under havbunnen ligger olje og gass. Den blir hentet opp og solgt."
+                },
+                {
+                    "si": "Og pengene herfra betyr at du eier en liten bit av tusenvis av selskaper, i nesten alle land i verden."
+                },
+                {
+                    "si": "Det gjør alle som bor i Norge. Hvordan henger det sammen?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "OLJEFONDET",
+                    "undertittel": "Hvorfor sparer Norge oljepengene i utlandet?",
+                    "bilde": "/images/okonomi/oljefondet-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 22014,
+                            "etikett": "milliarder kroner",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        },
+                        {
+                            "verdi": 5636904,
+                            "etikett": "mennesker i Norge",
+                            "fraBeat": 2,
+                            "omtrent": false
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvorfor får du ikke pengene?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Svaret heter oljefondet."
+                },
+                {
+                    "si": "Den 30. september 2026 var fondet verdt 22 014 milliarder kroner. Så mange nuller er vanskelig å se for seg.",
+                    "uttale": "Den trettiende september 2026 var fondet verdt tjueto tusen og fjorten milliarder kroner. Så mange nuller er vanskelig å se for seg."
+                },
+                {
+                    "si": "Ved sommeren 2026 bodde det 5 636 904 mennesker i Norge. Deler vi fondet likt, får hver av oss nesten 3,9 millioner kroner.",
+                    "uttale": "Ved sommeren 2026 bodde det fem millioner seks hundre og trettiseks tusen mennesker i Norge. Deler vi fondet likt, får hver av oss nesten tre komma ni millioner kroner."
+                },
+                {
+                    "si": "Men du får ikke pengene på kontoen din. Hvorfor ikke? Og hvorfor ligger de i utlandet?"
+                }
+            ]
+        },
+        {
+            "id": "fondet",
+            "kapittel": "Fra oljefelt til sparekonto",
+            "visual": {
+                "type": "OljefondetRegel",
+                "props": {
+                    "modus": "tid"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Staten tjente etter hvert så mye på oljen at politikerne måtte velge. Skulle pengene brukes med en gang, eller spares?"
+                },
+                {
+                    "si": "Svaret ble et fond. Et fond er en stor pott med penger, satt av til et bestemt formål."
+                },
+                {
+                    "si": "Stortinget vedtok loven om fondet 22. juni 1990. De første pengene ble satt inn i 1996.",
+                    "uttale": "Stortinget vedtok loven om fondet tjueandre juni 1990. De første pengene ble satt inn i 1996."
+                },
+                {
+                    "si": "I 2006 fikk fondet navnet Statens pensjonsfond utland. Men de fleste sier bare oljefondet."
+                },
+                {
+                    "si": "Fondet eies av staten, altså av oss alle. Finansdepartementet bestemmer reglene. NBIM, en avdeling i Norges Bank, gjør selve jobben med å kjøpe og selge.",
+                    "uttale": "Fondet eies av staten, altså av oss alle. Finansdepartementet bestemmer reglene. N B I M, en avdeling i Norges Bank, gjør selve jobben med å kjøpe og selge."
+                }
+            ]
+        },
+        {
+            "id": "kilder",
+            "lyd": "hav",
+            "kapittel": "Hvor kommer pengene fra?",
+            "visual": {
+                "type": "OljefondetReisen",
+                "props": {
+                    "modus": "kilder"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er oljeselskapene som henter opp oljen. Likevel får staten en stor del av pengene, på tre måter."
+                },
+                {
+                    "si": "For det første betaler oljeselskapene høy skatt. I 2026 regnet staten med 378 milliarder kroner i skatt."
+                },
+                {
+                    "si": "For det andre eier staten selv deler av mange oljefelt. Derfra ventet den 256 milliarder."
+                },
+                {
+                    "si": "For det tredje eier staten aksjer i Equinor, og får utbytte, altså en del av overskuddet. Det var 25 milliarder."
+                },
+                {
+                    "si": "Til sammen ventet staten rundt 671 milliarder kroner fra olje og gass. Alle disse pengene går inn i oljefondet."
+                }
+            ]
+        },
+        {
+            "id": "press",
+            "lyd": "stille",
+            "kapittel": "Hvorfor i utlandet?",
+            "visual": {
+                "type": "OljefondetPress",
+                "props": {
+                    "modus": "press"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kunne vi ikke bare brukt pengene på nye skoler, veier og sykehus med en gang?"
+                },
+                {
+                    "si": "Tenk deg at Norge plutselig hadde hundrevis av milliarder ekstra hvert år, men like mange arbeidere."
+                },
+                {
+                    "si": "Da ville alle slåss om de samme snekkerne, sykepleierne og ingeniørene."
+                },
+                {
+                    "si": "Lønningene ville stige. Prisene ville stige."
+                }
+            ]
+        },
+        {
+            "id": "krone",
+            "visual": {
+                "type": "OljefondetPress",
+                "props": {
+                    "modus": "krone"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Finansminister Sigbjørn Johnsen forklarte i 2012 at mer bruk av oljepenger også ville gi en sterkere krone. Da er en norsk krone verdt mer i andre lands penger."
+                },
+                {
+                    "si": "Det ville gått mest ut over bedrifter som selger fisk, metall eller turistreiser til folk i andre land."
+                },
+                {
+                    "si": "Med en sterk krone blir varene deres dyre for utlendinger. Da selger de mindre."
+                }
+            ]
+        },
+        {
+            "id": "ut",
+            "visual": {
+                "type": "OljefondetKart"
+            },
+            "replikker": [
+                {
+                    "si": "Derfor kjøper fondet heller deler av selskaper, hus og lån i utlandet."
+                },
+                {
+                    "si": "Johnsen pekte på en ting til. Norge selger mer til andre land enn vi kjøper. Det overskuddet kan bare spares i utlandet."
+                },
+                {
+                    "si": "Legg merke til omveien. Oljepengene går ikke rett fra Nordsjøen til skolen din."
+                },
+                {
+                    "si": "De reiser først ut i verden og jobber der i mange år. Bare en liten del kommer hjem hvert år."
+                }
+            ]
+        },
+        {
+            "id": "eier",
+            "kapittel": "Hva eier fondet?",
+            "visual": {
+                "type": "OljefondetReisen",
+                "props": {
+                    "modus": "verden"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva eier fondet egentlig? I september 2026 lå 72,1 prosent av pengene i aksjer, altså deler av selskaper."
+                },
+                {
+                    "si": "25,8 prosent var obligasjoner. Det er lån til stater og selskaper, som betaler renter tilbake."
+                },
+                {
+                    "si": "Resten var eiendom, og anlegg for fornybar energi, som vindparker."
+                },
+                {
+                    "si": "Fondet eier aksjer i rundt 7 100 selskaper. I snitt eier det 1,5 prosent av alle selskapene i verden som er på børsen.",
+                    "uttale": "Fondet eier aksjer i rundt sju tusen ett hundre selskaper. I snitt eier det en komma fem prosent av alle selskapene i verden som er på børsen."
+                }
+            ]
+        },
+        {
+            "id": "hona",
+            "kapittel": "Handlingsregelen",
+            "visual": {
+                "type": "OljefondetReisen",
+                "props": {
+                    "modus": "hona"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg at fondet er en høne. Når selskapene fondet eier tjener penger, legger høna egg. Den økningen kaller vi avkastning."
+                },
+                {
+                    "si": "I 2001 vedtok Stortinget en regel for hvor mye regjeringen kan bruke av fondet hvert år. Den heter handlingsregelen."
+                },
+                {
+                    "si": "Tanken er enkel. Du spiser eggene, men du slakter ikke høna."
+                },
+                {
+                    "si": "Bruker du bare det fondet tjener, blir selve fondet like stort. Da har også barnebarna dine glede av pengene, lenge etter at oljen er tatt opp."
+                }
+            ]
+        },
+        {
+            "id": "prosent",
+            "visual": {
+                "type": "OljefondetRegel",
+                "props": {
+                    "modus": "prosent"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Først var grensen 4 prosent av fondet. Det var det fondet ble regnet å tjene i et vanlig år."
+                },
+                {
+                    "si": "I 2017 ble grensen satt ned til 3 prosent."
+                },
+                {
+                    "si": "Regelen er ikke helt fast. Går det dårlig og mange mister jobben, kan regjeringen bruke litt mer. Går det bra, skal den bruke mindre."
+                },
+                {
+                    "si": "I statsbudsjettet for 2026 la regjeringen opp til å bruke 579,4 milliarder kroner fra fondet. Det var 2,8 prosent av fondet.",
+                    "uttale": "I statsbudsjettet for 2026 la regjeringen opp til å bruke fem hundre og syttini komma fire milliarder kroner fra fondet. Det var to komma åtte prosent av fondet."
+                },
+                {
+                    "si": "Hele budsjettet var på over 2000 milliarder. Oljepengene betaler altså en stor del av det staten bruker, sammen med skatten vi betaler.",
+                    "uttale": "Hele budsjettet var på over to tusen milliarder. Oljepengene betaler altså en stor del av det staten bruker, sammen med skatten vi betaler."
+                }
+            ]
+        },
+        {
+            "id": "bors",
+            "kapittel": "Når børsen faller",
+            "visual": {
+                "type": "OljefondetRegel",
+                "props": {
+                    "modus": "bors"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fondet vokser ikke hvert år. Fordi så mye ligger i aksjer, følger fondet børsene i verden opp og ned."
+                },
+                {
+                    "si": "Bare fra juli til september 2026 ble fondet 670 milliarder kroner mindre verdt."
+                },
+                {
+                    "si": "Mesteparten kom av at kronekursen endret seg, altså hva kronen er verdt i andre lands penger. Men selve investeringene tapte også 278 milliarder."
+                },
+                {
+                    "si": "Det høres skummelt ut. Men siden 1998 har fondet i gjennomsnitt tjent 6,78 prosent i året.",
+                    "uttale": "Det høres skummelt ut. Men siden 1998 har fondet i gjennomsnitt tjent seks komma sju åtte prosent i året."
+                },
+                {
+                    "si": "Gode og dårlige år jevner seg ut. Det er også en grunn til at regelen er 3 prosent, og ikke høyere."
+                }
+            ]
+        },
+        {
+            "id": "etikk",
+            "kapittel": "Hva kan Norge eie?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Fondets etiske regler",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Du eier en bit av det de gjør",
+                            "tekst": "også våpen, tobakk og forurensning",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Egne regler fra 2004",
+                            "tekst": "og et eget Etikkråd",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "bombe",
+                            "tittel": "Ikke tobakk, cannabis, kull",
+                            "tekst": "og ikke visse typer våpen",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "skjold",
+                            "tittel": "Hvordan selskapet oppfører seg",
+                            "tekst": "menneskerettigheter, miljø, kriminalitet",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du eier en bit av 7 100 selskaper, eier du også en bit av det de gjør. Noen lager våpen, selger tobakk eller forurenser.",
+                    "uttale": "Når du eier en bit av sju tusen ett hundre selskaper, eier du også en bit av det de gjør. Noen lager våpen, selger tobakk eller forurenser."
+                },
+                {
+                    "si": "Fra 2004 har fondet hatt egne etiske regler, og et eget Etikkråd. Etikk handler om hva som er rett og galt."
+                },
+                {
+                    "si": "Reglene sier blant annet at fondet ikke skal eie selskaper som lager tobakk, cannabis, kull og visse typer våpen."
+                },
+                {
+                    "si": "Selskaper kan også bli vurdert for hvordan de oppfører seg. Bryter de menneskerettighetene, ødelegger de miljøet, eller driver de med økonomisk kriminalitet?"
+                },
+                {
+                    "si": "Etikkrådet undersøkte selskaper og ga råd om hvilke fondet burde selge seg ut av. Siden 2015 har Norges Bank bestemt til slutt."
+                }
+            ]
+        },
+        {
+            "id": "stemme",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 102,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "2025: kritikk mot fondet",
+                            "fargeEtikett": "for",
+                            "restEtikett": "stemmer",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 102,
+                            "farget": 0,
+                            "restFarge": "#64748b",
+                            "tittel": "Regjeringen: må vi selge de største?",
+                            "fargeEtikett": "for",
+                            "restEtikett": "stemmer",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 102,
+                            "farget": 85,
+                            "farge": "#0d9488",
+                            "restFarge": "#dc2626",
+                            "tittel": "4. november 2025: 85 mot 17 stemmer",
+                            "fargeEtikett": "stemte for",
+                            "restEtikett": "stemte mot"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 102,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "SV og Rødt: reglene blir svekket",
+                            "fargeEtikett": "for",
+                            "restEtikett": "stemmer",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 4,
+                            "total": 102,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Hva mener du?",
+                            "fargeEtikett": "for",
+                            "restEtikett": "stemmer",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 2025 ble reglene satt på prøve. Fondet var blitt kritisert for å eie selskaper som hjalp Israel i krigen på Gazastripen."
+                },
+                {
+                    "si": "Samtidig var regjeringen redd for at reglene kunne tvinge fondet til å selge seg ut av noen av verdens største teknologiselskaper."
+                },
+                {
+                    "si": "Den 4. november 2025 stemte Stortinget, 85 mot 17. Etikkrådet skulle slutte å gi råd om å kaste ut selskaper, inntil nye regler var på plass.",
+                    "uttale": "Den fjerde november 2025 stemte Stortinget, 85 mot 17. Etikkrådet skulle slutte å gi råd om å kaste ut selskaper, inntil nye regler var på plass."
+                },
+                {
+                    "si": "SV og Rødt mente at dette svekket de etiske reglene. Etikkrådet følger likevel med på selskapene.",
+                    "uttale": "S V og Rødt mente at dette svekket de etiske reglene. Etikkrådet følger likevel med på selskapene."
+                },
+                {
+                    "si": "Skal fondet tjene mest mulig penger til skoler og sykehus? Eller skal Norge la være å eie selskaper som gjør noe vi mener er galt, selv om det koster? Hva mener du?"
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Oljepengene går ikke rett i budsjettet.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "De går inn i fondet.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Pengene jobber ute i verden,",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "så Norge ikke presses av for mye penger.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "I et vanlig år skal staten bruke",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "rundt 3 prosent.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Vi spiser eggene.",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "Høna blir igjen til dem som kommer etter oss.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Oljefondet er Norges sparekonto for oljepengene. Alt staten tjener på olje og gass, går inn i fondet."
+                },
+                {
+                    "si": "Pengene jobber i utlandet, så norsk økonomi ikke presses av for mye penger på en gang."
+                },
+                {
+                    "si": "Handlingsregelen sier at staten i et vanlig år bare skal bruke omtrent det fondet tjener, rundt 3 prosent."
+                },
+                {
+                    "si": "Vi spiser eggene, men tar vare på høna. Da blir pengene igjen til dem som kommer etter oss."
+                }
+            ]
+        }
+    ]
+}
