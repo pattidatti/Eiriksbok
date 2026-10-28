@@ -1,0 +1,243 @@
+{
+    "id": "forste-verdenskrig-teknologi",
+    "tittel": "Teknologi: Industrialisert død",
+    "kilde": "/historie/forste-verdenskrig/teknologi",
+    "bilde": "/images/historie/forste-verdenskrig/teknologi_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-28", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "eng",
+            "lyd": "vind",
+            "kapittel": "Et nytt slags krig",
+            "visual": { "type": "TeknologiFront", "props": { "modus": "eng" } },
+            "replikker": [
+                { "si": "Det er 1914. En hær marsjerer ut i krig." },
+                { "si": "Mange soldater har fargerike uniformer. Foran på geværet har de festet en lang kniv, en bajonett." },
+                { "si": "Offiserene leder an. De tror at angrep, mot og tapperhet vinner kriger." },
+                { "si": "Men på den andre siden venter noe nytt. En maskin." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Teknologi",
+                    "undertittel": "Første verdenskrig: industrialisert død",
+                    "bilde": "/images/historie/forste-verdenskrig/teknologi_hero.webp",
+                    "sporsmal": { "tekst": "Hvordan endret maskinene krigen?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Første verdenskrig kalles ofte den første moderne krigen." },
+                { "si": "Den kalles også industriell. Det betyr at maskiner og fabrikker preget krigen." },
+                { "si": "Gamle måter å slåss på møtte helt nye maskiner. Og maskinene kunne drepe flere enn noen hadde sett før." }
+            ]
+        },
+        {
+            "id": "maskingevaer",
+            "kapittel": "Maskingeværet",
+            "visual": { "type": "TeknologiFront", "props": { "modus": "mg" } },
+            "replikker": [
+                { "si": "Vestfronten var fronten i Frankrike og Belgia. Ett våpen preget den mer enn noe annet: maskingeværet." },
+                { "si": "Det tyske Maxim og det britiske Vickers var tunge maskiner. De ble kjølt med vann, og det trengtes flere mann for å bruke dem." },
+                { "si": "Ett maskingevær kunne skyte 400 til 600 skudd i minuttet." },
+                { "si": "Det var like mye som en hel tropp, altså en stor gruppe vanlige soldater med gevær, kunne skyte til sammen." }
+            ]
+        },
+        {
+            "id": "vekt",
+            "visual": { "type": "TeknologiSkjema", "props": { "modus": "vekt" } },
+            "replikker": [
+                { "si": "Maskingeværet endret balansen mellom angrep og forsvar." },
+                { "si": "Nå lå forsvarerne godt beskyttet med maskingeværene sine. Det ble mye lettere å forsvare seg enn å angripe." },
+                { "si": "Å løpe over åpent terreng mot dem var nesten det samme som selvmord." },
+                { "si": "Mer enn noe annet var det maskingeværet som tvang soldatene ned i skyttergravene. Krigen sto stille." },
+                { "si": "Generalene brukte lang tid på å forstå dette. Mange liv gikk tapt mens de lærte." }
+            ]
+        },
+        {
+            "id": "artilleri-andel",
+            "kapittel": "Kanonene",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Alle døde og sårede i krigen",
+                            "restEtikett": "døde og sårede",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 60,
+                            "farge": "#b45309",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Rundt 60 prosent: artilleri",
+                            "fargeEtikett": "rammet av kanonild",
+                            "restEtikett": "andre våpen",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 60,
+                            "farge": "#b45309",
+                            "restFarge": "#94a3b8",
+                            "tittel": "60 av 100: kanonene",
+                            "fargeEtikett": "rammet av kanonild",
+                            "restEtikett": "andre våpen",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Maskingeværet stoppet angrep. Men det var et annet våpen som drepte og skadet flest." },
+                { "si": "Det var artilleriet, altså kanonene. Forskere regner med at rundt 60 prosent av alle døde og sårede i krigen ble truffet av kanonild." },
+                { "si": "Tenk deg hundre døde eller sårede soldater. Rundt 60 av dem ble rammet av kanonene." }
+            ]
+        },
+        {
+            "id": "paris",
+            "lyd": "stille",
+            "visual": { "type": "TeknologiKart", "props": { "modus": "paris" } },
+            "replikker": [
+                { "si": "Kanonene ble større, traff bedre og skjøt lenger enn før." },
+                { "si": "Den tyske kanonen Tykke Bertha skjøt tunge granater mot festninger." },
+                { "si": "Paris-kanonen kunne skyte mot Frankrikes hovedstad fra over 100 kilometer unna." },
+                { "si": "Kanonen skremte folk i Paris, selv om fronten var langt unna." }
+            ]
+        },
+        {
+            "id": "trommeild",
+            "lyd": "storm",
+            "visual": { "type": "TeknologiFront", "props": { "modus": "krater" } },
+            "replikker": [
+                { "si": "Før store slag kom ofte trommeilden. Kanonene skjøt uten stans, og det kunne vare i flere dager eller uker." },
+                { "si": "Målet var å knuse fiendens skyttergraver og piggtråd." },
+                { "si": "Kanonene skulle også drive forsvarerne til vanvidd. Det ble kalt granatsjokk." },
+                { "si": "Landskapet ble pløyd opp til et månelandskap av gjørme og krater. Det gjorde det enda vanskeligere å komme fram." }
+            ]
+        },
+        {
+            "id": "gass",
+            "lyd": "vind",
+            "kapittel": "Giftgass",
+            "visual": { "type": "TeknologiKart", "props": { "modus": "ypres" } },
+            "replikker": [
+                { "si": "Begge sider ville desperat bryte stillstanden. Da tok de i bruk et nytt og grusomt våpen: giftgass." },
+                { "si": "Det første store gassangrepet kom ved Ypres i Belgia, i april 1915." },
+                { "si": "Tyskerne slapp ut skyer av klorgass. Vinden bar gassen mot de allierte linjene." },
+                { "si": "Senere kom enda farligere gasser, som sennepsgass. Den skadet lungene, ga brannsår på huden og kunne gjøre soldater blinde." }
+            ]
+        },
+        {
+            "id": "gass-svakhet",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Gassen vant ikke krigen",
+                    "punkter": [
+                        { "ikon": "skjold", "tittel": "Gassmasker", "tekst": "begge sider fikk dem raskt", "fraBeat": 1 },
+                        { "ikon": "vind", "tittel": "Vinden", "tekst": "kunne snu og blåse gassen tilbake", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Bruk forbudt i 1925", "tekst": "Genève-protokollen", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Gassen skapte enorm frykt. Men den avgjorde ikke krigen." },
+                { "si": "Begge sider laget raskt gode gassmasker. Da virket gassen dårligere." },
+                { "si": "Og gassen fulgte vinden. Snudde vinden, kunne gassen drive tilbake mot dine egne soldater." },
+                { "si": "Etter krigen syntes folk gass var så avskyelig at det ble forbudt å bruke den, i en avtale fra 1925." }
+            ]
+        },
+        {
+            "id": "tank",
+            "lyd": "vind",
+            "kapittel": "Stridsvognen",
+            "visual": { "type": "TeknologiFront", "props": { "modus": "tank" } },
+            "replikker": [
+                { "si": "Hvordan kommer man seg over piggtråd og skyttergraver, når maskingeværene venter?" },
+                { "si": "Britene bygde et kjøretøy med panser som stoppet kulene. Det kunne kjøre over piggtråd og krysse skyttergraver." },
+                { "si": "For å lure tyske spioner fikk det hemmelige våpenet kodenavnet tank. Det betyr vanntank." },
+                { "si": "De første stridsvognene, Mark I, rullet ut i slaget ved Somme i september 1916." },
+                { "si": "Toppfarten var bare 6 kilometer i timen. Det er omtrent like fort som du går." }
+            ]
+        },
+        {
+            "id": "tank-inne",
+            "visual": { "type": "TeknologiSkjema", "props": { "modus": "tank" } },
+            "replikker": [
+                { "si": "Inne i vogna kunne det bli uutholdelig varmt." },
+                { "si": "Motoren bråkte så mye at mannskapet slo på panseret med skiftenøkler for å snakke sammen." },
+                { "si": "Mange vogner brøt sammen før de nådde fronten. Men tyske soldater ble skremt av stålmonstrene som kom rullende." },
+                { "si": "Mot slutten av krigen, særlig i 1918, var stridsvognene blitt bedre. Da spilte de en avgjørende rolle i de alliertes seier." }
+            ]
+        },
+        {
+            "id": "fly",
+            "kapittel": "Luftkrigen",
+            "visual": { "type": "TeknologiSkjema", "props": { "modus": "propell" } },
+            "replikker": [
+                { "si": "I 1914 var flyet en helt ny oppfinnelse. Først brukte de det bare til å speide bak fiendens linjer." },
+                { "si": "Snart begynte pilotene å skyte på hverandre, med pistoler og rifler." },
+                { "si": "Så kom gjennombruddet: et maskingevær som var stilt inn slik at det skjøt gjennom propellen uten å treffe bladene." },
+                { "si": "Slik ble jagerflyet født. Piloter som den tyske Røde Baron ble gjort til helter i propagandaen, nesten som riddere." }
+            ]
+        },
+        {
+            "id": "zeppelin",
+            "lyd": "stille",
+            "visual": { "type": "TeknologiKart", "props": { "modus": "london" } },
+            "replikker": [
+                { "si": "Tyskerne hadde også enorme luftskip, kalt Zeppelinere." },
+                { "si": "De ble sendt over havet for å bombe byer som London." },
+                { "si": "For første gang kom krigen hjem til folk som ikke var soldater." }
+            ]
+        },
+        {
+            "id": "ubat",
+            "lyd": "hav",
+            "kapittel": "Ubåten",
+            "visual": { "type": "TeknologiKart", "props": { "modus": "ubat" } },
+            "replikker": [
+                { "si": "Til sjøs kunne ikke Tyskland slå den mektige britiske marinen i åpne slag." },
+                { "si": "I stedet sendte de ubåter mot handelsskipene som fraktet mat og råvarer til Storbritannia." },
+                { "si": "Ubåtene var vanskelige å oppdage. I 1917 var Storbritannia farlig nær å gå tom for mat." },
+                { "si": "Svaret ble konvoier: handelsskip som seilte samlet, med krigsskip rundt seg. De lyttet også etter ubåtene med hydrofoner, en slags undervannsmikrofon." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Gamle måter å slåss på.", "fraBeat": 0 },
+                        { "tekst": "Nye maskiner.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Nye våpen skulle bryte stillstanden.", "fraBeat": 1 },
+                        { "tekst": "Ofte fant den andre siden et svar.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Flyet avgjorde ikke denne krigen.", "fraBeat": 2 },
+                        { "tekst": "Men flyvåpenet ble det viktigste senere.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I første verdenskrig møtte gamle måter å slåss på nye maskiner. Maskinene drepte flere enn noen hadde sett før." },
+                { "si": "Mange nye oppfinnelser skulle bryte stillstanden. Ofte fant den andre siden et svar: gassmasker mot gass, konvoier mot ubåter." },
+                { "si": "Flyet avgjorde ikke denne krigen. Men det la grunnlaget for at flyvåpenet skulle bli det viktigste i krigene som kom etterpå." }
+            ]
+        }
+    ]
+}

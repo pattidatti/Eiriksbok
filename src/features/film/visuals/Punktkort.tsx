@@ -11,11 +11,13 @@ import {
     MessageCircleX,
     Radio,
     ScrollText,
+    Shield,
     Ship,
     Snowflake,
     Star,
     Swords,
     Users,
+    Wind,
     type LucideIcon,
 } from 'lucide-react';
 import type { VisualProps } from '../types';
@@ -37,6 +39,8 @@ const IKONER: Record<string, LucideIcon> = {
     hval: Fish,
     lampe: Lamp,
     vann: Droplets,
+    vind: Wind,
+    skjold: Shield,
 };
 
 interface Props {
