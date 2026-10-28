@@ -260,7 +260,7 @@ function Sovjet({ beat, p }: { beat: number; p: P }) {
             {beat === 3 && (
                 <>
                     <Pil fra={p([21, 33])} til={p(AFG_KANT)} farge={FARGE.usaSterk} bue={-0.12} />
-                    <Etikett pos={p([21, 33])} tekst="USA" farge={FARGE.usaSterk} dx={70} dy={-50} />
+                    <Etikett pos={p([21, 33])} tekst="fra USA" farge={FARGE.usaSterk} dx={90} dy={-50} />
                     <Pil fra={p([48, 27])} til={p(AFG_KANT)} farge="#15803d" bue={0.12} forsinkelse={0.6} />
                 </>
             )}
@@ -285,13 +285,13 @@ function Motiv({ beat, p }: { beat: number; p: P }) {
                 <>
                     <Pil fra={p([21, 34])} til={p([44, 26])} farge={FARGE.usaSterk} bue={-0.15} />
                     <Soldater pos={p([45, 25.5])} />
-                    <Etikett pos={p([21, 34])} tekst="USA" farge={FARGE.usaSterk} dx={70} dy={-50} />
+                    <Etikett pos={p([21, 34])} tekst="fra USA" farge={FARGE.usaSterk} dx={90} dy={-50} />
                 </>
             )}
             {beat === 1 && (
                 <>
                     <Pil fra={p(STED.afghanistan)} til={p([21, 38])} farge="#b91c1c" bue={0.15} />
-                    <Etikett pos={p([21, 38])} tekst="mot USA" farge="#b91c1c" dx={90} dy={-50} forsinkelse={1.4} />
+                    <Etikett pos={p([21, 38])} tekst="mot USA, langt i vest" farge="#b91c1c" dx={90} dy={-50} forsinkelse={1.4} />
                 </>
             )}
             {beat >= 2 && (
@@ -310,7 +310,7 @@ function Irak({ beat, p }: { beat: number; p: P }) {
             {beat === 0 && (
                 <>
                     <Pil fra={p([27, 38])} til={p(STED.bagdad)} farge={FARGE.usaSterk} bue={-0.15} />
-                    <Etikett pos={p([27, 38])} tekst="USA" farge={FARGE.usaSterk} dx={70} dy={-50} />
+                    <Etikett pos={p([27, 38])} tekst="fra USA" farge={FARGE.usaSterk} dx={90} dy={-50} />
                 </>
             )}
             {beat >= 4 && (
@@ -754,7 +754,7 @@ function Taarn({ pos }: { pos: [number, number] }) {
         >
             <rect x={x - 150} y={y - 190} width={34} height={170} fill="#475569" stroke="#fff" strokeWidth={4} />
             <rect x={x - 108} y={y - 184} width={34} height={164} fill="#475569" stroke="#fff" strokeWidth={4} />
-            <text x={x - 112} y={y + 20} textAnchor="middle" fontSize={34} fontWeight={800} fill="#0f172a" stroke="#fff" strokeWidth={8} paintOrder="stroke">
+            <text x={x - 170} y={y - 60} textAnchor="end" fontSize={34} fontWeight={800} fill="#0f172a" stroke="#fff" strokeWidth={8} paintOrder="stroke">
                 Tvillingtårnene
             </text>
         </motion.g>

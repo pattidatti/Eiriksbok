@@ -17,7 +17,7 @@ const RADER: {
     {
         etikett: 'Støtte',
         venstre: 'Støtte fra FN',
-        hoyre: 'FN sa nei, Frankrike og Tyskland også',
+        hoyre: 'Ingen godkjenning fra FN, Frankrike og Tyskland nektet',
         venstreOk: true,
         hoyreOk: false,
     },
@@ -30,7 +30,7 @@ const RADER: {
     },
     {
         etikett: 'Resultat',
-        venstre: 'Taliban falt på uker',
+        venstre: 'Taliban falt raskt',
         hoyre: 'Saddam falt, så kom kaos',
         venstreOk: true,
         hoyreOk: false,
@@ -127,7 +127,7 @@ function Celle({
                 </span>
             )}
             <span className="text-2xl font-bold text-slate-900 leading-tight">
-                {sporsmal ? 'Det skal vi snart se ...' : tekst}
+                {sporsmal ? 'Se snart' : tekst}
             </span>
         </motion.div>
     );
