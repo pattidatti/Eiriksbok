@@ -96,6 +96,7 @@ const Kioskkampen = lazy(() => import('./content/interactive/Kioskkampen').then(
 const BnpMaaleren = lazy(() => import('./content/interactive/BnpMaaleren').then(m => ({ default: m.BnpMaaleren })));
 const Ledighetslegen = lazy(() => import('./content/interactive/Ledighetslegen').then(m => ({ default: m.Ledighetslegen })));
 const Skattevekta = lazy(() => import('./content/interactive/Skattevekta').then(m => ({ default: m.Skattevekta })));
+const Oljekronereisen = lazy(() => import('./content/interactive/Oljekronereisen').then(m => ({ default: m.Oljekronereisen })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
 const Havdelingen = lazy(() => import('./content/interactive/Havdelingen').then(m => ({ default: m.Havdelingen })));
 const Hvalregnskapet = lazy(() => import('./content/interactive/Hvalregnskapet').then(m => ({ default: m.Hvalregnskapet })));
@@ -1069,6 +1070,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     BnpMaaleren,
     Ledighetslegen,
     Skattevekta,
+    Oljekronereisen,
     BrentJord,
     Hvalregnskapet,
     Havdelingen,
