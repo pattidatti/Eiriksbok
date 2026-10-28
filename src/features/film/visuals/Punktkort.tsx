@@ -16,6 +16,7 @@ import {
     Snowflake,
     Star,
     Swords,
+    TrainFront,
     Users,
     Wind,
     type LucideIcon,
@@ -41,6 +42,7 @@ const IKONER: Record<string, LucideIcon> = {
     vann: Droplets,
     vind: Wind,
     skjold: Shield,
+    tog: TrainFront,
 };
 
 interface Props {

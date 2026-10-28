@@ -1,0 +1,286 @@
+{
+    "id": "forste-verdenskrig-konsekvenser",
+    "tittel": "Konsekvenser: Et nytt Europa",
+    "kilde": "/historie/forste-verdenskrig/konsekvenser",
+    "bilde": "/images/historie/forste-verdenskrig/konsekvenser_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-28", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "stilt",
+            "lyd": "vind",
+            "kapittel": "Kanonene stilner",
+            "visual": { "type": "KonsekvenserFelt", "props": { "modus": "stilt" } },
+            "replikker": [
+                { "si": "Det er den ellevte november 1918. Langs frontene i Europa stilner kanonene." },
+                {
+                    "si": "Millioner av unge menn er døde. Store deler av Europa ligger i ruiner, og økonomiene i landene er knust."
+                },
+                { "si": "Krigen er over. Men verden er ikke lenger den samme." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ET NYTT EUROPA",
+                    "undertittel": "Konsekvensene av første verdenskrig",
+                    "bilde": "/images/historie/forste-verdenskrig/konsekvenser_hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kunne en fred så frø til nye konflikter?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Første verdenskrig blir ofte kalt urkatastrofen i det tjuende århundret. Det betyr katastrofen som de andre vokste ut av."
+                },
+                { "si": "Ikke bare fordi så mye ble ødelagt der og da." },
+                {
+                    "si": "Men fordi krigen sådde frøene til nesten alle de store konfliktene resten av hundreåret."
+                },
+                {
+                    "si": "I denne filmen skal vi se hvordan freden etter krigen kunne bli starten på noe nytt og farlig."
+                }
+            ]
+        },
+        {
+            "id": "imperier",
+            "kapittel": "Fire riker faller",
+            "visual": { "type": "KonsekvenserPuslespill", "props": { "modus": "fall" } },
+            "replikker": [
+                {
+                    "si": "Før 1914 styrte fire store keiserriker store deler av Europa og Midtøsten. Krigen fikk alle fire til å falle."
+                },
+                {
+                    "si": "Tyskland. Keiser Wilhelm flykter ut av landet, og Tyskland blir en republikk, et land uten keiser."
+                },
+                {
+                    "si": "Østerrike-Ungarn. Keiseren må gå av, og riket blir delt opp i flere nye land."
+                },
+                {
+                    "si": "Det osmanske riket. Sultanen mister de store områdene sine i Midtøsten. De blir delt mellom Storbritannia og Frankrike."
+                },
+                {
+                    "si": "Resten av riket blir den nye republikken Tyrkia, etter en krig for å bli fri, ledet av Mustafa Kemal Atatürk."
+                },
+                {
+                    "si": "Russland. Tsaren blir styrtet under revolusjonen i 1917. Etter en blodig borgerkrig blir landet til Sovjetunionen, verdens første kommunistiske stat."
+                }
+            ]
+        },
+        {
+            "id": "versailles",
+            "lyd": "rom",
+            "kapittel": "Freden i Versailles",
+            "visual": { "type": "KonsekvenserSalen", "props": { "modus": "forhandling" } },
+            "replikker": [
+                {
+                    "si": "Året er 1919. Seierherrene, landene som vant krigen, møtes i Versailles utenfor Paris. Her skal de bestemme hvordan freden skal bli."
+                },
+                {
+                    "si": "Frankrike har mistet enormt mange, og mye av landet er ødelagt. Franskmennene vil knuse Tyskland, så tyskerne aldri kan true naboene igjen."
+                },
+                { "si": "Storbritannia, og særlig USA, vil være mildere. Likevel blir freden hard." },
+                {
+                    "si": "Og Tyskland? Tyskerne får ikke være med på forhandlingene. De blir bare kalt inn for å skrive under."
+                }
+            ]
+        },
+        {
+            "id": "vilkar",
+            "visual": { "type": "KonsekvenserSalen", "props": { "modus": "traktat" } },
+            "replikker": [
+                {
+                    "si": "Avtalen heter Versailles-traktaten. En traktat er en avtale mellom land. Vilkårene knuste tysk stolthet."
+                },
+                { "si": "Artikkel 231 sa at Tyskland alene hadde skylden for at krigen brøt ut." },
+                {
+                    "si": "Tyskland måtte også betale enorme summer i krigserstatning til seierherrene, altså penger for skadene etter krigen."
+                },
+                { "si": "Det kvelte tysk økonomi i årene som fulgte." }
+            ]
+        },
+        {
+            "id": "haer",
+            "lyd": "vind",
+            "visual": { "type": "KonsekvenserFelt", "props": { "modus": "haer" } },
+            "replikker": [
+                { "si": "Så var det militæret. Den tyske hæren fikk ha høyst 100 000 mann." },
+                { "si": "Tyskland fikk ikke ha flyvåpen, altså fly til krig." },
+                { "si": "Ingen ubåter." },
+                { "si": "Og ingen tunge stridsvogner." }
+            ]
+        },
+        {
+            "id": "land",
+            "lyd": "stille",
+            "visual": { "type": "KonsekvenserPuslespill", "props": { "modus": "tyskland" } },
+            "replikker": [
+                { "si": "Til slutt måtte Tyskland gi fra seg land." },
+                { "si": "I vest mistet tyskerne Alsace-Lorraine til Frankrike." },
+                { "si": "I øst mistet de store områder til det nye landet Polen." },
+                { "si": "Og alle koloniene utenfor Europa var også borte." }
+            ]
+        },
+        {
+            "id": "bitterhet",
+            "visual": { "type": "KonsekvenserMisnoye" },
+            "replikker": [
+                {
+                    "si": "Traktaten skapte dyp bitterhet i Tyskland. Mange følte seg ydmyket, altså gjort små og flaue."
+                },
+                { "si": "Mange mente at den tyske hæren aldri var blitt slått på slagmarken." },
+                {
+                    "si": "De trodde i stedet at hæren var blitt sviktet av politikerne hjemme, som et stikk i ryggen. Denne historien kalles dolkestøtlegenden."
+                },
+                {
+                    "si": "Senere brukte Adolf Hitler og nazistene dette sinnet for å komme til makten."
+                }
+            ]
+        },
+        {
+            "id": "nye-land",
+            "kapittel": "Nye grenser",
+            "visual": { "type": "KonsekvenserPuslespill", "props": { "modus": "nye" } },
+            "replikker": [
+                {
+                    "si": "Den amerikanske presidenten Woodrow Wilson kom til forhandlingene med en plan på 14 punkter."
+                },
+                {
+                    "si": "Ett av punktene var nasjonal selvbestemmelse. Det betyr at hvert folk skal ha rett til sitt eget land."
+                },
+                {
+                    "si": "Slik kom det mange nye land i Øst-Europa: Polen, Tsjekkoslovakia, Jugoslavia, Finland, Estland, Latvia og Litauen."
+                },
+                { "si": "Men det var umulig å trekke grensene slik at alle ble fornøyde." },
+                {
+                    "si": "Millioner av tyskere bodde nå i Polen og Tsjekkoslovakia. Og ungarere havnet i Romania."
+                },
+                {
+                    "si": "Folk på feil side av grensen ble starten på nye konflikter. De skulle plage Europa i tiårene som fulgte."
+                }
+            ]
+        },
+        {
+            "id": "folkeforbundet",
+            "lyd": "rom",
+            "kapittel": "Håpet om fred",
+            "visual": { "type": "KonsekvenserBordet" },
+            "replikker": [
+                {
+                    "si": "For at en slik katastrofe aldri skulle skje igjen, ble Folkeforbundet opprettet. Ideen kom fra president Wilson."
+                },
+                {
+                    "si": "Her kunne land møtes og løse konflikter ved å snakke og forhandle, i stedet for å krige."
+                },
+                {
+                    "si": "Men stolen til USA sto tom. Senatet i USA stemte nei, fordi landet ville holde seg unna konfliktene i Europa."
+                },
+                { "si": "Tyskland og Sovjetunionen fikk heller ikke være med i begynnelsen." },
+                {
+                    "si": "Uten USA, og uten noen egen hær, klarte Folkeforbundet ikke å stoppe land som angrep andre i 1930-årene."
+                },
+                {
+                    "si": "Likevel var Folkeforbundet forløperen til dagens FN. Det var en tidlig utgave av det FN gjør i dag."
+                }
+            ]
+        },
+        {
+            "id": "kvinner",
+            "lyd": "stille",
+            "kapittel": "Kvinnene",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Kvinnene tok over",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "Mennene dro til fronten",
+                            "tekst": "det manglet folk på jobbene",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Fabrikker",
+                            "tekst": "laget ammunisjon: kuler og granater",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "tog",
+                            "tittel": "Transport og landbruk",
+                            "tekst": "jobber menn hadde hatt",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Like godt som menn",
+                            "tekst": "også tungt og krevende arbeid",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Krigen forandret også livet hjemme, særlig for kvinner. Millioner av menn dro til fronten, og det manglet folk på jobbene."
+                },
+                {
+                    "si": "Kvinner tok over i fabrikkene som laget ammunisjon, altså kuler og granater."
+                },
+                { "si": "De tok også over jobber i transporten og i landbruket." },
+                { "si": "Og de viste at de kunne gjøre tungt og krevende arbeid like godt som menn." }
+            ]
+        },
+        {
+            "id": "stemmerett",
+            "visual": { "type": "KonsekvenserPuslespill", "props": { "modus": "stemmerett" } },
+            "replikker": [
+                {
+                    "si": "Da holdt ikke de gamle argumentene lenger, om at kvinner ikke passet til å være med og bestemme."
+                },
+                { "si": "I Norge hadde kvinner fått stemmerett allerede i 1913." },
+                {
+                    "si": "I årene rett etter krigen fikk kvinner stemmerett i en rekke land, blant annet Storbritannia, Tyskland, Østerrike og USA."
+                },
+                {
+                    "si": "Krigen gjorde at likestillingen kom fortere. Men mange kvinner ble tvunget tilbake til jobben som husmor da mennene kom hjem."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Fire keiserriker forsvant.", "fraBeat": 0 },
+                        { "tekst": "Kartet ble tegnet på nytt.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "En hard fred.", "fraBeat": 1 },
+                        { "tekst": "En bitter taper.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Nye grenser,", "fraBeat": 2 },
+                        { "tekst": "folk på feil side.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Krigen og freden sådde frøene", "fraBeat": 3 },
+                        { "tekst": "til nye konflikter.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kanonene stilnet i 1918. Fire keiserriker forsvant, og kartet over Europa og Midtøsten ble tegnet på nytt."
+                },
+                {
+                    "si": "Versailles-traktaten straffet Tyskland hardt, og mange tyskere ble bitre. Den bitterheten kunne Hitler bruke senere."
+                },
+                {
+                    "si": "De nye grensene ga mange folk et eget land, men de satte også millioner på feil side."
+                },
+                {
+                    "si": "Derfor kalles krigen urkatastrofen. Krigen og freden etter den sådde frøene til nye konflikter."
+                }
+            ]
+        }
+    ]
+}

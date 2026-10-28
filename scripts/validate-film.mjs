@@ -32,7 +32,7 @@ const GENERELLE = {
     Dypet: { krav: ['dybde'], lister: {} },
     Sluttkort: { krav: ['setninger'], lister: { setninger: ['tekst', 'fraBeat'] } },
 };
-const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe', 'vann', 'vind', 'skjold'];
+const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe', 'vann', 'vind', 'skjold', 'tog'];
 const MAKS_SCENER_PER_VISUAL = 4;
 const MAKS_PUNKTKORT = 1;
 /** Bakgrunnslyden en scene kan ha (se useFilmAmbiens.ts). */
