@@ -1,0 +1,645 @@
+{
+    "id": "globalisering",
+    "tittel": "Globalisering: Hvorfor T-skjorta di er sydd i Bangladesh",
+    "kilde": "/samfunnskunnskap/okonomi/globalisering",
+    "bilde": "/images/okonomi/globalisering-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-29",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "lappen",
+            "kapittel": "Lappen i nakken",
+            "visual": {
+                "type": "GlobaliseringSkjorte",
+                "props": {
+                    "modus": "lapp",
+                    "tekster": [
+                        "Se på lappen i nakken",
+                        "Made in Bangladesh",
+                        "Tusenvis av kilometer",
+                        "Noen hundrelapper, eller mindre"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ta av deg genseren eller T-skjorta du har på deg. Se på lappen i nakken."
+                },
+                {
+                    "si": "Det er god sjanse for at det står Made in Bangladesh, Made in China, eller et annet land langt borte.",
+                    "uttale": "Det er god sjanse for at det står Meid in Bangladesj, Meid in Tsjaina, eller et annet land langt borte."
+                },
+                {
+                    "si": "Skjorta har reist tusenvis av kilometer før den havnet i en butikk i Norge."
+                },
+                {
+                    "si": "Likevel kostet den kanskje bare noen hundrelapper, eller mindre."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "GLOBALISERING",
+                    "undertittel": "Hvorfor T-skjorta di er sydd i Bangladesh",
+                    "bilde": "/images/okonomi/globalisering-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvem tjener penger på skjorta di?",
+                        "fraBeat": 1
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvordan kan det lønne seg å lage en skjorte på den andre siden av jorda og frakte den hit?"
+                },
+                {
+                    "si": "Og hvem tjener egentlig penger på den? I denne filmen følger vi én T-skjorte fra fabrikken til butikkhylla."
+                }
+            ]
+        },
+        {
+            "id": "tid",
+            "kapittel": "En mindre verden",
+            "visual": {
+                "type": "GlobaliseringKart",
+                "props": {
+                    "modus": "tid",
+                    "tekster": [
+                        "Varer, penger, mennesker og ideer",
+                        "Handel over lange avstander i tusenvis av år",
+                        "1800-tallet: jernbane, dampskip og telegraf",
+                        "Telefon, fly, satellitter og internett",
+                        "1991: Sovjetunionen faller"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Globalisering betyr at verden blir tettere bundet sammen. Varer, penger, mennesker og ideer flytter seg lettere mellom land enn før."
+                },
+                {
+                    "si": "Det startet ikke i går. Folk har handlet over lange avstander i tusenvis av år."
+                },
+                {
+                    "si": "Men fra 1800-tallet gikk det mye fortere. Jernbaner, dampskip og telegrafen gjorde reiser og beskjeder raskere."
+                },
+                {
+                    "si": "Senere kom telefon, fly, satellitter og internett. Avstandene er like lange som før, men det tar mye kortere tid å komme fram."
+                },
+                {
+                    "si": "Etter at Sovjetunionen falt i 1991, ble nesten hele verden en del av den samme verdensøkonomien."
+                }
+            ]
+        },
+        {
+            "id": "bangladesh",
+            "kapittel": "Hvorfor Bangladesh?",
+            "lyd": "stille",
+            "visual": {
+                "type": "GlobaliseringKart",
+                "props": {
+                    "modus": "bangladesh",
+                    "tekster": [
+                        "Rundt 174 millioner innbyggere",
+                        "Over en tredjedel lever under fattigdomsgrensen",
+                        "Lave lønninger: billig å sy klær",
+                        "Bare Kina selger mer klær",
+                        "Klær: rundt 82 prosent av eksporten",
+                        "Hele landet er avhengig av at vi kjøper"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Bangladesh er et land i Sør-Asia. Der bor det rundt 174 millioner mennesker."
+                },
+                {
+                    "si": "Over en tredjedel av dem lever under fattigdomsgrensen. Det betyr at de ikke har råd til det mest nødvendige."
+                },
+                {
+                    "si": "Da blir lønningene lave, og mange trenger jobb. Land bør lage det de er best eller billigst til å lage, og mange arbeidere og lave lønninger er Bangladeshs fortrinn."
+                },
+                {
+                    "si": "Derfor har Bangladesh blitt en av de største klesprodusentene i verden. Bare Kina selger mer klær til andre land."
+                },
+                {
+                    "si": "Klærne sto for rundt 82 prosent av alt landet tjente på å selge varer til utlandet i 2021 og 2022."
+                },
+                {
+                    "si": "Når nesten alt et land selger til utlandet, er klær, blir hele landet avhengig av at vi fortsetter å kjøpe."
+                }
+            ]
+        },
+        {
+            "id": "arbeidere",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 10,
+                            "farget": 10,
+                            "farge": "#475569",
+                            "tittel": "Rundt 4 millioner klesarbeidere",
+                            "fargeEtikett": "klesarbeidere",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 10,
+                            "farget": 6,
+                            "farge": "#db2777",
+                            "restFarge": "#64748b",
+                            "tittel": "Omtrent 6 av 10 er kvinner",
+                            "fargeEtikett": "kvinner",
+                            "restEtikett": "menn",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Rundt 4 millioner mennesker jobber i klesindustrien i Bangladesh. Den bransjen syr og selger klær."
+                },
+                {
+                    "si": "Tenk deg ti av dem på rad. Omtrent 6 av de 10 er kvinner."
+                }
+            ]
+        },
+        {
+            "id": "pris",
+            "visual": {
+                "type": "GlobaliseringSkjorte",
+                "props": {
+                    "modus": "pris",
+                    "tekster": [
+                        "2,06 dollar for en T-skjorte",
+                        "Rundt 20 kroner",
+                        "Justert for prisstigning: omtrent halvparten"
+                    ],
+                    "merker": [
+                        "For 25 år siden",
+                        "I dag"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Og skjortene er billige. I 2025 betalte europeiske kjøpere i snitt bare 2,06 dollar for en T-skjorte i bomull fra Bangladesh.",
+                    "uttale": "Og skjortene er billige. I 2025 betalte europeiske kjøpere i snitt bare to komma null seks dollar for en T-skjorte i bomull fra Bangladesh."
+                },
+                {
+                    "si": "Det er rundt 20 kroner."
+                },
+                {
+                    "si": "Regner vi med at prisene i verden har steget, betaler selskapene i dag bare omtrent halvparten av det de betalte for 25 år siden."
+                }
+            ]
+        },
+        {
+            "id": "deling",
+            "kapittel": "Hvem får pengene?",
+            "visual": {
+                "type": "GlobaliseringSkjorte",
+                "props": {
+                    "modus": "deling",
+                    "tekster": [
+                        "Hvordan blir prisen delt?",
+                        "Gjett: Hvor mye får syerskene?",
+                        "Syerskene: under 1 prosent",
+                        "Butikken: nesten 60 prosent",
+                        "Resten: blant annet merket",
+                        "Mye høyere lønn, nesten samme prislapp"
+                    ],
+                    "merker": [
+                        "Syerskene",
+                        "Butikken",
+                        "Resten"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Organisasjonen Clean Clothes Campaign jobber for bedre forhold for klesarbeidere. De har regnet ut hvordan prisen på en T-skjorte sydd i Bangladesh og solgt i Europa blir delt opp.",
+                    "uttale": "Organisasjonen Klin Klous Kampein jobber for bedre forhold for klesarbeidere. De har regnet ut hvordan prisen på en T-skjorte sydd i Bangladesh og solgt i Europa blir delt opp."
+                },
+                {
+                    "si": "Hva tror du syerskene får, de som syr skjorta? Gjett før du ser svaret."
+                },
+                {
+                    "si": "De får under 1 prosent av prisen. Selve syingen er nesten gratis i regnestykket."
+                },
+                {
+                    "si": "Nesten 60 prosent havner hos butikken i Europa. Den betaler husleie, ansatte og moms, en skatt til staten."
+                },
+                {
+                    "si": "Resten går blant annet til selskapet som eier merket. Det meste av prisen blir altså lagt på i Europa."
+                },
+                {
+                    "si": "Det betyr at syerskene kunne fått mye høyere lønn, uten at du hadde merket det særlig på prislappen."
+                }
+            ]
+        },
+        {
+            "id": "sprekker",
+            "kapittel": "Rana Plaza",
+            "lyd": "rom",
+            "visual": {
+                "type": "GlobaliseringBygning",
+                "props": {
+                    "modus": "sprekker",
+                    "tekster": [
+                        "Rana Plaza, utenfor Dhaka",
+                        "Flere klesfabrikker i samme bygning",
+                        "23. april 2013: sprekker i veggene",
+                        "Neste morgen: gå inn igjen",
+                        "Jobb, eller kom aldri tilbake"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Vi er i utkanten av Dhaka, hovedstaden i Bangladesh. Her står en stor bygning som heter Rana Plaza."
+                },
+                {
+                    "si": "Inne i bygningen ligger flere klesfabrikker."
+                },
+                {
+                    "si": "Den 23. april 2013 kommer det sprekker i veggene."
+                },
+                {
+                    "si": "Neste morgen får arbeiderne beskjed om å gå inn igjen."
+                },
+                {
+                    "si": "Ifølge Clean Clothes Campaign var valget enkelt: Jobb, eller gå hjem og kom aldri tilbake.",
+                    "uttale": "Ifølge Klin Klous Kampein var valget enkelt: Jobb, eller gå hjem og kom aldri tilbake."
+                }
+            ]
+        },
+        {
+            "id": "raste",
+            "visual": {
+                "type": "GlobaliseringBygning",
+                "props": {
+                    "modus": "raste",
+                    "tekster": [
+                        "24. april 2013: bygningen raser",
+                        "24. april 2013: bygningen raser",
+                        "Den verste ulykken i en klesfabrikk",
+                        "Klær for kjente merker",
+                        "Arbeiderne betaler prisen"
+                    ],
+                    "tall": [
+                        {
+                            "verdi": 1138,
+                            "etikett": "døde",
+                            "fraBeat": 1
+                        },
+                        {
+                            "verdi": 2600,
+                            "etikett": "skadet",
+                            "fraBeat": 1,
+                            "prefiks": "nesten"
+                        }
+                    ],
+                    "merkenavn": [
+                        "Benetton",
+                        "Mango",
+                        "Primark",
+                        "Walmart",
+                        "Inditex (Zara)"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dagen etter, den 24. april 2013, raste bygningen sammen."
+                },
+                {
+                    "si": "1138 mennesker døde, og nesten 2600 ble skadet."
+                },
+                {
+                    "si": "Det er den verste ulykken i en klesfabrikk noensinne."
+                },
+                {
+                    "si": "Arbeiderne hadde sydd klær for kjente merker som Benetton, Mango, Primark, Walmart og Inditex, som eier Zara."
+                },
+                {
+                    "si": "Når selskapene presser prisene ned, og myndighetene ikke passer på at byggene er trygge, er det arbeiderne som betaler."
+                }
+            ]
+        },
+        {
+            "id": "accord",
+            "kapittel": "Hva skjedde etterpå?",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "BANGLADESH ACCORD",
+                    "undertittel": "En avtale om brann- og byggsikkerhet",
+                    "tall": [
+                        {
+                            "verdi": 3780,
+                            "etikett": "fabrikker sjekket",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        },
+                        {
+                            "verdi": 39,
+                            "etikett": "stengt med en gang",
+                            "fraBeat": 2,
+                            "omtrent": false,
+                            "tone": "rod"
+                        },
+                        {
+                            "verdi": 34,
+                            "etikett": "millioner dollar i erstatning",
+                            "fraBeat": 3,
+                            "prefiks": "over",
+                            "tone": "gronn"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter ulykken krevde fagforeninger og organisasjoner at klesselskapene skrev under på en avtale om brann- og byggsikkerhet. Den kalles Bangladesh Accord.",
+                    "uttale": "Etter ulykken krevde fagforeninger og organisasjoner at klesselskapene skrev under på en avtale om brann- og byggsikkerhet. Den kalles Bangladesj Akkord."
+                },
+                {
+                    "si": "Ti år etter ulykken hadde inspektører sjekket 3780 fabrikker for farlige bygg, strøm og brannsikkerhet."
+                },
+                {
+                    "si": "39 fabrikker ble stengt med en gang."
+                },
+                {
+                    "si": "Familiene til de døde og de skadde fikk til sammen over 34 millioner dollar i erstatning. Det er penger for det de har mistet."
+                }
+            ]
+        },
+        {
+            "id": "inspektorer",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 92,
+                            "farget": 92,
+                            "farge": "#0d9488",
+                            "tittel": "Før ulykken: 92 inspektører",
+                            "fargeEtikett": "inspektører",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 393,
+                            "farget": 92,
+                            "farge": "#0d9488",
+                            "restFarge": "#5eead4",
+                            "tittel": "Ti år etter: 393 inspektører",
+                            "fargeEtikett": "fra før",
+                            "restEtikett": "nye",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1200,
+                            "farget": 1200,
+                            "farge": "#7c3aed",
+                            "tittel": "2023: rundt 1200 fagforeninger",
+                            "fargeEtikett": "fagforeninger i klesindustrien",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Landet fikk også flere inspektører, folk som sjekker at arbeidsplassene er trygge. Før ulykken var det 92."
+                },
+                {
+                    "si": "Ti år etter var de 393. Nå var det mange flere som kunne sjekke arbeidsplassene."
+                },
+                {
+                    "si": "I 2023 fantes det rundt 1200 fagforeninger i klesindustrien. En fagforening er en gruppe arbeidere som går sammen for å kreve bedre lønn og tryggere jobber."
+                }
+            ]
+        },
+        {
+            "id": "press",
+            "visual": {
+                "type": "GlobaliseringSkjorte",
+                "props": {
+                    "modus": "press",
+                    "tekster": [
+                        "Prisene presses fortsatt ned",
+                        "Mindre igjen til lønn og sikkerhet"
+                    ],
+                    "merker": [
+                        "Lønn og sikkerhet"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men noe har ikke endret seg. Klesselskapene presser fortsatt prisene ned."
+                },
+                {
+                    "si": "Når fabrikken får mindre betalt for hver skjorte, blir det mindre igjen til lønn og sikkerhet."
+                }
+            ]
+        },
+        {
+            "id": "kjede",
+            "kapittel": "En lang kjede",
+            "visual": {
+                "type": "GlobaliseringKart",
+                "props": {
+                    "modus": "kjede",
+                    "tekster": [
+                        "En forsyningskjede",
+                        "Ryker ett ledd, merker hele kjeden det",
+                        "2021: Ever Given sitter fast i Suezkanalen",
+                        "Over 400 skip i kø",
+                        "Kriser gjør at globaliseringen går saktere"
+                    ],
+                    "steder": [
+                        "Sydd i Bangladesh",
+                        "Selges i Europa",
+                        "Suezkanalen"
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når en skjorte lages i ett land, av stoff fra et annet, og selges i et tredje, kaller vi det en forsyningskjede."
+                },
+                {
+                    "si": "En lang kjede gir billige varer. Men den er også sårbar. Ryker ett ledd, merker hele kjeden det."
+                },
+                {
+                    "si": "I 2021 kjørte containerskipet Ever Given seg fast i Suezkanalen i Egypt. Kanalen er en snarvei for skip mellom Asia og Europa.",
+                    "uttale": "I 2021 kjørte containerskipet Ever Given seg fast i Suezkanalen i Egypt. Kanalen er en snarvei for skip mellom Asia og Europa."
+                },
+                {
+                    "si": "I flere døgn var kanalen stengt, og over 400 skip sto i kø. Varer til butikker i Europa ble forsinket."
+                },
+                {
+                    "si": "Koronapandemien bremset også verdenshandelen. Ifølge historikeren Eivind Heldaas Seland har kriser og nye handelshindringer fått globaliseringen til å gå saktere på 2000-tallet."
+                }
+            ]
+        },
+        {
+            "id": "ansvar",
+            "kapittel": "Hvem har ansvaret?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvem har ansvaret?",
+                    "punkter": [
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Selskapet",
+                            "tekst": "bestiller klærne og bestemmer prisen",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Landet",
+                            "tekst": "lager og passer på lovene",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "Deg som kjøper",
+                            "tekst": "velger hva du kjøper, og kan spørre",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når noe går galt langt nede i kjeden, hvem har da skylden? Det finnes minst tre svar."
+                },
+                {
+                    "si": "Selskapet: Det er klesselskapene som bestiller klærne og bestemmer prisen. De kan kreve trygge fabrikker og betale mer."
+                },
+                {
+                    "si": "Landet: Det er myndighetene i Bangladesh som skal lage og passe på lover om bygg, lønn og sikkerhet."
+                },
+                {
+                    "si": "Og deg som kjøper: Velger kundene billigst mulig hver gang, presser de prisene ned. Men kundene kan også spørre hvor klærne kommer fra."
+                }
+            ]
+        },
+        {
+            "id": "loven",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ÅPENHETSLOVEN",
+                    "undertittel": "Gjelder i Norge fra 1. juli 2022",
+                    "sporsmal": {
+                        "tekst": "Hvordan har arbeiderne det hos dem dere kjøper fra?",
+                        "fraBeat": 1
+                    },
+                    "tall": [
+                        {
+                            "verdi": 3,
+                            "etikett": "uker på å svare, som regel",
+                            "fraBeat": 2,
+                            "omtrent": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I Norge har Stortinget laget en egen lov om dette. Åpenhetsloven ble vedtatt i 2021 og gjelder fra 1. juli 2022."
+                },
+                {
+                    "si": "Større bedrifter må undersøke om arbeiderne hos dem de kjøper fra, har dårlige forhold eller får menneskerettighetene sine brutt. Og de må gjøre noe med det."
+                },
+                {
+                    "si": "Alle, også du, kan spørre en bedrift skriftlig om dette. Bedriften må som regel svare innen tre uker."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Billige klær til oss.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Jobb til millioner i Bangladesh.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Men under 1 prosent til syerskene,",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "og en jobb som kan være farlig.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Spørsmålet er ikke om vi skal handle,",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "men hvordan.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hvem har ansvaret?",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Globalisering gir oss billige klær. Og klesindustrien gir jobb til millioner av mennesker i et land der mange er fattige."
+                },
+                {
+                    "si": "Men syerskene får under 1 prosent av prisen, og Rana Plaza viste hvor farlig jobben kan være."
+                },
+                {
+                    "si": "Det er ikke sikkert det beste for arbeiderne er at vi slutter å kjøpe klær fra Bangladesh. Spørsmålet mange stiller, er ikke om vi skal handle, men hvordan."
+                },
+                {
+                    "si": "Så neste gang du ser på lappen i nakken: Hvem har ansvaret? Det må du ta stilling til selv."
+                }
+            ]
+        }
+    ]
+}
