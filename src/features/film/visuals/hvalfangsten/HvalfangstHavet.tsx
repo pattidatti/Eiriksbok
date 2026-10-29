@@ -456,7 +456,8 @@ export function HvalfangstHavet({ beat, playing, props }: VisualProps<Props>) {
     const tekst = MERKER[modus][Math.min(beat, MERKER[modus].length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas resize={{ offsetSize: true }}
+            <Canvas
+                resize={{ offsetSize: true }}
                 dpr={dpr}
                 camera={{ fov: 42, near: 0.5, far: 900, position: [70, 26, 90] }}
                 gl={{ antialias: true }}

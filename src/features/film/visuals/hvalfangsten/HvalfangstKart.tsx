@@ -143,8 +143,12 @@ export function HvalfangstKart({ beat, playing, props }: VisualProps<{ modus: Mo
                   '1904: forbudt i de tre nordligste fylkene',
                   'Rundt 3500 blåhval tatt',
               ][beat] ?? null)
-            : (['Svaret lå i sør', 'Larsen: 1892-1894', 'Grytviken, 1904', 'Sandefjord'][beat] ??
-              null);
+            : ([
+                  'Svaret lå i sør',
+                  'Larsen: 1892-1894',
+                  'Grytviken, 1904',
+                  'Christensen i Sandefjord',
+              ][beat] ?? null);
 
     return (
         <div className="absolute inset-0 bg-[#cfe3f0] overflow-hidden">
@@ -165,7 +169,7 @@ export function HvalfangstKart({ beat, playing, props }: VisualProps<{ modus: Mo
                             vectorEffect="non-scaling-stroke"
                             pathLength={1}
                             strokeDasharray={`${rute} 2`}
-                            opacity={rute > 0.01 ? 1 : 0}
+                            opacity={rute > 0.01 ? (beat >= 3 ? 0.2 : 1) : 0}
                         />
                     )}
                 </g>
