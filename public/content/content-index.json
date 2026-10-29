@@ -1,5 +1,5 @@
 {
-  "buildId": 111305316396396,
+  "buildId": 263170633367268,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4822,6 +4822,9 @@
     "finanskriser": [
       "content/samfunnskunnskap/okonomi/finanskriser.json"
     ],
+    "globalisering": [
+      "content/samfunnskunnskap/okonomi/globalisering.json"
+    ],
     "hvordan-penger-blir-til": [
       "content/samfunnskunnskap/okonomi/hvordan-penger-blir-til.json"
     ],
@@ -6562,6 +6565,7 @@
     "samfunnskunnskap/okonomi/arbeidsspesialisering": "content/samfunnskunnskap/okonomi/arbeidsspesialisering.json",
     "samfunnskunnskap/okonomi/bnp": "content/samfunnskunnskap/okonomi/bnp.json",
     "samfunnskunnskap/okonomi/finanskriser": "content/samfunnskunnskap/okonomi/finanskriser.json",
+    "samfunnskunnskap/okonomi/globalisering": "content/samfunnskunnskap/okonomi/globalisering.json",
     "samfunnskunnskap/okonomi/hvordan-penger-blir-til": "content/samfunnskunnskap/okonomi/hvordan-penger-blir-til.json",
     "samfunnskunnskap/okonomi/inflasjon-og-rente": "content/samfunnskunnskap/okonomi/inflasjon-og-rente.json",
     "samfunnskunnskap/okonomi/komparativt-fortrinn": "content/samfunnskunnskap/okonomi/komparativt-fortrinn.json",

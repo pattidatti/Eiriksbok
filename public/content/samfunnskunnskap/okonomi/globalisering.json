@@ -1,0 +1,291 @@
+{
+  "id": "globalisering",
+  "title": "Globalisering: Hvorfor T-skjorta di er sydd i Bangladesh",
+  "layout": "rich",
+  "year": "2013",
+  "category": "Økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Globalisering betyr at verden blir tettere bundet sammen. Raskere transport har gjort det lønnsomt å lage varer der det er billigst.",
+    "Bangladesh er verdens nest største klesprodusent, men syerskene får under 1 prosent av prisen på en T-skjorte.",
+    "Rana Plaza-ulykken i 2013 drepte over 1 100 klesarbeidere og fikk mange til å spørre hvem som har ansvaret."
+  ],
+  "externalUrl": "https://snl.no/globalisering",
+  "factChecked": "2026-10-29",
+  "tags": [
+    "økonomi",
+    "globalisering",
+    "bangladesh",
+    "handel",
+    "arbeidsforhold"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Ta av deg genseren eller T-skjorta du har på deg, og se på lappen i nakken. Det er god sjanse for at det står «Made in Bangladesh», «Made in China» eller et annet land langt borte. Skjorta har reist tusenvis av kilometer før den havnet i en butikk i Norge. Likevel kostet den kanskje bare noen hundrelapper, eller mindre."
+    },
+    {
+      "type": "text",
+      "content": "Hvordan kan det lønne seg å lage en skjorte på den andre siden av jorda og frakte den hit? Og hvem tjener egentlig penger på den? Svaret har et navn: globalisering. I denne artikkelen følger vi én T-skjorte fra fabrikken til butikkhylla, og ser hva reisen gir, og hva den koster."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Lapp med teksten Made in Bangladesh i en T-skjorte",
+      "caption": "Lappen i nakken forteller hvor skjorta ble sydd."
+    },
+    {
+      "type": "header",
+      "text": "Hva er globalisering?"
+    },
+    {
+      "type": "text",
+      "content": "Globalisering betyr at verden blir tettere bundet sammen. Varer, penger, mennesker og ideer flytter seg lettere mellom land enn før. Historikeren Eivind Heldaas Seland forklarer det som en rekke endringer som over tid har gjort verden «tettere sammenvevd», og på en måte mindre (Seland, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Det startet ikke i går. Folk har drevet handel over lange avstander i tusenvis av år. Men fra 1800-tallet gikk det mye fortere. Jernbaner, dampskip og telegrafen gjorde reiser og beskjeder raskere. Senere kom telefon, fly, satellitter og internett. Seland (2024) kaller dette «kompresjon av tid og rom»: avstandene er like lange som før, men det tar mye kortere tid å komme fram. Etter at Sovjetunionen falt i 1991, ble nesten hele verden en del av den samme verdensøkonomien (Seland, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Globalisering handler ikke bare om skip og kabler. Det handler også om hvorfor produksjonen flytter. Vil du vite mer om havnene og handelsrutene, kan du lese om [verdenshandelen som én stor maskin](/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt). Her skal vi se på hvorfor skjorta di ble sydd akkurat i Bangladesh."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor sys klærne i Bangladesh?"
+    },
+    {
+      "type": "text",
+      "content": "Bangladesh er et land i Sør-Asia med rundt 174 millioner innbyggere. Over en tredjedel av dem lever under fattigdomsgrensen, altså så fattig at de ikke har råd til det mest nødvendige (Haugan, 2026). Det betyr at lønningene er lave, og at mange trenger jobb. For et klesselskap betyr det at det blir billig å få sydd klær der."
+    },
+    {
+      "type": "text",
+      "content": "Derfor har Bangladesh blitt en av de største klesprodusentene i verden. Bare Kina selger mer klær til andre land. Rundt 4 millioner mennesker jobber i klesindustrien, og omtrent 6 av 10 av dem er kvinner. Klærne sto for rundt 82 prosent av alt landet tjente på å selge varer til utlandet i 2021–2022 (International Labour Organization [ILO], 2023). Når nesten alt et land selger til utlandet er klær, blir hele landet avhengig av at vi fortsetter å kjøpe."
+    },
+    {
+      "type": "text",
+      "content": "Ideen om at land bør lage det de er best eller billigst til å lage, kalles komparativt fortrinn. Du kan lese mer om den i artikkelen om [komparativt og absolutt fortrinn](/samfunnskunnskap/okonomi/komparativt-fortrinn). Bangladesh har mange arbeidere og lave lønninger. Det er landets fortrinn i verdenshandelen."
+    },
+    {
+      "type": "text",
+      "content": "Prisene er svært lave. I 2025 betalte europeiske kjøpere i snitt bare 2,06 dollar, rundt 20 kroner, for en T-skjorte i bomull fra Bangladesh. Regner vi med at prisene i verden har steget, betaler selskapene i dag bare omtrent halvparten av det de betalte for en T-skjorte for 25 år siden (Clean Clothes Campaign & Public Eye, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Hvem får pengene?"
+    },
+    {
+      "type": "text",
+      "content": "Organisasjonen Clean Clothes Campaign jobber for bedre forhold for klesarbeidere. De har regnet ut hvordan prisen på en T-skjorte sydd i Bangladesh og solgt i Europa blir delt opp. Arbeiderne som syr skjorta, får under 1 prosent av prisen. Nesten 60 prosent havner hos butikken (Richter, 2025). Prøv selv: Gjett hvor mye syerskene får, og følg så pengene."
+    },
+    {
+      "type": "component",
+      "name": "TskjortePrisen",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hvor prisen blir til. Selve syingen er nesten gratis i regnestykket. Det meste legges på i Europa: i butikken, som betaler husleie, ansatte og moms, og hos selskapet som eier merket. Det betyr også at lønna til syerskene kunne vært mye høyere uten at du hadde merket det særlig på prislappen. Hvordan prisen på en vare blir til, kan du lese mer om i artikkelen om [tilbud og etterspørsel](/samfunnskunnskap/okonomi/tilbud-og-ettersporsel)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Klesindustrien i Bangladesh",
+        "content": "Rundt 4 millioner arbeidere, omtrent 6 av 10 er kvinner. Over 4 000 fabrikker. Klær utgjorde rundt 82 prosent av landets eksport i 2021–2022. Bare Kina selger mer klær til utlandet (ILO, 2023; Haugan, 2026)."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Rana Plaza: Dagen bygningen raste"
+    },
+    {
+      "type": "text",
+      "content": "Den 23. april 2013 kom det sprekker i veggene i Rana Plaza, en stor bygning i utkanten av hovedstaden Dhaka. I bygningen lå det flere klesfabrikker. Neste morgen fikk arbeiderne beskjed om å gå inn igjen. Ifølge Clean Clothes Campaign (2013) var valget enkelt: jobb, eller gå hjem og kom aldri tilbake."
+    },
+    {
+      "type": "text",
+      "content": "Den 24. april 2013 raste bygningen sammen. 1 138 mennesker døde, og nesten 2 600 ble skadet. Det er den verste ulykken i en klesfabrikk noensinne (Clean Clothes Campaign, 2013). Arbeiderne hadde sydd klær for kjente merker som Benetton, Mango, Primark, Walmart og Inditex, som eier Zara."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Redningsarbeidere i ruinene etter en sammenrast fabrikkbygning",
+      "caption": "Rana Plaza utenfor Dhaka i Bangladesh raste sammen 24. april 2013."
+    },
+    {
+      "type": "text",
+      "content": "Ulykken viste baksiden av de billige klærne. Når selskapene presser prisene ned, og myndighetene ikke passer på at byggene er trygge, er det arbeiderne som betaler. Den fikk mange til å spørre: Hvem har sydd klærne mine, og under hvilke forhold?"
+    },
+    {
+      "type": "header",
+      "text": "Hva skjedde etterpå?"
+    },
+    {
+      "type": "text",
+      "content": "Etter ulykken krevde fagforeninger og organisasjoner at klesselskapene skulle skrive under på en avtale om brann- og byggsikkerhet i Bangladesh, kalt Bangladesh Accord (Clean Clothes Campaign, 2013). Avtalen ble en av to ordninger der klesselskapene selv var med på å sjekke fabrikkene (ILO, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Ti år etter ulykken hadde inspektører sjekket 3 780 fabrikker for farlige bygg, strøm og brannsikkerhet. 39 fabrikker ble stengt med en gang. Antallet arbeidstilsynsinspektører i landet økte fra 92 til 393. Familiene til de døde og de skadde fikk til sammen over 34 millioner dollar i erstatning, og i 2023 fantes det rundt 1 200 fagforeninger i klesindustrien (ILO, 2023). En fagforening er en gruppe arbeidere som går sammen for å kreve bedre lønn og tryggere jobber."
+    },
+    {
+      "type": "text",
+      "content": "Men noe har ikke endret seg. Klesselskapene presser fortsatt prisene ned, som vi så over (Clean Clothes Campaign & Public Eye, 2026). Når fabrikken får mindre betalt for hver skjorte, blir det mindre igjen til lønn og sikkerhet."
+    },
+    {
+      "type": "header",
+      "text": "En lang kjede kan ryke"
+    },
+    {
+      "type": "text",
+      "content": "Når en skjorte lages i ett land, av stoff fra et annet, og selges i et tredje, kaller vi det en forsyningskjede. En lang kjede gir billige varer, men den er også sårbar. Ryker ett ledd, merker hele kjeden det."
+    },
+    {
+      "type": "text",
+      "content": "I 2021 kjørte det store containerskipet Ever Given seg fast i Suezkanalen i Egypt. Kanalen er en snarvei for skip mellom Asia og Europa. I flere døgn var den stengt, og over 400 skip sto i kø (Store norske leksikon, 2026). Varer som skulle til butikker i Europa, ble forsinket. Under koronapandemien ble verdenshandelen også bremset, og Seland (2024) skriver at kriser og nye handelshindringer på 2000-tallet har fått globaliseringen til å gå saktere. Mer om hvor sårbare handelsrutene er, kan du lese i artikkelen om [sårbare nettverk](/samfunnskunnskap/handel-og-infrastruktur/saarbare-nettverk)."
+    },
+    {
+      "type": "header",
+      "text": "Hvem har ansvaret?"
+    },
+    {
+      "type": "text",
+      "content": "Når noe går galt langt nede i kjeden, hvem har da skylden? Det finnes minst tre svar, og alle har noe for seg."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Selskapet: Det er klesselskapene som bestiller klærne og bestemmer prisen. De kan kreve trygge fabrikker og betale mer.",
+        "Landet: Det er myndighetene i Bangladesh som skal lage og passe på lover om bygg, lønn og sikkerhet.",
+        "Deg som kjøper: Hvis kundene velger billigst mulig hver gang, presser de prisene ned. Kundene kan også spørre hvor klærne kommer fra."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "I Norge har Stortinget laget en egen lov om dette. Åpenhetsloven ble vedtatt i 2021 og gjelder fra 1. juli 2022. Den sier at større bedrifter må undersøke om det skjer brudd på menneskerettigheter eller dårlige arbeidsforhold hos dem de kjøper fra, og gjøre noe med det. Bedriftene må skrive en rapport om dette hvert år. Alle, også du, kan spørre en bedrift skriftlig om hvordan den jobber med dette, og bedriften må som regel svare innen tre uker (Åpenhetsloven, 2021). Forbrukertilsynet passer på at bedriftene følger loven."
+    },
+    {
+      "type": "text",
+      "content": "Samtidig er det ikke sikkert at det beste for arbeiderne er at vi slutter å kjøpe klær fra Bangladesh. Klesindustrien gir jobb til millioner av mennesker i et land der mange er fattige. Spørsmålet mange stiller, er derfor ikke om vi skal handle med Bangladesh, men hvordan."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdommer ser på klær i en butikk i Norge",
+      "caption": "Du er det siste leddet i kjeden når du kjøper skjorta."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Globalisering betyr at verden henger tettere sammen. Raskere transport og kommunikasjon har gjort det lønnsomt å lage varer der det er billigst. Bangladesh har lave lønninger og mange arbeidere, og har blitt verdens nest største klesprodusent. Det gir oss billige klær og gir millioner av mennesker jobb. Men syerskene får under 1 prosent av prisen, og Rana Plaza-ulykken i 2013 viste hvor farlig jobben kan være. Lange forsyningskjeder er også sårbare når noe går galt. Hvem som har ansvaret, selskapet, landet eller kunden, er et spørsmål du selv må ta stilling til."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Clean Clothes Campaign. (2013). *Rana Plaza*. Hentet 29.10.2026 fra [cleanclothes.org](https://cleanclothes.org/campaigns/past/ua/2013/cases/ranaplaza)",
+          "Clean Clothes Campaign & Public Eye. (2026, 21. mai). *Fashion's secret pricing: Workers suffer as brands defy inflation for decades*. Hentet 29.10.2026 fra [cleanclothes.org](https://cleanclothes.org/news/2026/fashions-secret-pricing-workers-suffer-as-brands-defy-inflation-for-decades)",
+          "Haugan, S. (2026). *Bangladesh*. Store norske leksikon. Hentet 29.10.2026 fra [snl.no/Bangladesh](https://snl.no/Bangladesh)",
+          "International Labour Organization. (2023). *The Rana Plaza disaster ten years on: What has changed?* Hentet 29.10.2026 fra [ilo.org](https://webapps.ilo.org/infostories/en-GB/Stories/Country-Focus/rana-plaza.html)",
+          "Richter, F. (2025, 22. mai). *Breakdown of the retail price of a T-shirt*. Statista. Hentet 29.10.2026 fra [statista.com](https://statista.com/chart/34514/breakdown-of-the-retail-price-of-a-t-shirt)",
+          "Seland, E. H. (2024). *Globalisering*. Store norske leksikon. Hentet 29.10.2026 fra [snl.no/globalisering](https://snl.no/globalisering)",
+          "Store norske leksikon. (2026). *Suezkanalen*. Hentet 29.10.2026 fra [snl.no/Suezkanalen](https://snl.no/Suezkanalen)",
+          "Åpenhetsloven. (2021). *Lov om virksomheters åpenhet og arbeid med grunnleggende menneskerettigheter og anstendige arbeidsforhold* (LOV-2021-06-18-99). Lovdata. Hentet 29.10.2026 fra [lovdata.no/dokument/NL/lov/2021-06-18-99](https://lovdata.no/dokument/NL/lov/2021-06-18-99)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr globalisering? Forklar med dine egne ord.",
+          "Hvor mange jobber i klesindustrien i Bangladesh, og hvor stor del av dem er kvinner?",
+          "Hva skjedde i Rana Plaza 23. og 24. april 2013?",
+          "Hva sier åpenhetsloven at større bedrifter i Norge må gjøre?"
+        ],
+        "reflekter": [
+          "Forklar hvorfor det lønner seg for et klesselskap å få sydd klær i Bangladesh, selv om skjortene må fraktes tusenvis av kilometer.",
+          "Syerskene får under 1 prosent av prisen, mens butikken får nesten 60 prosent. Hvorfor tror du fordelingen er slik?",
+          "Hvorfor er det en fare for Bangladesh at klær utgjør så stor del av alt landet selger til utlandet?",
+          "Hvem mener du har mest ansvar for at Rana Plaza-ulykken skjedde: selskapene, myndighetene i Bangladesh eller kundene? Begrunn svaret."
+        ],
+        "gaaVidere": [
+          "Sjekk lappene i fem klesplagg du har hjemme. Hvor er de laget? Sammenlign med resten av klassen og lag en oversikt.",
+          "Skriv en e-post til en klesbutikk du handler i, der du bruker åpenhetsloven og spør hvordan de sikrer gode arbeidsforhold hos fabrikkene. Hva vil du spørre om?",
+          "Debatt: «Vi bør slutte å kjøpe klær fra land der arbeiderne har lav lønn.» Finn argumenter både for og mot. Tenk på hva som skjer med arbeiderne i Bangladesh."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva betyr globalisering?",
+            "options": [
+              "At alle land får samme regjering",
+              "At verden blir tettere bundet sammen gjennom handel, reiser og kommunikasjon",
+              "At alle varer lages i Europa",
+              "At land slutter å handle med hverandre"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Globalisering betyr at varer, penger, mennesker og ideer flytter seg lettere mellom land, og at verden henger tettere sammen."
+          },
+          {
+            "question": "Hvorfor sys mange klær i Bangladesh?",
+            "options": [
+              "Fordi det vokser mye bomull i Norge",
+              "Fordi landet har mange arbeidere og lave lønninger",
+              "Fordi det er forbudt å lage klær i Europa",
+              "Fordi Bangladesh ligger nær Norge"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Lave lønninger og mange arbeidere gjør det billig å få sydd klær i Bangladesh."
+          },
+          {
+            "question": "Hvor stor del av prisen på en T-skjorte fra Bangladesh får syerskene, ifølge anslaget i artikkelen?",
+            "options": [
+              "Under 1 prosent",
+              "Rundt 12 prosent",
+              "Rundt 30 prosent",
+              "Nesten 60 prosent"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Syerskene får under 1 prosent. Nesten 60 prosent havner hos butikken."
+          },
+          {
+            "question": "Hva skjedde i Rana Plaza i 2013?",
+            "options": [
+              "En stor streik stengte alle fabrikkene",
+              "En bygning med klesfabrikker raste sammen, og over 1 100 mennesker døde",
+              "Bangladesh sluttet å selge klær til Europa",
+              "Et skip kjørte seg fast i Suezkanalen"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Bygningen raste 24. april 2013. Dagen før hadde det kommet sprekker i veggene."
+          },
+          {
+            "question": "Hva sier åpenhetsloven?",
+            "options": [
+              "At alle klær må lages i Norge",
+              "At større bedrifter må undersøke arbeidsforholdene hos dem de kjøper fra, og svare på spørsmål om det",
+              "At klær fra Bangladesh er forbudt",
+              "At butikkene må gi bort klær de ikke selger"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Åpenhetsloven gjelder fra 1. juli 2022. Alle kan spørre en større bedrift om hvordan den jobber med menneskerettigheter og arbeidsforhold."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
