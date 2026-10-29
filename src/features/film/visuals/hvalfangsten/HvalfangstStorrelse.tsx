@@ -113,7 +113,7 @@ export function HvalfangstStorrelse({ beat, props }: VisualProps<{ modus: Modus 
               'Fortsatt få blåhval i sør',
           ][beat]
         : [
-              'IWC, 1982: full stans',
+              'IWC 1982: full stans fra 1986',
               'Norge sa nei',
               '1993: Norge fanger vågehval igjen',
               'Blåhval og vågehval',
