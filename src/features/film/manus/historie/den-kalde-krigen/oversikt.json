@@ -1,0 +1,380 @@
+{
+    "id": "den-kalde-krigen-oversikt",
+    "tittel": "Den kalde krigen: En verden i to",
+    "kilde": "/historie/den-kalde-krigen/oversikt",
+    "bilde": "/images/lessons/den-kalde-krigen/oversikt.webp",
+    "utenforArtikkel": [
+        { "tall": 1000, "begrunnelse": "Prikkfeltet viser «tusen ganger kraftigere» fra artikkelen som 1000 prikker, én per Hiroshima-bombe." }
+    ],
+    "vurdering": { "dato": "2026-10-29", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "mai-1945",
+            "kapittel": "Vennene som ble fiender",
+            "visual": { "type": "KaldkrigVerden", "props": { "modus": "1945" } },
+            "replikker": [
+                { "si": "Det er mai 1945. Hitlers Tyskland har falt, og krigen i Europa er over." },
+                {
+                    "si": "Under krigen har tre land kjempet på samme side: USA, Storbritannia og Sovjetunionen."
+                },
+                {
+                    "si": "Men de var venner bare fordi de hadde en felles fiende, ikke de samme verdiene."
+                },
+                {
+                    "si": "Nå er fienden borte, og den gamle mistilliten kommer tilbake."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DEN KALDE KRIGEN",
+                    "undertittel": "En verden i to, 1945 til 1991",
+                    "bilde": "/images/lessons/den-kalde-krigen/oversikt.webp",
+                    "sporsmal": { "tekst": "Hvorfor kjempet de aldri direkte?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Slik begynte den kalde krigen." },
+                {
+                    "si": "Fra 1945 til 1991 sto to supermakter mot hverandre: USA og Sovjetunionen. En supermakt er et land så sterkt at det kan påvirke hele verden."
+                },
+                {
+                    "si": "Krigen ble kalt kald, fordi de to aldri kjempet direkte mot hverandre med egne soldater."
+                },
+                {
+                    "si": "Men hvorfor ikke? Og hvordan kjempet de i stedet?"
+                }
+            ]
+        },
+        {
+            "id": "systemer",
+            "kapittel": "To måter å styre på",
+            "visual": { "type": "KaldkrigSystemer" },
+            "replikker": [
+                {
+                    "si": "I bunnen var dette en kamp mellom to måter å bygge et samfunn på: kapitalisme og kommunisme."
+                },
+                {
+                    "si": "I vest kunne folk velge mellom mange partier. I Sovjetunionen var det bare ett parti, kommunistpartiet, og det styrte landet."
+                },
+                {
+                    "si": "I vest eide folk og bedrifter fabrikkene, og kjøp og salg styrte hva som ble laget. I øst eide staten alle bedriftene og bestemte hva som skulle lages."
+                },
+                {
+                    "si": "Vest sa at frihet for hver enkelt var viktigst. Øst sa at likhet var viktigst."
+                },
+                {
+                    "si": "Begge sider samlet landene sine i en militærallianse: NATO i vest og Warszawapakten i øst."
+                }
+            ]
+        },
+        {
+            "id": "jernteppet",
+            "kapittel": "Jernteppet",
+            "visual": { "type": "KaldkrigKart", "props": { "modus": "jernteppet" } },
+            "replikker": [
+                {
+                    "si": "I 1945 møttes lederne i Jalta og Potsdam for å bli enige om Europa etter krigen."
+                },
+                {
+                    "si": "USA og Storbritannia ville ha frie valg i Øst-Europa. Men Sovjetunionens leder, Josef Stalin, ville ha en beskyttende sone av land mellom seg og Vesten."
+                },
+                {
+                    "si": "Stalin satte inn kommunistiske regjeringer som måtte gjøre som han sa. Det skjedde i Polen, Ungarn og Tsjekkoslovakia."
+                },
+                {
+                    "si": "I 1946 holdt Winston Churchill en tale. Han hadde vært britisk statsminister under krigen. Han sa at et jernteppe hadde senket seg over Europa, fra Stettin i nord til Trieste i sør."
+                },
+                {
+                    "si": "Jernteppet var ingen mur ennå, men en grense med vakter. Den delte Europa i en demokratisk vestdel og en østdel som Sovjetunionen styrte."
+                }
+            ]
+        },
+        {
+            "id": "oppdemming",
+            "kapittel": "Våpen og penger",
+            "visual": { "type": "KaldkrigVerden", "props": { "modus": "oppdemming" } },
+            "replikker": [
+                {
+                    "si": "Hva skulle USA gjøre? Svaret ble en plan som kalles oppdemming."
+                },
+                {
+                    "si": "Tenk på en demning som stopper vann. USA skulle ikke presse kommunismen ut der den alt var. Men den skulle ikke få spre seg til nye land."
+                },
+                {
+                    "si": "I 1947 lovet president Harry S. Truman å hjelpe alle frie folk som ble presset av væpnede grupper. Dette løftet kalles Truman-doktrinen."
+                },
+                {
+                    "si": "Først sendte USA våpen og penger til Hellas og Tyrkia, så kommunistene ikke skulle ta makten der."
+                }
+            ]
+        },
+        {
+            "id": "marshall",
+            "visual": { "type": "KaldkrigVerden", "props": { "modus": "marshall" } },
+            "replikker": [
+                {
+                    "si": "USA sendte også penger. Det het Marshallplanen, og den varte fra 1948 til 1952."
+                },
+                {
+                    "si": "Amerikanerne mente at fattigdom fikk folk til å stemme på kommunistene. Derfor ga de milliarder av dollar, så Europa kunne bygge seg opp igjen."
+                },
+                {
+                    "si": "Det hjalp Vest-Europa til velstand, og kommunistene vant ikke valgene i land som Frankrike og Italia."
+                },
+                {
+                    "si": "Men Sovjetunionen nektet landene i øst å ta imot pengene. De mente USA prøvde å kjøpe vennskap. Så forskjellen i rikdom ble enda større."
+                }
+            ]
+        },
+        {
+            "id": "tyskland",
+            "kapittel": "Berlin",
+            "visual": { "type": "KaldkrigKart", "props": { "modus": "tyskland" } },
+            "replikker": [
+                {
+                    "si": "Det viktigste stridsstedet var Tyskland. Etter krigen ble landet delt i fire soner. USA, Storbritannia, Frankrike og Sovjetunionen fikk hver sin."
+                },
+                {
+                    "si": "Etter hvert ble de tre vestlige sonene slått sammen. Det ble Vest-Tyskland."
+                },
+                {
+                    "si": "Den sovjetiske sonen i øst ble til Øst-Tyskland."
+                },
+                {
+                    "si": "Og byen Berlin? Den lå langt inne i den østlige sonen. Også byen ble delt i to."
+                }
+            ]
+        },
+        {
+            "id": "luftbroen",
+            "visual": { "type": "KaldkrigKart", "props": { "modus": "luftbro" } },
+            "replikker": [
+                {
+                    "si": "I 1948 kom den første store krisen. De vestlige landene slo sammen sonene sine og innførte nye penger, D-mark."
+                },
+                {
+                    "si": "Som svar stengte Stalin alle veier, jernbaner og kanaler inn til Vest-Berlin. Han ville sulte ut byen, så Vesten måtte gi den opp."
+                },
+                {
+                    "si": "Tenk deg at du bor i Vest-Berlin. Ingen mat, ingen kull og ingen medisiner kommer inn. Hva gjør du?"
+                },
+                {
+                    "si": "USA og Storbritannia svarte med en luftbro. I nesten et helt år landet det et fly i Berlin hvert eneste minutt, med mat, kull og medisiner."
+                },
+                {
+                    "si": "I mai 1949 ga Sovjetunionen opp og åpnet veiene. Krisen førte til at Tyskland ble delt i to land, og NATO kom raskere."
+                }
+            ]
+        },
+        {
+            "id": "proksy",
+            "kapittel": "Krigene i skyggen",
+            "visual": { "type": "KaldkrigVerden", "props": { "modus": "proksy" } },
+            "replikker": [
+                {
+                    "si": "Supermaktene kjempet i stedet gjennom kriger i andre land. Det kalles stedfortrederkriger, eller proksykriger."
+                },
+                {
+                    "si": "I 1949 vant kommunistene under Mao Zedong borgerkrigen i Kina. Det sjokkerte USA."
+                },
+                {
+                    "si": "Fra 1950 til 1953 var det krig i Korea. Kina og Sovjetunionen hjalp nord, mens USA og FN hjalp sør."
+                },
+                {
+                    "si": "Fra 1955 til 1975 var det krig i Vietnam. USA sendte hundretusener av soldater for å hindre at kommunistene tok over i sør."
+                },
+                {
+                    "si": "Fra 1979 til 1989 var det Sovjetunionens tur. De invaderte Afghanistan for å støtte et kommunistisk styre, og møtte hard motstand fra krigere støttet av USA."
+                }
+            ]
+        },
+        {
+            "id": "spioner",
+            "kapittel": "Spionene",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "CIA mot KGB",
+                    "punkter": [
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Spionasje",
+                            "tekst": "inn i den andres regjering",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Kupp",
+                            "tekst": "støttet maktovertakelser i andre land",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "radio",
+                            "tittel": "Falske nyheter",
+                            "tekst": "løgn spredt med vilje",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "U-2, 1960",
+                            "tekst": "spionfly skutt ned over Sovjetunionen",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når man ikke kan kjempe åpent, blir det en krig i skyggene."
+                },
+                {
+                    "si": "USA hadde CIA, og Sovjetunionen hadde KGB. De sendte spioner inn i hverandres regjeringer."
+                },
+                {
+                    "si": "De støttet kupp, altså at noen tar makten med vold, og spredte falske nyheter med vilje."
+                },
+                {
+                    "si": "I 1960 ble et amerikansk spionfly, U-2, skutt ned over Sovjetunionen. Det ble en skandale, og et håp om bedre forhold mellom lederne forsvant."
+                }
+            ]
+        },
+        {
+            "id": "kapplopet",
+            "lyd": "rom",
+            "kapittel": "Terrorbalansen",
+            "visual": { "type": "KaldkrigRakettene", "props": { "modus": "kapplop" } },
+            "replikker": [
+                {
+                    "si": "Nå kommer det farligste av alt: atomvåpnene."
+                },
+                {
+                    "si": "I 1949 laget Sovjetunionen sin første atombombe. Nå hadde begge sider bomben."
+                },
+                {
+                    "si": "Da tok våpenkappløpet virkelig av. Fikk den ene siden flere våpen, laget den andre enda flere."
+                },
+                {
+                    "si": "Snart hadde begge sider hydrogenbomber, en enda kraftigere type atombombe."
+                }
+            ]
+        },
+        {
+            "id": "tusen",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1000,
+                            "farget": 1,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Bomben over Hiroshima",
+                            "fargeEtikett": "Hiroshima-bomben",
+                            "restEtikett": "tusen slike",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1000,
+                            "farget": 1000,
+                            "farge": "#dc2626",
+                            "tittel": "Én hydrogenbombe",
+                            "fargeEtikett": "tusen ganger så kraftig",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på den ene røde prikken. Den er bomben som ble sluppet over byen Hiroshima i Japan."
+                },
+                {
+                    "si": "En hydrogenbombe var tusen ganger kraftigere. Én bombe var like sterk som alle prikkene til sammen."
+                }
+            ]
+        },
+        {
+            "id": "mad",
+            "visual": { "type": "KaldkrigRakettene", "props": { "modus": "mad" } },
+            "replikker": [
+                {
+                    "si": "Begge sider kunne nå utslette hverandre. Selv den som ble angrepet først, kunne slå tilbake."
+                },
+                {
+                    "si": "Dette kalles MAD. Det står for gjensidig garantert ødeleggelse. Den som startet en atomkrig, ville selv bli ødelagt."
+                },
+                {
+                    "si": "Derfor turte ingen å starte. Frykten ble en slags rar garanti for fred. Dette kalles terrorbalansen."
+                },
+                {
+                    "si": "Men menneskene levde på kanten av stupet i flere tiår. Under Cuba-krisen i 1962 var verden bare minutter unna en katastrofe."
+                }
+            ]
+        },
+        {
+            "id": "oppror",
+            "lyd": "stille",
+            "kapittel": "Opprør i øst",
+            "visual": { "type": "KaldkrigKart", "props": { "modus": "oppror" } },
+            "replikker": [
+                {
+                    "si": "Sovjetunionen holdt et hardt grep om Øst-Europa. Men folk der gjorde opprør."
+                },
+                {
+                    "si": "I 1956 gjorde folket i Ungarn opprør mot det sovjetiske styret. Sovjetiske stridsvogner slo opprøret ned."
+                },
+                {
+                    "si": "I 1968 kom Praha-våren i Tsjekkoslovakia. Folk ville ha mer frihet, men fortsatt et kommunistisk styre. Også dette opprøret ble slått ned med makt."
+                },
+                {
+                    "si": "Sovjetlederen Leonid Bresjnev sa da at Sovjetunionen hadde rett til å sende soldater inn i alle kommunistiske land der styret var truet."
+                },
+                {
+                    "si": "Da så verden at jernteppet ble holdt oppe med makt, ikke av folkets vilje."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "To supermakter. To systemer.", "fraBeat": 0 },
+                        { "tekst": "Én verden delt i to.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "De kjempet med spioner, penger og kriger i andre land.", "fraBeat": 1 },
+                        { "tekst": "Aldri med egne soldater mot hverandre.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Frykten for atomkrig hindret en direkte krig.", "fraBeat": 2 },
+                        { "tekst": "Men bare så vidt.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "1989: Muren faller. 1991: Sovjetunionen faller.", "fraBeat": 3 },
+                        { "tekst": "Den kalde krigen er slutt.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den kalde krigen delte verden i et vest og et øst, med hver sin måte å styre på."
+                },
+                {
+                    "si": "Supermaktene kjempet med spioner, penger og kriger i andre land. Men aldri med egne soldater."
+                },
+                {
+                    "si": "Frykten for atomkrig holdt dem tilbake. Men flere ganger bare så vidt."
+                },
+                {
+                    "si": "I 1989 falt Berlinmuren, og i 1991 falt Sovjetunionen. Da var den kalde krigen over."
+                }
+            ]
+        }
+    ]
+}
