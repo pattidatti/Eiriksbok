@@ -1,0 +1,201 @@
+{
+    "id": "suez-krisen",
+    "tittel": "Suez-krisen 1956: Da de gamle imperiene falt",
+    "kilde": "/historie/den-kalde-krigen/suez-krisen",
+    "bilde": "/images/historie/den-kalde-krigen/suez_krisen_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-29", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "kanalen",
+            "kapittel": "Kanalen",
+            "lyd": "vind",
+            "visual": { "type": "SuezKanal", "props": { "modus": "kanal" } },
+            "replikker": [
+                { "si": "Tenk deg et stort skip som seiler rett gjennom en ørken. På begge sider er det bare sand." },
+                { "si": "Dette er Suezkanalen i Egypt. Mennesker har gravd den, og den knytter Middelhavet til Rødehavet." },
+                { "si": "Kanalen ble åpnet i 1869. Et selskap eide og drev den. Det het Suez Canal Company." },
+                { "si": "Kanalen lå i Egypt. Men de fleste som eide selskapet, var britiske og franske." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SUEZ-KRISEN",
+                    "undertittel": "1956: Da de gamle imperiene falt",
+                    "bilde": "/images/historie/den-kalde-krigen/suez_krisen_hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kan man vinne en krig og likevel tape?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "I 1956 havnet denne kanalen midt i en av de viktigste krisene i den kalde krigen." },
+                { "si": "Storbritannia og Frankrike var gamle kolonimakter, land som hadde styrt andre land. Nå prøvde de å vise at de fortsatt var sterke, i en verden der USA og Sovjetunionen bestemte." },
+                { "si": "De vant på slagmarken. Men de tapte likevel. Hvordan går det an?" }
+            ]
+        },
+        {
+            "id": "snarvei",
+            "kapittel": "Europas livslinje",
+            "lyd": "stille",
+            "visual": { "type": "SuezKart", "props": { "modus": "snarvei" } },
+            "replikker": [
+                { "si": "Hvorfor var kanalen så viktig? Se på kartet. Skip mellom Europa og Asia måtte før ta en mye lengre vei." },
+                { "si": "Kanalen gjorde sjøveien mellom Europa og Asia flere tusen kilometer kortere." },
+                { "si": "Gjennom kanalen gikk olje fra de arabiske landene. På 1950-tallet kom to tredjedeler av Europas olje denne veien." },
+                { "si": "For Europa var kanalen en livslinje. Men for Egypt var den et tegn på at Vesten fortsatt bestemte. Det ville egypterne bli kvitt." }
+            ]
+        },
+        {
+            "id": "nasser",
+            "kapittel": "Nasser",
+            "visual": { "type": "SuezKart", "props": { "modus": "nasser" } },
+            "replikker": [
+                { "si": "I 1952 tok en gruppe offiserer makten i Egypt." },
+                { "si": "Snart ble Gamal Abdel Nasser landets leder. Han var nasjonalist, altså en som vil at landet hans skal bestemme selv." },
+                { "si": "Nasser drømte om å samle hele den arabiske verden." },
+                { "si": "Og han ville at regionen skulle bli fri fra de gamle kolonimaktene." }
+            ]
+        },
+        {
+            "id": "demningen",
+            "visual": { "type": "SuezMakt", "props": { "modus": "demning" } },
+            "replikker": [
+                { "si": "Nasser ville gjøre Egypt moderne. Han ville bygge en gigantisk demning i Nilen, Assuan-demningen. En demning er en mur som holder igjen vannet i en elv." },
+                { "si": "Det kostet mye penger. USA og Storbritannia hadde tilbudt seg å låne ham penger." },
+                { "si": "Men Nasser nærmet seg Østblokken, landene på Sovjetunionens side. Da trakk USA og Storbritannia tilbudet tilbake." },
+                { "si": "Nasser svarte med et sjokk. Den 26. juli 1956 sa han at Egypt skulle nasjonalisere Suezkanalen." },
+                { "si": "Å nasjonalisere betyr at staten tar over. Nå skulle pengene fra kanalen betale for demningen." }
+            ]
+        },
+        {
+            "id": "planen",
+            "kapittel": "Den hemmelige planen",
+            "lyd": "rom",
+            "visual": { "type": "SuezPapir", "props": { "modus": "sevres" } },
+            "replikker": [
+                { "si": "Lederne i London og Paris ble rasende. Den britiske statsministeren Anthony Eden så på Nasser som en trussel på linje med Hitler." },
+                { "si": "De var redde for at Nasser skulle stenge for oljen. Men de hadde ingen lovlig rett til å angripe Egypt bare fordi landet tok over kanalen." },
+                {
+                    "si": "Derfor lagde de en hemmelig plan sammen med Israel. Den ble skrevet ned i Sèvres-protokollen.",
+                    "uttale": "Derfor lagde de en hemmelig plan sammen med Israel. Den ble skrevet ned i Sevr-protokollen."
+                },
+                { "si": "Steg én: Israel invaderer Sinai-halvøya og rykker fram mot kanalen." },
+                { "si": "Steg to: Storbritannia og Frankrike krever at både Egypt og Israel trekker seg bort fra kanalen. De sier det er for å beskytte skipene." },
+                { "si": "Steg tre: Nasser kommer til å nekte, for det er hans eget land. Da kan britene og franskmennene gå inn og ta kontroll over kanalen." }
+            ]
+        },
+        {
+            "id": "invasjon",
+            "kapittel": "Invasjon",
+            "lyd": "stille",
+            "visual": { "type": "SuezKart", "props": { "modus": "invasjon" } },
+            "replikker": [
+                { "si": "Den 29. oktober 1956 angrep Israel, akkurat som planen sa." },
+                { "si": "Kort tid etter angrep også Storbritannia og Frankrike." },
+                { "si": "Det egyptiske luftforsvaret ble knust. Fallskjermjegere, soldater som hopper ut fra fly, tok kontroll over viktige steder ved kanalen." },
+                { "si": "Militært var det en suksess. Men politisk ble det en katastrofe." }
+            ]
+        },
+        {
+            "id": "ungarn",
+            "visual": { "type": "SuezKart", "props": { "modus": "ungarn" } },
+            "replikker": [
+                { "si": "Verden ble rystet. To stormakter og Israel gikk til krig mot et utviklingsland, altså et fattigere land, på et så tynt grunnlag." },
+                { "si": "Og tidspunktet var svært dårlig. Akkurat da holdt Sovjetunionen på med å slå ned et opprør i Ungarn." },
+                { "si": "Nå kunne Sovjetunionen peke på Egypt. Da så verden mindre på det som skjedde i Ungarn." }
+            ]
+        },
+        {
+            "id": "usa",
+            "kapittel": "Supermaktene",
+            "visual": { "type": "SuezMakt", "props": { "modus": "pund" } },
+            "replikker": [
+                { "si": "Den største overraskelsen kom fra USA. President Dwight D. Eisenhower ble rasende." },
+                { "si": "Hans nærmeste allierte hadde startet en krig bak ryggen hans. Og det var rett før et presidentvalg i USA." },
+                { "si": "USA var redd for at krigen skulle drive hele den arabiske verden over til Sovjetunionens side." },
+                { "si": "Så la USA et knallhardt press på britene. USA truet med å selge britiske pund, Storbritannias penger. Da kunne hele den britiske økonomien bryte sammen." }
+            ]
+        },
+        {
+            "id": "brevet",
+            "kapittel": "Brev fra Moskva",
+            "lyd": "rom",
+            "visual": { "type": "SuezPapir", "props": { "modus": "brev" } },
+            "replikker": [
+                { "si": "Samtidig kom en iskald beskjed fra Moskva. Kvelden 5. november 1956 sendte Sovjetunionens statsminister Nikolaj Bulganin brev til lederne i Storbritannia, Frankrike og Israel." },
+                { "si": "Frankrikes statsminister Guy Mollet fikk et nesten likt brev som Eden. Til Eden skrev Bulganin omtrent dette:" },
+                { "si": "Hvilken situasjon ville Storbritannia vært i hvis landet ble angrepet av sterkere stater med alle typer moderne ødeleggelsesvåpen?" },
+                { "si": "Slike land trenger ikke sende krigsskip eller fly. De kan bruke andre midler, for eksempel rakettvåpen." },
+                { "si": "Bulganin skrev aldri ordet atombombe. Men alle skjønte hva han mente: Han antydet at raketter med atomvåpen kunne ramme London og Paris." }
+            ]
+        },
+        {
+            "id": "klemme",
+            "visual": { "type": "SuezMakt", "props": { "modus": "klemme" } },
+            "replikker": [
+                { "si": "For en gangs skyld sto USA og Sovjetunionen på samme side. Storbritannia og Frankrike satt fast i en klemme, med pengepress fra USA og rakettrusler fra Sovjetunionen." },
+                { "si": "De hadde ikke noe annet valg. De ba om våpenhvile, altså at kampene skulle stoppe, og trakk seg ut med skam." },
+                { "si": "Rakettrusselen var mer skremsel enn alvor. Da brevene kom, hadde pengepresset fra USA i praksis alt avgjort krisen. Britene var allerede i ferd med å gi opp." },
+                { "si": "Men Nikita Khrusjtsjov, den sterke mannen bak Bulganin, lærte noe: Atomtrusler virker. Den lærdommen tok han med seg videre i den kalde krigen." }
+            ]
+        },
+        {
+            "id": "fn",
+            "kapittel": "En ny verden",
+            "lyd": "vind",
+            "visual": { "type": "SuezKanal", "props": { "modus": "fn" } },
+            "replikker": [
+                { "si": "Krisen førte også til noe helt nytt. FN laget sin første fredsbevarende styrke. Den het UNEF." },
+                { "si": "Ideen kom fra den kanadiske politikeren Lester B. Pearson. Han fikk Nobels fredspris for arbeidet." },
+                { "si": "FN-soldatene skulle stå i Sinai og holde partene fra hverandre." },
+                { "si": "De var ikke der for å vinne en krig. De var der for å stå mellom dem som hadde kjempet." }
+            ]
+        },
+        {
+            "id": "arven",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Etter Suez",
+                    "punkter": [
+                        { "ikon": "skip", "tittel": "Slutt på å handle uten USA", "tekst": "for Storbritannia og Frankrike", "fraBeat": 0 },
+                        { "ikon": "haer", "tittel": "Supermaktene bestemmer", "tekst": "USA og Sovjetunionen", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "Nasser blir en helt", "tekst": "i hele Midtøsten", "fraBeat": 2 },
+                        { "ikon": "vind", "tittel": "Frigjøringen skyter fart", "tekst": "i Afrika og Asia", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Suez-krisen forandret verden for alltid. Storbritannia og Frankrike kunne ikke lenger handle som stormakter uten USA." },
+                { "si": "Fra nå av var det supermaktene som la reglene." },
+                { "si": "I Midtøsten ble Nasser en helt. Egypt tapte på slagmarken, men vant en stor politisk seier." },
+                { "si": "Og i Afrika og Asia skjøt bølgen av frigjøring fart. Flere og flere kolonier ble egne land." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Seier i ørkenen.", "fraBeat": 0 },
+                        { "tekst": "Tap i resten av verden.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Egypt tapte kampene.", "fraBeat": 1 },
+                        { "tekst": "Men Nasser vant.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Makt handler ikke bare om våpen,", "fraBeat": 2 },
+                        { "tekst": "men om penger, venner og hva verden synes.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Storbritannia og Frankrike vant i ørkenen. Men de tapte i resten av verden." },
+                { "si": "Egypt tapte kampene. Likevel var det Nasser som kom ut som vinneren." },
+                { "si": "Suez viste at makt i den nye verden ikke bare handler om våpen. Den handler også om penger, venner og hva resten av verden synes." }
+            ]
+        }
+    ]
+}
