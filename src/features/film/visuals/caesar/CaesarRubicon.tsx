@@ -350,14 +350,14 @@ const LAPPER: Record<Modus, Lapp[]> = {
         { tekst: 'Nord-Italia, januar 49 fvt.' },
         { tekst: 'Cæsar og soldatene hans' },
         { tekst: 'Roma', under: 'rik, berømt og hatet' },
-        { tekst: 'To dårlige valg' },
+        { tekst: 'Et umulig valg' },
         { tekst: 'RUBICON', under: 'grensa ingen general fikk krysse med hæren' },
     ],
     valg: [
         { tekst: 'Loven', under: 'krysse Rubicon med hæren = høyforræderi' },
         { tekst: 'Uten soldater i Roma venter:' },
-        { tekst: 'Tre valg. To av dem:' },
-        { tekst: 'Tre valg. To av dem:' },
+        { tekst: 'Tre valg' },
+        { tekst: 'Tre valg' },
         { tekst: 'Alle valgene er dårlige' },
     ],
     krysser: [
@@ -375,6 +375,7 @@ const FARER = [
 const VALG = [
     { tekst: 'Sende hæren hjem og dra alene', fare: 'blir trolig drept' },
     { tekst: 'Krysse elva med hæren', fare: 'høyforræderi og krig' },
+    { tekst: 'Forhandle med senatet', fare: 'senatet sier nei' },
 ];
 
 export function CaesarRubicon({ beat, playing, props }: VisualProps<{ modus: Modus }>) {
@@ -468,7 +469,8 @@ export function CaesarRubicon({ beat, playing, props }: VisualProps<{ modus: Mod
                                     scale: aktiv ? 1.06 : 1,
                                 }}
                                 transition={{ type: 'spring', stiffness: 180, damping: 20 }}
-                                className="relative w-[40%] px-5 py-3 rounded-2xl bg-white/95 shadow-xl border-t-[8px] border-amber-600"
+                                className="relative px-5 py-3 rounded-2xl bg-white/95 shadow-xl border-t-[8px] border-amber-600"
+                                style={{ width: '31%' }}
                             >
                                 <div className="text-sm md:text-base font-black text-amber-700">
                                     VALG {i + 1}
