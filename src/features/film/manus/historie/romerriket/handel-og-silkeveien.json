@@ -1,0 +1,373 @@
+{
+    "id": "handel-og-silkeveien",
+    "tittel": "Handel og Silkeveien",
+    "kilde": "/historie/romerriket/handel-og-silkeveien",
+    "bilde": "/images/romerriket/hero-handel.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-30", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "ankomst",
+            "lyd": "hav",
+            "visual": { "type": "HandelSkipet", "props": { "modus": "ankomst" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du står på en kai ved Middelhavet, i Romerrikets tid. Et stort seilskip glir inn mot land."
+                },
+                {
+                    "si": "Dekket er fullt av store krukker. Inni er det korn og olje, mat til en hel by."
+                },
+                {
+                    "si": "Skipet skal til Roma, hovedstaden i et enormt rike. Men Roma ligger ikke ved havet."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Handel og Silkeveien",
+                    "undertittel": "Romerriket som handelsmaskin",
+                    "bilde": "/images/romerriket/hero-handel.webp",
+                    "sporsmal": { "tekst": "Hvordan kom varene helt fram?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Romerriket var ikke bare en krigsmaskin. Det var også en gigantisk handelsmaskin."
+                },
+                {
+                    "si": "På ett og samme torg kunne du kjøpe varer fra tre kontinenter."
+                },
+                {
+                    "si": "En rik romer kunne gå kledd i silke fra Kina og krydre maten med pepper fra India."
+                },
+                {
+                    "si": "Men hvordan kom varene helt fram? Det skal vi finne ut."
+                }
+            ]
+        },
+        {
+            "id": "elva",
+            "kapittel": "Ostia",
+            "visual": { "type": "HandelSkipet", "props": { "modus": "elv" } },
+            "replikker": [
+                {
+                    "si": "Roma lå et stykke oppe i elva Tiberen. De store havskipene kunne ikke seile helt opp."
+                },
+                {
+                    "si": "Derfor vokste det fram en havneby der elva møter havet, 24 kilometer sørvest for Roma. Den het Ostia."
+                },
+                {
+                    "si": "Her ble varene lastet over i mindre elvebåter."
+                },
+                {
+                    "si": "Elvebåtene fraktet varene opp elva, til lagrene ved havna i Roma."
+                }
+            ]
+        },
+        {
+            "id": "havna",
+            "visual": { "type": "HandelSkipet", "props": { "modus": "havn" } },
+            "replikker": [
+                {
+                    "si": "Da byen var på sitt travleste, tidlig på 100-tallet, bodde det rundt 50 000 mennesker i Ostia.",
+                    "uttale": "Da byen var på sitt travleste, tidlig på hundretallet, bodde det rundt femti tusen mennesker i Ostia."
+                },
+                {
+                    "si": "Byen var full av store lagerhus. Der lå kornet til Roma og ventet."
+                },
+                {
+                    "si": "Ostia var også en servicestasjon for skipene, ikke bare et lager."
+                },
+                {
+                    "si": "Arkeologer har gravd ut store deler av byen. Vanlige hus og lagerbygninger er godt bevart her. I Roma og andre store byer i Italia er slike bygninger nesten helt borte."
+                }
+            ]
+        },
+        {
+            "id": "korn",
+            "lyd": "stille",
+            "kapittel": "Brød til folket",
+            "visual": { "type": "HandelKart", "props": { "modus": "korn" } },
+            "replikker": [
+                { "si": "Den viktigste varen av alle var korn." },
+                {
+                    "si": "Rundt år 150 bodde det kanskje én million mennesker i Roma. Byen var helt avhengig av korn fra andre steder."
+                },
+                {
+                    "si": "Egypt var det best organiserte jordbruksområdet i hele riket."
+                },
+                {
+                    "si": "Skip fraktet korn til Italia fra land som var bedre egnet til å dyrke korn, som Egypt og Nord-Afrika."
+                }
+            ]
+        },
+        {
+            "id": "uvaer",
+            "lyd": "storm",
+            "visual": { "type": "HandelSkipet", "props": { "modus": "storm" } },
+            "replikker": [
+                {
+                    "si": "Keiseren hadde selv ansvaret for at Roma fikk korn. På latin het det cura annonae, omsorgen for kornet.",
+                    "uttale": "Keiseren hadde selv ansvaret for at Roma fikk korn. På latin het det kura annonai, omsorgen for kornet."
+                },
+                {
+                    "si": "Men havet var ikke alltid snilt. Hva skjedde om kornflåten ble forsinket av uvær?"
+                },
+                {
+                    "si": "Da kunne misnøyen i Roma blusse opp, og det raskt."
+                },
+                {
+                    "si": "Dikteren Juvenal kalte det brød og sirkus: det folket krevde for å holde seg fornøyd. Mat i magen og noe å se på."
+                }
+            ]
+        },
+        {
+            "id": "stafett",
+            "lyd": "stille",
+            "kapittel": "Silkeveien",
+            "visual": { "type": "HandelStafett" },
+            "replikker": [
+                {
+                    "si": "Langt borte i øst lå Kina. Mellom Kina og Roma gikk det som kalles Silkeveien."
+                },
+                {
+                    "si": "Men Silkeveien var aldri én vei. Den var et nett av handelsstier, delt i mange etapper."
+                },
+                {
+                    "si": "Få reiste hele strekningen. Varene gikk videre fra mellommann til mellommann, ledd for ledd, som en stafettpinne."
+                },
+                {
+                    "si": "Romere og kinesere møttes nesten aldri. Likevel handlet de med hverandre."
+                },
+                {
+                    "si": "Karavaner fraktet silke vestover gjennom Sentral-Asia. Den andre veien gikk romerske håndverksvarer og mynter av sølv og gull."
+                }
+            ]
+        },
+        {
+            "id": "silke",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvorfor var silke så dyrt?",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Stor etterspørsel",
+                            "tekst": "fred og vekst rundt Middelhavet",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Kina holdt på hemmeligheten",
+                            "tekst": "solgte bare tråd og ferdig stoff",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Keiser i silke",
+                            "tekst": "Elagabalus, keiser 218-222 e.Kr.",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Silke var veldig dyrt. Hvorfor?"
+                },
+                {
+                    "si": "Det var fred og økonomisk vekst rundt Middelhavet. Det gjorde at svært mange ville kjøpe silke."
+                },
+                {
+                    "si": "Men bare kineserne visste hvordan silke ble laget. De holdt det hemmelig og solgte bare tråden og det ferdige stoffet."
+                },
+                {
+                    "si": "Silke var så eksklusivt, altså sjeldent og fint, at keiser Elagabalus regnes som den første romerske keiseren som gikk kledd i silke. Han var keiser fra år 218 til 222.",
+                    "uttale": "Silke var så eksklusivt, altså sjeldent og fint, at keiser Elagabalus regnes som den første romerske keiseren som gikk kledd i silke. Han var keiser fra år to hundre og atten til to hundre og tjueto."
+                }
+            ]
+        },
+        {
+            "id": "monsun",
+            "kapittel": "Monsunvinden",
+            "visual": { "type": "HandelKart", "props": { "modus": "monsun" } },
+            "replikker": [
+                {
+                    "si": "En enda viktigere rute gikk sjøveien, til India."
+                },
+                {
+                    "si": "I det første århundret etter Kristus fikk romerne makt helt ned til Rødehavet."
+                },
+                {
+                    "si": "Der lærte de å bruke monsunen. Det er en vind som snur med årstidene. Halve året blåser den mot India."
+                },
+                {
+                    "si": "Den andre halvdelen av året blåser den tilbake. Skipene kunne seile ut med vinden og hjem med vinden."
+                },
+                {
+                    "si": "Fra Rødehavet gikk varene videre over land, til det østlige Middelhavet."
+                }
+            ]
+        },
+        {
+            "id": "india",
+            "visual": { "type": "HandelBytte", "props": { "modus": "india" } },
+            "replikker": [
+                {
+                    "si": "Hva handlet de med? India sendte pepper, edelstener og perler."
+                },
+                {
+                    "si": "Også skilpaddeskall og elfenben, altså tenner fra elefanter."
+                },
+                {
+                    "si": "Romerne betalte med glass, kobber, tinn, bly og vin. Eller rett og slett med gullmynter."
+                },
+                {
+                    "si": "Arkeologer har funnet store skatter av romerske mynter i India. Ved Arikamedu har de gravd fram en romersk handelsstasjon fra denne tiden.",
+                    "uttale": "Arkeologer har funnet store skatter av romerske mynter i India. Ved Arikamedo har de gravd fram en romersk handelsstasjon fra denne tiden."
+                }
+            ]
+        },
+        {
+            "id": "rav",
+            "kapittel": "Rav-veien",
+            "visual": { "type": "HandelKart", "props": { "modus": "rav" } },
+            "replikker": [
+                {
+                    "si": "Handelen gikk også nordover. Her var varen rav."
+                },
+                {
+                    "si": "Rav er størknet kvae fra bartrær som vokste for 20 til 40 millioner år siden.",
+                    "uttale": "Rav er størknet kvae fra bartrær som vokste for tjue til førti millioner år siden."
+                },
+                {
+                    "si": "De viktigste funnstedene ligger langs Østersjøen, på kysten mellom Gdańsk og Klaipeda.",
+                    "uttale": "De viktigste funnstedene ligger langs Østersjøen, på kysten mellom Gdansk og Klaipeda."
+                },
+                {
+                    "si": "Langs Rav-veien gikk ravet helt ned til byene ved Middelhavet. Rav ble særlig brukt til smykker og pynt."
+                }
+            ]
+        },
+        {
+            "id": "rav-bytte",
+            "visual": { "type": "HandelBytte", "props": { "modus": "rav" } },
+            "replikker": [
+                {
+                    "si": "Handelsmenn reiste nordover med vin og glass."
+                },
+                {
+                    "si": "De kom tilbake med rav og pelsverk."
+                },
+                {
+                    "si": "Rav var en viktig vare allerede i steinalderen, lenge før Romerriket fantes."
+                }
+            ]
+        },
+        {
+            "id": "slaver",
+            "visual": { "type": "HandelKart", "props": { "modus": "slaver" } },
+            "replikker": [
+                {
+                    "si": "Men i Romerrikets økonomi var også mennesker en vare."
+                },
+                {
+                    "si": "Romerne fikk slaver først og fremst gjennom krig. Når de erobret et område, tok de fanger."
+                },
+                {
+                    "si": "Fangene kom blant annet fra Kaukasus, Hellas, Balkan, Nord-Afrika og Etiopia, og fra folk romerne kalte barbarer."
+                },
+                {
+                    "si": "Så ble de solgt videre på auksjon, som en vare, til private kjøpere."
+                }
+            ]
+        },
+        {
+            "id": "testaccio",
+            "lyd": "stille",
+            "kapittel": "Monte Testaccio",
+            "visual": { "type": "HandelTestaccio" },
+            "replikker": [
+                {
+                    "si": "I Roma finnes det en ås som mennesker har laget. Den heter Monte Testaccio, og den er fortsatt rundt 50 meter høy."
+                },
+                {
+                    "si": "Åsen består for det meste av knuste krukker. De kalles amforaer, store leirkrukker med to hanker."
+                },
+                {
+                    "si": "I krukkene ble olivenolje fraktet fra Baetica, i dagens Spania, til Roma.",
+                    "uttale": "I krukkene ble olivenolje fraktet fra Bætika, i dagens Spania, til Roma."
+                },
+                {
+                    "si": "Dette pågikk i de tre første hundreårene etter Kristus. Krukke etter krukke ble kastet på haugen."
+                },
+                {
+                    "si": "Åsen viser hvor enormt mye folk i Roma brukte."
+                }
+            ]
+        },
+        {
+            "id": "transport",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Land eller sjø?",
+                    "undertittel": "Hvor langt kommer varene på én dag?",
+                    "tall": [
+                        { "verdi": 15, "etikett": "km med oksekjerre", "fraBeat": 1, "tone": "rod", "omtrent": false },
+                        { "verdi": 100, "etikett": "km med seilskip", "fraBeat": 2, "tone": "gronn", "prefiks": "over" }
+                    ],
+                    "sporsmal": { "tekst": "Tunge varer på sjøen, hæren på veien", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor gikk så mye av handelen på sjøen?"
+                },
+                {
+                    "si": "En oksekjerre på land kom rundt 15 kilometer på en dag. Det var dyrt og tregt.",
+                    "uttale": "En oksekjerre på land kom rundt femten kilometer på en dag. Det var dyrt og tregt."
+                },
+                {
+                    "si": "Et seilskip kunne komme over 100 kilometer på en dag. Det var billig og raskt, men stormer og pirater gjorde det farlig.",
+                    "uttale": "Et seilskip kunne komme over hundre kilometer på en dag. Det var billig og raskt, men stormer og pirater gjorde det farlig."
+                },
+                {
+                    "si": "Derfor gikk tunge varer som korn, stein og olje med skip. Veiene ble brukt av hæren og til lette luksusvarer."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Silke fra Kina. Pepper fra India. Rav fra nord.", "fraBeat": 0 },
+                        { "tekst": "Varer fra tre kontinenter på ett torg.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Roma kunne ikke brødfø seg selv.", "fraBeat": 1 },
+                        { "tekst": "Byen levde av det skipene brakte.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Folk som nesten aldri møttes,", "fraBeat": 2 },
+                        { "tekst": "var likevel bundet sammen av handel.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Silke fra Kina, pepper fra India og rav fra Østersjøen. Alt kunne havne på det samme torget i Roma."
+                },
+                {
+                    "si": "Men handelen var ikke bare luksus. Roma var helt avhengig av korn og olje som kom med skip."
+                },
+                {
+                    "si": "Romere og kinesere møttes nesten aldri. Likevel var de bundet sammen, ledd for ledd, av handel."
+                }
+            ]
+        }
+    ]
+}
