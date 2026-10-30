@@ -1,0 +1,289 @@
+{
+  "id": "fodselstallet-i-norge",
+  "title": "Hvorfor får nordmenn så få barn?",
+  "layout": "rich",
+  "year": "2009-2025",
+  "category": "Demografi",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Samlet fruktbarhetstall (SFT) sier hvor mange barn hver kvinne får i snitt. Det trengs omtrent 2,1 for at hver generasjon skal erstatte seg selv.",
+    "I Norge falt SFT fra 1,98 i 2009 til 1,40 i 2023, det laveste som er målt. I 2025 var det 1,48.",
+    "Fallet skyldes mest at flere venter lenger med første barn, og at flere ikke får barn. Hvorfor folk venter, og om det er et problem, er forskerne uenige om."
+  ],
+  "externalUrl": "https://snl.no/samlet_fruktbarhetstall",
+  "factChecked": "2026-10-30",
+  "tags": [
+    "demografi",
+    "fruktbarhet",
+    "befolkning",
+    "statistikk",
+    "familie"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Se deg rundt i klasserommet. Kanskje har mange av dere ett søsken, eller to. Spør du besteforeldrene dine, hadde de kanskje flere. I 2009 fikk norske kvinner i snitt nesten to barn hver. I 2023 var tallet nede i 1,40, det laveste som noen gang er målt i Norge (Tønnessen & Solerød, 2026). Hva betyr det for et land når det blir født færre barn? Og hvorfor skjer det i et av de rikeste landene i verden?"
+    },
+    {
+      "type": "text",
+      "content": "I denne artikkelen skal du lære hvordan forskerne måler hvor mange barn som blir født, hvorfor tallet har falt, og hvorfor ingen er helt sikre på svaret."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Nyfødt baby i en sykehusseng på fødeavdeling",
+      "caption": "I 2025 ble det født rundt 55 400 barn i Norge."
+    },
+    {
+      "type": "header",
+      "text": "Hvordan måler vi hvor mange barn folk får?"
+    },
+    {
+      "type": "text",
+      "content": "Det enkleste er å telle hvor mange barn som blir født hvert år. I 2025 ble det født rundt 55 400 barn i Norge, 1 400 flere enn året før (Sørlien, 2026). Men det tallet sier ikke så mye alene. Bor det mange unge voksne i landet, blir det født mange barn, selv om hver enkelt får få."
+    },
+    {
+      "type": "text",
+      "content": "Derfor bruker forskerne et annet mål. Det heter samlet fruktbarhetstall, og forkortes SFT. Fruktbarhet betyr her hvor mange barn folk får. SFT forteller hvor mange barn en kvinne vil få i løpet av livet, i snitt, hvis hun får barn på samme måte som kvinnene i ulike aldre gjorde dette året (Tønnessen & Solerød, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Statistisk sentralbyrå (SSB) ser på alle kvinner mellom 15 og 49 år. For hver alder regner de ut hvor mange barn kvinnene fikk det året. Så legger de sammen tallene for alle aldrene (Tuv, 2020). Tenk på det som et øyeblikksbilde: Hva ville skjedd hvis dette året gjentok seg gjennom hele livet til en kvinne?"
+    },
+    {
+      "type": "text",
+      "content": "Et øyeblikksbilde kan lure deg. Tuv (2020) forklarer at SFT har falt mest fordi flere venter lenger før de får sitt første barn. Får en kvinne barn som 32-åring i stedet for som 27-åring, er hun ikke med i tallene for de årene hun venter. Da faller SFT, selv om hun kanskje ender med like mange barn til slutt. Det er derfor forskerne også følger kvinner som er født samme år, hele livet. Kvinner som ble født i 1979, hadde i snitt fått 1,89 barn da de var 45 år (Tuv, 2020). Det er høyere enn dagens SFT."
+    },
+    {
+      "type": "header",
+      "text": "Det magiske tallet 2,1"
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor er forskerne så opptatt av om tallet er over eller under to? Et barn har to foreldre. Får hvert par to barn, tar barna omtrent plassen til foreldrene sine når de blir voksne. Forskerne regner med at det trengs litt mer enn to, omtrent 2,1 barn per kvinne. Med 2,1 barn per kvinne holder folketallet seg likt over tid, så lenge ingen flytter inn eller ut (Tønnessen & Solerød, 2026). Dette tallet kalles erstatningsnivået, fordi hver generasjon da erstatter generasjonen før seg."
+    },
+    {
+      "type": "text",
+      "content": "Norge har ligget under 2,1 i lang tid. Likevel vokser folketallet. Det er fordi mange flytter hit, og fordi det er mange voksne i alderen der folk får barn. Derfor blir det fortsatt født flere enn det dør (Tønnessen & Solerød, 2026). Hva som skjer over lengre tid hvis tallet holder seg lavt, kan du utforske selv. Hvis du vil friske opp hvordan en pyramide leses, kan du først ta en titt på artikkelen om [befolkningspyramider](/samfunnskunnskap/demografi/befolkningspyramider)."
+    },
+    {
+      "type": "component",
+      "name": "Barnetallsmaskinen",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva som skjer under 2,1. Toppen av pyramiden endrer seg ikke de første 50 årene, for de eldre er allerede født. Men hvert nytt barnekull blir litt mindre enn det forrige. Etter noen tiår er det færre barn, færre unge voksne og en større andel eldre. Det er slik et land eldes."
+    },
+    {
+      "type": "header",
+      "text": "Et tall som går opp og ned"
+    },
+    {
+      "type": "text",
+      "content": "Norske kvinner har ikke alltid fått få barn. Før 1900 fikk de i snitt over fire. Mellom de to verdenskrigene falt tallet under to. På 1960-tallet steg det igjen til nesten tre. Så falt det kraftig på 1970-tallet, og på midten av 1980-tallet var det under 1,7. Etter det har tallet stort sett ligget mellom 1,5 og 2 (Tønnessen & Solerød, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "I 2009 var SFT 1,98. Deretter falt det nesten hvert år, helt ned til 1,40 i 2023. De to siste årene har det gått litt opp igjen: til 1,44 i 2024 og 1,48 i 2025 (Tønnessen & Solerød, 2026). SSB skriver at 1,48 fortsatt er lavt sett i et historisk perspektiv, og at det meste av økningen kom blant kvinner mellom 30 og 34 år (Sørlien, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Fødsler i Norge 2025",
+        "content": "Samlet fruktbarhetstall: 1,48 barn per kvinne (1,44 i 2024). Antall fødte: rundt 55 400. Gjennomsnittsalder ved første barn: 30,4 år for mødre og 32,3 år for fedre. Høyest i landet: Rogaland med 1,65 (Sørlien, 2026)."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Tallet er heller ikke likt over hele landet. I 2025 hadde Rogaland høyest SFT, med 1,65. Innlandet økte mest, fra 1,40 til 1,54 (Sørlien, 2026). Oslo hadde i 2024 det laveste tallet på Østlandet, med 1,31 (Tønnessen & Solerød, 2026). Så sent som i 1968 fikk kvinnene i Finnmark i snitt 3,4 barn. Forskjellene mellom fylkene var mye større før enn de er i dag (Tønnessen & Solerød, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung voksen kvinne på kontor ser på klokka",
+      "caption": "Mange venter lenger med å få barn enn før, både med tanke på jobb og utdanning."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor får folk færre barn?"
+    },
+    {
+      "type": "text",
+      "content": "Dette er det store spørsmålet. Folkehelseinstituttet (FHI) ledet et stort forskningsprosjekt om nettopp dette, sammen med SSB, Universitetet i Oslo og Institutt for samfunnsforskning. Svaret deres er at fallet først og fremst skyldes tre ting: Flere får ikke barn i det hele tatt, folk får sitt første barn senere, og færre får et tredje barn (Folkehelseinstituttet, 2020)."
+    },
+    {
+      "type": "text",
+      "content": "Den siste tiden har det skjedd store endringer blant unge voksne. Av kvinnene som fylte 30 år i 2025, hadde 58 prosent ennå ikke fått barn. Ti år tidligere gjaldt det 43 prosent (Sørlien, 2026). Mødrene var i snitt 30,4 år da de fikk sitt første barn i 2025. Det var like gammelt som året før, og det var første gang siden 2009 at alderen ikke økte (Sørlien, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Men hvorfor venter folk lenger? Her blir det vanskeligere. Forskerne har testet flere forklaringer:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Utdanning: Man kunne tro at det var de med lang utdanning som fikk færre barn. Men fallet etter 2009 var omtrent like sterkt i alle utdanningsgrupper (Folkehelseinstituttet, 2020).",
+        "Penger: Finanskrisen rammet de nordiske landene ulikt, men barnetallet falt likt i alle. Derfor tror forskerne ikke at fallet skyldes hvor mye penger folk faktisk har. Men usikkerhet om framtida kan spille en rolle, og noen sa at det koster for mye å få flere barn (Folkehelseinstituttet, 2020).",
+        "Helse: Fallet var ikke større blant folk med dårlig helse. Helse forklarer altså lite (Folkehelseinstituttet, 2020).",
+        "Verdier: Hva folk synes er viktig i livet, har trolig endret seg. Men dette er spesielt vanskelig å måle. Forskerne nevner også at færre unge voksne bor sammen med en kjæreste, men det har de ikke undersøkt grundig (Folkehelseinstituttet, 2020)."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Et annet spørsmål er hva staten kan gjøre. Norge har barnehager og foreldrepermisjon, altså betalt fri fra jobben når man får barn. Likevel har tallet falt. FHI skriver at billigere barnehage kanskje kan få flere til å få barn. Lengre permisjon og mer fleksible arbeidstider kan også hjelpe, ifølge folk som ble intervjuet, men det er ikke bevist i gode studier (Folkehelseinstituttet, 2020). Hvordan barnehager og permisjon betales av skatten vår, kan du lese mer om i artikkelen om [skatt](/samfunnskunnskap/okonomi/skatt)."
+    },
+    {
+      "type": "header",
+      "text": "Innvandrere får også færre barn"
+    },
+    {
+      "type": "text",
+      "content": "Mange tror at innvandrere får mange flere barn enn andre i Norge. Det har vært sant før, men forskjellen har blitt mindre (Tønnessen & Solerød, 2026). I 2025 skjedde det noe nytt: For første gang fikk innvandrerkvinner færre barn i snitt enn kvinnene i resten av befolkningen. SFT for innvandrerkvinner var 1,44 (Sørlien, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Gruppen er likevel svært ulik. Kvinner fra Ukraina hadde en SFT på bare 0,88. Kvinner fra Syria hadde 2,34, og kvinner fra Eritrea hadde 2,81 (Sørlien, 2026). Én forklaring på at forskjellen har krympet, er at det også blir født færre barn i landene mange innvandrere kommer fra (Tønnessen & Solerød, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Norge er ikke alene"
+    },
+    {
+      "type": "text",
+      "content": "Lave fødselstall er ikke noe som bare skjer i Norge. I hele verden fikk hver kvinne i snitt 2,24 barn i 2025. I land som Hellas, Italia og Spania har tallet vært helt nede i 1,2 til 1,3. I Kina var det bare 1,02 i 2025. I Afrika er snittet fortsatt nær fire (Tønnessen & Solerød, 2026). Rike land får som regel færre barn enn fattige. Det henger sammen med det som kalles [den demografiske overgangen](/samfunnskunnskap/demografi/den-demografiske-overgangen): Når et land blir rikere og flere barn overlever, begynner folk å få færre barn."
+    },
+    {
+      "type": "header",
+      "text": "Er det et problem?"
+    },
+    {
+      "type": "text",
+      "content": "Regjeringen er bekymret. I 2024 satte den ned et utvalg, ledet av forskeren Rannveig Kaldager Hart fra FHI, som skulle finne ut hvorfor det blir født færre barn, og hva det betyr for samfunnet. Barne- og familieminister Kjersti Toppe pekte på at regjeringen allerede hadde gjort barnehage og SFO billigere og økt barnetrygden. Samtidig innrømmet hun: «Vi veit mindre om kva effekt tiltaka har på fødselstala» (Folkestad, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor bekymrer politikerne seg? I Barnetallsmaskinen så du det: Holder tallet seg lavt lenge, blir det etter hvert færre i arbeid for hver person over 65 år. Da kan det bli vanskeligere å finne nok folk til å jobbe på sykehjem og sykehus, og færre som betaler skatt. Om roboter og ny teknologi kan ta noen av disse jobbene, kan du lese mer om i artikkelen [Robotene kommer](/samfunnskunnskap/mennesket-kultur-samfunn/robotene-kommer)."
+    },
+    {
+      "type": "text",
+      "content": "Men ikke alle er like sikre på at det er grunn til bekymring. Folk kan få barn senere og likevel ende med nesten like mange til slutt. Kvinnene som var 45 år i 2018, hadde i snitt fått 1,98 barn. FHI tror derfor at det endelige barnetallet vil falle noe, men trolig ikke helt ned til 1,56, som var SFT i 2018. FHI skriver også rett ut at det er usikkert om lav fruktbarhet er et problem (Folkehelseinstituttet, 2020). Det er et spørsmål både om tall og om hva vi mener er et godt samfunn."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Barnevogner og familier i en park om høsten",
+      "caption": "Om lave fødselstall er et problem, er et åpent spørsmål."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Norske kvinner får i dag rundt 1,5 barn hver, mens det trengs omtrent 2,1 for at hver generasjon skal erstatte seg selv. Tallet falt fra 1,98 i 2009 til 1,40 i 2023, og har steget litt de to siste årene. Hovedgrunnen er at flere venter lenger med å få sitt første barn, og at flere ikke får barn i det hele tatt. Hvorfor folk venter, er forskerne ikke helt enige om. Utdanning, penger og helse forklarer mindre enn mange tror, mens endrede verdier og usikkerhet om framtida kan bety mye. Om lave fødselstall er et problem, er et åpent spørsmål."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Folkehelseinstituttet. (2020). *Fallende fruktbarhet i Norge*. Hentet 30.10.2026 fra [fhi.no/publ/2020/fallende-fruktbarhet-i-norge](https://www.fhi.no/publ/2020/fallende-fruktbarhet-i-norge/)",
+          "Folkestad, S. (2024). *Låge fødselstal uroar regjeringa*. NHH Bulletin. Hentet 30.10.2026 fra [nhh.no](https://www.nhh.no/nhh-bulletin/artikkelarkiv/2024/august/lage-fodselstal-uroar-regjeringa/)",
+          "Sørlien, K. (2026). *Fruktbarheten fortsetter å øke*. Statistisk sentralbyrå. Hentet 30.10.2026 fra [ssb.no](https://www.ssb.no/befolkning/fodte-og-dode/statistikk/fodte/artikler/fruktbarheten-fortsetter-a-oke)",
+          "Tuv, N. (2020). *Slik måles fruktbarhet i statistikken*. Statistisk sentralbyrå. Hentet 30.10.2026 fra [ssb.no](https://www.ssb.no/befolkning/artikler-og-publikasjoner/slik-males-fruktbarhet-i-statistikken)",
+          "Tønnessen, M. & Solerød, H. (2026). *Samlet fruktbarhetstall*. Store norske leksikon. Hentet 30.10.2026 fra [snl.no/samlet_fruktbarhetstall](https://snl.no/samlet_fruktbarhetstall)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er samlet fruktbarhetstall (SFT), og hvilke kvinner er med når SSB regner det ut?",
+          "Hvor høyt var SFT i Norge i 2009, i 2023 og i 2025?",
+          "Hvilke tre ting forklarer ifølge FHI mest av fallet i fødselstallene?",
+          "Hvilket fylke hadde høyest SFT i 2025, og hva var tallet?"
+        ],
+        "reflekter": [
+          "Forklar med dine egne ord hva erstatningsnivået er, og hva som skjer med folketallet over tid hvis et land ligger under det og ingen flytter inn.",
+          "SFT kan falle selv om kvinnene til slutt får like mange barn. Forklar hvordan det henger sammen med at folk venter lenger med å få barn.",
+          "Bruk Barnetallsmaskinen. Hva skjer med andelen over 65 år og antall i arbeid per eldre når du går fra 2,1 til 1,48? Hvorfor endrer toppen av pyramiden seg nesten ikke?",
+          "Forskerne mener at penger og utdanning forklarer mindre av fallet enn mange tror. Hvilke grunner gir artikkelen for det?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Er det et problem at det blir født færre barn i Norge? Finn ett argument for og ett mot.",
+          "Intervju en forelder eller besteforelder: Hvor gamle var de da de fikk sitt første barn, og hvorfor fikk de så mange barn som de gjorde? Sammenlign med tallene i artikkelen.",
+          "Skriv et kort innlegg der du foreslår ett tiltak staten kunne prøvd for å få flere til å få barn. Forklar hvorfor du tror det kunne virket, og hva som kan tale imot."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva forteller samlet fruktbarhetstall (SFT)?",
+            "options": [
+              "Hvor mange barn som ble født i Norge et år",
+              "Hvor mange barn en kvinne vil få i snitt hvis hun får barn som kvinnene gjorde dette året",
+              "Hvor mange kvinner som er mellom 15 og 49 år",
+              "Hvor mange barn hver familie ønsker seg"
+            ],
+            "correctAnswer": 1,
+            "explanation": "SFT er et øyeblikksbilde: Hvor mange barn ville en kvinne fått hvis årets mønster gjentok seg gjennom hele livet hennes?"
+          },
+          {
+            "question": "Omtrent hvor mange barn per kvinne trengs for at folketallet skal holde seg likt uten innflytting?",
+            "options": [
+              "1,5",
+              "1,8",
+              "2,1",
+              "3,0"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Erstatningsnivået er omtrent 2,1. Da erstatter hver generasjon seg selv, så lenge ingen flytter inn eller ut."
+          },
+          {
+            "question": "Hva var SFT i Norge i 2023?",
+            "options": [
+              "1,98",
+              "1,40",
+              "1,48",
+              "2,24"
+            ],
+            "correctAnswer": 1,
+            "explanation": "1,40 i 2023 er det laveste som noen gang er målt i Norge. I 2025 hadde det steget til 1,48."
+          },
+          {
+            "question": "Hva forklarer ifølge FHI mest av fallet i fødselstallene?",
+            "options": [
+              "At folk har dårligere helse",
+              "At de med lang utdanning har sluttet å få barn",
+              "At flere ikke får barn, folk får første barn senere og færre får et tredje barn",
+              "At innvandrere får flere barn enn før"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Fallet skyldes mest at flere er barnløse, at folk venter lenger med første barn, og at færre får tre barn."
+          },
+          {
+            "question": "Hva skjedde for første gang i 2025?",
+            "options": [
+              "Det ble født flere enn 100 000 barn",
+              "Innvandrerkvinner fikk færre barn i snitt enn kvinnene i resten av befolkningen",
+              "SFT kom over 2,1",
+              "Oslo fikk høyest SFT i landet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I 2025 var SFT for innvandrerkvinner 1,44, lavere enn i resten av befolkningen for første gang."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
