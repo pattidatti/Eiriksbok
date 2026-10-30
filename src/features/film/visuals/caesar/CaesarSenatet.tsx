@@ -299,7 +299,7 @@ const LAPPER: Record<Modus, Lapp[]> = {
         { tekst: '15. mars 44 fvt.', under: 'Idene mars' },
         { tekst: 'Advart på forhånd', under: 'men Cæsar trodde ikke på spådommer' },
         { tekst: 'Rundt seksti menn med dolker', under: 'ledet av Cassius og Brutus' },
-        { tekst: '«Også du, Brutus?»', under: 'Brutus, Cæsars venn (i gull)' },
+        { tekst: '«Også du, Brutus?»', under: 'Brutus, Cæsars venn' },
         { tekst: 'Den tomme stolen' },
     ],
 };

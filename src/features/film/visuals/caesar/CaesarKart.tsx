@@ -98,7 +98,7 @@ const KORT: Record<Modus, Kort[][]> = {
         [{ tekst: '45 fvt.' }, { tekst: 'Alene på toppen', farge: GULL }],
     ],
     navnet: [
-        [{ tekst: 'Levde i 56 år' }, { tekst: 'Navnet: over 2000 år', farge: GULL }],
+        [{ tekst: 'Levde i 56 år' }, { tekst: 'Navnet: 2000 år', farge: GULL }],
         [{ tekst: 'Caesar' }, { tekst: 'uttalt «kaisar»', farge: LILLA }],
         [{ tekst: 'Keiseren' }, { tekst: 'Tyskland: Kaiser. Russland: tsar.', farge: ROD }],
         [{ tekst: 'Caesar' }, { tekst: 'ble en tittel', farge: GULL }],
