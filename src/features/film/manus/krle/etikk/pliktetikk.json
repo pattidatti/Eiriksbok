@@ -1,0 +1,409 @@
+{
+    "id": "pliktetikk",
+    "tittel": "Pliktetikk: Er det alltid galt å lyve?",
+    "kilde": "/krle/etikk/pliktetikk",
+    "bilde": "/images/etikk/pliktetikk_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-30",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "dora",
+            "kapittel": "Banking på døra",
+            "lyd": "vind",
+            "visual": {
+                "type": "PliktetikkHuset",
+                "props": {
+                    "modus": "dora"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du er en kvinne i Tyskland under andre verdenskrig. Det er kveld."
+                },
+                {
+                    "si": "I kjelleren skjuler du en jødisk familie, for å redde dem fra konsentrasjonsleirene."
+                },
+                {
+                    "si": "Så banker det hardt på døra. Det er en offiser fra Gestapo, det hemmelige politiet."
+                },
+                {
+                    "si": "Han ser deg rett inn i øynene og spør: Skjuler du noen jøder i huset ditt?"
+                },
+                {
+                    "si": "Hva gjør du?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "PLIKTETIKK",
+                    "undertittel": "Er det alltid galt å lyve?",
+                    "bilde": "/images/etikk/pliktetikk_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Sannheten eller løgnen?",
+                        "fraBeat": 0
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Er det alltid galt å lyve? Eller kan en løgn være riktig?"
+                }
+            ]
+        },
+        {
+            "id": "to-svar",
+            "visual": {
+                "type": "PliktetikkToSvar"
+            },
+            "replikker": [
+                {
+                    "si": "En utilitarist svarer raskt: Lyv. Løgnen redder uskyldige liv."
+                },
+                {
+                    "si": "For utilitaristen er det riktige det som skaper mest lykke. Her gjør løgnen det."
+                },
+                {
+                    "si": "Men filosofen Immanuel Kant var uenig. I et lite skrift fra 1797 skrev han at det alltid er galt å lyve, uansett hvem som spør."
+                },
+                {
+                    "si": "For Kant er sannheten en plikt du ikke kan forhandle om. Kant er pliktetiker."
+                },
+                {
+                    "si": "Det er ikke bare resultatet som avgjør om en handling er riktig. Også regelen bak den teller."
+                }
+            ]
+        },
+        {
+            "id": "fornuft",
+            "kapittel": "Fornuften bestemmer",
+            "visual": {
+                "type": "PliktetikkFornuft"
+            },
+            "replikker": [
+                {
+                    "si": "Lenge mente folk at moralen kom fra Gud. Du skal ikke stjele, fordi Gud har sagt det i Bibelen."
+                },
+                {
+                    "si": "Kant snudde dette opp ned. Mennesket kan selv finne ut hva som er rett, med fornuften, altså evnen til å tenke."
+                },
+                {
+                    "si": "Alle mennesker har fornuft. Derfor har vi alle tilgang til den samme moralske loven."
+                },
+                {
+                    "si": "For Kant betyr det at vi er autonome, altså selv-lovgivende. Vi følger lover vi på et vis har laget selv."
+                }
+            ]
+        },
+        {
+            "id": "pabud",
+            "kapittel": "To slags påbud",
+            "visual": {
+                "type": "PliktetikkPabud"
+            },
+            "replikker": [
+                {
+                    "si": "Kant skilte mellom to typer påbud. De fleste hverdagsregler kalte han hypotetiske: Hvis du vil oppnå noe, må du gjøre noe."
+                },
+                {
+                    "si": "Hvis du vil bli en god pianist, må du øve hver dag."
+                },
+                {
+                    "si": "Men bryr du deg ikke om piano, trenger du ikke øve. Regelen gjelder bare hvis du har målet."
+                },
+                {
+                    "si": "Den andre typen kalte han det kategoriske imperativ. Det betyr et påbud som gjelder alltid, uten unntak. Det sier bare: Gjør det!"
+                },
+                {
+                    "si": "Vær ærlig, gjelder enten du vil ha kunder eller ikke. Moralen er målet i seg selv."
+                }
+            ]
+        },
+        {
+            "id": "testen",
+            "kapittel": "Testen",
+            "visual": {
+                "type": "PliktetikkTesten"
+            },
+            "replikker": [
+                {
+                    "si": "Kant laget en test for å finne plikten din: Handl bare etter den regelen som du samtidig kan ville at skal bli en lov for alle."
+                },
+                {
+                    "si": "Først finner du regelen du følger. Si at den er: Jeg kan bryte et løfte når det passer meg."
+                },
+                {
+                    "si": "Så tenker du deg at alle andre gjør det samme."
+                },
+                {
+                    "si": "Da mister ordet løfte meningen sin. Ingen ville stolt på noen."
+                },
+                {
+                    "si": "Du kunne ikke engang gitt løftet du vil bryte. Regelen ødelegger seg selv. Derfor må du holde løfter."
+                }
+            ]
+        },
+        {
+            "id": "taxi",
+            "kapittel": "Aldri bare et middel",
+            "visual": {
+                "type": "PliktetikkMiddel",
+                "props": {
+                    "modus": "taxi"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kant skrev også loven på en annen måte: Bruk aldri et menneske bare som et middel, altså bare som et redskap."
+                },
+                {
+                    "si": "Legg merke til det lille ordet bare. For vi bruker hverandre ofte."
+                },
+                {
+                    "si": "Du bruker en taxisjåfør for å komme deg hjem. Det er helt i orden."
+                },
+                {
+                    "si": "Men du må respektere ham som et menneske. Du betaler, og du er høflig."
+                },
+                {
+                    "si": "Men du kan ikke lure ham eller gjøre ham til slave. Da bruker du ham bare som en ting."
+                }
+            ]
+        },
+        {
+            "id": "vekt",
+            "visual": {
+                "type": "PliktetikkMiddel",
+                "props": {
+                    "modus": "vekt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Her skiller pliktetikken seg fra utilitarismen. En utilitarist kan ofre ett menneske for å redde fem."
+                },
+                {
+                    "si": "Tenk på sporvognsproblemet. Kan du dytte en tykk mann ned fra en bro for å stanse toget og redde fem andre?"
+                },
+                {
+                    "si": "Pliktetikeren sier nei. Da bruker du ham som en ting, en bremsekloss, ikke som et menneske."
+                },
+                {
+                    "si": "For Kant har hvert menneske en verdi over enhver pris. Ingen kan ofres for det felles beste."
+                }
+            ]
+        },
+        {
+            "id": "butikk",
+            "kapittel": "Butikkeieren",
+            "visual": {
+                "type": "PliktetikkButikk"
+            },
+            "replikker": [
+                {
+                    "si": "Kant forteller om en butikkeier som aldri lurer kundene sine, ikke engang et barn som ikke kan regne."
+                },
+                {
+                    "si": "Men hvorfor er han ærlig? Kanskje er han bare redd for å miste ryktet sitt."
+                },
+                {
+                    "si": "Da er han ærlig for sin egen skyld. Ifølge Kant har ærligheten da ingen moralsk verdi."
+                },
+                {
+                    "si": "Men tenk om han har lyst til å lure kunden, og likevel gir riktige vekslepenger fordi det er plikten hans. Da skinner handlingen som en moralsk diamant."
+                },
+                {
+                    "si": "Ikke alle er enige. Mange beundrer heller den som gjør godt av kjærlighet eller vennskap, enn den som gjør det av plikt."
+                }
+            ]
+        },
+        {
+            "id": "morder",
+            "kapittel": "Morderen på døra",
+            "lyd": "vind",
+            "visual": {
+                "type": "PliktetikkHuset",
+                "props": {
+                    "modus": "morder"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tilbake til døra. Kant skrev at du må svare sant, selv til en morder som spør etter vennen din."
+                },
+                {
+                    "si": "Et poeng er at du ikke vet hva løgnen fører til. Si at du lyver og sier at vennen har stukket av."
+                },
+                {
+                    "si": "Men egentlig har vennen sneket seg ut bakveien. Da kan morderen løpe rett i armene på ham."
+                },
+                {
+                    "si": "Snakker du sant, har du gjort plikten din, mente Kant. Det morderen gjør etterpå, er hans eget ansvar."
+                },
+                {
+                    "si": "De færreste er enige med Kant her, og filosofer diskuterer det fortsatt. Men det viser hvor streng pliktetikken kan være."
+                }
+            ]
+        },
+        {
+            "id": "riket",
+            "kapittel": "Formålenes rike",
+            "lyd": "stille",
+            "visual": {
+                "type": "PliktetikkRiket"
+            },
+            "replikker": [
+                {
+                    "si": "Kant hadde en stor visjon. Han kalte den formålenes rike."
+                },
+                {
+                    "si": "Det er et tenkt samfunn der alle både lager lovene og er bundet av dem."
+                },
+                {
+                    "si": "Her behandler alle hverandre som mål, aldri bare som midler. Ingen lyver, stjeler eller utnytter andre."
+                },
+                {
+                    "si": "Kant visste at dette er et ideal vi kanskje aldri når. Men vi bør handle som om vi allerede levde der."
+                }
+            ]
+        },
+        {
+            "id": "sartre",
+            "kapittel": "Når plikter krasjer",
+            "visual": {
+                "type": "PliktetikkKart",
+                "props": {
+                    "modus": "valg"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva gjør du når to plikter krasjer? I 1946 fortalte den franske filosofen Jean-Paul Sartre om en elev som fikk et slikt valg under andre verdenskrig."
+                },
+                {
+                    "si": "Storebroren ble drept da Tyskland angrep i 1940. Faren hadde vendt seg mot moren og lente mot å samarbeide med okkupantene, tyskerne."
+                },
+                {
+                    "si": "Moren levde nå alene med den unge mannen. Skulle han bli hjemme og hjelpe henne?"
+                },
+                {
+                    "si": "Eller skulle han reise til England og slutte seg til de frie franske styrkene?"
+                },
+                {
+                    "si": "Ta vare på moren din, og kjemp mot et grusomt styre: Begge kan bli regler for alle. Men han kan ikke gjøre begge, og her kan ikke Kants test hjelpe ham."
+                }
+            ]
+        },
+        {
+            "id": "kompass",
+            "visual": {
+                "type": "PliktetikkKart",
+                "props": {
+                    "modus": "kompass"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sartre svarte at ingen regel kan vise deg veien. Eleven måtte velge selv."
+                },
+                {
+                    "si": "Vi er dømt til å være frie, sa Sartre. Vi må velge, og bære ansvaret alene."
+                },
+                {
+                    "si": "Pliktetikken gir oss et kompass, men ikke alltid et kart over terrenget."
+                }
+            ]
+        },
+        {
+            "id": "skjold",
+            "kapittel": "Pliktetikk i dag",
+            "visual": {
+                "type": "PliktetikkSkjold"
+            },
+            "replikker": [
+                {
+                    "si": "Kants tanker lever videre i menneskerettighetene. Det er rettighetene alle har, bare fordi de er mennesker."
+                },
+                {
+                    "si": "De gjelder uansett kjønn, klasse og bakgrunn. Og de begrunnes ofte med menneskeverd, en verdi over enhver pris, slik Kant beskrev det."
+                },
+                {
+                    "si": "I Grunnloven § 93 står forbudet mot tortur, slaveri og tvangsarbeid. Uten forbehold og uten unntak.",
+                    "uttale": "I Grunnloven paragraf nittitre står forbudet mot tortur, slaveri og tvangsarbeid. Uten forbehold og uten unntak."
+                },
+                {
+                    "si": "Slik blir pliktetikken et skjold for hvert enkelt menneske mot makten."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ikke bare resultatet teller.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Å lyve er galt, uansett hva det fører til.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Testen: Kan regelen min",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "bli en lov for alle?",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Bruk aldri et menneske",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "bare som en ting.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hva ville du gjort ved døra?",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Pliktetikken sier at det ikke bare er resultatet som teller. For Kant er noen handlinger, som å lyve, gale uansett hva de fører til."
+                },
+                {
+                    "si": "Vil du teste en handling, spør: Kan regelen min bli en lov for alle?"
+                },
+                {
+                    "si": "Og bruk aldri et menneske bare som en ting."
+                },
+                {
+                    "si": "Så tilbake til døra i Tyskland. Hva ville du gjort?"
+                }
+            ]
+        }
+    ]
+}
