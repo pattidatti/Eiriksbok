@@ -1,0 +1,249 @@
+{
+    "id": "fodselstallet-i-norge",
+    "tittel": "Hvorfor får nordmenn så få barn?",
+    "kilde": "/samfunnskunnskap/demografi/fodselstallet-i-norge",
+    "bilde": "/images/demografi/fodselstallet-i-norge-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-30", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "kvinnene",
+            "lyd": "vind",
+            "kapittel": "Færre barn",
+            "visual": { "type": "FodselstalletFolk", "props": { "modus": "start" } },
+            "replikker": [
+                { "si": "Se deg rundt i klasserommet. Kanskje har mange av dere ett søsken, eller to." },
+                { "si": "I 2009 fikk norske kvinner i snitt nesten to barn hver." },
+                { "si": "I 2023 var tallet nede i 1,40. Så lavt har det aldri vært målt i Norge før." },
+                { "si": "Hvorfor skjer det i et av verdens rikeste land? Og hva betyr det for landet?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Færre barn",
+                    "undertittel": "Hvorfor får nordmenn så få barn?",
+                    "bilde": "/images/demografi/fodselstallet-i-norge-hero.webp",
+                    "tall": [{ "verdi": 55400, "etikett": "barn født i 2025, 1400 flere enn året før", "fraBeat": 0 }],
+                    "sporsmal": { "tekst": "Hvorfor får hver kvinne færre barn?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "I 2025 ble det født rundt 55 400 barn her i landet. Det var 1400 flere enn året før." },
+                { "si": "Hvordan måler forskerne det, og hvorfor har tallet falt?" }
+            ]
+        },
+        {
+            "id": "maling",
+            "kapittel": "Hvordan måler vi?",
+            "visual": { "type": "FodselstalletAlder", "props": { "modus": "maling" } },
+            "replikker": [
+                { "si": "Å telle barna sier lite alene. Bor det mange unge voksne i landet, blir det født mange barn, selv om hver enkelt får få." },
+                { "si": "Derfor bruker forskerne et annet mål. Det heter samlet fruktbarhetstall, eller SFT. Fruktbarhet betyr her hvor mange barn folk får.", "uttale": "Derfor bruker forskerne et annet mål. Det heter samlet fruktbarhetstall, eller ess eff te. Fruktbarhet betyr her hvor mange barn folk får." },
+                { "si": "Statistisk sentralbyrå ser på alle kvinner mellom 15 og 49 år. For hver alder regner de ut hvor mange barn de fikk det året." },
+                { "si": "Så legger de sammen tallene for alle aldrene. Summen er SFT.", "uttale": "Så legger de sammen tallene for alle aldrene. Summen er ess eff te." },
+                { "si": "Det er et øyeblikksbilde: Hva om dette året gjentok seg gjennom hele livet til en kvinne?" }
+            ]
+        },
+        {
+            "id": "venter",
+            "visual": { "type": "FodselstalletAlder", "props": { "modus": "venter" } },
+            "replikker": [
+                { "si": "Men et øyeblikksbilde kan lure deg. Tallet har falt mest fordi flere venter lenger med sitt første barn." },
+                { "si": "Tenk deg en kvinne som får barn som 32-åring i stedet for 27-åring." },
+                { "si": "I årene hun venter, er hun ikke med i tallene. Da faller SFT, selv om hun kanskje ender med like mange barn til slutt.", "uttale": "I årene hun venter, er hun ikke med i tallene. Da faller ess eff te, selv om hun kanskje ender med like mange barn til slutt." },
+                { "si": "Derfor følger forskerne også kvinner født samme år, hele livet. De som ble født i 1979, hadde i snitt fått 1,89 barn da de var 45 år." }
+            ]
+        },
+        {
+            "id": "erstatning",
+            "lyd": "vind",
+            "kapittel": "Det magiske tallet 2,1",
+            "visual": { "type": "FodselstalletFolk", "props": { "modus": "erstatning" } },
+            "replikker": [
+                { "si": "Hvorfor er tallet to så viktig? Et barn har to foreldre." },
+                { "si": "Får hvert par to barn, tar barna omtrent plassen til foreldrene når de blir voksne." },
+                { "si": "Forskerne regner med at det trengs litt mer enn to, omtrent 2,1 barn per kvinne." },
+                { "si": "Da holder folketallet seg likt over tid, så lenge ingen flytter inn eller ut. Det kalles erstatningsnivået: Hver generasjon erstatter den før seg." }
+            ]
+        },
+        {
+            "id": "under",
+            "visual": { "type": "FodselstalletFolk", "props": { "modus": "under" } },
+            "replikker": [
+                { "si": "Hva skjer under 2,1? Hvert nytt barnekull blir litt mindre enn det forrige." },
+                { "si": "Etter noen tiår er det færre barn, færre unge voksne og flere eldre i forhold. Slik eldes et land." },
+                { "si": "Norge har lenge ligget under 2,1. Likevel vokser folketallet, fordi mange flytter hit." },
+                { "si": "Og mange voksne er i alderen der folk får barn. Derfor blir det fortsatt født flere enn det dør." }
+            ]
+        },
+        {
+            "id": "historien",
+            "lyd": "stille",
+            "kapittel": "Opp og ned",
+            "visual": { "type": "FodselstalletKurve", "props": { "modus": "lang" } },
+            "replikker": [
+                { "si": "Før 1900 fikk norske kvinner i snitt over fire barn." },
+                { "si": "Mellom de to verdenskrigene falt tallet under to." },
+                { "si": "På 1960-tallet steg det igjen til nesten tre." },
+                { "si": "Så falt det kraftig på 1970-tallet. På midten av 1980-tallet var det under 1,7." },
+                { "si": "Etter det har tallet stort sett ligget mellom 1,5 og 2." }
+            ]
+        },
+        {
+            "id": "fallet",
+            "visual": { "type": "FodselstalletKurve", "props": { "modus": "naer" } },
+            "replikker": [
+                { "si": "Så de siste årene. I 2009 var SFT 1,98.", "uttale": "Så de siste årene. I 2009 var ess eff te 1,98." },
+                { "si": "Deretter falt det nesten hvert år, helt ned til 1,40 i 2023." },
+                { "si": "Så gikk det litt opp igjen: til 1,44 i 2024 og 1,48 i 2025." },
+                { "si": "Det er fortsatt lavt mot tidligere år, sier Statistisk sentralbyrå. Mest av økningen kom blant kvinner mellom 30 og 34 år." }
+            ]
+        },
+        {
+            "id": "fylkene",
+            "visual": { "type": "FodselstalletKart", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Tallet er heller ikke likt over hele landet. I 2025 hadde Rogaland høyest SFT, med 1,65.", "uttale": "Tallet er heller ikke likt over hele landet. I 2025 hadde Rogaland høyest ess eff te, med 1,65." },
+                { "si": "Innlandet økte mest, fra 1,40 til 1,54." },
+                { "si": "Oslo hadde i 2024 det laveste tallet på Østlandet, med 1,31." },
+                { "si": "Så sent som i 1968 fikk kvinnene i Finnmark i snitt 3,4 barn. Forskjellene mellom fylkene var mye større før." }
+            ]
+        },
+        {
+            "id": "tre-ting",
+            "kapittel": "Hvorfor?",
+            "visual": { "type": "FodselstalletGrunner", "props": { "modus": "tre" } },
+            "replikker": [
+                { "si": "Hvorfor får folk færre barn? Folkehelseinstituttet ledet et stort forskningsprosjekt om det." },
+                { "si": "Svaret er at fallet først og fremst skyldes tre ting. Én: Flere får ikke barn i det hele tatt." },
+                { "si": "To: Folk får sitt første barn senere." },
+                { "si": "Tre: Færre får et tredje barn." }
+            ]
+        },
+        {
+            "id": "tretti",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 43,
+                            "farge": "#f59e0b",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Fylte 30 ti år før: 43 prosent uten barn",
+                            "fargeEtikett": "ingen barn ennå",
+                            "restEtikett": "har fått barn",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 58,
+                            "farge": "#f59e0b",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Fylte 30 i 2025: 58 prosent uten barn",
+                            "fargeEtikett": "ingen barn ennå",
+                            "restEtikett": "har fått barn",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 58,
+                            "farge": "#f59e0b",
+                            "restFarge": "#0d9488",
+                            "tittel": "Første barn i 2025: mor i snitt 30,4 år",
+                            "fargeEtikett": "fylte 30 i 2025, ingen barn ennå",
+                            "restEtikett": "har fått barn",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Av kvinnene som fylte 30 år ti år før 2025, hadde 43 prosent ennå ikke fått barn." },
+                { "si": "I 2025 gjaldt det 58 prosent." },
+                { "si": "I 2025 var mødrene i snitt 30,4 år da de fikk sitt første barn. Det var første gang siden 2009 at alderen ikke økte." }
+            ]
+        },
+        {
+            "id": "forklaringer",
+            "kapittel": "Hvorfor venter folk?",
+            "visual": { "type": "FodselstalletGrunner", "props": { "modus": "tester" } },
+            "replikker": [
+                { "si": "Men hvorfor venter folk? Forskerne har testet flere forklaringer." },
+                { "si": "Utdanning? Fallet etter 2009 var omtrent like sterkt i alle utdanningsgrupper." },
+                { "si": "Penger? Finanskrisen rammet de nordiske landene ulikt, men barnetallet falt likt i alle, så forskerne tror ikke det handler om hvor mye penger folk faktisk har. Usikkerhet om framtida kan likevel bety noe." },
+                { "si": "Helse? Fallet var ikke større blant folk med dårlig helse. Helse forklarer altså lite." },
+                { "si": "Verdier? Hva folk synes er viktig i livet, har trolig endret seg. Men det er spesielt vanskelig å måle." }
+            ]
+        },
+        {
+            "id": "innvandrere",
+            "kapittel": "Innvandrere",
+            "visual": { "type": "FodselstalletKart", "props": { "modus": "innvandrere" } },
+            "replikker": [
+                { "si": "Mange tror at innvandrere får mye flere barn enn andre i Norge. Det var sant før, men forskjellen har krympet." },
+                { "si": "I 2025 fikk innvandrerkvinner for første gang færre barn i snitt enn kvinnene i resten av befolkningen. SFT for innvandrerkvinner var 1,44.", "uttale": "I 2025 fikk innvandrerkvinner for første gang færre barn i snitt enn kvinnene i resten av befolkningen. Ess eff te for innvandrerkvinner var 1,44." },
+                { "si": "Men gruppen er svært ulik. Kvinner fra Ukraina hadde en SFT på bare 0,88.", "uttale": "Men gruppen er svært ulik. Kvinner fra Ukraina hadde en ess eff te på bare 0,88." },
+                { "si": "Kvinner fra Syria hadde 2,34, og kvinner fra Eritrea hadde 2,81." },
+                { "si": "Én forklaring på at forskjellen har krympet: Det blir også født færre barn i landene mange kommer fra." }
+            ]
+        },
+        {
+            "id": "verden",
+            "kapittel": "Norge er ikke alene",
+            "visual": { "type": "FodselstalletKart", "props": { "modus": "verden" } },
+            "replikker": [
+                { "si": "I hele verden fikk hver kvinne i snitt 2,24 barn i 2025." },
+                { "si": "I Hellas, Italia og Spania har tallet vært helt nede i 1,2 til 1,3." },
+                { "si": "I Kina var det bare 1,02 i 2025. I Afrika er snittet fortsatt nær fire." },
+                { "si": "Rike land får som regel færre barn enn fattige. Når et land blir rikere og flere barn overlever, begynner folk å få færre barn." }
+            ]
+        },
+        {
+            "id": "problem",
+            "lyd": "vind",
+            "kapittel": "Er det et problem?",
+            "visual": { "type": "FodselstalletFolk", "props": { "modus": "eldre" } },
+            "replikker": [
+                { "si": "Regjeringen er bekymret. Holder tallet seg lavt lenge, blir det etter hvert færre i arbeid for hver person over 65 år." },
+                { "si": "Da kan det bli vanskeligere å finne nok folk til sykehjem og sykehus, og færre betaler skatt." },
+                { "si": "I 2024 pekte ministeren på at regjeringen hadde gjort barnehage og SFO billigere og økt barnetrygden. Men hun innrømmet at de vet mindre om hva tiltakene gjør med fødselstallene.", "uttale": "I 2024 pekte ministeren på at regjeringen hadde gjort barnehage og ess eff o billigere og økt barnetrygden. Men hun innrømmet at de vet mindre om hva tiltakene gjør med fødselstallene." },
+                { "si": "Men ikke alle er like bekymret. Folk kan få barn senere og likevel ende med nesten like mange til slutt." },
+                { "si": "Kvinnene som var 45 år i 2018, hadde i snitt fått 1,98 barn. Folkehelseinstituttet tror at barnetallet til slutt faller noe, men trolig ikke helt ned til 1,56, som var SFT i 2018. De skriver rett ut at det er usikkert om få barn er et problem." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Rundt 1,5 barn per kvinne.", "fraBeat": 0 },
+                        { "tekst": "Omtrent 2,1 trengs for å erstatte seg selv.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Flere venter lenger.", "fraBeat": 1 },
+                        { "tekst": "Og flere får ikke barn i det hele tatt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Utdanning, penger og helse forklarer mindre enn mange tror.", "fraBeat": 2 },
+                        { "tekst": "Om det er et problem, er et åpent spørsmål.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Norske kvinner får i dag rundt 1,5 barn hver. Det trengs omtrent 2,1 for at hver generasjon skal erstatte seg selv." },
+                { "si": "Hovedgrunnen er at flere venter lenger med sitt første barn, og at flere ikke får barn i det hele tatt." },
+                { "si": "Hvorfor folk venter, er forskerne ikke helt enige om. Utdanning, penger og helse forklarer mindre enn mange tror." },
+                { "si": "Om det er et problem, er et åpent spørsmål. Det handler både om tall og om hva vi mener er et godt samfunn." }
+            ]
+        }
+    ]
+}
