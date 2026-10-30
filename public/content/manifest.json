@@ -1521,6 +1521,20 @@
               ],
               "createdDate": "2026-06-02T09:38:09+02:00",
               "lastUpdated": "2026-08-05T11:58:03+02:00"
+            },
+            {
+              "id": "fodselstallet-i-norge",
+              "title": "Hvorfor får nordmenn så få barn?",
+              "description": "Hva betyr det at norske kvinner får rundt 1,5 barn hver, hvorfor har tallet falt, og er det et problem?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "demografi",
+                "fruktbarhet",
+                "befolkning",
+                "statistikk",
+                "familie"
+              ],
+              "createdDate": "2026-10-30T00:00:00Z"
             }
           ]
         },

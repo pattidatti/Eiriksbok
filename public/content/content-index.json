@@ -1,5 +1,5 @@
 {
-  "buildId": 263170633367268,
+  "buildId": 111240474846879,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4684,6 +4684,9 @@
     "finland-levekar": [
       "content/samfunnskunnskap/demografi/finland-levekar.json"
     ],
+    "fodselstallet-i-norge": [
+      "content/samfunnskunnskap/demografi/fodselstallet-i-norge.json"
+    ],
     "demografi-intro": [
       "content/samfunnskunnskap/demografi/intro.json"
     ],
@@ -6517,6 +6520,7 @@
     "samfunnskunnskap/demografi/den-demografiske-overgangen": "content/samfunnskunnskap/demografi/den-demografiske-overgangen.json",
     "samfunnskunnskap/demografi/fattigdom": "content/samfunnskunnskap/demografi/fattigdom.json",
     "samfunnskunnskap/demografi/finland-levekar": "content/samfunnskunnskap/demografi/finland-levekar.json",
+    "samfunnskunnskap/demografi/fodselstallet-i-norge": "content/samfunnskunnskap/demografi/fodselstallet-i-norge.json",
     "samfunnskunnskap/demografi/intro": "content/samfunnskunnskap/demografi/intro.json",
     "samfunnskunnskap/demografi/km-6-levekaar-verden": "content/samfunnskunnskap/demografi/km-6-levekaar-verden.json",
     "samfunnskunnskap/demografi/malthus-vs-boserup": "content/samfunnskunnskap/demografi/malthus-vs-boserup.json",
