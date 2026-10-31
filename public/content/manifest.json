@@ -1535,6 +1535,21 @@
                 "familie"
               ],
               "createdDate": "2026-10-30T00:00:00Z"
+            },
+            {
+              "id": "eldrebolgen",
+              "title": "Eldrebølgen: Hvem skal ta vare på de gamle?",
+              "description": "Hvorfor blir det stadig flere eldre i Norge, og hvem skal betale for og gjøre jobben med å ta vare på dem?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "demografi",
+                "eldrebølgen",
+                "befolkning",
+                "velferd",
+                "pensjon",
+                "helse"
+              ],
+              "createdDate": "2026-10-31T00:00:00Z"
             }
           ]
         },
