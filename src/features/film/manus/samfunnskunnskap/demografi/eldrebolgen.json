@@ -1,0 +1,498 @@
+{
+    "id": "eldrebolgen",
+    "tittel": "Eldrebølgen: Hvem skal ta vare på de gamle?",
+    "kilde": "/samfunnskunnskap/demografi/eldrebolgen",
+    "bilde": "/images/demografi/eldrebolgen-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-31",
+        "viser": 3,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "sykehjem",
+            "kapittel": "Sykehjemmet",
+            "lyd": "rom",
+            "visual": {
+                "type": "EldrebolgenSykehjem",
+                "props": {
+                    "modus": "start"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du er leder på et sykehjem i en liten kommune. Det er fredag."
+                },
+                {
+                    "si": "To sykepleiere har nettopp sagt opp. Du legger ut en ny stilling."
+                },
+                {
+                    "si": "Men ingen søker."
+                },
+                {
+                    "si": "Samtidig står tre nye eldre på venteliste for å få plass."
+                },
+                {
+                    "si": "Dette gjelder ikke bare ett sykehjem. Det skjer i hele Norge: Vi blir flere gamle, og det blir færre til å ta vare på dem."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Eldrebølgen",
+                    "undertittel": "Hvem skal ta vare på de gamle?",
+                    "bilde": "/images/demografi/eldrebolgen-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 959633,
+                            "etikett": "er 67 år eller eldre (2026)",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvem betaler, og hvem gjør jobben?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette kalles eldrebølgen."
+                },
+                {
+                    "si": "I 2026 var 959 633 personer i Norge 67 år eller eldre."
+                },
+                {
+                    "si": "I denne filmen skal vi se hvorfor eldrebølgen kommer, hvem som skal betale, og hvem som skal gjøre jobben."
+                }
+            ]
+        },
+        {
+            "id": "andel",
+            "kapittel": "Hva er eldrebølgen?",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "total": 100,
+                            "restFarge": "#94a3b8",
+                            "fargeEtikett": "80 år eller eldre",
+                            "restEtikett": "yngre",
+                            "visTall": false,
+                            "fraBeat": 0,
+                            "farget": 5,
+                            "farge": "#ea580c",
+                            "tittel": "100 nordmenn i dag: omtrent 5 er 80 år eller eldre"
+                        },
+                        {
+                            "total": 100,
+                            "restFarge": "#94a3b8",
+                            "fargeEtikett": "80 år eller eldre",
+                            "restEtikett": "yngre",
+                            "visTall": false,
+                            "fraBeat": 1,
+                            "farget": 0,
+                            "farge": "#ea580c",
+                            "tittel": "1850: under 1 av 100"
+                        },
+                        {
+                            "total": 100,
+                            "restFarge": "#94a3b8",
+                            "fargeEtikett": "80 år eller eldre",
+                            "restEtikett": "yngre",
+                            "visTall": false,
+                            "fraBeat": 2,
+                            "farget": 5,
+                            "farge": "#ea580c",
+                            "tittel": "I dag: omtrent 5 av 100, altså 1 av 20"
+                        },
+                        {
+                            "total": 100,
+                            "restFarge": "#94a3b8",
+                            "fargeEtikett": "80 år eller eldre",
+                            "restEtikett": "yngre",
+                            "visTall": false,
+                            "fraBeat": 3,
+                            "farget": 15,
+                            "farge": "#dc2626",
+                            "tittel": "Mot slutten av århundret kan det bli nesten 15 av 100"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Eldrebølgen betyr at det blir stadig flere eldre, og at de eldre blir en større del av hele befolkningen."
+                },
+                {
+                    "si": "Se på dem som er 80 år eller eldre. I 1850 var de under 1 prosent av alle i Norge."
+                },
+                {
+                    "si": "I dag er de omtrent 5 prosent. Det er 1 av 20."
+                },
+                {
+                    "si": "Statistisk sentralbyrå, SSB, regner med at det kan bli nesten 15 prosent mot slutten av århundret. Det er 1 av 7."
+                }
+            ]
+        },
+        {
+            "id": "bolge",
+            "visual": {
+                "type": "EldrebolgenBolge"
+            },
+            "replikker": [
+                {
+                    "si": "Men ordet bølge kan lure deg."
+                },
+                {
+                    "si": "En bølge stiger, og så synker den igjen."
+                },
+                {
+                    "si": "Forskerne venter ikke at andelen eldre skal gå ned igjen. Aldringen er en varig endring, ikke en topp som går over."
+                },
+                {
+                    "si": "Derfor er det kanskje bedre å tenke på det som et nytt nivå enn som en bølge."
+                }
+            ]
+        },
+        {
+            "id": "lenger",
+            "kapittel": "Hvorfor blir vi eldre?",
+            "visual": {
+                "type": "EldrebolgenPyramide",
+                "props": {
+                    "modus": "lenger"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på denne figuren. Den kalles en befolkningspyramide. De yngste står nederst, og de eldste øverst."
+                },
+                {
+                    "si": "Den første grunnen til at vi blir eldre, er at folk lever lenger. Bedre mat, medisiner og helsevesen gjør at færre dør unge."
+                },
+                {
+                    "si": "En baby som blir født i Norge i 2026, kan i snitt vente å leve i 83,6 år."
+                },
+                {
+                    "si": "SSB regner med at tallet stiger til 87,2 år i 2050."
+                }
+            ]
+        },
+        {
+            "id": "kullene",
+            "visual": {
+                "type": "EldrebolgenPyramide",
+                "props": {
+                    "modus": "kull"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den andre grunnen er at det blir født færre barn."
+                },
+                {
+                    "si": "Et barnekull er alle som blir født samme år. Når hvert nytt kull er lite, blir de eldre en større del av befolkningen."
+                },
+                {
+                    "si": "Den tredje grunnen er etterkrigskullene. Etter andre verdenskrig ble det født svært mange barn i Norge."
+                },
+                {
+                    "si": "Nå nærmer de seg 80 år. Når et så stort kull blir gammelt, stiger antallet eldre raskt."
+                },
+                {
+                    "si": "Derfor blir toppen av pyramiden bredere år for år."
+                }
+            ]
+        },
+        {
+            "id": "innvandring",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 5,
+                            "farget": 5,
+                            "farge": "#0d9488",
+                            "tittel": "Flytter det inn mange unge, blir befolkningen yngre",
+                            "fargeEtikett": "unge som flytter hit",
+                            "visTall": false,
+                            "restEtikett": "andre"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 5,
+                            "farget": 5,
+                            "farge": "#64748b",
+                            "tittel": "Men de blir også gamle etter hvert",
+                            "fargeEtikett": "blir gamle her",
+                            "visTall": false,
+                            "restEtikett": "andre"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 5,
+                            "farget": 1,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Over 70 år i 2050: SSB regner med omtrent 1 av 5",
+                            "fargeEtikett": "har innvandrerbakgrunn",
+                            "visTall": false,
+                            "restEtikett": "andre over 70"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Innvandring spiller også inn. Flytter det inn mange unge, blir befolkningen yngre."
+                },
+                {
+                    "si": "Men også de som flytter hit, blir gamle etter hvert."
+                },
+                {
+                    "si": "SSB regner med at omtrent hver femte person over 70 år vil ha innvandrerbakgrunn i 2050."
+                }
+            ]
+        },
+        {
+            "id": "vendepunkt",
+            "kapittel": "Vendepunktet i 2032",
+            "visual": {
+                "type": "EldrebolgenVekt"
+            },
+            "replikker": [
+                {
+                    "si": "Hvert andre år lager SSB en framskriving. Det er en beregning av hvordan befolkningen trolig vil se ut i framtiden."
+                },
+                {
+                    "si": "Den bygger på hvor mange som blir født, dør og flytter. Den nyeste kom i juni 2026."
+                },
+                {
+                    "si": "Der står det at i 2032 blir det flere over 65 år enn under 20 år."
+                },
+                {
+                    "si": "Det har aldri skjedd før i Norge."
+                }
+            ]
+        },
+        {
+            "id": "fylker",
+            "visual": {
+                "type": "EldrebolgenKart"
+            },
+            "replikker": [
+                {
+                    "si": "I noen fylker har det allerede skjedd."
+                },
+                {
+                    "si": "I Innlandet, Telemark, Vestfold, Nordland og Troms er det nå flere over 65 enn under 20."
+                },
+                {
+                    "si": "Oslo blir det siste fylket, innen 2046."
+                },
+                {
+                    "si": "Eldrebølgen treffer nemlig ikke hele landet likt. Mange unge flytter fra bygdene til byene for å studere og jobbe. Derfor er andelen eldre høyest i distriktene."
+                },
+                {
+                    "si": "I de minst sentrale kommunene er i dag 20 prosent av innbyggerne 70 år eller eldre. I 2050 kan det bli omtrent 25 prosent, altså hver fjerde innbygger."
+                }
+            ]
+        },
+        {
+            "id": "betale",
+            "kapittel": "Hvem skal betale?",
+            "visual": {
+                "type": "EldrebolgenBaerere",
+                "props": {
+                    "modus": "tall"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Pensjon, sykehus og sykehjem betales i stor grad av skatten som folk i jobb betaler."
+                },
+                {
+                    "si": "Forskerne bruker et mål som heter forsørgerbyrden. Å forsørge betyr å sørge for at noen har det de trenger."
+                },
+                {
+                    "si": "Man teller hvor mange som er mellom 20 og 66 år for hver person som er 67 år eller eldre. Ikke alle i arbeidsalder er i jobb."
+                },
+                {
+                    "si": "I 1950 var det 7,6 personer i arbeidsalder for hver eldre."
+                },
+                {
+                    "si": "I 2026 er tallet 3,6."
+                },
+                {
+                    "si": "Ifølge SSBs hovedalternativ faller tallet til 2,5 i 2050, og til 1,8 i 2100."
+                }
+            ]
+        },
+        {
+            "id": "sytti",
+            "visual": {
+                "type": "EldrebolgenBaerere",
+                "props": {
+                    "modus": "sytti"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva skjer hvis alle jobber til de er 70 år?"
+                },
+                {
+                    "si": "Da blir det 3,1 personer i arbeidsalder per eldre i 2050, i stedet for 2,5."
+                },
+                {
+                    "si": "Det hjelper. Men det er fortsatt færre enn i dag, da tallet er 3,6."
+                },
+                {
+                    "si": "Å jobbe lenger løser altså ikke problemet alene."
+                }
+            ]
+        },
+        {
+            "id": "jobben",
+            "kapittel": "Hvem skal gjøre jobben?",
+            "lyd": "rom",
+            "visual": {
+                "type": "EldrebolgenSykehjem",
+                "props": {
+                    "modus": "mangel"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Penger er bare den ene siden. Noen må faktisk stelle de eldre. Og du kan ikke kjøpe hjelp hvis ingen kan gjøre jobben."
+                },
+                {
+                    "si": "SSB har regnet ut hvor mange helsearbeidere Norge vil trenge. Behovet vokser mest i hjelpen eldre får hjemme og på sykehjem."
+                },
+                {
+                    "si": "Forskerne regner i årsverk. Et årsverk er det én person gjør i en full stilling i ett år."
+                },
+                {
+                    "si": "I 2040 kan Norge mangle om lag 42 400 årsverk med helsepersonell."
+                },
+                {
+                    "si": "Mangelen er størst for helsefagarbeidere, med 25 900 årsverk, og sykepleiere, med 14 700 årsverk."
+                },
+                {
+                    "si": "Familien betyr også mye. Hjelper familien mindre i framtiden, må kommunen gjøre mer, og da blir mangelen større."
+                }
+            ]
+        },
+        {
+            "id": "tiltak",
+            "kapittel": "Hva kan vi gjøre?",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Tiltak som diskuteres",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Jobbe lenger",
+                            "tekst": "pensjonsreformen i 2011",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Utdanne flere",
+                            "tekst": "størst effekt, men ikke nok alene",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Innvandring",
+                            "tekst": "utsetter mer enn det løser",
+                            "fraBeat": 3
+                        },
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Teknologi",
+                            "tekst": "men omsorg trenger mennesker",
+                            "fraBeat": 4
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det finnes ikke én enkel løsning. Det første tiltaket er at folk jobber lenger. I 2011 kom en pensjonsreform, altså en stor endring av regler."
+                },
+                {
+                    "si": "Nå regnes pensjonen ut etter hvor lenge folk på din alder ventes å leve. Det kalles levealdersjustering. For deg betyr det litt mindre pensjon hvert år, eller at du må jobbe litt lenger enn besteforeldrene dine for å få like mye."
+                },
+                {
+                    "si": "Det andre er å utdanne flere sykepleiere og helsefagarbeidere. Det hadde størst effekt av tiltakene SSB testet. Men ingen tiltak alene er nok."
+                },
+                {
+                    "si": "Det tredje er innvandring. Folk som flytter hit for å jobbe, kan fylle ledige stillinger. Men de blir også gamle, så det utsetter mer enn det løser."
+                },
+                {
+                    "si": "Det fjerde er teknologi, som digitale verktøy eller maskiner. Men mange mener at stell og omsorg er noe mennesker må gjøre."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Et problem eller en seier?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Eldrebølgen kommer blant annet fordi vi lever lenger.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Mange ser det som en stor seier.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Velferdsstaten ble bygd for mange unge og få eldre.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Nå må vi bli gode på å ta vare på mange gamle samtidig.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er lett å snakke om eldrebølgen som et problem. Men husk hvorfor den kommer."
+                },
+                {
+                    "si": "Folk lever lenger og friskere enn før. Mange ser det som en stor seier."
+                },
+                {
+                    "si": "Velferdsstaten ble bygd i en tid med mange unge og få eldre. Nå må den tilpasses et land med stadig flere gamle."
+                },
+                {
+                    "si": "Utfordringen er ikke at vi blir gamle. Utfordringen er at samfunnet må bli godt på å ta vare på mange gamle samtidig."
+                }
+            ]
+        }
+    ]
+}
