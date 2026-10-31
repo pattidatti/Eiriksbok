@@ -1,0 +1,220 @@
+{
+    "id": "pompeii",
+    "tittel": "Pompeii: Byen som ble frosset i tid",
+    "kilde": "/historie/romerriket/pompeii",
+    "bilde": "/images/romerriket/hero-pompeii.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-31", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "morgen",
+            "lyd": "vind",
+            "kapittel": "Fjellet",
+            "visual": { "type": "PompeiiVulkan", "props": { "modus": "morgen" } },
+            "replikker": [
+                { "si": "Det er morgen i Romerriket, i år 79. Sola skinner over en rik by ved havet." },
+                { "si": "Byen heter Pompeii, og folkene her har det godt." },
+                { "si": "Over byen ruver et fjell. Det heter Vesuv. I liene vokser det gode vindruer." },
+                { "si": "Ingen i byen vet at fjellet er en vulkan. For dem er det bare et fjell." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "POMPEII",
+                    "undertittel": "Byen som ble frosset i tid",
+                    "bilde": "/images/romerriket/hero-pompeii.webp",
+                    "sporsmal": { "tekst": "Hvordan kan en katastrofe bli en tidsmaskin?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Ved lunsjtid eksploderer toppen av fjellet. I løpet av et døgn er en hel by begravet." },
+                { "si": "Et gammelt brev sier at det skjedde den tjuefjerde august. Nyere funn har fått flere forskere til å tro at det heller var den tjuefjerde oktober." },
+                { "si": "I denne filmen skal vi se hvordan katastrofen gjorde Pompeii til en tidsmaskin." }
+            ]
+        },
+        {
+            "id": "byene",
+            "visual": { "type": "PompeiiKart", "props": { "modus": "byer" } },
+            "replikker": [
+                { "si": "Vesuv ligger ved en stor bukt i Sør-Italia." },
+                { "si": "Pompeii var ikke den eneste byen som ble rammet." },
+                { "si": "Herculaneum, Oplontis og Stabiae ble begravd samtidig." },
+                { "si": "Fire byer forsvant under det samme fjellet på bare ett døgn." }
+            ]
+        },
+        {
+            "id": "oyenvitnet",
+            "kapittel": "Øyenvitnet",
+            "visual": { "type": "PompeiiKart", "props": { "modus": "plinius" } },
+            "replikker": [
+                { "si": "Hvordan vet vi hva som skjedde den dagen? Takket være en tenåringsgutt." },
+                { "si": "Han het Plinius den yngre, og han var rundt 17 eller 18 år gammel." },
+                { "si": "Han var på den andre siden av bukta. Derfra så han alt sammen." },
+                { "si": "Senere skrev han brev til historikeren Tacitus om det han hadde sett." }
+            ]
+        },
+        {
+            "id": "pinjetre",
+            "lyd": "vind",
+            "visual": { "type": "PompeiiVulkan", "props": { "modus": "utbrudd" } },
+            "klokke": ["13.00", "13.00", null, null],
+            "replikker": [
+                { "si": "En enorm røyksøyle stiger opp fra fjellet, 30 kilometer opp i lufta." },
+                { "si": "Plinius sammenlignet den med et pinjetre. En lang, tynn stamme som greiner seg ut høyt oppe." },
+                { "si": "Beskrivelsen hans regnes som den første ordentlige beskrivelsen av et vulkanutbrudd." },
+                { "si": "Derfor kaller forskere slike kraftige utbrudd for plinske utbrudd. De er oppkalt etter ham." }
+            ]
+        },
+        {
+            "id": "onkelen",
+            "lyd": "stille",
+            "visual": { "type": "PompeiiKart", "props": { "modus": "onkel" } },
+            "replikker": [
+                { "si": "Onkelen hans, Plinius den eldre, var sjef for flåten i Misenum." },
+                { "si": "Han dro ut med skip. Han ville se utbruddet nærmere, og han ville redde folk." },
+                { "si": "Han seilte rett mot fjellet som spydde ild og aske." },
+                { "si": "Det kostet ham livet. Han døde av de giftige gassene, på stranda i Stabiae." }
+            ]
+        },
+        {
+            "id": "steinregn",
+            "lyd": "storm",
+            "kapittel": "Steinregnet",
+            "visual": { "type": "PompeiiVulkan", "props": { "modus": "askeregn" } },
+            "klokke": ["15.00", "15.00", null, null],
+            "replikker": [
+                { "si": "Over Pompeii begynner det å regne. Det ser ut som snø, men det er stein." },
+                { "si": "Steinen heter pimpstein. Den kommer fra vulkanen, den er tung, og den er varm." },
+                { "si": "I nesten et døgn regner det stein over byen." },
+                { "si": "Folk som ble inne, ble knust av takene. De som løp ut, ble truffet av stein eller kvalt av gass." }
+            ]
+        },
+        {
+            "id": "laget",
+            "lyd": "stille",
+            "visual": { "type": "PompeiiSnitt", "props": { "modus": "lag" } },
+            "replikker": [
+                { "si": "Se på et hus i Pompeii. Steinene legger seg på gata, lag på lag." },
+                { "si": "Til slutt ligger det et lag på 2,8 meter.", "uttale": "Til slutt ligger det et lag på to komma åtte meter." },
+                { "si": "Så mye stein er tungt. Takene raser sammen under vekten." }
+            ]
+        },
+        {
+            "id": "strommene",
+            "lyd": "storm",
+            "visual": { "type": "PompeiiVulkan", "props": { "modus": "strom" } },
+            "klokke": [null, null, null, "20.00", "07.00"],
+            "replikker": [
+                { "si": "Men det var ikke steinene som drepte de fleste. Det var noe enda verre." },
+                { "si": "Det heter pyroklastiske strømmer. Det er supervarme bølger av gass og aske som raser nedover fjellsiden." },
+                { "si": "Slike strømmer holder ofte over 100 kilometer i timen. Gassene kan bli 600 til 700 grader varme." },
+                {
+                    "si": "Om kvelden traff de første strømmene Herculaneum.",
+                    "uttale": "Klokka åtte om kvelden traff de første strømmene Herculaneum."
+                },
+                {
+                    "si": "Neste morgen traff den dødeligste strømmen Pompeii. Ingen som var igjen i byen, overlevde.",
+                    "uttale": "Klokka sju neste morgen traff den dødeligste strømmen Pompeii. Ingen som var igjen i byen, overlevde."
+                }
+            ]
+        },
+        {
+            "id": "gips",
+            "lyd": "rom",
+            "kapittel": "Formene i asken",
+            "visual": { "type": "PompeiiSnitt", "props": { "modus": "gips" } },
+            "replikker": [
+                { "si": "Til sammen la pimpstein og aske seg som et teppe over byen, 6 til 7 meter tykt." },
+                { "si": "Massen ble hard og la seg som en form rundt kroppene til de døde." },
+                { "si": "Etter hvert råtnet kroppene bort. Igjen ble et tomt hull, formet som et menneske." },
+                { "si": "I 1858 fikk utgravingslederen Giuseppe Fiorelli en idé. Han helte gips ned i hullene." },
+                { "si": "Slik ble de berømte gipsavstøpningene til. De viser mennesker og dyr slik de var i dødsøyeblikket." },
+                { "si": "Mange av dem prøvde desperat å komme seg unna." }
+            ]
+        },
+        {
+            "id": "herculaneum",
+            "kapittel": "Herculaneum",
+            "visual": { "type": "PompeiiSnitt", "props": { "modus": "herculaneum" } },
+            "replikker": [
+                { "si": "Nabobyen Herculaneum lå nærmere vulkanen, helt nede ved sjøen." },
+                { "si": "Den ble først begravd av en glødende strøm, og så av slamstrømmer. Det er elver av gjørme." },
+                { "si": "Massen fylte hele byen, fra kjelleren til taket, og ble til en hard stein som heter tuff." },
+                { "si": "Tuffen er hardere enn det som la seg over Pompeii. Det gjorde det mye vanskeligere å grave." },
+                { "si": "Men den harde steinen tok enda bedre vare på byen. Her har treverk, tøy og papyrusruller overlevd. Det er bøker skrevet på lange ruller." }
+            ]
+        },
+        {
+            "id": "batehusene",
+            "lyd": "hav",
+            "visual": { "type": "PompeiiSnitt", "props": { "modus": "batehus" } },
+            "replikker": [
+                { "si": "Nede ved havna i Herculaneum lå det båthus." },
+                { "si": "På 1980-tallet fant arkeologene mange skjeletter her." },
+                { "si": "Folk hadde søkt ly i båthusene. De ventet på at noen skulle redde dem fra sjøen." },
+                { "si": "Men ingen båt kom." }
+            ]
+        },
+        {
+            "id": "grafitti",
+            "lyd": "stille",
+            "kapittel": "En tidsmaskin",
+            "visual": { "type": "PompeiiGate", "props": { "modus": "grafitti" } },
+            "replikker": [
+                { "si": "Utbruddet som drepte byen, tok også vare på den. Derfor kaller vi Pompeii en tidsmaskin." },
+                { "si": "Vi ser ikke bare store templer. Vi ser de små tingene fra hverdagen." },
+                { "si": "Arkeologene har funnet over 11 000 innskrifter på veggene. Det er grafitti.", "uttale": "Arkeologene har funnet over elleve tusen innskrifter på veggene. Det er grafitti." },
+                { "si": "Folk skrev kjærlighetserklæringer, vitser, dikt og fornærmelser." },
+                { "si": "Og de skrev valgkampslagord, som plakater på veggen før et valg." }
+            ]
+        },
+        {
+            "id": "gatekjokken",
+            "visual": { "type": "PompeiiGate", "props": { "modus": "thermopolium" } },
+            "replikker": [
+                { "si": "Pompeii hadde gatekjøkken. De het thermopolium, en snackbar der du kunne kjøpe varm mat og vin rett fra disken." },
+                { "si": "I 2020 gravde arkeologene ut et helt slikt gatekjøkken." },
+                { "si": "I leirkrukkene på disken fant de rester av and, gris, geit, fisk og snegler. Noen ganger i samme rett." },
+                { "si": "Disken var malt med ender som henger opp ned, og en hane. Trolig for å vise hva som sto på menyen." }
+            ]
+        },
+        {
+            "id": "villaen",
+            "lyd": "rom",
+            "visual": { "type": "PompeiiGate", "props": { "modus": "freske" } },
+            "replikker": [
+                { "si": "Rett utenfor bymuren ligger Mysterievillaen." },
+                { "si": "Her er veggene dekket av fresker. Det er malerier rett på veggen, i naturlig størrelse." },
+                { "si": "De viser trolig et hemmelig opptaksrituale, en seremoni der nye medlemmer ble tatt opp i en kult for vinguden Bacchus." },
+                { "si": "Etter 2000 år er fargene fortsatt klare. Særlig den berømte pompeianske rødfargen." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Et fjell med gode vindruer.", "fraBeat": 0 },
+                        { "tekst": "Men ingen visste at det var en vulkan.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Utbruddet tok livet av byen.", "fraBeat": 1 },
+                        { "tekst": "Og tok vare på den.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ikke bare keisere og templer,", "fraBeat": 2 },
+                        { "tekst": "men vanlige folks hverdag.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Folk i Pompeii levde under et fjell de trodde var trygt." },
+                { "si": "Det samme utbruddet som tok livet av byen, tok også vare på den, i nesten to tusen år." },
+                { "si": "Derfor vet vi i dag ikke bare hva keisere gjorde. Vi vet hva vanlige folk spiste, skrev og lo av." }
+            ]
+        }
+    ]
+}
