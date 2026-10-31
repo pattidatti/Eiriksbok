@@ -1,0 +1,470 @@
+{
+    "id": "den-romerske-legionen",
+    "tittel": "Den romerske legionen",
+    "kilde": "/historie/romerriket/den-romerske-legionen",
+    "bilde": "/images/romerriket/hero-legion.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-10-31", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "marsj",
+            "lyd": "vind",
+            "kapittel": "På marsj",
+            "visual": {
+                "type": "LegionenFormasjon",
+                "props": {
+                    "modus": "marsj"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg en lang, støvete vei i Romerriket. Rekke etter rekke med soldater marsjerer i takt."
+                },
+                {
+                    "si": "Hver soldat bærer alt han eier på ryggen."
+                },
+                {
+                    "si": "Dette er ikke en gjeng krigere som løper mot fienden mens de brøler."
+                },
+                {
+                    "si": "Det er en hær av yrkessoldater. De er like flinke til å bygge broer som til å slåss."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "LEGIONEN",
+                    "undertittel": "Romas hær av yrkessoldater",
+                    "bilde": "/images/romerriket/hero-legion.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne én by erobre så mye?",
+                        "fraBeat": 1
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Romas hær var delt i legioner. Dette er den romerske legionen."
+                },
+                {
+                    "si": "Hvordan kunne én by, Roma, erobre hele området rundt Middelhavet? Svaret ligger i denne hæren."
+                }
+            ]
+        },
+        {
+            "id": "verving",
+            "lyd": "stille",
+            "kapittel": "Å bli legionær",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Å bli legionær",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "25 år",
+                            "tekst": "så lenge du vervet deg",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "Fast lønn",
+                            "tekst": "hvert eneste år",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Frivillig",
+                            "tekst": "men tvang i krisetider",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Sacramentum",
+                            "tekst": "en hellig ed til keiseren",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Å bli legionær var ingen sommerjobb. Du vervet deg vanligvis for 25 år."
+                },
+                {
+                    "si": "Til gjengjeld fikk du en fast lønn hvert år."
+                },
+                {
+                    "si": "De fleste meldte seg frivillig. Men i krisetider kunne staten tvinge folk til å bli soldater."
+                },
+                {
+                    "si": "Ble du godkjent, sverget du sacramentum. Det var en hellig ed til keiseren, der du lovte å adlyde ordre helt til døden."
+                }
+            ]
+        },
+        {
+            "id": "trening",
+            "lyd": "vind",
+            "visual": {
+                "type": "LegionenFormasjon",
+                "props": {
+                    "modus": "trening"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Som ny rekrutt fikk du ikke et ekte sverd med en gang."
+                },
+                {
+                    "si": "Du trente med sverd av tre og skjold av flettverk, det vil si greiner som er flettet sammen."
+                },
+                {
+                    "si": "Dere øvde på å stå og gå i tett formasjon, skulder ved skulder."
+                },
+                {
+                    "si": "Og dere løp lange strekninger i full rustning. Treningen tok aldri slutt."
+                }
+            ]
+        },
+        {
+            "id": "organisasjon",
+            "kapittel": "Som legoklosser",
+            "visual": {
+                "type": "LegionenFormasjon",
+                "props": {
+                    "modus": "oppbygging"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Legionen var delt i små grupper, som legoklosser. Den minste var et contubernium: 8 soldater som delte telt og laget mat sammen."
+                },
+                {
+                    "si": "Ti slike telt ble til en centurie. Navnet betyr hundre, men en centurie hadde som regel litt under hundre mann."
+                },
+                {
+                    "si": "Centurien ble ledet av en centurion. Du kjente ham igjen på hestehårskammen på tvers av hjelmen, og stokken han slo dårlige soldater med."
+                },
+                {
+                    "si": "De fleste centurionene kom fra vanlige familier. De hadde kjempet seg opp fra de vanlige soldatenes rekker."
+                },
+                {
+                    "si": "Flere centurier ble til en kohort på rundt 480 mann."
+                },
+                {
+                    "si": "Og ti kohorter, pluss soldater til hest og hjelpere, ble til en hel legion. I keisertiden var det rundt 5400 mann."
+                }
+            ]
+        },
+        {
+            "id": "utstyr",
+            "lyd": "stille",
+            "kapittel": "Utstyr og våpen",
+            "visual": {
+                "type": "LegionenVapen",
+                "props": {
+                    "modus": "utstyr"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter hvert fikk alle legionærene helt likt utstyr fra staten."
+                },
+                {
+                    "si": "På hodet hadde de en hjelm av metall. På kroppen bar de panser, og på leggene benskinner."
+                },
+                {
+                    "si": "Skjoldet var stort og avlangt, laget av tre med lær utenpå og en kant av jern."
+                },
+                {
+                    "si": "Og så hadde de to viktige våpen: et kastespyd som het pilum, og et kort sverd som het gladius."
+                }
+            ]
+        },
+        {
+            "id": "pilum",
+            "visual": {
+                "type": "LegionenVapen",
+                "props": {
+                    "modus": "pilum"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Pilum var et tungt kastespyd. Spissen var laget av bløtt jern."
+                },
+                {
+                    "si": "Spydet var laget slik at jernet bøyde seg når det traff."
+                },
+                {
+                    "si": "Da kunne ikke fienden kaste det tilbake."
+                },
+                {
+                    "si": "Og traff spydet et skjold, ble skjoldet ubrukelig."
+                }
+            ]
+        },
+        {
+            "id": "gladius",
+            "visual": {
+                "type": "LegionenVapen",
+                "props": {
+                    "modus": "gladius"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Gladius var et kort sverd med egg på begge sider. Det var laget for å stikke."
+                },
+                {
+                    "si": "Mange fiender hadde lange sverd. For å hugge med et langt sverd trenger du god plass rundt deg."
+                },
+                {
+                    "si": "Romerne sto tett i tett bak de store skjoldene. Der var det ikke plass til å svinge et langt sverd."
+                },
+                {
+                    "si": "Fra muren av skjold stakk de det korte sverdet fram."
+                }
+            ]
+        },
+        {
+            "id": "desimering",
+            "lyd": "rom",
+            "kapittel": "Disiplin",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 10,
+                            "farget": 10,
+                            "farge": "#475569",
+                            "tittel": "Disiplinen var brutal",
+                            "fargeEtikett": "soldater i avdelingen",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 10,
+                            "farget": 10,
+                            "farge": "#b45309",
+                            "tittel": "Flyktet, eller gjorde opprør",
+                            "fargeEtikett": "hele avdelingen",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 10,
+                            "farget": 1,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Desimering: hver tiende mann",
+                            "fargeEtikett": "hver tiende",
+                            "restEtikett": "de ni andre måtte straffe",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 10,
+                            "farget": 1,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "De ni andre måtte straffe ham",
+                            "fargeEtikett": "hver tiende",
+                            "restEtikett": "de ni andre måtte straffe",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 4,
+                            "total": 10,
+                            "farget": 1,
+                            "farge": "#7f1d1d",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Frykten holdt linjen",
+                            "fargeEtikett": "hver tiende",
+                            "restEtikett": "de ni andre måtte straffe",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Disiplinen i legionen var brutal."
+                },
+                {
+                    "si": "Hvis en hel avdeling flyktet i kamp, eller gjorde opprør mot lederne, kunne generalen bestemme desimering."
+                },
+                {
+                    "si": "Ordet kommer fra latin og betyr å straffe eller drepe hver tiende mann. Soldatene ble stilt opp, og hver tiende mann ble valgt ut."
+                },
+                {
+                    "si": "Han ble pisket eller steinet i hjel av de ni andre."
+                },
+                {
+                    "si": "Straffen ble brukt når de skyldige ikke kunne finnes, eller når alle var skyldige. Det ga soldatene en fryktelig grunn til å holde linjen."
+                }
+            ]
+        },
+        {
+            "id": "leir",
+            "lyd": "vind",
+            "kapittel": "Mer enn krigere",
+            "visual": {
+                "type": "LegionenLeir",
+                "props": {
+                    "modus": "leir"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Legionærene var ikke bare krigere. De var også ingeniører, altså folk som planlegger og bygger."
+                },
+                {
+                    "si": "Når hæren kom fram, bygde den en leir med voller av jord og en palisade, et gjerde av tømmerstokker."
+                },
+                {
+                    "si": "Inni leiren sov soldatene i telt, åtte i hvert."
+                },
+                {
+                    "si": "Hæren hadde egne sykehus. Den fyrte teglovner for å lage murstein, og bakte sitt eget brød. En leir var en hel liten by."
+                },
+                {
+                    "si": "Og der hæren dro, bygde den veier og broer."
+                }
+            ]
+        },
+        {
+            "id": "beleiring",
+            "kapittel": "Mot bymuren",
+            "visual": {
+                "type": "LegionenFormasjon",
+                "props": {
+                    "modus": "testudo"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når romerne møtte en bymur, stoppet de ikke."
+                },
+                {
+                    "si": "De brukte katapulter og ballistaer, begge typer steinkastere."
+                },
+                {
+                    "si": "På 200-tallet etter Kristus kom onageren i tillegg, en stor steinkaster.",
+                    "uttale": "På to hundre tallet etter Kristus kom onageren i tillegg, en stor steinkaster."
+                },
+                {
+                    "si": "Og kom det regn av piler, løftet soldatene skjoldene over hodet. Skjoldene ble til et tak."
+                },
+                {
+                    "si": "Formasjonen het testudo, som betyr skilpadden. Under taket kunne de rykke helt inntil bymuren."
+                }
+            ]
+        },
+        {
+            "id": "pensjon",
+            "lyd": "stille",
+            "kapittel": "Etter 25 år",
+            "visual": {
+                "type": "LegionenLeir",
+                "props": {
+                    "modus": "koloni"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva skjedde med en legionær som overlevde alle de 25 årene?"
+                },
+                {
+                    "si": "Han fikk en sluttpakke. Under keiser Augustus var det 12 000 sestertser, en stor sum penger."
+                },
+                {
+                    "si": "Og viktigst av alt: han fikk jord."
+                },
+                {
+                    "si": "Byen Köln i Tyskland ble grunnlagt som romersk koloni i år 50 etter Kristus. Der bosatte romerske veteransoldater seg.",
+                    "uttale": "Byen Køln i Tyskland ble grunnlagt som romersk koloni i år femti etter Kristus. Der bosatte romerske veteransoldater seg."
+                }
+            ]
+        },
+        {
+            "id": "sammenligning",
+            "visual": {
+                "type": "LegionenVapen",
+                "props": {
+                    "modus": "motstander"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sammenlign legionæren med en germansk kriger."
+                },
+                {
+                    "si": "Krigeren var ofte en bonde som kjempet når det trengtes. Legionæren var soldat på heltid."
+                },
+                {
+                    "si": "Krigeren måtte skaffe sitt eget utstyr. Legionæren fikk likt utstyr fra staten."
+                },
+                {
+                    "si": "Krigeren kjempet mann mot mann, med mot. Legionæren kjempet i streng formasjon, med disiplin."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ikke en gjeng som løp og brølte.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "En hær av yrkessoldater.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Likt utstyr. Trening som aldri tok slutt.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Brutal disiplin.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Ingeniører og soldater.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Veier, broer og Köln.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva var hemmeligheten til legionen? Den var en hær av yrkessoldater."
+                },
+                {
+                    "si": "Alle hadde likt utstyr, alle trente hele tiden, og disiplinen var brutal. Derfor holdt linjen."
+                },
+                {
+                    "si": "Og der legionen kom, bygde den veier og broer. Selv byen Köln begynte som et nytt hjem for gamle soldater.",
+                    "uttale": "Og der legionen kom, bygde den veier og broer. Selv byen Køln begynte som et nytt hjem for gamle soldater."
+                }
+            ]
+        }
+    ]
+}
