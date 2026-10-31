@@ -175,7 +175,7 @@ interface Tall {
 
 const KORT: Record<Modus, Kort[][]> = {
     retrett: [
-        [{ tekst: 'Høsten 1944' }, { tekst: 'Tyskland taper krigen', farge: TYSK }],
+        [{ tekst: 'Høsten 1944' }, { tekst: 'Tyskland taper terreng', farge: TYSK }],
         [{ tekst: 'Nord-Finland' }, { tekst: 'Den tyske hæren må ut', farge: TYSK }],
         [{ tekst: 'Lyngen' }, { tekst: 'Ny forsvarslinje', farge: TYSK }],
     ],
@@ -217,7 +217,7 @@ const KORT: Record<Modus, Kort[][]> = {
 };
 
 const TALL: Partial<Record<Modus, (Tall[] | undefined)[]>> = {
-    retrett: [undefined, [{ verdi: 200000, etikett: 'tyske soldater', prefiks: 'over ' }]],
+    retrett: [undefined, undefined, [{ verdi: 200000, etikett: 'tyske soldater', prefiks: 'over ' }]],
     sovjet: [undefined, [{ verdi: 28, etikett: 'av ca. 900 bygninger sto igjen', tone: 'rod' }]],
     ordre: [[{ verdi: 5000, etikett: 'reiste frivillig', prefiks: 'ca. ' }]],
     sorover: [
@@ -505,7 +505,11 @@ function Navn({
             fontWeight={900}
             letterSpacing={5}
             fill={farge}
-            opacity={0.75}
+            stroke="#ffffff"
+            strokeWidth={6}
+            strokeOpacity={0.85}
+            paintOrder="stroke"
+            opacity={0.85}
         >
             {tekst}
         </text>

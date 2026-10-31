@@ -4,6 +4,15 @@
     "kilde": "/historie/andre-verdenskrig/brenningen-av-finnmark",
     "bilde": "/images/andre-verdenskrig/brenningen-av-finnmark-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-10-31",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 5,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 21
+    },
     "scener": [
         {
             "id": "kaia",
@@ -80,14 +89,14 @@
             },
             "replikker": [
                 {
-                    "si": "Høsten 1944 er andre verdenskrig i ferd med å snu. Tyskland taper."
+                    "si": "Høsten 1944 er andre verdenskrig i ferd med å snu. Tyskland taper terreng."
                 },
                 {
-                    "si": "Over 200 000 tyske soldater er i Nord-Finland. Nå må de komme seg ut.",
-                    "uttale": "Over to hundre tusen tyske soldater er i Nord-Finland. Nå må de komme seg ut."
+                    "si": "De tyske soldatene i Nord-Finland må komme seg ut."
                 },
                 {
-                    "si": "De trekker seg tilbake mot Lyngen i Nord-Troms. Der skal de lage en ny forsvarslinje, en linje fienden ikke skal komme forbi."
+                    "si": "Over 200 000 tyske soldater trekker seg tilbake mot Lyngen i Nord-Troms. Der skal de lage en ny forsvarslinje, en linje fienden ikke skal komme forbi.",
+                    "uttale": "Over to hundre tusen tyske soldater trekker seg tilbake mot Lyngen i Nord-Troms. Der skal de lage en ny forsvarslinje, en linje fienden ikke skal komme forbi."
                 }
             ]
         },
@@ -121,10 +130,7 @@
             "id": "ordren",
             "kapittel": "Ordren fra Hitler",
             "visual": {
-                "type": "FinnmarkKart",
-                "props": {
-                    "modus": "ordre"
-                }
+                "type": "FinnmarkKalender"
             },
             "replikker": [
                 {
@@ -189,7 +195,7 @@
                     "si": "Ingen skal finne mat, husly, veier eller båter. Husly betyr et sted å bo, tak over hodet."
                 },
                 {
-                    "si": "Tanken er at de sovjetiske soldatene ikke skal få hjelp eller tak over hodet når de rykker fram."
+                    "si": "Tanken er at de sovjetiske soldatene ikke skal få hjelp av folk eller tak over hodet når de rykker fram."
                 }
             ]
         },
@@ -224,7 +230,7 @@
             },
             "replikker": [
                 {
-                    "si": "Etter krigen telte Statistisk sentralbyrå opp hva som ble ødelagt. Listen er lang."
+                    "si": "Statistisk sentralbyrå har talt opp hva som ble ødelagt i Finnmark og Nord-Troms."
                 },
                 {
                     "si": "11 000 bolighus. 4700 fjøs og uthus.",
@@ -320,10 +326,7 @@
         {
             "id": "tromso",
             "visual": {
-                "type": "FinnmarkKart",
-                "props": {
-                    "modus": "tromso"
-                }
+                "type": "FinnmarkFordeling"
             },
             "replikker": [
                 {
@@ -406,13 +409,13 @@
                         {
                             "ikon": "penger",
                             "tittel": "Husbanken",
-                            "tekst": "gunstige lån til nye hus",
+                            "tekst": "lån på gode vilkår til nye hus",
                             "fraBeat": 0
                         },
                         {
                             "ikon": "avtale",
-                            "tittel": "Nord-Norge-planen, 1952 til 1960",
-                            "tekst": "veier, boliger og annen hjelp",
+                            "tittel": "Nord-Norge-planen",
+                            "tekst": "1952 til 1960: veier, boliger og annen hjelp",
                             "fraBeat": 1
                         },
                         {
@@ -426,13 +429,13 @@
             },
             "replikker": [
                 {
-                    "si": "Staten gir gunstige lån gjennom Husbanken. Gunstige lån betyr lån det er lett å betale tilbake."
+                    "si": "Staten gir gunstige lån gjennom Husbanken. Gunstige lån betyr lån på gode vilkår."
                 },
                 {
                     "si": "Fra 1952 til 1960 kommer Nord-Norge-planen. Den skal bygge veier, boliger og gi annen hjelp til landsdelen."
                 },
                 {
-                    "si": "Hele gjenreisningen varer til tidlig på 1960-tallet. Derfor ble de fleste husene i Finnmark bygd i de samme årene."
+                    "si": "Hele gjenreisningen varer til tidlig på 1960-tallet. De fleste husene ble bygd i de samme årene. Derfor ser mange byer og bygder i Finnmark annerledes ut enn resten av Norge."
                 }
             ]
         },
@@ -453,7 +456,7 @@
                     "si": "Han ble dømt til 20 års straffarbeid, altså fengsel med tvangsarbeid. Det var for krigsforbrytelser på Balkan, i Sørøst-Europa. En krigsforbrytelse er et brudd på reglene for krig."
                 },
                 {
-                    "si": "Men han ble ikke funnet skyldig for ødeleggelsen i Nord-Norge."
+                    "si": "Men han ble ikke funnet skyldig for tvangsevakueringen og ødeleggelsen i Nord-Norge."
                 },
                 {
                     "si": "Senere ble straffen satt ned til ti år. I 1951 slapp han ut."
@@ -462,7 +465,7 @@
                     "si": "Mange i Finnmark syntes det var urettferdig. For dem var brenningen en forbrytelse mot vanlige mennesker."
                 },
                 {
-                    "si": "For retten var spørsmålet om hæren trengte det i krigen. Hvor går grensen mellom krigføring og krigsforbrytelse?"
+                    "si": "For retten var spørsmålet om hæren mente den trengte det i krigen. Hvor går grensen mellom krigføring og krigsforbrytelse?"
                 }
             ]
         },

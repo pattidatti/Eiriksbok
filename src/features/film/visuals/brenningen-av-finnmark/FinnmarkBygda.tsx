@@ -615,7 +615,7 @@ const LAPPER: Record<Modus, string[]> = {
         'Først: husly',
         'Våren 1947: gjenreisningen starter',
         'Tilbake til samme plass',
-        'Gjenreist på åtte til ni år',
+        'Det meste gjenreist på åtte til ni år',
     ],
 };
 
