@@ -250,7 +250,7 @@ function Dom({ beat }: { beat: number }) {
                     >
                         <rect x={1030} y={610} width={500} height={140} rx={18} fill="#ffffff" stroke={ROD} strokeWidth={6} />
                         <text x={1280} y={668} textAnchor="middle" fontSize={34} fontWeight={900} fill={BLEKK}>
-                            Ødeleggelsen i Nord-Norge:
+                            Tvangsflytting og brenning:
                         </text>
                         <text x={1280} y={720} textAnchor="middle" fontSize={44} fontWeight={900} fill={ROD}>
                             IKKE SKYLDIG
@@ -300,15 +300,18 @@ function Dom({ beat }: { beat: number }) {
                         <text x={1105} y={300} textAnchor="middle" fontSize={34} fontWeight={900} fill="#475569">
                             Krigføring?
                         </text>
-                        <text x={1105} y={350} textAnchor="middle" fontSize={28} fontWeight={700} fill="#64748b">
-                            det hæren trengte
+                        <text x={1105} y={346} textAnchor="middle" fontSize={30} fontWeight={700} fill="#64748b">
+                            det hæren mente
+                        </text>
+                        <text x={1105} y={382} textAnchor="middle" fontSize={30} fontWeight={700} fill="#64748b">
+                            den trengte
                         </text>
                         <rect x={1290} y={220} width={290} height={190} rx={24} fill="#ffffff" />
                         <text x={1435} y={300} textAnchor="middle" fontSize={30} fontWeight={900} fill={ROD}>
                             Krigsforbrytelse?
                         </text>
-                        <text x={1435} y={350} textAnchor="middle" fontSize={26} fontWeight={700} fill="#64748b">
-                            brudd på krigens regler
+                        <text x={1435} y={350} textAnchor="middle" fontSize={30} fontWeight={700} fill="#64748b">
+                            brudd på reglene
                         </text>
                         <motion.line
                             x1={1270}
