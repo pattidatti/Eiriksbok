@@ -1,0 +1,555 @@
+{
+    "id": "arven-etter-romerriket",
+    "tittel": "Arven etter Romerriket",
+    "kilde": "/historie/romerriket/arven-etter-romerriket",
+    "bilde": "/images/romerriket/hero-arv.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-01", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "hverdag",
+            "lyd": "stille",
+            "visual": {
+                "type": "ArvenOrd",
+                "props": {
+                    "modus": "hverdag"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se deg rundt. Kanskje bor du i en by der gatene går helt rett."
+                },
+                {
+                    "si": "Kanskje har du penger i lomma med ansiktet til en leder på."
+                },
+                {
+                    "si": "Kanskje går noen du kjenner til en domstol for å løse en krangel."
+                },
+                {
+                    "si": "Eller kanskje sier du bare ordet skole, kalender eller musikk."
+                },
+                {
+                    "si": "Da lever du i arven etter Roma."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ARVEN",
+                    "undertittel": "etter Romerriket",
+                    "bilde": "/images/romerriket/hero-arv.webp",
+                    "sporsmal": {
+                        "tekst": "Falt Romerriket, eller ble det til oss?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange sier at Romerriket falt."
+                },
+                {
+                    "si": "Men det finnes en dristig påstand: Romerriket falt ikke. Det forandret seg bare til oss."
+                },
+                {
+                    "si": "I denne filmen ser vi på arven: språket, loven, betongen, byene og veiene, og kirken."
+                }
+            ]
+        },
+        {
+            "id": "sprak",
+            "kapittel": "Språket",
+            "visual": {
+                "type": "ArvenKart",
+                "props": {
+                    "modus": "sprak"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Romerne snakket latin. Da riket falt, forsvant ikke språket."
+                },
+                {
+                    "si": "Men det var ikke det fine skriftspråket som levde videre. Det var vulgærlatin, språket vanlige folk snakket til hverdags."
+                },
+                {
+                    "si": "I hver del av riket blandet latinen seg med språkene som fantes der fra før."
+                },
+                {
+                    "si": "Rundt 700-tallet hadde de ulike variantene glidd så langt fra latin og fra hverandre at de var blitt egne språk.",
+                    "uttale": "Rundt sju hundre tallet hadde de ulike variantene glidd så langt fra latin og fra hverandre at de var blitt egne språk."
+                },
+                {
+                    "si": "Vi kaller dem de romanske språkene: fransk, spansk, italiensk, portugisisk og rumensk. Pluss blant annet katalansk, sardisk og galisisk."
+                },
+                {
+                    "si": "I dag har mer enn 900 millioner mennesker et romansk språk som morsmål."
+                }
+            ]
+        },
+        {
+            "id": "nord",
+            "visual": {
+                "type": "ArvenOrd",
+                "props": {
+                    "modus": "lan"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men hva med oss i nord? Norsk og engelsk er germanske språk, ikke romanske."
+                },
+                {
+                    "si": "Likevel er språket vårt fullt av latin. Da kristendommen kom, kom den på latin."
+                },
+                {
+                    "si": "Kirken, vitenskapen og jussen brukte latin i hundrevis av år etter at riket var borte."
+                },
+                {
+                    "si": "Ord som system, data, video, audio, media, null, prosent og sivilisasjon er ren latin."
+                },
+                {
+                    "si": "Du kan faktisk ikke snakke om politikk, vitenskap eller utdanning uten å bruke ord romerne ga oss."
+                }
+            ]
+        },
+        {
+            "id": "alfabet",
+            "visual": {
+                "type": "ArvenOrd",
+                "props": {
+                    "modus": "alfabet"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Og bokstavene du leser akkurat nå? De er latinske. Det latinske alfabetet er det mest brukte skriftsystemet i verden."
+                },
+                {
+                    "si": "Romerne lånte ideen fra grekerne."
+                },
+                {
+                    "si": "Og grekerne hadde lånt den fra fønikerne."
+                },
+                {
+                    "si": "Men det var romerne som ga bokstavene formen vi bruker i dag. Særlig de store bokstavene, som A, B og C."
+                }
+            ]
+        },
+        {
+            "id": "lov",
+            "kapittel": "Loven",
+            "lyd": "rom",
+            "visual": {
+                "type": "ArvenTidslinje",
+                "props": {
+                    "tittel": "Corpus juris civilis",
+                    "farge": "#7c2d12",
+                    "punkter": [
+                        {
+                            "tid": "529-534",
+                            "tittel": "Lovboka samles",
+                            "tekst": "ti menn, ledet av Tribonian",
+                            "ikon": "bok",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tid": "Middelalderen",
+                            "tittel": "Studert i Bologna",
+                            "tekst": "ved universitetene",
+                            "ikon": "skole",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tid": "Fram til 1900",
+                            "tittel": "Gjaldt til 1900",
+                            "tekst": "deler av den, i Tyskland og Østerrike",
+                            "ikon": "vekt",
+                            "fraBeat": 4
+                        }
+                    ],
+                    "merknader": [
+                        {
+                            "fraBeat": 0,
+                            "tekst": "Loven: arven du ikke ser"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "tekst": "Jurist: en som har lært seg lovene"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den kanskje viktigste arven fra Roma kan du ikke se. Det er loven. Romerne var helt besatt av orden og regler."
+                },
+                {
+                    "si": "Keiser Justinian ga ordre om en stor lovbok. Ti menn, ledet av juristen Tribonian, satte den sammen i årene 529 til 534.",
+                    "uttale": "Keiser Justinian ga ordre om en stor lovbok. Ti menn, ledet av juristen Tribonian, satte den sammen i årene fem hundre og tjueni til fem hundre og trettifire."
+                },
+                {
+                    "si": "Lovboka heter Corpus juris civilis. En jurist er en som har lært seg lovene."
+                },
+                {
+                    "si": "I middelalderen studerte de den nøye ved universitetene, særlig i Bologna i Italia."
+                },
+                {
+                    "si": "I Østerrike og Tyskland var deler av den fortsatt gjeldende lov helt fram til en ny lovbok kom i 1900."
+                }
+            ]
+        },
+        {
+            "id": "prinsipper",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Fra romerretten",
+                    "punkter": [
+                        {
+                            "ikon": "haer",
+                            "tittel": "Likhet for loven",
+                            "tekst": "men ikke for slavene i Roma",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "skjold",
+                            "tittel": "Uskyldig til det motsatte er bevist",
+                            "tekst": "den som anklager, må bevise",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Dommere og advokater",
+                            "tekst": "utdannede jurister",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange ideer vi tar for gitt i dag, har røtter i romerretten."
+                },
+                {
+                    "si": "Loven skal gjelde likt for alle. Men romerne fulgte det ikke selv. Slaver hadde ikke de samme rettighetene som frie borgere."
+                },
+                {
+                    "si": "Du er uskyldig til det motsatte er bevist. Det er den som anklager, som må bevise. Ikke den som nekter."
+                },
+                {
+                    "si": "Og ordningen med utdannede jurister, altså dommere og advokater som tolker loven og forsvarer folk, har også røtter i Roma."
+                }
+            ]
+        },
+        {
+            "id": "betong",
+            "kapittel": "Betongen",
+            "lyd": "vind",
+            "visual": {
+                "type": "ArvenBygg",
+                "props": {
+                    "modus": "betong"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Se på Pantheon i Roma. Det står fortsatt, nesten 2000 år etter at romerne bygde det."
+                },
+                {
+                    "si": "Moderne broer kan ruste i stykker etter femti år. Hvordan er det mulig?"
+                },
+                {
+                    "si": "En stor del av svaret er romersk betong. Den besto av brent kalk, vulkansk aske og knust teglstein."
+                },
+                {
+                    "si": "Blandingen herdet, altså ble hard, når den ble rørt ut i vann. Etterpå tålte den vann."
+                }
+            ]
+        },
+        {
+            "id": "kuppel",
+            "lyd": "rom",
+            "visual": {
+                "type": "ArvenBygg",
+                "props": {
+                    "modus": "kuppel"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Med betongen kunne romerne bygge hvelv og kupler i en størrelse ingen hadde sett før."
+                },
+                {
+                    "si": "Gå inn i Pantheon og se opp."
+                },
+                {
+                    "si": "Kuppelen er 43,3 meter på tvers. Ingen har bygd en større kuppel i murverk. Det betyr at den er støpt og murt, uten stål.",
+                    "uttale": "Kuppelen er førtitre komma tre meter på tvers. Ingen har bygd en større kuppel i murverk. Det betyr at den er støpt og murt, uten stål."
+                },
+                {
+                    "si": "Øverst er det et rundt hull. Gjennom det faller lyset ned i det store rommet."
+                }
+            ]
+        },
+        {
+            "id": "bue",
+            "lyd": "stille",
+            "visual": {
+                "type": "ArvenBygg",
+                "props": {
+                    "modus": "bue"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Før romerne bygde man mest med søyler og bjelker, som i de greske templene."
+                },
+                {
+                    "si": "Det satte grenser for hvor store rom man kunne bygge."
+                },
+                {
+                    "si": "Romerne ga oss buen. Buen sender vekten utover og nedover, ned i bakken på hver side."
+                },
+                {
+                    "si": "Legg mange buer etter hverandre, så får du et hvelv, et tak formet som en bue. Det er romernes viktigste bidrag til byggekunsten."
+                },
+                {
+                    "si": "Slik kunne de bygge gigantiske åpne rom, og broer som tåler enorm vekt."
+                }
+            ]
+        },
+        {
+            "id": "akvedukt",
+            "visual": {
+                "type": "ArvenByplan",
+                "props": {
+                    "modus": "akvedukt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Buene bar også vannet. Romerne var mestere i å styre vannet."
+                },
+                {
+                    "si": "En akvedukt er en vannledning. Noen steder gikk den på en bro av buer. Den kunne føre ferskvann 30 til 50 kilometer inn til byene."
+                },
+                {
+                    "si": "Det var tyngdekraften som gjorde jobben. Vannet rant nedover hele veien fra kilden til byen."
+                }
+            ]
+        },
+        {
+            "id": "portland",
+            "visual": {
+                "type": "ArvenTidslinje",
+                "props": {
+                    "tittel": "Fra romersk betong til i dag",
+                    "farge": "#475569",
+                    "punkter": [
+                        {
+                            "tid": "Romertiden",
+                            "tittel": "Romersk betong",
+                            "tekst": "kalk, vulkansk aske, teglstein",
+                            "ikon": "kuppel",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tid": "1800-tallet",
+                            "tittel": "Portlandsement",
+                            "tekst": "utviklet i Storbritannia",
+                            "ikon": "fabrikk",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tid": "I dag",
+                            "tittel": "Skyskrapere",
+                            "tekst": "umulige uten betong",
+                            "ikon": "by",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Og betongen vi bygger med i dag?"
+                },
+                {
+                    "si": "Den bygger på portlandsement. Den ble utviklet i Storbritannia på 1800-tallet, og har navnet sitt fra portlandstein fra sørkysten av England.",
+                    "uttale": "Den bygger på portlandsement. Den ble utviklet i Storbritannia på atten hundre tallet, og har navnet sitt fra portlandstein fra sørkysten av England."
+                },
+                {
+                    "si": "Uten betong ville moderne byer med skyskrapere vært umulige."
+                }
+            ]
+        },
+        {
+            "id": "byplan",
+            "kapittel": "Byene og veiene",
+            "visual": {
+                "type": "ArvenByplan",
+                "props": {
+                    "modus": "by"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Har du lagt merke til at mange gamle byer i Europa har gater som går rett som piler?"
+                },
+                {
+                    "si": "Ofte er det fordi de startet som romerske militærleirer. En slik leir het castrum på latin."
+                },
+                {
+                    "si": "En romersk provinsby ble alltid planlagt rundt to hovedgater. De het cardo og decumanus."
+                },
+                {
+                    "si": "Gatene delte byen inn i et rutenett av firkanter. Der de to hovedgatene krysset hverandre, lå forum, byens torg og sentrum."
+                },
+                {
+                    "si": "Mange av dagens byer i Europa vokste ut av slike romerske byer og leirer."
+                }
+            ]
+        },
+        {
+            "id": "veier",
+            "visual": {
+                "type": "ArvenKart",
+                "props": {
+                    "modus": "veier"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mellom byene bygde romerne veier. Alle veier fører til Roma, sier ordtaket. Det var faktisk sant."
+                },
+                {
+                    "si": "I om lag 700 år, fram til år 395, bygde de ut et nett av hovedveier.",
+                    "uttale": "I om lag sju hundre år, fram til år tre hundre og nittifem, bygde de ut et nett av hovedveier."
+                },
+                {
+                    "si": "Nettet strakte seg fra Persiabukta i øst til Skottland i nord."
+                },
+                {
+                    "si": "Veiene holdt svært god kvalitet. Folk kunne reise raskt og trygt, og det bandt riket sammen, både i handel og kultur."
+                }
+            ]
+        },
+        {
+            "id": "kirke",
+            "kapittel": "Kirken",
+            "lyd": "rom",
+            "visual": {
+                "type": "ArvenTidslinje",
+                "props": {
+                    "tittel": "Pontifex maximus",
+                    "farge": "#a16207",
+                    "punkter": [
+                        {
+                            "tid": "Antikken",
+                            "tittel": "Øverste leder for statens religion",
+                            "tekst": "etter hvert keiserne selv",
+                            "ikon": "krone",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tid": "1400-tallet",
+                            "tittel": "Pavene tar tittelen",
+                            "tekst": "knyttet til Romerriket",
+                            "ikon": "kirke",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tid": "I dag",
+                            "tittel": "Vatikanet",
+                            "tekst": "latin er fortsatt kirkespråk",
+                            "ikon": "kuppel",
+                            "fraBeat": 4
+                        }
+                    ],
+                    "merknader": [
+                        {
+                            "fraBeat": 0,
+                            "tekst": "Roma: kristendommens hovedkvarter"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "tekst": "Bispedømmer fulgte de romerske provinsgrensene"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Til slutt: Roma ble hovedkvarteret for kristendommen. Og en gammel tittel fulgte med."
+                },
+                {
+                    "si": "I det gamle Roma var pontifex maximus den øverste lederen for statens religion. Etter hvert bar keiserne den tittelen selv."
+                },
+                {
+                    "si": "Paven tok ikke over tittelen med en gang. Først på 1400-tallet begynte pavene å bruke den. Lærde folk i renessansen ville knytte pavens makt tettere til det praktfulle Romerriket.",
+                    "uttale": "Paven tok ikke over tittelen med en gang. Først på fjorten hundre tallet begynte pavene å bruke den. Lærde folk i renessansen ville knytte pavens makt tettere til det praktfulle Romerriket."
+                },
+                {
+                    "si": "Den katolske kirken delte seg også inn i bispedømmer, altså områder med hver sin biskop. De fulgte de gamle romerske provinsgrensene."
+                },
+                {
+                    "si": "Og i Vatikanet er latin fortsatt kirkespråket. På mange måter er Vatikanstaten den siste levende resten av Romerriket."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Mange av ordene du sier. Bokstavene du leser.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Kom fra Roma.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Uskyldig til det motsatte er bevist.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "En idé fra romerretten.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Kanskje falt ikke Romerriket.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Kanskje forandret det seg til oss.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mange av ordene du sier, og bokstavene du leser, har reist hit fra Roma."
+                },
+                {
+                    "si": "Når en rettssak sier at du er uskyldig til det motsatte er bevist, bruker den en idé fra romerretten."
+                },
+                {
+                    "si": "Så kanskje falt ikke Romerriket helt. Kanskje forandret det seg bare til oss."
+                }
+            ]
+        }
+    ]
+}
