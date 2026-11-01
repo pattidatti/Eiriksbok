@@ -1,0 +1,205 @@
+{
+    "id": "hverdagsliv-i-roma",
+    "tittel": "Hverdagslivet i Roma",
+    "kilde": "/historie/romerriket/hverdagsliv-i-roma",
+    "bilde": "/images/romerriket/hero-hverdag.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-01", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "gate",
+            "lyd": "vind",
+            "visual": { "type": "HverdagslivInsula", "props": { "modus": "gate" } },
+            "replikker": [
+                { "si": "Tenk deg at du går gjennom en trang gate i Roma. Roma er en millionby, og gata er full av folk." },
+                { "si": "Husene på begge sider er høye, ofte fem etasjer eller mer." },
+                { "si": "Høyt oppe åpnes et vindu. Se deg for, ellers kan du få en bøtte med kloakk i hodet." },
+                { "si": "Øverst i huset bor de som har minst penger. Der oppe er leilighetene billigst." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ROMA",
+                    "undertittel": "Hverdagen for vanlige folk",
+                    "bilde": "/images/romerriket/hero-hverdag.webp",
+                    "sporsmal": { "tekst": "Hvordan levde de fleste?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Når vi tenker på Roma, ser vi ofte for oss keisere i hvite togaer og gladiatorer i arenaen." },
+                { "si": "Men for de fleste i byen handlet livet om å skaffe mat til familien og å betale leien." },
+                { "si": "I denne filmen skal vi se hvordan romerne bodde, spiste, gikk på skole og kledde seg." }
+            ]
+        },
+        {
+            "id": "domus",
+            "kapittel": "Et liv i høyden",
+            "visual": { "type": "HverdagslivInsula", "props": { "modus": "domus" } },
+            "replikker": [
+                { "si": "De rike bodde i en domus. Det var et hus for bare én familie." },
+                { "si": "Huset var bygd rundt et atrium, en åpen hall midt i huset, og en gård med søyler rundt. Rundt dem lå soverom, spisestuer og rom for gjester." },
+                { "si": "Men de aller fleste bodde ikke slik. De bodde i en insula. Det er latin og betyr øy." },
+                { "si": "En insula var en leiegård, et stort hus med mange leiligheter." }
+            ]
+        },
+        {
+            "id": "etasjer",
+            "visual": { "type": "HverdagslivInsula", "props": { "modus": "etasjer" } },
+            "replikker": [
+                { "si": "La oss se inn i en insula. Den var bygd av murstein dekket med betong, og den hadde ofte fem etasjer eller mer." },
+                { "si": "Nede på gatenivå lå det som regel verksteder og butikker. Her jobbet håndverkere, og her handlet folk." },
+                { "si": "Til leilighetene over gikk det en felles trapp. Lys og luft kom fra gata og fra en gårdsplass inne i huset." },
+                { "si": "Det var mest arbeidsfolk som bodde her. Og nå kommer det rare: De billigste og dårligste leilighetene lå øverst." },
+                { "si": "I dag er det ofte omvendt. Da er toppleiligheten med utsikt den dyreste." }
+            ]
+        },
+        {
+            "id": "hoyde",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Høydegrense",
+                    "undertittel": "Så høyt fikk en insula være",
+                    "sporsmal": { "tekst": "Hvor høyt fikk man bygge?", "fraBeat": 0 },
+                    "tall": [
+                        { "verdi": 68, "etikett": "fot under Augustus", "fraBeat": 1, "omtrent": false },
+                        { "verdi": 58, "etikett": "fot under Trajan", "fraBeat": 2, "omtrent": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Det fantes en lov om hvor høyt man fikk bygge." },
+                { "si": "Under keiser Augustus var grensen 68 fot. Fot er et gammelt mål for lengde." },
+                { "si": "Senere, under keiser Trajan, ble grensen satt ned til 58 fot." }
+            ]
+        },
+        {
+            "id": "brann",
+            "lyd": "ild",
+            "visual": { "type": "HverdagslivInsula", "props": { "modus": "brann" } },
+            "replikker": [
+                { "si": "Leiegårdene sto tett i tett, og mange var dårlig bygd. Derfor tok de ofte fyr." },
+                { "si": "Når det brant, var det farlig å komme seg ut." },
+                { "si": "Det fantes ingen heis. De som bodde øverst, hadde lengst vei ned trappa." },
+                { "si": "Derfor var det de øverst oppe som satt verst i det når brannen kom." }
+            ]
+        },
+        {
+            "id": "latrine",
+            "lyd": "stille",
+            "visual": { "type": "HverdagslivByen", "props": { "modus": "latrine" } },
+            "replikker": [
+                { "si": "I leilighetene var det verken vann i springen eller eget toalett." },
+                { "si": "Vann måtte du hente selv, fra en offentlig fontene ute på gata." },
+                { "si": "Og når du måtte på do, gikk du til en latrine. Det er et offentlig toalett for mange på en gang." },
+                { "si": "Der satt folk side om side på lange benker med hull, uten vegger mellom. Her pratet og møttes folk." },
+                { "si": "For å tørke seg brukte de en svamp på en pinne. Den delte de med naboen, og forhåpentligvis skylte de den i eddikvann først." }
+            ]
+        },
+        {
+            "id": "korn",
+            "kapittel": "Smaken av Roma",
+            "visual": { "type": "HverdagslivByen", "props": { "modus": "korn" } },
+            "replikker": [
+                { "si": "Romerne elsket mat. Men hva du spiste, kom an på om du var rik eller fattig." },
+                { "si": "For de fattige var maten nesten bare korn. Kornet ble bakt til brød eller kokt til grøt." },
+                { "si": "Mange fattige var avhengige av korn som staten delte ut, og av gaver fra de rike." },
+                { "si": "Kjøtt var luksus. Det spiste man ved spesielle anledninger, eller på fester der dyr ble ofret til gudene." },
+                { "si": "De færreste hadde kjøkken hjemme. Derfor kjøpte mange lunsjen sin ute på gata, i en slags gatekjøkken." }
+            ]
+        },
+        {
+            "id": "garum",
+            "visual": { "type": "HverdagslivByen", "props": { "modus": "garum" } },
+            "replikker": [
+                { "si": "Men det var én ting nesten alle romere hadde i maten. Den het garum." },
+                { "si": "Garum var en saus laget av fisk som hadde fått gjære, litt som fiskesausen som brukes i asiatisk mat i dag." },
+                { "si": "Romerne hadde den i nesten alt. Til og med i retter vi i dag ville kalt dessert." },
+                { "si": "Du kan tenke på garum som Romas ketsjup og soyasaus i ett." }
+            ]
+        },
+        {
+            "id": "gjestebud",
+            "lyd": "rom",
+            "visual": { "type": "HverdagslivByen", "props": { "modus": "gjestebud" } },
+            "replikker": [
+                { "si": "Hos de rike var det helt annerledes. De holdt gjestebud, store middager med gjester." },
+                { "si": "Gjestene satt ikke på stoler. De lå til bords på divaner, en slags benker med puter." },
+                { "si": "Måltidet kunne vare i mange timer, og det ble servert vin til maten." },
+                { "si": "Forskjellen mellom rik og fattig var enorm. De aller fleste i Roma var fattige. Pengene og makten var samlet hos noen få." }
+            ]
+        },
+        {
+            "id": "tavle",
+            "lyd": "stille",
+            "kapittel": "Skolen",
+            "visual": { "type": "HverdagslivFigur", "props": { "modus": "tavle" } },
+            "replikker": [
+                { "si": "Romerne lånte skolen sin fra grekerne. Som grekerne syntes de det var viktig å kunne tale godt." },
+                { "si": "Men ikke alle fikk gå lenge på skole. Barna i rike familier fikk den beste opplæringen, og guttene gikk lengst." },
+                { "si": "I rike familier fikk barnet, både gutter og jenter, en gresk tjener eller slave helt fra de var små. Tjeneren skulle lære barnet gresk." },
+                { "si": "Barna risset bokstaver og tall inn i en tavle av voks med en spiss penn. Pennen het stylus." },
+                { "si": "Når leksen var lært, glattet de ut voksen og begynte på nytt. Disiplinen var streng og hard." }
+            ]
+        },
+        {
+            "id": "pedagog",
+            "visual": { "type": "HverdagslivFigur", "props": { "modus": "pedagog" } },
+            "replikker": [
+                { "si": "En rik gutt gikk ikke alene til skolen. Han ble fulgt av en paedagogus, som regel en slave familien stolte på." },
+                { "si": "Han fulgte gutten til og fra skolen og passet på at han oppførte seg pent." },
+                { "si": "Det er herfra vi har ordet pedagog, som betyr lærer." },
+                { "si": "Det viktigste faget for en romersk gutt var retorikk. Det er kunsten å tale for seg, slik at folk lytter og blir overbevist." },
+                { "si": "Romerne skjønte at en god tale kunne være et våpen for den som ville styre landet." }
+            ]
+        },
+        {
+            "id": "tunika",
+            "kapittel": "Klær",
+            "visual": { "type": "HverdagslivFigur", "props": { "modus": "tunika" } },
+            "replikker": [
+                { "si": "I dag kan en milliardær gå i t-skjorte og jeans. I Roma viste klærne nøyaktig hvem du var." },
+                { "si": "Det vanligste plagget var tunikaen. Den lignet en lang skjorte." },
+                { "si": "Fargen fortalte hvor du hørte hjemme. Overklassen gikk i hvitt. Alle andre gikk i ubleket stoff, altså stoff som ikke var gjort hvitt, eller i brunt." }
+            ]
+        },
+        {
+            "id": "toga",
+            "visual": { "type": "HverdagslivFigur", "props": { "modus": "toga" } },
+            "replikker": [
+                { "si": "Over tunikaen bar romerske menn som var borgere en toga." },
+                { "si": "Togaen var et stort stykke stoff formet som en halv sirkel. Den var rundt 5,5 meter lang og 1,7 meter på det bredeste.", "uttale": "Togaen var et stort stykke stoff formet som en halv sirkel. Den var rundt fem og en halv meter lang og en komma sju meter på det bredeste." },
+                { "si": "Den var laget av ull, og derfor var den veldig tung." },
+                { "si": "Stoffet ble lagt over venstre skulder, rundt ryggen og under høyre arm. Bare høyre arm var fri." },
+                { "si": "I en toga kunne du verken løpe eller arbeide. Og det var nettopp poenget. Bare romerske borgere hadde lov til å bære den." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "De rike bodde i egne hus.", "fraBeat": 0 },
+                        { "tekst": "De fattigste bodde øverst i leiegården.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Grøt og brød for de mange.", "fraBeat": 1 },
+                        { "tekst": "Gjestebud for de få.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "I Roma kunne alle se", "fraBeat": 2 },
+                        { "tekst": "hvem du var, på klærne dine.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I Roma bestemte pengene hvor du bodde. De rike hadde egne hus. De fleste bodde i leiegårder, og de fattigste bodde øverst, der det var farligst." },
+                { "si": "Pengene bestemte også hva du spiste. Grøt og brød for de mange, lange gjestebud for de få." },
+                { "si": "Og alle kunne se forskjellen. Klærne dine fortalte hvem du var, før du rakk å si et eneste ord." }
+            ]
+        }
+    ]
+}
