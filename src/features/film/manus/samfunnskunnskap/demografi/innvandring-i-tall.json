@@ -1,0 +1,517 @@
+{
+    "id": "innvandring-i-tall",
+    "tittel": "Innvandring til Norge i tall",
+    "kilde": "/samfunnskunnskap/demografi/innvandring-i-tall",
+    "bilde": "/images/demografi/innvandring-i-tall-hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": "tusen",
+            "begrunnelse": "Målestokk i prikkfeltet: én prikk er tusen mennesker."
+        },
+        {
+            "tall": 987,
+            "begrunnelse": "Målestokk: 987 120 innvandrere delt på tusen, rundet av."
+        },
+        {
+            "tall": 1226,
+            "begrunnelse": "Målestokk: 987 120 + 238 507 = 1 225 627, delt på tusen og rundet av."
+        },
+        {
+            "tall": 59,
+            "begrunnelse": "Målestokk: 59 200 i 1975 delt på tusen, rundet av."
+        }
+    ],
+    "vurdering": {
+        "dato": "2026-11-01",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 5,
+        "sum": 21
+    },
+    "scener": [
+        {
+            "id": "debatt",
+            "lyd": "rom",
+            "kapittel": "TV-debatten",
+            "visual": {
+                "type": "InnvandringStudio",
+                "props": {
+                    "modus": "debatt"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg en debatt på TV. To politikere står i hver sin side av studioet."
+                },
+                {
+                    "si": "Den ene sier: Det bor nesten én million innvandrere i Norge. Det har aldri vært så mange."
+                },
+                {
+                    "si": "Den andre svarer: Arbeidsinnvandringen er den laveste på 20 år."
+                },
+                {
+                    "si": "Publikum ser forvirret på hverandre. Hvem har rett?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "INNVANDRING I TALL",
+                    "undertittel": "Hvem har rett?",
+                    "bilde": "/images/demografi/innvandring-i-tall-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 987120,
+                            "etikett": "innvandrere i Norge, 2026",
+                            "fraBeat": 2,
+                            "omtrent": false
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvordan kan begge ha rett?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Svaret er at begge har rett."
+                },
+                {
+                    "si": "Begge tallene kommer fra Statistisk sentralbyrå, SSB. Det er Norges offisielle kontor for statistikk."
+                },
+                {
+                    "si": "Ved inngangen til 2026 bodde det 987 120 innvandrere i Norge. I 2025 kom det færre arbeidsinnvandrere enn noe år siden 2005.",
+                    "uttale": "Ved inngangen til 2026 bodde det 987120 innvandrere i Norge. I 2025 kom det færre arbeidsinnvandrere enn noe år siden 2005."
+                },
+                {
+                    "si": "De to politikerne snakker bare om to helt forskjellige ting."
+                }
+            ]
+        },
+        {
+            "id": "regel",
+            "kapittel": "Hvem er innvandrer?",
+            "visual": {
+                "type": "InnvandringFamilie",
+                "props": {
+                    "modus": "regel"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I hverdagen er en innvandrer en som flytter til et annet land for å bo der."
+                },
+                {
+                    "si": "Men når SSB skal telle, trenger de en helt presis regel."
+                },
+                {
+                    "si": "Første krav: Personen har selv flyttet til Norge. Andre krav: Personen er født i utlandet."
+                },
+                {
+                    "si": "Tredje krav: Begge foreldrene er også født i utlandet."
+                },
+                {
+                    "si": "Fjerde krav: Alle fire besteforeldrene er også født i utlandet. Alle fire kravene må være oppfylt."
+                },
+                {
+                    "si": "Regelen gjelder alle: en arbeider fra Sverige, en flyktning fra Ukraina og en student fra Kina."
+                }
+            ]
+        },
+        {
+            "id": "grupper",
+            "visual": {
+                "type": "InnvandringFamilie",
+                "props": {
+                    "modus": "grupper"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Barna til innvandrere har en egen gruppe. De er født i Norge, av to foreldre som innvandret hit."
+                },
+                {
+                    "si": "De kalles norskfødte med innvandrerforeldre. De har aldri innvandret selv."
+                },
+                {
+                    "si": "Er du født i Norge og har én forelder fra utlandet og én fra Norge, er du ikke med i noen av gruppene. I 2023 var det rundt 234 200 slike.",
+                    "uttale": "Er du født i Norge og har én forelder fra utlandet og én fra Norge, er du ikke med i noen av gruppene. I 2023 var det rundt 234200 slike."
+                },
+                {
+                    "si": "Og er du født i utlandet av norske foreldre, er du heller ikke innvandrer."
+                },
+                {
+                    "si": "Passet spiller ingen rolle. En innvandrer som får norsk pass og blir norsk statsborger, er fortsatt innvandrer i statistikken."
+                },
+                {
+                    "si": "Regelen sier bare hvor folk og familien deres er født. Den sier ingenting om hvem som er norsk nok."
+                }
+            ]
+        },
+        {
+            "id": "antall",
+            "kapittel": "Hvor mange?",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 987,
+                            "farget": 987,
+                            "farge": "#ea580c",
+                            "tittel": "987 120 innvandrere, 2026",
+                            "fargeEtikett": "innvandrere",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1226,
+                            "farget": 987,
+                            "farge": "#ea580c",
+                            "restFarge": "#2563eb",
+                            "tittel": "Pluss 238 507 norskfødte med innvandrerforeldre",
+                            "fargeEtikett": "innvandrere",
+                            "restEtikett": "norskfødte med innvandrerforeldre",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1226,
+                            "farget": 987,
+                            "farge": "#ea580c",
+                            "restFarge": "#2563eb",
+                            "tittel": "Over 1,2 millioner til sammen",
+                            "fargeEtikett": "innvandrere",
+                            "restEtikett": "norskfødte med innvandrerforeldre",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 59,
+                            "farget": 59,
+                            "farge": "#7c3aed",
+                            "tittel": "1975: 59 200 til sammen, 1,5 %",
+                            "fargeEtikett": "begge gruppene i 1975",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "1. januar 2026 bodde det 987 120 innvandrere i Norge. Hver prikk er tusen mennesker.",
+                    "uttale": "Første januar 2026 bodde det 987120 innvandrere i Norge. Hver prikk er tusen mennesker."
+                },
+                {
+                    "si": "Det er 17,5 prosent av befolkningen. I tillegg bodde det 238 507 norskfødte med innvandrerforeldre her.",
+                    "uttale": "Det er sytten komma fem prosent av befolkningen. I tillegg bodde det 238507 norskfødte med innvandrerforeldre her."
+                },
+                {
+                    "si": "Legger du sammen de to gruppene, blir det over 1,2 millioner mennesker.",
+                    "uttale": "Legger du sammen de to gruppene, blir det over én komma to millioner mennesker."
+                },
+                {
+                    "si": "Spol tilbake til 1975. Da var de to gruppene til sammen bare 59 200 personer, eller 1,5 prosent av befolkningen.",
+                    "uttale": "Spol tilbake til 1975. Da var de to gruppene til sammen bare 59200 personer, eller én komma fem prosent av befolkningen."
+                }
+            ]
+        },
+        {
+            "id": "land",
+            "visual": {
+                "type": "InnvandringStolper",
+                "props": {
+                    "modus": "land"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Innvandrerne kommer fra mange land. Noen grupper er mye større enn andre."
+                },
+                {
+                    "si": "Den største gruppen kommer fra Polen, med 111 740 personer. Så følger Ukraina med 85 461.",
+                    "uttale": "Den største gruppen kommer fra Polen, med 111740 personer. Så følger Ukraina med 85461."
+                },
+                {
+                    "si": "Deretter kommer Litauen, Syria og Sverige."
+                },
+                {
+                    "si": "Men blant de norskfødte med innvandrerforeldre er de med foreldre fra Pakistan flest, 19 300 personer.",
+                    "uttale": "Men blant de norskfødte med innvandrerforeldre er de med foreldre fra Pakistan flest, 19300 personer."
+                },
+                {
+                    "si": "Gruppen du ser på, avgjør hvilket land som havner øverst."
+                }
+            ]
+        },
+        {
+            "id": "badekar",
+            "kapittel": "Bor her eller kommer hit?",
+            "visual": {
+                "type": "InnvandringStudio",
+                "props": {
+                    "modus": "badekar"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå kan vi løse gåten fra TV-debatten. Det finnes to typer tall om innvandring."
+                },
+                {
+                    "si": "Tenk på et badekar. Vannet i karet er hvor mange som bor i landet akkurat nå."
+                },
+                {
+                    "si": "Vannet fra kranen er hvor mange som kommer i løpet av ett år."
+                },
+                {
+                    "si": "Det kan være mye vann i karet selv om kranen renner sakte. Antallet innvandrere har aldri vært høyere."
+                },
+                {
+                    "si": "Men i 2025 økte antallet bare med 22 000, den laveste veksten på flere år. Færre flyttet hit, særlig fra Ukraina.",
+                    "uttale": "Men i 2025 økte antallet bare med 22000, den laveste veksten på flere år. Færre flyttet hit, særlig fra Ukraina."
+                },
+                {
+                    "si": "Og vann renner ut av karet også. Mange flytter videre eller tilbake igjen etter noen år."
+                }
+            ]
+        },
+        {
+            "id": "grunner",
+            "kapittel": "Hvorfor kommer folk?",
+            "visual": {
+                "type": "InnvandringStolper",
+                "props": {
+                    "modus": "grunner"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når noen fra et land utenfor Norden flytter hit, får SSB vite hvorfor. Tallene kommer fra UDI, som behandler søknader om å få bo i Norge.",
+                    "uttale": "Når noen fra et land utenfor Norden flytter hit, får SSB vite hvorfor. Tallene kommer fra U D I, som behandler søknader om å få bo i Norge."
+                },
+                {
+                    "si": "Grunnene deles i fire grupper: arbeid, familie, flukt og utdanning. Folk fra de andre nordiske landene er ikke med."
+                },
+                {
+                    "si": "I 2025 kom det 41 000 slike innvandrere.",
+                    "uttale": "I 2025 kom det 41000 slike innvandrere."
+                },
+                {
+                    "si": "Flukt var den største grunnen for fjerde år på rad, med 13 900. Av dem kom 12 500 fra Ukraina.",
+                    "uttale": "Flukt var den største grunnen for fjerde år på rad, med 13900. Av dem kom 12500 fra Ukraina."
+                },
+                {
+                    "si": "Nesten 13 000 kom for å bo sammen med familie, og 10 500 kom for å jobbe.",
+                    "uttale": "Nesten 13000 kom for å bo sammen med familie, og 10500 kom for å jobbe."
+                }
+            ]
+        },
+        {
+            "id": "lang",
+            "visual": {
+                "type": "InnvandringStolper",
+                "props": {
+                    "modus": "lang"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ser du på et lengre tidsrom, blir bildet et annet. Fra 1990 til 2025 kom det 1 216 000 ikke-nordiske innvandrere.",
+                    "uttale": "Ser du på et lengre tidsrom, blir bildet et annet. Fra 1990 til 2025 kom det én million to hundre og sekstentusen ikke-nordiske innvandrere."
+                },
+                {
+                    "si": "Da var familie den største grunnen, med 404 000 personer.",
+                    "uttale": "Da var familie den største grunnen, med 404000 personer."
+                },
+                {
+                    "si": "Arbeid fulgte tett etter, med 398 000.",
+                    "uttale": "Arbeid fulgte tett etter, med 398000."
+                },
+                {
+                    "si": "Flukt kom på tredjeplass med 290 000, og nesten 115 000 kom for å studere.",
+                    "uttale": "Flukt kom på tredjeplass med 290000, og nesten 115000 kom for å studere."
+                },
+                {
+                    "si": "Ser du bare på 2025, er flukt størst. Ser du på hele perioden, er det familie og arbeid. Perioden du velger, avgjør svaret."
+                }
+            ]
+        },
+        {
+            "id": "boende",
+            "visual": {
+                "type": "InnvandringStolper",
+                "props": {
+                    "modus": "boende"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men ikke alle ble boende. Av alle som kom etter 1990, bodde 69 prosent fortsatt i Norge i 2026."
+                },
+                {
+                    "si": "Av dem som kom på flukt, bodde 85 prosent her fortsatt."
+                },
+                {
+                    "si": "For dem som kom for å jobbe, var tallet 61 prosent. For studentene var det bare 37 prosent."
+                },
+                {
+                    "si": "Forklaringen kan være enkel. En flyktning kan ofte ikke reise hjem. En student reiser gjerne når studiet er ferdig."
+                }
+            ]
+        },
+        {
+            "id": "kommuner",
+            "kapittel": "Hvor bor de?",
+            "visual": {
+                "type": "InnvandringKart",
+                "props": {
+                    "modus": "kommuner"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Innvandrerne bor ikke jevnt fordelt over hele landet."
+                },
+                {
+                    "si": "I 2026 var Træna i Nordland kommunen med størst andel innvandrere, med 32 prosent."
+                },
+                {
+                    "si": "Frøya, Gamvik og Båtsfjord fulgte tett etter med 31 prosent. Rindal i Trøndelag hadde lavest andel, med 5 prosent."
+                },
+                {
+                    "si": "Her er det lett å gå i en felle. Træna, Gamvik og Båtsfjord er små kommuner."
+                },
+                {
+                    "si": "I 2023 betydde en høy andel i slike kommuner at det bodde mellom 100 og 600 innvandrere der."
+                },
+                {
+                    "si": "En andel sier hvor stor del av innbyggerne det gjelder. Et antall sier hvor mange personer det er."
+                }
+            ]
+        },
+        {
+            "id": "oslo",
+            "visual": {
+                "type": "InnvandringKart",
+                "props": {
+                    "modus": "oslo"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Jo mindre område du ser på, jo mer kan tallene skille seg ut."
+                },
+                {
+                    "si": "I Oslo er Stovner bydelen med høyest andel innvandrere, med 43 prosent."
+                },
+                {
+                    "si": "Søndre Nordstrand og Grorud har 40 prosent."
+                },
+                {
+                    "si": "Vil du vise et høyt tall, kan du velge en bydel. Vil du vise et lavt tall, kan du velge en kommune som Rindal."
+                },
+                {
+                    "si": "Begge bruker ekte tall. Men ingen av dem viser hele bildet."
+                }
+            ]
+        },
+        {
+            "id": "sporsmal",
+            "lyd": "rom",
+            "kapittel": "Fem spørsmål",
+            "visual": {
+                "type": "InnvandringStudio",
+                "props": {
+                    "modus": "sjekk"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Å vurdere hvor troverdig og fullstendig en opplysning er, kalles kildekritikk. Her er fem spørsmål du kan stille."
+                },
+                {
+                    "si": "Én: Hvem er talt med? Bare innvandrere, eller også norskfødte med innvandrerforeldre?"
+                },
+                {
+                    "si": "To: Hvor er det talt? Hele landet, én kommune eller én bydel?"
+                },
+                {
+                    "si": "Tre: Når er det talt? Ett enkelt år, eller mange år til sammen?"
+                },
+                {
+                    "si": "Fire: Er det en andel eller et antall? 32 prosent i en liten kommune kan være noen få hundre mennesker."
+                },
+                {
+                    "si": "Fem: Hvem står bak tallet? SSB, eller noen som vil vinne en debatt?"
+                }
+            ]
+        },
+        {
+            "id": "losning",
+            "visual": {
+                "type": "InnvandringStudio",
+                "props": {
+                    "modus": "losning"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå vet du hvorfor begge politikerne hadde rett."
+                },
+                {
+                    "si": "Den ene snakket om hvor mange som bor i Norge: vannet i karet."
+                },
+                {
+                    "si": "Den andre snakket om hvor mange som kom for å jobbe i ett bestemt år: vannet fra kranen."
+                },
+                {
+                    "si": "Tallene motsier ikke hverandre. De svarer bare på ulike spørsmål."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Et ekte tall kan vise bare en del av bildet.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Hvem er talt? Hvor? Når?",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Da blir det vanskeligere å lure deg.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Neste gang du hører et tall i en debatt, kan du gjøre som en forsker."
+                },
+                {
+                    "si": "Spør hvem som er talt, hvor, og når."
+                },
+                {
+                    "si": "Da blir det mye vanskeligere å lure deg. Og du kan selv bruke tall på en ærlig måte."
+                }
+            ]
+        }
+    ]
+}
