@@ -3,6 +3,7 @@
     "tittel": "Hans Nielsen Hauge: Predikanten som bygde et nettverk",
     "kilde": "/historie/dansketiden/hans-nielsen-hauge",
     "bilde": "/images/dansketiden/hans-nielsen-hauge-hero.webp",
+    "vurdering": { "dato": "2026-11-01", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "aker",
@@ -84,7 +85,18 @@
         },
         {
             "id": "boker",
-            "visual": { "type": "HaugeTavla", "props": { "modus": "boker" } },
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "HAUGES BØKER",
+                    "undertittel": "Bøker og småskrifter, fram til 1805",
+                    "tall": [
+                        { "verdi": 33, "etikett": "bøker og småskrifter", "fraBeat": 0, "omtrent": false },
+                        { "verdi": 200000, "etikett": "eksemplarer", "fraBeat": 1 }
+                    ],
+                    "sporsmal": { "tekst": "Den mest leste forfatteren i Norge", "fraBeat": 2 }
+                }
+            },
             "replikker": [
                 { "si": "Hauge skrev også. Han ga ut 33 bøker og småskrifter." },
                 {
@@ -108,7 +120,7 @@
                     "si": "På hvert sted fikk han venner. De fortsatte å møtes når han reiste videre."
                 },
                 {
-                    "si": "Hjemmet og familien var grunnmuren. Hver gård ble et lite vennesamfunn."
+                    "si": "Hjemmet og husstanden var grunnmuren i hvert vennesamfunn."
                 },
                 {
                     "si": "Gruppene holdt kontakten med hverandre gjennom brev og reiser."
@@ -120,10 +132,21 @@
         },
         {
             "id": "kvinner",
-            "visual": { "type": "HaugeTavla", "props": { "modus": "kvinner" } },
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        { "fraBeat": 0, "total": 1, "farget": 1, "farge": "#be185d", "tittel": "Kvinner prekte og ledet møter", "fargeEtikett": "kvinne som preker", "visTall": false },
+                        { "fraBeat": 1, "total": 4, "farget": 1, "farge": "#be185d", "tittel": "Fram til 1830: opptil 1 av 4?", "fargeEtikett": "kvinner", "restEtikett": "menn", "visTall": false },
+                        { "fraBeat": 2, "total": 10, "farget": 1, "farge": "#be185d", "tittel": "Enkelte bygder: nærmere 1 av 10", "fargeEtikett": "kvinner", "restEtikett": "menn", "visTall": false },
+                        { "fraBeat": 3, "total": 10, "farget": 1, "farge": "#be185d", "tittel": "Sara Oust og Marthe Olsdatter Gabestad", "fargeEtikett": "kvinner", "restEtikett": "menn", "visTall": false }
+                    ]
+                }
+            },
             "replikker": [
                 {
-                    "si": "Hauge gjorde noe som vakte stor oppsikt på den tiden. Han lot kvinner preke og lede møter."
+                    "si": "Hauge gjorde noe som var oppsiktsvekkende på den tiden. Han lot kvinner preke og lede møter."
                 },
                 {
                     "si": "Fram til 1830 kan opptil en fjerdedel av predikantene ha vært kvinner."
@@ -143,7 +166,7 @@
                     "si": "For Hauge hørte troen og arbeidet sammen. Våren 1801 ble han kjøpmann i Bergen."
                 },
                 {
-                    "si": "Han skaffet lån til venner som ville starte noe nytt. Mange måtte skaffe seg borgerbrev, altså lov fra myndighetene til å drive handel."
+                    "si": "Han skaffet lån til venner som ville starte noe nytt. Mange måtte skaffe seg borgerbrev, altså lov fra myndighetene til å drive handel og håndverk."
                 },
                 {
                     "si": "Mellom 1799 og 1828 kan haugianerne ha startet opptil 150 bedrifter. De ga arbeid til flere hundre mennesker."
@@ -155,7 +178,7 @@
                     "si": "De hadde et boktrykkeri i Kristiansand, en kobbergruve i Vingelen og møller i Gravdalen."
                 },
                 {
-                    "si": "Kritikerne mente at Hauge bare ville tjene penger selv. Det gjorde myndighetene enda mer mistenksomme."
+                    "si": "Kritikerne mente at Hauge bare ville tjene penger selv. Det var en av grunnene til at myndighetene ble enda mer mistenksomme."
                 }
             ]
         },
@@ -227,7 +250,7 @@
                     "si": "Da riksforsamlingen samlet seg på Eidsvoll i 1814 for å lage grunnloven, var tre av dem som var valgt dit, haugianere."
                 },
                 {
-                    "si": "Mange haugianske miljøer ble steder der folk lærte å organisere seg politisk."
+                    "si": "Flere haugianske miljøer ble etter hvert steder der folk lærte å organisere seg politisk."
                 }
             ]
         },
@@ -250,7 +273,7 @@
                     "uttale": "En annen kom fram til førtini før atten-åtti-årene. To andre fant femtiseks mellom atten-fjorten og atten-åtti."
                 },
                 {
-                    "si": "Det fantes ikke noe medlemskort. Hver forsker må selv avgjøre hvem som regnes som haugianer."
+                    "si": "Tallene blir trolig ulike fordi det ikke fantes noe medlemskort. Hver forsker må selv avgjøre hvem som regnes som haugianer."
                 }
             ]
         },
@@ -293,8 +316,8 @@
                 "type": "Sluttkort",
                 "props": {
                     "setninger": [
-                        { "tekst": "Han prekte når det var forbudt.", "fraBeat": 0 },
-                        { "tekst": "Han lot vanlige folk snakke om Gud.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Trolig den som har betydd mest for kirkelivet i Norge", "fraBeat": 0 },
+                        { "tekst": "siden reformasjonen.", "fraBeat": 0, "uthevet": true },
                         { "tekst": "Myndighetene satte lederen i fengsel.", "fraBeat": 1 },
                         { "tekst": "Men nettverket levde videre.", "fraBeat": 1, "uthevet": true },
                         { "tekst": "Vanlige folk kan organisere seg,", "fraBeat": 2 },
@@ -311,7 +334,7 @@
                     "si": "Store norske leksikon kaller Hauge trolig den personen som har betydd mest for kirkelivet i Norge siden reformasjonen."
                 },
                 {
-                    "si": "Myndighetene trodde de kunne stoppe bevegelsen ved å stoppe lederen. De tok feil."
+                    "si": "Myndighetene satte lederen i fengsel. Men bevegelsen levde videre."
                 },
                 {
                     "si": "Kanskje det viktigste Hauge lærte vanlige folk, var dette: De kunne selv organisere seg og starte noe nytt. Og de kunne stå sammen, også når lederen var borte."
