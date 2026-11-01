@@ -1,0 +1,317 @@
+{
+  "id": "innvandring-i-tall",
+  "title": "Innvandring til Norge i tall",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Demografi",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "SSB regner en person som innvandrer når personen er født i utlandet av to utenlandsfødte foreldre og selv har flyttet til Norge. Statsborgerskap spiller ingen rolle.",
+    "1. januar 2026 var 17,5 prosent av befolkningen innvandrere og 4,2 prosent norskfødte med innvandrerforeldre.",
+    "Flukt var den største grunnen til innvandring i 2025, men siden 1990 har familie og arbeid vært størst. Utvalget avgjør hva tallene viser."
+  ],
+  "externalUrl": "https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre",
+  "factChecked": "2026-11-01",
+  "tags": [
+    "demografi",
+    "innvandring",
+    "statistikk",
+    "kildekritikk",
+    "migrasjon",
+    "befolkning"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg en debatt på TV. Den ene politikeren sier: «Det bor nesten én million innvandrere i Norge. Det har aldri vært så mange.» Den andre svarer: «Arbeidsinnvandringen er den laveste på 20 år.» Publikum ser forvirret på hverandre. Hvem av dem har rett?"
+    },
+    {
+      "type": "text",
+      "content": "Svaret er at begge har rett. Begge tallene kommer fra Statistisk sentralbyrå (SSB), som er Norges offisielle kontor for statistikk. Ved inngangen til 2026 bodde det 987 100 innvandrere i Norge (Andersen, 2026). Og i 2025 kom det færre arbeidsinnvandrere enn noe år siden 2005 (Kirkeberg, 2026). De to politikerne snakker bare om to helt forskjellige ting."
+    },
+    {
+      "type": "text",
+      "content": "I denne artikkelen skal du lære å lese tall om innvandring. Du skal finne ut hvem som regnes som innvandrer, hvorfor folk kommer, og hvordan det samme temaet kan gi helt ulike tall. Til slutt får du en liste med spørsmål du kan stille hver gang noen bruker tall i en debatt."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "To politikere i TV-debatt med tall på skjerm",
+      "caption": "Tallene kan være ekte, men likevel brukes til å si det motsatte."
+    },
+    {
+      "type": "header",
+      "text": "Hvem er innvandrer?"
+    },
+    {
+      "type": "text",
+      "content": "I hverdagen er en innvandrer en person som flytter til et annet land for å bo der (Tønnessen, 2024). Men når SSB skal telle, trenger de en helt presis regel. Ellers ville tallene blitt forskjellige hver gang noen telte."
+    },
+    {
+      "type": "text",
+      "content": "SSB sier at en innvandrer er en person som selv har flyttet til Norge, og som er født i utlandet av to foreldre som også er født i utlandet. I tillegg må alle de fire besteforeldrene være født i utlandet. Alle fire kravene må være oppfylt (Steinkellner mfl., 2023). Regelen gjelder for alle, enten personen er en arbeider fra Sverige, en flyktning fra Ukraina eller en student fra Kina."
+    },
+    {
+      "type": "text",
+      "content": "Barna til innvandrere har en egen gruppe. En person som er født i Norge, men som har to foreldre som innvandret hit, kalles norskfødt med innvandrerforeldre. Disse barna har altså aldri innvandret selv. Mange av dem har bodd i Norge hele livet (Steinkellner mfl., 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Like viktig er det å vite hvem som ikke blir talt med. Er du født i Norge og har én forelder fra utlandet og én fra Norge, er du verken innvandrer eller norskfødt med innvandrerforeldre. I 2023 var det rundt 234 200 slike personer i Norge. Er du født i utlandet av norske foreldre, er du heller ikke innvandrer (Steinkellner mfl., 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Statsborgerskap spiller ingen rolle her. Statsborgerskap betyr hvilket land du er borger av, og hvilket pass du har. En innvandrer som blir norsk statsborger, er fortsatt innvandrer i statistikken (Steinkellner mfl., 2023). SSB kaller definisjonen beskrivende. Det betyr at den bare beskriver hvor folk og familien deres er født. Den sier ingenting om hvem som er «norsk nok»."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Tre ord du må kunne",
+        "content": "Innvandrer: født i utlandet av to utenlandsfødte foreldre, og har selv flyttet til Norge. Norskfødt med innvandrerforeldre: født i Norge av to foreldre som har innvandret. Innvandrerbakgrunn: brukes ofte om begge gruppene til sammen (Steinkellner mfl., 2023)."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvor mange er det?"
+    },
+    {
+      "type": "text",
+      "content": "1. januar 2026 bodde det 987 120 innvandrere i Norge. Det er 17,5 prosent av befolkningen. I tillegg bodde det 238 507 norskfødte med innvandrerforeldre, som er 4,2 prosent (Statistisk sentralbyrå, 2026). Legger du sammen de to gruppene, blir det over 1,2 millioner mennesker."
+    },
+    {
+      "type": "text",
+      "content": "Til sammenligning var de to gruppene til sammen bare 59 200 personer i 1975. Det var 1,5 prosent av befolkningen (Tønnessen, 2024). Hvordan dette skjedde, kan du lese om i artikkelen om [innvandringen til Norge](/historie/norge-i-moderne-tid/innvandringen-til-norge)."
+    },
+    {
+      "type": "text",
+      "content": "Noen grupper er mye større enn andre. Slik så de fem største gruppene ut i 2026 (Statistisk sentralbyrå, 2026):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Polen: 111 740 innvandrere",
+        "Ukraina: 85 461 innvandrere",
+        "Litauen: 43 065 innvandrere",
+        "Syria: 42 040 innvandrere",
+        "Sverige: 37 732 innvandrere"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Blant de norskfødte med innvandrerforeldre er det en annen gruppe som er størst. Det er de som har foreldre fra Pakistan, med 19 300 personer (Andersen, 2026). Dette viser at hvilken gruppe du ser på, avgjør hvilket land som havner øverst."
+    },
+    {
+      "type": "header",
+      "text": "Bor her eller kommer hit?"
+    },
+    {
+      "type": "text",
+      "content": "Nå kan vi løse gåten fra TV-debatten. Det finnes to helt forskjellige typer tall om innvandring. Det første tallet sier hvor mange som bor i landet akkurat nå. Det andre sier hvor mange som kommer i løpet av ett år. Tenk på et badekar: Det første tallet er hvor mye vann som er i karet. Det andre er hvor fort det renner inn fra kranen."
+    },
+    {
+      "type": "text",
+      "content": "Det kan være mye vann i karet selv om det renner sakte fra kranen. Slik er det med innvandringen nå. Antallet innvandrere i Norge har aldri vært høyere. Men i 2025 økte antallet bare med 22 000. Det er den laveste veksten på flere år. Grunnen er at færre flyttet hit, særlig fra Ukraina (Andersen, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Husk også at det renner vann ut av karet. Mange innvandrere flytter videre eller tilbake igjen etter noen år. Det får du se tydelig i neste del."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor kommer folk?"
+    },
+    {
+      "type": "text",
+      "content": "Når en person som ikke er fra et nordisk land, flytter til Norge, får SSB vite hvorfor. Opplysningene kommer fra Utlendingsdirektoratet (UDI), som behandler søknader om å få bo i Norge. Grunnene deles i fire hovedgrupper: arbeid, familie, flukt og utdanning (Steinkellner mfl., 2023). Folk fra de andre nordiske landene er ikke med i disse tallene (Kirkeberg, 2026). Hvorfor folk velger å flytte, kan du lese mer om i artikkelen [Migrasjon: Hvorfor drar vi?](/samfunnskunnskap/demografi/migrasjon-push-pull)."
+    },
+    {
+      "type": "text",
+      "content": "I 2025 kom det 41 000 slike innvandrere. Flukt var den største grunnen for fjerde år på rad, med 13 900 personer. Av dem kom 12 500 fra Ukraina. Nesten 13 000 kom for å bo sammen med familie, og 10 500 kom for å jobbe (Kirkeberg, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Ser du på et lengre tidsrom, blir bildet et annet. Fra 1990 til 2025 kom det 1 216 000 ikke-nordiske innvandrere. Da var familie den største grunnen med 404 000 personer, tett fulgt av arbeid med 398 000. Flukt kom på tredjeplass med 290 000, og nesten 115 000 kom for å studere (Kirkeberg, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Ikke alle ble boende. Av alle som kom etter 1990, bodde 69 prosent fortsatt i Norge i 2026. Men det var store forskjeller. Av dem som kom på flukt, bodde 85 prosent her fortsatt. For dem som kom for å jobbe, var tallet 61 prosent, og for studentene bare 37 prosent (Kirkeberg, 2026). Det kan ha en enkel forklaring. En flyktning kan ofte ikke reise hjem, mens en student gjerne reiser når studiet er ferdig."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv i modellen under. Velg ulike steder, ulike måter å telle på og ulike perioder. Se hva som skjer med overskriften."
+    },
+    {
+      "type": "component",
+      "name": "Utvalgslinsa",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Alle tallene i modellen er ekte. Likevel kan de gi helt motsatte overskrifter. Ser du bare på 2025, er flukt den største grunnen. Ser du på hele perioden siden 1990, er det familie og arbeid. Begge deler er sant. Det er perioden du velger, som avgjør svaret."
+    },
+    {
+      "type": "header",
+      "text": "Hvor bor innvandrerne?"
+    },
+    {
+      "type": "text",
+      "content": "Innvandrerne bor ikke jevnt fordelt over hele landet. I 2026 var Træna i Nordland kommunen med størst andel innvandrere, med 32 prosent. Frøya, Gamvik og Båtsfjord fulgte tett etter med 31 prosent. Rindal i Trøndelag hadde lavest andel, med 5 prosent (Andersen, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Her er det lett å gå i en felle. Træna, Gamvik og Båtsfjord er små kommuner. I 2023 betydde en høy andel i slike kommuner at det bodde mellom 100 og 600 innvandrere der (Steinkellner mfl., 2023). En andel sier hvor stor del av innbyggerne det gjelder. Et antall sier hvor mange personer det er. Begge er nyttige, men de forteller ulike historier."
+    },
+    {
+      "type": "text",
+      "content": "Jo mindre område du ser på, jo mer kan tallene skille seg ut. I Oslo er Stovner bydelen med høyest andel innvandrere, med 43 prosent. Søndre Nordstrand og Grorud har 40 prosent (Andersen, 2026). Den som vil vise et høyt tall, kan velge en bydel. Den som vil vise et lavt tall, kan velge en kommune som Rindal. Begge bruker ekte tall, men ingen av dem viser hele bildet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Elev ser på søylediagram om innvandring på datamaskin",
+      "caption": "Den som velger utvalget, bestemmer mye av hva tallet viser."
+    },
+    {
+      "type": "header",
+      "text": "Fem spørsmål du alltid bør stille"
+    },
+    {
+      "type": "text",
+      "content": "Å vurdere hvor troverdig og fullstendig en opplysning er, kalles kildekritikk. Når noen bruker tall om innvandring, eller om noe annet, kan du stille disse fem spørsmålene. De hjelper deg å se hva tallet egentlig viser. Du lærer mer om hvordan forskere samler inn tall i artikkelen [Slik undersøker vi samfunnet](/samfunnskunnskap/eksamen/km-1-metode)."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Hvem er talt med? Bare innvandrere, eller også norskfødte med innvandrerforeldre?",
+        "Hvor er det talt? Hele landet, én kommune eller én bydel?",
+        "Når er det talt? Ett enkelt år, eller mange år til sammen?",
+        "Er det en andel eller et antall? 32 prosent i en liten kommune kan være noen få hundre mennesker.",
+        "Hvem står bak tallet? Kommer det fra SSB, eller fra noen som vil vinne en debatt?"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Tallene om innvandring er viktige fordi politikerne bruker dem når de bestemmer. Innvandring er for eksempel ett av tiltakene som diskuteres når Norge skal få nok helsearbeidere i framtiden, slik du kan lese om i artikkelen om [eldrebølgen](/samfunnskunnskap/demografi/eldrebolgen). Derfor er det nyttig at du kan lese dem selv."
+    },
+    {
+      "type": "header",
+      "text": "Tilbake til TV-debatten"
+    },
+    {
+      "type": "text",
+      "content": "Nå vet du hvorfor begge politikerne hadde rett. Den ene snakket om hvor mange som bor i Norge. Den andre snakket om hvor mange som kom for å jobbe i ett bestemt år. Tallene motsier ikke hverandre. De svarer bare på ulike spørsmål."
+    },
+    {
+      "type": "text",
+      "content": "Neste gang du hører et tall i en debatt, kan du gjøre som en forsker: Spør hvem som er talt, hvor, og når. Da blir det mye vanskeligere å lure deg. Og du kan selv bruke tall på en ærlig måte når du skal argumentere."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdommer diskuterer avisoverskrifter rundt et bord",
+      "caption": "Gode spørsmål gjør det vanskeligere å bli lurt av tall."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Andersen, E. C. (2026). *Redusert vekst i bosatte innvandrere*. Statistisk sentralbyrå. Hentet 01.11.2026 fra [ssb.no](https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre/artikler/redusert-vekst-i-bosatte-innvandrere)",
+          "Kirkeberg, M. I. (2026). *Laveste arbeidsinnvandring på 20 år*. Statistisk sentralbyrå. Hentet 01.11.2026 fra [ssb.no](https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-etter-innvandringsgrunn/artikler/laveste-arbeidsinnvandring-pa-20-ar)",
+          "Statistisk sentralbyrå. (2026). *Innvandrere og norskfødte med innvandrerforeldre*. Hentet 01.11.2026 fra [ssb.no](https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre)",
+          "Steinkellner, A., Krokedal, L. & Andersen, E. (2023). *Innvandrerne og deres barn – en mangfoldig gruppe*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/befolkning/innvandrere/artikler/innvandrerne-og-deres-barn--en-mangfoldig-gruppe)",
+          "Tønnessen, M. (2024). *Innvandrer*. Store norske leksikon. Hentet 01.11.2026 fra [snl.no/innvandrer](https://snl.no/innvandrer)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilke fire krav må være oppfylt for at SSB skal regne en person som innvandrer?",
+          "Hva er forskjellen på en innvandrer og en norskfødt med innvandrerforeldre?",
+          "Hva var den største grunnen til innvandring i 2025, og hva var den største grunnen hvis du ser på hele perioden 1990-2025?",
+          "Hvilken kommune hadde størst andel innvandrere i 2026, og hvilken hadde minst?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvordan begge politikerne i TV-debatten kunne ha rett. Bruk badekaret som eksempel.",
+          "Bruk Utvalgslinsa. Velg to utvalg som gir overskrifter som nesten sier det motsatte. Forklar hvorfor begge er sanne.",
+          "Hvorfor tror du så mange flyktninger blir boende, mens mange studenter flytter igjen?",
+          "En person med én norsk og én utenlandsk forelder blir ikke regnet med i noen av de to gruppene. Hvilke fordeler og ulemper har det at SSB har en så presis regel?"
+        ],
+        "gaaVidere": [
+          "Finn andelen innvandrere i din egen kommune på ssb.no/kommunefakta. Sammenlign med hele landet, og skriv to overskrifter: en som får tallet til å virke stort, og en som får det til å virke lite.",
+          "Finn en nyhetssak eller et innlegg der noen bruker tall om innvandring. Bruk de fem spørsmålene fra artikkelen og vurder hvor godt tallet er brukt.",
+          "Diskuter i klassen: Har den som lager en overskrift, et ansvar for å vise hele bildet? Begrunn svaret."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvem regnes som innvandrer i SSBs statistikk?",
+            "options": [
+              "Alle som ikke er norske statsborgere",
+              "En person som er født i utlandet av to utenlandsfødte foreldre, og som selv har flyttet til Norge",
+              "Alle som har minst én forelder fra utlandet",
+              "Alle som har bodd i Norge i mindre enn fem år"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I tillegg må alle fire besteforeldrene være født i utlandet. Statsborgerskap spiller ingen rolle."
+          },
+          {
+            "question": "Hvor stor del av befolkningen i Norge var innvandrere 1. januar 2026?",
+            "options": [
+              "4,2 prosent",
+              "10 prosent",
+              "17,5 prosent",
+              "32 prosent"
+            ],
+            "correctAnswer": 2,
+            "explanation": "987 120 innvandrere utgjorde 17,5 prosent. 4,2 prosent er andelen norskfødte med innvandrerforeldre."
+          },
+          {
+            "question": "Hva var den største grunnen til innvandring til Norge i 2025?",
+            "options": [
+              "Arbeid",
+              "Familie",
+              "Utdanning",
+              "Flukt"
+            ],
+            "correctAnswer": 3,
+            "explanation": "13 900 kom på flukt, de fleste fra Ukraina. Ser du på hele perioden siden 1990, er familie og arbeid størst."
+          },
+          {
+            "question": "Hvorfor kan en kommune med 32 prosent innvandrere ha færre innvandrere enn en kommune med 10 prosent?",
+            "options": [
+              "Fordi SSB teller feil i små kommuner",
+              "Fordi en andel sier hvor stor del det er, ikke hvor mange personer",
+              "Fordi små kommuner ikke er med i statistikken",
+              "Fordi innvandrere i små kommuner ikke blir talt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "I en liten kommune kan en høy andel bety bare noen hundre mennesker. Andel og antall forteller ulike ting."
+          },
+          {
+            "question": "Hvilken gruppe hadde størst andel som fortsatt bodde i Norge av dem som kom etter 1990?",
+            "options": [
+              "De som kom for å studere",
+              "De som kom for å jobbe",
+              "De som kom på flukt",
+              "De som kom fra de nordiske landene"
+            ],
+            "correctAnswer": 2,
+            "explanation": "85 prosent av dem som kom på flukt, bodde her fortsatt. Bare 37 prosent av studentene ble værende."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
