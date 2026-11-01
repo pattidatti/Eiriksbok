@@ -9,7 +9,7 @@ import { TelleTall } from '../shared';
  * figurer. Presten har hvit pipekrage, Hauge har brun jakke.
  */
 
-type Modus = 'lov' | 'boker' | 'kvinner' | 'dom' | 'forskere' | 'fri';
+type Modus = 'lov' | 'dom' | 'forskere' | 'fri';
 
 const HAUGE = '#7c3aed';
 const ROD = '#b91c1c';
@@ -31,8 +31,6 @@ export function HaugeTavla({ beat, props }: VisualProps<{ modus: Modus }>) {
                     transition={{ duration: 0.5 }}
                 >
                     {modus === 'lov' && <Lov beat={beat} />}
-                    {modus === 'boker' && <Boker beat={beat} />}
-                    {modus === 'kvinner' && <Kvinner beat={beat} />}
                     {modus === 'dom' && <Dom beat={beat} />}
                     {modus === 'forskere' && <Forskere beat={beat} />}
                     {modus === 'fri' && <Fri beat={beat} />}
@@ -46,8 +44,6 @@ export function HaugeTavla({ beat, props }: VisualProps<{ modus: Modus }>) {
 function bildeNokkel(modus: Modus, beat: number) {
     if (modus === 'lov') return `lov-${['hauge', 'makt', 'stue', 'stue', 'vei', 'mote'][Math.min(beat, 5)]}`;
     if (modus === 'forskere') return `forskere-${beat <= 1 ? 'sal' : 'tall'}`;
-    if (modus === 'boker') return `boker-${beat === 0 ? 'hylle' : 'opplag'}`;
-    if (modus === 'kvinner') return `kvinner-${beat === 0 ? 'stue' : 'andel'}`;
     return modus;
 }
 
@@ -319,173 +315,6 @@ function Lov({ beat }: { beat: number }) {
                 ]}
             />
         </>
-    );
-}
-
-/* ---------- Bøkene ---------- */
-
-const BOKFARGER = ['#7c2d12', '#1e3a8a', '#065f46', '#78350f', '#4c1d95', '#334155'];
-
-function Boker({ beat }: { beat: number }) {
-    return (
-        <>
-            {beat === 0 ? (
-                <Svg>
-                    {[0, 1, 2].map((rad) => (
-                        <rect key={rad} x={90} y={300 + rad * 200} width={900} height={20} rx={6} fill="#8b5a2b" />
-                    ))}
-                    {Array.from({ length: 33 }, (_, i) => {
-                        const rad = Math.floor(i / 11);
-                        const kol = i % 11;
-                        return (
-                            <motion.rect
-                                key={i}
-                                x={110 + kol * 78}
-                                y={300 + rad * 200 - 150}
-                                width={64}
-                                height={150}
-                                rx={6}
-                                fill={BOKFARGER[(i * 7) % BOKFARGER.length]}
-                                stroke={PAPIR}
-                                strokeWidth={3}
-                                initial={{ opacity: 0, scale: 0.6 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.2 + i * 0.07, type: 'spring', stiffness: 200, damping: 18 }}
-                                style={{ transformOrigin: 'center bottom', transformBox: 'fill-box' }}
-                            />
-                        );
-                    })}
-                </Svg>
-            ) : (
-                <>
-                    <Svg>
-                        {Array.from({ length: 200 }, (_, i) => {
-                            const rad = Math.floor(i / 20);
-                            const kol = i % 20;
-                            return (
-                                <motion.rect
-                                    key={i}
-                                    x={100 + kol * 45}
-                                    y={150 + rad * 66}
-                                    width={32}
-                                    height={52}
-                                    rx={4}
-                                    fill={BOKFARGER[(i * 7) % BOKFARGER.length]}
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.2 + i * 0.012 }}
-                                    style={{ transformOrigin: 'center', transformBox: 'fill-box' }}
-                                />
-                            );
-                        })}
-                    </Svg>
-                    <div className="absolute left-[6%] top-[5%] px-5 py-2 rounded-xl bg-white shadow-lg text-xl md:text-2xl font-bold text-slate-700">
-                        Hver lille bok er 1 000 eksemplarer
-                    </div>
-                </>
-            )}
-            <div className="absolute right-[4%] top-0 bottom-0 w-[32%] flex flex-col justify-center gap-5">
-                <Stort verdi={33} etikett="bøker og småskrifter" />
-                {beat >= 1 && <Stort verdi={200000} etikett="eksemplarer fram til 1805" prefiks="ca. " />}
-                {beat >= 2 && (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.85 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="px-5 py-4 rounded-2xl bg-amber-300 text-slate-900 font-black text-2xl md:text-3xl shadow-xl"
-                    >
-                        Den mest leste forfatteren i Norge
-                    </motion.div>
-                )}
-            </div>
-        </>
-    );
-}
-
-/* ---------- Kvinnene ---------- */
-
-const ROSA = '#be185d';
-
-function Kvinner({ beat }: { beat: number }) {
-    if (beat === 0) {
-        return (
-            <>
-                <Svg>
-                    <Stue kvinne />
-                    <Merkelapp x={610} y={110} tekst="En kvinne leder møtet" farge={ROSA} />
-                </Svg>
-                <Kort linjer={[{ tekst: 'Hauge lot kvinner' }, { tekst: 'preke', farge: ROSA }, { tekst: 'lede møter', farge: ROSA }]} />
-            </>
-        );
-    }
-    const rader = [
-        { n: 4, tekst: 'Opptil en fjerdedel?', under: '1 av 4 predikanter', fraBeat: 1 },
-        { n: 10, tekst: 'Nærmere ti prosent?', under: '1 av 10 predikanter', fraBeat: 2 },
-    ];
-    return (
-        <>
-            <Svg>
-                {rader.map((r, k) =>
-                    beat >= r.fraBeat ? (
-                        <g key={r.tekst}>
-                            <text x={90} y={150 + k * 360} fontSize={52} fontWeight={900} fill="#111827">
-                                {r.tekst}
-                            </text>
-                            {Array.from({ length: r.n }, (_, i) => (
-                                <motion.g
-                                    key={i}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: 0.2 + i * 0.1 }}
-                                >
-                                    <Person
-                                        x={140 + i * (r.n === 4 ? 150 : 96)}
-                                        y={400 + k * 360}
-                                        farge={i === 0 ? ROSA : '#94a3b8'}
-                                        s={r.n === 4 ? 1.15 : 0.85}
-                                        kjole={i === 0}
-                                    />
-                                </motion.g>
-                            ))}
-                            <text x={r.n === 4 ? 760 : 1110} y={340 + k * 360} fontSize={36} fontWeight={800} fill={ROSA}>
-                                {r.under}
-                            </text>
-                        </g>
-                    ) : null
-                )}
-            </Svg>
-            {beat >= 3 && (
-                <div className="absolute right-[4%] top-[8%] flex flex-col gap-3 items-end">
-                    {['Sara Oust', 'Marthe Olsdatter Gabestad'].map((navn, i) => (
-                        <motion.div
-                            key={navn}
-                            initial={{ opacity: 0, x: 40 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.3 + i * 0.5 }}
-                            className="px-5 py-3 rounded-2xl bg-white text-slate-900 font-black text-2xl md:text-3xl shadow-xl border-l-[10px]"
-                            style={{ borderColor: ROSA }}
-                        >
-                            {navn}
-                        </motion.div>
-                    ))}
-                </div>
-            )}
-        </>
-    );
-}
-
-function Stort({ verdi, etikett, prefiks = '' }: { verdi: number; etikett: string; prefiks?: string }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="px-6 py-4 rounded-2xl bg-white shadow-xl"
-        >
-            <div className="text-5xl md:text-6xl font-black tabular-nums" style={{ color: HAUGE }}>
-                {prefiks}
-                <TelleTall verdi={verdi} />
-            </div>
-            <div className="text-xl md:text-2xl font-bold text-slate-600">{etikett}</div>
-        </motion.div>
     );
 }
 

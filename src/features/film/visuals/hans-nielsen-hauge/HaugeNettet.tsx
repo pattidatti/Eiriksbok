@@ -751,7 +751,7 @@ export function HaugeNettet({ beat, playing, props }: VisualProps<{ modus?: Modu
                         className="absolute bottom-[8%] left-1/2 -translate-x-1/2 px-6 py-3 rounded-2xl bg-white/95 shadow-xl flex items-center gap-4"
                     >
                         <BookX className="w-14 h-14 text-red-600" strokeWidth={2.5} />
-                        <span className="text-2xl md:text-3xl font-black text-slate-900">Bøkene hans er forbudt</span>
+                        <span className="text-2xl md:text-3xl font-black text-slate-900">Skriftene hans er forbudt</span>
                     </motion.div>
                 )}
             </AnimatePresence>

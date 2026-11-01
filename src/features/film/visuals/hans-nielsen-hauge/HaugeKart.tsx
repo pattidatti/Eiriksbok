@@ -79,7 +79,6 @@ const SJOVEI: LngLat[] = [
     [6.0, 56.8],
     [8.0, 57.8],
 ];
-const SALTVEI: LngLat[] = [STED.christiania, [9.9, 59.2], [9.2, 58.7], STED.sorlandet];
 
 interface Kort {
     tekst: string;
@@ -96,19 +95,19 @@ const KORT: Record<Modus, Kort[][]> = {
     reiser: [
         [{ tekst: '1797 til 1804' }, { tekst: 'Hauge reiser rundt i Norge', farge: HAUGE }],
         [{ tekst: 'Helt nord' }, { tekst: 'til Tromsø', farge: HAUGE }],
-        [{ tekst: 'Og sørover' }, { tekst: 'flere turer til Danmark', farge: BLA }],
+        [{ tekst: 'Og til Danmark' }, { tekst: 'flere turer', farge: BLA }],
         [{ tekst: 'Møter i stuer og på tun' }, { tekst: '«Lesere» eller haugianere', farge: HAUGE }],
         [
             { tekst: 'Haugianerne' },
             { tekst: 'Angre og vende om', farge: HAUGE },
-            { tekst: 'Nei til dans, drikking og moro', farge: ROD },
+            { tekst: 'Strenge mot dans, drikking og moro', farge: ROD },
         ],
     ],
     bedrifter: [
         [{ tekst: 'Våren 1801' }, { tekst: 'Hauge blir kjøpmann i Bergen', farge: GULL }],
         [
             { tekst: 'Lån til venner' },
-            { tekst: 'Borgerbrev: lov fra myndighetene til å drive handel', farge: GULL },
+            { tekst: 'Borgerbrev: lov til å drive handel og håndverk', farge: GULL },
         ],
         [{ tekst: '1799 til 1828' }],
         [
@@ -121,7 +120,7 @@ const KORT: Record<Modus, Kort[][]> = {
             { tekst: 'Kobbergruve i Vingelen', farge: GULL },
             { tekst: 'Møller i Gravdalen', farge: GULL },
         ],
-        [{ tekst: 'Kritikerne' }, { tekst: '«Han vil bare tjene penger selv»', farge: ROD }],
+        [{ tekst: 'Kritikerne' }, { tekst: 'Hauge vil bare tjene penger selv', farge: ROD }],
     ],
     salt: [
         [{ tekst: 'Napoleonskrigene' }, { tekst: 'Sjøveien til Norge stengt', farge: ROD }],
@@ -131,9 +130,9 @@ const KORT: Record<Modus, Kort[][]> = {
     ],
     arv: [
         [{ tekst: '1817' }, { tekst: 'Gården Bredtvet ved Christiania', farge: HAUGE }],
-        [{ tekst: '1821: testamentet' }, { tekst: '«Hold dere i statskirken»', farge: HAUGE }],
+        [{ tekst: '1821: testamentet' }, { tekst: 'Bli i statskirken', farge: HAUGE }],
         [{ tekst: '29. mars 1824' }, { tekst: 'Hauge dør, 53 år gammel', farge: HAUGE }],
-        [{ tekst: 'Sverige' }, { tekst: 'Bevegelsene bryter ut', farge: ROD }, { tekst: 'Egne frikirker' }],
+        [{ tekst: 'Sverige' }, { tekst: 'Folk bryter ut av statskirken', farge: ROD }, { tekst: 'Egne frikirker' }],
         [{ tekst: 'Norge' }, { tekst: 'Lekfolket blir i statskirken', farge: BLA }],
     ],
 };
@@ -145,7 +144,7 @@ const TALL: Partial<Record<Modus, (Tall[] | undefined)[]>> = {
 /** Utsnittet per modus: hjørnene i kartet som skal fylle venstre del av bildet. */
 const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
     reiser: [
-        [4.5, 56.6],
+        [4.5, 55.0],
         [21, 70.2],
     ],
     bedrifter: [
@@ -210,8 +209,8 @@ export function HaugeKart({ beat, props }: VisualProps<{ modus: Modus }>) {
 
                 {modus === 'reiser' && (
                     <>
-                        <Navn ll={[10.9, 61.7]} tekst="NORGE" p={p} />
-                        <Navn ll={[16.5, 62.0]} tekst="SVERIGE" p={p} farge="#a8a29e" />
+                        <Navn ll={[9.9, 61.9]} tekst="NORGE" p={p} />
+                        <Navn ll={[16.6, 64.6]} tekst="SVERIGE" p={p} farge="#a8a29e" />
                     </>
                 )}
                 {modus === 'salt' && (
@@ -286,8 +285,6 @@ export function HaugeKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                     <>
                         <Pil d={linje(SJOVEI)} farge="#64748b" varighet={1.6} />
                         <Kryss ll={[7.2, 57.4]} p={p} />
-                        {beat >= 2 && <Pil d={linje(SALTVEI)} farge={HAUGE} varighet={2} />}
-                        {beat >= 2 && <Merke ll={STED.christiania} tekst="Fengselet" p={p} farge={HAUGE} />}
                         {beat >= 2 && <Merke ll={STED.sorlandet} tekst="Saltverk" p={p} farge={BLA} under />}
                         {beat === 1 && <Saltsekk ll={[9.6, 60.5]} p={p} />}
                     </>
