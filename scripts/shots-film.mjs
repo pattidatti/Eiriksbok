@@ -16,7 +16,8 @@
 // liggende, så vurdereren alltid kan få hele settet.
 //
 // Hvert bilde sjekkes også for tekst som overlapper annen tekst, er kuttet i bildekanten,
-// står kloss inntil en annen SVG-merkelapp eller ligger under en HTML-boks (målt i DOM, også
+// står kloss inntil en annen SVG-merkelapp, stikker ut av SVG-kortet sitt (en `rect` rett før
+// teksten i samme gruppe) eller ligger under en HTML-boks (målt i DOM, også
 // merkelapper over 3D-lerretet). Funnene står i
 // overlapp.txt og stopper skriptet. Tekst tegnet inne i WebGL ser sjekken ikke.
 
@@ -143,6 +144,29 @@ function finnOverlapp() {
                 break;
             }
         }
+    }
+    // SVG-tekst som stikker ut av kortet sitt: en `rect` med fyll rett før teksten i samme
+    // gruppe, som teksten står midt i («Over åpent terreng = nesten selvmord»). Bakgrunner som
+    // dekker nesten hele bildet er ikke kort.
+    for (const { tekst, node, b } of bokser) {
+        const t = node.parentElement?.closest('text');
+        if (!t || !t.parentElement) continue;
+        const x = (b.left + b.right) / 2;
+        const y = (b.top + b.bottom) / 2;
+        let kort = null;
+        for (let e = t.previousElementSibling; e; e = e.previousElementSibling) {
+            if (e.tagName.toLowerCase() !== 'rect') continue;
+            const fyll = getComputedStyle(e).fill;
+            if (!fyll || fyll === 'none' || /rgba\(.*,\s*0\)$/.test(fyll)) continue;
+            const r = e.getBoundingClientRect();
+            if (r.width > R.width * 0.8 && r.height > R.height * 0.8) continue;
+            if (x < r.left || x > r.right || y < r.top || y > r.bottom) continue;
+            kort = r;
+            break;
+        }
+        if (!kort) continue;
+        const ut = Math.max(kort.left - b.left, b.right - kort.right);
+        if (ut > 3) funn.push(`«${tekst.slice(0, 50)}» stikker ${Math.round(ut)} px ut av kortet sitt`);
     }
     return [...new Set(funn)];
 }

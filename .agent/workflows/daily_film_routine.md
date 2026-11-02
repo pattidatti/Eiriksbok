@@ -80,7 +80,9 @@ så artikkelen på forsiden har film samme dag. De tre andre tar etterslepet.
 Ta først bort artikler som en annen kjøring allerede jobber med:
 
 ```bash
-gh pr list --state open --search "eiriksbok-daily-film in:body" --json headRefName,title --jq '.[].title' > /tmp/opptatt.txt
+# gh pr list/create går via GraphQL, som er sperret i sky-sesjonen (403). Bruk REST eller
+# GitHub-MCP (list_pull_requests, create_pull_request).
+gh api "repos/pattidatti/eiriksbok/pulls?state=open&per_page=100" --jq '.[] | select(.body // "" | contains("eiriksbok-daily-film")) | .title' > /tmp/opptatt.txt
 git ls-remote --heads origin 'claude/film-*' | sed 's|.*claude/film-[0-9]*-||' >> /tmp/opptatt.txt
 cat /tmp/opptatt.txt
 ```
@@ -135,6 +137,9 @@ variasjonsreglene mest først), så filmer under 22/25. For den filmen:
    Unntak: gjør faktarettelsene at filmen går over 1100 ord og `validate-film` stopper den,
    kort fyllord og gjentakelser i andre replikker til den er under igjen. Aldri presiseringene
    faktasjekken ba om (guiden §3c punkt 20).
+
+5. Bytter du ut moduser av en egen visual med andre visualer, slett den døde modus-koden i
+   samme PR. Ellers blir den liggende og ser i bruk ut.
 
 PR-tittel `film-forbedring: <Tittel> (<fag>)`. Samme smale diff: manuset og filmens egen
 visuals-mappe.
@@ -193,7 +198,8 @@ Når du er fornøyd: start **to ferske underagenter** etter guidens §5, i samme
 - **Vurdereren** får `/tmp/grunnlag.md`, guidens §5 (rubrikken), stiene til alle kontaktarkene
   og `overlapp.txt`. Ikke koden.
 
-Rett alle faktafunn, så vurdererens punkter. Ta nye bilder, vurder på nytt. **Maks tre
+Rett alle faktafunn, så vurdererens punkter. Ta nye bilder av alle scener der replikker
+**eller tekst i bildet** er endret (guiden §3c punkt 37), og vurder på nytt. **Maks tre
 vurderinger.** Ved 19/25 og ingen akse under 3 er filmen godkjent.
 
 Skriv den siste vurderingen inn i manuset, rett etter `utenforArtikkel`:
@@ -223,9 +229,11 @@ DATO=$(date -u +%Y%m%d)
 git checkout -b claude/film-$DATO-<leksjon>
 git add src/features/film/manus/<fag>/<emne>/<leksjon>.json src/features/film/visuals/<film-id>/
 git status --short   # SKAL bare vise de filene (+ docs/filmer/ideer.md ved kø)
+# Prettier bare på filer du har skrevet selv, aldri på hele mappa: eldre filer blir formatert om.
 git commit -m "film: <Tittel> (<fag>)"
 git push -u origin HEAD
-gh pr create --base main --title "film: <Tittel>" --body "$(cat <<'EOF'
+# gh pr create er sperret (GraphQL). Bruk MCP create_pull_request, eller REST:
+gh api repos/pattidatti/eiriksbok/pulls -f base=main -f head="$(git branch --show-current)" -f title="film: <Tittel>" -f body="$(cat <<'EOF'
 Artikkelfilm til <artikkel-sti>. Spill av: https://bok.haaland.de/film/<sti>
 
 - Scener: <n>, ord: <n>, egne visualer: <navn>
@@ -237,7 +245,7 @@ EOF
 ```
 
 Markøren `eiriksbok-daily-film` i PR-body gjør at `auto-merge-bot-prs.yml` merger PR-en.
-Sjekk etter to minutter at den ble merget (`gh pr view <nr> --json state`). Er den fortsatt
+Sjekk etter to minutter at den ble merget (`gh api repos/pattidatti/eiriksbok/pulls/<nr> --jq .merged`). Er den fortsatt
 åpen, skriv hvorfor i rapporten. Rør den ikke med force.
 
 ---
