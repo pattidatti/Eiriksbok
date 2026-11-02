@@ -1,0 +1,304 @@
+{
+    "id": "sentralisering",
+    "title": "Fra bygd til by: Når skolen på bygda legges ned",
+    "layout": "rich",
+    "year": "2026",
+    "category": "Demografi",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Sentralisering betyr at befolkningen samles i byer og tettsteder. 1. januar 2026 bodde 83,45 prosent av befolkningen i et tettsted.",
+        "De siste 15 årene er det blitt 365 færre grunnskoler. Det er særlig små skoler i de minst sentrale kommunene som legges ned.",
+        "Distriktspolitikk er det staten gjør for at folk skal kunne bo godt i hele landet. Partiene er uenige om hvor mye den kan og bør utrette."
+    ],
+    "externalUrl": "https://snl.no/sentralisering",
+    "factChecked": "2026-11-02",
+    "tags": [
+        "demografi",
+        "sentralisering",
+        "distriktspolitikk",
+        "bygd",
+        "skole",
+        "befolkning"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Tenk deg en liten skole i en bygd langt fra byen. For tjue år siden var det over seksti elever her. Nå er det bare tolv igjen. Til høsten skal kommunestyret bestemme om skolen skal legges ned. Da må elevene ta bussen i over en time hver dag for å komme til en større skole i nabobygda."
+        },
+        {
+            "type": "text",
+            "content": "Slike saker havner ofte i lokalavisa, og mange i bygda protesterer. For mange er skolen mer enn et sted å lære. Den er en møteplass, og den er et tegn på at bygda har en framtid."
+        },
+        {
+            "type": "text",
+            "content": "Det som skjer med bygdeskolen, er en del av noe mye større. Det kalles sentralisering. I denne artikkelen skal du lære hva sentralisering er, hvorfor det skjer, og hva det gjør med små steder. Til slutt skal du se hvorfor politikerne er så uenige om hva staten bør gjøre."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tomt klasserom i en liten bygdeskole om høsten",
+            "caption": "Når elevtallet faller, må kommunen bestemme om skolen skal leve videre."
+        },
+        {
+            "type": "header",
+            "text": "Hva er sentralisering?"
+        },
+        {
+            "type": "text",
+            "content": "Ordet sentralisering betyr at noe blir samlet på ett sted. Det motsatte kalles desentralisering. Når vi snakker om hvor folk bor, betyr sentralisering at befolkningen samles i et lite antall byer og tettsteder (Hansen og Tjernshaugen, 2026). Et tettsted er et område der minst 200 mennesker bor tett. Vanligvis kan det ikke være mer enn 50 meter mellom husene (Statistisk sentralbyrå, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "I dag bor de aller fleste nordmenn i et tettsted. 1. januar 2026 gjaldt det 83,45 prosent av befolkningen, eller nesten 4,7 millioner mennesker. Bare 921 637 personer bodde utenfor tettstedene, og tallet gikk ned med 1 286 på ett år (Statistisk sentralbyrå, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Forskjellene mellom ulike deler av landet er store. Statistisk sentralbyrå (SSB) deler kommunene inn i seks klasser etter hvor langt folk har å reise til jobb, butikker og andre tjenester. Dette kalles sentralitetsindeksen. Klasse 1 er de mest sentrale kommunene, som Oslo og Bærum. Klasse 6 er de minst sentrale (Utdanningsdirektoratet, 2026). I de mest sentrale kommunene bor 96 prosent av innbyggerne i et tettsted. I de minst sentrale gjelder det bare 52 prosent (Rapp, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Sentralisering skjer over hele verden. Du kan lese om hvordan byene vokser i andre land i artikkelen om [urbanisering](/samfunnskunnskap/demografi/urbanisering). Denne artikkelen handler om Norge. Her er det fortsatt mange små steder. Faktisk er Norge det landet i Europa der færrest bor i storbyer (Kommunal- og forvaltningskomiteen, 2023)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Ord du må kunne",
+                "content": "Sentralisering: folk, jobber og tjenester samles i byene og de største tettstedene. Distrikt: områder med spredt bosetting langt fra de største byene. Sentralitetsindeks: SSBs måte å måle hvor langt folk i en kommune har til jobb og tjenester. Distriktspolitikk: det staten gjør for at det skal være mulig å bo og leve godt i hele landet."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor flytter folk til byen?"
+        },
+        {
+            "type": "text",
+            "content": "Den viktigste grunnen er utdanning og jobb. Mange unge flytter for å ta høyere utdanning, altså å studere på universitet eller høgskole. Det gjelder særlig unge kvinner. Etter studiene får de jobb i byen, stifter familie og blir boende der (Kommunal- og forvaltningskomiteen, 2023)."
+        },
+        {
+            "type": "text",
+            "content": "Når de unge flytter, blir det født færre barn på bygda. De eldre blir igjen. Derfor blir befolkningen eldre aller raskest i distriktene. SSB regner med at innbyggere over 70 år vil være 16 prosent av befolkningen i de mest sentrale kommunene i 2050. I de minst sentrale kommunene vil det være rundt en firedel (Leknes og Løkken, 2024). Hva det betyr for helsevesenet, kan du lese om i artikkelen om [eldrebølgen](/samfunnskunnskap/demografi/eldrebolgen)."
+        },
+        {
+            "type": "text",
+            "content": "Befolkningen i Norge som helhet vil fortsatt vokse. SSB regner med at den blir 10 prosent større fra 2024 til 2050. Men veksten fordeler seg ujevnt. 226 av 357 kommuner er ventet å vokse. Resten, 37 prosent av kommunene, vil ha like mange eller færre innbyggere enn i dag (Leknes og Løkken, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Det finnes også noe som bremser sentraliseringen: innvandring. De siste årene har mange kommet til Norge, særlig fra Ukraina. Flere innvandrere enn før har bosatt seg utenfor de store byene. Det har gjort at sentraliseringen har gått saktere (Leknes og Løkken, 2024). Mer om hvem som kommer til Norge, finner du i artikkelen [innvandring til Norge i tall](/samfunnskunnskap/demografi/innvandring-i-tall)."
+        },
+        {
+            "type": "header",
+            "text": "Når skolen legges ned"
+        },
+        {
+            "type": "text",
+            "content": "Skolen er et av de tydeligste eksemplene på hva sentralisering gjør. Skoleåret 2025–26 fantes det 2 663 grunnskoler i Norge. Det er 365 færre enn for 15 år siden. Bare i 2025 ble 46 skoler lagt ned, mens 17 nye ble opprettet (Utdanningsdirektoratet, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Samtidig er det faktisk 6 000 flere elever i grunnskolen enn for 15 år siden. Skolene blir altså færre, men større. Det er de små skolene som forsvinner. Omtrent tre av fire skoler som ble lagt ned, hadde færre enn 100 elever det siste året. Halvparten hadde 37 elever eller færre (Utdanningsdirektoratet, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Det er særlig de minst sentrale kommunene som mister skoler. Av alle skolene som ble lagt ned de siste fem årene, lå 45 prosent i de minst sentrale kommunene. Bare 12 prosent lå i de mest sentrale. Finnmark, Innlandet og Nordland har mistet størst andel av skolene sine. I Oslo og Akershus er det derimot flere skoler i dag enn for 15 år siden, fordi elevtallet der har økt (Utdanningsdirektoratet, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Hvorfor legger kommunene ned skoler? Lavt elevtall og dårlig kommuneøkonomi er viktige grunner (Utdanningsdirektoratet, 2026). En elev i grunnskolen kostet kommunen i gjennomsnitt 166 800 kroner i 2025. En elev på en liten skole i et område med spredt bosetting koster mer enn en elev på en stor skole i byen (Utdanningsdirektoratet, 2026). Når kommunen har lite penger, blir det fristende å samle elevene på færre steder."
+        },
+        {
+            "type": "text",
+            "content": "For elevene betyr det ofte lengre vei til skolen. I de minst sentrale kommunene økte den gjennomsnittlige skoleveien for elever i 10. klasse fra 15,4 kilometer i 2010 til 17,2 kilometer i 2020 (Utdanningsdirektoratet, 2024). Samtidig viser forskning at det er liten sammenheng mellom hvor stor skolen er, og hvor mye elevene lærer (Utdanningsdirektoratet, 2024). Det betyr at striden om bygdeskolen sjelden handler om karakterer. Den handler om lang skolevei og om livet i bygda."
+        },
+        {
+            "type": "header",
+            "text": "Den onde sirkelen"
+        },
+        {
+            "type": "text",
+            "content": "Det skumle med sentralisering er at den kan forsterke seg selv. Når folk flytter, får butikken færre kunder og skolen færre elever. Når butikken og skolen legges ned, blir det mindre fristende å bo der. Da flytter enda flere. En slik utvikling, der hvert steg gjør det neste verre, kalles en ond sirkel."
+        },
+        {
+            "type": "text",
+            "content": "Prøv selv i modellen under. Bygda er tenkt, og grensene for når et tilbud forsvinner, er bare eksempler. Men mønsteret er det samme som mange virkelige bygder kjenner igjen."
+        },
+        {
+            "type": "component",
+            "name": "Bygdesirkelen",
+            "props": {}
+        },
+        {
+            "type": "text",
+            "content": "Så du hvordan tilbudene falt bort ett etter ett? Hvert tap gjør det litt vanskeligere for nye folk å flytte til bygda. Det er derfor mange mener at bygdene ikke klarer å snu utviklingen alene. Da kommer spørsmålet: Skal staten hjelpe?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ungdom venter på skolebussen ved en øde bygdevei",
+            "caption": "Når skolen flytter, blir skolebussen en stor del av hverdagen."
+        },
+        {
+            "type": "header",
+            "text": "Distriktspolitikk: Skal staten hjelpe bygdene?"
+        },
+        {
+            "type": "text",
+            "content": "Distriktspolitikk er det staten gjør for at folk skal kunne bo og leve godt også langt fra de store byene. Norge begynte med dette etter andre verdenskrig. Tanken var å fordele penger, jobber og tilbud mellom storbyene og de mindre stedene (Hansen og Vabo, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Ett virkemiddel er å flytte statlige kontorer ut av Oslo. Brønnøysundregistrene ligger i Brønnøysund, og Lotteri- og stiftelsestilsynet ligger i Førde (Hansen og Vabo, 2026). Da får folk med høy utdanning jobb på mindre steder."
+        },
+        {
+            "type": "text",
+            "content": "I 2023 la regjeringen fram en melding til Stortinget om distriktspolitikk. Målet var at folk skal kunne leve et godt liv i hele landet, og at folketallet i distriktskommunene skal øke (Kommunal- og forvaltningskomiteen, 2023). Her er noen av tiltakene som er blitt brukt:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Gratis barnehage og sletting av noe av studielånet for dem som bor i Finnmark og Nord-Troms (Kommunal- og forvaltningskomiteen, 2023).",
+                "Billigere og gratis ferje (Kommunal- og forvaltningskomiteen, 2023).",
+                "Et eget tilskudd for hver kommunale grunnskole. Det startet på 500 000 kroner i 2022 og er i 2026 på drøyt 580 000 kroner per skole (Utdanningsdirektoratet, 2026)."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor er politikerne uenige?"
+        },
+        {
+            "type": "text",
+            "content": "Regjeringen skrev i meldingen at det er en verdi i seg selv at det bor folk i hele landet. Et argument er beredskap, altså at landet skal være trygt og fungere hvis det skjer en krise eller en krig. Et annet argument er at naturressursene er spredt over hele landet. Da trengs det folk som bor der de finnes (Kommunal- og forvaltningskomiteen, 2023)."
+        },
+        {
+            "type": "text",
+            "content": "Men partiene er uenige om hva som er mulig, og hva som er lurt. Da Stortinget behandlet distriktsmeldingen, mente Fremskrittspartiet at målet om å øke folketallet i distriktene var urealistisk. Sosialistisk Venstreparti mente målet var bra, men at tiltakene ikke var sterke nok til å nå det. Arbeiderpartiet og Senterpartiet mente at riktig politikk kan gjøre en stor forskjell (Kommunal- og forvaltningskomiteen, 2023)."
+        },
+        {
+            "type": "text",
+            "content": "Slike uenigheter mellom by og land har lange røtter i norsk politikk. Forskere kaller det en konflikt mellom sentrum og periferi, altså mellom de store byene og områdene langt fra dem. Du kan lese mer om hvordan slike saker blir avgjort i artikkelen om [Stortinget](/samfunnskunnskap/styringsformer/stortinget)."
+        },
+        {
+            "type": "header",
+            "text": "Tilbake til bygdeskolen"
+        },
+        {
+            "type": "text",
+            "content": "Nå forstår du bedre hvorfor saken om den lille skolen er så vanskelig. Kommunen må spare penger, og en liten skole koster mer per elev. Men for bygda kan nedleggelsen være et steg videre i den onde sirkelen. Begge sider har gode argumenter."
+        },
+        {
+            "type": "text",
+            "content": "Det finnes ikke ett riktig svar. Noen mener at folk selv må få velge hvor de vil bo, og at staten ikke bør bruke mye penger på å holde liv i små steder. Andre mener at hele landet taper hvis bygdene tømmes. Hva du mener, avhenger av hva du synes er viktigst. Det er nettopp derfor sentralisering er et politisk spørsmål."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Liten bygd ved fjorden med lys i noen få hus",
+            "caption": "Hvor folk bor i framtiden, avgjøres både av folks egne valg og av politikk."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Hansen, T. & Tjernshaugen, A. (2026). *Sentralisering*. Store norske leksikon. Hentet 02.11.2026 fra [snl.no/sentralisering](https://snl.no/sentralisering)",
+                    "Hansen, T. & Vabo, S. I. (2026). *Distrikt*. Store norske leksikon. Hentet 02.11.2026 fra [snl.no/distrikt](https://snl.no/distrikt)",
+                    "Kommunal- og forvaltningskomiteen. (2023). *Innstilling fra kommunal- og forvaltningskomiteen om Eit godt liv i heile Noreg – distriktspolitikk for framtida* (Innst. 110 S (2023–2024)). Stortinget. [stortinget.no](https://www.stortinget.no/globalassets/pdf/innstillinger/stortinget/2023-2024/inns-202324-110s.pdf)",
+                    "Leknes, S. & Løkken, S. A. (2024). *Befolkningsframskrivinger for kommunene 2024* (Rapporter 2024/20). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/befolkning/befolkningsframskrivinger/artikler/befolkningsframskrivinger-for-kommunene-2024)",
+                    "Rapp, B. L. (2024). *Stadig flere bor i tettsteder*. Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/befolkning/folketall/statistikk/tettsteders-befolkning-og-areal/artikler/stadig-flere-bor-i-tettsteder)",
+                    "Statistisk sentralbyrå. (2026). *Tettsteders befolkning og areal*. Hentet 02.11.2026 fra [ssb.no](https://www.ssb.no/befolkning/folketall/statistikk/tettsteders-befolkning-og-areal)",
+                    "Utdanningsdirektoratet. (2024). *Færre og større skoler enn for ti år siden*. [udir.no](https://www.udir.no/api/PdfApi/PrintPageAsPdfDocument/210599)",
+                    "Utdanningsdirektoratet. (2026). *46 skoler ble lagt ned i 2025*. Hentet 02.11.2026 fra [udir.no](https://www.udir.no/tall-og-forskning/statistikk/statistikk-grunnskole/analyser/2026/skoler-lagt-ned-2025/)"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva betyr sentralisering, og hva er det motsatte?",
+                    "Hvor stor del av befolkningen i Norge bodde i et tettsted 1. januar 2026?",
+                    "Hvor mange grunnskoler ble lagt ned i 2025, og hvor mange nye ble opprettet?",
+                    "Nevn to tiltak staten bruker for å få flere til å bo i distriktene."
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hva som menes med en ond sirkel. Bruk Bygdesirkelen som eksempel.",
+                    "Hvorfor tror du det særlig er unge kvinner som flytter fra bygda for å studere?",
+                    "Forskning viser liten sammenheng mellom skolestørrelse og hvor mye elevene lærer. Hvorfor kjemper mange likevel så hardt for bygdeskolen?",
+                    "Hvorfor kan innvandring bremse sentraliseringen?"
+                ],
+                "gaaVidere": [
+                    "Finn ut hvilken sentralitetsklasse din egen kommune har, og om folketallet har gått opp eller ned de siste årene. Bruk ssb.no/kommunefakta.",
+                    "Skriv et leserinnlegg til lokalavisa der du tar stilling til om en liten bygdeskole med tolv elever bør legges ned. Bruk minst to argumenter fra artikkelen.",
+                    "Diskuter i klassen: Bør staten bruke mye penger på at folk skal kunne bo i hele landet, eller bør folk flytte dit jobbene er?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva betyr sentralisering når vi snakker om hvor folk bor?",
+                        "options": [
+                            "At folk flytter fra byene til bygdene",
+                            "At befolkningen samles i et lite antall byer og tettsteder",
+                            "At staten bestemmer hvor folk skal bo",
+                            "At alle kommuner blir like store"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Sentralisering betyr at noe samles på ett sted. Det motsatte er desentralisering."
+                    },
+                    {
+                        "question": "Hvor stor del av befolkningen bodde i et tettsted 1. januar 2026?",
+                        "options": [
+                            "Rundt 50 prosent",
+                            "Rundt 65 prosent",
+                            "Rundt 83 prosent",
+                            "Rundt 97 prosent"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "83,45 prosent, eller nesten 4,7 millioner mennesker, bodde i et tettsted."
+                    },
+                    {
+                        "question": "Hvilke skoler er det oftest som legges ned?",
+                        "options": [
+                            "Store skoler i byene",
+                            "Små skoler med færre enn 100 elever",
+                            "Private skoler i Oslo",
+                            "Videregående skoler"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Omtrent tre av fire nedlagte skoler hadde færre enn 100 elever det siste året."
+                    },
+                    {
+                        "question": "Hva har bremset sentraliseringen de siste årene?",
+                        "options": [
+                            "At flere får barn på bygda",
+                            "At bensinprisene har gått ned",
+                            "Innvandring",
+                            "At universitetene har flyttet ut av byene"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Flere innvandrere enn før har bosatt seg utenfor de store byene. Det har gjort at sentraliseringen har gått saktere."
+                    },
+                    {
+                        "question": "Hva er distriktspolitikk?",
+                        "options": [
+                            "Politikk som bare gjelder Oslo",
+                            "Det staten gjør for at folk skal kunne bo og leve godt i hele landet",
+                            "Regler for hvordan kommuner skal slås sammen",
+                            "Et parti som bare stiller til valg på bygda"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Norge begynte med distriktspolitikk etter andre verdenskrig."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
