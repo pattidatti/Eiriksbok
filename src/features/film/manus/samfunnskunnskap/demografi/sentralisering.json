@@ -1,0 +1,318 @@
+{
+    "id": "sentralisering",
+    "tittel": "Fra bygd til by: Når skolen på bygda legges ned",
+    "kilde": "/samfunnskunnskap/demografi/sentralisering",
+    "bilde": "/images/demografi/sentralisering-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-02", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "skolen",
+            "lyd": "vind",
+            "kapittel": "Bygdeskolen",
+            "visual": { "type": "SentraliseringBygda", "props": { "modus": "skolen" } },
+            "replikker": [
+                { "si": "Tenk deg en liten skole i en bygd langt fra byen." },
+                { "si": "For tjue år siden gikk det over seksti elever her. Nå er det bare tolv igjen." },
+                { "si": "Til høsten skal kommunestyret bestemme om skolen skal legges ned." },
+                {
+                    "si": "Da må elevene ta bussen i over en time hver dag, til en større skole i nabobygda."
+                },
+                {
+                    "si": "Mange i bygda protesterer. For dem er skolen mer enn et sted å lære. Den er en møteplass, og et tegn på at bygda har en framtid."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "FRA BYGD TIL BY",
+                    "undertittel": "Når skolen på bygda legges ned",
+                    "bilde": "/images/demografi/sentralisering-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor skjer det, og hva bør staten gjøre?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Det som skjer med bygdeskolen, er en del av noe mye større." },
+                { "si": "Det kalles sentralisering." },
+                {
+                    "si": "I denne filmen skal vi finne ut hva sentralisering er, hvorfor det skjer, og hvorfor politikerne er så uenige om hva staten bør gjøre."
+                }
+            ]
+        },
+        {
+            "id": "ordet",
+            "lyd": "stille",
+            "kapittel": "Hva er sentralisering?",
+            "visual": { "type": "SentraliseringTavle", "props": { "modus": "tettsted" } },
+            "replikker": [
+                {
+                    "si": "Ordet sentralisering betyr at noe blir samlet på ett sted. Når vi snakker om hvor folk bor, betyr det at folk samles i noen få byer og tettsteder."
+                },
+                { "si": "Det motsatte, at folk sprer seg utover, kalles desentralisering." },
+                { "si": "Men hva er et tettsted? Det er et område der minst 200 mennesker bor tett." },
+                { "si": "Vanligvis kan det ikke være mer enn 50 meter mellom husene." }
+            ]
+        },
+        {
+            "id": "andel",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Alle i Norge, som 100 prikker",
+                            "restEtikett": "hele befolkningen",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 83,
+                            "farge": "#2563eb",
+                            "restFarge": "#94a3b8",
+                            "tittel": "83,45 prosent bor i et tettsted",
+                            "fargeEtikett": "i et tettsted",
+                            "restEtikett": "utenfor",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 83,
+                            "farge": "#2563eb",
+                            "restFarge": "#ea580c",
+                            "tittel": "921 637 bor utenfor tettstedene",
+                            "fargeEtikett": "i et tettsted",
+                            "restEtikett": "utenfor, og de ble færre på ett år",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Tenk deg at alle som bor i Norge, er 100 prikker." },
+                {
+                    "si": "1. januar 2026 bodde 83,45 prosent i et tettsted. Det er nesten 4,7 millioner mennesker."
+                },
+                {
+                    "si": "Bare 921 637 personer bodde utenfor tettstedene. Og på ett år ble de 1 286 færre."
+                }
+            ]
+        },
+        {
+            "id": "klasser",
+            "visual": { "type": "SentraliseringTavle", "props": { "modus": "klasser" } },
+            "replikker": [
+                {
+                    "si": "Statistisk sentralbyrå, SSB, deler kommunene inn i seks klasser. Det handler om hvor langt folk har å reise til jobb, butikker og andre tjenester."
+                },
+                {
+                    "si": "Klasse 1 er de mest sentrale kommunene, som Oslo og Bærum. Der bor 96 prosent av innbyggerne i et tettsted."
+                },
+                { "si": "Klasse 6 er de minst sentrale. Der gjelder det bare 52 prosent." },
+                {
+                    "si": "Likevel har Norge fortsatt mange små steder. Ingen land i Europa har så få som bor i storbyer."
+                }
+            ]
+        },
+        {
+            "id": "flytting",
+            "lyd": "vind",
+            "kapittel": "Hvorfor flytter folk?",
+            "visual": { "type": "SentraliseringBygda", "props": { "modus": "flytting" } },
+            "replikker": [
+                { "si": "Hvorfor flytter folk til byen? Den viktigste grunnen er utdanning og jobb." },
+                {
+                    "si": "Mange unge flytter for å studere på universitet eller høgskole. Det gjelder særlig unge kvinner."
+                },
+                { "si": "Etter studiene får de jobb i byen, stifter familie og blir boende der." },
+                {
+                    "si": "Da blir det født færre barn på bygda. De eldre blir igjen, og befolkningen blir eldre aller raskest i distriktene, altså områdene langt fra de store byene."
+                },
+                {
+                    "si": "SSB regner med at i 2050 er 16 prosent av innbyggerne over 70 år i de mest sentrale kommunene. I de minst sentrale blir det rundt en firedel."
+                }
+            ]
+        },
+        {
+            "id": "innvandring",
+            "lyd": "stille",
+            "visual": { "type": "SentraliseringKart", "props": { "modus": "innvandring" } },
+            "replikker": [
+                { "si": "Men det finnes noe som bremser sentraliseringen: innvandring." },
+                { "si": "De siste årene har mange kommet til Norge, særlig fra Ukraina." },
+                {
+                    "si": "Flere innvandrere enn før har bosatt seg utenfor de store byene. Det har gjort at sentraliseringen har gått saktere."
+                }
+            ]
+        },
+        {
+            "id": "skoletall",
+            "kapittel": "Når skolen legges ned",
+            "visual": { "type": "SentraliseringSkoler", "props": { "modus": "tall" } },
+            "replikker": [
+                { "si": "Skolen er et av de tydeligste eksemplene på hva sentralisering gjør." },
+                {
+                    "si": "Skoleåret 2025-26 fantes det 2 663 grunnskoler i Norge. Det er 365 færre enn for 15 år siden.",
+                    "uttale": "Skoleåret tjuefemtjueseks fantes det 2 663 grunnskoler i Norge. Det er 365 færre enn for 15 år siden."
+                },
+                { "si": "Bare i 2025 ble 46 skoler lagt ned, mens 17 nye ble opprettet." },
+                {
+                    "si": "Samtidig er det 6 000 flere elever i grunnskolen enn for 15 år siden. Skolene blir altså færre, men større."
+                }
+            ]
+        },
+        {
+            "id": "hvilke",
+            "visual": { "type": "SentraliseringSkoler", "props": { "modus": "hvilke" } },
+            "replikker": [
+                { "si": "Det er de små skolene som forsvinner." },
+                {
+                    "si": "Omtrent tre av fire skoler som ble lagt ned, hadde færre enn 100 elever det siste året."
+                },
+                { "si": "Halvparten hadde 37 elever eller færre." },
+                {
+                    "si": "Av alle skolene som ble lagt ned de siste fem årene, lå 45 prosent i de minst sentrale kommunene. Bare 12 prosent lå i de mest sentrale."
+                }
+            ]
+        },
+        {
+            "id": "fylker",
+            "visual": { "type": "SentraliseringKart", "props": { "modus": "fylker" } },
+            "replikker": [
+                { "si": "Hvor i landet er det skolene forsvinner?" },
+                { "si": "Finnmark, Innlandet og Nordland har mistet størst andel av skolene sine." },
+                {
+                    "si": "I Oslo og Akershus er det derimot flere skoler i dag enn for 15 år siden. Der har elevtallet økt."
+                }
+            ]
+        },
+        {
+            "id": "vei",
+            "visual": { "type": "SentraliseringSkoler", "props": { "modus": "vei" } },
+            "replikker": [
+                {
+                    "si": "Hvorfor legger kommunene ned skoler? Lavt elevtall og dårlig kommuneøkonomi er viktige grunner."
+                },
+                {
+                    "si": "En elev i grunnskolen kostet kommunen i gjennomsnitt 166 800 kroner i 2025. En elev på en liten skole langt fra byen koster mer enn en elev på en stor skole i byen."
+                },
+                {
+                    "si": "For elevene betyr det ofte lengre skolevei. I de minst sentrale kommunene økte den gjennomsnittlige skoleveien for elever i 10. klasse fra 15,4 kilometer i 2010 til 17,2 kilometer i 2020."
+                },
+                {
+                    "si": "Forskning viser liten sammenheng mellom hvor stor skolen er, og hvor mye elevene lærer. Striden om bygdeskolen handler sjelden om karakterer. Den handler om lang skolevei og om livet i bygda."
+                }
+            ]
+        },
+        {
+            "id": "sirkel",
+            "lyd": "vind",
+            "kapittel": "Den onde sirkelen",
+            "visual": { "type": "SentraliseringBygda", "props": { "modus": "sirkel" } },
+            "replikker": [
+                { "si": "Det skumle med sentralisering er at den kan forsterke seg selv." },
+                { "si": "Når folk flytter, får butikken færre kunder, og skolen færre elever." },
+                { "si": "Så legges butikken ned. Og så skolen." },
+                { "si": "Da blir det mindre fristende å bo her. Og enda flere flytter." },
+                {
+                    "si": "En slik utvikling, der hvert steg gjør det neste verre, kalles en ond sirkel. Mange mener at bygdene ikke klarer å snu den alene."
+                }
+            ]
+        },
+        {
+            "id": "distrikt",
+            "lyd": "stille",
+            "kapittel": "Skal staten hjelpe?",
+            "visual": { "type": "SentraliseringKart", "props": { "modus": "distrikt" } },
+            "replikker": [
+                {
+                    "si": "Distriktspolitikk er det staten gjør for at folk skal kunne bo og leve godt også langt fra de store byene. Norge begynte med dette etter andre verdenskrig."
+                },
+                {
+                    "si": "Ett virkemiddel er å flytte statlige kontorer ut av Oslo. Brønnøysundregistrene ligger i Brønnøysund, og Lotteri- og stiftelsestilsynet ligger i Førde."
+                },
+                {
+                    "si": "De som bor i Finnmark og Nord-Troms, har fått gratis barnehage, og noe av studielånet er blitt slettet."
+                },
+                { "si": "Et annet tiltak er billigere og gratis ferje." },
+                {
+                    "si": "Og hver kommunale grunnskole får et eget tilskudd. I 2022 var det 500 000 kroner. I 2026 er det drøyt 580 000 kroner per skole."
+                }
+            ]
+        },
+        {
+            "id": "uenige",
+            "kapittel": "Hvorfor er de uenige?",
+            "visual": { "type": "SentraliseringTavle", "props": { "modus": "uenige" } },
+            "replikker": [
+                {
+                    "si": "I 2023 skrev regjeringen at det er en verdi i seg selv at det bor folk i hele landet."
+                },
+                {
+                    "si": "Ett argument er beredskap: at landet skal være trygt og fungere hvis det kommer en krise eller en krig. Et annet er at naturressursene er spredt over hele landet."
+                },
+                {
+                    "si": "Målet var at folketallet i distriktene skal øke. Men partiene er uenige. Fremskrittspartiet mente at målet var urealistisk."
+                },
+                {
+                    "si": "Sosialistisk Venstreparti mente målet var bra, men at tiltakene ikke var sterke nok."
+                },
+                { "si": "Arbeiderpartiet og Senterpartiet mente at riktig politikk kan gjøre en stor forskjell." },
+                {
+                    "si": "Forskere kaller dette en konflikt mellom sentrum og periferi. Altså mellom de store byene og områdene langt fra dem."
+                }
+            ]
+        },
+        {
+            "id": "tilbake",
+            "lyd": "vind",
+            "kapittel": "Tilbake til bygdeskolen",
+            "visual": { "type": "SentraliseringBygda", "props": { "modus": "tilbake" } },
+            "replikker": [
+                { "si": "Tilbake til den lille skolen med tolv elever." },
+                { "si": "Kommunen må spare penger, og en liten skole koster mer per elev." },
+                {
+                    "si": "Men for bygda kan nedleggelsen være et steg videre i den onde sirkelen."
+                },
+                { "si": "Begge sider har gode argumenter." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Folk, jobber og tjenester", "fraBeat": 0 },
+                        { "tekst": "samles i byer og store tettsteder.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Skal folk få velge selv,", "fraBeat": 1 },
+                        { "tekst": "eller taper hele landet hvis bygdene tømmes?", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Det finnes ikke ett riktig svar.", "fraBeat": 2 },
+                        { "tekst": "Derfor er det politikk.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Sentralisering betyr at folk, jobber og tjenester samles i byene og de største tettstedene."
+                },
+                {
+                    "si": "Noen mener at folk selv må få velge hvor de vil bo, og at staten ikke bør bruke mye penger på å holde liv i små steder. Andre mener at hele landet taper hvis bygdene tømmes."
+                },
+                {
+                    "si": "Det finnes ikke ett riktig svar. Hva du mener, avhenger av hva du synes er viktigst. Det er nettopp derfor sentralisering er et politisk spørsmål."
+                }
+            ]
+        }
+    ]
+}
