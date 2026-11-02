@@ -1,0 +1,354 @@
+{
+    "id": "romersk-start",
+    "tittel": "Roma: Fra sagn til republikk",
+    "kilde": "/historie/romerriket/romersk-start",
+    "bilde": "/images/romerriket/hero-founding.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-02", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "elva",
+            "lyd": "vind",
+            "kapittel": "Sagnet",
+            "visual": { "type": "RomaHoydene", "props": { "modus": "myte" } },
+            "replikker": [
+                { "si": "Tenk deg en elv i Italia en stille kveld. Elva heter Tiberen." },
+                {
+                    "si": "Ifølge et gammelt sagn blir to nyfødte tvillinger kastet i elva. De heter Romulus og Remus."
+                },
+                {
+                    "si": "De er sønner av krigsguden Mars. En hunnulv finner dem og gir dem melk, som om de var hennes egne valper."
+                },
+                {
+                    "si": "Da de blir voksne, krangler brødrene, og Romulus dreper Remus. Ifølge sagnet hersker Romulus i Roma fra rundt 753 før vår tid."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ROMA",
+                    "undertittel": "Fra sagn til republikk",
+                    "bilde": "/images/romerriket/hero-founding.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan ble Roma så mektig, og hvorfor gikk republikken i stykker?",
+                        "fraBeat": 1
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Slik fortalte romerne selv hvordan byen ble til. Men arkeologene, de som graver etter spor fra fortiden, forteller en mer jordnær historie."
+                },
+                {
+                    "si": "Vi skal følge Roma fra små landsbyer til herre over det vestlige Middelhavet. Og vi skal se hvordan rikdommen til slutt ødela republikken."
+                }
+            ]
+        },
+        {
+            "id": "hoydene",
+            "kapittel": "Sju høyder",
+            "visual": { "type": "RomaHoydene", "props": { "modus": "hoydene" } },
+            "replikker": [
+                { "si": "Det har bodd folk her siden rundt år 1000 før vår tid." },
+                {
+                    "si": "Roma vokste fram som en samling små landsbyer på sju høyder ved elva Tiberen."
+                },
+                {
+                    "si": "Høydene var trygge. Herfra kunne bøndene og gjeterne forsvare seg mot fiender."
+                },
+                {
+                    "si": "Og elva var nær. Det gjorde det lett å handle med salt og andre varer fra kysten."
+                },
+                { "si": "Etter hvert slo de små landsbyene seg sammen til ett fellesskap." }
+            ]
+        },
+        {
+            "id": "konsuler",
+            "lyd": "rom",
+            "kapittel": "Republikken",
+            "visual": { "type": "RomaSamfunn", "props": { "modus": "konsuler" } },
+            "replikker": [
+                { "si": "Ifølge tradisjonen ble Roma først styrt av sju konger." },
+                {
+                    "si": "De siste kongene var etruskere, et mektig folk fra Nord-Italia. Romerne lærte av dem å bygge buer og kloakker."
+                },
+                {
+                    "si": "Men romerne hatet å bli undertrykt. I 510 eller 509 før vår tid skal de ha jaget den siste kongen ut av byen."
+                },
+                {
+                    "si": "Romerne sverget at de aldri mer skulle styres av én mann. De laget en republikk. Ordet betyr folkets sak."
+                },
+                {
+                    "si": "Hvert år valgte de to ledere, kalt konsuler. De måtte være enige. Ble den ene for maktsyk, kunne den andre stoppe ham."
+                },
+                {
+                    "si": "Men republikken var ikke et folkestyre for alle. I folkeforsamlingen var det de rike som bestemte mest."
+                }
+            ]
+        },
+        {
+            "id": "stender",
+            "visual": { "type": "RomaSamfunn", "props": { "modus": "stender" } },
+            "replikker": [
+                { "si": "Systemet var laget for de rike. Samfunnet var delt i to grupper." },
+                {
+                    "si": "Patrisierne var noen få gamle slekter. Du måtte være født inn i en av dem."
+                },
+                {
+                    "si": "Plebeierne var alle de andre: bønder, håndverkere og soldater."
+                },
+                {
+                    "si": "I starten var det bare patrisiere som kunne bli prester eller få viktige verv i politikken."
+                }
+            ]
+        },
+        {
+            "id": "streik",
+            "lyd": "vind",
+            "kapittel": "Folket streiker",
+            "visual": { "type": "RomaHoydene", "props": { "modus": "streik" } },
+            "replikker": [
+                {
+                    "si": "Plebeierne fant seg ikke i dette. I år 494 før vår tid streiket de."
+                },
+                { "si": "De nektet å arbeide, og de nektet å kjempe i hæren." },
+                {
+                    "si": "De marsjerte ut av byen og opp på en høyde i nærheten, for å bygge sin egen by der."
+                },
+                {
+                    "si": "Nå fikk patrisierne panikk. Uten arbeidere og soldater sto Roma uten forsvar. De måtte gi etter."
+                }
+            ]
+        },
+        {
+            "id": "veto",
+            "lyd": "rom",
+            "visual": { "type": "RomaSamfunn", "props": { "modus": "veto" } },
+            "replikker": [
+                {
+                    "si": "Plebeierne fikk egne ledere, kalt folketribuner. En folketribun måtte selv være plebeier."
+                },
+                {
+                    "si": "Tribunen hadde en slags superkraft: vetoretten. Veto betyr: Jeg forbyr!"
+                },
+                {
+                    "si": "Ville senatet vedta en lov som skadet folket, kunne tribunen rope veto og stoppe den."
+                },
+                {
+                    "si": "Men han kunne bare stoppe noe før det ble vedtatt. En lov som allerede gjaldt, kunne han ikke fjerne."
+                },
+                { "si": "Fra 449 før vår tid ble det valgt ti folketribuner hvert år." },
+                {
+                    "si": "Denne kampen kalles stenderkampene, og den varte i flere hundre år. Først rundt år 300 før vår tid kunne også plebeiere bli prester og få de viktige vervene."
+                }
+            ]
+        },
+        {
+            "id": "kartago",
+            "lyd": "stille",
+            "kapittel": "Kartago",
+            "visual": { "type": "RomaKart", "props": { "modus": "rivaler" } },
+            "replikker": [
+                {
+                    "si": "Med fred i byen, sånn noenlunde, kunne Roma se utover. Først erobret romerne naboene sine i Italia."
+                },
+                { "si": "Men så møtte de en gigantisk rival: Kartago, i Nord-Afrika." },
+                {
+                    "si": "Kartago var en sjømakt som styrte handelen i Middelhavet."
+                },
+                {
+                    "si": "Krigene mellom Roma og Kartago kalles punerkrigene. De varte fra 264 til 146 før vår tid, altså i godt over hundre år."
+                }
+            ]
+        },
+        {
+            "id": "hannibal",
+            "visual": { "type": "RomaKart", "props": { "modus": "hannibal" } },
+            "replikker": [
+                {
+                    "si": "Den mest dramatiske var den andre punerkrigen, fra 218 til 201 før vår tid."
+                },
+                {
+                    "si": "Generalen Hannibal fra Kartago gjorde noe ingen trodde var mulig. Han angrep ikke fra sjøen."
+                },
+                {
+                    "si": "I stedet marsjerte han med en enorm hær fra Spania, over fjellene Pyreneene og gjennom Sør-Frankrike."
+                },
+                {
+                    "si": "Så gikk han over de snødekte Alpene, med krigselefanter, for å angripe Italia fra nord."
+                },
+                {
+                    "si": "Turen kostet dyrt. Han mistet en stor del av hæren og de fleste elefantene over fjellene."
+                }
+            ]
+        },
+        {
+            "id": "cannae",
+            "lyd": "vind",
+            "kapittel": "Cannae",
+            "visual": { "type": "RomaHoydene", "props": { "modus": "cannae" } },
+            "replikker": [
+                {
+                    "si": "Likevel slo Hannibal romerne i slag etter slag. Det verste nederlaget kom ved Cannae, i 216 før vår tid."
+                },
+                {
+                    "si": "Hannibal hadde rundt 30 000 mann. Romerne hadde ifølge tradisjonen rundt 80 000, men trolig ikke mer enn 50 000."
+                },
+                {
+                    "si": "Hannibal satte de beste soldatene sine ytterst på sidene, på fløyene. I midten sto en linje som skulle gi etter."
+                },
+                {
+                    "si": "Romerne angrep midten, og den trakk seg bakover. Romerne presset på, dypere og dypere inn."
+                },
+                {
+                    "si": "Så lukket fløyene seg rundt dem. Romerne var omringet, og hæren deres ble knust. Hannibals egne tap var små."
+                }
+            ]
+        },
+        {
+            "id": "zama",
+            "lyd": "stille",
+            "visual": { "type": "RomaKart", "props": { "modus": "zama" } },
+            "replikker": [
+                {
+                    "si": "Men Romas styrke var ikke én hær. Det var staheten. Romerne nektet å gi seg."
+                },
+                {
+                    "si": "For hvert år Hannibal ble værende i Italia, satte Roma opp nye legioner. En legion er en stor avdeling soldater."
+                },
+                { "si": "Til slutt måtte Hannibal reise hjem for å forsvare Kartago." },
+                {
+                    "si": "Der slo den romerske generalen Scipio ham ved Zama, i 202 før vår tid."
+                },
+                {
+                    "si": "Da punerkrigene var over, satt Roma igjen som herre over det vestlige Middelhavet."
+                }
+            ]
+        },
+        {
+            "id": "jord",
+            "kapittel": "Rikdommen",
+            "visual": { "type": "RomaSamfunn", "props": { "modus": "jord" } },
+            "replikker": [
+                {
+                    "si": "Seieren over Kartago gjorde Roma rikt. Men rikdommen ødela republikken."
+                },
+                {
+                    "si": "Småbøndene hadde vært de viktigste soldatene i hæren. Da de kom hjem fra krigen, var gårdene grodd igjen."
+                },
+                { "si": "De hadde ikke råd til å drive dem. Rike senatorer kjøpte opp jorda." },
+                {
+                    "si": "Der brukte de krigsfanger som gratis slaver. Slike store gods ble kalt latifundia."
+                },
+                { "si": "Bøndene flyktet til Roma. Der ble de arbeidsløse tiggere." }
+            ]
+        },
+        {
+            "id": "gracchus",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Brødrene Gracchus",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Jord til de fattige",
+                            "tekst": "Tiberius og Gaius Gracchus",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Jordloven, 133 fvt.",
+                            "tekst": "Et tak på hvor mye statsjord én borger kan ha",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Tiberius blir drept",
+                            "tekst": "sammen med 300 av tilhengerne sine",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Gaius taper valget, 121 fvt.",
+                            "tekst": "Han og flere tusen tilhengere mister livet",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Brødrene Tiberius og Gaius Gracchus prøvde å redde systemet. De ville gi jord tilbake til de fattige."
+                },
+                {
+                    "si": "Tiberius ble folketribun i 133 før vår tid. Han fikk vedtatt en jordlov: én borger kunne ikke ha mer enn en viss mengde av statens jord."
+                },
+                {
+                    "si": "Så stilte han til valg på nytt, mot skikk og bruk. Det brøt ut vold, og Tiberius ble drept sammen med 300 av tilhengerne sine."
+                },
+                {
+                    "si": "Ti år senere ble lillebroren Gaius folketribun. Da han tapte valget i 121, slo en av konsulene ned uroen. Gaius og flere tusen tilhengere mistet livet."
+                }
+            ]
+        },
+        {
+            "id": "sulla",
+            "kapittel": "Generalene",
+            "visual": { "type": "RomaKart", "props": { "modus": "sulla" } },
+            "replikker": [
+                {
+                    "si": "Nå ble striden avgjort med hærer, ikke med ord. Generaler som Marius og Sulla brukte hærene sine mot hverandre, ikke mot Romas fiender."
+                },
+                {
+                    "si": "Soldatene var nå lojale mot generalen som betalte dem. Ikke mot staten."
+                },
+                {
+                    "si": "Folkeforsamlingen ga en hærkommando til Marius. Men Sulla mente at den var hans."
+                },
+                {
+                    "si": "Da marsjerte Sulla med hæren sin mot Roma. Det hadde ingen romersk general gjort før."
+                },
+                {
+                    "si": "Han vant borgerkrigen og ble diktator, en leder med nesten all makt, for å bygge staten opp igjen."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Republikken var i praksis død.", "fraBeat": 0 },
+                        { "tekst": "Romerne delte makten, så ingen skulle bli konge.", "fraBeat": 1 },
+                        { "tekst": "Rikdom og hærer som fulgte generalene, brøt delingen ned.", "fraBeat": 2 },
+                        {
+                            "tekst": "Delt makt virker bare når alle følger reglene.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Republikken var i praksis død. Den manglet bare én mann til å begrave den. Han het Julius Cæsar."
+                },
+                {
+                    "si": "Da kongen var jaget, delte romerne makten, så ingen skulle bli konge igjen."
+                },
+                {
+                    "si": "Men da de rike tok jorda, og generalene tok hærene, holdt ikke delingen lenger."
+                },
+                {
+                    "si": "Delt makt virker bare så lenge alle følger reglene. Også de som har mest makt."
+                }
+            ]
+        }
+    ]
+}
