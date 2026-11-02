@@ -1,5 +1,5 @@
 {
-  "buildId": 249254431552165,
+  "buildId": 43667100259382,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4705,6 +4705,9 @@
     "migrasjon-push-pull": [
       "content/samfunnskunnskap/demografi/migrasjon-push-pull.json"
     ],
+    "sentralisering": [
+      "content/samfunnskunnskap/demografi/sentralisering.json"
+    ],
     "teknologi-helse": [
       "content/samfunnskunnskap/demografi/teknologi-helse.json"
     ],
@@ -6533,6 +6536,7 @@
     "samfunnskunnskap/demografi/km-6-levekaar-verden": "content/samfunnskunnskap/demografi/km-6-levekaar-verden.json",
     "samfunnskunnskap/demografi/malthus-vs-boserup": "content/samfunnskunnskap/demografi/malthus-vs-boserup.json",
     "samfunnskunnskap/demografi/migrasjon-push-pull": "content/samfunnskunnskap/demografi/migrasjon-push-pull.json",
+    "samfunnskunnskap/demografi/sentralisering": "content/samfunnskunnskap/demografi/sentralisering.json",
     "samfunnskunnskap/demografi/teknologi-helse": "content/samfunnskunnskap/demografi/teknologi-helse.json",
     "samfunnskunnskap/demografi/urbanisering": "content/samfunnskunnskap/demografi/urbanisering.json",
     "samfunnskunnskap/eksamen/km-1-metode": "content/samfunnskunnskap/eksamen/km-1-metode.json",

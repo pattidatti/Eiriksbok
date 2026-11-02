@@ -1565,6 +1565,21 @@
                 "befolkning"
               ],
               "createdDate": "2026-11-01T00:00:00Z"
+            },
+            {
+              "id": "sentralisering",
+              "title": "Fra bygd til by: Når skolen på bygda legges ned",
+              "description": "Hvorfor flytter folk fra bygda til byen, hva skjer med skolen og butikken som blir igjen, og hva kan staten gjøre?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "demografi",
+                "sentralisering",
+                "distriktspolitikk",
+                "bygd",
+                "skole",
+                "befolkning"
+              ],
+              "createdDate": "2026-11-02T00:00:00Z"
             }
           ]
         },

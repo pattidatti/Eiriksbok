@@ -100,6 +100,7 @@ const Oljekronereisen = lazy(() => import('./content/interactive/Oljekronereisen
 const Barnetallsmaskinen = lazy(() => import('./content/interactive/Barnetallsmaskinen').then(m => ({ default: m.Barnetallsmaskinen })));
 const Forsorgerbalansen = lazy(() => import('./content/interactive/Forsorgerbalansen').then(m => ({ default: m.Forsorgerbalansen })));
 const Utvalgslinsa = lazy(() => import('./content/interactive/Utvalgslinsa').then(m => ({ default: m.Utvalgslinsa })));
+const Bygdesirkelen = lazy(() => import('./content/interactive/Bygdesirkelen').then(m => ({ default: m.Bygdesirkelen })));
 const TskjortePrisen = lazy(() => import('./content/interactive/TskjortePrisen').then(m => ({ default: m.TskjortePrisen })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
 const Havdelingen = lazy(() => import('./content/interactive/Havdelingen').then(m => ({ default: m.Havdelingen })));
@@ -1078,6 +1079,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     Barnetallsmaskinen,
     Forsorgerbalansen,
     Utvalgslinsa,
+    Bygdesirkelen,
     TskjortePrisen,
     BrentJord,
     Hvalregnskapet,
