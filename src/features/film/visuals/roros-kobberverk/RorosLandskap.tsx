@@ -622,7 +622,7 @@ const MERKER: Record<Modus, (string | null)[]> = {
     gruve: [
         'Kobber: et rødbrunt metall',
         '1644: malm = stein med metall i',
-        'Storwartz: den viktigste gruva',
+        'Storwartz: viktigste gruveområde',
         'Kongen i København',
         'Tyske eksperter',
     ],
