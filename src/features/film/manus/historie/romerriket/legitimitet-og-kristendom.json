@@ -1,0 +1,221 @@
+{
+    "id": "legitimitet-og-kristendom",
+    "tittel": "Fra Princeps til Guds utvalgte",
+    "kilde": "/historie/romerriket/legitimitet-og-kristendom",
+    "bilde": "/images/romerriket/hero-legitimitet.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-02", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "riket",
+            "lyd": "vind",
+            "kapittel": "Hvem skal styre?",
+            "visual": { "type": "LegitimitetKart", "props": { "modus": "riket" } },
+            "replikker": [
+                { "si": "Tenk deg at du er keiser. Riket ditt strekker seg fra tåka i Skottland til den brennende sanden i Egypt." },
+                { "si": "Millioner av mennesker bor her." },
+                { "si": "Du har soldater. Men du kan ikke sette en soldat bak hver eneste innbygger." },
+                { "si": "Så hvordan får du alle disse menneskene til å godta at akkurat du skal ha all makt?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Guds utvalgte",
+                    "undertittel": "Hvordan keiserne i Roma fikk rett til å styre, fra Augustus til Theodosius",
+                    "bilde": "/images/romerriket/hero-legitimitet.webp",
+                    "sporsmal": { "tekst": "Hvorfor skal akkurat du ha makten?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette spørsmålet handler om legitimitet." },
+                { "si": "Legitimitet betyr at folk godtar at noen har rett til å styre. De følger lovene fordi de mener det er riktig, ikke bare fordi de er redde." },
+                { "si": "Det er forskjellen på en lærer du respekterer og en bølle som bare skremmer deg." },
+                { "si": "I denne filmen skal vi se hvordan keiserne i Roma fant nye svar på spørsmålet. Til slutt ble de Guds stedfortredere på jorden." }
+            ]
+        },
+        {
+            "id": "princeps",
+            "kapittel": "Den første borger",
+            "visual": { "type": "LegitimitetKilde", "props": { "modus": "princeps" } },
+            "replikker": [
+                { "si": "Vi begynner med Augustus. Fra år 27 før vår tid kalte han seg princeps. Det betyr den første borger." },
+                { "si": "Han ville se ut som en vanlig borger. Av ordet princeps har styreformen fått navnet prinsipatet." },
+                { "si": "Han gikk i vanlig romersk toga. Han ville gi inntrykk av at han styrte sammen med Senatet og folket." },
+                { "si": "Men på 200-tallet kom den ene krisen etter den andre. Nå var det hæren som bestemte hvem som ble keiser." },
+                { "si": "Makten lå i spissen av et spyd. Keisere ble drept like fort som de ble satt på tronen." }
+            ]
+        },
+        {
+            "id": "emesa",
+            "kapittel": "Én sol",
+            "lyd": "stille",
+            "visual": { "type": "LegitimitetKart", "props": { "modus": "emesa" } },
+            "replikker": [
+                { "si": "Allerede tidlig på 200-tallet prøvde en keiser å innføre en solgud i Roma. Han het Elagabalus og ble keiser som omtrent 15-åring." },
+                { "si": "Morens familie var prester for en solgud i byen Emesa i Syria. Der het guden Elah-Gabal. Derfor kaller vi keiseren Elagabalus." },
+                { "si": "Han prøvde å tvinge alle i riket til å dyrke solguden hans. Det likte romerne svært dårlig." },
+                { "si": "I år 222 gjorde livvakten hans opprør. De drepte både ham og moren. Men ideen om én solgud levde videre." }
+            ]
+        },
+        {
+            "id": "sol",
+            "lyd": "vind",
+            "visual": { "type": "LegitimitetHimmel", "props": { "modus": "sol" } },
+            "replikker": [
+                { "si": "Keiser Aurelian, som styrte fra 270 til 275, lyktes bedre." },
+                { "si": "Han brukte dyrkingen av Sol Invictus til å binde riket sammen. Navnet betyr den uovervinnelige sol." },
+                { "si": "Solkulten kom fra Syria på 200-tallet. Den ble fort en av de mest populære i hele riket." },
+                { "si": "Ideen var enkel: én sol på himmelen, én keiser på jorden." },
+                { "si": "Det var et viktig steg bort fra de mange gamle gudene. Et steg mot monoteisme, troen på bare én gud." }
+            ]
+        },
+        {
+            "id": "dominus",
+            "kapittel": "Herren",
+            "lyd": "rom",
+            "visual": { "type": "LegitimitetKilde", "props": { "modus": "dominus" } },
+            "replikker": [
+                { "si": "Så kom keiser Diokletian, som styrte fra 284 til 305. Han skjønte at keiseren måtte være mer enn bare en general." },
+                { "si": "Han hentet skikker fra østen. Nå bar keiseren et diadem, et smykke rundt hodet som en krone. Alle som kom til ham, måtte falle på kne." },
+                { "si": "Han ville kalles dominus. Det betyr herre. Derfor kaller vi denne tiden dominatet." },
+                { "si": "Han knyttet seg selv til guden Jupiter. Medkeiseren hans, Maximian, ble knyttet til Hercules." },
+                { "si": "Keiseren gikk i purpur og gull, skjult bak vakter og ritualer. Men en ny religion skulle gi keiserne en enda sterkere rett til å styre." }
+            ]
+        },
+        {
+            "id": "broa",
+            "kapittel": "Korset",
+            "lyd": "vind",
+            "visual": { "type": "LegitimitetHimmel", "props": { "modus": "bro" } },
+            "replikker": [
+                { "si": "Vi er ved den milviske bro. Året er 312." },
+                { "si": "Her skal Konstantin kjempe mot medkeiseren Maxentius. Den som vinner, får hele den vestlige delen av riket." },
+                { "si": "Kirkehistorikeren Evsebios skriver at Konstantin så et kors på himmelen. Med det sto det: I dette tegn skal du seire." },
+                { "si": "En annen forfatter, Lactantius, forteller at et kristent tegn kom til Konstantin i en drøm." },
+                { "si": "Konstantin lot tegnet male på skjoldene til soldatene sine. Og han vant." }
+            ]
+        },
+        {
+            "id": "gud",
+            "lyd": "stille",
+            "visual": { "type": "LegitimitetKilde", "props": { "modus": "gud" } },
+            "replikker": [
+                { "si": "Dette var et genialt trekk. Hvorfor?" },
+                { "si": "Kristendommen hadde én Gud som kunne alt. Og han krevde at du var lojal mot ham, og bare ham." },
+                { "si": "Hvis keiseren var Guds utvalgte på jorden, hva var da et opprør mot keiseren?" },
+                { "si": "Da var det et opprør mot Gud selv. Konstantin gjorde seg til kirkens beskytter og leder." }
+            ]
+        },
+        {
+            "id": "striden",
+            "kapittel": "Nikea",
+            "visual": { "type": "LegitimitetNikea", "props": { "modus": "strid" } },
+            "replikker": [
+                { "si": "Men de kristne var ikke enige om alt." },
+                { "si": "En prest i Alexandria i Egypt het Arius. Han lærte at Kristus var skapt av Gud, og derfor var lavere enn Gud." },
+                { "si": "Slagordet hans var at det fantes en tid da Kristus ikke fantes." },
+                { "si": "Biskop Alexander av Alexandria mente det motsatte. Faderen og Sønnen hørte sammen." },
+                { "si": "Striden skapte kaos og splittet de kristne. Og Konstantin hatet splittelse." }
+            ]
+        },
+        {
+            "id": "motet",
+            "visual": { "type": "LegitimitetKart", "props": { "modus": "nikea" } },
+            "replikker": [
+                { "si": "I år 325 kalte Konstantin inn biskoper fra hele riket. En biskop er en leder i kirken." },
+                { "si": "De skulle møtes i byen Nikea og bli enige en gang for alle." },
+                { "si": "Konstantin kalte inn til møtet og ledet det selv. Men selv var han ikke døpt. Han lot seg døpe først da han lå for døden, og det var ikke uvanlig på den tiden." }
+            ]
+        },
+        {
+            "id": "vedtaket",
+            "visual": { "type": "LegitimitetNikea", "props": { "modus": "vedtak" } },
+            "replikker": [
+                { "si": "Møtet bestemte at Sønnen var av samme vesen som Faderen." },
+                { "si": "Arius ble fordømt og ekskommunisert. Det betyr at han ble kastet ut av kirken." },
+                { "si": "Slik ble den nikenske trosbekjennelsen til. I år 381 fikk den sin endelige form, på et nytt kirkemøte i Konstantinopel." },
+                { "si": "Dette var første gang en keiser brukte statens makt til å bestemme hva som var rett tro." }
+            ]
+        },
+        {
+            "id": "julian",
+            "kapittel": "Gudene slår tilbake",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Julian den frafalne, keiser 361-363",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Prestene", "tekst": "mistet fordelene sine", "fraBeat": 2 },
+                        { "ikon": "penger", "tittel": "Kirken", "tekst": "mistet eiendom", "fraBeat": 3 },
+                        { "ikon": "avtale", "tittel": "De kristne", "tekst": "ble skjøvet ut på sidelinja", "fraBeat": 4 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Ikke alle keisere etter Konstantin var kristne. Nevøen hans, Julian, styrte fra 361 til 363." },
+                { "si": "Han prøvde å få de gamle gudene tilbake. Derfor kalte de kristne ham senere Julian den frafalne." },
+                { "si": "De kristne prestene mistet de fordelene de hadde fått." },
+                { "si": "Kirken mistet eiendom." },
+                { "si": "Og de kristne ble skjøvet ut på sidelinja. Men det var for sent. Da Julian falt på et felttog i øst, døde de gamle gudene med ham." }
+            ]
+        },
+        {
+            "id": "theodosius",
+            "kapittel": "Theodosius",
+            "visual": { "type": "LegitimitetKart", "props": { "modus": "theodosius" } },
+            "replikker": [
+                { "si": "Keiser Theodosius den første gjorde jobben ferdig." },
+                { "si": "Fra 380 til 394 kom han med påbud etter påbud. Kristendommen ble statens religion." },
+                { "si": "I 391 stengte han templene. Det ble forbudt å dyrke de gamle gudene, både hjemme og i det offentlige." },
+                { "si": "Før dette ble noen av mennene som styrte for ham, drept i byen Thessaloniki. I raseri lot Theodosius flere tusen av innbyggerne drepe som hevn." },
+                { "si": "Da grep biskop Ambrosius av Milano inn." }
+            ]
+        },
+        {
+            "id": "bot",
+            "lyd": "rom",
+            "visual": { "type": "LegitimitetKilde", "props": { "modus": "bot" } },
+            "replikker": [
+                { "si": "Året er 390. Ambrosius tvinger Theodosius til å gjøre offentlig bot. Han må vise alle at han angrer." },
+                { "si": "Den mektige romerske keiseren må be en biskop om tilgivelse, foran hele verden." },
+                { "si": "Maktbalansen har skiftet. Nå måtte selv keiseren bøye seg for kirken." }
+            ]
+        },
+        {
+            "id": "vekta",
+            "kapittel": "Kirke mot stat",
+            "lyd": "stille",
+            "visual": { "type": "LegitimitetVekt" },
+            "replikker": [
+                { "si": "Dette ble starten på en maktkamp som preget Europa i tusen år. Kampen mellom kirke og stat." },
+                { "si": "Hvem var egentlig sjefen? Keiseren, som hadde sverdet?" },
+                { "si": "Eller paven, som hadde nøklene til himmelen?" },
+                { "si": "I Vest-Europa ble kirken så mektig at selv konger måtte bøye seg. Uten kroning fra paven var du bare en krigsherre." },
+                { "si": "I Østromerriket gikk det motsatt vei. Der fortsatte keiseren å styre kirken i tusen år til." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Først var keiseren den første borger.", "fraBeat": 0 },
+                        { "tekst": "Så ble han herre, og til slutt Guds utvalgte.", "fraBeat": 1 },
+                        { "tekst": "Religionen tjente keiseren. Til slutt måtte keiseren tjene Gud.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Først var keiseren den første borger, som ville se ut som om han styrte sammen med Senatet og folket." },
+                { "si": "Så ble han herre, knyttet til solen og de gamle gudene. Og til slutt ble han Guds utvalgte." },
+                { "si": "Romerriket gikk fra et rike der religionen tjente keiseren, til en verden der keiseren måtte tjene Gud." }
+            ]
+        }
+    ]
+}
