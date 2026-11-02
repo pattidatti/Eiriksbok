@@ -10,7 +10,7 @@
 //   node scripts/validate-film.mjs historie/andre-verdenskrig/d-dagen
 //
 // Variasjonsreglene (samme visual i høyst MAKS_SCENER_PER_VISUAL scener, høyst ett
-// Punktkort) er feil når én film sjekkes, slik nattrutinen gjør. I helsjekken av alle
+// Punktkort med høyst MAKS_PUNKTER punkter, Prikkfelt der tallet endrer seg) er feil når én film sjekkes, slik nattrutinen gjør. I helsjekken av alle
 // filmer er de advarsler, for filmene fra før reglene kom bryter dem.
 //
 // Exit 1 ved feil. Advarsler stopper ikke.
@@ -35,6 +35,8 @@ const GENERELLE = {
 const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe', 'vann', 'vind', 'skjold', 'tog'];
 const MAKS_SCENER_PER_VISUAL = 4;
 const MAKS_PUNKTKORT = 1;
+/** Et Punktkort med flere punkter enn dette blir en rad tekstkort på rad (vurdereren trekker Viser). */
+const MAKS_PUNKTER = 4;
 /** Bakgrunnslyden en scene kan ha (se useFilmAmbiens.ts). */
 const LYDER = ['hav', 'vind', 'storm', 'ild', 'regn', 'rom', 'stille'];
 /** Tallord som må stå i artikkelen, akkurat som sifre. «hundre» og «tusen» sjekkes når de står alene. */
@@ -171,6 +173,16 @@ function sjekk(fil, visualer, streng) {
                         feil.push(`${hvor}: ${type}.${liste}[${j}].fraBeat=${el.fraBeat}, men scenen har bare ${antall} replikker`);
                     if (liste === 'punkter' && el.ikon && !IKONER.includes(el.ikon)) feil.push(`${hvor}: ukjent ikon "${el.ikon}" (lov: ${IKONER.join(', ')})`);
                 }
+            }
+            // Regler som filmene fra før de kom bryter: feil når én film sjekkes, ellers advarsel.
+            const regel = streng ? feil : adv;
+            if (type === 'Punktkort' && (p.punkter ?? []).length > MAKS_PUNKTER)
+                regel.push(`${hvor}: Punktkort med ${p.punkter.length} punkter (maks ${MAKS_PUNKTER}) - vis resten med filmens egne visualer i en ny modus`);
+            if (type === 'Prikkfelt' && (p.steg ?? []).length > 1) {
+                // Samme tall i hvert steg (bare fargen skifter) er en død beat for eleven.
+                const like = p.steg.every((st) => st.total === p.steg[0].total && st.farget === p.steg[0].farget);
+                if (like)
+                    regel.push(`${hvor}: alle Prikkfelt-stegene har samme total og farget - bildet står stille. Bruk Prikkfelt bare når tallet endrer seg, og vis ellers det som skjer`);
             }
             if (type === 'Prikkfelt')
                 for (const st of p.steg ?? []) {

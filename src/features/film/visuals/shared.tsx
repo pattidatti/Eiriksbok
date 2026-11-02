@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { animate, motion } from 'framer-motion';
 
 import { formatTall } from './format';
@@ -61,5 +61,44 @@ export function Teller({
                 {etikett}
             </div>
         </motion.div>
+    );
+}
+
+/**
+ * En fast tegneflate på 1000x562 px som skaleres til hele bildet. Lerretet er minst 1000 px
+ * bredt, men kan være bredere. Uten skaleringen blir en DOM-visual med faste mål liggende i
+ * øvre venstre hjørne. Tegn alt inni med vanlige px-mål for 1000x562.
+ */
+export function Flate({ children, bakgrunn }: { children: ReactNode; bakgrunn?: string }) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [mal, setMal] = useState({ skala: 1, x: 0, y: 0 });
+    useLayoutEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const maal = () => {
+            const skala = Math.min(el.clientWidth / 1000, el.clientHeight / 562) || 1;
+            // Midtstilt når bildet ikke har nøyaktig 16:9.
+            setMal({ skala, x: (el.clientWidth - 1000 * skala) / 2, y: (el.clientHeight - 562 * skala) / 2 });
+        };
+        maal();
+        const ro = new ResizeObserver(maal);
+        ro.observe(el);
+        return () => ro.disconnect();
+    }, []);
+    return (
+        <div ref={ref} className="absolute inset-0 overflow-hidden" style={{ background: bakgrunn }}>
+            <div
+                className="absolute origin-top-left"
+                style={{
+                    left: mal.x,
+                    top: mal.y,
+                    width: 1000,
+                    height: 562,
+                    transform: `scale(${mal.skala})`,
+                }}
+            >
+                {children}
+            </div>
+        </div>
     );
 }
