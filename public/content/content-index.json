@@ -1,5 +1,5 @@
 {
-  "buildId": 43667100259382,
+  "buildId": 186911219740172,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4681,6 +4681,9 @@
     "eldrebolgen": [
       "content/samfunnskunnskap/demografi/eldrebolgen.json"
     ],
+    "ettbarnspolitikken": [
+      "content/samfunnskunnskap/demografi/ettbarnspolitikken.json"
+    ],
     "fattigdom": [
       "content/samfunnskunnskap/demografi/fattigdom.json"
     ],
@@ -6528,6 +6531,7 @@
     "samfunnskunnskap/demografi/befolkningspyramider": "content/samfunnskunnskap/demografi/befolkningspyramider.json",
     "samfunnskunnskap/demografi/den-demografiske-overgangen": "content/samfunnskunnskap/demografi/den-demografiske-overgangen.json",
     "samfunnskunnskap/demografi/eldrebolgen": "content/samfunnskunnskap/demografi/eldrebolgen.json",
+    "samfunnskunnskap/demografi/ettbarnspolitikken": "content/samfunnskunnskap/demografi/ettbarnspolitikken.json",
     "samfunnskunnskap/demografi/fattigdom": "content/samfunnskunnskap/demografi/fattigdom.json",
     "samfunnskunnskap/demografi/finland-levekar": "content/samfunnskunnskap/demografi/finland-levekar.json",
     "samfunnskunnskap/demografi/fodselstallet-i-norge": "content/samfunnskunnskap/demografi/fodselstallet-i-norge.json",
