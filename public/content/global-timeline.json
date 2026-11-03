@@ -2788,6 +2788,30 @@
       ]
     },
     {
+      "id": "skatt",
+      "title": "Skatt: Hvorfor betaler vi, og hvem betaler mest?",
+      "description": "Hva er skatt, hva brukes pengene til, og hvorfor betaler noen en større del av lønnen sin enn andre?",
+      "startDate": 1100,
+      "endDate": null,
+      "displayDate": "Fra 1100-tallet til i dag",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/skatt",
+      "tags": [
+        "økonomi",
+        "skatt",
+        "moms",
+        "velferd",
+        "ulikhet"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "stor-zimbabwe",
       "title": "Stor-Zimbabwe",
       "description": "En mektig steinby i det sørlige Afrika, bygd uten mørtel og rik på handel med gull og elfenben.",
@@ -5707,6 +5731,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "tilbud-og-ettersporsel",
+      "title": "Tilbud og etterspørsel: Slik blir prisen til",
+      "description": "Hvorfor er vann billig og diamanter dyre? Se hvordan prisen blir til der kjøpere og selgere møtes.",
+      "startDate": 1776,
+      "endDate": null,
+      "displayDate": "Fra 1776 til i dag",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/tilbud-og-ettersporsel",
+      "tags": [
+        "økonomi",
+        "marked",
+        "pris",
+        "tilbud",
+        "etterspørsel"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "okonomiske-skoler",
       "title": "Ulike økonomiske skoler",
       "description": "Hvorfor uenes økonomer om kriser, rente og inflasjon? Et grunnriss av de fire store retningene.",
@@ -5906,6 +5954,30 @@
       "lng": 8.5,
       "placeLabel": "Norge",
       "placeCountryId": 578,
+      "geoConfidence": "tag"
+    },
+    {
+      "id": "moshoeshoe-og-basotho-riket",
+      "title": "Moshoeshoe: Kongen som bygde et folk av flyktninger",
+      "description": "Moshoeshoe samlet flyktninger og tidligere fiender til basotho-folket og reddet landet som i dag heter Lesotho.",
+      "startDate": 1786,
+      "endDate": 1870,
+      "displayDate": "1786-1870",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/moshoeshoe-og-basotho-riket",
+      "tags": [
+        "afrika",
+        "sør-afrika",
+        "lesotho",
+        "kolonialisering",
+        "diplomati"
+      ],
+      "lat": -29,
+      "lng": 24,
+      "placeLabel": "Sør-Afrika",
+      "placeCountryId": 710,
       "geoConfidence": "tag"
     },
     {
@@ -6115,6 +6187,30 @@
         "dyrevelferd",
         "moral"
       ]
+    },
+    {
+      "id": "mzilikazi-og-ndebele-riket",
+      "title": "Mzilikazi og Ndebele-riket: Et folk på vandring",
+      "description": "Mzilikazi brøt med Shaka, samlet beseirede folk til ett folk og flyttet riket helt til Matabeleland i dagens Zimbabwe.",
+      "startDate": 1790,
+      "endDate": 1868,
+      "displayDate": "1790-1868",
+      "type": "lesson",
+      "subjectId": "historie",
+      "topicId": "afrikanske-riker",
+      "link": "/historie/afrikanske-riker/mzilikazi-og-ndebele-riket",
+      "tags": [
+        "afrika",
+        "sør-afrika",
+        "zimbabwe",
+        "mfecane",
+        "ndebele"
+      ],
+      "lat": -29,
+      "lng": 24,
+      "placeLabel": "Sør-Afrika",
+      "placeCountryId": 710,
+      "geoConfidence": "tag"
     },
     {
       "id": "haiti",
@@ -8899,6 +8995,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "monopol-og-konkurranse",
+      "title": "Monopol og konkurranse: Hvem bestemmer prisen?",
+      "description": "Hva skjer når én selger eier hele markedet, og hvorfor passer staten på konkurransen i dagligvarehandelen?",
+      "startDate": 1922,
+      "endDate": null,
+      "displayDate": "Fra 1922 til i dag",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/monopol-og-konkurranse",
+      "tags": [
+        "økonomi",
+        "marked",
+        "pris",
+        "monopol",
+        "konkurranse"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "sovjet",
       "title": "Stalins jernhånd",
       "description": "Soviet under Stalin: Industrialisering og terror.",
@@ -8975,6 +9095,30 @@
         "krise",
         "børskrakk"
       ]
+    },
+    {
+      "id": "arbeidsledighet",
+      "title": "Arbeidsledighet: Hvorfor finner ikke alle jobb?",
+      "description": "Hvorfor står folk uten jobb, hvordan måles ledigheten, og hvorfor trenger ulike typer ledighet ulike løsninger?",
+      "startDate": 1930,
+      "endDate": null,
+      "displayDate": "Fra 1930-tallet til i dag",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/arbeidsledighet",
+      "tags": [
+        "økonomi",
+        "arbeidsledighet",
+        "arbeidsliv",
+        "nav",
+        "konjunktur"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "india-sub-1",
@@ -10778,6 +10922,30 @@
       "placeLabel": "Norge",
       "placeCountryId": 578,
       "geoConfidence": "tag"
+    },
+    {
+      "id": "bnp",
+      "title": "BNP: Hva er et land verdt?",
+      "description": "Hva måler BNP, hvorfor teller en husbrann mens husarbeid er usynlig, og hvorfor bruker FN også HDI?",
+      "startDate": 1952,
+      "endDate": null,
+      "displayDate": "Fra 1952 til i dag",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/bnp",
+      "tags": [
+        "økonomi",
+        "bnp",
+        "velferd",
+        "levekår",
+        "hdi"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "mau-mau-opproret",
@@ -12901,6 +13069,30 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "oljefondet",
+      "title": "Oljefondet: Hvorfor sparer Norge oljepengene i utlandet?",
+      "description": "Hvor kommer oljepengene fra, hvorfor investeres de i utlandet, og hvor mye kan staten bruke hvert år?",
+      "startDate": 1990,
+      "endDate": null,
+      "displayDate": "1990",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/oljefondet",
+      "tags": [
+        "økonomi",
+        "oljefondet",
+        "handlingsregelen",
+        "olje",
+        "etikk"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "siste-skanse-sub-2",
       "title": "Nelson Mandela løslates",
       "description": "Begynnelsen på slutten for Apartheid.",
@@ -13594,6 +13786,30 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "fodselstallet-i-norge",
+      "title": "Hvorfor får nordmenn så få barn?",
+      "description": "Hva betyr det at norske kvinner får rundt 1,5 barn hver, hvorfor har tallet falt, og er det et problem?",
+      "startDate": 2009,
+      "endDate": 2025,
+      "displayDate": "2009-2025",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "demografi",
+      "link": "/samfunnskunnskap/demografi/fodselstallet-i-norge",
+      "tags": [
+        "demografi",
+        "fruktbarhet",
+        "befolkning",
+        "statistikk",
+        "familie"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "barsakh",
       "title": "Barsakh",
       "description": "Utgitt av Simon Stranger",
@@ -13706,6 +13922,30 @@
       "tags": [
         "ytringsfrihet",
         "overvåking"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "globalisering",
+      "title": "Globalisering: Hvorfor T-skjorta di er sydd i Bangladesh",
+      "description": "Hvorfor sys klærne våre på den andre siden av jorda, hvem får pengene, og hvem har ansvaret når noe går galt?",
+      "startDate": 2013,
+      "endDate": null,
+      "displayDate": "2013",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "okonomi",
+      "link": "/samfunnskunnskap/okonomi/globalisering",
+      "tags": [
+        "økonomi",
+        "globalisering",
+        "bangladesh",
+        "handel",
+        "arbeidsforhold"
       ],
       "lat": 60.5,
       "lng": 8.5,
@@ -14306,6 +14546,81 @@
         "drøfting",
         "argumentasjon",
         "saktekst"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "eldrebolgen",
+      "title": "Eldrebølgen: Hvem skal ta vare på de gamle?",
+      "description": "Hvorfor blir det stadig flere eldre i Norge, og hvem skal betale for og gjøre jobben med å ta vare på dem?",
+      "startDate": 2026,
+      "endDate": 2050,
+      "displayDate": "2026-2050",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "demografi",
+      "link": "/samfunnskunnskap/demografi/eldrebolgen",
+      "tags": [
+        "demografi",
+        "eldrebølgen",
+        "befolkning",
+        "velferd",
+        "pensjon",
+        "helse"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "innvandring-i-tall",
+      "title": "Innvandring til Norge i tall",
+      "description": "Hvem regnes som innvandrer, hvorfor kommer folk, og hvordan kan de samme SSB-tallene brukes til å si det motsatte?",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "demografi",
+      "link": "/samfunnskunnskap/demografi/innvandring-i-tall",
+      "tags": [
+        "demografi",
+        "innvandring",
+        "statistikk",
+        "kildekritikk",
+        "migrasjon",
+        "befolkning"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "sentralisering",
+      "title": "Fra bygd til by: Når skolen på bygda legges ned",
+      "description": "Hvorfor flytter folk fra bygda til byen, hva skjer med skolen og butikken som blir igjen, og hva kan staten gjøre?",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "demografi",
+      "link": "/samfunnskunnskap/demografi/sentralisering",
+      "tags": [
+        "demografi",
+        "sentralisering",
+        "distriktspolitikk",
+        "bygd",
+        "skole",
+        "befolkning"
       ],
       "lat": 60.5,
       "lng": 8.5,

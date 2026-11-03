@@ -1371,7 +1371,7 @@
                 "arbeidsforhold"
               ],
               "createdDate": "2026-10-29T01:13:16.136Z",
-              "lastUpdated": "2026-10-29T01:13:48.840Z"
+              "lastUpdated": "2026-10-29T07:40:42+01:00"
             }
           ]
         },
@@ -1534,7 +1534,8 @@
                 "statistikk",
                 "familie"
               ],
-              "createdDate": "2026-10-30T00:00:00Z"
+              "createdDate": "2026-10-30T02:21:29+01:00",
+              "lastUpdated": "2026-10-30T07:41:38+01:00"
             },
             {
               "id": "eldrebolgen",
@@ -1549,7 +1550,8 @@
                 "pensjon",
                 "helse"
               ],
-              "createdDate": "2026-10-31T00:00:00Z"
+              "createdDate": "2026-10-31T02:22:07+01:00",
+              "lastUpdated": "2026-10-31T07:42:00+01:00"
             },
             {
               "id": "innvandring-i-tall",
@@ -1564,7 +1566,8 @@
                 "migrasjon",
                 "befolkning"
               ],
-              "createdDate": "2026-11-01T00:00:00Z"
+              "createdDate": "2026-11-01T02:23:44+01:00",
+              "lastUpdated": "2026-11-01T07:36:52+01:00"
             },
             {
               "id": "sentralisering",
@@ -1579,7 +1582,8 @@
                 "skole",
                 "befolkning"
               ],
-              "createdDate": "2026-11-02T00:00:00Z"
+              "createdDate": "2026-11-02T02:25:02+01:00",
+              "lastUpdated": "2026-11-02T07:32:38+01:00"
             }
           ]
         },
@@ -9672,7 +9676,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-30T07:41:38+01:00"
                 },
                 {
                   "id": "bonn",
@@ -9698,7 +9702,7 @@
                     "ritual"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-29T07:40:42+01:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -9711,7 +9715,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-10-28T07:46:03+01:00"
+                  "lastUpdated": "2026-10-29T07:40:42+01:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -9724,7 +9728,7 @@
                     "narrative"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-29T07:40:42+01:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -9737,7 +9741,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-29T07:40:42+01:00"
                 },
                 {
                   "id": "skapelse",
@@ -9750,7 +9754,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-30T07:41:38+01:00"
                 },
                 {
                   "id": "frelse",
@@ -9920,7 +9924,7 @@
                     "sentrale_trekk"
                   ],
                   "createdDate": "2025-12-04T13:10:30+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-11-01T07:36:52+01:00"
                 },
                 {
                   "id": "grunnleggere",
@@ -9932,7 +9936,7 @@
                     "grunnleggere"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-31T07:42:00+01:00"
                 },
                 {
                   "id": "hellige-tekster",
@@ -9944,7 +9948,7 @@
                     "hellige-tekster"
                   ],
                   "createdDate": "2025-12-04T14:04:03+01:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-11-01T07:36:52+01:00"
                 },
                 {
                   "id": "intro",
@@ -9982,7 +9986,7 @@
                     "narrative"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-11-01T07:36:52+01:00"
                 },
                 {
                   "id": "gudsbilde",
@@ -9995,7 +9999,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2026-08-10T12:00:00Z",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-31T07:42:00+01:00"
                 },
                 {
                   "id": "frelse",
@@ -10008,7 +10012,7 @@
                     "doctrinal"
                   ],
                   "createdDate": "2026-08-11T12:00:00Z",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-31T07:42:00+01:00"
                 },
                 {
                   "id": "bonn",
@@ -10022,7 +10026,7 @@
                     "dagligliv"
                   ],
                   "createdDate": "2026-08-11T01:31:27.641Z",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-31T07:42:00+01:00"
                 }
               ]
             },
@@ -10077,7 +10081,7 @@
                     "kulturarv"
                   ],
                   "createdDate": "2026-09-02T03:47:20+02:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-30T07:41:38+01:00"
                 },
                 {
                   "id": "bjornegraven",
@@ -10093,7 +10097,7 @@
                     "nord-norge"
                   ],
                   "createdDate": "2026-09-03T03:53:58+02:00",
-                  "lastUpdated": "2026-09-07T07:40:19+02:00"
+                  "lastUpdated": "2026-10-30T07:41:38+01:00"
                 }
               ]
             }
