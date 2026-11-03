@@ -4,6 +4,7 @@
     "kilde": "/historie/etterkrigstiden/verden-bygges-pa-nytt",
     "bilde": "/images/etterkrigstiden/verden-bygges-pa-nytt-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-03", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "ruiner",
@@ -26,7 +27,7 @@
                     "tittel": "1945",
                     "undertittel": "Verden bygges på nytt",
                     "bilde": "/images/etterkrigstiden/verden-bygges-pa-nytt-hero.webp",
-                    "tall": [{ "verdi": 70, "etikett": "millioner døde", "fraBeat": 1, "tone": "rod" }],
+                    "tall": [{ "verdi": 70, "etikett": "millioner døde", "fraBeat": 1, "tone": "rod", "prefiks": "minst" }],
                     "sporsmal": { "tekst": "Hvem skrev reglene, og hvem tjente på dem?", "fraBeat": 3 }
                 }
             },
@@ -84,7 +85,7 @@
                     "tittel": "FN var mer enn stormaktene",
                     "punkter": [
                         { "ikon": "hus", "tittel": "WHO og UNICEF", "tekst": "kontorer for helse, mat og barn", "fraBeat": 0 },
-                        { "ikon": "avtale", "tittel": "Menneskerettighetene", "tekst": "1948: alle er født frie, med samme menneskeverd", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Menneskeverd", "tekst": "1948: menneskerettighetene sier at alle er født frie", "fraBeat": 1 },
                         { "ikon": "stjerne", "tittel": "Trygve Lie", "tekst": "FNs første generalsekretær, fra Norge", "fraBeat": 2 },
                         { "ikon": "haer", "tittel": "Små land trenger regler", "tekst": "derfor satset Norge alt på FN", "fraBeat": 3 }
                     ]
@@ -150,17 +151,7 @@
         },
         {
             "id": "baktanke",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "Hva fikk USA igjen?",
-                    "punkter": [
-                        { "ikon": "penger", "tittel": "Kunder", "tekst": "Europa måtte kjøpe varer for dollar", "fraBeat": 1 },
-                        { "ikon": "snakk", "tittel": "Nei til kommunismen", "tekst": "fattige og desperate velgere", "fraBeat": 2 },
-                        { "ikon": "hus", "tittel": "Trygghet for USA", "tekst": "et stabilt Vest-Europa", "fraBeat": 3 }
-                    ]
-                }
-            },
+            "visual": { "type": "VerdenDollar", "props": { "modus": "baktanke" } },
             "replikker": [
                 { "si": "Men en gransker spør alltid: Hva fikk giveren igjen?" },
                 { "si": "Europa manglet dollar. Mat, drivstoff og maskiner kunne bare kjøpes for dollar, så mye av handelen gikk til USA." },
@@ -183,17 +174,7 @@
         {
             "id": "sporene",
             "kapittel": "Hvem skrev reglene?",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "Hvem skrev reglene?",
-                    "punkter": [
-                        { "ikon": "avtale", "tittel": "Vetoretten i FN", "tekst": "de fem som vant krigen", "fraBeat": 1 },
-                        { "ikon": "penger", "tittel": "Verdens penger", "tekst": "dollaren", "fraBeat": 2 },
-                        { "ikon": "fabrikk", "tittel": "IMF og Verdensbanken", "tekst": "den som betaler mest, altså USA", "fraBeat": 3 }
-                    ]
-                }
-            },
+            "visual": { "type": "VerdenSporene" },
             "replikker": [
                 { "si": "La oss samle sporene." },
                 { "si": "Hvem fikk vetorett i FN? De fem som vant krigen." },
@@ -217,7 +198,7 @@
                 }
             },
             "replikker": [
-                { "si": "Dette var ikke nødvendigvis en ond plan. Mange av dem som bygde systemet, mente alvor med fred. Og verden fikk mange tiår uten storkrig mellom stormaktene." },
+                { "si": "Dette var ikke nødvendigvis en ond plan. Mange av dem som bygde systemet, mente alvor med fred. Og verden fikk tiår uten storkrig mellom stormaktene." },
                 { "si": "Men systemet ga også vinnerne av krigen et forsprang som verden fortsatt lever med." },
                 { "si": "Så husk dette bildet av 1945: fred bygd på regler, og regler skrevet av vinnerne." }
             ]
