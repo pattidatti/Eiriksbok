@@ -1580,6 +1580,21 @@
                 "befolkning"
               ],
               "createdDate": "2026-11-02T00:00:00Z"
+            },
+            {
+              "id": "ettbarnspolitikken",
+              "title": "Ettbarnspolitikken i Kina",
+              "description": "Hvorfor bestemte Kina at de fleste par bare skulle få ett barn, hvordan fikk staten folk til å følge den, og hvorfor eldes landet så raskt i dag?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "demografi",
+                "kina",
+                "befolkning",
+                "fødselstall",
+                "eldrebølge",
+                "menneskerettigheter"
+              ],
+              "createdDate": "2026-11-03T00:00:00Z"
             }
           ]
         },
