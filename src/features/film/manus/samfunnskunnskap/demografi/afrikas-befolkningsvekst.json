@@ -1,0 +1,285 @@
+{
+    "id": "afrikas-befolkningsvekst",
+    "tittel": "Afrikas befolkningsvekst: Verdens yngste kontinent",
+    "kilde": "/samfunnskunnskap/demografi/afrikas-befolkningsvekst",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [
+        { "tall": 1500, "begrunnelse": "Artikkelens «rundt 1,5 milliarder» skrevet som millioner i tallkortet, fordi tallkortet bare viser hele tall." },
+        { "tall": 100, "begrunnelse": "Tenkt skole med 100 elever, brukt som sammenligning for veksten på nesten 41 prosent fra 2014 til 2024." }
+    ],
+    "vurdering": { "dato": "2026-11-04", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "ko-norge",
+            "kapittel": "Køen",
+            "visual": { "type": "AfrikaKo", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Tenk deg at alle som bor i Norge, stiller seg opp i én lang kø." },
+                { "si": "Den yngste babyen står først. Den eldste oldemoren står sist." },
+                { "si": "Nå finner vi personen som står akkurat i midten. Halvparten av landet står foran henne, og halvparten står bak." },
+                { "si": "I Norge er hun nesten 40 år, omtrent like gammel som mange foreldre. Alderen hennes kalles medianalderen." }
+            ]
+        },
+        {
+            "id": "ko-niger",
+            "visual": { "type": "AfrikaKo", "props": { "modus": "niger" } },
+            "replikker": [
+                { "si": "Gjør vi det samme i Niger, et land i Vest-Afrika, ser køen helt annerledes ut." },
+                { "si": "Køen er full av barn. Et ungt land har mange barn nederst og færre gamle på toppen." },
+                { "si": "Midtpersonen i Niger er bare 15 år." },
+                { "si": "Det betyr at halvparten av alle som bor i Niger, er yngre enn en elev i 10. klasse." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "AFRIKA",
+                    "undertittel": "Verdens yngste verdensdel",
+                    "tall": [
+                        { "verdi": 19, "etikett": "år: midtpersonen i Afrika, 2023", "fraBeat": 1, "omtrent": false, "tone": "gronn" },
+                        { "verdi": 42, "etikett": "år: midtpersonen i Europa, 2023", "fraBeat": 1, "omtrent": false },
+                        { "verdi": 1500, "etikett": "millioner i Afrika i 2024", "fraBeat": 2, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Et problem eller en mulighet?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Afrika, verdens yngste verdensdel." },
+                { "si": "I 2023 var midtpersonen i hele Afrika 19 år. I Europa var hun 42 år." },
+                { "si": "I 2024 bodde det rundt 1,5 milliarder mennesker i Afrika. I mange land sør for Sahara vokser tallet raskt." },
+                { "si": "Hvorfor vokser befolkningen så raskt? Og er det et problem eller en stor mulighet? Det er forskere og politikere uenige om." }
+            ]
+        },
+        {
+            "id": "mange-land",
+            "kapittel": "Mange land",
+            "visual": { "type": "AfrikaKart", "props": { "modus": "barn" } },
+            "replikker": [
+                { "si": "Men Afrika er ikke ett land, og forskjellene mellom landene er store." },
+                { "si": "Se på hvor mange barn en kvinne får i snitt. I Tunisia i nord var tallet 1,8 i 2023." },
+                { "si": "I Marokko og Sør-Afrika var tallet 2,2." },
+                { "si": "Men i Niger, Tsjad og Somalia fikk en kvinne rundt seks barn i 2023." },
+                { "si": "Når vi snakker om Afrikas befolkningsvekst, handler det mest om landene sør for Sahara, og særlig om noen land i vest og i midten." }
+            ]
+        },
+        {
+            "id": "barnedod",
+            "kapittel": "Hvorfor så fort?",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 9,
+                            "farget": 0,
+                            "restFarge": "#f59e0b",
+                            "tittel": "Barn i Niger",
+                            "restEtikett": "barn",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 9,
+                            "farget": 3,
+                            "farge": "#dc2626",
+                            "restFarge": "#f59e0b",
+                            "tittel": "Niger 1990: ett av tre døde før fem år",
+                            "fargeEtikett": "døde før fem år",
+                            "restEtikett": "vokste opp",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 9,
+                            "farget": 1,
+                            "farge": "#dc2626",
+                            "restFarge": "#f59e0b",
+                            "tittel": "Niger 2023: omtrent ett av ni",
+                            "fargeEtikett": "døde før fem år",
+                            "restEtikett": "vokste opp",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 9,
+                            "farget": 0,
+                            "restFarge": "#93c5fd",
+                            "tittel": "Norge: omtrent ett av 400",
+                            "restEtikett": "nesten alle vokser opp",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "For å forstå veksten må vi se på to ting: hvor mange som dør, og hvor mange som blir født." },
+                { "si": "I 1990 døde ett av tre barn i Niger før de fylte fem år. Det kalles barnedødelighet." },
+                { "si": "I 2023 var det omtrent ett av ni. Det er fortsatt mye, men nå vokser langt flere barn opp." },
+                { "si": "Til sammenligning: I Norge dør omtrent ett av 400 barn før femårsdagen." }
+            ]
+        },
+        {
+            "id": "familie",
+            "visual": { "type": "AfrikaKo", "props": { "modus": "familie" } },
+            "replikker": [
+                { "si": "Samtidig har ikke antall barn per kvinne falt like fort." },
+                { "si": "I 1980 og i 2000 fikk en kvinne i Niger nesten åtte barn." },
+                { "si": "I 2023 var tallet rundt seks." },
+                { "si": "Når barna overlever, men familiene fortsatt er store, blir det fort mange flere mennesker." },
+                { "si": "Dette er midten av den demografiske overgangen, en modell for hvordan land går fra mange fødsler og dødsfall til få. Færre dør, men mange blir fortsatt født." }
+            ]
+        },
+        {
+            "id": "fart",
+            "visual": { "type": "AfrikaVekst", "props": { "modus": "fart" } },
+            "replikker": [
+                { "si": "Folketallet i Niger økte med nesten 41 prosent bare fra 2014 til 2024." },
+                { "si": "Det er som om en skole med 100 elever fikk nesten 41 nye elever på ti år." },
+                { "si": "To økonomer i Verdensbanken skrev i 2020 at Niger hadde den høyeste befolkningsveksten i verden, med 3,8 prosent i året." },
+                { "si": "Hvert år kom det rundt 750 000 nye barn som trengte skole og helsehjelp." }
+            ]
+        },
+        {
+            "id": "prognose",
+            "kapittel": "Hvor mange blir vi?",
+            "visual": { "type": "AfrikaVekst", "props": { "modus": "afrika" } },
+            "replikker": [
+                { "si": "FN lager prognoser. En prognose er en beregning av hvordan noe trolig blir i framtiden." },
+                { "si": "I 1950 bodde det bare rundt 230 millioner mennesker i hele Afrika." },
+                { "si": "I 2024 var det rundt 1,5 milliarder." },
+                { "si": "Ifølge FN kan tallet bli nesten 2,5 milliarder i 2050, og rundt 3,8 milliarder i 2100." }
+            ]
+        },
+        {
+            "id": "niger-japan",
+            "visual": { "type": "AfrikaVekst", "props": { "modus": "niger-japan" } },
+            "replikker": [
+                { "si": "Se på to land som går hver sin vei." },
+                { "si": "Folketallet i Niger kan nesten doble seg, fra 27 millioner i 2024 til rundt 52 millioner i 2050." },
+                { "si": "I Japan går det motsatt vei. Der kan folketallet synke fra rundt 124 millioner i 2024 til 105 millioner i 2050." },
+                { "si": "Men husk: En prognose er ikke en fasit. Den bygger på antakelser, altså hva man tror, om hvor mange barn folk kommer til å få. Og det kan endre seg." }
+            ]
+        },
+        {
+            "id": "problem",
+            "kapittel": "Problem eller mulighet?",
+            "visual": { "type": "AfrikaVekst", "props": { "modus": "fattige" } },
+            "replikker": [
+                { "si": "Noen ser den raske veksten som et problem. Flere barn hvert år betyr flere skoler, lærere og leger, og mer mat." },
+                { "si": "I Niger er det allerede mange fattige. I 2021 var andelen fattige rundt 41 prosent. Folk i Niger kan i snitt regne med å leve til 61 år." },
+                { "si": "Ser vi lenger tilbake, falt andelen fattige fra rundt 54 prosent i 2005 til 45 prosent i 2014." },
+                { "si": "Likevel økte antallet fattige, fra 6,8 til 8,2 millioner. Befolkningen vokste så fort at det ble flere fattige, selv om en mindre del av folket var fattig." }
+            ]
+        },
+        {
+            "id": "utbytte",
+            "visual": { "type": "AfrikaKo", "props": { "modus": "utbytte" } },
+            "replikker": [
+                { "si": "Andre ser en mulighet. Om noen år blir de mange barna i køen voksne." },
+                { "si": "Hvis de får utdanning og jobb, får landet en stor arbeidsstyrke. Det er alle som er gamle nok til å jobbe, og som jobber eller vil jobbe." },
+                { "si": "Da blir det mange som jobber for hvert barn og hver gamle person som trenger hjelp." },
+                { "si": "Økonomer kaller det et demografisk utbytte: en gevinst landet kan få når mange er i arbeidsalder." },
+                { "si": "Men da må Niger, mener økonomene i Verdensbanken, få ned fødselstallene, gi flere jenter skole og skape jobber til de unge." }
+            ]
+        },
+        {
+            "id": "kenya",
+            "visual": { "type": "AfrikaKart", "props": { "modus": "endring" } },
+            "replikker": [
+                { "si": "Og det er mulig å få til endring. Se på Kenya i Øst-Afrika." },
+                { "si": "I 1990 fikk en kvinne i Kenya over seks barn. I 2023 var tallet rundt tre." },
+                { "si": "Midtpersonen ble også eldre, fra 14 til nesten 20 år." },
+                { "si": "I nabolandet Etiopia falt antall barn per kvinne fra rundt sju til fire i samme periode." },
+                { "si": "Kenya og Etiopia viser at et land kan bevege seg fort gjennom den demografiske overgangen." }
+            ]
+        },
+        {
+            "id": "jenter",
+            "kapittel": "Jentene på skolen",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 10,
+                            "farget": 0,
+                            "restFarge": "#c4b5fd",
+                            "tittel": "Jenter i Niger",
+                            "restEtikett": "jenter",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 10,
+                            "farget": 4,
+                            "farge": "#7c3aed",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Niger: fire av ti kom til 6. klasse",
+                            "fargeEtikett": "kom til 6. klasse",
+                            "restEtikett": "kom ikke så langt",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 3,
+                            "farget": 1,
+                            "farge": "#7c3aed",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Fattige land: én av tre fullfører ungdomsskolen",
+                            "fargeEtikett": "fullfører ungdomsskolen",
+                            "restEtikett": "fullfører ikke",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Hva får folk til å få færre barn? Det er mange grunner, men én går igjen: at jenter får gå lenger på skolen. De får ofte sitt første barn senere." },
+                { "si": "I Niger kom bare fire av ti jenter så langt som til sjette klasse rundt 2020." },
+                { "si": "Verdensbanken regner med at bare én av tre jenter i fattige land fullfører ungdomsskolen." }
+            ]
+        },
+        {
+            "id": "verden",
+            "kapittel": "Ungt og gammelt",
+            "visual": { "type": "AfrikaKart", "props": { "modus": "verden" } },
+            "replikker": [
+                { "si": "Det betyr ikke at noen skal bestemme hvor mange barn familier får. Kina prøvde det med tvang, og det fikk store følger." },
+                { "si": "Skole for jenter virker på en annen måte. Kvinnene får flere valg i livet, og mange velger da selv å få færre barn." },
+                { "si": "Mens Afrika er ungt, blir Europa og Øst-Asia stadig eldre. I Norge blir det flere eldre som trenger pleie." },
+                { "si": "Hvis FNs prognose slår til, kan mer enn hver tredje person i verden bo i Afrika i 2100." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Færre barn dør.", "fraBeat": 0 },
+                        { "tekst": "Men mange familier er fortsatt store.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Problem eller mulighet?", "fraBeat": 1 },
+                        { "tekst": "Ikke bare et spørsmål om hvor mange.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Det avhenger av", "fraBeat": 2 },
+                        { "tekst": "skole, helse og arbeid.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Det store spørsmålet", "fraBeat": 3 },
+                        { "tekst": "for mange land i Afrika.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Befolkningen i mange afrikanske land vokser fordi færre barn dør, mens mange familier fortsatt er store." },
+                { "si": "Om de mange unge blir et problem eller en mulighet, avhenger ikke bare av hvor mange som blir født." },
+                { "si": "Det avhenger av om de unge får gå på skole, holde seg friske og finne seg en jobb." },
+                { "si": "Det er det store spørsmålet for mange afrikanske land de neste tiårene." }
+            ]
+        }
+    ]
+}
