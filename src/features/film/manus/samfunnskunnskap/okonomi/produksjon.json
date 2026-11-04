@@ -1,0 +1,476 @@
+{
+    "id": "produksjon",
+    "tittel": "Produksjon: Hvorfor vi lager ting",
+    "kilde": "/samfunnskunnskap/okonomi/produksjon",
+    "bilde": "/images/lessons/produksjon_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-11-04",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 3,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "gata",
+            "lyd": "vind",
+            "kapittel": "Hva er produksjon?",
+            "visual": {
+                "type": "ProduksjonGata",
+                "props": {
+                    "modus": "gata"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva ser du for deg når du hører ordet produksjon? Kanskje en fabrikk med store piper og et samlebånd?"
+                },
+                {
+                    "si": "Det er riktig. Men produksjon er mye mer enn fabrikker."
+                },
+                {
+                    "si": "Når bakeren steker brød, er det produksjon."
+                },
+                {
+                    "si": "Når frisøren klipper hår, er det også produksjon."
+                },
+                {
+                    "si": "Og når en artist lager en ny sang, er det produksjon."
+                },
+                {
+                    "si": "Noe av det vi lager, er varer du kan ta på, som brød og biler. Noe er tjenester, som en hårklipp, undervisning eller helsepleie."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "PRODUKSJON",
+                    "undertittel": "Hvorfor vi lager ting",
+                    "bilde": "/images/lessons/produksjon_hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvem bestemmer hva som skal lages?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I økonomifaget betyr produksjon at vi bruker det vi har, for eksempel råvarer og arbeidskraft, til å lage nye varer og tjenester."
+                },
+                {
+                    "si": "Alt vi lager for å dekke behovene våre, hører med."
+                },
+                {
+                    "si": "Men hvem bestemmer at det skal lages akkurat nok brød til alle?"
+                }
+            ]
+        },
+        {
+            "id": "ressurser",
+            "kapittel": "Det store spørsmålet",
+            "visual": {
+                "type": "ProduksjonValg",
+                "props": {
+                    "modus": "ressurser"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Jorda har ikke uendelig med ressurser. Det finnes bare så mye jern, tømmer og olje."
+                },
+                {
+                    "si": "Og viktigst av alt: Det finnes bare så mye menneskelig arbeidskraft."
+                },
+                {
+                    "si": "Tenk deg en haug med stål. Skal vi bygge jernbane med det, eller sykehussenger?"
+                },
+                {
+                    "si": "Bruker vi mer av stålet på det ene, blir det mindre igjen til det andre."
+                },
+                {
+                    "si": "Det samme gjelder arbeidskraften. Skal folk bygge nye hus, eller ta vare på de eldre?"
+                },
+                {
+                    "si": "Ressursene er knappe. Det finnes ikke nok til alt. Derfor må hvert samfunn velge hvordan de skal brukes."
+                }
+            ]
+        },
+        {
+            "id": "plan",
+            "kapittel": "Planøkonomi",
+            "visual": {
+                "type": "ProduksjonSignal",
+                "props": {
+                    "modus": "plan"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ulike økonomiske systemer løser dette på to helt forskjellige måter. Den første kalles planøkonomi."
+                },
+                {
+                    "si": "I en planøkonomi har det offentlige kontroll over varene, tjenestene og fabrikkene. Det offentlige er staten eller kommunen."
+                },
+                {
+                    "si": "Da er det fellesskapet, gjennom staten, som bestemmer hva som skal lages."
+                },
+                {
+                    "si": "Også i et demokrati bestemmer det offentlige over noe av det som lages. Velgerne stemmer på politikere som lover sykehus, skoler eller jernbane."
+                },
+                {
+                    "si": "Tanken er å styre ressursene dit samfunnet trenger dem mest, ikke dit det lønner seg mest. Regningen betaler vi over skatten."
+                }
+            ]
+        },
+        {
+            "id": "kart",
+            "visual": {
+                "type": "ProduksjonKart",
+                "props": {}
+            },
+            "replikker": [
+                {
+                    "si": "Den mest gjennomførte planøkonomien har vi sett i kommunistiske land."
+                },
+                {
+                    "si": "Et eksempel er Sovjetunionen."
+                },
+                {
+                    "si": "Andre eksempler er Cuba og Nord-Korea."
+                }
+            ]
+        },
+        {
+            "id": "middag",
+            "visual": {
+                "type": "ProduksjonValg",
+                "props": {
+                    "modus": "middag"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du skulle bestemme hva alle i kommunen din skulle spise til middag, hver dag i en uke."
+                },
+                {
+                    "si": "Hvordan skulle du vite hvem som er allergiske?"
+                },
+                {
+                    "si": "Hvem som hater fisk?"
+                },
+                {
+                    "si": "Eller hvem som plutselig fikk gjester?"
+                },
+                {
+                    "si": "Hvilke problemer ville du møtt? Tenk på det mens vi ser på den andre måten."
+                }
+            ]
+        },
+        {
+            "id": "marked",
+            "kapittel": "Markedsøkonomi",
+            "visual": {
+                "type": "ProduksjonSignal",
+                "props": {
+                    "modus": "marked"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den andre måten kalles markedsøkonomi, eller kapitalisme. Her finnes det ingen sentral sjef som bestemmer."
+                },
+                {
+                    "si": "I stedet fordeles ressursene gjennom markeder. Et marked er all handelen mellom vanlige folk og bedrifter."
+                },
+                {
+                    "si": "Tilbud og etterspørsel lager priser. Tilbudet er det som er til salgs, og etterspørselen er det folk vil kjøpe."
+                },
+                {
+                    "si": "Prisene påvirker hva folk og bedrifter velger å lage, og hva de kjøper."
+                }
+            ]
+        },
+        {
+            "id": "sjokolade",
+            "visual": {
+                "type": "ProduksjonSignal",
+                "props": {
+                    "modus": "sjokolade"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du kjøper en spesiell type sjokolade i butikken, sender du et signal til den som lager den."
+                },
+                {
+                    "si": "Signalet sier: Lag mer av denne!"
+                },
+                {
+                    "si": "Dette kalles forbrukersuverenitet. Det betyr at du som kunde er med på å bestemme hva som blir laget."
+                },
+                {
+                    "si": "Bedriftene prøver hele tiden å gjette hva du vil ha. De kjøper råvarer og arbeidskraft og lager produkter."
+                }
+            ]
+        },
+        {
+            "id": "resultat",
+            "visual": {
+                "type": "ProduksjonSignal",
+                "props": {
+                    "modus": "resultat"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Treffer bedriften blink, selger den varen for mer enn det kostet å lage den."
+                },
+                {
+                    "si": "Da går den med overskudd. I markedsøkonomien er det et tegn på at bedriften har skapt verdi."
+                },
+                {
+                    "si": "Men hvis ingen vil ha varen, går bedriften med underskudd."
+                },
+                {
+                    "si": "Det er et signal om å stoppe. Bedriften bruker ressurser på noe ingen vil ha."
+                }
+            ]
+        },
+        {
+            "id": "mises",
+            "kapittel": "Prisene",
+            "visual": {
+                "type": "ProduksjonValg",
+                "props": {
+                    "modus": "blind"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I 1920 pekte en østerriksk økonom, Ludwig von Mises, på nettopp dette."
+                },
+                {
+                    "si": "Han mente at når ingen eier fabrikkene og maskinene privat, finnes det ingen ekte markedspriser."
+                },
+                {
+                    "si": "Og uten priser som viser hva som er knapt og ettertraktet, kunne ingen planlegger regne ut den beste bruken av ressursene, mente han."
+                },
+                {
+                    "si": "Han kalte dette kalkulasjonsproblemet. Å kalkulere betyr å regne ut."
+                }
+            ]
+        },
+        {
+            "id": "kaka",
+            "kapittel": "Kritikk og svar",
+            "visual": {
+                "type": "ProduksjonValg",
+                "props": {
+                    "modus": "kaka"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Markedsøkonomien får ofte kritikk. Nå skal vi høre svarene fra én bestemt gruppe økonomer, den østerrikske skolen."
+                },
+                {
+                    "si": "Husk at dette er ett syn blant flere. Det er ikke fasiten."
+                },
+                {
+                    "si": "Kritikk: Markedet skaper store forskjeller mellom rike og fattige."
+                },
+                {
+                    "si": "Svar: De østerrikske økonomene mener at forskjellene i seg selv ikke er problemet. For dem er problemet fattigdom."
+                },
+                {
+                    "si": "De sier at Bill Gates ble rik fordi millioner av mennesker fikk nytte av PC-er. Kaka ligger ikke fast, mener de. Den vokser, så også de fattigste får det bedre over tid."
+                }
+            ]
+        },
+        {
+            "id": "elva",
+            "lyd": "vind",
+            "visual": {
+                "type": "ProduksjonGata",
+                "props": {
+                    "modus": "elva"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kritikk: Bedrifter forurenser uten å betale for skaden."
+                },
+                {
+                    "si": "Svar: Østerrikerne mener det ofte skyldes at ingen eier for eksempel elva. Eide noen den, ville de ikke la en fabrikk dumpe gift i den."
+                },
+                {
+                    "si": "Problemet kalles allmenningens tragedie. Det skjer når hver bruker bare regner med sin egen fortjeneste, og ikke med det de andre taper."
+                },
+                {
+                    "si": "Men forskningen peker på tre veier ut, ikke bare én. Den første er at noen får eie allmenningen."
+                },
+                {
+                    "si": "Den andre er at myndighetene setter grenser, slik vi kjenner det fra fisket."
+                },
+                {
+                    "si": "Den tredje er at brukerne selv blir enige om regler. Østerrikerne liker best den første veien."
+                }
+            ]
+        },
+        {
+            "id": "monopol",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Monopoler",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Kritikk: de store spiser de små",
+                            "tekst": "og kan skru opp prisene",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "penger",
+                            "tittel": "En ekte fare: én selger alene",
+                            "tekst": "kan holde prisen høy",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Østerrikerne: ofte beskyttet av staten",
+                            "tekst": "Vinmonopolet eies av staten",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "fabrikk",
+                            "tittel": "Svar: nye konkurrenter kommer",
+                            "tekst": "det mener østerrikerne",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kritikk: Store selskaper spiser de små og kan skru opp prisene."
+                },
+                {
+                    "si": "Det er en ekte fare. Har én selger hele markedet for seg selv, kan den holde prisen høy for å tjene mest mulig."
+                },
+                {
+                    "si": "Svar: Østerrikerne sier at monopoler som varer lenge, ofte er beskyttet av staten. Mange eies av staten selv, og loven gir dem enerett, som Vinmonopolet."
+                },
+                {
+                    "si": "De mener at høy fortjeneste på et fritt marked lokker fram nye konkurrenter. Blir en bedrift dyr og dårlig, dukker det opp nye."
+                }
+            ]
+        },
+        {
+            "id": "tid",
+            "visual": {
+                "type": "ProduksjonTid",
+                "props": {
+                    "modus": "tid"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Kritikk: Kapitalister tenker bare på neste kvartal, altså de nærmeste månedene."
+                },
+                {
+                    "si": "Svar: Tvert imot, sier østerrikerne. Hva et selskap er verdt, bygger på alt det skal tjene i framtida."
+                },
+                {
+                    "si": "En eier som ødelegger ressursene sine i dag, taper penger i morgen, sier de."
+                },
+                {
+                    "si": "Politikere, derimot, tenker ofte bare fram til neste valg, mener de. Det er om fire år."
+                },
+                {
+                    "si": "Og gjennom renter og priser hjelper markedet folk med å planlegge langt fram, sier østerrikerne."
+                }
+            ]
+        },
+        {
+            "id": "blanding",
+            "kapittel": "Blandingsøkonomi",
+            "visual": {
+                "type": "ProduksjonTid",
+                "props": {
+                    "modus": "blanding"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "De aller fleste land i verden velger ikke bare det ene. De er blandingsøkonomier."
+                },
+                {
+                    "si": "Markedene og private bedrifter spiller en stor rolle, men staten og fagforeningene griper inn på mange måter."
+                },
+                {
+                    "si": "Norge er ikke noe unntak. Vi har vært en blandingsøkonomi gjennom hele tiden etter krigen."
+                },
+                {
+                    "si": "Private bedrifter selger oss mat og klær. Det offentlige driver sykehus og skoler."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ressursene er knappe.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Noen må velge hva som skal lages.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "I planøkonomi velger staten.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "I markedsøkonomi styrer prisene.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Staten driver sykehusene. Kiwi selger maten.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Kunne det vært omvendt?",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ressursene våre er knappe. Derfor må noen velge hva som skal lages."
+                },
+                {
+                    "si": "I en planøkonomi velger staten. I en markedsøkonomi er det prisene som styrer. Uten priser er det vanskelig å vite om vi bruker ressursene godt."
+                },
+                {
+                    "si": "Så tenk over dette: Hvorfor lar vi staten drive sykehusene, mens Rema 1000 og Kiwi selger oss maten? Kunne det vært omvendt?"
+                }
+            ]
+        }
+    ]
+}
