@@ -7,8 +7,7 @@ import { Teller } from '../shared';
 import type { VisualProps } from '../../types';
 
 /**
- * Kart over Nansens arbeid. Fem modus:
- * «liv»: Kristiania, Grønland, krigen i Europa, Washington og Folkeforbundet.
+ * Kart over Nansens arbeid. Fire modus:
  * «fanger»: fangeleirene i Russland og krigsfangene som kommer hjem.
  * «flukt»: flyktningene ut av Russland og kontoret for flyktninger i Genève.
  * «bytte»: utvekslingen mellom Hellas og Tyrkia.
@@ -19,12 +18,8 @@ import type { VisualProps } from '../../types';
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'liv' | 'fanger' | 'flukt' | 'bytte' | 'armenia';
+type Modus = 'fanger' | 'flukt' | 'bytte' | 'armenia';
 
-const KRISTIANIA: LngLat = [10.75, 59.91];
-const GRONLAND_OST: LngLat = [-40.3, 64.3];
-const GRONLAND_VEST: LngLat = [-51.7, 64.2];
-const WASHINGTON: LngLat = [-77.04, 38.9];
 const GENEVE: LngLat = [6.14, 46.2];
 const MOSKVA: LngLat = [37.6, 55.75];
 const JEREVAN: LngLat = [44.5, 40.18];
@@ -36,10 +31,6 @@ const TYRKIA = '792';
 const ARMENIA = '051';
 
 const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
-    liv: [
-        [-82, 34],
-        [42, 74],
-    ],
     fanger: [
         [-4, 41],
         [62, 65],
@@ -97,7 +88,7 @@ const FLUKT: LngLat[] = [
 ];
 
 export function NansenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
-    const modus = props.modus ?? 'liv';
+    const modus = props.modus ?? 'fanger';
     const { geographies } = useFilmVerden();
 
     const projeksjon: GeoProjection = useMemo(() => {
@@ -142,10 +133,12 @@ export function NansenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                     >
                         <path d="M0,0 L10,5 L0,10 z" fill="context-stroke" />
                     </marker>
+                    <filter id="nansen-take" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="40" />
+                    </filter>
                 </defs>
                 <Land geographies={geographies} sti={sti} farger={farger} />
 
-                {modus === 'liv' && <Liv beat={beat} p={p} />}
                 {modus === 'fanger' && <Fanger beat={beat} p={p} />}
                 {modus === 'flukt' && <Flukt beat={beat} p={p} />}
                 {modus === 'bytte' && <Bytte beat={beat} p={p} />}
@@ -195,13 +188,6 @@ export function NansenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
 }
 
 const OVERSKRIFTER: Record<Modus, string[]> = {
-    liv: [
-        'Født 1861',
-        '1888: på ski over Grønland',
-        '1914: krig i Europa',
-        'Washington 1917-1918: mat til Norge',
-        'Folkeforbundet',
-    ],
     fanger: [
         'Våren 1920: første oppdrag',
         'Fangeleirer i Russland',
@@ -277,48 +263,10 @@ function Punkt({
     );
 }
 
-function Liv({ beat, p }: { beat: number; p: P }) {
-    return (
-        <>
-            {beat >= 2 && (
-                <motion.ellipse
-                    cx={p([15, 50])[0]}
-                    cy={p([15, 50])[1]}
-                    rx={150}
-                    ry={110}
-                    fill="#dc2626"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: beat === 2 ? 0.35 : 0.15 }}
-                />
-            )}
-            {beat >= 1 && (
-                <>
-                    <motion.path
-                        d={`M ${p(GRONLAND_OST).join(' ')} L ${p(GRONLAND_VEST).join(' ')}`}
-                        stroke="#1d4ed8"
-                        strokeWidth={8}
-                        strokeDasharray="2 14"
-                        strokeLinecap="round"
-                        fill="none"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 2 }}
-                    />
-                    <Etikett tekst="Grønland" x={p([-44, 70])[0]} dy={p([-44, 70])[1]} farge="#1e3a5f" />
-                </>
-            )}
-            {beat >= 3 && <Pil fra={p(KRISTIANIA)} til={p(WASHINGTON)} farge="#0f172a" boy={-0.18} />}
-            {beat >= 3 && <Punkt pt={p(WASHINGTON)} navn="Washington" dy={42} />}
-            {beat >= 4 && <Punkt pt={p(GENEVE)} navn="Folkeforbundet" farge="#1d4ed8" dy={46} />}
-            <Punkt pt={p(KRISTIANIA)} navn="Kristiania (Oslo)" dy={-26} />
-        </>
-    );
-}
-
 function Fanger({ beat, p }: { beat: number; p: P }) {
     return (
         <>
-            {beat === 0 && <Pil fra={p(GENEVE)} til={p(MOSKVA)} farge="#1d4ed8" stiplet bredde={7} />}
+            {beat === 0 && <Pil fra={p(GENEVE)} til={p([46, 55])} farge="#1d4ed8" stiplet bredde={7} />}
             {beat >= 1 &&
                 LEIRER.map((ll, i) => {
                     const [x, y] = p(ll);
@@ -341,14 +289,16 @@ function Fanger({ beat, p }: { beat: number; p: P }) {
                     );
                 })}
             {beat === 2 && (
-                <motion.rect
-                    x={p([30, 64])[0]}
-                    y={p([30, 64])[1]}
-                    width={p([62, 46])[0] - p([30, 64])[0]}
-                    height={p([62, 46])[1] - p([30, 64])[1]}
+                <motion.ellipse
+                    cx={p([46, 55])[0]}
+                    cy={p([46, 55])[1]}
+                    rx={300}
+                    ry={220}
                     fill="#57534e"
+                    filter="url(#nansen-take)"
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 0.25 }}
+                    animate={{ opacity: 0.35 }}
+                    transition={{ duration: 1.2 }}
                 />
             )}
             {beat >= 3 &&
