@@ -1595,6 +1595,21 @@
                 "menneskerettigheter"
               ],
               "createdDate": "2026-11-03T00:00:00Z"
+            },
+            {
+              "id": "afrikas-befolkningsvekst",
+              "title": "Afrikas befolkningsvekst: Verdens yngste kontinent",
+              "description": "Hvorfor vokser befolkningen så raskt i mange afrikanske land, og blir de mange unge et problem eller en mulighet?",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "demografi",
+                "afrika",
+                "befolkning",
+                "fødselstall",
+                "befolkningsvekst",
+                "utdanning"
+              ],
+              "createdDate": "2026-11-04T00:00:00Z"
             }
           ]
         },
