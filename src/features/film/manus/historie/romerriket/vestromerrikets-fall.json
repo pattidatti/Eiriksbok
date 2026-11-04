@@ -1,0 +1,455 @@
+{
+    "id": "vestromerrikets-fall",
+    "tittel": "Vestromerrikets fall",
+    "kilde": "/historie/romerriket/vestromerrikets-fall",
+    "bilde": "/images/romerriket/hero-fall.webp",
+    "utenforArtikkel": [
+        {
+            "tall": "tusen",
+            "begrunnelse": "Målestokken i prikkfeltet: hver prikk er 1000 innbyggere."
+        },
+        {
+            "tall": 1500,
+            "begrunnelse": "Prikker i prikkfeltet: 1,5 millioner innbyggere delt på 1000 per prikk (artikkelen)."
+        },
+        {
+            "tall": 50,
+            "begrunnelse": "Prikker i prikkfeltet: 50 000 innbyggere delt på 1000 per prikk (artikkelen)."
+        }
+    ],
+    "vurdering": { "dato": "2026-11-04", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "natt",
+            "lyd": "vind",
+            "kapittel": "En natt i 410",
+            "visual": {
+                "type": "VestromRoma",
+                "props": {
+                    "modus": "port"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er natten til 24. august i år 410. Vi står utenfor muren rundt Roma."
+                },
+                {
+                    "si": "Romerne har lenge vært nesten umulige å slå. At noen skal ta selve Roma, er utenkelig."
+                },
+                {
+                    "si": "Men utenfor muren står en hær av visigoter. De ledes av kong Alarik."
+                },
+                {
+                    "si": "Denne natten bryter de inn i byen."
+                },
+                {
+                    "si": "I tre dager plyndrer de Roma. Å plyndre betyr å ta alt av verdi med makt."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "VESTROMERRIKETS FALL",
+                    "undertittel": "Fra rundt år 370 til år 476: rundt hundre år",
+                    "bilde": "/images/romerriket/hero-fall.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan kunne Roma falle?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Dette er historien om Vestromerrikets fall."
+                },
+                {
+                    "si": "Romerriket var delt i en vestlig og en østlig del. Denne filmen handler om den vestlige delen."
+                },
+                {
+                    "si": "Hvordan kunne et så mektig rike bli borte?"
+                }
+            ]
+        },
+        {
+            "id": "prosess",
+            "lyd": "stille",
+            "kapittel": "En langsom slutt",
+            "visual": {
+                "type": "VestromTid",
+                "props": {
+                    "modus": "hundre"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fallet kom ikke over natten. Det tok rundt hundre år."
+                },
+                {
+                    "si": "Noe kom innenfra. Riket hadde dårlig økonomi, og det var mye korrupsjon. Det betyr at folk med makt tok penger og fordeler de ikke hadde rett på."
+                },
+                {
+                    "si": "Resten kom utenfra. Store hærer invaderte riket, gang på gang."
+                },
+                {
+                    "si": "Historikere diskuterer fortsatt hvorfor riket falt. Men hvordan det skjedde, kan vi følge steg for steg."
+                }
+            ]
+        },
+        {
+            "id": "huner",
+            "kapittel": "Folkevandringene",
+            "visual": {
+                "type": "VestromKart",
+                "props": {
+                    "modus": "huner"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Historien begynner langt øst, rundt år 370."
+                },
+                {
+                    "si": "Der kommer hunerne ridende fra steppene, de store slettene i øst. Hunerne var et fryktet krigerfolk på hest."
+                },
+                {
+                    "si": "De bryter inn i Europa, og det setter i gang en kjedereaksjon."
+                },
+                {
+                    "si": "Germanske folk drar vestover og sørover, mot Romerriket. Noen vil erobre nytt land. Andre vil bare komme seg i trygghet."
+                },
+                {
+                    "si": "Det ble en av årsakene til folkevandringene, da hele folk flyttet på seg. Og romerne klarer ikke lenger å holde dem ute."
+                }
+            ]
+        },
+        {
+            "id": "alarik",
+            "visual": {
+                "type": "VestromKart",
+                "props": {
+                    "modus": "alarik"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå er vi tilbake ved visigoterne og kong Alarik."
+                },
+                {
+                    "si": "I år 410 invaderer de Italia og tar Roma. I tre dager plyndrer de byen."
+                },
+                {
+                    "si": "Sjokket går gjennom hele den kjente verden."
+                },
+                {
+                    "si": "Langt borte, i Betlehem, sitter kirkefaderen Hieronymus. En kirkefar er en viktig kristen lærer og forfatter."
+                },
+                {
+                    "si": "Han skal diktere et brev, altså si det høyt mens en annen skriver. Men han gråter så mye at han nesten ikke klarer det."
+                },
+                {
+                    "si": "I brevet står det: Byen som hadde tatt hele verden, ble selv tatt."
+                }
+            ]
+        },
+        {
+            "id": "attila",
+            "kapittel": "Guds svøpe",
+            "visual": {
+                "type": "VestromKart",
+                "props": {
+                    "modus": "attila"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men det verste var i vente. På midten av 400-tallet samler hunerkongen Attila en enorm hær."
+                },
+                {
+                    "si": "Kristne kalte ham Guds svøpe. En svøpe er en pisk, og de tror Attila er sendt for å straffe dem for syndene deres."
+                },
+                {
+                    "si": "Attila herjer først i Østromerriket. Så vender han blikket mot vest."
+                },
+                {
+                    "si": "I år 451 blir hunerne stanset i et slag i dagens Frankrike. Det kalles slaget på De katalauniske marker."
+                },
+                {
+                    "si": "Den romerske generalen Aëtius har slått seg sammen med vestgoterne, Romas gamle fiender. Vestgoter er et annet navn på visigoter."
+                },
+                {
+                    "si": "Året etter herjer Attila i Nord-Italia og nærmer seg Roma. Men så snur han plutselig og drar nordover igjen."
+                }
+            ]
+        },
+        {
+            "id": "snur",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvorfor snudde Attila?",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Et møte med paven",
+                            "tekst": "den gamle fortellingen",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "En syk og sulten hær",
+                            "tekst": "det nyere historikere peker på",
+                            "fraBeat": 1
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvorfor angrep han ikke Roma? Den gamle fortellingen sier at det skjedde etter et møte med pave Leo den første."
+                },
+                {
+                    "si": "Nyere historikere peker heller på at hæren slet med sykdom og for lite mat. Var det et mirakel, eller var hæren bare syk og sulten?"
+                }
+            ]
+        },
+        {
+            "id": "vandaler",
+            "lyd": "hav",
+            "kapittel": "Vandalene",
+            "visual": {
+                "type": "VestromKart",
+                "props": {
+                    "modus": "vandaler"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mens Roma er opptatt med hunerne, sniker et annet folk seg inn bakveien: vandalene."
+                },
+                {
+                    "si": "I 428 eller 429 setter de over Gibraltarstredet, ledet av Geiserik."
+                },
+                {
+                    "si": "De tar de romerske provinsene, altså områdene Roma styrte, i Nord-Afrika fra Marokko til det vestlige Libya. De erobrer også storbyen Kartago."
+                },
+                {
+                    "si": "Det er en katastrofe for Roma. Provinsene her betalte mye av skatten sin i korn."
+                },
+                {
+                    "si": "Nå mister keiseren i vest både korn og penger."
+                },
+                {
+                    "si": "I 455 tar vandalene Sicilia, Sardinia, Korsika og Balearene. Samme år kommer de sjøveien til Roma og plyndrer byen."
+                }
+            ]
+        },
+        {
+            "id": "tempel",
+            "lyd": "vind",
+            "kapittel": "Plyndringen i 455",
+            "visual": {
+                "type": "VestromRoma",
+                "props": {
+                    "modus": "tempel"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Denne gangen blir det ingen kamp. Vandalene tømmer byen, grundig og systematisk."
+                },
+                {
+                    "si": "Prokopios, en historiker fra Østromerriket, forteller om taket på Jupiter-tempelet. Det var av den fineste bronsen, dekket av så tykt gull at det skinte."
+                },
+                {
+                    "si": "Han forteller at vandalene rev av halve taket."
+                },
+                {
+                    "si": "Gullet og keiserens skatter blir lastet i skip og fraktet til Kartago."
+                },
+                {
+                    "si": "Ordet vandalisme, altså å ødelegge ting med vilje, kommer nettopp fra det vandalene gjorde i Roma."
+                }
+            ]
+        },
+        {
+            "id": "folketall",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1500,
+                            "farget": 1500,
+                            "farge": "#b45309",
+                            "tittel": "Roma på det meste: rundt 1,5 millioner",
+                            "fargeEtikett": "1000 innbyggere per prikk",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1500,
+                            "farget": 50,
+                            "farge": "#b45309",
+                            "restFarge": "#e2e8f0",
+                            "tittel": "Sank i hundreåret etter: omkring 50 000",
+                            "fargeEtikett": "innbyggere igjen",
+                            "restEtikett": "ikke lenger der",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hvor mange bodde i Roma? På det meste kan byen ha hatt rundt 1,5 millioner innbyggere. Hver prikk her er tusen mennesker.",
+                    "uttale": "Hvor mange bodde i Roma? På det meste kan byen ha hatt rundt en og en halv million innbyggere. Hver prikk her er tusen mennesker."
+                },
+                {
+                    "si": "I løpet av hundreåret etter vandalene sank tallet til omkring 50 000. Senere ble det enda færre."
+                }
+            ]
+        },
+        {
+            "id": "ruiner",
+            "lyd": "vind",
+            "visual": {
+                "type": "VestromRoma",
+                "props": {
+                    "modus": "ruiner"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Forum Romanum, torget som hadde vært selve hjertet i Romerriket, forfalt."
+                },
+                {
+                    "si": "Etter hvert ble det et sted der kuer beitet mellom ruinene."
+                }
+            ]
+        },
+        {
+            "id": "keiser",
+            "lyd": "rom",
+            "kapittel": "Den siste keiseren",
+            "visual": {
+                "type": "VestromTid",
+                "props": {
+                    "modus": "keiser"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Slutten kom ikke med et stort smell, men med et pennestrøk."
+                },
+                {
+                    "si": "I år 476 blir den siste keiseren i vest, Romulus Augustulus, avsatt. Germaneren Odovakar tar makten."
+                },
+                {
+                    "si": "Keiseren er fortsatt bare et barn. Nettopp derfor blir han spart."
+                },
+                {
+                    "si": "Odovakar gir ham en pensjon, altså penger å leve av. Så sender han ham til slektningene hans i Campania i Sør-Italia."
+                }
+            ]
+        },
+        {
+            "id": "navnet",
+            "visual": {
+                "type": "VestromTid",
+                "props": {
+                    "modus": "navn"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Navnet til den siste keiseren er en ironi fra historien, altså noe som passer nesten for godt."
+                },
+                {
+                    "si": "Ifølge sagnet het mannen som grunnla Roma, Romulus."
+                },
+                {
+                    "si": "Augustus het mannen som grunnla keiserdømmet."
+                },
+                {
+                    "si": "Nå bar den aller siste keiseren begge navnene. Sirkelen var sluttet."
+                },
+                {
+                    "si": "Odovakar utnevner ingen ny keiser i vest. Han kaller seg konge. Vestromerriket finnes ikke lenger."
+                }
+            ]
+        },
+        {
+            "id": "ost",
+            "lyd": "stille",
+            "kapittel": "Levde Roma videre?",
+            "visual": {
+                "type": "VestromTid",
+                "props": {
+                    "modus": "ost"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men falt hele Romerriket i 476?"
+                },
+                {
+                    "si": "Nei. Østromerriket, som også kalles Bysants, levde videre i nesten 1000 år til."
+                },
+                {
+                    "si": "Det falt først i 1453, da tyrkerne tok byen Konstantinopel."
+                },
+                {
+                    "si": "Så på en måte falt ikke Romerriket før på slutten av middelalderen."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Ikke på én natt.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Svakt innenfra, angrepet utenfra.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Til slutt et pennestrøk.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Merker vi det før det er for sent?",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Romerriket i vest falt ikke på én natt. Det tok rundt hundre år."
+                },
+                {
+                    "si": "Det startet med dårlig økonomi og korrupsjon innenfra. Det endte med invasjoner utenfra."
+                },
+                {
+                    "si": "Hunerne satte folk i bevegelse, goter og vandaler plyndret Roma, og til slutt tok en germaner makten med et pennestrøk."
+                },
+                {
+                    "si": "Kan et sterkt samfunn falle så sakte at folk ikke merker det før det er for sent? Hva tror du?"
+                }
+            ]
+        }
+    ]
+}
