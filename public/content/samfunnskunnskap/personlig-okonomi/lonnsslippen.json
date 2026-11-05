@@ -1,0 +1,293 @@
+{
+    "id": "lonnsslippen",
+    "title": "Lønnsslippen: Hvor blir pengene av?",
+    "layout": "rich",
+    "year": "2026",
+    "category": "Personlig økonomi",
+    "readTime": "8 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Bruttolønn er hele lønnen. Nettolønn er det som er igjen etter trekk og kommer inn på kontoen.",
+        "Med frikort betaler du ikke skatt hvis du tjener 100 000 kroner eller mindre i året (2026). Ligger frikortbeløpet på feil jobb, trekkes 50 prosent.",
+        "Skatt som er trukket for mye, får du igjen etter skatteoppgjøret. Feriepenger tjener du opp i år og får neste år."
+    ],
+    "externalUrl": "https://snl.no/frikort_-_skatt",
+    "factChecked": "2026-11-05",
+    "tags": [
+        "personlig økonomi",
+        "lønn",
+        "skatt",
+        "frikort",
+        "feriepenger",
+        "arbeidsliv"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Ida er 15 år og har fått sommerjobb i en kiosk ved stranda. I juli jobber hun 80 timer til 165 kroner timen. Hun har regnet ut at det blir 13 200 kroner, og hun har allerede bestemt seg for hva pengene skal gå til. Så kommer lønningsdagen. Hun åpner bank-appen, og der står det 6 600 kroner. Halvparten er borte."
+        },
+        {
+            "type": "text",
+            "content": "Har kiosken lurt henne? Har hun gjort noe galt? Svaret står på et lite papir, eller en PDF, som de fleste unge aldri leser: lønnsslippen. I denne artikkelen lærer du å lese den linje for linje, og du får vite hvorfor Idas penger slett ikke er borte."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Ung jente ser forvirret på bank-app i kiosk",
+            "caption": "Lønningsdag: tallet på kontoen er ikke alltid det du regnet med."
+        },
+        {
+            "type": "header",
+            "text": "Hva er en lønnsslipp?"
+        },
+        {
+            "type": "text",
+            "content": "En lønnsslipp er en oversikt som viser hvordan lønnen din er regnet ut. Arbeidsgiveren din skal gi deg en lønnsslipp hver gang du får lønn. Den skal vise lønnen, skattetrekket og andre ting som er trukket fra (Arbeidstilsynet, u.å.). Lønnen skal som hovedregel settes inn på kontoen din, og det er vanlig å få lønn én gang i måneden. Når du får lønn, skal stå i arbeidsavtalen din (Arbeidstilsynet, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Lønnsslippen er altså kvitteringen din. Den viser hva du har tjent, hva som er tatt fra, og hva som er igjen. Hvis du ikke får lønnsslipp, skal du si fra til arbeidsgiveren. Du kan lese mer om hvilke regler som gjelder på jobben i artikkelen om [arbeidsrett](/samfunnskunnskap/arbeidsliv/arbeidsrett)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Ord du må kunne",
+                "content": "Bruttolønn: hele lønnen før noe er trukket fra. Nettolønn: det som er igjen og kommer inn på kontoen. Skattetrekk: penger arbeidsgiveren holder igjen og sender til staten for deg. Frikort: et skattekort som sier at du ikke skal betale skatt så lenge du tjener lite nok. Skattekort: en beskjed fra Skatteetaten til arbeidsgiveren om hvor mye skatt som skal trekkes. Skatteoppgjør: oppgjøret året etter, der staten regner ut om du har betalt for mye eller for lite skatt."
+            }
+        },
+        {
+            "type": "header",
+            "text": "Brutto og netto: to tall for samme lønn"
+        },
+        {
+            "type": "text",
+            "content": "Det viktigste du må forstå på en lønnsslipp, er forskjellen på brutto og netto. Bruttolønn er hele lønnen du har avtalt med arbeidsgiveren. For Ida er det 80 timer ganger 165 kroner, altså 13 200 kroner. Nettolønn er det som er igjen etter at alle trekk er tatt bort. Det er nettolønnen som kommer inn på kontoen."
+        },
+        {
+            "type": "text",
+            "content": "Tenk på det som en pizza. Bruttolønnen er hele pizzaen. Før du får den, tar staten kanskje noen stykker. Nettolønnen er de stykkene som havner på tallerkenen din. Regnestykket er alltid det samme: brutto minus trekk er netto."
+        },
+        {
+            "type": "text",
+            "content": "Det største trekket er som regel skatt. Arbeidsgiveren betaler ikke skatten selv. De holder igjen en del av lønnen din og sender den videre til staten. Hvor mye de skal holde igjen, står ikke i arbeidsavtalen. Det står på skattekortet ditt."
+        },
+        {
+            "type": "component",
+            "name": "LonnsslippLeser",
+            "props": {}
+        },
+        {
+            "type": "header",
+            "text": "Frikortet: skattefritt opp til 100 000 kroner"
+        },
+        {
+            "type": "text",
+            "content": "De fleste unge med en deltidsjobb eller sommerjobb tjener ikke så mye at de skal betale skatt. Tjener du 100 000 kroner eller mindre i løpet av året, skal du ikke betale skatt (Skatteetaten, u.å.-a). Alle som er 13 år eller eldre, får et frikort automatisk. Du trenger ikke sende det til arbeidsgiveren. Det er arbeidsgiveren som henter det (Skatteetaten, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "Grensen var 100 000 kroner både i 2025 og 2026. I 2024 var den 70 000 kroner (Nyhus, 2026). Grensen kan altså endre seg fra år til år, så sjekk den hos Skatteetaten når du skal ta jobb. Husk at feriepengene dine også teller med når du regner ut om du er under grensen (Nyhus, 2026). Ifølge Skatteetaten brukte over 300 000 personer frikort i 2025 (Nyhus, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Men frikortet har en felle. Hvis du har frikort og tjener mer enn 100 000 kroner, trekker arbeidsgiveren 50 prosent skatt av alt du tjener over grensen (Nyhus, 2026). Forventer du å tjene mer enn grensen, bør du bestille et vanlig skattekort i stedet."
+        },
+        {
+            "type": "header",
+            "text": "Hva skjedde med Ida?"
+        },
+        {
+            "type": "text",
+            "content": "Ida har to jobber. Om våren jobbet hun noen timer i uka i en klesbutikk. Da gikk hun inn hos Skatteetaten og la hele frikortbeløpet på 100 000 kroner på klesbutikken. Hun tenkte ikke på at hun kanskje skulle få en sommerjobb også."
+        },
+        {
+            "type": "text",
+            "content": "Du kan nemlig dele frikortet mellom flere arbeidsgivere. Hvis du får mer i lønn fra én arbeidsgiver enn det beløpet du har lagt på den, må arbeidsgiveren trekke 50 prosent skatt. Det gjelder selv om du til sammen tjener under 100 000 kroner i året (Skatteetaten, u.å.-a). Kiosken hadde fått null kroner av frikortet. Derfor trakk de halvparten av Idas lønn."
+        },
+        {
+            "type": "text",
+            "content": "Kiosken gjorde ingenting galt. De fulgte beskjeden på skattekortet. Og Ida har heller ikke mistet pengene. Hun kan logge inn hos Skatteetaten og flytte noe av frikortbeløpet fra klesbutikken til kiosken. Du kan endre fordelingen flere ganger i året, for eksempel når du får en ny jobb, men du kan ikke legge mindre på en arbeidsgiver enn det du allerede har tjent der (Skatteetaten, u.å.-a)."
+        },
+        {
+            "type": "text",
+            "content": "De 6 600 kronene som allerede er trukket, får Ida igjen. Er det trukket for mye skatt, får du pengene tilbake året etter, når skatteoppgjøret er klart (Nyhus, 2026). Skatteoppgjøret er statens måte å rette opp feil på: der regner de ut hva du egentlig skulle betalt, og sammenligner med det som er trukket."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Tenåring flytter frikortbeløp på mobilen ved kjøkkenbordet",
+            "caption": "Frikortet kan deles mellom flere jobber. Du kan endre fordelingen selv."
+        },
+        {
+            "type": "header",
+            "text": "Feriepenger: lønn du får neste år"
+        },
+        {
+            "type": "text",
+            "content": "Nederst på mange lønnsslipper står det noe om feriepenger. Det er ikke penger du får nå. Feriepenger er penger du tjener opp mens du jobber i år, og som du får utbetalt året etter. Det er de som gjør at folk har penger når de tar ferie fra jobben."
+        },
+        {
+            "type": "text",
+            "content": "Etter ferieloven får de fleste minst 10,2 prosent av lønnen sin i feriepenger. Har du fem ukers ferie gjennom en tariffavtale, er satsen 12 prosent (Nyhus, 2025). En tariffavtale er en avtale om lønn og arbeidsvilkår som [fagforeningene](/samfunnskunnskap/arbeidsliv/fagforeninger) og arbeidsgiverne har forhandlet fram. For Ida betyr 10,2 prosent av 13 200 kroner at hun har tjent opp 1 346 kroner i feriepenger fra kiosken."
+        },
+        {
+            "type": "text",
+            "content": "Feriepengene blir vanligvis utbetalt i juni, på siste vanlige lønningsdag før ferien. Når feriepengene blir utbetalt året etter at du tjente dem opp, trekkes det ikke skatt av dem da (Nyhus, 2025). Derfor kan det komme mer penger enn vanlig inn på kontoen i juni. Tjener du dem opp og får dem utbetalt i samme år, for eksempel fordi du slutter i jobben, blir det trukket skatt."
+        },
+        {
+            "type": "header",
+            "text": "Når du tjener mer: skattekort og trygdeavgift"
+        },
+        {
+            "type": "text",
+            "content": "Om noen år tjener du kanskje mer enn frikortgrensen. Da trenger du et skattekort. Skattekortet forteller arbeidsgiveren hvor mye skatt de skal trekke av lønnen din på forskudd (Nyhus, 2026). Hva skattepengene går til, hvordan skattesystemet er bygd opp, og hvorfor de som tjener mest betaler en større del, kan du lese om i artikkelen om [skatt](/samfunnskunnskap/okonomi/skatt)."
+        },
+        {
+            "type": "text",
+            "content": "En del av trekket heter trygdeavgift. Trygdeavgiften blir krevd inn sammen med skatten, og den er med på å betale for folketrygden (Store norske leksikon, 2024). Folketrygden er ordningen som betaler sykepenger når du er syk, dagpenger hvis du mister jobben, og alderspensjon når du blir gammel (Mæland mfl., 2025). I 2026 er trygdeavgiften 7,6 prosent av lønnen for dem som er mellom 17 og 69 år, og 5,1 prosent for dem som er under 17. Men tjener du under 99 650 kroner i året, slipper du trygdeavgift helt (Skatteetaten, u.å.-b)."
+        },
+        {
+            "type": "text",
+            "content": "Trygdeavgiften er en av grunnene til at Norge har en [velferdsstat](/historie/norge-i-moderne-tid/velferdsstaten). Når du ser trekket på lønnsslippen, er det lett å tenke at pengene bare forsvinner. Men de samme pengene betaler sykepengene dine den dagen du blir syk."
+        },
+        {
+            "type": "header",
+            "text": "Slik leser du lønnsslippen din"
+        },
+        {
+            "type": "text",
+            "content": "Neste gang du får lønn, kan du gå gjennom lønnsslippen med disse spørsmålene:"
+        },
+        {
+            "type": "list",
+            "items": [
+                "Stemmer antall timer med det du faktisk jobbet?",
+                "Stemmer timelønnen med det som står i arbeidsavtalen?",
+                "Hvor mye er bruttolønnen, og hvor mye er trukket i skatt?",
+                "Er det trukket 50 prosent? Sjekk i så fall hvordan frikortet ditt er fordelt.",
+                "Hvor mye feriepenger har du tjent opp så langt i år?"
+            ]
+        },
+        {
+            "type": "text",
+            "content": "Ingen forventer at du skal kunne skattereglene utenat. Men den som leser lønnsslippen, oppdager feil tidlig. Ida oppdaget sin feil i juli. Hadde hun ikke sett etter, hadde hun ventet nesten et år på pengene sine uten å vite hvorfor."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Lønnsslipp på bordet med penn og kalkulator",
+            "caption": "Den som leser lønnsslippen, oppdager feilene tidlig."
+        },
+        {
+            "type": "header",
+            "text": "Oppsummering"
+        },
+        {
+            "type": "text",
+            "content": "En lønnsslipp viser veien fra bruttolønn til nettolønn. Brutto er hele lønnen. Netto er det som er igjen etter trekk. Hvor mye som trekkes, bestemmes av skattekortet ditt. De fleste unge har frikort og slipper skatt opp til 100 000 kroner, men frikortbeløpet må ligge hos riktig arbeidsgiver. Ellers trekkes det 50 prosent, og pengene kommer først tilbake etter skatteoppgjøret. Feriepengene tjener du opp i år og får neste år."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Arbeidstilsynet. (u.å.). *Lønn*. Hentet 05.11.2026 fra [arbeidstilsynet.no](https://www.arbeidstilsynet.no/arbeidsforhold/lonn/)",
+                    "Mæland, J. G., Hatland, A. & West Pedersen, A. (2025). *Folketrygden*. Store norske leksikon. Hentet 05.11.2026 fra [snl.no/folketrygden](https://snl.no/folketrygden)",
+                    "Nyhus, E. K. (2025). *Feriepenger*. Store norske leksikon. Hentet 05.11.2026 fra [snl.no/feriepenger](https://snl.no/feriepenger)",
+                    "Nyhus, E. K. (2026). *Frikort - skatt*. Store norske leksikon. Hentet 05.11.2026 fra [snl.no/frikort_-_skatt](https://snl.no/frikort_-_skatt)",
+                    "Skatteetaten. (u.å.-a). *Frikort*. Hentet 05.11.2026 fra [skatteetaten.no](https://www.skatteetaten.no/person/skatt/skattekort/frikort/)",
+                    "Skatteetaten. (u.å.-b). *Trygdeavgift: satser for 2026*. Hentet 05.11.2026 fra [skatteetaten.no](https://www.skatteetaten.no/satser/trygdeavgift/?year=2026)",
+                    "Store norske leksikon. (2024). *Trygdeavgift*. Hentet 05.11.2026 fra [snl.no/trygdeavgift](https://snl.no/trygdeavgift)"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på bruttolønn og nettolønn?",
+                    "Hva skal en lønnsslipp vise, ifølge Arbeidstilsynet?",
+                    "Hvor mye kan du tjene i 2026 før du må betale skatt hvis du har frikort?",
+                    "Hvor mange prosent feriepenger får de fleste, og når blir feriepengene vanligvis utbetalt?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor Ida fikk trukket 50 prosent skatt, selv om hun tjente under 100 000 kroner.",
+                    "Hvorfor er det lurt å lese lønnsslippen hver gang, og ikke bare se på tallet i bank-appen?",
+                    "Trygdeavgiften går til folketrygden. Forklar hvordan trekket på lønnsslippen henger sammen med sykepenger og pensjon.",
+                    "Hvorfor tror du feriepengene blir utbetalt året etter at du har tjent dem opp?"
+                ],
+                "gaaVidere": [
+                    "Lag din egen lønnsslipp for en tenkt sommerjobb. Velg timelønn og antall timer, og regn ut brutto, trekk, netto og feriepenger.",
+                    "Diskuter i klassen: Er det rettferdig at unge med lav inntekt slipper skatt, mens voksne må betale? Bruk artikkelen om skatt.",
+                    "Finn ut hva frikortgrensen er i år på skatteetaten.no. Har den endret seg siden denne artikkelen ble skrevet?"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hva er nettolønn?",
+                        "options": [
+                            "Hele lønnen før trekk",
+                            "Det som er igjen etter at skatt og andre trekk er tatt bort",
+                            "Lønnen du får på internett",
+                            "Feriepengene du får i juni"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Brutto minus trekk er netto. Det er nettolønnen som kommer inn på kontoen."
+                    },
+                    {
+                        "question": "Hvor mye kunne du tjene i 2026 med frikort uten å betale skatt?",
+                        "options": [
+                            "50 000 kroner",
+                            "70 000 kroner",
+                            "100 000 kroner",
+                            "200 000 kroner"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Grensen var 100 000 kroner i 2026. I 2024 var den 70 000 kroner."
+                    },
+                    {
+                        "question": "Ida har lagt hele frikortet på klesbutikken. Hva skjer når kiosken betaler henne lønn?",
+                        "options": [
+                            "Kiosken trekker ingen skatt",
+                            "Kiosken trekker 50 prosent skatt",
+                            "Kiosken trekker 7,6 prosent trygdeavgift",
+                            "Kiosken kan ikke betale henne lønn"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Når lønnen fra en arbeidsgiver er større enn frikortbeløpet som ligger der, må arbeidsgiveren trekke 50 prosent."
+                    },
+                    {
+                        "question": "Hva skjer med skatt som er trukket for mye?",
+                        "options": [
+                            "Den er tapt for alltid",
+                            "Du får den tilbake etter skatteoppgjøret året etter",
+                            "Arbeidsgiveren beholder den",
+                            "Den går automatisk til feriepengene"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Skatteoppgjøret regner ut hva du egentlig skulle betalt. Er det trukket for mye, får du pengene igjen."
+                    },
+                    {
+                        "question": "Hvor mange prosent feriepenger gir ferieloven minst?",
+                        "options": [
+                            "5,1 prosent",
+                            "7,6 prosent",
+                            "10,2 prosent",
+                            "25 prosent"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "De fleste får minst 10,2 prosent. Med fem ukers ferie gjennom tariffavtale er satsen 12 prosent."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}

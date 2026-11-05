@@ -5,10 +5,12 @@ import type { VisualProps } from '../../types';
 /**
  * Nansenpasset som tegning. «pass»: spørsmålet om hvem du er, konferansen med 31 land,
  * selve passet, hva det ga (og ikke ga), og landene som godtok det. «kontor»: Nansens
- * død, Nansenkontoret i Genève, sakene, frimerket og fredsprisen i 1938.
+ * død, Nansenkontoret i Genève, sakene, frimerket og fredsprisen i 1938. «veier»: de som
+ * fortsatt trengte hjelp i 1939, og Nansens metode: mat og trygghet først, så hjem, eller
+ * et nytt liv et annet sted.
  */
 
-type Modus = 'pass' | 'kontor';
+type Modus = 'pass' | 'kontor' | 'veier';
 
 const B = 1600;
 const H = 900;
@@ -18,7 +20,7 @@ const OVERSKRIFTER: Record<Modus, string[]> = {
         'Hvem er du?',
         'Genève, juli 1922: 31 land',
         'Nansenpasset',
-        'Hva passet ga',
+        'Med passet kunne du søke om',
         'Godtatt av mer enn 50 land',
     ],
     kontor: [
@@ -27,6 +29,12 @@ const OVERSKRIFTER: Record<Modus, string[]> = {
         'Rundt 800 000 saker',
         'Nansen-frimerker',
         'Nobels fredspris 1938',
+    ],
+    veier: [
+        '1939: fortsatt rundt 500 000',
+        'Først: mat og trygghet',
+        'Så: hjem, hvis det går',
+        'Ellers: et nytt liv et annet sted',
     ],
 };
 
@@ -40,8 +48,15 @@ export function NansenPasset({ beat, props }: VisualProps<{ modus: Modus }>) {
                 className="absolute inset-0 w-full h-full"
                 preserveAspectRatio="xMidYMid meet"
             >
-                {modus === 'pass' ? <Pass beat={beat} /> : <Kontor beat={beat} />}
+                {modus === 'pass' && <Pass beat={beat} />}
+                {modus === 'kontor' && <Kontor beat={beat} />}
+                {modus === 'veier' && <Veier beat={beat} />}
             </svg>
+            {modus === 'veier' && beat === 0 && (
+                <div className="absolute bottom-[8%] right-[6%]">
+                    <Teller verdi={500000} etikett="trengte fortsatt hjelp" prefiks="ca. " tone="rod" />
+                </div>
+            )}
             {modus === 'kontor' && beat === 2 && (
                 <div className="absolute bottom-[10%] right-[8%]">
                     <Teller verdi={800000} etikett="saker" tone="gronn" />
@@ -104,7 +119,6 @@ function Stempel({
     farge,
     vinkel,
     forsinkelse = 0,
-    strek = false,
 }: {
     x: number;
     y: number;
@@ -112,7 +126,6 @@ function Stempel({
     farge: string;
     vinkel: number;
     forsinkelse?: number;
-    strek?: boolean;
 }) {
     const bredde = tekst.length * 22 + 50;
     return (
@@ -137,9 +150,6 @@ function Stempel({
                 <text x={x} y={y + 13} textAnchor="middle" fontSize={38} fontWeight={900} fill={farge}>
                     {tekst}
                 </text>
-                {strek && (
-                    <line x1={x - bredde / 2 + 10} y1={y} x2={x + bredde / 2 - 10} y2={y} stroke={farge} strokeWidth={6} />
-                )}
             </g>
         </motion.g>
     );
@@ -196,11 +206,10 @@ function Pass({ beat }: { beat: number }) {
                             <Stempel
                                 x={330}
                                 y={720}
-                                tekst="Statsborgerskap"
+                                tekst="Ikke statsborgerskap"
                                 farge="#64748b"
                                 vinkel={-8}
                                 forsinkelse={1.6}
-                                strek
                             />
                         </>
                     )}
@@ -269,8 +278,21 @@ function Landrute() {
                 );
             })}
             <motion.text
+                x={1520}
+                y={420}
+                textAnchor="middle"
+                fontSize={110}
+                fontWeight={900}
+                fill="#15803d"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 3.2 }}
+            >
+                +
+            </motion.text>
+            <motion.text
                 x={1180}
-                y={680}
+                y={760}
                 textAnchor="middle"
                 fontSize={64}
                 fontWeight={900}
@@ -443,5 +465,124 @@ function Medalje() {
                 1938
             </text>
         </motion.g>
+    );
+}
+
+/** En tett, utellbar mengde: ett merke er ikke ett menneske. */
+const MENGDE = Array.from({ length: 320 }, (_, i) => {
+    const a = i * 2.39996;
+    const r = Math.sqrt(i / 320);
+    return [Math.cos(a) * r * 170, Math.sin(a) * r * 130] as const;
+});
+
+function Veier({ beat }: { beat: number }) {
+    const ved = beat >= 1;
+    const k = ved ? 0.55 : 1;
+    return (
+        <>
+            {/* Veiene fra leiren */}
+            {beat >= 2 && (
+                <motion.path
+                    d="M 900 520 C 1000 520 1000 300 1110 300"
+                    fill="none"
+                    stroke="#15803d"
+                    strokeWidth={18}
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.4 }}
+                />
+            )}
+            {beat >= 3 && (
+                <motion.path
+                    d="M 900 540 C 1000 540 1000 720 1110 720"
+                    fill="none"
+                    stroke="#1d4ed8"
+                    strokeWidth={18}
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.4 }}
+                />
+            )}
+
+            {/* Leiren: telt og mat */}
+            {ved && (
+                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
+                    <path d="M 640 600 L 760 420 L 880 600 Z" fill="#f59e0b" stroke="#92400e" strokeWidth={6} />
+                    <path d="M 740 600 L 760 520 L 780 600 Z" fill="#78350f" />
+                    <ellipse cx={600} cy={640} rx={56} ry={20} fill="#fef3c7" stroke="#92400e" strokeWidth={4} />
+                    <rect x={570} y={600} width={60} height={34} rx={14} fill="#d97706" />
+                    <text x={760} y={712} textAnchor="middle" fontSize={40} fontWeight={900} fill="#78350f">
+                        Mat og trygghet
+                    </text>
+                </motion.g>
+            )}
+
+            {/* Mengden som venter, og som så samles ved leiren */}
+            <motion.g
+                initial={false}
+                animate={{ opacity: beat >= 2 ? 0.55 : 1 }}
+                transition={{ duration: 1.2 }}
+            >
+                {MENGDE.map(([x, y], i) => (
+                    <motion.circle
+                        key={i}
+                        r={9}
+                        fill="#475569"
+                        stroke="#f1f5f9"
+                        strokeWidth={2}
+                        initial={false}
+                        animate={{ x: (ved ? 520 : 420) + x * k, y: (ved ? 460 : 500) + y * k }}
+                        transition={{ duration: 1.6, ease: 'easeInOut' }}
+                    />
+                ))}
+            </motion.g>
+            {beat === 0 && (
+                <motion.text
+                    x={420}
+                    y={720}
+                    textAnchor="middle"
+                    fontSize={36}
+                    fontWeight={800}
+                    fill="#334155"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                >
+                    Flyktninger som trengte hjelp
+                </motion.text>
+            )}
+
+            {/* Hjem */}
+            {beat >= 2 && (
+                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}>
+                    <rect x={1120} y={250} width={110} height={90} fill="#15803d" />
+                    <path d="M 1100 254 L 1175 190 L 1250 254 Z" fill="#14532d" />
+                    <rect x={1160} y={290} width={30} height={50} fill="#fef3c7" />
+                    <text x={1270} y={290} fontSize={52} fontWeight={900} fill="#14532d">
+                        Hjem
+                    </text>
+                    <text x={1270} y={334} fontSize={32} fontWeight={700} fill="#166534">
+                        hvis det er mulig
+                    </text>
+                </motion.g>
+            )}
+
+            {/* Et nytt liv et annet sted */}
+            {beat >= 3 && (
+                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}>
+                    <rect x={1120} y={670} width={110} height={90} fill="#1d4ed8" />
+                    <path d="M 1100 674 L 1175 610 L 1250 674 Z" fill="#1e3a8a" />
+                    <rect x={1160} y={710} width={30} height={50} fill="#fef3c7" />
+                    <text x={1270} y={710} fontSize={52} fontWeight={900} fill="#1e3a8a">
+                        Nytt liv
+                    </text>
+                    <text x={1270} y={754} fontSize={32} fontWeight={700} fill="#1e40af">
+                        et annet sted
+                    </text>
+                </motion.g>
+            )}
+        </>
     );
 }

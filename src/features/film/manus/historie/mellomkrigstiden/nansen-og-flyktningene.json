@@ -4,8 +4,11 @@
     "kilde": "/historie/mellomkrigstiden/nansen-og-flyktningene",
     "bilde": "/images/mellomkrigstiden/nansen-og-flyktningene-hero.webp",
     "utenforArtikkel": [
-        { "tall": 260, "begrunnelse": "Summen av de 200 voksne og 60 barna som står i artikkelen, brukt som totalen i prikkfeltet." }
+        { "tall": 260, "begrunnelse": "Summen av de 200 voksne og 60 barna som står i artikkelen. I prikkfeltet er én figur 10 mennesker." },
+        { "tall": 26, "begrunnelse": "260 mennesker delt på 10: antall figurer i prikkfeltet (20 voksne og 6 barn)." },
+        { "tall": 10, "begrunnelse": "Målestokken i prikkfeltet: én figur = 10 mennesker." }
     ],
+    "vurdering": { "dato": "2026-11-04", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "stasjonen",
@@ -38,7 +41,7 @@
             },
             "replikker": [
                 {
-                    "si": "Folk som Sergej var statsløse. Det betyr at ingen stat regnet dem som sine borgere. Uten pass var de nesten usynlige."
+                    "si": "Folk som Sergej var statsløse. Det betyr at ingen stat regnet dem som sine borgere. Uten pass var de nesten usynlige for myndighetene."
                 },
                 {
                     "si": "Mannen som fant en løsning, var en nordmann de fleste kjente fra helt andre ting: polarhelten Fridtjof Nansen."
@@ -49,11 +52,11 @@
         {
             "id": "liv",
             "kapittel": "Fra isen til diplomatiet",
-            "visual": { "type": "NansenKart", "props": { "modus": "liv" } },
+            "visual": { "type": "NansenLivslinje", "props": {} },
             "replikker": [
                 { "si": "Fridtjof Nansen ble født i 1861, like utenfor Kristiania, som i dag heter Oslo." },
                 {
-                    "si": "I 1888 gikk han over innlandsisen på Grønland på ski. Senere ble han verdenskjent med polarskuta Fram."
+                    "si": "I 1888 ble han verdenskjent da han gikk over innlandsisen på Grønland på ski. Senere kom polarskuta Fram."
                 },
                 { "si": "Men i 1914 brøt første verdenskrig ut, og nesten all utforskning stoppet." },
                 {
@@ -110,7 +113,7 @@
                 },
                 { "si": "Det ble kalt Nansenpasset." },
                 {
-                    "si": "Passet ga ikke statsborgerskap, altså at et land regner deg som sin borger. Men med passet kunne de søke om å reise inn i et land, bo der og arbeide der."
+                    "si": "Passet ga ikke statsborgerskap, altså at et land regner deg som sin borger. Men med passet kunne de søke om å reise inn, søke om lov til å bo og søke om arbeid."
                 },
                 {
                     "si": "Etter hvert godtok mer enn 50 land Nansenpasset. Nå fantes det et felles papir for mennesker som ikke hørte til noe sted."
@@ -125,7 +128,7 @@
                 { "si": "Tenk på Sergej igjen. Nå har han et Nansenpass i lomma." },
                 { "si": "Ved grensen viser passet hvem han er. Nå kan han søke om å reise inn." },
                 { "si": "Nå kan han søke om lov til å bo i landet. Og han kan søke om arbeid." },
-                { "si": "Grensen, politiet og fabrikken er de samme som før. Men svaret er et helt annet." }
+                { "si": "Lukene er de samme som før. Men svaret er et helt annet." }
             ]
         },
         {
@@ -143,7 +146,8 @@
                             "farget": 35,
                             "farge": "#b45309",
                             "tittel": "Russland 1921: én figur = én million",
-                            "fargeEtikett": "i fare for å sulte"
+                            "fargeEtikett": "35 millioner i fare for å sulte",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 1,
@@ -151,17 +155,17 @@
                             "farget": 35,
                             "farge": "#7f1d1d",
                             "tittel": "Mange land i Vesten sa nei",
-                            "fargeEtikett": "i fare, uten hjelp"
+                            "fargeEtikett": "35 millioner i fare for å sulte",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 2,
                             "total": 35,
-                            "farget": 7,
-                            "farge": "#0d9488",
-                            "restFarge": "#94a3b8",
-                            "tittel": "Nansen fikk fram mat",
-                            "fargeEtikett": "reddet, laveste anslag",
-                            "restEtikett": "i fare"
+                            "farget": 35,
+                            "farge": "#d97706",
+                            "tittel": "Nansen samlet inn mat",
+                            "fargeEtikett": "35 millioner i fare for å sulte",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 3,
@@ -169,9 +173,10 @@
                             "farget": 22,
                             "farge": "#0d9488",
                             "restFarge": "#94a3b8",
-                            "tittel": "Anslagene: fra 7 til 22 millioner reddet",
+                            "tittel": "Skisse: anslagene går fra 7 til 22 millioner reddet",
                             "fargeEtikett": "reddet, høyeste anslag",
-                            "restEtikett": "i fare"
+                            "restEtikett": "i fare for å sulte",
+                            "visTall": false
                         }
                     ]
                 }
@@ -181,7 +186,7 @@
                     "si": "Mens Nansen jobbet med flyktningene, kom en ny katastrofe. Sommeren 1921 var det hungersnød i Russland. Rundt 35 millioner mennesker sto i fare for å sulte."
                 },
                 {
-                    "si": "Mange land i Vesten ville ikke hjelpe. De stolte ikke på de nye kommunistiske lederne som hadde tatt makten etter revolusjonen."
+                    "si": "Mange land i Vesten ville ikke hjelpe. De stolte ikke på den nye kommunistiske regjeringen i Russland."
                 },
                 { "si": "Nansen ga seg ikke. Han samlet inn mat og fikk den fram til dem som trengte den." },
                 {
@@ -232,7 +237,7 @@
                             "tekst": "en gave fra Christian Erichsen",
                             "fraBeat": 1
                         },
-                        { "ikon": "hus", "tittel": "Alt til nødhjelp", "tekst": "mest i Ukraina", "fraBeat": 2 }
+                        { "ikon": "hus", "tittel": "Brukt på nødhjelp", "tekst": "mest i Ukraina", "fraBeat": 2 }
                     ]
                 }
             },
@@ -241,7 +246,7 @@
                 {
                     "si": "Forretningsmannen Christian Erichsen ga ham like mye penger som prisen var verdt, 122 000 kroner."
                 },
-                { "si": "Nansen beholdt ikke pengene. Han brukte dem på nødhjelp, mest i Ukraina." }
+                { "si": "Han brukte pengene på nødhjelp, mest i Ukraina." }
             ]
         },
         {
@@ -273,39 +278,41 @@
                     "steg": [
                         {
                             "fraBeat": 0,
-                            "total": 260,
-                            "farget": 0,
-                            "restFarge": "#94a3b8",
-                            "tittel": "Nansenhjelpen, 1937: disse fikk hjelp",
-                            "restEtikett": "fikk hjelp til Norge"
+                            "total": 26,
+                            "farget": 26,
+                            "farge": "#94a3b8",
+                            "tittel": "Nansenhjelpen, startet 1937",
+                            "fargeEtikett": "én figur = 10 mennesker",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 1,
-                            "total": 260,
-                            "farget": 0,
-                            "restFarge": "#475569",
-                            "tittel": "De hadde mistet statsborgerskapet",
-                            "restEtikett": "uten statsborgerskap"
+                            "total": 26,
+                            "farget": 26,
+                            "farge": "#475569",
+                            "tittel": "For dem som hadde mistet statsborgerskapet",
+                            "fargeEtikett": "én figur = 10 mennesker",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 2,
-                            "total": 260,
-                            "farget": 200,
+                            "total": 20,
+                            "farget": 20,
                             "farge": "#0d9488",
-                            "restFarge": "#94a3b8",
-                            "tittel": "200 voksne fikk komme til Norge",
-                            "fargeEtikett": "voksne",
-                            "restEtikett": "venter"
+                            "tittel": "200 voksne fikk lov til å reise inn i Norge",
+                            "fargeEtikett": "voksne, én figur = 10",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 3,
-                            "total": 260,
-                            "farget": 60,
+                            "total": 26,
+                            "farget": 6,
                             "farge": "#d97706",
                             "restFarge": "#0d9488",
-                            "tittel": "Og 60 barn",
+                            "tittel": "Og 60 barn fikk lov til å komme",
                             "fargeEtikett": "barn",
-                            "restEtikett": "voksne"
+                            "restEtikett": "voksne",
+                            "visTall": false
                         }
                     ]
                 }
@@ -316,29 +323,13 @@
                 {
                     "si": "Tyskland tok over Østerrike og Tsjekkoslovakia. Da skaffet Nansenhjelpen 200 voksne flyktninger lov til å reise inn i Norge."
                 },
-                { "si": "I tillegg fikk 60 barn komme." }
+                { "si": "I tillegg fikk 60 barn lov til å komme." }
             ]
         },
         {
             "id": "metodene",
             "kapittel": "Hva betyr det?",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "Det Nansen etterlot",
-                    "punkter": [
-                        { "ikon": "hus", "tittel": "1939: 500 000", "tekst": "trengte fortsatt hjelp", "fraBeat": 0 },
-                        { "ikon": "hus", "tittel": "Mat og trygghet", "tekst": "først av alt", "fraBeat": 1 },
-                        { "ikon": "skip", "tittel": "Hjem igjen", "tekst": "hvis det er mulig", "fraBeat": 2 },
-                        {
-                            "ikon": "avtale",
-                            "tittel": "Et nytt liv",
-                            "tekst": "et annet sted, hvis hjem ikke går",
-                            "fraBeat": 3
-                        }
-                    ]
-                }
-            },
+            "visual": { "type": "NansenPasset", "props": { "modus": "veier" } },
             "replikker": [
                 {
                     "si": "Nansen fikk ikke løst alt. Da Nansenkontoret ble lagt ned i 1939, trengte fortsatt rundt 500 000 flyktninger hjelp."

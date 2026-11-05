@@ -1,0 +1,201 @@
+{
+  "id": "hypotesen-norden-vs-frankrike",
+  "tittel": "Norden mot Frankerriket: Var vikingtiden selvforsvar?",
+  "kilde": "/historie/vikingtiden/hypotesen-norden-vs-frankrike",
+  "bilde": "/images/lessons/vikingtiden/hypotesen.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-05", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+  "scener": [
+    {
+      "id": "lindisfarne",
+      "kapittel": "Lindisfarne",
+      "lyd": "hav",
+      "visual": { "type": "HypotesenLandskap", "props": { "modus": "lindisfarne" } },
+      "replikker": [
+        { "si": "Det er den åttende juni 793. Vi er på den hellige øya Lindisfarne, der munkene har et kloster." },
+        { "si": "Ute på havet dukker det opp skip. De er lange og smale, og de seiler rett mot land." },
+        { "si": "Skipene glir opp i fjæresteinene. Munkene løper for livet." },
+        { "si": "Mange historiebøker sier at vikingtiden starter her. Men hvorfor skjedde det akkurat da?" }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "NORDEN MOT FRANKERRIKET",
+          "undertittel": "Var vikingtiden et selvforsvar?",
+          "bilde": "/images/lessons/vikingtiden/hypotesen.webp",
+          "sporsmal": { "tekst": "Ran eller selvforsvar?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Var det bare fordi nordboerne plutselig ville ha gull og slaver? Eller lå det noe mer politisk bak?" },
+        { "si": "I denne filmen skal vi teste en hypotese. En hypotese er en mulig forklaring, som vi ikke vet sikkert om stemmer." }
+      ]
+    },
+    {
+      "id": "gamle",
+      "kapittel": "To forklaringer",
+      "lyd": "stille",
+      "visual": { "type": "HypotesenVekt", "props": { "modus": "gamle" } },
+      "replikker": [
+        { "si": "Historikere har lenge forklart vikingtiden med tre ting." },
+        { "si": "Den første er befolkningsvekst. Det ble flere folk i Norden." },
+        { "si": "Den andre er bedre skip. Vikingskipene stakk så grunt at de ikke trengte havner. Derfor var de farlige langs kyster og elver." },
+        { "si": "Den tredje er nye handelsveier." }
+      ]
+    },
+    {
+      "id": "ny",
+      "visual": { "type": "HypotesenVekt", "props": { "modus": "ny" } },
+      "replikker": [
+        { "si": "Men en nyere hypotese snur bildet på hodet. Den peker på en kristen stormakt i sør." },
+        { "si": "Kanskje var vikingangrepene preventiv krig. Det betyr at du angriper først, fordi du tror fienden snart vil angripe deg." },
+        { "si": "Da blir vikingtiden et desperat selvforsvar. I så fall prøvde nordboerne å redde hele sin egen måte å leve og tro på." },
+        { "si": "Denne tanken er blant annet kjernen i en bok om vikingene, skrevet av Robert Ferguson." }
+      ]
+    },
+    {
+      "id": "karl",
+      "kapittel": "Karl den Store",
+      "visual": { "type": "HypotesenKart", "props": { "modus": "karl" } },
+      "replikker": [
+        { "si": "For å forstå vikingene, må vi se sør for Danmark." },
+        { "si": "På slutten av 700-tallet hadde Karl den Store samlet store deler av Europa i ett rike. Det het Frankerriket." },
+        { "si": "Karl ville ha et kristent rike, styrt etter Guds lover. Folk som trodde på andre guder, ville han ikke tåle." },
+        { "si": "Rett sør for Danmark bodde sakserne, i det som i dag er Nord-Tyskland. De nektet å bli kristne." }
+      ]
+    },
+    {
+      "id": "sakserkrigen",
+      "visual": { "type": "HypotesenTidslinje", "props": { "modus": "sakserne" } },
+      "replikker": [
+        { "si": "I 772 angrep Karl sakserne." },
+        { "si": "Det ble 33 år med stadige kamper. Først da var Sachsen en del av Frankerriket." },
+        { "si": "Underveis ble sakserne tvangskristnet. Det betyr at de måtte bli kristne, enten de ville eller ikke." },
+        { "si": "Mange ble også deportert. Det betyr at de ble tvunget bort fra hjemmene sine." }
+      ]
+    },
+    {
+      "id": "verden",
+      "lyd": "rom",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "VERDEN, 782",
+          "undertittel": "Massakren på saksiske fanger",
+          "tall": [
+            { "verdi": 4500, "etikett": "fanger drept, ifølge krønikene", "fraBeat": 1, "tone": "rod", "omtrent": false }
+          ],
+          "sporsmal": { "tekst": "Overdrevet, eller fullt mulig?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Det mørkeste øyeblikket kom i 782. Det kalles massakren i Verden. Verden er navnet på et sted i Sachsen." },
+        { "si": "Krønikene til frankerne, altså deres egne historiebøker, forteller at 4500 saksiske fanger ble halshugget." },
+        { "si": "Noen historikere mener tallet er overdrevet. Men mange regner det som fullt mulig." }
+      ]
+    },
+    {
+      "id": "hovding",
+      "kapittel": "Frykt i nord",
+      "lyd": "vind",
+      "visual": { "type": "HypotesenKart", "props": { "modus": "flukt" } },
+      "replikker": [
+        { "si": "Tenk deg nå at du er en dansk høvding. Du hører rykter om at naboene dine i sør blir drept for troen sin." },
+        { "si": "Flyktninger kommer over grensen. De har med seg skrekkhistorier om Hvitekrist og sverdet hans. Hvitekrist var det nordboerne kalte Jesus." },
+        { "si": "For nordboerne var dette neppe en religion om kjærlighet. Den lignet mer på en krigserklæring." }
+      ]
+    },
+    {
+      "id": "dannevirke",
+      "kapittel": "Dannevirke",
+      "visual": { "type": "HypotesenLandskap", "props": { "modus": "dannevirke" } },
+      "replikker": [
+        { "si": "Karl hadde slått sakserne. Nå truet han Danmark." },
+        { "si": "Kong Godfred av Danmark svarte med å bygge ut Dannevirke. Det var en grensevoll, en lang mur av jord." },
+        { "si": "Det var ikke et lite gjerde. Til sammen var vollene rundt 30 kilometer lange, tvers over Jylland. De skulle stoppe en hær." },
+        { "si": "Men deler av vollen er eldre enn Godfred. Årringene i treverket viser at den nordre vollen er fra år 737." }
+      ]
+    },
+    {
+      "id": "ejderen",
+      "lyd": "stille",
+      "visual": { "type": "HypotesenKart", "props": { "modus": "ejderen" } },
+      "replikker": [
+        { "si": "Kampen mellom Danmark og Frankerriket endte uavgjort." },
+        { "si": "I 811 ble de enige om en avtale. Elva Ejderen skulle være grensen mellom Frankerriket og Danmark." }
+      ]
+    },
+    {
+      "id": "angrep",
+      "kapittel": "Angrep som forsvar?",
+      "visual": { "type": "HypotesenKart", "props": { "modus": "tokt" } },
+      "replikker": [
+        { "si": "Ifølge hypotesen var angrepet på Lindisfarne ikke et tilfeldig ran. Det var et lite stikk rett mot hjertet av kristendommen." },
+        { "si": "Klostrene var fulle av rikdom, og ingen voktet dem. Men de var også sentre for den kristne troen." },
+        { "si": "Ved å angripe dem ville vikingene sende en tydelig beskjed: Guden deres kan ikke beskytte dere." },
+        { "si": "Vikingene seilte opp elva Seinen og truet Paris. De herjet også kysten av England." }
+      ]
+    },
+    {
+      "id": "gerilja",
+      "lyd": "vind",
+      "visual": { "type": "HypotesenLandskap", "props": { "modus": "elv" } },
+      "replikker": [
+        { "si": "Hvis hypotesen stemmer, måtte de kristne kongene bruke kreftene sine på forsvar hjemme, i stedet for å marsjere nordover." },
+        { "si": "Slik hypotesen ser det, var det en klassisk geriljakrig. Det betyr små, raske angrep i stedet for store slag." },
+        { "si": "Vikingene kunne slå til hvor som helst, når som helst." },
+        { "si": "Og de var borte før den tunge frankiske hæren rakk å komme. Den besto av ryttere i rustning." }
+      ]
+    },
+    {
+      "id": "organisert",
+      "kapittel": "Var det organisert?",
+      "lyd": "hav",
+      "visual": { "type": "HypotesenLandskap", "props": { "modus": "kanhave" } },
+      "replikker": [
+        { "si": "Lenge har vi sett på vikingene som små grupper, der hver gjorde som den ville." },
+        { "si": "Men store flåter tyder på at noen ledet dem. I 865 kom den store hedenske hæren til East Anglia i England. Målet var å erobre, ikke bare å plyndre." },
+        { "si": "Se også på øya Samsø i Danmark. Her gravde folk Kanhave-kanalen. Den er datert til år 726, lenge før Lindisfarne." },
+        { "si": "Fra Samsø kunne man kontrollere seilasen mellom Jylland og Sjælland. Det viser at noen kunne organisere store prosjekter." },
+        { "si": "Et slikt anlegg krever en konge eller en annen sterk makt. Hypotesen mener at vikingtiden kan ha vært et militært svar fra en slags stat, på en trussel fra sør." }
+      ]
+    },
+    {
+      "id": "uenige",
+      "kapittel": "Hypotese, ikke fasit",
+      "lyd": "stille",
+      "visual": { "type": "HypotesenVekt", "props": { "modus": "uenige" } },
+      "replikker": [
+        { "si": "Men husk at dette er en hypotese, ikke en fasit. Mange historikere legger vekten et annet sted." },
+        { "si": "Store norske leksikon sier at de viktigste grunnene var befolkningsvekst og nye handelsveier. Og at resten av Europa var dårlig organisert politisk." },
+        { "si": "Leksikonet setter dessuten starten på vikingtiden helt tilbake til rundt år 750." },
+        { "si": "Hva veier tyngst for deg?" }
+      ]
+    },
+    {
+      "id": "slutt",
+      "kapittel": "Hva betyr det?",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Hvis hypotesen stemmer:", "fraBeat": 0 },
+            { "tekst": "vikingene tenkte politisk og kjempet for å overleve.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Spredt makt i nord.", "fraBeat": 1 },
+            { "tekst": "Ett sterkt rike i sør.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Nordboerne tapte til slutt.", "fraBeat": 2 },
+            { "tekst": "Men de forandret Europa for alltid.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Hvis hypotesen stemmer, var vikingene ikke bare primitive barbarer. De tenkte politisk og kjempet for å overleve." },
+        { "si": "Da blir vikingtiden et sammenstøt mellom to slags samfunn. Det gamle i nord, der makta var spredt. Og det nye riket i sør, styrt fra toppen." },
+        { "si": "Tapte nordboerne til slutt? Ja. Men vikingtiden varte i rundt 250 år, og nordboerne forandret Europa for alltid." }
+      ]
+    }
+  ]
+}

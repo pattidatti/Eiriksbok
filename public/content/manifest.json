@@ -2537,6 +2537,30 @@
           ]
         },
         {
+          "id": "personlig-okonomi",
+          "title": "Personlig økonomi: Pengene dine",
+          "description": "Fra lønnsslippen til budsjett, lån og sparing: verktøyene du trenger før du får din første lønn.",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "lonnsslippen",
+              "title": "Lønnsslippen: Hvor blir pengene av?",
+              "description": "Lær å lese en lønnsslipp linje for linje: brutto og netto, frikort, skattetrekk og feriepenger.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "personlig økonomi",
+                "lønn",
+                "skatt",
+                "frikort",
+                "feriepenger",
+                "arbeidsliv"
+              ],
+              "createdDate": "2026-11-05T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "eksamen",
           "title": "Eksamen",
           "description": "Alt du trenger for å mestre muntlig eksamen i samfunnsfag etter 10. trinn.",
