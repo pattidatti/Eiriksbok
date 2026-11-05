@@ -1,0 +1,282 @@
+{
+  "id": "ettbarnspolitikken",
+  "title": "Ettbarnspolitikken i Kina",
+  "layout": "rich",
+  "year": "1980-2015",
+  "category": "Demografi",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/demografi/ettbarnspolitikken-hero.webp",
+  "details": [
+    "Fra rundt 1980 til 2015 skulle de fleste par i Kinas byer bare få ett barn. Staten fikk folk til å følge regelen med belønninger, bøter og tvang.",
+    "Forskere mener at det meste av nedgangen i antall barn skjedde før regelen kom, fordi Kina ble rikere og mer moderne.",
+    "I dag eldes Kina raskt. I 2025 var 23 prosent av befolkningen 60 år eller eldre, og staten prøver nå å få folk til å få flere barn."
+  ],
+  "externalUrl": "https://snl.no/Familie-_og_likestillingssp%C3%B8rsm%C3%A5l_i_Kina",
+  "factChecked": "2026-11-03",
+  "tags": [
+    "demografi",
+    "kina",
+    "befolkning",
+    "fødselstall",
+    "eldrebølge",
+    "menneskerettigheter"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg en skoleklasse der nesten ingen har søsken. Ingen storebror som tar deg med på kino, ingen lillesøster som roter på rommet ditt. Når du blir voksen, er det bare du som kan hjelpe mamma og pappa når de blir gamle. Og kanskje besteforeldrene dine også."
+    },
+    {
+      "type": "text",
+      "content": "For mange millioner barn i Kina var dette helt vanlig. Fra rundt 1980 bestemte staten at de fleste par i byene bare skulle få ett barn. Regelen kalles ettbarnspolitikken. Den varte i over 30 år og er et av de største forsøkene noen stat har gjort på å styre hvor mange barn folk får."
+    },
+    {
+      "type": "text",
+      "content": "I denne artikkelen skal du lære hvorfor Kina innførte regelen, hvordan staten fikk folk til å følge den, og hva den betyr for landet i dag. Du skal også se at forskerne er uenige om hvor mye regelen egentlig virket."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Kinesisk familie med ett barn i en storby på 1980-tallet",
+      "caption": "Mange par i Kinas byer fikk bare lov til å få ett barn."
+    },
+    {
+      "type": "header",
+      "text": "Et land med nesten én milliard mennesker"
+    },
+    {
+      "type": "text",
+      "content": "Rundt 1980 hadde Kina omtrent én milliard innbyggere. Lederne i kommunistpartiet var redde for at en befolkning som vokste for fort, ville gi mer fattigdom, for få skoleplasser, mer forurensning og flere uten jobb (Jiang, 2011). Den samme frykten finner du hos den britiske tenkeren Malthus, som du kan lese om i artikkelen [Malthus mot Boserup](/samfunnskunnskap/demografi/malthus-vs-boserup)."
+    },
+    {
+      "type": "text",
+      "content": "En gruppe forskere ledet av ingeniøren Song Jian regnet ut at den beste størrelsen for Kina var 650 til 700 millioner mennesker. Det var bare omtrent to tredjedeler av de som bodde i landet i 1980 (Jiang, 2011). Lederne brukte slike utregninger som et argument for å stramme inn."
+    },
+    {
+      "type": "text",
+      "content": "Men Kina hadde allerede begynt å få færre barn. Allerede rundt 1970 startet staten en kampanje med slagordet «senere, lengre, færre». Folk skulle gifte seg senere, vente lenger mellom hvert barn og få færre barn. Rundt 1970 fikk en kvinne i Kina i snitt nesten seks barn. Ved slutten av tiåret var tallet nede i 2,7 til 2,8 (Whyte mfl., 2015)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Fruktbarhet: hvor mange barn en kvinne får i snitt i løpet av livet. Sterilisering: en operasjon som gjør at en person ikke kan få flere barn. Tvangsabort: når en kvinne blir tvunget til å avbryte et svangerskap. Kjønnsbalanse: forholdet mellom hvor mange gutter og jenter som blir født. Eldrebølge: når andelen eldre i et land øker raskt."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Regelen om ett barn"
+    },
+    {
+      "type": "text",
+      "content": "I september 1979 vedtok Kinas nasjonalforsamling en politikk som skulle få familiene til å nøye seg med ett barn (Jiang, 2011). Dette skjedde i de samme årene som Kina begynte å åpne seg for verden under Deng Xiaoping. Du kan lese mer om ham i artikkelen [Deng Xiaoping: Kina åpner for verden](/historie/kinas-historie/deng-og-reformene). Fra 1982 ble det en fast regel at ektepar i byene bare skulle ha ett barn (Aas & Garberg, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Regelen var ikke like streng for alle. På landet var motstanden stor. Fra 1984 fikk derfor de fleste par på landet lov til å få et barn til hvis det første barnet var en jente (Whyte mfl., 2015). Folk fra etniske minoriteter, altså folkegrupper som ikke er han-kinesere, var heller ikke omfattet av regelen om ett barn (Whyte mfl., 2015)."
+    },
+    {
+      "type": "header",
+      "text": "Belønning og straff"
+    },
+    {
+      "type": "text",
+      "content": "Staten brukte både gulrot og pisk. Foreldre som bare hadde ett barn, kunne få hjelp til å betale for helsehjelp, en sikrere pensjon og bedre muligheter til å få bolig (Jiang, 2011). De som fikk for mange barn, kunne få bøter, høyere skatt eller bli satt til tvangsarbeid for en periode (Aas & Garberg, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Den mørkeste siden av politikken var tvangen. Mange kvinner ble tvunget til abort, uansett hvor langt de var kommet i svangerskapet, og mange ble sterilisert mot sin vilje (Aas & Garberg, 2024). Tvangen var verst i 1983. Det året ble det gjort 14,4 millioner aborter og 20,7 millioner steriliseringer i Kina (Whyte mfl., 2015). Det er derfor mange mener at ettbarnspolitikken brøt med grunnleggende menneskerettigheter."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Plakat for ettbarnspolitikken på en husvegg i Kina",
+      "caption": "Staten brukte plakater og slagord for å få folk til å få færre barn."
+    },
+    {
+      "type": "header",
+      "text": "Virket det?"
+    },
+    {
+      "type": "text",
+      "content": "Kinas myndigheter har sagt at politikken hindret at 400 millioner barn ble født. Forskerne Martin King Whyte, Feng Wang og Yong Cai mener det tallet er helt feil (Whyte mfl., 2015). De peker på at minst 70 prosent av nedgangen i antall barn skjedde før ettbarnspolitikken begynte. Etter at regelen kom i 1980, gikk fruktbarheten faktisk litt opp igjen i noen år."
+    },
+    {
+      "type": "text",
+      "content": "Whyte og kollegene mener at det meste av nedgangen etter 1980 skyldtes økonomisk utvikling, altså at Kina ble rikere, og ikke tvangen (Whyte mfl., 2015). Det passer med mønsteret du kan lese om i [den demografiske overgangen](/samfunnskunnskap/demografi/den-demografiske-overgangen): når et land blir rikere, får folk færre barn. Etter 1995 lå fruktbarheten i Kina rundt 1,7 barn per kvinne (Jiang, 2011)."
+    },
+    {
+      "type": "text",
+      "content": "Forskerne er altså uenige om hvor mye regelen betydde for antall fødsler. Men alle er enige om at Kina fikk færre barn veldig raskt, og at det får store følger i dag."
+    },
+    {
+      "type": "header",
+      "text": "Fire, to, én"
+    },
+    {
+      "type": "text",
+      "content": "Når hvert par bare får ett barn, blir hver ny generasjon mye mindre enn den forrige. Et ettbarn som gifter seg med et annet ettbarn, har til sammen to foreldre og fire besteforeldre over seg. Dette kalles ofte 4-2-1-familien. Prøv selv i modellen under, og se hva som skjer når du endrer antall barn per par."
+    },
+    {
+      "type": "component",
+      "name": "FireToEn",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Så du hvor fort slekta krympet med bare ett barn per par? Det samme skjer med et helt land. I 2010 var 13,3 prosent av befolkningen i Kina 60 år eller eldre. I 2020 var andelen 18,7 prosent (National Bureau of Statistics of China, 2021). Ved utgangen av 2025 hadde den steget til 23,0 prosent, altså nesten hver fjerde innbygger (National Bureau of Statistics of China, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Når mange blir gamle samtidig og få er unge, blir det færre som jobber og betaler skatt for hver pensjonist. Det samme problemet finnes i Norge, men det går mye saktere her. Les mer i artikkelen [Eldrebølgen: Hvem skal ta vare på de gamle?](/samfunnskunnskap/demografi/eldrebolgen)."
+    },
+    {
+      "type": "header",
+      "text": "Flere gutter enn jenter"
+    },
+    {
+      "type": "text",
+      "content": "I store deler av Kina var ønsket om å få en sønn sterkt (Aas & Garberg, 2024). Når en familie bare fikk ett barn, ville mange at det skulle bli en gutt. Jiang (2011) skriver at politikken førte til skjev kjønnsbalanse, og at flere jentebabyer ble drept, særlig på landet."
+    },
+    {
+      "type": "text",
+      "content": "Resultatet ble en skjev kjønnsbalanse. I 2010 ble det født omtrent 118 gutter for hver 100 jenter i Kina. I 2020 var tallet 111,3 gutter per 100 jenter (National Bureau of Statistics of China, 2021). Skjevheten har altså blitt mindre, men den er fortsatt stor. Når det blir født flere gutter enn jenter, vil en del av guttene ikke finne noen å gifte seg med når de blir voksne."
+    },
+    {
+      "type": "header",
+      "text": "Fra ett barn til tre"
+    },
+    {
+      "type": "text",
+      "content": "Etter hvert så lederne i Kina at landet ble eldre for fort. I 2013 fikk par lov til å få to barn hvis en av foreldrene selv var enebarn. Fra 2016 ble ettbarnspolitikken opphevet, og alle par kunne få to barn uten straff (Aas & Garberg, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Men fødselstallet steg ikke slik lederne hadde håpet. I 2020 ble det født 12 millioner barn, det laveste antallet som var målt, og en kvinne fikk i snitt bare 1,3 barn. I mai 2021 bestemte derfor kommunistpartiet at alle par kunne få tre barn (Al Jazeera, 2021). Mange unge par svarte at det ikke hjalp. De pekte på at det koster mye å oppdra barn, at jobbene er krevende, og at de også må ta vare på sine egne gamle foreldre (Al Jazeera, 2021)."
+    },
+    {
+      "type": "text",
+      "content": "I 2025 ble det født 7,92 millioner barn i Kina, mens 11,31 millioner døde. Befolkningen krympet med 3,39 millioner mennesker på ett år (National Bureau of Statistics of China, 2026). Staten som en gang forbød folk å få mer enn ett barn, prøver nå å få dem til å få flere. Men det viser seg at det er mye lettere å få folk til å få færre barn enn å få dem til å få flere."
+    },
+    {
+      "type": "header",
+      "text": "Hva kan vi lære?"
+    },
+    {
+      "type": "text",
+      "content": "Ettbarnspolitikken viser at en stat kan prøve å bestemme over noe av det mest private i livet til folk. Den viser også at slike valg får følger i generasjoner etterpå. Kina løste et problem den var redd for, rask befolkningsvekst, men fikk et nytt: en befolkning som eldes raskt, og for få unge til å bære byrden."
+    },
+    {
+      "type": "text",
+      "content": "Også i Norge får folk færre barn enn før, selv om ingen har bestemt det. Les mer i artikkelen [Hvorfor får nordmenn så få barn?](/samfunnskunnskap/demografi/fodselstallet-i-norge). Og vil du vite mer om hvordan Kina ble en stormakt, kan du lese [Kina som supermakt](/historie/kinas-historie/kina-supermakt)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Eldre mennesker trener tai chi i en park i Shanghai",
+      "caption": "I dag er nesten hver fjerde innbygger i Kina 60 år eller eldre."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Aas, K. N. & Garberg, B. (2024). *Familie- og likestillingsspørsmål i Kina*. Store norske leksikon. Hentet 03.11.2026 fra [snl.no/Familie-_og_likestillingsspørsmål_i_Kina](https://snl.no/Familie-_og_likestillingssp%C3%B8rsm%C3%A5l_i_Kina)",
+          "Al Jazeera. (2021, 31. mai). *China allows families to have 3 children in major policy shift*. [aljazeera.com](https://www.aljazeera.com/news/2021/5/31/china-eases-birth-limit-allows-couple-to-have-3-children)",
+          "Jiang, L. (2011). *China's One-Child Policy*. Embryo Project Encyclopedia, Arizona State University. [embryo.asu.edu](https://embryo.asu.edu/pages/chinas-one-child-policy)",
+          "National Bureau of Statistics of China. (2021). *Main Data of the Seventh National Population Census*. [stats.gov.cn](https://www.stats.gov.cn/english/PressRelease/202105/t20210510_1817185.html)",
+          "National Bureau of Statistics of China. (2026). *Statistical Communiqué of the People's Republic of China on the 2025 National Economic and Social Development*. [stats.gov.cn](https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html)",
+          "Whyte, M. K., Wang, F. & Cai, Y. (2015). Challenging Myths About China's One-Child Policy. *The China Journal, 74*, 144–159. [doi.org/10.1086/681664](https://doi.org/10.1086/681664)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva gikk ettbarnspolitikken ut på, og omtrent når startet og sluttet den?",
+          "Hvilke grupper hadde lov til å få mer enn ett barn?",
+          "Nevn to belønninger og to straffer staten brukte for å få folk til å følge regelen.",
+          "Hvor stor del av befolkningen i Kina var 60 år eller eldre i 2010, og hvor stor del var det i 2025?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hva 4-2-1-familien er. Bruk modellen Fire, to, én som eksempel.",
+          "Forskerne Whyte, Wang og Cai mener at tallet på 400 millioner færre fødsler er feil. Hva er argumentene deres?",
+          "Hvorfor førte ettbarnspolitikken til at det ble født flere gutter enn jenter?",
+          "Hvorfor tror du det er vanskeligere for en stat å få folk til å få flere barn enn færre?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Har en stat noen gang rett til å bestemme hvor mange barn folk skal få? Begrunn svaret ditt.",
+          "Skriv et dagboknotat fra en 14-åring i Shanghai i 1995 som er enebarn. Hva er bra, og hva er vanskelig?",
+          "Sammenlign Kina og Norge: Begge land får få barn i dag. Hva er likt, og hva er forskjellig i grunnene til det?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvem gjaldt regelen om ett barn først og fremst for?",
+            "options": [
+              "Alle i hele Kina, uten unntak",
+              "Ektepar i byene",
+              "Bare folk fra etniske minoriteter",
+              "Bare familier på landet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Fra 1982 skulle ektepar i byene bare ha ett barn. På landet og blant minoritetene var reglene mildere."
+          },
+          {
+            "question": "Hva skjedde med fruktbarheten i Kina på 1970-tallet, før ettbarnspolitikken?",
+            "options": [
+              "Den steg fra to til fire barn",
+              "Den holdt seg på rundt seks barn",
+              "Den falt fra nesten seks til under tre barn",
+              "Den falt til under ett barn"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Rundt 1970 fikk en kvinne nesten seks barn. Ved slutten av tiåret var tallet 2,7 til 2,8."
+          },
+          {
+            "question": "Hva betyr 4-2-1-familien?",
+            "options": [
+              "Fire besteforeldre, to foreldre og ett barnebarn",
+              "Fire barn, to foreldre og én bestemor",
+              "Fire generasjoner som bor i ett hus",
+              "Fire søsken som deler på to rom"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Når to enebarn får ett barn, har barnet to foreldre og fire besteforeldre over seg."
+          },
+          {
+            "question": "Hvorfor ble kjønnsbalansen skjev?",
+            "options": [
+              "Fordi det ble født færre gutter enn før",
+              "Fordi mange familier ville at det ene barnet skulle være en gutt",
+              "Fordi jenter flyttet ut av landet",
+              "Fordi staten bestemte at det skulle fødes flere gutter"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ønsket om en sønn var sterkt. I 2010 ble det født omtrent 118 gutter per 100 jenter."
+          },
+          {
+            "question": "Hva skjedde i 2021?",
+            "options": [
+              "Kina innførte ettbarnspolitikken",
+              "Kina forbød abort",
+              "Kina lot alle par få tre barn",
+              "Kina fikk flere fødsler enn noen gang"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I mai 2021 bestemte kommunistpartiet at alle par kunne få tre barn, fordi landet ble eldre for fort."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

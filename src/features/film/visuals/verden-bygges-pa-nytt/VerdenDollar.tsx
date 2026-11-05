@@ -7,9 +7,11 @@ import type { VisualProps } from '../../types';
  * «banker»: IMF (legevakten med regler) og Verdensbanken (veier, kraftverk, havner).
  * «stemmer»: én stemme hver i FN mot stemmer etter penger i IMF. Ingen tall: figuren
  * viser prinsippet, ikke de faktiske kvotene.
+ * «baktanke»: Marshallhjelpen som gave med baktanke. Dollar går over havet til Europa,
+ * så kommer dollarene tilbake for varer, et hinder mot kommunismen, og et skjold for USA.
  */
 
-type Modus = 'kjede' | 'banker' | 'stemmer';
+type Modus = 'kjede' | 'banker' | 'stemmer' | 'baktanke';
 
 const inn = (forsinkelse = 0) => ({
     initial: { opacity: 0, y: 24 },
@@ -29,6 +31,7 @@ export function VerdenDollar({ beat, props }: VisualProps<{ modus?: Modus }>) {
                 {modus === 'kjede' && <Kjede beat={beat} />}
                 {modus === 'banker' && <Banker beat={beat} />}
                 {modus === 'stemmer' && <Stemmer beat={beat} />}
+                {modus === 'baktanke' && <Baktanke beat={beat} />}
             </svg>
         </div>
     );
@@ -181,7 +184,7 @@ function Kjede({ beat }: { beat: number }) {
             {beat >= 3 && (
                 <motion.g {...inn(2)}>
                     <Tekst x={1220} y={700} size={38} farge="#14532d">
-                        Kjøpe fra utlandet? Trenger dollar.
+                        Kjøpe fra utlandet? Trenger som regel dollar.
                     </Tekst>
                 </motion.g>
             )}
@@ -377,7 +380,7 @@ function Stemmer({ beat }: { beat: number }) {
             )}
             {beat >= 1 &&
                 LAND.map((andel, i) => {
-                    const h = beat >= 2 ? 40 + andel * 440 : 120;
+                    const h = 40 + andel * 440;
                     const usa = beat >= 3 && i === 0;
                     const stor = beat >= 3 && andel >= 0.4;
                     return (
@@ -413,14 +416,189 @@ function Stemmer({ beat }: { beat: number }) {
                         <Tekst x={hoyre + 300} y={850} size={32} vekt={700} farge="#1d4ed8">
                             Mest makt: USA og store industriland
                         </Tekst>
-                        <Tekst x={hoyre + 300} y={150 + 50} size={32} vekt={700} farge="#475569">
+                        <Tekst x={hoyre + 300} y={bunn + 44} size={32} vekt={700} farge="#475569">
                             Verdensbanken: alltid en amerikansk sjef
                         </Tekst>
                     </motion.g>
                 )}
             </AnimatePresence>
+            {(beat === 1 || beat === 2) && (
+                <Tekst x={hoyre + 300} y={bunn + 40} size={26} vekt={600} farge="#64748b">
+                    Forenklet: høydene viser ideen, ikke ekte tall
+                </Tekst>
+            )}
             <line x1={venstre - 20} y1={bunn} x2={venstre + 620} y2={bunn} stroke="#334155" strokeWidth={4} />
             <line x1={hoyre - 20} y1={bunn} x2={hoyre + 620} y2={bunn} stroke="#334155" strokeWidth={4} />
+        </g>
+    );
+}
+
+/* ---------------- Baktanke: hva fikk USA igjen for Marshallhjelpen? ---------------- */
+
+const USA_X = 300;
+const EUROPA_X = 1300;
+const LAND_Y = 470;
+
+function Landblokk({ x, navn, farge }: { x: number; navn: string; farge: string }) {
+    return (
+        <g>
+            <rect x={x - 200} y={LAND_Y - 130} width={400} height={260} rx={30} fill={farge} />
+            <Tekst x={x} y={LAND_Y + 20} size={54} farge="#ffffff">
+                {navn}
+            </Tekst>
+        </g>
+    );
+}
+
+/** En rad mynter som flyr fra én side til den andre, om og om igjen. */
+function Myntstrom({ fra, til, y, forsinkelse = 0 }: { fra: number; til: number; y: number; forsinkelse?: number }) {
+    return (
+        <g>
+            {[0, 1, 2, 3].map((i) => (
+                <motion.g
+                    key={i}
+                    initial={{ x: fra, opacity: 0 }}
+                    animate={{ x: [fra, til], opacity: [0, 1, 1, 0] }}
+                    transition={{
+                        delay: forsinkelse + i * 0.5,
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatDelay: 0,
+                        ease: 'linear',
+                    }}
+                >
+                    <circle cx={0} cy={y} r={30} fill="#16a34a" stroke="#14532d" strokeWidth={4} />
+                    <text x={0} y={y} textAnchor="middle" dominantBaseline="central" fontSize={36} fontWeight={900} fill="#fff">
+                        $
+                    </text>
+                </motion.g>
+            ))}
+        </g>
+    );
+}
+
+function Kasse({ x, y, navn }: { x: number; y: number; navn: string }) {
+    return (
+        <g>
+            <rect x={x - 80} y={y - 46} width={160} height={92} rx={10} fill="#d6a76a" stroke="#92400e" strokeWidth={5} />
+            <line x1={x - 80} y1={y} x2={x + 80} y2={y} stroke="#92400e" strokeWidth={4} />
+            <Tekst x={x} y={y + 90} size={34}>
+                {navn}
+            </Tekst>
+        </g>
+    );
+}
+
+function Baktanke({ beat }: { beat: number }) {
+    return (
+        <g>
+            {/* Havet mellom dem */}
+            <rect x={530} y={LAND_Y - 150} width={540} height={300} rx={40} fill="#bfdbfe" />
+            {beat !== 1 && (
+                <Tekst x={800} y={LAND_Y + 190} size={30} vekt={700} farge="#1e3a8a">
+                    Atlanterhavet
+                </Tekst>
+            )}
+            <Landblokk x={USA_X} navn="USA" farge="#2563eb" />
+            <Landblokk x={EUROPA_X} navn="Vest-Europa" farge="#475569" />
+
+            {beat === 0 && (
+                <motion.g key="b0" {...inn(0.2)}>
+                    <Myntstrom fra={USA_X + 200} til={EUROPA_X - 200} y={LAND_Y} />
+                    <Tekst x={800} y={170} size={56}>
+                        Gave til Europa ...
+                    </Tekst>
+                    <Tekst x={800} y={800} size={48} farge="#b91c1c">
+                        Hva fikk giveren igjen?
+                    </Tekst>
+                </motion.g>
+            )}
+
+            {beat === 1 && (
+                <motion.g key="b1" {...inn(0.2)}>
+                    <Myntstrom fra={EUROPA_X - 200} til={USA_X + 200} y={LAND_Y - 70} forsinkelse={0.6} />
+                    {['Mat', 'Drivstoff', 'Maskiner'].map((n, i) => (
+                        <motion.g key={n} {...inn(0.4 + i * 0.5)}>
+                            <Kasse x={590 + i * 210} y={LAND_Y + 60} navn={n} />
+                        </motion.g>
+                    ))}
+                    <Tekst x={800} y={170} size={52}>
+                        Varene kostet dollar
+                    </Tekst>
+                    <Tekst x={800} y={800} size={44} farge="#14532d">
+                        Mye av handelen gikk til USA
+                    </Tekst>
+                </motion.g>
+            )}
+
+            {beat === 2 && (
+                <motion.g key="b2" {...inn(0.2)}>
+                    {/* En stemmeurne i Europa, og en sperre mot kommunismen */}
+                    <rect x={EUROPA_X - 90} y={180} width={180} height={130} rx={10} fill="#ffffff" stroke="#334155" strokeWidth={6} />
+                    <rect x={EUROPA_X - 50} y={196} width={100} height={12} rx={6} fill="#334155" />
+                    <motion.rect
+                        x={EUROPA_X - 30}
+                        width={60}
+                        height={80}
+                        rx={6}
+                        fill="#fef3c7"
+                        stroke="#92400e"
+                        strokeWidth={4}
+                        initial={{ y: 60 }}
+                        animate={{ y: [60, 150, 60] }}
+                        transition={{ duration: 2.4, repeat: Infinity }}
+                    />
+                    <Tekst x={EUROPA_X} y={680} size={36} farge="#334155">
+                        Fattige og desperate velgere
+                    </Tekst>
+                    <motion.g {...inn(0.8)}>
+                        <rect x={560} y={LAND_Y - 120} width={480} height={240} rx={24} fill="#fee2e2" stroke="#b91c1c" strokeWidth={6} />
+                        <Tekst x={800} y={LAND_Y - 30} size={44} farge="#b91c1c">
+                            Mål for USA:
+                        </Tekst>
+                        <Tekst x={800} y={LAND_Y + 30} size={40} farge="#b91c1c">
+                            hindre at de
+                        </Tekst>
+                        <Tekst x={800} y={LAND_Y + 80} size={40} farge="#b91c1c">
+                            valgte kommunismen
+                        </Tekst>
+                    </motion.g>
+                </motion.g>
+            )}
+
+            {beat >= 3 && (
+                <motion.g key="b3" {...inn(0.2)}>
+                    {/* Skjoldet: et stabilt Vest-Europa er også trygghet for USA */}
+                    <motion.path
+                        d={`M ${USA_X} 160 L ${USA_X + 120} 200 L ${USA_X + 110} 300 Q ${USA_X} 380 ${USA_X} 380 Q ${USA_X} 380 ${USA_X - 110} 300 L ${USA_X - 120} 200 Z`}
+                        fill="#dbeafe"
+                        stroke="#1d4ed8"
+                        strokeWidth={8}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.8 }}
+                    />
+                    <rect x={EUROPA_X - 150} y={180} width={300} height={90} rx={18} fill="#dcfce7" stroke="#15803d" strokeWidth={5} />
+                    <Tekst x={EUROPA_X} y={240} size={44} farge="#15803d">
+                        Stabilt
+                    </Tekst>
+                    <motion.path
+                        d={`M ${EUROPA_X - 200} 230 Q 800 110 ${USA_X + 140} 240`}
+                        fill="none"
+                        stroke="#15803d"
+                        strokeWidth={8}
+                        initial={{ pathLength: 0 }}
+                        animate={{ pathLength: 1 }}
+                        transition={{ delay: 0.6, duration: 1.2 }}
+                    />
+                    <Tekst x={800} y={800} size={50}>
+                        En gave med baktanke
+                    </Tekst>
+                    <Tekst x={USA_X} y={700} size={34} farge="#1d4ed8">
+                        Tryggere for USA
+                    </Tekst>
+                </motion.g>
+            )}
         </g>
     );
 }

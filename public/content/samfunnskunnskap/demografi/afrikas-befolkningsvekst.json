@@ -1,0 +1,274 @@
+{
+  "id": "afrikas-befolkningsvekst",
+  "title": "Afrikas befolkningsvekst: Verdens yngste kontinent",
+  "layout": "rich",
+  "year": "2024",
+  "category": "Demografi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/demografi/afrikas-befolkningsvekst-hero.webp",
+  "details": [
+    "Afrika er verdens yngste verdensdel. I 2023 var midtpersonen i Afrika 19 år, i Europa 42 år.",
+    "Befolkningen vokser raskt i mange land sør for Sahara fordi færre barn dør, mens kvinner fortsatt får mange barn.",
+    "Om de mange unge blir et problem eller en mulighet, avhenger av om de får skole, helse og arbeid. Skole for jenter henger sammen med lavere fødselstall."
+  ],
+  "externalUrl": "https://snl.no/Nigers_befolkning",
+  "factChecked": "2026-11-04",
+  "tags": [
+    "demografi",
+    "afrika",
+    "befolkning",
+    "fødselstall",
+    "befolkningsvekst",
+    "utdanning"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg at alle som bor i et land, stiller seg opp i én lang kø. Den yngste babyen står først, og den eldste oldemoren står sist. Så finner du personen som står akkurat i midten. Halvparten av landet står foran henne, og halvparten står bak. Alderen til denne personen kalles medianalderen."
+    },
+    {
+      "type": "text",
+      "content": "I Norge er midtpersonen nesten 40 år, omtrent like gammel som mange foreldre. I Niger, et land i Vest-Afrika, er midtpersonen bare 15 år. Det betyr at halvparten av alle som bor i Niger, er yngre enn en elev i 10. klasse (FN, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "I denne artikkelen skal du lære hvorfor befolkningen i mange afrikanske land vokser så fort, og hvorfor Afrika er verdens yngste verdensdel. Du skal også se at forskere og politikere er uenige om dette er et problem eller en stor mulighet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Skolebarn i uniform på vei til skolen i Niamey",
+      "caption": "I Niger er nesten halvparten av innbyggerne under 15 år."
+    },
+    {
+      "type": "header",
+      "text": "Ett kontinent, mange land"
+    },
+    {
+      "type": "text",
+      "content": "I 2024 bodde det rundt 1,5 milliarder mennesker i Afrika (FN, 2024). Midtpersonen i hele Afrika var 19 år i 2023. I Europa var hun 42 år. Ingen andre verdensdeler har en så ung befolkning som Afrika."
+    },
+    {
+      "type": "text",
+      "content": "Men Afrika er ikke ett land. Forskjellene mellom landene er store. I Tunisia i Nord-Afrika fikk en kvinne i snitt 1,8 barn i 2023. I Sør-Afrika og Marokko var tallet 2,2. I Niger, Tsjad og Somalia fikk en kvinne rundt seks barn (FN, 2024). Når du leser om «Afrikas befolkningsvekst», handler det mest om landene sør for Sahara, og særlig om noen land i vest og i midten av kontinentet."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Medianalder: alderen til personen som står i midten hvis hele landet stiller seg i kø etter alder. Fruktbarhet: hvor mange barn en kvinne får i snitt i løpet av livet. Barnedødelighet: hvor mange barn som dør før de fyller fem år. Prognose: en beregning av hvordan noe trolig vil bli i framtiden. Arbeidsstyrke: alle i et land som er gamle nok til å jobbe og som jobber eller vil jobbe."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor vokser befolkningen så fort?"
+    },
+    {
+      "type": "text",
+      "content": "For å forstå veksten må du kjenne til [den demografiske overgangen](/samfunnskunnskap/demografi/den-demografiske-overgangen). Det er en modell som viser hvordan land går fra å ha mange fødsler og mange dødsfall, til å ha få fødsler og få dødsfall. Det viktigste skjer i midten: Når færre dør, men folk fortsatt får mange barn, vokser befolkningen svært raskt."
+    },
+    {
+      "type": "text",
+      "content": "Niger er et godt eksempel. I 1990 døde ett av tre barn i Niger før de fylte fem år. I 2023 var tallet omtrent ett av ni barn (UN IGME, 2025). Det er fortsatt mye, men det betyr at langt flere barn vokser opp. I Norge dør omtrent ett av 400 barn før femårsdagen."
+    },
+    {
+      "type": "text",
+      "content": "Samtidig har ikke antall barn per kvinne falt like fort. I 1980 og i 2000 fikk en kvinne i Niger nesten åtte barn. I 2023 var tallet rundt seks (FN, 2024). Når barna overlever, men familiene fortsatt er store, blir det fort mange flere mennesker. Folketallet i Niger økte med nesten 41 prosent bare fra 2014 til 2024 (Lundbo, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Økonomene Luc Razafimandimby og Vinaya Swaroop i Verdensbanken skrev i 2020 at Niger hadde den høyeste befolkningsveksten i verden, med 3,8 prosent i året. Hvert år kom det rundt 750 000 nye barn som trengte skole og helsehjelp (Razafimandimby & Swaroop, 2020)."
+    },
+    {
+      "type": "header",
+      "text": "Still opp køen"
+    },
+    {
+      "type": "text",
+      "content": "Hvordan ser det egentlig ut når et land er ungt? I modellen under stiller du opp fire land i kø, fra yngst til eldst. Gjett først hvor gammel personen i midten er. Prøv alle fire landene."
+    },
+    {
+      "type": "component",
+      "name": "Midtpersonen",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Så du forskjellen? I Niger og Nigeria er køen full av barn, og midtpersonen er en tenåring. I Norge og Japan er det flere eldre enn barn i køen. Dette kan du også se i en [befolkningspyramide](/samfunnskunnskap/demografi/befolkningspyramider): Et ungt land har en bred bunn og en smal topp."
+    },
+    {
+      "type": "header",
+      "text": "Hvor mange blir vi?"
+    },
+    {
+      "type": "text",
+      "content": "FN lager prognoser for hvor mange mennesker det vil bo i hvert land i framtiden. Ifølge FN (2024) vil folketallet i Afrika øke fra rundt 1,5 milliarder i 2024 til nesten 2,5 milliarder i 2050. I 2100 kan det bo rundt 3,8 milliarder mennesker i Afrika. Til sammenligning bodde det bare rundt 230 millioner mennesker i hele Afrika i 1950."
+    },
+    {
+      "type": "text",
+      "content": "For Niger viser prognosen at folketallet kan nesten doble seg fra 27 millioner i 2024 til rundt 52 millioner i 2050. I Japan går det motsatt vei. Der kan folketallet synke fra rundt 124 millioner til 105 millioner i samme periode (FN, 2024). Husk at en prognose ikke er en fasit. Den bygger på antakelser om hvor mange barn folk kommer til å få, og det kan endre seg."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Travel gate med markedsboder og mange unge i Lagos",
+      "caption": "Nigeria er Afrikas mest folkerike land, og midtpersonen der er rundt 18 år."
+    },
+    {
+      "type": "header",
+      "text": "Problem eller mulighet?"
+    },
+    {
+      "type": "text",
+      "content": "Noen ser den raske veksten som et problem. Når det blir mange flere barn hvert år, må landet bygge nye skoler, ansette flere lærere og leger og skaffe mer mat. I Niger er det allerede mange fattige. Rundt 41 prosent av befolkningen levde under fattigdomsgrensen i 2021, og en person i Niger kan i snitt regne med å leve til 61 år (Lundbo, 2026). Les mer om hva fattigdom betyr i artikkelen [Fattigdom](/samfunnskunnskap/demografi/fattigdom)."
+    },
+    {
+      "type": "text",
+      "content": "Razafimandimby og Swaroop (2020) viser at andelen fattige i Niger falt fra rundt 54 til 45 prosent mellom 2005 og 2014. Likevel økte antallet fattige fra 6,8 til 8,2 millioner, fordi befolkningen vokste så fort. Den samme frykten for at befolkningen vokser fortere enn maten og pengene, finner du hos Malthus. Les om ham i [Malthus mot Boserup](/samfunnskunnskap/demografi/malthus-vs-boserup)."
+    },
+    {
+      "type": "text",
+      "content": "Andre ser en mulighet. Om noen år blir de mange barna voksne. Hvis de får utdanning og jobb, får landet en stor arbeidsstyrke, og det blir mange som jobber for hvert barn og hver gammel person som trenger hjelp. Økonomer kaller dette et demografisk utbytte, altså en gevinst landet kan få når mange er i arbeidsalder. Razafimandimby og Swaroop (2020) håper at Niger kan få et slikt utbytte. Da må landet få ned fødselstallene, gi flere jenter skole og skape jobber til de unge."
+    },
+    {
+      "type": "text",
+      "content": "Det er også mulig å få til endring. I Kenya fikk en kvinne over seks barn i 1990. I 2023 var tallet rundt tre, og midtpersonen hadde blitt eldre, fra 14 til nesten 20 år (FN, 2024). I Etiopia falt antall barn per kvinne fra rundt sju til fire i samme periode. Kenya og Etiopia viser at et land kan bevege seg fort gjennom den demografiske overgangen."
+    },
+    {
+      "type": "header",
+      "text": "Jentene på skolen"
+    },
+    {
+      "type": "text",
+      "content": "Hva er det som får folk til å få færre barn? Det er mange grunner, men én går igjen: at jenter får gå lenger på skolen. Verdensbanken skriver at hvert ekstra år på ungdomsskole eller videregående gjør sjansen for å få barn som tenåring 6 prosentpoeng lavere, og at sammenhengen er ekstra sterk i Afrika sør for Sahara (Wadhwa, 2019). Jenter som går lenger på skolen, får altså ofte sitt første barn senere."
+    },
+    {
+      "type": "text",
+      "content": "I Niger var det rundt 2020 bare fire av ti jenter som kom så langt som til sjette klasse (Razafimandimby & Swaroop, 2020). Verdensbanken (2018) regner med at bare én av tre jenter i fattige land fullfører ungdomsskolen. Ifølge den samme rapporten kunne nesten ingen jenter blitt giftet bort før de fylte 18 hvis alle fikk fullføre skolen til og med videregående nivå. Kvinner ville da i snitt fått færre barn."
+    },
+    {
+      "type": "text",
+      "content": "Det betyr ikke at noen skal bestemme hvor mange barn familier får. Kina prøvde det med tvang, og det fikk store følger. Les om det i [Ettbarnspolitikken i Kina](/samfunnskunnskap/demografi/ettbarnspolitikken). Skole for jenter virker på en annen måte: Kvinnene får flere valg i livet sitt, og mange velger da selv å få færre barn."
+    },
+    {
+      "type": "header",
+      "text": "Et ungt Afrika og et gammelt Europa"
+    },
+    {
+      "type": "text",
+      "content": "Mens Afrika er ungt, blir Europa og Øst-Asia stadig eldre. I Norge får vi færre barn, og det blir flere eldre som trenger pleie. Les om det i [Eldrebølgen: Hvem skal ta vare på de gamle?](/samfunnskunnskap/demografi/eldrebolgen). I 2100 kan mer enn hver tredje person i verden bo i Afrika, hvis FNs prognose slår til (FN, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Om Afrikas unge befolkning blir et problem eller en mulighet, avhenger altså ikke bare av hvor mange som blir født. Det avhenger av om de unge får gå på skole, holde seg friske og finne seg en jobb. Det er det store spørsmålet for mange afrikanske land de neste tiårene."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Unge kvinner i et klasserom i en videregående skole i Afrika",
+      "caption": "Når jenter får gå lenger på skolen, får de ofte sitt første barn senere."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "FN. (2024). *World Population Prospects 2024*. United Nations, Department of Economic and Social Affairs, Population Division. Tall hentet 04.11.2026 via Our World in Data fra [ourworldindata.org/grapher/median-age](https://ourworldindata.org/grapher/median-age)",
+          "Lundbo, S. (2026). *Nigers befolkning*. Store norske leksikon. Hentet 04.11.2026 fra [snl.no/Nigers_befolkning](https://snl.no/Nigers_befolkning)",
+          "Razafimandimby, L. & Swaroop, V. (2020, 24. januar). *Le Niger peut-il échapper au piège démographique ?* Africa Can End Poverty, Verdensbanken. [blogs.worldbank.org](https://blogs.worldbank.org/fr/africacan/le-niger-peut-il-echapper-au-piege-demographique)",
+          "UN IGME. (2025). *Child mortality estimates*. United Nations Inter-agency Group for Child Mortality Estimation. Tall hentet 04.11.2026 via Our World in Data fra [ourworldindata.org/grapher/child-mortality](https://ourworldindata.org/grapher/child-mortality)",
+          "Verdensbanken. (2018). *Missed Opportunities: The High Cost of Not Educating Girls*. [worldbank.org](https://www.worldbank.org/en/topic/education/publication/missed-opportunities-the-high-cost-of-not-educating-girls)",
+          "Wadhwa, D. (2019, 19. august). *Girls enrolled in school are less likely to become pregnant as teenagers*. World Bank Data Blog. [blogs.worldbank.org](https://blogs.worldbank.org/en/opendata/girls-enrolled-school-are-less-likely-become-pregnant-teenagers)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er medianalder? Forklar med eksempelet med køen.",
+          "Hvor gammel var midtpersonen i Niger, i Norge og i hele Afrika i 2023?",
+          "Hvor mange barn fikk en kvinne i snitt i Niger i 2023, og hvor mange fikk en kvinne i Tunisia?",
+          "Hvor mange mennesker kan det bo i Afrika i 2050 ifølge FNs prognose?"
+        ],
+        "reflekter": [
+          "Forklar hvorfor befolkningen vokser raskt når barnedødeligheten faller, men antall barn per kvinne fortsatt er høyt. Bruk den demografiske overgangen.",
+          "Hvorfor økte antallet fattige i Niger selv om andelen fattige gikk ned? Forklar med egne ord.",
+          "Hva er et demografisk utbytte, og hva må til for at et land skal få det?",
+          "Hvorfor er det misvisende å snakke om «Afrika» som om det var ett land når det gjelder befolkning?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Er en ung og voksende befolkning først og fremst et problem eller en mulighet? Finn argumenter for begge sider.",
+          "Sammenlign Niger med Kina i artikkelen om ettbarnspolitikken. Hvorfor kan skole for jenter være en bedre vei enn tvang hvis et land vil ha lavere fødselstall?",
+          "Norge får for få barn, og Niger får mange. Skriv en kort tekst om hva de to landene kunne lært av hverandre."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er medianalderen i et land?",
+            "options": [
+              "Gjennomsnittsalderen til alle voksne",
+              "Alderen til personen i midten hvis alle stiller seg i kø etter alder",
+              "Hvor gammel den eldste personen i landet er",
+              "Hvor gamle kvinner er når de får sitt første barn"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Medianalderen deler befolkningen i to like store halvdeler: halvparten er yngre, og halvparten er eldre."
+          },
+          {
+            "question": "Omtrent hvor gammel var midtpersonen i Niger i 2023?",
+            "options": [
+              "15 år",
+              "25 år",
+              "40 år",
+              "49 år"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Medianalderen i Niger var rundt 15 år. Det betyr at halvparten av innbyggerne er yngre enn en elev i 10. klasse."
+          },
+          {
+            "question": "Hvorfor vokser befolkningen i Niger så raskt?",
+            "options": [
+              "Fordi mange flytter til Niger fra Europa",
+              "Fordi færre barn dør, mens kvinner fortsatt får mange barn",
+              "Fordi folk i Niger lever lenger enn folk i Norge",
+              "Fordi staten har bestemt at alle skal få tre barn"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Barnedødeligheten har falt mye, men antall barn per kvinne har ikke falt like fort. Da vokser befolkningen raskt."
+          },
+          {
+            "question": "Hvilket land i artikkelen er et eksempel på at antall barn per kvinne kan falle raskt?",
+            "options": [
+              "Japan",
+              "Niger",
+              "Kenya",
+              "Somalia"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I Kenya falt antall barn per kvinne fra over seks i 1990 til rundt tre i 2023."
+          },
+          {
+            "question": "Hva peker Verdensbanken på som en viktig grunn til at kvinner får færre barn?",
+            "options": [
+              "At jenter får gå lenger på skolen",
+              "At familiene får mer jord",
+              "At flere flytter til landsbygda",
+              "At staten gir bøter til store familier"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Jenter som går lenger på skolen, får oftere sitt første barn senere, og sammenhengen er ekstra sterk i Afrika sør for Sahara."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -1,0 +1,452 @@
+{
+    "id": "romerske-keisere",
+    "tittel": "De romerske keiserne: Hvem skulle få makten?",
+    "kilde": "/historie/romerriket/romerske-keisere",
+    "bilde": "/images/romerriket/hero-emperors.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-03", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "brann",
+            "lyd": "ild",
+            "kapittel": "Roma brenner",
+            "visual": {
+                "type": "KeisereRoma",
+                "props": {
+                    "modus": "brann"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er år 64, og Roma brenner."
+                },
+                {
+                    "si": "Brannen raser i ni døgn. Når den endelig slokner, ligger store deler av byen i aske."
+                },
+                {
+                    "si": "Snart går ryktene. Var det keiseren selv som sto bak?"
+                },
+                {
+                    "si": "Folk sier at han ville ha plass til et gigantisk nytt palass, Det gylne hus."
+                },
+                {
+                    "si": "Keiseren het Nero. Han var bare én av mange menn som styrte Romerriket."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KEISERNE",
+                    "undertittel": "Fra kloke filosofer til gale tyranner",
+                    "bilde": "/images/romerriket/hero-emperors.webp",
+                    "tall": [
+                        {
+                            "verdi": 500,
+                            "etikett": "år med keisere",
+                            "fraBeat": 2
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvem bestemte hvem som ble keiser?",
+                        "fraBeat": 3
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Den første keiseren var Augustus. Han vant borgerkrigene i Roma i det første århundret før vår tidsregning."
+                },
+                {
+                    "si": "Nå var keiseren som en gud på jorden. Han var den øverste generalen, og han bestemte over liv og død."
+                },
+                {
+                    "si": "I løpet av 500 år kom det mange keisere. Noen var kloke filosofer, andre gale tyranner."
+                },
+                {
+                    "si": "Men hvem bestemte hvem som ble keiser? Svaret hadde mye å si for hva slags keiser riket fikk."
+                }
+            ]
+        },
+        {
+            "id": "julisk",
+            "kapittel": "Slekten som feilet",
+            "visual": {
+                "type": "KeisereRekke",
+                "props": {
+                    "modus": "julisk"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "De første keiserne kom fra samme slekt, det julisk-claudiske dynastiet. Et dynasti er en familie som har makten i generasjon etter generasjon."
+                },
+                {
+                    "si": "Etter Augustus kom Tiberius. Fra år 26 bodde han på øya Capri. Gardeprefekten Sejanus, sjefen for keiserens livvakt, styrte mye av det daglige i Roma."
+                },
+                {
+                    "si": "Så kom Caligula. Han er kjent for historien om at han ville gjøre hesten sin til konsul, en av de høyeste lederne i Roma."
+                },
+                {
+                    "si": "Men historikere i dag mener bildet er farget av kilder som var fiender av ham. De beskriver ham heller som maktsyk og selvopptatt enn som gal."
+                },
+                {
+                    "si": "Claudius stammet og hadde et fysisk handikap. Mange trodde han var uegnet. Men han ble en dyktig keiser, og under ham ble Britannia erobret i år 43."
+                },
+                {
+                    "si": "Den siste i slekten var Nero, keiser fra år 54 til 68."
+                }
+            ]
+        },
+        {
+            "id": "nero",
+            "visual": {
+                "type": "KeisereRekke",
+                "props": {
+                    "modus": "nero"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nero var mer opptatt av å synge og spille teater enn av å styre riket."
+                },
+                {
+                    "si": "Etter brannen ble noen kristne gjort til syndebukker. De fikk skylden og ble straffet brutalt."
+                },
+                {
+                    "si": "Med Nero begynte staten å forfølge kristne. De store forfølgelsene over hele riket kom likevel først over 150 år senere."
+                },
+                {
+                    "si": "Til slutt ble Nero for mye selv for romerne. Han flyktet fra byen og døde i juni 68. Med ham døde slekten ut."
+                },
+                {
+                    "si": "Var en keiser skikkelig ille, kunne senatet, Romas råd, straffe ham etter døden. Navnet ble hugget vekk fra steinene, og statuene ble knust. Det var som om han aldri hadde levd."
+                }
+            ]
+        },
+        {
+            "id": "adopsjon",
+            "kapittel": "Gullalderen",
+            "visual": {
+                "type": "KeisereRekke",
+                "props": {
+                    "modus": "adopsjon"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter Nero kom kaos og borgerkrig. Så fulgte en tid som historikeren Edward Gibbon kalte den beste tiden menneskene hadde hatt."
+                },
+                {
+                    "si": "Det var tiden for de fem gode keiserne: Nerva, Trajan, Hadrian, Antoninus Pius og Marcus Aurelius."
+                },
+                {
+                    "si": "Hemmeligheten var enkel. De første av dem hadde ingen egne sønner som kunne ta over."
+                },
+                {
+                    "si": "I stedet adopterte de den dyktigste mannen i riket, og han ble keiser etter dem."
+                }
+            ]
+        },
+        {
+            "id": "trajan",
+            "lyd": "stille",
+            "visual": {
+                "type": "KeisereKart",
+                "props": {
+                    "modus": "trajan"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Trajan var keiser fra år 98 til 117. Under ham var Romerriket på sitt aller største."
+                },
+                {
+                    "si": "Han erobret Dacia, store områder nord for elva Donau, i dagens Romania."
+                },
+                {
+                    "si": "Han erobret også land i Mesopotamia, langt øst i riket."
+                },
+                {
+                    "si": "Han tok med seg så mye rikdom hjem at han kunne betale for fantastiske byggverk i Roma."
+                }
+            ]
+        },
+        {
+            "id": "soyle",
+            "lyd": "vind",
+            "visual": {
+                "type": "KeisereRoma",
+                "props": {
+                    "modus": "soyle"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I Roma bygde Trajan et gigantisk forum, en stor åpen plass, med markedshaller ved siden av."
+                },
+                {
+                    "si": "Der reiste han også Trajansøylen. Den står fortsatt i dag."
+                },
+                {
+                    "si": "Bilder hugget i stein viser hele krigen i Dacia i detalj, nesten som en tegneserie."
+                },
+                {
+                    "si": "Søylen var propaganda, et budskap som skal få folk til å mene noe. Den viste hvor sterk og disiplinert hæren var."
+                }
+            ]
+        },
+        {
+            "id": "hadrian",
+            "lyd": "stille",
+            "kapittel": "Grensene",
+            "visual": {
+                "type": "KeisereKart",
+                "props": {
+                    "modus": "hadrian"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Etter Trajan kom Hadrian, keiser fra 117 til 138. Han ga opp erobringene i Mesopotamia."
+                },
+                {
+                    "si": "Elva Eufrat ble rikets grense i øst."
+                },
+                {
+                    "si": "I stedet for å erobre mer, satset han på solide forsvarsverk langs grensene."
+                },
+                {
+                    "si": "Hadrian reiste også mye. Han ville lære mer, styre bedre og knytte provinsene, delene av riket, tettere til Roma."
+                }
+            ]
+        },
+        {
+            "id": "mur",
+            "lyd": "vind",
+            "visual": {
+                "type": "KeisereRoma",
+                "props": {
+                    "modus": "mur"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mest kjent er Hadrians mur i Nord-England. Den ble bygd i årene 122 til 128."
+                },
+                {
+                    "si": "Muren gikk 118 kilometer tvers over landet, fra munningen av elva Tyne på østkysten til Solway Firth i vest.",
+                    "uttale": "Muren gikk hundre og atten kilometer tvers over landet, fra munningen av elva Tain på østkysten til Solvei Førth i vest."
+                },
+                {
+                    "si": "Den ruvet over landskapet som en klar beskjed: Hit, men ikke lenger."
+                }
+            ]
+        },
+        {
+            "id": "arv",
+            "lyd": "stille",
+            "kapittel": "Faren og sønnen",
+            "visual": {
+                "type": "KeisereRekke",
+                "props": {
+                    "modus": "arv"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Gullalderen endte med Marcus Aurelius, keiser fra 161 til 180. Han kalles filosofkeiseren."
+                },
+                {
+                    "si": "Han skrev korte, filosofiske notater gjennom livet. Samlingen heter Til meg selv."
+                },
+                {
+                    "si": "Mye av tiden brukte han på å forsvare riket mot germanske folk langs Donau."
+                },
+                {
+                    "si": "Så brøt han tradisjonen. Han lot sin egen sønn, Commodus, arve tronen."
+                },
+                {
+                    "si": "Han er kritisert for det, men han hadde få valg. Å gå forbi sønnen ville i praksis vært en dødsdom over Commodus."
+                },
+                {
+                    "si": "Commodus ble ingen suksess. Han festet, mens korrupte rådgivere styrte. Nyttårsaften i år 192 ble han myrdet."
+                }
+            ]
+        },
+        {
+            "id": "borgerrett",
+            "kapittel": "Makt er rett",
+            "visual": {
+                "type": "KeisereKart",
+                "props": {
+                    "modus": "borgerrett"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Nå kom en tid der hæren bestemte alt. Keiseren Septimius Severus skal ha gitt sønnene et råd på dødsleiet."
+                },
+                {
+                    "si": "Hold sammen, gjør soldatene rike, og bry dere ikke om noen andre."
+                },
+                {
+                    "si": "Sønnen Caracalla ble keiser i 211. Han fulgte rådet om soldatene. Men i 212 myrdet han broren Geta."
+                },
+                {
+                    "si": "Samme år ga han alle frie innbyggere i riket romersk borgerrett. Nå var de alle romerske borgere."
+                },
+                {
+                    "si": "Historikeren Cassius Dio levde på samme tid, og mente det handlet om mer skatt. Dagens historikere er ikke sikre."
+                }
+            ]
+        },
+        {
+            "id": "bad",
+            "lyd": "rom",
+            "visual": {
+                "type": "KeisereRoma",
+                "props": {
+                    "modus": "bad"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Caracalla fikk også bygd et enormt badeanlegg i Roma."
+                },
+                {
+                    "si": "Det var laget for rundt 1600 badegjester om gangen."
+                },
+                {
+                    "si": "Det var et palass for folket, pyntet med marmor og gull."
+                }
+            ]
+        },
+        {
+            "id": "krise",
+            "lyd": "stille",
+            "kapittel": "Krisen",
+            "visual": {
+                "type": "KeisereKart",
+                "props": {
+                    "modus": "krise"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "På 200-tallet var riket nær ved å falle sammen. Vi kaller det krisen i det tredje århundret."
+                },
+                {
+                    "si": "Fra år 235 til 284 var det nesten borgerkrig hele tiden."
+                },
+                {
+                    "si": "Over 20 keisere regnes som ekte keisere i disse årene. I tillegg kom mange tronranere, folk som prøvde å ta makten med vold."
+                },
+                {
+                    "si": "Riket ble angrepet fra alle kanter, og økonomien lå i ruiner."
+                },
+                {
+                    "si": "Det trengtes en jernhånd for å redde det som var igjen. Den tilhørte keisere som Diokletian, som forsto at systemet måtte endres totalt."
+                }
+            ]
+        },
+        {
+            "id": "typer",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "To slags keisere",
+                    "punkter": [
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Den sivile keiseren",
+                            "tekst": "Roma og senatet, toga, lover og tradisjon. Som Augustus",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "haer",
+                            "tittel": "Soldatkeiseren",
+                            "tekst": "leiren ved grensen, rustning, legioner. Som Trajan og Septimius Severus",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Gjennom hele denne historien ser vi to slags keisere."
+                },
+                {
+                    "si": "Den sivile keiseren styrte fra Roma sammen med senatet. Han gikk i toga, og makten bygde på lover og tradisjon, som hos Augustus."
+                },
+                {
+                    "si": "Soldatkeiseren styrte fra militærleirer ved grensen, kledd i rustning. Makten kom fra lojale legioner, altså store hæravdelinger, og fra sverdet. Trajan og Septimius Severus var slike keisere."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Først bestemte slekten.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "En dyktig Claudius, og en Nero.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Så valgte keiserne den dyktigste.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Det ga en gullalder.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Så bestemte hæren.",
+                            "fraBeat": 2
+                        },
+                        {
+                            "tekst": "Da var det sverdet som ga makt.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hvem som fikk makten,",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "hadde mye å si for hele riket.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så hvem bestemte? Først var det slekten. Den ga riket både en dyktig Claudius og en Nero."
+                },
+                {
+                    "si": "Så valgte de gode keiserne den dyktigste mannen i riket. Det ga en gullalder."
+                },
+                {
+                    "si": "Etter år 192 var det hæren som bestemte. Da var det sverdet, ikke lover og tradisjon, som ga makt."
+                },
+                {
+                    "si": "Hvem som fikk makten, og hvordan, hadde mye å si for alle som levde i riket."
+                }
+            ]
+        }
+    ]
+}

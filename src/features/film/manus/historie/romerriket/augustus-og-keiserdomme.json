@@ -1,0 +1,308 @@
+{
+    "id": "augustus-og-keiserdomme",
+    "tittel": "Augustus: Fra republikk til keiserdømme",
+    "kilde": "/historie/romerriket/augustus-og-keiserdomme",
+    "bilde": "/images/romerriket/hero-augustus.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-03", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "actium",
+            "lyd": "hav",
+            "kapittel": "Actium",
+            "visual": { "type": "AugustusHavet", "props": { "modus": "for" } },
+            "replikker": [
+                {
+                    "si": "Det er 2. september, år 31 før vår tid. Vi er ved Actium, en odde på vestkysten av Hellas.",
+                    "uttale": "Det er den andre september, år trettien før vår tid. Vi er ved Actium, en odde på vestkysten av Hellas."
+                },
+                { "si": "To store flåter med krigsskip ligger klare til kamp." },
+                { "si": "På den ene siden: Marcus Antonius og Egypts dronning, Kleopatra." },
+                { "si": "På den andre siden: den unge Octavius og admiralen hans, Marcus Agrippa." },
+                { "si": "Dette sjøslaget skal avgjøre hvem som får styre hele den romerske verden." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "AUGUSTUS",
+                    "undertittel": "Fra republikk til keiserdømme",
+                    "bilde": "/images/romerriket/hero-augustus.webp",
+                    "tall": [
+                        { "verdi": 40, "etikett": "år ved makten", "fraBeat": 2, "prefiks": "over" },
+                        { "verdi": 200, "etikett": "år med fred", "fraBeat": 2, "tone": "gronn" }
+                    ],
+                    "sporsmal": { "tekst": "Hva kostet freden?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Vinneren av dette slaget skulle få et nytt navn: Augustus." },
+                { "si": "Han ble den første keiseren i Roma." },
+                { "si": "Han styrte i over 40 år. Og han regnes gjerne som den som startet en fred som varte i rundt 200 år." },
+                { "si": "Men freden hadde en pris. For å forstå den, må vi gå noen år tilbake i tid." }
+            ]
+        },
+        {
+            "id": "caesar",
+            "lyd": "stille",
+            "kapittel": "Republikken revner",
+            "visual": { "type": "AugustusKart", "props": { "modus": "caesar" } },
+            "replikker": [
+                { "si": "Roma var en republikk. Det betyr at landet ikke hadde noen konge." },
+                {
+                    "si": "Men Roma hadde vokst seg så stort at de gamle reglene ikke lenger virket. Generaler med egne hærer kjempet om makten."
+                },
+                {
+                    "si": "Den flinkeste og mest hensynsløse av dem var Julius Cæsar. Fra 58 til 50 før vår tid erobret han Gallia, dagens Frankrike og Belgia."
+                },
+                {
+                    "si": "Senatorene i Roma ble redde for ham. I år 49 før vår tid krysset han grenseelva Rubicon med hæren sin. Det var forræderi."
+                },
+                {
+                    "si": "Cæsar vant borgerkrigen og ble diktator på livstid. Det betyr at han kunne bestemme nesten alt, så lenge han levde."
+                }
+            ]
+        },
+        {
+            "id": "idene",
+            "visual": { "type": "AugustusMakt", "props": {
+                    "modus": "graf",
+                    "antall": [0, 1, 1, 2],
+                    "notater": [null, null, { "tittel": "Brutus og de andre", "tekst": "trodde de reddet republikken" }, null]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Men mange i senatet hatet ham. Den 15. mars år 44 før vår tid ble Cæsar drept under et møte i senatet."
+                },
+                {
+                    "si": "Denne grafen viser omtrent hvor mye av makten senatet hadde. Før Cæsar døde, hadde senatet mye makt."
+                },
+                { "si": "Blant morderne var vennen hans, Brutus. De trodde de hadde reddet republikken. Men de tok feil." },
+                { "si": "Etter mordet ble makten delt mellom tre menn. Senatet fikk mindre å si." }
+            ]
+        },
+        {
+            "id": "to-herskere",
+            "kapittel": "To herskere",
+            "visual": { "type": "AugustusKart", "props": { "modus": "to" } },
+            "replikker": [
+                { "si": "Roma kastet seg ut i en ny borgerkrig, verre enn den forrige." },
+                {
+                    "si": "Cæsars trofaste offiser, Marcus Antonius, gikk sammen med Cæsars adopterte sønn, den unge Octavius. Sammen knuste de morderne Brutus og Cassius."
+                },
+                { "si": "Men freden varte ikke lenge. Verden var ikke stor nok for to herskere." },
+                {
+                    "si": "Antonius slo seg sammen med Kleopatra, dronningen av Egypt. De drømte om et rike i øst, styrt fra byen Alexandria."
+                },
+                {
+                    "si": "Octavius var en mester i propaganda, altså å styre hva folk tror. Han fikk Antonius til å se ut som en forræder som hadde glemt at han var romer."
+                }
+            ]
+        },
+        {
+            "id": "slaget",
+            "lyd": "hav",
+            "kapittel": "Slaget",
+            "visual": { "type": "AugustusHavet", "props": { "modus": "slag" } },
+            "replikker": [
+                { "si": "Alt bygde opp mot et siste oppgjør. Ved Actium møttes de to flåtene." },
+                {
+                    "si": "Octavius hadde en dyktig general og admiral på sin side, Marcus Agrippa. En admiral er sjefen for en flåte."
+                },
+                { "si": "Skipene gikk løs på hverandre. Det var et gigantisk sjøslag." }
+            ]
+        },
+        {
+            "id": "flukt",
+            "visual": { "type": "AugustusHavet", "props": { "modus": "flukt" } },
+            "replikker": [
+                { "si": "Så, midt i slaget, snudde Kleopatra og flyktet med skipene sine." },
+                { "si": "Og Antonius? Han fulgte etter henne." },
+                { "si": "Resten av flåten hans ble igjen. Skipene overga seg til Octavius." },
+                { "si": "En uke senere ga også soldatene til Antonius på land opp." }
+            ]
+        },
+        {
+            "id": "alene",
+            "lyd": "stille",
+            "visual": { "type": "AugustusKart", "props": { "modus": "alene" } },
+            "replikker": [
+                {
+                    "si": "Året etter, i år 30 før vår tid, ble Antonius og Kleopatra sporet opp i Egypt. Der ble de tvunget til å ta sitt eget liv."
+                },
+                {
+                    "si": "Nå sto Octavius igjen alene. Han var enehersker, den eneste som styrte, over hele middelhavsområdet."
+                },
+                { "si": "Han var verdens mektigste mann." }
+            ]
+        },
+        {
+            "id": "tittelen",
+            "kapittel": "Ikke konge",
+            "visual": { "type": "AugustusMakt", "props": { "modus": "titler" } },
+            "replikker": [
+                { "si": "Men Octavius visste at han måtte passe seg. Romerne hatet ordet konge." },
+                {
+                    "si": "Derfor kalte han seg ikke konge. I stedet ble han kalt princeps senatus, senatets førstemann.",
+                    "uttale": "Derfor kalte han seg ikke konge. I stedet ble han kalt prinkeps senatus, senatets førstemann."
+                },
+                {
+                    "si": "Den tittelen har gitt navn til den første tiden med keisere i Roma. Den kalles prinsipatet."
+                },
+                {
+                    "si": "I januar år 27 før vår tid ga senatet ham et nytt navn: Augustus. Det betyr den opphøyde. Republikken var død, og keiserdømmet var født."
+                }
+            ]
+        },
+        {
+            "id": "makten",
+            "visual": { "type": "AugustusMakt", "props": { "modus": "graf", "antall": [2, 3, 4, 5] } },
+            "replikker": [
+                { "si": "Se igjen på makten. Etter mordet delte tre menn på den." },
+                { "si": "Etter Actium hadde Octavius kontrollen. Senatet hadde lite igjen." },
+                {
+                    "si": "Augustus sa at han ga republikken tilbake. Men all makten beholdt han selv."
+                },
+                {
+                    "si": "Da han døde, var senatet i praksis bare et råd som ga råd. Republikken var for lengst død."
+                }
+            ]
+        },
+        {
+            "id": "reformer",
+            "kapittel": "Arkitekten bak freden",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Augustus endret alt",
+                    "punkter": [
+                        { "ikon": "haer", "tittel": "Hæren og skattene", "fraBeat": 0 },
+                        { "ikon": "avtale", "tittel": "Lovene og religionen", "fraBeat": 1 },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "De gamle dydene",
+                            "tekst": "enkle, trofaste, pliktoppfyllende",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Streng mot sin egen datter",
+                            "tekst": "Julia ble sendt bort i år 2 fvt.",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Augustus styrte fra 27 før vår tid til han døde i år 14 etter vår tid. På de over 40 årene endret han hæren og skattene."
+                },
+                { "si": "Han endret lovene, og han endret religionen." },
+                {
+                    "si": "Han ville at romerne skulle leve som før i tida: enkelt, trofast og med pliktfølelse."
+                },
+                {
+                    "si": "Han var så streng at han sendte bort sin egen datter, Julia, i år 2 før vår tid. Det gikk rykter om at hun levde et for vilt liv."
+                }
+            ]
+        },
+        {
+            "id": "marmor",
+            "lyd": "vind",
+            "visual": { "type": "AugustusByen", "props": {} },
+            "replikker": [
+                { "si": "Sammen med Agrippa satte Augustus i gang et enormt byggeprogram i Roma." },
+                {
+                    "si": "Det ble sagt om ham at han overtok en by av teglstein og etterlot en by av marmor."
+                },
+                {
+                    "si": "De bygde akvedukter, altså lange vannledninger, ofte på høye buer, som fraktet vann inn til byen. Og de bygde bad og templer."
+                },
+                {
+                    "si": "De bygde også det første Pantheon. Bygningen som står i Roma i dag, er ikke Agrippas. Den ble tatt i bruk på 120-tallet."
+                },
+                {
+                    "si": "Men innskriften med navnet til Agrippa, fra år 27 før vår tid, ble skrevet på nytt på fasaden. Der står den fortsatt."
+                },
+                {
+                    "si": "Byggingen var ikke bare for å vise seg fram. Den ga folk i Roma arbeid og noe å være stolte av."
+                }
+            ]
+        },
+        {
+            "id": "pax",
+            "lyd": "hav",
+            "kapittel": "Pax Romana",
+            "visual": { "type": "AugustusKart", "props": { "modus": "pax" } },
+            "replikker": [
+                {
+                    "si": "Det viktigste Augustus fikk til, var ro. Etter hundre år med borgerkrig kunne folk endelig puste ut."
+                },
+                { "si": "Handelen blomstret, piratene var borte, og grensene var sikre." },
+                {
+                    "si": "Denne tiden kalles Pax Romana, den romerske freden. Den varte i rundt 200 år."
+                },
+                { "si": "Det var den lengste fredstiden Europa hadde hatt, før moderne tid." }
+            ]
+        },
+        {
+            "id": "prisen",
+            "lyd": "stille",
+            "visual": { "type": "AugustusMakt", "props": { "modus": "pris" } },
+            "replikker": [
+                { "si": "Men prisen for freden var friheten." },
+                { "si": "Før var romerne borgere som var med på å styre seg selv." },
+                {
+                    "si": "Nå var de undersåtter. Det betyr folk som må gjøre det en hersker bestemmer. Og herskeren var keiseren."
+                }
+            ]
+        },
+        {
+            "id": "stykket",
+            "lyd": "rom",
+            "kapittel": "Stykket er over",
+            "visual": { "type": "AugustusTeater", "props": {} },
+            "replikker": [
+                { "si": "Augustus døde i Nola den 19. august år 14 etter vår tid." },
+                {
+                    "si": "Da han lå for døden, skal han ha spurt vennene sine: Har jeg spilt rollen min godt i livets komedie?"
+                },
+                { "si": "Vennene skal ha nikket. Da svarte han: Klapp da, for stykket er over." },
+                {
+                    "si": "Han visste at keiserdømmet var et teater. Men det var et teater som holdt verden sammen."
+                },
+                {
+                    "si": "Navnet hans lever videre. Måneden august er oppkalt etter ham. Før het den Sextilis, den sjette, fordi året en gang begynte i mars."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Fred eller frihet?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Hundre år med borgerkrig.", "fraBeat": 0 },
+                        { "tekst": "Så kom freden.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Men romerne styrte ikke lenger seg selv.", "fraBeat": 1 },
+                        { "tekst": "Prisen for freden var friheten.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Hva ville du valgt:", "fraBeat": 2 },
+                        { "tekst": "fred, eller frihet?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Augustus kom til makten etter hundre år med borgerkrig. Han regnes gjerne som den som startet freden."
+                },
+                { "si": "Men prisen for freden var friheten. Romerne styrte ikke lenger seg selv." },
+                { "si": "Så hva tenker du? Er det verdt å gi bort friheten for å få fred og ro?" }
+            ]
+        }
+    ]
+}

@@ -4,6 +4,15 @@
     "kilde": "/historie/dansketiden/roros-kobberverk",
     "bilde": "/images/dansketiden/roros-kobberverk-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-11-02",
+        "viser": 3,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
     "scener": [
         {
             "id": "vinter",
@@ -26,7 +35,7 @@
                     "si": "Lasset er tungt. Stein fra gruvene, sekker med trekull og ved."
                 },
                 {
-                    "si": "Foran ligger bergstaden Røros, en by som vokste opp rundt gruvene. Fra smeltehytta stiger det røyk, dag og natt."
+                    "si": "Foran ligger bergstaden Røros. Fra smeltehytta stiger det røyk, dag og natt."
                 }
             ]
         },
@@ -72,7 +81,7 @@
             },
             "replikker": [
                 {
-                    "si": "Kobber er et rødbrunt metall som er lett å forme. Det meste ble solgt til utlandet, men noe havnet på norske kirketårn."
+                    "si": "Kobber er et rødbrunt metall som er lett å forme. Det meste ble solgt til utlandet, men noe ble brukt i Norge, for eksempel på kirketårn."
                 },
                 {
                     "si": "I 1644 begynte Lorentz Lossius å bryte malm på Rørosvidda. Malm er stein med metall i."
@@ -84,7 +93,7 @@
                     "si": "Norge var en del av Danmark-Norge, og kongen satt i København. Han ville ha metall, for metall betydde penger og våpen."
                 },
                 {
-                    "si": "Kunnskapen om gruver fantes i utlandet. Derfor hentet de tyske eksperter og arbeidere for å drive verket."
+                    "si": "Kunnskapen om gruver fantes i utlandet. Derfor hentet de inn tyske eksperter og fagarbeidere for å drive bergverkene."
                 }
             ]
         },
@@ -175,9 +184,9 @@
             "id": "bondene",
             "lyd": "stille",
             "visual": {
-                "type": "RorosKart",
+                "type": "RorosGarden",
                 "props": {
-                    "modus": "bonder"
+                    "modus": "plikt"
                 }
             },
             "replikker": [
@@ -219,7 +228,7 @@
                     "si": "Den rikeste gruva, Nye Storwartz, ble funnet i 1708. Den alene ga rundt 40 000 tonn kobber."
                 },
                 {
-                    "si": "Den siste gruva, Olavsgruva, var i drift helt til sommeren 1972. I dag kan du gå inn i den."
+                    "si": "Den siste gruva i Storwartz-feltet, Olavsgruva, var i drift helt til sommeren 1972. I dag kan du gå inn i den."
                 }
             ]
         },
@@ -227,29 +236,9 @@
             "id": "garden",
             "lyd": "stille",
             "visual": {
-                "type": "Punktkort",
+                "type": "RorosGarden",
                 "props": {
-                    "tittel": "To jobber i hver familie",
-                    "punkter": [
-                        {
-                            "ikon": "hus",
-                            "tittel": "En liten gård",
-                            "tekst": "med dyr, for alle arbeiderne",
-                            "fraBeat": 0
-                        },
-                        {
-                            "ikon": "fabrikk",
-                            "tittel": "Mennene",
-                            "tekst": "i gruva eller ved smeltehytta",
-                            "fraBeat": 1
-                        },
-                        {
-                            "ikon": "stjerne",
-                            "tittel": "Kvinnene",
-                            "tekst": "drev det meste av gårdsarbeidet",
-                            "fraBeat": 2
-                        }
-                    ]
+                    "modus": "familie"
                 }
             },
             "replikker": [
@@ -285,10 +274,10 @@
                     "si": "Smeltehytta slukte skog fortere enn ny skog rakk å vokse opp."
                 },
                 {
-                    "si": "Rundt 1670 var all skog innenfor 25 kilometer fra smeltehytta hugget ned."
+                    "si": "Rundt 1670 var skogen innenfor 25 kilometer fra smeltehytta hugget ned."
                 },
                 {
-                    "si": "Røyken forurenset lufta, og den gjorde det vanskelig for ny skog å vokse."
+                    "si": "Røyken forurenset lufta, og den gjorde det vanskeligere for ny skog å vokse."
                 },
                 {
                     "si": "I byen ligger fortsatt store hauger med svart slagg. De er spor etter flere hundre år med tungindustri."
@@ -351,7 +340,7 @@
                     "tittel": "Ny teknikk",
                     "punkter": [
                         {
-                            "ikon": "fabrikk",
+                            "ikon": "tog",
                             "tittel": "1877: Rørosbanen",
                             "tekst": "toget kommer til Røros",
                             "fraBeat": 0
@@ -365,7 +354,7 @@
                         {
                             "ikon": "penger",
                             "tittel": "Rundt 1900: taubaner",
-                            "tekst": "bøndene mister malmkjøringen",
+                            "tekst": "de fleste bøndene mister malmkjøringen",
                             "fraBeat": 2
                         }
                     ]
@@ -419,7 +408,7 @@
                 "type": "Tittelkort",
                 "props": {
                     "tittel": "SLUTTEN",
-                    "undertittel": "Verket går konkurs i 1977",
+                    "undertittel": "1953: hytta brenner. 1977: konkurs",
                     "bilde": "/images/dansketiden/roros-kobberverk-02.webp",
                     "tall": [
                         {
@@ -510,7 +499,7 @@
                             "fraBeat": 1
                         },
                         {
-                            "tekst": "Alle ble dratt inn.",
+                            "tekst": "Alle ble preget av verket.",
                             "fraBeat": 1,
                             "uthevet": true
                         },
@@ -531,7 +520,7 @@
                     "si": "Røros kobberverk var mer enn en gruve. Det var et helt landskap som jobbet for kobberet."
                 },
                 {
-                    "si": "Bøndene, kvinnene på gårdene, kjørekarene og samene på vidda. Alle ble dratt inn."
+                    "si": "Bøndene, kvinnene på gårdene, kjørekarene og samene på vidda. Alle ble preget av verket."
                 },
                 {
                     "si": "Derfor er det ikke nok å bevare bare byen. Historien om kobberet er historien om et helt landskap."

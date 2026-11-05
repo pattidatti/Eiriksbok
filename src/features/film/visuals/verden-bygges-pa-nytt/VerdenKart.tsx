@@ -29,6 +29,8 @@ const SOVJET = [643, 804, 112, 398, 860, 795, 417, 762, 268, 51, 31, 440, 428, 2
 const OST = [616, 203, 703, 348, 642, 100];
 const VEST = [826, 250, 528, 56, 380, 208, 40, 300, 792, 620, 372, 276, 752, 352];
 const NORGE = 578;
+/** Land som holdt seg utenfor krigen (eller nesten): Sverige, Irland, Portugal, Tyrkia, Island. */
+const NOYTRALE = [752, 372, 620, 792, 352];
 
 const STED = {
     usa: [-98, 39] as LngLat,
@@ -100,7 +102,7 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
         return FARGE.land;
     }
     if (modus === 'bretton') {
-        if (beat === 0 && (VEST.includes(id) || OST.includes(id) || sovjet || id === 392 || id === 156))
+        if (beat === 0 && !NOYTRALE.includes(id) && (VEST.includes(id) || OST.includes(id) || sovjet || id === 392 || id === 156))
             return FARGE.krig;
         if (beat >= 1 && id === NORGE) return FARGE.norge;
         if (beat >= 1 && id === USA) return FARGE.usa;
@@ -190,11 +192,11 @@ export function VerdenKart({ beat, playing, props }: VisualProps<{ modus?: Modus
                 {modus === 'kjemper' && (
                     <>
                         <Etikett pos={skjerm([-12, 55])} tekst="Storbritannia: nesten konkurs" vis={beat === 0} />
-                        <Etikett pos={skjerm([2, 44])} tekst="Frankrike: okkupert" dy={20} vis={beat === 0} />
+                        <Etikett pos={skjerm([2, 44])} tekst="Frankrike: var okkupert" dy={20} vis={beat === 0} />
                         {beat >= 1 && <Etikett pos={skjerm([10, 51])} tekst="Tyskland: knust" farge="#1c1917" dy={-40} vis={beat === 1} />}
                         {beat >= 1 && <Etikett pos={skjerm([134, 38])} tekst="Japan: knust" farge="#1c1917" dy={-50} vis={beat === 1} />}
                         {beat >= 2 && <Etikett pos={skjerm(STED.usa)} tekst="USA" farge={FARGE.usa} stor />}
-                        {beat >= 2 && <Etikett pos={skjerm([90, 62])} tekst="Sovjetunionen" farge={FARGE.ostMork} stor />}
+                        {beat >= 2 && <Etikett pos={skjerm(beat === 4 ? [95, 47] : [90, 62])} tekst="Sovjetunionen" farge={FARGE.ostMork} stor />}
                         {beat === 3 &&
                             OST.map((id) => {
                                 const s = senter(id);

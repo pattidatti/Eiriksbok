@@ -9,7 +9,7 @@ import { frø } from './felles3d';
 
 /**
  * Kart over Røros kobberverk. «sirkel»: circumferensen, sirkelen med radius 45,2 km rundt
- * gruva. «bonder»: gårdene i sirkelen som måtte jobbe for verket. «femunden»: skogen som ble
+ * gruva. «femunden»: skogen som ble
  * hugget ut, og den nye smeltehytta ved Femunden. «veier»: Vinterleden til Falun og kobberet
  * til Trondheim og Amsterdam. «verdensarv»: byen i 1980, hele sirkelen i 2010.
  */
@@ -17,7 +17,7 @@ import { frø } from './felles3d';
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'sirkel' | 'bonder' | 'femunden' | 'veier' | 'verdensarv';
+type Modus = 'sirkel' | 'femunden' | 'veier' | 'verdensarv';
 
 const ROROS: LngLat = [11.385, 62.574];
 const GRUVA: LngLat = [11.55, 62.63];
@@ -72,13 +72,6 @@ const KOBBERVEIEN: LngLat[] = [
     AMSTERDAM,
 ];
 
-/** Gårder spredt i sirkelen, unna selve gruva. */
-const GARDER: LngLat[] = Array.from({ length: 46 }, (_, i) => {
-    const r = R_SIRKEL * (0.28 + Math.sqrt(frø(i + 40)) * 0.66);
-    const a = frø(i + 80) * Math.PI * 2;
-    return [GRUVA[0] + (Math.cos(a) * r) / Math.cos((GRUVA[1] * Math.PI) / 180), GRUVA[1] + Math.sin(a) * r];
-});
-
 /** Skog utenfor hogstringen. */
 const SKOG: LngLat[] = Array.from({ length: 90 }, (_, i) => {
     const r = R_HOGST * 1.15 + frø(i + 900) * R_SIRKEL * 1.4;
@@ -94,7 +87,6 @@ const NAER: Utsnitt = { sv: [10.3, 62.05], no: [12.75, 63.15] };
 const REGION: Utsnitt = { sv: [9.3, 60.3], no: [16.6, 63.8] };
 
 function utsnittFor(modus: Modus, beat: number): Utsnitt {
-    if (modus === 'bonder' && beat >= 3) return { sv: [4.5, 58], no: [20, 66] };
     if (modus === 'femunden') return { sv: [10.4, 61.8], no: [12.9, 63.0] };
     if (modus === 'veier') {
         if (beat <= 1) return NAER;
@@ -183,7 +175,6 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
 
     const visSirkel =
         (modus === 'sirkel' && beat >= 1) ||
-        modus === 'bonder' ||
         modus === 'femunden' ||
         modus === 'veier' ||
         (modus === 'verdensarv' && beat >= 2);
@@ -285,21 +276,6 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
                         );
                     })}
 
-                {/* Gårdene i sirkelen */}
-                {modus === 'bonder' &&
-                    beat <= 2 &&
-                    GARDER.map((ll, i) => (
-                        <motion.g key={i} initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: i * 0.03 }}>
-                            <g transform={skjerm(ll)}>
-                                {beat >= 1 && <Frakt fra={ll} til={ROROS} skjermPunkt={(x) => tilSkjerm(x, proj, vindu, kk)} i={i} playing={playing} />}
-                                <Gaard />
-                            </g>
-                        </motion.g>
-                    ))}
-                {modus === 'bonder' && beat === 2 && (
-                    <Stempel tekst="PLIKTARBEID" under="betalt, men ingen kunne si nei" />
-                )}
-
                 {/* Malm til skogen */}
                 {modus === 'femunden' && beat >= 2 && (
                     <Pil fra={tilSkjerm(GRUVA, proj, vindu, kk)} til={tilSkjerm(FEMUNDSHYTTA, proj, vindu, kk)} farge="#9a3412" tekst="malm til skogen" />
@@ -328,7 +304,7 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
                         </motion.g>
                     </g>
                 )}
-                {(modus === 'sirkel' || (modus === 'bonder' && beat <= 2) || modus === 'femunden') && (
+                {(modus === 'sirkel' || modus === 'femunden') && (
                     <g transform={skjerm(GRUVA)}>
                         <Gruvemerke />
                         <Etikett tekst="Storwartz" x={24} dy={-18} anker="start" />
@@ -378,7 +354,7 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
                     </motion.g>
                 )}
                 {arv && beat >= 2 && <Fakta x={60} linjer={['2010: hele sirkelen', 'rundt 5000 km²']} />}
-                {(modus === 'bonder' && beat >= 3) || (modus === 'veier' && beat >= 2) ? (
+                {modus === 'veier' && beat >= 2 ? (
                     <>
                         <g transform={skjerm([8.6, 61.2])}>
                             <Etikett tekst="NORGE" dy={0} farge="#78716c" />
@@ -422,7 +398,7 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
                     [3, 57.5],
                     [26, 71.5],
                 ]}
-                synlig={utsnittNaa.no[0] - utsnittNaa.sv[0] < 4}
+                synlig={utsnittNaa.no[0] - utsnittNaa.sv[0] < 4 && !(arv && beat >= 2)}
                 etikett="Norge"
             />
         </div>
@@ -431,9 +407,8 @@ export function RorosKart({ beat, playing, props }: VisualProps<{ modus: Modus }
 
 const OVERSKRIFTER: Record<Modus, (string | null)[]> = {
     sirkel: ['1646: Irgens tar over', 'En sirkel rundt gruva', 'Verket velger først', 'Circumferensen = omkrets'],
-    bonder: ['Bøndene i sirkelen', 'Frakte varer, brenne trekull', 'Pliktarbeid', 'Flere bergverk gjorde det samme'],
-    femunden: ['Skogen er hugget ut', '1743: ny smeltehytte', 'Malmen flytter til skogen'],
-    veier: ['Kjørekarene', 'Over frosne vann og myrer', 'Vinterleden til Falun', 'Lang vei', 'Kobberet til Amsterdam'],
+    femunden: ['Skogen nær hytta er hugget ut', '1743: ny smeltehytte', 'Malmen flytter til skogen'],
+    veier: ['Kjørekarene', 'Over frosne vann og myrer', 'Vinterleden til Falun', 'Lang vei', 'Kobberet, mest til Amsterdam'],
     verdensarv: ['1980: verdensarv', 'Vernet for alle mennesker', 'Et helt landskap'],
 };
 
@@ -493,38 +468,6 @@ function Gruvemerke() {
             <circle r={18} fill="#9a3412" stroke="#fff" strokeWidth={4} />
             <path d="M -8 8 L 8 -8 M -9 -3 L -3 -9 M 3 9 L 9 3" stroke="#fff" strokeWidth={4} strokeLinecap="round" />
         </g>
-    );
-}
-
-/** Animert prikk fra en gård inn mot smeltehytta. Tegnes i gårdens lokale koordinater. */
-function Frakt({
-    fra,
-    til,
-    skjermPunkt,
-    i,
-    playing,
-}: {
-    fra: LngLat;
-    til: LngLat;
-    skjermPunkt: (ll: LngLat) => [number, number];
-    i: number;
-    playing: boolean;
-}) {
-    const a = skjermPunkt(fra);
-    const b = skjermPunkt(til);
-    const dx = b[0] - a[0];
-    const dy = b[1] - a[1];
-    return (
-        <>
-            <line x1={0} y1={0} x2={dx} y2={dy} stroke="#9a3412" strokeOpacity={0.35} strokeWidth={2} />
-            <motion.circle
-                r={5}
-                fill={i % 2 ? '#1c1917' : '#9a3412'}
-                initial={{ cx: 0, cy: 0 }}
-                animate={playing ? { cx: [0, dx], cy: [0, dy] } : { cx: dx * 0.5, cy: dy * 0.5 }}
-                transition={{ duration: 3 + frø(i) * 2, repeat: playing ? Infinity : 0, delay: frø(i + 5) * 2 }}
-            />
-        </>
     );
 }
 
@@ -597,20 +540,6 @@ function Rettigheter() {
                 </motion.g>
             ))}
         </g>
-    );
-}
-
-function Stempel({ tekst, under }: { tekst: string; under: string }) {
-    return (
-        <motion.g initial={{ opacity: 0, scale: 1.5 }} animate={{ opacity: 1, scale: 1 }} style={{ originX: '1220px', originY: '700px' }}>
-            <g transform="rotate(-6 1220 700)">
-                <rect x={960} y={640} width={520} height={100} rx={14} fill="#ffffff" fillOpacity={0.9} stroke="#b91c1c" strokeWidth={8} />
-                <text x={1220} y={712} textAnchor="middle" fontSize={62} fontWeight={900} fill="#b91c1c">
-                    {tekst}
-                </text>
-            </g>
-            <Etikett tekst={under} x={1220} dy={800} />
-        </motion.g>
     );
 }
 

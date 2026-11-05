@@ -1,5 +1,5 @@
 {
-  "buildId": 43667100259382,
+  "buildId": 79297720935,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4672,6 +4672,9 @@
     "lonn-og-ulikhet": [
       "content/samfunnskunnskap/arbeidsliv/lonn-og-ulikhet.json"
     ],
+    "afrikas-befolkningsvekst": [
+      "content/samfunnskunnskap/demografi/afrikas-befolkningsvekst.json"
+    ],
     "befolkningspyramider": [
       "content/samfunnskunnskap/demografi/befolkningspyramider.json"
     ],
@@ -4680,6 +4683,9 @@
     ],
     "eldrebolgen": [
       "content/samfunnskunnskap/demografi/eldrebolgen.json"
+    ],
+    "ettbarnspolitikken": [
+      "content/samfunnskunnskap/demografi/ettbarnspolitikken.json"
     ],
     "fattigdom": [
       "content/samfunnskunnskap/demografi/fattigdom.json"
@@ -6525,9 +6531,11 @@
     "samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv": "content/samfunnskunnskap/arbeidsliv/fremtidens-arbeidsliv.json",
     "samfunnskunnskap/arbeidsliv/frontfagmodellen": "content/samfunnskunnskap/arbeidsliv/frontfagmodellen.json",
     "samfunnskunnskap/arbeidsliv/lonn-og-ulikhet": "content/samfunnskunnskap/arbeidsliv/lonn-og-ulikhet.json",
+    "samfunnskunnskap/demografi/afrikas-befolkningsvekst": "content/samfunnskunnskap/demografi/afrikas-befolkningsvekst.json",
     "samfunnskunnskap/demografi/befolkningspyramider": "content/samfunnskunnskap/demografi/befolkningspyramider.json",
     "samfunnskunnskap/demografi/den-demografiske-overgangen": "content/samfunnskunnskap/demografi/den-demografiske-overgangen.json",
     "samfunnskunnskap/demografi/eldrebolgen": "content/samfunnskunnskap/demografi/eldrebolgen.json",
+    "samfunnskunnskap/demografi/ettbarnspolitikken": "content/samfunnskunnskap/demografi/ettbarnspolitikken.json",
     "samfunnskunnskap/demografi/fattigdom": "content/samfunnskunnskap/demografi/fattigdom.json",
     "samfunnskunnskap/demografi/finland-levekar": "content/samfunnskunnskap/demografi/finland-levekar.json",
     "samfunnskunnskap/demografi/fodselstallet-i-norge": "content/samfunnskunnskap/demografi/fodselstallet-i-norge.json",

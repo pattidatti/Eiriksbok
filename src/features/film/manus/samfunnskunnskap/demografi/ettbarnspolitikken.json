@@ -1,0 +1,370 @@
+{
+    "id": "ettbarnspolitikken",
+    "tittel": "Ettbarnspolitikken i Kina",
+    "kilde": "/samfunnskunnskap/demografi/ettbarnspolitikken",
+    "utenforArtikkel": [
+        { "tall": 1000, "begrunnelse": "Målestokk i prikkfeltet: 1000 prikker er hele befolkningen, så 133, 187 og 230 prikker er 13,3, 18,7 og 23,0 prosent fra artikkelen." },
+        { "tall": 133, "begrunnelse": "Regnet ut fra artikkelen: 13,3 prosent av 1000 prikker." },
+        { "tall": 187, "begrunnelse": "Regnet ut fra artikkelen: 18,7 prosent av 1000 prikker." },
+        { "tall": 230, "begrunnelse": "Regnet ut fra artikkelen: 23,0 prosent av 1000 prikker." }
+    ],
+    "vurdering": { "dato": "2026-11-03", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "klasse",
+            "lyd": "rom",
+            "kapittel": "Ett barn",
+            "visual": { "type": "EttbarnSlekt", "props": { "modus": "klasse" } },
+            "replikker": [
+                { "si": "Tenk deg en skoleklasse der nesten ingen har søsken." },
+                {
+                    "si": "Ingen storebror som tar deg med på kino. Ingen lillesøster som roter på rommet ditt."
+                },
+                {
+                    "si": "Når du blir voksen, er det bare du som kan hjelpe mamma og pappa når de blir gamle. Og kanskje besteforeldrene dine også."
+                },
+                { "si": "For mange millioner barn i Kina var dette helt vanlig." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ETT BARN",
+                    "undertittel": "Ettbarnspolitikken i Kina, rundt 1980 til 2015",
+                    "tall": [
+                        {
+                            "verdi": 30,
+                            "etikett": "år med regelen",
+                            "fraBeat": 1,
+                            "omtrent": false,
+                            "prefiks": "over"
+                        }
+                    ],
+                    "sporsmal": { "tekst": "Virket det egentlig?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fra rundt 1980 bestemte staten i Kina at de fleste par i byene bare skulle få ett barn."
+                },
+                { "si": "Regelen kalles ettbarnspolitikken. Den varte i over 30 år." },
+                {
+                    "si": "Det er et av de største forsøkene noen stat har gjort på å styre hvor mange barn folk får."
+                },
+                {
+                    "si": "I denne filmen skal vi se hvorfor Kina gjorde det, hvordan staten fikk folk til å følge regelen, og om den egentlig virket."
+                }
+            ]
+        },
+        {
+            "id": "milliard",
+            "kapittel": "Redd for vekst",
+            "visual": { "type": "EttbarnKart", "props": { "modus": "milliard" } },
+            "replikker": [
+                { "si": "Rundt 1980 hadde Kina omtrent én milliard innbyggere." },
+                {
+                    "si": "Lederne i kommunistpartiet var redde. En befolkning som vokste for fort, kunne gi mer fattigdom, for få skoleplasser, mer forurensning og flere uten jobb."
+                },
+                {
+                    "si": "En gruppe forskere ledet av ingeniøren Song Jian regnet ut at den beste størrelsen for Kina var 650 til 700 millioner mennesker."
+                },
+                {
+                    "si": "Det var bare omtrent to tredjedeler av dem som bodde i landet. Lederne brukte slike utregninger for å stramme inn."
+                }
+            ]
+        },
+        {
+            "id": "fall",
+            "kapittel": "Før regelen",
+            "visual": { "type": "EttbarnKurve", "props": { "modus": "fall" } },
+            "replikker": [
+                { "si": "Men Kina hadde allerede begynt å få færre barn." },
+                {
+                    "si": "Rundt 1970 startet staten en kampanje med slagordet: senere, lengre, færre."
+                },
+                {
+                    "si": "Folk skulle gifte seg senere, vente lenger mellom hvert barn og få færre barn."
+                },
+                {
+                    "si": "Rundt 1970 fikk en kvinne i Kina i snitt nesten seks barn. Det tallet kalles fruktbarhet: hvor mange barn en kvinne får i løpet av livet."
+                },
+                { "si": "Ved slutten av tiåret var tallet nede i 2,7 til 2,8." }
+            ]
+        },
+        {
+            "id": "regelen",
+            "lyd": "vind",
+            "kapittel": "Regelen",
+            "visual": { "type": "EttbarnSlekt", "props": { "modus": "regler" } },
+            "replikker": [
+                {
+                    "si": "I september 1979 vedtok Kinas nasjonalforsamling en politikk som skulle få familiene til å nøye seg med ett barn."
+                },
+                {
+                    "si": "Det skjedde i de samme årene som Kina begynte å åpne seg for verden under lederen Deng Xiaoping."
+                },
+                {
+                    "si": "Fra 1982 ble det en fast regel: Ektepar i byene skulle bare ha ett barn."
+                },
+                {
+                    "si": "Men regelen var ikke like streng for alle. På landet var motstanden stor. Fra 1984 fikk de fleste par der lov til å få et barn til hvis det første var en jente."
+                },
+                {
+                    "si": "Folk fra etniske minoriteter, altså folkegrupper som ikke er han-kinesere, var ikke omfattet av regelen om ett barn."
+                }
+            ]
+        },
+        {
+            "id": "gulrot",
+            "lyd": "stille",
+            "kapittel": "Gulrot og pisk",
+            "visual": { "type": "EttbarnVekt", "props": { "modus": "belonning" } },
+            "replikker": [
+                {
+                    "si": "Staten brukte både gulrot og pisk. Det betyr belønning til dem som fulgte regelen, og straff til dem som ikke gjorde det."
+                },
+                {
+                    "si": "Foreldre med bare ett barn kunne få hjelp til å betale for helsehjelp, en sikrere pensjon og bedre muligheter til å få bolig."
+                },
+                {
+                    "si": "De som fikk for mange barn, kunne få bøter, høyere skatt eller bli satt til tvangsarbeid en periode. Da ble de tvunget til å jobbe."
+                }
+            ]
+        },
+        {
+            "id": "tvang",
+            "lyd": "rom",
+            "visual": { "type": "EttbarnTall", "props": { "modus": "tvang" } },
+            "replikker": [
+                { "si": "Den mørkeste siden av politikken var tvangen." },
+                {
+                    "si": "Mange kvinner ble tvunget til abort, altså til å avbryte svangerskapet. Det skjedde uansett hvor langt de var kommet."
+                },
+                {
+                    "si": "Mange ble også sterilisert mot sin vilje. Det er en operasjon som gjør at en person ikke kan få flere barn."
+                },
+                {
+                    "si": "Tvangen var verst i 1983. Det året ble det gjort 14,4 millioner aborter og 20,7 millioner steriliseringer i Kina, mange av dem under tvang."
+                },
+                {
+                    "si": "Derfor mener mange at ettbarnspolitikken brøt med grunnleggende menneskerettigheter."
+                }
+            ]
+        },
+        {
+            "id": "virket",
+            "lyd": "stille",
+            "kapittel": "Virket det?",
+            "visual": { "type": "EttbarnKurve", "props": { "modus": "virket" } },
+            "replikker": [
+                {
+                    "si": "Kinas myndigheter har sagt at politikken hindret at 400 millioner barn ble født."
+                },
+                {
+                    "si": "Forskerne Martin King Whyte, Feng Wang og Yong Cai mener det tallet er helt feil."
+                },
+                {
+                    "si": "De peker på at minst 70 prosent av nedgangen i antall barn skjedde før ettbarnspolitikken begynte."
+                },
+                {
+                    "si": "Etter at regelen kom i 1980, gikk fruktbarheten faktisk litt opp igjen i noen år."
+                },
+                {
+                    "si": "Forskerne mener at det meste av nedgangen etter 1980 kom fordi Kina ble rikere, ikke på grunn av tvangen. Etter 1995 lå tallet rundt 1,7 barn per kvinne."
+                },
+                {
+                    "si": "Forskerne er altså uenige om hvor mye regelen betydde. Men alle er enige om at Kina fikk færre barn veldig raskt."
+                }
+            ]
+        },
+        {
+            "id": "fire-to-en",
+            "lyd": "rom",
+            "kapittel": "Fire, to, én",
+            "visual": { "type": "EttbarnSlekt", "props": { "modus": "421" } },
+            "replikker": [
+                {
+                    "si": "Når hvert par bare får ett barn, blir hver ny generasjon mye mindre enn den forrige."
+                },
+                {
+                    "si": "Her er to enebarn som gifter seg. Enebarn betyr at de ikke har søsken. De får ett barn sammen."
+                },
+                { "si": "Barnet har to foreldre over seg." },
+                { "si": "Og over dem igjen står fire besteforeldre." },
+                {
+                    "si": "Dette kalles ofte 4-2-1-familien. Fire besteforeldre, to foreldre og ett barn.",
+                    "uttale": "Dette kalles ofte fire-to-en-familien. Fire besteforeldre, to foreldre og ett barn."
+                }
+            ]
+        },
+        {
+            "id": "eldre",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1000,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Hele Kinas befolkning",
+                            "restEtikett": "alle innbyggerne",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1000,
+                            "farget": 133,
+                            "farge": "#c2410c",
+                            "restFarge": "#94a3b8",
+                            "tittel": "2010: 13,3 prosent er 60 år eller eldre",
+                            "fargeEtikett": "60 år eller eldre",
+                            "restEtikett": "under 60 år",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1000,
+                            "farget": 187,
+                            "farge": "#c2410c",
+                            "restFarge": "#94a3b8",
+                            "tittel": "2020: 18,7 prosent",
+                            "fargeEtikett": "60 år eller eldre",
+                            "restEtikett": "under 60 år",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 1000,
+                            "farget": 230,
+                            "farge": "#c2410c",
+                            "restFarge": "#94a3b8",
+                            "tittel": "2025: 23,0 prosent, nesten hver fjerde",
+                            "fargeEtikett": "60 år eller eldre",
+                            "restEtikett": "under 60 år",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Slekta krymper fort med bare ett barn per par. Det samme skjer med et helt land. Her er Kinas befolkning."
+                },
+                { "si": "I 2010 var 13,3 prosent av befolkningen 60 år eller eldre." },
+                { "si": "I 2020 var andelen 18,7 prosent." },
+                {
+                    "si": "Ved utgangen av 2025 hadde den steget til 23 prosent. Det er nesten hver fjerde innbygger. Når mange blir gamle og få er unge, blir det færre som jobber for hver pensjonist."
+                }
+            ]
+        },
+        {
+            "id": "gutter",
+            "kapittel": "Flere gutter",
+            "visual": { "type": "EttbarnVekt", "props": { "modus": "kjonn" } },
+            "replikker": [
+                { "si": "I store deler av Kina var ønsket om å få en sønn sterkt." },
+                {
+                    "si": "Når en familie bare fikk ett barn, ville mange at det skulle bli en gutt. En forsker skriver at politikken også førte til at flere jentebabyer ble drept, særlig på landet."
+                },
+                { "si": "I 2010 ble det født omtrent 118 gutter for hver 100 jenter." },
+                {
+                    "si": "I 2020 var tallet 111,3 gutter per 100 jenter. Skjevheten er blitt mindre, men den er fortsatt stor."
+                },
+                {
+                    "si": "Når det blir født flere gutter enn jenter, vil en del av guttene ikke finne noen å gifte seg med når de blir voksne."
+                }
+            ]
+        },
+        {
+            "id": "to-tre",
+            "kapittel": "Fra ett til tre",
+            "visual": { "type": "EttbarnKurve", "props": { "modus": "tre" } },
+            "replikker": [
+                { "si": "Etter hvert så lederne i Kina at landet ble eldre for fort." },
+                {
+                    "si": "I 2013 fikk par lov til å få to barn hvis en av foreldrene selv var enebarn."
+                },
+                {
+                    "si": "Fra 2016 ble ettbarnspolitikken opphevet. Alle par kunne få to barn uten straff."
+                },
+                {
+                    "si": "Men fødselstallet steg ikke slik lederne hadde håpet. I 2020 ble det født 12 millioner barn, det laveste antallet som var målt. En kvinne fikk i snitt bare 1,3 barn."
+                },
+                {
+                    "si": "I mai 2021 bestemte derfor kommunistpartiet at alle par kunne få tre barn."
+                }
+            ]
+        },
+        {
+            "id": "unge-par",
+            "lyd": "rom",
+            "visual": { "type": "EttbarnSlekt", "props": { "modus": "par" } },
+            "replikker": [
+                { "si": "Mange unge par svarte at det ikke hjalp." },
+                { "si": "De pekte på at det koster mye å oppdra barn." },
+                { "si": "De sa at jobbene er krevende." },
+                { "si": "Og at de også må ta vare på sine egne gamle foreldre." }
+            ]
+        },
+        {
+            "id": "krymper",
+            "lyd": "stille",
+            "kapittel": "Et land som krymper",
+            "visual": { "type": "EttbarnTall", "props": { "modus": "krymper" } },
+            "replikker": [
+                { "si": "I 2025 ble det født 7,92 millioner barn i Kina." },
+                { "si": "Samme år døde 11,31 millioner mennesker." },
+                { "si": "Befolkningen krympet med 3,39 millioner mennesker på ett år." },
+                {
+                    "si": "Staten som en gang forbød folk å få mer enn ett barn, prøver nå å få dem til å få flere."
+                }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En stat prøvde å bestemme", "fraBeat": 0 },
+                        {
+                            "tekst": "noe av det mest private i livet.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        { "tekst": "Forskerne er uenige om hvor mye regelen virket.", "fraBeat": 1 },
+                        {
+                            "tekst": "Men følgene varer i generasjoner.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Det er lettere å få folk til å få færre barn", "fraBeat": 2 },
+                        {
+                            "tekst": "enn å få dem til å få flere.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ettbarnspolitikken viser at en stat kan prøve å bestemme over noe av det mest private i livet til folk."
+                },
+                {
+                    "si": "Forskerne er uenige om hvor mye regelen virket. Men Kina fikk færre barn veldig raskt, og valgene får følger i generasjoner etterpå: en befolkning som eldes raskt, og for få unge."
+                },
+                {
+                    "si": "Det viser seg at det er mye lettere å få folk til å få færre barn enn å få dem til å få flere."
+                }
+            ]
+        }
+    ]
+}

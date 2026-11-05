@@ -18,7 +18,7 @@ const OVERSKRIFT = [
     'Varmen får fjellet til å sprekke',
     'Bor, krutt og senere dynamitt',
     null,
-    'Olavsgruva: i drift til 1972',
+    'Olavsgruva: siste i Storwartz-feltet',
 ];
 
 export function RorosGruve({ beat, playing }: VisualProps) {
@@ -145,7 +145,7 @@ export function RorosGruve({ beat, playing }: VisualProps) {
                     transition={{ delay: 2.4 }}
                     className="absolute right-[5%] bottom-[8%] px-5 py-3 rounded-2xl bg-white/95 shadow-xl text-2xl font-bold text-slate-900"
                 >
-                    Først for hånd og krutt. Senere: dynamitt
+                    Senere: bor og krutt. Så dynamitt
                 </motion.div>
             )}
             {beat === 4 && (
