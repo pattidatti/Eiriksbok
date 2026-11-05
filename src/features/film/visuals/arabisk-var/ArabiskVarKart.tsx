@@ -6,11 +6,10 @@ import type { VisualProps } from '../../types';
 
 /**
  * Kartet over den arabiske våren. Hver modus er et eget utsnitt med egne lag:
- * spredning (opprøret hopper fra land til land), nett (mobiler og videoer verden rundt),
- * libya, syria, flukt og stormakter. Land fargelegges per beat, og piler tegnes ut.
+ * spredning (opprøret hopper fra land til land), libya, syria og flukt. Land fargelegges per beat, og piler tegnes ut.
  */
 
-type Modus = 'spredning' | 'nett' | 'libya' | 'syria' | 'flukt' | 'stormakter';
+type Modus = 'spredning' | 'libya' | 'syria' | 'flukt';
 type LL = [number, number];
 
 const B = 1600;
@@ -48,8 +47,6 @@ const BY: Record<string, LL> = {
     damaskus: [36.29, 33.51],
     daraa: [36.1, 32.62],
     moskva: [37.62, 55.75],
-    teheran: [51.39, 35.69],
-    riyadh: [46.72, 24.71],
     tyrkia: [35.2, 38.9],
     libanon: [35.86, 33.95],
     jordan: [36.3, 31.2],
@@ -63,10 +60,6 @@ const UTSNITT: Record<Modus, [LL, LL]> = {
         [-6, 10],
         [58, 40],
     ],
-    nett: [
-        [-12, 8],
-        [60, 52],
-    ],
     libya: [
         [6, 18],
         [30, 39],
@@ -78,10 +71,6 @@ const UTSNITT: Record<Modus, [LL, LL]> = {
     flukt: [
         [-4, 26],
         [56, 58],
-    ],
-    stormakter: [
-        [-6, 10],
-        [62, 46],
     ],
 };
 
@@ -101,8 +90,6 @@ function farger(modus: Modus, beat: number): Partial<Record<number, string>> {
                 for (const id of [ID.tunisia, ID.egypt, ID.libya, ID.jemen]) f[id] = ROD;
             return f;
         }
-        case 'nett':
-            return { [ID.tunisia]: '#fdba74', [ID.egypt]: '#fdba74' };
         case 'libya':
             if (beat >= 3) return { [ID.libya]: '#d6d3d1' };
             return { [ID.libya]: beat >= 1 ? '#fb923c' : '#fcd34d' };
@@ -117,15 +104,6 @@ function farger(modus: Modus, beat: number): Partial<Record<number, string>> {
             if (beat >= 1)
                 for (const id of [ID.tyrkia, ID.libanon, ID.jordan]) f[id] = '#93c5fd';
             if (beat >= 3) f[ID.russland] = '#e2e8f0';
-            return f;
-        }
-        case 'stormakter': {
-            const f: Partial<Record<number, string>> = {
-                [ID.saudi]: '#4ade80',
-                [ID.iran]: '#c084fc',
-            };
-            if (beat >= 1) f[ID.syria] = '#fca5a5';
-            if (beat >= 2) f[ID.libya] = '#fdba74';
             return f;
         }
     }
@@ -240,22 +218,6 @@ function Prikk({ xy, farge = ROD, r = 12, puls = false }: { xy: [number, number]
     );
 }
 
-/** En mobiltelefon som lyser. */
-function Mobil({ xy, forsinkelse = 0 }: { xy: [number, number]; forsinkelse?: number }) {
-    return (
-        <motion.g
-            initial={{ opacity: 0, scale: 0.4 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: forsinkelse, type: 'spring', stiffness: 220, damping: 18 }}
-            style={{ transformOrigin: `${xy[0]}px ${xy[1]}px` }}
-        >
-            <rect x={xy[0] - 18} y={xy[1] - 30} width={36} height={60} rx={7} fill="#0f172a" />
-            <rect x={xy[0] - 13} y={xy[1] - 23} width={26} height={42} rx={3} fill="#38bdf8" />
-            <circle cx={xy[0]} cy={xy[1] + 24} r={3} fill="#64748b" />
-        </motion.g>
-    );
-}
-
 function Lag({ modus, beat, p }: { modus: Modus; beat: number; p: GeoProjection }) {
     const q = (ll: LL) => p(ll) as [number, number];
     const by = (n: keyof typeof BY) => q(BY[n]);
@@ -274,9 +236,9 @@ function Lag({ modus, beat, p }: { modus: Modus; beat: number; p: GeoProjection 
                     <Prikk xy={by('sidiBouzid')} puls={beat === 0} />
                     {beat >= 1 && <Pil fra={BY.sidiBouzid} til={BY.tripoli} farge={ORANSJE} p={p} />}
                     {beat >= 1 && <Pil fra={BY.sidiBouzid} til={BY.kairo} farge={ORANSJE} p={p} forsinkelse={0.4} bue={0.15} />}
-                    {beat >= 2 && <Pil fra={BY.kairo} til={BY.sanaa} farge={ORANSJE} p={p} bue={-0.2} />}
-                    {beat >= 2 && <Pil fra={BY.kairo} til={BY.manama} farge={ORANSJE} p={p} forsinkelse={0.4} bue={0.15} />}
-                    {beat >= 2 && <Pil fra={BY.kairo} til={BY.damaskus} farge={ORANSJE} p={p} forsinkelse={0.8} bue={0.2} />}
+                    {beat >= 2 && <Pil fra={BY.sidiBouzid} til={BY.sanaa} farge={ORANSJE} p={p} bue={-0.2} />}
+                    {beat >= 2 && <Pil fra={BY.sidiBouzid} til={BY.manama} farge={ORANSJE} p={p} forsinkelse={0.4} bue={0.15} />}
+                    {beat >= 2 && <Pil fra={BY.sidiBouzid} til={BY.damaskus} farge={ORANSJE} p={p} forsinkelse={0.8} bue={0.2} />}
                     {beat >= 2 && <Prikk xy={by('manama')} farge={ORANSJE} r={10} />}
                     {navn
                         .filter(([, , fra]) => beat >= fra)
@@ -284,45 +246,6 @@ function Lag({ modus, beat, p }: { modus: Modus; beat: number; p: GeoProjection 
                             <Navn key={n} xy={q(ll)} forsinkelse={0.6}>
                                 {n}
                             </Navn>
-                        ))}
-                </>
-            );
-        }
-        case 'nett': {
-            const mobiler: LL[] = [BY.tunis, BY.sidiBouzid, [10.5, 34], BY.kairo, [31.8, 31.2], [29.9, 31.2], [32.5, 29.9]];
-            const verden: LL[] = [
-                [-8, 39],
-                [3, 45],
-                [12, 46],
-                [27, 45.5],
-                [45, 42],
-                [56, 24],
-            ];
-            return (
-                <>
-                    {mobiler.map((ll, i) => (
-                        <Mobil key={i} xy={q(ll)} forsinkelse={i * 0.12} />
-                    ))}
-                    {beat >= 1 &&
-                        mobiler.slice(1).map((ll, i) => (
-                            <Pil key={i} fra={mobiler[i]} til={ll} farge="#0ea5e9" p={p} bredde={4} bue={0.12} forsinkelse={i * 0.15} />
-                        ))}
-                    {beat >= 3 &&
-                        verden.map((ll, i) => (
-                            <g key={i}>
-                                <Pil fra={i % 2 ? BY.kairo : BY.tunis} til={ll} farge="#7c3aed" p={p} bredde={5} forsinkelse={i * 0.2} />
-                                <motion.g
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 1.2 + i * 0.2 }}
-                                >
-                                    <circle cx={q(ll)[0]} cy={q(ll)[1]} r={22} fill="#7c3aed" />
-                                    <path
-                                        d={`M ${q(ll)[0] - 7} ${q(ll)[1] - 11} L ${q(ll)[0] + 11} ${q(ll)[1]} L ${q(ll)[0] - 7} ${q(ll)[1] + 11} Z`}
-                                        fill="#fff"
-                                    />
-                                </motion.g>
-                            </g>
                         ))}
                 </>
             );
@@ -520,53 +443,6 @@ function Lag({ modus, beat, p }: { modus: Modus; beat: number; p: GeoProjection 
                 </>
             );
         }
-        case 'stormakter': {
-            return (
-                <>
-                    <Navn xy={q([45, 23.5])} str={34} farge="#14532d">
-                        Saudi-Arabia
-                    </Navn>
-                    <Navn xy={q([54.5, 32.5])} str={34} farge="#581c87">
-                        Iran
-                    </Navn>
-                    {beat === 0 && (
-                        <>
-                            <Pil fra={BY.riyadh} til={BY.sanaa} farge="#14532d" p={p} bue={-0.2} />
-                            <Pil fra={BY.riyadh} til={BY.manama} farge="#14532d" p={p} forsinkelse={0.3} bredde={6} />
-                            <Pil fra={BY.teheran} til={BY.damaskus} farge="#9333ea" p={p} bue={0.15} forsinkelse={0.5} />
-                            <Pil fra={BY.teheran} til={BY.sanaa} farge="#9333ea" p={p} bue={-0.15} forsinkelse={0.8} bredde={6} />
-                        </>
-                    )}
-                    {beat === 1 && (
-                        <>
-                            <Navn xy={q([38.6, 35.4])} str={38}>
-                                Syria
-                            </Navn>
-                            <Pil fra={[44, 45]} til={BY.damaskus} farge="#b91c1c" p={p} bue={-0.1} />
-                            <Pil fra={[-6, 33]} til={[36.6, 34.8]} farge="#1d4ed8" p={p} bue={0.12} forsinkelse={0.4} />
-                            <Navn xy={q([45, 42.5])} farge="#b91c1c" forsinkelse={0.9} anker="start">
-                                Russland: med Assad
-                            </Navn>
-                            <Navn xy={q([0, 36.5])} farge="#1d4ed8" forsinkelse={1.2} anker="start">
-                                USA: mot Assad
-                            </Navn>
-                        </>
-                    )}
-                    {beat >= 2 && (
-                        <>
-                            <Navn xy={q([17.5, 26])} str={40}>
-                                Libya
-                            </Navn>
-                            <Pil fra={[10, 44.5]} til={BY.tripoli} farge="#1d4ed8" p={p} bue={0.1} />
-                            <Pil fra={BY.benghazi} til={[22, 44.5]} farge="#94a3b8" p={p} bue={0.1} stiplet forsinkelse={1.2} />
-                            <Navn xy={q([17.5, 22.6])} str={30} farge="#7f1d1d" forsinkelse={2}>
-                                Ingen plan for etterpå
-                            </Navn>
-                        </>
-                    )}
-                </>
-            );
-        }
     }
 }
 
@@ -610,11 +486,9 @@ function DeltLibya({ d, p }: { d: string; p: GeoProjection }) {
 
 const OVERSKRIFT: Record<Modus, string[]> = {
     spredning: ['Desember 2010', '2011', '2011', 'Innen et år'],
-    nett: ['Twitter og Facebook', 'Mobilen samler folk', 'Aviser og TV: styrt av regjeringen', 'Hele verden ser på'],
     libya: ['Gaddafi styrer', 'NATO griper inn', 'Opprørerne vinner', 'Ingen stat', 'Landet delt mellom grupper'],
     syria: ['Syria, 2011', 'Skudd mot folket', 'Borgerkrig', 'To sider', 'IS vokser fram'],
     flukt: ['Krigen i Syria', 'Flukten til nabolandene', 'Flukten til Europa', 'Assad faller'],
-    stormakter: ['Saudi-Arabia mot Iran', 'USA og Russland', 'Vesten forlater Libya'],
 };
 
 export function ArabiskVarKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
@@ -685,26 +559,9 @@ export function ArabiskVarKart({ beat, props }: VisualProps<{ modus?: Modus }>) 
                     </span>
                 </div>
             )}
-            {modus === 'nett' && beat === 2 && (
-                <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="absolute right-[4%] top-[22%] w-[30%] flex flex-col gap-3"
-                >
-                    <div className="px-5 py-3 rounded-2xl bg-slate-800 text-white shadow-xl">
-                        <div className="text-2xl font-black">Aviser og TV</div>
-                        <div className="text-lg font-semibold text-slate-300">styrt av regjeringen</div>
-                    </div>
-                    <div className="px-5 py-3 rounded-2xl bg-sky-500 text-white shadow-xl">
-                        <div className="text-2xl font-black">Internett</div>
-                        <div className="text-lg font-semibold">kunne ikke stanses fort nok</div>
-                    </div>
-                </motion.div>
-            )}
             {modus === 'libya' && beat >= 4 && (
                 <div className="absolute bottom-[6%] left-[4%] flex gap-3 text-lg font-bold">
-                    {['væpnede grupper', 'stammer', 'regjeringer som kjemper mot hverandre'].map((t, i) => (
+                    {['væpnede grupper', 'stammer', 'regjeringer som kjemper mot hverandre (grensene er omtrentlige)'].map((t, i) => (
                         <span key={t} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 shadow">
                             <span className="w-5 h-5 rounded-full" style={{ background: ['#f59e0b', '#16a34a', '#2563eb'][i] }} /> {t}
                         </span>
@@ -736,9 +593,9 @@ export function ArabiskVarKart({ beat, props }: VisualProps<{ modus?: Modus }>) 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.6 }}
-                    className="absolute bottom-[6%] right-[4%] px-5 py-3 rounded-2xl bg-red-700 text-white shadow-xl text-2xl font-black"
+                    className="absolute top-[5%] left-[4%] px-5 py-3 rounded-2xl bg-red-700 text-white shadow-xl text-2xl font-black"
                 >
-                    Assads styre faller på elleve dager
+                    Desember 2024: styret faller på elleve dager
                 </motion.div>
             )}
         </div>

@@ -299,7 +299,7 @@ const TEKST: Record<Sted, (string | [string, 'rod'])[]> = {
     ],
     pearl: [
         'Pearl-rundkjøringen, Manama · februar 2011',
-        'Folket: mest sjia · kongen: sunni',
+        'De som protesterte: mest sjia · kongen: sunni',
         ['Soldater fra Saudi-Arabia', 'rod'],
         ['Opprøret slås ned', 'rod'],
         'Base for den femte flåten til USA',
