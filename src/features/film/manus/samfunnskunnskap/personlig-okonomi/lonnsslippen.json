@@ -1,0 +1,319 @@
+{
+    "id": "lonnsslippen",
+    "tittel": "Lønnsslippen: Hvor blir pengene av?",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/lonnsslippen",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-05", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 5, "tro": 4, "sum": 21 },
+    "scener": [
+        {
+            "id": "kiosken",
+            "lyd": "hav",
+            "kapittel": "Sommerjobben",
+            "visual": { "type": "LonnsslippenKiosk", "props": { "modus": "sommer" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg en kiosk ved stranda, en varm dag i juli. Bak disken står Ida. Hun er 15 år, og dette er sommerjobben hennes."
+                },
+                { "si": "I juli jobber Ida 80 timer." },
+                { "si": "For hver time får hun 165 kroner." },
+                {
+                    "si": "Hun regner ut at det blir 13 200 kroner. Og hun har allerede bestemt seg for hva pengene skal gå til."
+                }
+            ]
+        },
+        {
+            "id": "lonningsdag",
+            "visual": { "type": "LonnsslippenKiosk", "props": { "modus": "lonningsdag" } },
+            "replikker": [
+                { "si": "Så kommer lønningsdagen. Ida åpner bank-appen på mobilen." },
+                { "si": "Der står det 6 600 kroner." },
+                {
+                    "si": "Halvparten er borte! Har kiosken lurt henne? Har hun gjort noe galt?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "LØNNSSLIPPEN",
+                    "undertittel": "Hvor blir pengene av?",
+                    "tall": [
+                        { "verdi": 13200, "etikett": "kroner hun regnet med", "fraBeat": 0, "omtrent": false },
+                        { "verdi": 6600, "etikett": "kroner kom inn på kontoen", "fraBeat": 0, "tone": "rod", "omtrent": false }
+                    ],
+                    "sporsmal": { "tekst": "Hvor ble resten av?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Svaret står på et lite papir, eller i en PDF, som de fleste unge aldri leser."
+                },
+                { "si": "Det heter lønnsslippen." },
+                {
+                    "si": "I denne filmen lærer du å lese den linje for linje. Og du får vite hvorfor Idas penger slett ikke er borte."
+                }
+            ]
+        },
+        {
+            "id": "slippen",
+            "kapittel": "Kvitteringen",
+            "visual": { "type": "LonnsslippenSlipp", "props": { "modus": "linjer" } },
+            "replikker": [
+                {
+                    "si": "En lønnsslipp er en oversikt over hvordan lønnen din er regnet ut. Arbeidsgiveren skal gi deg en hver gang du får lønn."
+                },
+                { "si": "Øverst står det hvor mange timer du har jobbet, og hva du får per time." },
+                { "si": "Så kommer lønnen, og det som er trukket fra, som skattetrekket." },
+                { "si": "Nederst står det som er igjen. Det er de pengene som kommer inn på kontoen." },
+                {
+                    "si": "Lønnsslippen er altså kvitteringen din. Får du ikke lønnsslipp, skal du si fra til arbeidsgiveren."
+                }
+            ]
+        },
+        {
+            "id": "pizza",
+            "visual": { "type": "LonnsslippenPizza" },
+            "replikker": [
+                {
+                    "si": "To ord er viktigst på slippen: brutto og netto. Tenk på lønnen som en pizza."
+                },
+                {
+                    "si": "Bruttolønnen er hele pizzaen. Det er hele lønnen du har avtalt med arbeidsgiveren. For Ida er det 13 200 kroner."
+                },
+                { "si": "Før du får pizzaen, tar staten kanskje noen stykker. Det er trekket." },
+                {
+                    "si": "Nettolønnen er stykkene som havner på tallerkenen din. Det er de som kommer inn på kontoen."
+                },
+                { "si": "Regnestykket er alltid det samme: brutto minus trekk er netto." }
+            ]
+        },
+        {
+            "id": "trekket",
+            "lyd": "hav",
+            "visual": { "type": "LonnsslippenKiosk", "props": { "modus": "trekk" } },
+            "replikker": [
+                { "si": "Det største trekket er som regel skatt." },
+                {
+                    "si": "Kiosken betaler ikke skatten selv. Den holder igjen en del av lønnen din og sender den videre til staten."
+                },
+                {
+                    "si": "Hvor mye kiosken skal holde igjen, står ikke i arbeidsavtalen. Det står på skattekortet ditt. Det er en beskjed fra Skatteetaten til arbeidsgiveren."
+                }
+            ]
+        },
+        {
+            "id": "grensen",
+            "lyd": "stille",
+            "kapittel": "Frikortet",
+            "visual": { "type": "LonnsslippenFrikort", "props": { "modus": "grense" } },
+            "replikker": [
+                {
+                    "si": "De fleste unge med deltidsjobb eller sommerjobb tjener ikke så mye at de skal betale skatt."
+                },
+                {
+                    "si": "Tjener du 100 000 kroner eller mindre i løpet av året, skal du ikke betale skatt. Det er det frikortet sier."
+                },
+                {
+                    "si": "Alle som er 13 år eller eldre, får frikort av seg selv. Det er arbeidsgiveren som henter det, ikke du."
+                },
+                {
+                    "si": "Men grensen kan flytte seg. I 2024 var den 70 000 kroner. I 2025 og 2026 var den 100 000."
+                },
+                { "si": "Og husk: Feriepengene dine teller også med når du sjekker om du er under grensen." }
+            ]
+        },
+        {
+            "id": "fella",
+            "visual": { "type": "LonnsslippenFrikort", "props": { "modus": "felle" } },
+            "replikker": [
+                { "si": "Men frikortet har en felle." },
+                {
+                    "si": "Tjener du mer enn 100 000 kroner med frikort, trekker arbeidsgiveren 50 prosent skatt av alt du tjener over grensen."
+                },
+                {
+                    "si": "Tror du at du kommer til å tjene mer enn grensen, bør du heller bestille et vanlig skattekort."
+                }
+            ]
+        },
+        {
+            "id": "to-jobber",
+            "lyd": "hav",
+            "kapittel": "Hva skjedde med Ida?",
+            "visual": { "type": "LonnsslippenKiosk", "props": { "modus": "tojobber" } },
+            "replikker": [
+                {
+                    "si": "Tilbake til Ida. Hun har nemlig to jobber. Om våren jobbet hun noen timer i uka i en klesbutikk."
+                },
+                {
+                    "si": "Da gikk hun inn hos Skatteetaten og la hele frikortet på 100 000 kroner på klesbutikken."
+                },
+                {
+                    "si": "Hun tenkte ikke på at hun kanskje skulle få en sommerjobb også. Kiosken fikk null kroner av frikortet."
+                }
+            ]
+        },
+        {
+            "id": "fordeling",
+            "lyd": "stille",
+            "visual": { "type": "LonnsslippenFrikort", "props": { "modus": "fordeling" } },
+            "replikker": [
+                {
+                    "si": "Du kan nemlig dele frikortet mellom flere arbeidsgivere. Du bestemmer selv hvor mye av de 100 000 kronene hver jobb skal få."
+                },
+                {
+                    "si": "Får du mer lønn fra én jobb enn den delen som ligger der, må arbeidsgiveren trekke 50 prosent skatt."
+                },
+                { "si": "Det gjelder selv om du til sammen tjener under 100 000 kroner i året." },
+                {
+                    "si": "Kiosken hadde null kroner av frikortet. Derfor trakk den halvparten av lønnen til Ida: 6 600 kroner."
+                }
+            ]
+        },
+        {
+            "id": "flytte",
+            "visual": { "type": "LonnsslippenFrikort", "props": { "modus": "flytt" } },
+            "replikker": [
+                {
+                    "si": "Kiosken gjorde ingenting galt. Den fulgte beskjeden på skattekortet."
+                },
+                {
+                    "si": "Ida kan logge inn hos Skatteetaten og flytte noe av frikortet fra klesbutikken til kiosken."
+                },
+                {
+                    "si": "Du kan endre fordelingen flere ganger i året, for eksempel når du får en ny jobb."
+                },
+                {
+                    "si": "Men det er én regel: Du kan ikke legge mindre på en jobb enn det du allerede har tjent der."
+                }
+            ]
+        },
+        {
+            "id": "tilbake",
+            "kapittel": "Pengene kommer tilbake",
+            "visual": { "type": "LonnsslippenKalender", "props": { "modus": "oppgjor" } },
+            "replikker": [
+                { "si": "Og de 6 600 kronene som allerede er trukket? Dem får Ida igjen." },
+                {
+                    "si": "Er det trukket for mye skatt, får du pengene tilbake året etter, når skatteoppgjøret er klart."
+                },
+                {
+                    "si": "I skatteoppgjøret regner staten ut hva du egentlig skulle betalt. Så sammenligner den med det som er trukket."
+                },
+                { "si": "Er det for mye, får du det som er for mye tilbake." }
+            ]
+        },
+        {
+            "id": "feriepenger",
+            "kapittel": "Feriepenger",
+            "visual": { "type": "LonnsslippenSlipp", "props": { "modus": "ferie" } },
+            "replikker": [
+                {
+                    "si": "Nederst på mange lønnsslipper står det noe om feriepenger. Det er ikke penger du får nå."
+                },
+                {
+                    "si": "Etter ferieloven får de fleste minst 10,2 prosent av lønnen sin i feriepenger.",
+                    "uttale": "Etter ferieloven får de fleste minst ti komma to prosent av lønnen sin i feriepenger."
+                },
+                {
+                    "si": "For Ida er det 10,2 prosent av 13 200 kroner. Hun har tjent opp 1 346 kroner i feriepenger fra kiosken.",
+                    "uttale": "For Ida er det ti komma to prosent av 13 200 kroner. Hun har tjent opp 1 346 kroner i feriepenger fra kiosken."
+                },
+                {
+                    "si": "Har du fem ukers ferie gjennom en tariffavtale, er satsen 12 prosent. En tariffavtale er en avtale om lønn og arbeidsvilkår som fagforeningene og arbeidsgiverne har forhandlet fram."
+                }
+            ]
+        },
+        {
+            "id": "juni",
+            "visual": { "type": "LonnsslippenKalender", "props": { "modus": "ferie" } },
+            "replikker": [
+                {
+                    "si": "Feriepenger tjener du opp mens du jobber i år. Du får dem utbetalt året etter."
+                },
+                {
+                    "si": "De kommer vanligvis i juni, på den siste vanlige lønningsdagen før ferien."
+                },
+                {
+                    "si": "Får du dem året etter at du tjente dem opp, trekkes det ikke skatt av dem da. Derfor kan det komme mer penger enn vanlig i juni."
+                },
+                {
+                    "si": "Men får du dem samme år, for eksempel fordi du slutter i jobben, blir det trukket skatt."
+                }
+            ]
+        },
+        {
+            "id": "trygd",
+            "kapittel": "Når du tjener mer",
+            "visual": { "type": "LonnsslippenSlipp", "props": { "modus": "trygd" } },
+            "replikker": [
+                {
+                    "si": "Om noen år tjener du kanskje mer enn frikortgrensen. Da trenger du et skattekort. En del av skattetrekket heter trygdeavgift."
+                },
+                {
+                    "si": "Trygdeavgiften blir krevd inn sammen med skatten. Den er med på å betale for folketrygden."
+                },
+                {
+                    "si": "Folketrygden betaler sykepenger når du er syk, dagpenger hvis du mister jobben, og alderspensjon når du blir gammel."
+                },
+                {
+                    "si": "I 2026 er trygdeavgiften 7,6 prosent hvis du er mellom 17 og 69 år. Er du under 17, er den 5,1 prosent.",
+                    "uttale": "I 2026 er trygdeavgiften sju komma seks prosent hvis du er mellom 17 og 69 år. Er du under 17, er den fem komma én prosent."
+                },
+                {
+                    "si": "Men tjener du under 99 650 kroner i året, slipper du trygdeavgift helt."
+                }
+            ]
+        },
+        {
+            "id": "sjekk",
+            "kapittel": "Les slippen",
+            "visual": { "type": "LonnsslippenSlipp", "props": { "modus": "sjekk" } },
+            "replikker": [
+                { "si": "Neste gang du får lønn, kan du gå gjennom slippen med fem spørsmål." },
+                {
+                    "si": "Stemmer antall timer med det du jobbet? Stemmer timelønnen med arbeidsavtalen?"
+                },
+                { "si": "Hvor mye er bruttolønnen, og hvor mye er trukket i skatt?" },
+                { "si": "Er det trukket 50 prosent? Sjekk i så fall hvordan frikortet ditt er fordelt." },
+                { "si": "Og hvor mye feriepenger har du tjent opp så langt i år?" }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Brutto er hele lønnen.", "fraBeat": 0 },
+                        { "tekst": "Netto er det som kommer inn på kontoen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Frikortet må ligge", "fraBeat": 1 },
+                        { "tekst": "på riktig jobb.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "For mye skatt trukket?", "fraBeat": 2 },
+                        { "tekst": "Du får det igjen etter skatteoppgjøret.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Den som leser lønnsslippen,", "fraBeat": 3 },
+                        { "tekst": "oppdager feilen tidlig.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Lønnsslippen viser veien fra brutto til netto. Brutto er hele lønnen. Netto er det som er igjen."
+                },
+                {
+                    "si": "De fleste unge har frikort. Men frikortet må ligge hos riktig arbeidsgiver. Ellers trekkes det 50 prosent."
+                },
+                {
+                    "si": "Skatt som er trukket for mye, får du igjen etter skatteoppgjøret. Men da må du vente til året etter."
+                },
+                {
+                    "si": "Ida oppdaget feilen i juli. Hadde hun ikke lest slippen, hadde hun ventet nesten et år på pengene, uten å vite hvorfor."
+                }
+            ]
+        }
+    ]
+}
