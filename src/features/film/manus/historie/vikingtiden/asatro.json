@@ -1,0 +1,272 @@
+{
+    "id": "asatro",
+    "tittel": "Åsatru: En verden av lureri og skjebne",
+    "kilde": "/historie/vikingtiden/asatro",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-05", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "treet",
+            "lyd": "vind",
+            "kapittel": "Treet midt i verden",
+            "visual": { "type": "AsatroYggdrasil", "props": { "modus": "treet" } },
+            "replikker": [
+                { "si": "Tenk deg et tre som er så stort at greinene strekker seg over hele verden." },
+                { "si": "Det er et asketre, og det er alltid grønt. Treet heter Yggdrasil." },
+                {
+                    "si": "For folk i Norden i vikingtiden sto dette treet i sentrum av alt. Det sto midt i verden, og greinene strakte seg over alt."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ÅSATRU",
+                    "undertittel": "En verden av lureri og skjebne",
+                    "sporsmal": { "tekst": "Hvorfor var vikingene ikke redde for å dø?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Troen til vikingene kaller vi åsatru." },
+                {
+                    "si": "Det var en verden full av guder, kjemper og kvinnelige vesener som formet skjebnen."
+                },
+                {
+                    "si": "I denne filmen skal vi finne ut hvordan vikingene så på verden, og hvorfor de ikke var redde for å dø i kamp."
+                }
+            ]
+        },
+        {
+            "id": "ingen-bok",
+            "lyd": "stille",
+            "kapittel": "Ingen bok, ingen bud",
+            "visual": { "type": "AsatroVekt", "props": { "modus": "ingen" } },
+            "replikker": [
+                {
+                    "si": "Når vi tenker på religion i dag, tenker vi ofte på hellige bøker, prester og regler."
+                },
+                { "si": "Åsatrua hadde ingenting av dette. Ingen bibel, ingen pave og ingen ti bud." },
+                {
+                    "si": "For folk i Norden var religion en selvfølgelig del av verden. Det handlet mer om hva du gjorde, om skikker og handlinger, enn om hva du trodde inni deg."
+                }
+            ]
+        },
+        {
+            "id": "avtale",
+            "visual": { "type": "AsatroVekt", "props": { "modus": "avtale" } },
+            "replikker": [
+                { "si": "I stedet handlet det om å gjøre avtaler med gudene og maktene." },
+                {
+                    "si": "Du ga noe. Det kalte de et blot, et offer. Det kunne være en gjenstand, et dyr, eller mat og drikke."
+                },
+                { "si": "Så håpet du å få noe tilbake, som en god avling eller lykke i krig." },
+                { "si": "Du ga for å få noe igjen. Litt som en handel." }
+            ]
+        },
+        {
+            "id": "gudene",
+            "kapittel": "Gudene",
+            "visual": { "type": "AsatroAaret", "props": { "modus": "gudene" } },
+            "replikker": [
+                { "si": "Gudene hadde hvert sitt område, litt som hver sin jobb." },
+                { "si": "Tor rådde over torden og vær." },
+                { "si": "Odin ga mot i kamp." },
+                { "si": "Frøy ga fred og grøde. Grøde er det som vokser på jorda, som korn." },
+                {
+                    "si": "Gudene var mektige, men ikke allmektige. Det betyr at de ikke kunne gjøre hva som helst."
+                },
+                { "si": "Du tilba dem ikke av kjærlighet, men av respekt. Og litt frykt." }
+            ]
+        },
+        {
+            "id": "riker",
+            "lyd": "vind",
+            "kapittel": "Verden i treet",
+            "visual": { "type": "AsatroYggdrasil", "props": { "modus": "riker" } },
+            "replikker": [
+                { "si": "Tilbake til treet. Yggdrasil har tre røtter, og rundt treet var verden delt i flere riker." },
+                { "si": "Åsgard er gudenes hjem. Der bodde Odin og Tor." },
+                { "si": "I midten ligger Midgard. Det er menneskenes verden, vår verden." },
+                {
+                    "si": "Langt borte, på den andre siden av verdenshavet, ligger Utgard, også kalt Jotunheim. Der bor jotnene, kjempene."
+                },
+                {
+                    "si": "Under jorda ligger Helheim, dødsriket. Det styres av gudinnen Hel, og dit trodde man at folk kom når de døde."
+                }
+            ]
+        },
+        {
+            "id": "yme",
+            "lyd": "stille",
+            "visual": { "type": "AsatroYme" },
+            "replikker": [
+                {
+                    "si": "Men hvordan ble verden til? Odin og brødrene hans drepte urjotnen Yme, den aller første kjempen. Av kroppen hans lagde de verden."
+                },
+                { "si": "Kjøttet ble jord. Beina og tennene ble fjell og stein." },
+                { "si": "Blodet og svetten ble hav og vann. Håret ble skog." },
+                {
+                    "si": "Av øyenbrynene lagde de en mur rundt Midgard. Den skulle verne menneskene mot jotnene og kaoset."
+                }
+            ]
+        },
+        {
+            "id": "balanse",
+            "lyd": "storm",
+            "kapittel": "Orden og kaos",
+            "visual": { "type": "AsatroYggdrasil", "props": { "modus": "balanse" } },
+            "replikker": [
+                { "si": "Hele verdensbildet til vikingene handlet om balanse." },
+                { "si": "Gudene var ordenens voktere. De passet på at verden holdt sammen." },
+                {
+                    "si": "Jotnene var kaos. Fra Utgard truet de både mennesker og guder, og de ville ødelegge verden."
+                },
+                { "si": "Menneskene levde midt imellom, i Midgard." },
+                { "si": "Hvis balansen tippet, ville ragnarok komme. Ragnarok er verdens undergang." },
+                {
+                    "si": "Derfor var det menneskenes jobb å hjelpe gudene. Det gjorde de ved å ofre til dem."
+                }
+            ]
+        },
+        {
+            "id": "nornene",
+            "lyd": "rom",
+            "kapittel": "Skjebnen",
+            "visual": { "type": "AsatroYggdrasil", "props": { "modus": "nornene" } },
+            "replikker": [
+                { "si": "Det kanskje viktigste ordet for folk i Norden var skjebne." },
+                {
+                    "si": "Under treet Yggdrasil, ved Urds brønn, holdt nornene til. Nornene var kvinnelige vesener som visste om skjebnen og formet den."
+                },
+                {
+                    "si": "De tre viktigste het Urd, Verdande og Skuld. Navnene peker mot fortid, nåtid og framtid."
+                },
+                {
+                    "si": "Nornene var til stede når et barn ble født. Da avgjorde de skjebnen til det nye mennesket."
+                },
+                {
+                    "si": "Noen kilder sier at de skar runer i treverk. Andre sier at de spant og klipte tråder."
+                },
+                {
+                    "si": "Ikke engang gudene kom utenom skjebnen. De visste at ragnarok ville komme, og de kunne ikke endre det."
+                }
+            ]
+        },
+        {
+            "id": "dodsforakt",
+            "lyd": "stille",
+            "visual": { "type": "AsatroTraaden" },
+            "replikker": [
+                {
+                    "si": "Skjebnetroen ga vikingene en enorm dødsforakt. Det betyr at de ikke var redde for å dø."
+                },
+                { "si": "Tenk deg at dødsdagen din er bestemt allerede den dagen du blir født." },
+                {
+                    "si": "Da dør du den dagen uansett. Om du gjemmer deg under senga, eller om du stormer fremst i krigen."
+                },
+                { "si": "Så hvorfor være redd i kamp? Da er det bedre å dø stående, med ære." },
+                {
+                    "si": "For det eneste som lever evig, er ettermælet. Ettermælet er det folk sier om deg etterpå."
+                }
+            ]
+        },
+        {
+            "id": "havamal",
+            "kapittel": "Håvamål",
+            "visual": { "type": "AsatroVekt", "props": { "modus": "havamal" } },
+            "replikker": [
+                {
+                    "si": "Et gammelt dikt sier det slik: Buskapen dør, slektningene dør, og du dør selv. Men ordet om deg dør aldri, hvis du vinner et godt rykte.",
+                    "uttale": "Et gammelt dikt sier det slik. Buskapen dør, slektningene dør, og du dør selv. Men ordet om deg dør aldri, hvis du vinner et godt rykte."
+                },
+                {
+                    "si": "Diktet heter Håvamål, Den høyes tale. Det har 164 strofer, og det er skrevet som om Odin snakker. Håve er et annet navn på Odin."
+                },
+                {
+                    "si": "I Håvamål finner du ikke bud om hva du ikke skal gjøre. Du finner gode råd om hvordan du klarer deg blant folk, og hvordan du overlever."
+                },
+                {
+                    "si": "Vær gjestfri. Vær lojal, altså trofast. Og hold måte, ikke ta for mye av noe."
+                },
+                {
+                    "si": "Diktet advarer også mot dumskap og mot å stole for mye på folk. Du bærer ingen bedre oppakning enn mye vett, står det."
+                },
+                { "si": "Og vennskap og et godt ettermæle er verdt mer enn rikdom." }
+            ]
+        },
+        {
+            "id": "blot",
+            "lyd": "ild",
+            "kapittel": "Blotet",
+            "visual": { "type": "AsatroAaret", "props": { "modus": "aaret" } },
+            "replikker": [
+                {
+                    "si": "Religionen var en del av hverdagen. Blotene ble holdt på faste tider i året, og når det var krise."
+                },
+                {
+                    "si": "En viktig del av blotet var et festmåltid som alle spiste sammen. De spiste kjøtt fra offerdyrene og drakk øl og mjød."
+                },
+                {
+                    "si": "Blodet fra dyra ble smurt på gudefigurene, på veggene i og utenfor hovet, og på folkene selv. Et hov var et hus der folk holdt blot."
+                },
+                { "si": "Ifølge sagaene var det tre store blot i året." },
+                {
+                    "si": "Om høsten for god årsvekst. Midtvinters, i jula, for grøden i året som kom. Og om våren for krigslykke."
+                }
+            ]
+        },
+        {
+            "id": "motet",
+            "lyd": "stille",
+            "kapittel": "To måter å leve på",
+            "visual": { "type": "AsatroAaret", "props": { "modus": "motet" } },
+            "replikker": [
+                {
+                    "si": "Så kom kristendommen. Med den fulgte kirker, prester og en helt ny kristenrett."
+                },
+                {
+                    "si": "Kristenretten var den delen av loven som gjaldt kirken. Den straffet blant annet de som arbeidet på en helligdag."
+                },
+                {
+                    "si": "Den straffet også de som nektet å døpe barna sine, og de som giftet seg med mer enn én."
+                },
+                {
+                    "si": "Kristendommen krevde underkastelse og ydmykhet. Det betyr å bøye seg for Gud og ikke gjøre seg selv stor."
+                },
+                {
+                    "si": "Åsatru krevde mot og handling. Det var to helt forskjellige måter å være menneske på."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ingen bok. Ingen bud.", "fraBeat": 0 },
+                        { "tekst": "Avtaler, skikker og balanse.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Skjebnen var bestemt.", "fraBeat": 1 },
+                        { "tekst": "Selv for gudene.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Alt dør.", "fraBeat": 2 },
+                        { "tekst": "Men et godt ettermæle dør aldri.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Åsatru hadde ingen hellig bok og ingen bud. Den handlet om avtaler med gudene, om skikker og om balanse."
+                },
+                {
+                    "si": "Vikingene trodde at skjebnen var bestemt fra du ble født. Ikke engang gudene kunne endre den."
+                },
+                {
+                    "si": "Døden kom uansett. Det eneste som levde evig, var hva folk sa om deg etterpå."
+                }
+            ]
+        }
+    ]
+}
