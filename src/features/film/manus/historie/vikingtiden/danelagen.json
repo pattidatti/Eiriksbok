@@ -1,0 +1,213 @@
+{
+    "id": "danelagen",
+    "tittel": "Danelagen: Da England var norsk",
+    "kilde": "/historie/vikingtiden/danelagen",
+    "bilde": "/images/lessons/vikingtiden/danelagen.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-06", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "ankomst",
+            "lyd": "hav",
+            "kapittel": "Hæren kommer",
+            "visual": { "type": "DanelagenLandskap", "props": { "modus": "ankomst" } },
+            "replikker": [
+                { "si": "Tenk deg kysten av East Anglia, øst i England, i året 865. En stor vikinghær kommer i land." },
+                { "si": "Vikinger hadde vært her før. Da plyndret de, og så seilte de hjem igjen." },
+                { "si": "Men denne gangen er noe nytt. Disse vikingene skal ikke hjem. De er kommet for å bli." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DANELAGEN",
+                    "undertittel": "Da England var norsk",
+                    "bilde": "/images/lessons/vikingtiden/danelagen.webp",
+                    "sporsmal": { "tekst": "Hvordan ble England delt i to?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Danelagen. Det var den delen av England der vikingenes lov gjaldt." },
+                { "si": "Den handler om en konge som nesten tapte alt, om en by som het Jorvik, og om ord du kanskje bruker hver dag." },
+                { "si": "Hvordan ble England delt i to? Og hva ble igjen etter vikingene?" }
+            ]
+        },
+        {
+            "id": "haeren",
+            "lyd": "stille",
+            "visual": { "type": "DanelagenKart", "props": { "modus": "erobring" } },
+            "replikker": [
+                { "si": "Engelske kilder kaller den Den store hedenske hæren. Hedensk betyr at de ikke var kristne." },
+                { "si": "En av lederne var Ivar Beinlause. Etter sagaene ville han og brødrene hans hevne faren sin, Ragnar Lodbrok." },
+                { "si": "På få år erobret hæren tre engelske kongeriker: Northumbria i nord, East Anglia i øst og Mercia midt i landet." },
+                { "si": "Bare ett kongerike holdt stand. Det var Wessex, helt sør i England, med kong Alfred." }
+            ]
+        },
+        {
+            "id": "myra",
+            "lyd": "vind",
+            "kapittel": "Kongen i myra",
+            "visual": { "type": "DanelagenLandskap", "props": { "modus": "myra" } },
+            "replikker": [
+                { "si": "Men også Alfred var nær ved å tape alt. Han måtte flykte fra Chippenham." },
+                { "si": "Med en håndfull menn gjemte han seg i ødemarkene i Somerset. Ødemark betyr villmark der nesten ingen bor." },
+                { "si": "Det fins en kjent legende fra denne tiden. Kongen fikk ly hos en svinerøkter, en mann som passet griser." },
+                { "si": "Kongen satt så dypt i tanker at han lot brødet svi seg. Men det er en legende, ikke noe vi vet sikkert." },
+                { "si": "Alfred ga ikke opp. Han klarte å samle troppene sine igjen." }
+            ]
+        },
+        {
+            "id": "seier",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Fra seier til fred",
+                    "punkter": [
+                        { "ikon": "haer", "tittel": "Seier ved Edington", "tekst": "mai 878", "fraBeat": 0 },
+                        { "ikon": "stjerne", "tittel": "Guthrum blir døpt", "tekst": "og blir kristen", "fraBeat": 1 },
+                        { "ikon": "hus", "tittel": "Guthrum slår seg ned", "tekst": "i East Anglia", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Fred med en grense", "tekst": "rundt 880", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I mai 878 møtte Alfred vikinghæren i slaget ved Edington. Og Alfred vant." },
+                { "si": "Vikinghøvdingen Guthrum var slått. Han lot seg døpe. Det betyr at han ble kristen." },
+                { "si": "Etterpå slo Guthrum seg ned i East Anglia." },
+                { "si": "Rundt 880 ble Alfred og Guthrum enige om fred. Avtalen satte en grense tvers gjennom England." }
+            ]
+        },
+        {
+            "id": "deling",
+            "kapittel": "To England",
+            "visual": { "type": "DanelagenKart", "props": { "modus": "deling" } },
+            "replikker": [
+                { "si": "Nå var England delt i to." },
+                { "si": "I sørvest lå Wessex. Der styrte engelskmennene." },
+                { "si": "I nordøst lå Danelagen. Der gjaldt dansk og norsk lov. Danelagen tok med Northumbria, East Anglia og deler av Mercia." },
+                { "si": "Skandinavene der fikk styre en del selv. I mange saker fulgte de sine egne skikker og sine egne lover." }
+            ]
+        },
+        {
+            "id": "bygd",
+            "lyd": "vind",
+            "kapittel": "Nye naboer",
+            "visual": { "type": "DanelagenLandskap", "props": { "modus": "bygd" } },
+            "replikker": [
+                { "si": "Tusenvis av skandinaver flyttet hit. Og de var ikke bare krigere." },
+                { "si": "Mange var bønder som dyrket jorda og holdt dyr." },
+                { "si": "Andre var handelsmenn som kjøpte og solgte, eller håndverkere som laget ting." },
+                { "si": "De skandinaviske stedsnavnene fins fortsatt. De ligger tett i tett i nord og øst i England." }
+            ]
+        },
+        {
+            "id": "jorvik",
+            "visual": { "type": "DanelagenLandskap", "props": { "modus": "jorvik" } },
+            "replikker": [
+                { "si": "En av de viktigste byene var York. Vikingene kalte den Jorvik." },
+                { "si": "Fra 867 var Jorvik et hovedsentrum i Danelagen." },
+                { "si": "Senere, i tiden vi kaller høymiddelalderen, var York trolig den største byen i hele England." },
+                { "si": "Byen ble også et sentrum for handel med ull." }
+            ]
+        },
+        {
+            "id": "smelting",
+            "lyd": "stille",
+            "kapittel": "Språket",
+            "visual": { "type": "DanelagenOrd", "props": { "modus": "smelting" } },
+            "replikker": [
+                { "si": "Men vikingenes største arv i England er ikke brente klostre. Det er språket." },
+                { "si": "Engelskmennene snakket gammelengelsk. Vikingene snakket norrønt. De to språkene var ganske like." },
+                { "si": "I Danelagen levde folk side om side, og språkene smeltet sammen." },
+                { "si": "Dialekten i East Midland, et område i England, ble senere til moderne engelsk. Og det området ligger nesten helt oppå den tett befolkede, sørlige delen av Danelagen." }
+            ]
+        },
+        {
+            "id": "ordene",
+            "visual": { "type": "DanelagenOrd", "props": { "modus": "ord" } },
+            "replikker": [
+                { "si": "Svært mange helt vanlige engelske ord kommer fra nordisk. Hør bare." },
+                {
+                    "si": "Egg, knife, window, husband og sister. Og take, give og die, som betyr ta, gi og dø.",
+                    "uttale": "Egg, naif, vindou, hasbend og sister. Og teik, giv og dai, som betyr ta, gi og dø."
+                },
+                {
+                    "si": "Ord om samfunn og lov: law, fellow, trust, guest og gift. Law betyr lov.",
+                    "uttale": "Ord om samfunn og lov: lå, fellou, trast, gest og gift. Lå betyr lov."
+                },
+                {
+                    "si": "Og ord om kroppen og naturen: leg, skin, skirt og sky.",
+                    "uttale": "Og ord om kroppen og naturen: legg, skinn, skøøt og skai."
+                },
+                { "si": "Det stoppet ikke ved ordene. Forskere mener at engelsk også lånte noen småord og endinger på ord, og at setningene bygges litt på skandinavisk vis." },
+                { "si": "Uten vikingene ville engelsk hørtes ganske annerledes ut." }
+            ]
+        },
+        {
+            "id": "tilbake",
+            "kapittel": "Kampen om nord",
+            "visual": { "type": "DanelagenTidslinje" },
+            "replikker": [
+                { "si": "Engelskmennene ga ikke opp. På 900-tallet tok engelske konger Danelagen tilbake, litt etter litt." },
+                { "si": "Kong Æthelstan vant Northumbria i 927.", "uttale": "Kong Ætelstan vant Northumbria i 927." },
+                { "si": "Men fra 939 fikk vikingene kontrollen igjen." },
+                { "si": "Først i 954 ble vikingene i Northumbria endelig slått." },
+                { "si": "Likevel beholdt området sitt eget preg lenge. Folk fortsatte å ha norrøne navn og følge norrøne skikker." }
+            ]
+        },
+        {
+            "id": "knut",
+            "kapittel": "Nordsjøriket",
+            "visual": { "type": "DanelagenKart", "props": { "modus": "nordsjo" } },
+            "replikker": [
+                { "si": "Og vikingene kom tilbake. Tidlig på 1000-tallet erobret danske konger hele England." },
+                { "si": "Først kom Svein Tjugeskjegg. Så kom sønnen hans, Knut den mektige." },
+                { "si": "Knut ble konge i England i 1016 og i Danmark i 1018." },
+                { "si": "Fra 1028 var han også konge i Norge. Han var konge i alle tre landene fram til 1035." },
+                { "si": "Knut styrte et rike rundt hele Nordsjøen. For en kort tid var England midtpunktet i et skandinavisk storrike." }
+            ]
+        },
+        {
+            "id": "slutten",
+            "kapittel": "1066",
+            "visual": { "type": "DanelagenKart", "props": { "modus": "slutt" } },
+            "replikker": [
+                { "si": "Men det tok slutt i 1066." },
+                {
+                    "si": "Den 25. september falt Harald Hardråde i slaget ved Stamford Bridge. Han ble truffet av en pil i strupen.",
+                    "uttale": "Den tjuefemte september falt Harald Hardråde i slaget ved Stamford Bridge. Han ble truffet av en pil i strupen."
+                },
+                { "si": "Mange ser dette slaget som slutten på vikingtiden." },
+                {
+                    "si": "Knappe tre uker senere, 14. oktober, vant normannerne slaget ved Hastings. De erobret England for godt.",
+                    "uttale": "Knappe tre uker senere, fjortende oktober, vant normannerne slaget ved Hastings. De erobret England for godt."
+                }
+            ]
+        },
+        {
+            "id": "arven",
+            "kapittel": "Hva ble igjen?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "De kom for å plyndre.", "fraBeat": 0 },
+                        { "tekst": "Så kom de for å bli.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Grensen er borte for lengst.", "fraBeat": 1 },
+                        { "tekst": "Stedsnavnene ligger der fortsatt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Egg. Knife. Sky.", "fraBeat": 2 },
+                        { "tekst": "Engelsk bærer vikingenes spor.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Vikingene kom først for å plyndre. Så kom de for å bli, som bønder, handelsmenn og håndverkere." },
+                { "si": "Grensen mellom Wessex og Danelagen er borte for lengst. Men stedsnavnene ligger der fortsatt." },
+                { "si": "Og hver gang noen sier egg, knife eller sky, bruker de ord som vikingene tok med seg til England." }
+            ]
+        }
+    ]
+}
