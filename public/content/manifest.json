@@ -2546,7 +2546,7 @@
               "id": "lonnsslippen",
               "title": "Lønnsslippen: Hvor blir pengene av?",
               "description": "Lær å lese en lønnsslipp linje for linje: brutto og netto, frikort, skattetrekk og feriepenger.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/personlig-okonomi/lonnsslippen-hero.webp",
               "layout": "rich",
               "tags": [
                 "personlig økonomi",
@@ -2562,7 +2562,7 @@
               "id": "budsjett",
               "title": "Budsjett: Å velge hva pengene skal gå til",
               "description": "Faste og variable utgifter, buffer og SIFOs referansebudsjett: slik lager du en plan for pengene dine.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/personlig-okonomi/budsjett-hero.webp",
               "layout": "rich",
               "tags": [
                 "personlig økonomi",
