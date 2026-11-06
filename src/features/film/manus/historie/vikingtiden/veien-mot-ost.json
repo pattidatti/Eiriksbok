@@ -1,0 +1,193 @@
+{
+    "id": "veien-mot-ost",
+    "tittel": "Veien mot Øst: Vikingene som rodde til Miklagard",
+    "kilde": "/historie/vikingtiden/veien-mot-ost",
+    "bilde": "/images/lessons/vikingtiden/veien_mot_ost.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-06", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "elva",
+            "lyd": "vind",
+            "kapittel": "Elvene",
+            "visual": { "type": "VeienMotOstElva", "props": { "modus": "elv" } },
+            "replikker": [
+                { "si": "Tenk deg at du sitter ved en åre i et skip, på en stor elv langt inne i landet." },
+                { "si": "Du kommer fra Sverige, og du ror østover, dypt inn i landet." },
+                { "si": "Andre ser bare skog og sletter her. Men du ser en motorvei av vann." },
+                { "si": "Og du er ikke den eneste. Svenske vikinger, og noen få nordmenn, tok denne veien." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "VEIEN MOT ØST",
+                    "undertittel": "Vikingene som rodde til Miklagard",
+                    "bilde": "/images/lessons/vikingtiden/veien_mot_ost.webp",
+                    "sporsmal": { "tekst": "Handelsmenn, røvere eller livvakter?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Mange tenker bare på vikingene som dro vestover." },
+                { "si": "Men de fleste som dro østover, kom fra Sverige. Bare noen få var nordmenn." },
+                { "si": "I denne filmen skal vi følge dem langs elvene, helt ned til en by som var langt større enn noe de kjente hjemmefra." }
+            ]
+        },
+        {
+            "id": "ruter",
+            "kapittel": "To ruter",
+            "visual": { "type": "VeienMotOstKart", "props": { "modus": "ruter" } },
+            "replikker": [
+                { "si": "Fra Østersjøen renner store elver dypt inn i Europa: Volga, Dnjepr og Don." },
+                { "si": "Den første ruta gikk over de store innsjøene Ladoga og Onega, til elva Volga og videre til handelsbyen Bulgar." },
+                { "si": "Den andre ruta fulgte elva Dnjepr ned til Svartehavet." },
+                { "si": "Der lå målet: Bysants, riket til keiseren i Konstantinopel." }
+            ]
+        },
+        {
+            "id": "navnet",
+            "kapittel": "Rus",
+            "visual": { "type": "VeienMotOstKart", "props": { "modus": "navn" } },
+            "replikker": [
+                { "si": "Vikingene i øst kalte seg rus." },
+                { "si": "Navnet kommer trolig fra Ruotsi. Det er det finske navnet på Sverige." },
+                { "si": "Det henger sammen med Roslagen, et landskap i Sverige. Roslagen het før Roden, av et gammelt svensk ord som betyr roflotilje, altså en flåte av robåter." },
+                { "si": "Etter hvert ble ordet rus brukt om landet også. Det lever videre i to navn du kjenner: Russland og Belarus." }
+            ]
+        },
+        {
+            "id": "bytte",
+            "kapittel": "Handel og ran",
+            "visual": { "type": "VeienMotOstTavle", "props": { "modus": "bytte" } },
+            "replikker": [
+                { "si": "I øst er det ofte umulig å skille vikingen fra handelsmannen. De samme folkene kunne handle den ene dagen og plyndre den neste." },
+                { "si": "Sørover fraktet de pelsverk og frankiske sverd." },
+                { "si": "Og de fraktet mennesker. Slaver var en av de viktigste varene i hele handelen." },
+                { "si": "Selve ordet slave kommer fra latin. Først ble det brukt om slaviske krigsfanger som ble solgt som treller." },
+                { "si": "Honning og voks fra elveriket var også viktige varer." },
+                { "si": "Tilbake fikk de framfor alt sølv, i form av mynter." }
+            ]
+        },
+        {
+            "id": "gardarike",
+            "kapittel": "Gardarike",
+            "visual": { "type": "VeienMotOstKart", "props": { "modus": "gardarike" } },
+            "replikker": [
+                { "si": "Langs elvene vokste det fram handelsbyer med vern rundt, altså borger." },
+                { "si": "De to viktigste var Holmgard i nord, som i dag heter Novgorod, og Kønugard i sør, som i dag heter Kyiv." },
+                { "si": "Kyiv ble hovedstaden. Vikingene kalte riket Gardarike. I sagaene betyr det riket med borgene." },
+                { "si": "Skandinaver grunnla trolig dette riket midt på 800-tallet." },
+                { "si": "Men allerede på 900-tallet hadde de blitt slukt av den mye større slaviske befolkningen. De snakket det slaviske språket og levde som folket rundt dem." }
+            ]
+        },
+        {
+            "id": "rurik",
+            "visual": { "type": "VeienMotOstTavle", "props": { "modus": "rurik" } },
+            "replikker": [
+                { "si": "En gammel bok forteller hvordan det kan ha begynt. Den heter Nestorkrøniken, og den ble skrevet av en munk i Kyiv." },
+                { "si": "Ifølge krøniken ble vikinghøvdingen Rurik kalt til Novgorod i år 862 for å styre byen." },
+                { "si": "Slaviske og finske stammer skal ha bedt skandinavene om å herske over dem og skape orden." },
+                { "si": "Etterkommerne etter Rurik kalles rurikidene. De styrte østslaviske fyrstedømmer helt fram til 1598." },
+                { "si": "Da døde tsar Fjodor, sønnen til Ivan den grusomme. Slekten hadde styrt i mer enn 700 år." }
+            ]
+        },
+        {
+            "id": "miklagard",
+            "lyd": "vind",
+            "kapittel": "Miklagard",
+            "visual": { "type": "VeienMotOstElva", "props": { "modus": "miklagard" } },
+            "replikker": [
+                { "si": "Målet for mange av reisene lå enda lenger sør: Konstantinopel, som i dag heter Istanbul." },
+                { "si": "Vikingene kalte byen Miklagard. Mikill betyr stor, og gard betyr gård. Miklagard er altså den store byen." },
+                { "si": "Flere hundre tusen mennesker bodde her. Byen var langt større enn noe vikingene kjente hjemmefra." },
+                { "si": "Bare veddeløpsbanen hadde plass til 100 000 tilskuere." }
+            ]
+        },
+        {
+            "id": "angrep",
+            "lyd": "ild",
+            "visual": { "type": "VeienMotOstElva", "props": { "modus": "angrep" } },
+            "replikker": [
+                { "si": "Fyrstene i Kyiv dro flere ganger med flåter helt fram til bymurene. Men de klarte aldri å ta byen." },
+                { "si": "Folket i Bysants, bysantinerne, hadde nemlig et fryktet våpen: gresk ild." },
+                { "si": "Det var en blanding av nafta, bek og svovel som tok fyr lett. Nafta brenner på vann, og derfor passet våpenet godt i krig på sjøen." },
+                { "si": "Keiseren brukte gresk ild med stor suksess når hovedstaden skulle forsvares." },
+                { "si": "Til slutt viste det seg at handel lønte seg bedre enn krig. Fyrstene jobbet hardt for at kjøpmennene deres skulle få gode vilkår i Bysants." }
+            ]
+        },
+        {
+            "id": "vaeringer",
+            "lyd": "rom",
+            "kapittel": "Væringene",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Væringene",
+                    "punkter": [
+                        { "ikon": "haer", "tittel": "Den gamle hæren ble svekket", "tekst": "keiseren leide soldater i stedet", "fraBeat": 0 },
+                        { "ikon": "skip", "tittel": "Krigere og kjøpmenn fra Norden", "tekst": "de fleste fra Sverige", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Vár betyr løfte", "tekst": "væringene hadde sverget en ed", "fraBeat": 2 },
+                        { "ikon": "stjerne", "tittel": "Keiserens livvakt", "tekst": "hindre opprør og gjøre politiarbeid", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Den gamle måten keiseren bygde opp hæren sin på, ble svekket. Derfor satset han i stedet på leiesoldater, soldater som kjemper for betaling." },
+                { "si": "Fra slutten av 900-tallet vervet han væringer. Det var krigere og kjøpmenn fra Norden, og de fleste kom fra Sverige." },
+                { "si": "Ordet væring kommer av det norrøne ordet vár, som betyr løfte. Væringene var de som hadde sverget en ed." },
+                { "si": "Etter hvert ble de keiserens egen livvakt. De skulle hindre opprør og gjøre politiarbeid." }
+            ]
+        },
+        {
+            "id": "harald",
+            "lyd": "stille",
+            "kapittel": "Harald Hardråde",
+            "visual": { "type": "VeienMotOstKart", "props": { "modus": "harald" } },
+            "replikker": [
+                { "si": "Den mest kjente væringen av alle er Harald Hardråde. Han kom til Konstantinopel i 1034 eller 1035." },
+                { "si": "Han hadde erfaring fra krig, og han var av kongelig slekt. Det ga ham en rask vei oppover." },
+                { "si": "Etter hvert skal han ha blitt øverste leder for væringene." },
+                { "si": "Skalden Tjodolv Arnorsson, en dikter, forteller at Harald var med i 18 større slag. Blant annet på Sicilia og i Bulgaria." },
+                { "si": "Det meste av krigsbyttet sendte han i forveien, til fyrst Jaroslav i Gardarike." }
+            ]
+        },
+        {
+            "id": "hjem",
+            "lyd": "hav",
+            "visual": { "type": "VeienMotOstElva", "props": { "modus": "hjem" } },
+            "replikker": [
+                { "si": "Rundt 1043 eller 1044 dro Harald hjemover." },
+                { "si": "Det fortelles at skipet hans lå skjevt i sjøen, så tungt lastet var det med gull." },
+                { "si": "Formuen ga ham tyngde i maktkampen hjemme." },
+                { "si": "Som konge brukte han pengene blant annet til å holde en stor hird. Hirden var kongens egne krigere." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Vikingene i øst var både kjøpmenn og røvere.", "fraBeat": 0 },
+                        { "tekst": "De handlet med pels, sverd og mennesker.", "fraBeat": 1 },
+                        { "tekst": "De var med på å skape riket rundt Kyiv.", "fraBeat": 2 },
+                        { "tekst": "Men snart snakket de slavisk og levde som folket rundt dem.", "fraBeat": 3 },
+                        { "tekst": "Navnet lever videre: Russland og Belarus.", "fraBeat": 4, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Så hvem var vikingene i øst? De var både kjøpmenn og røvere." },
+                { "si": "De handlet med pels og sverd, og med mennesker." },
+                { "si": "De var med på å skape riket rundt Kyiv." },
+                { "si": "Men allerede på 900-tallet snakket de slavisk og levde som folket rundt dem." },
+                { "si": "Likevel lever navnet deres videre, i Russland og Belarus. Neste gang du ser et kart over Europa, kan du tenke på at det navnet trolig begynte med noen som rodde." }
+            ]
+        }
+    ]
+}
