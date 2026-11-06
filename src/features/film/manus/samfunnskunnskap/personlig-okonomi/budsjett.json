@@ -1,0 +1,224 @@
+{
+    "id": "budsjett",
+    "tittel": "Budsjett: Å velge hva pengene skal gå til",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/budsjett",
+    "bilde": "/images/personlig-okonomi/budsjett-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 5000, "begrunnelse": "Husleia i artikkelens tenkte eksempel, fra den interaktive komponenten HybelBudsjett i artikkelen." },
+        { "tall": 300, "begrunnelse": "Mobilen i artikkelens tenkte eksempel, fra HybelBudsjett i artikkelen." },
+        { "tall": 500, "begrunnelse": "Busskortet i artikkelens tenkte eksempel, fra HybelBudsjett i artikkelen." },
+        { "tall": 4200, "begrunnelse": "Regnet ut fra artikkelen og HybelBudsjett: 10 000 minus 5000, 300 og 500." }
+    ],
+    "vurdering": { "dato": "2026-11-06", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "hybel",
+            "kapittel": "Hybelen",
+            "lyd": "rom",
+            "visual": { "type": "BudsjettHybel", "props": { "modus": "rik" } },
+            "replikker": [
+                { "si": "Jonas er 17 år og har nettopp flyttet på hybel for å gå på skole i en annen by." },
+                { "si": "Hver måned har han 10 000 kroner, litt fra foreldrene og resten fra en deltidsjobb på en matbutikk." },
+                { "si": "Den første uka føles han rik. Han spiser pizza med nye venner." },
+                { "si": "Han kjøper en genser han har hatt lyst på lenge. Og han fyller opp spillkontoen." }
+            ]
+        },
+        {
+            "id": "tjuende",
+            "visual": { "type": "BudsjettHybel", "props": { "modus": "tjuende" } },
+            "replikker": [
+                { "si": "Så kommer den 20. i måneden. Jonas åpner bank-appen: 340 kroner.", "uttale": "Så kommer den tjuende i måneden. Jonas åpner bank-appen: 340 kroner." },
+                { "si": "Husleia er betalt. Men det er ti dager til neste gang det kommer penger." },
+                { "si": "Og kjøleskapet er nesten tomt." },
+                { "si": "Jonas har ikke gjort noe ulovlig eller dumt. Han har bare brukt penger uten en plan." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "BUDSJETT",
+                    "undertittel": "Å velge hva pengene skal gå til",
+                    "bilde": "/images/personlig-okonomi/budsjett-hero.webp",
+                    "tall": [
+                        { "verdi": 10000, "etikett": "kroner inn", "fraBeat": 1, "omtrent": false, "tone": "gronn" },
+                        { "verdi": 340, "etikett": "kroner igjen den 20.", "fraBeat": 1, "omtrent": false, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hvor ble pengene av?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Den planen Jonas mangler, heter et budsjett." },
+                { "si": "Han startet med 10 000 kroner. Den 20. var det 340 igjen.", "uttale": "Han startet med 10 000 kroner. Den tjuende var det 340 igjen." },
+                { "si": "Hvor ble det av alt sammen? Og hva kunne han gjort?" }
+            ]
+        },
+        {
+            "id": "hva-er",
+            "kapittel": "Hva er et budsjett?",
+            "lyd": "stille",
+            "visual": { "type": "BudsjettTavle", "props": { "modus": "hvem" } },
+            "replikker": [
+                { "si": "Et budsjett er en oversikt over hvor mye penger du regner med å få, og hva du planlegger å bruke dem på." },
+                { "si": "Den gjelder for en bestemt tid, for eksempel én måned." },
+                { "si": "Staten har et budsjett. Kommunen har et budsjett. Bedrifter har budsjetter." },
+                { "si": "Men det enkleste budsjettet er ditt eget. Budsjettet til en familie eller en som bor alene, kalles et husholdningsbudsjett." },
+                { "si": "Tenk på det som et kart over pengene dine. Uten kart vet du ikke hvor du havner." }
+            ]
+        },
+        {
+            "id": "to-sider",
+            "visual": { "type": "BudsjettTavle", "props": { "modus": "vekt" } },
+            "replikker": [
+                { "si": "Et budsjett har to sider. På den ene siden står inntektene, altså pengene som kommer inn." },
+                { "si": "På den andre siden står utgiftene, altså pengene som går ut." },
+                { "si": "Er inntektene større enn utgiftene, har du et overskudd som du kan spare." },
+                { "si": "Er utgiftene større, har du et underskudd. Da går ikke regnestykket opp." }
+            ]
+        },
+        {
+            "id": "fire-valg",
+            "visual": { "type": "BudsjettTavle", "props": { "modus": "valg" } },
+            "replikker": [
+                { "si": "Har du et underskudd, har du fire valg." },
+                { "si": "Ett: Bruke mindre. Da blir utgiftene mindre." },
+                { "si": "To: Tjene mer. Da blir inntektene større." },
+                { "si": "Tre: Ta av pengene du har spart." },
+                { "si": "Fire: Låne. Det er dyrest, for lånet må betales tilbake, ofte med renter, altså en pris for å låne." },
+                { "si": "Den viktigste regelen er enkel: Over tid må det være penger til alle utgiftene du har planlagt." }
+            ]
+        },
+        {
+            "id": "faste",
+            "kapittel": "Faste og variable",
+            "visual": { "type": "BudsjettKroner", "props": { "modus": "faste" } },
+            "replikker": [
+                { "si": "Tilbake til Jonas. Inntekten hans er 10 000 kroner i måneden." },
+                { "si": "Har du jobb, bruker du nettolønnen. Det er det som faktisk kommer inn på kontoen etter skatt." },
+                { "si": "Først kommer de faste utgiftene. Det er regninger som kommer jevnlig, ofte med samme beløp hver gang." },
+                { "si": "Tenk deg at husleia til Jonas er 5000 kroner, mobilen 300 og busskortet 500." },
+                { "si": "Faste utgifter er vanskelige å endre på kort sikt. Har Jonas skrevet under på en husleiekontrakt, må han betale husleie hver måned." }
+            ]
+        },
+        {
+            "id": "variable",
+            "visual": { "type": "BudsjettKroner", "props": { "modus": "variable" } },
+            "replikker": [
+                { "si": "I dette eksemplet har Jonas 4200 kroner igjen når de faste utgiftene er trukket fra." },
+                { "si": "Dem kan han selv velge hva han vil bruke på." },
+                { "si": "Her ligger de variable utgiftene. De endrer seg fra måned til måned: mat, klær, gaver, ferie og fritid." },
+                { "si": "Beløpet varierer, så du må anslå det, altså gjette ut fra hva du har brukt før." },
+                { "si": "Her er det lettest å kutte. Jonas kan ikke forhandle bort husleia i morgen. Men han kan lage middag hjemme i stedet for å kjøpe pizza." }
+            ]
+        },
+        {
+            "id": "buffer",
+            "kapittel": "Bufferen",
+            "lyd": "rom",
+            "visual": { "type": "BudsjettHybel", "props": { "modus": "buffer" } },
+            "replikker": [
+                { "si": "Men noen utgifter kommer helt uventet." },
+                { "si": "Mobilen knuser. Sykkelen må repareres. En venn har bursdag, og alle skal spleise på en gave." },
+                { "si": "Slike utgifter vet du ikke om på forhånd. Men du vet at noe kommer til å skje." },
+                { "si": "Derfor bør et budsjett ha en buffer: penger som er satt av til uventede utgifter." },
+                { "si": "Hvis Jonas hadde flyttet 600 kroner til en egen konto på lønningsdagen, hadde de vært der da mobilen knuste." }
+            ]
+        },
+        {
+            "id": "hvor-stor",
+            "lyd": "stille",
+            "visual": { "type": "BudsjettKroner", "props": { "modus": "buffer" } },
+            "replikker": [
+                { "si": "Hvor stor bør bufferen være? En forbrukerøkonom i banken Nordea anbefaler to til tre månedslønner." },
+                { "si": "Uten en slik reserve, skriver hun, kan én uventet regning nesten velte hele økonomien." },
+                { "si": "For en 17-åring på hybel er to månedslønner mye. Men poenget er det samme i det små." },
+                { "si": "Noen hundrelapper i måneden gjør at en knust mobilskjerm ikke betyr at du må hoppe over middagen." },
+                { "si": "Det samme gjelder store utgifter du vet kommer, som en klassetur til våren. Sett av litt hver måned." }
+            ]
+        },
+        {
+            "id": "sifo",
+            "kapittel": "Hva koster det å leve?",
+            "visual": { "type": "BudsjettSifo", "props": { "modus": "kurv" } },
+            "replikker": [
+                { "si": "Men hva koster ting egentlig? Hvor mye bruker en person på mat i måneden?" },
+                { "si": "Forbruksforskningsinstituttet SIFO ved OsloMet lager hvert år et referansebudsjett." },
+                { "si": "Det viser hva det koster å leve på et nivå de fleste kan godta, uten å skille seg for mye ut. Det kom første gang i 1987." },
+                { "si": "Det har satser, altså beløp, for blant annet mat og drikke, klær og sko, hygiene, fritid, reiser og møbler." },
+                { "si": "Men husleie, strøm og andre utgifter til bolig er ikke med. Heller ikke feriereiser eller uteliv." },
+                { "si": "Husleia må du altså legge til selv. Og for mange er det den største utgiften av alle." }
+            ]
+        },
+        {
+            "id": "dyrere",
+            "visual": { "type": "BudsjettSifo", "props": { "modus": "pris" } },
+            "replikker": [
+                { "si": "Tallene viser også at det har blitt dyrere å leve." },
+                { "si": "Ta en familie med mor, far og en datter på 15 år. Ifølge SIFO trengte de 27 854 kroner i måneden i 2022." },
+                { "si": "I februar 2026 trengte en slik familie 33 456 kroner." },
+                { "si": "Det er en økning på omtrent 20 prosent på fire år." },
+                { "si": "Når prisene stiger, kalles det inflasjon. Da må fjorårets budsjett justeres, ellers stemmer det ikke lenger." }
+            ]
+        },
+        {
+            "id": "fem-steg",
+            "kapittel": "Ditt første budsjett",
+            "visual": { "type": "BudsjettKroner", "props": { "modus": "plan" } },
+            "replikker": [
+                { "si": "Et ark, et regneark eller en app i banken holder. Start med én måned, for lønn kommer ofte én gang i måneden." },
+                { "si": "Steg én: Skriv opp inntekten. Hvor mye kommer inn på kontoen hver måned?" },
+                { "si": "Steg to: Skriv opp de faste utgiftene, og trekk dem fra inntekten." },
+                { "si": "Steg tre: Sett av et beløp til buffer, før du bruker resten." },
+                { "si": "Steg fire: Fordel resten på mat, klær og fritid." },
+                { "si": "Steg fem: Følg med gjennom måneden. Stemte planen? Juster neste måned." }
+            ]
+        },
+        {
+            "id": "kontoer",
+            "visual": { "type": "BudsjettTavle", "props": { "modus": "kontoer" } },
+            "replikker": [
+                { "si": "Noen synes det er lettere å lage et ukesbudsjett, slik at pengene varer hele måneden." },
+                { "si": "Andre bruker flere kontoer. Én for regninger, én for buffer og én for det de kan bruke fritt." },
+                { "si": "Et årsbudsjett hjelper med penger som ikke kommer hver måned. Feriepenger tjener du opp i år og får utbetalt neste år." }
+            ]
+        },
+        {
+            "id": "valg",
+            "kapittel": "En plan, ikke en straff",
+            "lyd": "rom",
+            "visual": { "type": "BudsjettHybel", "props": { "modus": "valg" } },
+            "replikker": [
+                { "si": "Mange tror et budsjett betyr å nekte seg alt som er gøy. Det er feil. Det handler om å velge." },
+                { "si": "Jonas kan fortsatt kjøpe pizza med vennene sine." },
+                { "si": "Men nå vet han at pizzaen koster ham noe annet senere i måneden. Og han kan bestemme om det er verdt det." },
+                { "si": "Derfor er ingen budsjetter like. Én bruker mye på klær. En annen sparer til en reise og lager matpakke hver dag." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Penger inn. Penger ut.", "fraBeat": 0 },
+                        { "tekst": "Et budsjett er planen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Faste utgifter først. Så bufferen.", "fraBeat": 1 },
+                        { "tekst": "Så velger du resten.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Budsjettet sier ikke hva du skal like.", "fraBeat": 2 },
+                        { "tekst": "Det viser hva valgene koster.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Det er du som bestemmer.", "fraBeat": 3 },
+                        { "tekst": "Ikke den 20. i måneden.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Et budsjett er en plan for pengene som kommer inn, og pengene som går ut." },
+                { "si": "Trekk fra de faste utgiftene først. Sett av en buffer. Så velger du hva resten skal gå til." },
+                { "si": "Budsjettet sier ikke hva du skal like. Det viser hva valgene dine koster." },
+                { "si": "Og når du vet det, er det du som bestemmer over pengene. Ikke den 20. i måneden.", "uttale": "Og når du vet det, er det du som bestemmer over pengene. Ikke den tjuende i måneden." }
+            ]
+        }
+    ]
+}
