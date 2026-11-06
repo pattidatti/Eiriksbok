@@ -254,8 +254,8 @@ function Soyler({ beat }: { beat: number }) {
             r.current.visible = r.current.scale.y > 0.01;
         }
     });
-    const [ax, az] = xz([34.95, 31.9]);
-    const [bx, bz] = xz([35.25, 31.75]);
+    const [ax, az] = xz([34.95, 31.8]);
+    const [bx, bz] = xz([35.3, 31.8]);
     return (
         <>
             <mesh ref={a} position={[ax, 1, az]} scale={[1, 0.001, 1]}>
@@ -408,7 +408,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     landet: [
         { tekst: 'Østenden av Middelhavet' },
         { tekst: 'Israel, Vestbredden og Gaza' },
-        { tekst: 'Et av de mest omstridte stedene i verden', rod: true },
+        { tekst: 'Et omstridt land', rod: true },
         { tekst: 'To folk, ett hjem' },
     ],
     '1967': [
@@ -457,7 +457,7 @@ export function IsraelPalestinaModell({ beat, playing, props }: VisualProps<{ mo
         const g = geographies.find((x) => Number(x.id) === VESTBREDDEN);
         if (!g) return [] as [number, number][];
         const ut: [number, number][] = [];
-        for (let i = 0; ut.length < 60 && i < 3000; i++) {
+        for (let i = 0; ut.length < 30 && i < 3000; i++) {
             const ll: LngLat = [34.9 + frø(i) * 0.7, 31.3 + frø(i + 999) * 1.3];
             if (geoContains(g as never, ll)) ut.push(xz(ll));
         }
