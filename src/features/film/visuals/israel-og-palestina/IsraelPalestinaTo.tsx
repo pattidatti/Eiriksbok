@@ -560,19 +560,19 @@ function Rabin({ beat }: { beat: number }) {
 
 const SIDER = [
     {
-        navn: 'Mange israelere',
+        navn: 'Israels regjering',
         farge: FARGE.israel,
         lys: FARGE.israelLys,
         tekst: 'Det eneste stedet der jøder kan beskytte seg selv. Etter Holocaust en nødvendighet.',
     },
     {
-        navn: 'Mange palestinere',
+        navn: 'PLO og palestinske organisasjoner',
         farge: FARGE.palestina,
         lys: FARGE.palestinaLys,
         tekst: 'Vi har bodd her i generasjoner. Drevet ut i 1948. Okkupert siden 1967.',
     },
     {
-        navn: 'FN',
+        navn: 'FN og Den internasjonale domstolen',
         farge: '#b45309',
         lys: '#fef3c7',
         tekst: 'Bosettingene er ulovlige. Begge parter har brutt folkeretten.',

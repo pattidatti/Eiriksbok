@@ -7,17 +7,15 @@ import type { VisualProps } from '../../types';
 /**
  * Kartet over Israel og Palestina, i seks modus:
  * «herzl»: Europa, Argentina, Uganda og til slutt det gamle landet ved Middelhavet.
- * «balfour»: brevet fra London i 1917.
- * «mandat»: britisk styre 1920-1948 og innvandringen fra Europa.
  * «deling»: FNs plan fra 1947. Grensene tegnes ikke, bare de to statene og Jerusalem.
- * «1948»: staten Israel, angrepet fra fem land, Gaza til Egypt og Vestbredden til Jordan.
+ * «1948»: staten Israel, angrepet fra fem land, Egypt styrer Gaza og Jordan Vestbredden.
  * «idag»: Vestbredden med bosetninger, Gaza under Hamas og blokaden.
  */
 
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'herzl' | 'balfour' | 'mandat' | 'deling' | '1948' | 'idag';
+type Modus = 'herzl' | 'deling' | '1948' | 'idag';
 
 const ISRAEL = 376;
 const PALESTINA = 275;
@@ -26,7 +24,6 @@ const JORDAN = 400;
 const SYRIA = 760;
 const IRAK = 368;
 const LIBANON = 422;
-const STORBRITANNIA = 826;
 const ARGENTINA = 32;
 const UGANDA = 800;
 const EUROPA = [
@@ -36,7 +33,6 @@ const EUROPA = [
 const MANDATET = [ISRAEL, PALESTINA];
 
 const STED = {
-    london: [-0.1, 51.5] as LngLat,
     wien: [16.4, 48.2] as LngLat,
     jerusalem: [35.22, 31.78] as LngLat,
     landet: [35.0, 31.6] as LngLat,
@@ -56,13 +52,10 @@ const FARGE = {
     land: '#efe7d6',
     kant: '#b9ad92',
     hav: '#cfe3f0',
-    europa: '#cbd5e1',
     jodisk: '#2563eb',
     jodiskLys: '#93c5fd',
     palestinsk: '#0f766e',
     palestinskLys: '#5eead4',
-    britisk: '#b91c1c',
-    britiskLys: '#fca5a5',
     egypt: '#d97706',
     jordan: '#65a30d',
     angrep: '#7c2d12',
@@ -83,10 +76,6 @@ function lagProjeksjon(modus: Modus): GeoProjection {
     switch (modus) {
         case 'herzl':
             return utsnitt([-72, -40], [52, 60]);
-        case 'balfour':
-            return utsnitt([-10, 22], [50, 56]);
-        case 'mandat':
-            return utsnitt([4, 27], [46, 52]);
         case 'deling':
             return utsnitt([32.2, 29.4], [37.8, 33.4]);
         case '1948':
@@ -102,17 +91,6 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
             if (beat <= 2 && EUROPA.includes(id)) return '#a5b4fc';
             if (beat === 3 && (id === ARGENTINA || id === UGANDA)) return FARGE.merket;
             if (beat >= 4 && MANDATET.includes(id)) return FARGE.merket;
-            return FARGE.land;
-        case 'balfour':
-            if (id === STORBRITANNIA) return FARGE.britisk;
-            if (beat === 0 && [EGYPT, IRAK, ...MANDATET, JORDAN].includes(id))
-                return FARGE.britiskLys;
-            if (beat >= 2 && MANDATET.includes(id)) return FARGE.jodiskLys;
-            return FARGE.land;
-        case 'mandat':
-            if (MANDATET.includes(id)) return FARGE.britisk;
-            if (id === STORBRITANNIA) return FARGE.britiskLys;
-            if (beat >= 1 && EUROPA.includes(id)) return FARGE.europa;
             return FARGE.land;
         case 'deling':
             if (MANDATET.includes(id)) return beat === 0 ? FARGE.mandat : '#d6d3d1';
@@ -133,24 +111,11 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
 const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     herzl: [
         { tekst: 'Europa, slutten av 1800-tallet' },
-        { tekst: 'Jøder: et forfulgt mindretall' },
+        { tekst: 'Jøder: et mindretall' },
         { tekst: 'Sionismen: en egen jødisk stat' },
         { tekst: 'Argentina? Uganda?' },
         { tekst: 'Israel, eller Palestina' },
         { tekst: 'Men folk bodde der allerede', rod: true },
-    ],
-    balfour: [
-        { tekst: 'Britene styrer store deler av Midtøsten' },
-        { tekst: '1917: Brev fra Balfour til Rothschild' },
-        { tekst: 'Et nasjonalt hjem for jøder' },
-        { tekst: 'Uten å skade dem som bor der' },
-        { tekst: 'Palestinerne ble ikke spurt', rod: true },
-    ],
-    mandat: [
-        { tekst: '1920-1948: Britisk mandat' },
-        { tekst: 'Hundretusener av jøder kommer' },
-        { tekst: 'Araberne blir urolige' },
-        { tekst: 'Opprør og angrep fra begge sider', rod: true },
     ],
     deling: [
         { tekst: '1947: FN bestemmer' },
@@ -164,14 +129,14 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Dagen etter: fem land angriper', rod: true },
         { tekst: 'Løftet: knuse den nye staten' },
         { tekst: 'Israel vinner krigen' },
-        { tekst: 'Gaza til Egypt, Vestbredden til Jordan' },
+        { tekst: 'Egypt styrer Gaza, Jordan styrer Vestbredden' },
     ],
     idag: [
         { tekst: 'I dag' },
         { tekst: 'Vestbredden: delt kontroll' },
         { tekst: 'Over 700 000 bosettere', rod: true },
         { tekst: 'Gaza: Hamas styrer siden 2007' },
-        { tekst: 'Grensene rundt Gaza er stengt', rod: true },
+        { tekst: 'Blokade rundt Gaza', rod: true },
     ],
 };
 
@@ -286,12 +251,14 @@ export function IsraelPalestinaKart({ beat, props }: VisualProps<{ modus?: Modus
                         )}
                         {beat >= 4 && (
                             <>
+                                {beat === 4 && (
                                 <Pil
                                     fra={p(STED.wien)}
                                     til={p(STED.landet)}
                                     farge="#92400e"
                                     bue={0.15}
                                 />
+                                )}
                                 <Puls pos={p(STED.landet)} farge={FARGE.merket} />
                                 <Etikett
                                     pos={p([12, 26])}
@@ -307,94 +274,6 @@ export function IsraelPalestinaKart({ beat, props }: VisualProps<{ modus?: Modus
                                 />
                             </>
                         )}
-                    </>
-                )}
-
-                {modus === 'balfour' && (
-                    <>
-                        <Etikett pos={p([-1, 47.5])} tekst="London" farge={FARGE.britisk} />
-                        {beat === 0 && (
-                            <Etikett
-                                pos={p([36, 26])}
-                                tekst="Britisk makt"
-                                farge={FARGE.britisk}
-                                stor
-                            />
-                        )}
-                        {beat === 1 && <Brev fra={p(STED.london)} til={p(STED.jerusalem)} />}
-                        {beat >= 2 && (
-                            <Etikett
-                                pos={p([27, 29])}
-                                tekst="Et hjem for jøder"
-                                farge={FARGE.jodisk}
-                                linjeTil={p(STED.landet)}
-                                forsinkelse={0.3}
-                            />
-                        )}
-                        {beat === 3 && (
-                            <Etikett
-                                pos={p([42, 24.5])}
-                                tekst="Men ikke skade dem som bor der"
-                                farge={FARGE.palestinsk}
-                                forsinkelse={0.3}
-                            />
-                        )}
-                        {beat >= 4 && (
-                            <Etikett
-                                pos={p([42, 24.5])}
-                                tekst="Palestinerne: ikke spurt"
-                                farge={FARGE.britisk}
-                                stor
-                                forsinkelse={0.3}
-                            />
-                        )}
-                    </>
-                )}
-
-                {modus === 'mandat' && (
-                    <>
-                        <Etikett
-                            pos={p([39, 30])}
-                            tekst="Britisk mandat"
-                            farge={FARGE.britisk}
-                            linjeTil={p(STED.landet)}
-                        />
-                        {beat >= 1 &&
-                            (
-                                [
-                                    [21, 52],
-                                    [19, 47.5],
-                                    [12, 51],
-                                    [26, 45],
-                                    [24, 54],
-                                ] as LngLat[]
-                            ).map((fra, i) => (
-                                <Pil
-                                    key={i}
-                                    fra={p(fra)}
-                                    til={p(STED.landet)}
-                                    farge={FARGE.jodisk}
-                                    bue={0.08 + i * 0.03}
-                                    forsinkelse={i * 0.35}
-                                />
-                            ))}
-                        {beat === 1 && (
-                            <Etikett
-                                pos={p([10, 41])}
-                                tekst="Hundretusener kommer"
-                                farge={FARGE.jodisk}
-                                forsinkelse={1.6}
-                            />
-                        )}
-                        {beat >= 2 && (
-                            <Etikett
-                                pos={p([10, 34])}
-                                tekst="Araberne frykter å bli presset ut"
-                                farge={FARGE.palestinsk}
-                                forsinkelse={0.3}
-                            />
-                        )}
-                        {beat >= 3 && <Puls pos={p(STED.landet)} farge={FARGE.britisk} />}
                     </>
                 )}
 
@@ -422,14 +301,6 @@ export function IsraelPalestinaKart({ beat, props }: VisualProps<{ modus?: Modus
                                     linjeTil={p(STED.jerusalem)}
                                 />
                             </>
-                        )}
-                        {beat >= 4 && (
-                            <Etikett
-                                pos={p([35.0, 30.3])}
-                                tekst="Halvparten?"
-                                farge="#7c2d12"
-                                stor
-                            />
                         )}
                     </>
                 )}
@@ -603,7 +474,7 @@ export function IsraelPalestinaKart({ beat, props }: VisualProps<{ modus?: Modus
                         {beat >= 4 && (
                             <Etikett
                                 pos={p([33.75, 31.55])}
-                                tekst="Stengt"
+                                tekst="Blokade"
                                 farge="#111827"
                                 stor
                                 forsinkelse={1.6}
@@ -632,44 +503,42 @@ export function IsraelPalestinaKart({ beat, props }: VisualProps<{ modus?: Modus
 
             {modus === 'deling' && beat >= 1 && (
                 <div className="absolute right-8 top-16 flex flex-col gap-4 w-[25rem]">
-                    <Statskort
-                        tittel="Én jødisk stat"
-                        farge={FARGE.jodisk}
-                        svar={beat >= 2 ? 'JA' : undefined}
-                    />
-                    <Statskort
-                        tittel="Én arabisk stat"
-                        farge={FARGE.palestinsk}
-                        svar={beat >= 3 ? 'NEI' : undefined}
-                    />
+                    <Statskort tittel="Én jødisk stat" farge={FARGE.jodisk} />
+                    <Statskort tittel="Én arabisk stat" farge={FARGE.palestinsk} />
+                    {beat >= 2 && <Svarkort hvem="Jødene" svar="JA til planen" />}
+                    {beat >= 3 && <Svarkort hvem="Palestinerne og arabiske land" svar="NEI til planen" />}
                 </div>
             )}
         </div>
     );
 }
 
-function Statskort({ tittel, farge, svar }: { tittel: string; farge: string; svar?: string }) {
+function Statskort({ tittel, farge }: { tittel: string; farge: string }) {
     return (
         <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-between rounded-2xl bg-white/95 shadow-xl px-6 py-4"
+            className="rounded-2xl bg-white/95 shadow-xl px-6 py-4"
             style={{ borderLeft: `14px solid ${farge}` }}
         >
             <span className="text-3xl font-black text-slate-900">{tittel}</span>
-            {svar && (
-                <motion.span
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 18 }}
-                    className={`text-3xl font-black px-3 py-1 rounded-xl text-white ${
-                        svar === 'JA' ? 'bg-teal-600' : 'bg-red-700'
-                    }`}
-                >
-                    {svar}
-                </motion.span>
-            )}
+        </motion.div>
+    );
+}
+
+/** Svaret på hele planen, med hvem som svarte. */
+function Svarkort({ hvem, svar }: { hvem: string; svar: string }) {
+    const ja = svar.startsWith('JA');
+    return (
+        <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className={`rounded-2xl shadow-xl px-6 py-3 text-white ${ja ? 'bg-teal-600' : 'bg-red-700'}`}
+        >
+            <div className="text-2xl font-bold">{hvem}:</div>
+            <div className="text-3xl font-black">{svar}</div>
         </motion.div>
     );
 }
@@ -793,48 +662,6 @@ function Pil({
                 animate={{ opacity: 1 }}
                 transition={{ delay: forsinkelse + 1.3 }}
             />
-        </g>
-    );
-}
-
-/** En stiplet rute med en konvolutt som reiser langs den. */
-function Brev({ fra, til }: { fra: [number, number]; til: [number, number] }) {
-    const mx = (fra[0] + til[0]) / 2 + (til[1] - fra[1]) * 0.2;
-    const my = (fra[1] + til[1]) / 2 - (til[0] - fra[0]) * 0.2;
-    const d = `M ${fra[0]} ${fra[1]} Q ${mx} ${my} ${til[0]} ${til[1]}`;
-    return (
-        <g>
-            <motion.path
-                d={d}
-                fill="none"
-                stroke="#334155"
-                strokeWidth={5}
-                strokeDasharray="14 12"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 2.2, ease: 'easeInOut' }}
-            />
-            <g
-                style={
-                    {
-                        offsetPath: `path('${d}')`,
-                        animation: 'israel-palestina-brev 2.2s ease-in-out forwards',
-                    } as never
-                }
-            >
-                <rect
-                    x={-34}
-                    y={-22}
-                    width={68}
-                    height={44}
-                    rx={4}
-                    fill="#fffbeb"
-                    stroke="#78350f"
-                    strokeWidth={4}
-                />
-                <path d="M -34 -22 L 0 6 L 34 -22" fill="none" stroke="#78350f" strokeWidth={4} />
-            </g>
-            <style>{`@keyframes israel-palestina-brev { from { offset-distance: 0%; } to { offset-distance: 100%; } }`}</style>
         </g>
     );
 }
