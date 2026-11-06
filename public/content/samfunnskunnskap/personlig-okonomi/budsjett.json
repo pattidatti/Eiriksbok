@@ -1,0 +1,287 @@
+{
+  "id": "budsjett",
+  "title": "Budsjett: Å velge hva pengene skal gå til",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Personlig økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Et budsjett er en plan for inntekter og utgifter. Trekk fra de faste utgiftene først, så vet du hva du kan velge å bruke resten på.",
+    "Faste utgifter (husleie, abonnementer) er vanskelige å endre. Variable utgifter (mat, klær, fritid) er lettest å kutte i.",
+    "En buffer gjør at en uventet regning ikke velter økonomien. SIFOs referansebudsjett viser hva ting koster, men uten bolig."
+  ],
+  "externalUrl": "https://snl.no/husholdningsbudsjett",
+  "factChecked": "2026-11-06",
+  "tags": [
+    "personlig økonomi",
+    "budsjett",
+    "forbruk",
+    "sparing",
+    "buffer"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Jonas er 17 år og har nettopp flyttet på hybel for å gå på skole i en annen by. Hver måned har han 10 000 kroner: litt fra foreldrene og resten fra en deltidsjobb på en matbutikk. Den første uka føles han rik. Han spiser pizza med nye venner, kjøper en genser han har hatt lyst på lenge og fyller opp spillkontoen."
+    },
+    {
+      "type": "text",
+      "content": "Den 20. i måneden åpner han bank-appen. Der står det 340 kroner. Husleia er betalt, men det er ti dager til neste gang det kommer penger, og kjøleskapet er nesten tomt. Hvor ble det av alt sammen? Jonas har ikke gjort noe ulovlig eller dumt. Han har bare brukt penger uten en plan. Den planen heter et budsjett."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Gutt ser bekymret på bank-app på hybelkjøkken",
+      "caption": "Den 20. i måneden: pengene er nesten borte, og det er ti dager igjen."
+    },
+    {
+      "type": "header",
+      "text": "Hva er et budsjett?"
+    },
+    {
+      "type": "text",
+      "content": "Et budsjett er en oversikt over hvor mye penger du regner med å få, og hva du planlegger å bruke dem på, i en bestemt periode (Gårseth-Nesbakk, 2025). Staten har et budsjett, kommunen har et budsjett, og bedrifter har budsjetter. Men det aller enkleste budsjettet er ditt eget."
+    },
+    {
+      "type": "text",
+      "content": "Et budsjett for en familie eller en person som bor alene, kalles et husholdningsbudsjett. Det hjelper deg å ha kontroll over pengene som kommer inn og pengene som går ut. Det gjør det også lettere å se hvor du kan kutte, og å spare til noe større senere (Nyhus og Gårseth-Nesbakk, 2026). Du kan altså tenke på budsjettet som et kart over pengene dine. Uten kart vet du ikke hvor du er på vei før du er framme."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Inntekt: penger som kommer inn, for eksempel lønn. Utgift: penger som går ut. Fast utgift: en utgift som kommer regelmessig, ofte med samme beløp, som husleie. Variabel utgift: en utgift som endrer seg fra måned til måned, som mat og klær. Overskudd: når du har mer penger enn du bruker. Underskudd: når du bruker mer enn du har. Buffer: penger du setter av til utgifter du ikke vet om ennå."
+      }
+    },
+    {
+      "type": "header",
+      "text": "To sider: det som kommer inn og det som går ut"
+    },
+    {
+      "type": "text",
+      "content": "Et budsjett har to sider. På den ene siden skriver du inntektene, altså pengene som kommer inn. På den andre siden skriver du utgiftene, altså pengene som går ut. Er inntektene større enn utgiftene, har du et overskudd som du kan spare. Er utgiftene større, har du et underskudd. Da har du fire valg: bruke mindre, tjene mer, ta av pengene du har spart, eller låne (Nyhus og Gårseth-Nesbakk, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Det siste valget, å låne, er det dyreste. Et lån må betales tilbake, og ofte med renter. Hvordan rentene virker, kan du lese om i artikkelen om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente). Den viktigste regelen i et budsjett er derfor enkel: over tid må det være penger til alle utgiftene du har planlagt (Nyhus og Gårseth-Nesbakk, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "For Jonas er inntekten lett å finne. Det er 10 000 kroner i måneden. Har du en jobb, er det nettolønnen du skal bruke, altså det som faktisk kommer inn på kontoen etter skatt. Hvorfor det tallet kan være lavere enn du tror, kan du lese om i artikkelen om [lønnsslippen](/samfunnskunnskap/personlig-okonomi/lonnsslippen)."
+    },
+    {
+      "type": "header",
+      "text": "Faste og variable utgifter"
+    },
+    {
+      "type": "text",
+      "content": "Utgiftene i et budsjett deler vi i to grupper. Faste utgifter er regninger som kommer jevnlig, ofte med det samme beløpet hver gang. Eksempler er husleie, strøm, forsikring og abonnementer, som mobilabonnement og strømmetjenester. De faste utgiftene er vanskelige å endre på kort sikt (Nyhus og Gårseth-Nesbakk, 2026). Har Jonas skrevet under på en husleiekontrakt, må han betale husleie hver måned, uansett hvor mye pizza han har lyst på."
+    },
+    {
+      "type": "text",
+      "content": "Variable utgifter endrer seg fra måned til måned. Det er for eksempel mat, klær, gaver, ferie og fritid. Fordi beløpet varierer, må du anslå det ut fra hva du har brukt før. Det er de variable utgiftene som er lettest å gjøre noe med når du må kutte (Nyhus og Gårseth-Nesbakk, 2026). Jonas kan ikke forhandle bort husleia i morgen, men han kan lage middag hjemme i stedet for å kjøpe pizza."
+    },
+    {
+      "type": "text",
+      "content": "Derfor er det lurt å begynne budsjettet med de faste utgiftene. Trekk dem fra inntekten først. Det som er igjen, er pengene du faktisk kan velge hva du vil bruke på. Prøv selv med Jonas' første måned på hybel. Hele beløpet i eksemplet er tenkt, men utgiftene er vanlige."
+    },
+    {
+      "type": "component",
+      "name": "HybelBudsjett",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Bufferen: penger til det du ikke vet om ennå"
+    },
+    {
+      "type": "text",
+      "content": "Det er ikke bare de vanlige utgiftene som kan tømme kontoen. Mobilen knuser. Sykkelen må repareres. En venn har bursdag, og alle skal spleise på en gave. Slike utgifter vet du ikke om på forhånd, men du vet at noe kommer til å skje. Derfor bør et budsjett ha en buffer, altså penger som er satt av til uventede utgifter. Da blir det mindre sjanse for at økonomien din havner i trøbbel (Nyhus og Gårseth-Nesbakk, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Hvor stor bør bufferen være? Forbrukerøkonomen Derya Incedursun i Nordea anbefaler en buffer på to til tre månedslønner (Incedursun, 2023). Uten en slik reserve kan én uventet regning nesten velte hele privatøkonomien, skriver hun. For en 17-åring på hybel er to månedslønner mye. Men poenget er det samme i det små: noen hundrelapper satt av hver måned gjør at en knust mobilskjerm ikke betyr at du må hoppe over middagen."
+    },
+    {
+      "type": "text",
+      "content": "Det samme gjelder store utgifter du vet kommer, men ikke hver måned. Skal du på klassetur til våren, eller trenger du nye vintersko i november? Da kan du sette av litt hver måned, slik at pengene er der når regningen kommer (Nyhus og Gårseth-Nesbakk, 2026)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Knust mobilskjerm på bord ved siden av sparegris",
+      "caption": "En buffer er penger til det du ikke vet om ennå, som en knust mobilskjerm."
+    },
+    {
+      "type": "header",
+      "text": "Hva koster det egentlig å leve?"
+    },
+    {
+      "type": "text",
+      "content": "Når du skal lage ditt første budsjett, er det vanskelig å vite hva ting koster. Hvor mye bruker en person egentlig på mat i måneden? Her kan du få hjelp. Forbruksforskningsinstituttet SIFO ved OsloMet lager hvert år et referansebudsjett. Det viser hva det koster å leve på et nivå de fleste kan godta, uten å skille seg for mye ut (SIFO, u.å.). Referansebudsjettet kom første gang i 1987 (Nyhus, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Referansebudsjettet har satser for blant annet mat og drikke, klær og sko, hygiene, fritid, reiser og møbler (Nyhus, 2026). På OsloMet sine nettsider finnes en kalkulator der du kan legge inn alder og hvor mange som bor i husholdningen, og få et forslag til budsjett. Men legg merke til hva som ikke er med. Husleie, strøm og andre utgifter til bolig er ikke med. Det er heller ikke feriereiser eller uteliv (SIFO, u.å.). Husleia må du altså legge til selv, og for mange er det den største utgiften av alle."
+    },
+    {
+      "type": "text",
+      "content": "Tallene viser også at det har blitt dyrere å leve. Ifølge SIFO trengte en familie med mor, far og en datter på 15 år 33 456 kroner i måneden i februar 2026. I 2022 var tallet 27 854 kroner. Det er en økning på omtrent 20 prosent på fire år (Lassen, 2026). Når prisene stiger, er det [inflasjon](/samfunnskunnskap/okonomi/inflasjon-og-rente). Da må et budsjett fra i fjor justeres, ellers stemmer det ikke lenger."
+    },
+    {
+      "type": "header",
+      "text": "Slik lager du ditt første budsjett"
+    },
+    {
+      "type": "text",
+      "content": "Et budsjett trenger ikke være avansert. Et ark, et regneark eller en app i banken holder. Fordi lønn ofte kommer én gang i måneden, er et månedsbudsjett et naturlig sted å begynne (Nyhus og Gårseth-Nesbakk, 2026). Gå gjennom disse stegene:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Skriv opp inntekten din: hvor mye kommer inn på kontoen hver måned?",
+        "Skriv opp de faste utgiftene og trekk dem fra inntekten.",
+        "Sett av et beløp til buffer, før du bruker resten.",
+        "Fordel resten på de variable utgiftene: mat, klær, fritid.",
+        "Følg med gjennom måneden. Stemte planen? Juster neste måned."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Noen synes det er lettere å lage et ukesbudsjett, slik at pengene varer hele måneden. Andre bruker flere kontoer, for eksempel én konto for regninger, én for buffer og én for det de kan bruke fritt (Nyhus og Gårseth-Nesbakk, 2026). Hvis Jonas hadde flyttet 600 kroner til en egen konto på lønningsdagen, hadde de vært der da mobilen knuste."
+    },
+    {
+      "type": "text",
+      "content": "Et årsbudsjett kan være nyttig for de pengene som ikke kommer hver måned. Et eksempel er feriepenger (Nyhus og Gårseth-Nesbakk, 2026), som du tjener opp i år og får utbetalt neste år. Er det penger du vet kommer, kan du planlegge hva de skal brukes til før de havner på kontoen."
+    },
+    {
+      "type": "header",
+      "text": "Et budsjett er en plan, ikke en straff"
+    },
+    {
+      "type": "text",
+      "content": "Mange tror et budsjett handler om å nekte seg selv alt som er gøy. Det er feil. Et budsjett handler om å velge. Jonas kan fortsatt kjøpe pizza med vennene sine. Forskjellen er at han nå vet at pizzaen koster ham noe annet senere i måneden, og han kan bestemme om det er verdt det."
+    },
+    {
+      "type": "text",
+      "content": "Det er også derfor ingen budsjetter er like. Én person vil bruke mye på klær og lite på spill. En annen vil spare til en reise og lage matpakke hver dag. Budsjettet forteller deg ikke hva du skal like. Det viser deg hva valgene dine koster. Og når du vet det, er det du som bestemmer over pengene, ikke den 20. i måneden."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom skriver budsjett i notatbok ved kjøkkenbordet",
+      "caption": "Et budsjett handler om å velge, ikke om å nekte seg alt."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Et budsjett er en plan for pengene som kommer inn og pengene som går ut. Faste utgifter, som husleie og abonnementer, kommer hver måned og er vanskelige å endre. Variable utgifter, som mat, klær og fritid, er lettere å kutte i. En buffer gjør at en uventet regning ikke velter hele økonomien. SIFOs referansebudsjett kan hjelpe deg å anslå hva ting koster, men bolig må du legge til selv. Det viktigste er at et budsjett er en plan med valg, ikke en straff."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Gårseth-Nesbakk, L. (2025). *Budsjett*. Store norske leksikon. Hentet 06.11.2026 fra [snl.no/budsjett](https://snl.no/budsjett)",
+          "Incedursun, D. (2023). *Derfor bør du ha en bufferkonto*. Nordea. [nordea.com](https://www.nordea.com/no/nyheter/derfor-bor-du-ha-en-bufferkonto)",
+          "Lassen, K. (2026). *SIFO sitt referansebudsjett 2026: Framleis brei prisauke*. OsloMet. Hentet 06.11.2026 fra [oslomet.no](https://www.oslomet.no/om/nyheter/sifo-sitt-referansebudsjett-2026-framleis-brei-prisauke)",
+          "Nyhus, E. K. (2026). *Referansebudsjettet*. Store norske leksikon. Hentet 06.11.2026 fra [snl.no/referansebudsjettet](https://snl.no/referansebudsjettet)",
+          "Nyhus, E. K. & Gårseth-Nesbakk, L. (2026). *Husholdningsbudsjett*. Store norske leksikon. Hentet 06.11.2026 fra [snl.no/husholdningsbudsjett](https://snl.no/husholdningsbudsjett)",
+          "SIFO. (u.å.). *Referansebudsjettet*. OsloMet. Hentet 06.11.2026 fra [oslomet.no/om/sifo/referansebudsjettet](https://www.oslomet.no/om/sifo/referansebudsjettet)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er et budsjett, og hva er et husholdningsbudsjett?",
+          "Hva er forskjellen på en fast og en variabel utgift? Gi to eksempler på hver.",
+          "Hva kan du gjøre hvis budsjettet ditt viser et underskudd?",
+          "Hva er ikke med i SIFOs referansebudsjett?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor det er lurt å trekke fra de faste utgiftene først når du lager et budsjett.",
+          "Hvorfor er de variable utgiftene lettere å kutte i enn de faste?",
+          "Jonas hadde 340 kroner igjen den 20. Hva tror du han kunne gjort annerledes? Bruk ordene fast utgift, variabel utgift og buffer.",
+          "Hvorfor må et budsjett justeres når prisene stiger?"
+        ],
+        "gaaVidere": [
+          "Lag et tenkt månedsbudsjett for deg selv når du er 18 år og bor på hybel. Bestem inntekten, sett opp faste og variable utgifter, og husk bufferen.",
+          "Diskuter i klassen: Er det best å ha én konto for alt, eller flere kontoer med ulike formål? Hva er fordeler og ulemper?",
+          "Prøv SIFOs kalkulator på nettsidene til OsloMet. Hva sier den at en person på din alder bruker på mat i måneden? Var det mer eller mindre enn du trodde?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er en fast utgift?",
+            "options": [
+              "En utgift som endrer seg hver måned",
+              "En utgift som kommer jevnlig, ofte med samme beløp, som husleie",
+              "Penger du setter av til uventede utgifter",
+              "Penger du får fra en jobb"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Faste utgifter er regninger som kommer regelmessig, som husleie, strøm og abonnementer. De er vanskelige å endre på kort sikt."
+          },
+          {
+            "question": "Hvilke utgifter er lettest å kutte i når pengene ikke strekker til?",
+            "options": [
+              "Husleie",
+              "Forsikring",
+              "Variable utgifter som mat, klær og fritid",
+              "Mobilabonnementet"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Variable utgifter endrer seg fra måned til måned og er de du lettest kan gjøre noe med på kort sikt."
+          },
+          {
+            "question": "Hva er en buffer i et budsjett?",
+            "options": [
+              "Penger som er satt av til utgifter du ikke vet om ennå",
+              "Et lån fra banken",
+              "Den største faste utgiften",
+              "Pengene du bruker på fritid"
+            ],
+            "correctAnswer": 0,
+            "explanation": "En buffer er en reserve til uventede utgifter, som en knust mobilskjerm. Da velter ikke økonomien når noe skjer."
+          },
+          {
+            "question": "Hva er IKKE med i SIFOs referansebudsjett?",
+            "options": [
+              "Mat og drikke",
+              "Klær og sko",
+              "Husleie og strøm",
+              "Hygieneartikler"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Bolig, strøm og andre boutgifter er ikke med. Husleia må du legge til selv."
+          },
+          {
+            "question": "Hva er det viktigste prinsippet i et budsjett?",
+            "options": [
+              "Du skal aldri bruke penger på noe gøy",
+              "Over tid må det være penger til alle utgiftene du har planlagt",
+              "Du må alltid låne når det blir tomt",
+              "Budsjettet skal være likt for alle"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Over tid må inntektene dekke utgiftene. Innenfor det er budsjettet en plan med dine egne valg."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

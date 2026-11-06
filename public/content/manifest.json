@@ -2557,6 +2557,21 @@
                 "arbeidsliv"
               ],
               "createdDate": "2026-11-05T00:00:00Z"
+            },
+            {
+              "id": "budsjett",
+              "title": "Budsjett: Å velge hva pengene skal gå til",
+              "description": "Faste og variable utgifter, buffer og SIFOs referansebudsjett: slik lager du en plan for pengene dine.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "personlig økonomi",
+                "budsjett",
+                "forbruk",
+                "sparing",
+                "buffer"
+              ],
+              "createdDate": "2026-11-06T00:00:00Z"
             }
           ]
         },
