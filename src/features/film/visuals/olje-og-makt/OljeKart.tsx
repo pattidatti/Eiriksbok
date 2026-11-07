@@ -5,19 +5,17 @@ import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
 
 /**
- * Kartet over oljen, i seks modus:
+ * Kartet over oljen, i fire modus:
  * «funn»: oljefunnene i Persia (1908), Irak (1927) og Saudi-Arabia (1938).
  * «opec»: fem land møtes i Bagdad i 1960 og starter OPEC.
- * «egen»: landene tar oljen tilbake (Libya, Irak, Saudi-Arabia).
  * «krig»: oktober 1973, Vesten støtter Israel, og oljelandene bruker oljen som pressmiddel.
- * «nordsjoen»: Ekofisk, produksjonen og den nye skatten.
  * «kontrast»: rikdommen i Gulf-statene, Dubai, og Qatar mot Jemen.
  */
 
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'funn' | 'opec' | 'egen' | 'krig' | 'nordsjoen' | 'kontrast';
+type Modus = 'funn' | 'opec' | 'krig' | 'kontrast';
 
 const IRAN = 364;
 const IRAK = 368;
@@ -28,7 +26,6 @@ const LIBYA = 434;
 const EGYPT = 818;
 const SYRIA = 760;
 const ISRAEL = 376;
-const NORGE = 578;
 const EMIRATENE = 784;
 const QATAR = 634;
 const JEMEN = 887;
@@ -36,8 +33,6 @@ const JEMEN = 887;
 const STED = {
     masjed: [49.3, 32.0] as LngLat,
     bagdad: [44.4, 33.3] as LngLat,
-    ekofisk: [3.2, 56.5] as LngLat,
-    oslo: [10.75, 59.9] as LngLat,
     dubai: [55.3, 25.2] as LngLat,
     qatar: [51.2, 25.3] as LngLat,
     jemen: [47.5, 15.6] as LngLat,
@@ -49,13 +44,10 @@ const FARGE = {
     kant: '#a8a29e',
     olje: '#c2410c',
     oljeLys: '#fdba74',
-    utenlandsk: '#64748b',
-    egen: '#15803d',
     angrep: '#dc2626',
     vesten: '#2563eb',
     gull: '#eab308',
     fattig: '#7f1d1d',
-    norge: '#be123c',
 };
 
 function lagProjeksjon(modus: Modus): GeoProjection {
@@ -72,12 +64,8 @@ function lagProjeksjon(modus: Modus): GeoProjection {
             return utsnitt([30, 18], [62, 40]);
         case 'opec':
             return utsnitt([-78, -4], [64, 42]);
-        case 'egen':
-            return utsnitt([8, 15], [58, 38]);
         case 'krig':
             return utsnitt([22, 14], [58, 40]);
-        case 'nordsjoen':
-            return utsnitt([-9, 51], [17, 63]);
         default:
             return utsnitt([33, 11], [60, 32]);
     }
@@ -98,21 +86,12 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
             if (beat === 0 && id === IRAK) return FARGE.oljeLys;
             return FARGE.land;
         }
-        case 'egen': {
-            if (id === LIBYA) return beat >= 1 ? FARGE.egen : FARGE.utenlandsk;
-            if (id === IRAK) return beat >= 2 ? FARGE.egen : FARGE.utenlandsk;
-            if (id === SAUDI) return beat >= 3 ? FARGE.egen : FARGE.utenlandsk;
-            if (id === KUWAIT || id === IRAN) return FARGE.utenlandsk;
-            return FARGE.land;
-        }
         case 'krig': {
             if (id === EGYPT || id === SYRIA) return FARGE.angrep;
             if (id === ISRAEL) return beat >= 1 ? FARGE.vesten : '#fca5a5';
             if (beat >= 2 && [SAUDI, KUWAIT, IRAK, LIBYA].includes(id)) return FARGE.olje;
             return FARGE.land;
         }
-        case 'nordsjoen':
-            return id === NORGE ? FARGE.norge : FARGE.land;
         default: {
             if (beat >= 4 && id === JEMEN) return FARGE.fattig;
             if (beat >= 3 && id === QATAR) return FARGE.gull;
@@ -291,32 +270,19 @@ const KORT: Record<Modus, ({ tekst: string; tone?: 'lys' | 'rod' | 'gronn' | 'gu
         { tekst: 'OPEC: Organisasjonen av oljeeksporterende land', tone: 'gull' },
         { tekst: 'Mål: stabile priser og jevne inntekter' },
     ],
-    egen: [
-        { tekst: 'Utenlandske selskaper eier oljen' },
-        { tekst: 'Libya tar over oljen', tone: 'gronn' },
-        { tekst: '1972: Irak tar over IPC', tone: 'gronn' },
-        { tekst: 'Saudi-Arabia kjøper Aramco', tone: 'gronn' },
-        { tekst: 'Oljen tilhører landet den kommer fra', tone: 'gronn' },
-    ],
     krig: [
         { tekst: '6. oktober 1973: Yom Kippur-krigen', tone: 'rod' },
         { tekst: 'USA og vestlige land støtter Israel' },
         { tekst: 'Svaret: olje som pressmiddel', tone: 'rod' },
         null,
     ],
-    nordsjoen: [
-        { tekst: 'Vesten leter etter olje hjemme' },
-        { tekst: 'Ekofisk: drivverdig lille julaften 1969' },
-        { tekst: '1971: produksjonen starter' },
-        { tekst: '1975: mye høyere skatt på oljen', tone: 'gull' },
-    ],
     kontrast: [
         { tekst: 'Gulf-statene: enorm rikdom', tone: 'gull' },
         { tekst: 'Skoler · sykehus · jobber i staten' },
         { tekst: 'Dubai: fra liten kystby til skyskrapere' },
-        { tekst: 'Qatar: blant verdens rikeste', tone: 'gull' },
-        { tekst: 'Jemen: blant de fattigste', tone: 'rod' },
-        { tekst: 'Hvem har oljen?' },
+        { tekst: 'Qatar: blant verdens rikeste per innbygger', tone: 'gull' },
+        { tekst: 'Jemen: blant de fattigste i den arabiske verden', tone: 'rod' },
+        { tekst: 'Mye handler om hvem som har oljen' },
     ],
 };
 
@@ -375,11 +341,11 @@ function Innhold({
             <>
                 <Drape pos={p(STED.masjed)} />
                 <Etikett pos={flytt(p(STED.masjed), 0, 60)} tekst="1908" />
-                {beat >= 1 && <Etikett pos={flytt(midt(IRAN), 40, -60)} tekst="PERSIA = IRAN" stor farge="#7c2d12" />}
+                {beat >= 1 && <Etikett pos={flytt(midt(IRAN), 40, -60)} tekst="Persia = Iran" stor farge="#7c2d12" />}
                 {beat >= 2 && (
                     <>
                         <Drape pos={flytt(midt(IRAK), 0, -20)} />
-                        <Etikett pos={flytt(midt(IRAK), 0, 40)} tekst="Irak 1927" />
+                        <Etikett pos={flytt(midt(IRAK), -30, 50)} tekst="Irak 1927" />
                     </>
                 )}
                 {beat >= 3 && (
@@ -430,73 +396,23 @@ function Innhold({
             </>
         );
     }
-    if (modus === 'egen') {
-        const saudi = flytt(midt(SAUDI), 40, -10);
-        return (
-            <>
-                {beat === 0 && (
-                    <>
-                        <Etikett pos={midt(LIBYA)} tekst="Libya" />
-                        <Etikett pos={flytt(midt(IRAK), 0, 20)} tekst="Irak" />
-                        <Etikett pos={saudi} tekst="Saudi-Arabia" />
-                    </>
-                )}
-                {beat >= 1 && <Etikett pos={midt(LIBYA)} tekst="Libya 1969" farge={FARGE.egen} />}
-                {beat >= 2 && <Etikett pos={flytt(midt(IRAK), 0, 20)} tekst="Irak 1972" farge={FARGE.egen} />}
-                {beat >= 1 && beat < 3 && <Etikett pos={saudi} tekst="Saudi-Arabia" />}
-                {beat >= 3 && <AramcoStolpe pos={saudi} hopp={beat === 3} />}
-            </>
-        );
-    }
     if (modus === 'krig') {
         const israel = p([35, 31.5]);
         return (
             <>
                 <Pil fra={flytt(midt(EGYPT), 40, -40)} til={flytt(israel, -22, 28)} farge="#7f1d1d" bue={-0.15} />
                 <Pil fra={flytt(midt(SYRIA), 10, 0)} til={flytt(israel, 16, -26)} farge="#7f1d1d" bue={0.15} forsinkelse={0.4} />
-                <Etikett pos={flytt(midt(EGYPT), 0, 40)} tekst="Egypt" />
+                {beat < 3 && <Etikett pos={flytt(midt(EGYPT), 0, 40)} tekst="Egypt" />}
                 <Etikett pos={flytt(midt(SYRIA), 30, -36)} tekst="Syria" />
                 <Etikett pos={flytt(israel, -120, -40)} tekst="Israel" farge={beat >= 1 ? FARGE.vesten : '#0f172a'} />
                 {beat >= 1 && <Pil fra={[40, 230]} til={flytt(israel, -26, -8)} farge={FARGE.vesten} bue={0.12} />}
-                {beat >= 1 && <Etikett pos={[180, 190]} tekst="← fra USA" farge={FARGE.vesten} />}
+                {beat >= 1 && <Etikett pos={[180, 190]} tekst="støtte fra USA →" farge={FARGE.vesten} />}
                 {beat >= 2 && (
                     <>
                         <Drape pos={flytt(midt(SAUDI), 40, -30)} />
                         <Drape pos={flytt(midt(IRAK), 0, -10)} forsinkelse={0.3} />
                         <Drape pos={flytt(midt(KUWAIT), 10, 0)} forsinkelse={0.6} />
                         <Etikett pos={flytt(midt(SAUDI), 40, 40)} tekst="Oljelandene" farge="#7c2d12" />
-                    </>
-                )}
-            </>
-        );
-    }
-    if (modus === 'nordsjoen') {
-        const ek = p(STED.ekofisk);
-        return (
-            <>
-                <Etikett pos={flytt(p([9, 61]), 0, 0)} tekst="Norge" farge="#881337" />
-                <Etikett pos={p([1.5, 57.4])} tekst="Nordsjøen" farge="#1e3a8a" />
-                {beat === 0 &&
-                    [p([2, 55]), p([4, 58.5]), p([-1, 59])].map((pos, i) => (
-                        <motion.circle
-                            key={i}
-                            cx={pos[0]}
-                            cy={pos[1]}
-                            r={20}
-                            fill="none"
-                            stroke="#1e3a8a"
-                            strokeWidth={6}
-                            animate={{ r: [10, 90], opacity: [0.9, 0] }}
-                            transition={{ duration: 2.2, repeat: Infinity, delay: i * 0.6 }}
-                        />
-                    ))}
-                {beat >= 1 && <Plattform pos={ek} />}
-                {beat >= 1 && <Etikett pos={flytt(ek, 0, 90)} tekst="Ekofisk" />}
-                {beat >= 2 && <Drape pos={flytt(ek, 0, -30)} />}
-                {beat >= 3 && (
-                    <>
-                        <Pil fra={flytt(ek, 40, -20)} til={flytt(p(STED.oslo), -10, 20)} farge="#a16207" bue={-0.2} />
-                        <Etikett pos={flytt(p(STED.oslo), 40, 70)} tekst="til staten" farge="#a16207" />
                     </>
                 )}
             </>
@@ -536,7 +452,7 @@ function Innhold({
             {beat >= 5 && (
                 <>
                     <Drape pos={flytt(midt(SAUDI), -40, -20)} />
-                    <Drape pos={flytt(p(STED.qatar), 0, -50)} forsinkelse={0.3} />
+                    <Drape pos={flytt(p(STED.qatar), 0, 60)} forsinkelse={0.3} />
                     <Drape pos={p([47.8, 29.6])} forsinkelse={0.6} />
                     <Drape pos={p([54.3, 23.8])} forsinkelse={0.9} />
                 </>
@@ -583,74 +499,24 @@ function Skyskrapere({ pos }: { pos: [number, number] }) {
     );
 }
 
-/** Oljeplattform i miniatyr. */
-function Plattform({ pos }: { pos: [number, number] }) {
-    const [x, y] = pos;
-    return (
-        <motion.g initial={{ opacity: 0, scale: 0.4 }} animate={{ opacity: 1, scale: 1 }} style={{ transformOrigin: `${x}px ${y}px` }}>
-            <line x1={x - 30} y1={y + 50} x2={x - 20} y2={y} stroke="#334155" strokeWidth={8} />
-            <line x1={x + 30} y1={y + 50} x2={x + 20} y2={y} stroke="#334155" strokeWidth={8} />
-            <rect x={x - 45} y={y - 12} width={90} height={18} fill="#f59e0b" stroke="#fff" strokeWidth={3} />
-            <rect x={x + 10} y={y - 60} width={10} height={50} fill="#334155" />
-        </motion.g>
-    );
-}
-
-/** Saudi-Arabias eierandel i Aramco: 60 prosent i 1974, hele selskapet fra 1980. */
-function AramcoStolpe({ pos, hopp }: { pos: [number, number]; hopp: boolean }) {
-    const [x, y] = pos;
-    const bredde = 400;
-    return (
-        <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            <rect x={x - bredde / 2 - 10} y={y - 80} width={bredde + 20} height={150} rx={18} fill="#ffffff" opacity={0.95} />
-            <text x={x} y={y - 42} textAnchor="middle" fontSize={30} fontWeight={800} fill="#0f172a">
-                Saudi-Arabia eier Aramco
-            </text>
-            <rect x={x - bredde / 2} y={y - 18} width={bredde} height={40} rx={8} fill="#cbd5e1" />
-            <motion.rect
-                x={x - bredde / 2}
-                y={y - 18}
-                height={40}
-                rx={8}
-                fill={FARGE.egen}
-                initial={{ width: hopp ? 0 : bredde }}
-                animate={{ width: hopp ? [0, bredde * 0.6, bredde * 0.6, bredde] : bredde }}
-                transition={{ duration: hopp ? 6 : 0.4, times: [0, 0.2, 0.6, 0.8] }}
-            />
-            <motion.text
-                x={x}
-                y={y + 56}
-                textAnchor="middle"
-                fontSize={28}
-                fontWeight={800}
-                fill="#0f172a"
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-            >
-                {hopp ? '1974: 60 %  →  1980: hele' : '1980: hele selskapet'}
-            </motion.text>
-        </motion.g>
-    );
-}
-
 /** Oljekuttet: produksjonen går ned fem prosent hver måned. */
 function Kutt() {
-    const maneder = ['Okt.', 'Nov.', 'Des.', 'Jan.'];
+    const maneder = ['Start', '1 mnd.', '2 mnd.', '3 mnd.'];
     return (
         <motion.div
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             className="absolute bottom-[5%] left-[4%] px-6 py-3 rounded-2xl bg-white/95 shadow-xl"
         >
-            <div className="font-display font-bold text-2xl text-slate-900 text-center">
-                Produksjonen kuttes med 5 % hver måned
+            <div className="font-display font-bold text-xl text-slate-900 text-center">
+                Produksjonen kuttes<br />med 5 % hver måned
             </div>
-            <div className="mt-3 flex items-end justify-center gap-5 h-36">
+            <div className="mt-3 flex items-end justify-center gap-3 h-36">
                 {maneder.map((m, i) => (
                     <div key={m} className="flex flex-col items-center">
                         <div className="text-base font-bold text-red-600 h-6">{i > 0 ? '−5 %' : ''}</div>
                         <motion.div
-                            className="w-14 rounded-t-md bg-orange-700"
+                            className="w-11 rounded-t-md bg-orange-700"
                             initial={{ height: 100 }}
                             animate={{ height: 100 * Math.pow(0.95, i) }}
                             transition={{ delay: 0.5 + i * 0.6, duration: 0.8 }}

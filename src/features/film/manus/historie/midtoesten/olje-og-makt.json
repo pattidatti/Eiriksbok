@@ -4,6 +4,15 @@
     "kilde": "/historie/midtoesten/olje-og-makt",
     "bilde": "/images/midtoesten/olje-og-makt-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-11-07",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
     "scener": [
         {
             "id": "ventilen",
@@ -49,7 +58,7 @@
                     "si": "Fra 5. desember blir det forbudt å kjøre bil i helgene."
                 },
                 {
-                    "si": "Tenk deg en søndag der veiene er helt tomme for biler. Alt på grunn av olje."
+                    "si": "Tenk deg en søndag der nesten ingen kjører bil. Alt på grunn av olje."
                 }
             ]
         },
@@ -65,7 +74,7 @@
                     "tall": [
                         {
                             "verdi": 48,
-                            "etikett": "prosent av verdens oljereserver ligger i Midtøsten",
+                            "etikett": "prosent av verdens kjente oljereserver ligger i Midtøsten",
                             "fraBeat": 2
                         }
                     ],
@@ -134,8 +143,8 @@
                     "si": "Britiske og amerikanske selskaper bestemmer over pumpene, rørene og prisene."
                 },
                 {
-                    "si": "Den britiske staten kjøper seg inn i selskapet Anglo-Persian Oil Company. Det blir senere oljeselskapet BP.",
-                    "uttale": "Den britiske staten kjøper seg inn i selskapet Anglo-Persian Oil Company. Det blir senere oljeselskapet B P."
+                    "si": "Den britiske staten kjøper seg opp i selskapet Anglo-Persian Oil Company, og får kontroll over oljen i Iran. Selskapet blir senere BP.",
+                    "uttale": "Den britiske staten kjøper seg opp i selskapet Anglo-Persian Oil Company, og får kontroll over oljen i Iran. Selskapet blir senere B P."
                 },
                 {
                     "si": "Iranske arbeidere sliter på oljefeltene. Men pengene seiler av gårde til den britiske staten."
@@ -170,10 +179,7 @@
         {
             "id": "egen",
             "visual": {
-                "type": "OljeKart",
-                "props": {
-                    "modus": "egen"
-                }
+                "type": "OljeEierskap"
             },
             "replikker": [
                 {
@@ -216,7 +222,7 @@
                     "si": "Som svar bruker de arabiske oljelandene oljen som et pressmiddel. Et pressmiddel er noe du bruker for å tvinge andre til å gjøre som du vil."
                 },
                 {
-                    "si": "De kutter produksjonen med fem prosent hver måned. Det var dette som stengte ventilen i starten av filmen."
+                    "si": "OPEC blir med. Etter forslag fra Kuwait kutter de produksjonen med fem prosent hver måned. Sammen med stansen i eksporten var det dette som stengte ventilen i starten av filmen."
                 }
             ]
         },
@@ -243,11 +249,9 @@
         },
         {
             "id": "nordsjoen",
+            "lyd": "hav",
             "visual": {
-                "type": "OljeKart",
-                "props": {
-                    "modus": "nordsjoen"
-                }
+                "type": "OljeNordsjo"
             },
             "replikker": [
                 {
@@ -266,6 +270,7 @@
         },
         {
             "id": "rikdom",
+            "lyd": "stille",
             "kapittel": "Velsignelse eller forbannelse?",
             "visual": {
                 "type": "OljeKart",
@@ -284,13 +289,13 @@
                     "si": "Dubai går fra å være en liten by ved kysten til en by full av skyskrapere. Det tar bare noen få tiår."
                 },
                 {
-                    "si": "Qatar var et fattig land før olje og gass. I dag er det blant de rikeste i verden, med gratis utdanning."
+                    "si": "Qatar var et fattig land før olje og gass. I dag er det blant de rikeste i verden, når vi deler inntektene på hver innbygger. Og utdanningen er gratis."
                 },
                 {
-                    "si": "Jemen ligger på den samme halvøya. Det er et av de fattigste landene i den arabiske verden."
+                    "si": "Jemen ligger på den samme halvøya. Det er et av de fattigste landene i den arabiske verden, og der brøt det ut en krig i 2014-2015."
                 },
                 {
-                    "si": "Forskjellen handler ikke om hvor landene ligger. Den handler om hvem som har oljen."
+                    "si": "Forskjellen handler ikke om hvor landene ligger. Den handler mye om hvem som har oljen."
                 }
             ]
         },
@@ -303,8 +308,8 @@
                     "punkter": [
                         {
                             "ikon": "fabrikk",
-                            "tittel": "Bare én vare",
-                            "tekst": "andre næringer blir ikke bygd opp",
+                            "tittel": "Nesten bare én vare",
+                            "tekst": "andre måter å tjene penger på blir ofte ikke bygd opp",
                             "fraBeat": 1
                         },
                         {
@@ -315,7 +320,7 @@
                         },
                         {
                             "ikon": "stjerne",
-                            "tittel": "Pengene går til toppen",
+                            "tittel": "Pengene går ofte til toppen",
                             "tekst": "kongehus og eliter, ikke vanlige folk",
                             "fraBeat": 3
                         }
@@ -351,7 +356,8 @@
                             "farget": 100,
                             "farge": "#16a34a",
                             "tittel": "Petrodollar: oljen betales i dollar",
-                            "fargeEtikett": "dollar"
+                            "fargeEtikett": "dollar",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 1,
@@ -359,9 +365,10 @@
                             "farget": 90,
                             "farge": "#b45309",
                             "restFarge": "#cbd5e1",
-                            "tittel": "Saudi-Arabia, eksport: 90 % fra olje",
+                            "tittel": "Saudi-Arabia, eksport: rundt 90 % fra olje",
                             "fargeEtikett": "fra olje",
-                            "restEtikett": "alt annet"
+                            "restEtikett": "alt annet",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 2,
@@ -371,7 +378,8 @@
                             "restFarge": "#cbd5e1",
                             "tittel": "Statens inntekter: 70 til 80 % fra olje",
                             "fargeEtikett": "fra olje",
-                            "restEtikett": "alt annet"
+                            "restEtikett": "alt annet",
+                            "visTall": false
                         }
                     ]
                 }
@@ -413,6 +421,7 @@
         },
         {
             "id": "klima",
+            "lyd": "vind",
             "kapittel": "Olje og klima",
             "visual": {
                 "type": "OljeFelt",
@@ -431,16 +440,17 @@
                     "si": "Tørke og mangel på vann truer jordbruket og drikkevannet."
                 },
                 {
-                    "si": "Saudi-Arabia lager all strømmen sin fra olje og gass. Ingen andre land i G20, en gruppe av verdens største økonomier, gjør det.",
-                    "uttale": "Saudi-Arabia lager all strømmen sin fra olje og gass. Ingen andre land i G tjue, en gruppe av verdens største økonomier, gjør det."
+                    "si": "Saudi-Arabia lager all strømmen sin med fossil energi, som olje og gass. Ingen andre land i G20, en gruppe av verdens største økonomier, gjør det.",
+                    "uttale": "Saudi-Arabia lager all strømmen sin med fossil energi, som olje og gass. Ingen andre land i G tjue, en gruppe av verdens største økonomier, gjør det."
                 },
                 {
-                    "si": "Men landet har startet planer for fornybar energi, som sol, og for kjernekraft. De vet at oljealderen tar slutt en dag."
+                    "si": "Men landet har startet planer for fornybar energi og for kjernekraft. De vet at oljealderen tar slutt en dag."
                 }
             ]
         },
         {
             "id": "slutt",
+            "lyd": "stille",
             "kapittel": "Hva betyr det?",
             "visual": {
                 "type": "Sluttkort",
@@ -456,7 +466,7 @@
                             "uthevet": true
                         },
                         {
-                            "tekst": "Den som eier oljen,",
+                            "tekst": "Den som har oljen,",
                             "fraBeat": 1
                         },
                         {
@@ -481,7 +491,7 @@
                     "si": "Olje formet Midtøsten. Og oljen fra Midtøsten formet resten av verden."
                 },
                 {
-                    "si": "Først eide utlendingene den. Så tok landene den tilbake, og lærte at den som eier oljen, kan skru igjen ventilen."
+                    "si": "Først eide utlendingene den. Så tok landene den tilbake. Og i 1973 viste de at den som har oljen, kan skru igjen ventilen."
                 },
                 {
                     "si": "Oljen under ørkensanden har aldri bare vært drivstoff. Den er makt, politikk og skjebne på en gang."
