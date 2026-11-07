@@ -1,0 +1,270 @@
+{
+    "id": "normandie",
+    "tittel": "Normandie: Fra vikinger til riddere",
+    "kilde": "/historie/vikingtiden/normandie",
+    "bilde": "/images/lessons/vikingtiden/normandie.webp",
+    "utenforArtikkel": [],
+    "vurdering": {
+        "dato": "2026-11-07",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 4,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 20
+    },
+    "scener": [
+        {
+            "id": "seinen",
+            "lyd": "vind",
+            "kapittel": "Seinen, 911",
+            "visual": { "type": "NormandieElva", "props": { "modus": "seinen" } },
+            "replikker": [
+                {
+                    "si": "Vi er i Frankrike, i året 911. Foran oss renner en bred elv. Den heter Seinen."
+                },
+                {
+                    "si": "Oppover elva ror lange vikingskip. Vikingene herjer opp og ned langs Seinen."
+                },
+                { "si": "Lenger inne i landet ligger Paris. Vikingene truer byen stadig vekk." },
+                {
+                    "si": "Den frankiske kongen heter Karl, og kallenavnet hans er Karl den enfoldige, altså litt enkel og godtroende. Kanskje fortjente han det. Nå er han desperat."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NORMANDIE",
+                    "undertittel": "Fra vikinger til riddere, 911 til 1066",
+                    "bilde": "/images/lessons/vikingtiden/normandie.webp",
+                    "sporsmal": { "tekst": "Hvordan ble vikinger til riddere?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er historien om Normandie." },
+                {
+                    "si": "Om hvordan en gjeng vikinger fikk et eget land i Frankrike."
+                },
+                {
+                    "si": "Og om hvordan de ble riddere som hele Europa fryktet. Hvordan kunne det skje?"
+                }
+            ]
+        },
+        {
+            "id": "rollo",
+            "kapittel": "Gange-Rolv",
+            "visual": { "type": "NormandieElva", "props": { "modus": "rollo" } },
+            "replikker": [
+                {
+                    "si": "Høvdingen til vikingene på Seinen het Rollo. På norrønt, språket vikingene snakket, het han Gange-Rolv."
+                },
+                { "si": "Sagaene, gamle fortellinger fra Norden, forklarer det rare navnet." },
+                { "si": "Ifølge sagaene var Rollo så stor at han ikke kunne sitte på en hest." },
+                { "si": "Derfor måtte han gå. Og derfor kalte de ham Gange-Rolv." }
+            ]
+        },
+        {
+            "id": "avtale",
+            "lyd": "stille",
+            "kapittel": "Avtalen",
+            "visual": { "type": "NormandieKart", "props": { "modus": "avtale" } },
+            "replikker": [
+                { "si": "Samme år kom kongen og Rollo til enighet. De laget en avtale." },
+                {
+                    "si": "Rollo og mennene hans fikk slå seg ned i området rundt utløpet av Seinen, der elva renner ut i havet."
+                },
+                { "si": "Til gjengjeld skulle de forsvare landet mot andre vikinger." },
+                {
+                    "si": "Vikingene som før hadde truet landet, skulle nå holde andre vikinger borte."
+                }
+            ]
+        },
+        {
+            "id": "lofter",
+            "visual": { "type": "NormandieTavle", "props": { "modus": "avtale" } },
+            "replikker": [
+                { "si": "Rollo fikk også et løfte om en av kongens døtre." },
+                {
+                    "si": "Han gikk med på å la seg døpe. Å bli døpt betyr å bli tatt opp i den kristne kirken."
+                },
+                {
+                    "si": "Og han ble kongens vasall. En vasall er en mann som lover å være tro mot kongen sin."
+                }
+            ]
+        },
+        {
+            "id": "foten",
+            "lyd": "rom",
+            "visual": { "type": "NormandieElva", "props": { "modus": "foten" } },
+            "replikker": [
+                {
+                    "si": "Det finnes en kjent historie om dette. Rollo skulle sverge troskap til kongen, altså love å være tro mot ham."
+                },
+                { "si": "Da skulle han kysse kongens fot. Men Rollo nektet." },
+                { "si": "I stedet lot han en av mennene sine gjøre det." },
+                { "si": "Mannen løftet kongens fot så høyt at kongen veltet bakover." },
+                {
+                    "si": "Men vent litt. Historien er bare kjent fra én skriver, Dudo av Saint-Quentin. Han skrev den nesten hundre år senere.",
+                    "uttale": "Men vent litt. Historien er bare kjent fra én skriver, Dudo av Sang-Kangtang. Han skrev den nesten hundre år senere."
+                },
+                {
+                    "si": "Og han skrev på oppdrag fra Rollos etterkommere, altså for familien hans. Vi vet derfor ikke om det virkelig skjedde."
+                }
+            ]
+        },
+        {
+            "id": "franske",
+            "lyd": "stille",
+            "kapittel": "Vikinger blir franske",
+            "visual": { "type": "NormandieTavle", "props": { "modus": "sprak" } },
+            "replikker": [
+                {
+                    "si": "Landet Rollo fikk, ble hetende Normandie. Navnet kommer av normannerne, som betyr nordmennene, folk fra nord."
+                },
+                {
+                    "si": "Og nå skjer det noe nesten utrolig. Etter noen generasjoner er det norrøne språket borte."
+                },
+                {
+                    "si": "Det smeltet gradvis inn i den franske dialekten folk snakket der. En dialekt er måten folk snakker på et sted."
+                },
+                {
+                    "si": "I dag er det først og fremst stedsnavn langs kysten som røper hvem som kom."
+                },
+                {
+                    "si": "Vikingene ble også kristne. Kirken sto sterkt i Normandie, og det kom flere nye klostre."
+                }
+            ]
+        },
+        {
+            "id": "ridder",
+            "visual": { "type": "NormandieTavle", "props": { "modus": "ridder" } },
+            "replikker": [
+                { "si": "Men én ting beholdt de: vikingenes krigerånd og eventyrlyst." },
+                { "si": "Frankerne kjempet til hest. Soldater til hest kalles kavaleri." },
+                {
+                    "si": "Normannerne blandet vikingenes dristighet med frankernes kavaleri. Og de tok ivrig til seg ridderkulturen fra frankerriket."
+                },
+                {
+                    "si": "Resultatet ble en kriger hele Europa kom til å frykte: den normanniske ridderen til hest."
+                }
+            ]
+        },
+        {
+            "id": "erobrere",
+            "kapittel": "Erobrerne",
+            "visual": { "type": "NormandieKart", "props": { "modus": "verden" } },
+            "replikker": [
+                {
+                    "si": "Normannerne satt ikke stille i Frankrike. De var blitt kristne og snakket fransk, men de ville ha mer."
+                },
+                { "si": "I 1066 tok de England. Det kommer vi tilbake til." },
+                {
+                    "si": "Andre normannere dro til Middelhavet, først som leiesoldater. Det er soldater som kjemper for betaling."
+                },
+                {
+                    "si": "På 1050-tallet tok sønnene til Tancred de Hauteville kontroll over Calabria og Puglia, og siden Sicilia.",
+                    "uttale": "På ti-femtitallet tok sønnene til Tankred de Otvil kontroll over Kalabria og Pulja, og siden Sicilia."
+                },
+                {
+                    "si": "Tidlig på 1100-tallet samlet Roger 2. områdene til kongeriket Sicilia.",
+                    "uttale": "Tidlig på elleve-hundretallet samlet Roger den andre områdene til kongeriket Sicilia."
+                },
+                {
+                    "si": "Normanniske riddere var også med i det første korstoget. Langt borte i Midtøsten grunnla de fyrstedømmet Antiokia."
+                }
+            ]
+        },
+        {
+            "id": "aar1066",
+            "kapittel": "1066",
+            "visual": { "type": "NormandieKart", "props": { "modus": "1066" } },
+            "replikker": [
+                {
+                    "si": "Året 1066 blir gjerne regnet som slutten på vikingtiden. Og det skjedde i to trinn.",
+                    "uttale": "Året ti-sekstiseks blir gjerne regnet som slutten på vikingtiden. Og det skjedde i to trinn."
+                },
+                { "si": "Først seilte den norske kongen Harald Hardråde mot England." },
+                {
+                    "si": "Den 25. september falt han ved Stamford Bridge, i kamp mot Harald Godwinson.",
+                    "uttale": "Den tjuefemte september falt han ved Stamford Bridge, i kamp mot Harald Godwinson."
+                },
+                { "si": "Så gikk Vilhelm, hertugen av Normandie, i land i sør." },
+                {
+                    "si": "Den 14. oktober slo han den utslitte engelske hæren ved Hastings. Harald Godwinson mistet livet der.",
+                    "uttale": "Den fjortende oktober slo han den utslitte engelske hæren ved Hastings. Harald Godwinson mistet livet der."
+                }
+            ]
+        },
+        {
+            "id": "kanalen",
+            "lyd": "hav",
+            "visual": { "type": "NormandieElva", "props": { "modus": "kanalen" } },
+            "replikker": [
+                {
+                    "si": "Mannen som vant, kaller vi i dag Vilhelm Erobreren. Han var Rollos tipp-tipp-oldebarn."
+                },
+                { "si": "Han hadde kommet over havet fra Normandie, landet Rollo fikk." },
+                { "si": "I jula samme år ble han kronet til konge av England." },
+                {
+                    "si": "Etter hvert byttet han ut de engelske lederne med franske støttespillere, både i kirken og i styret av landet."
+                },
+                {
+                    "si": "Tenk på det: Det var etterkommere av vikinger som satte det siste punktumet for vikingtiden."
+                }
+            ]
+        },
+        {
+            "id": "arven",
+            "lyd": "stille",
+            "kapittel": "Arven",
+            "visual": { "type": "NormandieTavle", "props": { "modus": "arv" } },
+            "replikker": [
+                {
+                    "si": "Normandie viser hvor flinke vikingene var til å tilpasse seg. De var ikke bare ødeleggere. De bygde også stater."
+                },
+                { "si": "De tok det beste fra kulturene de møtte, og gjorde det til sitt eget." },
+                {
+                    "si": "Engelske slott og ridderkulturen bærer spor etter dem. Det gjør også selve det engelske språket."
+                },
+                {
+                    "si": "Etter 1066 tok engelsk opp i seg svært mange franske ord. Slike ord kalles lånord."
+                },
+                {
+                    "si": "Det er en viktig grunn til at engelsk skiller seg fra de andre germanske språkene i dag. Germanske språk er en familie av språk som er i slekt."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "De kom for å herje.", "fraBeat": 0 },
+                        { "tekst": "De ble for å bygge.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Nytt språk. Ny tro.", "fraBeat": 1 },
+                        { "tekst": "Samme eventyrlyst.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "1066: slutten på vikingtiden", "fraBeat": 2 },
+                        {
+                            "tekst": "satt av etterkommere av vikinger.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Rollo og mennene hans kom til Frankrike som vikinger som herjet. Men de ble, og de bygde et land."
+                },
+                { "si": "Etterkommerne fikk nytt språk og ny tro. Men eventyrlysten beholdt de." },
+                {
+                    "si": "Og i 1066, året vi gjerne sier at vikingtiden tok slutt, var det etterkommere av vikinger som satte punktumet."
+                }
+            ]
+        }
+    ]
+}
