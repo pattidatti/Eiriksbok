@@ -1,0 +1,225 @@
+{
+    "id": "kristningen-av-norge",
+    "tittel": "Kristningen: Dåp eller kamp",
+    "kilde": "/historie/vikingtiden/kristningen-av-norge",
+    "bilde": "/images/lessons/vikingtiden/kristningen.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-07", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "svolder",
+            "lyd": "hav",
+            "kapittel": "Svolder, år 1000",
+            "visual": { "type": "KristningenHav", "props": { "modus": "svolder" } },
+            "replikker": [
+                { "si": "Det er år 1000. Vi er ute på havet ved Svolder, og et sjøslag er i gang." },
+                { "si": "Her ligger skipet til Olav Tryggvason, kongen i Norge. Mot ham står en allianse av tre fiender." },
+                {
+                    "si": "Danskekongen Svein Tjugeskjegg, sveakongen Olof Skötkonung og ladejarlen Eirik Håkonsson. En jarl var en mektig høvding.",
+                    "uttale": "Danskekongen Svein Tjugeskjegg, sveakongen Olof Skøtkonung og ladejarlen Eirik Håkonsson. En jarl var en mektig høvding."
+                },
+                { "si": "Olav taper slaget. Sagaene forteller at han hoppet over bord og forsvant. Liket hans ble aldri funnet." },
+                { "si": "Olav hadde prøvd å gjøre hele Norge kristent. Hvordan gikk det til?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KRISTNINGEN",
+                    "undertittel": "Dåp eller kamp",
+                    "bilde": "/images/lessons/vikingtiden/kristningen.webp",
+                    "sporsmal": { "tekst": "Hvordan ble Norge kristent?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om kristningen av Norge." },
+                { "si": "Hvordan ble nordmenn kristne? Og hvordan ble kristendommen den eneste lovlige troen i landet?" },
+                { "si": "Vi skal se hvem som drev det fram, og hvorfor kongene ville det så sterkt." }
+            ]
+        },
+        {
+            "id": "myten",
+            "lyd": "stille",
+            "kapittel": "Ikke ett sverdslag",
+            "visual": { "type": "KristningenTidslinje", "props": { "modus": "myte" } },
+            "replikker": [
+                { "si": "Mange lærer at Norge ble kristent med ett sverdslag, på Stiklestad i 1030." },
+                { "si": "Men sannheten er mer innviklet enn det." },
+                { "si": "Kristningen skjedde over lang tid. Antakelig tok den et par hundre år." },
+                { "si": "Og den begynte ikke med sverd. Den begynte med fredelig handel." }
+            ]
+        },
+        {
+            "id": "handel",
+            "kapittel": "Handel og kors",
+            "visual": { "type": "KristningenKart", "props": { "modus": "handel" } },
+            "replikker": [
+                { "si": "Vikinger reiste ut over havet for å handle." },
+                { "si": "Der ute så de at de kristne landene var rikere og bedre organisert." },
+                { "si": "Å komme godt overens med de kristne kunne være lurt." }
+            ]
+        },
+        {
+            "id": "primsigning",
+            "visual": { "type": "KristningenFolk", "props": { "modus": "primsigning" } },
+            "replikker": [
+                { "si": "Derfor lot mange vikinger seg primsigne. Primsigning var en korsmerking, et tegn med korset." },
+                { "si": "Egentlig skulle den gjøre en hedning klar til dåpen. En hedning var en som ikke var kristen." },
+                { "si": "Men i Norge var primsigningen ofte nok i seg selv. Mange ble kanskje ikke døpt før de lå for døden." },
+                { "si": "Med korsmerket var det lettere å omgås kristne, altså å være sammen med dem." }
+            ]
+        },
+        {
+            "id": "konger",
+            "kapittel": "Kongene",
+            "visual": { "type": "KristningenFolk", "props": { "modus": "konger" } },
+            "replikker": [
+                { "si": "Men den store endringen kom med kongene." },
+                { "si": "Tre konger sto bak hvert sitt forsøk på å gjøre landet kristent." },
+                { "si": "Håkon den Gode. Olav Tryggvason. Og Olav Haraldsson, som også blir kalt Olav den Hellige." },
+                { "si": "Hvorfor var kongene så ivrige?" }
+            ]
+        },
+        {
+            "id": "likemenn",
+            "visual": { "type": "KristningenFolk", "props": { "modus": "likemenn" } },
+            "replikker": [
+                { "si": "I den gamle skikken var kongen bare første blant likemenn." },
+                { "si": "Det betyr at han sto fremst, men at de andre mektige mennene var like mye verdt som ham." },
+                { "si": "I kristendommen var kongen Guds utvalgte." },
+                { "si": "Ser du hvorfor kongene likte den nye troen så godt?" }
+            ]
+        },
+        {
+            "id": "tryggvason",
+            "kapittel": "Dåp eller kamp",
+            "visual": { "type": "KristningenKart", "props": { "modus": "tryggvason" } },
+            "replikker": [
+                { "si": "Olav Tryggvason var konge fra rundt 995 til år 1000. Og han var ingen mild prest." },
+                { "si": "Han støttet kirkebygging og misjon. Misjon betyr å spre troen til nye mennesker." },
+                { "si": "Han ga påbud om dåp, faste og kristen begravelse. Å faste betyr å la være å spise visse typer mat i en periode." },
+                { "si": "På Moster i Sunnhordland grunnla han en kirke." },
+                { "si": "Sagaen forteller at han reiste rundt i landet med et enkelt valg: La deg døpe, eller slåss mot meg." },
+                { "si": "Olav var kjent som en av Norges fremste krigere. Derfor valgte de fleste dåpen. Men motstanden vokste." }
+            ]
+        },
+        {
+            "id": "lov",
+            "kapittel": "Mostertinget",
+            "visual": { "type": "KristningenFolk", "props": { "modus": "lov" } },
+            "replikker": [
+                { "si": "Olav Tryggvason falt ved Svolder, men han hadde sådd et frø. Senere fortsatte Olav Haraldsson arbeidet." },
+                { "si": "En gang i 1020-årene, kanskje i 1024, ble det holdt et ting på Moster. Et ting var et stort møte der lover ble bestemt." },
+                { "si": "Der lagde kongen og biskop Grimkjell en kristenrett, altså kristne lover for hele riket. De gjorde det sammen med bøndene på tinget." },
+                { "si": "Nå ble kristendommen rikets eneste tillatte tro. All annen gudsdyrking ble forbudt." },
+                { "si": "Alle måtte døpes, faste, og gravlegges i vigslet jord. Det er jord som kirken har innviet til graver." }
+            ]
+        },
+        {
+            "id": "kirker",
+            "lyd": "vind",
+            "visual": { "type": "KristningenHav", "props": { "modus": "bygging" } },
+            "replikker": [
+                { "si": "Loven ga alle en ny plikt: Du måtte hjelpe til med å bygge kirker." },
+                { "si": "Og når kirken sto, måtte du være med og holde den ved like." },
+                { "si": "Kristenretten forandret hverdagen for alle." },
+                { "si": "Dette gjorde bøndene svært sinte." }
+            ]
+        },
+        {
+            "id": "knut",
+            "lyd": "stille",
+            "kapittel": "Stiklestad",
+            "visual": { "type": "KristningenKart", "props": { "modus": "knut" } },
+            "replikker": [
+                { "si": "Samtidig la den danske kongen Knut den Mektige planer i det skjulte." },
+                { "si": "Knuts utsendinger ga norske stormenn engelske sølvmynter. Det var bestikkelser, altså betaling i det skjulte for å få dem over på Knuts side." },
+                { "si": "Det vet vi fordi både norske og engelske kilder forteller om det." },
+                { "si": "Olav ble jaget ut av landet. Men i 1030 kom han tilbake." },
+                { "si": "Han falt i slaget på Stiklestad, den 29. juli 1030." }
+            ]
+        },
+        {
+            "id": "helgen",
+            "lyd": "rom",
+            "kapittel": "Helgenen",
+            "visual": { "type": "KristningenHav", "props": { "modus": "nidaros" } },
+            "replikker": [
+                { "si": "Året etter tok de liket hans opp av graven." },
+                { "si": "Kirken erklærte ham hellig. Liket ble lagt i et skrin, en kostbar kiste, på høyalteret i Klemenskirken i Nidaros." },
+                { "si": "Folk knyttet mirakler til levningene hans. Selv fiendene hans angret." },
+                { "si": "Nidaros ble Norges kirkelige hovedstad. Tapet på Stiklestad ble en seier for den nye troen." }
+            ]
+        },
+        {
+            "id": "slutt-1066",
+            "lyd": "stille",
+            "kapittel": "Vikingtiden slutter",
+            "visual": { "type": "KristningenTidslinje", "props": { "modus": "slutt" } },
+            "replikker": [
+                { "si": "Vikingtiden regnes vanligvis fra rundt år 800 til omkring 1050." },
+                { "si": "Men året 1066 blir gjerne sett på som en epilog. Det er en ekstra slutt, som kommer etter at historien egentlig er over." },
+                { "si": "Da prøvde Harald Hardråde å erobre England. Han og mange av hirden, kongens egne krigere, falt ved Stamford Bridge 25. september 1066." },
+                { "si": "Store norske leksikon kaller ham den siste store vikingkongen." },
+                { "si": "Bare tre uker senere, 14. oktober, tapte den engelske kongen Harald Godvinsson mot Vilhelm av Normandie, i slaget ved Hastings." },
+                { "si": "Normandie var grunnlagt av vikinger. Men Vilhelm kom med en fransk ridderkultur. Det markerte slutten på tiden da nordboerne dominerte." }
+            ]
+        },
+        {
+            "id": "trelldom",
+            "kapittel": "Et nytt Norge",
+            "visual": { "type": "KristningenTidslinje", "props": { "modus": "trell" } },
+            "replikker": [
+                { "si": "Kristningen og slutten på vikingtiden forandret Norge. Ta trelldommen. En trell var en slave." },
+                { "si": "Kirken var imot at kristne holdt kristne treller, og arbeidet for å sette dem fri." },
+                { "si": "Pengene dro i samme retning. Det kom færre slaver utenfra, og det kostet mye å holde treller." },
+                { "si": "I stedet for treller ble det vanligere med leilendinger, bønder som leide jorda de dyrket." },
+                { "si": "På slutten av 1100-tallet var trelldommen på vei ut. I Magnus Lagabøtes landslov fra 1274 finnes ikke trellene lenger som egen gruppe i samfunnet." }
+            ]
+        },
+        {
+            "id": "endringer",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Mer som endret seg",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Bøker og latin", "tekst": "prestene kom med skriftkultur", "fraBeat": 1 },
+                        { "ikon": "skjold", "tittel": "En sterk stat", "tekst": "kongen og kirken støttet hverandre", "fraBeat": 2 },
+                        { "ikon": "hus", "tittel": "Strengere for kvinner", "tekst": "mer styrt av menn", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Mer endret seg også." },
+                { "si": "Med prestene kom bøker og latin. Norge ble en del av den europeiske bokkulturen." },
+                { "si": "Kongen og kirken støttet hverandre. Det ga et mer stabilt Norge, styrt fra toppen." },
+                { "si": "For kvinnene ble det strengere. I vikingtiden hadde de sterke rettigheter hjemme. Under kirken ble samfunnet mer styrt av menn." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ikke ett sverdslag.", "fraBeat": 0 },
+                        { "tekst": "Et par hundre år.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Først handel og korsmerker.", "fraBeat": 1 },
+                        { "tekst": "Så konger, lover og tvang.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Et tap på Stiklestad.", "fraBeat": 2 },
+                        { "tekst": "En seier for den nye troen.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Norge ble ikke kristent på én dag, og ikke med ett sverdslag. Det tok antakelig et par hundre år." },
+                { "si": "Det begynte med handel og korsmerker. Så kom kongene, med nye lover og med tvang." },
+                { "si": "Olav den Hellige tapte slaget på Stiklestad. Men som helgen hjalp han kristendommen med å feste seg i Norge." }
+            ]
+        }
+    ]
+}
