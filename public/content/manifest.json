@@ -2572,6 +2572,21 @@
                 "buffer"
               ],
               "createdDate": "2026-11-06T00:00:00Z"
+            },
+            {
+              "id": "kreditt-og-forbrukslan",
+              "title": "Kreditt og forbrukslån: Når lån blir dyrt",
+              "description": "Effektiv rente, minstebeløpsfellen og reglene som skal beskytte deg: hvorfor lån på kredittkort kan bli så dyre.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "personlig økonomi",
+                "lån",
+                "kredittkort",
+                "rente",
+                "gjeld"
+              ],
+              "createdDate": "2026-11-07T00:00:00Z"
             }
           ]
         },

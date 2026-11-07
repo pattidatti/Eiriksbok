@@ -1,0 +1,268 @@
+{
+  "id": "kreditt-og-forbrukslan",
+  "title": "Kreditt og forbrukslån: Når lån blir dyrt",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Personlig økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Et forbrukslån er et lån uten pant. Også kredittkortgjeld er et forbrukslån, og renten er ofte rundt 20 prosent.",
+    "Den effektive renten viser hva lånet egentlig koster, med gebyrer og renter på renter.",
+    "Betaler du bare minstebeløpet, går det meste til renter. Utlånsforskriften og gjeldsregistrene skal hindre at folk låner for mye."
+  ],
+  "externalUrl": "https://snl.no/forbruksl%C3%A5n",
+  "factChecked": "2026-11-07",
+  "tags": [
+    "personlig økonomi",
+    "lån",
+    "kredittkort",
+    "rente",
+    "gjeld"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Emil er 19 år og har akkurat begynt å jobbe i en butikk. Han har lenge drømt om en ny gaming-PC, og nå har han funnet den han vil ha. Den koster 15 000 kroner. På kontoen har han 2 000. Men i lommeboka ligger et kredittkort med plass til 20 000 kroner. Ett trykk, og PC-en er på vei hjem til ham."
+    },
+    {
+      "type": "text",
+      "content": "To år senere spiller Emil fortsatt på PC-en. Men han betaler fortsatt for den også. Hver måned går det et lite beløp fra kontoen hans til kortselskapet, og gjelden krymper nesten ikke. Hvordan kan en PC til 15 000 kroner ende opp med å koste mye mer enn det? Svaret ligger i et ord som mange unge ikke har lært ennå: rente."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom med kredittkort foran ny gaming-PC",
+      "caption": "Ett trykk med kredittkortet, og PC-en er din. Men den er ikke betalt."
+    },
+    {
+      "type": "header",
+      "text": "Hva er et forbrukslån?"
+    },
+    {
+      "type": "text",
+      "content": "Når du låner penger, må du betale dem tilbake. I tillegg må du betale for å få låne. Den prisen heter rente. Et forbrukslån er et lån der du ikke gir banken noe den kan ta hvis du ikke betaler, for eksempel et hus, en hytte eller en bil (Nyhus, 2025). Det kalles et lån uten pant. Pant betyr at noe du eier står som sikkerhet for lånet."
+    },
+    {
+      "type": "text",
+      "content": "Også et kredittkort er et forbrukslån. Når du betaler med kredittkort, bruker du ikke dine egne penger. Du låner av kortselskapet (Forbrukerrådet, 2025). Kortet har en grense, en kredittramme, for hvor mye du kan låne. Det betyr ikke at pengene er dine. Det betyr bare at du kan låne så mye."
+    },
+    {
+      "type": "text",
+      "content": "Fordi banken ikke har noe å ta hvis du ikke betaler, tar den en større risiko. Derfor er renten på forbrukslån vanligvis mye høyere enn renten på boliglån (Nyhus, 2025). Forbrukerrådet skriver at en effektiv rente på rundt 20 prosent ikke er uvanlig på kredittkort (Forbrukerrådet, 2025). Hvordan banker lager nye penger når de gir lån, kan du lese om i artikkelen om [hvordan penger blir til](/samfunnskunnskap/okonomi/hvordan-penger-blir-til)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Rente: prisen du betaler for å låne penger, oppgitt i prosent per år. Effektiv rente: hva lånet egentlig koster i året, med renter på renter og alle gebyrer. Kredittramme: hvor mye du har lov til å låne på et kort. Minstebeløp: det minste du må betale hver måned. Pant: noe du eier som står som sikkerhet for et lån. Inkasso: et selskap som krever inn penger når du ikke har betalt."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Effektiv rente: det tallet du må se etter"
+    },
+    {
+      "type": "text",
+      "content": "I reklame for lån står det ofte to renter: en nominell rente og en effektiv rente. Den nominelle renten er den renten som står i avtalen. Den effektive renten er det lånet egentlig koster deg (Sirnes, 2026). Den effektive renten er nesten alltid høyest. Det har to grunner."
+    },
+    {
+      "type": "text",
+      "content": "Den første grunnen er gebyrer. Banken legger ofte gebyrer på lånet, for eksempel et gebyr når du tar opp lånet og et gebyr for hver faktura. Gebyrene regnes med i den effektive renten (Sirnes, 2026). Den andre grunnen er renter på renter. Renten blir ofte lagt til flere ganger i året. Da betaler du også rente av rentene som allerede er lagt til."
+    },
+    {
+      "type": "text",
+      "content": "Et enkelt eksempel viser hvordan det virker. Du låner 100 kroner med 10 prosent rente i året. Banken legger til 5 prosent etter et halvt år og 5 prosent til etter et helt år. Da skylder du 110,25 kroner etter ett år, ikke 110. Den effektive renten er altså 10,25 prosent (Sirnes, 2026). Forskjellen er liten her, men på store lån og høye renter vokser den raskt. Mer om hvordan renter virker, kan du lese i artikkelen om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+    },
+    {
+      "type": "text",
+      "content": "Fordi den effektive renten viser hva lånet faktisk koster, har banker plikt til å oppgi den når de reklamerer for lån (Sirnes, 2026). Siden 2017 må reklame for kreditt også vise hva lånet koster totalt (Nyhus, 2025). Sammenligner du to lån, er det derfor den effektive renten du skal se på."
+    },
+    {
+      "type": "header",
+      "text": "Fellen med minstebeløpet"
+    },
+    {
+      "type": "text",
+      "content": "Når fakturaen fra kredittkortet kommer, kan du velge. Du kan betale hele beløpet, eller du kan betale bare et minstebeløp. Betaler du alt før fristen, betaler du som regel ingen rente. Mange gjør nettopp det. I 2025 hadde nesten 48 prosent av alle over 15 år kredittkortgjeld som de betalte før fristen. Samtidig hadde 19 prosent kredittkortgjeld som de betalte rente på (Vatne og Solheim, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Det er lett å velge minstebeløpet. Det er lite, og resten av lønna kan gå til andre ting. Men minstebeløpet går mest til å betale renter. Bare en liten del går til å betale ned selve gjelden. Derfor kan gjelden henge med i flere år. Siden 2017 har kortselskapene måttet foreslå at du betaler hele beløpet på fakturaen. De må også vise hva det koster deg å betale mindre (Nyhus, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Du har kjøpt PC-en til Emil på kredittkort med 20 prosent effektiv rente. Hvor lang tid tar det å bli ferdig, og hva koster PC-en til slutt? Tallene er et tenkt eksempel, men renten er vanlig for kredittkort."
+    },
+    {
+      "type": "component",
+      "name": "Minstebelopsfellen",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "I eksemplet tar det over seks år å bli ferdig hvis du bare betaler minstebeløpet. PC-en ender med å koste over 24 000 kroner, og over 9 000 av det er renter. Betaler du 1 500 kroner i måneden, er du ferdig på under ett år, og rentene blir rundt 1 400 kroner. Det er den samme PC-en. Det eneste som er forskjellig, er hvor fort du betaler."
+    },
+    {
+      "type": "text",
+      "content": "Det finnes også et annet problem. En gaming-PC holder kanskje i fem år før den føles gammel. Betaler du bare minstebeløpet, kan du fortsatt betale på den gamle PC-en når du vil kjøpe en ny. Derfor er det en god regel å aldri låne til ting som er brukt opp før lånet er betalt."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung mann ser bekymret på kredittkortfaktura på mobilen",
+      "caption": "Minstebeløpet ser lite ut, men det meste går til renter."
+    },
+    {
+      "type": "header",
+      "text": "Reglene som skal beskytte deg"
+    },
+    {
+      "type": "text",
+      "content": "Fordi forbrukslån kan bli så dyre, har staten laget regler for dem. Reglene står i utlånsforskriften. Den sier blant annet at en bank ikke kan gi deg lån hvis all gjelden din blir større enn fem ganger det du tjener i året (Nyhus, 2026). Tjener du 300 000 kroner, kan du altså ikke ha mer enn 1,5 millioner i gjeld til sammen. For forbrukslån må du dessuten alltid betale ned litt hver måned (Nyhus, 2026). Banken skal også sjekke om du faktisk klarer å betale tilbake før du får lånet (Nyhus, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "For å gjøre det lettere å sjekke, finnes det gjeldsregistre. Siden 1. juli 2019 har banker og kortselskaper måttet melde fra om gjeld uten pant til et gjeldsregister (Nyhus, 2025). I dag finnes det to slike registre i Norge: Gjeldsregisteret og Norsk Gjeld. Når du søker om et lån, kan banken se hvor mye gjeld du har fra før. Du kan også selv logge inn og se all din egen gjeld på ett sted (Vatne og Solheim, 2026). Det er nyttig hvis du har mistet oversikten."
+    },
+    {
+      "type": "header",
+      "text": "Når gjelden ikke blir betalt"
+    },
+    {
+      "type": "text",
+      "content": "Hva skjer hvis du slutter å betale? Først kommer purringer, altså påminnelser med gebyr. Betaler du fortsatt ikke, kan banken selge gjelden til et selskap som driver med inkasso. Det er ikke uvanlig. Ved slutten av 2025 var over 30 prosent av all forbruksgjeld i Norge eid av slike selskaper (Vatne og Solheim, 2026). Da kommer det nye gebyrer i tillegg, og gjelden blir enda større."
+    },
+    {
+      "type": "text",
+      "content": "Forbruksgjeld utgjør bare rundt 3 prosent av all gjelden norske husholdninger har. Det meste er boliglån. Men fordi renten er så høy, er det forbruksgjelden som oftest gir folk problemer (Vatne og Solheim, 2026). Det er også derfor det lønner seg å lære hvordan den virker før du får ditt første kredittkort."
+    },
+    {
+      "type": "header",
+      "text": "Hva Emil kunne gjort"
+    },
+    {
+      "type": "text",
+      "content": "Emil gjorde ikke noe ulovlig. Men han kunne gjort noe annet. Han kunne spart til PC-en i noen måneder, slik at han betalte med egne penger. Han kunne kjøpt en billigere PC og spart resten. Eller han kunne brukt kortet, men betalt hele fakturabeløpet før fristen. Da hadde kortet kostet ham ingenting. Et [budsjett](/samfunnskunnskap/personlig-okonomi/budsjett) hadde vist ham hvor mye han kunne sette av hver måned."
+    },
+    {
+      "type": "text",
+      "content": "Et kredittkort er ikke farlig i seg selv. Det kan være praktisk, for eksempel på reise. Det farlige er å glemme at det er et lån. Før du låner, kan du stille deg tre spørsmål. Hva er den effektive renten? Hvor mye koster lånet til sammen? Og har jeg fortsatt bruk for det jeg kjøper når lånet er betalt?"
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom legger penger i sparebøsse ved siden av PC-katalog",
+      "caption": "Å spare først er ofte den billigste måten å kjøpe noe dyrt på."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Et forbrukslån er et lån uten pant, og kredittkort er også forbrukslån. Fordi banken ikke har sikkerhet, er renten høy, ofte rundt 20 prosent på kredittkort. Den effektive renten viser hva lånet egentlig koster, med gebyrer og renter på renter. Betaler du bare minstebeløpet, går mesteparten til renter, og gjelden kan vare i årevis. Utlånsforskriften og gjeldsregistrene skal hindre at folk låner mer enn de klarer å betale tilbake. Den sikreste regelen er enkel: lån aldri til noe som er borte før lånet er betalt."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Forbrukerrådet. (2025). *Hvordan velge kredittkort?* ung.no. Hentet 07.11.2026 fra [ung.no](https://www.ung.no/oss/OQMFXAE10axPskcsLshzPH)",
+          "Nyhus, E. K. (2025). *Forbrukslån*. Store norske leksikon. Hentet 07.11.2026 fra [snl.no/forbrukslån](https://snl.no/forbruksl%C3%A5n)",
+          "Nyhus, E. K. (2026). *Utlånsforskriften*. Store norske leksikon. Hentet 07.11.2026 fra [snl.no/utlånsforskriften](https://snl.no/utl%C3%A5nsforskriften)",
+          "Sirnes, E. (2026). *Effektiv rente*. Store norske leksikon. Hentet 07.11.2026 fra [snl.no/effektiv_rente](https://snl.no/effektiv_rente)",
+          "Vatne, B. H. & Solheim, H. (2026). *Dyrtid og høye renter har ikke ført til større forbrukslån*. Bankplassen, Norges Bank. [norges-bank.no](https://www.norges-bank.no/bankplassen/arkiv/2026/dyrtid-og-hoye-renter-har-ikke-fort-til-storre-forbrukslan/)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er et forbrukslån, og hva betyr det at et lån er uten pant?",
+          "Hva er forskjellen på nominell og effektiv rente?",
+          "Hva sier utlånsforskriften om hvor mye gjeld du kan ha?",
+          "Hva er et gjeldsregister, og hvem kan se hva som står der?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor renten på forbrukslån er høyere enn renten på boliglån.",
+          "Hvorfor tror du så mange velger å betale bare minstebeløpet? Hva er det de ikke ser?",
+          "Bruk tallene fra Minstebeløpsfellen: Hvorfor blir det så stor forskjell på hva PC-en koster, når det er den samme PC-en?",
+          "Er det rimelig at staten bestemmer hvor mye folk får låne? Gi ett argument for og ett mot."
+        ],
+        "gaaVidere": [
+          "Finn en reklame for et forbrukslån eller et kredittkort på nett. Hva er den nominelle og den effektive renten? Hva koster lånet totalt?",
+          "Diskuter i klassen: Bør det være et rentetak, altså en grense for hvor høy renten på forbrukslån kan være?",
+          "Skriv et kort råd til en venn som har lyst til å kjøpe en dyr mobil på kredittkort. Bruk ordene effektiv rente, minstebeløp og buffer."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er et forbrukslån?",
+            "options": [
+              "Et lån med huset som sikkerhet",
+              "Et lån uten pant, for eksempel på kredittkort",
+              "Penger du får i gave fra banken",
+              "Et lån fra staten til studier"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Et forbrukslån er et lån uten pant. Kredittkortgjeld regnes også som forbrukslån."
+          },
+          {
+            "question": "Hvorfor er den effektive renten høyere enn den nominelle?",
+            "options": [
+              "Fordi den regner med gebyrer og renter på renter",
+              "Fordi den bare gjelder for unge",
+              "Fordi staten legger til skatt",
+              "Den er alltid lik den nominelle"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Den effektive renten tar med gebyrer og at renten legges til flere ganger i året. Derfor viser den hva lånet egentlig koster."
+          },
+          {
+            "question": "Hva skjer hvis du bare betaler minstebeløpet på kredittkortet?",
+            "options": [
+              "Gjelden forsvinner etter en måned",
+              "Du slipper renter",
+              "Mesteparten går til renter, og gjelden kan vare i flere år",
+              "Banken sletter resten av gjelden"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Minstebeløpet går mest til renter. Bare en liten del betaler ned selve gjelden, så lånet varer lenge og blir dyrt."
+          },
+          {
+            "question": "Hva sier utlånsforskriften om samlet gjeld?",
+            "options": [
+              "Den kan ikke være mer enn fem ganger årsinntekten",
+              "Den kan ikke være mer enn det du tjener på en måned",
+              "Det finnes ingen grense",
+              "Bare unge under 25 har en grense"
+            ],
+            "correctAnswer": 0,
+            "explanation": "En bank kan ikke gi deg lån hvis all gjelden din blir større enn fem ganger det du tjener i året."
+          },
+          {
+            "question": "Hva kan du se i et gjeldsregister?",
+            "options": [
+              "Hvor mye skatt du betaler",
+              "All gjelden din uten pant samlet på ett sted",
+              "Hvor mye penger vennene dine har",
+              "Lønna di de siste fem årene"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Gjeldsregistrene samler gjeld uten pant. Både bankene og du selv kan se hvor mye gjeld du har."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
