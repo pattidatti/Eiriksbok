@@ -1,5 +1,5 @@
 {
-  "buildId": 20748434113199,
+  "buildId": 26639345755187,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4885,6 +4885,9 @@
     "budsjett": [
       "content/samfunnskunnskap/personlig-okonomi/budsjett.json"
     ],
+    "kreditt-og-forbrukslan": [
+      "content/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan.json"
+    ],
     "lonnsslippen": [
       "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json"
     ],
@@ -6610,6 +6613,7 @@
     "samfunnskunnskap/okonomi/skatt": "content/samfunnskunnskap/okonomi/skatt.json",
     "samfunnskunnskap/okonomi/tilbud-og-ettersporsel": "content/samfunnskunnskap/okonomi/tilbud-og-ettersporsel.json",
     "samfunnskunnskap/personlig-okonomi/budsjett": "content/samfunnskunnskap/personlig-okonomi/budsjett.json",
+    "samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan": "content/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan.json",
     "samfunnskunnskap/personlig-okonomi/lonnsslippen": "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
     "samfunnskunnskap/styringsformer/demokrati-ansikter": "content/samfunnskunnskap/styringsformer/demokrati-ansikter.json",
