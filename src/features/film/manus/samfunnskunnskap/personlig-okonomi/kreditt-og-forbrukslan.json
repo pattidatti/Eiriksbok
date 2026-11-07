@@ -1,0 +1,532 @@
+{
+    "id": "kreditt-og-forbrukslan",
+    "tittel": "Kreditt og forbrukslån: Når lån blir dyrt",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan",
+    "bilde": "/images/personlig-okonomi/kreditt-og-forbrukslan-hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 105,
+            "begrunnelse": "Regnet ut fra artikkelens eksempel: 100 kroner pluss 5 prosent etter et halvt år. Artikkelen gir sluttsummen 110,25."
+        },
+        {
+            "tall": "5,25",
+            "begrunnelse": "Regnet ut fra artikkelens eksempel: 5 prosent av 105 kroner. Står i regnestykket i bildet."
+        }
+    ],
+    "vurdering": {
+        "dato": "2026-11-07",
+        "viser": 4,
+        "lesbart": 4,
+        "variasjon": 3,
+        "forstaelig": 4,
+        "tro": 4,
+        "sum": 19
+    },
+    "scener": [
+        {
+            "id": "kjopet",
+            "kapittel": "Ett trykk",
+            "lyd": "rom",
+            "visual": {
+                "type": "KredittRommet",
+                "props": {
+                    "modus": "kjop"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Emil er 19 år. Han har akkurat begynt å jobbe i en butikk."
+                },
+                {
+                    "si": "Lenge har han drømt om en ny gaming-PC. Nå har han funnet den. Den koster 15 000 kroner."
+                },
+                {
+                    "si": "På kontoen har han 2000 kroner. Det holder ikke."
+                },
+                {
+                    "si": "Men i lommeboka ligger et kredittkort med plass til 20 000 kroner."
+                },
+                {
+                    "si": "Ett trykk, og PC-en er på vei hjem til ham."
+                }
+            ]
+        },
+        {
+            "id": "to-aar",
+            "visual": {
+                "type": "KredittRommet",
+                "props": {
+                    "modus": "toaar"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "To år senere spiller Emil fortsatt på PC-en."
+                },
+                {
+                    "si": "Men han betaler fortsatt for den også."
+                },
+                {
+                    "si": "Hver måned går et lite beløp fra kontoen hans til kortselskapet."
+                },
+                {
+                    "si": "Og gjelden krymper nesten ikke."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KREDITT",
+                    "undertittel": "Når lån blir dyrt",
+                    "bilde": "/images/personlig-okonomi/kreditt-og-forbrukslan-hero.webp",
+                    "tall": [
+                        {
+                            "verdi": 15000,
+                            "etikett": "kroner for PC-en",
+                            "fraBeat": 1,
+                            "omtrent": false
+                        }
+                    ],
+                    "sporsmal": {
+                        "tekst": "Hvorfor koster den mye mer?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Emil kjøpte på kreditt. Det betyr at han lånte pengene."
+                },
+                {
+                    "si": "PC-en kostet 15 000 kroner i butikken."
+                },
+                {
+                    "si": "Hvordan kan den ende opp med å koste mye mer? Svaret ligger i et ord mange unge ikke har lært ennå: rente."
+                }
+            ]
+        },
+        {
+            "id": "pant",
+            "kapittel": "Lån uten pant",
+            "visual": {
+                "type": "KredittRegler",
+                "props": {
+                    "modus": "pant"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du låner penger, må du betale dem tilbake. I tillegg må du betale for å få låne. Den prisen heter rente."
+                },
+                {
+                    "si": "Noen lån har pant. Pant betyr at noe du eier står som sikkerhet for lånet, for eksempel et hus, en hytte eller en bil."
+                },
+                {
+                    "si": "Betaler du ikke, kan banken ta det."
+                },
+                {
+                    "si": "Et forbrukslån er et lån uten pant. Banken har ingenting å ta hvis du ikke betaler."
+                },
+                {
+                    "si": "Derfor tar banken en større risiko. Og derfor er renten vanligvis mye høyere enn på et boliglån."
+                }
+            ]
+        },
+        {
+            "id": "kortet",
+            "lyd": "stille",
+            "visual": {
+                "type": "KredittFellen",
+                "props": {
+                    "modus": "kort"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Også et kredittkort er et forbrukslån."
+                },
+                {
+                    "si": "Når du betaler med kortet, bruker du ikke dine egne penger. Du låner av kortselskapet."
+                },
+                {
+                    "si": "Kortet har en grense for hvor mye du kan låne. Den heter kredittramme. Emil sin er på 20 000."
+                },
+                {
+                    "si": "Det betyr ikke at pengene er hans. Det betyr bare at han kan låne så mye."
+                },
+                {
+                    "si": "Og prisen er høy. En effektiv rente på rundt 20 prosent er ikke uvanlig på kredittkort."
+                }
+            ]
+        },
+        {
+            "id": "renter-paa-renter",
+            "kapittel": "Effektiv rente",
+            "visual": {
+                "type": "KredittFellen",
+                "props": {
+                    "modus": "renter"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I reklame for lån står det ofte to renter. Den nominelle renten er den som står i avtalen."
+                },
+                {
+                    "si": "Den effektive renten er det lånet egentlig koster deg. Den er nesten alltid høyest."
+                },
+                {
+                    "si": "Tenk deg at du låner 100 kroner med 10 prosent rente i året."
+                },
+                {
+                    "si": "Etter et halvt år legger banken til 5 prosent. Da skylder du 105 kroner."
+                },
+                {
+                    "si": "Etter et helt år legger banken til 5 prosent til. Men nå av 105 kroner. Da skylder du 110,25, ikke 110.",
+                    "uttale": "Etter et helt år legger banken til 5 prosent til. Men nå av 105 kroner. Da skylder du hundre og ti kroner og tjuefem øre, ikke hundre og ti."
+                },
+                {
+                    "si": "Du betaler rente av rentene. Det kalles renter på renter. Den effektive renten blir 10,25 prosent.",
+                    "uttale": "Du betaler rente av rentene. Det kalles renter på renter. Den effektive renten blir ti komma to fem prosent."
+                }
+            ]
+        },
+        {
+            "id": "to-grunner",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Den effektive renten",
+                    "punkter": [
+                        {
+                            "ikon": "penger",
+                            "tittel": "Gebyrer",
+                            "tekst": "når du tar opp lånet, og for hver faktura",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Renter på renter",
+                            "tekst": "renten legges ofte til flere ganger i året",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "avtale",
+                            "tittel": "Banken må vise den",
+                            "tekst": "og siden 2017: hva lånet koster totalt",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er to grunner til at den effektive renten blir høyest."
+                },
+                {
+                    "si": "Den første er gebyrer. Banken tar ofte et gebyr når du tar opp lånet, og et gebyr for hver faktura."
+                },
+                {
+                    "si": "Den andre er renter på renter. På store lån og høye renter vokser forskjellen raskt."
+                },
+                {
+                    "si": "Derfor må banker vise den effektive renten når de reklamerer. Siden 2017 må reklamen også vise hva lånet koster totalt."
+                },
+                {
+                    "si": "Sammenligner du to lån, er det den effektive renten du skal se på."
+                }
+            ]
+        },
+        {
+            "id": "fakturaen",
+            "kapittel": "Minstebeløpet",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 0,
+                            "farge": "#0d9488",
+                            "restFarge": "#94a3b8",
+                            "tittel": "Alle over 15 år, i 2025",
+                            "fargeEtikett": "betalte før fristen",
+                            "restEtikett": "alle over 15 år",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 48,
+                            "farge": "#0d9488",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Nesten 48 prosent betalte før fristen",
+                            "fargeEtikett": "betalte kortgjelden før fristen",
+                            "restEtikett": "alle andre",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 100,
+                            "farget": 19,
+                            "farge": "#dc2626",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "19 prosent betalte rente",
+                            "fargeEtikett": "hadde kortgjeld de betalte rente på",
+                            "restEtikett": "alle andre",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Så kommer fakturaen fra kortselskapet. Nå kan du velge: betale hele beløpet, eller bare et minstebeløp, altså det minste du må betale hver måned."
+                },
+                {
+                    "si": "Betaler du alt før fristen, betaler du som regel ingen rente."
+                },
+                {
+                    "si": "Mange gjør nettopp det. I 2025 hadde nesten 48 prosent av alle over 15 år kortgjeld som de betalte før fristen."
+                },
+                {
+                    "si": "Samtidig hadde 19 prosent kortgjeld som de betalte rente på."
+                }
+            ]
+        },
+        {
+            "id": "betalingen",
+            "visual": {
+                "type": "KredittFellen",
+                "props": {
+                    "modus": "betaling"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det er lett å velge minstebeløpet. Det er lite, og resten av lønna kan gå til andre ting."
+                },
+                {
+                    "si": "Men se hvor pengene går. Det meste av minstebeløpet går til å betale renter."
+                },
+                {
+                    "si": "Bare en liten del går til å betale ned selve gjelden. Derfor kan gjelden henge med i flere år."
+                },
+                {
+                    "si": "Siden 2017 har kortselskapene måttet foreslå at du betaler hele fakturaen. De må også vise hva det koster å betale mindre."
+                }
+            ]
+        },
+        {
+            "id": "kurven",
+            "visual": {
+                "type": "KredittFellen",
+                "props": {
+                    "modus": "kurve"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "La oss regne på PC-en til Emil. 15 000 kroner på kort med 20 prosent effektiv rente. Tallene er et tenkt eksempel."
+                },
+                {
+                    "si": "Betaler han bare minstebeløpet, tar det over seks år å bli ferdig."
+                },
+                {
+                    "si": "Da har PC-en kostet over 24 000 kroner. Over 9000 av det er renter."
+                },
+                {
+                    "si": "Betaler han heller 1500 kroner i måneden, er han ferdig på under ett år. Rentene blir rundt 1400 kroner."
+                },
+                {
+                    "si": "Det er den samme PC-en. Det eneste som er forskjellig, er hvor fort han betaler."
+                }
+            ]
+        },
+        {
+            "id": "gammel",
+            "lyd": "rom",
+            "visual": {
+                "type": "KredittRommet",
+                "props": {
+                    "modus": "gammel"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Det finnes et problem til. En gaming-PC holder kanskje i fem år før den føles gammel."
+                },
+                {
+                    "si": "Betaler du bare minstebeløpet, kan du fortsatt betale på den gamle PC-en når du vil kjøpe en ny."
+                },
+                {
+                    "si": "Derfor er dette en god regel: Lån aldri til ting som er brukt opp før lånet er betalt."
+                }
+            ]
+        },
+        {
+            "id": "fem-ganger",
+            "kapittel": "Reglene",
+            "lyd": "stille",
+            "visual": {
+                "type": "KredittRegler",
+                "props": {
+                    "modus": "fem"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Fordi forbrukslån kan bli så dyre, har staten laget regler for dem. Reglene står i utlånsforskriften."
+                },
+                {
+                    "si": "Den sier blant annet at en bank ikke kan gi deg lån hvis all gjelden din blir større enn fem ganger det du tjener i året."
+                },
+                {
+                    "si": "Tjener du 300 000 kroner, kan du altså ikke ha mer enn 1,5 millioner i gjeld til sammen.",
+                    "uttale": "Tjener du 300 000 kroner, kan du altså ikke ha mer enn halvannen million i gjeld til sammen."
+                },
+                {
+                    "si": "På forbrukslån må du dessuten alltid betale ned litt hver måned."
+                },
+                {
+                    "si": "Og banken skal sjekke at du faktisk klarer å betale tilbake, før du får lånet."
+                }
+            ]
+        },
+        {
+            "id": "registeret",
+            "visual": {
+                "type": "KredittRegler",
+                "props": {
+                    "modus": "register"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "For å gjøre det lettere å sjekke, finnes det gjeldsregistre."
+                },
+                {
+                    "si": "Siden 1. juli 2019 har banker og kortselskaper måttet melde fra om gjeld uten pant til et gjeldsregister.",
+                    "uttale": "Siden første juli 2019 har banker og kortselskaper måttet melde fra om gjeld uten pant til et gjeldsregister."
+                },
+                {
+                    "si": "I dag finnes det to slike registre i Norge: Gjeldsregisteret og Norsk Gjeld."
+                },
+                {
+                    "si": "Når du søker om lån, kan banken se hvor mye gjeld du har fra før."
+                },
+                {
+                    "si": "Og du kan selv logge inn og se all din egen gjeld på ett sted."
+                }
+            ]
+        },
+        {
+            "id": "inkasso",
+            "kapittel": "Når gjelden ikke blir betalt",
+            "visual": {
+                "type": "KredittRegler",
+                "props": {
+                    "modus": "inkasso"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Hva skjer hvis du slutter å betale? Først kommer purringer, altså påminnelser med gebyr."
+                },
+                {
+                    "si": "Betaler du fortsatt ikke, kan banken selge gjelden til et inkassoselskap. Det er ikke uvanlig. Et inkassoselskap er et selskap som krever inn penger du ikke har betalt."
+                },
+                {
+                    "si": "Da kommer det nye gebyrer i tillegg, og gjelden blir enda større."
+                },
+                {
+                    "si": "Ved slutten av 2025 eide slike selskaper over 30 prosent av all forbruksgjeld i Norge."
+                }
+            ]
+        },
+        {
+            "id": "emil-kunne",
+            "kapittel": "Hva Emil kunne gjort",
+            "visual": {
+                "type": "KredittRommet",
+                "props": {
+                    "modus": "spare"
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Emil gjorde ikke noe ulovlig. Men han kunne gjort noe annet."
+                },
+                {
+                    "si": "Han kunne spart til PC-en i noen måneder, og betalt med egne penger."
+                },
+                {
+                    "si": "Han kunne kjøpt en billigere PC og spart resten."
+                },
+                {
+                    "si": "Eller han kunne brukt kortet, men betalt hele fakturaen før fristen. Da hadde kortet kostet ham ingenting."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        {
+                            "tekst": "Et kredittkort er ikke farlig i seg selv.",
+                            "fraBeat": 0
+                        },
+                        {
+                            "tekst": "Det farlige er å glemme at det er et lån.",
+                            "fraBeat": 0,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Hva er den effektive renten?",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Hvor mye koster lånet til sammen?",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Har jeg fortsatt bruk for det når lånet er betalt?",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        },
+                        {
+                            "tekst": "Lån aldri til noe som er borte",
+                            "fraBeat": 3
+                        },
+                        {
+                            "tekst": "før lånet er betalt.",
+                            "fraBeat": 3,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Et kredittkort kan være praktisk, for eksempel på reise. Det farlige er å glemme at det er et lån."
+                },
+                {
+                    "si": "Før du låner, kan du stille deg tre spørsmål. Hva er den effektive renten? Hvor mye koster lånet til sammen?"
+                },
+                {
+                    "si": "Og har jeg fortsatt bruk for det jeg kjøper når lånet er betalt?"
+                },
+                {
+                    "si": "Den sikreste regelen er enkel: Lån aldri til noe som er borte før lånet er betalt."
+                }
+            ]
+        }
+    ]
+}
