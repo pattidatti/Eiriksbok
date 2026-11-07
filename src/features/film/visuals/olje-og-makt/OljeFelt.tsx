@@ -625,7 +625,7 @@ const MERKER: Record<Modus, (string | null)[]> = {
         'Oktober 1973',
         'Olje til Europa og USA',
         'Ventilen skrus igjen',
-        'Eksport til USA og Nederland: stanset',
+        'Eksporten stanses, helt eller delvis',
         'Oljen er der fortsatt',
     ],
     eiere: [
@@ -638,8 +638,8 @@ const MERKER: Record<Modus, (string | null)[]> = {
         'Klimaendringer',
         null,
         'Tørke og mangel på vann',
-        'Saudi-Arabia: all strøm fra olje og gass',
-        'Planer: sol og kjernekraft',
+        'Saudi-Arabia: all strøm fra fossil energi',
+        'Planer: fornybar energi og kjernekraft',
     ],
 };
 

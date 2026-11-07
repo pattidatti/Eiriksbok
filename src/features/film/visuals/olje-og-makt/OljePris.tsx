@@ -183,7 +183,7 @@ function Kurve() {
                     Oljekrisen
                 </text>
                 <text x={x(1974) + 30} y={y(48) + 50} fontSize={26} fontWeight={700} fill="#b91c1c">
-                    (11,65 dollar den gangen)
+                    (datidens pris: 11,65 dollar)
                 </text>
             </motion.g>
         </motion.svg>
