@@ -1,0 +1,186 @@
+{
+    "id": "inflasjon-og-rente",
+    "tittel": "Inflasjon og rente: Hvorfor blir alt dyrere?",
+    "kilde": "/samfunnskunnskap/okonomi/inflasjon-og-rente",
+    "bilde": "/images/lessons/okonomi/inflasjon-og-rente.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-08", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "kassa",
+            "lyd": "rom",
+            "kapittel": "I kassa",
+            "visual": { "type": "InflasjonButikken", "props": { "modus": "kasse" } },
+            "replikker": [
+                { "si": "Tenk deg at du står i kassa med en full handlekurv. I fjor kostet den 100 kroner." },
+                { "si": "I år ligger akkurat de samme varene i kurven. Men nå koster den kanskje 105 kroner." },
+                { "si": "Kurven er ikke blitt større. Det er pengene dine som er blitt mindre verdt." },
+                { "si": "Dette har et eget navn. Det heter inflasjon." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "INFLASJON OG RENTE",
+                    "undertittel": "Hvorfor blir alt dyrere?",
+                    "bilde": "/images/lessons/okonomi/inflasjon-og-rente.webp",
+                    "sporsmal": { "tekst": "Hvem taper, og hvem vinner?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Inflasjon betyr at prisene sett under ett stiger, og fortsetter å stige." },
+                { "si": "Vi måler den i prosent. Hvor mye har prisene steget på ett år?" },
+                { "si": "I denne filmen skal vi finne ut hvorfor prisene stiger, hva renten har med saken å gjøre, og hvem som taper og vinner." }
+            ]
+        },
+        {
+            "id": "million",
+            "kapittel": "Mer penger, samme ting",
+            "visual": { "type": "InflasjonButikken", "props": { "modus": "million" } },
+            "replikker": [
+                { "si": "Hvorfor stiger prisene? En gammel forklaring handler om hvor mye penger som finnes." },
+                { "si": "Tenk deg at alle i Norge plutselig fikk en million kroner hver inn på konto." },
+                { "si": "Ville vi blitt rikere? Nei. Det finnes like mange hus, biler og varer som før." },
+                { "si": "Vi ville bare bydd over hverandre for å få tak i de samme tingene. Og prisene ville skutt i været." },
+                { "si": "Denne ideen kalles kvantitetsteorien. I dag mener økonomer at pengemengden alene ikke forklarer alt. Også andre ting spiller inn." }
+            ]
+        },
+        {
+            "id": "tid",
+            "kapittel": "Prisen på tid",
+            "visual": { "type": "InflasjonVekt" },
+            "replikker": [
+                { "si": "For å forstå rente, må vi først forstå tålmodighet. Økonomer kaller det tidspreferanse." },
+                { "si": "Du får velge: 1000 kroner i dag, eller 1000 kroner om et år. Hva velger du?" },
+                { "si": "De fleste tar pengene i dag. Vi setter mer pris på ting nå enn på ting som kommer senere." },
+                { "si": "Men hva om du får 1100 kroner om et år? Da er du kanskje villig til å vente." },
+                { "si": "De ekstra 100 kronene er prisen på tålmodigheten din. Det er dette all rente bygger på." },
+                { "si": "Økonomen Eugen von Böhm-Bawerk forklarte det slik: Den som vil ha noe nå, betaler rente. Den som gir slipp på noe, krever rente.",
+                  "uttale": "Økonomen Eugen von Böm-Baverk forklarte det slik: Den som vil ha noe nå, betaler rente. Den som gir slipp på noe, krever rente." }
+            ]
+        },
+        {
+            "id": "naturlig",
+            "kapittel": "To renter",
+            "visual": { "type": "InflasjonRenten", "props": { "modus": "naturlig" } },
+            "replikker": [
+                { "si": "Hvor høy burde renten være? I et fritt marked, der ingen styrer, avgjør folk det selv." },
+                { "si": "Sparer folk mye, finnes det mange penger å låne ut. Da blir renten lav." },
+                { "si": "Sparer folk lite, blir det færre penger å låne ut, og renten stiger." },
+                { "si": "Renten som kommer av folks egen sparing, kalles den naturlige renten. Navnet kommer fra økonomen Knut Wicksell." }
+            ]
+        },
+        {
+            "id": "styring",
+            "visual": { "type": "InflasjonRenten", "props": { "modus": "styring" } },
+            "replikker": [
+                { "si": "Men i Norge er det Norges Bank som bestemmer en svært viktig rente. Den heter styringsrenten." },
+                { "si": "Det er renten bankene får på pengene de har i Norges Bank. Likevel påvirker den rentene i hele økonomien." },
+                { "si": "En komité med fem medlemmer setter den, åtte ganger i året." },
+                { "si": "Målet er å holde prisveksten lav og stabil. Men styringsrenten følger ikke nødvendigvis hvor mye folk faktisk sparer." }
+            ]
+        },
+        {
+            "id": "lav",
+            "kapittel": "For lav, for høy",
+            "visual": { "type": "InflasjonRenten", "props": { "modus": "lav" } },
+            "replikker": [
+                { "si": "Hva skjer hvis styringsrenten er lavere enn den naturlige renten?" },
+                { "si": "Da blir det kunstig billig å låne. Folk og bedrifter låner mer enn ekte sparing gir rom for." },
+                { "si": "Samtidig sparer folk mindre. Wicksell viste at alle lånene og investeringene da presser prisene opp." },
+                { "si": "Vi kan få inflasjon og bobler, for eksempel i boligmarkedet. En boble er når prisene blåses opp, som en ballong." }
+            ]
+        },
+        {
+            "id": "hoy",
+            "visual": { "type": "InflasjonRenten", "props": { "modus": "hoy" } },
+            "replikker": [
+                { "si": "Og motsatt: Er styringsrenten høyere enn den naturlige renten, blir det kunstig dyrt å låne." },
+                { "si": "Da bremser økonomien mer enn den trenger." },
+                { "si": "Da kan vi få arbeidsledighet. Det betyr at folk som vil jobbe, ikke får jobb." }
+            ]
+        },
+        {
+            "id": "kurven",
+            "kapittel": "Handlekurven",
+            "visual": { "type": "InflasjonButikken", "props": { "modus": "kurv" } },
+            "replikker": [
+                { "si": "Hvordan vet vi hvor stor inflasjonen er? Statistisk sentralbyrå, SSB, har en fast handlekurv." },
+                { "si": "I den ligger rundt 650 varer og tjenester som folk i Norge kjøper." },
+                { "si": "Alt fra mat, strøm og bensin til klær, flyreiser og kinobilletter." },
+                { "si": "Hver måned sjekker SSB hva kurven koster. Den tiende i måneden kommer tallet. Det heter konsumprisindeksen, KPI." },
+                { "si": "Koster hele kurven 3 prosent mer enn året før, sier vi at inflasjonen er 3 prosent." }
+            ]
+        },
+        {
+            "id": "pengemengde",
+            "visual": { "type": "InflasjonButikken", "props": { "modus": "pengemengde" } },
+            "replikker": [
+                { "si": "Den andre måten er å telle pengene. Alle pengene i landet kalles pengemengden, eller M2." },
+                { "si": "Da legger man sammen sedler og mynt, pengene på brukskontoene våre, og sparepenger som bare er bundet en kort tid." },
+                { "si": "Vokser pengene fortere enn det vi lager av varer og tjenester, følger prisene etter. Det er tanken i kvantitetsteorien." },
+                { "si": "Derfor ser mange på pengemengden som et tidlig varsel om inflasjon." }
+            ]
+        },
+        {
+            "id": "sparer",
+            "kapittel": "Vinnere og tapere",
+            "visual": { "type": "InflasjonKonto", "props": { "modus": "sparer" } },
+            "replikker": [
+                { "si": "Inflasjon rammer ikke alle likt. Noen taper, og noen vinner." },
+                { "si": "Tenk deg at du har 100 000 kroner på konto, og at inflasjonen er 5 prosent." },
+                { "si": "Etter ett år står det fortsatt 100 000 på kontoen. Men du får bare kjøpt det som 95 000 kroner kunne kjøpe før." },
+                { "si": "Realrente er renten minus prisstigningen. Får du mindre rente i banken enn prisene stiger, er realrenten negativ. Da betaler du i praksis for å ha penger i banken." }
+            ]
+        },
+        {
+            "id": "laaner",
+            "visual": { "type": "InflasjonKonto", "props": { "modus": "laaner" } },
+            "replikker": [
+                { "si": "Den som har mye gjeld, kommer bedre ut. Tenk deg et boliglån på 3 millioner kroner." },
+                { "si": "Over tid stiger lønningene vanligvis i takt med prisene. Men lånebeløpet stiger ikke med prisene." },
+                { "si": "Da blir lånet en stadig mindre del av inntekten din. Folk sier at inflasjonen spiser opp gjelden." },
+                { "si": "For bedrifter er høy inflasjon som ingen kan forutse, et problem. De vet ikke hva ting vil koste, og kan vente med å ansette folk." }
+            ]
+        },
+        {
+            "id": "cantillon",
+            "kapittel": "Hvem får pengene først?",
+            "visual": { "type": "InflasjonBolgen" },
+            "replikker": [
+                { "si": "Det betyr også noe hvor de nye pengene kommer inn. Det kalles Cantillon-effekten.",
+                  "uttale": "Det betyr også noe hvor de nye pengene kommer inn. Det kalles Kantijong-effekten." },
+                { "si": "Tenk deg at staten trykker nye penger for å bygge en vei. Entreprenøren, firmaet som bygger veien, får pengene først." },
+                { "si": "Firmaet kan handle mens prisene fortsatt er gamle og lave. Det blir rikere." },
+                { "si": "Men når pengene blir brukt, stiger prisene. Steg for steg sprer pengene seg videre." },
+                { "si": "Når pengene til slutt når matbutikken din, har prisene allerede gått opp. Lønna di har ikke rukket å stige ennå." },
+                { "si": "De som får pengene sist, som vanlige lønnsmottakere og folk på trygd, taper. Særlig mat og strøm kan stige raskt, og det må vi kjøpe uansett pris." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Samme kurv. Høyere pris.", "fraBeat": 0 },
+                        { "tekst": "Pengene er blitt mindre verdt.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Renten er prisen på tid.", "fraBeat": 1 },
+                        { "tekst": "Norges Bank bruker styringsrenten for å holde prisveksten lav og stabil.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Nye penger løfter ikke alle priser samtidig.", "fraBeat": 2 },
+                        { "tekst": "Den som får dem først, tjener. Den som får dem sist, taper.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Inflasjon betyr at den samme kurven koster mer. Pengene er blitt mindre verdt." },
+                { "si": "Renten er prisen på tid. Norges Bank bruker styringsrenten for å holde prisveksten lav og stabil." },
+                { "si": "Men nye penger løfter ikke alle priser samtidig. Den som får dem først, tjener på det. Den som får dem sist, taper." }
+            ]
+        }
+    ]
+}
