@@ -1,0 +1,292 @@
+{
+    "id": "kjop-na-betal-senere",
+    "tittel": "Kjøp nå, betal senere: Når regningen vokser",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere",
+    "bilde": "/images/personlig-okonomi/kjop-na-betal-senere-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 238, "begrunnelse": "Regnet ut fra artikkelen: T-skjorta på 200 kroner pluss purregebyret på 38 kroner." },
+        { "tall": 276, "begrunnelse": "Regnet ut fra artikkelen: 238 kroner pluss gebyret for inkassovarselet på 38 kroner." },
+        { "tall": 463.5, "begrunnelse": "Regnet ut fra artikkelen: 276 kroner pluss salæret på 187,50 kroner." },
+        { "tall": 451, "begrunnelse": "Regnet ut fra artikkelen: 651 kroner minus prisen på 200 kroner er gebyrene (38 + 38 + 375)." }
+    ],
+    "vurdering": { "dato": "2026-11-08", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "kveld",
+            "lyd": "rom",
+            "kapittel": "Betal senere",
+            "visual": { "type": "KjopnaMobil", "props": { "modus": "handel" } },
+            "replikker": [
+                { "si": "En kveld i oktober handler Sara på mobilen. Hun er 15 år og har nettopp fått sin første bankkonto med kort." },
+                { "si": "Hun handler på nett. Først en T-skjorte til 200 kroner." },
+                { "si": "Så et mobildeksel til 150 kroner, og et par sokker til 99 kroner." },
+                { "si": "Hver gang dukker det opp en knapp nederst i kassen: Betal senere." },
+                { "si": "Det føles lurt. Hun får varene nå, og kan betale når lønna fra helgejobben kommer." }
+            ]
+        },
+        {
+            "id": "glemt",
+            "visual": { "type": "KjopnaMobil", "props": { "modus": "glemt" } },
+            "replikker": [
+                { "si": "Tre uker senere har Sara betalt to av regningene." },
+                { "si": "Den tredje, for T-skjorta, har hun glemt. Den ligger i en app hun sjelden åpner." },
+                { "si": "Da hun endelig ser den, er det ikke lenger 200 kroner hun skylder." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Betal senere",
+                    "undertittel": "Når regningen vokser",
+                    "bilde": "/images/personlig-okonomi/kjop-na-betal-senere-hero.webp",
+                    "tall": [
+                        { "verdi": 200, "etikett": "kroner for T-skjorta", "fraBeat": 1, "omtrent": false },
+                        { "verdi": 651, "etikett": "kroner, uten renter", "fraBeat": 2, "omtrent": false, "tone": "rod" }
+                    ],
+                    "sporsmal": { "tekst": "Hvordan kan en billig T-skjorte bli så dyr?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Kjøp nå, betal senere." },
+                { "si": "En T-skjorte til 200 kroner." },
+                { "si": "Venter hun helt til salæret blir doblet, kan den bli 651 kroner, med de høyeste gebyrene som er lov. Og da er ikke rentene regnet med." },
+                { "si": "Hvordan kan det skje? For å forstå det må vi se på hva betal senere egentlig er." }
+            ]
+        },
+        {
+            "id": "laan",
+            "kapittel": "Et lite lån",
+            "visual": { "type": "KjopnaFlyt" },
+            "replikker": [
+                { "si": "Når du trykker betal senere, får du varen før du har betalt for den." },
+                { "si": "Vanligvis får du 14 eller 30 dager på deg til å betale regningen. Den kalles en faktura." },
+                { "si": "Forbrukertilsynet passer på at butikker følger loven. De sier at dette er en kredittavtale. Kreditt betyr at du låner." },
+                { "si": "Ofte er det ikke butikken selv som låner deg pengene, men et eget betalingsselskap som samarbeider med butikken." },
+                { "si": "Betaler du hele beløpet før fristen, koster det vanligvis ingenting ekstra." },
+                { "si": "Men deler du opp betalingen, kan det komme renter. Forbrukerrådet viser et eksempel med 21 prosent rente. Renten varierer, men det er like dyrt som mange kredittkort." }
+            ]
+        },
+        {
+            "id": "regler",
+            "visual": { "type": "KjopnaMobil", "props": { "modus": "regler" } },
+            "replikker": [
+                { "si": "Fordi det er et lån, gjelder det regler. Selskapet skal fortelle deg hva det koster, og hva som skjer hvis du betaler for sent." },
+                { "si": "Det skal også sjekke om du har råd. Og du har angrerett, altså rett til å ombestemme deg." },
+                { "si": "Men Forbrukertilsynet skriver at mange butikker bryter loven, fordi de tilbyr betal senere uten å følge disse reglene." },
+                { "si": "Det finnes også en aldersgrense. Du må være 18 år for å ta opp lån og handle på kreditt." },
+                { "si": "Sara på 15 burde altså ikke fått tilbudet i det hele tatt. Men om noen få år dukker knappen opp for deg også." }
+            ]
+        },
+        {
+            "id": "trappa",
+            "kapittel": "Trappa til inkasso",
+            "visual": { "type": "KjopnaTrapp", "props": { "modus": "oversikt" } },
+            "replikker": [
+                { "si": "Hva skjer med den glemte T-skjorta? Reglene står i inkassoloven, som kom i 1988." },
+                { "si": "Loven sier at du skal få varsler og frister før regningen blir for stor." },
+                { "si": "Prosessen går i tre trinn, som en trapp. Purring, inkassovarsel og inkasso." },
+                { "si": "Vi går opp trappa med Sara. Tallene er et tenkt eksempel, men gebyrene er de høyeste som er lov i 2026." }
+            ]
+        },
+        {
+            "id": "purring",
+            "visual": { "type": "KjopnaTrapp", "props": { "modus": "purring" } },
+            "replikker": [
+                { "si": "Første trinn er purringen. En purring er en påminnelse om at fristen har gått ut." },
+                { "si": "Butikken kan ta et gebyr for purringen, men tidligst 14 dager etter den første fristen." },
+                { "si": "I 2026 er det høyeste lovlige purregebyret 38 kroner. Nå skylder Sara 238 kroner." },
+                { "si": "Purringen skal gi henne minst 14 nye dager til å betale." }
+            ]
+        },
+        {
+            "id": "varsel",
+            "visual": { "type": "KjopnaTrapp", "props": { "modus": "varsel" } },
+            "replikker": [
+                { "si": "Andre trinn er inkassovarselet. Før en regning kan sendes til inkasso, har du rett på et skriftlig varsel." },
+                { "si": "Varselet gir en ny frist på minst 14 dager. Også det kan koste 38 kroner. Nå er regningen på 276 kroner." },
+                { "si": "Her er det viktig å følge med. Betaler Sara innen fristen i varselet, kan hun ikke få regningen fra inkassoselskapet." },
+                { "si": "Men tenk deg at Sara venter." }
+            ]
+        },
+        {
+            "id": "inkasso",
+            "visual": { "type": "KjopnaTrapp", "props": { "modus": "inkasso" } },
+            "replikker": [
+                { "si": "Tredje trinn er inkasso. Nå har et inkassoselskap tatt over kravet. Inkasso betyr at et selskap krever inn penger som noen ikke har betalt." },
+                { "si": "Selskapet sender en betalingsoppfordring med en ny frist på 14 dager." },
+                {
+                    "si": "Og nå kommer et salær, altså betaling for inkassoselskapets arbeid. For en regning på 500 kroner eller mindre kan det være 187,50 kroner.",
+                    "uttale": "Og nå kommer et salær, altså betaling for inkassoselskapets arbeid. For en regning på fem hundre kroner eller mindre kan det være hundre og åttisju kroner og femti øre."
+                },
+                { "si": "Venter du mer enn fire uker etter fristen, kan salæret dobles til 375 kroner, i stedet for 187,50.", "uttale": "Venter du mer enn fire uker etter fristen, kan salæret dobles til tre hundre og syttifem kroner, i stedet for hundre og åttisju kroner og femti øre." },
+                { "si": "I tillegg kan det komme forsinkelsesrente. Det er en ekstra rente fordi du betaler for sent." }
+            ]
+        },
+        {
+            "id": "regnestykket",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 200,
+                            "farget": 200,
+                            "farge": "#2563eb",
+                            "tittel": "T-skjorta: 200 kroner",
+                            "fargeEtikett": "kroner for T-skjorta"
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 651,
+                            "farget": 200,
+                            "farge": "#2563eb",
+                            "restFarge": "#dc2626",
+                            "tittel": "Til slutt: 651 kroner, uten renter",
+                            "fargeEtikett": "kroner for T-skjorta",
+                            "restEtikett": "kroner i gebyrer"
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 651,
+                            "farget": 200,
+                            "farge": "#2563eb",
+                            "restFarge": "#dc2626",
+                            "tittel": "Over to tredjedeler er gebyrer",
+                            "fargeEtikett": "kroner for T-skjorta",
+                            "restEtikett": "kroner i gebyrer"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 651,
+                            "farget": 200,
+                            "farge": "#94a3b8",
+                            "restFarge": "#dc2626",
+                            "tittel": "Ventingen kostet",
+                            "fargeEtikett": "kroner for T-skjorta",
+                            "restEtikett": "kroner i gebyrer"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "La oss regne sammen. Hver prikk er én krone. T-skjorta kostet 200 kroner." },
+                { "si": "Venter Sara helt til salæret er doblet, har regningen blitt 651 kroner. Og da er ikke rentene regnet med." },
+                { "si": "Det er over tre ganger så mye som prisen. Over to tredjedeler av beløpet er bare gebyrer." },
+                { "si": "Varen ble ikke dyrere. Det var ventingen som kostet." }
+            ]
+        },
+        {
+            "id": "smaa",
+            "kapittel": "Små beløp, store problemer",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 10,
+                            "farget": 10,
+                            "farge": "#64748b",
+                            "tittel": "Inkassosaker i 2023",
+                            "fargeEtikett": "inkassosaker",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 10,
+                            "farget": 9,
+                            "farge": "#2563eb",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Ni av ti gjaldt vanlige folk",
+                            "fargeEtikett": "vanlige folk",
+                            "restEtikett": "bedrifter",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 40,
+                            "farge": "#dc2626",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Hver prikk er 1 av 100 regninger",
+                            "fargeEtikett": "rundt 40 prosent: under 500 kroner",
+                            "restEtikett": "større regninger",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 100,
+                            "farget": 40,
+                            "farge": "#dc2626",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Små regninger, glemt eller ikke betalt",
+                            "fargeEtikett": "regninger under 500 kroner",
+                            "restEtikett": "større regninger",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Det kan virke rart at noen havner hos inkasso for en T-skjorte. Men små regninger er helt vanlige i inkassosaker." },
+                { "si": "I 2023 gjaldt ni av ti inkassosaker vanlige folk, ikke bedrifter." },
+                { "si": "Og rundt 40 prosent av regningene var på under 500 kroner da de ble sendt til inkasso." },
+                { "si": "Det handler altså ofte ikke om store lån, men om små regninger som noen har glemt eller ikke klarte å betale." }
+            ]
+        },
+        {
+            "id": "kjeden",
+            "visual": { "type": "KjopnaKjede" },
+            "replikker": [
+                { "si": "Betaler du fortsatt ikke etter inkasso, kan saken gå videre til forliksrådet eller til namsmannen." },
+                { "si": "Da kan det bli bestemt et utlegg. Det betyr at staten kan ta penger fra deg, for eksempel ved å trekke dem fra lønna di." },
+                { "si": "Da får du en betalingsanmerkning. Det er en merknad om at du ikke har betalt gjelden din." },
+                { "si": "Med en betalingsanmerkning er det vanskelig å få lån, kreditt og abonnementer, for eksempel et mobilabonnement." },
+                { "si": "Når gjelden er betalt, blir merknaden fjernet. Men det kan ta litt tid." }
+            ]
+        },
+        {
+            "id": "vaner",
+            "lyd": "rom",
+            "kapittel": "Slik holder du oversikten",
+            "visual": { "type": "KjopnaMobil", "props": { "modus": "vaner" } },
+            "replikker": [
+                { "si": "Betal senere er ikke farlig i seg selv. Problemet er at det er så lett. Regningen kan lett forsvinne mellom andre meldinger." },
+                { "si": "Så hva kan du gjøre? Betal med en gang hvis du har pengene. Da finnes det ingen regning å glemme." },
+                { "si": "Velger du å betale senere, legg forfallsdatoen inn i kalenderen på mobilen. Det er den siste dagen du kan betale uten ekstra kostnader." },
+                { "si": "Sjekk appen eller e-posten din for regninger minst én gang i uka." },
+                { "si": "Og spør deg selv: Hadde jeg kjøpt dette hvis jeg måtte betale det i dag?" },
+                { "si": "Har du glemt en regning, betal den så fort du oppdager det. Hvert trinn gjør den dyrere." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Betal senere betyr at du låner.", "fraBeat": 0 },
+                        { "tekst": "Derfor gjelder regler og 18-årsgrense.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "I tide: vanligvis gratis.", "fraBeat": 1 },
+                        { "tekst": "Det er ventingen som koster.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Betal med en gang,", "fraBeat": 2 },
+                        { "tekst": "eller sett en påminnelse.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Betal senere betyr at du låner. Derfor gjelder det regler, og en aldersgrense på 18 år." },
+                { "si": "Betaler du i tide, koster det vanligvis ingenting. Det er ventingen som koster." },
+                { "si": "Den beste regelen er enkel: Betal med en gang, eller sett en påminnelse." }
+            ]
+        }
+    ]
+}
