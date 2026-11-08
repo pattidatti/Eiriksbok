@@ -1,0 +1,196 @@
+{
+    "id": "nasjonalromantikken",
+    "tittel": "Nasjonalromantikken: Da Norge fant sin sjel",
+    "kilde": "/norsk/litteraturhistorie/nasjonalromantikken",
+    "bilde": "/images/lessons/norsk/litteraturhistorie/nasjonalromantikken.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-08", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "fjellet",
+            "kapittel": "Fjellet",
+            "lyd": "vind",
+            "visual": { "type": "NasjonalromantikkenFjord", "props": { "modus": "fjord" } },
+            "replikker": [
+                { "si": "Tenk deg en fjord. Fjellene stuper rett ned i vannet, og en foss kaster seg utfor kanten." },
+                { "si": "Lenge så folk på slik natur som et hinder. Farlig, stygg og ufruktbar. Ødemark der ingenting vokser." },
+                { "si": "Men så skjer det noe. Kunstnere drar opp i fjellet for å finne det de kaller det sanne Norge." },
+                { "si": "Fjellet blir et bilde på hvordan nordmenn er: hardføre, stolte og urokkelige." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NASJONALROMANTIKKEN",
+                    "undertittel": "Da Norge fant sin sjel, ca. 1830 til 1870",
+                    "bilde": "/images/lessons/norsk/litteraturhistorie/nasjonalromantikken.webp",
+                    "sporsmal": { "tekst": "Hva er egentlig norsk?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne tiden kaller vi nasjonalromantikken. Den varte fra rundt 1830 til 1870." },
+                { "si": "Mange kaller den Norges kulturelle gullalder. Kunst, bøker og musikk blomstret som aldri før." },
+                { "si": "Og mange stilte det samme spørsmålet: Hva er egentlig norsk?" },
+                { "si": "I denne filmen ser vi hvor de lette etter svaret: i naturen, hos bøndene og i språket." }
+            ]
+        },
+        {
+            "id": "union",
+            "kapittel": "En ny stat",
+            "lyd": "stille",
+            "visual": { "type": "NasjonalromantikkenKart", "props": { "modus": "union" } },
+            "replikker": [
+                { "si": "For å forstå hvorfor, må vi tilbake til 1814. Da fikk Norge sin egen grunnlov." },
+                { "si": "Før det var Norge i union med Danmark, fra 1380 til 1814. Union betyr at landene hadde samme konge." },
+                { "si": "Embetsmennene, de som styrte landet for kongen, snakket og skrev dansk. Det gjorde også de rike og lærde i byene. De leste danske bøker og hentet nye ideer fra København." },
+                { "si": "Etter 1814 var Norge en egen stat, men i union med Sverige. Og kulturen var fortsatt sterkt preget av Danmark." }
+            ]
+        },
+        {
+            "id": "natt",
+            "visual": { "type": "NasjonalromantikkenTid", "props": { "modus": "natt" } },
+            "replikker": [
+                { "si": "Henrik Ibsen kalte tiden under Danmark for firehundreårsnatten. Natt, fordi det norske var som visket ut." },
+                { "si": "Grunnloven ga Norge et skjelett. Men skjelettet manglet kjøtt og blod: en egen historie, et eget språk og en egen kultur." },
+                { "si": "Derfor gikk forskere løs på sagaene, skikkene og sagnene fra middelalderen." },
+                { "si": "De ville vise at det gikk en linje uten brudd, fra storhetstiden i middelalderen og fram til sin egen tid." },
+                { "si": "Målet var å bevise at nordmenn var et eget folk. Ikke dansker, og ikke svensker." }
+            ]
+        },
+        {
+            "id": "sprak",
+            "kapittel": "Et norsk språk",
+            "visual": { "type": "NasjonalromantikkenSprak", "props": { "modus": "dansk" } },
+            "replikker": [
+                { "si": "Det samme gjaldt språket. Folk skrev fortsatt dansk." },
+                { "si": "For mange føltes dansken nå fremmed og stiv. Den var ikke norsk." },
+                { "si": "Et eget folk måtte ha et eget skriftspråk. Men hvordan skulle det lages? Her ble folk uenige, og striden om språket varte i generasjoner." },
+                { "si": "Tre menn pekte ut hver sin vei." }
+            ]
+        },
+        {
+            "id": "aasen",
+            "visual": { "type": "NasjonalromantikkenKart", "props": { "modus": "aasen" } },
+            "replikker": [
+                { "si": "Den første var Ivar Aasen. Mellom 1842 og 1846 reiste han rundt i landet, særlig på Vestlandet og i fjellbygdene." },
+                { "si": "Han lyttet til hvordan vanlige folk på bygdene snakket. Dialektene, mente han, hadde levd videre helt fra norrøn tid, språket i vikingtiden og middelalderen." },
+                { "si": "Ut av dialektene bygde han et nytt skriftspråk: landsmålet. I dag heter det nynorsk." },
+                { "si": "Det var et språk bygd på folkets egen tale, og det skulle gi bonden verdighet." }
+            ]
+        },
+        {
+            "id": "knudsen",
+            "visual": { "type": "NasjonalromantikkenSprak", "props": { "modus": "knudsen" } },
+            "replikker": [
+                { "si": "Den andre var Knud Knudsen. Han ville ikke bygge et nytt språk. Han ville endre dansken litt etter litt." },
+                { "si": "Han kalte det selv gradvishetens vei. Stavemåten skulle likne mer på hvordan folk med utdanning snakket til daglig." },
+                {
+                    "si": "Der folk sa de harde lydene p, t og k, skulle det også skrives p, t og k. Ikke de bløte b, d og g, slik dansken gjorde.",
+                    "uttale": "Der folk sa de harde lydene pe, te og kå, skulle det også skrives pe, te og kå. Ikke de bløte be, de og ge, slik dansken gjorde."
+                },
+                { "si": "Det meste av det han foreslo, kom med i rettskrivingen i 1907, 1917 og 1938." },
+                { "si": "Slik ble riksmålet til. Senere fikk det navnet bokmål, og det er det de fleste skriver i dag." }
+            ]
+        },
+        {
+            "id": "munch",
+            "visual": { "type": "NasjonalromantikkenSprak", "props": { "modus": "munch" } },
+            "replikker": [
+                {
+                    "si": "Den tredje var historikeren P. A. Munch.",
+                    "uttale": "Den tredje var historikeren Pe A Munk."
+                },
+                { "si": "Han mente det ikke holdt å bytte ut noen ord og stavemåter. Skulle språket bli norsk på ordentlig, måtte hele systemet bygges om, ut fra dialektene og norrønt." },
+                { "si": "Derfor roste han arbeidet til Aasen. Men han trodde at et slikt språk mest var interessant for forskere, og at folk ikke kunne bruke det til vanlig på hans tid." },
+                { "si": "Han ga altså Aasen rett i hva som var galt, men trodde ikke på løsningen." }
+            ]
+        },
+        {
+            "id": "bonden",
+            "kapittel": "Bonden og naturen",
+            "lyd": "vind",
+            "visual": { "type": "NasjonalromantikkenFjord", "props": { "modus": "bonde" } },
+            "replikker": [
+                { "si": "Tilbake til fjellet. Her bor bonden." },
+                { "si": "Før hadde bønder lav status. Nå ble bonden løftet fram som den som bar den ekte norske kulturen." },
+                { "si": "Bygdene hadde eventyr, folkeviser, håndverk og bunader. Alt dette ble byggesteiner i den nye nasjonen." },
+                { "si": "Byene var preget av Europa. Bonden ble sett som en levende forbindelse tilbake til sagatiden og vikingkongene." },
+                { "si": "Men det var et glansbilde, et bilde der alt er pyntet. Søndagsklær, flotte stabbur og evig solskinn." },
+                { "si": "Fattigdom, sult, slit, sykdom og overtro ble visket bort, eller gjort ufarlig." }
+            ]
+        },
+        {
+            "id": "europa",
+            "kapittel": "Kunstnerne",
+            "lyd": "stille",
+            "visual": { "type": "NasjonalromantikkenKart", "props": { "modus": "europa" } },
+            "replikker": [
+                { "si": "Alle kunstformene jobbet sammen. Diktere skrev om det malerne malte, og komponistene laget musikk til stemningen." },
+                { "si": "Asbjørnsen og Moe samlet inn og gjenfortalte eventyr og sagn." },
+                { "si": "Da de leste utgavene til Brødrene Grimm i Tyskland, så de at slike fortellinger var verdt å samle og forske på." },
+                { "si": "Maleriet som ble symbolet på tiden, Brudeferden i Hardanger, ble malt i Düsseldorf i Tyskland, vinteren 1847 til 1848." },
+                { "si": "I 1849 holdt Ole Bull en stor konsert i Christiania med hardingfelespilleren Myllarguten. Det var første gang en hardingfelespiller spilte fra en offentlig konsertscene." }
+            ]
+        },
+        {
+            "id": "brudeferden",
+            "lyd": "hav",
+            "visual": { "type": "NasjonalromantikkenFjord", "props": { "modus": "brudeferd" } },
+            "replikker": [
+                { "si": "Brudeferden i Hardanger er malt av to kunstnere sammen. Gude malte det store, dramatiske landskapet." },
+                { "si": "Tidemand malte menneskene i det, med mange små detaljer." },
+                { "si": "En brudeferd er reisen til bryllupet." },
+                { "si": "Maleriet ble selve symbolet på tiden: mennesket og naturen som passer perfekt sammen." }
+            ]
+        },
+        {
+            "id": "verk",
+            "lyd": "stille",
+            "visual": { "type": "NasjonalromantikkenTid", "props": { "modus": "verk" } },
+            "replikker": [
+                { "si": "Også dikterne var med. Wergeland og Welhaven skrev dikt som hyllet fedrelandet og naturen. Diktene ble nesten som nasjonalsanger." },
+                { "si": "Asbjørnsen og Moe begynte å gi ut eventyrene i hefter i 1841." },
+                { "si": "I 1857 kom Synnøve Solbakken av Bjørnstjerne Bjørnson. Den løftet bygdefolket inn i den store litteraturen." },
+                { "si": "Men Bjørnson malte ikke bare glansbilde. I fortellingen om Torbjørn og Synnøve får også drikking, hykleri og ulykkelige ekteskap plass. Hykleri er å late som du er bedre enn du er." },
+                { "si": "Og Edvard Grieg tok tonene fra felespill og hallingdans og gjorde dem om til klassisk musikk som ble kjent over hele verden." }
+            ]
+        },
+        {
+            "id": "sprekker",
+            "kapittel": "Sprekker i bildet",
+            "lyd": "regn",
+            "visual": { "type": "NasjonalromantikkenFjord", "props": { "modus": "sprekker" } },
+            "replikker": [
+                { "si": "Men glansbildet kunne ikke skjule alt. Norge forandret seg raskt." },
+                { "si": "Industribyene vokste. Og på bygdene var det så mye nød at mange måtte reise til Amerika." },
+                { "si": "Mot slutten av perioden så diktere og debattanter at glansbildet slo sprekker." },
+                { "si": "Nå ville de ha sannhet, debatt om problemene og kritikk av samfunnet. Slik la nasjonalromantikken grunnlaget for neste tid: realismen, der dikterne ville vise livet slik det faktisk var." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Grunnloven ga Norge et skjelett.", "fraBeat": 0 },
+                        { "tekst": "De ga det kjøtt og blod.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Eventyrene, bokmål og nynorsk", "fraBeat": 1 },
+                        { "tekst": "har vi fortsatt i dag.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Et glansbilde viser ikke alt.", "fraBeat": 2 },
+                        { "tekst": "Sult og slit var der hele tiden.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Grunnloven ga Norge et skjelett. Kunstnerne, forskerne og språkfolkene ga det kjøtt og blod." },
+                { "si": "Mye av det de laget, har vi fortsatt. Eventyrene er en viktig del av norsk kulturarv, og bokmål og nynorsk bygger på det de startet." },
+                { "si": "Men husk at et glansbilde ikke viser alt. Fattigdommen og slitet var der hele tiden, selv om bildene og fortellingene ofte gjemte det bort." }
+            ]
+        }
+    ]
+}
