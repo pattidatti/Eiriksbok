@@ -3,15 +3,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { geoMercator, geoPath, type GeoPath } from 'd3-geo';
 import { useFilmVerden } from '../../kart/useFilmVerden';
 import type { VisualProps } from '../../types';
-import { Teller } from '../shared';
+import { TelleTall } from '../shared';
 
 /**
- * Kart for misjonsfilmen: hva misjon er (ut i verden og inn i Norge), Stavanger i 1842,
- * Schreuders lange vei til Zululand, Madagaskar, Frankrike som tar øya, og krigen i 1940
- * da pengene fra Norge stoppet. Kartet står til venstre, forklaringene til høyre.
+ * Kart for misjonsfilmen: Stavanger i 1842, Schreuders lange vei til Zululand, Madagaskar,
+ * og krigen i 1940 da pengene fra Norge stoppet. Kartet står til venstre, forklaringene til høyre.
  */
 
-type Modus = 'begrep' | 'stavanger' | 'zululand' | 'madagaskar' | 'frankrike' | 'krig';
+type Modus = 'stavanger' | 'zululand' | 'madagaskar' | 'krig';
 type LngLat = [number, number];
 type P = (ll: LngLat) => [number, number];
 
@@ -28,12 +27,10 @@ const KANT = '#b9ad92';
 const ID = {
     norge: '578',
     sverige: '752',
-    frankrike: '250',
     madagaskar: '450',
     sorafrika: '710',
     usa: '840',
     tyskland: '276',
-    kina: '156',
 };
 
 const STED = {
@@ -43,7 +40,6 @@ const STED = {
     zululand: [31.4, -28.4] as LngLat,
     hongkong: [114.17, 22.3] as LngLat,
     antsirabe: [47.03, -19.87] as LngLat,
-    paris: [2.35, 48.86] as LngLat,
     madagaskar: [46.8, -19.5] as LngLat,
     stockholm: [18.07, 59.33] as LngLat,
     usa: [-77, 39] as LngLat,
@@ -62,11 +58,10 @@ const TIL_ZULULAND: LngLat[] = [
     [24, -36],
     STED.zululand,
 ];
-const TIL_HONGKONG: LngLat[] = [STED.zululand, [44, -26], [62, -10], [80, 2], [97, 4], STED.hongkong];
-const TILBAKE: LngLat[] = [STED.hongkong, [100, 0], [82, -8], [60, -20], [40, -32], STED.zululand];
+// Sjøveien gjennom Det indiske hav og Malakkastredet.
+const TIL_HONGKONG: LngLat[] = [STED.zululand, [36, -30], [55, -18], [75, -2], [92, 5], [98.5, 4.2], [104, 1.3], [110, 9], STED.hongkong];
+const TILBAKE: LngLat[] = [STED.hongkong, [112, 9], [105, 0.5], [97, 3], [88, -4], [68, -16], [48, -30], [36, -32]];
 const TIL_MADAGASKAR: LngLat[] = [STED.oslo, [10, 40], [22, 20], [40, 0], STED.madagaskar];
-const TIL_KINA: LngLat[] = [STED.oslo, [40, 55], [80, 45], [110, 35]];
-const PARIS_MADAGASKAR: LngLat[] = [STED.paris, [12, 30], [30, 8], [42, -8], STED.madagaskar];
 const SVERIGE_MADAGASKAR: LngLat[] = [STED.stockholm, [30, 40], [44, 10], STED.madagaskar];
 const USA_MADAGASKAR: LngLat[] = [STED.usa, [-45, 20], [-10, -10], [20, -30], [40, -24]];
 
@@ -76,22 +71,6 @@ interface Kort {
 }
 
 const KORT: Record<Modus, Kort[][]> = {
-    begrep: [
-        [{ tekst: 'Misjon' }, { tekst: 'Spre et religiøst budskap, på en planlagt måte', farge: MISJON }],
-        [{ tekst: 'Misjon' }, { tekst: 'Slik spredte kristendommen seg', farge: MISJON }],
-        [{ tekst: 'Ytremisjon' }, { tekst: 'Reise dit folk ikke er kristne', farge: GULL }],
-        [
-            { tekst: 'Indremisjon' },
-            { tekst: 'Styrke troen der folk alt er kristne', farge: LILLA },
-        ],
-        [
-            { tekst: 'Mer enn tro' },
-            { tekst: 'Skoler', farge: BLA },
-            { tekst: 'Helsearbeid', farge: ROD },
-            { tekst: 'Hjelp til fattige', farge: GULL },
-        ],
-        [{ tekst: 'Norge' }, { tekst: 'Blant landene med flest misjonærer per innbygger', farge: MISJON }],
-    ],
     stavanger: [
         [{ tekst: '8. august 1842' }, { tekst: 'Det Norske Misjonsselskap', farge: MISJON }],
         [{ tekst: 'Norges eldste' }, { tekst: 'Hovedkontoret er fortsatt i Stavanger', farge: MISJON }],
@@ -115,25 +94,15 @@ const KORT: Record<Modus, Kort[][]> = {
         [{ tekst: '1866' }, { tekst: 'Kirker', farge: MISJON }, { tekst: 'Skoler', farge: BLA }, { tekst: 'Helsetilbud', farge: ROD }],
         [{ tekst: 'Antsirabe' }, { tekst: 'Jordbruk, helse og skole', farge: MISJON }],
     ],
-    frankrike: [
-        [{ tekst: 'Europeiske stormakter' }, { tekst: 'kjemper om øya', farge: BLA }],
-        [{ tekst: '1885' }, { tekst: 'Fransk protektorat', farge: BLA }, { tekst: 'Frankrike holder oppsyn og bestemmer mye' }],
-        [{ tekst: '1895' }, { tekst: 'Frankrike okkuperer øya', farge: BLA }],
-        [{ tekst: '1896' }, { tekst: 'Fransk koloni', farge: BLA }],
-    ],
     krig: [
         [{ tekst: '1940' }, { tekst: 'Tyskland okkuperer Norge', farge: ROD }, { tekst: 'Nazistene tar over Misjonsselskapet', farge: ROD }],
-        [{ tekst: 'Pengene stopper' }, { tekst: 'Ingenting fra Norge', farge: ROD }],
+        [{ tekst: 'Pengene stopper' }, { tekst: 'Ingen penger fra Norge', farge: ROD }],
         [{ tekst: 'Arbeidet fortsetter' }, { tekst: 'Støtte fra blant annet Sverige og USA', farge: MISJON }],
     ],
 };
 
 /** Utsnittet per modus: hjørnene som skal fylle venstre del av bildet. */
 const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
-    begrep: [
-        [-22, -38],
-        [122, 76],
-    ],
     stavanger: [
         [2.5, 57.4],
         [13.5, 63.6],
@@ -146,10 +115,6 @@ const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
         [31, -27],
         [53, -11],
     ],
-    frankrike: [
-        [-14, -28],
-        [52, 54],
-    ],
     krig: [
         [-112, -30],
         [55, 68],
@@ -157,7 +122,7 @@ const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
 };
 
 export function MisjonKart({ beat, props }: VisualProps<{ modus: Modus }>) {
-    const modus = props.modus ?? 'begrep';
+    const modus = props.modus ?? 'stavanger';
     const { geographies } = useFilmVerden();
 
     const projeksjon = useMemo(() => {
@@ -188,24 +153,6 @@ export function MisjonKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                 preserveAspectRatio="xMidYMid slice"
             >
                 <Land geographies={geographies} sti={sti} />
-
-                {modus === 'begrep' && (
-                    <>
-                        <Felt d={land(ID.norge)} farge={beat === 3 ? LILLA : MISJON} vis />
-                        {beat >= 2 && beat !== 3 && <Pil d={linje(TIL_MADAGASKAR)} farge={GULL} varighet={2} />}
-                        {beat >= 2 && beat !== 3 && <Pil d={linje(TIL_ZULULAND.slice(1))} farge={GULL} varighet={2.4} />}
-                        {beat >= 2 && beat !== 3 && <Pil d={linje(TIL_KINA)} farge={GULL} varighet={2.2} />}
-                        {beat === 3 && <Ringer ll={[10, 62]} p={p} farge={LILLA} />}
-                        {beat === 4 && (
-                            <>
-                                <Symbol ll={[22, 0]} p={p} tegn="skole" forsinkelse={0.3} />
-                                <Symbol ll={[46.8, -19.5]} p={p} tegn="helse" forsinkelse={0.9} />
-                                <Symbol ll={[105, 30]} p={p} tegn="hjelp" forsinkelse={1.5} />
-                            </>
-                        )}
-                        <Merke ll={STED.oslo} tekst="Norge" p={p} farge={MISJON} hoyre />
-                    </>
-                )}
 
                 {modus === 'stavanger' && (
                     <>
@@ -275,25 +222,6 @@ export function MisjonKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                     </>
                 )}
 
-                {modus === 'frankrike' && (
-                    <>
-                        <Felt d={land(ID.frankrike)} farge={BLA} vis={beat >= 1} />
-                        {beat >= 1 && <Navn ll={[2.5, 50.6]} tekst="FRANKRIKE" p={p} farge={BLA} />}
-                        <Navn ll={[20, 8]} tekst="AFRIKA" p={p} />
-                        <motion.path
-                            d={land(ID.madagaskar)}
-                            fill={BLA}
-                            stroke="#ffffff"
-                            strokeWidth={2}
-                            initial={{ fillOpacity: 0.05 }}
-                            animate={{ fillOpacity: [0.08, 0.3, 0.55, 0.85][Math.min(beat, 3)] }}
-                            transition={{ duration: 1.4 }}
-                        />
-                        {beat >= 1 && <Pil d={linje(PARIS_MADAGASKAR)} farge={BLA} varighet={2.2} stiplet={beat === 1} />}
-                        <Merke ll={[46.8, -19.5]} tekst="Madagaskar" p={p} farge={beat >= 3 ? BLA : MISJON} venstre />
-                    </>
-                )}
-
                 {modus === 'krig' && (
                     <>
                         <Felt d={land(ID.tyskland)} farge="#44403c" vis />
@@ -334,7 +262,12 @@ export function MisjonKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                     ))}
                     {modus === 'zululand' && beat === 4 && (
                         <motion.div key="sju" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                            <Teller verdi={7} etikett="år å vente" forsinkelse={0.8} tone="rod" />
+                            <div className="px-5 py-3 rounded-2xl bg-white/95 shadow-xl text-center">
+                                <div className="text-6xl font-black text-red-700">
+                                    <TelleTall verdi={7} forsinkelse={0.8} />
+                                </div>
+                                <div className="text-2xl font-bold text-slate-700">år å vente</div>
+                            </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -493,35 +426,12 @@ function Spiss({ d, farge, forsinkelse }: { d: string; farge: string; forsinkels
     );
 }
 
-/** Ringer som brer seg ut inne i landet: indremisjon. */
-function Ringer({ ll, p, farge }: { ll: LngLat; p: P; farge: string }) {
-    const [x, y] = p(ll);
-    return (
-        <g>
-            {[0, 1, 2].map((i) => (
-                <motion.circle
-                    key={i}
-                    cx={x}
-                    cy={y}
-                    fill="none"
-                    stroke={farge}
-                    strokeWidth={6}
-                    initial={{ r: 10, opacity: 0.9 }}
-                    animate={{ r: 90, opacity: 0 }}
-                    transition={{ duration: 2.4, delay: i * 0.8, repeat: Infinity }}
-                />
-            ))}
-            <circle cx={x} cy={y} r={14} fill={farge} stroke="#ffffff" strokeWidth={4} />
-        </g>
-    );
-}
+type Tegn = 'skole' | 'helse' | 'kirke';
 
-type Tegn = 'skole' | 'helse' | 'hjelp' | 'kirke';
-
-/** Et lite skilt med et symbol: skole (bok), helse (kors), hjelp (hender), kirke. */
+/** Et lite skilt med et symbol: skole (bok), helse (kors), kirke. */
 function Symbol({ ll, p, tegn, forsinkelse }: { ll: LngLat; p: P; tegn: Tegn; forsinkelse: number }) {
     const [x, y] = p(ll);
-    const farge = { skole: BLA, helse: ROD, hjelp: GULL, kirke: MISJON }[tegn];
+    const farge = { skole: BLA, helse: ROD, kirke: MISJON }[tegn];
     return (
         <motion.g
             initial={{ opacity: 0, y: 20 }}
@@ -537,11 +447,6 @@ function Symbol({ ll, p, tegn, forsinkelse }: { ll: LngLat; p: P; tegn: Tegn; fo
                     <g fill={farge}>
                         <path d="M -28 -16 Q -14 -24 0 -16 V 22 Q -14 14 -28 22 Z" />
                         <path d="M 28 -16 Q 14 -24 0 -16 V 22 Q 14 14 28 22 Z" opacity={0.75} />
-                    </g>
-                )}
-                {tegn === 'hjelp' && (
-                    <g fill={farge}>
-                        <path d="M -26 4 Q -26 -10 -12 -8 L 0 0 L 12 -8 Q 26 -10 26 4 L 0 26 Z" />
                     </g>
                 )}
                 {tegn === 'kirke' && (

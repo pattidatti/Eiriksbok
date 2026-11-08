@@ -23,14 +23,14 @@ interface Ting {
 }
 
 const MAKT_TING: Ting[] = [
-    { tekst: 'Del av kolonimaktenes styre', fraBeat: 1 },
-    { tekst: 'Legg bort den gamle religionen', fraBeat: 2 },
+    { tekst: 'Mange steder del av kolonimaktenes arbeid', fraBeat: 1 },
+    { tekst: 'Ville at folk la bort den gamle religionen', fraBeat: 2 },
 ];
 const HJELP_TING: Ting[] = [
     { tekst: 'Noen gikk imot kolonimaktene', fraBeat: 1 },
     { tekst: 'Holdt liv i språket gassisk', fraBeat: 3 },
     { tekst: 'Afrikanske studenter i Stavanger', fraBeat: 4 },
-    { tekst: '1950: egen kirke på Madagaskar', fraBeat: 4 },
+    { tekst: '1950: selvstendig kirke', fraBeat: 4 },
 ];
 
 export function MisjonVekt({ beat, props }: VisualProps<{ modus: Modus }>) {
@@ -76,6 +76,9 @@ function Vekt({ beat }: { beat: number }) {
                     )}
                 </AnimatePresence>
                 {beat === 0 && (
+                    <motion.rect x={cx - 500} y={505} width={1000} height={76} rx={18} fill="#ffffff" initial={{ opacity: 0 }} animate={{ opacity: 0.95 }} transition={{ delay: 0.6 }} />
+                )}
+                {beat === 0 && (
                     <motion.text x={cx} y={560} textAnchor="middle" fontSize={44} fontWeight={800} fill={MORK} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
                         Europa tar makten over store deler av verden
                     </motion.text>
@@ -112,9 +115,9 @@ function Skaal({
             </text>
             {ting.map((t, i) => (
                 <motion.g key={t.tekst} initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 + (i % 2) * 0.8, type: 'spring', stiffness: 160, damping: 16 }}>
-                    <rect x={x - 215} y={y + 170 + i * 92} width={430} height={78} rx={14} fill="#ffffff" stroke={farge} strokeWidth={5} />
-                    <foreignObject x={x - 208} y={y + 172 + i * 92} width={416} height={74}>
-                        <div className="h-full flex items-center justify-center text-center font-bold text-slate-900 leading-tight" style={{ fontSize: 31 }}>
+                    <rect x={x - 215} y={y + 170 + i * 104} width={430} height={92} rx={14} fill="#ffffff" stroke={farge} strokeWidth={5} />
+                    <foreignObject x={x - 208} y={y + 172 + i * 104} width={416} height={88}>
+                        <div className="h-full flex items-center justify-center text-center font-bold text-slate-900 leading-tight" style={{ fontSize: 32 }}>
                             {t.tekst}
                         </div>
                     </foreignObject>
