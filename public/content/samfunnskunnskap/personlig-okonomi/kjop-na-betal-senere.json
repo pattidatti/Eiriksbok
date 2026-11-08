@@ -1,0 +1,270 @@
+{
+  "id": "kjop-na-betal-senere",
+  "title": "Kjøp nå, betal senere: Når regningen vokser",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Personlig økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "«Kjøp nå, betal senere» er et lån. Du får varen nå og betaler som regel om 14 eller 30 dager.",
+    "Glemmer du regningen, kommer purring, inkassovarsel og inkasso. Hvert trinn kan gi nye gebyrer.",
+    "En regning på 200 kroner kan bli over 600 kroner. Til slutt kan du få en betalingsanmerkning."
+  ],
+  "externalUrl": "https://snl.no/inkasso",
+  "factChecked": "2026-11-08",
+  "tags": [
+    "personlig økonomi",
+    "faktura",
+    "inkasso",
+    "gjeld",
+    "netthandel"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Sara er 15 år og har nettopp fått sin første bankkonto med kort. En kveld i oktober handler hun tre ting på nett: en T-skjorte til 200 kroner, et mobildeksel til 150 kroner og et par sokker til 99 kroner. Hver gang dukker det opp en knapp nederst i kassen: «Betal senere». Det føles lurt. Hun får varene nå og kan betale når lønna fra helgejobben kommer."
+    },
+    {
+      "type": "text",
+      "content": "Tre uker senere har hun betalt to av regningene. Den tredje, for T-skjorta, har hun glemt. Den ligger i en app hun sjelden åpner. Da hun endelig ser den, er det ikke lenger 200 kroner hun skylder. Hvordan kan en billig T-skjorte plutselig bli så mye dyrere? For å forstå det må vi se på hva «betal senere» egentlig er."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom handler på mobilen med betal senere-knapp",
+      "caption": "Ett trykk, og varen er på vei. Men den er ikke betalt ennå."
+    },
+    {
+      "type": "header",
+      "text": "Hva betyr «kjøp nå, betal senere»?"
+    },
+    {
+      "type": "text",
+      "content": "Når du velger «betal senere» i en nettbutikk, får du varen før du har betalt for den. Vanligvis får du 14 eller 30 dager på deg til å betale regningen, som kalles en faktura (Forbrukertilsynet, 2025). Noen ganger kan du også dele opp betalingen i flere mindre beløp over flere måneder."
+    },
+    {
+      "type": "text",
+      "content": "Det høres ut som en enkel tjeneste, men det er mer enn det. Forbrukertilsynet, som passer på at butikker følger loven, skriver at slike tjenester er en kredittavtale (Forbrukertilsynet, 2025). Kreditt betyr at du låner. Når du trykker «betal senere», tar du altså opp et lite lån. Ofte er det ikke butikken selv som låner deg pengene, men et eget betalingsselskap som samarbeider med butikken (Forbrukertilsynet, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Betaler du hele beløpet før fristen, koster det vanligvis ingenting ekstra. Men deler du opp betalingen, kan det komme renter. Forbrukerrådet bruker et eksempel der en slik «betal senere»-løsning har 21 prosent rente. Renten varierer, men det er like dyrt som mange kredittkort (Forbrukerrådet, 2025). Hvordan renter på lån virker, kan du lese mer om i artikkelen om [kreditt og forbrukslån](/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Faktura: en regning du får etter at du har fått varen. Kreditt: å få låne penger eller å få utsette betalingen. Forfallsdato: den siste dagen du kan betale uten ekstra kostnader. Purring: en påminnelse om at du ikke har betalt. Inkasso: når et selskap krever inn penger som noen ikke har betalt. Salær: betalingen inkassoselskapet tar for jobben. Betalingsanmerkning: en merknad om at du ikke har betalt gjelden din."
+      }
+    },
+    {
+      "type": "text",
+      "content": "Fordi «betal senere» er et lån, gjelder det regler. Selskapet skal fortelle deg hva det koster, og hva som skjer hvis du betaler for sent. Selskapet skal også sjekke om du har råd, og du har angrerett, altså rett til å ombestemme deg (Forbrukertilsynet, 2025). Men Forbrukertilsynet skriver også at mange butikker bryter loven ved å tilby slike tjenester uten å følge disse reglene (Forbrukertilsynet, 2025). Reglene finnes for å hindre at folk får mer gjeld enn de klarer å betale."
+    },
+    {
+      "type": "text",
+      "content": "Det finnes også en aldersgrense. Du må være 18 år for å ta opp lån og handle på kreditt. Forbrukerrådet skriver at de som er under 18 år, ikke kan ta opp gjeld (Forbrukerrådet, 2025). Sara på 15 burde altså ikke fått tilbudet i det hele tatt. Likevel er det nyttig å vite hvordan det virker, for om noen få år kommer knappen til å dukke opp for deg også."
+    },
+    {
+      "type": "header",
+      "text": "Fra glemt regning til inkasso"
+    },
+    {
+      "type": "text",
+      "content": "Hva skjer med den glemte T-skjorta til Sara? Reglene for dette står i inkassoloven, som kom i 1988 (Langseth, 2026). Den sier at du skal få varsler og frister før regningen blir for stor. Prosessen går i trinn."
+    },
+    {
+      "type": "text",
+      "content": "Første trinn er purringen. Purringen er en påminnelse om at fristen har gått ut. Butikken kan ta et gebyr for purringen, men tidligst 14 dager etter den første fristen. Purringen skal gi deg minst 14 nye dager til å betale (Finanstilsynet, u.å.). I 2026 er det høyeste lovlige purregebyret 38 kroner (Finanstilsynet, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Andre trinn er inkassovarselet. Før en regning kan sendes til inkasso, har du rett på et skriftlig varsel med en ny frist på minst 14 dager (Finanstilsynet, u.å.). Også dette varselet kan koste 38 kroner (Finanstilsynet, 2026). Her er det viktig å følge med. Betaler du innen fristen i varselet, kan du ikke få regningen fra inkassoselskapet (Langseth, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Tredje trinn er inkasso. Nå har et inkassoselskap tatt over kravet. Selskapet sender deg en betalingsoppfordring med en ny frist på 14 dager, og nå kommer det et salær, altså betaling for inkassoselskapets arbeid (Finanstilsynet, u.å.). For en regning på 500 kroner eller mindre kan salæret være 187,50 kroner. Venter du mer enn fire uker etter fristen, kan salæret dobles til 375 kroner (Finanstilsynet, 2026). I tillegg kan det komme forsinkelsesrente, som er en ekstra rente fordi du betaler for sent (Finanstilsynet, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Følg den glemte fakturaen til Sara, og velg om du vil betale nå eller vente to uker til. Tallene er et tenkt eksempel, men gebyrene er de høyeste som er lov i 2026."
+    },
+    {
+      "type": "component",
+      "name": "DenGlemteFakturaen",
+      "props": {
+        "vare": "T-skjorte fra nettbutikk",
+        "belop": 200
+      }
+    },
+    {
+      "type": "text",
+      "content": "Venter Sara helt til salæret blir doblet, har T-skjorta til 200 kroner blitt til 651 kroner, og da er ikke rentene regnet med. Det er over tre ganger så mye som prisen. Over to tredjedeler av beløpet er bare gebyrer. Varen ble ikke dyrere. Det var ventingen som kostet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung jente ser forskrekket på et inkassobrev",
+      "caption": "Et inkassobrev kan komme for en regning du helt hadde glemt."
+    },
+    {
+      "type": "header",
+      "text": "Små beløp, store problemer"
+    },
+    {
+      "type": "text",
+      "content": "Det kan virke rart at noen havner hos inkasso for en T-skjorte. Men små regninger er helt vanlige i inkassosaker. I 2023 gjaldt ni av ti inkassosaker vanlige folk, ikke bedrifter. Rundt 40 prosent av regningene var på under 500 kroner da de ble sendt til inkasso (Langseth, 2026). Det handler altså ofte ikke om store lån, men om små regninger som noen har glemt eller ikke klarte å betale."
+    },
+    {
+      "type": "text",
+      "content": "Betaler du fortsatt ikke etter inkasso, kan saken gå videre til forliksrådet eller til namsmannen (Finanstilsynet, u.å.). Da kan det bli bestemt et utlegg. Det betyr at staten kan ta penger fra deg, for eksempel ved å trekke dem fra lønna di. Da får du en betalingsanmerkning. Det er en merknad som kredittopplysningsbyråene, altså selskaper som sjekker om folk betaler regningene sine, registrerer på deg. Med en betalingsanmerkning er det vanskelig å få lån, kreditt og abonnementer, for eksempel et mobilabonnement (Skatteetaten, u.å.). Når gjelden er betalt, blir merknaden fjernet, men det kan ta litt tid (Skatteetaten, u.å.)."
+    },
+    {
+      "type": "header",
+      "text": "Slik holder du oversikten"
+    },
+    {
+      "type": "text",
+      "content": "«Kjøp nå, betal senere» er ikke farlig i seg selv. Problemet er at det er så lett. Du trykker på en knapp, og varen er på vei. Regningen kommer senere, ofte i en app eller på e-post, og den kan lett forsvinne mellom andre meldinger. Har du handlet mange små ting, kan du fort miste oversikten over hvor mye du skylder til sammen."
+    },
+    {
+      "type": "text",
+      "content": "Noen enkle vaner gjør det mye tryggere:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Betal med en gang hvis du har pengene. Da finnes det ingen regning å glemme.",
+        "Legg inn forfallsdatoen i kalenderen på mobilen når du velger å betale senere.",
+        "Sjekk appen eller e-posten din for regninger minst én gang i uka.",
+        "Spør deg selv om du hadde kjøpt varen hvis du måtte betale den i dag.",
+        "Har du glemt en regning, betal den så fort du oppdager det. Hvert trinn gjør den dyrere."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Den siste regelen er kanskje den viktigste. Det koster ingenting å betale i tide. Det er ventingen som koster. Et [budsjett](/samfunnskunnskap/personlig-okonomi/budsjett) kan hjelpe deg med å se hvor mye du faktisk har å bruke hver måned, slik at regningene ikke kommer som en overraskelse."
+    },
+    {
+      "type": "text",
+      "content": "Det er også lurt å tenke over hvorfor du får lyst til å handle. Reklame og påvirkere i sosiale medier kan få oss til å kjøpe ting vi egentlig ikke trenger. Les mer om det i artikkelen om [kjendismakt](/samfunnskunnskap/mennesket-kultur-samfunn/kjendismakt). Når knappen «betal senere» står rett ved siden av, er det enda lettere å si ja."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom setter påminnelse om faktura i mobilkalenderen",
+      "caption": "En påminnelse i kalenderen kan spare deg for mange hundre kroner."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "«Kjøp nå, betal senere» betyr at du får varen nå og betaler om 14 eller 30 dager. Det er et lån, og derfor gjelder det regler og en aldersgrense på 18 år. Betaler du i tide, koster det ingenting. Glemmer du regningen, kommer purring, inkassovarsel og inkasso, og hvert trinn kan legge til gebyrer. En regning på 200 kroner kan vokse til over 600 kroner. Til slutt kan du få en betalingsanmerkning som gjør det vanskelig å få lån eller mobilabonnement. Den beste regelen er enkel: betal med en gang, eller sett en påminnelse."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Finanstilsynet. (u.å.). *Inkassovirksomhet*. Hentet 08.11.2026 fra [finanstilsynet.no](https://finanstilsynet.no/forbrukerinformasjon/inkassovirksomhet)",
+          "Finanstilsynet. (2026). *Oversikt over utenrettslige inndrivingskostnader*. Hentet 08.11.2026 fra [finanstilsynet.no](https://finanstilsynet.no/forbrukerinformasjon/inkassovirksomhet/oversikt-over-utenrettslige-inndrivingskostnader)",
+          "Forbrukerrådet. (2025). *Spørsmål og svar om lån og gjeld*. ung.no. Hentet 08.11.2026 fra [ung.no](https://www.ung.no/oss/602Ipm7UJsSe5B4njDLpox)",
+          "Forbrukertilsynet. (2025). *Veiledning om lovkrav ved tilbud av tjenester som innebærer «kjøp nå, betal senere»*. [forbrukertilsynet.no](https://forbrukertilsynet.no/wp-content/uploads/2025/03/veiledning-om-lovkrav-ved-tilbud-av-tjenester-som-innebaerer-kjop-na-betal-senere-1.pdf)",
+          "Langseth, H. (2026). *Inkasso*. Store norske leksikon. Hentet 08.11.2026 fra [snl.no/inkasso](https://snl.no/inkasso)",
+          "Skatteetaten. (u.å.). *Betalingsanmerkninger*. Hentet 08.11.2026 fra [skatteetaten.no](https://www.skatteetaten.no/person/betaling-og-innkreving/om-innkreving/tvangsinnkreving/betalingsanmerkninger/)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva skjer når du trykker «betal senere» i en nettbutikk, og hvor lang tid får du vanligvis på deg?",
+          "Hvorfor regner Forbrukertilsynet «kjøp nå, betal senere» som et lån?",
+          "Nevn de tre trinnene fra en glemt regning til inkasso. Hvor lang frist får du på hvert trinn?",
+          "Hva er en betalingsanmerkning, og hva kan den gjøre vanskelig for deg?"
+        ],
+        "reflekter": [
+          "Forklar med egne ord hvorfor T-skjorta til Sara ble over tre ganger så dyr, selv om prisen på varen ikke endret seg.",
+          "Hvorfor tror du det er en aldersgrense på 18 år for å handle på kreditt?",
+          "Hvorfor tror du butikker og betalingsselskaper vil at knappen «betal senere» skal være så lett å trykke på?",
+          "Rundt 40 prosent av regningene som går til inkasso er på under 500 kroner. Hva kan det si om hvorfor folk havner hos inkasso?"
+        ],
+        "gaaVidere": [
+          "Se på kassen i en nettbutikk du kjenner. Hvilke betalingsvalg finnes? Står det noe om renter eller gebyrer, og hvor lett er det å finne?",
+          "Diskuter i klassen: Bør «betal senere» være forbudt for unge under 20 år? Finn argumenter for og mot.",
+          "Lag en kort huskeliste eller en plakat med råd til en venn som skal begynne å handle på nett."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er «kjøp nå, betal senere» egentlig?",
+            "options": [
+              "En gave fra butikken",
+              "Et lite lån der du får utsette betalingen",
+              "En rabatt på varen",
+              "En måte å slippe å betale på"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Forbrukertilsynet regner «kjøp nå, betal senere» som en kredittavtale, altså et lån."
+          },
+          {
+            "question": "Hva er det høyeste lovlige purregebyret i 2026?",
+            "options": [
+              "10 kroner",
+              "38 kroner",
+              "200 kroner",
+              "750 kroner"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ifølge Finanstilsynet er det høyeste gebyret for purring og inkassovarsel 38 kroner i 2026."
+          },
+          {
+            "question": "Hva skjer hvis du betaler innen fristen i inkassovarselet?",
+            "options": [
+              "Du må likevel betale salær til inkassoselskapet",
+              "Regningen dobles",
+              "Du slipper regningen fra inkassoselskapet",
+              "Du får betalingsanmerkning"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Betaler du innen fristen i inkassovarselet, kan du ikke få regningen fra inkassoselskapet."
+          },
+          {
+            "question": "Hvorfor er en betalingsanmerkning et problem?",
+            "options": [
+              "Den gjør det vanskelig å få lån og mobilabonnement",
+              "Den gir deg høyere lønn",
+              "Den gjelder bare bedrifter",
+              "Den forsvinner aldri"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Med en betalingsanmerkning er det vanskelig å få lån, kreditt og abonnementer. Den blir fjernet når gjelden er betalt."
+          },
+          {
+            "question": "Hvor gammel må du være for å handle på kreditt?",
+            "options": [
+              "13 år",
+              "15 år",
+              "16 år",
+              "18 år"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Du må være 18 år for å ta opp lån og handle på kreditt. De som er under 18, kan ikke ta opp gjeld."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
