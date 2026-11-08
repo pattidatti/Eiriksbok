@@ -1,5 +1,5 @@
 {
-  "buildId": 26639345755187,
+  "buildId": 96127099323913,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4885,6 +4885,9 @@
     "budsjett": [
       "content/samfunnskunnskap/personlig-okonomi/budsjett.json"
     ],
+    "kjop-na-betal-senere": [
+      "content/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere.json"
+    ],
     "kreditt-og-forbrukslan": [
       "content/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan.json"
     ],
@@ -6613,6 +6616,7 @@
     "samfunnskunnskap/okonomi/skatt": "content/samfunnskunnskap/okonomi/skatt.json",
     "samfunnskunnskap/okonomi/tilbud-og-ettersporsel": "content/samfunnskunnskap/okonomi/tilbud-og-ettersporsel.json",
     "samfunnskunnskap/personlig-okonomi/budsjett": "content/samfunnskunnskap/personlig-okonomi/budsjett.json",
+    "samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere": "content/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere.json",
     "samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan": "content/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan.json",
     "samfunnskunnskap/personlig-okonomi/lonnsslippen": "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",

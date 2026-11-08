@@ -2587,6 +2587,20 @@
                 "gjeld"
               ],
               "createdDate": "2026-11-07T00:00:00Z"
+            },
+            {
+              "id": "kjop-na-betal-senere",
+              "title": "Kjøp nå, betal senere: Når regningen vokser",
+              "description": "Hva «betal senere» egentlig er, og hvordan en glemt faktura vokser gjennom purring, inkassovarsel og inkasso.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "personlig økonomi",
+                "faktura",
+                "inkasso",
+                "gjeld",
+                "netthandel"
+              ],
+              "createdDate": "2026-11-08T00:00:00Z"
             }
           ]
         },
