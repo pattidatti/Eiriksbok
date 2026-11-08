@@ -73,7 +73,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/sammenligning/mat-og-renhet-01.webp",
             "alt": "Et dekket langbord sett ovenfra med mange ulike retter",
             "caption": "Det samme bordet ser helt ulikt ut avhengig av hvem som skal spise ved det."
         },
@@ -552,7 +552,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/sammenligning/mat-og-renhet-02.webp",
             "alt": "Elever i en skolekantine velger mat fra ulike fat",
             "caption": "I en norsk skolekantine møtes flere av disse reglene hver dag."
         },
@@ -587,7 +587,7 @@
         },
         {
             "type": "image",
-            "src": "/images/placeholder.webp",
+            "src": "/images/sammenligning/mat-og-renhet-03.webp",
             "alt": "Mange hender rekker etter fat på et fellesmåltid",
             "caption": "Et måltid er også en beskjed om hvem som hører sammen."
         },
