@@ -4,6 +4,7 @@
     "kilde": "/historie/norge-i-moderne-tid/misjonsbevegelsen",
     "bilde": "/images/placeholder.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-08", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "lyngdal",
@@ -33,6 +34,10 @@
                     "tittel": "MISJON",
                     "undertittel": "Misjonsbevegelsen: fra syforeningen i Lyngdal til Madagaskar",
                     "bilde": "/images/placeholder.webp",
+                    "tall": [
+                        { "verdi": 4500, "etikett": "misjonsforeninger i 1940", "fraBeat": 1 },
+                        { "verdi": 112500, "etikett": "medlemmer til sammen i 1940", "fraBeat": 2 }
+                    ],
                     "sporsmal": { "tekst": "Hjelp, makt eller begge deler?", "fraBeat": 3 }
                 }
             },
@@ -52,7 +57,7 @@
         {
             "id": "misjon",
             "kapittel": "Hva er misjon?",
-            "visual": { "type": "MisjonKart", "props": { "modus": "begrep" } },
+            "visual": { "type": "MisjonBegrep" },
             "replikker": [
                 {
                     "si": "Hva betyr egentlig misjon? Misjon betyr å spre et religiøst budskap på en planlagt måte."
@@ -142,7 +147,7 @@
             "visual": { "type": "MisjonKart", "props": { "modus": "madagaskar" } },
             "replikker": [
                 {
-                    "si": "Det største misjonslandet ble Madagaskar. Det er en stor øy øst for Afrika."
+                    "si": "Det største misjonslandet til Misjonsselskapet ble Madagaskar. Det er en stor øy øst for Afrika."
                 },
                 {
                     "si": "Den norske misjonen der startet i 1866. Nordmennene bygde kirker, skoler og helsetilbud."
@@ -154,7 +159,7 @@
         },
         {
             "id": "frankrike",
-            "visual": { "type": "MisjonKart", "props": { "modus": "frankrike" } },
+            "visual": { "type": "MisjonTidslinje" },
             "replikker": [
                 {
                     "si": "Men mens misjonærene arbeidet på øya, kjempet europeiske stormakter, store og mektige land, om den."
@@ -184,7 +189,7 @@
                     "si": "Samtidig holdt de norske skolene og kirkene liv i gassisk, språket til folk på Madagaskar. Ellers tok fransk mer og mer over."
                 },
                 {
-                    "si": "Misjonsskolen i Stavanger tok inn afrikanske studenter allerede fra 1860-tallet. I 1950 ble kirken misjonen hadde bygd på Madagaskar, selvstendig."
+                    "si": "Misjonsskolen i Stavanger tok inn afrikanske studenter allerede fra 1860-tallet. I 1950 ble den lutherske kirken på Madagaskar selvstendig."
                 },
                 {
                     "si": "Hvordan skal vi se på misjonen i dag? Som hjelp, som makt, eller som en blanding av begge deler?"
@@ -198,7 +203,7 @@
             "visual": { "type": "MisjonStua", "props": { "modus": "vekst" } },
             "replikker": [
                 {
-                    "si": "Misjonærene trengte penger. Pengene kom fra vanlige folk i små foreninger i Norge."
+                    "si": "Misjonærene trengte penger. Mye av pengene kom fra vanlige folk i små foreninger i Norge."
                 },
                 {
                     "si": "Det fantes noen få kvinneforeninger før Lyngdal: i Christiania i 1839, i Drammen i 1840 og i Trondheim i 1843."
@@ -234,7 +239,7 @@
                     "si": "Misjonsselskapet var imot kvinnelige prester. Men i 1904 fikk kvinnene stemmerett i selskapet."
                 },
                 {
-                    "si": "Ute på misjonsfeltene ble kvinnene viktige i helsearbeidet. Mange utdannet seg til sykepleiere og leger for å kunne reise ut."
+                    "si": "Ute på misjonsfeltene ble kvinnene viktige i helsearbeid og sosialt arbeid. Mange utdannet seg til sykepleiere og leger for å kunne reise ut."
                 }
             ]
         },
@@ -262,7 +267,7 @@
             "visual": { "type": "MisjonStolper", "props": { "modus": "topp" } },
             "replikker": [
                 {
-                    "si": "Bevegelsen fortsatte å vokse. I 1940 var det rundt 4500 misjonsforeninger i Norge."
+                    "si": "I 1940 var det rundt 4500 misjonsforeninger i Norge."
                 },
                 { "si": "Til sammen hadde de omtrent 112 500 medlemmer." },
                 {

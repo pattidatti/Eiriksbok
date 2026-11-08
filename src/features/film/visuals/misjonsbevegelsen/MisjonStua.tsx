@@ -48,7 +48,7 @@ function kameraFor(modus: Modus, beat: number, t: number): Kamera {
     }
     if (modus === 'vekst') {
         const bane = Math.min(t, 14) * 0.03;
-        const avstand = [6, 15, 28, 58, 70, 72][Math.min(beat, 5)];
+        const avstand = [6, 15, 28, 58, 70, 104][Math.min(beat, 5)];
         const vinkel = 0.75 + bane;
         return {
             pos: v(Math.sin(vinkel) * avstand, avstand * 0.75 + 1.5, Math.cos(vinkel) * avstand),
@@ -436,7 +436,8 @@ function Foreninger({ beat }: { beat: number }) {
         t.instanceMatrix.needsUpdate = true;
     });
 
-    const ringer = (beat === 0 ? [0] : beat === 1 ? [0, 1, 2, 3] : []).map((i) => pts[kvinner[i]]);
+    // Beat 1: bare de tre foreningene fra før Lyngdal får ring, så eleven teller tre.
+    const ringer = (beat === 0 ? [0] : beat === 1 ? [1, 2, 3] : []).map((i) => pts[kvinner[i]]);
     return (
         <>
             <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
@@ -453,8 +454,8 @@ function Foreninger({ beat }: { beat: number }) {
             </instancedMesh>
             {ringer.map((p, i) => (
                 <mesh key={i} position={[p.x, 0.03, p.z]} rotation={[-Math.PI / 2, 0, 0]}>
-                    <ringGeometry args={[i === 0 ? 1.4 : 0.9, i === 0 ? 1.75 : 1.15, 32]} />
-                    <meshBasicMaterial color={i === 0 ? '#facc15' : '#fb923c'} />
+                    <ringGeometry args={[beat === 0 ? 1.4 : 0.9, beat === 0 ? 1.75 : 1.15, 32]} />
+                    <meshBasicMaterial color={beat === 0 ? '#facc15' : '#fb923c'} />
                 </mesh>
             ))}
         </>

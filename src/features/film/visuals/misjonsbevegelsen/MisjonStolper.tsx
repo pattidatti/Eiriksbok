@@ -4,7 +4,7 @@ import { Teller, TelleTall } from '../shared';
 
 /**
  * Hvor stor bevegelsen ble, og hvor liten den er i dag.
- * - `topp`: foreningene i 1882, 1904 og 1940 som stolper, medlemstallet i 1940, og et
+ * - `topp`: foreningene i 1882 og 1940 som stolper, medlemstallet i 1940, og et
  *   stiplet tillegg for at tallet kan ha vært høyere.
  * - `idag`: små foreninger som forsvinner, Misjonsselskapets foreninger i 2006 og 2017,
  *   misjonærene som blir færre, gjenbruksbutikkene og pengene fra Norad.
@@ -65,7 +65,7 @@ function Stolpe({
                         style={{ background: d.farge }}
                     >
                         {d.navn && (
-                            <span className="px-2 text-center leading-tight text-xl">
+                            <span className="px-2 text-center leading-tight text-2xl">
                                 <TelleTall verdi={d.verdi} forsinkelse={forsinkelse + i * 0.6} />
                                 <br />
                                 {d.navn}
@@ -75,7 +75,7 @@ function Stolpe({
                 ))}
             </div>
             <div className="mt-2 text-3xl font-black text-slate-900">{aar}</div>
-            <div className="text-lg font-semibold text-slate-500 text-center leading-tight h-12">
+            <div className="text-2xl font-bold text-slate-600 text-center leading-tight h-14">
                 {deler.length === 1 ? (
                     <>
                         <TelleTall verdi={sum} forsinkelse={forsinkelse} /> {etikett}
@@ -102,7 +102,6 @@ function Topp({ beat }: { beat: number }) {
                         { verdi: 830, farge: MANN, navn: 'menn' },
                     ]}
                 />
-                <Stolpe aar="1904" etikett="kvinneforeninger" maks={5200} deler={[{ verdi: 3500, farge: KVINNE }]} forsinkelse={0.4} />
                 <Stolpe aar="1940" etikett="foreninger" maks={5200} deler={[{ verdi: 4500, farge: ALLE }]} forsinkelse={1.2} ekstra={beat >= 2} />
             </div>
             <div className="absolute right-[4%] top-0 bottom-0 w-[34%] flex flex-col justify-center gap-5">
@@ -110,13 +109,13 @@ function Topp({ beat }: { beat: number }) {
                     {beat >= 1 && (
                         <motion.div key="medlemmer" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="flex flex-col items-center gap-3">
                             <Teller verdi={112500} etikett="medlemmer i 1940" prefiks="ca. " />
-                            <div className="grid grid-cols-10 gap-1.5 w-full">
-                                {Array.from({ length: 40 }, (_, i) => (
+                            <div className="grid gap-[3px] w-full" style={{ gridTemplateColumns: 'repeat(30, minmax(0, 1fr))' }}>
+                                {Array.from({ length: 330 }, (_, i) => (
                                     <motion.div
                                         key={i}
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: 0.8 + i * 0.03 }}
+                                        transition={{ delay: 0.8 + (i % 30) * 0.03 + Math.floor(i / 30) * 0.05 }}
                                         className="aspect-square rounded-full"
                                         style={{ background: ALLE }}
                                     />
@@ -138,7 +137,7 @@ function Topp({ beat }: { beat: number }) {
                     )}
                     {beat === 0 && (
                         <motion.div key="vokser" exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }} className="px-5 py-3 rounded-2xl bg-slate-900 text-white text-3xl font-black shadow-xl">
-                            Bevegelsen vokser
+                            Rundt 4500 i 1940
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -177,8 +176,8 @@ function IDag({ beat }: { beat: number }) {
                         </motion.div>
                     ) : (
                         <motion.div key="stolper" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-end justify-around h-full border-b-4 border-slate-300">
-                            <Stolpe aar="2006" etikett="lokale foreninger" maks={3200} deler={[{ verdi: 2800, farge: ALLE }]} />
-                            <Stolpe aar="2017" etikett="lokale foreninger" maks={3200} deler={[{ verdi: 1500, farge: GRA }]} forsinkelse={1.2} />
+                            <Stolpe aar="2006" etikett="foreninger" maks={3200} deler={[{ verdi: 2800, farge: ALLE }]} />
+                            <Stolpe aar="2017" etikett="foreninger" maks={3200} deler={[{ verdi: 1500, farge: GRA }]} forsinkelse={1.2} />
                         </motion.div>
                     )}
                 </AnimatePresence>

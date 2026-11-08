@@ -93,6 +93,7 @@ export function MisjonPlakat({ beat }: VisualProps) {
                             ))}
                             <rect x={980} y={170} width={440} height={20} fill="#6b7280" />
                             <rect x={980} y={610} width={440} height={20} fill="#6b7280" />
+                            <rect x={960} y={645} width={480} height={140} rx={16} fill={BLEKK} />
                             <text x={1200} y={700} textAnchor="middle" fontSize={44} fontWeight={900} fill="#ffffff" stroke={BLEKK} strokeWidth={8} paintOrder="stroke">
                                 Hans Nielsen Hauge
                             </text>
