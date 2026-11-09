@@ -104,6 +104,9 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
 - **Samme visual i høyst 4 scener, og høyst ett Punktkort.** (Tittelkort og Sluttkort teller
   ikke.) `validate-film` stopper filmen som bryter det. Et kart med sju moduser er fortsatt ett
   kart for eleven. Punktkort er lysbilder; vis heller det som skjer.
+  En egen visual i fire scener bør ha minst én modus som ser helt annerledes ut, ellers trekker
+  vurdereren Variasjon. Bryter et kart regelen, flytt de minst stedbundne modusene til en ny,
+  lett 2D-visual og slett dem fra kartet i samme PR.
 - **Begynn i en scene, ikke med en tittel.** Titanic åpner på havet klokka 23.38, og tittelen
   kommer i scene 2. Første setning skal sette eleven et sted.
 - **Slutt med hva det betyr.** Sluttkort med 2-4 store setninger, og den siste er uthevet.
@@ -114,6 +117,15 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
   eleven. Gjentakelse er lov i tale.
 - Ekte æ, ø, å. Aldri tankestrek eller em-dash. Ingen markdown.
 - Hvert fagord forklares i samme replikk.
+- **Ord som høres ut som noe annet.** Rett etter at filmen har telt («tre røtter»), høres «tre»
+  (treverk) ut som et tall. «Slaver» er både treller og de slaviske folkene: skriv «det slaviske
+  folket» om folket.
+- **Syn, hypoteser og parter trenger avsender i hver scene, også i bildet.** Artikkelens «ifølge
+  denne hypotesen» står én gang over flere avsnitt, men filmen bytter scene, og en overskrift
+  som står alene leses som fakta. Gi hver scene og hvert kort sin markør («Østerrikerne:», «De
+  mener:»), sett spørsmålstegn i kapittelnavn som er påstander, bruk samme avsender som
+  artikkelen («israelske myndigheter», ikke «mange israelere»), og sett navnet på en tredje
+  part (FN) på kortet. Faktasjekken finner flest feil nettopp i tekst i bildet.
 - **Bare fakta fra artikkelen.** Artikkelen er kildebelagt, filmen er det ikke. Du skriver om
   for øret, du legger ikke til nye fakta. Et nytt tall krever `utenforArtikkel` med kilde, og
   da bør det være en sammenligning (fjell, fotballbaner), ikke en ny påstand.
@@ -132,7 +144,9 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
 Bildet er også en påstand. Eleven teller, måler og sammenligner det som står i bildet.
 
 - **Si et antall, vis nøyaktig så mange.** Sier stemmen «fem trinn», skal eleven kunne telle fem.
-  En bunn eller nullsone tegnet som en søyle blir telt med; merk trinnene med nummer.
+  En bunn eller nullsone tegnet som en søyle blir telt med; merk trinnene med nummer. Det samme
+  gjelder myntstabler og andre symbolske mengder: 1000 mot 1100 kroner er 10 mot 11 mynter,
+  ikke 5 mot 6.
 - **Ord som «de fleste» og «gikk lengst» tegnes ikke som tellbare figurer eller stolper med
   lengde.** Da leser eleven et forhold (60 mot 3) som artikkelen ikke gir. Bruk en tett, utellbar
   mengde, eller ord. Det gjelder også egne visualer, ikke bare Prikkfelt.
@@ -141,6 +155,13 @@ Bildet er også en påstand. Eleven teller, måler og sammenligner det som står
 - **Sammenlign med den gruppen artikkelen sammenligner med.** Sier artikkelen «resten av
   befolkningen» og gir ikke det tallet, ikke sett snittet for alle ved siden av. La stemmen bære
   sammenligningen.
+- **Et kort med en annen enhet enn kurven** (12 millioner født på en kurve over barn per kvinne)
+  sier hva tallet er («fødte»), og står ved riktig år på x-aksen. Ellers leser eleven det som et
+  punkt på kurven.
+- **Tall fra koden til en interaktiv komponent i artikkelen** (HybelBudsjett, Minstebelopsfellen)
+  regnes som artikkelen, men før dem i `utenforArtikkel` med komponentnavnet, for
+  `validate-film` ser dem ikke. En kurve regnet med komponentens modell merkes «Tenkt
+  eksempel», ikke «Skisse».
 - **En kurve mellom to endepunkter er en skisse.** Gir artikkelen bare start og slutt, merk
   grafen «Skisse: bare tallene som er skrevet, er ekte», og sett hvert tall der artikkelen
   plasserer det i tid. Tall som er målt ulikt, legges ikke på samme akse uten å si det.
@@ -157,8 +178,8 @@ Alle tar `fraBeat`: elementet vises fra den replikken (0-basert) og ut scenen.
 
 | Visual | Bruk når | Props |
 |---|---|---|
-| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false, prefiks?}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler, 72 år), `prefiks: "minst"` / `"over"` når artikkelen sier det (skriv da ikke «minst» i etiketten). Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). Skriften krymper selv for lange ord, men hold `tittel` kort og legg resten i `undertittel`. |
-| `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?, visTall?: false}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. Forklaringen viser `farget` og `total - farget` foran etikettene; er prikkene en skala (100 like store grupper, «tusenvis») eller en rate (344 av 1000 døde, da blir resten «656 levde», en ny påstand), sett `visTall: false` og la stemmen si skalaen. Med tall må `restEtikett` gi mening sammen med `total - farget` («99 friske», ikke «99 folket i området»). En andel av noe annet enn figurene (hvem som sto bak, ikke hvem som ble rammet) trenger et eget bilde. Har alle stegene samme `total` og `farget` (bare fargen skifter), står bildet stille; `validate-film` stopper det. Vis da hendelsen med en egen visual. |
+| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false, prefiks?}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler, 72 år), `prefiks: "minst"` / `"over"` når artikkelen sier det (skriv da ikke «minst» i etiketten). Sier replikken «minst 70» og tallet mangler `prefiks`, stopper `validate-film` det. Undertittelen har en mørk plate og tåler lyse foto. Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). Skriften krymper selv for lange ord, men hold `tittel` kort og legg resten i `undertittel`. |
+| `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?, visTall?: false}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. Forklaringen viser `farget` og `total - farget` foran etikettene; er prikkene en skala (100 like store grupper, «tusenvis») eller en rate (344 av 1000 døde, da blir resten «656 levde», en ny påstand), sett `visTall: false` og la stemmen si skalaen. Med tall må `restEtikett` gi mening sammen med `total - farget` («99 friske», ikke «99 folket i området»). En andel av noe annet enn figurene (hvem som sto bak, ikke hvem som ble rammet) trenger et eget bilde. Har alle stegene samme `total` og `farget` (bare fargen skifter), står bildet stille; `validate-film` stopper det. Vis da hendelsen med en egen visual. Figurene skaleres etter største `total`, så bland ikke totaler som spriker mer enn 10 ganger (9 og 400); `validate-film` stopper det. |
 | `Livbater` | Kapasitet mot bruk (seter, plasser, senger) | `bater: [{navn, plasser, brukt, fraBeat}]` |
 | `Andeler` | Andel per gruppe som stolper, til slutt to grupper som ringer | `tittel`, `kilde?`, `rader: [{etikett, reddet, totalt, fraBeat, farge}]`, `sammenlign?: {fraBeat, venstre, hoyre}` |
 | `Punktkort` | 2-4 følger, regler eller grunner (`validate-film` stopper flere enn 4). Tiltak og løsninger på slutten av en film vises heller med filmens egne visualer i en ny modus | `tittel`, `punkter: [{ikon, tittel, tekst?, fraBeat}]`. Ikon: `livbat`, `radio`, `is`, `avtale`, `skip`, `penger`, `hest`, `haer`, `stjerne` |
@@ -184,7 +205,9 @@ Velg det artikkelen handler om **og som kan vises**:
   per beat.
 - **Et kart (d3-geo):** hvor ting skjedde, ruter, fronter, grenser som flytter seg. Hent
   verdenskartet med `useFilmVerden()` fra `src/features/film/kart/` (lokalt, aldri CDN):
-  - Uten argument gir det det grove kartet (1:110 mill.). Det holder for verden og store regioner.
+  - Uten argument gir det det grove kartet (1:110 mill.). Det holder for verden og store regioner,
+    men ikke når et lite land skal fargelegges: Danmark ble en tynn flik øst for Jylland. Gi da
+    utsnittet, også på et regionkart.
   - Zoomer kartet inn på et lite område (en landsdel, en fjord, en by), gi utsnittet:
     `useFilmVerden([[vest, sør], [øst, nord]])`. Da får du det fine kartet (1:50 mill., med
     fjorder og øyer), men bare landene i utsnittet. Har kartet flere moduser, gi utsnittet for
@@ -331,6 +354,25 @@ streng.
 37. **`whitespace-nowrap` i en DOM-boks** kuttes i bildekanten når faktasjekken gjør
     merkelappen lengre. Ta alle scener med endret tekst i bildet på nytt etter rettelsene,
     ikke bare de med endrede replikker.
+38. **`motion.div` som fylles fra et `left`-punkt** (en del i høyre ende av en søyle) trenger
+    `width` i `style`. Uten den blir feltet usynlig, og ingen port melder det.
+39. **Halvtak og hvelv av `cylinderGeometry`** med `thetaLength: Math.PI` trenger
+    `rotation={[-Math.PI / 2, 0, 0]}` og `thetaStart: -Math.PI / 2`. Med `[PI/2, 0, PI/2]`
+    (Euler XYZ roterer Z først) ligger aksen på tvers, og hvelvet skjærer gjennom rommet.
+40. **`fitExtent` med et utsnitt som er høyere enn 16:9**, sammen med
+    `preserveAspectRatio="xMidYMid slice"`, kutter nord og sør uten varsel (Nord-Afrika
+    forsvant). Velg et utsnitt litt bredere enn 16:9 i projeksjonens mål, eller bruk `meet`.
+41. **`planeGeometry` vises bare fra forsiden.** En dreid flate (en foss) var usynlig fordi
+    kameraet så på baksiden. Snu dreiningen mot kameraet, eller bruk `side={THREE.DoubleSide}`.
+42. **Kort i hjørnene av en SVG med `meet`** på 1600x900 ligger helt i bildekanten, for flaten
+    har ingen marg i 16:9. Plasser kort ut fra tegningen (ved plattformen, skipet), og sjekk at
+    kortet ikke dekker det det forklarer.
+43. **Figurer som glir mot målet med `damp`** står på forrige plass når eleven hopper til en
+    beat. En handling som må synes på en bestemt beat, settes rett på plass når beaten starter.
+    `shots-film` venter nå til kameraet har glidd fram, men et vidt oversiktsbilde trenger
+    likevel god margin i kameramålet.
+44. **drei-`<Html>` over visualens egen DOM-overskrift** ble ikke alltid fanget av `shots-film`
+    når overlappet var lite. Skjul merket i beatene der det kan nå overskriften (som punkt 9).
 
 ---
 
@@ -360,7 +402,8 @@ hvert ark** og sjekk mot rubrikken. Les arkene, ikke enkeltbildene.
 
 `shots-film` måler også all tekst i bildet (også merkelapper over 3D) og stopper når tekst
 overlapper annen tekst (også to merkelapper på samme linje som så vidt går inn i hverandre),
-når to SVG-merkelapper på samme linje står kloss inntil hverandre, når SVG-tekst stikker ut av kortet sitt (en `rect` rett før teksten), når SVG-tekst ligger under
+når to SVG-merkelapper på samme linje står kloss inntil hverandre, når SVG-tekst stikker ut av kortet sitt (en `rect` rett før teksten), når en fylt SVG-figur er
+tegnet oppå SVG-tekst, når SVG-tekst ligger under
 en HTML-boks med bakgrunn, eller når tekst er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
 mappe. Rett dem og ta de scenene på nytt med `--scener 3,7`: de andre scenenes bilder og ark
 blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken ikke.
@@ -380,8 +423,9 @@ Vurderingen gjøres av **to ferske underagenter** som ikke har skrevet filmen og
 `film-grunnlag` tar med artikkelens nøkkelpunkter (`details`) og alle blokkene (også sitater,
 faktabokser, `expandable` og interaktive komponenter, også tekst som bare står i komponentens
 kode, som valgene i RubiconChoice), teksten i hver scenes visual-props («Tekst i bildet») og
-teksten i koden til filmens egne visualer (også `data.ts`). Styreverdier (`tone`, `farge`,
-hex-farger) er tatt bort. Tekst som bygges av variabler (`${tall} år`), ser den ikke.
+teksten i koden til filmens egne visualer (også `data.ts`). Tallene i komponent-props
+(punktene i en PlotGraph) og tallkonstanter i komponentkoden (`{ navn: 'Husleie', belop: 5000 }`)
+er med. Styreverdier (`tone`, `farge`, hex-farger) er tatt bort. Tekst som bygges av variabler (`${tall} år`), ser den ikke.
 
 Bildene tas på pause, så kontrollinja under bildet viser alltid første kapittel og 0:00. Si
 det til vurdereren, så den ikke melder det som en feil.

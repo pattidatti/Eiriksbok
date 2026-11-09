@@ -39,6 +39,8 @@ Fullfør jobbene i rekkefølge. Avslutt ALDRI uten Jobb 6 (rapporten).
 date -u +"%Y-%m-%d %H:%M UTC" | tee /tmp/start.txt
 git fetch origin main && git checkout -B work origin/main
 npm ci 2>&1 | tail -3
+# sharp (kontaktarkene) laster ned libvips og kan få 504 via proxyen. Da: npm ci --ignore-scripts,
+# og prøv (cd node_modules/sharp && node install/libvips). Uten sharp lager shots-film arkene med Playwright.
 npx playwright install --with-deps chromium 2>&1 | tail -2 || npx playwright install chromium 2>&1 | tail -2
 ```
 
@@ -142,7 +144,9 @@ variasjonsreglene mest først), så filmer under 22/25. For den filmen:
    samme PR. Ellers blir den liggende og ser i bruk ut.
 
 PR-tittel `film-forbedring: <Tittel> (<fag>)`. Samme smale diff: manuset og filmens egen
-visuals-mappe.
+visuals-mappe. Rediger det eksisterende manuset som tekst (strengbytte), ikke med
+`json.dumps` eller `prettier --write`: de bretter ut alle de kompakte `{ "si": ... }`-objektene
+og eldre TSX, og diffen blir tre ganger så stor.
 
 ### Hopp over
 
@@ -207,6 +211,8 @@ Skriv den siste vurderingen inn i manuset, rett etter `utenforArtikkel`:
 ```json
 "vurdering": { "dato": "2026-10-18", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
 ```
+
+Regn ut `sum` selv fra aksene (vurdereren har oppgitt feil sum). `validate-film` stopper en sum som ikke stemmer.
 
 **Når noe ikke blir grønt** (tsc, lint, validator, eller en visual som krasjer), gå ned trappa.
 Ikke start på nytt:

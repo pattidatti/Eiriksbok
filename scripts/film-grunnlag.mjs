@@ -9,7 +9,8 @@
 //
 // Med kommer også artikkelens nøkkelpunkter (`details`), teksten i interaktive komponenter
 // som har teksten sin i koden (RubiconChoice), og teksten i filmens egne visualer (overskrifter
-// og kort i koden). Det er påstander filmen viser, og faktasjekken skal se dem.
+// og kort i koden). Det er påstander filmen viser, og faktasjekken skal se dem. Tall tas også med:
+// tallene i komponent-props (punktene i en PlotGraph) og tallkonstanter i komponentkoden.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -24,7 +25,7 @@ const manus = JSON.parse(fs.readFileSync(path.join(ROT, 'src/features/film/manus
 const artikkel = JSON.parse(fs.readFileSync(path.join(ROT, 'public/content', `${sti}.json`), 'utf8'));
 
 // Styreverdier, ikke tekst eleven ser. Faktasjekkeren meldte `tone: "rod"` som en merkelapp.
-const STYRE_PROPS = ['src', 'image', 'bilde', 'icon', 'ikon', 'type', 'name', 'id', 'link', 'url', 'color', 'modus', 'farge', 'restFarge', 'tone', 'figur', 'omtrent', 'visTall', 'uthevet', 'lyd', 'side', 'variant'];
+const STYRE_PROPS = ['fraBeat', 'src', 'image', 'bilde', 'icon', 'ikon', 'type', 'name', 'id', 'link', 'url', 'color', 'modus', 'farge', 'restFarge', 'tone', 'figur', 'omtrent', 'visTall', 'uthevet', 'lyd', 'side', 'variant'];
 const FARGE = /^(#[0-9a-f]{3,8}|rgba?\(.*\)|hsla?\(.*\))$/i;
 
 /** Tekst ut av en innholdsblokk, også fra komponent-props (faktabokser, tidslinjer). */
@@ -33,12 +34,34 @@ function tekstFra(x, ut = []) {
         if (!FARGE.test(x.trim())) ut.push(x);
     }
     else if (Array.isArray(x)) x.forEach((y) => tekstFra(y, ut));
-    else if (x && typeof x === 'object')
+    else if (x && typeof x === 'object') {
+        // Tallene ved siden av teksten (punktene i en PlotGraph: x/y). Uten dem trodde
+        // vurdereren at prosenter og årstall fra artikkelens graf var diktet opp.
+        const tall = Object.entries(x).filter(([k, v]) => typeof v === 'number' && !STYRE_PROPS.includes(k));
+        if (tall.length) ut.push(`(${tall.map(([k, v]) => `${k}: ${v}`).join(', ')})`);
         for (const [k, v] of Object.entries(x)) {
             if (STYRE_PROPS.includes(k)) continue;
             tekstFra(v, ut);
         }
+    }
     return ut;
+}
+
+/**
+ * Tall i koden til en komponent: objekter med både tekst og tall (`{ navn: 'Husleie', belop: 5000 }`)
+ * og konstanter (`const INNTEKT = 8000`). Faktasjekkeren kunne ikke bekrefte tall filmen tok fra
+ * en interaktiv komponent i artikkelen (HybelBudsjett), for de står bare i koden.
+ */
+function tallIKode(fil) {
+    const kode = fs.readFileSync(fil, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+    const funn = [];
+    for (const m of kode.matchAll(/\{[^{}\n]*\}/g)) {
+        const t = m[0];
+        if (/(['"])[^'"\n]*\p{L}{3}[^'"\n]*\1/u.test(t) && /\b\w+\s*:\s*-?\d[\d_.]*\b/.test(t) && !/className|=>|style|stiffness|damping|delay|duration|ease/.test(t))
+            funn.push(t.replace(/\s+/g, ' ').trim());
+    }
+    for (const m of kode.matchAll(/^\s*(?:export\s+)?const\s+([A-ZÆØÅ][A-ZÆØÅ0-9_]+)\s*=\s*(-?\d[\d_.]*)\s*;/gmu)) funn.push(`${m[1]} = ${m[2]}`);
+    return [...new Set(funn)];
 }
 
 /**
@@ -82,8 +105,9 @@ const linjer = [`# Artikkelen: ${artikkel.title}`, ''];
 if (artikkel.details?.length) linjer.push('## Nøkkelpunkter (øverst i artikkelen)', '', ...artikkel.details.map((d) => `- ${d}`), '');
 function blokker(liste) {
     for (const blokk of liste ?? []) {
-        if (blokk.type === 'header') linjer.push('', `## ${blokk.text}`, '');
-        else if (blokk.type === 'subheader') linjer.push('', `### ${blokk.text ?? blokk.content}`, '');
+        // Overskriftene står i `text`, `content` eller `value` (eldre artikler). Før ble det «## undefined».
+        if (blokk.type === 'header') linjer.push('', `## ${blokk.text ?? blokk.content ?? blokk.value}`, '');
+        else if (blokk.type === 'subheader') linjer.push('', `### ${blokk.text ?? blokk.content ?? blokk.value}`, '');
         else if (blokk.type === 'text' || blokk.type === 'paragraph') linjer.push(blokk.content ?? blokk.text, '');
         else if (blokk.type === 'list') linjer.push(...(blokk.items ?? []).map((i) => `- ${i}`), '');
         else if (blokk.type === 'image') {
@@ -97,7 +121,11 @@ function blokker(liste) {
             // komponenter som tar alt fra props, har bare litt knappetekst; den hoppes over.
             const fil = komponentFil(blokk.name);
             const kt = fil ? tekstIKode(fil).filter((x) => !t.includes(x)) : [];
-            if (kt.length >= 8 && kt.length <= 150) linjer.push(`[${blokk.name}, tekst fra komponentens kode] ${kt.join(' | ')}`, '');
+            if (kt.length >= 8 && kt.length <= 150) {
+                linjer.push(`[${blokk.name}, tekst fra komponentens kode] ${kt.join(' | ')}`, '');
+                const tk = tallIKode(fil);
+                if (tk.length && tk.length <= 80) linjer.push(`[${blokk.name}, tall fra komponentens kode] ${tk.join(' | ')}`, '');
+            }
         } else if (Array.isArray(blokk.content)) {
             // expandable og andre blokker med egne underblokker.
             const { content, ...rest } = blokk;
