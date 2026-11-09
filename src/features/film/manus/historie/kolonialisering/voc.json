@@ -1,0 +1,219 @@
+{
+    "id": "voc",
+    "tittel": "VOC: Selskapet som ble en stat",
+    "kilde": "/historie/kolonialisering/voc",
+    "bilde": "/images/historie/kolonialisering/voc/hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-09", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "hjem",
+            "lyd": "hav",
+            "kapittel": "Krydderet",
+            "visual": { "type": "VocSkip", "props": { "modus": "hjem" } },
+            "replikker": [
+                { "si": "Det er slutten av 1500-tallet. Et nederlandsk skip seiler hjem etter en lang reise." },
+                { "si": "Det kommer fra Ostindia, det vi i dag kaller Sørøst-Asia." },
+                { "si": "I lasten ligger krydder, som muskat og nellik. I Europa er krydder svært dyrt." },
+                { "si": "Turen blir en suksess. Snart vil mange andre kjøpmenn gjøre det samme." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "VOC",
+                    "undertittel": "Det nederlandske ostindiske kompani, 1602 til 1799",
+                    "bilde": "/images/historie/kolonialisering/voc/hero.webp",
+                    "tall": [{ "verdi": 150, "etikett": "skip i flåten", "fraBeat": 2 }],
+                    "sporsmal": { "tekst": "Hvordan kunne et selskap få så mye makt?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Ut av denne handelen vokste VOC. Det står for det nederlandske ostindiske kompani." },
+                { "si": "Selskapet ble startet i 1602 og levde i nesten 200 år, helt til 1799." },
+                { "si": "På 1600- og 1700-tallet var VOC det største og rikeste selskapet i handelen med koloniene, landene europeerne tok kontroll over. VOC hadde rundt 150 skip og egne soldater." },
+                { "si": "Hvordan kunne et selskap få så mye makt? Og hvorfor gikk det likevel konkurs til slutt?" }
+            ]
+        },
+        {
+            "id": "kapplop",
+            "lyd": "stille",
+            "kapittel": "Kappløpet",
+            "visual": { "type": "VocKart", "props": { "modus": "kapplop" } },
+            "replikker": [
+                { "si": "På 1500-tallet var det portugiserne og spanjolene som styrte sjøhandelen til Asia." },
+                { "si": "De hadde nesten monopol på krydderhandelen. Monopol betyr at bare én får selge en vare." },
+                { "si": "Samtidig var Nederland i krig med Spania. Nederlenderne ville bli fri fra spansk styre." },
+                { "si": "Derfor ville de bryte monopolet. Det ville også gjøre dem sterkere i kampen mot Spania." }
+            ]
+        },
+        {
+            "id": "priskrig",
+            "visual": { "type": "VocKamre", "props": { "modus": "priskrig" } },
+            "replikker": [
+                { "si": "Hjemme i Nederland startet mange små handelsselskaper. Alle ville ha sin del av krydderet." },
+                { "si": "De konkurrerte så hardt at det ble priskrig, og fortjenesten var i fare." },
+                { "si": "Da grep staten inn. Parlamentet, som het Generalstatene, slo de små selskapene sammen til ett stort." },
+                { "si": "Den 20. mars 1602 fikk VOC et privilegiebrev. Det var en skriftlig tillatelse fra staten.", "uttale": "Den tjuende mars sekstenhundreogto fikk VOC et privilegiebrev. Det var en skriftlig tillatelse fra staten." }
+            ]
+        },
+        {
+            "id": "aksjer",
+            "kapittel": "Aksjer",
+            "visual": { "type": "VocKamre", "props": { "modus": "aksjer" } },
+            "replikker": [
+                { "si": "VOC var noe helt nytt. Det var det første selskapet der vanlige folk kunne kjøpe aksjer." },
+                { "si": "En aksje er en liten bit av et selskap. Du betaler penger, og selskapet bruker pengene på skip og varer." },
+                { "si": "De som kjøpte aksjer, ble eiere. De valgte folk til å sitte i styret." },
+                { "si": "I Amsterdam handlet kjøpmenn med aksjene i VOC på børsen." }
+            ]
+        },
+        {
+            "id": "monopol",
+            "visual": { "type": "VocKart", "props": { "modus": "monopol" } },
+            "replikker": [
+                { "si": "VOC fikk monopol på all nederlandsk handel øst for Kapp det gode håp." },
+                { "si": "Kapp det gode håp ligger helt sør i Afrika. Øst for den fikk ingen andre nederlendere handle." },
+                { "si": "Til å begynne med gjaldt monopolet i 21 år." }
+            ]
+        },
+        {
+            "id": "krydderoyene",
+            "lyd": "hav",
+            "kapittel": "Krydderøyene",
+            "visual": { "type": "VocSkip", "props": { "modus": "oy" } },
+            "replikker": [
+                { "si": "Langt mot øst ligger Krydderøyene, for eksempel Banda og Ambon i dagens Indonesia." },
+                { "si": "Her dyrket folk muskat, nellik, pepper og kanel." },
+                { "si": "VOC tok kontroll over stedene der krydderet vokste, som muskaten på Banda. Slik fikk selskapet monopol på mange av kryddene." }
+            ]
+        },
+        {
+            "id": "batavia",
+            "lyd": "stille",
+            "visual": { "type": "VocKart", "props": { "modus": "asia" } },
+            "replikker": [
+                { "si": "I 1619 grunnla VOC byen Batavia på øya Java. I dag heter byen Jakarta." },
+                { "si": "Batavia ble hovedbasen. Herfra styrte nederlenderne Krydderøyene." },
+                { "si": "I 1641 drev VOC portugiserne ut av handelsbyen Malakka." },
+                { "si": "VOC fikk også handelsposter i India og på Ceylon, som i dag heter Sri Lanka. På Ceylon tok de kontroll over kanelen." },
+                { "si": "I Persia og Kina skaffet de silke og porselen." },
+                { "si": "I Japan var VOC det eneste selskapet fra Europa som fikk lov å handle. Det skjedde fra en liten handelsstasjon på øya Dejima." }
+            ]
+        },
+        {
+            "id": "lasten",
+            "kapittel": "Lasten",
+            "visual": { "type": "VocSkip", "props": { "modus": "last" } },
+            "replikker": [
+                { "si": "Hva hadde skipene med seg hjem? Blant annet krydder." },
+                { "si": "Så stoff: bomullsstoff fra India og silke fra Kina og Japan." },
+                { "si": "På 1700-tallet ble te og kaffe viktige varer. VOC hadde egne kaffeplantasjer på Java og Sri Lanka." },
+                { "si": "Og luksus, som kinesisk porselen og edelstener. Rike europeere ville gjerne ha slike ting." }
+            ]
+        },
+        {
+            "id": "ruta",
+            "kapittel": "Den lange reisen",
+            "visual": { "type": "VocKart", "props": { "modus": "rute" } },
+            "replikker": [
+                { "si": "Skipene seilte ut fra havner i Nederland, særlig Amsterdam, og sørover langs kysten av Afrika." },
+                { "si": "De rundet Kapp det gode håp og krysset Det indiske hav til Asia." },
+                { "si": "I 1652 grunnla VOC Kappstaden på sørspissen av Afrika. Der kunne skipene fylle opp med mat og andre forsyninger." },
+                { "si": "En tur fram og tilbake kunne ta nesten ett år." }
+            ]
+        },
+        {
+            "id": "storm",
+            "lyd": "storm",
+            "visual": { "type": "VocSkip", "props": { "modus": "storm" } },
+            "replikker": [
+                { "si": "Reisen var full av farer. Stormer kunne treffe skipene midt ute på havet." },
+                { "si": "Sykdom spredte seg om bord, og pirater kunne angripe." },
+                { "si": "Likevel tjente VOC så mye på varene at reisen lønte seg. Nederland ble et av verdens rikeste land." }
+            ]
+        },
+        {
+            "id": "styret",
+            "lyd": "rom",
+            "kapittel": "En stat i staten",
+            "visual": { "type": "VocKamre", "props": { "modus": "styre" } },
+            "replikker": [
+                { "si": "Hvem styrte dette store selskapet? De gamle konkurrentene ble avdelinger, kalt kamre." },
+                { "si": "Det var seks kamre i ulike byer, blant annet Amsterdam, Middelburg og Rotterdam." },
+                { "si": "Øverst satt et råd med 17 direktører fra kamrene. Rådet het Heren XVII, De sytten herrer.", "uttale": "Øverst satt et råd med sytten direktører fra kamrene. Rådet het Heren sytten, De sytten herrer." },
+                { "si": "Kammeret i Amsterdam var klart mektigst. Det hadde åtte av de sytten plassene." }
+            ]
+        },
+        {
+            "id": "fullmakter",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Makt som et land",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Lage avtaler", "tekst": "med herskere i Asia", "fraBeat": 1 },
+                        { "ikon": "skjold", "tittel": "Bygge fort", "tekst": "og starte kolonier", "fraBeat": 1 },
+                        { "ikon": "haer", "tittel": "Egen hær og flåte", "tekst": "og føre krig", "fraBeat": 2 },
+                        { "ikon": "penger", "tittel": "Egne myntverk", "tekst": "som laget penger", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men VOC var mer enn et vanlig selskap. Staten ga det makt som vanligvis bare et land har." },
+                { "si": "VOC kunne lage avtaler med herskere i Asia, bygge fort og starte kolonier." },
+                { "si": "Selskapet hadde egne soldater og en flåte på rundt 150 skip. Det kunne føre krig." },
+                { "si": "Det hadde til og med egne myntverk. Med all denne makten ble VOC en stat i staten." }
+            ]
+        },
+        {
+            "id": "nedgang",
+            "lyd": "stille",
+            "kapittel": "Nedgangen",
+            "visual": { "type": "VocRegnskap", "props": { "modus": "nedgang" } },
+            "replikker": [
+                { "si": "På 1700-tallet begynte det å gå nedover. Ett problem var korrupsjon: mange ansatte drev handel for seg selv og tappet selskapet." },
+                { "si": "Kriger kostet mye. I krigen mot Storbritannia fra 1780 til 1784 knuste britene den nederlandske flåten." },
+                { "si": "Det var også svært dyrt å holde soldater, skip og fort." },
+                { "si": "Samtidig tok andre igjen VOC. Særlig det britiske East India Company ble en sterk konkurrent." },
+                { "si": "Britene begynte å lage egne tekstiler, og krydderhandelen sluttet å vokse. Monopolet var ikke like mye verdt lenger." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": { "type": "VocRegnskap", "props": { "modus": "slutt" } },
+            "replikker": [
+                { "si": "Mot slutten av 1790-årene hadde VOC enorm gjeld. Selskapet var konkurs: det kunne ikke betale det det skyldte." },
+                { "si": "I 1799 ble VOC oppløst. Staten Nederland tok over alt selskapet hadde hatt i Indonesia." },
+                { "si": "Staten arvet både koloniene og den enorme gjelden." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Vanlige folk kunne eie", "fraBeat": 0 },
+                        { "tekst": "en bit av verdenshandelen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Rikdommen kom fra", "fraBeat": 1 },
+                        { "tekst": "monopol og militærmakt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Prisen var korrupsjon, krig", "fraBeat": 2 },
+                        { "tekst": "og utnytting av folk.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Handel og imperier", "fraBeat": 3 },
+                        { "tekst": "gikk hånd i hånd.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "VOC viser hvordan moderne selskaper vokste fram. Vanlige folk kunne eie en bit av verdenshandelen." },
+                { "si": "Men rikdommen kom fra monopol og militærmakt." },
+                { "si": "Historien har også en mørk side: korrupsjon, kriger og utnytting av folkene som bodde der VOC tok over." },
+                { "si": "Handel og makt over andre gikk hånd i hånd. Et imperium er et stort rike som styrer andre land og folk." }
+            ]
+        }
+    ]
+}
