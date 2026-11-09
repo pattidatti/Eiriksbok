@@ -10,8 +10,10 @@
 //   node scripts/validate-film.mjs historie/andre-verdenskrig/d-dagen
 //
 // Variasjonsreglene (samme visual i høyst MAKS_SCENER_PER_VISUAL scener, høyst ett
-// Punktkort med høyst MAKS_PUNKTER punkter, Prikkfelt der tallet endrer seg) er feil når én film sjekkes, slik nattrutinen gjør. I helsjekken av alle
-// filmer er de advarsler, for filmene fra før reglene kom bryter dem.
+// Punktkort med høyst MAKS_PUNKTER punkter, Prikkfelt der tallet endrer seg og totalene ikke
+// spriker mer enn MAKS_PRIKK_FORHOLD, prefiks på Tittelkort-tall stemmen sier «minst» om) er
+// feil når én film sjekkes, slik nattrutinen gjør. I helsjekken av alle filmer er de
+// advarsler, for filmene fra før reglene kom bryter dem. `vurdering.sum` må alltid stemme.
 //
 // Exit 1 ved feil. Advarsler stopper ikke.
 
@@ -37,6 +39,9 @@ const MAKS_SCENER_PER_VISUAL = 4;
 const MAKS_PUNKTKORT = 1;
 /** Et Punktkort med flere punkter enn dette blir en rad tekstkort på rad (vurdereren trekker Viser). */
 const MAKS_PUNKTER = 4;
+/** Prikkfelt skalerer figurene etter største `total`. Et steg med 400 etter et med 9 gjør de små stegene ulesbare. */
+const MAKS_PRIKK_FORHOLD = 10;
+const VURDERING_AKSER = ['viser', 'lesbart', 'variasjon', 'forstaelig', 'tro'];
 /** Bakgrunnslyden en scene kan ha (se useFilmAmbiens.ts). */
 const LYDER = ['hav', 'vind', 'storm', 'ild', 'regn', 'rom', 'stille'];
 /** Tallord som må stå i artikkelen, akkurat som sifre. «hundre» og «tusen» sjekkes når de står alene. */
@@ -184,6 +189,21 @@ function sjekk(fil, visualer, streng) {
                 if (like)
                     regel.push(`${hvor}: alle Prikkfelt-stegene har samme total og farget - bildet står stille. Bruk Prikkfelt bare når tallet endrer seg, og vis ellers det som skjer`);
             }
+            if (type === 'Prikkfelt' && (p.steg ?? []).length > 1) {
+                const totaler = p.steg.map((st) => st.total).filter((t) => t > 0);
+                const [min, maks] = [Math.min(...totaler), Math.max(...totaler)];
+                if (min > 0 && maks / min > MAKS_PRIKK_FORHOLD)
+                    regel.push(`${hvor}: Prikkfelt blander total ${min} og ${maks} - figurene skaleres etter den største, så det lille steget blir ulesbart. Ta det store tallet i stemmen eller i en egen scene`);
+            }
+            if (type === 'Tittelkort')
+                for (const t of p.tall ?? []) {
+                    // Stemmen sier «minst 70», bildet viser «ca. 70».
+                    const v = String(t.verdi);
+                    const sagt = s.replikker.map((r) => normaliser(r.si)).join(' ');
+                    const ord = sagt.match(new RegExp(`\\b(minst|over|mer enn|opptil)\\s+${v}\\b`, 'i'));
+                    if (ord && t.prefiks === undefined)
+                        regel.push(`${hvor}: replikken sier «${ord[0]}», men Tittelkort-tallet ${v} har ingen prefiks og vises som «ca. ${v}» - sett prefiks: "${ord[1].toLowerCase()}"`);
+                }
             if (type === 'Prikkfelt')
                 for (const st of p.steg ?? []) {
                     if (st.farget > st.total) feil.push(`${hvor}: Prikkfelt farget > total`);
@@ -253,6 +273,14 @@ function sjekk(fil, visualer, streng) {
         });
     });
 
+    if (m.vurdering) {
+        // Vurdereren har oppgitt en sum som ikke stemte med aksene (21 mot 20).
+        const v = m.vurdering;
+        const akser = VURDERING_AKSER.map((k) => v[k]);
+        if (akser.some((a) => typeof a !== 'number')) feil.push(`vurdering mangler en av aksene ${VURDERING_AKSER.join(', ')}`);
+        else if (akser.reduce((a, b) => a + b, 0) !== v.sum)
+            feil.push(`vurdering.sum er ${v.sum}, men aksene gir ${akser.reduce((a, b) => a + b, 0)} - regn ut summen selv`);
+    }
     if (ord < 550 || ord > 1100) feil.push(`manuset er ${ord} ord (skal være 550-1100, rundt 4-7 minutter)`);
     if (m.scener.length < 10) adv.push(`bare ${m.scener.length} scener (sikt på 12-16)`);
     const variasjon = streng ? feil : adv;

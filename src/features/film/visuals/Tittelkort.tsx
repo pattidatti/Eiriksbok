@@ -65,7 +65,8 @@ export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: beat >= 1 ? 1 : 0, y: beat >= 1 ? 0 : 10 }}
                         transition={{ duration: 0.8 }}
-                        className="mt-3 text-white/90 text-xl md:text-3xl font-semibold"
+                        // Mørk plate: over lyse foto (snø, himmel) forsvant undertittelen.
+                        className="mt-3 px-5 py-1.5 rounded-xl bg-slate-950/60 text-white text-xl md:text-3xl font-semibold"
                     >
                         {props.undertittel}
                     </motion.p>

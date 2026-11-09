@@ -17,9 +17,12 @@
 //
 // Hvert bilde sjekkes også for tekst som overlapper annen tekst, er kuttet i bildekanten,
 // står kloss inntil en annen SVG-merkelapp, stikker ut av SVG-kortet sitt (en `rect` rett før
-// teksten i samme gruppe) eller ligger under en HTML-boks (målt i DOM, også
-// merkelapper over 3D-lerretet). Funnene står i
-// overlapp.txt og stopper skriptet. Tekst tegnet inne i WebGL ser sjekken ikke.
+// teksten i samme gruppe), har en fylt SVG-figur tegnet oppå seg, eller ligger under en
+// HTML-boks (målt i DOM, også merkelapper over 3D-lerretet). Funnene står i overlapp.txt og
+// stopper skriptet. Tekst tegnet inne i WebGL ser sjekken ikke.
+//
+// 3D-scener venter til kameraet har glidd fram (se ventTilRo). Mangler sharp, lages
+// kontaktarket med Playwright i stedet.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -145,6 +148,22 @@ function finnOverlapp() {
             }
         }
     }
+    // SVG-tekst som en figur er tegnet oppå (legioner over et bynavn): en fylt SVG-form senere i
+    // treet ligger øverst midt på teksten.
+    for (const { tekst, node, b } of bokser) {
+        const t = node.parentElement?.closest('text');
+        if (!t) continue;
+        const x = (b.left + b.right) / 2;
+        const y = (b.top + b.bottom) / 2;
+        if (x < R.left || x > R.right || y < R.top || y > R.bottom) continue;
+        const topp = document.elementFromPoint(x, y);
+        if (!(topp instanceof SVGGeometryElement) || topp.closest('text') || !t.ownerSVGElement?.contains(topp)) continue;
+        if (!(t.compareDocumentPosition(topp) & Node.DOCUMENT_POSITION_FOLLOWING)) continue;
+        const cs = getComputedStyle(topp);
+        const fyllAlfa = parseFloat(cs.fill.match(/rgba\(.*,\s*([\d.]+)\)$/)?.[1] ?? '1');
+        if (cs.fill === 'none' || fyllAlfa * parseFloat(cs.fillOpacity) * parseFloat(cs.opacity) < 0.5) continue;
+        funn.push(`«${tekst.slice(0, 50)}» har en figur (${topp.tagName.toLowerCase()}) tegnet oppå seg`);
+    }
     // SVG-tekst som stikker ut av kortet sitt: en `rect` med fyll rett før teksten i samme
     // gruppe, som teksten står midt i («Over åpent terreng = nesten selvmord»). Bakgrunner som
     // dekker nesten hele bildet er ikke kort.
@@ -187,6 +206,39 @@ page.on('console', (m) => {
     feil.push(`konsoll: ${t.slice(0, 200)}`);
 });
 
+/**
+ * Hvor lenge en 3D-scene må gå før kameraet og figurene har glidd fram. Visualene teller tid
+ * med `Math.min(delta, 0.05)`, så med få bilder i sekundet (swiftshader) går filmens klokke
+ * saktere enn veggklokka, og bildet ble tatt mens kameraet ennå gled. Vi måler bilder i sekundet
+ * og venter til filmens klokke har gått ca. 4,5 sekunder (kameraet er da 99 % framme).
+ */
+async function ventTilRo() {
+    const fps = await page.evaluate(
+        () =>
+            new Promise((ferdig) => {
+                let n = 0;
+                const t0 = performance.now();
+                const tell = () => (performance.now() - t0 < 1000 ? (n++, requestAnimationFrame(tell)) : ferdig(n));
+                requestAnimationFrame(tell);
+            })
+    );
+    const fart = Math.min(1, 0.05 * Math.max(fps, 1));
+    return Math.min(20000, Math.max(2500, (4500 / fart) - 1000));
+}
+
+/** Kontaktark uten sharp (libvips lot seg ikke laste ned): et HTML-rutenett skjermdumpet med Playwright. */
+async function arkUtenSharp(filer, ut) {
+    const side = await browser.newPage({ viewport: { width: 1366, height: 400 } });
+    const ruter = filer
+        .map((f) => `<figure><img src="data:image/png;base64,${fs.readFileSync(f).toString('base64')}"><figcaption>${path.basename(f)}</figcaption></figure>`)
+        .join('');
+    await side.setContent(
+        `<style>body{margin:0;background:#111;display:grid;grid-template-columns:1fr 1fr;gap:4px;width:1366px;align-content:start}figure{margin:0;position:relative}img{width:100%;display:block}figcaption{position:absolute;left:6px;top:6px;background:#000c;color:#fff;font:600 16px sans-serif;padding:2px 6px}</style>${ruter}`
+    );
+    await side.screenshot({ path: ut, fullPage: true });
+    await side.close();
+}
+
 const base = `http://localhost:${port}/film/${sti}`;
 // Varm opp Vite (første transform av three tar tid).
 await page.goto(base, { timeout: 120000 }).catch(() => {});
@@ -197,7 +249,8 @@ for (const [si, sc] of manus.scener.entries()) {
     const tre = /Havet|3D|Scene/i.test(sc.visual.type) || !['Tittelkort', 'Prikkfelt', 'Livbater', 'Andeler', 'Punktkort', 'Dypet', 'Sluttkort'].includes(sc.visual.type);
     for (let b = 0; b < sc.replikker.length; b++) {
         await page.goto(`${base}?scene=${si}&beat=${b}`);
-        await page.waitForTimeout(tre ? 6500 : 4000);
+        await page.waitForTimeout(tre ? 3000 : 4000);
+        if (tre) await page.waitForTimeout(await ventTilRo());
         if (await page.getByText('Mangler visual').count()) feil.push(`scene ${si}: Mangler visual ${sc.visual.type}`);
         if (await page.getByText(/Noe gikk galt/).count()) feil.push(`scene ${si} beat ${b}: ErrorBoundary slo inn`);
         await page.screenshot({ path: path.join(ut, `s${String(si).padStart(2, '0')}-b${b}.png`) });
@@ -207,10 +260,15 @@ for (const [si, sc] of manus.scener.entries()) {
         .readdirSync(ut)
         .filter((f) => f.startsWith(`s${String(si).padStart(2, '0')}-`))
         .map((f) => path.join(ut, f));
+    const ark = path.join(ut, `ark-s${String(si).padStart(2, '0')}.png`);
     try {
-        execFileSync('node', [path.join(ROT, 'scripts/kontaktark-microgame.mjs'), '--filer', ...filer, '--out', path.join(ut, `ark-s${String(si).padStart(2, '0')}.png`)], { stdio: 'ignore' });
+        execFileSync('node', [path.join(ROT, 'scripts/kontaktark-microgame.mjs'), '--filer', ...filer, '--out', ark], { stdio: 'ignore' });
     } catch {
-        feil.push(`scene ${si}: kontaktark feilet`);
+        try {
+            await arkUtenSharp(filer.sort(), ark);
+        } catch {
+            feil.push(`scene ${si}: kontaktark feilet`);
+        }
     }
     console.log(`scene ${si} (${sc.id}, ${sc.visual.type}): ${sc.replikker.length} bilder`);
 }
