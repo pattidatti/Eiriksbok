@@ -1598,7 +1598,8 @@
                 "eldrebølge",
                 "menneskerettigheter"
               ],
-              "createdDate": "2026-11-03T00:00:00Z"
+              "createdDate": "2026-11-03T02:27:18+01:00",
+              "lastUpdated": "2026-11-03T02:27:18+01:00"
             },
             {
               "id": "afrikas-befolkningsvekst",
@@ -1613,7 +1614,8 @@
                 "befolkningsvekst",
                 "utdanning"
               ],
-              "createdDate": "2026-11-04T00:00:00Z"
+              "createdDate": "2026-11-04T06:38:25+01:00",
+              "lastUpdated": "2026-11-04T06:38:25+01:00"
             }
           ]
         },
@@ -2556,7 +2558,8 @@
                 "feriepenger",
                 "arbeidsliv"
               ],
-              "createdDate": "2026-11-05T00:00:00Z"
+              "createdDate": "2026-11-05T04:32:41+01:00",
+              "lastUpdated": "2026-11-06T07:42:24+01:00"
             },
             {
               "id": "budsjett",
@@ -2571,7 +2574,8 @@
                 "sparing",
                 "buffer"
               ],
-              "createdDate": "2026-11-06T00:00:00Z"
+              "createdDate": "2026-11-06T07:01:54+01:00",
+              "lastUpdated": "2026-11-06T07:42:24+01:00"
             },
             {
               "id": "kreditt-og-forbrukslan",
@@ -2586,7 +2590,8 @@
                 "rente",
                 "gjeld"
               ],
-              "createdDate": "2026-11-07T00:00:00Z"
+              "createdDate": "2026-11-07T02:13:39+01:00",
+              "lastUpdated": "2026-11-07T07:43:24+01:00"
             },
             {
               "id": "kjop-na-betal-senere",
@@ -2600,7 +2605,24 @@
                 "gjeld",
                 "netthandel"
               ],
-              "createdDate": "2026-11-08T00:00:00Z"
+              "createdDate": "2026-11-08T07:16:29+01:00",
+              "lastUpdated": "2026-11-08T07:42:24+01:00"
+            },
+            {
+              "id": "sparing-og-rentes-rente",
+              "title": "Sparing og rentes rente: Når tiden jobber for deg",
+              "description": "Hvorfor den som begynner å spare tidlig ender med mye mer: rentes rente, sparekonto, fond, aksjer og BSU.",
+              "image": "/images/placeholder.webp",
+              "layout": "rich",
+              "tags": [
+                "personlig økonomi",
+                "sparing",
+                "rente",
+                "fond",
+                "bsu"
+              ],
+              "createdDate": "2026-11-09T01:12:31.828Z",
+              "lastUpdated": "2026-11-09T01:12:49.975Z"
             }
           ]
         },
@@ -10254,7 +10276,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-08T07:42:24+01:00"
             },
             {
               "id": "gudsbilde",
@@ -10267,7 +10289,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T04:17:49+02:00",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-06T07:42:24+01:00"
             },
             {
               "id": "bonn",
@@ -10293,7 +10315,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-08T07:42:24+01:00"
             },
             {
               "id": "doden",
@@ -10319,7 +10341,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-06T07:42:24+01:00"
             },
             {
               "id": "hellige-tekster",
@@ -10332,7 +10354,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-07T07:43:24+01:00"
             },
             {
               "id": "grunnleggere",
@@ -10345,7 +10367,7 @@
                 "narrative"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-06T07:42:24+01:00"
             },
             {
               "id": "etikk-og-leveregler",
@@ -10371,7 +10393,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-07T07:43:24+01:00"
             },
             {
               "id": "hellige-rom",
@@ -10384,7 +10406,7 @@
                 "material"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-06T07:42:24+01:00"
             },
             {
               "id": "symboler-og-klaer",
@@ -10410,7 +10432,7 @@
                 "ritual"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-08T07:42:24+01:00"
             },
             {
               "id": "lidelse",
@@ -10423,7 +10445,7 @@
                 "doctrinal"
               ],
               "createdDate": "2026-08-12T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-08T07:42:24+01:00"
             },
             {
               "id": "kjonn-og-roller",
@@ -10436,7 +10458,7 @@
                 "social"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-07T07:43:24+01:00"
             },
             {
               "id": "ledelse-og-fellesskap",
@@ -10449,7 +10471,7 @@
                 "social"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-07T07:43:24+01:00"
             },
             {
               "id": "pilegrim",
@@ -10462,7 +10484,7 @@
                 "material"
               ],
               "createdDate": "2026-08-13T12:00:00Z",
-              "lastUpdated": "2026-09-07T07:40:19+02:00"
+              "lastUpdated": "2026-11-08T07:42:24+01:00"
             }
           ]
         },

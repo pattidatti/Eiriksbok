@@ -1,0 +1,283 @@
+{
+  "id": "sparing-og-rentes-rente",
+  "title": "Sparing og rentes rente: Når tiden jobber for deg",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Personlig økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Rentes rente betyr at du får rente også på rentene du har fått før. Effekten vokser jo lenger pengene står.",
+    "Tid er den viktigste ingrediensen: den som begynner tidlig, kan ende med mye mer, selv med samme beløp i måneden.",
+    "Sparekonto er trygt, mens fond og aksjer kan gi mer, men også falle. BSU gir unge skattefradrag når de sparer til bolig."
+  ],
+  "externalUrl": "https://snl.no/rente_-_renteregning",
+  "factChecked": "2026-11-09",
+  "tags": [
+    "personlig økonomi",
+    "sparing",
+    "rente",
+    "fond",
+    "bsu"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Sara og Jonas går i samme klasse. Begge får seg deltidsjobb, og begge bestemmer seg for å spare 1 000 kroner i måneden. Forskjellen er bare én ting. Sara begynner når hun er 20 år. Jonas venter til han er 30, fordi han vil kjøpe seg en bil først."
+    },
+    {
+      "type": "text",
+      "content": "Begge sparer helt til de er 60, og pengene vokser med 5 prosent i året. Når de er 60, sammenligner de. Sara har satt inn 480 000 kroner selv og har omtrent 1,5 millioner på kontoen. Jonas har satt inn 360 000 kroner og har rundt 840 000. Sara har satt inn bare litt mer enn Jonas, men hun har nesten dobbelt så mye. Hvordan er det mulig? Tallene er et tenkt eksempel, men forklaringen er ekte. Den heter rentes rente."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "To ungdommer sammenligner sparekontoer på mobilen",
+      "caption": "Sara og Jonas sparte like mye hver måned. Bare den ene begynte ti år tidligere."
+    },
+    {
+      "type": "header",
+      "text": "Hva er sparing?"
+    },
+    {
+      "type": "text",
+      "content": "Å spare betyr å la være å bruke penger nå, slik at du har dem senere. I samfunnsøkonomien beskriver de sparing nettopp slik: å la være å bruke inntekten på forbruk (Stoltz, 2024). Det høres enkelt ut, men det er ikke alltid lett. Du må velge bort noe du har lyst på i dag."
+    },
+    {
+      "type": "text",
+      "content": "Folk sparer av ulike grunner. Noen sparer til noe stort, som en bolig, et førerkort eller en reise. Andre sparer til en buffer, altså penger som ligger klare hvis noe uventet skjer. Du kan lese mer om bufferen i artikkelen om [budsjett](/samfunnskunnskap/personlig-okonomi/budsjett). Denne artikkelen handler om hva som skjer med pengene mens de ligger der."
+    },
+    {
+      "type": "header",
+      "text": "Renter på renter"
+    },
+    {
+      "type": "text",
+      "content": "Når du setter penger i banken, låner du dem egentlig ut til banken. Som betaling får du rente. I artikkelen om [kreditt og forbrukslån](/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan) var renten noe du betalte. Når du sparer, er det banken som betaler deg."
+    },
+    {
+      "type": "text",
+      "content": "Store norske leksikon viser et enkelt eksempel: setter du inn 100 kroner med 5 prosent rente, har du 105 kroner etter ett år (Sirnes, 2026). Det spennende skjer året etter. Etter hver periode legges rentene til innskuddet (Sirnes, 2026). Året etter får du altså rente av 105 kroner, ikke av 100. Da har du 110,25 kroner. De 25 ørene ekstra er rente på renten fra året før."
+    },
+    {
+      "type": "text",
+      "content": "25 øre høres ikke mye ut. Men effekten vokser for hvert år. Hvis du setter inn 10 000 kroner én gang og lar dem stå med 5 prosent rente i året, har du rundt 16 300 kroner etter 10 år. Etter 20 år har du rundt 26 500. Etter 40 år har du rundt 70 400 kroner, uten å ha satt inn en eneste krone til. Det er dette som kalles rentes rente: pengene dine tjener penger, og så tjener de pengene også penger."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Rente: det du får betalt for å la banken bruke pengene dine, oppgitt i prosent per år. Rentes rente: at du får rente også på rentene du har fått før. Avkastning: hvor mye pengene dine har vokst, enten det er renter, utbytte eller at verdien har steget. Risiko: hvor usikkert det er hva du ender med. Fond: en pott der mange slår sammen pengene sine og kjøper mange aksjer eller andre verdipapirer."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Tid er den viktigste ingrediensen"
+    },
+    {
+      "type": "text",
+      "content": "Nå kan vi forklare hva som skjedde med Sara og Jonas. Sara hadde ti år ekstra. I de ti årene satte hun inn 120 000 kroner mer enn Jonas. Men de pengene fikk også ti år ekstra med renter på renter. Det er derfor forskjellen til slutt blir så mye større enn de 120 000 kronene."
+    },
+    {
+      "type": "text",
+      "content": "Det samme ser du hvis du tenker på kurven som en snøball som ruller ned en bakke. I starten er den liten og vokser sakte. Jo lenger den ruller, jo mer snø fester seg, og jo fortere vokser den. De siste årene er det rentene, ikke det du har satt inn, som gjør mesteparten av jobben."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Start med å spare fra du er 40 år, og se hvor stor del av pengene som blir renter. Flytt så startalderen. Prøv også å endre beløpet og renten. Hva endrer egentlig forholdet mellom det du har satt inn og det som er renter?"
+    },
+    {
+      "type": "component",
+      "name": "RentesRenteKurve",
+      "props": {
+        "sluttAlder": 60,
+        "startAlder": 40,
+        "manedsBelop": 500,
+        "rente": 5
+      }
+    },
+    {
+      "type": "text",
+      "content": "Kanskje la du merke til noe rart. Når du sparer mer hver måned, blir alle tallene større, men renteandelen blir den samme. Det er bare tiden og renten som endrer forholdet. Derfor sier mange at det viktigste er ikke hvor mye du sparer, men hvor tidlig du begynner. Selv et lite beløp kan bli stort med nok tid."
+    },
+    {
+      "type": "header",
+      "text": "Sparekonto, fond eller aksjer?"
+    },
+    {
+      "type": "text",
+      "content": "Det finnes flere måter å spare på. Den enkleste er en sparekonto i banken. Der vet du hvilken rente du får, og verdien svinger ikke opp og ned slik aksjer gjør. Til gjengjeld vokser pengene vanligvis saktere enn i fond (Meinich og Sirnes, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "En annen måte er å eie aksjer. En aksje er en liten eierandel i et selskap (Knudsen og Sirnes, 2025). Går det bra med selskapet, kan du få en del av overskuddet som utbytte. Du kan også tjene penger hvis aksjen blir verdt mer enn du betalte for den (Knudsen og Sirnes, 2025). Men verdien kan også falle. Da kan du ende med mindre enn du satte inn."
+    },
+    {
+      "type": "text",
+      "content": "Mange unge velger derfor fond. Et fond samler penger fra mange personer og kjøper verdipapirer for dem, for eksempel aksjer i mange ulike selskaper (Meinich og Sirnes, 2024). Fordi pengene blir spredd på mange selskaper, er risikoen mindre enn om du kjøper aksjer i bare ett selskap. Det er som å ikke legge alle eggene i én kurv. Likevel er fond mer usikre enn penger i banken, men de gir vanligvis høyere avkastning over tid (Meinich og Sirnes, 2024). Noen fond, kalt passive fond eller indeksfond, kjøper bare litt av alle selskapene i et marked. De har lavere kostnader, og derfor har de i gjennomsnitt gjort det bedre enn fond der noen velger aksjene for hånd (Meinich og Sirnes, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Den samme tanken om å spre pengene bruker staten. [Oljefondet](/samfunnskunnskap/okonomi/oljefondet) eier små biter av svært mange selskaper i mange land, slik at ett dårlig selskap ikke betyr så mye."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Sparekonto: lav risiko, ofte lav rente. Passer for buffer og for penger du trenger snart.",
+        "Fond: pengene spres på mange selskaper. Kan falle i verdi, men har vanligvis vokst mer over lang tid.",
+        "Enkeltaksjer: du eier en bit av ett selskap. Kan gi mye, men også tape mye."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Denne artikkelen gir ikke råd om hva du skal velge. Poenget er å forstå at høyere mulig gevinst nesten alltid betyr høyere risiko. Penger du trenger om et halvt år, bør ikke ligge et sted der verdien kan falle. Penger du ikke skal bruke på tjue år, tåler mer at verdien går opp og ned."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hender legger mynter i tre glass merket bank, fond og aksjer",
+      "caption": "Sparekonto, fond og aksjer: jo større mulig gevinst, jo større risiko."
+    },
+    {
+      "type": "header",
+      "text": "BSU: sparing for deg som er ung"
+    },
+    {
+      "type": "text",
+      "content": "Staten har laget en egen spareordning for unge som vil kjøpe bolig. Den heter BSU, som står for boligsparing for ungdom. Du kan spare på BSU til og med det året du fyller 33 år, og det finnes ingen nedre aldersgrense (Nyhus og Kleivset, 2025). Du kan sette inn opptil 27 500 kroner i året, og til sammen opptil 300 000 kroner (Skatteetaten, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Det spesielle med BSU er at du får et skattefradrag. Det betyr at du betaler litt mindre skatt. Fradraget er 10 prosent av det du setter inn i året (Nyhus og Kleivset, 2025). Setter du inn 27 500 kroner, får du altså 2 750 kroner mindre i skatt. Men da må du tjene så mye at du faktisk betaler skatt. Du kan heller ikke eie en bolig fra før (Skatteetaten, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Pengene på BSU skal brukes til bolig, for eksempel til å kjøpe en leilighet eller pusse opp der du bor. Bruker du dem til noe annet, må du betale tilbake hele skattefordelen du har fått (Nyhus og Kleivset, 2025). Du kan bare ha én BSU-konto i hele livet (Skatteetaten, u.å.)."
+    },
+    {
+      "type": "header",
+      "text": "Fienden som spiser sparepengene"
+    },
+    {
+      "type": "text",
+      "content": "Det finnes én ting som kan gjøre sparingen mindre verdt enn den ser ut: prisstigning. Hvis prisene i butikken stiger raskere enn renten du får, kan du kjøpe mindre for pengene dine senere, selv om tallet på kontoen har blitt større. Hvordan prisstigning og rente henger sammen, kan du lese om i artikkelen om [inflasjon og rente](/samfunnskunnskap/okonomi/inflasjon-og-rente)."
+    },
+    {
+      "type": "text",
+      "content": "Rentes rente virker også den andre veien. Har du gjeld med høy rente, vokser gjelden på samme måte som sparepengene. Derfor er det ofte lurt å betale ned dyr gjeld før du begynner å spare."
+    },
+    {
+      "type": "header",
+      "text": "Hva Jonas kunne gjort"
+    },
+    {
+      "type": "text",
+      "content": "Jonas tok ikke et dumt valg. Bilen var kanskje viktig for ham. Men han kunne ha begynt med et lite beløp mens han sparte til bilen, for eksempel 200 kroner i måneden. Det hadde han knapt merket i hverdagen, men det hadde gitt pengene ti år ekstra til å vokse."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung person ser på en voksende plante i en sparebøsse",
+      "caption": "Det du sparer tidlig, får lengst tid til å vokse."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Sparing betyr å la være å bruke penger nå for å ha dem senere. Når pengene ligger i banken, får du rente, og etter hver periode legges rentene til. Da får du rente også på rentene. Det kalles rentes rente, og effekten vokser jo lenger pengene står. Derfor er tid den viktigste ingrediensen: den som begynner tidlig, kan ende med mye mer, selv med samme beløp i måneden. Sparekonto er trygt, men gir ofte lav rente. Fond og aksjer kan gi mer, men verdien kan også falle. BSU gir unge et skattefradrag hvis de sparer til bolig."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Knudsen, G. & Sirnes, E. (2025). *Aksje*. Store norske leksikon. Hentet 09.11.2026 fra [snl.no/aksje](https://snl.no/aksje)",
+          "Meinich, P. & Sirnes, E. (2024). *Verdipapirfond*. Store norske leksikon. Hentet 09.11.2026 fra [snl.no/verdipapirfond](https://snl.no/verdipapirfond)",
+          "Nyhus, E. K. & Kleivset, C. (2025). *BSU*. Store norske leksikon. Hentet 09.11.2026 fra [snl.no/BSU](https://snl.no/BSU)",
+          "Sirnes, E. (2026). *Rente - renteregning*. Store norske leksikon. Hentet 09.11.2026 fra [snl.no/rente_-_renteregning](https://snl.no/rente_-_renteregning)",
+          "Skatteetaten. (u.å.). *Boligsparing for ungdom (BSU)*. Hentet 09.11.2026 fra [skatteetaten.no/bsu](https://www.skatteetaten.no/bsu/)",
+          "Stoltz, G. (2024). *Sparing*. Store norske leksikon. Hentet 09.11.2026 fra [snl.no/sparing](https://snl.no/sparing)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva betyr det å spare, ifølge artikkelen?",
+          "Forklar med et eksempel hva rentes rente er.",
+          "Hva er forskjellen på en sparekonto, et fond og en aksje?",
+          "Hvor mye kan du spare på BSU i året, og hva får du igjen på skatten?"
+        ],
+        "reflekter": [
+          "Sara satte inn 120 000 kroner mer enn Jonas, men endte med mye mer enn 120 000 kroner ekstra. Forklar hvorfor.",
+          "Bruk Rentes rente-kurven: Hvorfor endrer ikke månedsbeløpet hvor stor del av pengene som blir renter?",
+          "Hvorfor er det ofte lurt å betale ned dyr gjeld før du begynner å spare?",
+          "Hvorfor gir et fond lavere risiko enn å kjøpe aksjer i bare ett selskap?"
+        ],
+        "gaaVidere": [
+          "Lag en spareplan for deg selv: Hva vil du spare til, hvor mye kan du sette av i måneden, og hvor lenge må du spare?",
+          "Diskuter i klassen: Er det rettferdig at staten gir skattefradrag til unge som sparer til bolig, men ikke til unge som sparer til noe annet?",
+          "Finn ut hva renten på en vanlig sparekonto og en BSU-konto er i en bank i dag. Hvor stor er forskjellen?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er rentes rente?",
+            "options": [
+              "At banken tar et gebyr for å passe på pengene",
+              "At du får rente også på rentene du har fått før",
+              "At renten er lik hvert år",
+              "At du betaler rente til staten"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Etter hver periode legges rentene til innskuddet. Året etter får du derfor rente også av rentene."
+          },
+          {
+            "question": "Sara og Jonas sparer like mye hver måned. Hvorfor ender Sara med nesten dobbelt så mye?",
+            "options": [
+              "Hun fikk høyere rente",
+              "Hun begynte ti år tidligere, så pengene fikk vokse lenger",
+              "Hun kjøpte aksjer i ett selskap",
+              "Hun brukte BSU"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Sara fikk ti år ekstra med renter på renter. Tid er den viktigste ingrediensen."
+          },
+          {
+            "question": "Hvorfor er et fond mindre risikabelt enn én enkelt aksje?",
+            "options": [
+              "Fond kan aldri falle i verdi",
+              "Staten garanterer for fond",
+              "Pengene blir spredd på mange selskaper",
+              "Fond gir fast rente"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Et fond sprer pengene på mange verdipapirer. Da betyr det mindre om ett selskap går dårlig. Men et fond kan likevel falle i verdi."
+          },
+          {
+            "question": "Hva gjelder for BSU?",
+            "options": [
+              "Du kan spare til du er 50",
+              "Du får 10 prosent skattefradrag av det du setter inn, og pengene skal brukes til bolig",
+              "Du kan bruke pengene til hva du vil",
+              "Du kan ha så mange BSU-kontoer du vil"
+            ],
+            "correctAnswer": 1,
+            "explanation": "BSU gir 10 prosent skattefradrag. Pengene skal brukes til bolig, og du kan bare ha én BSU-konto i livet."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

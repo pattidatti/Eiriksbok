@@ -107,6 +107,7 @@ const LonnsslippLeser = lazy(() => import('./content/interactive/LonnsslippLeser
 const HybelBudsjett = lazy(() => import('./content/interactive/HybelBudsjett').then(m => ({ default: m.HybelBudsjett })));
 const Minstebelopsfellen = lazy(() => import('./content/interactive/Minstebelopsfellen').then(m => ({ default: m.Minstebelopsfellen })));
 const DenGlemteFakturaen = lazy(() => import('./content/interactive/DenGlemteFakturaen').then(m => ({ default: m.DenGlemteFakturaen })));
+const RentesRenteKurve = lazy(() => import('./content/interactive/RentesRenteKurve').then(m => ({ default: m.RentesRenteKurve })));
 const TskjortePrisen = lazy(() => import('./content/interactive/TskjortePrisen').then(m => ({ default: m.TskjortePrisen })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
 const Havdelingen = lazy(() => import('./content/interactive/Havdelingen').then(m => ({ default: m.Havdelingen })));
@@ -1092,6 +1093,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     HybelBudsjett,
     Minstebelopsfellen,
     DenGlemteFakturaen,
+    RentesRenteKurve,
     TskjortePrisen,
     BrentJord,
     Hvalregnskapet,

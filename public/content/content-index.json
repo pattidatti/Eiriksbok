@@ -1,5 +1,5 @@
 {
-  "buildId": 96127099323913,
+  "buildId": 109935075040073,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4894,6 +4894,9 @@
     "lonnsslippen": [
       "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json"
     ],
+    "sparing-og-rentes-rente": [
+      "content/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente.json"
+    ],
     "antikken-visjoner": [
       "content/samfunnskunnskap/styringsformer/antikken-visjoner.json"
     ],
@@ -6619,6 +6622,7 @@
     "samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere": "content/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere.json",
     "samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan": "content/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan.json",
     "samfunnskunnskap/personlig-okonomi/lonnsslippen": "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json",
+    "samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente": "content/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
     "samfunnskunnskap/styringsformer/demokrati-ansikter": "content/samfunnskunnskap/styringsformer/demokrati-ansikter.json",
     "samfunnskunnskap/styringsformer/diktaturet": "content/samfunnskunnskap/styringsformer/diktaturet.json",
