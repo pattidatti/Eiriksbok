@@ -1,0 +1,201 @@
+{
+    "id": "sparing-og-rentes-rente",
+    "tittel": "Sparing og rentes rente: Når tiden jobber for deg",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente",
+    "bilde": "/images/personlig-okonomi/sparing-og-rentes-rente-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-09", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "to-venner",
+            "kapittel": "To venner",
+            "visual": { "type": "SparingKurve", "props": { "modus": "start" } },
+            "replikker": [
+                { "si": "Sara og Jonas går i samme klasse. Begge får seg en deltidsjobb." },
+                { "si": "Begge bestemmer seg for å spare 1000 kroner i måneden." },
+                { "si": "Sara begynner å spare når hun er 20 år." },
+                { "si": "Jonas venter til han er 30. Først vil han kjøpe seg en bil." },
+                { "si": "Begge sparer helt til de er 60. Pengene vokser med 5 prosent i året." }
+            ]
+        },
+        {
+            "id": "resultat",
+            "visual": { "type": "SparingKurve", "props": { "modus": "resultat" } },
+            "replikker": [
+                { "si": "Når de er 60, sammenligner de kontoene sine." },
+                { "si": "Sara har satt inn 480 000 kroner selv. Nå har hun omtrent 1,5 millioner." },
+                { "si": "Jonas har satt inn 360 000 kroner. Han har rundt 840 000." },
+                { "si": "Sara har satt inn bare litt mer enn Jonas. Men hun har nesten dobbelt så mye." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Rentes rente",
+                    "undertittel": "Når tiden jobber for deg",
+                    "bilde": "/images/personlig-okonomi/sparing-og-rentes-rente-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan er det mulig?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Tallene er et tenkt eksempel. Men forklaringen er ekte." },
+                { "si": "Hvordan kan Sara ende med så mye mer? Svaret heter rentes rente." }
+            ]
+        },
+        {
+            "id": "sparing",
+            "kapittel": "Renter på renter",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hva er sparing?",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Ikke bruke pengene nå", "tekst": "så du har dem senere", "fraBeat": 0 },
+                        { "ikon": "stjerne", "tittel": "Velge bort noe", "tekst": "som du har lyst på i dag", "fraBeat": 1 },
+                        { "ikon": "hus", "tittel": "Spare til noe stort", "tekst": "en bolig, et førerkort, en reise", "fraBeat": 2 },
+                        { "ikon": "skjold", "tittel": "Spare til en buffer", "tekst": "penger klare hvis noe uventet skjer", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men først: hva er sparing? Å spare betyr å la være å bruke penger nå, så du har dem senere." },
+                { "si": "Det høres enkelt ut, men det er ikke alltid lett. Du må velge bort noe du har lyst på i dag." },
+                { "si": "Noen sparer til noe stort, som en bolig, et førerkort eller en reise." },
+                { "si": "Andre sparer til en buffer. Det er penger som ligger klare hvis noe uventet skjer." }
+            ]
+        },
+        {
+            "id": "banken",
+            "visual": { "type": "SparingStabler", "props": { "modus": "hundre" } },
+            "replikker": [
+                { "si": "Når du setter penger i banken, låner du dem egentlig ut til banken." },
+                { "si": "Som betaling får du rente. Når du sparer, er det banken som betaler deg." },
+                { "si": "Tenk deg at du setter inn 100 kroner med 5 prosent rente. Etter ett år har du 105 kroner." },
+                { "si": "Nå legges rentene til pengene dine. Året etter får du altså rente av 105 kroner, ikke av 100." },
+                { "si": "Da har du 110,25 kroner. De 25 ørene ekstra er rente på renten fra året før." }
+            ]
+        },
+        {
+            "id": "ti-tusen",
+            "visual": { "type": "SparingStabler", "props": { "modus": "tiaar" } },
+            "replikker": [
+                { "si": "25 øre høres ikke mye ut. Men effekten vokser for hvert år." },
+                { "si": "Tenk deg at du setter inn 10 000 kroner én gang, og lar dem stå med 5 prosent rente i året." },
+                { "si": "Etter 10 år har du rundt 16 300 kroner." },
+                { "si": "Etter 20 år har du rundt 26 500." },
+                { "si": "Etter 40 år har du rundt 70 400 kroner. Og du har ikke satt inn en eneste krone til." }
+            ]
+        },
+        {
+            "id": "snoball",
+            "lyd": "vind",
+            "visual": { "type": "SparingStabler", "props": { "modus": "snoball" } },
+            "replikker": [
+                { "si": "Det er dette som kalles rentes rente. Pengene dine tjener penger, og så tjener de pengene også penger." },
+                { "si": "Tenk på en snøball som ruller ned en bakke. I starten er den liten og vokser sakte." },
+                { "si": "Jo lenger den ruller, jo mer snø fester seg, og jo fortere vokser den." },
+                { "si": "Slik er det med sparepengene også. De siste årene er det rentene, ikke det du har satt inn, som gjør mesteparten av jobben." }
+            ]
+        },
+        {
+            "id": "ti-aar-ekstra",
+            "lyd": "stille",
+            "kapittel": "Ti år ekstra",
+            "visual": { "type": "SparingKurve", "props": { "modus": "forskjell" } },
+            "replikker": [
+                { "si": "Nå kan vi forklare hva som skjedde med Sara og Jonas. Se på kurvene deres." },
+                { "si": "Sara hadde ti år ekstra. I de ti årene satte hun inn 120 000 kroner mer enn Jonas." },
+                { "si": "Men de pengene fikk også ti år ekstra med renter på renter." },
+                { "si": "Derfor blir forskjellen til slutt mye større enn de 120 000 kronene." }
+            ]
+        },
+        {
+            "id": "valg",
+            "kapittel": "Bank, fond eller aksjer?",
+            "visual": { "type": "SparingValg", "props": { "modus": "risiko" } },
+            "replikker": [
+                { "si": "Det finnes flere måter å spare på. Den enkleste er en sparekonto i banken." },
+                { "si": "Der vet du hvilken rente du får, og verdien svinger ikke opp og ned. Men pengene vokser vanligvis saktere enn i fond." },
+                { "si": "Du kan også kjøpe aksjer. En aksje er en liten eierandel i et selskap. Går det bra med selskapet, kan du tjene penger." },
+                { "si": "Men verdien kan også falle. Da kan du ende med mindre enn du satte inn." },
+                { "si": "Mange unge velger derfor fond. Et fond samler penger fra mange personer og kjøper aksjer i mange ulike selskaper." },
+                { "si": "Det er som å ikke legge alle eggene i én kurv. Går det dårlig med ett selskap, betyr det mindre." }
+            ]
+        },
+        {
+            "id": "risiko",
+            "visual": { "type": "SparingValg", "props": { "modus": "horisont" } },
+            "replikker": [
+                { "si": "Filmen gir ikke råd om hva du skal velge. Men husk dette: høyere mulig gevinst betyr nesten alltid høyere risiko." },
+                { "si": "Risiko betyr hvor usikkert det er hva du ender med." },
+                { "si": "Penger du trenger om et halvt år, bør ikke ligge et sted der verdien kan falle." },
+                { "si": "Penger du ikke skal bruke på tjue år, tåler mer at verdien går opp og ned." }
+            ]
+        },
+        {
+            "id": "bsu",
+            "kapittel": "BSU",
+            "visual": { "type": "SparingValg", "props": { "modus": "bsu" } },
+            "replikker": [
+                { "si": "Staten har laget en egen spareordning for unge som vil kjøpe bolig. Den heter BSU, boligsparing for ungdom." },
+                { "si": "Du kan spare på BSU til og med det året du fyller 33 år." },
+                { "si": "Du kan sette inn opptil 27 500 kroner i året, og til sammen opptil 300 000 kroner." },
+                { "si": "Det spesielle er skattefradraget. Du får 10 prosent av det du setter inn, i mindre skatt. Setter du inn 27 500 kroner, betaler du 2750 kroner mindre i skatt." },
+                { "si": "Men da må du tjene så mye at du faktisk betaler skatt. Og du kan ikke eie en bolig fra før." },
+                { "si": "Pengene skal brukes til bolig. Bruker du dem til noe annet, må du betale tilbake hele skattefordelen." }
+            ]
+        },
+        {
+            "id": "prisstigning",
+            "kapittel": "Fienden",
+            "visual": { "type": "SparingValg", "props": { "modus": "pris" } },
+            "replikker": [
+                { "si": "Det finnes én ting som kan gjøre sparingen mindre verdt enn den ser ut: prisstigning." },
+                { "si": "Hvis prisene i butikken stiger raskere enn renten du får, kan du kjøpe mindre for pengene dine senere." },
+                { "si": "Det skjer selv om tallet på kontoen har blitt større." }
+            ]
+        },
+        {
+            "id": "gjeld",
+            "visual": { "type": "SparingStabler", "props": { "modus": "gjeld" } },
+            "replikker": [
+                { "si": "Og rentes rente virker også den andre veien." },
+                { "si": "Har du gjeld med høy rente, vokser gjelden på samme måte som sparepengene." },
+                { "si": "Derfor er det ofte lurt å betale ned dyr gjeld før du begynner å spare." }
+            ]
+        },
+        {
+            "id": "jonas",
+            "kapittel": "Hva lærer vi?",
+            "visual": { "type": "SparingKurve", "props": { "modus": "jonas" } },
+            "replikker": [
+                { "si": "Tilbake til Jonas. Han tok ikke et dumt valg. Bilen var kanskje viktig for ham." },
+                { "si": "Men han kunne ha begynt med et lite beløp mens han sparte til bilen. For eksempel 200 kroner i måneden." },
+                { "si": "Det hadde han knapt merket i hverdagen. Men det hadde gitt pengene ti år ekstra til å vokse." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Samme beløp hver måned.", "fraBeat": 0 },
+                        { "tekst": "Nesten dobbelt så mye.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Pengene tjener penger,", "fraBeat": 1 },
+                        { "tekst": "og de pengene tjener også penger.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Et lite beløp kan bli stort", "fraBeat": 2 },
+                        { "tekst": "med nok tid.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Sara og Jonas sparte like mye hver måned. Men Sara endte med nesten dobbelt så mye." },
+                { "si": "Forskjellen var tid. Pengene hennes fikk ti år ekstra til å tjene penger, og så tjente de pengene også penger." },
+                { "si": "Derfor sier mange at det viktigste ikke er hvor mye du sparer, men hvor tidlig du begynner. Selv et lite beløp kan bli stort med nok tid." }
+            ]
+        }
+    ]
+}
