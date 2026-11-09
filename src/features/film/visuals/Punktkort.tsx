@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import {
     Bomb,
+    Church,
     Coins,
     Droplets,
     Factory,
@@ -18,6 +19,7 @@ import {
     Swords,
     TrainFront,
     Users,
+    Venus,
     Wind,
     type LucideIcon,
 } from 'lucide-react';
@@ -43,6 +45,8 @@ const IKONER: Record<string, LucideIcon> = {
     vind: Wind,
     skjold: Shield,
     tog: TrainFront,
+    kirke: Church,
+    kvinne: Venus,
 };
 
 interface Props {

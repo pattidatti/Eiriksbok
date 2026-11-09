@@ -1,0 +1,220 @@
+{
+    "id": "realismen",
+    "tittel": "Realismen: Sannheten skal frem",
+    "kilde": "/norsk/litteraturhistorie/realismen",
+    "bilde": "/images/norsk/litteraturhistorie/realismen-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-09", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "fasade",
+            "lyd": "regn",
+            "kapittel": "Fasaden",
+            "visual": { "type": "RealismenStua", "props": { "modus": "fasade" } },
+            "replikker": [
+                { "si": "Tenk deg en kveld i en norsk by. I et fint hus er det selskap." },
+                { "si": "Utenfra ser alt perfekt ut. Fine klær, pene selskaper og tunge gardiner foran vinduene." },
+                { "si": "På søndag går familien i kirken. Alle skal se at de er ordentlige folk." },
+                { "si": "Men hva skjer bak gardinene, når gjestene har gått hjem?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "REALISMEN",
+                    "undertittel": "Sannheten skal frem, ca. 1870 til 1890",
+                    "bilde": "/images/norsk/litteraturhistorie/realismen-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor ville forfatterne rive ned fasaden?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Det er dette realismen handler om." },
+                { "si": "Realismen er en periode i norsk litteratur. Den varte fra omtrent 1870 til 1890." },
+                { "si": "Forfatterne ville skrive om virkeligheten slik den faktisk var, også de stygge sidene." }
+            ]
+        },
+        {
+            "id": "glansbilde",
+            "lyd": "stille",
+            "kapittel": "Slutt på glansbildet",
+            "visual": { "type": "RealismenTid", "props": { "modus": "glansbilde" } },
+            "replikker": [
+                { "si": "Før realismen kom nasjonalromantikken. Da skrev forfatterne mest om hvor vakkert Norge var." },
+                { "si": "De hyllet naturen, de stolte bøndene og den gamle historien." },
+                { "si": "Alt skulle være fint og flott, nesten som et glansbilde." },
+                { "si": "Men rundt 1870 sa det stopp. Nå ville ikke forfatterne lenger pynte på sannheten." },
+                { "si": "De mente at samfunnet var fullt av urettferdighet som ingen snakket om. Det ville de kritisere, så folk våknet." }
+            ]
+        },
+        {
+            "id": "brandes",
+            "kapittel": "Det moderne gjennombrudd",
+            "visual": { "type": "RealismenKart", "props": { "modus": "kobenhavn" } },
+            "replikker": [
+                { "si": "Startskuddet kom fra Danmark. I 1871 holdt Georg Brandes noen foredrag i København. Han var litteraturkritiker, en som vurderer bøker." },
+                { "si": "Han gikk kraftig til angrep på kirken og på dem som satt med makten. Mange forfattere ble sinte, men også inspirert." },
+                { "si": "Brandes mente at forfatterne i Skandinavia var feige, og at bøkene deres ikke handlet om virkelige mennesker." },
+                { "si": "Han sa at litteraturen må sette problemer under debatt. Den skal ta opp det som er galt, så folk må snakke om det." },
+                { "si": "Dette ble starten på perioden vi kaller Det moderne gjennombrudd." }
+            ]
+        },
+        {
+            "id": "lege",
+            "visual": { "type": "RealismenSamfunn", "props": { "modus": "lege" } },
+            "replikker": [
+                { "si": "Forfatterne sluttet å skrive bare for å underholde eller trøste folk." },
+                { "si": "I stedet oppførte de seg nesten som leger. De undersøkte samfunnet, slik en lege undersøker en syk kropp." },
+                { "si": "Og de fant sykdommer: fattigdom, at kvinner ble holdt nede, og løgn." },
+                { "si": "Medisinen var å fortelle sannheten, uten å pynte på den." }
+            ]
+        },
+        {
+            "id": "byen",
+            "kapittel": "Et land i endring",
+            "visual": { "type": "RealismenSamfunn", "props": { "modus": "byen" } },
+            "replikker": [
+                { "si": "Hvorfor kom realismen akkurat da? Fordi Norge forandret seg raskere enn noensinne." },
+                { "si": "Norge begynte å gå fra å være et bondesamfunn til å bli et industrisamfunn, med fabrikker." },
+                { "si": "Tusenvis av mennesker flyttet fra bygdene og inn til byene for å få jobb på fabrikkene." },
+                { "si": "I byene ble forskjellene tydelige. Arbeiderne bodde ofte trangt og fattig." },
+                { "si": "Samtidig fikk en ny gruppe rike mer og mer makt. Den kalles borgerskapet: fabrikkeiere, kjøpmenn og direktører." }
+            ]
+        },
+        {
+            "id": "innsyn",
+            "lyd": "rom",
+            "kapittel": "Bak gardinene",
+            "visual": { "type": "RealismenStua", "props": { "modus": "innsyn" } },
+            "replikker": [
+                { "si": "Forfatterne irriterte seg spesielt over dobbeltmoralen hos borgerskapet. Utad skulle alt se pent og dannet ut. Dannet betyr fint og høflig." },
+                { "si": "Men bak de lukkede dørene foregikk det mye rart: løgner, ulykkelige ekteskap, utroskap og lureri med penger." },
+                { "si": "Dette kalles dobbeltmoral. Man viser én ting utad og gjør noe annet hjemme." },
+                { "si": "Forfatterne skrev enkelt, direkte og presist, nesten som en journalist." },
+                { "si": "Når du leste boka eller så stykket, skulle det føles som om veggen inn til stua var borte. Du tittet rett inn på hemmelighetene." }
+            ]
+        },
+        {
+            "id": "temaer",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Dette skrev de om",
+                    "punkter": [
+                        { "ikon": "kvinne", "tittel": "Kvinners rettigheter", "tekst": "kunne ikke stemme", "fraBeat": 1 },
+                        { "ikon": "kirke", "tittel": "Kirken", "tekst": "prester som misbrukte makten", "fraBeat": 2 },
+                        { "ikon": "penger", "tittel": "Juks og penger", "tekst": "rik er ikke det samme som ærlig", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Forfatterne tok Brandes på ordet. Tre temaer gikk igjen." },
+                { "si": "Kvinners rettigheter. Kvinner kunne ikke stemme, og de var avhengige av pengene til faren eller mannen sin." },
+                { "si": "Kirken. Prestene hadde mye makt, og folk torde sjelden si imot dem. Forfatterne mente at prestene ofte misbrukte makten." },
+                { "si": "Juks og penger. Mange ville bli rike fort. Forfatterne ville vise at du ikke er ærlig bare fordi du har mye penger." }
+            ]
+        },
+        {
+            "id": "dukkehjem",
+            "lyd": "rom",
+            "kapittel": "Et dukkehjem",
+            "visual": { "type": "RealismenStua", "props": { "modus": "dukkehjem" } },
+            "replikker": [
+                { "si": "Kvinners rettigheter var kanskje det viktigste temaet. I 1879 skrev Henrik Ibsen stykket Et dukkehjem." },
+                { "si": "Hovedpersonen heter Nora. Hun er gift og har tre små barn." },
+                { "si": "Så gjør Nora noe helt sjokkerende. Hun forlater mannen og de tre barna." },
+                { "si": "Hun vil finne seg selv og bli et fritt menneske." },
+                { "si": "At en kvinne gikk fra mann og barn, var helt uhørt i 1879. Stykket skapte stor debatt i avisene." }
+            ]
+        },
+        {
+            "id": "fire",
+            "lyd": "stille",
+            "kapittel": "De fire store",
+            "visual": { "type": "RealismenTid", "props": { "modus": "fire" } },
+            "replikker": [
+                { "si": "Fra 1860-årene og fram mot århundreskiftet satte fire forfattere tonen i norsk litteratur." },
+                { "si": "De kalles de fire store: Henrik Ibsen, Bjørnstjerne Bjørnson, Alexander Kielland og Jonas Lie." },
+                { "si": "Ibsen er Norges mest kjente forfatter gjennom tidene. Stykkene hans spilles fortsatt over hele verden." },
+                { "si": "Han var en mester i å avsløre løgner. Se bare på stykket En folkefiende fra 1882." }
+            ]
+        },
+        {
+            "id": "folkefiende",
+            "visual": { "type": "RealismenSamfunn", "props": { "modus": "folkefiende" } },
+            "replikker": [
+                { "si": "Badelegen Doktor Stockmann oppdager at vannet i byens populære kurbad er forgiftet. Et kurbad er et bad folk reiser til for helsens skyld." },
+                { "si": "Vannet gjør folk syke. Stockmann tror han blir feiret som en helt når han forteller sannheten." },
+                { "si": "Men i stedet blir hele byen rasende. Både avisene og de små næringsdrivende tjener på at sannheten holdes skjult." },
+                { "si": "Til slutt står Stockmann helt alene mot alle. Men han nekter å gi seg." },
+                { "si": "Ibsen lar ham si: Den sterkeste mann i verden, det er han som står mest alene." }
+            ]
+        },
+        {
+            "id": "kielland",
+            "visual": { "type": "RealismenKart", "props": { "modus": "stavanger" } },
+            "replikker": [
+                { "si": "Alexander Kielland vokste opp i en overklassefamilie i Stavanger. Familien hadde drevet et handelshus, altså en handelsbedrift, i flere generasjoner." },
+                { "si": "Likevel valgte han å kritisere de rike og mektige. Han skrev skarpt, morsomt og ironisk." },
+                { "si": "Han angrep spesielt skolen og kirken. Han gjorde narr av hyklerske prester: De prekte om å være god, men var selv slemme eller grådige." },
+                { "si": "I boka Gift fra 1883 angriper han dobbeltmoralen i skolen. Der bygger han på sine egne tolv år på latinskolen." }
+            ]
+        },
+        {
+            "id": "bjornson-lie",
+            "visual": { "type": "RealismenTid", "props": { "modus": "bjornson-lie" } },
+            "replikker": [
+                { "si": "Bjørnstjerne Bjørnson var stor og høylytt, og han blandet seg i alt som skjedde i samfunnet." },
+                { "si": "I stykket En hanske fra 1883 krevde han at verken mannen eller kvinnen skulle ha sex før ekteskapet. Det var ikke rettferdig at bare kvinner måtte være rene." },
+                { "si": "Jonas Lie var ikke like sint. Han skrev familieromaner om hjem og samliv, og om tankene og følelsene til personene." },
+                { "si": "Han kritiserte at kvinner hadde så lite frihet. I 1884 var han med på å starte Norsk Kvinnesaksforening." }
+            ]
+        },
+        {
+            "id": "naturalismen",
+            "kapittel": "Naturalismen",
+            "visual": { "type": "RealismenSamfunn", "props": { "modus": "arv" } },
+            "replikker": [
+                { "si": "På 1880-tallet kom Amalie Skram. Hun hørte til en retning som kalles naturalismen." },
+                { "si": "Naturalistene var enda tøffere. De skrev om ekstrem fattigdom, alkoholisme og psykisk sykdom. Alkoholisme er når noen ikke klarer å slutte å drikke." },
+                { "si": "Realistene mente at du kunne forandre livet ditt hvis du bare ville." },
+                { "si": "Naturalistene mente at skjebnen var bestemt av arv og miljø. Var du født fattig med foreldre som drakk, var et godt liv nesten umulig." },
+                { "si": "Det ser vi i romanserien til Skram om Hellemyrsfolket. Den følger en familie gjennom flere generasjoner." }
+            ]
+        },
+        {
+            "id": "slutten",
+            "kapittel": "Hva lærte vi?",
+            "visual": { "type": "RealismenTid", "props": { "modus": "slutten" } },
+            "replikker": [
+                { "si": "Rundt 1890 tok realismen slutt. Folk ble litt lei av å lese om problemer, kloakk og fattigdom hele tiden." },
+                { "si": "De ville heller lese om mystikk, drømmer og det uforklarlige. Den nye perioden kalles nyromantikken." },
+                { "si": "Men realismen var utrolig viktig. Forfatterne lærte oss at litteratur kan være et kraftig våpen." },
+                { "si": "Ved å skrive om det som er galt, kan du få politikere til å endre lover og vanlige folk til å endre meninger." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Nasjonalromantikken viste glansbildet.", "fraBeat": 0 },
+                        { "tekst": "Realismen viste hva som skjedde bak gardinene.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Sannheten er viktig,", "fraBeat": 1 },
+                        { "tekst": "selv om den kan gjøre vondt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Tør å stille spørsmål", "fraBeat": 2 },
+                        { "tekst": "ved makten.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Nasjonalromantikken viste oss glansbildet. Realismen viste oss hva som skjedde bak gardinene." },
+                { "si": "Den lærte oss at sannheten er viktig, selv om den kan gjøre vondt." },
+                { "si": "Og at vi alltid må tørre å stille spørsmål ved makten." }
+            ]
+        }
+    ]
+}
