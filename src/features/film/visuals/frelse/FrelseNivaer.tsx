@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import type { VisualProps } from '../../types';
-import { Figur, Flate, Tekst } from './felles';
+import { Figur, Flate, MiniStige, Tekst } from './felles';
 
 /**
  * De tre yngre trossamfunnene og mormonismens tre nivåer. Beat 0 viser hvor de tre kommer fra.
  * Så reiser alle de døde seg opp til et av tre nivåer (oppstandelsen er en gave), og til slutt
  * lyser det øverste nivået, opphøyelsen, med de fire kravene.
+ * Modus `plassert`: de tre settes på hver sin lille stige, én etter én.
  */
 
 const OPPHAV = [
@@ -79,7 +80,7 @@ function Opphav() {
 
 function Nivaer({ beat }: { beat: number }) {
     // Hvor mange som ender på hvert nivå (bare en tegning, ikke tall fra virkeligheten).
-    const folk = [0, 0, 1, 1, 1, 2, 2, 2, 2];
+    const folk = [0, 0, 0, 1, 1, 1, 2, 2, 2];
     const oppe = beat >= 2;
     return (
         <>
@@ -160,54 +161,210 @@ function Nivaer({ beat }: { beat: number }) {
                 </text>
             </motion.g>
             {/* Kravene for toppen */}
-            <motion.g
-                initial={{ opacity: 0 }}
-                animate={{ opacity: beat >= 3 ? 1 : 0 }}
-                transition={{ duration: 0.5 }}
-            >
-                <text x={1060} y={250} fontSize={36} fontWeight={900} fill="#0f172a">
-                    Du må:
-                </text>
-                {KRAV.map((k, i) => (
-                    <motion.g
-                        key={k}
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={{ opacity: beat >= 3 ? 1 : 0, x: beat >= 3 ? 0 : 30 }}
-                        transition={{ delay: 0.3 + i * 0.7 }}
-                    >
-                        <rect
-                            x={1060}
-                            y={290 + i * 120}
-                            width={470}
-                            height={96}
-                            rx={20}
-                            fill="#fff"
-                            stroke="#f59e0b"
-                            strokeWidth={4}
-                        />
-                        <path
-                            d={`M ${1090} ${338 + i * 120} l 16 18 l 30 -36`}
-                            fill="none"
-                            stroke="#16a34a"
-                            strokeWidth={9}
-                            strokeLinecap="round"
-                        />
-                        <text
-                            x={1150}
-                            y={351 + i * 120}
-                            fontSize={36}
-                            fontWeight={800}
-                            fill="#0f172a"
+            {beat >= 3 && (
+                <motion.g
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <text x={1060} y={250} fontSize={36} fontWeight={900} fill="#0f172a">
+                        Du må:
+                    </text>
+                    {KRAV.map((k, i) => (
+                        <motion.g
+                            key={k}
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: beat >= 3 ? 1 : 0, x: beat >= 3 ? 0 : 30 }}
+                            transition={{ delay: 0.3 + i * 0.7 }}
                         >
-                            {k}
-                        </text>
-                    </motion.g>
-                ))}
-            </motion.g>
+                            <rect
+                                x={1060}
+                                y={290 + i * 120}
+                                width={470}
+                                height={96}
+                                rx={20}
+                                fill="#fff"
+                                stroke="#f59e0b"
+                                strokeWidth={4}
+                            />
+                            <path
+                                d={`M ${1090} ${338 + i * 120} l 16 18 l 30 -36`}
+                                fill="none"
+                                stroke="#16a34a"
+                                strokeWidth={9}
+                                strokeLinecap="round"
+                            />
+                            <text
+                                x={1150}
+                                y={351 + i * 120}
+                                fontSize={36}
+                                fontWeight={800}
+                                fill="#0f172a"
+                            >
+                                {k}
+                            </text>
+                        </motion.g>
+                    ))}
+                </motion.g>
+            )}
         </>
     );
 }
 
-export function FrelseNivaer({ beat }: VisualProps) {
+/** Trinnet hver av de tre står på (0 = gjort for deg), som i den store stigen. */
+const PLASS = [
+    { navn: 'Mormonisme', x: 330, farge: '#8b5cf6', trinn: 2, fra: 0, tekst: 'gave og innsats' },
+    {
+        navn: 'Jehovas vitner',
+        x: 800,
+        farge: '#0ea5e9',
+        trinn: 1,
+        fra: 1,
+        tekst: 'gaven først, så ditt svar',
+    },
+    {
+        navn: "Bahá'í",
+        x: 1270,
+        farge: '#14b8a6',
+        trinn: 3,
+        fra: 3,
+        tekst: 'din vei, uten målstrek',
+    },
+];
+
+function Plassert({ beat }: { beat: number }) {
+    const aktiv = beat === 0 ? 0 : beat <= 2 ? 1 : 2;
+    return (
+        <>
+            <Tekst x={800} y={95} str={50}>
+                Tre yngre trossamfunn på stigen
+            </Tekst>
+            {PLASS.map((p, i) => {
+                const vist = beat >= p.fra;
+                const lyser = i === aktiv;
+                return (
+                    <g key={p.navn}>
+                        <rect
+                            x={p.x - 215}
+                            y={140}
+                            width={430}
+                            height={620}
+                            rx={28}
+                            fill="#fff"
+                            stroke={lyser ? p.farge : '#e2e8f0'}
+                            strokeWidth={lyser ? 8 : 4}
+                        />
+                        <text
+                            x={p.x}
+                            y={200}
+                            textAnchor="middle"
+                            fontSize={40}
+                            fontWeight={900}
+                            fill={p.farge}
+                        >
+                            {p.navn}
+                        </text>
+                        <MiniStige
+                            x={p.x}
+                            y={300}
+                            trinn={vist ? p.trinn : null}
+                            farge={p.farge}
+                            aktiv={lyser || !vist}
+                            steg={82}
+                        />
+                        {vist && (
+                            <motion.text
+                                x={p.x}
+                                y={735}
+                                textAnchor="middle"
+                                fontSize={32}
+                                fontWeight={800}
+                                fill="#0f172a"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.6 }}
+                            >
+                                {p.tekst}
+                            </motion.text>
+                        )}
+                    </g>
+                );
+            })}
+            {/* Under: det som skjer i fokus-kolonnen akkurat nå */}
+            {beat === 1 && (
+                <motion.g
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
+                >
+                    <rect x={470} y={785} width={660} height={80} rx={22} fill="#0c4a6e" />
+                    <text
+                        x={800}
+                        y={838}
+                        textAnchor="middle"
+                        fontSize={36}
+                        fontWeight={800}
+                        fill="#fff"
+                    >
+                        Og du kan miste den igjen
+                    </text>
+                </motion.g>
+            )}
+            {beat === 2 && (
+                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                    <rect x={160} y={775} width={1280} height={110} rx={22} fill="#0c4a6e" />
+                    <text
+                        x={800}
+                        y={822}
+                        textAnchor="middle"
+                        fontSize={31}
+                        fontWeight={800}
+                        fill="#fff"
+                    >
+                        Jehovas vitner: Gud velger hvem som kommer med blant de 144{'\u00a0'}000
+                    </text>
+                    <text
+                        x={800}
+                        y={866}
+                        textAnchor="middle"
+                        fontSize={28}
+                        fontWeight={700}
+                        fill="#bae6fd"
+                    >
+                        Bare et lite mindretall regner seg selv dit
+                    </text>
+                </motion.g>
+            )}
+            {beat >= 3 && (
+                <motion.g
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                >
+                    <rect x={430} y={785} width={740} height={80} rx={22} fill="#134e4a" />
+                    <text
+                        x={800}
+                        y={838}
+                        textAnchor="middle"
+                        fontSize={34}
+                        fontWeight={800}
+                        fill="#fff"
+                    >
+                        Ingen prester. Veien tar aldri slutt
+                    </text>
+                </motion.g>
+            )}
+        </>
+    );
+}
+
+export function FrelseNivaer({ beat, props }: VisualProps<{ modus?: 'plassert' }>) {
+    if (props.modus === 'plassert') {
+        return (
+            <Flate bakgrunn="#f5f3ff">
+                <Plassert beat={beat} />
+            </Flate>
+        );
+    }
     return <Flate bakgrunn="#f5f3ff">{beat === 0 ? <Opphav /> : <Nivaer beat={beat} />}</Flate>;
 }

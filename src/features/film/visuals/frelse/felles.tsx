@@ -140,3 +140,75 @@ export function Boble({
         </motion.g>
     );
 }
+
+/**
+ * En liten stige med fem trinn: «for deg» øverst, «av deg» nederst. `trinn` er trinnet
+ * merket står på (0 = øverst), eller null når det ikke er plassert ennå.
+ */
+export function MiniStige({
+    x,
+    y,
+    trinn,
+    farge,
+    aktiv = true,
+    steg = 90,
+}: {
+    x: number;
+    y: number;
+    trinn: number | null;
+    farge: string;
+    aktiv?: boolean;
+    steg?: number;
+}) {
+    return (
+        <g opacity={aktiv ? 1 : 0.45}>
+            <text
+                x={x}
+                y={y - 62}
+                textAnchor="middle"
+                fontSize={24}
+                fontWeight={800}
+                fill="#b45309"
+            >
+                for deg
+            </text>
+            {[0, 1, 2, 3, 4].map((k) => (
+                <rect
+                    key={k}
+                    x={x - 110}
+                    y={y + k * steg}
+                    width={220}
+                    height={18}
+                    rx={7}
+                    fill={trinn === k ? '#fcd34d' : '#c8a77a'}
+                />
+            ))}
+            <text
+                x={x}
+                y={y + 4 * steg + 56}
+                textAnchor="middle"
+                fontSize={24}
+                fontWeight={800}
+                fill="#334155"
+            >
+                av deg
+            </text>
+            {trinn !== null && (
+                <motion.g
+                    initial={{ y: -120 - trinn * steg, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ type: 'spring', stiffness: 90, damping: 13 }}
+                >
+                    <circle
+                        r={24}
+                        cx={x}
+                        cy={y + trinn * steg - 22}
+                        fill={farge}
+                        stroke="#fff"
+                        strokeWidth={5}
+                    />
+                </motion.g>
+            )}
+        </g>
+    );
+}
