@@ -126,7 +126,7 @@ function Samsara({ beat }: { beat: number }) {
                     </g>
                 ))}
             </motion.g>
-            <Tekst x={1250} y={820} str={36} farge="#475569" vis={beat === 2}>
+            <Tekst x={1250} y={820} str={42} farge="#1e293b" vis={beat === 2}>
                 tilgivelse stopper ikke hjulet
             </Tekst>
             {/* Veien ut: moksha */}
@@ -161,10 +161,10 @@ function Samsara({ beat }: { beat: number }) {
 }
 
 const VEIER = [
-    { navn: 'Handlingens vei', tekst: 'du gjør det du skal', y: 220, farge: '#0891b2', selv: true },
+    { navn: 'Handlingens vei', tekst: 'noe du gjør selv', y: 220, farge: '#0891b2', selv: true },
     {
         navn: 'Kunnskapens vei',
-        tekst: 'du forstår sammenhengen',
+        tekst: 'også noe du gjør selv',
         y: 450,
         farge: '#7c3aed',
         selv: true,
