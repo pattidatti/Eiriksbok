@@ -2623,6 +2623,20 @@
               ],
               "createdDate": "2026-11-09T01:12:31.828Z",
               "lastUpdated": "2026-11-09T01:12:49.975Z"
+            },
+            {
+              "id": "svindel",
+              "title": "Svindel på nett: Slik lurer de deg",
+              "description": "Pengemuldyr, nettfiske og falske nettbutikker: slik kjenner du igjen svindel, og dette gjør du hvis du blir lurt.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "personlig økonomi",
+                "svindel",
+                "netthandel",
+                "hvitvasking",
+                "nettvett"
+              ],
+              "createdDate": "2026-11-10T00:00:00Z"
             }
           ]
         },

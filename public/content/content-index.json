@@ -1,5 +1,5 @@
 {
-  "buildId": 109935075040073,
+  "buildId": 171695135111071,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4897,6 +4897,9 @@
     "sparing-og-rentes-rente": [
       "content/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente.json"
     ],
+    "svindel": [
+      "content/samfunnskunnskap/personlig-okonomi/svindel.json"
+    ],
     "antikken-visjoner": [
       "content/samfunnskunnskap/styringsformer/antikken-visjoner.json"
     ],
@@ -6623,6 +6626,7 @@
     "samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan": "content/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan.json",
     "samfunnskunnskap/personlig-okonomi/lonnsslippen": "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json",
     "samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente": "content/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente.json",
+    "samfunnskunnskap/personlig-okonomi/svindel": "content/samfunnskunnskap/personlig-okonomi/svindel.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
     "samfunnskunnskap/styringsformer/demokrati-ansikter": "content/samfunnskunnskap/styringsformer/demokrati-ansikter.json",
     "samfunnskunnskap/styringsformer/diktaturet": "content/samfunnskunnskap/styringsformer/diktaturet.json",
