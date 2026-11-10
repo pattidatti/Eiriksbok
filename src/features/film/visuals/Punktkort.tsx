@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import {
+    KeyRound,
     Bomb,
     Church,
     Coins,
@@ -47,6 +48,7 @@ const IKONER: Record<string, LucideIcon> = {
     tog: TrainFront,
     kirke: Church,
     kvinne: Venus,
+    las: KeyRound,
 };
 
 interface Props {

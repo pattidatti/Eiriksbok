@@ -34,7 +34,7 @@ const GENERELLE = {
     Dypet: { krav: ['dybde'], lister: {} },
     Sluttkort: { krav: ['setninger'], lister: { setninger: ['tekst', 'fraBeat'] } },
 };
-const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe', 'vann', 'vind', 'skjold', 'tog', 'kirke', 'kvinne'];
+const IKONER = ['livbat', 'radio', 'is', 'avtale', 'skip', 'penger', 'hest', 'haer', 'stjerne', 'hus', 'snakk', 'bombe', 'fabrikk', 'hval', 'lampe', 'vann', 'vind', 'skjold', 'tog', 'kirke', 'kvinne', 'las'];
 const MAKS_SCENER_PER_VISUAL = 4;
 const MAKS_PUNKTKORT = 1;
 /** Et Punktkort med flere punkter enn dette blir en rad tekstkort på rad (vurdereren trekker Viser). */
