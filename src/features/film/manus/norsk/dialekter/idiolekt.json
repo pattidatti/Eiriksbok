@@ -1,0 +1,189 @@
+{
+    "id": "idiolekt",
+    "tittel": "Idiolekt: Ingen snakker helt som deg",
+    "kilde": "/norsk/dialekter/idiolekt",
+    "bilde": "/images/dialekter/idiolekt-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-10", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "brevene",
+            "lyd": "rom",
+            "kapittel": "Hundre brev",
+            "visual": { "type": "IdiolektBrev", "props": { "modus": "bunke" } },
+            "replikker": [
+                { "si": "Et bord hos politiet. På det ligger rundt hundre brev." },
+                { "si": "Alle ser ut til å komme fra ulike kontorer og ulike saksbehandlere. Og alle har lurt penger ut av folk." },
+                { "si": "Så leser en språkforsker brevene. Hun legger merke til noe rart: Brevene ligner for mye på hverandre." },
+                { "si": "Samme slags ordvalg. Samme slags stavefeil. Samme måte å bygge setninger på." },
+                { "si": "Det var ikke hundre personer som hadde skrevet dem. Det var én." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "IDIOLEKT",
+                    "undertittel": "Ingen snakker helt som deg",
+                    "sporsmal": { "tekst": "Hvordan kunne språket avsløre ham?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Mannen het Carl Danhammer. Språkanalysen ble avgjørende da han ble dømt til ett år og åtte måneder i fengsel." },
+                { "si": "Hvordan er det mulig? Fordi språket ditt er så personlig at det kan brukes til å kjenne deg igjen. Fagordet for det er idiolekt." }
+            ]
+        },
+        {
+            "id": "lekter",
+            "kapittel": "Hva er en idiolekt?",
+            "visual": { "type": "IdiolektTorg", "props": { "modus": "lekter" } },
+            "replikker": [
+                { "si": "Du kjenner kanskje andre ord som slutter på lekt. En dialekt er talemålet i et område, for eksempel bergensk." },
+                { "si": "En sosiolekt er talemålet til en sosial gruppe. En etnolekt er talemålet til en gruppe med felles bakgrunn." },
+                { "si": "Alle disse handler om grupper. Talemålet følger ikke bare stedet. Det følger også hvem du er, og miljøet du hører til." },
+                { "si": "En idiolekt er måten ett enkelt menneske snakker på. Det er det minste nivået av alle." },
+                { "si": "Dialekten handler om et sted. Idiolekten handler om deg." }
+            ]
+        },
+        {
+            "id": "systemet",
+            "visual": { "type": "IdiolektProfil", "props": { "modus": "lag" } },
+            "replikker": [
+                { "si": "Idiolekten er ikke bare noen få favorittord. Den omfatter hele språksystemet ditt." },
+                { "si": "Ordene du kan, og lydene du lager når du snakker." },
+                { "si": "Måten du bøyer ord på, og hvordan du bygger setninger." },
+                { "si": "Og alt annet i måten du bruker språket på." }
+            ]
+        },
+        {
+            "id": "valg",
+            "visual": { "type": "IdiolektProfil", "props": { "modus": "valg" } },
+            "replikker": [
+                { "si": "Tenk på små valg du tar hver dag. Sier du «boka» eller «boken»?" },
+                { "si": "Legger du inn «lissom» når du tenker?" },
+                { "si": "Skriver du «hei» eller «heisann» i meldinger?" },
+                { "si": "Hvert av disse valgene deler du med mange andre." },
+                { "si": "Men alle sammen, i akkurat din blanding, deler du med nesten ingen." }
+            ]
+        },
+        {
+            "id": "barn",
+            "kapittel": "Hvor kommer den fra?",
+            "visual": { "type": "IdiolektLivslinje", "props": { "modus": "barn" } },
+            "replikker": [
+                { "si": "Idiolekten din er ikke tilfeldig. Den er formet av livshistorien din." },
+                { "si": "Hvor du ble født, hvilken sosial bakgrunn familien din har, og hvor mye skolegang du har fått." },
+                { "si": "Grunnmuren legges tidlig. De fleste barn sier sitt første ord rundt ettårsdagen." },
+                { "si": "Ved femårsalderen er all grunnleggende grammatikk på plass. Grammatikk er reglene for hvordan vi bøyer ord og setter dem sammen." },
+                { "si": "Men barn lærer ikke språk bare av å høre lyd. De må høre språk i ekte samtaler med mennesker. TV alene er ikke nok." }
+            ]
+        },
+        {
+            "id": "livet",
+            "visual": { "type": "IdiolektLivslinje", "props": { "modus": "livet" } },
+            "replikker": [
+                { "si": "Så fortsetter det hele livet. Idiolekten står ikke stille." },
+                { "si": "Begynner du på en ny skole, får du nye ord." },
+                { "si": "Flytter du til en annen landsdel, sniker det seg inn nye målmerker. Det er de små trekkene som viser hvor en dialekt hører hjemme." },
+                { "si": "Får du en jobb, lærer du et fagspråk, altså ordene som hører til et yrke." },
+                { "si": "Idiolekten din i dag er ikke helt den samme som for tre år siden. Og om ti år er den annerledes igjen." }
+            ]
+        },
+        {
+            "id": "rett",
+            "lyd": "rom",
+            "kapittel": "Språket som bevis",
+            "visual": { "type": "IdiolektBrev", "props": { "modus": "fag" } },
+            "replikker": [
+                { "si": "At vi snakker og skriver ulikt, brukes også i alvorlige saker. Fagfeltet heter rettslingvistikk." },
+                { "si": "Det betyr å bruke kunnskap om språk i rettssystemet, og når politiet etterforsker en sak." },
+                { "si": "Det brukes i saker om opphavsrett, altså retten til det du selv har laget. Og når noen må finne ut hvem som har skrevet en tekst." },
+                { "si": "De siste årene har også chat-samtaler blitt gransket på denne måten." },
+                { "si": "I Norge har Universitetet i Sørøst-Norge hatt landets første studieprogram i rettslingvistikk siden 2023." }
+            ]
+        },
+        {
+            "id": "torget",
+            "lyd": "stille",
+            "visual": { "type": "IdiolektTorg", "props": { "modus": "spor" } },
+            "replikker": [
+                { "si": "Hvordan finner man én person i mengden? Tenk deg et torg fullt av folk som prater." },
+                { "si": "Vi leter etter en person med tre språktrekk. Første trekk: Personen sier «æ». Det gjør mange." },
+                { "si": "Andre trekk: «ikkje». Det sier også mange. Men færre har begge trekkene." },
+                { "si": "Med det tredje trekket står bare én person igjen." },
+                { "si": "Ett trekk alene hjelper nesten ikke. Det er når flere trekk møtes i samme munn, at du kan peke ut én person." },
+                { "si": "Slik er det i ekte språkgransking også. Jo flere språklige likheter på ulike nivåer i teksten, jo sterkere er beviset." }
+            ]
+        },
+        {
+            "id": "chat",
+            "kapittel": "Idiolekt i skrift",
+            "visual": { "type": "IdiolektProfil", "props": { "modus": "chat" } },
+            "replikker": [
+                { "si": "Idiolekten din stopper ikke når du slutter å snakke. Den følger med inn i tastaturet." },
+                { "si": "Setter du punktum på slutten av en melding, eller lar du den henge?" },
+                { "si": "Skriver du «hahaha» eller «lol»? Hvor mange emojier tåler du i én melding?" },
+                { "si": "Dette er små vaner, og de fleste av dem har du aldri bestemt deg for. Nettopp derfor er de vanskelige å skjule." },
+                { "si": "Prøv selv: Se på de fem siste meldingene du har sendt. Finner du et mønster som går igjen?" }
+            ]
+        },
+        {
+            "id": "skala",
+            "kapittel": "Hvor sikkert er det?",
+            "visual": { "type": "IdiolektProfil", "props": { "modus": "skala" } },
+            "replikker": [
+                { "si": "Men hvor sikkert er et språklig fingeravtrykk? Ikke helt sikkert, og det er viktig." },
+                { "si": "Et fingeravtrykk fra huden gir enten treff eller ikke treff." },
+                { "si": "Et språklig fingeravtrykk er mer usikkert. Derfor bruker språkforskerne en skala med sju trinn." },
+                { "si": "Den går fra «svært sannsynlig samme skribent» til «svært sannsynlig ulike skribenter»." },
+                { "si": "Korte tekster og lite variert språk gjør det vanskelig å si noe sikkert. Skriver du bare «ok», er det ingenting å analysere." }
+            ]
+        },
+        {
+            "id": "summen",
+            "kapittel": "Fra idiolekt til språk",
+            "visual": { "type": "IdiolektTorg", "props": { "modus": "summen" } },
+            "replikker": [
+                { "si": "Til slutt en tanke som snur saken på hodet. Hvis alle har sin egen idiolekt, finnes det da noe som heter norsk?" },
+                { "si": "Svaret er at gruppene bygges nedenfra. Det som er felles i mange idiolekter, blir til en dialekt." },
+                { "si": "Og det som er felles for alle som snakker norsk, er språket. Norsk er ikke en ferdig ting som ligger over oss." },
+                { "si": "Norsk er summen av alt vi som snakker det, har til felles." }
+            ]
+        },
+        {
+            "id": "endring",
+            "visual": { "type": "IdiolektTorg", "props": { "modus": "endring" } },
+            "replikker": [
+                { "si": "Det betyr også at språket forandrer seg gjennom idiolekter." },
+                { "si": "Noen begynner å si et ord på en ny måte." },
+                { "si": "Når mange nok gjør det samme, blir den nye måten etter hvert vanlig i hele gruppen." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Din idiolekt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Det er ikke rart.", "fraBeat": 0 },
+                        { "tekst": "Det er idiolekten min.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Alle stedene du har bodd.", "fraBeat": 1 },
+                        { "tekst": "Alle du har snakket med.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ett ord peker ingen steder.", "fraBeat": 2 },
+                        { "tekst": "Ti småting som peker samme vei, peker sterkt mot én person.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Ingen andre har akkurat den samme.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Så neste gang noen sier at du har en rar måte å si et ord på, kan du svare: Det er ikke rart. Det er idiolekten min." },
+                { "si": "Den er bygd av alle stedene du har bodd, alle du har snakket med, og alt du har lest og sett." },
+                { "si": "Og husk: Ett ord peker ingen steder. Men ti småting som peker samme vei, peker sterkt mot én person." },
+                { "si": "Ingen andre har akkurat den samme idiolekten som deg." }
+            ]
+        }
+    ]
+}
