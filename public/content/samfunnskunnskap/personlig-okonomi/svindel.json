@@ -1,0 +1,267 @@
+{
+  "id": "svindel",
+  "title": "Svindel på nett: Slik lurer de deg",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Personlig økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Svindlere lurer folk til å gi fra seg penger, koder eller kontoen sin. I 2025 ble bankkunder i Norge svindlet for 962 millioner kroner.",
+    "Å låne bort kontoen sin som pengemuldyr er hvitvasking. Du kan bli straffet selv om du ikke visste alt.",
+    "Svindel bruker de samme triksene: hastverk, noe som er for godt til å være sant, og ønsket om å få noe fra deg."
+  ],
+  "externalUrl": "https://snl.no/nettfiske",
+  "factChecked": "2026-11-10",
+  "tags": [
+    "personlig økonomi",
+    "svindel",
+    "netthandel",
+    "hvitvasking",
+    "nettvett"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Jonas er 15 år og sitter på bussen hjem fra trening. Mobilen plinger. Det er en melding på Snapchat fra en han ikke kjenner: «Vil du tjene 500 kroner på fem minutter? Du tar imot 5 000 kroner på kontoen din og sender dem videre. Helt lovlig, alle gjør det.» Jonas har lyst på nye fotballsko. Fem minutter for 500 kroner høres nesten for enkelt ut."
+    },
+    {
+      "type": "text",
+      "content": "Det er nettopp det det er. Meldingen er et forsøk på å gjøre Jonas til et pengemuldyr. Hvis han sier ja, hjelper han kriminelle med å flytte penger, og han kan selv bli straffet. I denne artikkelen skal du lære de vanligste formene for svindel på nett, hvordan du kjenner dem igjen, og hva du gjør hvis uhellet først har skjedd."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Gutt på buss leser en mistenkelig melding på mobilen",
+      "caption": "En melding fra en fremmed kan se uskyldig ut. Det er meningen."
+    },
+    {
+      "type": "header",
+      "text": "Hva er svindel?"
+    },
+    {
+      "type": "text",
+      "content": "Svindel betyr å lure noen for å få penger eller noe annet av verdi. På nett skjer det med meldinger, annonser og falske nettsider. Svindlerne trenger ikke å bryte seg inn noe sted. De prøver i stedet å få deg til å gjøre jobben selv: trykke på en lenke, skrive inn en kode eller sende penger. Dette kalles sosial manipulering, altså å lure folk ved å spille på følelsene deres (Nätt, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Svindel koster mye. I 2025 ble kunder i norske banker svindlet for 962 millioner kroner til sammen (Finanstilsynet, 2026). I andre halvår av 2025 var over halvparten av svindelen av den typen der kunden selv ble lurt til å sette i gang betalingen (Finanstilsynet, 2026). Det betyr at svindlerne oftest ikke knekker noen sikkerhetssystemer. De lurer mennesker."
+    },
+    {
+      "type": "header",
+      "text": "Pengemuldyr: Når noen vil låne kontoen din"
+    },
+    {
+      "type": "text",
+      "content": "Et pengemuldyr er en person som tar imot penger fra én person og sender dem videre til en annen, og som får betalt for det (Europol, u.å.). Pengene kommer ofte fra svindel eller annen kriminalitet. Ved å sende dem gjennom kontoen til en vanlig ungdom blir det vanskeligere for politiet å finne ut hvor pengene kom fra og hvor de havnet."
+    },
+    {
+      "type": "text",
+      "content": "Det har et eget navn: hvitvasking. Hvitvasking betyr å skjule hvor penger fra kriminalitet kommer fra, slik at de ser lovlige ut (Elden, 2026). Reglene står i straffeloven, og straffen kan være bot eller fengsel. Det viktigste for deg å vite er dette: Du kan bli straffet selv om du ikke visste sikkert at pengene var ulovlige. Loven straffer også den som burde ha skjønt det (Elden, 2026). Når en fremmed betaler deg for å flytte penger, burde du skjønne det."
+    },
+    {
+      "type": "text",
+      "content": "Økokrim, som etterforsker økonomisk kriminalitet, ser at kriminelle nettverk rekrutterer stadig flere unge. Noen er helt ned i 15 år (KLP, 2021). Den vanligste måten å finne dem på er gjennom sosiale medier som Snapchat og TikTok, med løfter om «lettjente penger uten risiko» (KLP, 2021). Europol, politisamarbeidet i EU, advarer om at svindlerne ofte retter seg mot folk under 35 år, også mindreårige (Europol, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Prisen for å si ja kan bli høy. Du kan få bot, samfunnsstraff eller fengsel, og banken kan stenge kontoen din (Europol, u.å.). Europol skriver også at noen blir truet med vold hvis de vil slutte å hjelpe de kriminelle (Europol, u.å.). De 500 kronene Jonas ble lovet, er ikke verdt det."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Svindel: å lure noen for å få penger eller noe annet av verdi. Pengemuldyr: en person som lar kriminelle bruke kontoen sin til å flytte penger. Hvitvasking: å skjule hvor penger fra kriminalitet kommer fra. Nettfiske: falske meldinger eller nettsider som skal lure deg til å gi fra deg passord, koder eller kortnummer. Kortreklamasjon: å be banken om å få tilbake penger du har betalt med kort for noe du ikke fikk."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Nettfiske: Den falske meldingen"
+    },
+    {
+      "type": "text",
+      "content": "Den andre store svindeltypen kalles nettfiske. På engelsk heter det phishing. Svindlerne «fisker» etter passord, koder og kortnummer (Nätt, 2024). Et vanlig eksempel er en e-post eller SMS som later som den kommer fra en tjeneste du kjenner, for eksempel banken din eller et fraktselskap. Meldingen sier at noe er galt: det er mistenkelig aktivitet på kontoen din, eller pakken din står fast. Så får du en lenke."
+    },
+    {
+      "type": "text",
+      "content": "Lenken fører til en kopi av den ekte nettsiden. Den kan se helt lik ut. Men når du skriver inn brukernavn og passord der, havner de rett hos svindlerne (Nätt, 2024). Med innloggingen din kan de tømme kontoen eller handle i ditt navn. Det beste rådet er derfor enkelt: Trykk ikke på lenker i meldinger som ber deg logge inn eller betale. Skriv heller inn adressen til banken eller butikken selv, eller bruk appen deres (Nätt, 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Falske nettbutikker"
+    },
+    {
+      "type": "text",
+      "content": "Den tredje fellen er falske nettbutikker. De lokker ofte med kjente merkevarer til en pris som er alt for lav. Du betaler, men varen kommer aldri, eller du får en billig kopi. Ung.no, som har skrevet sine råd sammen med Forbrukerrådet, nevner flere varseltegn (Ung.no, 2026). Butikken later som den er norsk, men har skrivefeil og et rart nettnavn. Den mangler adresse, telefonnummer og organisasjonsnummer. Og den sier ingenting om angrerett, altså retten til å angre på et kjøp og sende varen tilbake."
+    },
+    {
+      "type": "text",
+      "content": "Før du handler fra en butikk du ikke kjenner, kan du søke den opp og se hva andre har opplevd. Betal gjerne med kort. Da kan du be banken om pengene tilbake hvis du ikke får varen. Det kalles kortreklamasjon (Ung.no, 2026). Husk også at «betal senere» er et lån med egne regler. Les mer om det i artikkelen om [kjøp nå, betal senere](/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom sammenligner en ekte og en falsk nettbutikk",
+      "caption": "En falsk nettbutikk kan ligne på en ekte. Varseltegnene står ofte i det små."
+    },
+    {
+      "type": "header",
+      "text": "Tre triks som går igjen"
+    },
+    {
+      "type": "text",
+      "content": "Svindel kan se veldig forskjellig ut. Men hvis du ser nøye etter, bruker svindlerne de samme triksene igjen og igjen. Det første er hastverk: «innen 24 timer», «bare i dag», «kontoen din blir sperret». Hastverket skal få deg til å handle før du rekker å tenke. Det andre er lokkemat: noe som er for godt til å være sant, som lettjente penger eller sko til en femtedel av prisen. Europol sier det kort: Hvis noe virker for godt til å være sant, er det sannsynligvis det (Europol, u.å.). Det tredje er at svindleren vil at du skal gi fra deg noe: penger, koder eller kontoen din."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Under får du fem meldinger og tilbud. Noen er svindel, og minst én er trygg. Se om du klarer å finne triksene."
+    },
+    {
+      "type": "component",
+      "name": "SvindelSjekken",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "La du merke til hva alle svindlene hadde felles? Alle ville at du skulle gi fra deg noe. Ingen ekte bank ber deg logge inn via en lenke i en SMS, og ingen seriøs arbeidsgiver betaler deg for å låne kontoen din. Når en melding haster og ber om penger, koder eller kontoen din, er det på tide å stoppe."
+    },
+    {
+      "type": "header",
+      "text": "Hva gjør du hvis det har skjedd?"
+    },
+    {
+      "type": "text",
+      "content": "Selv forsiktige folk blir lurt. Svindlerne er flinke, og det er ingen skam å gå på en smell. Det viktigste er at du handler raskt. Har du sendt penger, gitt fra deg kortnummer eller logget inn på en falsk side, bør du gjøre dette:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Si fra til en voksen du stoler på, for eksempel en forelder.",
+        "Ring banken med en gang og fortell hva som har skjedd. Jo raskere banken får vite det, jo større er sjansen for å stoppe pengene.",
+        "Har noen brukt kontoen din til å flytte penger: Stopp overføringene og si fra til banken (Europol, u.å.).",
+        "Meld fra til politiet der du bor (Europol, u.å.).",
+        "Bytt passord på kontoen som kan være lurt, og slå på totrinnsinnlogging der det går (Nätt, 2024)."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Totrinnsinnlogging betyr at du trenger to ting for å logge inn, for eksempel både et passord og en kode på mobilen. Da er ikke passordet alene nok for svindlerne (Nätt, 2024). Det er også lurt å tenke over hva du deler om deg selv på nett. Jo mer svindlerne vet om deg, jo mer troverdige kan meldingene deres bli. Les mer i artikkelen om [dine digitale spor](/samfunnskunnskap/mennesket-kultur-samfunn/km-10-digitale-spor)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom ringer banken mens en voksen sitter ved siden av",
+      "caption": "Ring banken med en gang. Jo raskere du er, jo større er sjansen for å stoppe pengene."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Svindel på nett handler mindre om teknikk og mer om å lure mennesker. De vanligste fellene for unge er å bli pengemuldyr, å gå på nettfiske og å handle i falske nettbutikker. Å låne bort kontoen sin er hvitvasking, og du kan bli straffet selv om du ikke visste alt. Svindlerne bruker de samme triksene: hastverk, lokkemat og ønsket om å få noe fra deg. Stopp, sjekk og spør noen før du trykker. Og husk at penger som vokser fort uten innsats, nesten alltid er for godt til å være sant. Ekte sparing går sakte, slik du kan lese i artikkelen om [sparing og rentes rente](/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente)."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Elden, J. C. (2026). *Hvitvasking*. Store norske leksikon. Hentet 10.11.2026 fra [snl.no](https://snl.no/hvitvasking)",
+          "Europol. (u.å.). *Pengemuldyr: En måte å hvitvaske penger på* [Brosjyre]. Hentet 10.11.2026 fra [europol.europa.eu](https://www.europol.europa.eu/sites/default/files/documents/no_flyers.pdf)",
+          "Finanstilsynet. (2026). *Svindelstatistikk andre halvår 2025*. Hentet 10.11.2026 fra [finanstilsynet.no](https://www.finanstilsynet.no/publikasjoner-og-analyser/svindel-og-svindelstatistikk/2025/h2/svindelstatistikk-andre-halvar-2025/)",
+          "KLP. (2021). *Økt bruk av pengemuldyr ved svindel*. Hentet 10.11.2026 fra [klp.no](https://www.klp.no/artikler/okt-bruk-av-pengemuldyr-ved-svindel)",
+          "Nätt, T. H. (2024). *Nettfiske*. Store norske leksikon. Hentet 10.11.2026 fra [snl.no](https://snl.no/nettfiske)",
+          "Ung.no. (2026). *Er det trygt å handle fra ...?* Hentet 10.11.2026 fra [ung.no](https://www.ung.no/hvilke-nettbutikker-er-det-trygt-a-handle-fra)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er et pengemuldyr, og hvorfor er det straffbart å være det?",
+          "Hva er nettfiske? Forklar hvordan en falsk lenke kan gi svindlerne passordet ditt.",
+          "Nevn tre varseltegn på at en nettbutikk kan være falsk.",
+          "Hvor mye ble kunder i norske banker svindlet for i 2025, og hvordan ble de fleste lurt?"
+        ],
+        "reflekter": [
+          "Hvorfor tror du svindlere så ofte bruker hastverk i meldingene sine?",
+          "Jonas visste ikke sikkert at pengene var ulovlige. Er det rettferdig at han likevel kan bli straffet? Begrunn svaret.",
+          "Hvorfor tror du kriminelle nettverk prøver å rekruttere unge, og ikke voksne, som pengemuldyr?",
+          "Mange som blir svindlet, skammer seg og sier ikke fra. Hvorfor er det et problem, og hva kan gjøre det lettere å si fra?"
+        ],
+        "gaaVidere": [
+          "Lag en plakat eller en kort video for elever på 8. trinn med de tre triksene svindlere bruker, og hva de skal gjøre hvis de blir lurt.",
+          "Finn en svindelmelding som du eller noen du kjenner har fått (fjern navn og numre). Pek ut varseltegnene og skriv hvilket triks den bruker.",
+          "Diskuter i klassen: Hvem har mest ansvar for å stoppe svindel på nett - den enkelte, bankene, de sosiale mediene eller staten?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er et pengemuldyr?",
+            "options": [
+              "En som låner penger i banken",
+              "En som lar andre bruke kontoen sin til å flytte penger mot betaling",
+              "En som jobber i et inkassoselskap",
+              "En som selger varer på nett"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Et pengemuldyr tar imot penger og sender dem videre mot betaling. Det er en del av hvitvasking."
+          },
+          {
+            "question": "Kan du bli straffet for hvitvasking selv om du ikke visste sikkert at pengene var ulovlige?",
+            "options": [
+              "Nei, aldri",
+              "Bare hvis du er over 18 år",
+              "Ja, loven straffer også den som burde ha skjønt det",
+              "Bare hvis beløpet er over en million kroner"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Både den som vet og den som burde ha skjønt at pengene kom fra kriminalitet, kan straffes."
+          },
+          {
+            "question": "Du får en SMS fra «banken» med en lenke der du skal logge inn. Hva bør du gjøre?",
+            "options": [
+              "Trykke på lenken med en gang",
+              "Svare på meldingen med passordet ditt",
+              "Ignorere lenken og heller logge inn via bankens egen app eller nettside",
+              "Sende meldingen videre til venner"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Lenken kan føre til en falsk kopi av banken. Skriv inn adressen selv eller bruk appen."
+          },
+          {
+            "question": "Hvilket av disse er IKKE et vanlig svindeltriks?",
+            "options": [
+              "Hastverk",
+              "Noe som er for godt til å være sant",
+              "Å be om penger, koder eller kontoen din",
+              "Å oppgi adresse, telefon og regler for angrerett"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Seriøse butikker viser kontaktinformasjon og angrerett. Det mangler ofte i falske butikker."
+          },
+          {
+            "question": "Hvorfor er det lurt å betale med kort når du handler på nett?",
+            "options": [
+              "Kort er alltid billigere",
+              "Du kan be banken om pengene tilbake hvis du ikke får varen",
+              "Butikken ser ikke hvem du er",
+              "Du slipper å betale moms"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Dette kalles kortreklamasjon."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
