@@ -1,0 +1,183 @@
+{
+    "id": "geolekt",
+    "tittel": "Geolekt: Hvor går grensen mellom to dialekter?",
+    "kilde": "/norsk/dialekter/geolekt",
+    "bilde": "/images/dialekter/geolekt-hero.webp",
+    "utenforArtikkel": [
+        { "tall": "én prest", "begrunnelse": "Forklaring av ordet prestegjeld (området én prest hadde ansvar for), ikke et nytt faktum om dialekter. Store norske leksikon, «prestegjeld»." }
+    ],
+    "vurdering": { "dato": "2026-11-10", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "bussen",
+            "lyd": "vind",
+            "kapittel": "Bussturen",
+            "visual": { "type": "GeolektKart", "props": { "modus": "buss" } },
+            "replikker": [
+                { "si": "Du sitter på bussen fra Bergen til Oslo. Ved avgang hører du «eg», og en rullende r." },
+                { "si": "Fem timer senere ruller bussen ned mot Drammen. Nå sier folk «jæi», og r-en er en helt annen lyd." },
+                { "si": "Et sted underveis har språket skiftet. Men hvor? Ved det høyeste fjellet, eller inne i den lange tunnelen?" },
+                { "si": "Prøv å sette fingeren på kartet og si: Her går grensen. Det er vanskeligere enn det høres ut." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "GEOLEKT",
+                    "undertittel": "Hvor går grensen mellom to dialekter?",
+                    "bilde": "/images/dialekter/geolekt-hero.webp",
+                    "sporsmal": { "tekst": "Er grensen en strek?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om geolekter. Og om et spørsmål som er vanskeligere enn det ser ut: Hvor går grensen mellom to dialekter?" },
+                { "si": "Er grensen en strek på kartet? Eller er den noe helt annet?" }
+            ]
+        },
+        {
+            "id": "lekter",
+            "kapittel": "Språket som hører til et sted",
+            "visual": { "type": "GeolektTavle", "props": { "modus": "lekter" } },
+            "replikker": [
+                { "si": "Språkforskere har et eget ord for en variant av et språk. De kaller det en varietet." },
+                { "si": "Når varianten bare henger sammen med hvor folk bor, kaller de den en geolekt. «Geo» betyr jord eller sted, og «lekt» betyr talemåte." },
+                { "si": "Det er dette vi vanligvis mener med dialekt når vi snakker til daglig. Sier du at noen snakker sunnmørsk, mener du en geolekt." },
+                { "si": "Men språket ditt kan formes på flere måter. En sosiolekt hører til en gruppe i samfunnet. En etnolekt vokser fram der mange språk møtes." },
+                { "si": "Og idiolekten er din helt egen språkstil. Men geolekten er den som svarer på spørsmålet: Hvor kommer du fra?" }
+            ]
+        },
+        {
+            "id": "isogloss",
+            "kapittel": "Isoglossen",
+            "visual": { "type": "GeolektDal", "props": { "modus": "innsamling" } },
+            "replikker": [
+                { "si": "Så hvor slutter en geolekt? Vi kan ikke måle hele talemålet på én gang. Vi må ta ett trekk om gangen." },
+                { "si": "Et slikt trekk kalles et målmerke. Det kan være tjukk l, eller den myke j-lyden i «mannj»." },
+                { "si": "Forskerne reiser rundt og spør folk på mange steder hvordan de sier bestemte ord. Svarene fører de inn på et kart." },
+                { "si": "Da tegner det seg en linje. Der slutter det ene svaret, og det andre tar over." },
+                { "si": "Den linjen har et eget navn. Den heter en isogloss. En isogloss er grensen for ett enkelt målmerke." }
+            ]
+        },
+        {
+            "id": "forskerne",
+            "visual": { "type": "GeolektTavle", "props": { "modus": "forskere" } },
+            "replikker": [
+                { "si": "Dette arbeidet har lange røtter i Norge. Ivar Aasen reiste rundt i landet på 1800-tallet." },
+                { "si": "Reisene hans var avgjørende for at studiet av dialekter ble en vitenskap." },
+                { "si": "På begynnelsen av 1900-tallet kartla Amund B. Larsen hvordan folk snakket i byene. Og ordlistene til Johan Storm ble brukt helt fram til 1970-tallet." },
+                { "si": "Likevel har vi aldri fått et samlet dialektatlas for norsk. Vi har mange kart over ett og ett trekk, men ikke ett stort kart over alt." }
+            ]
+        },
+        {
+            "id": "tre-bygder",
+            "kapittel": "Ingen skarp grense",
+            "visual": { "type": "GeolektDal", "props": { "modus": "tre-bygder" } },
+            "replikker": [
+                { "si": "Nå kommer det viktigste. Hvis alle målmerkene skiftet på nøyaktig samme sted, ville dialektgrensen vært en enkel strek." },
+                { "si": "Men slik er det ikke. Isoglossene for ulike trekk faller ofte ikke sammen." },
+                { "si": "Tenk deg tre bygder på rad i en dal. Bygda lengst vest mangler alle tre trekkene. Bygda lengst øst har alle tre." },
+                { "si": "Bygda i midten har bare ett av dem. Hvor setter du grensen nå?" },
+                { "si": "Uansett hvor du setter den, havner noe på feil side." }
+            ]
+        },
+        {
+            "id": "beltet",
+            "visual": { "type": "GeolektDal", "props": { "modus": "belte" } },
+            "replikker": [
+                { "si": "Derfor sier forskerne at en tydelig dialektgrense bare finnes der mange isoglosser faller sammen på samme sted." },
+                { "si": "Der linjene sprer seg, får vi i stedet et overgangsområde. Da skifter språket gradvis, litt etter litt." },
+                { "si": "Og det blir enda mer rotete når vi ser nøye etter. Selv ett og samme målmerke kan ha flere varianter, med hver sin grense." },
+                { "si": "Tjukk l brukes både der det gamle språket hadde bokstaven l, og der det hadde to andre bokstaver. De to typene har ikke helt de samme grensene." },
+                { "si": "Jo nærmere du går inn på kartet, jo flere linjer dukker opp." }
+            ]
+        },
+        {
+            "id": "langfjella",
+            "lyd": "vind",
+            "kapittel": "Geografien tegner linjene",
+            "visual": { "type": "GeolektKart", "props": { "modus": "hovedgrense" } },
+            "replikker": [
+                { "si": "Men hvorfor ligger linjene akkurat der de ligger? Svaret er ofte at folk måtte reise for å snakke sammen." },
+                { "si": "Se på det store skillet mellom østnorsk og vestnorsk. Grensen starter ved Langesundsfjorden og går gjennom sørvestre Telemark." },
+                { "si": "Videre følger den Langfjella. Til slutt går den mellom Romsdal og Nordmøre." },
+                { "si": "Det er ingen tilfeldighet at grensen følger den store fjellkjeden. Fjellene gjorde det tungt å komme seg fra bygd til bygd." }
+            ]
+        },
+        {
+            "id": "setesdal",
+            "visual": { "type": "GeolektDal", "props": { "modus": "setesdal" } },
+            "replikker": [
+                { "si": "Setesdal er et godt eksempel. Dalen fikk ikke ordentlig vei før på slutten av 1800-tallet." },
+                { "si": "Talemålet der har holdt på mange gamle trekk som er borte andre steder." },
+                { "si": "Når reisen er tung, blir språket liggende i ro. Når reisen er lett, blandes språket raskere." }
+            ]
+        },
+        {
+            "id": "mannj",
+            "lyd": "stille",
+            "visual": { "type": "GeolektKart", "props": { "modus": "palatal" } },
+            "replikker": [
+                { "si": "Andre trekk følger helt andre linjer. Ta den myke j-lyden, som i «mannj». Forskerne kaller den palatalisering." },
+                { "si": "Den hører til et nordlig område. Grensen strekker seg så langt sør som til Hedmark, og går mellom Valdres og Gudbrandsdalen." },
+                { "si": "Den linjen har ingenting med Langfjella å gjøre. To bygder kan ligge på samme side av den ene grensen, og på hver sin side av den andre." },
+                { "si": "Derfor blir kartet et nett av linjer, og ikke et puslespill med tydelige biter." }
+            ]
+        },
+        {
+            "id": "skarre",
+            "kapittel": "Grenser som flytter seg",
+            "visual": { "type": "GeolektKart", "props": { "modus": "skarre" } },
+            "replikker": [
+                { "si": "Isoglossene ligger heller ikke fast. De flytter seg når et trekk sprer seg til nye steder." },
+                { "si": "Skarre-r er det beste eksempelet. Lyden oppsto i Paris på 1600-tallet." },
+                { "si": "Rundt år 1800 hadde den nådd Kristiansand og Bergen." },
+                { "si": "Siden 1950-tallet har skarre-beltet vokst videre, fra Risør i retning Bergen." },
+                { "si": "Grensen for skarre-r ligger altså et annet sted i dag enn den gjorde da bestemoren din var ung." }
+            ]
+        },
+        {
+            "id": "hopp",
+            "visual": { "type": "GeolektTavle", "props": { "modus": "hopp" } },
+            "replikker": [
+                { "si": "Noen ganger er skiftet likevel brått. Et trekk kan forsvinne helt fra én bygd til nabobygda." },
+                { "si": "En fjord, et fjell eller en gammel grense mellom to prestegjeld kan gi et slikt hopp. Et prestegjeld var området én prest hadde ansvar for." },
+                { "si": "Men det gjelder ett trekk om gangen, ikke hele talemålet." }
+            ]
+        },
+        {
+            "id": "fotografi",
+            "kapittel": "Kartet viser fortiden",
+            "visual": { "type": "GeolektTavle", "props": { "modus": "fotografi" } },
+            "replikker": [
+                { "si": "Husk også dette: Et dialektkart er som et gammelt fotografi." },
+                { "si": "Det viser hvordan folk snakket da forskerne samlet inn svarene. Og de spurte som regel eldre folk på landsbygda." },
+                { "si": "Kartet er derfor ikke et bilde av hvordan ungdom snakker i dag." },
+                { "si": "Nå flytter folk mer, reiser mer og møtes på nett. Mange av de gamle linjene har blitt utydelige." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hvor går grensen?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Grensen er ikke ett sted.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Den er en sone, kanskje flere mil bred,", "fraBeat": 1 },
+                        { "tekst": "der det ene trekket etter det andre gir seg.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Språk er ikke land med streker mellom seg.", "fraBeat": 2 },
+                        { "tekst": "Det er et landskap der alt går gradvis over i noe annet.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Så hva svarer vi på spørsmålet fra bussturen? At grensen ikke er ett sted." },
+                { "si": "Den er en sone, kanskje flere mil bred, der det ene trekket etter det andre gir seg." },
+                { "si": "Språk er ikke land med streker mellom seg. Det er et landskap der alt går gradvis over i noe annet." }
+            ]
+        }
+    ]
+}
