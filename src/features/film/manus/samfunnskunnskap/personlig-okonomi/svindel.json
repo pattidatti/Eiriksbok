@@ -1,0 +1,282 @@
+{
+    "id": "svindel",
+    "tittel": "Svindel på nett: Slik lurer de deg",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/svindel",
+    "bilde": "/images/personlig-okonomi/svindel-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-10", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "bussen",
+            "kapittel": "Meldingen",
+            "visual": { "type": "SvindelMobil", "props": { "modus": "snap" } },
+            "replikker": [
+                { "si": "Jonas er 15 år. Han sitter på bussen hjem fra trening." },
+                { "si": "Mobilen plinger. Det er en melding på Snapchat, fra en han ikke kjenner." },
+                {
+                    "si": "Vil du tjene 500 kroner på fem minutter? Du tar imot 5000 kroner og sender dem videre. Helt lovlig, alle gjør det.",
+                    "uttale": "Vil du tjene fem hundre kroner på fem minutter? Du tar imot fem tusen kroner og sender dem videre. Helt lovlig, alle gjør det."
+                },
+                {
+                    "si": "Jonas har lyst på nye fotballsko. Fem minutter for 500 kroner høres nesten for enkelt ut.",
+                    "uttale": "Jonas har lyst på nye fotballsko. Fem minutter for fem hundre kroner høres nesten for enkelt ut."
+                },
+                { "si": "Det er nettopp det det er. Noen prøver å gjøre Jonas til et pengemuldyr." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SVINDEL PÅ NETT",
+                    "undertittel": "Slik lurer de deg",
+                    "bilde": "/images/personlig-okonomi/svindel-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kjenner du igjen svindel?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Denne filmen handler om tre av de vanligste fellene for unge: å bli pengemuldyr, å gå på nettfiske og å handle i falske nettbutikker."
+                },
+                { "si": "Hvordan kjenner du igjen svindel? Og hva gjør du hvis uhellet først har skjedd?" }
+            ]
+        },
+        {
+            "id": "hvelvet",
+            "kapittel": "Hva er svindel?",
+            "visual": { "type": "SvindelByen", "props": { "modus": "hvelv" } },
+            "replikker": [
+                { "si": "Svindel betyr å lure noen for å få penger eller noe annet av verdi." },
+                { "si": "På nett skjer det med meldinger, annonser og falske nettsider." },
+                { "si": "Svindlerne trenger ikke å bryte seg inn noe sted." },
+                {
+                    "si": "De prøver i stedet å få deg til å gjøre jobben selv: trykke på en lenke, skrive inn en kode eller sende penger."
+                },
+                {
+                    "si": "Dette kalles sosial manipulering. Det betyr å lure folk ved å spille på følelsene deres."
+                }
+            ]
+        },
+        {
+            "id": "millioner",
+            "visual": { "type": "SvindelTall", "props": { "modus": "millioner" } },
+            "replikker": [
+                {
+                    "si": "Svindel koster mye. I 2025 ble kunder i norske banker svindlet for 962 millioner kroner til sammen.",
+                    "uttale": "Svindel koster mye. I tjue tjuefem ble kunder i norske banker svindlet for ni hundre og sekstito millioner kroner til sammen."
+                },
+                {
+                    "si": "I andre halvår av 2025 var over halvparten av svindelen av én type. Kunden ble selv lurt til å sette i gang betalingen.",
+                    "uttale": "I andre halvår av tjue tjuefem var over halvparten av svindelen av én type. Kunden ble selv lurt til å sette i gang betalingen."
+                },
+                {
+                    "si": "Svindlerne knekker altså oftest ikke noen sikkerhetssystemer. De lurer mennesker."
+                }
+            ]
+        },
+        {
+            "id": "muldyr",
+            "kapittel": "Pengemuldyr",
+            "visual": { "type": "SvindelByen", "props": { "modus": "muldyr" } },
+            "replikker": [
+                { "si": "Tilbake til Jonas. Hva er egentlig et pengemuldyr?" },
+                {
+                    "si": "Det er en person som tar imot penger fra én person og sender dem videre til en annen. Og som får betalt for det."
+                },
+                { "si": "Pengene kommer ofte fra svindel eller annen kriminalitet." },
+                {
+                    "si": "Når pengene går gjennom kontoen til en vanlig ungdom, blir det vanskeligere for politiet å finne ut hvor de kom fra, og hvor de havnet."
+                }
+            ]
+        },
+        {
+            "id": "hvitvasking",
+            "visual": { "type": "SvindelByen", "props": { "modus": "kjede" } },
+            "replikker": [
+                {
+                    "si": "Dette har et eget navn: hvitvasking. Det betyr å skjule hvor penger fra kriminalitet kommer fra, slik at de ser lovlige ut."
+                },
+                { "si": "Reglene står i straffeloven, og straffen kan være bot eller fengsel." },
+                {
+                    "si": "Og her er det viktigste: Du kan bli straffet selv om du ikke visste sikkert at pengene var ulovlige."
+                },
+                {
+                    "si": "Loven straffer også den som burde ha skjønt det. Når en fremmed betaler deg for å flytte penger, burde du skjønne det."
+                }
+            ]
+        },
+        {
+            "id": "unge",
+            "visual": { "type": "SvindelTall", "props": { "modus": "unge" } },
+            "replikker": [
+                {
+                    "si": "Økokrim etterforsker økonomisk kriminalitet. De ser at kriminelle nettverk rekrutterer, altså får med seg, stadig flere unge."
+                },
+                { "si": "Noen er helt ned i 15 år." },
+                {
+                    "si": "Den vanligste måten å finne dem på er gjennom sosiale medier som Snapchat og TikTok, med løfter om lettjente penger uten risiko."
+                },
+                {
+                    "si": "Europol, politisamarbeidet i EU, advarer om at svindlerne ofte retter seg mot folk under 35 år. Også mindreårige."
+                }
+            ]
+        },
+        {
+            "id": "prisen",
+            "visual": { "type": "SvindelByen", "props": { "modus": "vekt" } },
+            "replikker": [
+                { "si": "Prisen for å si ja kan bli høy." },
+                { "si": "Du kan få bot, samfunnsstraff eller fengsel." },
+                { "si": "Og banken kan stenge kontoen din." },
+                {
+                    "si": "Europol skriver også at noen blir truet med vold hvis de vil slutte å hjelpe de kriminelle."
+                },
+                {
+                    "si": "De 500 kronene Jonas ble lovet, er ikke verdt det.",
+                    "uttale": "De fem hundre kronene Jonas ble lovet, er ikke verdt det."
+                }
+            ]
+        },
+        {
+            "id": "nettfiske",
+            "kapittel": "Nettfiske",
+            "visual": { "type": "SvindelMobil", "props": { "modus": "sms" } },
+            "replikker": [
+                {
+                    "si": "Den andre store svindeltypen kalles nettfiske. På engelsk heter det phishing.",
+                    "uttale": "Den andre store svindeltypen kalles nettfiske. På engelsk heter det fisjing."
+                },
+                { "si": "Svindlerne fisker etter passord, koder og kortnummer." },
+                {
+                    "si": "Et vanlig eksempel er en e-post eller SMS som later som den kommer fra en tjeneste du kjenner, som banken din eller et fraktselskap."
+                },
+                {
+                    "si": "Meldingen sier at noe er galt. Det er mistenkelig aktivitet på kontoen din, eller pakken din står fast."
+                },
+                { "si": "Så får du en lenke." }
+            ]
+        },
+        {
+            "id": "kopien",
+            "visual": { "type": "SvindelMobil", "props": { "modus": "kopi" } },
+            "replikker": [
+                { "si": "Lenken fører til en kopi av den ekte nettsiden. Den kan se helt lik ut." },
+                {
+                    "si": "Men når du skriver inn brukernavn og passord der, havner de rett hos svindlerne."
+                },
+                { "si": "Med innloggingen din kan de tømme kontoen eller handle i ditt navn." },
+                {
+                    "si": "Det beste rådet er derfor enkelt: Trykk ikke på lenker i meldinger som ber deg logge inn eller betale."
+                },
+                { "si": "Skriv heller inn adressen til banken selv, eller bruk appen deres." }
+            ]
+        },
+        {
+            "id": "nettbutikk",
+            "kapittel": "Falske nettbutikker",
+            "visual": { "type": "SvindelMobil", "props": { "modus": "butikk" } },
+            "replikker": [
+                {
+                    "si": "Den tredje fellen er falske nettbutikker. De lokker ofte med kjente merkevarer til en pris som er alt for lav."
+                },
+                { "si": "Du betaler, men varen kommer aldri. Eller du får en billig kopi." },
+                {
+                    "si": "Se etter varseltegnene. Butikken later som den er norsk, men har skrivefeil og et rart nettnavn."
+                },
+                {
+                    "si": "Den mangler adresse, telefonnummer og organisasjonsnummer. Og den sier ingenting om angrerett, altså retten til å angre på et kjøp og sende varen tilbake."
+                },
+                {
+                    "si": "Betal gjerne med kort. Da kan du be banken om pengene tilbake hvis du ikke får varen. Det kalles kortreklamasjon."
+                }
+            ]
+        },
+        {
+            "id": "triks",
+            "kapittel": "Tre triks",
+            "visual": { "type": "SvindelTriks", "props": { "modus": "tre" } },
+            "replikker": [
+                {
+                    "si": "Svindel kan se veldig forskjellig ut. Men svindlerne bruker de samme triksene igjen og igjen."
+                },
+                {
+                    "si": "Det første er hastverk. Innen 24 timer, bare i dag, kontoen din blir sperret. Du skal handle før du rekker å tenke.",
+                    "uttale": "Det første er hastverk. Innen tjuefire timer, bare i dag, kontoen din blir sperret. Du skal handle før du rekker å tenke."
+                },
+                {
+                    "si": "Det andre er lokkemat: noe som er for godt til å være sant. Som lettjente penger, eller sko til en femtedel av prisen."
+                },
+                {
+                    "si": "Det tredje er at svindleren vil at du skal gi fra deg noe: penger, koder eller kontoen din."
+                }
+            ]
+        },
+        {
+            "id": "jonas-igjen",
+            "visual": { "type": "SvindelTriks", "props": { "modus": "jonas" } },
+            "replikker": [
+                { "si": "Se på meldingen til Jonas igjen. Finner du triksene?" },
+                { "si": "Lettjente penger for nesten ingenting. Det er lokkemat." },
+                { "si": "Og han skal låne bort kontoen sin. Han skal gi fra seg noe." },
+                {
+                    "si": "Ingen seriøs arbeidsgiver betaler deg for å låne kontoen din. Og ingen ekte bank ber deg logge inn via en lenke i en SMS."
+                },
+                {
+                    "si": "Når en melding haster og ber om penger, koder eller kontoen din, er det på tide å stoppe."
+                }
+            ]
+        },
+        {
+            "id": "hjelp",
+            "kapittel": "Hvis det har skjedd",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Har du blitt lurt?",
+                    "punkter": [
+                        { "ikon": "haer", "tittel": "Si fra til en voksen", "tekst": "for eksempel en forelder", "fraBeat": 1 },
+                        { "ikon": "penger", "tittel": "Ring banken", "tekst": "med en gang", "fraBeat": 2 },
+                        { "ikon": "skjold", "tittel": "Meld fra til politiet", "tekst": "der du bor", "fraBeat": 3 },
+                        { "ikon": "las", "tittel": "Bytt passord", "tekst": "og totrinnsinnlogging der det går", "fraBeat": 4 }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Selv forsiktige folk blir lurt. Det er ingen skam å gå på en smell. Det viktigste er at du handler raskt."
+                },
+                { "si": "Si fra til en voksen du stoler på, for eksempel en forelder." },
+                {
+                    "si": "Ring banken med en gang. Jo raskere banken får vite det, jo større er sjansen for å stoppe pengene."
+                },
+                { "si": "Meld fra til politiet der du bor." },
+                {
+                    "si": "Bytt passord, og slå på totrinnsinnlogging der det går. Da trenger du to ting for å logge inn, for eksempel både et passord og en kode på mobilen."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Svindel handler mer om å lure mennesker enn om teknikk.", "fraBeat": 0 },
+                        { "tekst": "Hastverk. Lokkemat. Noen som vil ha noe fra deg.", "fraBeat": 1 },
+                        { "tekst": "Stopp, sjekk og spør noen før du trykker.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Svindel på nett handler mindre om teknikk og mer om å lure mennesker."
+                },
+                {
+                    "si": "Svindlerne bruker de samme triksene: hastverk, lokkemat og ønsket om å få noe fra deg."
+                },
+                { "si": "Så stopp, sjekk og spør noen før du trykker." }
+            ]
+        }
+    ]
+}
