@@ -29,8 +29,9 @@ const AKRE: [number, number][] = [];
 for (let r = 0; r < 3; r++) for (let k = 0; k < 6; k++) AKRE.push([-35 + k * 13, -16 - r * 11]);
 
 function antallAkre(modus: Modus, beat: number) {
-    if (modus === 'reform') return beat <= 1 ? 0 : beat === 2 ? 9 : AKRE.length;
-    if (modus === 'tilbake') return beat === 0 ? AKRE.length : 0;
+    // Nær 90 000 av rundt 240 000 hektar: ca. 3/8 av den ubrukte jorda, 7 av 18 åkre.
+    if (modus === 'reform') return beat <= 1 ? 0 : beat === 2 ? 4 : 7;
+    if (modus === 'tilbake') return beat === 0 ? 7 : 0;
     return 0;
 }
 
@@ -45,8 +46,7 @@ function flagg(modus: Modus, beat: number) {
             skip: beat >= 2,
             telegraf: beat >= 3,
         };
-    if (modus === 'reform') return { ...alle, ubrukt: beat <= 1 };
-    if (modus === 'tilbake') return { ...alle, ubrukt: beat >= 1 };
+    if (modus === 'reform' || modus === 'tilbake') return alle;
     return { jord: false, ubrukt: false, tog: false, skip: false, telegraf: false };
 }
 
@@ -632,7 +632,7 @@ const TEKST: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     plantasje: [
         { tekst: 'En bananplantasje i Guatemala' },
         { tekst: 'Jernbanen gjennom plantasjen' },
-        { tekst: 'Skipet venter: bananer til USA' },
+        { tekst: 'Skipet venter: bananene skal over havet' },
         { tekst: 'Hvem eier alt dette?', rod: true },
     ],
     blekksprut: [
@@ -720,7 +720,7 @@ export function GuatemalaPlantasje({ beat, playing, props }: VisualProps<{ modus
                             Lov, 1952
                         </div>
                         <div className="mt-2 font-display font-black text-3xl leading-tight text-slate-900">
-                            Store eiendommer som ligger ubrukt, går til fattige bønder
+                            Store eiendommer som ligger ubrukt, kan gå til fattige bønder
                         </div>
                     </motion.div>
                 )}

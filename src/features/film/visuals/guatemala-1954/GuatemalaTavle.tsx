@@ -3,15 +3,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import type { VisualProps } from '../../types';
 
 /**
- * Tegnede tavler til Guatemala-filmen, i fem modus:
+ * Tegnede tavler til Guatemala-filmen, i fire modus:
  * «revolusjon»: tidslinja 1944-1954 med Ubico, Arévalo (86 prosent) og Árbenz.
  * «pris»: selskapets egne papirer med lav verdi, og prisen: 1,2 mot 16 millioner dollar.
  * «brodre»: nettverket fra United Fruit via advokatfirmaet til Dulles-brødrene og Eisenhower.
- * «radio»: ingen hær, men en falsk radiostasjon, fly og et skuespill til Árbenz går av.
  * «arkiv»: den offisielle historien mot de hemmelige dokumentene, og spørsmålet om hvem som tjente.
  */
 
-type Modus = 'revolusjon' | 'pris' | 'brodre' | 'radio' | 'arkiv';
+type Modus = 'revolusjon' | 'pris' | 'brodre' | 'arkiv';
 
 const BAKGRUNN = '#f5efe1';
 const BLAA = '#1e3a8a';
@@ -293,7 +292,7 @@ function Revolusjon({ beat }: { beat: number }) {
                         x={760}
                         y={590}
                         textAnchor="middle"
-                        fontSize={30}
+                        fontSize={38}
                         fontWeight={700}
                         fill="#475569"
                     >
@@ -374,7 +373,7 @@ function Pris({ beat }: { beat: number }) {
                         x={380}
                         y={272}
                         textAnchor="middle"
-                        fontSize={26}
+                        fontSize={32}
                         fontWeight={700}
                         fill="#64748b"
                     >
@@ -493,7 +492,7 @@ function Pris({ beat }: { beat: number }) {
                         x={1000}
                         y={bunn - 1.2 * skala - 90}
                         textAnchor="middle"
-                        fontSize={28}
+                        fontSize={36}
                         fontWeight={700}
                         fill="#475569"
                     >
@@ -553,7 +552,7 @@ function Brodre({ beat }: { beat: number }) {
                     <Linje fra={NODER.john} til={NODER.allen} farge="#ca8a04" />
                     <Inn forsinkelse={0.8}>
                         <rect
-                            x={1110}
+                            x={1015}
                             y={418}
                             width={150}
                             height={64}
@@ -563,7 +562,7 @@ function Brodre({ beat }: { beat: number }) {
                             strokeWidth={4}
                         />
                         <text
-                            x={1185}
+                            x={1090}
                             y={452}
                             textAnchor="middle"
                             dominantBaseline="middle"
@@ -685,234 +684,6 @@ function Brodre({ beat }: { beat: number }) {
                         storrelse={40}
                         vinkel={-4}
                     />
-                </>
-            )}
-        </>
-    );
-}
-
-/* ---------- Radioen ---------- */
-
-function Soldat({ x, y }: { x: number; y: number }) {
-    return (
-        <g>
-            <circle cx={x} cy={y - 46} r={16} fill="#94a3b8" />
-            <rect x={x - 18} y={y - 28} width={36} height={56} rx={10} fill="#94a3b8" />
-        </g>
-    );
-}
-
-function Fly({ forsinkelse, y }: { forsinkelse: number; y: number }) {
-    return (
-        <motion.g
-            initial={{ x: -400 }}
-            animate={{ x: 1900 }}
-            transition={{ duration: 5, delay: forsinkelse, repeat: Infinity, ease: 'linear' }}
-        >
-            <g transform={`translate(0 ${y}) scale(2)`}>
-                <path d="M 0 0 L 120 -6 L 150 0 L 120 6 Z" fill="#334155" />
-                <path d="M 50 0 L 80 -50 L 98 -50 L 86 0 Z" fill="#475569" />
-                <path d="M 50 0 L 80 50 L 98 50 L 86 0 Z" fill="#475569" />
-                <path d="M 4 0 L 0 -22 L 18 -22 L 22 0 Z" fill="#475569" />
-            </g>
-        </motion.g>
-    );
-}
-
-function Radio({ beat }: { beat: number }) {
-    return (
-        <>
-            {beat === 0 && (
-                <>
-                    <Inn>
-                        <text
-                            x={800}
-                            y={170}
-                            textAnchor="middle"
-                            fontSize={64}
-                            fontWeight={900}
-                            fill={ROD}
-                        >
-                            Ingen stor hær
-                        </text>
-                    </Inn>
-                    <g opacity={0.6}>
-                        {Array.from({ length: 24 }, (_, i) => (
-                            <Soldat
-                                key={i}
-                                x={360 + (i % 8) * 120}
-                                y={380 + Math.floor(i / 8) * 150}
-                            />
-                        ))}
-                    </g>
-                    <motion.line
-                        x1={300}
-                        y1={250}
-                        x2={1300}
-                        y2={720}
-                        stroke={ROD}
-                        strokeWidth={22}
-                        strokeLinecap="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ delay: 0.8, duration: 0.6 }}
-                    />
-                    <motion.line
-                        x1={1300}
-                        y1={250}
-                        x2={300}
-                        y2={720}
-                        stroke={ROD}
-                        strokeWidth={22}
-                        strokeLinecap="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ delay: 1.2, duration: 0.6 }}
-                    />
-                </>
-            )}
-
-            {beat >= 1 && beat <= 3 && (
-                <>
-                    {/* Radiomasta */}
-                    <Inn>
-                        <path
-                            d="M 300 760 L 360 300 L 420 760 Z"
-                            fill="none"
-                            stroke="#334155"
-                            strokeWidth={10}
-                        />
-                        <path
-                            d="M 320 600 L 400 600 M 335 480 L 385 480 M 348 380 L 372 380"
-                            stroke="#334155"
-                            strokeWidth={8}
-                        />
-                        <circle cx={360} cy={290} r={16} fill={ROD} />
-                        <text
-                            x={360}
-                            y={830}
-                            textAnchor="middle"
-                            fontSize={40}
-                            fontWeight={900}
-                            fill="#0f172a"
-                        >
-                            «Frihetens stemme»
-                        </text>
-                    </Inn>
-                    {[0, 1, 2].map((i) => (
-                        <motion.circle
-                            key={i}
-                            cx={360}
-                            cy={290}
-                            fill="none"
-                            stroke={ROD}
-                            strokeWidth={6}
-                            initial={{ r: 20, opacity: 0.9 }}
-                            animate={{ r: 300, opacity: 0 }}
-                            transition={{
-                                duration: 2.4,
-                                delay: i * 0.8,
-                                repeat: Infinity,
-                                ease: 'easeOut',
-                            }}
-                        />
-                    ))}
-                    <Inn forsinkelse={0.6}>
-                        <rect
-                            x={760}
-                            y={220}
-                            width={660}
-                            height={130}
-                            rx={30}
-                            fill="#ffffff"
-                            stroke="#334155"
-                            strokeWidth={5}
-                        />
-                        <text
-                            x={1090}
-                            y={290}
-                            textAnchor="middle"
-                            dominantBaseline="middle"
-                            fontSize={40}
-                            fontWeight={900}
-                            fill="#0f172a"
-                        >
-                            «Vi er opprørere i Guatemala!»
-                        </text>
-                    </Inn>
-                    {beat >= 2 && (
-                        <Inn forsinkelse={0.3}>
-                            <rect
-                                x={760}
-                                y={400}
-                                width={660}
-                                height={130}
-                                rx={30}
-                                fill="#ffffff"
-                                stroke="#334155"
-                                strokeWidth={5}
-                            />
-                            <text
-                                x={1090}
-                                y={470}
-                                textAnchor="middle"
-                                dominantBaseline="middle"
-                                fontSize={40}
-                                fontWeight={900}
-                                fill="#0f172a"
-                            >
-                                «Hele landet reiser seg!»
-                            </text>
-                        </Inn>
-                    )}
-                    {beat === 2 && <Stempel x={1090} y={640} tekst="IKKE SANT" forsinkelse={1.4} />}
-                    {beat === 3 && (
-                        <>
-                            <Fly forsinkelse={0} y={120} />
-                            <Fly forsinkelse={2.5} y={820} />
-                            <Stempel x={1090} y={700} tekst="SKUESPILL" forsinkelse={1} />
-                        </>
-                    )}
-                </>
-            )}
-
-            {beat >= 4 && (
-                <>
-                    <Inn>
-                        <text
-                            x={800}
-                            y={260}
-                            textAnchor="middle"
-                            fontSize={64}
-                            fontWeight={900}
-                            fill="#0f172a"
-                        >
-                            27. juni 1954
-                        </text>
-                    </Inn>
-                    <Inn forsinkelse={0.5}>
-                        <Kort
-                            x={800}
-                            y={460}
-                            b={560}
-                            h={170}
-                            tittel="Árbenz går av"
-                            under="presset ble for stort"
-                            farge={ROD}
-                        />
-                    </Inn>
-                    <Inn forsinkelse={1.2}>
-                        <text
-                            x={800}
-                            y={680}
-                            textAnchor="middle"
-                            fontSize={40}
-                            fontWeight={800}
-                            fill="#475569"
-                        >
-                            Ingen stor hær. Bare triks.
-                        </text>
-                    </Inn>
                 </>
             )}
         </>
@@ -1046,11 +817,11 @@ function Arkiv({ beat }: { beat: number }) {
                         x={1160}
                         y={705}
                         textAnchor="middle"
-                        fontSize={30}
+                        fontSize={38}
                         fontWeight={800}
                         fill="#92400e"
                     >
-                        frigitt mange år senere
+                        frigitt senere
                     </text>
                 </Inn>
             )}
@@ -1091,7 +862,6 @@ export function GuatemalaTavle({ beat, props }: VisualProps<{ modus?: Modus }>) 
                     {modus === 'revolusjon' && <Revolusjon beat={beat} />}
                     {modus === 'pris' && <Pris beat={beat} />}
                     {modus === 'brodre' && <Brodre beat={beat} />}
-                    {modus === 'radio' && <Radio beat={beat} />}
                     {modus === 'arkiv' && <Arkiv beat={beat} />}
                 </motion.svg>
             </AnimatePresence>

@@ -119,7 +119,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Iran. Chile. Guatemala.' },
         { tekst: 'Folkevalgte ledere, fjernet', rod: true },
         { tekst: 'Guatemala: et selskap styrte' },
-        { tekst: '1999: «Det var feil»' },
+        { tekst: '1999: Clinton sa at det var feil' },
     ],
 };
 
