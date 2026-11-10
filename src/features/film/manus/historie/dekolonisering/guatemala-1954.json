@@ -9,9 +9,11 @@
             "begrunnelse": "Prosentene i artikkelen (83 og 93 prosent) er tegnet som 100 prikker. Ingen ny påstand."
         }
     ],
+    "vurdering": { "dato": "2026-11-10", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "plantasjen",
+            "lyd": "vind",
             "kapittel": "Bananlandet",
             "visual": { "type": "GuatemalaPlantasje", "props": { "modus": "plantasje" } },
             "replikker": [
@@ -22,7 +24,7 @@
                     "si": "Gjennom plantasjen går en jernbane. Toget er fullt av grønne bananer."
                 },
                 {
-                    "si": "Ved kysten venter et skip. Bananene skal over havet, til USA."
+                    "si": "Ved kysten venter et skip. Bananene skal over havet."
                 },
                 {
                     "si": "Men hvem eier egentlig alt dette? Jorda, toget og skipet? Det er ikke folket som bor her."
@@ -50,6 +52,7 @@
         },
         {
             "id": "kartet",
+            "lyd": "stille",
             "visual": { "type": "GuatemalaKart", "props": { "modus": "land" } },
             "replikker": [
                 {
@@ -144,6 +147,7 @@
         },
         {
             "id": "brodrene",
+            "lyd": "rom",
             "kapittel": "Kuppet",
             "visual": { "type": "GuatemalaTavle", "props": { "modus": "brodre" } },
             "replikker": [
@@ -163,6 +167,7 @@
         },
         {
             "id": "kommunist",
+            "lyd": "stille",
             "visual": { "type": "GuatemalaKart", "props": { "modus": "kaldkrig" } },
             "replikker": [
                 {
@@ -176,14 +181,15 @@
                     "si": "Men påstandene om at han hadde bånd til Sovjetunionen, ble aldri bevist."
                 },
                 {
-                    "si": "I august 1953 sa USA ja til en hemmelig operasjon. Den fikk 2,7 millioner dollar.",
-                    "uttale": "I august nitten femtitre sa USA ja til en hemmelig operasjon. Den fikk to komma sju millioner dollar."
+                    "si": "I august 1953 sa USA ja til en hemmelig operasjon. Den fikk 2,7 millioner dollar til propaganda og politisk press.",
+                    "uttale": "I august nitten femtitre sa USA ja til en hemmelig operasjon. Den fikk to komma sju millioner dollar til propaganda og politisk press."
                 }
             ]
         },
         {
             "id": "radioen",
-            "visual": { "type": "GuatemalaTavle", "props": { "modus": "radio" } },
+            "lyd": "rom",
+            "visual": { "type": "GuatemalaRadio", "props": {} },
             "replikker": [
                 {
                     "si": "CIA brukte ikke en stor hær. De brukte triks."
@@ -194,7 +200,7 @@
                 {
                     "si": "Den fortalte at hele landet hadde reist seg mot regjeringen. Det var ikke sant."
                 },
-                { "si": "CIA sendte også egne fly over landet. Det hele var et skuespill." },
+                { "si": "CIA sendte også egne fly over landet. Mye av det var et skuespill." },
                 {
                     "si": "Men det virket, og presset ble for stort. Den 27. juni 1954 trakk Árbenz seg.",
                     "uttale": "Men det virket, og presset ble for stort. Den tjuesjuende juni nitten femtifire trakk Arbens seg."
@@ -203,6 +209,7 @@
         },
         {
             "id": "tilbake",
+            "lyd": "vind",
             "kapittel": "Prisen",
             "visual": { "type": "GuatemalaPlantasje", "props": { "modus": "tilbake" } },
             "replikker": [
@@ -217,6 +224,7 @@
         },
         {
             "id": "borgerkrigen",
+            "lyd": "stille",
             "visual": {
                 "type": "Prikkfelt",
                 "props": {
@@ -227,8 +235,9 @@
                             "total": 100,
                             "farget": 100,
                             "farge": "#57534e",
-                            "tittel": "Borgerkrig fra 1960 til 1996: 36 år",
-                            "fargeEtikett": "grupper: alle ofrene"
+                            "tittel": "Borgerkrig 1960 til 1996: opp mot 200 000 drept",
+                            "fargeEtikett": "alle ofrene, i 100 like store grupper",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 1,
@@ -236,9 +245,10 @@
                             "farget": 83,
                             "farge": "#b45309",
                             "restFarge": "#94a3b8",
-                            "tittel": "83 prosent av ofrene var mayaer",
+                            "tittel": "83 av 100 deler av ofrene var mayaer",
                             "fargeEtikett": "mayaer",
-                            "restEtikett": "andre"
+                            "restEtikett": "andre ofre",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 2,
@@ -246,9 +256,10 @@
                             "farget": 93,
                             "farge": "#b91c1c",
                             "restFarge": "#94a3b8",
-                            "tittel": "Overgrepene: staten sto bak 93",
-                            "fargeEtikett": "staten",
-                            "restEtikett": "andre"
+                            "tittel": "Staten sto bak 93 av 100 deler av overgrepene",
+                            "fargeEtikett": "overgrep staten sto bak",
+                            "restEtikett": "overgrep andre sto bak",
+                            "visTall": false
                         }
                     ]
                 }
@@ -274,7 +285,7 @@
                     "uttale": "I desember nitten femtitre kom en ung lege fra Argentina til Guatemala. Han het Tsje Gevara."
                 },
                 {
-                    "si": "Han var i landet i ni måneder, og han så kuppet med egne øyne."
+                    "si": "Han var i landet i ni måneder, og han var der da kuppet skjedde."
                 },
                 {
                     "si": "Det gjorde ham enda sikrere på at revolusjon var nødvendig. Slik kan ett kupp i et lite land sette spor i hele verdenshistorien."
@@ -325,9 +336,9 @@
                         { "tekst": "Jord, tog, skip og telegraf.", "fraBeat": 0 },
                         { "tekst": "Alt i samme hånd.", "fraBeat": 0, "uthevet": true },
                         { "tekst": "Jord til fattige bønder", "fraBeat": 1 },
-                        { "tekst": "ble kalt kommunisme.", "fraBeat": 1, "uthevet": true },
-                        { "tekst": "Ikke en hær, men en radio", "fraBeat": 2 },
-                        { "tekst": "og et skuespill.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "ble kalt kommunisme av selskapet.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ingen stor hær,", "fraBeat": 2 },
+                        { "tekst": "men en radio og et skuespill.", "fraBeat": 2, "uthevet": true },
                         { "tekst": "Spør alltid:", "fraBeat": 3 },
                         { "tekst": "Hvem tjente på historien?", "fraBeat": 3, "uthevet": true }
                     ]
@@ -338,10 +349,10 @@
                     "si": "Et selskap som eier jorda, toget, skipene og telegrafen, sitter med nøklene til et helt land."
                 },
                 {
-                    "si": "Da en president ville gi ubrukt jord til fattige bønder, ble det kalt kommunisme."
+                    "si": "Da en president ville gi ubrukt jord til fattige bønder, kalte United Fruit og vennene i Washington det kommunisme."
                 },
                 {
-                    "si": "Kuppet trengte ingen stor hær. Det holdt med en radio, noen fly og et skuespill."
+                    "si": "Kuppet trengte ingen stor hær. CIA brukte en radio, noen fly og et skuespill."
                 },
                 {
                     "si": "Prisen betalte folket i Guatemala i mange tiår etterpå. Så neste gang du hører en historie om et land langt borte, spør: Hvem tjente på den?"
