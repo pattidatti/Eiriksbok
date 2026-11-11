@@ -4,10 +4,12 @@
     "kilde": "/historie/dekolonisering/nykolonialisme",
     "bilde": "/images/historie/dekolonisering/nykolonialisme_hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-11", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "frie",
             "kapittel": "Fri på papiret",
+            "lyd": "vind",
             "visual": { "type": "NykolonialismeMarionett", "props": { "modus": "flagg" } },
             "replikker": [
                 { "si": "Tenk deg et land som har vært koloni i mange år. Det betyr at et land i Europa har styrt det. Nå blir det endelig fritt." },
@@ -18,6 +20,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -40,7 +43,7 @@
                 { "si": "Ordet ny betyr at det er en moderne utgave av noe gammelt." },
                 { "si": "I den vanlige kolonitiden styrte land som Storbritannia og Frankrike andre land direkte. De sendte guvernører og soldater." },
                 { "si": "I nykolonialismen er kontrollen mer skjult. Den skjer gjennom penger, lån, handel og store selskaper." },
-                { "si": "Ingen erobrer landet åpent. Men de gamle kolonimaktene beholder mye av makten over de tidligere koloniene." }
+                { "si": "Ingen erobrer landet åpent. Store norske leksikon sier det slik: De gamle kolonimaktene beholdt mye av makten over de tidligere koloniene." }
             ]
         },
         {
@@ -58,7 +61,7 @@
             "kapittel": "Fire verktøy",
             "visual": { "type": "NykolonialismeMarionett", "props": { "modus": "verktoy" } },
             "replikker": [
-                { "si": "Den nye kolonimakten har fire verktøy. Til sammen blir de et helt system." },
+                { "si": "Vi skal se på fire verktøy. Til sammen blir de et helt system." },
                 { "si": "Det første er gjeld." },
                 { "si": "Det andre er store selskaper." },
                 { "si": "Det tredje er kupp, når alt annet feiler." },
@@ -81,7 +84,7 @@
             "visual": { "type": "NykolonialismeRegnskap", "props": { "modus": "renter" } },
             "replikker": [
                 { "si": "Gjeld er ikke bare historie. Når du låner penger, må du betale renter. Det er en ekstra sum for å få låne." },
-                { "si": "Land i det globale sør, altså de fattigere landene, betaler i snitt omtrent dobbelt så mye i renter som de rike industrilandene." },
+                { "si": "Land i det globale sør, altså de fattigere landene, betaler i snitt omtrent dobbelt så mye i renter på statsgjelden sin som de rike industrilandene." },
                 { "si": "Da blir det mindre igjen til resten. Budsjettene til helse og skole klarer ikke å holde tritt." }
             ]
         },
@@ -138,7 +141,7 @@
                 "props": {
                     "tittel": "Skjer det fortsatt?",
                     "punkter": [
-                        { "ikon": "snakk", "tittel": "Ja, mange mener det", "fraBeat": 0 },
+                        { "ikon": "lampe", "tittel": "Ja, mange mener det", "fraBeat": 0 },
                         { "ikon": "penger", "tittel": "Renter på gammel gjeld", "tekst": "spiser mye av inntektene", "fraBeat": 1 },
                         { "ikon": "avtale", "tittel": "Lån fra Kina", "tekst": "til prosjekter i Afrika og Asia", "fraBeat": 2 },
                         { "ikon": "stjerne", "tittel": "Samme metode", "tekst": "men aktørene kan være nye", "fraBeat": 3 }
@@ -155,13 +158,13 @@
         {
             "id": "norge",
             "kapittel": "Kan et land slippe unna?",
-            "visual": { "type": "NykolonialismeKart", "props": { "modus": "norge" } },
+            "visual": { "type": "NykolonialismeFond", "props": {} },
             "replikker": [
                 { "si": "Men vi skal ikke male alt helt svart. Noen land har klart å bryte ut av fellen." },
-                { "si": "Mange forskere snakker om en ressursforbannelse. Det betyr at land med mye olje og mineraler ofte får dårlig styring og lite utvikling." },
+                { "si": "Mange forskere snakker om en ressursforbannelse. Det betyr at olje og mineraler ser ut til å ofte føre til dårlig styring og lite utvikling." },
                 { "si": "Men det går an å unngå. Da Norge fant olje, beholdt staten kontrollen over inntektene." },
                 { "si": "Pengene ble lagt i oljefondet. Siden 2012 har det vært verdens største statlige fond." },
-                { "si": "Det er nesten det motsatte av en bananrepublikk, der et fremmed selskap har makten." }
+                { "si": "Det er nesten det motsatte av en bananrepublikk. Det er et land der et fremmed selskap har makten, slik United Fruit hadde i Guatemala." }
             ]
         },
         {

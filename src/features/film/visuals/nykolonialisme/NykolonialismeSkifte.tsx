@@ -393,18 +393,17 @@ function Rad({
             <text x={190} y={y + 70} fontSize={36} fontWeight={900} fill="#0f172a">
                 {tekst}
             </text>
+            {/* Rødt kryss ved siden av teksten, ikke strek over den (guiden §3c punkt 35). */}
             {krysset && (
-                <motion.line
-                    x1={40}
-                    y1={y + 56}
-                    x2={460}
-                    y2={y + 56}
+                <motion.path
+                    d={`M ${405} ${y + 30} L ${455} ${y + 80} M ${455} ${y + 30} L ${405} ${y + 80}`}
                     stroke="#dc2626"
-                    strokeWidth={10}
+                    strokeWidth={12}
                     strokeLinecap="round"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ delay: 0.5, duration: 0.6 }}
+                    fill="none"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.4 }}
                 />
             )}
         </motion.g>
