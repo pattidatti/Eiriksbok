@@ -1,0 +1,213 @@
+{
+    "id": "bergensk",
+    "tittel": "Bergensk: Byen med sin egen språklyd",
+    "kilde": "/norsk/dialekter/bergensk",
+    "bilde": "/images/dialekter/bergensk-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-11", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "benken",
+            "kapittel": "Benken i Bergen",
+            "lyd": "vind",
+            "visual": { "type": "BergenskBryggen", "props": { "modus": "torg" } },
+            "replikker": [
+                { "si": "Tenk deg at du sitter på en benk midt i Bergen, ikke langt fra havna. To personer går forbi deg." },
+                { "si": "Den ene sier: Jei vet ikke vor dere kjøpte kjøttet." },
+                { "si": "Den andre svarer: Eg vet ikkje kor dokkar sjøpte sjøttet." },
+                { "si": "Begge er født og oppvokst i Bergen. Begge snakker bergensk. Likevel høres de tydelig ulike ut." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "BERGENSK",
+                    "undertittel": "Byen med sin egen språklyd",
+                    "bilde": "/images/dialekter/bergensk-hero.webp",
+                    "sporsmal": { "tekst": "Pen eller gate?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om bergensk." },
+                { "si": "Bergensk er ikke én lyd, men et helt landskap av talemål. Og der finnes det spor du kan lære å lese." },
+                { "si": "Når filmen er slutt, skal du høre forskjell på en penbergenser og en gategutt før de har sagt tre ord." }
+            ]
+        },
+        {
+            "id": "oya",
+            "kapittel": "En språklig øy",
+            "visual": { "type": "BergenskKart", "props": { "modus": "oy" } },
+            "replikker": [
+                { "si": "Bergensk skiller seg fra alle dialektene rundt seg." },
+                { "si": "Fjellene og fjordene stengte byen litt inne." },
+                { "si": "Men samtidig var Bergen i hundrevis av år den travleste handelsbyen i Norden. Skip fra hele Europa la til kai her." },
+                { "si": "Derfor er bergensk litt som en språklig øy. Den fikk sin helt egen form, fordi den vokste opp i en travel havneby." }
+            ]
+        },
+        {
+            "id": "bryggen",
+            "lyd": "hav",
+            "visual": { "type": "BergenskBryggen", "props": { "modus": "hansa" } },
+            "replikker": [
+                { "si": "Ved havna ligger Bryggen. Her bodde tyske kjøpmenn fra Hansaforbundet. Vi kaller dem hansakjøpmenn." },
+                { "si": "De snakket nedertysk, en form for tysk." },
+                { "si": "I flere hundre år levde norsk og tysk side om side i byen." },
+                { "si": "Det møtet formet talemålet i Bergen på en måte du ikke finner noe annet sted i landet." }
+            ]
+        },
+        {
+            "id": "kjonn",
+            "kapittel": "Bare to kjønn",
+            "lyd": "stille",
+            "visual": { "type": "BergenskTavle", "props": { "modus": "kjonn" } },
+            "replikker": [
+                { "si": "Det mest kjente kjennetegnet på bergensk handler om grammatikk." },
+                { "si": "I norsk deler vi substantivene, altså ord som gutt, jente og hus, inn i tre grupper. De kalles grammatiske kjønn." },
+                { "si": "Hankjønn: en gutt. Hunkjønn: ei jente. Intetkjønn: et hus." },
+                { "si": "De aller fleste norske dialektene har alle tre. Men ikke bergensk. Der er hunkjønnet rett og slett borte." },
+                { "si": "Hunkjønnsordene har smeltet sammen med hankjønn til én stor gruppe. Den kalles felleskjønn. Bergensk har bare to kjønn: felleskjønn og intetkjønn." }
+            ]
+        },
+        {
+            "id": "solen",
+            "visual": { "type": "BergenskTavle", "props": { "modus": "solen" } },
+            "replikker": [
+                { "si": "Hva betyr det i praksis? Resten av landet sier sola, boka og jenta, med en a på slutten." },
+                { "si": "Bergenseren sier solen, boken og jenten." },
+                { "si": "Bergensk er en av de svært få norske dialektene som mangler hunkjønn helt. Derfor er dette trekket så berømt." },
+                { "si": "Prøver du å herme etter bergensk og sier jenta mi, avslører du deg med en gang." }
+            ]
+        },
+        {
+            "id": "hvorfor",
+            "kapittel": "Hvorfor i Bergen?",
+            "lyd": "hav",
+            "visual": { "type": "BergenskBryggen", "props": { "modus": "mote" } },
+            "replikker": [
+                { "si": "Men hvorfor forsvant hunkjønnet akkurat i Bergen? Svaret ligger trolig på Bryggen." },
+                { "si": "Når to språk møtes så tett, skjer det ofte noe med grammatikken. De vanskeligste og minst nødvendige delene slites vekk." },
+                { "si": "Grammatisk kjønn er en slik del. Du trenger det ikke strengt tatt for å forstå hverandre." },
+                { "si": "Derfor forsvant det trolig først, da bergenserne og tyskerne skulle gjøre seg forstått." },
+                { "si": "Resultatet ble et enklere system med bare to kjønn, slik dansk også har." }
+            ]
+        },
+        {
+            "id": "skarre",
+            "kapittel": "Skarre-r-en",
+            "lyd": "stille",
+            "visual": { "type": "BergenskTavle", "props": { "modus": "r" } },
+            "replikker": [
+                { "si": "Det neste du legger merke til med bergensk, er r-en." },
+                { "si": "På Østlandet og de fleste andre steder i landet lager folk r-en fremme på tunga." },
+                { "si": "En bergenser lager r-en langt bak i halsen, nesten som en skraping. Det kalles skarre-r." },
+                { "si": "Du hører den i ord som Bergen og Bryggen. Bergensk deler den med Sørlandet." }
+            ]
+        },
+        {
+            "id": "sprang",
+            "visual": { "type": "BergenskKart", "props": { "modus": "skarre" } },
+            "replikker": [
+                { "si": "Det morsomme er at skarre-r-en ikke er gammel i Bergen i det hele tatt." },
+                { "si": "Den oppstod trolig i Paris på 1600-tallet, og ble fort moderne blant fine familier i Europa." },
+                { "si": "Derfra spredte den seg fra by til by. Til Köln, til Berlin, og til København rundt 1780." },
+                { "si": "Bergen var en av de aller første byene i Norge som tok den nye r-en i bruk. Trolig fordi byen hadde så tett kontakt med utlandet." },
+                { "si": "Først etterpå spredte den seg ut til bygdene rundt. Det kalles sprangmodellen: et språktrekk hopper fra by til by, i stedet for å bre seg jevnt utover." }
+            ]
+        },
+        {
+            "id": "kjsj",
+            "kapittel": "Kj blir sj",
+            "visual": { "type": "BergenskTavle", "props": { "modus": "kjsj" } },
+            "replikker": [
+                { "si": "Her er et trekk mange bergensere har. Du hører det spesielt godt hos yngre folk." },
+                { "si": "Den tynne, hvesende kj-lyden blir til en sj-lyd. Kirke blir sjirke, kjøtt blir sjøtt og kylling blir sjylling." },
+                { "si": "At to lyder faller sammen til én, kalles et sammenfall. Her heter det kj-sj-sammenfall." },
+                { "si": "I dag sprer trekket seg raskt blant ungdom i hele Norge. Mange voksne reagerer og mener at kj-lyden forsvinner." },
+                { "si": "Språkforskere er mer rolige. Lyder kommer og går, akkurat som da skarre-r-en en gang var ny og moderne." }
+            ]
+        },
+        {
+            "id": "smaaord",
+            "kapittel": "Eg, ikkje og dokkar",
+            "visual": { "type": "BergenskSkala", "props": { "modus": "smaaord" } },
+            "replikker": [
+                { "si": "Bergensk har også sine egne små ord. Mange bergensere sier eg for jeg, slik man gjør ellers på Vestlandet." },
+                { "si": "For dere sier de gjerne dokkar. Og for hun kan de bruke den gamle formen hon." },
+                { "si": "Spørreordene er også typiske. Kor betyr hvor, og ka betyr hva." },
+                { "si": "Kor hen skal du? betyr rett og slett: Hvor skal du?" }
+            ]
+        },
+        {
+            "id": "tyskeord",
+            "lyd": "hav",
+            "visual": { "type": "BergenskBryggen", "props": { "modus": "varer" } },
+            "replikker": [
+                { "si": "Fra tysk fikk vi også en mengde nye ord. Hansakjøpmennene tok dem med seg." },
+                { "si": "Betale, bukse, frukt og sukker. Snakke, prøve, reise og handle. Alle kom inn i norsk fra tysk." },
+                { "si": "Vi bruker dem hver dag uten å tenke over hvor de kommer fra." },
+                { "si": "Selv måten vi viser hvem noe tilhører, mannen sin bil i stedet for mannens bil, kom trolig inn i norsk gjennom denne kontakten." }
+            ]
+        },
+        {
+            "id": "krymp",
+            "kapittel": "Ord som krymper",
+            "lyd": "stille",
+            "visual": { "type": "BergenskSkala", "props": { "modus": "krymp" } },
+            "replikker": [
+                { "si": "I rask, folkelig bergensk skrumper ordene inn. Lydene på slutten blir rett og slett svelget." },
+                { "si": "Skal blir ska, til blir te, er blir e, og kommer blir komma." },
+                { "si": "En hel setning kan krympe mye. Sagt tydelig blir den: Eg vet ikkje når hon kommer." },
+                { "si": "En gatebergenser kan si: E' vet'sje ko'ti' hon komma'." },
+                { "si": "Det er ikke slurv. Det er et fast mønster, og en stor del av det som gjør gatebergensk til gatebergensk." }
+            ]
+        },
+        {
+            "id": "skala",
+            "kapittel": "Pen og gate",
+            "visual": { "type": "BergenskSkala", "props": { "modus": "skala" } },
+            "replikker": [
+                { "si": "Akkurat som Oslo har en østkant og en vestkant, har Bergen to måter å snakke på inne i samme by." },
+                { "si": "Det kalles en sosiolekt: et talemål som hører til en gruppe i samfunnet, og ikke til et sted." },
+                { "si": "Penbergensk ligger tett opp mot skriftspråket. Det var språket til de rike familiene, og du hører det fortsatt på jobb og i taler. Der sier man jei, ikke og dere." },
+                { "si": "Gatebergensk er det folkelige talemålet fra arbeidsstrøkene. Der sier man eg, ikkje og dokkar." },
+                { "si": "Mellom de to finnes mange mellomtrinn. De fleste bergensere ligger et sted midt imellom." }
+            ]
+        },
+        {
+            "id": "finest",
+            "kapittel": "Hvem snakker finest?",
+            "visual": { "type": "BergenskSkala", "props": { "modus": "situasjon" } },
+            "replikker": [
+                { "si": "Navnene kan lure deg. Navnet penbergensk høres finere ut. Men ingen av de to er riktigere norsk enn det andre." },
+                { "si": "Penbergensk ligner mer på skriftspråket. Det gjør det ikke bedre." },
+                { "si": "En bergenser kan snakke penere i et jobbintervju, og mer folkelig sammen med kompiser." },
+                { "si": "Det kalles språktilpasning. Å kunne flere stiler er ikke juks. Du velger selv hvilket signal du sender." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Skarre-r-en var ny en gang.", "fraBeat": 0 },
+                        { "tekst": "Kj-sj er nytt nå.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Folk flytter mer og ser de samme videoene.", "fraBeat": 1 },
+                        { "tekst": "Pen og gate ligger nærmere hverandre enn før.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "To kjønn, skarre-r, fra fint til folkelig.", "fraBeat": 2 },
+                        { "tekst": "Du hører med en gang hvor stemmen kommer fra.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Bergensk forandrer seg hele tiden, slik alle dialekter gjør. Skarre-r-en var en gang splitter ny. Kj-sj-sammenfallet er nytt nå." },
+                { "si": "Skillet mellom pen og gate er mindre skarpt enn før, fordi folk flytter mer, tar mer utdanning og ser de samme videoene på nett." },
+                { "si": "Men så lenge byen har sine to kjønn, sin skarre-r og sitt spenn fra fint til folkelig, hører du med en gang hvor stemmen kommer fra." }
+            ]
+        }
+    ]
+}
