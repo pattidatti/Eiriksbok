@@ -1,0 +1,204 @@
+{
+    "id": "forbrukerrettigheter",
+    "tittel": "Dine rettigheter som forbruker",
+    "kilde": "/samfunnskunnskap/personlig-okonomi/forbrukerrettigheter",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-11", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "disken",
+            "lyd": "rom",
+            "kapittel": "Mobilen",
+            "visual": { "type": "ForbrukerDisken", "props": { "modus": "disk" } },
+            "replikker": [
+                { "si": "Mia er 15 år. Hun kjøpte mobilen sin for sparepengene fra sommerjobben." },
+                { "si": "En kveld, 13 måneder senere, slutter mobilen å lade. Hun har ikke mistet den, og den har aldri vært våt." },
+                { "si": "Neste dag går hun til butikken der hun kjøpte den. Mannen bak disken ser på kvitteringen." },
+                { "si": "Så rister han på hodet. Beklager, garantien er ett år. Den gikk ut for en måned siden." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Dine rettigheter",
+                    "undertittel": "som forbruker",
+                    "bilde": "/images/placeholder.webp",
+                    "sporsmal": { "tekst": "Har butikken rett?", "fraBeat": 1 },
+                    "tall": [
+                        { "verdi": 2, "etikett": "år reklamasjonsrett", "fraBeat": 2, "omtrent": false, "prefiks": "minst", "tone": "gronn" },
+                        { "verdi": 14, "etikett": "dager angrerett på nett", "fraBeat": 3, "omtrent": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Mia går hjem igjen. Hun tror hun må kjøpe ny mobil." },
+                { "si": "Men har butikken egentlig rett? Svaret er nei." },
+                { "si": "Mia har en rett som er sterkere enn garantien. Den står i loven og heter reklamasjonsrett." },
+                { "si": "I denne filmen lærer du hvilke rettigheter du har, og hvordan du bruker dem." }
+            ]
+        },
+        {
+            "id": "loven",
+            "lyd": "rom",
+            "visual": { "type": "ForbrukerDisken", "props": { "modus": "lov" } },
+            "replikker": [
+                { "si": "Du er en forbruker når du kjøper noe til deg selv fra en butikk eller en bedrift. Sko, en mobil, en konsertbillett." },
+                { "si": "Butikken kjenner som regel både varene og reglene bedre enn deg. Du står alene ved kassa." },
+                { "si": "Derfor finnes forbrukerkjøpsloven. Den skal jevne ut forskjellen." },
+                { "si": "Rettighetene i loven kan ikke butikken ta fra deg, selv om det står noe annet i de små bokstavene." }
+            ]
+        },
+        {
+            "id": "gulvet",
+            "kapittel": "Gulvet og hylla",
+            "visual": { "type": "ForbrukerDisken", "props": { "modus": "gulv" } },
+            "replikker": [
+                { "si": "Mange tror at garanti og reklamasjon er to ord for det samme. Det er de ikke." },
+                { "si": "Reklamasjon betyr å klage på en feil ved en vare. Retten til å klage står i loven og gjelder alle forbrukerkjøp." },
+                { "si": "En garanti er et frivillig løfte fra butikken eller produsenten. Den kommer i tillegg til loven." },
+                { "si": "Tenk på det slik: Reklamasjonsretten er gulvet. Den er alltid der. Garantien er en ekstra hylle som noen butikker setter opp." },
+                { "si": "Når butikken sier at garantien er ute, er bare hylla borte. Gulvet står der fortsatt." }
+            ]
+        },
+        {
+            "id": "frister",
+            "lyd": "stille",
+            "kapittel": "Hvor lenge?",
+            "visual": { "type": "ForbrukerTidslinje", "props": { "modus": "frister" } },
+            "replikker": [
+                { "si": "Hvor lenge kan du klage? Loven sier minst to år etter at du fikk varen." },
+                { "si": "For ting som skal vare mye lenger enn vanlig, er fristen fem år." },
+                { "si": "Store norske leksikon bruker en TV som eksempel: fem år. En enkel ledning til TV-en har bare to år." }
+            ]
+        },
+        {
+            "id": "mia-frist",
+            "visual": { "type": "ForbrukerTidslinje", "props": { "modus": "mia" } },
+            "replikker": [
+                { "si": "Her er Mias mobil på tidslinja. Garantien varte i ett år." },
+                { "si": "Mobilen sluttet å lade etter 13 måneder. Det er godt innenfor fristen på to år." },
+                { "si": "Men når du har oppdaget feilen, må du si fra innen rimelig tid." },
+                { "si": "Den fristen er aldri kortere enn to måneder. Men det trygge rådet er: Klag med en gang." }
+            ]
+        },
+        {
+            "id": "bevis",
+            "visual": { "type": "ForbrukerTidslinje", "props": { "modus": "bevis" } },
+            "replikker": [
+                { "si": "Det finnes en regel til som hjelper Mia mye." },
+                { "si": "Viser en feil seg innen to år etter at du fikk varen, regner loven med at feilen fantes allerede da du kjøpte den." },
+                { "si": "Mia må altså ikke bevise at mobilen var dårlig fra starten. Mener butikken at hun har ødelagt mobilen selv, er det butikken som må vise det." }
+            ]
+        },
+        {
+            "id": "feil",
+            "lyd": "rom",
+            "kapittel": "Feil og krav",
+            "visual": { "type": "ForbrukerDisken", "props": { "modus": "skyld" } },
+            "replikker": [
+                { "si": "Loven kaller en feil ved varen for en mangel. Varen skal virke, og vare så lenge som vanlige varer av samme slag." },
+                { "si": "Loven nevner holdbarhet, funksjon og sikkerhet. Det er også en mangel hvis reklamen lovet noe varen ikke klarer." },
+                { "si": "Men reklamasjon gjelder bare feil som ikke skyldes deg." },
+                { "si": "Mister du mobilen i asfalten og skjermen sprekker, er det ikke en feil ved mobilen. Da må du betale selv, eller sjekke om en forsikring dekker skaden." }
+            ]
+        },
+        {
+            "id": "krav",
+            "lyd": "stille",
+            "visual": { "type": "ForbrukerKrav", "props": { "modus": "krav" } },
+            "replikker": [
+                { "si": "Har varen en mangel, kan du først velge: reparasjon eller ny vare." },
+                { "si": "Det skal ikke koste deg noe, og det skal skje innen rimelig tid." },
+                { "si": "Virker ikke reparasjonen, eller vil butikken ikke fikse feilen, kan du gå videre. Du kan beholde varen og få tilbake en del av prisen: prisavslag." },
+                { "si": "Eller du gir tilbake varen og får alle pengene tilbake: heving. Det gjelder ikke hvis feilen er helt liten." },
+                { "si": "Har feilen påført deg et tap, må butikken dekke det: erstatning." },
+                { "si": "For Mia betyr det: Butikken må reparere mobilen eller gi henne en ny, gratis." }
+            ]
+        },
+        {
+            "id": "nett",
+            "kapittel": "Angrerett",
+            "visual": { "type": "ForbrukerAngre", "props": { "modus": "nett" } },
+            "replikker": [
+                { "si": "Men hva om varen er helt fin, og du bare har ombestemt deg? Da gjelder angrerettloven." },
+                { "si": "Den gjelder når du handler på avstand, som på nett, eller når noen selger deg noe utenfor en butikk, som på døra hjemme." },
+                { "si": "Du har 14 dager på å angre, og du trenger ikke ha noen grunn. For varer begynner fristen å gå den dagen du får varen i hånden." },
+                { "si": "Du må bare si klart fra før fristen er ute, for eksempel med et angreskjema eller en e-post." },
+                { "si": "Butikken må betale tilbake pengene senest 14 dager etter at den fikk beskjeden." }
+            ]
+        },
+        {
+            "id": "glemt",
+            "visual": { "type": "ForbrukerTidslinje", "props": { "modus": "tolv" } },
+            "replikker": [
+                { "si": "Butikken har plikt til å fortelle deg om angreretten." },
+                { "si": "Glemmer den det, blir fristen mye lengre. Da kan du angre i opptil 12 måneder ekstra." }
+            ]
+        },
+        {
+            "id": "unntak",
+            "visual": { "type": "ForbrukerAngre", "props": { "modus": "unntak" } },
+            "replikker": [
+                { "si": "Portoen tilbake betaler du som regel selv. Men ikke hvis butikken har lovet å dekke den, eller ikke har sagt at du må betale." },
+                { "si": "Det finnes også unntak. En genser med navnet ditt på er laget spesielt for deg. Den kan du ikke angre på." },
+                { "si": "Det samme gjelder en forseglet pakke, altså en pakke som er lukket slik at du ser om den er åpnet." },
+                { "si": "Har du åpnet den, og varen ikke kan selges igjen av hensyn til helse og hygiene, kan du ikke angre." },
+                { "si": "Og kjøper du sko i en vanlig butikk i sentrum, gir loven deg ingen angrerett." },
+                { "si": "Noen butikker lar deg bytte likevel, men det er et frivillig tilbud." }
+            ]
+        },
+        {
+            "id": "klagen",
+            "kapittel": "Slik klager du",
+            "visual": { "type": "ForbrukerEpost" },
+            "replikker": [
+                { "si": "Det første steget er alltid å klage til butikken der du kjøpte varen." },
+                { "si": "Klag skriftlig, for eksempel på e-post. Da har du bevis på hva du sa og når." },
+                { "si": "Ta med kvitteringen. Et bilde på mobilen holder." },
+                { "si": "Beskriv feilen kort, og si hva du vil ha: reparasjon, ny vare eller pengene tilbake." },
+                { "si": "Si også hvilken regel du bruker, for eksempel: Jeg reklamerer etter forbrukerkjøpsloven." },
+                { "si": "Er du under 18, kan det hjelpe å ha med en voksen." }
+            ]
+        },
+        {
+            "id": "videre",
+            "visual": { "type": "ForbrukerKrav", "props": { "modus": "klage" } },
+            "replikker": [
+                { "si": "Hva om butikken fortsatt sier nei? Da kan du sende saken til Forbrukertilsynet." },
+                { "si": "Der hjelper en nøytral person, en mekler, dere med å finne en løsning dere begge kan godta. Du må betale et gebyr først." },
+                { "si": "Blir dere ikke enige, kan saken gå til Forbrukerklageutvalget. Det ligner på en liten domstol som bestemmer hvem som har rett." },
+                { "si": "Svaret er bindende. Det betyr at partene må følge det, med mindre en av dem tar saken til tingretten innen en måned." },
+                { "si": "Tingretten er den vanlige domstolen der rettssaker starter. Slik kan vanlige folk få hjelp uten å betale for en advokat." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Mia fikk ny mobil",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Jeg reklamerer etter forbrukerkjøpsloven.", "fraBeat": 0 },
+                        { "tekst": "Mia fikk ny mobil.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Garantien er hylla.", "fraBeat": 1 },
+                        { "tekst": "Loven er gulvet.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "14 dager angrerett på nett.", "fraBeat": 2 },
+                        { "tekst": "I vanlig butikk: ingen.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Rettighetene dine", "fraBeat": 3 },
+                        { "tekst": "kan ingen ta fra deg.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Mia fikk ny mobil. Hun gikk tilbake, viste kvitteringen og sa: Jeg reklamerer etter forbrukerkjøpsloven." },
+                { "si": "Husk: Garantien er bare et ekstra løfte på toppen. Reklamasjonsretten står i loven, og den varer i minst to år." },
+                { "si": "Handler du på nett, har du 14 dager på å ombestemme deg. Men ikke i en vanlig butikk." },
+                { "si": "Rettighetene dine kan ingen butikk ta fra deg. Og sier butikken nei, kan du få hjelp." }
+            ]
+        }
+    ]
+}
