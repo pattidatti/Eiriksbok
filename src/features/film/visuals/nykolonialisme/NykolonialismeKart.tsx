@@ -9,14 +9,13 @@ import type { VisualProps } from '../../types';
  * «selskap»: United Fruit i Guatemala, jorda Árbenz tok, og kuppet i 1954.
  * «kupp»: fem land på ei tidslinje fra 1950 til 1975, ett per beat.
  * «kakao»: råvarer fra Ghana til Europa, ferdigvarer tilbake, og verdien som renner nordover.
- * «norge»: ressursforbannelsen, og oljen som går til oljefondet.
  * «sankara»: Burkina Faso, talen om gjelden i juli 1987 og kuppet i oktober.
  */
 
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'selskap' | 'kupp' | 'kakao' | 'norge' | 'sankara';
+type Modus = 'selskap' | 'kupp' | 'kakao' | 'sankara';
 
 const ID = {
     guatemala: 320,
@@ -27,7 +26,6 @@ const ID = {
     indonesia: 360,
     ghana: 288,
     burkina: 854,
-    norge: 578,
 };
 const EUROPA = [276, 56, 528, 826, 756, 724, 380, 40, 208, 752];
 
@@ -54,10 +52,6 @@ const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
     kakao: [
         [-24, -2],
         [34, 60],
-    ],
-    norge: [
-        [-14, 54],
-        [34, 71],
     ],
     sankara: [
         [-22, 2],
@@ -140,10 +134,6 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
         if (EUROPA.includes(id)) return FARGE.nord;
         return FARGE.land;
     }
-    if (modus === 'norge') {
-        if (id === ID.norge) return FARGE.sor;
-        return FARGE.land;
-    }
     if (id === ID.burkina) return beat >= 3 ? FARGE.kupp : FARGE.sor;
     if (beat === 2 && EUROPA.includes(id)) return FARGE.nord;
     return FARGE.land;
@@ -171,13 +161,6 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Bonden får noen få kroner' },
         { tekst: 'Verdien renner nordover', rod: true },
         { tekst: 'Arvet fra kolonitiden' },
-    ],
-    norge: [
-        { tekst: 'Kan et land slippe unna?' },
-        { tekst: 'Ressursforbannelsen', rod: true },
-        { tekst: 'Norge: staten beholdt kontrollen' },
-        { tekst: 'Oljefondet' },
-        { tekst: 'Det motsatte av en bananrepublikk' },
     ],
     sankara: [
         { tekst: 'Burkina Faso' },
@@ -213,7 +196,6 @@ export function NykolonialismeKart({ beat, playing, props }: VisualProps<{ modus
                 {modus === 'selskap' && <Selskap beat={beat} p={p} />}
                 {modus === 'kupp' && <Kupp beat={beat} p={p} />}
                 {modus === 'kakao' && <Kakao beat={beat} p={p} playing={playing} />}
-                {modus === 'norge' && <Norge beat={beat} p={p} />}
                 {modus === 'sankara' && <Sankara beat={beat} p={p} />}
             </svg>
 
@@ -247,30 +229,8 @@ export function NykolonialismeKart({ beat, playing, props }: VisualProps<{ modus
                         key={`kupp-${beat}`}
                         navn={KUPP[beat - 1].tekst}
                         linje={KUPP[beat - 1].grunn}
-                        side={beat === 2 ? 'hoyre' : 'venstre'}
+                        side={beat === 1 ? 'venstre' : 'hoyre'}
                         rod={beat === 4}
-                    />
-                )}
-                {modus === 'norge' && beat === 1 && (
-                    <Kort
-                        key="forbannelse"
-                        navn="Mye olje og mineraler"
-                        linje="gir ofte dårlig styring og lite utvikling"
-                        side="hoyre"
-                        rod
-                    />
-                )}
-                {modus === 'norge' && beat >= 3 && (
-                    <Kort
-                        key="fond"
-                        navn="Statens pensjonsfond utland"
-                        linje="Verdens største statlige fond siden 2012"
-                        ekstra={
-                            beat >= 4
-                                ? 'Pengene styres av staten, ikke av et fremmed selskap'
-                                : undefined
-                        }
-                        side="hoyre"
                     />
                 )}
                 {modus === 'sankara' && beat <= 3 && (
@@ -389,9 +349,9 @@ function Kupp({ beat, p }: { beat: number; p: (ll: LngLat) => [number, number] }
         <>
             {/* Tidslinje fra 1950 til 1975 */}
             <rect
-                x={x0 - 60}
+                x={x0 - 120}
                 y={yLinje - 40}
-                width={x1 - x0 + 120}
+                width={x1 - x0 + 240}
                 height={80}
                 rx={20}
                 fill="#ffffff"
@@ -607,74 +567,12 @@ function Kakao({
     );
 }
 
-function Norge({ beat, p }: { beat: number; p: (ll: LngLat) => [number, number] }) {
-    const norge = p([9, 61]);
-    const nordsjoen = p([2.5, 58]);
-    return (
-        <>
-            <Etikett pos={[norge[0] + 20, norge[1] - 20]} tekst="Norge" farge="#14532d" stor />
-            {beat >= 2 && (
-                <motion.g
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                >
-                    <Plattform pos={nordsjoen} />
-                </motion.g>
-            )}
-            {beat >= 2 && (
-                <Pil
-                    fra={[nordsjoen[0] + 40, nordsjoen[1] - 40]}
-                    til={[norge[0] - 20, norge[1] + 60]}
-                    farge="#111827"
-                    bue={-0.2}
-                    tekst="staten"
-                />
-            )}
-            {beat >= 3 && (
-                <motion.g
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.5, type: 'spring', stiffness: 160, damping: 14 }}
-                    style={{ transformOrigin: `${norge[0]}px ${norge[1] + 160}px` }}
-                >
-                    {[0, 1, 2, 3, 4, 5].map((i) => (
-                        <ellipse
-                            key={i}
-                            cx={norge[0] - 80}
-                            cy={norge[1] + 230 - i * 24}
-                            rx={70}
-                            ry={20}
-                            fill="#facc15"
-                            stroke="#a16207"
-                            strokeWidth={5}
-                        />
-                    ))}
-                    <text
-                        x={norge[0] - 80}
-                        y={norge[1] + 300}
-                        textAnchor="middle"
-                        fontSize={40}
-                        fontWeight={900}
-                        fill="#713f12"
-                        stroke="#fff"
-                        strokeWidth={8}
-                        paintOrder="stroke"
-                    >
-                        oljefondet
-                    </text>
-                </motion.g>
-            )}
-        </>
-    );
-}
-
 function Sankara({ beat, p }: { beat: number; p: (ll: LngLat) => [number, number] }) {
     const bf = p([-1.6, 12.3]);
     const eu = p([4, 47]);
     return (
         <>
-            <Etikett pos={[bf[0], bf[1] + 70]} tekst="Burkina Faso" farge="#14532d" />
+            <Etikett pos={[bf[0] + 90, bf[1] + 70]} tekst="Burkina Faso" farge="#14532d" />
             {beat === 1 && (
                 <motion.g
                     initial={{ opacity: 0, scale: 0.7 }}
@@ -726,7 +624,7 @@ function Sankara({ beat, p }: { beat: number; p: (ll: LngLat) => [number, number
                 <>
                     <Etikett
                         pos={[eu[0] + 330, eu[1] + 10]}
-                        tekst="Tidligere kolonimakter"
+                        tekst="Europa"
                         farge={FARGE.nord}
                     />
                     <Pil
@@ -734,7 +632,7 @@ function Sankara({ beat, p }: { beat: number; p: (ll: LngLat) => [number, number
                         til={[bf[0] + 10, bf[1] - 30]}
                         farge={FARGE.nord}
                         bue={0.15}
-                        tekst="kolonimakt før, långiver nå"
+                        tekst="Sankara: kolonimakt før, långiver nå"
                     />
                 </>
             )}
@@ -1114,30 +1012,6 @@ function Strom({
             >
                 sør → nord
             </text>
-        </g>
-    );
-}
-
-function Plattform({ pos }: { pos: [number, number] }) {
-    const [x, y] = pos;
-    return (
-        <g>
-            <rect x={x - 40} y={y - 20} width={80} height={20} fill="#475569" />
-            {[-30, 22].map((dx) => (
-                <rect key={dx} x={x + dx} y={y} width={8} height={40} fill="#475569" />
-            ))}
-            <path
-                d={`M ${x - 10} ${y - 20} L ${x} ${y - 75} L ${x + 10} ${y - 20} Z`}
-                fill="#94a3b8"
-                stroke="#334155"
-                strokeWidth={3}
-            />
-            <path
-                d={`M ${x + 46} ${y - 70} C ${x + 70} ${y - 40}, ${x + 70} ${y - 20}, ${x + 46} ${y - 20} C ${x + 22} ${y - 20}, ${x + 22} ${y - 40}, ${x + 46} ${y - 70} Z`}
-                fill="#111827"
-                stroke="#fff"
-                strokeWidth={4}
-            />
         </g>
     );
 }
