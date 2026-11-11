@@ -1,0 +1,300 @@
+{
+  "id": "forbrukerrettigheter",
+  "title": "Dine rettigheter som forbruker",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Personlig økonomi",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Reklamasjon betyr å klage på en feil ved en vare. Etter loven kan du klage i minst to år, og i fem år for ting som skal vare lenge.",
+    "Garantien er et frivillig løfte fra butikken eller produsenten. Den kommer i tillegg til loven og tar aldri bort reklamasjonsretten.",
+    "Handler du på nett, har du 14 dagers angrerett. Du kan sende varen tilbake uten å ha noen grunn."
+  ],
+  "externalUrl": "https://snl.no/reklamasjon",
+  "factChecked": "2026-11-11",
+  "tags": [
+    "personlig økonomi",
+    "forbruker",
+    "reklamasjon",
+    "angrerett",
+    "netthandel",
+    "lover"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Mia er 15 år. Hun kjøpte mobilen sin for sparepengene fra sommerjobben. En kveld, 13 måneder senere, slutter den å lade. Hun har ikke mistet den, og den har aldri vært våt. Neste dag går hun til butikken der hun kjøpte den. Mannen bak disken ser på kvitteringen og rister på hodet: «Beklager. Garantien er ett år. Den gikk ut for en måned siden.»"
+    },
+    {
+      "type": "text",
+      "content": "Mia går hjem igjen. Hun tror hun må kjøpe ny mobil. Men har butikken egentlig rett? Svaret er nei. Mia har nemlig en rett som er sterkere og varer lenger enn garantien. Den står i loven, og den heter reklamasjonsrett. I denne artikkelen lærer du hvilke rettigheter du har når du kjøper noe, og hvordan du bruker dem."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Jente viser en død mobil over butikkdisken",
+      "caption": "Butikken sier at garantien er ute. Men garanti og reklamasjon er ikke det samme."
+    },
+    {
+      "type": "header",
+      "text": "Hva er en forbruker?"
+    },
+    {
+      "type": "text",
+      "content": "Du er en forbruker når du kjøper noe til deg selv fra en butikk eller en bedrift. Det gjelder enten du kjøper sko, en mobil eller en konsertbillett. Reglene for slike kjøp står i en egen lov som heter forbrukerkjøpsloven. Loven gir deg rettigheter som butikken ikke kan ta fra deg, selv om det står noe annet i de små bokstavene (Fredriksen, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor trengs en slik lov? Butikken kjenner som regel både varene og reglene bedre enn deg. Du står alene ved kassa. Loven skal jevne ut den forskjellen. Den er et eksempel på hvordan lover lager felles regler som gjør samfunnet tryggere. Du kan lese mer om det i artikkelen [Lover, normer og konsekvenser](/samfunnskunnskap/styringsformer/km-14-lover-normer)."
+    },
+    {
+      "type": "header",
+      "text": "Garanti og reklamasjon er ikke det samme"
+    },
+    {
+      "type": "text",
+      "content": "Her ligger misforståelsen i Mias historie. Mange tror at garanti og reklamasjon er to ord for det samme. Det er de ikke. Reklamasjon betyr å klage på en feil ved en vare du har kjøpt. Retten til å klage står i loven og gjelder alle forbrukerkjøp. En garanti er et frivillig løfte fra butikken eller produsenten. Den kommer i tillegg til loven. Den kan gi deg mer tid eller dekke flere ting, men den kan aldri ta bort rettighetene du har etter loven (Fredriksen, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Tenk på det slik: Reklamasjonsretten er gulvet. Den er alltid der. Garantien er en ekstra hylle som noen butikker setter opp. Når butikken sier at garantien er ute, har den bare fortalt deg at hylla er borte. Gulvet står der fortsatt."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Forbruker: en person som kjøper noe til seg selv fra en butikk eller bedrift. Reklamasjon: å klage til selgeren på en feil ved en vare. Mangel: en feil ved varen, for eksempel at den går i stykker for tidlig. Garanti: et frivillig løfte fra butikken eller produsenten, i tillegg til loven. Angrerett: retten til å gi tilbake en vare du har kjøpt på nett, uten noen grunn."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvor lenge kan du klage?"
+    },
+    {
+      "type": "text",
+      "content": "Forbrukerkjøpsloven sier at du kan klage på en feil i minst to år etter at du fikk varen. For ting som skal vare mye lenger enn vanlig, er fristen fem år (Forbrukerkjøpsloven, 2002). Store norske leksikon bruker en TV som eksempel på en vare med fem års frist, mens en enkel ledning til TV-en bare har to år (Fredriksen, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Du kan ikke vente så lenge du vil etter at du har oppdaget feilen. Du må si fra til butikken innen rimelig tid. Loven sier likevel at denne fristen aldri er kortere enn to måneder fra du oppdaget feilen (Forbrukerkjøpsloven, 2002). Det trygge rådet er enkelt: Klag med en gang du merker at noe er galt."
+    },
+    {
+      "type": "text",
+      "content": "Det finnes en regel til som hjelper Mia mye. Hvis en feil viser seg innen to år etter at du fikk varen, regner loven med at feilen fantes allerede da du kjøpte den (Forbrukerkjøpsloven, 2002). Det betyr at Mia ikke må bevise at mobilen var dårlig fra starten. Mener butikken at hun har ødelagt den selv, er det butikken som må vise det."
+    },
+    {
+      "type": "header",
+      "text": "Hva er en feil?"
+    },
+    {
+      "type": "text",
+      "content": "Loven kaller en feil ved varen for en mangel. En vare har en mangel når den ikke er slik du kunne vente deg. Den skal virke til det den er laget for, og den skal vare så lenge som vanlige varer av samme slag. Loven nevner holdbarhet, funksjon og sikkerhet. Det er også en mangel hvis reklamen lovet noe varen ikke klarer (Forbrukerkjøpsloven, 2002)."
+    },
+    {
+      "type": "text",
+      "content": "Men ikke alt som går galt er butikkens ansvar. Reklamasjon gjelder bare feil som ikke skyldes deg (Forbrukerkjøpsloven, 2002). Mister du mobilen i asfalten og skjermen sprekker, er det ikke en feil ved mobilen. Da må du betale reparasjonen selv, eller sjekke om du har en forsikring som dekker skaden."
+    },
+    {
+      "type": "header",
+      "text": "Hva kan du kreve?"
+    },
+    {
+      "type": "text",
+      "content": "Når en vare har en mangel, gir loven deg flere muligheter. Du kan velge om du vil ha varen reparert eller byttet i en ny. Det skal ikke koste deg noe, og det skal skje innen rimelig tid (Forbrukerkjøpsloven, 2002). Hvis reparasjonen ikke virker, eller butikken ikke vil fikse feilen, kan du gå videre:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Retting: butikken reparerer varen gratis.",
+        "Omlevering: du får en ny vare i stedet for den som er ødelagt.",
+        "Prisavslag: du beholder varen, men får tilbake en del av prisen.",
+        "Heving: du gir tilbake varen og får alle pengene tilbake. Det gjelder ikke hvis feilen er helt liten.",
+        "Erstatning: butikken må dekke tap feilen har påført deg."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "For Mia betyr det at butikken må reparere mobilen eller gi henne en ny, uten at hun betaler. Fristen på to år er ikke gått ut, og hun har ikke ødelagt mobilen selv."
+    },
+    {
+      "type": "header",
+      "text": "Angrerett: Når du handler på nett"
+    },
+    {
+      "type": "text",
+      "content": "Reklamasjon handler om varer med feil. Men hva om varen er helt fin, og du bare har ombestemt deg? Da kommer en annen lov inn: angrerettloven. Den gjelder når du handler på avstand, for eksempel på nett, eller når noen selger deg noe utenfor en vanlig butikk, som på døra hjemme (Angrerettloven, 2014)."
+    },
+    {
+      "type": "text",
+      "content": "Angreretten varer i 14 dager. For varer begynner fristen å gå den dagen du får varen i hånden. Du trenger ikke ha noen grunn. Du må bare si klart fra til butikken før fristen er ute, for eksempel med et angreskjema eller en e-post. Butikken må betale tilbake pengene senest 14 dager etter at den fikk beskjeden (Angrerettloven, 2014). Du må som regel betale portoen for å sende varen tilbake, men ikke hvis butikken har lovet å dekke den, eller ikke har fortalt deg at du må betale."
+    },
+    {
+      "type": "text",
+      "content": "Butikken har plikt til å fortelle deg om angreretten. Glemmer den det, blir fristen mye lengre: Da kan du angre i opptil 12 måneder ekstra (Angrerettloven, 2014). Det finnes også unntak. Varer som er laget spesielt for deg, for eksempel en genser med navnet ditt på, kan du ikke angre på. Det samme gjelder varer i en forseglet pakke, altså en pakke som er lukket slik at du ser om den er åpnet. Har du brutt forseglingen, og varen ikke kan selges igjen av hensyn til helse og hygiene, kan du ikke angre."
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva som mangler: vanlige butikker. Kjøper du sko i en butikk i sentrum, gir loven deg ingen angrerett. Noen butikker lar deg bytte likevel, men det er et frivillig tilbud. Les mer om hvordan nettbutikker får deg til å handle mer i [Kjøp nå, betal senere](/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere), og om butikker som bare later som de finnes i [Svindel på nett](/samfunnskunnskap/personlig-okonomi/svindel)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom pakker en genser i returpose hjemme",
+      "caption": "Når du handler på nett, har du 14 dager på å angre. I en vanlig butikk har du ikke det."
+    },
+    {
+      "type": "header",
+      "text": "Test deg selv"
+    },
+    {
+      "type": "text",
+      "content": "Nå kjenner du tre regler: angrerett, reklamasjon og ingen rett. Under får du fem saker. Hver sak er tegnet inn på en tidslinje fra dagen varen ble kjøpt. Se hvor lang tid som har gått, hvor varen ble kjøpt, og om feilen skyldes varen eller deg selv."
+    },
+    {
+      "type": "component",
+      "name": "KlageFristen",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "La du merke til at garantien nesten aldri var svaret? Det er fordi garantien er det minst viktige av de tre. Det er loven som gir deg de sterkeste rettighetene."
+    },
+    {
+      "type": "header",
+      "text": "Slik klager du"
+    },
+    {
+      "type": "text",
+      "content": "Det første steget er alltid å klage til butikken der du kjøpte varen. Loven sier at du skal gi selgeren beskjed om at du vil klage på feilen (Forbrukerkjøpsloven, 2002). Klag skriftlig, for eksempel på e-post. Da har du bevis på hva du sa og når du sa det. Ta med kvitteringen, beskriv feilen kort, og si hva du vil ha: reparasjon, ny vare eller pengene tilbake."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Ta vare på kvitteringer. Et bilde på mobilen holder.",
+        "Klag så fort du merker feilen.",
+        "Klag skriftlig, og skriv ned datoen.",
+        "Si hvilken regel du bruker, for eksempel: «Jeg reklamerer etter forbrukerkjøpsloven.»",
+        "Er du under 18, kan det hjelpe å ha med en voksen."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Hva om butikken fortsatt sier nei? Da kan du sende saken til Forbrukertilsynet. Der hjelper en nøytral person, en mekler, deg og butikken med å finne en løsning dere begge kan godta. Du må betale et gebyr før saken går til mekling (Forbrukertilsynet, 2025). Blir dere ikke enige, kan saken gå videre til Forbrukerklageutvalget."
+    },
+    {
+      "type": "text",
+      "content": "Forbrukerklageutvalget ligner på en liten domstol. Utvalget leser saken og bestemmer hvem som har rett. Svaret er bindende. Det betyr at partene må følge det, med mindre en av dem tar saken til tingretten, som er den vanlige domstolen der rettssaker starter, innen en måned (Forbrukertilsynet, 2026). På denne måten kan vanlige folk få hjelp til å bruke rettighetene sine uten å betale for en advokat."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom skriver klage på laptop med kvittering ved siden av",
+      "caption": "En god klage er skriftlig, kort og viser til loven."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Som forbruker har du rettigheter som butikken ikke kan ta fra deg. Reklamasjonsretten gjelder når varen har en feil, og den varer i minst to år, og i fem år for ting som skal vare lenge. Garantien er bare et ekstra løfte på toppen. Angreretten gir deg 14 dager på å ombestemme deg når du handler på nett, men ikke i en vanlig butikk. Og sier butikken nei, kan du få hjelp fra Forbrukertilsynet. Mia fikk forresten ny mobil. Hun gikk tilbake til butikken, viste kvitteringen og sa: «Jeg reklamerer etter forbrukerkjøpsloven.»"
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Angrerettloven. (2014). *Lov om opplysningsplikt og angrerett ved fjernsalg og salg utenom faste forretningslokaler* (LOV-2014-06-20-27). Lovdata. Hentet 11.11.2026 fra [lovdata.no/dokument/NL/lov/2014-06-20-27](https://lovdata.no/dokument/NL/lov/2014-06-20-27)",
+          "Forbrukerkjøpsloven. (2002). *Lov om forbrukerkjøp* (LOV-2002-06-21-34). Lovdata. Hentet 11.11.2026 fra [lovdata.no/dokument/NL/lov/2002-06-21-34](https://lovdata.no/dokument/NL/lov/2002-06-21-34)",
+          "Forbrukertilsynet. (2025). *Tvisteløsning*. Hentet 11.11.2026 fra [forbrukertilsynet.no](https://www.forbrukertilsynet.no/tvistelosning)",
+          "Forbrukertilsynet. (2026). *Forbrukerklageutvalget*. Hentet 11.11.2026 fra [forbrukertilsynet.no](https://www.forbrukertilsynet.no/forbrukerklageutvalget)",
+          "Fredriksen, J. I. (2025). *Reklamasjon*. Store norske leksikon. Hentet 11.11.2026 fra [snl.no](https://snl.no/reklamasjon)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er forskjellen på en garanti og reklamasjonsretten?",
+          "Hvor lenge kan du reklamere på en vare, og når er fristen fem år?",
+          "Hvor mange dager angrerett har du når du handler på nett, og når begynner fristen å gå?",
+          "Nevn tre ting du kan kreve når en vare har en mangel."
+        ],
+        "reflekter": [
+          "Butikken sa til Mia at garantien var ute. Forklar hvorfor hun likevel hadde rett til å få mobilen reparert.",
+          "Hvorfor tror du loven gir deg angrerett når du handler på nett, men ikke i en vanlig butikk?",
+          "Hvorfor er det lurt å klage skriftlig og ta vare på kvitteringen?",
+          "Loven gir forbrukere sterkere rettigheter enn butikkene. Er det rettferdig? Begrunn svaret."
+        ],
+        "gaaVidere": [
+          "Skriv en kort klage-e-post fra Mia til butikken. Bruk det du har lært om reklamasjon.",
+          "Finn en vare hjemme som har gått i stykker. Ville du hatt rett til å reklamere på den? Hvorfor eller hvorfor ikke?",
+          "Diskuter i klassen: Bør reklamasjonsfristen for mobiltelefoner være to eller fem år?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Mobilen din slutter å virke etter 13 måneder, og garantien var ett år. Hva gjelder?",
+            "options": [
+              "Du har ingen rettigheter fordi garantien er ute",
+              "Du kan reklamere, fordi reklamasjonsretten varer i minst to år",
+              "Du har angrerett i 14 dager",
+              "Du må alltid betale reparasjonen selv"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Garantien er et frivillig løfte. Reklamasjonsretten står i loven og varer i minst to år."
+          },
+          {
+            "question": "Hvor lang angrerett har du når du kjøper noe på nett?",
+            "options": ["3 dager", "7 dager", "14 dager", "30 dager"],
+            "correctAnswer": 2,
+            "explanation": "Angreretten er 14 dager, regnet fra den dagen du fikk varen."
+          },
+          {
+            "question": "Du kjøpte sko i en vanlig butikk og angrer på fargen. Har du angrerett etter loven?",
+            "options": [
+              "Ja, alltid i 14 dager",
+              "Ja, men bare i 7 dager",
+              "Nei, angrerettloven gjelder salg på avstand, som på nett",
+              "Nei, fordi sko aldri kan byttes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Angreretten gjelder når du handler på nett eller utenfor butikken. Noen butikker lar deg bytte frivillig."
+          },
+          {
+            "question": "Hva skjer i Forbrukerklageutvalget?",
+            "options": [
+              "Utvalget selger varer billigere til unge",
+              "Utvalget bestemmer hvem som har rett i en klagesak, og svaret er bindende",
+              "Utvalget lager nye lover",
+              "Utvalget reparerer varer gratis"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Forbrukerklageutvalget avgjør saker som ikke ble løst i mekling. Avgjørelsen er bindende med mindre den tas til tingretten."
+          },
+          {
+            "question": "Hvilken av disse er en mangel du kan reklamere på?",
+            "options": [
+              "Du mistet nettbrettet, og skjermen sprakk",
+              "Du liker ikke fargen på genseren",
+              "Vaskemaskinen slutter å sentrifugere etter ett år uten at noen har brukt den feil",
+              "Du fant den samme varen billigere i en annen butikk"
+            ],
+            "correctAnswer": 2,
+            "explanation": "En mangel er en feil ved varen som ikke skyldes deg. Vaskemaskinen skulle vart mye lenger."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

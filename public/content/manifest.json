@@ -2637,6 +2637,21 @@
                 "nettvett"
               ],
               "createdDate": "2026-11-10T00:00:00Z"
+            },
+            {
+              "id": "forbrukerrettigheter",
+              "title": "Dine rettigheter som forbruker",
+              "description": "Reklamasjon, garanti og angrerett: slik klager du når en vare går i stykker eller du angrer på et kjøp på nett.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "personlig økonomi",
+                "forbruker",
+                "reklamasjon",
+                "angrerett",
+                "netthandel",
+                "lover"
+              ],
+              "createdDate": "2026-11-11T00:00:00Z"
             }
           ]
         },
