@@ -1,0 +1,226 @@
+{
+    "id": "etnolekt",
+    "tittel": "Etnolekt og multietnolekt: Språket som viser hvem du henger med",
+    "kilde": "/norsk/dialekter/etnolekt",
+    "bilde": "/images/dialekter/etnolekt-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 30, "begrunnelse": "Tenkt gruppe på 30 figurer i Prikkfelt, bare for å vise én person mot hele gruppen. Tallet vises ikke (visTall: false) og sies ikke." }
+    ],
+    "vurdering": { "dato": "2026-11-11", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "buss",
+            "lyd": "rom",
+            "kapittel": "På bussen",
+            "visual": { "type": "EtnolektBuss", "props": { "modus": "buss" } },
+            "replikker": [
+                { "si": "Tenk deg en buss i Oslo. To ungdommer er på vei hjem fra skolen." },
+                { "si": "Den ene sier: Jalla, baja, vi er sent ute." },
+                { "si": "Den andre ler og svarer: Slapp av, den bussen er tært." },
+                { "si": "En voksen ved siden av skjønner nesten alt, men ikke helt. Ordene jalla, baja og tært står ikke i norske skolebøker." },
+                { "si": "Likevel forstår de to hverandre helt fint. Måten de snakker på, forteller hvem de er, og hvem de henger med." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ETNOLEKT",
+                    "undertittel": "Språket som viser hvem du henger med",
+                    "bilde": "/images/dialekter/etnolekt-hero.webp",
+                    "sporsmal": { "tekst": "Hva er det de snakker?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om etnolekt og multietnolekt." },
+                { "si": "To lange ord. Men begge handler om én ting: at måten vi snakker på, henger sammen med hvem vi er sammen med." }
+            ]
+        },
+        {
+            "id": "kjennemerke",
+            "kapittel": "Hva er en etnolekt?",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        { "fraBeat": 0, "total": 30, "farget": 0, "restFarge": "#94a3b8", "tittel": "En etnisk gruppe", "restEtikett": "folk med felles bakgrunn", "visTall": false },
+                        { "fraBeat": 1, "total": 30, "farget": 1, "farge": "#7c3aed", "restFarge": "#cbd5e1", "tittel": "Én person snakker litt rart: ikke nok", "fargeEtikett": "snakker litt rart", "restEtikett": "resten av gruppen", "visTall": false },
+                        { "fraBeat": 2, "total": 30, "farget": 30, "farge": "#7c3aed", "tittel": "Felles for hele gruppen", "fargeEtikett": "snakker på samme måte", "visTall": false },
+                        { "fraBeat": 3, "total": 30, "farget": 30, "farge": "#ea580c", "tittel": "Et kjennemerke: jeg hører til", "fargeEtikett": "viser at de hører til", "visTall": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "En etnolekt er den felles måten en etnisk gruppe snakker et språk på. En etnisk gruppe er folk med felles bakgrunn og kultur." },
+                { "si": "Men det er ikke nok at én person snakker litt rart." },
+                { "si": "Måten å snakke på må være felles for hele gruppen." },
+                { "si": "Tenk på det som et kjennemerke. Når du snakker på en bestemt måte, viser du samtidig at du hører til en bestemt gruppe." }
+            ]
+        },
+        {
+            "id": "krav",
+            "visual": { "type": "EtnolektOrd", "props": { "modus": "krav" } },
+            "replikker": [
+                { "si": "Tre ting må være på plass før vi kaller noe en etnolekt." },
+                { "si": "Den første har du sett: språktrekkene må være felles for hele gruppen, ikke bare hos ett menneske." },
+                { "si": "Den andre: trekkene må gå videre til neste generasjon, slik at også barna bruker dem." },
+                { "si": "Den tredje: folk bruker etnolekten til å vise at de hører til gruppen." },
+                { "si": "Ofte kommer trekkene av at de første i gruppen lærte norsk som andrespråk, altså etter morsmålet. Da kan uttale, tonefall og ordvalg bli farget av morsmålet. Noen av trekkene lever videre." }
+            ]
+        },
+        {
+            "id": "samer",
+            "visual": { "type": "EtnolektOrd", "props": { "modus": "baand" } },
+            "replikker": [
+                { "si": "Vi trenger ikke gå til de nye bydelene for å finne etnolekter i Norge." },
+                { "si": "Blant samer og kvener finnes det egne måter å snakke norsk på." },
+                { "si": "Selve det samiske eller kvenske språket kan ha blitt svekket gjennom fornorskingen, da folk ble presset til å bruke norsk." },
+                { "si": "Men noen bruker en slik etnolekt nettopp for å vise at de hører til samisk eller kvensk kultur. Talemålet blir et bånd til bakgrunnen og historien." }
+            ]
+        },
+        {
+            "id": "torg",
+            "lyd": "vind",
+            "kapittel": "Mange blir til én",
+            "visual": { "type": "EtnolektBuss", "props": { "modus": "torg" } },
+            "replikker": [
+                { "si": "I de store byene har det vokst fram noe litt annet: en multietnolekt." },
+                { "si": "Multi betyr flere. En multietnolekt har trekk fra mange ulike språk." },
+                { "si": "Den er ikke knyttet til én etnisk gruppe, men til ungdom med mange forskjellige bakgrunner som møtes." },
+                { "si": "En ordbok forklarer det slik: En multietnolekt oppstår når folk med ulik språklig og kulturell bakgrunn tar i bruk og snakker et nytt språk sammen." }
+            ]
+        },
+        {
+            "id": "oslo",
+            "lyd": "stille",
+            "visual": { "type": "EtnolektKart", "props": { "modus": "oslo" } },
+            "replikker": [
+                { "si": "Hvor vokste den norske multietnolekten fram?" },
+                { "si": "Særlig i flerkulturelle bydeler på Oslo øst. Flerkulturell betyr at folk fra mange ulike kulturer bor side om side." },
+                { "si": "Den vokste fram fra 1990-tallet. Multietnolekten er et ferskt eksempel på hvordan et nytt talemål blir til.", "uttale": "Den vokste fram fra nittitallet. Multietnolekten er et ferskt eksempel på hvordan et nytt talemål blir til." }
+            ]
+        },
+        {
+            "id": "verden",
+            "kapittel": "Ord fra hele verden",
+            "visual": { "type": "EtnolektKart", "props": { "modus": "verden" } },
+            "replikker": [
+                { "si": "Det tydeligste kjennetegnet på multietnolekten er lånordene. Lånord er ord som er hentet fra et annet språk." },
+                { "si": "Mange kommer fra urdu og punjabi. Det er språk som mange med pakistansk bakgrunn snakker." },
+                { "si": "Andre ord kommer fra arabisk, og noen fra persisk, berbisk, spansk og språk fra Balkan." },
+                { "si": "Engelsk er ekstra viktig. Ungdom møter engelsk overalt, i musikk, spill og videoer." },
+                { "si": "Ordene kommer fra hele verden, men blir til ett felles ungdomsspråk." }
+            ]
+        },
+        {
+            "id": "ordbok",
+            "visual": { "type": "EtnolektOrd", "props": { "modus": "ordbok" } },
+            "replikker": [
+                { "si": "La oss avkode noen av ordene." },
+                { "si": "Baja betyr kompis, og tært betyr kul eller fin. De kommer fra urdu og punjabi." },
+                { "si": "Jalla betyr kom igjen, eller skynd deg. Wallah betyr jeg sverger, og flus betyr penger. De kommer fra arabisk." },
+                { "si": "Digge betyr å like noe, og kommer fra engelsk. Ingen enkelt gruppe eier denne ordboka alene." }
+            ]
+        },
+        {
+            "id": "monster",
+            "kapittel": "Mer enn ord",
+            "visual": { "type": "EtnolektOrd", "props": { "modus": "monster" } },
+            "replikker": [
+                { "si": "Men multietnolekten er mer enn bare ord. Den har også sin egen rytme." },
+                { "si": "Mange beskriver den som stakkato. Det betyr litt hakkete, med tydelige trykk." },
+                { "si": "Den bytter også ofte om på ordrekkefølgen. På standard norsk sier vi: I går gikk jeg ikke. Verbet gikk står på plass nummer to." },
+                { "si": "I multietnolekten kan det bli: I går eg ikkje gjekk. Her har verbet flyttet seg." },
+                { "si": "Dette er ikke tilfeldige feil. Det er faste mønstre som mange bruker likt, akkurat slik en dialekt har sine faste kjennetegn." }
+            ]
+        },
+        {
+            "id": "kebab",
+            "kapittel": "Et navn med bismak",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KEBABNORSK",
+                    "undertittel": "Et kallenavn på den norske multietnolekten",
+                    "sporsmal": { "tekst": "Et rettferdig navn?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Du har kanskje hørt et annet ord for dette talemålet: kebabnorsk." },
+                { "si": "Det er kallenavnet på den norske multietnolekten. Navnet spiller på kebab, en rett mange forbinder med innvandring." },
+                { "si": "Navnet er bygd på en stereotypi, altså et fast og forenklet bilde av hvem som snakker slik." },
+                { "si": "Derfor liker ikke alle navnet. Det kan høres ut som dårlig eller morsom norsk, og det er urettferdig mot dem som bruker det hver dag." }
+            ]
+        },
+        {
+            "id": "hvem",
+            "lyd": "vind",
+            "visual": { "type": "EtnolektBuss", "props": { "modus": "hvem" } },
+            "replikker": [
+                { "si": "En vanlig misforståelse er at bare ungdom med innvandrerbakgrunn snakker slik. Det stemmer ikke." },
+                { "si": "Også ungdom uten innvandrerbakgrunn bruker multietnolekten. De tar den i bruk for å være en del av gjengen og miljøet." },
+                { "si": "Talemålet handler altså ikke om hudfarge, eller om hvor foreldrene dine er født." },
+                { "si": "Det handler om hvilket sosialt miljø du hører til." }
+            ]
+        },
+        {
+            "id": "regler",
+            "lyd": "stille",
+            "kapittel": "Dårlig norsk?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Dårlig norsk? Nei.",
+                    "punkter": [
+                        { "ikon": "avtale", "tittel": "Egne regler", "tekst": "akkurat som andre dialekter og talemål", "fraBeat": 1 },
+                        { "ikon": "haer", "tittel": "En sosiolekt?", "tekst": "noen forskere: talemålet til en sosial gruppe", "fraBeat": 2 },
+                        { "ikon": "stjerne", "tittel": "Følger mønstre", "tekst": "og forteller hvem folk er", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Er multietnolekten egentlig dårlig norsk? Svaret er nei." },
+                { "si": "Den er et levende talemål med sine egne regler, akkurat som andre dialekter og talemål i Norge." },
+                { "si": "Den er ikke knyttet til ett sted eller én etnisk gruppe, men til et sosialt miljø. Derfor mener noen forskere at den passer best som en sosiolekt, altså talemålet til en sosial gruppe." },
+                { "si": "Uansett hva vi kaller den, følger den mønstre og forteller en historie om hvem folk er." }
+            ]
+        },
+        {
+            "id": "bytte",
+            "kapittel": "To måter å snakke på",
+            "visual": { "type": "EtnolektBuss", "props": { "modus": "bytte" } },
+            "replikker": [
+                { "si": "De som bruker multietnolekten, kan også snakke helt vanlig norsk når de vil." },
+                { "si": "En elev kan snakke multietnolekt med kompisene i friminuttet." },
+                { "si": "Og så bytte til et mer skriftnært talemål på et jobbintervju. Skriftnært betyr nærmere slik vi skriver." },
+                { "si": "Multietnolekten er én måte å snakke på blant flere. Å eie flere talemål og velge mellom dem er faktisk en styrke." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Språk er aldri ferdig",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Språk er aldri ferdig.", "fraBeat": 0 },
+                        { "tekst": "Nye talemål oppstår der folk møtes.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ord fra mange språk", "fraBeat": 1 },
+                        { "tekst": "blir til ett felles ungdomsspråk.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ikke hvor du kommer fra,", "fraBeat": 2 },
+                        { "tekst": "men hvilket miljø du hører til.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Språk er aldri ferdig. Det forandrer seg hele tiden, og nye talemål oppstår der folk møtes på nye måter." },
+                { "si": "Multietnolekten ble til da mennesker fra hele verden flyttet sammen i de samme bydelene. Ordene kom fra mange språk, men ble til ett felles ungdomsspråk." },
+                { "si": "Den forteller ikke hvor du kommer fra. Den forteller hvilket miljø du hører til, og hvem du henger med." }
+            ]
+        }
+    ]
+}
