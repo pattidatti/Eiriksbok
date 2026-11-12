@@ -1,0 +1,266 @@
+{
+    "id": "malmerker",
+    "tittel": "Målmerker: Sporene som avslører dialekten",
+    "kilde": "/norsk/dialekter/malmerker",
+    "bilde": "/images/dialekter/malmerker-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-12", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "bussen",
+            "lyd": "rom",
+            "kapittel": "På bussen",
+            "visual": { "type": "MalmerkerOrd", "props": { "modus": "buss" } },
+            "replikker": [
+                { "si": "Du sitter på bussen. En fyr bak deg sier «æ» i stedet for «jeg»." },
+                { "si": "En annen på bussen svarer, og han sier «eg»." },
+                {
+                    "si": "Uten å tenke over det har du allerede gjettet hvor de kommer fra. Hvordan klarte du det?"
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MÅLMERKER",
+                    "undertittel": "Sporene som avslører dialekten",
+                    "bilde": "/images/dialekter/malmerker-hero.webp",
+                    "sporsmal": { "tekst": "Hvilke spor røper deg?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Du lyttet etter små spor i språket. Slike spor kalles målmerker."
+                },
+                {
+                    "si": "Et målmerke er ett språktrekk: en uttale, en endelse eller et ord som skiller én dialekt fra en annen."
+                },
+                {
+                    "si": "Ett målmerke sier ikke så mye alene. Men legger du flere sammen, tegner de et ganske nøyaktig kart."
+                }
+            ]
+        },
+        {
+            "id": "tunga",
+            "kapittel": "Tjukk l",
+            "visual": { "type": "MalmerkerMunn", "props": { "modus": "tjukkl" } },
+            "replikker": [
+                { "si": "Det kanskje mest kjente målmerket heter tjukk l." },
+                {
+                    "si": "Noen sier «sol» nesten som «såL», og «bord» nesten som «boL»."
+                },
+                { "si": "Slik lager du lyden: Du bøyer tunga bakover i munnen." },
+                { "si": "Så lar du tungespissen slå et lite slag mot ganen, taket i munnen." }
+            ]
+        },
+        {
+            "id": "tjukkl-kart",
+            "visual": { "type": "MalmerkerKart", "props": { "modus": "tjukkl" } },
+            "replikker": [
+                { "si": "Tjukk l finnes på Østlandet og i Trøndelag." },
+                {
+                    "si": "Men du hører den ikke på Vestlandet, og heller ikke i det meste av Nord-Norge."
+                },
+                {
+                    "si": "Bare den ene lyden forteller altså ganske mye om hvor en person hører hjemme."
+                }
+            ]
+        },
+        {
+            "id": "norront",
+            "visual": { "type": "MalmerkerMunn", "props": { "modus": "norront" } },
+            "replikker": [
+                {
+                    "si": "Tjukk l er ikke ny. Den kommer fra norrønt, det gamle språket vikingene snakket."
+                },
+                { "si": "Den dukker opp der norrønt hadde en l, som i «dal» og «sol»." },
+                {
+                    "si": "Og der norrønt hadde bokstavene rð, som i «gard» og «jord».",
+                    "uttale": "Og der norrønt hadde to bestemte bokstaver etter hverandre, som i gard og jord."
+                },
+                {
+                    "si": "Tjukk l er altså et levende spor etter et språk som er over tusen år gammelt."
+                }
+            ]
+        },
+        {
+            "id": "mannj",
+            "kapittel": "Den myke j-en",
+            "visual": { "type": "MalmerkerKart", "props": { "modus": "palatal" } },
+            "replikker": [
+                {
+                    "si": "Reis nordover, og du møter et helt annet målmerke. I Nord-Norge og Trøndelag smyger det seg ofte inn en myk j-lyd etter enkelte konsonanter."
+                },
+                {
+                    "si": "«Mann» blir til «mannj», «kveld» blir til «kvellj», og «redd» blir til «reddj»."
+                },
+                { "si": "Dette kalles palatalisering." },
+                {
+                    "si": "Hør på denne gamle trønderske setningen: Mannj med hannjhonnj i bannj. Altså: mann med hannhund i bånd."
+                }
+            ]
+        },
+        {
+            "id": "jamvekt",
+            "kapittel": "Endelser",
+            "visual": { "type": "MalmerkerOrd", "props": { "modus": "jamvekt" } },
+            "replikker": [
+                {
+                    "si": "Noen målmerker handler ikke om lyder, men om endelsen, altså slutten av ordet."
+                },
+                {
+                    "si": "På Østlandet og i Trøndelag deles verbene i to grupper. Noen ender på a, som «å værra»."
+                },
+                {
+                    "si": "Andre ender ikke på a. Det heter «å værra», men «å skrive». Denne todelingen kalles kløyvd infinitiv."
+                },
+                {
+                    "si": "Bak ligger en gammel regel som heter jamvekt. Ord som var korte i norrønt, oppfører seg fortsatt annerledes enn ord som var lange."
+                },
+                { "si": "På Vestlandet finnes ikke denne todelingen. Der ender alle verbene likt." }
+            ]
+        },
+        {
+            "id": "apokope",
+            "visual": { "type": "MalmerkerOrd", "props": { "modus": "apokope" } },
+            "replikker": [
+                {
+                    "si": "I Trøndelag og deler av Nord-Norge skjer noe annet. Den siste vokalen forsvinner helt."
+                },
+                { "si": "«Å kaste» blir til «å kast»." },
+                {
+                    "si": "Og «å kjøpe» blir til «å kjøp». Dette målmerket heter apokope.",
+                    "uttale": "Og å kjøpe blir til å kjøp. Dette målmerket heter apokópe."
+                },
+                {
+                    "si": "Ordene blir korte og ender på en konsonant. Det er ikke slurv. Det er en fast regel i dialekten."
+                }
+            ]
+        },
+        {
+            "id": "jeg",
+            "kapittel": "Landsdelene",
+            "visual": { "type": "MalmerkerKart", "props": { "modus": "jeg" } },
+            "replikker": [
+                {
+                    "si": "Kanskje ingenting røper dialekten din raskere enn ordet for «jeg»."
+                },
+                { "si": "På Vestlandet og Sørlandet er «eg» vanlig." },
+                {
+                    "si": "I Trøndelag og Nord-Norge hører du ofte «æ». Inne i Trøndelag finnes også «i» og «je»."
+                },
+                { "si": "Og i skriftspråket? Der er «eg» nynorsk, og «jeg» er bokmål." }
+            ]
+        },
+        {
+            "id": "fire",
+            "visual": { "type": "MalmerkerKart", "props": { "modus": "fire" } },
+            "replikker": [
+                {
+                    "si": "Når språkforskere skal ordne alle dialektene, deler de gjerne landet i fire hovedområder."
+                },
+                { "si": "Østlandsk, vestlandsk, trøndersk og nordnorsk." },
+                {
+                    "si": "Tidligere delte man ofte landet i bare to, øst og vest. I dag er firedelingen mest vanlig. Grensa mellom øst og vest følger blant annet fjellkjeden Langfjella."
+                },
+                {
+                    "si": "Lenger nord går grensa mellom Romsdal og Nordmøre. Hvert område har sin egen samling av målmerker."
+                }
+            ]
+        },
+        {
+            "id": "tonefall",
+            "visual": { "type": "MalmerkerMunn", "props": { "modus": "tonefall" } },
+            "replikker": [
+                {
+                    "si": "Et morsomt målmerke som skiller øst fra vest, er tonefallet: hvordan stemmen går opp og ned."
+                },
+                { "si": "På Østlandet og i Trøndelag stiger stemmen mot slutten av ordet." },
+                { "si": "På Vestlandet og i Nord-Norge faller den." },
+                {
+                    "si": "Grensa går omtrent ved Lillesand på Sørlandet. Tonefallet gjør at vestlandsk kan høres litt syngende ut for en østlending."
+                }
+            ]
+        },
+        {
+            "id": "stolt",
+            "kapittel": "Din dialekt",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Dialekt over alt",
+                    "punkter": [
+                        {
+                            "ikon": "radio",
+                            "tittel": "I radioen og i nyhetene",
+                            "tekst": "og på skolen, etter dialektbølgen på 1970-tallet",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Ingen offisiell standard",
+                            "tekst": "Norge har ikke noe offisielt standard talemål",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "I mange land må folk legge bort dialekten sin når de snakker offentlig. Slik er det ikke i Norge."
+                },
+                {
+                    "si": "Etter dialektbølgen på 1970-tallet ble det vanlig å bruke dialekt over alt: på skolen, i radioen og i nyhetene."
+                },
+                {
+                    "si": "Norge har nemlig ikke noe offisielt standard talemål. Målmerkene dine er ikke feil. De er en del av hvem du er."
+                }
+            ]
+        },
+        {
+            "id": "detektiv",
+            "kapittel": "Bli en detektiv",
+            "visual": { "type": "MalmerkerOrd", "props": { "modus": "detektiv" } },
+            "replikker": [
+                {
+                    "si": "Nå kan du lytte som en detektiv. Tenk deg at du møter en ny person."
+                },
+                { "si": "Spor én: Hun sier «æ». Det peker mot Trøndelag eller Nord-Norge." },
+                {
+                    "si": "Spor to: Hun har tjukk l i «sol». Den finnes på Østlandet og i Trøndelag, men ikke i det meste av Nord-Norge."
+                },
+                {
+                    "si": "Spor tre: Hun sier «å kast». Alle sporene peker mot samme sted: Trøndelag."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ett målmerke sier lite.", "fraBeat": 0 },
+                        { "tekst": "Flere sammen tegner et kart.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Noen spor er over tusen år gamle.", "fraBeat": 1 },
+                        { "tekst": "De kommer fra norrønt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Dialekten er den muntlige adressen din.", "fraBeat": 2 },
+                        { "tekst": "Den forteller hvor du hører til.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Ett målmerke sier lite alene. Men flere sammen tegner et ganske nøyaktig kart."
+                },
+                { "si": "Noen av sporene, som tjukk l og jamvekt, er arvestykker fra norrønt, over tusen år gamle." },
+                {
+                    "si": "Dialekten er den muntlige adressen din. Den forteller hvor du hører til."
+                }
+            ]
+        }
+    ]
+}
