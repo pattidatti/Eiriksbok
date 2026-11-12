@@ -2656,6 +2656,28 @@
           ]
         },
         {
+          "id": "rettsstaten",
+          "title": "Rettsstaten: Lov, straff og rettferdighet",
+          "description": "Hva som skjer etter et lovbrudd: rettsstatens regler, politiet, domstolene, straff og ungdom og kriminalitet.",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "hva-er-en-rettsstat",
+              "title": "Hva er en rettsstat?",
+              "description": "Fem regler som sørger for at også de som styrer landet, må følge loven - og hvorfor de beskytter deg.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "rettsstaten",
+                "grunnloven",
+                "maktfordeling",
+                "menneskerettigheter",
+                "demokrati"
+              ],
+              "createdDate": "2026-11-12T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "eksamen",
           "title": "Eksamen",
           "description": "Alt du trenger for å mestre muntlig eksamen i samfunnsfag etter 10. trinn.",
