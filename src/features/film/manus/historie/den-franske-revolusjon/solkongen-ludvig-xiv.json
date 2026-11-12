@@ -4,6 +4,7 @@
     "kilde": "/historie/den-franske-revolusjon/solkongen-ludvig-xiv",
     "bilde": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-12", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
     "scener": [
         {
             "id": "morgen",
@@ -27,7 +28,7 @@
                     "tittel": "LUDVIG 14.",
                     "undertittel": "Solkongen i Versailles",
                     "bilde": "/images/den-franske-revolusjon/solkongen-ludvig-xiv-hero.webp",
-                    "tall": [{ "verdi": 72, "etikett": "år som konge", "fraBeat": 1 }],
+                    "tall": [{ "verdi": 72, "etikett": "år som konge", "fraBeat": 1, "omtrent": false }],
                     "sporsmal": { "tekst": "Hvordan temmer du de farligste mennene i landet?", "fraBeat": 2 }
                 }
             },
@@ -46,7 +47,7 @@
             "id": "barn",
             "lyd": "stille",
             "kapittel": "Konge som barn",
-            "visual": { "type": "SolkongenBane", "props": { "modus": "barn" } },
+            "visual": { "type": "SolkongenMakt", "props": { "modus": "barn" } },
             "replikker": [
                 { "si": "Ludvig ble født i 1638. Da han var fire år gammel, døde faren." },
                 { "si": "I 1643 ble Ludvig konge. Men et barn kan ikke styre et land." },
@@ -57,7 +58,7 @@
                     "si": "Kongen hadde fått mange embetsmenn, altså folk som styrte landet for ham."
                 },
                 {
-                    "si": "Det likte ikke adelen, de rike familiene med store gårder og titler som hertug og greve. De var vant til å bestemme selv."
+                    "si": "Det likte ikke adelen, de rike familiene med store gårder og titler som hertug og greve. De var vant til å bestemme mye selv."
                 }
             ]
         },
@@ -79,14 +80,14 @@
                     "uttale": "Så tok de aller mektigste adelsmennene over, med støtte fra Spania. Prinsen av Kongde førte åpen krig mot kongens hær."
                 },
                 {
-                    "si": "Til slutt vant kongens side, fordi opprørerne var uenige. Men gutten på tronen glemte det aldri. Han stolte aldri på adelen igjen."
+                    "si": "Til slutt vant kongens side, fordi opprørerne var uenige. Men gutten på tronen glemte det aldri. Han var mistenksom mot adelen resten av livet."
                 }
             ]
         },
         {
             "id": "enevelde",
             "kapittel": "Staten, det er jeg",
-            "visual": { "type": "SolkongenBane", "props": { "modus": "enevelde" } },
+            "visual": { "type": "SolkongenMakt", "props": { "modus": "enevelde" } },
             "replikker": [
                 { "si": "I 1661 døde Mazarin. Ludvig var 22 år, og nå ville han styre selv." },
                 {
@@ -160,7 +161,7 @@
             "visual": { "type": "SolkongenSlott", "props": { "modus": "speil" } },
             "replikker": [
                 { "si": "Det mest kjente rommet er Speilsalen. Den er 73 meter lang." },
-                { "si": "Langs den ene veggen står 17 buede speil. De er laget av 357 mindre speilglass." },
+                { "si": "Salen har 17 buede speil. De er laget av 357 mindre speilglass." },
                 { "si": "Her gikk hoffolkene hver dag, og her ble store seremonier holdt." }
             ]
         },
@@ -182,7 +183,7 @@
                 {
                     "si": "I 1682 flyttet Ludvig hoffet og hele regjeringen fra Paris til Versailles. Minst 3000 mennesker skulle bo fast i slottet."
                 },
-                { "si": "Hver dag var det mellom 3000 og 10 000 mennesker der." },
+                { "si": "Hver dag var det mellom 3000 og 10 000 mennesker der. Det kom an på hva som skjedde den dagen." },
                 {
                     "si": "Og her er det smarte trikset. Adelen som hadde gjort opprør, ble nå invitert til Versailles. Dagene gikk med konserter, ball, teater og kortspill."
                 },
@@ -271,7 +272,7 @@
             "replikker": [
                 { "si": "Ludvig var en gutt som ble jaget fra sin egen hovedstad. Han endte som en konge med all makt." },
                 {
-                    "si": "Etterpå temmet han adelen uten soldater. Han ga dem fester, regler og en plass nær seg selv."
+                    "si": "Etterpå temmet han adelen med et slott, ikke bare med soldater. Han ga dem fester, regler og en plass nær seg selv."
                 },
                 {
                     "si": "Så neste gang noen gir deg noe flott, kan du spørre: Hva får jeg, og hva gir jeg fra meg?"

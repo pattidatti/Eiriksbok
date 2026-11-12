@@ -245,8 +245,8 @@ export function SolkongenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                                     tekst="Condé"
                                 />
                                 <Sverd
-                                    x={p([-0.6, 48.9])[0]}
-                                    y={p([-0.6, 48.9])[1]}
+                                    x={p([-1.8, 48.4])[0]}
+                                    y={p([-1.8, 48.4])[1]}
                                     farge={KONGE}
                                     tekst="Kongens hær"
                                 />
@@ -383,7 +383,7 @@ export function SolkongenKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                                     liten
                                     farge="#78350f"
                                 />
-                                <Punkt pos={p(STRASBOURG)} tekst="Strasbourg" farge={GULL} />
+                                <Punkt pos={p(STRASBOURG)} tekst="Strasbourg" farge="#92400e" />
                             </>
                         )}
                         {beat >= 4 &&
@@ -624,7 +624,7 @@ function Lupe({ px, py }: { px: number; py: number }) {
             </text>
             <circle cx={cx - 90} cy={cy - 20} r={16} fill={KONGE} />
             <text
-                x={cx - 90}
+                x={cx - 50}
                 y={cy - 46}
                 textAnchor="middle"
                 fontSize={30}
