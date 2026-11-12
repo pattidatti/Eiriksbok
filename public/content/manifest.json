@@ -2642,7 +2642,7 @@
               "id": "forbrukerrettigheter",
               "title": "Dine rettigheter som forbruker",
               "description": "Reklamasjon, garanti og angrerett: slik klager du når en vare går i stykker eller du angrer på et kjøp på nett.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/personlig-okonomi/forbrukerrettigheter-hero.webp",
               "tags": [
                 "personlig økonomi",
                 "forbruker",
@@ -2665,7 +2665,7 @@
               "id": "hva-er-en-rettsstat",
               "title": "Hva er en rettsstat?",
               "description": "Fem regler som sørger for at også de som styrer landet, må følge loven - og hvorfor de beskytter deg.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/rettsstaten/hva-er-en-rettsstat-hero.webp",
               "tags": [
                 "rettsstaten",
                 "grunnloven",
