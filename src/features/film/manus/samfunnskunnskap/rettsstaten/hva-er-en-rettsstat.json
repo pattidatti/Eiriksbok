@@ -1,0 +1,234 @@
+{
+    "id": "hva-er-en-rettsstat",
+    "tittel": "Hva er en rettsstat?",
+    "kilde": "/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat",
+    "bilde": "/images/rettsstaten/hva-er-en-rettsstat-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 97, "begrunnelse": "Regnet ut fra artikkelen: 68 prosent av 143 land er omtrent 97 land. Brukt som antall fargede prikker i prikkfeltet, tallet vises ikke." }
+    ],
+    "vurdering": { "dato": "2026-11-12", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "dora",
+            "lyd": "vind",
+            "kapittel": "En tidlig morgen",
+            "visual": { "type": "RettsstatHuset", "props": { "modus": "dora" } },
+            "replikker": [
+                { "si": "Tenk deg en tidlig morgen. Politiet banker på døra hjemme hos en mann." },
+                { "si": "De tar ham med seg, men de sier ikke hvorfor. Han får ikke snakke med en advokat." },
+                { "si": "Familien vet ikke hva han er anklaget for." }
+            ]
+        },
+        {
+            "id": "cella",
+            "lyd": "rom",
+            "visual": { "type": "RettsstatHuset", "props": { "modus": "celle" } },
+            "replikker": [
+                { "si": "Uker blir til måneder. Han sitter fortsatt innesperret, og ingen dommer har sett på saken." },
+                { "si": "Kanskje har han kritisert landets leder på nettet. Kanskje har han bare kranglet med feil person." },
+                { "si": "Historien er tenkt. Men slike ting skjer i land der makthaverne kan gjøre som de vil." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "RETTSSTATEN",
+                    "undertittel": "Når loven styrer, og ikke makthaverne",
+                    "bilde": "/images/rettsstaten/hva-er-en-rettsstat-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor beskytter reglene også de skyldige?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "I Norge skal dette ikke kunne skje. Grunnen er at Norge er en rettsstat." },
+                { "si": "Men hva betyr det? Og hvorfor beskytter reglene også dem som kanskje har gjort noe galt?" }
+            ]
+        },
+        {
+            "id": "loven",
+            "kapittel": "Loven styrer",
+            "visual": { "type": "RettsstatLoven", "props": { "modus": "rettsstat" } },
+            "replikker": [
+                { "si": "En rettsstat er et land der makten er styrt og begrenset av lover som alle kan lese." },
+                { "si": "Det gjelder også dem som styrer landet. Politiet, regjeringen og kommunen kan ikke bare gjøre det de har lyst til." },
+                { "si": "De må holde seg innenfor lovene." },
+                {
+                    "si": "På engelsk sier man «rule of law». Det betyr at loven styrer, ikke enkeltpersoner.",
+                    "uttale": "På engelsk sier man rul åv lå. Det betyr at loven styrer, ikke enkeltpersoner."
+                }
+            ]
+        },
+        {
+            "id": "politistat",
+            "visual": { "type": "RettsstatLoven", "props": { "modus": "politistat" } },
+            "replikker": [
+                { "si": "Det motsatte av en rettsstat kalles en politistat. Der bruker makthaverne makten vilkårlig." },
+                { "si": "Vilkårlig betyr tilfeldig, uten at noen lov gir dem rett til det. Mannen i cella levde i en politistat." },
+                { "si": "Ifølge Store norske leksikon har Norge vært en rettsstat siden landet fikk sin egen grunnlov i 1814." },
+                { "si": "Grunnloven er Norges viktigste lov. Den bestemmer hvordan makten skal brukes." }
+            ]
+        },
+        {
+            "id": "soylene",
+            "kapittel": "Fem regler",
+            "visual": { "type": "RettsstatHuset", "props": { "modus": "soyler" } },
+            "replikker": [
+                { "si": "Rettsstaten er ikke én enkelt regel. Den er flere regler som henger sammen, som søylene under et tak." },
+                { "si": "Én: Alle er like for loven." },
+                { "si": "To: Ingen straff uten lov." },
+                { "si": "Tre: Du er uskyldig til det motsatte er bevist." },
+                { "si": "Fire: Domstolene er uavhengige." },
+                { "si": "Fem: Staten må selv følge loven. Mange av reglene står i Grunnloven." }
+            ]
+        },
+        {
+            "id": "likhet",
+            "visual": { "type": "RettsstatReglene", "props": { "modus": "likhet" } },
+            "replikker": [
+                { "si": "Den første regelen står svart på hvitt i Grunnloven paragraf 98: Alle er like for loven." },
+                { "si": "Loven gjelder på samme måte for en statsminister som for en bussjåfør." },
+                { "si": "Ingen skal få en mildere eller strengere dom fordi de er rike, kjente eller har en viktig jobb." }
+            ]
+        },
+        {
+            "id": "legalitet",
+            "visual": { "type": "RettsstatReglene", "props": { "modus": "tid" } },
+            "replikker": [
+                { "si": "Den andre regelen heter legalitetsprinsippet. Ingen kan dømmes uten lov, eller settes i fengsel uten dom." },
+                { "si": "Det som er forbudt, må stå i en skrevet lov. Og loven må være lett å finne og lett å forstå." },
+                { "si": "Kan loven forstås på flere måter, skal den anklagede frikjennes. Det betyr at han går fri." },
+                { "si": "Grunnloven paragraf 97 legger til at ingen lov kan gjelde bakover i tid." },
+                { "si": "Kommer det en ny lov i dag, kan du ikke straffes for noe du gjorde i fjor." }
+            ]
+        },
+        {
+            "id": "bevis",
+            "visual": { "type": "RettsstatReglene", "props": { "modus": "bevis" } },
+            "replikker": [
+                { "si": "Den tredje regelen står i paragraf 96: Alle har rett til å bli regnet som uskyldige til skyld er bevist." },
+                { "si": "Det er ikke du som må bevise at du ikke gjorde det. Det er staten som må bevise at du gjorde det." },
+                { "si": "Den fjerde regelen står i paragraf 95: Saken din skal avgjøres av en uavhengig og upartisk domstol, innen rimelig tid." },
+                { "si": "Upartisk betyr at dommeren ikke holder med noen av sidene på forhånd." }
+            ]
+        },
+        {
+            "id": "vern",
+            "lyd": "vind",
+            "visual": { "type": "RettsstatHuset", "props": { "modus": "vern" } },
+            "replikker": [
+                { "si": "Den femte regelen handler om staten selv. Paragraf 113 sier at myndighetene må ha en lov når de griper inn i livet ditt." },
+                { "si": "Og paragraf 94 sier at ingen kan settes i fengsel, uten slik loven bestemmer." },
+                { "si": "Mannen fra starten ville vært beskyttet av nettopp disse to reglene i Norge." }
+            ]
+        },
+        {
+            "id": "skyldige",
+            "lyd": "stille",
+            "kapittel": "Også de skyldige?",
+            "visual": { "type": "RettsstatReglene", "props": { "modus": "tvil" } },
+            "replikker": [
+                { "si": "Mange lurer på om rettsstaten er for snill. Hvorfor skal en som kanskje har gjort noe alvorlig, få advokat og rettssak?" },
+                { "si": "Svaret er at ingen kan vite på forhånd hvem som er skyldig. Det er nettopp det rettssaken skal finne ut." },
+                { "si": "Politifolk og dommere er mennesker, og mennesker tar feil. Vitner husker galt, og bevis kan se sikrere ut enn de er." },
+                { "si": "Rettsstaten gjør det vanskeligere å dømme feil person. Prisen er at det av og til er vanskeligere å dømme den riktige." },
+                { "si": "Og du skal kunne lese loven og vite på forhånd hvor grensene går. Den tryggheten gjelder deg, naboen din og alle andre." }
+            ]
+        },
+        {
+            "id": "makt",
+            "kapittel": "Makt skal stoppe makt",
+            "visual": { "type": "RettsstatLoven", "props": { "modus": "makt" } },
+            "replikker": [
+                { "si": "En viktig idé bak rettsstaten er maktfordeling. Det betyr at makten i staten er delt i tre." },
+                { "si": "Den franske filosofen Montesquieu skrev om denne ideen i 1748. Han mente at den som har makt, lett misbruker den." },
+                { "si": "Derfor må makt holdes i sjakk av annen makt." },
+                { "si": "I Norge lager Stortinget lovene, regjeringen styrer, og domstolene dømmer." },
+                { "si": "Når domstolene er uavhengige, kan de si nei til regjeringen hvis den bryter loven." }
+            ]
+        },
+        {
+            "id": "veien",
+            "kapittel": "En lang vei fram",
+            "visual": { "type": "RettsstatKart", "props": { "modus": "veien" } },
+            "replikker": [
+                { "si": "Tanken om at makten skal bindes av lover, er gammel. Romerne krevde at lovene skulle være skrevet ned og kjent for folk." },
+                { "si": "I middelalderen fikk Norge en felles, skrevet lovbok: Magnus Lagabøtes landslov." },
+                { "si": "I England tvang adelen kongen til å godta Magna Carta, på begynnelsen av 1200-tallet. Den ga blant annet vern mot å bli fengslet uten grunn." },
+                { "si": "Likevel hadde kongen lenge det siste ordet i mange land. Ifølge Store norske leksikon vokste ideene om rettsstaten fram som et svar på eneveldige konger. Det var konger med all makt, som brukte den tilfeldig." },
+                { "si": "På 1800-tallet ble flere land styrt etter en grunnlov, og makten ble delt. Ideene hjalp også demokratiet fram." }
+            ]
+        },
+        {
+            "id": "maling",
+            "kapittel": "Rettsstaten i dag",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 143,
+                            "farget": 143,
+                            "farge": "#0d9488",
+                            "tittel": "143 land blir målt",
+                            "fargeEtikett": "land",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 143,
+                            "farget": 97,
+                            "farge": "#dc2626",
+                            "restFarge": "#94a3b8",
+                            "tittel": "2025: svakere i 68 prosent av landene",
+                            "fargeEtikett": "rettsstaten ble svakere",
+                            "restEtikett": "ikke svakere",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Rettsstaten er ikke noe et land har en gang for alle. Organisasjonen World Justice Project måler hvor sterk den er i 143 land." },
+                { "si": "I 2025 ble rettsstaten svakere i 68 prosent av landene. Det er mer enn to av tre." }
+            ]
+        },
+        {
+            "id": "norden",
+            "visual": { "type": "RettsstatKart", "props": { "modus": "maling" } },
+            "replikker": [
+                { "si": "Norge kom godt ut av målingen. Danmark havnet på førsteplass i verden." },
+                { "si": "I Europa og Nord-Amerika fulgte Norge rett etter." },
+                { "si": "Men hvorfor ble rettsstaten svakere i så mange land? Den viktigste grunnen er ifølge World Justice Project at mange ledere styrer mer autoritært." },
+                { "si": "Det betyr at de samler mer makt hos seg selv og tåler mindre kontroll." },
+                { "si": "Målingen viser også at domstolene mister makt i mange land, mens regjeringene får mer." },
+                { "si": "Når det skjer, blir det lettere å gå i retning av et diktatur." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Loven gjelder alle.", "fraBeat": 0 },
+                        { "tekst": "Også dem som styrer.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Staten kan ta feil.", "fraBeat": 1 },
+                        { "tekst": "Derfor beskytter reglene alle.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Rettsstaten er aldri ferdig.", "fraBeat": 2 },
+                        { "tekst": "Den må passes på hele tiden.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "En rettsstat er et land der makten er styrt av lover, og der også de som styrer, må følge dem." },
+                { "si": "Reglene beskytter alle, også de skyldige, fordi staten kan ta feil." },
+                { "si": "I Norge står reglene i Grunnloven. Men målinger viser at rettsstaten blir svakere i mange land. Den må derfor passes på hele tiden." }
+            ]
+        }
+    ]
+}
