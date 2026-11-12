@@ -1,0 +1,195 @@
+{
+    "id": "sosiolekt",
+    "tittel": "Sosiolekt: Snakker vi ulikt fordi vi er ulike?",
+    "kilde": "/norsk/dialekter/sosiolekt",
+    "bilde": "/images/dialekter/sosiolekt-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-12", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "trikk",
+            "kapittel": "Samme trikk",
+            "lyd": "vind",
+            "visual": { "type": "SosiolektBy", "props": { "modus": "trikk" } },
+            "replikker": [
+                { "si": "Se for deg to ungdommer. De er født i den samme byen og går på samme skole." },
+                { "si": "Etter skolen tar de den samme trikken hjem." },
+                { "si": "Likevel snakker de litt ulikt. Den ene sier boka og jenta." },
+                { "si": "Den andre sier boken og jenten." },
+                { "si": "Det er ikke et fjell eller en fjord som skiller dem. Begge bor jo i samme by. Så hva er det som skiller?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SOSIOLEKT",
+                    "undertittel": "Snakker vi ulikt fordi vi er ulike?",
+                    "bilde": "/images/dialekter/sosiolekt-hero.webp",
+                    "tall": [
+                        { "verdi": 2, "etikett": "sosiolekter i de fleste norske byer", "fraBeat": 2, "omtrent": false, "prefiks": "minst" }
+                    ],
+                    "sporsmal": { "tekst": "Hvor kommer forskjellene fra?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Det de snakker, kalles en sosiolekt." },
+                { "si": "Forskjellen kommer av hvilken gruppe de to vokste opp i." },
+                { "si": "I de fleste norske byer finnes det minst to sosiolekter." },
+                { "si": "I denne filmen skal vi finne ut hvor forskjellene kommer fra, og hvordan du selv bytter mellom måter å snakke på." }
+            ]
+        },
+        {
+            "id": "hva",
+            "kapittel": "Hva er en sosiolekt?",
+            "visual": { "type": "SosiolektTavle", "props": { "modus": "hva" } },
+            "replikker": [
+                { "si": "En sosiolekt er en variant av et språk. Den hører til en sosial gruppe, altså folk med lik bakgrunn, og ikke til et bestemt sted." },
+                { "si": "En vanlig dialekt kalles også en geolekt. Den skiller folk fra ulike steder, for eksempel to bygder med et fjell mellom." },
+                { "si": "En sosiolekt skiller grupper som bor på det samme stedet." },
+                { "si": "Hvilken sosiolekt du snakker, henger ofte sammen med bakgrunnen din. Det kan være hva foreldrene dine jobber med, hvor mye utdanning familien har, og hvilket miljø du vokste opp i." },
+                { "si": "Forskjellene kan ligge i uttalen, i hvordan du bøyer ordene, og i hvilke ord du velger." }
+            ]
+        },
+        {
+            "id": "elva",
+            "kapittel": "Østkant og vestkant",
+            "lyd": "vind",
+            "visual": { "type": "SosiolektBy", "props": { "modus": "elva" } },
+            "replikker": [
+                { "si": "Det klareste eksempelet i Norge finner vi i Oslo." },
+                { "si": "I lang tid delte byen seg språklig i to: østkantmål og vestkantmål." },
+                { "si": "Skillet fulgte elva Akerselva. Elva skilte også to helt ulike deler av byen." },
+                { "si": "På østkanten lå arbeiderstrøkene ved fabrikkene. Der levde et folkemål, talemålet til vanlige arbeidsfolk." },
+                { "si": "På vestkanten bodde embetsmenn, altså folk med høye stillinger i staten, og rike kjøpmenn. Der vokste det fram et finere talemål, tett opp mot skriftspråket." }
+            ]
+        },
+        {
+            "id": "ost",
+            "lyd": "stille",
+            "visual": { "type": "SosiolektTavle", "props": { "modus": "ost" } },
+            "replikker": [
+                { "si": "Hør på forskjellen. På østkanten sier folk gjerne jenta og boka. Det er hunkjønn, med a på slutten." },
+                { "si": "De har også den tjukke l-en. Det er en l-lyd der tungespissen bøyes bakover og slår raskt fram mot ganen." },
+                { "si": "I lånord, altså ord vi har hentet fra andre språk, legger de ofte trykket på første stavelse. Ordet bensin får trykket på ben." },
+                { "si": "Og mange sier jæi, der andre sier jeg." }
+            ]
+        },
+        {
+            "id": "vest",
+            "visual": { "type": "SosiolektTavle", "props": { "modus": "vest" } },
+            "replikker": [
+                { "si": "På vestkanten er det annerledes. Der sier folk oftere jenten og boken. Det kalles felleskjønn." },
+                { "si": "Her er det ingen tjukk l, og trykket ligger ikke på første stavelse." },
+                { "si": "Legg merke til noe. Vestkantmålet ligner mye på skriftspråket, altså slik ordene skrives." },
+                { "si": "Nettopp derfor blir det ofte regnet som et slags standardtalemål, et talemål som ligger tett opp mot det skrevne." }
+            ]
+        },
+        {
+            "id": "byer",
+            "kapittel": "Gruppe, ikke sted",
+            "visual": { "type": "SosiolektKart", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Oslo er ikke alene. I de fleste norske byer finnes det minst to sosiolekter." },
+                { "si": "I Stavanger har bydelen Eiganes lenge vært knyttet til et finere talemål." },
+                { "si": "I Trondheim gjelder det samme for Singsaker." },
+                { "si": "I Tromsø har forskjellen tradisjonelt fulgt et skille mellom nord og sør i byen." },
+                { "si": "Ofte er det små språktrekk som avslører deg. I Stavanger har det gitt høyere status å si ikke, enn det lokale ikkje." }
+            ]
+        },
+        {
+            "id": "industri",
+            "lyd": "vind",
+            "visual": { "type": "SosiolektBy", "props": { "modus": "industri" } },
+            "replikker": [
+                { "si": "Hvorfor oppsto disse forskjellene? Svaret ligger i historien." },
+                { "si": "På 1800-tallet vokste byene raskt. Det var industrialiseringen, tiden da det ble bygd mange fabrikker." },
+                { "si": "Fabrikkarbeiderne bodde tett ved industrien." },
+                { "si": "De som eide fabrikkene, bygde seg hjem i roligere og renere strøk lenger unna." },
+                { "si": "Bakgrunn, inntekt og utdanning skilte folk i grupper. Og talemålene fulgte skillet." },
+                { "si": "Slik ble måten du snakket på et lite signal om hvilken gruppe du hørte til." }
+            ]
+        },
+        {
+            "id": "tilpasning",
+            "kapittel": "Du bytter selv",
+            "lyd": "stille",
+            "visual": { "type": "SosiolektSamtale", "props": { "modus": "tilpasning" } },
+            "replikker": [
+                { "si": "Men en sosiolekt handler ikke bare om andre. Den handler like mye om deg." },
+                { "si": "For du snakker ikke helt likt overalt. Sammen med bestevennen snakker du på én måte." },
+                { "si": "Sammen med en lærer, eller på et jobbintervju, snakker du kanskje på en annen måte." },
+                { "si": "Mange snakker litt finere på jobb enn hjemme i sofaen." },
+                { "si": "Dette kalles språktilpasning. Vi endrer talemålet etter hvem vi er sammen med, og hvilken situasjon vi er i." }
+            ]
+        },
+        {
+            "id": "kode",
+            "visual": { "type": "SosiolektSamtale", "props": { "modus": "kode" } },
+            "replikker": [
+                { "si": "Noen ganger bytter vi til og med stil midt i en samtale." },
+                { "si": "Kanskje vil du understreke et poeng. Da kaster du inn et engelsk uttrykk: What's going on, lissom!" },
+                { "si": "Dette kalles kodeveksling. Du hopper mellom språk eller stiler i den samme samtalen." },
+                { "si": "Det viser noe viktig. Du har flere måter å snakke på samtidig. Og du velger selv, ofte uten å tenke over det, hvilket signal du vil sende." }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "Endrer de seg?",
+            "lyd": "vind",
+            "visual": { "type": "SosiolektBy", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "Endrer sosiolektene seg? Ja, og ganske raskt." },
+                { "si": "I dag reiser folk mer, og flere tar utdanning." },
+                { "si": "Og alle ser de samme seriene og videoene på nett." },
+                { "si": "Det gjør at forskjellene mellom gruppene blir mindre. De to Oslo-sosiolektene har begynt å nærme seg hverandre." }
+            ]
+        },
+        {
+            "id": "blanding",
+            "lyd": "stille",
+            "visual": { "type": "SosiolektTavle", "props": { "modus": "blanding" } },
+            "replikker": [
+                { "si": "Talemålet som ungdom tar i bruk nå, blander trekk fra både øst og vest. Det blir trolig framtidas talemål." },
+                { "si": "Noen østkanttrekk blir svakere blant unge. Et eksempel er trykket på første stavelse i bensin." },
+                { "si": "Og flere på vestkanten har begynt å si boka og jenta, med a på slutten." }
+            ]
+        },
+        {
+            "id": "signal",
+            "visual": { "type": "SosiolektSamtale", "props": { "modus": "signal" } },
+            "replikker": [
+                { "si": "Men sosiolekten forsvinner ikke." },
+                { "si": "Folk er fortsatt klar over at måten du snakker på, kan si noe om hvilken gruppe du hører til." },
+                { "si": "Språket forandrer seg bare, slik det alltid har gjort." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ingen sosiolekt er finere", "fraBeat": 0 },
+                        { "tekst": "eller mer riktig enn en annen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Vestkantmålet ligner mer på skriftspråket.", "fraBeat": 1 },
+                        { "tekst": "Det er ikke bedre norsk.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Begge er levende talemål", "fraBeat": 2 },
+                        { "tekst": "som forteller hvem folk er og hvor de hører til.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Det er ikke fjellet som skiller talemålene i byen,", "fraBeat": 3 },
+                        { "tekst": "men det sosiale livet.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Poenget er ikke at én sosiolekt er finere eller mer riktig enn en annen." },
+                { "si": "Vestkantmålet er ikke bedre norsk enn østkantmålet, selv om det ligner mer på skriftspråket." },
+                { "si": "Begge er levende talemål. De forteller en historie om hvem folk er, og hvor de hører til." },
+                { "si": "Det er ikke fjellet som skiller talemålene i byen. Det er det sosiale livet." }
+            ]
+        }
+    ]
+}
