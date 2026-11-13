@@ -7,7 +7,7 @@ import { damp, useKamera, v } from './felles3d';
 
 /**
  * Bakslaget som dominobrikker. Seks brikker står på rad, fra kuppet i 1953 til fiendskapet.
- * Beat 0: hele rekka, kuppet lyser. Beat n: brikke n-1 faller mot brikke n, som lyser.
+ * Beat 0: hele rekka, kuppet lyser. Beat n: brikke n har falt mot neste og ligger med teksten opp.
  * Hver brikke har en fast vinkel per beat, så det tåler at eleven hopper rett inn.
  */
 
@@ -28,16 +28,26 @@ const brikkeX = (i: number) => x0 + i * AVSTAND;
 /** Vinkelen der en brikke hviler på den neste. */
 const HVILER = Math.asin((AVSTAND - BREDDE) / HØYDE);
 
+/** Siste brikke som har falt. Brikka stemmen snakker om har akkurat falt, så teksten vender opp mot kameraet. */
+const sistFalt = (beat: number) => (beat === 0 ? -1 : Math.min(beat, BRIKKER.length - 2));
+
 function vinkelFor(i: number, beat: number) {
-    if (i >= beat) return 0;
+    const s = sistFalt(beat);
+    if (i > s) return 0;
     // Brikka foran har også falt: denne ligger lenger nede.
-    return i < beat - 1 ? HVILER + 0.35 : HVILER;
+    return i < s ? HVILER + 0.35 : HVILER;
 }
 
 function kamera(beat: number, t: number) {
     if (beat === 0) return { pos: v(x0 - 12 + t * 0.2, 7, 11), se: v(x0 + 4, 2, 0) };
-    const x = brikkeX(Math.min(beat, BRIKKER.length - 1));
-    return { pos: v(x - 6, 4.4, 8), se: v(x, 2.3, 0) };
+    const siste = BRIKKER.length - 1;
+    // Siste beat: kameraet står bak enden av rekka og ser «Fiender» forfra, med rekka som har falt bak.
+    if (beat >= siste) {
+        const xs = brikkeX(siste);
+        return { pos: v(xs + 6.5, 5, 9), se: v(xs - 1.5, 2.3, 0) };
+    }
+    const x = brikkeX(beat) + 1.2;
+    return { pos: v(x - 5, 8.5, 10), se: v(x, 2.2, 0) };
 }
 
 function lagTekstur(år: string, linjer: string[], mørk: boolean) {
@@ -77,7 +87,11 @@ function Brikke({ i, beat, playing }: { i: number; beat: number; playing: boolea
         <group ref={pivot} position={[brikkeX(i) + BREDDE / 2, 0, 0]}>
             <mesh position={[-BREDDE / 2, HØYDE / 2, 0]}>
                 <boxGeometry args={[BREDDE, HØYDE, DYBDE]} />
-                <meshStandardMaterial attach="material-0" color={b.farge} flatShading />
+                {i === BRIKKER.length - 1 ? (
+                    <meshStandardMaterial attach="material-0" map={tekstur} emissive="#ffffff" emissiveMap={tekstur} emissiveIntensity={0.3} />
+                ) : (
+                    <meshStandardMaterial attach="material-0" color={b.farge} flatShading />
+                )}
                 <meshStandardMaterial attach="material-1" map={tekstur} emissive="#ffffff" emissiveMap={tekstur} emissiveIntensity={0.3} />
                 <meshStandardMaterial attach="material-2" color={b.farge} flatShading />
                 <meshStandardMaterial attach="material-3" color={b.farge} flatShading />

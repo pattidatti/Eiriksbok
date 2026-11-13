@@ -6,6 +6,7 @@
     "utenforArtikkel": [
         { "tall": 60, "begrunnelse": "Artikkelen skriver det med bokstaver: «Først i 2013, seksti år etter, innrømmet CIA»." }
     ],
+    "vurdering": { "dato": "2026-11-13", "viser": 4, "lesbart": 3, "variasjon": 5, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "oljefeltet",
@@ -122,7 +123,7 @@
             "id": "prisen",
             "visual": { "type": "AjaxTeateret", "props": { "modus": "pris" } },
             "replikker": [
-                { "si": "Og prisen? Hele operasjonen kostet under én million dollar." },
+                { "si": "Og prisen? Hele operasjonen kostet anslagsvis under én million dollar." },
                 { "si": "For den summen byttet to land ut en hel regjering. Så billig kan makt være." }
             ]
         },
@@ -154,38 +155,7 @@
         },
         {
             "id": "gisler",
-            "visual": {
-                "type": "Prikkfelt",
-                "props": {
-                    "figur": "person",
-                    "steg": [
-                        {
-                            "fraBeat": 0,
-                            "total": 52,
-                            "farget": 52,
-                            "farge": "#2563eb",
-                            "tittel": "Ambassaden i Teheran",
-                            "fargeEtikett": "amerikanere"
-                        },
-                        {
-                            "fraBeat": 1,
-                            "total": 52,
-                            "farget": 52,
-                            "farge": "#dc2626",
-                            "tittel": "52 gisler i 444 dager",
-                            "fargeEtikett": "holdt fanget"
-                        },
-                        {
-                            "fraBeat": 2,
-                            "total": 52,
-                            "farget": 52,
-                            "farge": "#7f1d1d",
-                            "tittel": "Fra venner til fiender",
-                            "fargeEtikett": "gisler"
-                        }
-                    ]
-                }
-            },
+            "visual": { "type": "AjaxAmbassaden" },
             "replikker": [
                 { "si": "Kort etter stormet sinte studenter den amerikanske ambassaden i Teheran, hovedstaden i Iran." },
                 { "si": "De tok 52 amerikanere som gisler. Gislene satt fanget i 444 dager." },
@@ -205,17 +175,7 @@
         {
             "id": "monsteret",
             "kapittel": "Hva lærer vi?",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "Mønsteret",
-                    "punkter": [
-                        { "ikon": "penger", "tittel": "Et fattig land", "tekst": "med en verdifull ressurs", "fraBeat": 1 },
-                        { "ikon": "stjerne", "tittel": "En leder", "tekst": "som vil beholde rikdommen i landet", "fraBeat": 2 },
-                        { "ikon": "hest", "tittel": "En stormakt", "tekst": "som fjerner ham i det skjulte", "fraBeat": 3 }
-                    ]
-                }
-            },
+            "visual": { "type": "AjaxTeateret", "props": { "modus": "monster" } },
             "replikker": [
                 { "si": "Operasjon Ajax viser et mønster som går igjen i historien." },
                 { "si": "Først et fattig land med en ressurs som er verdt mye." },
@@ -239,7 +199,7 @@
             },
             "replikker": [
                 { "si": "Vi bør også være kritiske til kildene. I mange år nektet USA for at de sto bak kuppet." },
-                { "si": "Først i 2013, seksti år etter, innrømmet CIA offentlig at de hadde gjort det." },
+                { "si": "Først i 2013, seksti år etter, innrømmet CIA offentlig sin rolle i kuppet." },
                 { "si": "Sannheten om hemmelige operasjoner kan bruke lang tid på å komme fram. Spør alltid: Hvem tjener på den versjonen jeg får høre?" }
             ]
         },
@@ -249,7 +209,7 @@
                 "type": "Sluttkort",
                 "props": {
                     "setninger": [
-                        { "tekst": "Under én million dollar.", "fraBeat": 0 },
+                        { "tekst": "Anslagsvis under én million dollar.", "fraBeat": 0 },
                         { "tekst": "En hel regjering byttet ut.", "fraBeat": 0, "uthevet": true },
                         { "tekst": "Seieren i 1953", "fraBeat": 1 },
                         { "tekst": "ble fiendskapet i 1979.", "fraBeat": 1, "uthevet": true },
@@ -259,7 +219,7 @@
                 }
             },
             "replikker": [
-                { "si": "For under én million dollar ble en folkevalgt regjering byttet ut." },
+                { "si": "For anslagsvis under én million dollar ble en folkevalgt regjering byttet ut." },
                 { "si": "Men seieren i 1953 ble starten på fiendskapet i 1979, og det varer fortsatt." },
                 { "si": "Slik kan en rask seier bli til et langt nederlag." }
             ]
