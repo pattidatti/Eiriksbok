@@ -2674,6 +2674,20 @@
                 "demokrati"
               ],
               "createdDate": "2026-11-12T00:00:00Z"
+            },
+            {
+              "id": "politiet",
+              "title": "Politiet: Makten til å gripe inn",
+              "description": "Hva politiet kan og ikke kan gjøre, hvilke rettigheter du har hvis du blir stoppet, og hvordan du klager.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "rettsstaten",
+                "politiet",
+                "rettigheter",
+                "maktfordeling",
+                "demokrati"
+              ],
+              "createdDate": "2026-11-13T00:00:00Z"
             }
           ]
         },

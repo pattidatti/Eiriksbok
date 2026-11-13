@@ -1,0 +1,294 @@
+{
+  "id": "politiet",
+  "title": "Politiet: Makten til å gripe inn",
+  "layout": "rich",
+  "year": "1995",
+  "category": "Rettsstaten",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Politiet skal holde ro og orden, hjelpe folk og etterforske lovbrudd. Reglene står i politiloven fra 1995.",
+    "Jo mer politiet griper inn i livet ditt, jo strengere krav stiller loven: ingen mistanke, skjellig grunn til mistanke, eller at retten sier ja.",
+    "Blir du stoppet, må du oppgi navn, fødselsdato og adresse, men du trenger ikke forklare deg. Klager kan sendes til politiet eller Spesialenheten."
+  ],
+  "externalUrl": "https://snl.no/politi",
+  "factChecked": "2026-11-13",
+  "tags": [
+    "rettsstaten",
+    "politiet",
+    "rettigheter",
+    "maktfordeling",
+    "demokrati"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er fredag kveld, og du er på vei hjem med to venner. En politibil kjører sakte forbi, stopper og slår på blålyset. To politifolk går ut av bilen og kommer mot dere. «Hei, kan vi snakke litt med dere?» Hjertet ditt slår fortere, selv om du ikke har gjort noe galt."
+    },
+    {
+      "type": "text",
+      "content": "Hva har politiet egentlig lov til å gjøre nå? Må du svare på alt de spør om? Kan de se i sekken din? Og hva gjør du hvis du mener at politiet behandler deg urettferdig? I denne artikkelen skal du lære hva politiet kan gjøre, hvor grensene går, og hvilke rettigheter du har."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Politibil med blålys i en bygate om kvelden",
+      "caption": "Politiet har mer makt enn noen andre i samfunnet. Derfor har makten også klare grenser."
+    },
+    {
+      "type": "header",
+      "text": "Hva gjør politiet?"
+    },
+    {
+      "type": "text",
+      "content": "Politiet er en offentlig myndighet. Det betyr at politiet jobber for staten og for oss alle. Oppgaven er å holde ro og orden, passe på at folk følger lovene, og etterforske lovbrudd (Paus, 2024). Å etterforske betyr å finne ut hva som har skjedd og hvem som har gjort det."
+    },
+    {
+      "type": "text",
+      "content": "Reglene for politiet står i politiloven fra 1995. Loven sier at politiet skal jobbe på tre måter: de skal forebygge, det vil si hindre at lovbrudd skjer, de skal passe på at lovene blir fulgt, og de skal hjelpe folk (Politiloven, 1995). Blant oppgavene er å «beskytte person, eiendom og fellesgoder», altså mennesker, det folk eier, og det vi eier sammen, å stoppe kriminalitet og å hjelpe folk som er i fare."
+    },
+    {
+      "type": "text",
+      "content": "I Norge er politiet delt inn i tolv politidistrikter. Slik har det vært siden 2016. Før 2002 var landet delt inn i hele 54 distrikter (Store norske leksikon, 2022). Hvert distrikt ledes av en politimester, og over alle distriktene står Politidirektoratet."
+    },
+    {
+      "type": "header",
+      "text": "Politiet har makt, men makten har grenser"
+    },
+    {
+      "type": "text",
+      "content": "Politiet kan gjøre ting som vanlige folk ikke har lov til. De kan gi deg ordre, holde deg fast og ta med seg folk til arresten. Det er mye makt. I en [rettsstat](/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat) må også de som har makt, følge loven. Derfor har politiloven klare regler for hvordan politiet skal bruke makten sin."
+    },
+    {
+      "type": "text",
+      "content": "Den viktigste regelen står i politiloven § 6. Politiet skal alltid begynne med det mildeste som virker. Først kommer et råd, en forklaring eller en advarsel. Politiet skal ikke bruke sterkere midler hvis svakere midler er nok (Politiloven, 1995). Hvis en gjeng bråker, skal politiet først be dem dempe seg, ikke legge dem i håndjern."
+    },
+    {
+      "type": "text",
+      "content": "Politiet kan bruke fysisk makt, for eksempel holde noen fast, men bare når det er «nødvendig og forsvarlig» (Politiloven, 1995). Forsvarlig betyr at det ikke er for mye i forhold til situasjonen. Politiet skal også være saklige og upartiske. Det betyr at de skal behandle alle likt og ikke holde med noen på forhånd."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du må kunne",
+        "content": "Pågripelse: at politiet tar med seg en person mot hans eller hennes vilje fordi personen er mistenkt for et lovbrudd. Ransaking: at politiet leter gjennom et hjem, et rom eller lommene og sekken til en person. Skjellig grunn til mistanke: en klar og god grunn til å tro at noen har gjort et lovbrudd. Påtalemyndigheten: de som leder etterforskningen og bestemmer om en sak skal gå til retten. Varetekt: at en mistenkt sitter innesperret mens saken etterforskes, før det er avsagt dom."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Tre trinn: Jo mer politiet griper inn, jo strengere krav"
+    },
+    {
+      "type": "text",
+      "content": "Du kan tenke på politiets makt som en trapp med tre trinn. Jo mer politiet griper inn i livet ditt, jo høyere opp i trappen er du, og jo strengere krav stiller loven."
+    },
+    {
+      "type": "text",
+      "content": "På det første trinnet trenger ingen å være mistenkt for noe. Politiet kan gripe inn for å stanse uro og holde orden, for eksempel be folk flytte seg eller gå hjem (Politiloven, 1995). De kan ta med seg personer som er så fulle at de er til fare for seg selv eller andre, men ingen skal holdes i arresten lenger enn nødvendig. Og de skal hjelpe syke folk som ikke klarer seg selv. Mye av det politiet gjør, handler om å hjelpe."
+    },
+    {
+      "type": "text",
+      "content": "På det andre trinnet må politiet mistenke deg for et lovbrudd. For å pågripe noen, altså ta dem med seg mot deres vilje, må politiet ha «skjellig grunn til mistanke» om et lovbrudd som kan gi mer enn seks måneder i fengsel. I tillegg må det være en særlig grunn, for eksempel fare for at personen rømmer eller ødelegger bevis (Keiserud & Elden, 2024). Tar politiet noen på fersk gjerning, kan de ransake personen med en gang, uten å spørre retten først (Krag & Elden, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "På det tredje trinnet må en dommer si ja. Hjemmet ditt er særlig godt beskyttet. Grunnloven § 102 sier at myndighetene ikke kan ransake private hjem uten at det gjelder en straffesak (Krag & Elden, 2024). Sier du nei, er hovedregelen at retten må bestemme om politiet får komme inn og lete. Bare når det haster veldig, kan påtalemyndigheten bestemme i stedet. Det samme gjelder hvis politiet vil holde noen innesperret over tid. Den som er pågrepet, må slippes fri eller føres fram for tingretten innen 48 timer. Fram til 2022 var fristen 72 timer (Keiserud & Elden, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Nå er det din tur. Under får du åtte ting politiet kan gjøre. Finn ut hvilket trinn hver handling hører til."
+    },
+    {
+      "type": "component",
+      "name": "PolitiMaktSortering",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Så du mønsteret? Å be folk gå hjem krever nesten ingenting. Å ransake hjemmet ditt eller holde deg innesperret i flere dager krever at en uavhengig dommer har vurdert saken. Slik hindrer rettsstaten at politiet bruker makten tilfeldig."
+    },
+    {
+      "type": "header",
+      "text": "Stoppet av politiet: Dine rettigheter"
+    },
+    {
+      "type": "text",
+      "content": "Tilbake til fredagskvelden. Politiet kan stoppe deg hvis de mistenker deg for noe. De kan også stoppe deg hvis du er under 18 år og de er bekymret for deg, eller hvis de trenger oversikt fordi det kan bli bråk (Holmliainitiativet & ung.no, 2023). Her er noen regler det er lurt å kjenne til:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Du må oppgi riktig navn, fødselsdato og adresse hvis politiet spør. Mer enn det trenger du ikke si.",
+        "Ingen i Norge har plikt til å gå med legitimasjon. Men politiet kan be om å se det hvis du nekter å si navnet ditt eller oppgir feil navn.",
+        "Politiet skal kunne vise tjenestenummeret sitt, eller si navnet sitt. De skal fortelle deg hvorfor de snakker med deg, hvis de kan.",
+        "Gir politiet deg en ordre, for eksempel om å gå bort fra et sted, må du følge den, selv om du er uenig. Du kan klage etterpå.",
+        "Du trenger ikke forklare deg om saken. Du kan vente til du har snakket med foreldrene dine eller en advokat.",
+        "Blir du pågrepet, har du rett til advokat."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Kildene for listen er ung.no og politiloven (Holmliainitiativet & ung.no, 2023; Politiloven, 1995). Politiet kan også ta deg med til politistasjonen, for eksempel hvis du nekter å oppgi navn eller lager bråk. Da kan de holde deg i opptil fire timer. Er du under 15 år, kan du ikke straffes, men politiet kan likevel etterforske saken og kjøre deg hjem (Holmliainitiativet & ung.no, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hva rettighetene dine ikke betyr. Du har ikke lov til å la være å følge en ordre fordi du synes den er urettferdig. Å bryte en ordre fra politiet kan gi bot. Ideen er at du følger ordren der og da, og at du får prøvd saken etterpå. Det henger sammen med skillet mellom [lover og normer](/samfunnskunnskap/styringsformer/km-14-lover-normer): loven gir politiet rett til å gi ordre, men loven gir deg også rett til å klage."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Politibetjent snakker rolig med tre ungdommer på fortauet",
+      "caption": "Du må oppgi navn, fødselsdato og adresse. Du trenger ikke forklare deg om saken."
+    },
+    {
+      "type": "header",
+      "text": "Når politiet gjør feil"
+    },
+    {
+      "type": "text",
+      "content": "Politifolk er mennesker, og mennesker kan gjøre feil. Noen ganger bryter også politifolk loven. Derfor finnes Spesialenheten for politisaker. Den startet 1. januar 2005 og etterforsker saker der noen i politiet kan ha gjort noe straffbart i jobben (Husby, 2025). Det er viktig at politiet ikke etterforsker seg selv. Derfor er Spesialenheten egen og står utenfor resten av politiet. Den har hovedkontor på Hamar."
+    },
+    {
+      "type": "text",
+      "content": "Alle kan sende en anmeldelse til Spesialenheten. En anmeldelse er en melding om at du tror noen har gjort noe straffbart. Spesialenheten etterforsker også alle saker der noen dør eller blir alvorlig skadet i møte med politiet, selv om ingen er mistenkt. I 2022 fikk Spesialenheten 974 anmeldelser. Omtrent tre prosent endte med bot, tiltale (at saken blir sendt til retten) eller en annen reaksjon, mens 64 prosent ble henlagt, det vil si at saken ble lagt bort (Husby, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Er du misfornøyd med hvordan en politibetjent oppførte seg, men tror ikke at det var straffbart, kan du klage. Du sender klagen på e-post til politiet der du bor og skriver «Klage på politiet». Skriv når og hvor det skjedde, og om noen så det. Tjenestenummeret til betjenten er nyttig, men du må ikke ha det (Holmliainitiativet & ung.no, 2023)."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor er tillit så viktig?"
+    },
+    {
+      "type": "text",
+      "content": "Politiet i Norge er avhengig av at folk stoler på dem. Folk må melde fra om lovbrudd, fortelle hva de har sett og følge ordrer. Gjør de ikke det, blir det mye vanskeligere for politiet å gjøre jobben sin."
+    },
+    {
+      "type": "text",
+      "content": "Hvert år spør politiet tusenvis av nordmenn om hva de synes. I 2025 svarte 73 prosent at de hadde svært eller ganske høy tillit til politiet. Det var tre prosentpoeng mer enn året før, og det høyeste tallet siden målingen startet i 2022 (Horvei & Karterud, 2025). Tilliten var størst i Oslo og lavest i Finnmark."
+    },
+    {
+      "type": "text",
+      "content": "Tillit og grenser henger sammen. Reglene du har lest om, er ikke bare til for å beskytte deg mot politiet. De er også en grunn til at folk kan stole på politiet. Når alle vet at politiet må følge loven, at en dommer må si ja før hjemmet ditt blir ransaket, og at det finnes noen som sjekker politiet, blir det lettere å samarbeide. Det er den samme tanken som ligger bak [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven): at makten skal ha grenser."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Politistasjon i en norsk småby en grå morgen",
+      "caption": "I 2025 hadde 73 prosent av nordmenn høy tillit til politiet."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Politiet skal holde ro og orden, hjelpe folk og etterforske lovbrudd. De har mye makt, men politiloven sier at de alltid skal bruke det mildeste middelet som virker. Jo mer politiet griper inn i livet ditt, jo strengere krav stiller loven: For å be folk gå hjem trengs ingen mistanke. For å pågripe noen trengs skjellig grunn til mistanke. For å ransake et hjem uten samtykke, eller holde noen innesperret over tid, må retten som hovedregel si ja. Blir du stoppet, må du oppgi navn, fødselsdato og adresse, men du trenger ikke forklare deg. Mener du at politiet har gjort noe galt, kan du klage eller anmelde saken til Spesialenheten."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Holmliainitiativet & ung.no. (2023). *Stoppet av politiet – dette er dine rettigheter*. ung.no. Hentet 13.11.2026 fra [ung.no](https://www.ung.no/kriminalitet/4454_Stoppet_av_politiet_-_dette_er_dine_rettigheter.html)",
+          "Horvei, M. & Karterud, T. (2025). *Politiets innbyggerundersøkelse 2025*. Verian på oppdrag for Politidirektoratet. Hentet 13.11.2026 fra [politiet.no](https://www.politiet.no/globalassets/tall-og-fakta/innbyggerundersokelsen/2025/innbyggerundersokelsen-2025.pdf)",
+          "Husby, I. (2025). *Spesialenheten for politisaker*. Store norske leksikon. Hentet 13.11.2026 fra [snl.no](https://snl.no/Spesialenheten_for_politisaker)",
+          "Keiserud, E. & Elden, J. C. (2024). *Pågripelse*. Store norske leksikon. Hentet 13.11.2026 fra [snl.no](https://snl.no/pågripelse)",
+          "Krag, E. & Elden, J. C. (2024). *Ransaking*. Store norske leksikon. Hentet 13.11.2026 fra [snl.no](https://snl.no/ransaking)",
+          "Paus, M. (2024). *Politi*. Store norske leksikon. Hentet 13.11.2026 fra [snl.no](https://snl.no/politi)",
+          "Politiloven. (1995). *Lov om politiet* (LOV-1995-08-04-53). Lovdata. Hentet 13.11.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/1995-08-04-53)",
+          "Store norske leksikon. (2022). *Politidistrikt*. Hentet 13.11.2026 fra [snl.no](https://snl.no/politidistrikt)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilke tre måter skal politiet jobbe på, ifølge politiloven?",
+          "Hvor mange politidistrikter har Norge i dag, og hvor mange var det før 2002?",
+          "Hva må du oppgi hvis politiet spør deg, og hva trenger du ikke å si?",
+          "Hva er Spesialenheten for politisaker, og når ble den opprettet?"
+        ],
+        "reflekter": [
+          "Politiloven sier at politiet alltid skal begynne med det mildeste middelet som virker. Hvorfor tror du denne regelen er viktig?",
+          "Forklar med egne ord hvorfor kravene blir strengere jo mer politiet griper inn i livet til en person. Bruk minst to eksempler fra artikkelen.",
+          "Hvorfor er det viktig at det ikke er politiet selv som etterforsker saker der politifolk kan ha gjort noe galt?",
+          "Du skal følge en ordre fra politiet selv om du er uenig, og heller klage etterpå. Hva er fordelene og ulempene med en slik regel?"
+        ],
+        "gaaVidere": [
+          "Diskuter i gruppa: Hva kan politiet gjøre for at enda flere, også ungdom, skal stole på dem?",
+          "Tillit til politiet var lavest i Finnmark og høyest i Oslo i 2025. Finn mulige forklaringer, og skriv et kort avsnitt om hva du tror.",
+          "Lag en plakat eller en kort video for elever på 8. trinn: «Stoppet av politiet - dette må du vite»."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva sier politiloven § 6 om hvordan politiet skal bruke makten sin?",
+            "options": [
+              "Politiet skal alltid bruke håndjern først",
+              "Politiet skal begynne med det mildeste middelet som virker",
+              "Politiet kan gjøre som de vil når de har uniform",
+              "Politiet må alltid spørre retten først"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Politiet skal først bruke råd, forklaring eller advarsel. Sterkere midler skal bare brukes når svakere ikke er nok."
+          },
+          {
+            "question": "Hva må du fortelle politiet hvis de spør?",
+            "options": [
+              "Alt du vet om saken",
+              "Navn, fødselsdato og adresse",
+              "Passordet til mobilen din",
+              "Ingenting i det hele tatt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Du må oppgi riktig navn, fødselsdato og adresse. Du trenger ikke forklare deg om saken."
+          },
+          {
+            "question": "Politiet vil lete etter bevis hjemme hos deg, men du sier nei. Hva er hovedregelen?",
+            "options": [
+              "Politiet kan gå inn likevel når de vil",
+              "Retten må bestemme om politiet får ransake",
+              "Naboene bestemmer",
+              "Politiet må vente i ett år"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Hjemmet ditt er godt beskyttet. Sier du nei, må retten som hovedregel bestemme. Bare når det haster veldig, kan påtalemyndigheten gjøre det."
+          },
+          {
+            "question": "Hvor lang tid har politiet på å slippe fri eller føre en pågrepet person fram for retten?",
+            "options": [
+              "24 timer",
+              "48 timer",
+              "Én uke",
+              "Det finnes ingen frist"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Fristen er 48 timer. Fram til 2022 var den 72 timer."
+          },
+          {
+            "question": "Hva gjør Spesialenheten for politisaker?",
+            "options": [
+              "Den leder alle politidistriktene",
+              "Den etterforsker saker der noen i politiet kan ha gjort noe straffbart",
+              "Den trener nye politifolk",
+              "Den bestemmer straffen i rettssaker"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Spesialenheten står utenfor resten av politiet og etterforsker mulige lovbrudd gjort av politifolk i jobben."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
