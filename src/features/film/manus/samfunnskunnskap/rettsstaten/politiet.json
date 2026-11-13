@@ -1,0 +1,258 @@
+{
+    "id": "politiet",
+    "tittel": "Politiet: Makten til å gripe inn",
+    "kilde": "/samfunnskunnskap/rettsstaten/politiet",
+    "bilde": "/images/rettsstaten/politiet-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-13", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "fredag",
+            "kapittel": "Fredag kveld",
+            "lyd": "vind",
+            "visual": { "type": "PolitietGata", "props": { "modus": "stopp" } },
+            "replikker": [
+                { "si": "Det er fredag kveld. Du er på vei hjem med to venner." },
+                { "si": "En politibil kjører sakte forbi. Så stopper den, og blålyset slås på." },
+                { "si": "To politifolk går ut av bilen og kommer mot dere." },
+                { "si": "Hei, kan vi snakke litt med dere?" },
+                { "si": "Hjertet ditt slår fortere, selv om du ikke har gjort noe galt." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "POLITIET",
+                    "undertittel": "Makten til å gripe inn",
+                    "bilde": "/images/rettsstaten/politiet-hero.webp",
+                    "sporsmal": { "tekst": "Hvor går grensene for politiets makt?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Hva har politiet lov til å gjøre nå? Må du svare på alt?" },
+                { "si": "I denne filmen lærer du hva politiet kan gjøre, hvor grensene går, og hvilke rettigheter du har." }
+            ]
+        },
+        {
+            "id": "oppgaver",
+            "kapittel": "Hva gjør politiet?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Politiloven fra 1995",
+                    "punkter": [
+                        { "ikon": "las", "tittel": "Etterforske", "tekst": "finne ut hva som skjedde", "fraBeat": 0 },
+                        { "ikon": "skjold", "tittel": "Forebygge", "tekst": "hindre at lovbrudd skjer", "fraBeat": 1 },
+                        { "ikon": "avtale", "tittel": "Passe på lovene", "tekst": "at lovene blir fulgt", "fraBeat": 2 },
+                        { "ikon": "livbat", "tittel": "Hjelpe folk", "tekst": "også folk som er i fare", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Politiet holder ro og orden og etterforsker lovbrudd, altså finner ut hva som skjedde og hvem som gjorde det. Reglene står i politiloven fra 1995." },
+                { "si": "Loven sier at politiet skal jobbe på tre måter. De skal forebygge, altså hindre at lovbrudd skjer." },
+                { "si": "De skal passe på at lovene blir fulgt." },
+                { "si": "Og de skal hjelpe folk, for eksempel folk som er i fare." }
+            ]
+        },
+        {
+            "id": "distrikter",
+            "visual": { "type": "PolitietKart", "props": { "modus": "distrikter" } },
+            "replikker": [
+                { "si": "Før 2002 var Norge delt inn i hele 54 politidistrikter." },
+                { "si": "I dag er det bare tolv. Slik har det vært siden 2016." },
+                { "si": "Hvert distrikt ledes av en politimester. Over alle distriktene står Politidirektoratet." }
+            ]
+        },
+        {
+            "id": "makt",
+            "kapittel": "Makt med grenser",
+            "visual": { "type": "PolitietSkala", "props": { "modus": "makt" } },
+            "replikker": [
+                { "si": "Politiet kan gjøre ting som vanlige folk ikke har lov til." },
+                { "si": "De kan gi deg ordre, holde deg fast og ta folk med til arresten." },
+                { "si": "Men i en rettsstat må også de som har makt, følge loven." },
+                { "si": "Derfor har politiloven klare regler for hvordan politiet skal bruke makten sin." }
+            ]
+        },
+        {
+            "id": "mildest",
+            "visual": { "type": "PolitietSkala", "props": { "modus": "mildest" } },
+            "replikker": [
+                {
+                    "si": "Den viktigste regelen står i politiloven § 6. Politiet skal alltid begynne med det mildeste som virker.",
+                    "uttale": "Den viktigste regelen står i politiloven paragraf seks. Politiet skal alltid begynne med det mildeste som virker."
+                },
+                { "si": "Først kommer et råd, en forklaring eller en advarsel." },
+                { "si": "Sterkere midler skal ikke brukes hvis svakere er nok." },
+                { "si": "Bråker en gjeng, skal politiet først be dem dempe seg. Ikke legge dem i håndjern." },
+                { "si": "Fysisk makt, som å holde noen fast, er bare lov når det er nødvendig og forsvarlig. Altså ikke for mye i forhold til situasjonen." }
+            ]
+        },
+        {
+            "id": "trapp",
+            "kapittel": "Tre trinn",
+            "visual": { "type": "PolitietTrappa", "props": { "modus": "trinn1" } },
+            "replikker": [
+                { "si": "Du kan tenke på politiets makt som en trapp med tre trinn." },
+                { "si": "Jo mer politiet griper inn i livet ditt, jo høyere opp i trappen er du, og jo strengere krav stiller loven." },
+                { "si": "På første trinn trenger ingen å være mistenkt. Politiet kan be folk flytte seg eller gå hjem for å stanse uro." },
+                { "si": "De kan ta med folk som er så fulle at de er til fare for seg selv eller andre, men ikke holde dem lenger enn nødvendig. De skal også hjelpe syke." }
+            ]
+        },
+        {
+            "id": "trinn2",
+            "visual": { "type": "PolitietTrappa", "props": { "modus": "trinn2" } },
+            "replikker": [
+                { "si": "På det andre trinnet må politiet mistenke deg for et lovbrudd." },
+                { "si": "For å pågripe noen, altså ta dem med mot deres vilje, trenger politiet skjellig grunn til mistanke. Det er en klar og god grunn til å tro at noen har brutt loven." },
+                { "si": "Lovbruddet må kunne gi mer enn seks måneder i fengsel. Og det må finnes en særlig grunn, som fare for at personen rømmer eller ødelegger bevis." },
+                { "si": "Tar politiet noen på fersk gjerning, altså i det de gjør det, kan de ransake personen med en gang, uten å spørre retten." }
+            ]
+        },
+        {
+            "id": "trinn3",
+            "visual": { "type": "PolitietTrappa", "props": { "modus": "trinn3" } },
+            "replikker": [
+                { "si": "På det tredje trinnet må en dommer si ja." },
+                {
+                    "si": "Hjemmet ditt er særlig godt beskyttet. Grunnloven § 102 sier at myndighetene ikke kan ransake private hjem uten at det gjelder en straffesak.",
+                    "uttale": "Hjemmet ditt er særlig godt beskyttet. Grunnloven paragraf hundre og to sier at myndighetene ikke kan ransake private hjem uten at det gjelder en straffesak."
+                },
+                { "si": "Sier du nei, er hovedregelen at retten må bestemme om politiet får komme inn og lete." },
+                { "si": "Bare når det haster veldig, kan påtalemyndigheten bestemme. Det er de som leder etterforskningen." }
+            ]
+        },
+        {
+            "id": "frist",
+            "visual": { "type": "PolitietTrappa", "props": { "modus": "frist" } },
+            "replikker": [
+                { "si": "Det samme gjelder hvis politiet vil holde noen innesperret over tid." },
+                { "si": "Den som er pågrepet, må slippes fri eller føres fram for tingretten, altså en domstol, innen 48 timer." },
+                { "si": "Fram til 2022 var fristen 72 timer." },
+                { "si": "Så du mønsteret? Å be folk gå hjem krever nesten ingenting. Å ransake hjemmet ditt krever at en uavhengig dommer har vurdert saken." }
+            ]
+        },
+        {
+            "id": "rettigheter",
+            "kapittel": "Stoppet av politiet",
+            "lyd": "vind",
+            "visual": { "type": "PolitietGata", "props": { "modus": "rettigheter" } },
+            "replikker": [
+                { "si": "Tilbake til fredag kveld. Politiet kan stoppe deg hvis de mistenker deg for noe." },
+                { "si": "De kan også stoppe deg hvis du er under 18 år og de er bekymret for deg, eller hvis det kan bli bråk og de trenger oversikt." },
+                { "si": "Spør politiet, må du oppgi riktig navn, fødselsdato og adresse. Mer enn det trenger du ikke si." },
+                { "si": "Ingen i Norge har plikt til å gå med legitimasjon. Men nekter du å si navnet ditt, eller sier feil navn, kan politiet be om å se det." },
+                { "si": "Politiet skal kunne vise tjenestenummeret sitt eller si navnet sitt. Og de skal si hvorfor de snakker med deg, hvis de kan." },
+                { "si": "Du trenger ikke forklare deg om saken. Du kan vente til du har snakket med foreldrene dine eller en advokat. Blir du pågrepet, har du rett til advokat." }
+            ]
+        },
+        {
+            "id": "ordre",
+            "visual": { "type": "PolitietGata", "props": { "modus": "ordre" } },
+            "replikker": [
+                { "si": "Men noe må du gjøre. Gir politiet deg en ordre, for eksempel om å gå bort fra et sted, må du følge den." },
+                { "si": "Også om du synes den er urettferdig. Å bryte ordren kan gi bot." },
+                { "si": "Politiet kan også ta deg med til stasjonen, for eksempel hvis du nekter å si navn eller lager bråk. Da kan de holde deg i opptil fire timer." },
+                { "si": "Du følger ordren der og da, og kan klage etterpå." },
+                { "si": "Er du misfornøyd med en politibetjent, men tror ikke det var straffbart, sender du en e-post til politiet der du bor. Skriv Klage på politiet, når og hvor det skjedde, og om noen så det." }
+            ]
+        },
+        {
+            "id": "spesialenheten",
+            "kapittel": "Når politiet gjør feil",
+            "lyd": "stille",
+            "visual": { "type": "PolitietKart", "props": { "modus": "hamar" } },
+            "replikker": [
+                { "si": "Politifolk er mennesker, og mennesker kan gjøre feil. Noen ganger bryter de også loven." },
+                { "si": "Derfor finnes Spesialenheten for politisaker. Den startet første januar 2005." },
+                { "si": "Den etterforsker saker der noen i politiet kan ha gjort noe straffbart i jobben." },
+                { "si": "Politiet skal ikke etterforske seg selv. Derfor står Spesialenheten utenfor resten av politiet, med hovedkontor på Hamar." },
+                { "si": "Den etterforsker også alle saker der noen dør eller blir alvorlig skadet i møte med politiet, selv om ingen er mistenkt." }
+            ]
+        },
+        {
+            "id": "anmeldelser",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 100,
+                            "farge": "#2563eb",
+                            "tittel": "974 anmeldelser i 2022: én prikk er én prosent",
+                            "fargeEtikett": "anmeldelser til Spesialenheten",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 64,
+                            "farge": "#64748b",
+                            "restFarge": "#bfdbfe",
+                            "tittel": "64 prosent ble henlagt",
+                            "fargeEtikett": "henlagt, altså lagt bort",
+                            "restEtikett": "andre utfall",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 100,
+                            "farget": 3,
+                            "farge": "#dc2626",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Omtrent tre prosent fikk en reaksjon",
+                            "fargeEtikett": "bot, tiltale eller annen reaksjon",
+                            "restEtikett": "henlagt eller andre utfall",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Alle kan anmelde en sak til Spesialenheten, altså melde fra om at de tror noen har gjort noe straffbart. I 2022 kom det 974 anmeldelser. Her er hver prikk én prosent av dem." },
+                { "si": "64 prosent ble henlagt, altså lagt bort." },
+                { "si": "Omtrent tre prosent endte med bot, tiltale eller en annen reaksjon. Tiltale betyr at saken blir sendt til retten. Resten endte på andre måter." }
+            ]
+        },
+        {
+            "id": "tillit",
+            "kapittel": "Tillit",
+            "visual": { "type": "PolitietKart", "props": { "modus": "tillit" } },
+            "replikker": [
+                { "si": "Politiet er avhengig av at folk stoler på dem, melder fra om lovbrudd og følger ordrer." },
+                { "si": "I 2025 svarte 73 prosent at de hadde svært eller ganske høy tillit til politiet." },
+                { "si": "Det var tre prosentpoeng mer enn året før, og det høyeste tallet siden målingen startet i 2022." },
+                { "si": "Tilliten var størst i Oslo og lavest i Finnmark." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Makten har grenser",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Reglene beskytter deg.", "fraBeat": 0 },
+                        { "tekst": "Og de gir grunn til å stole på politiet.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "En dommer sier ja eller nei.", "fraBeat": 1 },
+                        { "tekst": "Noen sjekker politiet.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Da blir det lettere å samarbeide.", "fraBeat": 2 },
+                        { "tekst": "Makten skal ha grenser.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Tillit og grenser henger sammen. Reglene beskytter deg, og de er en grunn til at folk kan stole på politiet." },
+                { "si": "Som hovedregel må en dommer si ja før hjemmet ditt blir ransaket. Og det finnes noen som sjekker politiet." },
+                { "si": "Da blir det lettere å samarbeide. Samme tanke ligger bak Grunnloven: Makten skal ha grenser." }
+            ]
+        }
+    ]
+}
