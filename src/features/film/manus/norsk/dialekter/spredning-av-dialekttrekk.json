@@ -1,0 +1,180 @@
+{
+    "id": "spredning-av-dialekttrekk",
+    "tittel": "Bølgemodellen og sprangmodellen: Hvordan sprer dialekttrekk seg?",
+    "kilde": "/norsk/dialekter/spredning-av-dialekttrekk",
+    "bilde": "/images/dialekter/spredning-av-dialekttrekk-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-13", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "fjorden",
+            "lyd": "vind",
+            "kapittel": "Et rart mønster",
+            "visual": { "type": "SpredningLandskap", "props": { "modus": "fjord" } },
+            "replikker": [
+                { "si": "Tenk deg en stille fjord. På hver side ligger ei lita bygd." },
+                { "si": "Folk på begge sider snakker nesten likt. Det er ikke rart." },
+                { "si": "Men noen ganger skjer det motsatte. To byer som ligger flere hundre kilometer fra hverandre, begynner å si et ord på samme nye måte." },
+                { "si": "Og alle bygdene som ligger imellom? De fortsetter som før. Hvordan kan det henge sammen?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "BØLGE ELLER SPRANG?",
+                    "undertittel": "Hvordan sprer dialekttrekk seg?",
+                    "bilde": "/images/dialekter/spredning-av-dialekttrekk-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan reiser en ny måte å snakke på?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om hvordan nye måter å snakke på sprer seg i et land." },
+                { "si": "Språkforskere har to modeller som forklarer det: bølgemodellen og sprangmodellen. En modell er en forenklet måte å forklare noe på." }
+            ]
+        },
+        {
+            "id": "kasta",
+            "kapittel": "Et trekk må reise",
+            "visual": { "type": "SpredningTale", "props": { "modus": "by" } },
+            "replikker": [
+                { "si": "Tenk deg at ungdommen i én by begynner å si «å kasta» der de før sa «å kaste»." },
+                { "si": "I starten er det bare noen få som gjør det." },
+                { "si": "Så plukker vennene deres det opp." },
+                { "si": "Etter hvert sier hele byen det. Men hvordan kommer det nye trekket seg videre til neste sted?" }
+            ]
+        },
+        {
+            "id": "malmerke",
+            "visual": { "type": "SpredningTale", "props": { "modus": "trekk" } },
+            "replikker": [
+                { "si": "Det er ikke hele dialekter som flytter på seg. Det er små biter som flytter seg." },
+                { "si": "Det kan være en ny uttale, altså hvordan du sier et ord." },
+                { "si": "Det kan være et helt nytt ord. Eller en ny bøyning, altså en ny ending på ordet, som «kasta» i stedet for «kaste»." },
+                { "si": "Et slikt lite kjennetegn som skiller én dialekt fra en annen, kaller vi et målmerke. Når mange nok tar opp det samme målmerket, endrer dialekten seg litt." }
+            ]
+        },
+        {
+            "id": "to-svar",
+            "visual": { "type": "SpredningTale", "props": { "modus": "to-svar" } },
+            "replikker": [
+                { "si": "De to modellene gir hvert sitt svar på hvordan målmerket reiser." },
+                { "si": "Den ene sier at trekket sildrer jevnt utover. Litt som når du slipper en stein i vannet." },
+                { "si": "Den andre sier at trekket kan ta lange hopp og lande langt unna." },
+                { "si": "Begge har rett. De forklarer bare ulike biter av det samme puslespillet." }
+            ]
+        },
+        {
+            "id": "dammen",
+            "lyd": "vind",
+            "kapittel": "Bølgemodellen",
+            "visual": { "type": "SpredningLandskap", "props": { "modus": "dam" } },
+            "replikker": [
+                { "si": "Vi starter med bølgemodellen. Se for deg en stille dam." },
+                { "si": "Du slipper en stein. Plopp." },
+                { "si": "Bølgene brer seg jevnt utover i ringer fra der steinen traff." },
+                { "si": "Slik tenker vi oss at et nytt språktrekk sprer seg fra stedet der det oppsto." }
+            ]
+        },
+        {
+            "id": "bolgen",
+            "visual": { "type": "SpredningLandskap", "props": { "modus": "bolge" } },
+            "replikker": [
+                { "si": "Her er trekket født i én bygd." },
+                { "si": "Først når det nabolaget rett rundt." },
+                { "si": "Så nabolaget etter det. Sakte, men sikkert, ruller det videre utover." },
+                { "si": "Jo lenger unna du bor, jo senere kommer trekket til deg." },
+                { "si": "Og noen ganger dør bølgen ut før den når helt fram. Da får de fjerneste stedene aldri trekket." }
+            ]
+        },
+        {
+            "id": "overgang",
+            "visual": { "type": "SpredningTale", "props": { "modus": "overgang" } },
+            "replikker": [
+                { "si": "Bølgemodellen forklarer noe vi kjenner godt i Norge. Dialektene glir gradvis over i hverandre, fra bygd til bygd." },
+                { "si": "To nabobygder ligner mye på hverandre." },
+                { "si": "Men forskjellene blir større og større jo lenger fra hverandre stedene ligger." },
+                { "si": "Fjellene og fjordene gjorde dialektene ulike i utgangspunktet. Og det er de samme fjellene og fjordene som bestemmer hvor lett bølgen ruller videre." }
+            ]
+        },
+        {
+            "id": "hoppet",
+            "kapittel": "Sprangmodellen",
+            "visual": { "type": "SpredningLandskap", "props": { "modus": "sprang" } },
+            "replikker": [
+                { "si": "Men bølgemodellen forklarer ikke alt." },
+                { "si": "Noen ganger dukker det samme nye trekket opp i Oslo og i Tromsø omtrent samtidig." },
+                { "si": "Bygdene mellom dem har det ikke i det hele tatt." },
+                { "si": "Hadde trekket rullet som en bølge, måtte det jo ha passert alle bygdene på veien. Her trenger vi sprangmodellen." }
+            ]
+        },
+        {
+            "id": "byene",
+            "lyd": "stille",
+            "visual": { "type": "SpredningKart", "props": { "modus": "sprang" } },
+            "replikker": [
+                { "si": "Sprangmodellen sier at et trekk kan hoppe rett fra ett sted til et annet, uten å ta med seg alt imellom." },
+                { "si": "Og som regel hopper det mellom byer." },
+                { "si": "Grunnen er enkel. Folk i byene har mye kontakt med folk i andre byer. De reiser mellom dem og studerer i dem." },
+                { "si": "De ser de samme TV-programmene og følger de samme folkene på nett." },
+                { "si": "Trekket hopper fra by til by fordi det er der menneskene møtes. Ikke langs veien mellom dem." }
+            ]
+        },
+        {
+            "id": "for",
+            "kapittel": "Før og nå",
+            "visual": { "type": "SpredningKart", "props": { "modus": "for" } },
+            "replikker": [
+                { "si": "For hundre år siden var det tungt å reise i Norge." },
+                { "si": "Folk holdt seg mest til sitt eget område." },
+                { "si": "Da var det bølgemodellen som styrte mest. Trekkene spredte seg sakte, fra nabo til nabo." }
+            ]
+        },
+        {
+            "id": "na",
+            "visual": { "type": "SpredningKart", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "I dag er alt annerledes. Vi flytter oftere, og vi tar toget og flyet på kryss og tvers." },
+                { "si": "Og vi er sammen på nett hele tiden, uansett hvor vi bor." },
+                { "si": "Når avstand betyr mindre, blir sprangene viktigere. En ny måte å snakke på kan hoppe fra ungdom i én by til ungdom i en annen by på noen få uker." },
+                { "si": "Mange språkforskere mener at dette er en av grunnene til at folk i de store byene snakker likere over hele landet." },
+                { "si": "Samtidig blir en del gamle bygdedialekter svakere." }
+            ]
+        },
+        {
+            "id": "begge",
+            "kapittel": "Begge deler",
+            "visual": { "type": "SpredningKart", "props": { "modus": "begge" } },
+            "replikker": [
+                { "si": "Så hvilken modell er riktig? Du trenger ikke velge. De beskriver to ting som skjer samtidig." },
+                { "si": "Bølgen forklarer de myke overgangene i landskapet. Den viser hvorfor nabobygder ligner." },
+                { "si": "Sprangene forklarer hoppene. De viser hvorfor byer langt fra hverandre kan dele et trekk som bygdene imellom ikke har." },
+                { "si": "Sammen gir de et mye bedre bilde av hvordan et språk forandrer seg enn hver av dem gjør alene." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva tar vi med oss?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Bølgen: fra nabo til nabo.", "fraBeat": 0 },
+                        { "tekst": "Sprangene: fra by til by.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Et nytt ord blant vennene dine.", "fraBeat": 1 },
+                        { "tekst": "Kom det rullende, eller hoppet det hit?", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ofte er svaret", "fraBeat": 2 },
+                        { "tekst": "litt av begge deler.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Bølgen går fra nabo til nabo. Sprangene går fra by til by." },
+                { "si": "Neste gang du hører et nytt ord spre seg blant vennene dine, kan du spørre deg selv. Kom det rullende som en bølge fra nabolaget? Eller hoppet det hit fra en helt annen kant av landet?" },
+                { "si": "Ofte er svaret litt av begge deler." }
+            ]
+        }
+    ]
+}
