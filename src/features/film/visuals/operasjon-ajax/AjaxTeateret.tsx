@@ -7,9 +7,11 @@ import type { VisualProps } from '../../types';
  * bøllene dukker opp én etter én, hver gang en seddel flyr ut av CIA-kofferten. På siste beat
  * blir kulissene gjennomsiktige: en hånd over scenen holder trådene til alle sammen.
  * «kupp»: seks beats, som over. «pris»: den tomme kofferten og prislappen.
+ * «monster»: mønsteret i fem beats. Tom scene, så oljetønnene, så lederen ved dem, så hånda
+ * som løfter ham bort i trådene, og til slutt regningen som kommer mange år senere.
  */
 
-type Modus = 'kupp' | 'pris';
+type Modus = 'kupp' | 'pris' | 'monster';
 
 const GULV = 740;
 const KOFFERT = { x: 120, y: 600 };
@@ -33,6 +35,13 @@ const TEKST: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Bak kulissene: CIA', rod: true },
     ],
     pris: [{ tekst: 'Prisen for et kupp' }, { tekst: 'En hel regjering byttet ut', rod: true }],
+    monster: [
+        { tekst: 'Et mønster som går igjen' },
+        { tekst: 'Et fattig land med en verdifull ressurs' },
+        { tekst: 'En leder som vil beholde rikdommen i landet' },
+        { tekst: 'En stormakt fjerner ham i det skjulte', rod: true },
+        { tekst: 'Regningen kommer ofte mange år senere', rod: true },
+    ],
 };
 
 export function AjaxTeateret({ beat, props }: VisualProps<{ modus?: Modus }>) {
@@ -43,7 +52,7 @@ export function AjaxTeateret({ beat, props }: VisualProps<{ modus?: Modus }>) {
         <div className="absolute inset-0 overflow-hidden" style={{ background: '#f3e7cf' }}>
             <svg viewBox="0 0 1600 900" className="absolute inset-0 w-full h-full" preserveAspectRatio="xMidYMid meet">
                 {/* Bakteppet: Teheran */}
-                <Byen dempet={avslørt} />
+                <Byen dempet={avslørt || modus === 'monster'} />
                 {/* Teppet på sidene */}
                 <path d="M 0 0 L 150 0 Q 110 300 60 900 L 0 900 Z" fill="#7f1d1d" />
                 <path d="M 1600 0 L 1450 0 Q 1490 300 1540 900 L 1600 900 Z" fill="#7f1d1d" />
@@ -52,11 +61,9 @@ export function AjaxTeateret({ beat, props }: VisualProps<{ modus?: Modus }>) {
                 <rect x={0} y={GULV} width={1600} height={160} fill="#92633a" />
                 <rect x={0} y={GULV} width={1600} height={10} fill="#5b3a1e" />
 
-                {modus === 'kupp' ? (
-                    <Kupp beat={beat} avslørt={avslørt} />
-                ) : (
-                    <Pris beat={beat} />
-                )}
+                {modus === 'kupp' && <Kupp beat={beat} avslørt={avslørt} />}
+                {modus === 'pris' && <Pris beat={beat} />}
+                {modus === 'monster' && <Monster beat={beat} />}
             </svg>
             <AnimatePresence mode="wait">
                 <motion.div
@@ -137,8 +144,8 @@ function Pris({ beat }: { beat: number }) {
             >
                 <path d="M 560 180 L 1080 180 L 1140 300 L 1080 420 L 560 420 Z" fill="#fef3c7" stroke="#a16207" strokeWidth={8} />
                 <circle cx={1080} cy={300} r={16} fill="#f3e7cf" stroke="#a16207" strokeWidth={6} />
-                <text x={820} y={265} textAnchor="middle" fontSize={56} fontWeight={800} fill="#78350f">
-                    Under én
+                <text x={820} y={265} textAnchor="middle" fontSize={44} fontWeight={800} fill="#78350f">
+                    Anslagsvis under én
                 </text>
                 <text x={820} y={355} textAnchor="middle" fontSize={84} fontWeight={900} fill="#78350f">
                     million dollar
@@ -162,6 +169,85 @@ function Pris({ beat }: { beat: number }) {
                 </motion.g>
             )}
         </>
+    );
+}
+
+/** Mønsteret. Lederen står ved tønnene til beat 2, henger i trådene på beat 3 og er borte på beat 4. */
+function Monster({ beat }: { beat: number }) {
+    const LEDER = { x: HÅND.x, y: GULV };
+    return (
+        <>
+            {beat === 0 && (
+                <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
+                    <ellipse cx={800} cy={GULV + 20} rx={420} ry={60} fill="#fef3c7" opacity={0.7} />
+                    <text x={800} y={420} textAnchor="middle" fontSize={120} fontWeight={900} fill="#7f1d1d" opacity={0.85}>
+                        Mønsteret
+                    </text>
+                </motion.g>
+            )}
+            {beat >= 1 && (
+                <Inn forsinkelse={beat === 1 ? 0.5 : 0}>
+                    <Tonner x={520} y={GULV} />
+                    {beat <= 2 && <Navneskilt x={520} y={GULV - 370} tekst="Oljen" vis />}
+                </Inn>
+            )}
+            {beat === 2 && (
+                <Inn forsinkelse={0.5}>
+                    <Figur x={LEDER.x} y={LEDER.y} farge="#15803d" />
+                    <Navneskilt x={LEDER.x} y={LEDER.y - 290} tekst="Lederen" vis />
+                </Inn>
+            )}
+            {beat === 3 && (
+                <>
+                    <motion.g initial={{ y: 0 }} animate={{ y: -150 }} transition={{ delay: 0.8, duration: 1.2 }}>
+                        <Figur x={LEDER.x} y={LEDER.y} farge="#15803d" />
+                    </motion.g>
+                    {[-14, 14].map((dx, i) => (
+                        <line key={i} x1={HÅND.x + dx} y1={HÅND.y + 70} x2={LEDER.x + dx} y2={LEDER.y - 340} stroke="#111827" strokeWidth={4} />
+                    ))}
+                    <Hånd />
+                </>
+            )}
+            {beat >= 4 && (
+                <motion.g
+                    initial={{ opacity: 0, y: -60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, type: 'spring', stiffness: 140, damping: 14 }}
+                >
+                    <rect x={880} y={180} width={420} height={440} fill="#ffffff" stroke="#991b1b" strokeWidth={8} />
+                    <text x={1090} y={270} textAnchor="middle" fontSize={64} fontWeight={900} fill="#991b1b">
+                        REGNING
+                    </text>
+                    {[0, 1, 2, 3].map((i) => (
+                        <rect key={i} x={930} y={320 + i * 50} width={i % 2 ? 220 : 320} height={14} fill="#cbd5e1" />
+                    ))}
+                    <text x={1090} y={580} textAnchor="middle" fontSize={44} fontWeight={900} fill="#991b1b">
+                        Betales senere
+                    </text>
+                </motion.g>
+            )}
+        </>
+    );
+}
+
+function Tonner({ x, y }: { x: number; y: number }) {
+    const plass: [number, number][] = [
+        [-130, 0],
+        [0, 0],
+        [130, 0],
+        [-65, -170],
+        [65, -170],
+    ];
+    return (
+        <g>
+            {plass.map(([dx, dy], i) => (
+                <g key={i}>
+                    <rect x={x + dx - 55} y={y + dy - 170} width={110} height={170} rx={10} fill="#1f2937" />
+                    <rect x={x + dx - 55} y={y + dy - 125} width={110} height={10} fill="#ca8a04" />
+                    <rect x={x + dx - 55} y={y + dy - 60} width={110} height={10} fill="#ca8a04" />
+                </g>
+            ))}
+        </g>
     );
 }
 
@@ -216,7 +302,7 @@ function Seddel({ fra, til, forsinkelse }: { fra: [number, number]; til: [number
     return (
         <motion.g
             initial={{ x: fra[0], y: fra[1], opacity: 0, rotate: 0 }}
-            animate={{ x: til[0], y: til[1], opacity: [0, 1, 1, 0.9], rotate: 200 }}
+            animate={{ x: til[0], y: til[1], opacity: [0, 1, 1, 0], rotate: 200 }}
             transition={{ duration: 1.3, delay: forsinkelse, ease: 'easeOut' }}
         >
             <rect x={-26} y={-14} width={52} height={28} rx={4} fill="#4ade80" stroke="#166534" strokeWidth={3} />
