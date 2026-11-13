@@ -1,0 +1,209 @@
+{
+  "id": "hva-er-dialekter",
+  "tittel": "Dialekter: Hvorfor snakker vi så ulikt?",
+  "kilde": "/norsk/dialekter/hva-er-dialekter",
+  "bilde": "/images/dialekter/dialekter-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-13", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "leir",
+      "lyd": "ild",
+      "kapittel": "Leirskolen",
+      "visual": { "type": "DialekterLand", "props": { "modus": "leir" } },
+      "replikker": [
+        { "si": "Tenk deg en leirskole. Det er kveld, og fire ungdommer fra fire kanter av Norge sitter rundt bålet." },
+        { "si": "Den første gjesper og sier: Æ e trøtt." },
+        { "si": "Den andre sier: Eg er trøytt. Den tredje sier: Jæ ær trøtt." },
+        { "si": "Den fjerde sier også: Æ e trøtt. Men r-en låter helt annerledes." },
+        { "si": "Alle sier det samme, og alle snakker norsk. Likevel hører du med én gang at de kommer fra ulike steder." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "DIALEKTER",
+          "undertittel": "Hvorfor snakker vi så ulikt?",
+          "bilde": "/images/dialekter/dialekter-hero.webp",
+          "sporsmal": { "tekst": "Hva forteller stemmen din?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Det de hører, er dialekter." },
+        { "si": "En dialekt er måten folk snakker på i et bestemt område." },
+        { "si": "Dialekten din er noe av det første andre legger merke til. Den forteller ofte hvor du kommer fra, før du har rukket å si det selv." }
+      ]
+    },
+    {
+      "id": "deler",
+      "kapittel": "Hva er en dialekt?",
+      "visual": { "type": "DialekterOrd", "props": { "modus": "deler" } },
+      "replikker": [
+        { "si": "Hva er det som skiller dialektene fra hverandre? Det handler særlig om dette." },
+        { "si": "Hvordan du uttaler ordene, altså hvordan de låter. Trøtt eller trøytt?" },
+        { "si": "Hvordan du bøyer ordene, altså hvilken ending de får. Å kaste eller å kasta?" },
+        { "si": "Og hvilke ord du velger å bruke." }
+      ]
+    },
+    {
+      "id": "sprak",
+      "kapittel": "Språk eller dialekt?",
+      "visual": { "type": "DialekterLekter", "props": { "modus": "sprak" } },
+      "replikker": [
+        { "si": "Hva er så forskjellen på et språk og en dialekt?" },
+        { "si": "Et språk er det store systemet, som norsk, svensk eller engelsk." },
+        { "si": "En dialekt er en lokal variant av språket. Alle som snakker norsk, snakker samtidig en dialekt." },
+        { "si": "Det finnes ikke noe rent norsk uten dialekt. Til og med nyhetsoppleseren på TV snakker en variant. Den ligger bare tett opp mot skriftspråket." }
+      ]
+    },
+    {
+      "id": "grense",
+      "visual": { "type": "DialekterLekter", "props": { "modus": "grense" } },
+      "replikker": [
+        { "si": "Her kommer noe rart. Hvor går egentlig grensen mellom en dialekt og et eget språk?" },
+        { "si": "En fra Bergen og en fra Kristiansund kan ha vanskeligere for å forstå hverandre enn en svenske og en danske har." },
+        { "si": "Likevel sier vi at de to nordmennene snakker samme språk. Men svensk og dansk regnes som egne språk." },
+        { "si": "Grensen handler altså ikke om hvor ulikt folk snakker. Den handler om politikk og historie. Grensene mellom språk er ofte tegnet opp av mennesker." }
+      ]
+    },
+    {
+      "id": "overalt",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Dialekt overalt?",
+          "punkter": [
+            { "ikon": "snakk", "tittel": "Mange andre land", "tekst": "ett «fint» talemål, dialekt er useriøst", "fraBeat": 0 },
+            { "ikon": "radio", "tittel": "Norge: i nyhetsstudioet", "tekst": "brede dialekter", "fraBeat": 1 },
+            { "ikon": "hus", "tittel": "på Stortinget", "tekst": "fra talerstolen", "fraBeat": 2 },
+            { "ikon": "haer", "tittel": "i klasserommet", "tekst": "også læreren", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "I mange land finnes det ett fint talemål som alle skal bruke på skolen, på jobb og på TV. Dialekt blir sett på som noe useriøst." },
+        { "si": "Slik er det ikke i Norge. Her hører du brede dialekter fra nyhetsstudioet," },
+        { "si": "fra talerstolen på Stortinget," },
+        { "si": "og fra læreren i klasserommet." },
+        { "si": "Det er en av grunnene til at nordmenn ofte er så flinke til å forstå hverandre på tvers av landet." }
+      ]
+    },
+    {
+      "id": "jeg",
+      "kapittel": "Målmerkene",
+      "visual": { "type": "DialekterOrd", "props": { "modus": "jeg" } },
+      "replikker": [
+        { "si": "Hvordan klarer vi å høre så raskt hvor noen kommer fra? Vi lytter etter noen få, tydelige spor." },
+        { "si": "Slike spor kalles målmerker. Et målmerke er et trekk som skiller én dialekt fra en annen." },
+        { "si": "Et av de mest kjente er ordet du bruker om deg selv. Noen sier jeg. Andre sier eg, æ, e eller i." },
+        { "si": "Dette ene lille ordet avslører ofte hvilken landsdel du kommer fra." }
+      ]
+    },
+    {
+      "id": "infinitiv",
+      "visual": { "type": "DialekterOrd", "props": { "modus": "infinitiv" } },
+      "replikker": [
+        { "si": "Et annet målmerke er infinitiv. Det er grunnformen av verbet, den med å foran. Sier du å kaste, eller å kasta?" },
+        { "si": "Noen steder sier de bare: å kast." },
+        { "si": "Endelsen skifter fra bygd til bygd." }
+      ]
+    },
+    {
+      "id": "lyder",
+      "visual": { "type": "DialekterKart", "props": { "modus": "lyder" } },
+      "replikker": [
+        { "si": "Så har vi r-en. Mange lager r-en fremme i munnen. Det kalles rulle-r." },
+        { "si": "Mange steder på Sør- og Vestlandet lager de r-en bak i halsen. Det kalles skarre-r." },
+        { "si": "Hør så på ordene sol og dal. I store deler av Østlandet og Trøndelag får l-en en tykk klang. Den kalles tjukk l." },
+        { "si": "Når du kjenner de vanligste målmerkene, kan du nesten lage et kart av en samtale." }
+      ]
+    },
+    {
+      "id": "omrader",
+      "kapittel": "Fire store områder",
+      "visual": { "type": "DialekterKart", "props": { "modus": "omrader" } },
+      "replikker": [
+        { "si": "Språkforskere deler grovt sett Norge inn i fire store dialektområder." },
+        { "si": "Nordnorsk og trøndersk." },
+        { "si": "Vestnorsk og østnorsk." },
+        { "si": "Men grensene er ikke skarpe streker. Dialekten glir gradvis over i naboens dialekt, fra bygd til bygd." },
+        { "si": "Og to nabobygder kan ha ord og bøyninger som skiller seg tydelig fra hverandre." }
+      ]
+    },
+    {
+      "id": "dalene",
+      "lyd": "vind",
+      "kapittel": "Hvorfor så ulikt?",
+      "visual": { "type": "DialekterLand", "props": { "modus": "dal" } },
+      "replikker": [
+        { "si": "Men hvorfor ble dialektene så forskjellige? Svaret ligger først i geografien." },
+        { "si": "Norge er et langt land med fjell, fjorder og daler. I gamle dager var det vanskelig å reise." },
+        { "si": "Folk i en dal snakket mest med hverandre." },
+        { "si": "Språket deres utviklet seg litt for seg selv. Det blandet seg ikke så mye med språket til naboene bak fjellet." },
+        { "si": "Slik vokste det fram mange ulike måter å snakke på, i et land med få folk." }
+      ]
+    },
+    {
+      "id": "historie",
+      "lyd": "stille",
+      "visual": { "type": "DialekterOrd", "props": { "modus": "tid" } },
+      "replikker": [
+        { "si": "Svaret ligger også i historien. Mange av forskjellene går helt tilbake til norrønt, språket vikingene snakket." },
+        { "si": "Senere var Norge i union med Danmark, altså bundet sammen med Danmark. Da ble skriftspråket dansk." },
+        { "si": "Men hjemme fortsatte folk å snakke sine norske dialekter." },
+        { "si": "På 1840-tallet reiste Ivar Aasen rundt i landet og samlet på disse levende dialektene." },
+        { "si": "Av dem bygde han grunnlaget for nynorsk, det ene av de to skriftspråkene våre." }
+      ]
+    },
+    {
+      "id": "lekter",
+      "kapittel": "Ikke bare stedet",
+      "visual": { "type": "DialekterLekter", "props": { "modus": "lekter" } },
+      "replikker": [
+        { "si": "Men det er ikke bare stedet som former måten du snakker på. Når talemålet hører til et sted, kaller vi det en geolekt." },
+        { "si": "En sosiolekt hører til en sosial gruppe. I Oslo har det lenge vært forskjell på talemålet øst og vest i byen. Der er det ikke fjellet som skiller, men det sosiale livet." },
+        { "si": "En etnolekt vokser fram der mange språk og kulturer møtes. I flere byer blander ungdom med bakgrunn fra ulike land norsk med ord og rytme fra andre språk. Slik viser de hvem de hører sammen med." },
+        { "si": "Og helt innerst er idiolekten. Det er din helt egen måte å snakke på, med favorittord og vaner du kanskje ikke merker selv." }
+      ]
+    },
+    {
+      "id": "endring",
+      "lyd": "vind",
+      "kapittel": "Dialekter i endring",
+      "visual": { "type": "DialekterLand", "props": { "modus": "veier" } },
+      "replikker": [
+        { "si": "Endrer dialektene seg? Ja, hele tiden." },
+        { "si": "I dag flytter folk mer, reiser mer og møtes på nett. Da blander talemålene seg." },
+        { "si": "Mange sterke målmerker blir svakere, særlig blant unge. Noen bygdedialekter ligner mer og mer på talemålet i nærmeste by." },
+        { "si": "Samtidig kommer nye trekk til, som når ungdom over hele landet plukker opp ord fra sosiale medier." },
+        { "si": "Noen synes det er trist at gamle dialekter blir svakere. Andre mener at språk bare gjør det språk alltid har gjort: forandrer seg." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "lyd": "stille",
+      "kapittel": "Din stemme",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Språk står aldri stille.", "fraBeat": 0 },
+            { "tekst": "Det følger menneskene som bruker det.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Dialekten er ikke dårligere norsk.", "fraBeat": 1 },
+            { "tekst": "Den er norsk, snakket der du bor.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Dialekten din forteller", "fraBeat": 2 },
+            { "tekst": "hvor du kommer fra, og hvem du vokste opp med.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Språk står aldri stille. Det er levende, og det følger menneskene som bruker det." },
+        { "si": "Dialekten er ikke en dårligere utgave av norsk. Den er norsk, bare snakket der du bor." },
+        { "si": "Uansett hva du mener om endringene, er dialekten din en del av hvem du er. Den forteller hvor du kommer fra, og hvem du har vokst opp med." }
+      ]
+    }
+  ]
+}
