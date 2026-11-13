@@ -31,7 +31,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/okonomi/bnp-01.webp",
       "alt": "Ungdom klipper en plen i en norsk hage",
       "caption": "Klipper du naboens plen for penger, teller det i BNP. Klipper du din egen, gjør det ikke."
     },
@@ -106,7 +106,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/okonomi/bnp-02.webp",
       "alt": "Familie som lager middag sammen på et kjøkken",
       "caption": "Matlaging, vasking og barnepass hjemme er mye arbeid. Men det blir ikke med i BNP."
     },
@@ -140,7 +140,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/okonomi/bnp-03.webp",
       "alt": "Travel norsk handlegate med butikker og mennesker",
       "caption": "BNP måler hvor mye et land lager og selger. Men det forteller ikke hvor godt folk har det."
     },
