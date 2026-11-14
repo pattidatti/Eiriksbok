@@ -2688,6 +2688,20 @@
                 "demokrati"
               ],
               "createdDate": "2026-11-13T00:00:00Z"
+            },
+            {
+              "id": "domstolene",
+              "title": "Domstolene: Fra tingrett til Høyesterett",
+              "description": "De tre nivåene i domstolene, forskjellen på straffesak og sivil sak, rollene i rettssalen og hvorfor en dom kan ankes.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "rettsstaten",
+                "domstolene",
+                "rettigheter",
+                "maktfordeling",
+                "demokrati"
+              ],
+              "createdDate": "2026-11-14T00:00:00Z"
             }
           ]
         },

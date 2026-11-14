@@ -1,5 +1,5 @@
 {
-  "buildId": 98364892354560,
+  "buildId": 269853315404385,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4903,6 +4903,9 @@
     "svindel": [
       "content/samfunnskunnskap/personlig-okonomi/svindel.json"
     ],
+    "domstolene": [
+      "content/samfunnskunnskap/rettsstaten/domstolene.json"
+    ],
     "hva-er-en-rettsstat": [
       "content/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat.json"
     ],
@@ -6637,6 +6640,7 @@
     "samfunnskunnskap/personlig-okonomi/lonnsslippen": "content/samfunnskunnskap/personlig-okonomi/lonnsslippen.json",
     "samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente": "content/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente.json",
     "samfunnskunnskap/personlig-okonomi/svindel": "content/samfunnskunnskap/personlig-okonomi/svindel.json",
+    "samfunnskunnskap/rettsstaten/domstolene": "content/samfunnskunnskap/rettsstaten/domstolene.json",
     "samfunnskunnskap/rettsstaten/hva-er-en-rettsstat": "content/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat.json",
     "samfunnskunnskap/rettsstaten/politiet": "content/samfunnskunnskap/rettsstaten/politiet.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
