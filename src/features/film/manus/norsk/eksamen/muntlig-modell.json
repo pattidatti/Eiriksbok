@@ -1,0 +1,226 @@
+{
+    "id": "muntlig-modell",
+    "tittel": "Slik ser en 6-er ut: Muntlig eksamen",
+    "kilde": "/norsk/eksamen/muntlig-modell",
+    "bilde": "/images/norsk/eksamen/muntlig-modell-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-14", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "apning",
+            "lyd": "vind",
+            "kapittel": "Åpningen",
+            "visual": { "type": "MuntligScenen", "props": { "modus": "skog" } },
+            "replikker": [
+                { "si": "Tenk deg den minste broren i et eventyr. Han er fattig, og han blir ledd av." },
+                { "si": "Ingen tror på ham." },
+                { "si": "Likevel vet vi allerede fra første setning at det er han som kommer til å vinne." },
+                { "si": "Slik åpner en tenkt elev presentasjonen sin på muntlig eksamen i norsk." },
+                { "si": "Vi ser hele presentasjonen, og hvorfor den gir karakteren 6." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Toppkarakter",
+                    "undertittel": "Slik ser en 6-er ut på muntlig eksamen i norsk",
+                    "bilde": "/images/norsk/eksamen/muntlig-modell-hero.webp",
+                    "tall": [
+                        { "verdi": 24, "etikett": "timer før: temaet", "fraBeat": 0, "omtrent": false },
+                        { "verdi": 10, "etikett": "minutter presentasjon", "fraBeat": 2 }
+                    ],
+                    "sporsmal": { "tekst": "Hva gjør presentasjonen så god?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Temaet kom 24 timer før eksamen: framgang og motgang." },
+                { "si": "På eksamensdagen kom oppgaven: Drøft hvordan framgang og motgang framstilles i tekster du velger selv, fra ulike tidsperioder. Bruk fagbegreper." },
+                { "si": "Først holder eleven en presentasjon på cirka 10 minutter. Så kommer en samtale med faglæreren." },
+                { "si": "Hva gjør denne presentasjonen så god?" }
+            ]
+        },
+        {
+            "id": "pastand",
+            "kapittel": "Påstanden",
+            "visual": { "type": "MuntligManus", "props": { "modus": "pastand" } },
+            "replikker": [
+                { "si": "Den vanligste feilen er å si: Jeg skal snakke om framgang og motgang i tre tekster. Men det er ikke en påstand. Det er en liste." },
+                { "si": "En 6-er begynner med en påstand: Framgang er ikke alltid noe du kan jobbe deg til." },
+                { "si": "Folkediktningen lover at den smarte vinner. Noen tiår senere river forfatterne det løftet i stykker." },
+                { "si": "Påstanden er omstridt, altså kan noen være uenige. Den gir presentasjonen en retning." },
+                { "si": "Det er det sensor leter etter: at du argumenterer, ikke bare gjenforteller." }
+            ]
+        },
+        {
+            "id": "epoker",
+            "kapittel": "Tre tekster",
+            "visual": { "type": "MuntligManus", "props": { "modus": "epoker" } },
+            "replikker": [
+                { "si": "Så velger eleven tre tekster fra hver sin tid." },
+                { "si": "Først folkeeventyret Askeladden som kappåt med trollet, fra nasjonalromantikken." },
+                { "si": "Så Karens jul av Amalie Skram, fra 1885. Realisme og naturalisme." },
+                { "si": "Til slutt Sult av Knut Hamsun, fra 1890. Nyromantikk." },
+                { "si": "Hvorfor tre tider? Læreplanen, LK20, sier at du skal kunne sammenligne tekster ut fra tiden de ble skrevet i." }
+            ]
+        },
+        {
+            "id": "tidsplan",
+            "visual": { "type": "MuntligManus", "props": { "modus": "tid" } },
+            "replikker": [
+                { "si": "Eleven deler inn tiden, og snakker fritt fra stikkord." },
+                { "si": "Åpningen tar cirka 1 minutt." },
+                { "si": "Askeladden får cirka 2 minutter." },
+                { "si": "Karens jul får cirka 2,5 minutter." },
+                { "si": "Sult får også cirka 2,5 minutter." },
+                { "si": "Avslutningen tar cirka 1,5 minutt." }
+            ]
+        },
+        {
+            "id": "askeladden",
+            "lyd": "vind",
+            "kapittel": "Askeladden",
+            "visual": { "type": "MuntligScenen", "props": { "modus": "troll" } },
+            "replikker": [
+                { "si": "Asbjørnsen og Moe samlet eventyrene på 1840-tallet." },
+                { "si": "En gammel, skrøpelig bonde har tre sønner. Askeladden er den yngste, den ingen satser på. Han starter helt nederst." },
+                { "si": "Så møter han trollet. Askeladden er liten og svak. Trollet er stort og sterkt." },
+                { "si": "Men gutten klemmer en hvit ost, så vannet renner. Trollet tror det er en stein." },
+                { "si": "Eleven kaller det den smarte kontrasten. En kontrast er to helt ulike ting satt mot hverandre. Den lille vinner fordi han er smartere." }
+            ]
+        },
+        {
+            "id": "lofte",
+            "lyd": "stille",
+            "visual": { "type": "MuntligPilen", "props": { "modus": "trapp" } },
+            "replikker": [
+                { "si": "Poenget er ikke at Askeladden jukser. Poenget er hva eventyret lover." },
+                { "si": "Den som er smart og utholdende, stiger til topps." },
+                { "si": "Motgang er bare en prøve på veien. Askeladden ender med sølv og gull." },
+                { "si": "I folkediktningen er verden rettferdig. Den lille fortjener å vinne, og han vinner." },
+                { "si": "Hold fast på det løftet, sier eleven. For nå skal det brytes." }
+            ]
+        },
+        {
+            "id": "karen",
+            "lyd": "vind",
+            "kapittel": "Karens jul",
+            "visual": { "type": "MuntligScenen", "props": { "modus": "kai" } },
+            "replikker": [
+                { "si": "Vi hopper drøyt 40 år fram, til 1885 og Karens jul." },
+                { "si": "Karen er en ung, fattig, enslig mor uten et sted å bo. Hun gjemmer seg i et forlatt fergemannshus på en kai i Kristiania." },
+                { "si": "Skram begynner med en kald beskrivelse av stedet. Snøen smelter mens den faller. Gasslyktene gir et skittent, branngult lys." },
+                { "si": "Det er ikke pynt. Naturalistene mente at miljøet rundt deg bestemmer hvem du blir." },
+                { "si": "Karen hvisker bare: Det er bare meg, Karen. Jæ sitter her med ungen min." }
+            ]
+        },
+        {
+            "id": "muren",
+            "lyd": "stille",
+            "visual": { "type": "MuntligPilen", "props": { "modus": "mur" } },
+            "replikker": [
+                { "si": "Karen kjemper for barnet sitt. I eventyret ville hun blitt belønnet." },
+                { "si": "Men naturalistene tror at arv og miljø avgjør alt. Det er en mur hun ikke kommer over." },
+                { "si": "Til slutt finner en politimann Karen frosset i hjel i skuret, med det døde barnet i armene." },
+                { "si": "Legg merke til ironien. Julen er høytiden for et nyfødt barn, for lys og varme. Men Karens barn dør i kulde og mørke." },
+                { "si": "Den kontrasten er Skrams kritikk av samfunnet. I det samfunnet Skram skildrer, finnes ingen framgang for de fattigste." }
+            ]
+        },
+        {
+            "id": "sult",
+            "lyd": "rom",
+            "kapittel": "Sult",
+            "visual": { "type": "MuntligScenen", "props": { "modus": "by" } },
+            "replikker": [
+                { "si": "Så kommer Sult, fra 1890." },
+                { "si": "Hos Skram lå motgangen i samfunnet, utenfor mennesket. Hos Hamsun flytter den innover, inn i hodet." },
+                { "si": "Romanen åpner slik: Det var i den tid jeg gikk omkring og sultet i Kristiania, denne forunderlige by som ingen forlater før han har fått merker av den." },
+                { "si": "Han som forteller, er en ung skribent uten penger. Han har pantsatt tingene sine." }
+            ]
+        },
+        {
+            "id": "hodet",
+            "lyd": "stille",
+            "visual": { "type": "MuntligPilen", "props": { "modus": "hodet" } },
+            "replikker": [
+                { "si": "Hamsun lar oss være inni hodet hans. Det heter indre monolog: vi hører tankene mens de skifter." },
+                { "si": "Utenpå er alt motgang: sult, fattigdom, klær som faller fra hverandre." },
+                { "si": "Men midt i sulten tenker han at han er sterk som en rise, og kan stanse en vogn med skulderen." },
+                { "si": "En gammel tigger ber om penger til melk, og han gir bort penger han egentlig ikke har råd til. Stoltheten er det eneste han har igjen." },
+                { "si": "Her er framgang og motgang ikke to ulike skjebner. De bor i samme menneske." }
+            ]
+        },
+        {
+            "id": "avslutning",
+            "kapittel": "Avslutningen",
+            "visual": { "type": "MuntligPilen", "props": { "modus": "flytter" } },
+            "replikker": [
+                { "si": "Til slutt sirkler eleven tilbake til starten." },
+                { "si": "Askeladden viste at framgang er en belønning du kan vinne." },
+                { "si": "Karen viste at samfunnet kan nekte deg den, uansett hvor hardt du kjemper." },
+                { "si": "Og Hamsun viste at framgang og motgang kan bo i det samme hodet." },
+                { "si": "I tekster som Aldri godt nok fra 2024 har motgangen flyttet enda lenger inn. Til speilet, og følelsen av aldri å være god nok." },
+                { "si": "Kanskje er den sanneste framgangen å beholde seg selv midt i motgangen." }
+            ]
+        },
+        {
+            "id": "sensor",
+            "kapittel": "Hvorfor en 6-er?",
+            "visual": { "type": "MuntligManus", "props": { "modus": "sensor" } },
+            "replikker": [
+                { "si": "Hvorfor er dette en 6-er? Se hva sensor ser etter." },
+                { "si": "Eleven argumenterer, og åpner med en påstand, ikke en oppsummering." },
+                { "si": "Eleven viser hva teksten sier, og hvordan. Kontrast, ironi og indre monolog får navn og forklaring." },
+                { "si": "Tekstene står i hver sin epoke, og blir koblet til en tekst fra 2024." },
+                { "si": "Og det er en rød tråd. Avslutningen går tilbake til påstanden." }
+            ]
+        },
+        {
+            "id": "samtalen",
+            "kapittel": "Fagsamtalen",
+            "visual": { "type": "MuntligSamtale", "props": { "modus": "naturalisme" } },
+            "replikker": [
+                { "si": "Så kommer samtalen med faglæreren." },
+                { "si": "Faglæreren spør: Du sa at naturalismen tror arv og miljø avgjør alt. Ser du den tanken i en moderne tekst?" },
+                { "si": "Et svakt svar er: Eh, ja, kanskje. Folk har det jo vanskelig i dag også." },
+                { "si": "Et godt svar kobler 1885 til 2024. I Aldri godt nok skriver jenta at noen ganger handler det bare om arv og hvordan du er født." },
+                { "si": "Hos Skram lå tvangen i samfunnet. Her ligger den i selvbildet, inni personen." }
+            ]
+        },
+        {
+            "id": "jukser",
+            "visual": { "type": "MuntligSamtale", "props": { "modus": "askeladden" } },
+            "replikker": [
+                { "si": "Neste spørsmål: Askeladden jukser jo. Fortjener han egentlig framgangen sin?" },
+                { "si": "Det svake svaret: Nei, han jukser, så han fortjener det ikke." },
+                { "si": "Det gode svaret sier: Etter våre regler jukser han. Men i eventyrets logikk er list en dyd, ikke fusk." },
+                { "si": "Trollet kan være et symbol på de mektige. Eventyret viser at vanlige folk satte pris på kløkt mot de mektige." },
+                { "si": "Eleven har også baklomme-tekster: ekstra tekster, klare hvis faglæreren ber om et eksempel til. Da svarer du trygt." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Ditt eget svar",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ikke en liste.", "fraBeat": 0 },
+                        { "tekst": "En påstand noen kan være uenig i.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ikke bare hva et virkemiddel heter.", "fraBeat": 1 },
+                        { "tekst": "Men hva det gjør med leseren.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Tekster som viser temaet fra ulike sider", "fraBeat": 2 },
+                        { "tekst": "og to tekster i baklomma.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Vil du lage ditt eget? Skriv én skarp påstand, og test den: Kan noen være uenig? Hvis ja, er den god." },
+                { "si": "Finn ett sitat og ett virkemiddel i hver tekst. Forklar hva virkemiddelet gjør." },
+                { "si": "Velg tekster som viser temaet fra ulike sider, helst fra ulike tider. Og ha to baklomme-tekster klare til samtalen." }
+            ]
+        }
+    ]
+}
