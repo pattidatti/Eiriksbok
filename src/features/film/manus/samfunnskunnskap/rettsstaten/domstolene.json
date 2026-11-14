@@ -1,0 +1,202 @@
+{
+    "id": "domstolene",
+    "tittel": "Domstolene: Fra tingrett til Høyesterett",
+    "kilde": "/samfunnskunnskap/rettsstaten/domstolene",
+    "bilde": "/images/rettsstaten/domstolene-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-14", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "morgen",
+            "kapittel": "Tirsdag morgen",
+            "lyd": "rom",
+            "visual": { "type": "DomstoleneSal", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "Klokka er ni en tirsdag morgen, i et stort rom med lyse vegger." },
+                { "si": "Foran sitter Jonas. Han er 19 år. Ved siden av ham sitter advokaten hans." },
+                { "si": "For et halvt år siden var Jonas på en fest. Der skal han ha slått ned en annen ungdom." },
+                { "si": "Nå åpnes en dør bak et langt bord. Tre personer kommer inn." },
+                { "si": "Alle i rommet reiser seg. Rettssaken har begynt." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DOMSTOLENE",
+                    "undertittel": "Fra tingrett til Høyesterett",
+                    "bilde": "/images/rettsstaten/domstolene-hero.webp",
+                    "sporsmal": { "tekst": "Hvem bestemmer om Jonas er skyldig?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Jonas er diktet opp. Men det som skjer med ham, skjer hver dag i norske rettssaler." },
+                { "si": "Hvem er alle menneskene i rommet? Hvem bestemmer om Jonas er skyldig? Og hva skjer hvis han mener dommen er feil?" }
+            ]
+        },
+        {
+            "id": "makta",
+            "kapittel": "Den tredje makta",
+            "visual": { "type": "DomstoleneMakta", "props": { "modus": "makt" } },
+            "replikker": [
+                { "si": "I Norge er makta delt i tre." },
+                { "si": "Stortinget lager lovene. Regjeringen styrer landet." },
+                { "si": "Domstolene avgjør saker der noen er uenige eller mistenkt for å ha brutt loven. De er den tredje statsmakta." },
+                { "si": "Domstolene skal være uavhengige. Verken regjeringen eller Stortinget kan bestemme hva en dommer skal mene i en sak." },
+                { "si": "Grunnloven sier at en dommer under 70 år bare kan fjernes fra jobben gjennom en dom, og ikke kan flyttes mot sin vilje." }
+            ]
+        },
+        {
+            "id": "saker",
+            "visual": { "type": "DomstoleneMakta", "props": { "modus": "saker" } },
+            "replikker": [
+                { "si": "Domstolene har to hovedtyper saker." },
+                { "si": "Den første er straffesaker. Da mener staten at noen har gjort noe straffbart. Saken til Jonas er en straffesak." },
+                { "si": "Påtalemyndigheten, altså de som leder etterforskningen, tar saken til retten." },
+                { "si": "Den andre typen er sivile saker. Da handler det ikke om straff, men om at to parter er uenige." },
+                { "si": "Det kan være naboer som krangler om trær. Eller foreldre som er uenige om hvor barna skal bo etter et brudd." }
+            ]
+        },
+        {
+            "id": "forlik",
+            "visual": { "type": "DomstoleneMakta", "props": { "modus": "forlik" } },
+            "replikker": [
+                { "si": "Mange sivile saker starter i forliksrådet." },
+                { "si": "Hver kommune har et forliksråd med tre vanlige folk. Kommunestyret velger dem for fire år." },
+                { "si": "De prøver først å få partene til å bli enige." },
+                { "si": "I enkle saker kan forliksrådet også avsi dom. Da bestemmer de selv hvem som har rett." }
+            ]
+        },
+        {
+            "id": "trapp",
+            "kapittel": "Tre trinn",
+            "visual": { "type": "DomstoleneTrapp", "props": { "modus": "trinn" } },
+            "replikker": [
+                { "si": "De vanlige domstolene i Norge er ordnet som en trapp med tre trinn." },
+                { "si": "Nederst står tingretten. Det er her nesten alle saker starter." },
+                { "si": "Etter en stor endring i 2021 var det 23 tingretter. I 2025 ble seks av dem delt i elleve nye. Nå er det 28." },
+                { "si": "Andre trinn er lagmannsretten. Det finnes seks, blant annet Borgarting i Oslo, Gulating i Bergen og Hålogaland i Tromsø." },
+                { "si": "Øverst står Høyesterett. Det finnes bare én, og den har 20 dommere." },
+                { "si": "En sak starter nederst. Den kan klatre oppover hvis noen er misfornøyd med avgjørelsen." }
+            ]
+        },
+        {
+            "id": "roller",
+            "kapittel": "Hvem er hvem?",
+            "lyd": "rom",
+            "visual": { "type": "DomstoleneSal", "props": { "modus": "roller" } },
+            "replikker": [
+                { "si": "Tilbake til Jonas. Alle i rommet har sin egen jobb." },
+                { "si": "Aktor kommer fra påtalemyndigheten. Aktor leser opp tiltalen, altså hva Jonas er anklaget for, og må bevise at han er skyldig." },
+                { "si": "På den andre siden sitter forsvareren, advokaten til Jonas. Forsvareren skal passe på rettighetene hans, og staten betaler." },
+                { "si": "Jonas kalles tiltalte. Han kan fortelle sin versjon, men han har ingen plikt til å si noe." },
+                { "si": "Så forklarer vitnene seg. Det er folk som så eller hørte noe den kvelden." },
+                { "si": "Den som ble slått, kan ha sin egen advokat, en bistandsadvokat. Til slutt får Jonas si noen siste ord." }
+            ]
+        },
+        {
+            "id": "dommere",
+            "visual": { "type": "DomstoleneSal", "props": { "modus": "dommere" } },
+            "replikker": [
+                { "si": "Bak det lange bordet sitter dommerne. I en vanlig straffesak i tingretten er de tre." },
+                { "si": "Én av dem er fagdommer. Det er en utdannet jurist som har dette som jobb. Fagdommeren leder rettsmøtet og skriver dommen." },
+                { "si": "De to andre er meddommere. Det er vanlige folk uten utdanning i juss." },
+                { "si": "Når alle har snakket, går de tre dommerne inn på et eget rom og diskuterer saken." },
+                { "si": "De får bare bruke det som ble lagt fram i rettssalen. Og samtalen deres er hemmelig." }
+            ]
+        },
+        {
+            "id": "hvem",
+            "kapittel": "Vanlige folk som dommere",
+            "lyd": "stille",
+            "visual": { "type": "DomstoleneFolk", "props": { "modus": "hvem" } },
+            "replikker": [
+                { "si": "Meddommerne er kanskje det mest overraskende i rettssalen." },
+                { "si": "De er lærere, sykepleiere, snekkere og pensjonister." },
+                { "si": "Kommunestyret velger dem for fire år om gangen." },
+                { "si": "Du må være over 21 og under 70 år, kunne godt nok norsk og være egnet til oppgaven." },
+                { "si": "I lagmannsretten kan hver meddommer regne med å sitte i rundt to saker i året." }
+            ]
+        },
+        {
+            "id": "stemme",
+            "visual": { "type": "DomstoleneFolk", "props": { "modus": "stemme" } },
+            "replikker": [
+                { "si": "Meddommerne har like mye å si som fagdommeren. Hver dommer har én stemme." },
+                { "si": "I tingretten må minst to av de tre dommerne mene at tiltalte er skyldig." },
+                { "si": "Det betyr at to vanlige folk kan stemme ned en utdannet dommer." },
+                { "si": "Tanken er at den tiltalte skal dømmes av folk som ligner ham selv, og at livserfaring hjelper når de skal vurdere hva som er til å tro på." },
+                { "si": "Før 2018 hadde lagmannsretten også jury. Det var en gruppe vanlige folk som avgjorde om tiltalte var skyldig, uten fagdommerne." },
+                { "si": "Juryen ble tatt bort fra 1. januar 2018. I dag sitter meddommerne sammen med fagdommerne og diskuterer saken." }
+            ]
+        },
+        {
+            "id": "anke",
+            "kapittel": "En ny runde",
+            "visual": { "type": "DomstoleneTrapp", "props": { "modus": "anke" } },
+            "replikker": [
+                { "si": "Dommere er mennesker, og mennesker kan ta feil." },
+                { "si": "Derfor kan både den som blir dømt og påtalemyndigheten anke en dom. Å anke betyr å be en høyere domstol om å se på saken igjen." },
+                { "si": "I straffesaker er fristen 14 dager fra partene får vite om dommen." },
+                { "si": "Lagmannsretten må ikke ta alle saker. Den kan si nei hvis det er helt klart at en ny runde ikke vil gi et annet resultat." }
+            ]
+        },
+        {
+            "id": "lagmannsrett",
+            "lyd": "rom",
+            "visual": { "type": "DomstoleneSal", "props": { "modus": "lagmannsrett" } },
+            "replikker": [
+                { "si": "Tar lagmannsretten saken, starter alt på nytt. Vitnene forklarer seg igjen, og bevisene legges fram på nytt." },
+                { "si": "Når det er anket om Jonas er skyldig, sitter det sju dommere: to fagdommere og fem meddommere." },
+                { "si": "Minst fem av de sju må mene at han er skyldig. Hvis ikke, blir han frifunnet." },
+                { "si": "Tenk på det som å få rettet en prøve av en ny lærer, i tillegg til den første." },
+                { "si": "Kommer to grupper hver for seg fram til at du er skyldig, er det mindre sjanse for feil." }
+            ]
+        },
+        {
+            "id": "ankeutvalg",
+            "kapittel": "Høyesterett",
+            "lyd": "stille",
+            "visual": { "type": "DomstoleneTrapp", "props": { "modus": "ankeutvalg" } },
+            "replikker": [
+                { "si": "Kan Jonas anke helt til Høyesterett? Han kan prøve." },
+                { "si": "Men anken går først til Høyesteretts ankeutvalg. Der ser tre dommere på saken." },
+                { "si": "De sier bare ja hvis saken betyr noe for flere enn den ene saken." },
+                { "si": "Bare et fåtall saker kommer helt opp. Høyesterett avgjør litt over 100 saker i året." }
+            ]
+        },
+        {
+            "id": "rettesnor",
+            "visual": { "type": "DomstoleneTrapp", "props": { "modus": "rettesnor" } },
+            "replikker": [
+                { "si": "Høyesterett har en annen jobb enn trinnene under." },
+                { "si": "Den skal passe på at loven blir brukt likt over hele landet." },
+                { "si": "Den skal gjøre uklare lover klarere, og finne svar der loven ikke sier noe." },
+                { "si": "Når andre domstoler senere får lignende saker, ser de på hvordan Høyesterett løste dem. Dommen blir en rettesnor, altså en regel å rette seg etter, for mange." },
+                { "si": "Høyesterett er gammel. Grunnloven fra 1814 sa at Norge skulle ha en Høyesterett, og den første dommen kom i 1815." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Domstolene er den tredje statsmakta.", "fraBeat": 0 },
+                        { "tekst": "Tingretten, lagmannsretten og Høyesterett: tre trinn i en trapp.", "fraBeat": 1 },
+                        { "tekst": "Vanlige folk dømmer sammen med fagdommerne.", "fraBeat": 2 },
+                        { "tekst": "En dom kan ankes, så nye dommere får se på saken.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Domstolene er den tredje statsmakta. De avgjør straffesaker og sivile saker." },
+                { "si": "Nesten alle saker starter i tingretten. De kan ankes til lagmannsretten, og noen ganger helt til Høyesterett." },
+                { "si": "Vanlige folk dømmer sammen med fagdommerne, og stemmen deres teller like mye." },
+                { "si": "Og en dom kan ankes, så nye dommere får se på saken. Det skal gjøre det mindre sannsynlig at noen blir dømt urettferdig." }
+            ]
+        }
+    ]
+}
