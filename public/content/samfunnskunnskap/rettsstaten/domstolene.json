@@ -1,0 +1,290 @@
+{
+    "id": "domstolene",
+    "title": "Domstolene: Fra tingrett til Høyesterett",
+    "layout": "rich",
+    "year": "1815",
+    "category": "Rettsstaten",
+    "readTime": "10 min lesning",
+    "heroImage": "/images/placeholder.webp",
+    "details": [
+        "Domstolene er den tredje statsmakta. De avgjør straffesaker og sivile saker.",
+        "Systemet er en trapp med tre trinn: 28 tingretter, seks lagmannsretter og én Høyesterett.",
+        "Vanlige folk sitter som meddommere og har like mye å si som fagdommerne. En dom kan ankes til en høyere domstol."
+    ],
+    "externalUrl": "https://snl.no/domstol",
+    "factChecked": "2026-11-14",
+    "tags": [
+        "rettsstaten",
+        "domstolene",
+        "rettigheter",
+        "maktfordeling",
+        "demokrati"
+    ],
+    "content": [
+        {
+            "type": "text",
+            "content": "Klokka er ni en tirsdag morgen. Jonas er 19 år og sitter på en stol foran i et stort rom med lyse vegger. Ved siden av ham sitter advokaten hans. Det er gått et halvt år siden en fest der Jonas skal ha slått ned en annen ungdom. Nå åpnes en dør bak et langt bord, og tre personer kommer inn. Alle i rommet reiser seg. Rettssaken har begynt."
+        },
+        {
+            "type": "text",
+            "content": "Jonas er en oppdiktet person, men det som skjer med ham, skjer hver dag i norske rettssaler. I denne artikkelen følger vi saken hans. Hvem er alle menneskene i rommet? Hvem bestemmer om han er skyldig? Og hva skjer hvis han mener dommen er feil?"
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Rettssal med dommerbord, vitneboks og tilhørerbenker",
+            "caption": "En rettssal er ofte et ganske vanlig rom. Det som gjør den spesiell, er reglene for hva som skjer der."
+        },
+        {
+            "type": "header",
+            "text": "Den tredje makta"
+        },
+        {
+            "type": "text",
+            "content": "I Norge er makta delt i tre. Stortinget lager lovene, regjeringen styrer landet, og domstolene avgjør saker der noen er uenige eller mistenkt for å ha brutt loven. Domstolene er altså den tredje statsmakta (Gisle, 2025a). Du kan lese mer om hvordan makta er delt, i artikkelen om [maktaktører i Norge](/samfunnskunnskap/styringsformer/km-12-maktaktørar)."
+        },
+        {
+            "type": "text",
+            "content": "At domstolene skal være uavhengige, er en av grunnsteinene i en [rettsstat](/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat). Det betyr at verken regjeringen eller Stortinget kan bestemme hva en dommer skal mene i en sak. Grunnloven sier at en dommer under 70 år bare kan fjernes fra jobben sin gjennom en dom, og ikke kan flyttes mot sin vilje (Gisle, 2025a)."
+        },
+        {
+            "type": "header",
+            "text": "To slags saker: straff og uenighet"
+        },
+        {
+            "type": "text",
+            "content": "Domstolene behandler to hovedtyper saker. Den første er straffesaker. En straffesak er en sak der staten mener at en person eller en bedrift har gjort noe straffbart (Store norske leksikon, 2024). Det er påtalemyndigheten, altså de som leder etterforskningen, som tar saken til retten. Saken til Jonas er en straffesak."
+        },
+        {
+            "type": "text",
+            "content": "Den andre typen er sivile saker. Det er saker som ikke handler om straff, men om at to parter er uenige. Store norske leksikon gir to eksempler: naboer som krangler om trær, og foreldre som er uenige om hvor barna skal bo etter et brudd (Mohseni, 2023). Mange slike saker starter i forliksrådet. Hver kommune har et forliksråd med tre vanlige folk, valgt av kommunestyret for fire år. De prøver først å få partene til å bli enige, og kan i enkle saker også avsi dom (Reusch & Aasland, 2026)."
+        },
+        {
+            "type": "header",
+            "text": "Tre trinn i en trapp"
+        },
+        {
+            "type": "text",
+            "content": "De vanlige domstolene i Norge er ordnet som en trapp med tre trinn: tingretten, lagmannsretten og Høyesterett (Domstolloven, 1915). En sak starter nederst og kan klatre oppover hvis noen er misfornøyd med avgjørelsen."
+        },
+        {
+            "type": "list",
+            "items": [
+                "Tingretten er nederste trinn. Det er her nesten alle saker starter. I dag finnes det 28 tingretter rundt om i landet. Etter en reform i 2021 var det bare 23, men i 2025 ble seks av dem delt opp i elleve nye (Gisle, 2025b).",
+                "Lagmannsretten er andre trinn. Det finnes seks lagmannsretter, blant annet Borgarting i Oslo, Gulating i Bergen og Hålogaland i Tromsø. Oppgaven er å behandle saker som er anket fra tingretten (Keiserud & Gisle, 2026).",
+                "Høyesterett er øverste trinn. Det finnes bare én Høyesterett, og den har 20 dommere. Høyesterett avgjør litt over 100 saker i året (Sunde, 2026)."
+            ]
+        },
+        {
+            "type": "header",
+            "text": "Hvem er hvem i rettssalen?"
+        },
+        {
+            "type": "text",
+            "content": "Tilbake til Jonas. I rommet er det mange mennesker, og alle har sin egen jobb. Aktor kommer fra påtalemyndigheten. Aktor leser opp tiltalen, altså hva Jonas er anklaget for, og må bevise at han er skyldig. Til slutt ber aktor om straff eller frifinnelse. På den andre siden sitter forsvareren. Forsvareren er advokaten til Jonas og skal passe på rettighetene hans. Retten oppnevner forsvareren, og staten betaler (Norges domstoler, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Jonas selv kalles tiltalte. Han kan fortelle sin versjon, men han har ingen plikt til å si noe. Etter ham forklarer vitnene seg, altså folk som så eller hørte noe den kvelden. Den som ble slått, kan ha en egen advokat, en bistandsadvokat. Til slutt oppsummerer aktor og forsvareren saken, og Jonas får si noen siste ord (Norges domstoler, u.å.)."
+        },
+        {
+            "type": "component",
+            "name": "FactBox",
+            "props": {
+                "title": "Ord du må kunne",
+                "content": "Tiltale: den skriftlige anklagen mot en person i en straffesak. Aktor: den som legger fram saken for påtalemyndigheten og prøver å bevise at tiltalte er skyldig. Forsvarer: advokaten som hjelper den tiltalte. Fagdommer: en dommer som er utdannet jurist og har det som jobb. Meddommer: en vanlig person uten juridisk utdanning som er med og dømmer. Anke: å be en høyere domstol om å se på saken på nytt."
+            }
+        },
+        {
+            "type": "text",
+            "content": "Bak det lange bordet sitter dommerne. I en vanlig straffesak i tingretten er det én fagdommer og to meddommere (Gisle, 2025b). Fagdommeren leder rettsmøtet og skriver dommen. Når alle har snakket, går de tre dommerne inn på et eget rom og diskuterer saken. De får bare bruke det som ble lagt fram i rettssalen, og samtalen deres er hemmelig (Norges domstoler, u.å.)."
+        },
+        {
+            "type": "text",
+            "content": "Nå er det din tur. Følg saken til Jonas fra tingretten og så langt den kan komme."
+        },
+        {
+            "type": "component",
+            "name": "RettssakReisen",
+            "props": {}
+        },
+        {
+            "type": "text",
+            "content": "Så du hvordan saken flyttet seg oppover? Hver gang kom nye dommere inn og så på saken med friske øyne. Det er hele poenget med trappen."
+        },
+        {
+            "type": "header",
+            "text": "Vanlige folk som dommere"
+        },
+        {
+            "type": "text",
+            "content": "Meddommerne er kanskje det mest overraskende i rettssalen. De er lærere, sykepleiere, snekkere og pensjonister. Kommunestyret velger dem for fire år om gangen. For å bli valgt må du være over 21 og under 70 år, kunne godt nok norsk og være egnet til oppgaven (Domstolloven, 1915). I lagmannsretten kan hver meddommer regne med å sitte i rundt to saker i året."
+        },
+        {
+            "type": "text",
+            "content": "Meddommerne har like mye å si som fagdommeren. I tingretten må minst to av de tre dommerne mene at tiltalte er skyldig. Det betyr at to vanlige folk kan stemme ned en utdannet dommer (Gisle & Elden, 2024). Tanken er at den tiltalte skal dømmes av folk som ligner ham selv, og at vanlige folk har livserfaring som er nyttig når man skal vurdere hva som er troverdig. Ordningen er også en del av folkestyret: folket er med på den dømmende makta."
+        },
+        {
+            "type": "text",
+            "content": "Før 2018 hadde Norge også jury i lagmannsretten. Juryen var en gruppe vanlige folk som avgjorde skyldspørsmålet uten fagdommerne. Juryordningen ble avskaffet fra 1. januar 2018 (Keiserud & Gisle, 2026). I dag sitter meddommerne sammen med fagdommerne og diskuterer saken med dem."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Meddommere og fagdommer diskuterer rundt et bord",
+            "caption": "Meddommerne er vanlige folk. De har én stemme hver, akkurat som fagdommeren."
+        },
+        {
+            "type": "header",
+            "text": "Hvorfor kan saken prøves på nytt?"
+        },
+        {
+            "type": "text",
+            "content": "Dommere er mennesker, og mennesker kan ta feil. Derfor kan både den som blir dømt og påtalemyndigheten anke en dom. Å anke betyr å be en høyere domstol om å se på saken igjen. I straffesaker er fristen 14 dager fra partene får vite om dommen (Aasland mfl., 2025)."
+        },
+        {
+            "type": "text",
+            "content": "Lagmannsretten må ikke ta alle saker. Den kan si nei hvis det er helt klart at en ny runde ikke vil føre til noe annet resultat (Aasland mfl., 2025). Men tar lagmannsretten saken, starter alt på nytt. Vitnene forklarer seg igjen, og bevisene blir lagt fram på nytt. Når skyldspørsmålet er anket, sitter det to fagdommere og fem meddommere. Minst fem av de sju må mene at tiltalte er skyldig. Hvis ikke, blir han frifunnet (Gisle & Elden, 2024)."
+        },
+        {
+            "type": "text",
+            "content": "Tenk på det som å få rettet en prøve av en ny lærer, i tillegg til den første. Hvis to forskjellige grupper, uavhengig av hverandre, kommer fram til at du er skyldig, er det mindre sjanse for at det er feil."
+        },
+        {
+            "type": "header",
+            "text": "Høyesterett: Saker som gjelder mange"
+        },
+        {
+            "type": "text",
+            "content": "Kan Jonas anke helt til Høyesterett? Han kan prøve. Men anken går først til Høyesteretts ankeutvalg, der tre dommere ser på saken. De sier bare ja hvis saken har betydning utover den ene saken (Aasland mfl., 2025). Bare et fåtall saker kommer helt opp (Sunde, 2026)."
+        },
+        {
+            "type": "text",
+            "content": "Grunnen er at Høyesterett har en annen jobb enn de to andre trinnene. Høyesterett skal passe på at loven blir brukt likt over hele landet, gjøre uklare lover klarere, og finne svar der loven ikke sier noe (Sunde, 2026). Når andre domstoler senere får lignende saker, ser de på hvordan Høyesterett løste dem. En dom i Høyesterett er altså ikke bare et svar til én person, men en rettesnor for mange."
+        },
+        {
+            "type": "text",
+            "content": "Høyesterett er gammel. Grunnloven fra 1814 sa at Norge skulle ha en Høyesterett, og den første dommen kom i 1815 (Sunde, 2026). Du kan lese mer om dette i artikkelen om [Grunnloven](/samfunnskunnskap/styringsformer/grunnloven)."
+        },
+        {
+            "type": "image",
+            "src": "/images/placeholder.webp",
+            "alt": "Høyesteretts bygning en klar vinterdag",
+            "caption": "Høyesterett avgjør litt over 100 saker i året. Avgjørelsene blir en rettesnor for domstolene under."
+        },
+        {
+            "type": "header",
+            "text": "Oppsummering"
+        },
+        {
+            "type": "text",
+            "content": "Domstolene er den tredje statsmakta. De avgjør straffesaker, der staten anklager noen for et lovbrudd, og sivile saker, der to parter er uenige. Systemet er en trapp med tre trinn: 28 tingretter, seks lagmannsretter og én Høyesterett. I rettssalen har aktor, forsvareren, tiltalte, vitnene og dommerne hver sin rolle. Vanlige folk sitter som meddommere og har like mye å si som fagdommerne. En dom kan ankes, slik at nye dommere kan se på saken. Det skal gjøre det mindre sannsynlig at noen blir dømt urettferdig. Vil du vite hva som skjer før en sak kommer til retten, kan du lese om [politiet](/samfunnskunnskap/rettsstaten/politiet)."
+        },
+        {
+            "type": "component",
+            "name": "Kildeliste",
+            "props": {
+                "sources": [
+                    "Aasland, G., Schei, T. & Elden, J. C. (2025). *Anke – straffedommer*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/anke_-_straffedommer)",
+                    "Domstolloven. (1915). *Lov om domstolene* (LOV-1915-08-13-5). Lovdata. Hentet 14.11.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/1915-08-13-5)",
+                    "Gisle, J. (2025a). *Domstol*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/domstol)",
+                    "Gisle, J. (2025b). *Tingrett*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/tingrett)",
+                    "Gisle, J. & Elden, J. C. (2024). *Meddommer*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/meddommer)",
+                    "Keiserud, E. & Gisle, J. (2026). *Lagmannsrett*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/lagmannsrett)",
+                    "Mohseni, M. H. (2023). *Sivil sak*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/sivil_sak)",
+                    "Norges domstoler. (u.å.). *Straffesak med meddommere*. Hentet 14.11.2026 fra [domstol.no](https://www.domstol.no/no/straffesak/straffesak-med-meddommere)",
+                    "Reusch, C. & Aasland, G. (2026). *Forliksråd*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/forliksråd)",
+                    "Store norske leksikon. (2024). *Straffesak*. Hentet 14.11.2026 fra [snl.no](https://snl.no/straffesak)",
+                    "Sunde, J. Ø. (2026). *Høyesterett*. Store norske leksikon. Hentet 14.11.2026 fra [snl.no](https://snl.no/Høyesterett)"
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Oppgaver",
+            "props": {
+                "forstaa": [
+                    "Hva er forskjellen på en straffesak og en sivil sak? Gi ett eksempel på hver.",
+                    "Hva heter de tre trinnene i domstolstrappen, og hvor mange domstoler finnes det på hvert trinn?",
+                    "Hvilken jobb har aktor, og hvilken jobb har forsvareren?",
+                    "Hvem kan bli meddommer, og hvem velger dem?"
+                ],
+                "reflekter": [
+                    "Forklar med egne ord hvorfor det er viktig at domstolene er uavhengige av regjeringen og Stortinget.",
+                    "I tingretten kan to meddommere stemme ned en utdannet fagdommer. Hva er fordelene og ulempene med det?",
+                    "Hvorfor tror du det må være minst fem av sju dommere i lagmannsretten for å dømme noen, og ikke bare fire?",
+                    "Høyesterett tar bare saker som betyr noe for mange andre. Er det rettferdig overfor den som mener dommen sin er feil? Begrunn svaret."
+                ],
+                "gaaVidere": [
+                    "Diskuter i gruppa: Ville dere likt å være meddommer? Hva ville vært vanskeligst?",
+                    "Finn en nyhetssak om en dom fra Høyesterett. Skriv et kort avsnitt om hva saken handlet om, og hvorfor den kan ha betydning for mange.",
+                    "Lag en tegning eller tegneserie som viser veien en straffesak kan gå, fra tingretten til Høyesterett."
+                ]
+            }
+        },
+        {
+            "type": "component",
+            "name": "Quiz",
+            "props": {
+                "questions": [
+                    {
+                        "question": "Hvilke tre trinn har de vanlige domstolene i Norge?",
+                        "options": [
+                            "Forliksrådet, tingretten og Stortinget",
+                            "Tingretten, lagmannsretten og Høyesterett",
+                            "Politiet, tingretten og regjeringen",
+                            "Kommunen, fylket og staten"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Saken starter i tingretten, kan ankes til lagmannsretten, og i noen tilfeller videre til Høyesterett."
+                    },
+                    {
+                        "question": "Hvem sitter vanligvis som dommere i en straffesak i tingretten?",
+                        "options": [
+                            "Én fagdommer og to meddommere",
+                            "Ti jurymedlemmer",
+                            "Fem høyesterettsdommere",
+                            "Bare én fagdommer"
+                        ],
+                        "correctAnswer": 0,
+                        "explanation": "Én fagdommer og to meddommere. Alle tre har én stemme."
+                    },
+                    {
+                        "question": "Hva betyr det å anke en dom?",
+                        "options": [
+                            "Å klage til politiet",
+                            "Å be en høyere domstol se på saken på nytt",
+                            "Å be om kortere straff hos fengselet",
+                            "Å trekke saken"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Å anke betyr å be en høyere domstol om å vurdere saken igjen. I straffesaker er fristen 14 dager."
+                    },
+                    {
+                        "question": "Når slipper Høyesteretts ankeutvalg en straffesak gjennom?",
+                        "options": [
+                            "Alltid, hvis den tiltalte ber om det",
+                            "Når saken har betydning utover den ene saken",
+                            "Når aktor og forsvareren er enige",
+                            "Aldri, Høyesterett tar bare sivile saker"
+                        ],
+                        "correctAnswer": 1,
+                        "explanation": "Høyesterett skal avgjøre spørsmål som betyr noe for mange andre saker, ikke prøve hver sak en tredje gang."
+                    },
+                    {
+                        "question": "Hvor gammel må du være for å bli valgt som meddommer?",
+                        "options": [
+                            "Over 16 år",
+                            "Over 18 år",
+                            "Over 21 og under 70 år",
+                            "Over 30 år"
+                        ],
+                        "correctAnswer": 2,
+                        "explanation": "Domstolloven sier at meddommere må være over 21 og under 70 år når valgperioden starter."
+                    }
+                ]
+            }
+        }
+    ],
+    "timeline": []
+}
