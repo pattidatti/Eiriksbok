@@ -200,7 +200,7 @@ function Nettverk({ modus, beat }: { modus: Modus; beat: number }) {
             <AnimatePresence>
                 {modus === 'poler' && beat === 0 && <Brikke key="p0" tekst="En pol = et maktsentrum" />}
                 {modus === 'poler' && beat === 1 && <Brikke key="p1" tekst="Bipolar: to poler" />}
-                {modus === 'poler' && beat === 2 && <Brikke key="p2" tekst="Land etter land valgte side" />}
+                {modus === 'poler' && beat === 2 && <Brikke key="p2" tekst="To poler i balanse" />}
                 {modus === 'poler' && beat === 3 && <Brikke key="p3" tekst="Unipolar: én pol" />}
                 {modus === 'poler' && beat === 4 && <Brikke key="p4" tekst="Største økonomi, baser over hele kloden" />}
                 {modus === 'etter' && beat === 0 && <Brikke key="e0" tekst="Historiens slutt?" strek />}

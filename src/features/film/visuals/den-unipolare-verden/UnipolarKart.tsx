@@ -6,18 +6,17 @@ import type { VisualProps } from '../../types';
 import { Teller } from '../shared';
 
 /**
- * Kart over den unipolare verden, i fem modus:
+ * Kart over den unipolare verden, i fire modus:
  * «sko»: joggeskoens reise fra USA via Kina og Vietnam til Norge, og handelslinjene rundt kloden.
  * «gevinst»: Asia får jobbene, de gamle industribyene i USA og Europa mister dem.
  * «nato»: landene i øst går vestover, NATO i 1999 og 2004, og grensen sett fra Moskva.
  * «terror»: 11. september som steder på kartet, så krigene i Afghanistan og Irak.
- * «krise»: finanskrisen sprer seg som ringer fra New York.
  */
 
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'sko' | 'gevinst' | 'nato' | 'terror' | 'krise';
+type Modus = 'sko' | 'gevinst' | 'nato' | 'terror';
 
 const USA = 840;
 const RUSSLAND = 643;
@@ -95,7 +94,6 @@ const FARGE = {
     vietnam: '#0d9488',
     norge: '#0f766e',
     krig: '#f97316',
-    krise: '#ef4444',
     gra: '#a8a29e',
 };
 
@@ -117,14 +115,13 @@ function visningFor(modus: Modus, beat: number): { midt: LngLat | null; zoom: nu
     if (modus === 'gevinst' && beat === 1) return { midt: [100, 25], zoom: 1.7 };
     if (modus === 'gevinst' && beat === 2) return { midt: [-35, 45], zoom: 1.6 };
     if (modus === 'nato' && beat >= 5) return { midt: [33, 56], zoom: 1.6 };
-    if (modus === 'terror' && beat <= 3) return { midt: [-76.5, 39.8], zoom: 7 };
+    if (modus === 'terror' && beat <= 2) return { midt: [-76.5, 39.8], zoom: 7 };
+    if (modus === 'terror' && beat === 3) return { midt: [-40, 30], zoom: 1.25 };
     if (modus === 'terror' && beat === 4) return { midt: [-10, 38], zoom: 1.35 };
-    if (modus === 'krise' && beat <= 1) return { midt: [-74, 40.7], zoom: 3.2 };
-    if (modus === 'krise' && beat === 4) return { midt: [-92, 40], zoom: 2.4 };
     return { midt: null, zoom: 1 };
 }
 
-function fargeFor(modus: Modus, beat: number, id: number, krisefront: number, sentre: Map<number, LngLat>): string {
+function fargeFor(modus: Modus, beat: number, id: number): string {
     if (modus === 'sko') {
         if (beat >= 1 && id === USA) return FARGE.usa;
         if (beat >= 2 && id === KINA) return FARGE.kina;
@@ -146,45 +143,10 @@ function fargeFor(modus: Modus, beat: number, id: number, krisefront: number, se
         if (beat === 0 && [112, 804, 498].includes(id)) return FARGE.ost;
         return FARGE.land;
     }
-    if (modus === 'terror') {
-        if (id === USA) return beat >= 5 ? '#93c5fd' : FARGE.usa;
-        if (beat >= 4 && (id === AFGHANISTAN || id === IRAK)) return FARGE.krig;
-        return FARGE.land;
-    }
-    // krise
-    if (id === USA) return FARGE.krise;
-    if (beat >= 2) {
-        const s = sentre.get(id);
-        if (s && avstand(s, STED.newyork) < krisefront) return '#fca5a5';
-    }
+    // terror
+    if (id === USA) return beat >= 5 ? '#93c5fd' : FARGE.usa;
+    if (beat >= 4 && (id === AFGHANISTAN || id === IRAK)) return FARGE.krig;
     return FARGE.land;
-}
-
-/** Grov avstand i grader mellom to punkter (nok til å la krisa spre seg i ringer). */
-function avstand(a: LngLat, b: LngLat) {
-    const dx = (a[0] - b[0]) * Math.cos(((a[1] + b[1]) / 2) * (Math.PI / 180));
-    const dy = a[1] - b[1];
-    return Math.sqrt(dx * dx + dy * dy);
-}
-
-/** Hvor langt krisa har nådd (grader fra New York), steg for steg slik at land ikke tegnes om hvert bilde. */
-function useKrisefront(aktiv: boolean, playing: boolean) {
-    const [front, setFront] = useState(0);
-    useEffect(() => {
-        if (!aktiv || !playing) return;
-        let n = 0;
-        const id = setInterval(() => {
-            n += 12;
-            setFront(n);
-            if (n > 200) clearInterval(id);
-        }, 250);
-        return () => {
-            clearInterval(id);
-            setFront(0);
-        };
-    }, [aktiv, playing]);
-    if (!aktiv) return 999;
-    return playing ? front : 200;
 }
 
 export function UnipolarKart({ beat, playing, props }: VisualProps<{ modus?: Modus }>) {
@@ -228,16 +190,6 @@ export function UnipolarKart({ beat, playing, props }: VisualProps<{ modus?: Mod
         return [B / 2 + (x - vis.x) * vis.k, H / 2 + (y - vis.y) * vis.k];
     };
 
-    const sentre = useMemo(() => {
-        const m = new Map<number, LngLat>();
-        for (const g of geographies) {
-            const c = geoPath().centroid(g as never);
-            if (Number.isFinite(c[0])) m.set(Number(g.id), c as LngLat);
-        }
-        return m;
-    }, [geographies]);
-    const krisefront = useKrisefront(modus === 'krise' && beat >= 2, playing);
-
     return (
         <div className="absolute inset-0 overflow-hidden" style={{ background: FARGE.hav }}>
             <svg
@@ -249,13 +201,13 @@ export function UnipolarKart({ beat, playing, props }: VisualProps<{ modus?: Mod
                     <Land
                         geographies={geographies}
                         sti={sti}
-                        farge={(id) => fargeFor(modus, beat, id, krisefront, sentre)}
-                        nokkel={`${modus}-${beat}-${krisefront}`}
+                        farge={(id) => fargeFor(modus, beat, id)}
+                        nokkel={`${modus}-${beat}`}
                     />
                     {modus === 'nato' && (
                         <path
                             d={sti(KRIM as never) ?? ''}
-                            fill={fargeFor(modus, beat, UKRAINA, krisefront, sentre)}
+                            fill={fargeFor(modus, beat, UKRAINA)}
                             stroke={FARGE.kant}
                             strokeWidth={0.8}
                             vectorEffect="non-scaling-stroke"
@@ -321,9 +273,11 @@ export function UnipolarKart({ beat, playing, props }: VisualProps<{ modus?: Mod
 
                 {modus === 'terror' && (
                     <>
-                        {beat >= 1 && beat <= 3 && <Nål pos={skjerm(STED.newyork)} tekst="New York" />}
-                        {beat >= 1 && beat <= 3 && <Nål pos={skjerm(STED.pentagon)} tekst="Pentagon" under />}
-                        {beat >= 1 && beat <= 3 && <Nål pos={skjerm(STED.pennsylvania)} tekst="Pennsylvania" venstre />}
+                        {beat >= 1 && beat <= 2 && <Nål pos={skjerm(STED.newyork)} tekst="New York" />}
+                        {beat >= 1 && beat <= 2 && <Nål pos={skjerm(STED.pentagon)} tekst="Pentagon" under />}
+                        {beat >= 1 && beat <= 2 && <Nål pos={skjerm(STED.pennsylvania)} tekst="Pennsylvania" venstre />}
+                        {beat === 3 && <Nål pos={skjerm(STED.newyork)} tekst="" vis={false} />}
+                        {beat === 3 && <Etikett pos={skjerm([-100, 40])} tekst="USA" farge={FARGE.usa} stor />}
                         {beat === 0 && <Etikett pos={skjerm([-76.5, 37])} tekst="USA" farge={FARGE.usa} stor />}
                         {beat === 4 && <Pil fra={skjerm([-80, 38])} til={skjerm(STED.afghanistan)} farge={FARGE.krig} bue={-0.15} />}
                         {beat === 4 && <Pil fra={skjerm([-80, 38])} til={skjerm(STED.irak)} farge={FARGE.krig} bue={-0.1} forsinkelse={1.2} />}
@@ -332,12 +286,6 @@ export function UnipolarKart({ beat, playing, props }: VisualProps<{ modus?: Mod
                     </>
                 )}
 
-                {modus === 'krise' && (
-                    <>
-                        <Nål pos={skjerm(STED.newyork)} tekst={beat <= 1 ? 'Wall Street, New York' : 'New York'} />
-                        {beat >= 2 && <Ringer pos={skjerm(STED.newyork)} />}
-                    </>
-                )}
             </svg>
 
             <AnimatePresence>
@@ -355,19 +303,13 @@ export function UnipolarKart({ beat, playing, props }: VisualProps<{ modus?: Mod
                 {modus === 'nato' && beat === 6 && <Brikke key="n6" tekst="Russland: svakt og bittert" farge="rod" />}
                 {modus === 'terror' && beat === 0 && <Brikke key="t0" tekst="11. september 2001" />}
                 {modus === 'terror' && beat === 1 && <Brikke key="t1" tekst="Kaprede fly" />}
-                {modus === 'terror' && beat === 2 && <Brikke key="t2" tekst="Nesten 3000 mennesker døde" farge="rod" />}
                 {modus === 'terror' && beat === 3 && <Brikke key="t3" tekst="En fiende uten hær og uten stat" />}
                 {modus === 'terror' && beat === 4 && <Brikke key="t4" tekst="Afghanistan 2001, Irak 2003" />}
                 {modus === 'terror' && beat === 5 && <Brikke key="t5" tekst="Lange og dyre kriger" />}
-                {modus === 'krise' && beat === 0 && <Brikke key="k0" tekst="September 2008: Lehman Brothers konkurs" farge="rod" />}
-                {modus === 'krise' && beat === 1 && <Brikke key="k1" tekst="Huslån som ikke kunne betales" />}
-                {modus === 'krise' && beat === 2 && <Brikke key="k2" tekst="Millioner mistet jobb og bolig" farge="rod" />}
-                {modus === 'krise' && beat === 3 && <Brikke key="k3" tekst="Staten redder bankene" />}
-                {modus === 'krise' && beat === 4 && <Brikke key="k4" tekst="Mistet kontrollen over egen økonomi" />}
             </AnimatePresence>
-            {modus === 'krise' && beat === 3 && (
-                <div className="absolute bottom-[8%] left-1/2 -translate-x-1/2">
-                    <Teller verdi={700} etikett="milliarder dollar i krisepakker" prefiks="ca. " forsinkelse={0.6} tone="rod" />
+            {modus === 'terror' && beat === 2 && (
+                <div className="absolute bottom-[8%] inset-x-0 flex justify-center">
+                    <Teller verdi={3000} etikett="mennesker mistet livet" prefiks="nesten " forsinkelse={0.6} tone="rod" />
                 </div>
             )}
         </div>
@@ -597,27 +539,6 @@ function Grense({ punkter }: { punkter: [number, number][] }) {
                 animate={{ pathLength: 1 }}
                 transition={{ duration: 1.2, delay: 0.2 }}
             />
-        </g>
-    );
-}
-
-/** Ringer som brer seg utover fra et punkt. */
-function Ringer({ pos }: { pos: [number, number] }) {
-    return (
-        <g>
-            {[0, 1, 2].map((i) => (
-                <motion.circle
-                    key={i}
-                    cx={pos[0]}
-                    cy={pos[1]}
-                    fill="none"
-                    stroke="#dc2626"
-                    strokeWidth={5}
-                    initial={{ r: 10, opacity: 0.9 }}
-                    animate={{ r: 900, opacity: 0 }}
-                    transition={{ duration: 4.5, delay: i * 1.5, repeat: Infinity, ease: 'easeOut' }}
-                />
-            ))}
         </g>
     );
 }

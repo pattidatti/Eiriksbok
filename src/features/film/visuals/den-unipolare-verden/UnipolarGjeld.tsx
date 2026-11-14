@@ -33,7 +33,7 @@ export function UnipolarGjeld({ beat, props }: VisualProps<{ modus?: Modus }>) {
                 {modus === 'krav' && beat === 1 && <Brikke key="k1" tekst="Klarer ikke å betale" farge="rod" />}
                 {modus === 'krav' && beat === 2 && <Brikke key="k2" tekst="Strukturtilpasning: lån med krav" />}
                 {modus === 'syn' && beat === 2 && <Brikke key="s2" tekst="Nykolonialisme" />}
-                {modus === 'syn' && beat === 3 && <Brikke key="s3" tekst="Protester" farge="rod" />}
+                {modus === 'syn' && beat === 3 && <Brikke key="s3" tekst="Følger av kravene: protester" farge="rod" />}
             </AnimatePresence>
         </div>
     );
@@ -89,10 +89,10 @@ function Krav({ beat }: { beat: number }) {
                     <text x={150} y={78} textAnchor="middle" fontSize={34} fontWeight={900} fill="#0f172a">
                         IMF
                     </text>
-                    <text x={150} y={334} textAnchor="middle" fontSize={28} fontWeight={800} fill="#334155">
+                    <text x={150} y={336} textAnchor="middle" fontSize={29} fontWeight={800} fill="#0f172a">
                         Det internasjonale
                     </text>
-                    <text x={150} y={368} textAnchor="middle" fontSize={28} fontWeight={800} fill="#334155">
+                    <text x={150} y={372} textAnchor="middle" fontSize={29} fontWeight={800} fill="#0f172a">
                         pengefondet
                     </text>
                 </g>
@@ -119,11 +119,11 @@ function Krav({ beat }: { beat: number }) {
                         animate={{ opacity: 1, x: 0, y: 0 }}
                         transition={{ duration: 0.9 }}
                     >
-                        <rect x={620} y={120} width={520} height={680} rx={14} fill="#ffffff" stroke="#0f172a" strokeWidth={5} />
-                        <text x={880} y={190} textAnchor="middle" fontSize={44} fontWeight={900} fill="#0f172a">
+                        <rect x={620} y={165} width={520} height={635} rx={14} fill="#ffffff" stroke="#0f172a" strokeWidth={5} />
+                        <text x={880} y={222} textAnchor="middle" fontSize={44} fontWeight={900} fill="#0f172a">
                             LÅN
                         </text>
-                        <text x={880} y={240} textAnchor="middle" fontSize={28} fontWeight={700} fill="#64748b">
+                        <text x={880} y={264} textAnchor="middle" fontSize={28} fontWeight={700} fill="#475569">
                             på disse vilkårene:
                         </text>
                         {KRAV.map((k, i) =>
@@ -133,15 +133,15 @@ function Krav({ beat }: { beat: number }) {
                                     initial={{ opacity: 0, scale: 1.4 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.3 + (i % 2) * 1.2, type: 'spring', stiffness: 220, damping: 18 }}
-                                    style={{ transformOrigin: `880px ${310 + i * 95}px` }}
+                                    style={{ transformOrigin: `880px ${325 + i * 95}px` }}
                                 >
-                                    <rect x={650} y={275 + i * 95} width={460} height={72} rx={12} fill="#fef2f2" stroke="#b91c1c" strokeWidth={4} />
-                                    <text x={880} y={320 + i * 95} textAnchor="middle" fontSize={32} fontWeight={800} fill="#7f1d1d">
+                                    <rect x={650} y={290 + i * 95} width={460} height={72} rx={12} fill="#fef2f2" stroke="#b91c1c" strokeWidth={4} />
+                                    <text x={880} y={335 + i * 95} textAnchor="middle" fontSize={32} fontWeight={800} fill="#7f1d1d">
                                         {k.tekst}
                                     </text>
                                 </motion.g>
                             ) : (
-                                <rect key={k.tekst} x={650} y={275 + i * 95} width={460} height={72} rx={12} fill="#f1f5f9" />
+                                <rect key={k.tekst} x={650} y={290 + i * 95} width={460} height={72} rx={12} fill="#f1f5f9" />
                             )
                         )}
                         {/* Lenka fra papiret til landet */}
@@ -188,7 +188,7 @@ function Syn({ beat }: { beat: number }) {
             <AnimatePresence>
                 {beat <= 1 && (
                     <motion.g key="to" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                        <Panel x={120} tittel="Nødvendig medisin" undertittel="for syke økonomier" farge="#0d9488" aktiv={beat === 0}>
+                        <Panel x={120} avsender="Noen mener:" tittel="Nødvendig medisin" undertittel="for syke økonomier" farge="#0d9488" aktiv={beat === 0}>
                             <g transform="translate(430 300)">
                                 <rect x={-110} y={-45} width={220} height={90} rx={45} fill="#ffffff" stroke="#0f172a" strokeWidth={5} />
                                 <path d="M 0 -45 L 0 45 L -65 45 A 45 45 0 0 1 -65 -45 Z" fill="#14b8a6" />
@@ -197,7 +197,7 @@ function Syn({ beat }: { beat: number }) {
                         </Panel>
                         {beat >= 1 && (
                             <motion.g initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-                                <Panel x={860} tittel="Kolonistyre" undertittel="uten soldater, gjennom gjeld" farge="#b91c1c" aktiv>
+                                <Panel x={860} avsender="Andre mener:" tittel="Kolonistyre" undertittel="uten soldater, gjennom gjeld" farge="#b91c1c" aktiv>
                                     <g transform="translate(1170 300)">
                                         {[0, 1, 2, 3].map((i) => (
                                             <ellipse
@@ -271,7 +271,7 @@ function Syn({ beat }: { beat: number }) {
                         );
                     })}
                     <text x={800} y={830} textAnchor="middle" fontSize={36} fontWeight={800} fill="#0f172a">
-                        Mange mistet jobben, og prisene steg
+                        Mange offentlig ansatte mistet jobben, og prisene steg
                     </text>
                 </motion.g>
             )}
@@ -281,6 +281,7 @@ function Syn({ beat }: { beat: number }) {
 
 function Panel({
     x,
+    avsender,
     tittel,
     undertittel,
     farge,
@@ -288,6 +289,7 @@ function Panel({
     children,
 }: {
     x: number;
+    avsender: string;
     tittel: string;
     undertittel: string;
     farge: string;
@@ -298,6 +300,9 @@ function Panel({
         <g opacity={aktiv ? 1 : 0.55}>
             <rect x={x} y={120} width={620} height={660} rx={28} fill="#ffffff" stroke={farge} strokeWidth={8} />
             {children}
+            <text x={x + 310} y={460} textAnchor="middle" fontSize={36} fontWeight={700} fill="#475569">
+                {avsender}
+            </text>
             <text x={x + 310} y={540} textAnchor="middle" fontSize={56} fontWeight={900} fill={farge}>
                 {tittel}
             </text>
