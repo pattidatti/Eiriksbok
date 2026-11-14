@@ -1,0 +1,206 @@
+{
+    "id": "retoriske-grep",
+    "tittel": "Retoriske grep: Små teknikker, store ord",
+    "kilde": "/norsk/retorikk/retoriske-grep",
+    "bilde": "/images/retorikk/retoriske-grep-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 6, "begrunnelse": "Telt fra artikkelen: den nevner seks grep (anafora, treklang, kontrast, retorisk spørsmål, metafor og klimaks)." },
+        { "tall": "seks", "begrunnelse": "Samme telling som over: artikkelen lister seks grep." }
+    ],
+    "vurdering": { "dato": "2026-11-14", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "apning",
+            "lyd": "rom",
+            "kapittel": "To setninger",
+            "visual": { "type": "RetoriskeGrepSal", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "Tenk deg en stor sal fylt med folk. En taler går opp på scenen." },
+                { "si": "Hun sier: Vi vil ha endring, rettferdighet og fremtiden tilbake." },
+                { "si": "Setningen er grei. Men den glir forbi oss, og vi glemmer den nesten med en gang." },
+                { "si": "Så sier hun det samme på en ny måte: Vi vil ha endring. Vi vil ha rettferdighet. Vi vil ha fremtiden tilbake." },
+                { "si": "Nå treffer det. Men hvorfor? Ordene betyr jo akkurat det samme." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Retoriske grep",
+                    "undertittel": "Små teknikker som gjør ord til noe vi husker",
+                    "bilde": "/images/retorikk/retoriske-grep-hero.webp",
+                    "tall": [{ "verdi": 6, "etikett": "grep i denne filmen", "fraBeat": 2, "omtrent": false }],
+                    "sporsmal": { "tekst": "Hvordan får ord oss til å lytte?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Svaret er retoriske grep. Det er små teknikker som gjør en flat påstand til ord vi husker." },
+                { "si": "Etos, patos og logos, som du møtte i forrige artikkel, forteller hva slags appell taleren bruker. Grepene er noe annet. De er selve håndverket i setningen." },
+                { "si": "I denne filmen åpner vi verktøykassa og ser på seks grep." },
+                { "si": "Når du kjenner dem igjen, ser du hvordan språket virker. Og du merker når noen prøver å bruke det mot deg." }
+            ]
+        },
+        {
+            "id": "anafora",
+            "kapittel": "Gjentakelse og tre",
+            "visual": { "type": "RetoriskeGrepTavle", "props": { "modus": "anafora" } },
+            "replikker": [
+                { "si": "Det første grepet heter anafora. Flere setninger starter med det samme ordet eller de samme ordene. Ta en vanlig setning: Vi må gjøre noe med klimaet nå." },
+                { "si": "Prøv heller: Vi må handle." },
+                { "si": "Vi må endre. Vi må gjøre det nå." },
+                { "si": "Hør hvordan det banker. Gjentakelsen bygger opp fart og kraft, og hjernen merker at noe er viktig." }
+            ]
+        },
+        {
+            "id": "churchill",
+            "visual": { "type": "RetoriskeGrepSal", "props": { "modus": "churchill" } },
+            "klokke": [null, null, null, null, null],
+            "replikker": [
+                { "si": "Den fjerde juni 1940 taler Winston Churchill i Underhuset, den britiske nasjonalforsamlingen i London." },
+                { "si": "Han sier: We shall fight on the beaches. Vi skal kjempe på strendene." },
+                { "si": "We shall fight on the landing grounds. Vi skal kjempe på landingsplassene." },
+                { "si": "We shall fight in the fields and in the streets. På markene og i gatene." },
+                { "si": "Det var ingen tilfeldig setning. Hver gang han sa we shall fight, banket han budskapet inn i dem som lyttet." }
+            ]
+        },
+        {
+            "id": "treklang",
+            "visual": { "type": "RetoriskeGrepTavle", "props": { "modus": "treklang" } },
+            "replikker": [
+                { "si": "Det andre grepet er treklang: tre ord eller setninger på rad." },
+                { "si": "Frihet, likhet, brorskap. Det var ropet fra den franske revolusjonen." },
+                { "si": "Veni, vidi, vici. Med de ordene meldte Julius Cæsar at han hadde vunnet slaget ved Zela.", "uttale": "Veni, vidi, vitsji. Med de ordene meldte Julius Cæsar at han hadde vunnet slaget ved Zela." },
+                { "si": "Og fra trafikkopplæringen: Stop, look, and listen. Stopp, se og lytt." }
+            ]
+        },
+        {
+            "id": "telling",
+            "visual": { "type": "RetoriskeGrepTavle", "props": { "modus": "telling" } },
+            "replikker": [
+                { "si": "Hvorfor akkurat tre? To ting virker tilfeldig." },
+                { "si": "Fire virker som for mye." },
+                { "si": "Tre føles fullstendig. Hjernen oppfatter tre punkter som et ferdig mønster." },
+                { "si": "Derfor finner du tre overalt. Tre brødre og tre ønsker i eventyrene. Raskere, bedre, billigere i reklamen." },
+                { "si": "Skal du overbevise noen, så prøv å samle argumentene dine i tre punkter." }
+            ]
+        },
+        {
+            "id": "kontrast",
+            "kapittel": "Motsetninger og spørsmål",
+            "visual": { "type": "RetoriskeGrepTavle", "props": { "modus": "kontrast" } },
+            "replikker": [
+                { "si": "Det tredje grepet er kontrast. Du setter to motsatte ting tett inntil hverandre, så begge blir tydeligere. Fagordet er antitese." },
+                { "si": "Charles Dickens begynner romanen To byer fra 1859 slik: Det var den beste av tider, det var den verste av tider." },
+                { "si": "Hjernen elsker å sammenligne. Derfor fester setningen seg." },
+                { "si": "Politikere bruker det samme grepet: De rike blir rikere, og de fattige blir fattigere." }
+            ]
+        },
+        {
+            "id": "valg",
+            "visual": { "type": "RetoriskeGrepBilde", "props": { "modus": "valg" } },
+            "replikker": [
+                { "si": "Kontrast gjør enda mer. Vi kan vente og miste alt, eller handle og redde noe. Nå tenker du at du må velge." },
+                { "si": "Når noen stiller opp to ting side om side, må vi velge side. Selv om det egentlig finnes mange flere muligheter." },
+                { "si": "Derfor elsker politikere kontrast. Virkeligheten blir til bare to ting, og da er det lettere for velgerne å bestemme seg." }
+            ]
+        },
+        {
+            "id": "sporsmal",
+            "visual": { "type": "RetoriskeGrepBilde", "props": { "modus": "sporsmal" } },
+            "replikker": [
+                { "si": "Det fjerde grepet er det retoriske spørsmålet. Det er et spørsmål der taleren verken venter eller ønsker svar." },
+                { "si": "Er vi ikke alle mennesker? Hvor lenge skal vi tåle dette?" },
+                { "si": "Taleren regner med at du allerede vet svaret. Og du svarer inni deg." },
+                { "si": "Reklame bruker grepet hele tiden. Lei av tørt hår?" },
+                { "si": "Du tenker: Ja, jeg er faktisk lei av det. Da har du gått over på talerens side. Og reklamen har vunnet." }
+            ]
+        },
+        {
+            "id": "metafor",
+            "kapittel": "Bilder",
+            "visual": { "type": "RetoriskeGrepBilde", "props": { "modus": "love" } },
+            "replikker": [
+                { "si": "Det femte grepet er metaforen. Da bruker vi et ord i overført betydning, som et bilde. Hjertet hennes ble til stein." },
+                { "si": "Tiden er gull. Livet er en reise. Ingen av delene er sant ord for ord, men vi skjønner dem med en gang." },
+                { "si": "Si at noen er en løve i kamp. Hva tenker du på?" },
+                { "si": "Løvens mot og styrke flyttes over til personen. Det er det metaforen gjør. Den låner egenskaper fra én ting til en annen." }
+            ]
+        },
+        {
+            "id": "sedler",
+            "visual": { "type": "RetoriskeGrepBilde", "props": { "modus": "sedler" } },
+            "replikker": [
+                { "si": "Hvorfor virker det? Hjernen husker bilder mye bedre enn tall og ideer." },
+                { "si": "To milliarder kroner. Det glir rett forbi." },
+                { "si": "En bunke sedler høyere enn Eiffeltårnet. Den ser du for deg. Gode talere gjør alltid tall om til bilder." }
+            ]
+        },
+        {
+            "id": "klimaks",
+            "kapittel": "Trappa",
+            "visual": { "type": "RetoriskeGrepSal", "props": { "modus": "trapp" } },
+            "replikker": [
+                { "si": "Det sjette grepet er klimaks. Ordet betyr høydepunkt. Hvert ledd er litt sterkere enn det forrige, som trinn i en trapp." },
+                { "si": "Jeg kom, jeg så, jeg seiret. Det er Cæsar igjen, og samme setning kan være både treklang og klimaks. Hører du hvordan hver del blir litt større?" },
+                { "si": "Eller hør på denne: Først tok de bøkene våre." },
+                { "si": "Så stengte de skolene." },
+                { "si": "Til slutt forbød de språket vårt." },
+                { "si": "Stigningen drar lytteren med oppover, som en sang som starter rolig og slutter med fullt orkester. Når toppen kommer, sitter den." }
+            ]
+        },
+        {
+            "id": "oppdag",
+            "kapittel": "Slik finner du dem",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Slik oppdager du grepene",
+                    "punkter": [
+                        { "ikon": "radio", "tittel": "Les høyt", "tekst": "grepene er laget for øret", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "Banker det?", "tekst": "gjentakelse, som anafora", "fraBeat": 2 },
+                        { "ikon": "haer", "tittel": "Vokser det?", "tekst": "klimaks", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Hvordan finner du grepene i en tale eller et debattinnlegg?" },
+                { "si": "Les teksten høyt. Retoriske grep er laget for øret, ikke for øyet." },
+                { "si": "Lytt etter rytmen. Er det noe som banker? Da er det kanskje en gjentakelse, som anafora." },
+                { "si": "Er det noe som vokser? Da kan det være klimaks." }
+            ]
+        },
+        {
+            "id": "sparsomt",
+            "visual": { "type": "RetoriskeGrepSal", "props": { "modus": "verktoy" } },
+            "replikker": [
+                { "si": "Når du selv skal holde en tale, trenger du ikke bruke alle grepene." },
+                { "si": "Velg ett eller to som passer til det du vil si." },
+                { "si": "For mange grep på en gang blir som et måltid med for mye krydder. Teksten føles overlesset." },
+                { "si": "De beste talerne bruker grepene sparsomt, akkurat der det betyr noe." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Samme ord.", "fraBeat": 0 },
+                        { "tekst": "Ny form. Ny kraft.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Grepene er overalt:", "fraBeat": 1 },
+                        { "tekst": "i taler, reklame og sanger.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Kjenner du dem igjen,", "fraBeat": 2 },
+                        { "tekst": "kan du bruke dem. Og se når de brukes på deg.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Taleren i salen sa det samme to ganger. Det var formen som gjorde at ordene traff." },
+                { "si": "Grepene er overalt rundt deg: i taler, i reklame, i sangtekster og i vanlig prat." },
+                { "si": "Kjenner du dem igjen, kan du bruke dem selv. Og du ser når noen bruker dem for å få deg med." }
+            ]
+        }
+    ]
+}
