@@ -6,9 +6,8 @@ import type { VisualProps } from '../../types';
 import { Brikke, GassRor, GassStil, RUSSLAND_ROD } from './felles';
 
 /**
- * Kartet i Russland-filmen, i fem modus:
+ * Kartet i Russland-filmen, i fire modus:
  * «sammenbrudd»: Sovjetunionen som én rød flate, flagget tas ned i Moskva, femten land.
- * «gass»: røret gjennom Ukraina, så Nord Stream på bunnen av Østersjøen, utenom naboene.
  * «nato»: landene i øst går inn i NATO i 1999 og 2004, og hvordan det ser ut fra Kreml.
  * «opptrapping»: Georgia 2008, Krim 2014, Ukraina 2022, mens gassen renner videre.
  * «svar»: sanksjoner, gassen kuttes, Finland og Sverige blir med i NATO.
@@ -17,14 +16,13 @@ import { Brikke, GassRor, GassStil, RUSSLAND_ROD } from './felles';
 const B = 1600;
 const H = 900;
 type LngLat = [number, number];
-type Modus = 'sammenbrudd' | 'gass' | 'nato' | 'opptrapping' | 'svar';
+type Modus = 'sammenbrudd' | 'nato' | 'opptrapping' | 'svar';
 
 const RUSSLAND = 643;
 const UKRAINA = 804;
 const GEORGIA = 268;
 const FINLAND = 246;
 const SVERIGE = 752;
-const TYSKLAND = 276;
 const HVITERUSSLAND = 112;
 
 /** De femten sovjetrepublikkene, med en egen farge hver når de blir egne land. */
@@ -90,28 +88,8 @@ const STED = {
     moskva: [37.6, 55.75] as LngLat,
     kyiv: [30.5, 50.45] as LngLat,
     tbilisi: [44.8, 41.7] as LngLat,
-    gassfelt: [72, 64] as LngLat,
-    vyborg: [28.7, 60.7] as LngLat,
-    greifswald: [13.6, 54.1] as LngLat,
 };
 
-/** Røret gjennom Ukraina og Nord Stream, som punktlister. */
-const ROR_UKRAINA: LngLat[] = [
-    [44, 56],
-    [37.6, 52],
-    [31, 50],
-    [24, 48.8],
-    [17.2, 48.6],
-    [12, 50],
-];
-const ROR_NORDSTREAM: LngLat[] = [
-    [36, 59],
-    [28.7, 60.7],
-    [24, 59.6],
-    [19.5, 57.2],
-    [15.5, 55],
-    [13.6, 54.1],
-];
 const ROR_SVAR: LngLat[] = [
     [36, 56],
     [28, 54],
@@ -154,8 +132,6 @@ function lagProjeksjon(modus: Modus): GeoProjection {
     switch (modus) {
         case 'sammenbrudd':
             return utsnitt([22, 37], [125, 70], 72);
-        case 'gass':
-            return utsnitt([4, 44], [62, 63], 32);
         case 'nato':
             return utsnitt([-8, 40], [56, 64], 25);
         case 'opptrapping':
@@ -172,12 +148,6 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
         if (beat <= 1) return RUSSLAND_ROD;
         if (beat === 2) return sovjet[1];
         return id === RUSSLAND ? RUSSLAND_ROD : FARGE.blek;
-    }
-    if (modus === 'gass') {
-        if (id === RUSSLAND) return RUSSLAND_ROD;
-        if (id === UKRAINA) return beat === 1 ? FARGE.ukraina : '#fde68a';
-        if (id === TYSKLAND && beat >= 2) return '#d6d3d1';
-        return FARGE.land;
     }
     if (modus === 'nato') {
         if (id === RUSSLAND) return beat === 3 ? '#7f1d1d' : RUSSLAND_ROD;
@@ -256,22 +226,6 @@ export function RusslandKart({ beat, playing, props }: VisualProps<{ modus?: Mod
                     </>
                 )}
 
-                {modus === 'gass' && (
-                    <>
-                        <Nål pos={p(STED.moskva)} tekst="Moskva" />
-                        {beat === 0 && <Gassfelt pos={p([52, 60])} />}
-                        {beat >= 1 && (
-                            <GassRor d={linje(ROR_UKRAINA)} playing={playing} bredde={16} />
-                        )}
-                        {beat >= 1 && <Etikett pos={p([31, 47.6])} tekst="Ukraina" farge="#854d0e" />}
-                        {beat >= 2 && (
-                            <GassRor d={linje(ROR_NORDSTREAM)} playing={playing} farge="#38bdf8" bredde={16} forsinkelse={0.4} />
-                        )}
-                        {beat >= 2 && <Etikett pos={p([12.5, 57.6])} tekst="Nord Stream, 2011" farge="#075985" />}
-                        {beat >= 2 && <Etikett pos={p([10.5, 51.4])} tekst="Tyskland" />}
-                    </>
-                )}
-
                 {modus === 'nato' && (
                     <>
                         <Etikett pos={p([44, 61])} tekst="Russland" stor farge="#7f1d1d" />
@@ -314,7 +268,7 @@ export function RusslandKart({ beat, playing, props }: VisualProps<{ modus?: Mod
                         {beat >= 2 && <Etikett pos={p([29, 48.6])} tekst={beat === 5 ? 'Ukraina 2022' : 'Ukraina 2014'} stor farge="#854d0e" />}
                         {beat >= 2 && <Nål pos={p(STED.kyiv)} tekst="Kyiv" under />}
                         {beat >= 3 && <Etikett pos={p([34.2, 44.2])} tekst="Krim" farge="#7f1d1d" dy={20} />}
-                        {beat === 4 && <GassRor d={linje([[45, 48.5], [38, 47.6], [32, 47.4], [23.5, 47.6]])} playing={playing} bredde={14} />}
+                        {(beat === 1 || beat === 4) && <GassRor d={linje([[45, 48.5], [38, 47.6], [32, 47.4], [23.5, 47.6]])} playing={playing} bredde={14} />}
                         {beat === 5 &&
                             ([
                                 [[31.2, 53.6], [31.0, 51.3]],
@@ -346,10 +300,6 @@ export function RusslandKart({ beat, playing, props }: VisualProps<{ modus?: Mod
                 {modus === 'sammenbrudd' && beat === 1 && <Brikke key="a1" tekst="Flagget tas ned for siste gang" farge="rod" />}
                 {modus === 'sammenbrudd' && beat === 2 && <Brikke key="a2" tekst="Femten nye land" />}
                 {modus === 'sammenbrudd' && beat === 3 && <Brikke key="a3" tekst="For mange russere: et nederlag" farge="rod" />}
-                {modus === 'gass' && beat === 0 && <Brikke key="g0" tekst="Se på hva de bygger" farge="mork" />}
-                {modus === 'gass' && beat === 1 && <Brikke key="g1" tekst="Gassen går gjennom Ukraina" />}
-                {modus === 'gass' && beat === 2 && <Brikke key="g2" tekst="Nytt rør på havbunnen" />}
-                {modus === 'gass' && beat === 3 && <Brikke key="g3" tekst="Gassen kan gå utenom naboene" farge="rod" />}
                 {modus === 'nato' && beat === 0 && <Brikke key="n0" tekst="Grensene flytter seg" />}
                 {modus === 'nato' && beat === 1 && <Brikke key="n1" tekst="Inn i NATO: 1999 og 2004" />}
                 {modus === 'nato' && beat === 2 && <Brikke key="n2" tekst="De ville ha beskyttelse" />}
@@ -515,38 +465,6 @@ function Flaggstang({ pos }: { pos: [number, number] }) {
                 <path d={`M ${x + 14} ${y - 190} a 13 13 0 1 0 22 -6`} fill="none" stroke="#facc15" strokeWidth={4} />
                 <path d={`M ${x + 15} ${y - 172} L ${x + 35} ${y - 192} M ${x + 30} ${y - 197} L ${x + 40} ${y - 187}`} stroke="#facc15" strokeWidth={4} />
             </motion.g>
-        </motion.g>
-    );
-}
-
-/** Et gassfelt: tre tårn med en flamme på toppen. */
-function Gassfelt({ pos }: { pos: [number, number] }) {
-    return (
-        <motion.g initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-            {[0, 1, 2].map((i) => {
-                const x = pos[0] - 70 + i * 70;
-                const y = pos[1];
-                return (
-                    <g key={i}>
-                        <path d={`M ${x - 18} ${y + 40} L ${x} ${y - 50} L ${x + 18} ${y + 40} Z`} fill="none" stroke="#1e293b" strokeWidth={6} />
-                        <path d={`M ${x - 10} ${y} L ${x + 10} ${y} M ${x - 14} ${y + 20} L ${x + 14} ${y + 20}`} stroke="#1e293b" strokeWidth={5} />
-                        <path d={`M ${x} ${y - 52} q -12 -20 0 -40 q 12 20 0 40`} fill="#f59e0b" stroke="#ffffff" strokeWidth={3} />
-                    </g>
-                );
-            })}
-            <text
-                x={pos[0]}
-                y={pos[1] + 92}
-                textAnchor="middle"
-                fontSize={40}
-                fontWeight={900}
-                fill="#7f1d1d"
-                stroke="#ffffff"
-                strokeWidth={8}
-                paintOrder="stroke"
-            >
-                Gass og olje
-            </text>
         </motion.g>
     );
 }

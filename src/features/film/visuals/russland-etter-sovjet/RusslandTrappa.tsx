@@ -24,7 +24,7 @@ export function RusslandTrappa({ beat, playing }: VisualProps) {
                 {beat <= 1 ? <Feilregning beat={beat} /> : <Trapp beat={beat} playing={playing} />}
             </svg>
             <AnimatePresence>
-                {beat === 0 && <Brikke key="b0" tekst="Putin regnet med to ting" />}
+                {beat === 0 && <Brikke key="b0" tekst="Putin regnet trolig med to ting" />}
                 {beat === 1 && <Brikke key="b1" tekst="Han tok feil på begge" farge="rod" />}
                 {beat === 2 && <Brikke key="b2" tekst="Hvert steg større enn det forrige" />}
                 {beat === 3 && <Brikke key="b3" tekst="Og gassen fortsatte å strømme" farge="mork" />}
@@ -55,13 +55,14 @@ function Feilregning({ beat }: { beat: number }) {
                             initial={{ opacity: 0, scale: 1.8 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.5 + i * 0.6, type: 'spring', stiffness: 260, damping: 16 }}
-                            style={{ transformOrigin: `${b.x}px 420px` }}
-                            stroke={RUSSLAND_ROD}
-                            strokeWidth={22}
-                            strokeLinecap="round"
+                            style={{ transformOrigin: `${b.x + 235}px 280px` }}
                         >
-                            <line x1={b.x - 160} y1={300} x2={b.x + 160} y2={540} />
-                            <line x1={b.x + 160} y1={300} x2={b.x - 160} y2={540} />
+                            {/* Krysset står ved siden av boblen, så teksten kan leses (guiden §3c punkt 35) */}
+                            <circle cx={b.x + 235} cy={280} r={66} fill={RUSSLAND_ROD} stroke="#ffffff" strokeWidth={6} />
+                            <g stroke="#ffffff" strokeWidth={16} strokeLinecap="round">
+                                <line x1={b.x + 207} y1={252} x2={b.x + 263} y2={308} />
+                                <line x1={b.x + 263} y1={252} x2={b.x + 207} y2={308} />
+                            </g>
                         </motion.g>
                     )}
                 </motion.g>
@@ -141,7 +142,7 @@ function Trapp({ beat, playing }: { beat: number; playing: boolean }) {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 1.6 }}
                     >
-                        Gass til Europa, år etter år, helt til 2022
+                        Gass til Europa, år etter år
                     </motion.text>
                 </>
             )}

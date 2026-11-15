@@ -173,7 +173,7 @@ function Sjokk({ beat }: { beat: number }) {
     if (beat === 3) {
         return (
             <g>
-                {/* Stolpen skyter ut av bildet */}
+                {/* Over 2500 prosent økning: prisen blir mer enn 26 ganger så høy, og stolpen likeså */}
                 <rect x={1000} y={770} width={160} height={20} fill="#94a3b8" />
                 <text x={1080} y={830} textAnchor="middle" fontSize={34} fontWeight={800} fill="#475569">
                     før
@@ -183,7 +183,7 @@ function Sjokk({ beat }: { beat: number }) {
                     width={160}
                     fill={ROD}
                     initial={{ y: 770, height: 20 }}
-                    animate={{ y: -20, height: 810 }}
+                    animate={{ y: 270, height: 520 }}
                     transition={{ delay: 0.4, duration: 3, ease: [0.5, 0, 0.9, 0.6] }}
                 />
                 <text x={1320} y={830} textAnchor="middle" fontSize={34} fontWeight={800} fill={ROD}>
@@ -288,9 +288,10 @@ function Person({ x, y, farge, skala = 1 }: { x: number; y: number; farge: strin
 /* ---------- Levealder ---------- */
 
 function Levealder({ beat }: { beat: number }) {
-    // Lengdene er bare til å se forskjellen. Bare forskjellen (sju år) står i artikkelen.
+    // Bare forskjellen (sju år) står i artikkelen. Den korte stolpen er ca. 11 prosent kortere,
+    // omtrent sju år av en levealder på godt over 60, så forholdet ikke overdrives.
     const full = 980;
-    const kort = full - 150;
+    const kort = full - 110;
     return (
         <g>
             <Tekst x={230} y={385} str={56} anker="end">
@@ -326,7 +327,7 @@ function Levealder({ beat }: { beat: number }) {
                     <motion.rect
                         x={420 + kort}
                         y={560}
-                        width={150}
+                        width={full - kort}
                         height={70}
                         rx={14}
                         fill="none"
@@ -337,7 +338,7 @@ function Levealder({ beat }: { beat: number }) {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 2.6 }}
                     />
-                    <Tekst x={420 + kort + 75} y={700} str={48} farge={ROD} forsinkelse={2.8}>
+                    <Tekst x={420 + (kort + full) / 2} y={700} str={48} farge={ROD} forsinkelse={2.8}>
                         sju år
                     </Tekst>
                 </>
@@ -346,7 +347,7 @@ function Levealder({ beat }: { beat: number }) {
                 <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
                     <rect x={420} y={760} width={980} height={90} rx={20} fill="#ffffff" stroke={MORK} strokeWidth={4} />
                     <text x={910} y={820} textAnchor="middle" fontSize={40} fontWeight={800} fill={MORK}>
-                        Født bare noen år senere, men et kortere liv
+                        Mange menn døde mye yngre enn før
                     </text>
                 </motion.g>
             )}

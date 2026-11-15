@@ -409,7 +409,7 @@ export function RusslandGass({ beat, playing, props }: VisualProps<{ modus?: Mod
                 {modus === 'ror' && beat === 3 && <Brikke key="r3" tekst="Handel skaper fred?" farge="mork" />}
                 {modus === 'kran' && beat === 0 && <Brikke key="k0" tekst="Kranen eies av Kreml" farge="rod" />}
                 {modus === 'kran' && beat === 1 && <Brikke key="k1" tekst="Gjør som Kreml vil: billig gass" />}
-                {modus === 'kran' && beat === 2 && <Brikke key="k2" tekst="Protesterer: kranen skrus igjen" farge="rod" />}
+                {modus === 'kran' && beat === 2 && <Brikke key="k2" tekst="Protesterer: kranen skrus ned" farge="rod" />}
                 {modus === 'kran' && beat === 3 && <Brikke key="k3" tekst="Midt på vinteren" farge="mork" />}
             </AnimatePresence>
         </div>
