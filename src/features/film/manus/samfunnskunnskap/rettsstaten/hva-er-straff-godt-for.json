@@ -1,0 +1,214 @@
+{
+    "id": "hva-er-straff-godt-for",
+    "tittel": "Hva er straff godt for?",
+    "kilde": "/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for",
+    "bilde": "/images/rettsstaten/hva-er-straff-godt-for-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 100, "begrunnelse": "Prosentene fra SSB (28, 14 og 43 prosent) vist som prikker av 100. Regnet ut fra artikkelen." }
+    ],
+    "vurdering": { "dato": "2026-11-15", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "halden",
+            "kapittel": "Fengsel eller hotell?",
+            "lyd": "vind",
+            "visual": { "type": "StraffHalden", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "Se for deg et fengsel der de innsatte går på skole, jobber og får hjelp mens de sitter straffen sin." },
+                { "si": "Dette er Halden fengsel, som åpnet i 2010." },
+                { "si": "Det er et fengsel med høyt sikkerhetsnivå, og det har plass til 251 innsatte." },
+                { "si": "Halden har blitt et utstillingsvindu, et eksempel på hvordan Norge vil at et fengsel skal være." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "STRAFF",
+                    "undertittel": "Hva er den egentlig godt for?",
+                    "bilde": "/images/rettsstaten/hva-er-straff-godt-for-hero.webp",
+                    "sporsmal": { "tekst": "Skal ikke straff gjøre vondt?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Mange som ser bilder fra slike fengsler for første gang, reagerer likt. Er dette et fengsel eller et hotell?" },
+                { "si": "Skal ikke straff gjøre vondt? Spørsmålet er ikke dumt." },
+                { "si": "Det handler om noe av det viktigste et samfunn må bestemme: Hva er straff egentlig godt for?" }
+            ]
+        },
+        {
+            "id": "retning",
+            "kapittel": "Fire svar",
+            "visual": { "type": "StraffTid", "props": { "modus": "retning" } },
+            "replikker": [
+                { "si": "Når staten straffer noen, tar den noe fra dem. Det kan være penger, tid eller friheten." },
+                { "si": "Det er alvorlig. Derfor må staten ha en god grunn." },
+                { "si": "Svarene på hvorfor vi straffer, deles ofte i to grupper. Den første ser bakover: Den som har gjort noe galt, skal betale for det." },
+                { "si": "Den andre gruppen ser framover. Straffen skal gjøre framtiden tryggere, ved at det blir færre lovbrudd." },
+                { "si": "Ut fra de to gruppene kan vi trekke fram fire formål med straff." }
+            ]
+        },
+        {
+            "id": "gjengjeldelse",
+            "visual": { "type": "StraffVekt", "props": { "modus": "gjengjeldelse" } },
+            "replikker": [
+                { "si": "Det eldste svaret er gjengjeldelse. Det betyr at straffen er en slags betaling for det onde man har gjort." },
+                { "si": "Den gamle regelen øye for øye, tann for tann bygger på denne tanken." },
+                { "si": "Det viktigste er at straffen står i forhold til det man gjorde. Et lite tyveri skal gi en liten straff." },
+                { "si": "Og drap skal gi en stor straff." },
+                { "si": "Hvis noen ødelegger sykkelen din, føles det urettferdig om de slipper unna." },
+                { "si": "Men gjengjeldelse spør ikke om straffen gjør verden bedre. Den spør bare om skylden er betalt." }
+            ]
+        },
+        {
+            "id": "skremme",
+            "visual": { "type": "StraffTid", "props": { "modus": "skremme" } },
+            "replikker": [
+                { "si": "Det andre formålet handler ikke om den som blir straffet, men om alle oss andre." },
+                { "si": "Når folk vet at tyveri kan gi straff, lar mange være å stjele. Dette kalles allmennprevensjon." },
+                { "si": "Allmenn betyr at det gjelder alle. Prevensjon betyr å forebygge, altså å hindre at noe skjer." },
+                { "si": "Men det er ikke bare straffen som teller. Sjansen for å bli tatt spiller også en stor rolle." },
+                { "si": "En streng straff skremmer lite hvis ingen tror de blir oppdaget." },
+                { "si": "Over tid kan straff også forme hva folk synes er rett og galt." }
+            ]
+        },
+        {
+            "id": "beskytte",
+            "visual": { "type": "StraffTid", "props": { "modus": "lengde" } },
+            "replikker": [
+                { "si": "Det tredje formålet er å beskytte andre mot den som har gjort noe galt." },
+                { "si": "Så lenge en farlig person sitter i fengsel, kan han ikke skade folk utenfor." },
+                { "si": "I Norge kan en fengselsstraff vare fra 14 dager til 30 år." },
+                { "si": "Er faren for ny alvorlig kriminalitet særlig stor, kan retten i stedet dømme personen til forvaring. Da kan tiden inne forlenges så lenge faren er der." }
+            ]
+        },
+        {
+            "id": "spor",
+            "lyd": "vind",
+            "visual": { "type": "StraffHalden", "props": { "modus": "innsiden" } },
+            "replikker": [
+                { "si": "Det fjerde formålet er å endre personen, slik at hen ikke gjør det igjen." },
+                { "si": "Det kan skje gjennom skole," },
+                { "si": "gjennom arbeid," },
+                { "si": "eller gjennom behandling for rus og hjelp til å takle sinne." },
+                { "si": "Formål tre og fire handler begge om den som blir straffet. Sammen kalles de individualprevensjon. Til det hører også at personen blir skremt av sin egen straff." }
+            ]
+        },
+        {
+            "id": "historie",
+            "kapittel": "Hva sier loven?",
+            "lyd": "stille",
+            "visual": { "type": "StraffTid", "props": { "modus": "historie" } },
+            "replikker": [
+                { "si": "Norge har prøvd ut ulike svar." },
+                { "si": "På slutten av 1800-tallet fikk tanken om å forbedre fangene stor plass." },
+                { "si": "Fra midten av 1960-tallet snudde det igjen. Det viste seg å være vanskelig å behandle lovbrytere." },
+                { "si": "Da ble det igjen viktigere at straffen skremmer, og at den står i forhold til lovbruddet." },
+                { "si": "Så, i 2005, vedtok Stortinget en ny straffelov." }
+            ]
+        },
+        {
+            "id": "lov",
+            "visual": { "type": "StraffVekt", "props": { "modus": "lov" } },
+            "replikker": [
+                { "si": "Da sa Stortinget tydelig nei til hevn og gjengjeldelse som grunn for å straffe." },
+                { "si": "Straffen skal i stedet forebygge. Den skal styre hvordan folk oppfører seg i framtiden." },
+                { "si": "Det betyr ikke at rettferdighet er uviktig. Straffen skal fortsatt stå i forhold til det man har gjort." },
+                { "si": "Men ingen skal straffes bare for at de skal lide." },
+                { "si": "Loven om hvordan straff gjennomføres, sier det samme. Straffen skal motvirke nye lovbrudd, være trygg for samfunnet og hjelpe den dømte tilbake." }
+            ]
+        },
+        {
+            "id": "veien",
+            "kapittel": "For snille?",
+            "lyd": "vind",
+            "visual": { "type": "StraffHalden", "props": { "modus": "veien" } },
+            "replikker": [
+                { "si": "I Norge er det å miste friheten selve straffen." },
+                { "si": "Bortsett fra det har innsatte de samme rettighetene som andre norske borgere. De har for eksempel rett til helsehjelp og skole." },
+                { "si": "I 2024 hadde Norge 31 fengsler. De fleste starter soningen i et lukket fengsel med høy sikkerhet." },
+                { "si": "Senere kan de flytte til et åpent fengsel, eller til en overgangsbolig. Det er den frieste formen for fengsel." },
+                { "si": "Nesten alle som sitter i fengsel, slipper ut en dag. Da blir de naboene våre igjen." },
+                { "si": "Har tiden inne gjort dem sintere, mer ensomme og uten jobb, er det dårlig nytt for alle. Har de lært et yrke og fått hjelp mot rus, er sjansen større for at det går bra." }
+            ]
+        },
+        {
+            "id": "virker",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Halden fengsel: gjennomgangen i 2016",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Bedre tilbud", "tekst": "skole, arbeid og behandling", "fraBeat": 1 },
+                        { "ikon": "las", "tittel": "Færre nye lovbrudd?", "tekst": "forskerne klarte ikke å vise det", "fraBeat": 2 },
+                        { "ikon": "penger", "tittel": "Dyrere å drive", "tekst": "enn andre fengsler", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men virker det? Halden viser hvor vanskelig det er å svare på." },
+                { "si": "En gjennomgang i 2016 fant at tilbudet om skole, arbeid og behandling var bedre enn i andre fengsler med høy sikkerhet." },
+                { "si": "Likevel klarte forskerne ikke å vise at de som sonet der, begikk færre nye lovbrudd." },
+                { "si": "Fengselet var også dyrere å drive enn andre fengsler." }
+            ]
+        },
+        {
+            "id": "tilbakefall",
+            "kapittel": "Tallene",
+            "visual": { "type": "StraffTilbakefall", "props": { "modus": "alle" } },
+            "replikker": [
+                { "si": "Når en som er straffet, begår nye lovbrudd, kalles det tilbakefall." },
+                { "si": "Det er ikke lett å måle. Tallene blir svært ulike ut fra hvem man teller, hva som regnes som nytt lovbrudd, og hvor lenge man følger med." },
+                { "si": "Statistisk sentralbyrå, SSB, fulgte alle som fikk en straffereaksjon i Norge i 2019. Det var nesten 60 000 personer." },
+                { "si": "Av dem begikk 28 prosent et nytt lovbrudd i løpet av tre år." },
+                { "si": "Det betyr at sju av ti ikke ble tatt for noe nytt i den perioden." }
+            ]
+        },
+        {
+            "id": "forskjell",
+            "visual": { "type": "StraffTilbakefall", "props": { "modus": "forskjell" } },
+            "replikker": [
+                { "si": "Tallene viste noe annet viktig. Hva slags straff folk fikk, betydde ganske lite sammenlignet med andre ting." },
+                { "si": "Blant dem som ble straffet for første gang, begikk 14 prosent nye lovbrudd innen tre år." },
+                { "si": "Blant dem som var straffet før, var tallet 43 prosent." },
+                { "si": "Folk som sto uten arbeid, hadde også mye oftere tilbakefall." },
+                { "si": "Men SSB minner om at tallene ikke viser hvilken straff som virker best. De viser hva som skjedde, ikke hvorfor." }
+            ]
+        },
+        {
+            "id": "verdier",
+            "kapittel": "Hva synes du?",
+            "visual": { "type": "StraffVekt", "props": { "modus": "verdier" } },
+            "replikker": [
+                { "si": "Til slutt handler straff om hva vi synes er rett." },
+                { "si": "Er det viktigste for deg færrest mulig lovbrudd og mest trygghet for flest? Da tenker du som en utilitarist, og spør hvilken straff som gir best følger." },
+                { "si": "Mener du at hver person skal få det hen fortjener, uansett følger? Da tenker du mer i retning av gjengjeldelse." },
+                { "si": "De fleste mener litt av begge. Kanskje synes du Halden er klokt, men at noen saker er så grove at straffen må føles." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Betale, skremme, beskytte, endre.", "fraBeat": 0 },
+                        { "tekst": "Ingen straff treffer alle fire fullt ut.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Norsk lov: straff skal forebygge.", "fraBeat": 1 },
+                        { "tekst": "Gjengjeldelse alene er ikke grunn nok.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Nesten alle kommer ut igjen en dag.", "fraBeat": 2 },
+                        { "tekst": "Hva vil du at tiden inne skal gjøre med dem?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Straff kan ha fire formål: betale, skremme andre, beskytte samfunnet og få personen på rett spor. Ingen straff treffer alle fire fullt ut." },
+                { "si": "Norsk lov sier at straffen skal forebygge nye lovbrudd, og at gjengjeldelse alene ikke er grunn nok." },
+                { "si": "Nesten alle som sitter i fengsel, kommer ut igjen. Så hva vil du at tiden inne skal gjøre med dem?" }
+            ]
+        }
+    ]
+}
