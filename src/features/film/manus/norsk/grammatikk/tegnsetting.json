@@ -1,0 +1,198 @@
+{
+    "id": "tegnsetting",
+    "tittel": "Tegnsetting: Når et komma redder bestemor",
+    "kilde": "/norsk/grammatikk/tegnsetting",
+    "bilde": "/images/grammatikk/tegnsetting-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-15", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 5, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "apning",
+            "lyd": "rom",
+            "kapittel": "Ett komma",
+            "visual": { "type": "TegnsettingVerden", "props": { "modus": "bord" } },
+            "replikker": [
+                { "si": "Tenk deg et kjøkkenbord. Bestemor sitter der og venter på maten." },
+                { "si": "Du roper: Spis bestemor! Hvis du leser det høyt for noen, blir de litt skremt." },
+                { "si": "For uten komma er bestemor plutselig selve maten." },
+                { "si": "Sett inn ett enkelt komma: Spis, bestemor! Nå ber du bare bestemor om å smake på maten." },
+                { "si": "Det er det tegnsetting handler om. Små streker og prikker som styrer hva leseren faktisk forstår." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Tegnsetting",
+                    "undertittel": "Når et komma redder bestemor",
+                    "bilde": "/images/grammatikk/tegnsetting-hero.webp",
+                    "sporsmal": { "tekst": "Hvilken jobb har hvert tegn?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Denne filmen handler om punktum, komma, spørsmålstegn og de andre små tegnene i en tekst." },
+                { "si": "Hvert tegn har sin egen jobb. Og ett av dem kan redde bestemor." }
+            ]
+        },
+        {
+            "id": "klister",
+            "visual": { "type": "TegnsettingSetning", "props": { "modus": "klister" } },
+            "replikker": [
+                { "si": "Tegn er ikke pynt. Uten dem klistrer ordene seg sammen, og meningen blir uklar." },
+                { "si": "Bruken av skilletegn i en tekst kalles interpunksjon. Det er et eget system i skriftspråket." },
+                { "si": "Tegnene forteller leseren når de skal stoppe, puste, lytte til en ny stemme eller stille et spørsmål." },
+                { "si": "Med tegnene får skriften rytme, retning og presisjon. Presisjon betyr at leseren forstår akkurat det du mener." }
+            ]
+        },
+        {
+            "id": "skilt",
+            "lyd": "vind",
+            "kapittel": "Trafikkskilt",
+            "visual": { "type": "TegnsettingVerden", "props": { "modus": "vei" } },
+            "replikker": [
+                { "si": "Tenk på en setning som en biltur. Tegnene er trafikkskiltene som styrer farten." },
+                { "si": "Punktum er et stoppskilt. Det sier: Stopp helt. En ny tanke kommer." },
+                { "si": "Komma er et lyssignal som blinker gult. Ta en kort pust og se deg om." },
+                { "si": "Spørsmålstegn løfter stemmen din opp i slutten av setningen, som om du venter på svar." },
+                { "si": "Og utropstegn skrur opp volumet et hakk. Det viser glede, sinne, overraskelse eller en kommando." }
+            ]
+        },
+        {
+            "id": "flere",
+            "lyd": "stille",
+            "visual": { "type": "TegnsettingTegn", "props": { "modus": "tegn" } },
+            "replikker": [
+                { "si": "Det finnes flere tegn i verktøykassa." },
+                { "si": "Kolon er to prikker over hverandre. Det sier: Her kommer det noe. En liste, en forklaring eller et sitat." },
+                { "si": "Semikolon binder to hele setninger som hører tett sammen. Det brukes sjelden, for punktum gjør stort sett samme jobb." },
+                { "si": "Og anførselstegn står rundt direkte tale og sitater. Dem kommer vi tilbake til." }
+            ]
+        },
+        {
+            "id": "oppramsing",
+            "kapittel": "Fire jobber for komma",
+            "visual": { "type": "TegnsettingSetning", "props": { "modus": "oppramsing" } },
+            "replikker": [
+                { "si": "Komma har fått ord på seg for å være lunefullt. Men hovedjobben er enkel: å skille ledd som ellers ville krasjet i hverandre." },
+                { "si": "Det er fire situasjoner du møter hver dag. Den første er oppramsing." },
+                { "si": "Jeg hadde med pizza, brus og sjokolade. Komma mellom tingene, og ordet og foran den siste." },
+                { "si": "På norsk skal det altså ikke stå komma foran og i en oppramsing." },
+                { "si": "Den andre er tiltale. Når du snakker direkte til noen, skiller du navnet fra resten med komma. Hei, Mia." },
+                { "si": "Dropper du kommaet, blir personen en del av setningen. Det var akkurat det som skjedde med stakkars bestemor." }
+            ]
+        },
+        {
+            "id": "leddsetning",
+            "visual": { "type": "TegnsettingSetning", "props": { "modus": "leddsetning" } },
+            "replikker": [
+                { "si": "Den tredje er leddsetninger. En leddsetning er en setning som ikke kan stå alene." },
+                { "si": "Den hekter seg på hovedsetningen med et bindeord, for eksempel fordi, som, da, hvis eller når." },
+                { "si": "Står leddsetningen først, må du sette komma: Når klokka ringer, går vi ut." },
+                { "si": "Kommer den etter hovedsetningen, og trengs for at setningen skal gi mening, kan du ofte droppe kommaet: Vi går ut når klokka ringer." },
+                { "si": "Står leddsetningen midt inni, får den komma på begge sider: Hunden, som het Tassen, sov på sofaen." }
+            ]
+        },
+        {
+            "id": "hovedsetninger",
+            "visual": { "type": "TegnsettingSetning", "props": { "modus": "hovedsetninger" } },
+            "replikker": [
+                { "si": "Den fjerde er to hele setninger som er bundet sammen med et lite ord, for eksempel og, men, for eller så." },
+                { "si": "Se på hvem som gjør noe i hver setning. Den som gjør noe, kalles subjektet." },
+                { "si": "Jeg løp ut, og hunden fulgte etter. Her er det to ulike subjekter, jeg og hunden. Da setter du komma foran og." },
+                { "si": "Jeg løp ut og lukket døra. Her er det jeg som gjør begge deler. Samme subjekt, og da kan du droppe kommaet." }
+            ]
+        },
+        {
+            "id": "dialog",
+            "kapittel": "Når noen snakker",
+            "visual": { "type": "TegnsettingTegn", "props": { "modus": "dialog" } },
+            "replikker": [
+                { "si": "Når noen snakker i en tekst, må du vise det med tegn." },
+                { "si": "På norsk bruker vi vinklede anførselstegn, som små piler. Ikke de amerikanske krøllene." },
+                { "si": "Slik ser det ut: Hvor skal du? spurte Mia." },
+                { "si": "Legg merke til at spørsmålstegnet står inne i anførselstegnene, sammen med setningen det hører til." },
+                { "si": "Og spurte begynner med liten bokstav, fordi det fortsetter setningen." }
+            ]
+        },
+        {
+            "id": "mellomrom",
+            "visual": { "type": "TegnsettingTegn", "props": { "modus": "mellomrom" } },
+            "replikker": [
+                { "si": "Husk også at tegn aldri kommer alene. De henger fast i ordet før seg, ikke i ordet etter." },
+                { "si": "Det skal stå hei, Mia, med kommaet tett inntil hei. Ikke med et mellomrom foran kommaet." },
+                { "si": "Etter tegnet kommer ett mellomrom. Akkurat som her." }
+            ]
+        },
+        {
+            "id": "rytme",
+            "lyd": "vind",
+            "kapittel": "Les høyt",
+            "visual": { "type": "TegnsettingVerden", "props": { "modus": "rytme" } },
+            "replikker": [
+                { "si": "Er du i tvil, er det et godt triks å lese teksten høyt for deg selv." },
+                { "si": "Der du naturlig stopper opp eller tar en pust, skal det ofte stå et tegn." },
+                { "si": "Lange setninger uten tegn kveler leseren. Det er som en vei uten et eneste skilt." },
+                { "si": "Men korte, oppstykkede setninger med altfor mange punktum gir en hakkete stil." },
+                { "si": "Tegnsetting er rytme." }
+            ]
+        },
+        {
+            "id": "chat",
+            "lyd": "stille",
+            "kapittel": "På nett",
+            "visual": { "type": "TegnsettingChat", "props": { "modus": "punktum" } },
+            "replikker": [
+                { "si": "I chat og på sosiale medier har tegnene fått nye roller." },
+                { "si": "Et punktum på slutten av en kort melding kan oppleves som irritert. Selv om det bare er riktig grammatikk." },
+                { "si": "I en amerikansk studie syntes lesere at svar i tekstmeldinger var mindre oppriktige, altså mindre ærlige, når de sluttet med punktum." },
+                { "si": "På håndskrevne lapper skjedde ikke det samme." },
+                { "si": "Mange yngre dropper punktum i raske meldinger og bruker linjeskift eller emoji i stedet. Det er ikke feil. Det er et nytt språk for et nytt medium." }
+            ]
+        },
+        {
+            "id": "formell",
+            "visual": { "type": "TegnsettingChat", "props": { "modus": "formell" } },
+            "replikker": [
+                { "si": "Men når du skriver en oppgave, en e-post til læreren eller en søknad, gjelder de vanlige reglene." },
+                { "si": "Da er punktum bare punktum, og kommaet redder fortsatt bestemor." },
+                { "si": "Skill mellom chat og formell skriving. Å beherske begge deler er en superkraft." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "rom",
+            "kapittel": "Respekt for leseren",
+            "visual": { "type": "TegnsettingVerden", "props": { "modus": "slutt" } },
+            "replikker": [
+                { "si": "Tegn handler om å hjelpe leseren din. Hvert tegn er et lite kart over hvordan setningen henger sammen." },
+                { "si": "En ryddig tekst er lettere å lese. Den er også mer overbevisende, for den viser at du har tenkt gjennom hva du vil si." },
+                { "si": "Så hvis du er i tvil om et komma, husk bestemor. Hun sitter ved bordet og venter på maten." },
+                { "si": "Det eneste hun trenger fra deg, er et lite komma." }
+            ]
+        },
+        {
+            "id": "laerdom",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Tegn er ikke pynt.", "fraBeat": 0 },
+                        { "tekst": "De styrer hva leseren forstår.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Usikker? Les høyt.", "fraBeat": 1 },
+                        { "tekst": "Der du puster, står det ofte et tegn.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Tegnsetting er", "fraBeat": 2 },
+                        { "tekst": "respekt for leseren.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Tegn er ikke pynt. De styrer hva leseren forstår." },
+                { "si": "Er du usikker, så les høyt. Der du puster, står det ofte et tegn." },
+                { "si": "Tegnsetting er rytme og retning. Men mest av alt er det respekt for leseren." }
+            ]
+        }
+    ]
+}
