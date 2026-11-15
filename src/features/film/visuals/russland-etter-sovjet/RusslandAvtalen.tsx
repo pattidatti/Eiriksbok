@@ -30,7 +30,7 @@ export function RusslandAvtalen({ beat, props }: VisualProps<{ modus?: Modus }>)
                 {modus === 'tv' && beat === 0 && <Brikke key="t0" tekst="Oljeprisen stiger" />}
                 {modus === 'tv' && beat === 1 && <Brikke key="t1" tekst="Mange får det bedre" />}
                 {modus === 'tv' && beat === 2 && <Brikke key="t2" tekst="Staten tar TV-kanalene" farge="rod" />}
-                {modus === 'tv' && beat === 3 && <Brikke key="t3" tekst="Kritikerne: eksil eller fengsel" farge="mork" />}
+                {modus === 'tv' && beat === 3 && <Brikke key="t3" tekst="Kritikerne: flukt eller fengsel" farge="mork" />}
                 {modus === 'tv' && beat === 4 && <Brikke key="t4" tekst="Den frie debatten forsvinner" farge="rod" />}
             </AnimatePresence>
         </div>
@@ -288,7 +288,7 @@ function Tv({ beat }: { beat: number }) {
                     );
                 })}
                 <Tekst x={800} y={850} str={40} forsinkelse={3.6}>
-                    Alle kanalene viser det samme
+                    Staten styrer kanalene
                 </Tekst>
             </g>
         );
@@ -332,7 +332,7 @@ function Tv({ beat }: { beat: number }) {
                 return (
                     <g key={i}>
                         <Figur x={x} y={700} farge="#64748b" skala={0.7} />
-                        <motion.g initial={{ opacity: 1, scale: 1 }} animate={{ opacity: 0, scale: 0.6 }} transition={{ delay: 0.8 + i * 0.55, duration: 0.6 }} style={{ transformOrigin: `${x}px 440px` }}>
+                        <motion.g initial={{ opacity: 1, scale: 1 }} animate={{ opacity: 0.15, scale: 0.75 }} transition={{ delay: 0.8 + i * 0.55, duration: 0.6 }} style={{ transformOrigin: `${x}px 440px` }}>
                             <rect x={x - 80} y={360} width={160} height={100} rx={30} fill="#ffffff" stroke={MORK} strokeWidth={5} />
                             <path d={`M ${x - 20} ${458} L ${x} ${500} L ${x + 15} ${458}`} fill="#ffffff" stroke={MORK} strokeWidth={5} />
                             <circle cx={x - 35} cy={410} r={10} fill={MORK} />

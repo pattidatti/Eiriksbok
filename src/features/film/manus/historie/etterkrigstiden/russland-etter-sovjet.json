@@ -4,9 +4,11 @@
     "kilde": "/historie/etterkrigstiden/russland-etter-sovjet",
     "bilde": "/images/etterkrigstiden/russland-etter-sovjet-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-15", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "juledag",
+            "lyd": "vind",
             "kapittel": "Juledag 1991",
             "visual": {
                 "type": "RusslandKart",
@@ -57,6 +59,7 @@
         },
         {
             "id": "sjokk",
+            "lyd": "stille",
             "kapittel": "Alt raser sammen",
             "visual": {
                 "type": "RusslandNittitallet",
@@ -95,10 +98,10 @@
                     "si": "Krisen kunne til og med måles i hvor lenge folk levde."
                 },
                 {
-                    "si": "Fra 1988 til 1994 falt forventet levealder for russiske menn med hele sju år."
+                    "si": "Fra 1988 til 1994 falt forventet levealder for russiske menn med hele sju år. Altså hvor lenge en mann kunne regne med å leve."
                 },
                 {
-                    "si": "En gutt født i 1994 kunne regne med et mye kortere liv."
+                    "si": "Mange menn døde mye yngre enn før."
                 }
             ]
         },
@@ -165,7 +168,7 @@
                     "si": "Mange russere fikk det bedre enn før."
                 },
                 {
-                    "si": "Samtidig kom alle de store TV-kanalene under statens kontroll. Der får de fleste russere nyhetene sine."
+                    "si": "Samtidig kom alle de store TV-kanalene under statens kontroll, direkte eller indirekte. Der får de fleste russere nyhetene sine."
                 },
                 {
                     "si": "Medieeiere som kritiserte Putin, måtte flykte. Oligarker som utfordret ham, havnet i fengsel eller i utlandet."
@@ -191,11 +194,11 @@
                             "uthevet": true
                         },
                         {
-                            "tekst": "Ikke en seier. Ikke frihet.",
+                            "tekst": "For Putin var 1991",
                             "fraBeat": 1
                         },
                         {
-                            "tekst": "Et tap man kan prøve å ta igjen.",
+                            "tekst": "et tap, ikke frihet.",
                             "fraBeat": 1,
                             "uthevet": true
                         }
@@ -207,12 +210,13 @@
                     "si": "I 2005 kalte Putin Sovjetunionens sammenbrudd det tjuende århundrets største geopolitiske katastrofe. Geopolitisk betyr her: om makten mellom land."
                 },
                 {
-                    "si": "Det mange i vest så som frihet, så Putin som et tap. Og et tap kan man prøve å ta igjen."
+                    "si": "Det mange i vest så som frihet, så Putin som et tap."
                 }
             ]
         },
         {
             "id": "ror",
+            "lyd": "vind",
             "kapittel": "Gass som våpen",
             "visual": {
                 "type": "RusslandGass",
@@ -251,7 +255,7 @@
                     "si": "Land som gjorde som Russland ville, fikk billig gass."
                 },
                 {
-                    "si": "Land som protesterte, kunne oppleve at kranen ble skrudd igjen. Midt på vinteren."
+                    "si": "Land som protesterte, kunne oppleve at kranen ble skrudd ned. Midt på vinteren."
                 },
                 {
                     "si": "Tenk deg å si nei til naboen som eier varmen i huset ditt."
@@ -260,18 +264,17 @@
         },
         {
             "id": "nordstream",
+            "lyd": "stille",
             "visual": {
-                "type": "RusslandKart",
-                "props": {
-                    "modus": "gass"
-                }
+                "type": "RusslandOmvei",
+                "props": {}
             },
             "replikker": [
                 {
                     "si": "Her er granskerens regel: Se ikke på hva ledere sier. Se på hva de bygger."
                 },
                 {
-                    "si": "Mye av gassen til Europa gikk gjennom rør i Ukraina."
+                    "si": "Gassen til Europa gikk gjennom rør i naboland som Ukraina."
                 },
                 {
                     "si": "Men Russland bygde rør som gikk utenom. Nord Stream ligger på bunnen av Østersjøen, rett til Tyskland. Den sto ferdig i 2011."
@@ -295,7 +298,7 @@
                     "si": "Mens Russland ble rikere, flyttet grensene i Europa seg. Land som før var styrt fra Moskva, gikk inn i NATO og EU."
                 },
                 {
-                    "si": "Polen, Tsjekkia og Ungarn i 1999. Sju land til i 2004, blant dem Estland, Latvia og Litauen."
+                    "si": "I NATO: Polen, Tsjekkia og Ungarn i 1999. Sju land til i 2004, blant dem Estland, Latvia og Litauen."
                 },
                 {
                     "si": "De hadde levd under sovjetisk kontroll. NATO er et forsvarssamarbeid der landene lover å hjelpe hverandre, og det ville de være med i."
@@ -318,10 +321,10 @@
             },
             "replikker": [
                 {
-                    "si": "Sommeren 2008 går Russland til krig mot Georgia, et lite naboland som ville vestover."
+                    "si": "Sommeren 2008 blir det krig mellom Russland og Georgia, et lite naboland som ville vestover."
                 },
                 {
-                    "si": "Krigen varer i fem dager, og Georgia mister kontrollen over Sør-Ossetia og Abkhasia. Vesten protesterer, men kjøper gass som før."
+                    "si": "Krigen varer i fem dager, og Georgia mister kontrollen over det som var igjen av Sør-Ossetia og Abkhasia. Vesten protesterer, men kjøper gass som før."
                 },
                 {
                     "si": "I 2014 gjør ukrainerne opprør mot presidenten sin, som var vennlig mot Russland."
@@ -333,7 +336,7 @@
                     "si": "EU og USA svarer med sanksjoner, altså straff mot handelen. Men de kjøper fortsatt gass."
                 },
                 {
-                    "si": "Den 24. februar 2022 kommer fullskalainvasjonen. Russland angriper Ukraina med full styrke, fra flere sider."
+                    "si": "Den 24. februar 2022 kommer fullskalainvasjonen. Russland angriper Ukraina fra flere sider av landet på én gang."
                 }
             ]
         },
@@ -345,7 +348,7 @@
             },
             "replikker": [
                 {
-                    "si": "Putin regnet med en rask seier. Han regnet også med at et splittet Vesten ville se en annen vei, som før."
+                    "si": "Mye tyder på at Putin regnet med en rask seier. Han regnet også med at et splittet Vesten ville se en annen vei, som før."
                 },
                 {
                     "si": "Han tok feil på begge punkter. Ukrainerne kjempet imot, og krigen ble lang og blodig."
@@ -391,7 +394,7 @@
             "visual": {
                 "type": "Punktkort",
                 "props": {
-                    "tittel": "Hvorfor reagerte ikke Vesten før?",
+                    "tittel": "Hvorfor reagerte ikke Vesten hardere?",
                     "punkter": [
                         {
                             "ikon": "penger",
@@ -422,7 +425,7 @@
             },
             "replikker": [
                 {
-                    "si": "Nå kommer det ubehagelige spørsmålet. Signalene var synlige i mange år. Hvorfor reagerte ikke Vesten før?"
+                    "si": "Signalene var synlige i mange år. Hvorfor reagerte ikke Vesten hardere før?"
                 },
                 {
                     "si": "Det første svaret er pengene. Europas industri tjente på billig russisk gass, og ingen ville gi slipp på den."
@@ -483,7 +486,7 @@
                     "si": "Historien om Russland er også en historie om Vesten. Å være avhengig av en vare kan gjøre land blinde for fare."
                 },
                 {
-                    "si": "Og den viser en ting du kan ta med deg videre. Den som eier energien, eier også en del av makten."
+                    "si": "Den som eier energien, eier også en del av makten."
                 }
             ]
         }
