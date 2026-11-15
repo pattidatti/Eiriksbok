@@ -1,0 +1,332 @@
+{
+    "id": "norront",
+    "tittel": "Norrønt: Språket vikingene snakket",
+    "kilde": "/norsk/sprakhistorie/norront",
+    "bilde": "/images/sprakhistorie/norront-hero.webp",
+    "utenforArtikkel": [
+        {
+            "tall": 16,
+            "begrunnelse": "Antall tegn i den yngre futharken, vist i bildet (artikkelen sier «langt færre» enn 24). Store norske leksikon, «futhark»."
+        }
+    ],
+    "vurdering": { "dato": "2026-11-15", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "loftet",
+            "lyd": "rom",
+            "kapittel": "En gammel bok",
+            "visual": { "type": "NorrontRom", "props": { "modus": "bok" } },
+            "replikker": [
+                { "si": "Tenk deg at du finner en gammel bok på et loft." },
+                {
+                    "si": "Du åpner den. På første side står det: Þar er maðr nefndr Egill.",
+                    "uttale": "Du åpner den. På første side står det: Thar er mathr nevndr Egill."
+                },
+                { "si": "Du leser det høyt. Sakte begynner det å gi mening." },
+                {
+                    "si": "Þar ligner der. Maðr ligner mann. Nefndr ligner nevnt.",
+                    "uttale": "Thar ligner der. Mathr ligner mann. Nevndr ligner nevnt."
+                },
+                {
+                    "si": "Du har akkurat lest din første setning på norrønt. Det er språket folk snakket i Norge for tusen år siden."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NORRØNT",
+                    "undertittel": "Språket vikingene snakket",
+                    "bilde": "/images/sprakhistorie/norront-hero.webp",
+                    "tall": [{ "verdi": 1000, "etikett": "år siden", "fraBeat": 1 }],
+                    "sporsmal": {
+                        "tekst": "Hvordan ble vikingenes språk til norsken din?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                { "si": "Norrønt var språket vikingene snakket." },
+                {
+                    "si": "Det ble snakket i Norge for rundt tusen år siden. Snorre skrev kongesagaene sine på norrønt, og Olav den hellige snakket det."
+                },
+                {
+                    "si": "I denne filmen skal vi se hvordan dette språket ble til den norsken du snakker i dag."
+                }
+            ]
+        },
+        {
+            "id": "tid",
+            "lyd": "stille",
+            "kapittel": "Et gammelt språk",
+            "visual": { "type": "NorrontTidslinje", "props": { "modus": "start" } },
+            "replikker": [
+                {
+                    "si": "Norrønt vokste fram fra urnordisk. Det er et enda eldre språk, som vi kjenner fra runesteiner."
+                },
+                {
+                    "si": "Rundt år 700 hadde språket endret seg så mye at vi gir det et nytt navn: norrønt."
+                },
+                {
+                    "si": "Norrønt ble brukt fram til rundt 1350. Språket slik det ble brukt i Norge, kaller vi også gammelnorsk."
+                },
+                {
+                    "si": "Men norrønt er ikke et fremmed språk. Det er det samme språket vi snakker i dag, bare i en eldre form."
+                },
+                { "si": "Du kan si at norrønt er oldemoren til moderne norsk." }
+            ]
+        },
+        {
+            "id": "vest",
+            "lyd": "hav",
+            "kapittel": "Vestover",
+            "visual": { "type": "NorrontKart", "props": { "modus": "vest" } },
+            "replikker": [
+                { "si": "Norrønt ble ikke bare snakket i Norge." },
+                { "si": "På vikingtoktene tok nordmennene språket med seg vestover, over havet." },
+                { "si": "Det slo rot på Island, på Færøyene, på Shetland og på Orknøyene." },
+                {
+                    "si": "Etter hvert ble språket i Norge og på Island litt ulikt. Derfor skiller vi mellom gammalnorsk, språket i Norge, og gammalislandsk, språket på Island."
+                }
+            ]
+        },
+        {
+            "id": "runer",
+            "lyd": "vind",
+            "kapittel": "Runer og pergament",
+            "visual": { "type": "NorrontRom", "props": { "modus": "stein" } },
+            "replikker": [
+                {
+                    "si": "Hvordan skrev de? I starten med runer, risset inn i stein og i smykker."
+                },
+                { "si": "Det eldre runealfabetet hadde 24 tegn." },
+                {
+                    "si": "Fra 800-tallet brukte folk et forenklet runealfabet med langt færre tegn. Det kalles den yngre futharken."
+                },
+                {
+                    "si": "Det var litt som å skrive på et tastatur der mange av tastene er borte."
+                }
+            ]
+        },
+        {
+            "id": "pergament",
+            "lyd": "rom",
+            "visual": { "type": "NorrontRom", "props": { "modus": "pergament" } },
+            "replikker": [
+                {
+                    "si": "Rundt år 1000 kom kristendommen. Med den kom skrivekunsten og det latinske alfabetet, alfabetet du bruker nå."
+                },
+                {
+                    "si": "Munker og skrivere på Island begynte å skrive på pergament. Det er et ark laget av dyrehud."
+                },
+                {
+                    "si": "Det er derfor vi har sagaene i dag. Uten dem ville språket vært tapt, slik så mange andre språk fra middelalderen er."
+                }
+            ]
+        },
+        {
+            "id": "bokstaver",
+            "lyd": "stille",
+            "visual": { "type": "NorrontOrd", "props": { "modus": "bokstaver" } },
+            "replikker": [
+                { "si": "Men noen av bokstavene i de gamle tekstene kjenner du ikke." },
+                {
+                    "si": "Denne heter thorn. Den uttales som th i det engelske ordet thing.",
+                    "uttale": "Denne heter torn. Den uttales som te-hå i det engelske ordet thing."
+                },
+                {
+                    "si": "Denne heter eth. Den uttales som th i det engelske ordet the, og finnes fortsatt på islandsk.",
+                    "uttale": "Denne heter eð. Den uttales som te-hå i det engelske ordet the, og finnes fortsatt på islandsk."
+                },
+                {
+                    "si": "O med krok er en åpen o-lyd. Den ble til o eller å i norsk i dag."
+                },
+                { "si": "Æ og ø har klart seg uten store endringer. De er helt like i dag." }
+            ]
+        },
+        {
+            "id": "ordpar",
+            "kapittel": "Kan du lese norrønt?",
+            "visual": { "type": "NorrontOrd", "props": { "modus": "ordpar" } },
+            "replikker": [
+                {
+                    "si": "Det enkleste beviset på at norrønt og norsk er i slekt, er å se ordene side om side."
+                },
+                {
+                    "si": "Hús er blitt til hus. Skip er fortsatt skip, helt likt etter tusen år.",
+                    "uttale": "Hus er blitt til hus. Skip er fortsatt skip, helt likt etter tusen år."
+                },
+                {
+                    "si": "Maðr er blitt til mann.",
+                    "uttale": "Mathr er blitt til mann."
+                },
+                {
+                    "si": "Fjǫrðr er blitt til fjord. Og kýr er blitt til ku.",
+                    "uttale": "Fjorthr er blitt til fjord. Og kyr er blitt til ku."
+                },
+                {
+                    "si": "Auga er vanskeligere. G-en forsvant, og au ble til ø. Slik fikk vi ordet øye.",
+                    "uttale": "Auga er vanskeligere. G-en forsvant, og a-u ble til ø. Slik fikk vi ordet øye."
+                }
+            ]
+        },
+        {
+            "id": "kasus",
+            "kapittel": "Bøyningene",
+            "visual": { "type": "NorrontOrd", "props": { "modus": "kasus" } },
+            "replikker": [
+                {
+                    "si": "Ordene ligner, men grammatikken har endret seg mye. Norrønt hadde fire kasus."
+                },
+                {
+                    "si": "Kasus betyr at ordet får en annen endelse, alt etter hvilken rolle det har i setningen."
+                },
+                {
+                    "si": "Er hesten den som gjør noe, heter den hestr. Er hesten den noe skjer med, heter den bare hest."
+                },
+                { "si": "Hestens het hests. Og til hesten het hesti." },
+                { "si": "Islandsk har dette ennå. Tysk har det litt. Norsk har det nesten ikke." }
+            ]
+        },
+        {
+            "id": "verb",
+            "visual": { "type": "NorrontOrd", "props": { "modus": "verb" } },
+            "replikker": [
+                {
+                    "si": "Også verbene var vanskeligere. De ble bøyd etter hvem som gjorde noe, og hvor mange de var."
+                },
+                { "si": "Språket hadde til og med egne ord for vi to og dere to." },
+                { "si": "I dag sier vi bare er, til alle." },
+                {
+                    "si": "Bøyning etter bøyning har falt bort. Det er én grunn til at norsk er lettere å lære enn islandsk."
+                }
+            ]
+        },
+        {
+            "id": "dansk",
+            "kapittel": "Dansk tar over",
+            "visual": { "type": "NorrontTidslinje", "props": { "modus": "dansk" } },
+            "replikker": [
+                {
+                    "si": "Så hva skjedde med norrønt? Et skille kom med svartedauden, pesten som herjet fra 1349 til 1350."
+                },
+                {
+                    "si": "Etter pesten tok en helt ny generasjon av folk som kunne skrive, over. Og skriftspråket endret seg."
+                },
+                {
+                    "si": "Fra 1380 var Norge i union med Danmark, med felles konge. Det varte helt til 1814."
+                },
+                {
+                    "si": "Bit for bit tok dansk over som skriftspråk. Folk snakket fortsatt norsk, men ingen skrev det ned."
+                },
+                {
+                    "si": "Da Norge ble selvstendig igjen i 1814, fantes det ikke noe norsk skriftspråk. Bare dansk."
+                }
+            ]
+        },
+        {
+            "id": "aasen",
+            "visual": { "type": "NorrontKart", "props": { "modus": "aasen" } },
+            "replikker": [
+                {
+                    "si": "Derfor reiste Ivar Aasen rundt i landet. Mellom 1842 og 1846 samlet han dialektord, særlig på Vestlandet og i fjellbygdene."
+                },
+                {
+                    "si": "Dialektene hadde tatt vare på mye av det norrøne. Av dem laget han et nytt skriftspråk: landsmål."
+                },
+                { "si": "Senere fikk landsmålet navnet nynorsk." },
+                {
+                    "si": "Mange nynorske ord står nærmere norrønt enn bokmål gjør. Tenk på eg, ikkje og kvifor."
+                }
+            ]
+        },
+        {
+            "id": "stedsnavn",
+            "kapittel": "Norrønt i dag",
+            "visual": { "type": "NorrontKart", "props": { "modus": "stedsnavn" } },
+            "replikker": [
+                { "si": "Norrønt forsvant aldri helt. Det lever i nesten alle ordene du sier." },
+                {
+                    "si": "Stedsnavn er fulle av gammel arv. Mange slutter på vik, fjord, sund, nes eller dal."
+                },
+                {
+                    "si": "Navn som Nes og Dal er rene naturnavn. Noen av dem er svært gamle."
+                },
+                {
+                    "si": "Endelser som stad og bø er gamle ord for gård eller bosted. Navn på stad var typiske i vikingtiden."
+                }
+            ]
+        },
+        {
+            "id": "ukedager",
+            "visual": { "type": "NorrontTidslinje", "props": { "modus": "uke" } },
+            "replikker": [
+                { "si": "Selv ukedagene bærer på norrønt. Fire av dem har navn etter gamle guder." },
+                { "si": "Tirsdag har navnet sitt etter krigsguden Ty." },
+                { "si": "Onsdag etter hovedguden Odin. Og torsdag etter Tor." },
+                {
+                    "si": "Fredag er litt vanskeligere. Navnet kan spores til gudinnene Frigg og Frøya."
+                }
+            ]
+        },
+        {
+            "id": "england",
+            "lyd": "hav",
+            "visual": { "type": "NorrontKart", "props": { "modus": "england" } },
+            "replikker": [
+                {
+                    "si": "Norrønt satte også spor i engelsk. Nordmenn og dansker reiste vestover til England."
+                },
+                {
+                    "si": "Forskere anslår at rundt tusen ord som brukes i engelsk i dag, kommer fra vikingenes språk."
+                },
+                {
+                    "si": "Law kommer fra lagu. Husband kommer fra husbondi. Window kommer fra vindauga.",
+                    "uttale": "Lå kommer fra lagu. Hasbend kommer fra husbondi. Windou kommer fra vindauga."
+                },
+                {
+                    "si": "Weak kommer fra veikr. Og egg har overlevd helt uendret.",
+                    "uttale": "Wiik kommer fra veikr. Og egg har overlevd helt uendret."
+                },
+                {
+                    "si": "Og på Island har språket endret seg så lite at folk leser de gamle tekstene uten store problemer. Islandsk er en tidsmaskin."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Tråden bakover",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Norrønt er eldre norsk.", "fraBeat": 0 },
+                        {
+                            "tekst": "Vi har ikke skiftet språk. Vi har endret det, ord for ord.",
+                            "fraBeat": 1
+                        },
+                        {
+                            "tekst": "Sagaene er skrevet av dine egne forfedre.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Norrønt er ikke bare et fagord du skal huske til prøven. Det er norsk, bare eldre."
+                },
+                {
+                    "si": "Vi har ikke skiftet språk. Vi har bare endret det, ord for ord, generasjon for generasjon."
+                },
+                {
+                    "si": "Sagaene er ikke skrevet av fremmede. De er skrevet av dine egne forfedre."
+                }
+            ]
+        }
+    ]
+}
