@@ -112,6 +112,7 @@ const SvindelSjekken = lazy(() => import('./content/interactive/SvindelSjekken')
 const RettsstatVokteren = lazy(() => import('./content/interactive/RettsstatVokteren').then(m => ({ default: m.RettsstatVokteren })));
 const PolitiMaktSortering = lazy(() => import('./content/interactive/PolitiMaktSortering').then(m => ({ default: m.PolitiMaktSortering })));
 const RettssakReisen = lazy(() => import('./content/interactive/RettssakReisen').then(m => ({ default: m.RettssakReisen })));
+const StraffeVekta = lazy(() => import('./content/interactive/StraffeVekta').then(m => ({ default: m.StraffeVekta })));
 const KlageFristen = lazy(() => import('./content/interactive/KlageFristen').then(m => ({ default: m.KlageFristen })));
 const TskjortePrisen = lazy(() => import('./content/interactive/TskjortePrisen').then(m => ({ default: m.TskjortePrisen })));
 const BrentJord = lazy(() => import('./content/interactive/BrentJord').then(m => ({ default: m.BrentJord })));
@@ -1103,6 +1104,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RettsstatVokteren,
     PolitiMaktSortering,
     RettssakReisen,
+    StraffeVekta,
     KlageFristen,
     TskjortePrisen,
     BrentJord,

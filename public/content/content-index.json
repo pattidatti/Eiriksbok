@@ -1,5 +1,5 @@
 {
-  "buildId": 269853315404385,
+  "buildId": 33592008656667,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4909,6 +4909,9 @@
     "hva-er-en-rettsstat": [
       "content/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat.json"
     ],
+    "hva-er-straff-godt-for": [
+      "content/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for.json"
+    ],
     "politiet": [
       "content/samfunnskunnskap/rettsstaten/politiet.json"
     ],
@@ -6642,6 +6645,7 @@
     "samfunnskunnskap/personlig-okonomi/svindel": "content/samfunnskunnskap/personlig-okonomi/svindel.json",
     "samfunnskunnskap/rettsstaten/domstolene": "content/samfunnskunnskap/rettsstaten/domstolene.json",
     "samfunnskunnskap/rettsstaten/hva-er-en-rettsstat": "content/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat.json",
+    "samfunnskunnskap/rettsstaten/hva-er-straff-godt-for": "content/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for.json",
     "samfunnskunnskap/rettsstaten/politiet": "content/samfunnskunnskap/rettsstaten/politiet.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
     "samfunnskunnskap/styringsformer/demokrati-ansikter": "content/samfunnskunnskap/styringsformer/demokrati-ansikter.json",
