@@ -1,0 +1,280 @@
+{
+    "id": "bokmal-og-nynorsk",
+    "tittel": "Bokmål og nynorsk: Hvordan Norge fikk to skriftspråk",
+    "kilde": "/norsk/sprakhistorie/bokmal-og-nynorsk",
+    "bilde": "/images/sprakhistorie/bokmal-og-nynorsk-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 109, "begrunnelse": "Regnet ut fra artikkelen: 78 stemte for og 31 mot i 1885, til sammen 109 stemmer. Brukt som total i prikkfeltet." },
+        { "tall": 1000, "begrunnelse": "Målestokk i prikkfeltet: 1000 prikker er alle grunnskoleelevene, så 14,8 prosent blir 148 prikker og 11,6 prosent blir 116." },
+        { "tall": 148, "begrunnelse": "Regnet ut fra artikkelen: 14,8 prosent av 1000 prikker." },
+        { "tall": 116, "begrunnelse": "Regnet ut fra artikkelen: 11,6 prosent av 1000 prikker." }
+    ],
+    "vurdering": { "dato": "2026-11-16", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "vandring",
+            "lyd": "vind",
+            "kapittel": "Vandringen",
+            "visual": { "type": "BokmalVandring", "props": { "modus": "vandring" } },
+            "replikker": [
+                { "si": "Det er 1842. En ung mann på 28 år legger ut på vandring. Han har ryggsekk og notatbok." },
+                { "si": "Han heter Ivar Aasen. Planen hans er å reise fra bygd til bygd og skrive ned hvordan folk faktisk snakker." },
+                { "si": "Han lytter i fjøs og på kjøkken, og rundt kaffebordet hos prestene i bygdene." },
+                { "si": "Han skriver ned ord, bøyninger og hele setninger. Bøyninger er de små endringene i ordet, som hest og hesten." },
+                { "si": "Han reiser fra 1842 til 1846, særlig på Vestlandet og i fjellbygdene. Da han kommer hjem, har han noe ingen andre har: et atlas over norske dialekter." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "BOKMÅL OG NYNORSK",
+                    "undertittel": "Hvordan Norge fikk to skriftspråk",
+                    "bilde": "/images/sprakhistorie/bokmal-og-nynorsk-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor har Norge to skriftspråk?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Ivar Aasen var i gang med noe stort. Notatbøkene skulle bli et helt nytt skriftspråk." },
+                { "si": "I dag har Norge to offisielle skriftspråk. Begge heter norsk: bokmål og nynorsk." },
+                { "si": "Det er det bare noen få land i verden som har. Hvorfor har vi to? Svaret ligger 200 år tilbake, og det har med Danmark å gjøre." }
+            ]
+        },
+        {
+            "id": "union",
+            "kapittel": "Snakket norsk, skrev dansk",
+            "visual": { "type": "BokmalKart", "props": { "modus": "union" } },
+            "replikker": [
+                { "si": "I 400 år var Norge i union med Danmark. Union betyr at to land er bundet sammen og styres sammen, med felles konge." },
+                { "si": "All skrift var på dansk: lover, bøker og aviser, i kirken og på skolen." },
+                { "si": "Dansk var språket de utdannede brukte. Det var dansk barna lærte å lese og skrive." },
+                { "si": "Men folk i bygdene snakket norske dialekter. Det gamle norrøne språket fra vikingtiden levde videre der i hundrevis av år. Ingen skrev dialektene ned." },
+                { "si": "Resultatet var et merkelig dobbeltliv. Nordmenn snakket norsk, men skrev dansk." }
+            ]
+        },
+        {
+            "id": "smugling",
+            "kapittel": "Eget land, eget språk?",
+            "visual": { "type": "BokmalOrd", "props": { "modus": "smugling" } },
+            "replikker": [
+                { "si": "I 1814 fikk Norge sin egen grunnlov. Senere gikk landet i union med Sverige." },
+                { "si": "Nå satt nordmenn med et stort spørsmål. Vi har eget land og egen grunnlov. Hvorfor har vi ikke et eget skriftspråk?" },
+                { "si": "Diktere som Henrik Wergeland begynte å smugle norske ord inn i dansken." },
+                { "si": "Asbjørnsen og Moe skrev ned folkeeventyr. Språket var dansk på utsiden, men fullt av norske vendinger og rytmer." },
+                { "si": "Likevel var skriftspråket i bunn og grunn fortsatt dansk." }
+            ]
+        },
+        {
+            "id": "veiskille",
+            "kapittel": "To menn, to svar",
+            "visual": { "type": "BokmalOrd", "props": { "modus": "veiskille" } },
+            "replikker": [
+                { "si": "På 1840-tallet kom det to ulike svar, og de kom samtidig." },
+                { "si": "Det ene kom fra Ivar Aasen. Han mente at det ekte norske språket bodde i bygdedialektene." },
+                { "si": "Det andre kom fra Knud Knudsen, en lærer i Christiania. Christiania er det gamle navnet på Oslo." },
+                { "si": "De to tenkte stikk motsatt. Den ene ville bygge nytt, den andre ville bygge om." }
+            ]
+        },
+        {
+            "id": "aasen",
+            "lyd": "vind",
+            "visual": { "type": "BokmalVandring", "props": { "modus": "bygg" } },
+            "replikker": [
+                { "si": "Aasen mente at dialektene hadde holdt seg nær det norrøne. Dansken hadde endret seg mer, nede i Danmark." },
+                { "si": "Derfor bygde han et nytt skriftspråk fra grunnen av, med dialektene som byggesteiner." },
+                { "si": "Grammatikken kom i 1848. Grammatikk er reglene for hvordan ord bøyes og settes sammen." },
+                { "si": "Ordboka kom i 1850. Han kalte språket landsmål." },
+                { "si": "I 1929 vedtok Stortinget at det offisielle navnet skulle være nynorsk." }
+            ]
+        },
+        {
+            "id": "knudsen",
+            "lyd": "stille",
+            "visual": { "type": "BokmalOrd", "props": { "modus": "knudsen" } },
+            "replikker": [
+                { "si": "Knud Knudsen syntes Aasens plan var for radikal, altså at den endret for mye på en gang." },
+                { "si": "Hvorfor lage et helt nytt språk, når alle skolebarn allerede kan et skriftspråk?" },
+                { "si": "Hans idé var å ta dansken slik den var, og bytte ut de mest danske ordene med norske former, litt etter litt. Han kalte det gradvishetens vei." },
+                { "si": "Han ville skrive sten i stedet for steen. Og etter hvert stein." },
+                { "si": "Det Knudsen fornorsket, ble til slutt riksmål. Fra 1929 fikk det navnet bokmål." }
+            ]
+        },
+        {
+            "id": "jamstilling",
+            "kapittel": "Like i loven",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 109,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "Stortinget, 12. mai 1885",
+                            "restEtikett": "stemmer",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 109,
+                            "farget": 78,
+                            "farge": "#0d9488",
+                            "restFarge": "#dc2626",
+                            "tittel": "Jamstillingsvedtaket: 78 mot 31",
+                            "fargeEtikett": "stemte for",
+                            "restEtikett": "stemte mot"
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Allerede i 1885, mange år før navnene nynorsk og bokmål kom, stemte Stortinget over språket. Det skjedde den 12. mai." },
+                { "si": "78 stemte for, og 31 stemte mot. Vedtaket kalles jamstillingsvedtaket." },
+                { "si": "Jamstilling betyr likestilling. Landsmål og det dansk-norske skriftspråket ble likestilt ved lov, i skolen og i statens kontorer." }
+            ]
+        },
+        {
+            "id": "samnorsk",
+            "lyd": "rom",
+            "kapittel": "Striden",
+            "visual": { "type": "BokmalStrid", "props": { "modus": "samnorsk" } },
+            "replikker": [
+                { "si": "Men loven stoppet ikke krangelen. Fra slutten av 1800-tallet og gjennom hele 1900-tallet kranglet nordmenn om hvilket skriftspråk som var det riktige." },
+                { "si": "Skoler valgte side. Aviser valgte side. Politikere kjempet i Stortinget om bøyninger og endelser." },
+                { "si": "Myndighetene hadde en plan: samnorsk. Bokmål og nynorsk skulle smelte sammen til ett språk i fremtiden." },
+                { "si": "Nye regler for hvordan ordene skulle skrives, i 1917 og i 1938, skulle bygge bro mellom dem. Slike regler kalles rettskrivingsreformer." }
+            ]
+        },
+        {
+            "id": "aksjon",
+            "visual": { "type": "BokmalStrid", "props": { "modus": "aksjon" } },
+            "replikker": [
+                { "si": "Folk reagerte sterkt. Foreldre begynte å streke over de radikale formene i skolebøkene, altså de nye formene som skulle føre språkene sammen." },
+                { "si": "I 1953 samlet Foreldreaksjonen mot samnorsk over 400 000 underskrifter." },
+                { "si": "Året etter ga regjeringen etter. Den tillot lærebøker med tradisjonelle bokmålsformer." },
+                { "si": "Og i 2002 fjernet Stortinget for godt den regelen som sa at språkene skulle nærme seg hverandre. Den het tilnærmingsparagrafen." }
+            ]
+        },
+        {
+            "id": "makt",
+            "lyd": "stille",
+            "visual": { "type": "BokmalStrid", "props": { "modus": "vekt" } },
+            "replikker": [
+                { "si": "Striden handlet ikke bare om språk. Den handlet også om makt og klasse." },
+                { "si": "Nynorsk ble ofte sett på som bygdas språk. Bokmål var språket i byene og blant de utdannede." },
+                { "si": "Forfattere som Tarjei Vesaas og Olav H. Hauge skrev sine viktigste verk på nynorsk. De viste at språket kunne bære stor litteratur." },
+                { "si": "Men de fleste avisene fortsatte å skrive bokmål. Og bokmål ble språket som rådde i radioen, og senere på fjernsynet." }
+            ]
+        },
+        {
+            "id": "spraklova",
+            "kapittel": "I dag",
+            "visual": { "type": "BokmalStrid", "props": { "modus": "lov" } },
+            "replikker": [
+                { "si": "I dag er det Språklova som gjelder. Den trådte i kraft 1. januar 2022." },
+                { "si": "Loven sier at bokmål og nynorsk er likeverdige. Begge kan brukes på alle områder i samfunnet." },
+                { "si": "Offentlige organer, altså staten og kommunene, har plikt til å bruke, utvikle og styrke begge språkene." },
+                { "si": "Og nynorsk får et ekstra vern, fordi det er det minst brukte av de to." }
+            ]
+        },
+        {
+            "id": "tall",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 1000,
+                            "farget": 148,
+                            "farge": "#7c3aed",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "2001: 14,8 prosent har nynorsk som hovedmål",
+                            "fargeEtikett": "nynorsk",
+                            "restEtikett": "resten",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 1000,
+                            "farget": 116,
+                            "farge": "#7c3aed",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "2021: 11,6 prosent har nynorsk som hovedmål",
+                            "fargeEtikett": "nynorsk",
+                            "restEtikett": "resten",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 1000,
+                            "farget": 116,
+                            "farge": "#7c3aed",
+                            "restFarge": "#2563eb",
+                            "tittel": "Rundt 88 prosent har bokmål",
+                            "fargeEtikett": "nynorsk",
+                            "restEtikett": "bokmål",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Hvor mange velger nynorsk? I 2001 hadde 14,8 prosent av elevene i grunnskolen nynorsk som hovedmål.", "uttale": "Hvor mange velger nynorsk? I 2001 hadde fjorten komma åtte prosent av elevene i grunnskolen nynorsk som hovedmål." },
+                { "si": "I 2021 var det 11,6 prosent.", "uttale": "I 2021 var det elleve komma seks prosent." },
+                { "si": "Resten, rundt 88 prosent, har bokmål. Hovedmål er språket du skriver mest på skolen. Det andre lærer du også, som sidemål." }
+            ]
+        },
+        {
+            "id": "vestlandet",
+            "lyd": "vind",
+            "kapittel": "Hvorfor to?",
+            "visual": { "type": "BokmalKart", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "Nynorsk står sterkest på Vestlandet, særlig på Sunnmøre og i Vestland fylke, utenom Bergen." },
+                { "si": "Mange spør om det ikke ville vært enklere å velge ett språk. Ett argument for å beholde begge handler om hvem vi er." },
+                { "si": "Tenk deg en elev i Volda eller på Voss. Hen snakker en dialekt som ligner nynorsk, og kjenner seg igjen når hen leser nynorsk." },
+                { "si": "En ungdom fra Oslo føler seg på samme måte hjemme i bokmål. Språk handler om identitet, altså hvem du er og hvor du hører til." }
+            ]
+        },
+        {
+            "id": "norden",
+            "lyd": "stille",
+            "visual": { "type": "BokmalKart", "props": { "modus": "norden" } },
+            "replikker": [
+                { "si": "Det finnes også et praktisk argument. Når du lærer både hovedmål og sidemål, ser du hvordan språk kan variere." },
+                { "si": "Du blir også mer bevisst på din egen dialekt." },
+                { "si": "Og de to skriftspråkene gjør det lettere å forstå svensk og dansk. Til sammen dekker de en stor del av variasjonen i de nordiske språkene." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Nordmenn snakket norsk,", "fraBeat": 0 },
+                        { "tekst": "men skrev dansk.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Aasen bygde fra dialektene.", "fraBeat": 1 },
+                        { "tekst": "Knudsen fornorsket dansken.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Likestilt siden 1885:", "fraBeat": 2 },
+                        { "tekst": "to likeverdige språk i loven.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Ikke et tegn på splittelse,", "fraBeat": 3 },
+                        { "tekst": "men plass til flere måter å snakke samme språk på.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Nordmenn snakket norsk, men skrev dansk. Det ville de gjøre noe med." },
+                { "si": "To menn svarte ulikt. Aasen bygde fra dialektene. Knudsen fornorsket dansken." },
+                { "si": "Begge språkene har vært likestilte ved lov siden 1885. I dag sier Språklova at de er likeverdige." },
+                { "si": "Det er ikke et tegn på splittelse at Norge har to skriftspråk. Det er et tegn på at det er plass til flere måter å snakke samme språk på." }
+            ]
+        }
+    ]
+}
