@@ -6640,6 +6640,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "hva-er-en-rettsstat",
+      "title": "Hva er en rettsstat?",
+      "description": "Fem regler som sørger for at også de som styrer landet, må følge loven - og hvorfor de beskytter deg.",
+      "startDate": 1814,
+      "endDate": null,
+      "displayDate": "1814",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "rettsstaten",
+      "link": "/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat",
+      "tags": [
+        "rettsstaten",
+        "grunnloven",
+        "maktfordeling",
+        "menneskerettigheter",
+        "demokrati"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "unionen-med-sverige",
       "title": "Unionen med Sverige: To land, én konge",
       "description": "Hvordan Norge i 1814 ble en personalunion med Sverige, og hva de 91 årene betydde.",
@@ -6760,6 +6784,30 @@
       "placeLabel": "Storbritannia",
       "placeCountryId": 826,
       "geoConfidence": "tag"
+    },
+    {
+      "id": "domstolene",
+      "title": "Domstolene: Fra tingrett til Høyesterett",
+      "description": "De tre nivåene i domstolene, forskjellen på straffesak og sivil sak, rollene i rettssalen og hvorfor en dom kan ankes.",
+      "startDate": 1815,
+      "endDate": null,
+      "displayDate": "1815",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "rettsstaten",
+      "link": "/samfunnskunnskap/rettsstaten/domstolene",
+      "tags": [
+        "rettsstaten",
+        "domstolene",
+        "rettigheter",
+        "maktfordeling",
+        "demokrati"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "samlingen-av-italia-og-tyskland",
@@ -12790,6 +12838,31 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "ettbarnspolitikken",
+      "title": "Ettbarnspolitikken i Kina",
+      "description": "Hvorfor bestemte Kina at de fleste par bare skulle få ett barn, hvordan fikk staten folk til å følge den, og hvorfor eldes landet så raskt i dag?",
+      "startDate": 1980,
+      "endDate": 2015,
+      "displayDate": "1980-2015",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "demografi",
+      "link": "/samfunnskunnskap/demografi/ettbarnspolitikken",
+      "tags": [
+        "demografi",
+        "kina",
+        "befolkning",
+        "fødselstall",
+        "eldrebølge",
+        "menneskerettigheter"
+      ],
+      "lat": 35,
+      "lng": 105,
+      "placeLabel": "Kina",
+      "placeCountryId": 156,
+      "geoConfidence": "tag"
+    },
+    {
       "id": "imf-og-verdensbanken-sub-1",
       "title": "Strukturtilpasning",
       "description": "Fattige land får lån mot at de kutter og privatiserer.",
@@ -13339,6 +13412,30 @@
       "geoConfidence": "tag"
     },
     {
+      "id": "politiet",
+      "title": "Politiet: Makten til å gripe inn",
+      "description": "Hva politiet kan og ikke kan gjøre, hvilke rettigheter du har hvis du blir stoppet, og hvordan du klager.",
+      "startDate": 1995,
+      "endDate": null,
+      "displayDate": "1995",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "rettsstaten",
+      "link": "/samfunnskunnskap/rettsstaten/politiet",
+      "tags": [
+        "rettsstaten",
+        "politiet",
+        "rettigheter",
+        "maktfordeling",
+        "demokrati"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
       "id": "den-unipolare-verden-sub-1",
       "title": "WTO opprettes",
       "description": "Verdens handelsorganisasjon skal få varer og penger til å flyte fritt over grensene.",
@@ -13661,6 +13758,30 @@
         "kald-krig",
         "økonomi"
       ]
+    },
+    {
+      "id": "hva-er-straff-godt-for",
+      "title": "Hva er straff godt for?",
+      "description": "De fire formålene med straff, hva norsk lov sier om gjengjeldelse, og hva tallene om tilbakefall forteller.",
+      "startDate": 2005,
+      "endDate": null,
+      "displayDate": "2005",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "rettsstaten",
+      "link": "/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for",
+      "tags": [
+        "rettsstaten",
+        "straff",
+        "fengsel",
+        "rettferdighet",
+        "etikk"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
     },
     {
       "id": "den-unipolare-verden-sub-4",
@@ -14182,6 +14303,30 @@
       "geoConfidence": "guess"
     },
     {
+      "id": "afrikas-befolkningsvekst",
+      "title": "Afrikas befolkningsvekst: Verdens yngste kontinent",
+      "description": "Hvorfor vokser befolkningen så raskt i mange afrikanske land, og blir de mange unge et problem eller en mulighet?",
+      "startDate": 2024,
+      "endDate": null,
+      "displayDate": "2024",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "demografi",
+      "link": "/samfunnskunnskap/demografi/afrikas-befolkningsvekst",
+      "tags": [
+        "demografi",
+        "afrika",
+        "befolkning",
+        "fødselstall",
+        "befolkningsvekst",
+        "utdanning"
+      ],
+      "lat": 2,
+      "lng": 20,
+      "placeLabel": "Afrika",
+      "geoConfidence": "tag"
+    },
+    {
       "id": "global-handel-oversikt",
       "title": "Verden er én maskin",
       "description": "Hvordan global handel fungerer og hvorfor alle land er avhengige av hverandre.",
@@ -14621,6 +14766,176 @@
         "bygd",
         "skole",
         "befolkning"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "lonnsslippen",
+      "title": "Lønnsslippen: Hvor blir pengene av?",
+      "description": "Lær å lese en lønnsslipp linje for linje: brutto og netto, frikort, skattetrekk og feriepenger.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/lonnsslippen",
+      "tags": [
+        "personlig økonomi",
+        "lønn",
+        "skatt",
+        "frikort",
+        "feriepenger",
+        "arbeidsliv"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "budsjett",
+      "title": "Budsjett: Å velge hva pengene skal gå til",
+      "description": "Faste og variable utgifter, buffer og SIFOs referansebudsjett: slik lager du en plan for pengene dine.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/budsjett",
+      "tags": [
+        "personlig økonomi",
+        "budsjett",
+        "forbruk",
+        "sparing",
+        "buffer"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "kreditt-og-forbrukslan",
+      "title": "Kreditt og forbrukslån: Når lån blir dyrt",
+      "description": "Effektiv rente, minstebeløpsfellen og reglene som skal beskytte deg: hvorfor lån på kredittkort kan bli så dyre.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/kreditt-og-forbrukslan",
+      "tags": [
+        "personlig økonomi",
+        "lån",
+        "kredittkort",
+        "rente",
+        "gjeld"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "kjop-na-betal-senere",
+      "title": "Kjøp nå, betal senere: Når regningen vokser",
+      "description": "Hva «betal senere» egentlig er, og hvordan en glemt faktura vokser gjennom purring, inkassovarsel og inkasso.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/kjop-na-betal-senere",
+      "tags": [
+        "personlig økonomi",
+        "faktura",
+        "inkasso",
+        "gjeld",
+        "netthandel"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "sparing-og-rentes-rente",
+      "title": "Sparing og rentes rente: Når tiden jobber for deg",
+      "description": "Hvorfor den som begynner å spare tidlig ender med mye mer: rentes rente, sparekonto, fond, aksjer og BSU.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente",
+      "tags": [
+        "personlig økonomi",
+        "sparing",
+        "rente",
+        "fond",
+        "bsu"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "svindel",
+      "title": "Svindel på nett: Slik lurer de deg",
+      "description": "Pengemuldyr, nettfiske og falske nettbutikker: slik kjenner du igjen svindel, og dette gjør du hvis du blir lurt.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/svindel",
+      "tags": [
+        "personlig økonomi",
+        "svindel",
+        "netthandel",
+        "hvitvasking",
+        "nettvett"
+      ],
+      "lat": 60.5,
+      "lng": 8.5,
+      "placeLabel": "Norge",
+      "placeCountryId": 578,
+      "geoConfidence": "guess"
+    },
+    {
+      "id": "forbrukerrettigheter",
+      "title": "Dine rettigheter som forbruker",
+      "description": "Reklamasjon, garanti og angrerett: slik klager du når en vare går i stykker eller du angrer på et kjøp på nett.",
+      "startDate": 2026,
+      "endDate": null,
+      "displayDate": "2026",
+      "type": "lesson",
+      "subjectId": "samfunnskunnskap",
+      "topicId": "personlig-okonomi",
+      "link": "/samfunnskunnskap/personlig-okonomi/forbrukerrettigheter",
+      "tags": [
+        "personlig økonomi",
+        "forbruker",
+        "reklamasjon",
+        "angrerett",
+        "netthandel",
+        "lover"
       ],
       "lat": 60.5,
       "lng": 8.5,
