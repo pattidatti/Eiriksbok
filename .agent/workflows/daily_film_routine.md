@@ -50,7 +50,10 @@ krever. Valget lagres i `/tmp/pw.env`, som hver Playwright-kommando starter med 
 ```bash
 : > /tmp/pw.env
 node -e "require('playwright').chromium.launch().then(b=>{console.log('pw ok');b.close()}).catch(e=>console.log('pw fail'))"
-# Ved «pw fail»:
+# Ved «pw fail»: prøv først nettleseren direkte (wrapperen under kan bli stoppet av sikkerhetsfilteret):
+echo 'export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/opt/pw-browsers/chromium' > /tmp/pw.env
+source /tmp/pw.env && node -e "require('playwright').chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }).then(b=>{console.log('pw ok');b.close()})"
+# Fortsatt «pw fail» (sertifikatfeil): wrapperen.
 printf '#!/bin/sh\nexec /opt/pw-browsers/chromium --ignore-certificate-errors "$@"\n' > /tmp/chromium-wrap && chmod +x /tmp/chromium-wrap
 echo 'export PLAYWRIGHT_CHROMIUM_EXECUTABLE=/tmp/chromium-wrap' > /tmp/pw.env
 source /tmp/pw.env && node -e "require('playwright').chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE }).then(b=>{console.log('pw ok');b.close()})"
@@ -59,6 +62,9 @@ source /tmp/pw.env && node -e "require('playwright').chromium.launch({ executabl
 (`launch()` leser ikke variabelen selv, så kontrollen må sende `executablePath`. `shots-film`
 gjør det.) Skal du stoppe dev-serveren, bruk `kill %1` eller PID-en, ikke `pkill -f "vite ..."`:
 mønsteret står i din egen kommandolinje, så pkill dreper shellet ditt også.
+
+`npx tsc -b` mens Vite og `shots-film` går, kan bruke opp minnet og drepe hele økta (exit 137).
+Kjør tsc med `NODE_OPTIONS=--max-old-space-size=6144`, og aldri samtidig med `shots-film`.
 
 Start dev-serveren én gang og la den gå:
 
@@ -180,7 +186,7 @@ Lag dem i `src/features/film/visuals/<film-id>/<Navn>.tsx` etter guiden §3b. Na
 filmens navn (`DdagenStranda`, `BerlinmurenKart`), så det aldri kolliderer med en annen film.
 
 ```bash
-node scripts/validate-film.mjs <sti> && npx tsc -b && npx eslint src/features/film
+node scripts/validate-film.mjs <sti> && NODE_OPTIONS=--max-old-space-size=6144 npx tsc -b && npx eslint src/features/film
 ```
 
 ---
@@ -230,7 +236,7 @@ Når det har gått 2,5 timer siden starten (`/tmp/start.txt`), startes ingen ny 
 ## Jobb 5: PR (alltid)
 
 ```bash
-node scripts/validate-film.mjs <sti> && npx tsc -b && npx eslint src/features/film || echo "IKKE GRØNT - tilbake til trappa i Jobb 4"
+node scripts/validate-film.mjs <sti> && NODE_OPTIONS=--max-old-space-size=6144 npx tsc -b && npx eslint src/features/film || echo "IKKE GRØNT - tilbake til trappa i Jobb 4"
 DATO=$(date -u +%Y%m%d)
 git checkout -b claude/film-$DATO-<leksjon>
 git add src/features/film/manus/<fag>/<emne>/<leksjon>.json src/features/film/visuals/<film-id>/

@@ -125,6 +125,13 @@ function finnOverlapp() {
             const sammeLinje = Math.abs(midtA - midtC) < Math.min(a.b.height, c.b.height) / 2;
             const minste = Math.min(a.b.width * a.b.height, c.b.width * c.b.height) * 0.64;
             if (!sammeLinje && (w * h) / minste < 0.15) continue;
+            // Samme tekst nesten nøyaktig oppå seg selv er en node som er lagt inn to ganger (et
+            // strengbytte som traff to steder), ikke et layoutproblem.
+            const likBoks = Math.abs(a.b.left - c.b.left) < 3 && Math.abs(a.b.top - c.b.top) < 3;
+            if (a.tekst === c.tekst && likBoks) {
+                funn.push(`«${a.tekst.slice(0, 50)}» står to ganger oppå seg selv - duplisert node i koden, sjekk siste strengbytte`);
+                continue;
+            }
             funn.push(`«${a.tekst.slice(0, 50)}» overlapper «${c.tekst.slice(0, 50)}»`);
         }
     }
@@ -161,7 +168,15 @@ function finnOverlapp() {
         if (!(t.compareDocumentPosition(topp) & Node.DOCUMENT_POSITION_FOLLOWING)) continue;
         const cs = getComputedStyle(topp);
         const fyllAlfa = parseFloat(cs.fill.match(/rgba\(.*,\s*([\d.]+)\)$/)?.[1] ?? '1');
-        if (cs.fill === 'none' || fyllAlfa * parseFloat(cs.fillOpacity) * parseFloat(cs.opacity) < 0.5) continue;
+        // En figur i en gruppe som er skjult med opacity 0 (innhold fra en senere beat) treffes
+        // likevel av elementFromPoint. Gang derfor med opaciteten til alle foreldrene.
+        let synlig = fyllAlfa * parseFloat(cs.fillOpacity);
+        for (let e = topp; e && e !== rot.parentElement; e = e.parentElement) {
+            const ce = getComputedStyle(e);
+            if (ce.display === 'none' || ce.visibility === 'hidden') synlig = 0;
+            synlig *= parseFloat(ce.opacity || '1');
+        }
+        if (cs.fill === 'none' || synlig < 0.5) continue;
         funn.push(`«${tekst.slice(0, 50)}» har en figur (${topp.tagName.toLowerCase()}) tegnet oppå seg`);
     }
     // SVG-tekst som stikker ut av kortet sitt: en `rect` med fyll rett før teksten i samme
@@ -290,7 +305,8 @@ if (!kunScener) {
 
 await browser.close();
 console.log(`\nBilder: ${path.relative(ROT, ut)}/ (les ark-sNN.png)`);
-fs.writeFileSync(path.join(ut, 'overlapp.txt'), overlapp.join('\n') + (overlapp.length ? '\n' : ''));
+// En tom fil leste vurdereren som at sjekken kanskje ikke gikk. Si det.
+fs.writeFileSync(path.join(ut, 'overlapp.txt'), overlapp.length ? overlapp.join('\n') + '\n' : 'Ingen feil.\n');
 if (overlapp.length) {
     console.log(`\nTekst som overlapper eller er kuttet (${overlapp.length}, også i overlapp.txt):`);
     for (const o of overlapp) console.log(`  ${o}`);

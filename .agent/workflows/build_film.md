@@ -107,6 +107,9 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
   En egen visual i fire scener bør ha minst én modus som ser helt annerledes ut, ellers trekker
   vurdereren Variasjon. Bryter et kart regelen, flytt de minst stedbundne modusene til en ny,
   lett 2D-visual og slett dem fra kartet i samme PR.
+- **Filmer om regler og rettigheter** blir lett tre DOM-visualer med ikonkort (krav, unntak,
+  klagetrapp). Vurdereren leser dem som lysbilder og gir Variasjon 3, selv med en god 3D-scene.
+  Vis heller en ting som skjer: pakker som sorteres, en sak som flytter seg opp trappa.
 - **Begynn i en scene, ikke med en tittel.** Titanic åpner på havet klokka 23.38, og tittelen
   kommer i scene 2. Første setning skal sette eleven et sted.
 - **Slutt med hva det betyr.** Sluttkort med 2-4 store setninger, og den siste er uthevet.
@@ -126,6 +129,10 @@ film»-knappen i artikkelen dukker opp av seg selv. Rør ikke de delte filene i 
   mener:»), sett spørsmålstegn i kapittelnavn som er påstander, bruk samme avsender som
   artikkelen («israelske myndigheter», ikke «mange israelere»), og sett navnet på en tredje
   part (FN) på kortet. Faktasjekken finner flest feil nettopp i tekst i bildet.
+- **Merkelapper som forkorter en regel mister vilkåret.** «Domstolene kan si nei», «Kongen
+  bestemte», «Ingen fengsel» sier mer enn artikkelen. Skriv vilkåret inn i merkelappen fra start
+  («... hvis loven bryter Grunnloven»), også når stemmen sier det. I rettsstat-filmen var 6 av 11
+  funn i faktasjekken tekst i bildet.
 - **Bare fakta fra artikkelen.** Artikkelen er kildebelagt, filmen er det ikke. Du skriver om
   for øret, du legger ikke til nye fakta. Et nytt tall krever `utenforArtikkel` med kilde, og
   da bør det være en sammenligning (fjell, fotballbaner), ikke en ny påstand.
@@ -165,6 +172,17 @@ Bildet er også en påstand. Eleven teller, måler og sammenligner det som står
 - **En kurve mellom to endepunkter er en skisse.** Gir artikkelen bare start og slutt, merk
   grafen «Skisse: bare tallene som er skrevet, er ekte», og sett hvert tall der artikkelen
   plasserer det i tid. Tall som er målt ulikt, legges ikke på samme akse uten å si det.
+- **Stolper før og etter** har det forholdet artikkelen gir, også når effekten «sprenger
+  skalaen». «Over 2500 prosent» er 26 ganger, ikke en stolpe som skyter ut av bildet (40 ganger),
+  og «sju år kortere» av 66 er ca. 11 prosent kortere, ikke 15.
+- **En vekt tipper mot den tunge siden.** Regn ut fortegnet på bomvinkelen ut fra hvilken side
+  som skal synke. En vekt som tippet feil vei sa det motsatte av stemmen, og ingen port så det.
+- **A mot B side om side:** bytter du etiketten på den ene siden på siste beat («Land med olje»
+  -> «Bananrepublikk»), leser eleven de to som samme ting. Et nytt motbilde trenger et nytt
+  grunnlag i bildet (plantasjer i stedet for olje i bakken), ikke bare en ny overskrift.
+- **Områder uten skarpe grenser** (dialekter, påvirkning) tegnes som uskarpe skyer
+  (`feGaussianBlur` klippet med en `clipPath` av landet), ikke som streker artikkelen ikke gir.
+  En grunnfarge for «resten av landet» må spare ut området som kommer i neste beat.
 - **Kart med dagens grenser om eldre riker** merkes «omtrentlig», og et land som var delt
   (Polen 1914), vises delt.
 
@@ -178,11 +196,11 @@ Alle tar `fraBeat`: elementet vises fra den replikken (0-basert) og ut scenen.
 
 | Visual | Bruk når | Props |
 |---|---|---|
-| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false, prefiks?}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler, 72 år), `prefiks: "minst"` / `"over"` når artikkelen sier det (skriv da ikke «minst» i etiketten). Sier replikken «minst 70» og tallet mangler `prefiks`, stopper `validate-film` det. Undertittelen har en mørk plate og tåler lyse foto. Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). Skriften krymper selv for lange ord, men hold `tittel` kort og legg resten i `undertittel`. |
+| `Tittelkort` | Tittel over hero-bildet, tall som teller opp, et spørsmål | `tittel`, `undertittel?`, `bilde?`, `tall?: [{verdi, etikett, fraBeat, tone?: 'rod'\|'gronn', omtrent?: false, prefiks?}]`, `sporsmal?: {tekst, fraBeat}`. Tallene får «ca.» foran; `omtrent: false` for eksakte tall (52 gisler, 72 år), `prefiks: "minst"` / `"over"` når artikkelen sier det (skriv da ikke «minst» i etiketten). Sier replikken «minst 70» og tallet mangler `prefiks`, stopper `validate-film` det. Undertittelen har en mørk plate og tåler lyse foto. Årstall hører hjemme i tittel eller undertittel, ikke i `tall` («1 644»). Skriften krymper selv for lange ord, og bindestrek inni et ord («6-er») brytes ikke. Hold `tittel` kort og legg resten i `undertittel`. Heltebildet står i flere beats: viser det en person, sjekk at det er den stemmen navngir på de beatene, ellers dropp `bilde`. |
 | `Prikkfelt` | «Hvor mange av hvor mange»: ett merke per menneske | `figur: 'prikk'\|'person'`, `steg: [{fraBeat, total, farget, farge?, restFarge?, tittel, fargeEtikett?, restEtikett?, visTall?: false}]`. Siste steg med `fraBeat <= beat` vises. Hold `total` under ca. 3000. Forklaringen viser `farget` og `total - farget` foran etikettene; er prikkene en skala (100 like store grupper, «tusenvis») eller en rate (344 av 1000 døde, da blir resten «656 levde», en ny påstand), sett `visTall: false` og la stemmen si skalaen. Med tall må `restEtikett` gi mening sammen med `total - farget` («99 friske», ikke «99 folket i området»). En andel av noe annet enn figurene (hvem som sto bak, ikke hvem som ble rammet) trenger et eget bilde. Har alle stegene samme `total` og `farget` (bare fargen skifter), står bildet stille; `validate-film` stopper det. Vis da hendelsen med en egen visual. Figurene skaleres etter største `total`, så bland ikke totaler som spriker mer enn 10 ganger (9 og 400); `validate-film` stopper det. |
 | `Livbater` | Kapasitet mot bruk (seter, plasser, senger) | `bater: [{navn, plasser, brukt, fraBeat}]` |
-| `Andeler` | Andel per gruppe som stolper, til slutt to grupper som ringer | `tittel`, `kilde?`, `rader: [{etikett, reddet, totalt, fraBeat, farge}]`, `sammenlign?: {fraBeat, venstre, hoyre}` |
-| `Punktkort` | 2-4 følger, regler eller grunner (`validate-film` stopper flere enn 4). Tiltak og løsninger på slutten av en film vises heller med filmens egne visualer i en ny modus | `tittel`, `punkter: [{ikon, tittel, tekst?, fraBeat}]`. Ikon: `livbat`, `radio`, `is`, `avtale`, `skip`, `penger`, `hest`, `haer`, `stjerne` |
+| `Andeler` | Andel per gruppe som stolper, til slutt to grupper som ringer | `tittel`, `kilde?`, `rader: [{etikett, reddet, totalt, fraBeat, farge}]`, `sammenlign?: {fraBeat, venstre, hoyre, tittel, etter}`. `reddet` er bare telleren («hvor mange av `totalt`»). Med `sammenlign` MÅ du sette `tittel` (overskriften over ringene) og `etter` (ordet etter «X av Y», f.eks. «stemte ja»), ellers står Titanics «Kvinner og barn først» og «overlevde» i bildet. `validate-film` stopper det. |
+| `Punktkort` | 2-4 følger, regler eller grunner (`validate-film` stopper flere enn 4). Tiltak og løsninger på slutten av en film vises heller med filmens egne visualer i en ny modus | `tittel`, `punkter: [{ikon, tittel, tekst?, fraBeat}]`. Ikon: `livbat`, `radio`, `is`, `avtale`, `skip`, `penger`, `hest`, `haer`, `stjerne`, `hus`, `snakk`, `bombe`, `fabrikk`, `hval`, `lampe`, `vann`, `vind`, `skjold`, `tog`, `kirke`, `kvinne`, `las` |
 | `Dypet` | Dybde eller høyde i riktig målestokk | `dybde`, `fjell?: {navn, hoyde, fraBeat}`, `vrakFraBeat?` |
 | `Sluttkort` | Store setninger til slutt | `setninger: [{tekst, fraBeat, uthevet?}]`. Hver beat viser bare sine egne setninger. Ingen beat uten setning. |
 
@@ -217,6 +235,10 @@ Velg det artikkelen handler om **og som kan vises**:
     `OST_TYSKLAND` og `VEST_BERLIN` fra `kart/grenser.ts`, klippet etter Tyskland (se kommentaren
     der). Sjøruter følger havet med mellompunkter (Bab el-Mandeb, Gibraltar), aldri én bue
     mellom to havner, og et skip som seiler ruta bruker de samme punktene.
+  - Noe som beveger seg over det fine kartet (en buss langs en rute) legges i en egen `<svg>`
+    over grunnkartet, og grunnkartet får `will-change: transform`. I samme `<svg>` tegnes hele
+    kartet på nytt hvert bilde: avspillingen falt til 0 bilder i sekundet, og `shots-film` fikk
+    timeout på `avspilling.png`.
   - Zoomer kartet så langt inn at landegrensene ikke lenger forteller hvor vi er, legg på
     `<Oversiktskart utsnitt={...} omrade={...} etikett="Norge" />` fra samme mappe: et lite
     kart i hjørnet med en rød ramme rundt utsnittet. Se `RorosKart.tsx`.
@@ -292,8 +314,8 @@ streng.
     Bruk `MultiPoint` med hjørnene.
 13. **Komponentnavn med Æ/Ø/Å først** (`Åker`) regnes ikke som komponent av hooks-linten.
     Bruk ASCII-forbokstav.
-14. **Heltebilde med slagord** på politisk følsomme tema: Tittelkort viser bildet i flere
-    beats. Sjekk bildet, eller dropp `bilde`. Sett aldri sitattegn eller utropstegn på
+14. **Heltebilde med slagord** på politisk følsomme tema, eller med en annen person enn den
+    stemmen navngir: Tittelkort viser bildet i flere beats. Sjekk bildet, eller dropp `bilde`. Sett aldri sitattegn eller utropstegn på
     parafraser i merkelapper.
 15. **Krim tegnes som russisk** i verdenskartet. Handler filmen om tiden før 2014, tegn `KRIM`
     fra `src/features/film/kart/grenser.ts` over Russland i Ukrainas farge.
@@ -339,12 +361,15 @@ streng.
 31. **Keyframes på `cx`/`cy`** (`animate={{ cx: [a, b] }}` på `motion.circle`) gir konsollfeilen
     «attribute cx: Expected length, "undefined"», og `shots-film` stopper. Animer `x`/`y`. Og
     `motion.rect` med både `x`-prop og `animate={{ x }}` flytter klossen dobbelt (som punkt 10).
+    `animate={{ r }}` på `motion.circle` animerer ikke i det hele tatt: ringene ble usynlige uten
+    feilmelding. Bruk SMIL (`<animate attributeName="r" ... />`) eller `scale`.
 32. **Merkelapper over 3D** (drei-`<Html>` eller DOM) med `text-lg` blir ca. 10 px på
     Chromebook. Bruk minst `text-2xl` på landnavn og merker.
 33. **Merkelapper på en rekke 3D-objekter sett på skrå** kolliderer i perspektivet uten at
     `shots-film` alltid ser det. Projiser et punkt i fast høyde over foten (ikke toppen av noe
     som velter), legg merkene i vekslende rader, og dropp merket som havner under
-    scenetittelen.
+    scenetittelen. Det samme gjelder et merke på en brikke bak en annen, og et kort oppå en
+    brikke: porten ser ikke dybden, bare vurdereren gjør det. Se på arkene.
 34. **Partikler fra forrige modus** (snø, gnister) blir liggende og ser ut som stjerner på
     skjermbildet. Skru av partikler som ikke hører til beaten.
 35. **Strek over tekst** for å vise «ikke lov» går gjennom små bokstaver og kan ikke leses på
@@ -373,6 +398,30 @@ streng.
     likevel god margin i kameramålet.
 44. **drei-`<Html>` over visualens egen DOM-overskrift** ble ikke alltid fanget av `shots-film`
     når overlappet var lite. Skjul merket i beatene der det kan nå overskriften (som punkt 9).
+45. **Et åpent 3D-skrog med bunnen under vannflaten** (et lasterom sett ovenfra) viser havet
+    gjennom gulvet. Løft skipet over bølgehøyden i den modusen, eller skjul havet.
+46. **`position`-prop på en `<group>` som glir med `damp`.** R3F setter posisjonen på nytt ved
+    hver render, så figuren hopper i stedet for å gå. Sett startplassen én gang
+    (`const [start] = useState(mal)`) og la `useFrame` ta resten.
+47. **En rad som skal forsvinne fra et kort** med bare `opacity`/`y` etterlater et tomt felt
+    som vurdereren leser som en feil. Animer `height: 0` med `overflow: hidden`.
+48. **Et merke på elva med bakken i samme farge** (blå kant ved blå elv) ser ut til å stå på
+    feil side. Gi bakken en farge som skiller seg tydelig fra vannet.
+49. **En animasjon som går i syklus** (en tunge som slår, en pendel) tas av `shots-film` ved en
+    tilfeldig t, så samme beat ser ulik ut fra kjøring til kjøring. Sett visualen i
+    nøkkelstillingen når `playing` er false, og la syklusen gå bare under avspilling.
+50. **Tekst i en `display: flex`-rad mister mellomrommet** rundt et inline `<span>` («brus<span>,
+    </span> og» ble «brus,og»). Legg blandet tekst i én `<span>` inni flex-raden, eller bruk
+    `&nbsp;`. I språkfilmer er mellomrommet selve poenget.
+51. **Detaljer på forsiden av en `extrudeGeometry` med `bevelEnabled`** ligger på
+    `depth + bevelThickness` i z, ikke `depth`. Runene lå inni bevelen og var usynlige.
+52. **En DOM-brikke øverst i bildet** (top 6 %) dekker SVG-kort som starter rundt y 120 på
+    1600x900-flaten, og `shots-film` ser det ikke (tekst over en `rect`, ikke tekst over tekst).
+    Hold SVG-kort under y ≈ 160 i beats med en brikke. Skisse- og kildemerker legges nederst,
+    ikke øverst ved overskriften: overskriften blir lengre etter faktasjekken.
+53. **En `Vis`-hjelper i en 2D-visual** bør returnere `null` når innholdet er skjult, ikke bare
+    sette opacity 0. Skjult innhold ligger ellers i veien for musa og for skjermleseren.
+    (`shots-film` hopper nå over figurer med opacity 0, så de gir ikke lenger falske funn.)
 
 ---
 
@@ -406,7 +455,10 @@ når to SVG-merkelapper på samme linje står kloss inntil hverandre, når SVG-t
 tegnet oppå SVG-tekst, når SVG-tekst ligger under
 en HTML-boks med bakgrunn, eller når tekst er kuttet i bildekanten. Funnene står i `overlapp.txt` i samme
 mappe. Rett dem og ta de scenene på nytt med `--scener 3,7`: de andre scenenes bilder og ark
-blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken ikke.
+blir liggende, så settet er alltid helt. Tekst tegnet inne i WebGL ser sjekken ikke. Er sjekken
+ren, står «Ingen feil.» i fila. Står samme tekst oppå seg selv, melder den en duplisert node
+(et strengbytte i koden som traff to steder): sjekk at et bytte treffer nøyaktig én gang før du
+gjør det. Figurer i en gruppe med opacity 0 regnes som usynlige.
 
 ### Rubrikken (5 akser, 1-5, terskel 19/25 og ingen akse under 3)
 

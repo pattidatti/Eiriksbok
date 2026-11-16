@@ -18,17 +18,28 @@ interface Props {
         fraBeat: number;
         venstre: Omit<Rad, 'fraBeat'>;
         hoyre: Omit<Rad, 'fraBeat'>;
+        /**
+         * Overskriften når ringene vises, og ordet etter «X av Y» under ringene («stemte ja»).
+         * Standardverdiene er Titanics («Kvinner og barn først», «overlevde»), så andre filmer
+         * MÅ sette begge. `validate-film` stopper en film som lar være.
+         */
+        tittel?: string;
+        etter?: string;
     };
 }
 
-/** Andel reddet per gruppe som liggende stolper, og til slutt to grupper side om side. */
+/**
+ * Andel per gruppe som liggende stolper, og til slutt to grupper side om side som ringer.
+ * `reddet` er bare navnet på telleren (Titanic var den første filmen): det er «hvor mange av
+ * `totalt`» for hva som helst. Overskrift og ord under ringene settes i `sammenlign`.
+ */
 export function Andeler({ beat, props }: VisualProps<Props>) {
     const sammenlign =
         props.sammenlign && beat >= props.sammenlign.fraBeat ? props.sammenlign : null;
     return (
         <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-slate-100 flex flex-col px-[7%] py-[5%]">
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 text-center">
-                {sammenlign ? 'Kvinner og barn først' : props.tittel}
+                {sammenlign ? (sammenlign.tittel ?? 'Kvinner og barn først') : props.tittel}
             </h2>
             <AnimatePresence mode="wait">
                 {sammenlign ? (
@@ -39,9 +50,13 @@ export function Andeler({ beat, props }: VisualProps<Props>) {
                         exit={{ opacity: 0 }}
                         className="flex-1 flex items-center justify-center gap-[8%]"
                     >
-                        <Ring rad={sammenlign.venstre} />
+                        <Ring rad={sammenlign.venstre} etter={sammenlign.etter ?? 'overlevde'} />
                         <div className="text-4xl font-black text-slate-400">mot</div>
-                        <Ring rad={sammenlign.hoyre} forsinkelse={1} />
+                        <Ring
+                            rad={sammenlign.hoyre}
+                            etter={sammenlign.etter ?? 'overlevde'}
+                            forsinkelse={1}
+                        />
                     </motion.div>
                 ) : (
                     <motion.div
@@ -96,7 +111,15 @@ export function Andeler({ beat, props }: VisualProps<Props>) {
     );
 }
 
-function Ring({ rad, forsinkelse = 0 }: { rad: Omit<Rad, 'fraBeat'>; forsinkelse?: number }) {
+function Ring({
+    rad,
+    etter,
+    forsinkelse = 0,
+}: {
+    rad: Omit<Rad, 'fraBeat'>;
+    etter?: string;
+    forsinkelse?: number;
+}) {
     const andel = rad.reddet / rad.totalt;
     const R = 120;
     const omkrets = 2 * Math.PI * R;
@@ -131,7 +154,8 @@ function Ring({ rad, forsinkelse = 0 }: { rad: Omit<Rad, 'fraBeat'>; forsinkelse
             </svg>
             <div className="text-2xl md:text-3xl font-black text-slate-900 mt-2">{rad.etikett}</div>
             <div className="text-lg md:text-xl font-semibold text-slate-500">
-                {rad.reddet} av {rad.totalt} overlevde
+                {rad.reddet} av {rad.totalt}
+                {etter ? ` ${etter}` : ''}
             </div>
         </div>
     );
