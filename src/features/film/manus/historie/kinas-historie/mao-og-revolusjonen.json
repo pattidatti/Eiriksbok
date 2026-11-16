@@ -9,10 +9,12 @@
             "begrunnelse": "Artikkelen skriver «Hundre år med ydmykelse» med bokstaver. Samme tall, bare skrevet med sifre i tittelkortet."
         }
     ],
+    "vurdering": { "dato": "2026-11-16", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "porten",
             "kapittel": "Porten",
+            "lyd": "vind",
             "visual": {
                 "type": "MaoKina",
                 "props": {
@@ -27,7 +29,7 @@
                     "si": "Oppe på porten står en mann. Han heter Mao Zedong."
                 },
                 {
-                    "si": "Han sier at landet har fått et nytt navn: Folkerepublikken Kina."
+                    "si": "Han sier at nå finnes det en ny stat: Folkerepublikken Kina."
                 },
                 {
                     "si": "Ti dager før, på et stort møte, hadde han sagt ordene som skulle bli stående: Det kinesiske folket har reist seg!"
@@ -36,6 +38,7 @@
         },
         {
             "id": "tittel",
+            "lyd": "stille",
             "visual": {
                 "type": "Tittelkort",
                 "props": {
@@ -58,10 +61,10 @@
             },
             "replikker": [
                 {
-                    "si": "Mao ledet kommunistene i Kina. Han var 55 år gammel."
+                    "si": "Mao var nå Kinas nye hersker. Han var 55 år gammel."
                 },
                 {
-                    "si": "For Kina betød dagen slutten på rundt hundre år med ydmykelse. Andre land hadde tråkket på Kina: europeiske stormakter, japanske soldater og så en lang borgerkrig."
+                    "si": "For Kina betød dagen slutten på rundt hundre år med ydmykelse. Europeiske stormakter og japanske soldater hadde tråkket på Kina, og så kom en lang borgerkrig."
                 },
                 {
                     "si": "Men hva betød det egentlig at folket hadde reist seg? Det kom an på hvem du spurte."
@@ -145,32 +148,11 @@
         {
             "id": "bondeland",
             "kapittel": "Jorda",
+            "lyd": "vind",
             "visual": {
-                "type": "Prikkfelt",
+                "type": "MaoKina",
                 "props": {
-                    "figur": "person",
-                    "steg": [
-                        {
-                            "fraBeat": 0,
-                            "total": 4,
-                            "farget": 3,
-                            "farge": "#65a30d",
-                            "restFarge": "#94a3b8",
-                            "tittel": "De aller fleste bodde på landet",
-                            "fargeEtikett": "på landsbygda",
-                            "restEtikett": "i byen"
-                        },
-                        {
-                            "fraBeat": 1,
-                            "total": 4,
-                            "farget": 3,
-                            "farge": "#65a30d",
-                            "restFarge": "#94a3b8",
-                            "tittel": "Selv i 1990: 75 prosent på landet",
-                            "fargeEtikett": "på landsbygda",
-                            "restEtikett": "i byen"
-                        }
-                    ]
+                    "modus": "landet"
                 }
             },
             "replikker": [
@@ -207,6 +189,7 @@
         },
         {
             "id": "prisen",
+            "lyd": "stille",
             "visual": {
                 "type": "MaoTavle",
                 "props": {
@@ -221,7 +204,7 @@
                     "si": "Mange godseiere ble henrettet."
                 },
                 {
-                    "si": "Ingen vet de nøyaktige tallene. Men under borgerkrigen og de første årene etter revolusjonen ble flere millioner mennesker drept."
+                    "si": "Ingen vet sikkert hvor mange. Men anslagene sier at flere millioner ble drept under borgerkrigen og de første årene etter revolusjonen."
                 },
                 {
                     "si": "Landreformen var frigjøring og terror på én gang."
@@ -269,8 +252,8 @@
             },
             "replikker": [
                 {
-                    "si": "Bare noen måneder senere kom den første store prøven. 25. juni 1950 angrep Nord-Korea Sør-Korea.",
-                    "uttale": "Bare noen måneder senere kom den første store prøven. Tjuefemte juni nitten femti angrep Nord-Korea Sør-Korea."
+                    "si": "Mindre enn ett år etter at Mao tok makten, kom den første store prøven. 25. juni 1950 angrep Nord-Korea Sør-Korea.",
+                    "uttale": "Mindre enn ett år etter at Mao tok makten, kom den første store prøven. Tjuefemte juni nitten femti angrep Nord-Korea Sør-Korea."
                 },
                 {
                     "si": "De gikk over grensen ved den 38. breddegraden, en tenkt linje tvers over landet.",
@@ -280,7 +263,7 @@
                     "si": "USA gikk inn i krigen på Sør-Koreas side."
                 },
                 {
-                    "si": "Styrkene til FN rykket helt fram mot grensen til Kina. Nå bestemte Mao seg for å handle."
+                    "si": "Styrkene til FN rykket fram mot grensen til Kina. Nå bestemte Mao seg for å handle."
                 },
                 {
                     "si": "I november 1950 gikk kinesiske soldater inn i krigen. Til sammen deltok rundt 300 000 kinesere."
@@ -318,14 +301,14 @@
             "id": "blomster",
             "kapittel": "Hundre blomster",
             "visual": {
-                "type": "MaoTavle",
+                "type": "MaoBlomster",
                 "props": {
                     "modus": "blomster"
                 }
             },
             "replikker": [
                 {
-                    "si": "I 1956 overrasket Mao alle. Han ba folk si hva de mente, også om partiet."
+                    "si": "I 1956 overrasket Mao alle. Han ba kritikerne, og alle som tenkte og skrev, si hva de mente."
                 },
                 {
                     "si": "La hundre blomster blomstre, sa han. La hundre tankeskoler konkurrere. Blomstene var nye tanker og ideer."
@@ -344,17 +327,17 @@
         {
             "id": "fellen",
             "visual": {
-                "type": "MaoTavle",
+                "type": "MaoBlomster",
                 "props": {
                     "modus": "fellen"
                 }
             },
             "replikker": [
                 {
-                    "si": "Svaret ble en ny kampanje mot alle som hadde kritisert. Partiet kalte dem høyrefolk, og kampanjen ble kalt anti-høyrekampanjen."
+                    "si": "Svaret ble en ny kampanje. Den ble kalt anti-høyrekampanjen."
                 },
                 {
-                    "si": "Hundretusener av lærde og skrivende mennesker ble arrestert."
+                    "si": "Hundretusener av mennesker som tenkte og skrev, ble arrestert."
                 },
                 {
                     "si": "Hundre blomster-kampanjen var blitt en felle. Eller i det minste ble den brukt som én."
@@ -381,7 +364,7 @@
                     "si": "Men som administrator, altså som sjef for den daglige driften av et land, var han en katastrofe."
                 },
                 {
-                    "si": "Han forsto ikke økonomi. Han lyttet ikke til ekspertene som advarte ham. Han lot ideene styre der kunnskap burde styrt."
+                    "si": "Han forsto ikke økonomi. Han lyttet ikke til ekspertene som advarte ham. Han lot kommunismen, ideene han trodde på, styre der kunnskap burde styrt."
                 }
             ]
         },
@@ -439,7 +422,7 @@
                     "si": "Den samme reformen ga jord til de fattige og døden til mange godseiere."
                 },
                 {
-                    "si": "Mao kunne vinne en krig. Men da han ville gjøre Kina til en stormakt på rekordtid, lyttet han ikke."
+                    "si": "Mao kunne vinne en krig. Men da han ville gjøre Kina til en industriell stormakt på rekordtid, lyttet han ikke."
                 },
                 {
                     "si": "Det endte i den verste hungersnøden i menneskenes historie. Den historien kan du lese i neste artikkel."
