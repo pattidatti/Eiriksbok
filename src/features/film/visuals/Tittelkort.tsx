@@ -34,6 +34,12 @@ function tittelKlasse(tittel: string) {
     return 'text-4xl md:text-5xl';
 }
 
+/**
+ * Bindestrek inni et ord («6-er», «FN-pakten») blir en hard bindestrek (U+2011), så tittelen
+ * ikke brytes til «6- / er». Ordet regnes da som ett i `tittelKlasse` og krymper skriften.
+ */
+const hardBindestrek = (t: string) => t.replace(/(\S)-(?=\S)/g, '$1\u2011');
+
 /** Tittel over et bilde som sakte zoomer inn, med tall og spørsmål som dukker opp. */
 export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
     const tall = (props.tall ?? []).filter((t) => beat >= t.fraBeat);
@@ -58,7 +64,7 @@ export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
                     transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
                     className={`text-white font-black ${tittelKlasse(props.tittel)} drop-shadow-2xl`}
                 >
-                    {props.tittel}
+                    {hardBindestrek(props.tittel)}
                 </motion.h1>
                 {props.undertittel && (
                     <motion.p
@@ -68,7 +74,7 @@ export function Tittelkort({ beat, playing, props }: VisualProps<Props>) {
                         // Mørk plate: over lyse foto (snø, himmel) forsvant undertittelen.
                         className="mt-3 px-5 py-1.5 rounded-xl bg-slate-950/60 text-white text-xl md:text-3xl font-semibold"
                     >
-                        {props.undertittel}
+                        {hardBindestrek(props.undertittel)}
                     </motion.p>
                 )}
                 <div className="mt-8 flex gap-5 min-h-[7rem]">

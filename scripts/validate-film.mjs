@@ -212,6 +212,9 @@ function sjekk(fil, visualer, streng) {
                         feil.push(`${hvor}: Prikkfelt-steget «${st.tittel}» har visTall: false, men mangler fargeEtikett/restEtikett`);
                 }
             if (type === 'Livbater') for (const b of p.bater ?? []) if (b.brukt > b.plasser) feil.push(`${hvor}: Livbater brukt > plasser`);
+            // Andeler har Titanics ord som standard («Kvinner og barn først», «overlevde»).
+            if (type === 'Andeler' && p.sammenlign && m.id !== 'titanic' && (!p.sammenlign.tittel || !p.sammenlign.etter))
+                feil.push(`${hvor}: Andeler.sammenlign mangler tittel/etter - uten dem står Titanics «Kvinner og barn først» og «overlevde» i bildet`);
         } else if (!visualer.has(type)) {
             feil.push(`${hvor}: ukjent visual "${type}" (verken generell eller fil i src/features/film/visuals/<film>/${type}.tsx)`);
         } else if (visualer.get(type).startsWith('DUPLIKAT')) {
