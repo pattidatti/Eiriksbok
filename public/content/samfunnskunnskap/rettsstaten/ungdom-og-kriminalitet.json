@@ -1,0 +1,297 @@
+{
+  "id": "ungdom-og-kriminalitet",
+  "title": "Ungdom og kriminalitet",
+  "layout": "rich",
+  "year": "2014",
+  "category": "Rettsstaten",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Du kan ikke straffes for noe du gjorde før du fylte 15 år. Men politiet kan etterforske, ha en bekymringssamtale og koble inn barnevernet.",
+    "For unge under 18 år skal fengsel være siste utvei. Siden 2014 har domstolene kunnet gi ungdomsstraff i stedet.",
+    "Venner som begår lovbrudd og dårlig trivsel på skolen øker risikoen. Gode forhold til lærere og støttende foreldre beskytter."
+  ],
+  "externalUrl": "https://snl.no/kriminell_lavalder",
+  "factChecked": "2026-11-16",
+  "tags": [
+    "rettsstaten",
+    "straff",
+    "ungdom",
+    "kriminalitet",
+    "rettigheter"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er en mørk kveld i november. Ved en bussholdeplass står en gutt på 15 år og venter på bussen. Tre ungdommer kommer bort til ham. To av dem krever at han gir fra seg mobilen. Den tredje, en gutt på 14, står litt unna og holder utkikk. Etter et halvt minutt løper alle tre av gårde med telefonen."
+    },
+    {
+      "type": "text",
+      "content": "Senere finner politiet ut hvem de var. Men nå kommer et vanskelig spørsmål: Kan 14-åringen som sto vakt, straffes for ranet? Og hva skjer med de to andre, som er 16? I denne artikkelen skal du se hva som faktisk skjer når unge bryter loven, og hvorfor Norge velger oppfølging framfor fengsel for de fleste unge."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Tom bussholdeplass om kvelden med gatelys",
+      "caption": "Mange lovbrudd blant unge skjer i grupper, på steder der ungdom samles."
+    },
+    {
+      "type": "header",
+      "text": "Grensen går ved 15 år"
+    },
+    {
+      "type": "text",
+      "content": "I Norge kan du ikke straffes for noe du gjorde før du fylte 15 år. Denne grensen kalles den kriminelle lavalderen. Den betyr at politiet og domstolene ikke kan gi deg bot, ungdomsstraff eller fengsel hvis du var under 15 da det skjedde (Elden, 2026). Grensen sto i straffeloven allerede før, men da var den 14 år. I 1987 ble den hevet til 15 (Elden, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Loven sier at den som er under 15 år, er «uten skyldevne» (Elden, 2026). Det betyr at loven ikke regner et barn som skyldig på samme måte som en voksen, selv om det barnet gjorde var galt."
+    },
+    {
+      "type": "header",
+      "text": "Hva skjer med den som er under 15?"
+    },
+    {
+      "type": "text",
+      "content": "At du ikke kan straffes, betyr ikke at ingenting skjer. Politiet kan fortsatt etterforske saken for å finne ut hva som skjedde (ung.no, 2024a). Det er viktig for den som ble ranet. Han har krav på at noen tar saken på alvor, selv om den som gjorde det er ung."
+    },
+    {
+      "type": "text",
+      "content": "Politiet kan også kalle barnet og foreldrene inn til en bekymringssamtale. Det er en samtale der politiet forteller hva de vet, og snakker med familien om hvordan barnet kan komme bort fra kriminalitet. Både barnet og foreldrene må møte opp. Samtalen skrives ned hos politiet, men den havner ikke på rullebladet (ung.no, 2024a). Rullebladet er listen over straffene en person har fått."
+    },
+    {
+      "type": "text",
+      "content": "I tillegg kan saken sendes til barnevernet. Barnevernet kan sette inn tiltak for å hjelpe barnet og familien, og for å beskytte andre (Elden, 2026). Politiet kan heller ikke pågripe eller sette et barn under 15 år i varetekt. Men de kan ta med seg barnet i noen situasjoner, for eksempel hvis det er svært beruset, og holde barnet i inntil fire timer mens de prøver å få tak i foreldrene (ung.no, 2024a)."
+    },
+    {
+      "type": "text",
+      "content": "For 14-åringen fra bussholdeplassen betyr dette at han slipper straff, men ikke at han slipper unna. Han må sitte i et møterom sammen med foreldrene og politiet og snakke om det han var med på."
+    },
+    {
+      "type": "header",
+      "text": "Fra 15 år: Fengsel skal være siste utvei"
+    },
+    {
+      "type": "text",
+      "content": "De to 16-åringene kan straffes. Men loven skiller fortsatt mellom unge og voksne. Norge har skrevet under på FNs barnekonvensjon, og den sier at barn under 18 år bare skal i fengsel når det er helt nødvendig. Et barn under 18 år kan heller aldri få mer enn 15 års fengsel, selv for de verste lovbruddene (Elden, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Det betyr ikke at domstolene ser bort fra alvorlige lovbrudd. Statistisk sentralbyrå (SSB) så på 85 saker der en ungdom under 18 år ble straffet for å ha skadet noen. Omtrent 12 prosent av dem fikk ubetinget fengsel, altså fengsel de faktisk måtte sitte i (Mohn, 2026). For de fleste unge ender saken likevel ikke i retten. SSB skriver at det vanligste for 15–17-åringer er at saken sendes til konfliktrådet, eller at påtalemyndigheten lar være å ta den videre (Mohn, 2026). Påtalemyndigheten er den delen av politiet og statsadvokatene som bestemmer om en sak skal for retten."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "items": [
+          "Kriminell lavalder: alderen du må ha nådd for å kunne straffes. I Norge er den 15 år.",
+          "Bekymringssamtale: en samtale der politiet snakker med et barn og foreldrene etter et lovbrudd.",
+          "Konfliktrådet: et offentlig kontor som følger opp unge som har fått ungdomsstraff eller ungdomsoppfølging.",
+          "Ungdomskoordinator: en person i konfliktrådet som har ansvar for oppfølgingen av den unge."
+        ]
+      }
+    },
+    {
+      "type": "header",
+      "text": "Ungdomsstraff: en plan i stedet for en celle"
+    },
+    {
+      "type": "text",
+      "content": "Siden 1. juli 2014 har norske domstoler kunnet gi ungdomsstraff (Elden, 2022). Den er for unge mellom 15 og 18 år som har begått alvorlig eller gjentatt kriminalitet, for eksempel vold, ran eller mange tyverier. Ungdomsstraffen er laget som et ekte alternativ til fengsel (Elden, 2022)."
+    },
+    {
+      "type": "text",
+      "content": "Det er konfliktrådet som har ansvaret når straffen gjennomføres. Først holdes et ungdomsstormøte. Der møtes den unge, foreldrene, en ungdomskoordinator fra konfliktrådet og folk fra politiet og kriminalomsorgen. Kriminalomsorgen er etaten som har ansvaret for fengsler og straff i frihet. Ofte er også skolen, barnevernet eller helsetjenesten med (Elden, 2022). Hvis den som ble utsatt for lovbruddet vil, kan han eller hun også møte den unge (ung.no, 2024b)."
+    },
+    {
+      "type": "text",
+      "content": "På møtet lager de en ungdomsplan. Planen kan for eksempel si at den unge skal gå på skolen hver dag, ha en jobb, bo et bestemt sted, være hjemme innen en fast tid og gjøre nyttig arbeid for andre (Elden, 2022). Straffen varer fra 120 dager, altså rundt fire måneder, og opptil to år (Straffeloven, 2005, § 52 b)."
+    },
+    {
+      "type": "component",
+      "name": "UngdomsVeivalg",
+      "props": {
+        "title": "To ungdommer, ett ran"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Ungdomsstraff er ikke en gratis billett. Når retten gir ungdomsstraff, setter den også en fengselsstraff som ligger klar i bakgrunnen. Bryter den unge planen, møter ikke opp eller begår nye lovbrudd, kan saken gå tilbake til retten. Da kan det ende med at personen må sone fengselsstraffen likevel (Elden, 2022; ung.no, 2024b)."
+    },
+    {
+      "type": "text",
+      "content": "Bruken av ungdomsstraff har økt. I 2025 fikk 15–17-åringer 221 ungdomsstraffer. Til sammen ble det gitt 236 ungdomsstraffer og ungdomsoppfølginger, mens snittet i årene 2019–2024 var 185 (Mohn, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Ungdomsoppfølging: uten rettssak"
+    },
+    {
+      "type": "text",
+      "content": "For lovbrudd som er litt mindre alvorlige, finnes ungdomsoppfølging. Den ligner på ungdomsstraff, men varer kortere, fra fire måneder til ett år. Den største forskjellen er at saken ikke går til retten. Det er påtalemyndigheten som bestemmer. Men det krever at den unge har tilstått og selv sier ja til ordningen. Sier den unge nei, går saken til retten i stedet (ung.no, 2024b)."
+    },
+    {
+      "type": "text",
+      "content": "Både ungdomsstraff og ungdomsoppfølging bygger på samme tanke som du kan lese mer om i artikkelen [Hva er straff godt for?](/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for): Straffen skal hindre nye lovbrudd. For en 16-åring er det ofte mer å vinne på å få fullført skolen enn på å sitte innelåst."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom og voksne rundt et bord i et lyst møterom",
+      "caption": "I et ungdomsstormøte sitter den unge og familien sammen med folk som skal hjelpe til."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor havner noen i kriminalitet?"
+    },
+    {
+      "type": "text",
+      "content": "Det finnes ikke én forklaring på hvorfor noen unge begynner å bryte loven. Forskere snakker heller om risikofaktorer og beskyttende faktorer. En risikofaktor er noe som gjør det mer sannsynlig at noen havner i kriminalitet. En beskyttende faktor er noe som gjør det mindre sannsynlig."
+    },
+    {
+      "type": "text",
+      "content": "I 2026 gikk Folkehelseinstituttet gjennom forskningen på feltet. De fant at det var mer risiko knyttet til psykiske vansker, rus, vold og omsorgssvikt i hjemmet, og til å være sammen med venner som selv begår lovbrudd. Dårlige karakterer, at man slutter på skolen og at man trives dårlig der, økte også risikoen (Hestevik mfl., 2026). Venneflokken kan trekke sterkt, noe du kan lese mer om i artikkelen om [flokkmentalitet](/samfunnskunnskap/mennesket-kultur-samfunn/flokkmentalitet)."
+    },
+    {
+      "type": "text",
+      "content": "På den andre siden fant forskerne at det å høre til på skolen og ha gode forhold til lærere og andre på samme alder virket beskyttende. Varme og støttende foreldre beskyttet også (Hestevik mfl., 2026). Forskerne er samtidig ærlige om at kunnskapen er usikker. Mange av studiene er fra andre land, og det er vanskelig å vite sikkert hva som er årsak og hva som bare henger sammen (Hestevik mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Det er også viktig å huske at risikofaktorer ikke bestemmer hvem du blir. De sier noe om sjanser for en hel gruppe, ikke om hva som vil skje med akkurat deg."
+    },
+    {
+      "type": "header",
+      "text": "Nye former for kriminalitet blant unge"
+    },
+    {
+      "type": "text",
+      "content": "Ikke all kriminalitet blant unge skjer på gata. Noen blir lokket til å la kriminelle bruke bankkontoen sin mot betaling. Da blir de det som kalles pengemuldyr, og det er ulovlig selv om man ikke vet alt om hvor pengene kommer fra. Les mer om dette i artikkelen om [svindel](/samfunnskunnskap/personlig-okonomi/svindel)."
+    },
+    {
+      "type": "text",
+      "content": "Husk at fra du fyller 15, kan du straffes, også for slike lovbrudd. Blir saken alvorlig, kan den havne i [domstolene](/samfunnskunnskap/rettsstaten/domstolene), og en dom havner på rullebladet ditt."
+    },
+    {
+      "type": "header",
+      "text": "Hva skjedde ved bussholdeplassen?"
+    },
+    {
+      "type": "text",
+      "content": "Gå tilbake til ranet i begynnelsen. 14-åringen kan ikke straffes, men han og foreldrene må til en bekymringssamtale, og barnevernet kan bli koblet inn. De to 16-åringene kan straffes. Har de ranet før, kan retten gi dem ungdomsstraff, med en plan, faste tider og et møte med gutten de ranet, hvis han vil."
+    },
+    {
+      "type": "text",
+      "content": "Ingen av dem slipper unna. Men målet er det samme for alle tre: at de ikke gjør det igjen. Samfunnet satser på at oppfølging, en voksen som bryr seg og en plass på skolen gir bedre sjanser enn en celle. Hvordan det går videre, avhenger mye av valgene de tar selv, og av menneskene rundt dem."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom på vei inn i en skole om morgenen",
+      "caption": "For mange unge lovbrytere er en plass på skolen noe av det viktigste som skal beskyttes."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Elden, J. C. (2022). *Ungdomsstraff*. Store norske leksikon. Hentet 16.11.2026 fra [snl.no](https://snl.no/ungdomsstraff)",
+          "Elden, J. C. (2026). *Kriminell lavalder*. Store norske leksikon. Hentet 16.11.2026 fra [snl.no](https://snl.no/kriminell_lavalder)",
+          "Hestevik, C. H., Borge, T. C., Nøkleby, H. & Johansen, T. B. (2026). *Oppvekstsvilkår og kriminalitet blant barn og unge: En paraplyoversikt over risiko- og beskyttelsesfaktorer*. Folkehelseinstituttet. Hentet 16.11.2026 fra [fhi.no](https://www.fhi.no/publ/2026/oppvekstsvilkar-og-kriminalitet-blant-barn-og-unge-en-paraplyoversikt-over-risiko--og-beskyttelsesfaktorer/)",
+          "Mohn, S. B. (2026). *Færre dømt til fengsel*. Statistisk sentralbyrå. Hentet 16.11.2026 fra [ssb.no](https://www.ssb.no/sosiale-forhold-og-kriminalitet/kriminalitet-og-rettsvesen/statistikk/straffereaksjoner/artikler/faerre-domt-til-fengsel)",
+          "Straffeloven. (2005). *Lov om straff* (LOV-2005-05-20-28). Lovdata. Hentet 16.11.2026 fra [lovdata.no](https://lovdata.no/dokument/NL/lov/2005-05-20-28)",
+          "ung.no. (2024a). *Den kriminelle lavalder*. Barne-, ungdoms- og familiedirektoratet. Hentet 16.11.2026 fra [ung.no](https://www.ung.no/kriminalitet/848_Den_kriminelle_lavalder.html)",
+          "ung.no. (2024b). *Ungdomsstraff og ungdomsoppfølging*. Barne-, ungdoms- og familiedirektoratet. Hentet 16.11.2026 fra [ung.no](https://www.ung.no/kriminalitet/3515_Ungdomsoppf%C3%B8lging_og_ungdomsstraff.html)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er den kriminelle lavalderen i Norge, og når ble den hevet fra 14 til 15 år?",
+          "Hva kan politiet gjøre når et barn under 15 år har begått et lovbrudd? Nevn minst tre ting.",
+          "Hva er en ungdomsplan, og hva kan den inneholde?",
+          "Hva er forskjellen på ungdomsstraff og ungdomsoppfølging?"
+        ],
+        "reflekter": [
+          "Hvorfor tror du loven sier at barn under 15 år er «uten skyldevne»? Er du enig i at grensen bør gå ved 15?",
+          "Forklar med egne ord hvorfor fengsel skal være siste utvei for unge under 18 år.",
+          "Ungdomsstraffen har en fengselsstraff som ligger klar i bakgrunnen. Hvorfor tror du den er laget slik?",
+          "Velg én risikofaktor og én beskyttende faktor fra artikkelen. Forklar hvordan de kan påvirke valgene til en ungdom."
+        ],
+        "gaaVidere": [
+          "Diskuter i gruppa: Noen mener den kriminelle lavalderen bør senkes til 14 år. Finn argumenter for og mot.",
+          "Skriv et kort innlegg til en skoleavis: «Hva kan skolen gjøre for at færre unge havner i kriminalitet?» Bruk minst ett funn fra Folkehelseinstituttet.",
+          "Finn ut om kommunen din har en SLT-koordinator eller et eget tilbud for unge som er i ferd med å havne i kriminalitet. Hva gjør de?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvor gammel må du være for å kunne straffes i Norge?",
+            "options": [
+              "12 år",
+              "14 år",
+              "15 år",
+              "18 år"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Den kriminelle lavalderen er 15 år. Den ble hevet fra 14 til 15 år i 1987."
+          },
+          {
+            "question": "Hva er en bekymringssamtale?",
+            "options": [
+              "En rettssak for barn",
+              "En samtale der politiet snakker med et barn og foreldrene etter et lovbrudd",
+              "En samtale med en psykolog som barnet velger selv",
+              "Et møte der barnet får en bot"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Både barnet og foreldrene må møte. Samtalen skrives ned hos politiet, men havner ikke på rullebladet."
+          },
+          {
+            "question": "Hvem har ansvaret når en ungdomsstraff gjennomføres?",
+            "options": [
+              "Konfliktrådet",
+              "Skolen",
+              "Høyesterett",
+              "Foreldrene"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Konfliktrådet har ansvaret, og en ungdomskoordinator følger opp den unge."
+          },
+          {
+            "question": "Hva kan skje hvis en ungdom bryter ungdomsplanen flere ganger?",
+            "options": [
+              "Ingenting",
+              "Saken kan gå tilbake til retten, og personen kan måtte sone i fengsel",
+              "Personen får en ny plan hver gang",
+              "Foreldrene må sone i stedet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Retten setter en fengselsstraff som ligger klar i bakgrunnen hvis planen ikke blir fulgt."
+          },
+          {
+            "question": "Hva fant Folkehelseinstituttet virket beskyttende mot kriminalitet blant unge?",
+            "options": [
+              "Å ha mange penger",
+              "Å høre til på skolen og ha gode forhold til lærere",
+              "Å være mye alene",
+              "Å flytte ofte"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Tilhørighet og gode forhold til lærere og andre på samme alder virket beskyttende. Støttende foreldre beskyttet også."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -1,5 +1,5 @@
 {
-  "buildId": 33592008656667,
+  "buildId": 109915436162583,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4915,6 +4915,9 @@
     "politiet": [
       "content/samfunnskunnskap/rettsstaten/politiet.json"
     ],
+    "ungdom-og-kriminalitet": [
+      "content/samfunnskunnskap/rettsstaten/ungdom-og-kriminalitet.json"
+    ],
     "antikken-visjoner": [
       "content/samfunnskunnskap/styringsformer/antikken-visjoner.json"
     ],
@@ -6647,6 +6650,7 @@
     "samfunnskunnskap/rettsstaten/hva-er-en-rettsstat": "content/samfunnskunnskap/rettsstaten/hva-er-en-rettsstat.json",
     "samfunnskunnskap/rettsstaten/hva-er-straff-godt-for": "content/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for.json",
     "samfunnskunnskap/rettsstaten/politiet": "content/samfunnskunnskap/rettsstaten/politiet.json",
+    "samfunnskunnskap/rettsstaten/ungdom-og-kriminalitet": "content/samfunnskunnskap/rettsstaten/ungdom-og-kriminalitet.json",
     "samfunnskunnskap/styringsformer/antikken-visjoner": "content/samfunnskunnskap/styringsformer/antikken-visjoner.json",
     "samfunnskunnskap/styringsformer/demokrati-ansikter": "content/samfunnskunnskap/styringsformer/demokrati-ansikter.json",
     "samfunnskunnskap/styringsformer/diktaturet": "content/samfunnskunnskap/styringsformer/diktaturet.json",
