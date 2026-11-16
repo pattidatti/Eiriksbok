@@ -8,10 +8,11 @@ import type { VisualProps } from '../../types';
 /**
  * Mao-filmens 3D-scener.
  * - «port»: Den himmelske freds port i Beijing 1. oktober 1949, med folkemengden og flagget.
+ * - «landet»: Kina sett ovenfra, et bondeland med landsbyer så langt øyet rekker og én liten by.
  * - «jord»: en landsby der godseierens store jord blir delt opp i små åkre med hus på.
  */
 
-type Modus = 'port' | 'jord';
+type Modus = 'port' | 'landet' | 'jord';
 
 function damp(a: number, b: number, lambda: number, dt: number) {
     return THREE.MathUtils.lerp(a, b, 1 - Math.exp(-lambda * dt));
@@ -36,13 +37,17 @@ function kameraFor(modus: Modus, beat: number, t: number): Kamera {
                 return { pos: v(t * 0.15, 19, 10), se: v(0, 1, 42) };
         }
     }
+    if (modus === 'landet') {
+        if (beat === 0) return { pos: v(-30 + t * 0.8, 9, 34), se: v(-6 + t * 0.8, 0, 0) };
+        return { pos: v(0, 72, 62), se: v(0, 0, -6) };
+    }
     switch (beat) {
         case 0:
             return { pos: v(-16 + t * 0.5, 5, 18), se: v(0, 0, 0) };
         case 1:
             return { pos: v(10, 13, 20), se: v(0, 0, -6) };
         case 2:
-            return { pos: v(0, 26, 12), se: v(0, 0, -1) };
+            return { pos: v(0, 27, 13), se: v(0, 0, 6) };
         default:
             return { pos: v(14 - t * 0.3, 8, 15), se: v(0, 0, -1) };
     }
@@ -442,6 +447,163 @@ function JordScene({ beat, playing }: { beat: number; playing: boolean }) {
     );
 }
 
+/* ---------- Landet ---------- */
+
+const LANDSBYER = 46;
+const HUS_PER_LANDSBY = 7;
+const LAND_HUS = LANDSBYER * HUS_PER_LANDSBY;
+
+/** Et tilfeldig, men fast tall mellom 0 og 1. */
+function fast(i: number) {
+    const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;
+    return x - Math.floor(x);
+}
+
+/**
+ * Landsbyer spredt over hele bildet: for mange til å telles. Byen er én liten klynge
+ * med høye hus bakerst til høyre. Ingen tall i bildet her, bare inntrykket «de aller fleste».
+ */
+function LandetScene() {
+    const hus = useRef<THREE.InstancedMesh>(null);
+    const tak = useRef<THREE.InstancedMesh>(null);
+    const akre = useRef<THREE.InstancedMesh>(null);
+    const blokker = useRef<THREE.InstancedMesh>(null);
+    const o = useMemo(() => new THREE.Object3D(), []);
+    const landsbyer = useMemo(
+        () =>
+            Array.from({ length: LANDSBYER }, (_, i) => {
+                const k = i % 9;
+                const r = Math.floor(i / 9);
+                return {
+                    x: -64 + k * 16 + (fast(i) - 0.5) * 8,
+                    z: -44 + r * 18 + (fast(i + 50) - 0.5) * 8,
+                };
+            }).filter((l) => !(l.x > 30 && l.z < -20)),
+        []
+    );
+    const BLOKKER = 14;
+    const farger = useMemo(() => {
+        const pal = ['#a3c254', '#c9b458', '#7fa34a', '#b8c968', '#98b84d', '#d2bf6a'];
+        return Array.from(
+            { length: LANDSBYER * 4 },
+            (_, i) => new THREE.Color(pal[i % pal.length])
+        );
+    }, []);
+    const ferdig = useRef(false);
+    useFrame(() => {
+        if (ferdig.current) return;
+        const hm = hus.current;
+        const tm = tak.current;
+        const am = akre.current;
+        const bm = blokker.current;
+        if (!hm || !tm || !am || !bm) return;
+        let n = 0;
+        landsbyer.forEach((l, li) => {
+            for (let j = 0; j < HUS_PER_LANDSBY; j++) {
+                const a = fast(li * 10 + j) * Math.PI * 2;
+                const d = 1 + fast(li * 10 + j + 5) * 2.6;
+                const x = l.x + Math.cos(a) * d;
+                const z = l.z + Math.sin(a) * d;
+                o.position.set(x, 0.45, z);
+                o.rotation.set(0, a, 0);
+                o.scale.setScalar(1);
+                o.updateMatrix();
+                hm.setMatrixAt(n, o.matrix);
+                o.position.set(x, 1.25, z);
+                o.rotation.set(0, a + Math.PI / 4, 0);
+                o.updateMatrix();
+                tm.setMatrixAt(n, o.matrix);
+                n++;
+            }
+        });
+        for (; n < LAND_HUS; n++) {
+            o.position.set(0, -50, 0);
+            o.scale.setScalar(0.001);
+            o.updateMatrix();
+            hm.setMatrixAt(n, o.matrix);
+            tm.setMatrixAt(n, o.matrix);
+        }
+        let m = 0;
+        landsbyer.forEach((l, li) => {
+            for (let j = 0; j < 4; j++) {
+                o.position.set(l.x + (j % 2 ? 4.2 : -4.2), 0.05, l.z + (j < 2 ? 4 : -4));
+                o.rotation.set(-Math.PI / 2, 0, 0);
+                o.scale.set(5.5, 4.5, 1);
+                o.updateMatrix();
+                am.setMatrixAt(m, o.matrix);
+                am.setColorAt(m, farger[(li * 4 + j) % farger.length]);
+                m++;
+            }
+        });
+        for (; m < LANDSBYER * 4; m++) {
+            o.position.set(0, -50, 0);
+            o.scale.setScalar(0.001);
+            o.updateMatrix();
+            am.setMatrixAt(m, o.matrix);
+        }
+        for (let b = 0; b < BLOKKER; b++) {
+            const h = 1.2 + fast(b + 900) * 1.6;
+            o.position.set(44 + (b % 4) * 3.2, h / 2, -34 + Math.floor(b / 4) * 3.2);
+            o.rotation.set(0, 0, 0);
+            o.scale.set(2.2, h, 2.2);
+            o.updateMatrix();
+            bm.setMatrixAt(b, o.matrix);
+        }
+        for (const im of [hm, tm, am, bm]) {
+            im.instanceMatrix.needsUpdate = true;
+            if (im.instanceColor) im.instanceColor.needsUpdate = true;
+        }
+        ferdig.current = true;
+    });
+    return (
+        <>
+            <color attach="background" args={['#d6ecf7']} />
+            <fog attach="fog" args={['#e2f0f7', 90, 220]} />
+            <ambientLight intensity={0.6} />
+            <directionalLight position={[20, 40, 15]} intensity={1.5} color="#fff3d6" />
+            <hemisphereLight args={['#e0f2fe', '#4d5b2b', 0.5]} />
+            <mesh rotation={[-Math.PI / 2, 0, 0]}>
+                <planeGeometry args={[400, 400]} />
+                <meshStandardMaterial color="#6b8f3a" roughness={1} />
+            </mesh>
+            {/* En elv som slynger seg gjennom landet */}
+            <mesh rotation={[-Math.PI / 2, 0, 0.35]} position={[-10, 0.03, 0]}>
+                <planeGeometry args={[6, 260]} />
+                <meshStandardMaterial color="#5b9bd5" roughness={0.4} />
+            </mesh>
+            {/* Byen: grå plass under høyhusene */}
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[48.8, 0.04, -29.2]}>
+                <planeGeometry args={[16, 14]} />
+                <meshStandardMaterial color="#9ca3af" roughness={1} />
+            </mesh>
+            <instancedMesh
+                ref={akre}
+                args={[undefined, undefined, LANDSBYER * 4]}
+                frustumCulled={false}
+            >
+                <planeGeometry args={[1, 1]} />
+                <meshStandardMaterial roughness={1} />
+            </instancedMesh>
+            <instancedMesh ref={hus} args={[undefined, undefined, LAND_HUS]} frustumCulled={false}>
+                <boxGeometry args={[1, 0.9, 0.9]} />
+                <meshStandardMaterial color="#efe3c8" />
+            </instancedMesh>
+            <instancedMesh ref={tak} args={[undefined, undefined, LAND_HUS]} frustumCulled={false}>
+                <coneGeometry args={[0.9, 0.7, 4]} />
+                <meshStandardMaterial color="#9a3412" flatShading />
+            </instancedMesh>
+            <instancedMesh
+                ref={blokker}
+                args={[undefined, undefined, BLOKKER]}
+                frustumCulled={false}
+            >
+                <boxGeometry args={[1, 1, 1]} />
+                <meshStandardMaterial color="#64748b" />
+            </instancedMesh>
+        </>
+    );
+}
+
 /* ---------- Kamera og ramme ---------- */
 
 function Kameraet({ modus, beat, playing }: { modus: Modus; beat: number; playing: boolean }) {
@@ -474,6 +636,7 @@ const ETIKETTER: Record<Modus, (string | null)[]> = {
         '1. oktober 1949: Folkerepublikken Kina',
         null,
     ],
+    landet: ['Kina: et bondeland', null],
     jord: ['En landsby i Kina', 'Godseierens jord', '1950: jorda deles ut', 'Jord til bøndene'],
 };
 
@@ -493,11 +656,9 @@ export function MaoKina({ beat, playing, props }: VisualProps<{ modus?: Modus }>
                 gl={{ antialias: true }}
             >
                 <Kameraet modus={modus} beat={beat} playing={playing} />
-                {modus === 'port' ? (
-                    <PortScene beat={beat} />
-                ) : (
-                    <JordScene beat={beat} playing={playing} />
-                )}
+                {modus === 'port' && <PortScene beat={beat} />}
+                {modus === 'landet' && <LandetScene />}
+                {modus === 'jord' && <JordScene beat={beat} playing={playing} />}
             </Canvas>
             <AnimatePresence mode="wait">
                 {etikett && (
@@ -511,6 +672,9 @@ export function MaoKina({ beat, playing, props }: VisualProps<{ modus?: Modus }>
                         {etikett}
                     </motion.div>
                 )}
+            </AnimatePresence>
+            <AnimatePresence>
+                {modus === 'landet' && beat >= 1 && <LandetAndel key="andel" />}
             </AnimatePresence>
             <AnimatePresence>
                 {modus === 'port' && beat >= 3 && (
@@ -532,5 +696,45 @@ export function MaoKina({ beat, playing, props }: VisualProps<{ modus?: Modus }>
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+/** «Tre av fire» i 1990: fire like felt, tre av dem grønne. */
+function LandetAndel() {
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="absolute inset-x-0 flex justify-center"
+            style={{ bottom: '6%' }}
+        >
+            <div
+                className="rounded-3xl bg-white/95 shadow-2xl px-8 py-5 text-slate-900"
+                style={{ width: 620 }}
+            >
+                <div className="font-display font-black text-4xl text-center">
+                    1990: tre av fire på landet
+                </div>
+                <div className="flex gap-2 mt-4" style={{ height: 64 }}>
+                    {[0, 1, 2, 3].map((i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scaleY: 0.2 }}
+                            animate={{ opacity: 1, scaleY: 1 }}
+                            transition={{ duration: 0.5, delay: 0.3 + i * 0.25 }}
+                            className="flex-1 rounded-xl flex items-center justify-center text-white font-black text-2xl"
+                            style={{ background: i < 3 ? '#65a30d' : '#64748b' }}
+                        >
+                            {i < 3 ? 'landet' : 'byen'}
+                        </motion.div>
+                    ))}
+                </div>
+                <div className="text-center text-2xl font-bold text-slate-600 mt-3">
+                    Fortsatt i 1990: 75 prosent
+                </div>
+            </div>
+        </motion.div>
     );
 }

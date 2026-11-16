@@ -336,8 +336,8 @@ function Korea({ beat, p }: { beat: number; p: Proj }) {
             <Tekst
                 x={p([124.5, 41.5])[0]}
                 y={p([124.5, 41.5])[1] - 20}
-                tekst="FN ved grensen til Kina"
-                farge="#1d4ed8"
+                tekst="FN mot grensen til Kina"
+                farge="#1e3a8a"
                 synlig={beat === 3}
             />
             {kinaPiler.map((d, i) => (
@@ -349,39 +349,85 @@ function Korea({ beat, p }: { beat: number; p: Proj }) {
 
 function Vapenhvile({ beat, p }: { beat: number; p: Proj }) {
     const [x, y] = p([125.8, 39.7]);
+    const [vx, vy] = p([124.4, 38]);
+    const [hx] = p([129.6, 38]);
     return (
-        <AnimatePresence>
-            {beat >= 1 && beat <= 2 && (
-                <motion.g
-                    key="anying"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <circle cx={x} cy={y} r={16} fill="#0f172a" stroke="#fff" strokeWidth={4} />
-                    <rect
-                        x={x - 600}
-                        y={y - 86}
-                        width={550}
-                        height={170}
-                        rx={18}
-                        fill="#ffffff"
-                        opacity={0.95}
-                    />
-                    <line x1={x - 50} y1={y} x2={x - 16} y2={y} stroke="#0f172a" strokeWidth={3} />
-                    <text x={x - 575} y={y - 28} fontSize={48} fontWeight={900} fill="#0f172a">
-                        Mao Anying
-                    </text>
-                    <text x={x - 575} y={y + 20} fontSize={34} fontWeight={600} fill="#475569">
-                        Maos eldste sønn, offiser
-                    </text>
-                    <text x={x - 575} y={y + 60} fontSize={34} fontWeight={600} fill="#475569">
-                        døde i november 1950
-                    </text>
-                </motion.g>
-            )}
-        </AnimatePresence>
+        <>
+            <AnimatePresence>
+                {beat >= 3 && (
+                    <motion.g
+                        key="linja"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.2 }}
+                    >
+                        <line
+                            x1={vx}
+                            y1={vy}
+                            x2={hx}
+                            y2={vy}
+                            stroke="#475569"
+                            strokeWidth={26}
+                            strokeLinecap="round"
+                            opacity={0.85}
+                        />
+                        <text
+                            x={vx - 30}
+                            y={vy + 70}
+                            textAnchor="end"
+                            fontSize={36}
+                            fontWeight={900}
+                            fill="#0f172a"
+                            stroke="#fff"
+                            strokeWidth={7}
+                            paintOrder="stroke"
+                        >
+                            Korea fortsatt delt
+                        </text>
+                    </motion.g>
+                )}
+            </AnimatePresence>
+            <AnimatePresence>
+                {beat >= 1 && beat <= 2 && (
+                    <motion.g
+                        key="anying"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <circle cx={x} cy={y} r={16} fill="#0f172a" stroke="#fff" strokeWidth={4} />
+                        <rect
+                            x={x - 600}
+                            y={y - 86}
+                            width={550}
+                            height={170}
+                            rx={18}
+                            fill="#ffffff"
+                            opacity={0.95}
+                        />
+                        <line
+                            x1={x - 50}
+                            y1={y}
+                            x2={x - 16}
+                            y2={y}
+                            stroke="#0f172a"
+                            strokeWidth={3}
+                        />
+                        <text x={x - 575} y={y - 28} fontSize={48} fontWeight={900} fill="#0f172a">
+                            Mao Anying
+                        </text>
+                        <text x={x - 575} y={y + 20} fontSize={34} fontWeight={600} fill="#475569">
+                            Maos eldste sønn, offiser
+                        </text>
+                        <text x={x - 575} y={y + 60} fontSize={34} fontWeight={600} fill="#475569">
+                            døde i november 1950
+                        </text>
+                    </motion.g>
+                )}
+            </AnimatePresence>
+        </>
     );
 }
 
@@ -392,8 +438,8 @@ function Overskrift({ modus, beat }: { modus: Modus; beat: number }) {
             '25. juni 1950: Nord-Korea angriper',
             'Grensen: den 38. breddegraden',
             'USA går inn på Sør-Koreas side',
-            'FN rykker fram mot Kina',
-            'November 1950: ca. 300 000 kinesere går inn',
+            'FN rykker mot grensen til Kina',
+            'Kina går inn: i alt ca. 300 000 soldater',
         ][Math.min(beat, 4)];
     } else if (modus === 'vapenhvile') {
         tekst = [
