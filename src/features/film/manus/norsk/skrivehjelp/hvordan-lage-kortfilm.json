@@ -1,0 +1,355 @@
+{
+    "id": "hvordan-lage-kortfilm",
+    "tittel": "Hvordan lage kortfilm",
+    "kilde": "/norsk/skrivehjelp/hvordan-lage-kortfilm",
+    "bilde": "/images/lessons/norsk/kortfilm-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-16", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "apning",
+            "lyd": "rom",
+            "kapittel": "Lappen",
+            "visual": { "type": "KortfilmSett", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "En skolegang etter siste time. Ali åpner skapet sitt." },
+                { "si": "En hvit lapp faller ut og lander på gulvet." },
+                {
+                    "si": "Kameraet går helt inntil. På lappen står det: Møt meg bak gymsalen kl 15:00. Ingen navn.",
+                    "uttale": "Kameraet går helt inntil. På lappen står det: Møt meg bak gymsalen klokka tre. Ingen navn."
+                },
+                {
+                    "si": "Kjente du spenningen? Ingen forklarte hva som skjedde. Du så det."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "KORTFILM",
+                    "undertittel": "En novelle du kan se",
+                    "bilde": "/images/lessons/norsk/kortfilm-hero.webp",
+                    "sporsmal": {
+                        "tekst": "Hvordan får du historien ut av hodet og inn i en film?",
+                        "fraBeat": 2
+                    }
+                }
+            },
+            "replikker": [
+                { "si": "En kortfilm er en novelle du kan se. De samme reglene gjelder." },
+                {
+                    "si": "Karakteren din må ville noe, noe må stå i veien, og slutten skal bety noe."
+                },
+                {
+                    "si": "Forskjellen er at du forteller med lys, bevegelse og lyd i stedet for ord. Så hvordan får du historien ut i en film?"
+                }
+            ]
+        },
+        {
+            "id": "plan",
+            "kapittel": "Planlegg",
+            "visual": { "type": "KortfilmKlipp", "props": { "modus": "scener" } },
+            "replikker": [
+                {
+                    "si": "Det som skiller en god elevfilm fra en kaotisk film, er ikke kameraet. Det er forberedelsen."
+                },
+                {
+                    "si": "Skriv et scenenotat, en enkel liste over scenene. Det tar femten minutter, og det kan spare dere for to timer med opptak dere ikke kan bruke."
+                },
+                {
+                    "si": "Skriv scenene i den rekkefølgen de skjer i historien. Bestem hvilke kamera- og klippegrep du vil bruke i hver scene."
+                },
+                {
+                    "si": "Så kan dere filme scenene i den rekkefølgen som passer best, og sette dem sammen slik historien krever etterpå."
+                }
+            ]
+        },
+        {
+            "id": "scenetest",
+            "visual": { "type": "KortfilmKlipp", "props": { "modus": "scenetest" } },
+            "replikker": [
+                {
+                    "si": "Hver scene har én jobb. Den skal drive handlingen framover, vise noe om en karakter, eller skape stemning."
+                },
+                {
+                    "si": "Gjør den ingen av delene? Da trengs ikke scenen. Spør deg selv: Hva ville skjedd hvis denne scenen ikke var der?"
+                },
+                {
+                    "si": "Se på denne: Erik går til skolen, tar bussen og stirrer ut av vinduet. Ingenting skjer. Klipp den."
+                },
+                {
+                    "si": "Prøv heller dette: Erik river ned lappen om fotballkampen og stapper den i lomma. Nå skjønner vi at han skjuler noe."
+                }
+            ]
+        },
+        {
+            "id": "avstand",
+            "lyd": "rom",
+            "kapittel": "Kameraet",
+            "visual": { "type": "KortfilmSett", "props": { "modus": "avstand" } },
+            "replikker": [
+                {
+                    "si": "Kameraet velger hva vi ser. Hvor nær du står, bestemmer hva seeren legger merke til. Her er fem avstander."
+                },
+                {
+                    "si": "Totalbilde viser oss hvor vi er. Her ser vi en elev alene i en lang, tom gang."
+                },
+                { "si": "Halvtotalbilde viser hele kroppen, fra hodet til føttene." },
+                {
+                    "si": "Halvnært er det utsnittet vi ser mest av på TV, for eksempel når noen snakker til kamera."
+                },
+                {
+                    "si": "Nært viser ansiktet. Nå ser vi følelsen, for eksempel øynene til en elev som leser en viktig lapp."
+                },
+                {
+                    "si": "Ekstremt nært viser én detalj som sier alt: fingrene som skjelver rundt en telefon."
+                }
+            ]
+        },
+        {
+            "id": "vinkel",
+            "visual": { "type": "KortfilmSett", "props": { "modus": "vinkel" } },
+            "replikker": [
+                {
+                    "si": "Høyden på kameraet betyr også noe. Den bestemmer hvem som har makt i scenen."
+                },
+                {
+                    "si": "Fugleperspektiv, ovenfra og ned, gjør personen liten og sårbar. Bruk det når noen er i en håpløs situasjon."
+                },
+                {
+                    "si": "Normalperspektiv er i øyehøyde. Da møter vi personen som en likeverdig. Det er den vanligste vinkelen."
+                },
+                {
+                    "si": "Froskeperspektiv, nedenfra og opp, gjør personen mektig og truende. Bruk det for sjefer, skurker eller et øyeblikk av seier."
+                }
+            ]
+        },
+        {
+            "id": "lyd",
+            "lyd": "stille",
+            "kapittel": "Lyd",
+            "visual": { "type": "KortfilmLyd", "props": { "modus": "reallyd" } },
+            "replikker": [
+                { "si": "Lyden er den usynlige halvdelen av filmen." },
+                {
+                    "si": "Lydene som finnes der du filmer, kalles reallyd. De forteller seeren hvor vi er."
+                },
+                { "si": "Dårlig lyd merker seeren med én gang." },
+                {
+                    "si": "Men her kan du også gjøre elevfilmen mye bedre, uten å kjøpe noe utstyr."
+                }
+            ]
+        },
+        {
+            "id": "mikrofon",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Overlev Chromebook-mikrofonen",
+                    "punkter": [
+                        {
+                            "ikon": "snakk",
+                            "tittel": "20 cm fra skjermen",
+                            "tekst": "ikke nærmere, ikke lenger unna",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "vind",
+                            "tittel": "Klede over mikrofonen",
+                            "tekst": "når du filmer ute i vind",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "radio",
+                            "tittel": "10 sekunder stille først",
+                            "tekst": "så kan du fjerne støy etterpå",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "hus",
+                            "tittel": "Unngå rom med ekko",
+                            "tekst": "tomme ganger og harde vegger er verst",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Filmer du med en Chromebook? Hold ansiktet 20 centimeter fra skjermen. Ikke nærmere, og ikke lenger unna."
+                },
+                { "si": "Filmer du ute i vind, legg et klede over mikrofonen." },
+                {
+                    "si": "Ta opp 10 sekunder med stille bakgrunnslyd først. Da kan du fjerne støy etterpå."
+                },
+                {
+                    "si": "Og unngå rom med ekko. Tomme ganger og klasserom med harde vegger er verst."
+                }
+            ]
+        },
+        {
+            "id": "dubbing",
+            "visual": { "type": "KortfilmLyd", "props": { "modus": "dubbing" } },
+            "replikker": [
+                {
+                    "si": "Det beste lydtrikset heter dubbing. Filmfolk kaller det ADR.",
+                    "uttale": "Det beste lydtrikset heter dubbing. Filmfolk kaller det A D R."
+                },
+                { "si": "Først filmer og klipper dere scenen som vanlig." },
+                {
+                    "si": "Etterpå sier skuespillerne replikkene sine på nytt, innendørs, mens de ser på seg selv på skjermen."
+                },
+                {
+                    "si": "Den nye lyden kommer inn i stedet for den gamle. Selv Hollywood gjør dette, og lyden blir alltid bedre."
+                }
+            ]
+        },
+        {
+            "id": "lys",
+            "lyd": "rom",
+            "kapittel": "Lys",
+            "visual": { "type": "KortfilmSett", "props": { "modus": "lys" } },
+            "replikker": [
+                {
+                    "si": "Du trenger ikke lysutstyr. Du trenger å forstå lyset som allerede er der."
+                },
+                {
+                    "si": "Første feil: et vindu bak personen. Da blir personen mørk, bare en silhuett mot lyset."
+                },
+                { "si": "Løsningen er enkel. Snu personen, så ansiktet vender mot vinduet." },
+                {
+                    "si": "Taklys gir harde skygger under øynene og nesen. Slå det av, og bruk heller et bordlys fra siden."
+                },
+                {
+                    "si": "Er rommet for mørkt? Hold et hvitt A4-ark utenfor bildet. Det sender lyset tilbake inn på ansiktet og fjerner harde skygger."
+                }
+            ]
+        },
+        {
+            "id": "replikk",
+            "lyd": "stille",
+            "kapittel": "Dialog",
+            "visual": { "type": "KortfilmSamtale", "props": { "modus": "replikk" } },
+            "replikker": [
+                {
+                    "si": "Replikker på film er kortere enn i en roman. Og de sier sjelden ting rett ut."
+                },
+                {
+                    "si": "Hør her. Emma sier: Husker du at pappa dro for tre år siden? Venninnen svarer: Ja, det var hardt for deg."
+                },
+                {
+                    "si": "Ingen snakker sånn. Replikkene er der bare for å fortelle seeren noe. Det kalles eksponeringsdialog."
+                },
+                {
+                    "si": "Prøv heller: Han sendte ikke engang melding til bursdagen min. Emma stirrer ut av vinduet, og vi skjønner resten selv."
+                }
+            ]
+        },
+        {
+            "id": "klipp",
+            "kapittel": "Klipping",
+            "visual": { "type": "KortfilmKlipp", "props": { "modus": "klippetyper" } },
+            "replikker": [
+                {
+                    "si": "Du filmer mye mer enn du får bruk for. I klippingen forteller du historien på nytt, nå med rytme."
+                },
+                {
+                    "si": "Et godt triks er å klippe mens noe beveger seg. Da blir klippet usynlig, og filmen føles som én lang bevegelse."
+                },
+                {
+                    "si": "Det finnes tre grunnleggende typer klipp. Direkte klipp er en brå overgang til neste scene."
+                },
+                {
+                    "si": "Match-klipp binder scenene med to like bevegelser. En arm svinger, og i neste bilde svinger en annen arm på samme måte."
+                },
+                {
+                    "si": "Smash-klipp er en hard og overraskende overgang. Bruk det for sjokk, en vits eller et hopp i tid."
+                }
+            ]
+        },
+        {
+            "id": "akse",
+            "visual": { "type": "KortfilmSamtale", "props": { "modus": "akse" } },
+            "replikker": [
+                {
+                    "si": "En regel til gjelder når to personer snakker sammen. Tenk deg en rett linje mellom dem."
+                },
+                {
+                    "si": "Står kameraet på den ene siden av linja, ser de mot hverandre i bildet. Jonas ser mot høyre, og Sofie ser mot venstre."
+                },
+                {
+                    "si": "Men flytter du kameraet over linja, snur alt. Nå ser det ut som om begge ser samme vei."
+                },
+                {
+                    "si": "Dette kalles 180-gradersregelen. Hold kameraet på én side av linja, så seeren ikke blir forvirret.",
+                    "uttale": "Dette kalles hundreogåtti-gradersregelen. Hold kameraet på én side av linja, så seeren ikke blir forvirret."
+                }
+            ]
+        },
+        {
+            "id": "rytme",
+            "visual": { "type": "KortfilmKlipp", "props": { "modus": "rytme" } },
+            "replikker": [
+                {
+                    "si": "Lengden på hvert klipp betyr også noe. Korte klipp gir hjertet fart. Lange klipp gir pusterom."
+                },
+                {
+                    "si": "Sorg: Kameraet hviler i 8 sekunder på den tomme stolen ved middagsbordet."
+                },
+                {
+                    "si": "Panikk: Fem bilder rett etter hverandre. Tom stol, tallerken, dør, vindu, gata nedenfor. Fire klipp på to sekunder."
+                },
+                {
+                    "si": "Et reaksjonsklipp viser ansiktet til den som ser noe. Jonas tar opp telefonen, og så ser vi ansiktet hans bli blankt."
+                },
+                { "si": "Vi får aldri se meldingen. Ansiktet forteller oss hva vi skal føle." }
+            ]
+        },
+        {
+            "id": "teksting",
+            "kapittel": "Teksting",
+            "visual": { "type": "KortfilmLyd", "props": { "modus": "teksting" } },
+            "replikker": [
+                {
+                    "si": "Til slutt: teksting. Den hjelper folk med nedsatt hørsel, og alle som ser filmen der det er mye støy."
+                },
+                { "si": "Teksten skal stå nederst i bildet, ikke midt i. Og maks to linjer om gangen." },
+                {
+                    "si": "Bruk hvit tekst med svart skygge. Hvit tekst alene forsvinner på et lyst bilde."
+                },
+                { "si": "Og legg til tekstingen aller sist, når klippingen er ferdig." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Plan. Kamera. Lyd. Lys. Dialog. Klipp.", "fraBeat": 0 },
+                        { "tekst": "Alt tjener historien.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Hva skal seeren se?", "fraBeat": 1 },
+                        { "tekst": "Det er et valg.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ikke kameraet,", "fraBeat": 2 },
+                        { "tekst": "men forberedelsen.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Planlegging, kamera, lyd, lys, dialog og klipping. Alt er verktøy for én ting: historien din."
+                },
+                {
+                    "si": "Husk lappen i skapet. Hver gang du filmer, velger du hva seeren skal se, og hva de skal føle."
+                },
+                {
+                    "si": "Det som skiller en god elevfilm fra en kaotisk film, er ikke kameraet. Det er forberedelsen."
+                }
+            ]
+        }
+    ]
+}
