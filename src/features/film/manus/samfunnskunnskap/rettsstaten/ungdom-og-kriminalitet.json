@@ -1,0 +1,227 @@
+{
+    "id": "ungdom-og-kriminalitet",
+    "tittel": "Ungdom og kriminalitet: Hva skjer når unge bryter loven?",
+    "kilde": "/samfunnskunnskap/rettsstaten/ungdom-og-kriminalitet",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [
+        { "tall": 10, "begrunnelse": "Prikkfeltet farger 10 av 85 prikker: omtrent 12 prosent av 85 saker, regnet ut fra artikkelen (Mohn, 2026). Tallet vises ikke, stemmen sier «omtrent 12 prosent»." }
+    ],
+    "vurdering": { "dato": "2026-11-16", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 5, "sum": 20 },
+    "scener": [
+        {
+            "id": "holdeplass",
+            "kapittel": "Bussholdeplassen",
+            "lyd": "vind",
+            "visual": { "type": "UngdomHoldeplass", "props": { "modus": "ran" } },
+            "replikker": [
+                { "si": "Det er en mørk kveld i november. Ved en bussholdeplass står en gutt på 15 år og venter på bussen." },
+                { "si": "Tre ungdommer kommer bort til ham." },
+                { "si": "To av dem krever at han gir fra seg mobilen. Den tredje, en gutt på 14, står litt unna og holder utkikk." },
+                { "si": "Etter et halvt minutt løper alle tre av gårde med telefonen." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "UNGDOM OG KRIMINALITET",
+                    "undertittel": "Hva skjer når unge bryter loven?",
+                    "sporsmal": { "tekst": "Kan 14-åringen straffes?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Senere finner politiet ut hvem de var." },
+                { "si": "Men kan 14-åringen som sto vakt, straffes for ranet? Og hva skjer med de to andre, som er 16?" },
+                { "si": "I denne filmen ser vi hva som skjer når unge bryter loven, og hvorfor Norge følger opp de fleste unge i stedet for å sette dem i fengsel." }
+            ]
+        },
+        {
+            "id": "grensen",
+            "kapittel": "Grensen går ved 15",
+            "lyd": "stille",
+            "visual": { "type": "UngdomVeien", "props": { "modus": "alder" } },
+            "replikker": [
+                { "si": "I Norge kan du ikke straffes for noe du gjorde før du fylte 15 år." },
+                { "si": "Denne grensen kalles den kriminelle lavalderen. Var du under 15, kan du ikke få bot, ungdomsstraff eller fengsel." },
+                { "si": "Før gikk grensen ved 14 år. I 1987 ble den flyttet opp til 15." },
+                { "si": "Loven sier at barn under 15 er uten skyldevne. Da regner ikke loven barnet som skyldig slik den regner en voksen, selv om det barnet gjorde var galt." },
+                { "si": "Derfor havner 14-åringen på den ene siden av streken, og de to 16-åringene på den andre." }
+            ]
+        },
+        {
+            "id": "under15",
+            "kapittel": "Under 15 år",
+            "visual": { "type": "UngdomVeien", "props": { "modus": "under15" } },
+            "replikker": [
+                { "si": "At du ikke kan straffes, betyr ikke at ingenting skjer." },
+                { "si": "Politiet kan fortsatt etterforske saken, altså finne ut hva som skjedde. Gutten som ble ranet, har krav på at saken tas på alvor." },
+                { "si": "Politiet kan kalle barnet og foreldrene inn til en bekymringssamtale." },
+                { "si": "Saken kan også sendes til barnevernet, som kan sette inn tiltak for å hjelpe barnet og familien, og for å beskytte andre." },
+                { "si": "Men politiet kan ikke pågripe et barn under 15, eller sette det i varetekt, altså holde det innesperret mens saken etterforskes." },
+                { "si": "Er barnet for eksempel svært beruset, kan politiet ta det med seg og holde det i inntil fire timer, mens de prøver å få tak i foreldrene." }
+            ]
+        },
+        {
+            "id": "samtalen",
+            "lyd": "rom",
+            "visual": { "type": "UngdomHoldeplass", "props": { "modus": "samtale" } },
+            "replikker": [
+                { "si": "For 14-åringen betyr dette at han slipper straff. Men han slipper ikke unna." },
+                { "si": "Han må sitte i et møterom sammen med foreldrene og politiet." },
+                { "si": "Politiet forteller hva de vet, og snakker med familien om hvordan han kan komme bort fra kriminalitet." },
+                { "si": "Samtalen skrives ned hos politiet. Men den havner ikke på rullebladet hans. Rullebladet er listen over straffene en person har fått." }
+            ]
+        },
+        {
+            "id": "over15",
+            "kapittel": "Fra 15 år",
+            "lyd": "stille",
+            "visual": { "type": "UngdomVeien", "props": { "modus": "over15" } },
+            "replikker": [
+                { "si": "De to 16-åringene er over grensen og kan straffes. Men loven skiller fortsatt mellom unge og voksne." },
+                { "si": "Norge har skrevet under på FNs barnekonvensjon. Den sier at barn under 18 år bare skal i fengsel når det er helt nødvendig." },
+                { "si": "Et barn under 18 år kan heller aldri få mer enn 15 års fengsel, selv for de verste lovbruddene." },
+                { "si": "For de fleste unge ender saken likevel ikke i retten. For 15 til 17-åringer er det vanligste at saken går til konfliktrådet, eller at påtalemyndigheten ikke tar den videre. Konfliktrådet er et offentlig kontor som følger opp unge." },
+                { "si": "Påtalemyndigheten er den delen av politiet og statsadvokatene som bestemmer om en sak skal for retten." }
+            ]
+        },
+        {
+            "id": "fengsel",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 85,
+                            "farget": 0,
+                            "restFarge": "#94a3b8",
+                            "tittel": "SSB så på 85 saker",
+                            "restEtikett": "saker med ungdom under 18",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 85,
+                            "farget": 85,
+                            "farge": "#2563eb",
+                            "tittel": "85 saker: ungdom under 18 straffet for å ha skadet noen",
+                            "fargeEtikett": "straffet for å skade noen",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 85,
+                            "farget": 10,
+                            "farge": "#dc2626",
+                            "restFarge": "#93c5fd",
+                            "tittel": "Omtrent 12 prosent: ubetinget fengsel",
+                            "fargeEtikett": "ubetinget fengsel",
+                            "restEtikett": "annen straff",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men domstolene ser ikke bort fra alvorlige lovbrudd." },
+                { "si": "Statistisk sentralbyrå så på 85 saker der en ungdom under 18 år ble straffet for å ha skadet noen." },
+                { "si": "Omtrent 12 prosent av dem fikk ubetinget fengsel. Det er fengsel de faktisk måtte sitte i." }
+            ]
+        },
+        {
+            "id": "stormote",
+            "kapittel": "Ungdomsstraff",
+            "lyd": "rom",
+            "visual": { "type": "UngdomPlan", "props": { "modus": "stormote" } },
+            "replikker": [
+                { "si": "Siden 1. juli 2014 har domstolene kunnet gi ungdomsstraff. Den er for unge mellom 15 og 18 år som har begått alvorlig eller gjentatt kriminalitet, som vold eller ran.", "uttale": "Siden første juli 2014 har domstolene kunnet gi ungdomsstraff. Den er for unge mellom 15 og 18 år som har begått alvorlig eller gjentatt kriminalitet, som vold eller ran." },
+                { "si": "Den er laget som et ekte alternativ til fengsel, og konfliktrådet har ansvaret når straffen gjennomføres." },
+                { "si": "Først holdes et ungdomsstormøte. Der møtes den unge, foreldrene og en ungdomskoordinator fra konfliktrådet, som har ansvar for oppfølgingen." },
+                { "si": "Politiet og kriminalomsorgen er også med. Kriminalomsorgen har ansvaret for fengsler og straff i frihet. Ofte er skolen, barnevernet eller helsetjenesten med." },
+                { "si": "Hvis den som ble utsatt for lovbruddet vil, kan han eller hun også møte den unge." }
+            ]
+        },
+        {
+            "id": "planen",
+            "visual": { "type": "UngdomPlan", "props": { "modus": "plan" } },
+            "replikker": [
+                { "si": "På møtet lager de en ungdomsplan." },
+                { "si": "Den kan for eksempel si at den unge skal gå på skolen hver dag og ha en jobb." },
+                { "si": "Den kan også si at den unge skal bo et bestemt sted, og være hjemme innen en fast tid." },
+                { "si": "Og den kan si at den unge skal gjøre nyttig arbeid for andre." },
+                { "si": "Straffen varer fra 120 dager, altså rundt fire måneder, og opptil to år." }
+            ]
+        },
+        {
+            "id": "bakgrunn",
+            "visual": { "type": "UngdomPlan", "props": { "modus": "fengsel" } },
+            "replikker": [
+                { "si": "Men ungdomsstraff er ingen gratis billett." },
+                { "si": "Når retten gir ungdomsstraff, setter den også en fengselsstraff som ligger klar i bakgrunnen." },
+                { "si": "Bryter den unge planen, møter ikke opp eller begår nye lovbrudd, kan saken gå tilbake til retten." },
+                { "si": "Da kan personen måtte sone fengselsstraffen likevel, altså sitte den av i fengsel." }
+            ]
+        },
+        {
+            "id": "oppfolging",
+            "kapittel": "Ungdomsoppfølging",
+            "lyd": "stille",
+            "visual": { "type": "UngdomVeien", "props": { "modus": "veiskille" } },
+            "replikker": [
+                { "si": "Ungdomsoppfølging er for lovbrudd som er litt mindre alvorlige. Den ligner ungdomsstraff, men varer kortere, fra fire måneder til ett år." },
+                { "si": "Den største forskjellen er at saken ikke går til retten. Det er påtalemyndigheten som bestemmer." },
+                { "si": "Men det krever to ting. Den unge må ha tilstått, altså innrømmet lovbruddet. Og den unge må selv si ja til ordningen." },
+                { "si": "Sier den unge nei, går saken til retten i stedet." },
+                { "si": "Både ungdomsstraff og ungdomsoppfølging skal hindre nye lovbrudd. For en 16-åring er det ofte mer å vinne på å fullføre skolen enn på å sitte innelåst." }
+            ]
+        },
+        {
+            "id": "hvorfor",
+            "kapittel": "Hvorfor?",
+            "visual": { "type": "UngdomPlan", "props": { "modus": "faktorer" } },
+            "replikker": [
+                { "si": "Hvorfor havner noen unge i kriminalitet? Det finnes ikke én forklaring." },
+                { "si": "Forskere snakker heller om risikofaktorer, som gjør kriminalitet mer sannsynlig, og beskyttende faktorer, som gjør det mindre sannsynlig." },
+                { "si": "I 2026 gikk Folkehelseinstituttet gjennom forskningen. De fant mer risiko ved psykiske vansker, rus, vold og omsorgssvikt hjemme, altså at barnet ikke får den omsorgen det trenger." },
+                { "si": "Venner som bryter loven, dårlige karakterer, å slutte på skolen og å trives dårlig der, økte også risikoen." },
+                { "si": "Å høre til på skolen, og å ha gode forhold til lærere og andre på samme alder, virket beskyttende. Varme og støttende foreldre beskyttet også." },
+                { "si": "Forskerne sier selv at kunnskapen er usikker. Og risikofaktorer sier noe om sjanser for en hel gruppe, ikke om hva som skjer med akkurat deg." }
+            ]
+        },
+        {
+            "id": "tilbake",
+            "kapittel": "Tilbake til holdeplassen",
+            "lyd": "vind",
+            "visual": { "type": "UngdomHoldeplass", "props": { "modus": "tilbake" } },
+            "replikker": [
+                { "si": "Gå tilbake til ranet ved bussholdeplassen." },
+                { "si": "14-åringen kan ikke straffes. Men han og foreldrene må til en bekymringssamtale, og barnevernet kan bli koblet inn." },
+                { "si": "De to 16-åringene kan straffes. Har de ranet før, kan de få ungdomsstraff, med en plan, faste tider og et møte med gutten de ranet, hvis han vil." },
+                { "si": "Ingen av dem slipper unna. Men målet er det samme for alle tre: at de ikke gjør det igjen." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Samfunnet satser på oppfølging,", "fraBeat": 0 },
+                        { "tekst": "en voksen som bryr seg og en plass på skolen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Mye avhenger av valgene de tar selv", "fraBeat": 1 },
+                        { "tekst": "og av menneskene rundt dem.", "fraBeat": 1, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Samfunnet satser på at oppfølging, en voksen som bryr seg og en plass på skolen gir bedre sjanser enn en celle." },
+                { "si": "Hvordan det går videre, avhenger mye av valgene de tar selv, og av menneskene rundt dem." }
+            ]
+        }
+    ]
+}
