@@ -1,0 +1,219 @@
+{
+  "id": "konfliktradet",
+  "tittel": "Konfliktrådet: Å møte den du gjorde vondt",
+  "kilde": "/samfunnskunnskap/rettsstaten/konfliktradet",
+  "bilde": "/images/rettsstaten/konfliktradet-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-17", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "rommet",
+      "lyd": "rom",
+      "kapittel": "Et møte",
+      "visual": { "type": "KonfliktradetRommet", "props": { "modus": "apning" } },
+      "replikker": [
+        { "si": "Det er tirsdag ettermiddag, i et lite møterom." },
+        { "si": "Her sitter Mathias. Han er 15 år." },
+        { "si": "På den andre siden av bordet sitter Randi. Hun er vaktmester på skolen hans." },
+        { "si": "Ved enden av bordet sitter en mekler, en som skal hjelpe dem å snakke sammen." }
+      ]
+    },
+    {
+      "id": "ruta",
+      "visual": { "type": "KonfliktradetRommet", "props": { "modus": "ruta" } },
+      "replikker": [
+        { "si": "Spol to uker tilbake." },
+        { "si": "Mathias knuste en rute i gymsalen." },
+        { "si": "Det var Randi som måtte feie opp glasset." },
+        { "si": "Mathias og Randi er oppdiktet. Men slike møter skjer hver dag i Norge." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Konfliktrådet",
+          "undertittel": "Å møte den du gjorde vondt",
+          "bilde": "/images/rettsstaten/konfliktradet-hero.webp",
+          "sporsmal": { "tekst": "Virker det?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "De skjer i konfliktrådet, et statlig kontor som hjelper folk å løse konflikter og saker om lovbrudd." },
+        { "si": "Du skal se hva som skjer i et slikt møte, og hvorfor Norge har konfliktråd." },
+        { "si": "Og: Virker det?" }
+      ]
+    },
+    {
+      "id": "straffesak",
+      "kapittel": "En annen tanke",
+      "visual": { "type": "KonfliktradetSporsmal", "props": { "modus": "straffesak" } },
+      "replikker": [
+        { "si": "I en vanlig straffesak står staten i midten." },
+        { "si": "Politiet etterforsker. En dommer bestemmer straffen." },
+        { "si": "Og den som ble rammet, er ofte bare et vitne, ute på siden." },
+        { "si": "Konfliktrådet bygger på en annen tanke. Den kalles gjenopprettende rett. Å gjenopprette betyr å rette opp igjen." },
+        { "si": "En vanlig straffesak spør: Hvilken lov ble brutt? Hvem gjorde det? Hvilken straff skal personen få?" },
+        { "si": "Gjenopprettende rett spør noe annet: Hvem ble skadet? Hva trenger de? Og hvem kan hjelpe dem med det?" }
+      ]
+    },
+    {
+      "id": "christie",
+      "visual": { "type": "KonfliktradetSporsmal", "props": { "modus": "christie" } },
+      "replikker": [
+        { "si": "Tanken kom fra den norske kriminologen Nils Christie. En kriminolog forsker på kriminalitet og straff." },
+        { "si": "På 1970-tallet skrev han en kjent artikkel. Den heter Konflikt som eiendom." },
+        { "si": "Christie mente at advokater og dommere hadde tatt konfliktene fra de menneskene de egentlig tilhørte." },
+        { "si": "Konfliktrådet siterer ham slik: Man burde ikke la konflikter forvitre, de burde brukes. Å forvitre betyr å smuldre bort." },
+        { "si": "En konflikt kan være en sjanse til å lære noe, ikke bare noe som må ryddes bort." }
+      ]
+    },
+    {
+      "id": "historie",
+      "kapittel": "Fra forsøk til hele landet",
+      "visual": { "type": "KonfliktradetTall", "props": { "modus": "tid" } },
+      "replikker": [
+        { "si": "De første konfliktrådene i Norge kom på midten av 1980-tallet. Først handlet det mest om unge lovbrytere mellom 15 og 18 år." },
+        { "si": "I 1989 fantes det 81 konfliktråd. Til sammen tok de 268 saker." },
+        { "si": "I 1991 vedtok Stortinget en egen lov om konfliktråd. Fra 1993 til 1994 fantes tilbudet i hele landet." },
+        { "si": "I 2004 ble konfliktrådene statlige. I 2014 kom en ny lov, som ga dem ansvaret for ungdomsstraff og ungdomsoppfølging." },
+        { "si": "I dag er det 12 konfliktråd, med kontor på 22 steder." }
+      ]
+    },
+    {
+      "id": "saker",
+      "kapittel": "Hvilke saker?",
+      "visual": { "type": "KonfliktradetTall", "props": { "modus": "saker" } },
+      "replikker": [
+        { "si": "Konfliktrådet tar to slags saker." },
+        { "si": "Den ene er straffesaker, som tyveri, hærverk, mobbing eller vold. Dem sender politiet videre." },
+        { "si": "Den andre er sivile saker: konflikter der ingen har brutt loven, som krangler mellom naboer." },
+        { "si": "I 2023 tok konfliktrådene 8034 saker." },
+        { "si": "Blant dem var 1879 meklinger i straffesaker og 3050 meklinger i sivile saker. Resten var andre slags saker." }
+      ]
+    },
+    {
+      "id": "vilkar",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Tre krav, og én fordel",
+          "punkter": [
+            { "ikon": "avtale", "tittel": "Frivillig", "tekst": "alle må si ja, og du kan trekke deg", "fraBeat": 1 },
+            { "ikon": "snakk", "tittel": "Stort sett enige om hva som skjedde", "tekst": "mekleren finner ikke ut hvem som snakker sant", "fraBeat": 2 },
+            { "ikon": "penger", "tittel": "Gratis", "fraBeat": 3 },
+            { "ikon": "las", "tittel": "Ikke på den vanlige politiattesten", "tekst": "når en politisak blir løst i konfliktrådet", "fraBeat": 4 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Tre ting må være på plass før et møte kan skje." },
+        { "si": "For det første er det frivillig. Alle må si ja til å møtes, og du kan trekke deg når du vil." },
+        { "si": "For det andre må partene stort sett være enige om hva som skjedde. Mekleren skal nemlig ikke finne ut hvem som snakker sant." },
+        { "si": "For det tredje er det gratis." },
+        { "si": "Og en politisak som blir løst her, kommer ikke på den vanlige politiattesten. Det er et papir fra politiet som viser om du er straffet. Mange arbeidsgivere ber om det." }
+      ]
+    },
+    {
+      "id": "mote",
+      "lyd": "rom",
+      "kapittel": "Slik foregår et møte",
+      "visual": { "type": "KonfliktradetRommet", "props": { "modus": "mote" } },
+      "replikker": [
+        { "si": "Først får hver av partene en egen samtale med mekleren, og får vite hva som skal skje." },
+        { "si": "De kan ta med en støtteperson. Møtet ledes av én eller to meklere og varer som regel én til tre timer." },
+        { "si": "Møtet har tre deler. Først snakker de om hva som skjedde." },
+        { "si": "Så snakker de om hvordan det er nå." },
+        { "si": "Til slutt snakker de om hvordan de vil at det skal bli framover." },
+        { "si": "Alle i rommet har taushetsplikt. De får ikke fortelle andre det de har hørt. Da tør folk å være ærlige." }
+      ]
+    },
+    {
+      "id": "mekler",
+      "visual": { "type": "KonfliktradetRommet", "props": { "modus": "mekler" } },
+      "replikker": [
+        { "si": "Meklerne er vanlige folk, ikke jurister, altså folk som har studert lover. Det finnes rundt 550 av dem i Norge." },
+        { "si": "De må være minst 18 år, men det er ingen krav til utdanning. De får betalt for jobben." },
+        { "si": "Mekleren skal ikke dømme, og ikke bestemme." },
+        { "si": "Mekleren legger til rette for samtalen, kan foreslå løsninger og må godkjenne avtalen til slutt." }
+      ]
+    },
+    {
+      "id": "avtale",
+      "lyd": "stille",
+      "kapittel": "Avtalen",
+      "visual": { "type": "KonfliktradetAvtale", "props": { "modus": "avtale" } },
+      "replikker": [
+        { "si": "Går møtet bra, kan partene lage en avtale. De bestemmer selv hva som står i den, eller om de vil lage en." },
+        { "si": "En avtale kan handle om å betale for noe som ble ødelagt, om å si unnskyld, eller om å gjøre en jobb." },
+        { "si": "Et eksempel: En som har stjålet fra en butikk, blir enig med butikken om å vaske lageret i tre timer en lørdag." },
+        { "si": "Er du under 18 år, må foreldrene eller vergen din også skrive under." }
+      ]
+    },
+    {
+      "id": "etter",
+      "visual": { "type": "KonfliktradetAvtale", "props": { "modus": "etter" } },
+      "replikker": [
+        { "si": "I straffesaker har partene to uker på å angre seg etter at avtalen er laget." },
+        { "si": "Blir avtalen fulgt, er saken avgjort." },
+        { "si": "Blir den ikke fulgt, kan politiet ta opp saken igjen og vurdere en annen straff." }
+      ]
+    },
+    {
+      "id": "forskning",
+      "kapittel": "Virker det?",
+      "visual": { "type": "KonfliktradetTall", "props": { "modus": "ofre" } },
+      "replikker": [
+        { "si": "Det er ikke lett å måle. Danske forskere har gått gjennom mange undersøkelser om hvordan ofrene opplever det." },
+        { "si": "To danske undersøkelser spurte ofrene om møtet var vellykket. Den ene fant at 77 prosent syntes det, den andre 85 prosent." },
+        { "si": "Studier fra andre land viser at ofrene ofte er mindre redde og mindre sinte etterpå." },
+        { "si": "De ønsker også sjeldnere hevn over den som gjorde det." }
+      ]
+    },
+    {
+      "id": "forbehold",
+      "visual": { "type": "KonfliktradetTall", "props": { "modus": "forbehold" } },
+      "replikker": [
+        { "si": "Men en del ofre er misfornøyde. Særlig når møtet bare handlet om å hjelpe den som gjorde det, og ikke om hva de selv trengte." },
+        { "si": "Forskerne sammenlignet også ofre som hadde vært i konfliktråd, med ofre som ikke hadde det." },
+        { "si": "De fant ikke at de som hadde vært der, trengte mindre hjelp fra psykolog eller lege etterpå." },
+        { "si": "Mange av de positive undersøkelsene sammenligner heller ikke med en gruppe som ikke var der." },
+        { "si": "Men én ting er ganske tydelig: For mange ofre er det viktig å bli hørt. Å få spørre hvorfor meg, og få et svar." }
+      ]
+    },
+    {
+      "id": "debatt",
+      "kapittel": "Hva synes du?",
+      "visual": { "type": "KonfliktradetSporsmal", "props": { "modus": "debatt" } },
+      "replikker": [
+        { "si": "Noen mener at konfliktrådet er for snilt. Den som gjorde noe galt, slipper jo unna med en samtale og litt arbeid." },
+        { "si": "Andre mener at det kan være tøffere å se den du har skadet i øynene, enn å betale en bot til staten." },
+        { "si": "Det handler om hva rettferdighet er. For noen betyr det at alle får like hard straff for samme handling." },
+        { "si": "For andre betyr det at skaden blir rettet opp, og at de som var med, får være med og bestemme hvordan." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Ingen dommer i rommet.", "fraBeat": 0 },
+            { "tekst": "Partene ved samme bord, og en mekler.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Ikke bare: Hvilken lov ble brutt?", "fraBeat": 1 },
+            { "tekst": "Men: Hvem ble skadet, og hva trenger de?", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Mange ofre er fornøyde.", "fraBeat": 2 },
+            { "tekst": "Men forskerne er ikke sikre på hvor mye det hjelper på lang sikt.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "I konfliktrådet er det ingen dommer i rommet. Partene sitter ved samme bord, og en mekler hjelper dem." },
+        { "si": "Spørsmålet er ikke bare hvilken lov som ble brutt. Det er hvem som ble skadet, og hva som skal til for å gjøre det godt igjen." },
+        { "si": "Mange ofre er fornøyde med møtet. Men forskerne er ikke sikre på hvor mye det hjelper på lang sikt." }
+      ]
+    }
+  ]
+}
