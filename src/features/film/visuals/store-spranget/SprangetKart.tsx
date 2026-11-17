@@ -300,7 +300,7 @@ const Land = memo(function Land({ geographies, sti }: { geographies: GeoFeature[
 
 const OVERSKRIFT: Record<Modus, string[]> = {
     garde: [
-        'April 1966: kulturrevolusjonen',
+        '1966: kulturrevolusjonen',
         'Mål: knuse motstanderne',
         'Mai 1966: de første rødegardistene',
         'Over hele Kina',
@@ -445,9 +445,7 @@ function Kort({ modus, beat }: { modus: Modus; beat: number }) {
         );
     if (modus === 'deng' && beat >= 3)
         innhold = (
-            <p className="text-2xl font-semibold text-slate-700">
-                Men partiet bestemmer fortsatt over alt.
-            </p>
+            <p className="text-2xl font-semibold text-slate-700">Men partiet beholdt makten.</p>
         );
     return (
         <AnimatePresence mode="wait">

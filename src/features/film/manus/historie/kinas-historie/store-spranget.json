@@ -4,6 +4,7 @@
     "kilde": "/historie/kinas-historie/store-spranget",
     "bilde": "/images/kinas-historie/store-spranget-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-17", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "gryta",
@@ -37,8 +38,9 @@
                     "tall": [
                         {
                             "verdi": 15,
-                            "etikett": "år for å gå forbi Storbritannia",
-                            "fraBeat": 1
+                            "etikett": "år for å gå forbi Storbritannia i stål og maskiner",
+                            "fraBeat": 1,
+                            "omtrent": false
                         }
                     ],
                     "sporsmal": {
@@ -89,7 +91,7 @@
                 { "si": "Over hele landsbygda bygde folk små stålovner." },
                 { "si": "For å fyre i ovnene hogde de ned skogen." },
                 {
-                    "si": "Men stålet som kom ut, var nesten ubrukelig. Og mens bøndene passet ovnene, sto ingen på åkeren."
+                    "si": "Men stålet som kom ut, var nesten ubrukelig. Og mens bøndene passet ovnene, var det for få igjen på åkeren."
                 }
             ]
         },
@@ -148,7 +150,7 @@
             "visual": { "type": "SprangetLandsby", "props": { "modus": "tom" } },
             "replikker": [
                 {
-                    "si": "Mellom 1959 og 1961 rammet en hungersnød Kina. Det betyr at folk sultet i hele landet."
+                    "si": "Mellom 1959 og 1961 rammet en hungersnød Kina. Det betyr at det var så lite mat at mange millioner sultet."
                 },
                 {
                     "si": "Tørke og flom gjorde det verre. Men hovedårsaken var politikken."
@@ -158,7 +160,7 @@
                     "si": "Ingen vet nøyaktig hvor mange som døde. Trolig var det titalls millioner. Anslagene starter på rundt 20 millioner, og noen er mye høyere."
                 },
                 {
-                    "si": "I Kina i dag er det fortsatt ikke lov å snakke fritt om dette."
+                    "si": "I Kina i dag er det fortsatt mye sensur rundt dette."
                 }
             ]
         },
@@ -217,13 +219,13 @@
             "visual": { "type": "SprangetKart", "props": { "modus": "garde" } },
             "replikker": [
                 {
-                    "si": "I april 1966 satte Mao i gang kulturrevolusjonen. Gammel kultur skulle fjernes, og et nytt kommunistisk samfunn skulle bygges."
+                    "si": "I 1966 satte Mao i gang kulturrevolusjonen. Gammel kultur skulle fjernes, og et nytt kommunistisk samfunn skulle bygges."
                 },
                 {
                     "si": "Men det egentlige målet var å knuse motstanderne hans og få full kontroll igjen."
                 },
                 {
-                    "si": "Mao vendte seg rett til ungdommen. I mai 1966 dannet elever og studenter i Beijing de første gruppene av rødegardister."
+                    "si": "Mao vendte seg rett til ungdommen. I mai 1966 dannet elever og studenter i Beijing de første gruppene av rødegardister. De startet på egen hånd, men Mao heiet på dem."
                 },
                 {
                     "si": "Bevegelsen spredte seg over hele landet. På det meste var rundt elleve millioner unge med."
@@ -235,38 +237,7 @@
         },
         {
             "id": "fire-gamle",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "De fire gamle",
-                    "punkter": [
-                        {
-                            "ikon": "hus",
-                            "tittel": "Gamle skikker",
-                            "tekst": "tradisjoner og høytider",
-                            "fraBeat": 0
-                        },
-                        {
-                            "ikon": "lampe",
-                            "tittel": "Gamle vaner",
-                            "tekst": "slik folk alltid hadde levd",
-                            "fraBeat": 1
-                        },
-                        {
-                            "ikon": "snakk",
-                            "tittel": "Gamle tenkemåter",
-                            "tekst": "alt som smakte av fortiden",
-                            "fraBeat": 2
-                        },
-                        {
-                            "ikon": "avtale",
-                            "tittel": "Gamle ideer",
-                            "tekst": "bøker, templer og statuer",
-                            "fraBeat": 3
-                        }
-                    ]
-                }
-            },
+            "visual": { "type": "SprangetVegg", "props": { "modus": "gamle" } },
             "replikker": [
                 {
                     "si": "Rødegardistene ropte et slagord fra Mao selv: Det er riktig å gjøre opprør. De gikk løs på det de kalte de fire gamle. Gamle skikker var den første."
@@ -322,7 +293,7 @@
                     "si": "En hel generasjon vokste opp uten ordentlig skolegang. De kalles den tapte generasjonen. Over hundre millioner mennesker ble rammet på en eller annen måte."
                 },
                 {
-                    "si": "Til slutt var landet i kaos. Fra august 1968 tvang myndighetene rødegardistene til å stoppe, med hæren i ryggen."
+                    "si": "Til slutt var landet i kaos. Fra august 1968 tvang myndighetene rødegardistene til å stoppe, med hæren i ryggen. Mao sa ja til det."
                 },
                 {
                     "si": "Men kulturrevolusjonen var ikke over før i 1976. Kinas egne myndigheter kaller årene fra 1966 til 1976 for tiårskatastrofen."
@@ -341,10 +312,10 @@
                     "si": "Bare uker senere ble Banden av fire arrestert. Det var de fire lederne som hadde drevet kulturrevolusjonen videre, med Maos kone Jiang Qing i spissen."
                 },
                 {
-                    "si": "Deng Xiaoping var blitt sendt til tvangsarbeid i 1967. Nå kom han tilbake. Fra desember 1978 var han Kinas mektigste mann."
+                    "si": "Deng Xiaoping mistet alle vervene sine i 1967 og ble sendt til tvangsarbeid. Nå kom han tilbake. Fra desember 1978 var han Kinas mektigste mann."
                 },
                 {
-                    "si": "Han åpnet landet for handel. Men partiet skulle fortsatt bestemme over alt."
+                    "si": "Han åpnet landet for handel. Men partiet ga ikke fra seg makten."
                 }
             ]
         },
@@ -359,11 +330,11 @@
                             "fraBeat": 0
                         },
                         {
-                            "tekst": "Frykt fikk elever til å gå løs på lærerne sine.",
+                            "tekst": "Mao heiet fram elever som gikk løs på lærerne.",
                             "fraBeat": 1
                         },
                         {
-                            "tekst": "Det farligste var at ingen turte å si sannheten.",
+                            "tekst": "Under spranget turte ingen å si sannheten.",
                             "fraBeat": 2,
                             "uthevet": true
                         }
@@ -375,10 +346,10 @@
                     "si": "Det store spranget viser hvordan en plan på papiret kunne bli til sult for millioner."
                 },
                 {
-                    "si": "Kulturrevolusjonen viser hvordan frykt kunne få elever til å gå løs på lærerne sine, og barn på foreldrene."
+                    "si": "Kulturrevolusjonen viser hvordan Mao heiet fram elever som gikk løs på lærerne sine, og hvordan frykt fikk barn til å anklage foreldrene."
                 },
                 {
-                    "si": "Og begge viser hva som skjer når ingen tør å si sannheten til den som har makten."
+                    "si": "Og spranget viser hva som skjer når ingen tør å si sannheten til den som har makten."
                 }
             ]
         }

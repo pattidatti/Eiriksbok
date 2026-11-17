@@ -367,8 +367,8 @@ function Korn({ beat }: { beat: number }) {
                     markerEnd="url(#sp-pil)"
                 />
                 <text
-                    x={690}
-                    y={510}
+                    x={860}
+                    y={652}
                     textAnchor="middle"
                     fontSize={40}
                     fontWeight={800}

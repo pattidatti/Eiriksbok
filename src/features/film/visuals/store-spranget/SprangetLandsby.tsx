@@ -500,7 +500,7 @@ const TEKST: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Hva skal familien lage mat i?' },
     ],
     kollektiv: [
-        { tekst: 'Hver familie har sin åkerlapp' },
+        { tekst: '1949: kommunistene tar makten' },
         { tekst: 'Gjerdene forsvinner' },
         { tekst: 'Én stor fellesgård: et kollektiv' },
         { tekst: 'Betalt i poeng, ikke i mat' },
@@ -509,7 +509,7 @@ const TEKST: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Det store spranget fremover, 1958' },
         { tekst: 'Små stålovner over hele landsbygda' },
         { tekst: 'Skogen hogges til ved', rod: true },
-        { tekst: 'Ingen står på åkeren', rod: true },
+        { tekst: 'For få igjen på åkeren', rod: true },
     ],
     tom: [
         { tekst: 'Hungersnøden, 1959 til 1961', rod: true },
