@@ -1,0 +1,277 @@
+{
+  "id": "konfliktradet",
+  "title": "Konfliktrådet: Å møte den du gjorde vondt",
+  "layout": "rich",
+  "year": "1991",
+  "category": "Rettsstaten",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "I konfliktrådet møtes den som gjorde noe galt, og den som ble rammet. En mekler hjelper dem å snakke sammen.",
+    "Det er frivillig og gratis. Partene lager avtalen selv, og mekleren må godkjenne den.",
+    "Tanken kalles gjenopprettende rett: Hvem ble skadet, og hva trengs for å gjøre det godt igjen?"
+  ],
+  "externalUrl": "https://konfliktraadet.no/",
+  "factChecked": "2026-11-17",
+  "tags": [
+    "rettsstaten",
+    "straff",
+    "ungdom",
+    "konfliktløsning",
+    "rettferdighet"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Det er tirsdag ettermiddag. Mathias er 15 år og sitter i et lite møterom. På den andre siden av bordet sitter Randi, vaktmesteren på skolen. For to uker siden knuste Mathias en rute i gymsalen. Det var Randi som måtte feie opp glasset. Nå skal de snakke sammen, og ved enden av bordet sitter en mekler."
+    },
+    {
+      "type": "text",
+      "content": "Mathias og Randi er oppdiktet. Men slike møter skjer hver dag i Norge. De skjer i konfliktrådet, et statlig kontor som hjelper folk å løse konflikter og saker om lovbrudd (Bernt, 2026). I denne artikkelen skal du lære hva som skjer i et slikt møte, hvorfor Norge har konfliktråd, og hva forskningen sier om det virker."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom og voksen ved bord i lyst møterom",
+      "caption": "I konfliktrådet sitter partene ved samme bord. Det er ingen dommer i rommet."
+    },
+    {
+      "type": "header",
+      "text": "En annen måte å tenke rettferdighet på"
+    },
+    {
+      "type": "text",
+      "content": "I en vanlig straffesak står staten i midten. Politiet etterforsker, og en dommer bestemmer straffen. Den som ble rammet, er ofte bare et vitne. I artikkelen om [domstolene](/samfunnskunnskap/rettsstaten/domstolene) kan du lese mer om hvordan en rettssak foregår."
+    },
+    {
+      "type": "text",
+      "content": "Konfliktrådet bygger på en annen tanke, som kalles gjenopprettende rett. «Gjenopprette» betyr å rette opp igjen. Målet er å rette opp mest mulig av skaden som har skjedd (Konfliktrådet, 2021). Forskjellen kan vises med to sett spørsmål. En vanlig straffesak spør: Hvilken lov ble brutt? Hvem gjorde det? Hvilken straff skal personen få? Gjenopprettende rett spør: Hvem ble skadet? Hva trenger de? Og hvem kan hjelpe dem med det (Konfliktrådet, 2021)?"
+    },
+    {
+      "type": "text",
+      "content": "Tanken kom fra den norske kriminologen Nils Christie. En kriminolog forsker på kriminalitet og straff. På 1970-tallet skrev Christie en kjent artikkel som heter «Konflikt som eiendom». Han mente at advokater og dommere hadde tatt konfliktene fra de menneskene konfliktene egentlig tilhørte (Bernt, 2026). Konfliktrådet siterer ham slik: «Man burde ikke la konflikter forvitre, de burde brukes» (Konfliktrådet, 2021). Å forvitre betyr å smuldre bort. Med det mente han at en konflikt kan være en sjanse til å lære noe, ikke bare noe som må ryddes bort."
+    },
+    {
+      "type": "header",
+      "text": "Fra forsøk til landsdekkende tilbud"
+    },
+    {
+      "type": "text",
+      "content": "De første konfliktrådene kom i Norge på midten av 1980-tallet. Først handlet det mest om unge lovbrytere mellom 15 og 18 år. I 1989 fantes det 81 konfliktråd, og til sammen behandlet de 268 saker. I 1991 vedtok Stortinget en egen lov om konfliktråd. Fra 1993–1994 fantes tilbudet i hele landet (Bernt, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "I 2004 ble konfliktrådene statlige. I 2014 kom en ny lov. Den ga konfliktrådet ansvaret for ungdomsstraff og ungdomsoppfølging, som du kan lese om i artikkelen om [ungdom og kriminalitet](/samfunnskunnskap/rettsstaten/ungdom-og-kriminalitet). I dag er det 12 konfliktråd med kontor på 22 steder (Bernt, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "content": "Mekler: en person som hjelper to parter å snakke sammen og finne en løsning. Mekleren dømmer ikke. Mekling: et møte der en mekler hjelper partene. Parter: de som er med i konflikten, for eksempel den som gjorde noe galt og den som ble rammet. Gjenopprettende rett: å rette opp skaden i stedet for bare å straffe. Taushetsplikt: at du ikke har lov til å fortelle andre det du har hørt."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvilke saker havner i konfliktrådet?"
+    },
+    {
+      "type": "text",
+      "content": "Konfliktrådet tar to slags saker. Den ene slagsen er straffesaker. Det kan være tyveri, hærverk, mobbing eller vold (ung.no, 2024). Da er det politiet som sender saken videre. Den andre slagsen er sivile saker. Det er konflikter der ingen har brutt loven, for eksempel krangler mellom naboer. I 2023 behandlet konfliktrådene 8034 saker. 1879 av dem var meklinger i straffesaker, og 3050 var meklinger i sivile saker (Bernt, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Tre ting må være på plass før et møte kan skje. For det første er det frivillig. Alle må si ja til å møtes, og du kan trekke deg når du vil (ung.no, 2024). For det andre må partene stort sett være enige om hva som skjedde (Bernt, 2026). Mekleren skal nemlig ikke finne ut hvem som snakker sant. For det tredje er det gratis (ung.no, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Det er også en fordel for den som har gjort noe galt. En politisak som blir løst i konfliktrådet, kommer ikke på den vanlige politiattesten (ung.no, 2024). En politiattest er et papir fra politiet som viser om du er straffet. Mange arbeidsgivere ber om den."
+    },
+    {
+      "type": "header",
+      "text": "Slik foregår et møte"
+    },
+    {
+      "type": "text",
+      "content": "Før selve møtet får hver av partene en egen samtale med mekleren. Der får de vite hva som skal skje, og de kan ta med seg en støtteperson (ung.no, 2024). Selve møtet ledes av én eller to meklere og varer som regel én til tre timer (Konfliktrådet, 2023)."
+    },
+    {
+      "type": "text",
+      "content": "Møtet har tre deler. Først snakker partene om hva som skjedde. Så snakker de om hvordan situasjonen er nå. Til slutt snakker de om hvordan de vil at det skal bli framover. Alle får si det de vil, men på en måte som gjør at ingen føler seg krenket eller utrygg. Alle i rommet har taushetsplikt (Konfliktrådet, 2023). Det er for at folk skal tørre å være ærlige."
+    },
+    {
+      "type": "text",
+      "content": "Meklerne er vanlige folk, ikke jurister. Det finnes rundt 550 meklere i Norge. De må være minst 18 år, men det er ingen krav til utdanning. De får betalt for jobben (Bernt, 2026). Mekleren skal ikke dømme og ikke bestemme. Mekleren legger til rette for samtalen, kan foreslå løsninger og må godkjenne avtalen til slutt (Bernt, 2026). Prøv selv å være mekler i møtet mellom Mathias og Randi."
+    },
+    {
+      "type": "component",
+      "name": "Meklingsmotet",
+      "props": {}
+    },
+    {
+      "type": "text",
+      "content": "Så du hva som skjedde da du stilte åpne spørsmål? Mathias fikk høre at det var Randi som måtte rydde, og Randi fikk vite hvorfor ruta knuste. Avtalen kom fra dem selv. Når mekleren dømte eller bestemte, stoppet samtalen opp."
+    },
+    {
+      "type": "header",
+      "text": "Avtalen"
+    },
+    {
+      "type": "text",
+      "content": "Hvis møtet går bra, kan partene lage en avtale. Det er de som bestemmer hva som står i den, og de kan også la være å lage en (ung.no, 2024). En avtale kan handle om å betale for noe som ble ødelagt, om å si unnskyld, eller om å gjøre en jobb. På ung.no står et eksempel: En som har stjålet fra en butikk, blir enig med butikken om å vaske lageret i tre timer en lørdag (ung.no, 2024). Er du under 18 år, må foreldrene eller vergen din også skrive under (ung.no, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "I straffesaker har partene to uker på å angre seg etter at avtalen er laget (Konfliktrådet, 2023). Hvis avtalen blir fulgt, er saken avgjort. Hvis den ikke blir fulgt, kan politiet ta opp saken igjen og vurdere en annen straff (Konfliktrådet, 2024)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Hender som signerer en avtale ved et bord",
+      "caption": "Det er partene selv som bestemmer hva avtalen skal inneholde."
+    },
+    {
+      "type": "header",
+      "text": "Virker det?"
+    },
+    {
+      "type": "text",
+      "content": "Det er ikke lett å måle om konfliktråd virker. Danske forskere har gått gjennom mange undersøkelser om hvordan ofrene opplever det. To danske undersøkelser fant at 77 og 85 prosent av ofrene syntes møtet i konfliktrådet var vellykket (Kyvsgaard & Ribe, 2018). Studier fra andre land viser at ofre som har vært i konfliktråd, ofte er mindre redde og mindre sinte etterpå. De ønsker også sjeldnere hevn over den som gjorde det (Kyvsgaard & Ribe, 2018)."
+    },
+    {
+      "type": "text",
+      "content": "Men bildet er ikke bare positivt. En del ofre er misfornøyde. Det gjelder særlig når de følte at møtet bare handlet om å hjelpe den som gjorde det, og ikke om hva de selv trengte (Kyvsgaard & Ribe, 2018). Forskerne gjorde også en egen undersøkelse. De sammenlignet ofre som hadde vært i konfliktråd, med ofre som ikke hadde det. Der fant de ikke at de som hadde vært i konfliktråd, trengte mindre hjelp fra psykolog eller lege etterpå (Kyvsgaard & Ribe, 2018). Mange av de positive undersøkelsene har dessuten svakheter, for eksempel at de ikke sammenligner med en gruppe som ikke var i konfliktråd."
+    },
+    {
+      "type": "text",
+      "content": "Det forskningen likevel viser ganske tydelig, er dette: For mange ofre er det viktig å bli hørt. Å få spørre «hvorfor meg?» og få et svar kan bety mer enn at noen blir straffet."
+    },
+    {
+      "type": "header",
+      "text": "Hva synes du?"
+    },
+    {
+      "type": "text",
+      "content": "Noen mener at konfliktrådet er for snilt. Den som har gjort noe galt, slipper jo unna med en samtale og litt arbeid. Andre mener at det kan være tøffere å se den du har skadet i øynene enn å betale en bot til staten. Det henger sammen med spørsmålet du kanskje kjenner fra artikkelen om [hva straff er godt for](/samfunnskunnskap/rettsstaten/hva-er-straff-godt-for): Skal straff handle om å betale for det man gjorde, eller om at det ikke skal skje igjen?"
+    },
+    {
+      "type": "text",
+      "content": "Konfliktrådet sier også noe om hva [rettferdighet](/krle/etikk/rettferdighetsetikk) er. For noen betyr rettferdighet at alle får like hard straff for samme handling. For andre betyr rettferdighet at skaden blir rettet opp, og at de som var med, får være med og bestemme hvordan."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung gutt og vaktmester rydder sammen i skolegang",
+      "caption": "En avtale kan handle om å gjøre noe godt igjen for den som ble rammet."
+    },
+    {
+      "type": "header",
+      "text": "Oppsummering"
+    },
+    {
+      "type": "text",
+      "content": "Konfliktrådet er et statlig tilbud der den som har gjort noe galt, og den som ble rammet, kan møtes. En mekler leder møtet, men dømmer ikke og bestemmer ikke. Møtet er frivillig og gratis, og partene lager avtalen selv. Tanken kalles gjenopprettende rett og bygger på ideene til Nils Christie. Den spør hvem som ble skadet, og hva som skal til for å gjøre det godt igjen. Mange ofre er fornøyde med møtet, men forskerne er ikke sikre på hvor mye det hjelper på lang sikt."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bernt, C. (2026). *Konfliktråd*. Store norske leksikon. Hentet 17.11.2026 fra [snl.no](https://snl.no/konfliktr%C3%A5d)",
+          "Konfliktrådet. (2021). *Gjenopprettende prosess*. Hentet 17.11.2026 fra [konfliktraadet.no](https://konfliktraadet.no/om-konfliktradet/restorative-justice/)",
+          "Konfliktrådet. (2023). *Hva skjer i et meklingsmøte?* Hentet 17.11.2026 fra [konfliktraadet.no](https://konfliktraadet.no/meklingsmote/hva-skjer-i-et-meklingsmote/)",
+          "Konfliktrådet. (2024). *Hva skjer etter et meklingsmøte?* Hentet 17.11.2026 fra [konfliktraadet.no](https://konfliktraadet.no/meklingsmote/hva-skjer-etter-et-meklingsmote/)",
+          "Kyvsgaard, B. & Ribe, M. Ø. (2018). *Effekten af konfliktmægling for ofre*. Justitsministeriets Forskningskontor. [justitsministeriet.dk](https://www.justitsministeriet.dk/wp-content/uploads/2017/01/effekten_af_konfliktmaegling_for_ofre.pdf)",
+          "ung.no. (2024). *Slik bruker du konfliktrådet*. Barne-, ungdoms- og familiedirektoratet. Hentet 17.11.2026 fra [ung.no](https://www.ung.no/kriminalitet/2258_Bruk_konfliktr%C3%A5det_-_unng%C3%A5_merknad_p%C3%A5_rullebladet.html)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er en mekler, og hva er det mekleren ikke skal gjøre?",
+          "Hvilke tre ting må være på plass før et møte i konfliktrådet kan skje?",
+          "Hvilke tre deler har et møte i konfliktrådet?",
+          "Hva skjer hvis en avtale i en straffesak ikke blir fulgt?"
+        ],
+        "reflekter": [
+          "Forklar forskjellen på spørsmålene en vanlig straffesak stiller, og spørsmålene gjenopprettende rett stiller.",
+          "Hvorfor tror du det er viktig at møtet er frivillig for begge parter?",
+          "Hva mente Nils Christie med at konflikter er «eiendom»? Forklar med egne ord.",
+          "Forskerne fant at mange ofre var fornøyde, men ikke at de trengte mindre hjelp fra lege eller psykolog. Hvordan kan begge deler stemme?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Er konfliktrådet for snilt, eller kan det være tøffere enn en bot?",
+          "Tenk på en konflikt du kjenner fra skolen eller fra en nyhetssak. Skriv tre åpne spørsmål en mekler kunne stilt.",
+          "Skriv en kort tekst fra offerets side: Hva ville du trengt for å føle at saken var ordnet opp i?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er jobben til en mekler i konfliktrådet?",
+            "options": [
+              "Å bestemme straffen",
+              "Å finne ut hvem som lyver",
+              "Å hjelpe partene å snakke sammen og finne en løsning",
+              "Å forsvare den som gjorde noe galt"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Mekleren dømmer ikke og bestemmer ikke, men legger til rette for samtalen og må godkjenne avtalen."
+          },
+          {
+            "question": "Hvem bestemmer hva som står i avtalen?",
+            "options": [
+              "Mekleren",
+              "Partene selv",
+              "Politiet",
+              "Dommeren"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Partene bestemmer innholdet. Mekleren må godkjenne avtalen."
+          },
+          {
+            "question": "Hvilket spørsmål stiller gjenopprettende rett?",
+            "options": [
+              "Hvilken lov ble brutt?",
+              "Hvor lang straff skal personen få?",
+              "Hvem ble skadet, og hva trenger de?",
+              "Hvem har skylda?"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Gjenopprettende rett handler om å rette opp skaden, ikke bare om å straffe."
+          },
+          {
+            "question": "Hvem regnes som grunnleggeren av tanken bak konfliktrådet?",
+            "options": [
+              "Nils Christie",
+              "Henrik Ibsen",
+              "Montesquieu",
+              "Gro Harlem Brundtland"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Kriminologen Nils Christie skrev artikkelen «Konflikt som eiendom» på 1970-tallet."
+          },
+          {
+            "question": "Hva er sant om å møte i konfliktrådet?",
+            "options": [
+              "Det er tvang for alle",
+              "Det koster mye penger",
+              "Det er frivillig, og du kan trekke deg når du vil",
+              "Bare voksne kan bruke det"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Alle må si ja til å møtes, og det er gratis."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

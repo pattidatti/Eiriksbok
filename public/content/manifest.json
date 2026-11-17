@@ -2559,7 +2559,7 @@
                 "arbeidsliv"
               ],
               "createdDate": "2026-11-05T04:32:41+01:00",
-              "lastUpdated": "2026-11-06T07:42:24+01:00"
+              "lastUpdated": "2026-11-16T07:39:03+01:00"
             },
             {
               "id": "budsjett",
@@ -2591,7 +2591,7 @@
                 "gjeld"
               ],
               "createdDate": "2026-11-07T02:13:39+01:00",
-              "lastUpdated": "2026-11-07T07:43:24+01:00"
+              "lastUpdated": "2026-11-16T07:39:03+01:00"
             },
             {
               "id": "kjop-na-betal-senere",
@@ -2606,7 +2606,7 @@
                 "netthandel"
               ],
               "createdDate": "2026-11-08T07:16:29+01:00",
-              "lastUpdated": "2026-11-15T07:42:03+01:00"
+              "lastUpdated": "2026-11-16T07:39:03+01:00"
             },
             {
               "id": "sparing-og-rentes-rente",
@@ -2736,7 +2736,22 @@
                 "rettigheter"
               ],
               "createdDate": "2026-11-16T01:10:22.764Z",
-              "lastUpdated": "2026-11-16T01:11:00.903Z"
+              "lastUpdated": "2026-11-16T02:19:07+01:00"
+            },
+            {
+              "id": "konfliktradet",
+              "title": "Konfliktrådet: Å møte den du gjorde vondt",
+              "description": "Hva som skjer når den som gjorde noe galt, og den som ble rammet, møtes med en mekler - og hva gjenopprettende rett betyr.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "rettsstaten",
+                "straff",
+                "ungdom",
+                "konfliktløsning",
+                "rettferdighet"
+              ],
+              "createdDate": "2026-11-17T01:11:18.192Z",
+              "lastUpdated": "2026-11-17T01:12:09.983Z"
             }
           ]
         },
