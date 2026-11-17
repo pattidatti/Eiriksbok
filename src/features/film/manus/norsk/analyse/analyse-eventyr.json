@@ -1,0 +1,284 @@
+{
+    "id": "analyse-eventyr",
+    "tittel": "Slik analyserer du: Eventyr",
+    "kilde": "/norsk/analyse/analyse-eventyr",
+    "bilde": "/images/lessons/norsk/analyse/analyse-eventyr-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-17", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "skogen",
+            "lyd": "vind",
+            "kapittel": "Det var en gang",
+            "visual": { "type": "EventyrSkogen", "props": { "modus": "apning" } },
+            "replikker": [
+                { "si": "Det var en gang en bonde som hadde tre sønner." },
+                { "si": "Den eldste, Per, skal ut i skogen. Stien går inn mellom store, mørke trær." },
+                { "si": "Da brøler det. Et troll står mellom trærne." },
+                { "si": "Per snur og løper hjem så fort han kan." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "EVENTYR",
+                    "undertittel": "Slik analyserer du: Askeladden som kappåt med trollet",
+                    "bilde": "/images/lessons/norsk/analyse/analyse-eventyr-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor virker eventyret så godt?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Dette er starten på eventyret Askeladden som kappåt med trollet." },
+                {
+                    "si": "Du kjenner det kanskje fra før. Det er et av de mest kjente eventyrene vi har i Norge."
+                },
+                {
+                    "si": "I denne filmen skal du lære å analysere et eventyr. Det betyr å finne ut hvordan teksten er bygd, og hvorfor den virker så godt."
+                }
+            ]
+        },
+        {
+            "id": "munn",
+            "lyd": "stille",
+            "kapittel": "Fra munn til munn",
+            "visual": { "type": "EventyrMunn", "props": { "modus": "kjede" } },
+            "replikker": [
+                {
+                    "si": "Mange tror at eventyr bare er fri fantasi. At noen fant på dem helt på slump."
+                },
+                {
+                    "si": "Men et folkeeventyr har ingen kjent forfatter. Ingen vet hvem som fant på det først."
+                },
+                {
+                    "si": "Eventyrene ble fortalt fra munn til munn, fra én forteller til den neste, i flere hundre år."
+                },
+                {
+                    "si": "Først på 1800-tallet skrev Asbjørnsen og Moe dem ned i bøker."
+                }
+            ]
+        },
+        {
+            "id": "knagger",
+            "visual": { "type": "EventyrMunn", "props": { "modus": "knagger" } },
+            "replikker": [
+                {
+                    "si": "Tenk deg at du skal huske en lang historie uten å skrive den ned. Da trenger du faste knagger å henge handlingen på."
+                },
+                {
+                    "si": "Disse faste mønstrene kaller vi eventyrets lover. Forskeren Axel Olrik fant en rekke av dem."
+                },
+                {
+                    "si": "Innledningsloven: eventyret starter rolig, med Det var en gang. Da vet vi at vi går inn i en magisk verden."
+                },
+                {
+                    "si": "Tretallsloven: alt skjer tre ganger. Det er den viktigste og mest kjente loven."
+                },
+                {
+                    "si": "Tvillingloven: to personer, ofte Per og Pål, oppfører seg som om de var én person."
+                },
+                {
+                    "si": "Motsetningsloven: når to personer er med samtidig, er de helt ulike. Rik mot fattig, smart mot dum."
+                }
+            ]
+        },
+        {
+            "id": "brodre",
+            "lyd": "vind",
+            "kapittel": "Hvorfor tre?",
+            "visual": { "type": "EventyrSkogen", "props": { "modus": "brodre" } },
+            "replikker": [
+                { "si": "La oss se på tretallsloven i eventyret. Det er tre brødre." },
+                { "si": "Først går Per inn i skogen. Trollet brøler, og Per løper hjem." },
+                { "si": "Så går Pål. Det samme skjer igjen. Han løper også hjem." },
+                {
+                    "si": "Til slutt kommer den yngste, Askeladden. Han ber om å få prøve seg."
+                }
+            ]
+        },
+        {
+            "id": "kurve",
+            "lyd": "stille",
+            "visual": { "type": "EventyrKurve", "props": { "modus": "spenning" } },
+            "replikker": [
+                { "si": "Hvorfor akkurat tre? Hvorfor ikke én, eller fire?" },
+                {
+                    "si": "Hvis bare Askeladden hadde gått, kunne han jo bare ha hatt flaks. Derfor må Per feile først. Da skjønner vi at trollet er farlig."
+                },
+                {
+                    "si": "Så feiler Pål på akkurat samme måte. Nå skjønner vi at oppgaven er umulig for et vanlig menneske."
+                },
+                {
+                    "si": "Spenningen stiger for hvert forsøk. Når Askeladden kommer, er det mest på spill."
+                },
+                {
+                    "si": "Og så klarer den minste og svakeste det som de to andre ikke klarte."
+                },
+                {
+                    "si": "Uten feilene til Per og Pål ville seieren til Askeladden ikke vært på langt nær like god."
+                }
+            ]
+        },
+        {
+            "id": "kontrast",
+            "lyd": "vind",
+            "kapittel": "Stor mot liten",
+            "visual": { "type": "EventyrSkogen", "props": { "modus": "kontrast" } },
+            "replikker": [
+                {
+                    "si": "I moderne filmer er skurkene ofte sammensatte. Kanskje er de litt snille innerst inne."
+                },
+                {
+                    "si": "Slik er det ikke i eventyr. Her er verden delt i to, godt og ondt, svart og hvitt. Vi kaller det kontraster."
+                },
+                {
+                    "si": "Trollet er enormt. Det står for en farlig naturkraft som truer mennesket."
+                },
+                {
+                    "si": "Askeladden er liten. Han står for mennesket når det er på sitt svakeste."
+                },
+                {
+                    "si": "Men den viktigste forskjellen er inni dem. Trollet har musklene. Askeladden har fantasien."
+                }
+            ]
+        },
+        {
+            "id": "lista",
+            "visual": { "type": "EventyrSkogen", "props": { "modus": "lista" } },
+            "replikker": [
+                { "si": "Trollet truer med å drepe Askeladden. Hva gjør han da?" },
+                {
+                    "si": "Han tar fram en hvitost og klemmer den til vannet renner ut. Så sier han at det er en stein."
+                },
+                {
+                    "si": "Trollet tror at Askeladden klemmer vann ut av stein. Da blir trollet redd."
+                },
+                {
+                    "si": "Senere skal de spise grøt. Askeladden lurer trollet til å skjære hull i magen sin, så grøten renner ut."
+                },
+                {
+                    "si": "Askeladden vinner ikke fordi han er sterkere. Han vinner fordi han er smartere. Forstand mot rå makt, hode mot mage."
+                }
+            ]
+        },
+        {
+            "id": "roller",
+            "lyd": "stille",
+            "kapittel": "Roller, ikke mennesker",
+            "visual": { "type": "EventyrKurve", "props": { "modus": "roller" } },
+            "replikker": [
+                {
+                    "si": "I en analyse kan du se på personene i eventyret som roller, ikke som mennesker med følelser. Vi kaller rollene aktanter."
+                },
+                {
+                    "si": "Subjektet er den som vil oppnå noe. Her er det Askeladden."
+                },
+                {
+                    "si": "Objektet er det hele handler om. I eventyrene er det ofte prinsessen og halve riket."
+                },
+                {
+                    "si": "Motstanderen er den som står i veien. Her er det trollet. Så finnes det ofte en hjelper, som hjelper helten."
+                },
+                {
+                    "si": "Navnet på en person kan skifte fra versjon til versjon. Men rollen er alltid den samme."
+                },
+                {
+                    "si": "Personene er typer, ikke ekte mennesker. Det kaller vi typetegning. Askeladden er et bilde på list, trollet på rå kraft."
+                }
+            ]
+        },
+        {
+            "id": "moral",
+            "kapittel": "Moralen",
+            "visual": { "type": "EventyrKurve", "props": { "modus": "riket" } },
+            "replikker": [
+                {
+                    "si": "Til slutt må du spørre: Hvorfor har denne enkle historien overlevd i generasjoner?"
+                },
+                {
+                    "si": "Et eventyr har sin egen logikk. De gode får sin lønn, og de onde blir straffet."
+                },
+                {
+                    "si": "Askeladden starter med de dårligste kortene. Han er minst og svakest, og han blir ofte sett ned på."
+                },
+                { "si": "I mange eventyr er det nettopp den yngste, han som blir sett ned på, som vinner kongsdatteren og halve riket." },
+                {
+                    "si": "Oppskriften er å være nysgjerrig, og å våge å tenke annerledes enn Per og Pål. Moralen handler om håp."
+                }
+            ]
+        },
+        {
+            "id": "skriv",
+            "kapittel": "Skriv analysen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Tre steg i analysen",
+                    "punkter": [
+                        {
+                            "ikon": "stjerne",
+                            "tittel": "Tretallsloven",
+                            "tekst": "bygger spenning",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "skjold",
+                            "tittel": "Kontrastene",
+                            "tekst": "gjør konflikten tydelig",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Moralen",
+                            "tekst": "gir håp",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du skriver din egen analyse, kan du gå fram i tre steg. Du er en kontrollør som sjekker om teksten følger lovene."
+                },
+                {
+                    "si": "Først tretallsloven. Vis hvordan feilene til Per og Pål bygger opp spenningen."
+                },
+                {
+                    "si": "Så kontrastene. Vis hvordan stor mot liten og makt mot list gjør konflikten tydelig."
+                },
+                {
+                    "si": "Til slutt moralen. Ikke bare list opp lovene. Forklar hvordan de virker sammen og får fram budskapet."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Eventyr er ikke skrevet på slump.", "fraBeat": 0 },
+                        { "tekst": "De følger faste lover, så de var lette å huske.", "fraBeat": 1 },
+                        {
+                            "tekst": "Den lille kan vinne over den store, med hodet.",
+                            "fraBeat": 2,
+                            "uthevet": true
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Eventyr er altså ikke fri fantasi skrevet på slump. De følger strenge regler."
+                },
+                {
+                    "si": "Lovene gjorde det lett for fortelleren å huske, og lett for lytterne å følge med."
+                },
+                {
+                    "si": "Og budskapet har levd i hundrevis av år: Det er ikke musklene som feller trollet. Den lille kan vinne over den store, med hodet."
+                }
+            ]
+        }
+    ]
+}
