@@ -1,0 +1,264 @@
+{
+    "id": "germanske-sprak",
+    "tittel": "De germanske søskenbarna",
+    "kilde": "/norsk/sprakhistorie/germanske-sprak",
+    "bilde": "/images/topics/germanske_sprak_hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-17", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "kafe",
+            "lyd": "rom",
+            "visual": { "type": "GermanskOrd", "props": { "modus": "kafe" } },
+            "replikker": [
+                { "si": "Tenk deg at du sitter på en kafé i Amsterdam." },
+                { "si": "Ved nabobordet snakker to mennesker nederlandsk. Du forstår ikke alt." },
+                {
+                    "si": "Men plutselig fanger du opp noen ord. Huis, boek, melk. Det høres nesten ut som norsk.",
+                    "uttale": "Men plutselig fanger du opp noen ord. Høys, buk, melk. Det høres nesten ut som norsk."
+                },
+                {
+                    "si": "Eller var det engelsk? House, book, milk. Eller begge deler?",
+                    "uttale": "Eller var det engelsk? Haus, bukk, milk. Eller begge deler?"
+                },
+                { "si": "Det er ikke tilfeldig. Du har oppdaget et slektskap som er tusenvis av år gammelt." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "De germanske søskenbarna",
+                    "undertittel": "Hvorfor norsk, engelsk og tysk er i slekt",
+                    "bilde": "/images/topics/germanske_sprak_hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor ligner språkene på hverandre?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Norsk, engelsk, tysk og nederlandsk er germanske språk." },
+                { "si": "De er søskenbarn i en stor språkfamilie, og de har det samme opphavet langt tilbake i tid." },
+                { "si": "I denne filmen skal vi finne ut hvorfor de ligner, og hvorfor de likevel er så forskjellige." }
+            ]
+        },
+        {
+            "id": "familie",
+            "kapittel": "En familie av språk",
+            "visual": { "type": "GermanskTre", "props": { "modus": "familie" } },
+            "replikker": [
+                { "si": "Tenk på språk som en familie. Akkurat som deg har språk foreldre, besteforeldre og søskenbarn." },
+                { "si": "Norsk og svensk er som søsken. De skilte lag nylig, og derfor er de veldig like." },
+                { "si": "Norsk og engelsk er som søskenbarn. De er tydelig i slekt, men har gått hver sin vei." },
+                { "si": "Og norsk og hindi? De er som fjerne slektninger som nesten ikke ligner hverandre lenger." },
+                { "si": "Men de har samme stamfar. Germansk, gresk og indoiransk hører alle til den store indoeuropeiske språkfamilien." }
+            ]
+        },
+        {
+            "id": "stamfar",
+            "kapittel": "Stamfaren",
+            "visual": { "type": "GermanskKart", "props": { "modus": "urhjem" } },
+            "replikker": [
+                { "si": "For rundt 5000 år siden bodde et folk i elvedalene nord for Svartehavet, i dagens Ukraina." },
+                { "si": "Ingen har hørt språket deres. Vi kaller det proto-indoeuropeisk. Proto betyr det aller første." },
+                { "si": "Folket spredte seg utover Europa og Asia, og språket endret seg i hver sin retning." },
+                { "si": "Slik ble det til germansk, italisk, slavisk, keltisk og mange flere greiner." },
+                { "si": "Sammenhengen ble oppdaget i 1786. Briten William Jones så at sanskrit, gresk og latin lignet påfallende mye på hverandre." },
+                { "si": "Det regnes som et av de største gjennombruddene i språkvitenskapen." }
+            ]
+        },
+        {
+            "id": "greiner",
+            "kapittel": "Den germanske greinen",
+            "visual": { "type": "GermanskTre", "props": { "modus": "greiner" } },
+            "replikker": [
+                { "si": "Germansk er en av greinene på dette treet. Alle de germanske språkene stammer fra urgermansk." },
+                { "si": "Ingen skrev ned urgermansk. Forskerne har satt det sammen igjen ved å sammenligne de eldste kildene i de germanske språkene." },
+                { "si": "Folk vandret og slo seg ned nye steder. Da delte urgermansk seg i tre greiner." },
+                { "si": "Nordgermansk ble til norsk, svensk, dansk, islandsk og færøysk." },
+                { "si": "Vestgermansk ble til engelsk, tysk, nederlandsk, frisisk og jiddisk. Det er den største greinen, målt i hvor mange som snakker språkene." },
+                { "si": "Østgermansk døde ut. Gotisk og de andre språkene der forsvant i middelalderen." }
+            ]
+        },
+        {
+            "id": "kognater",
+            "lyd": "stille",
+            "kapittel": "Se likheten",
+            "visual": { "type": "GermanskOrd", "props": { "modus": "kognater" } },
+            "replikker": [
+                {
+                    "si": "Ta ordet natt. På engelsk heter det night, på nederlandsk nacht og på tysk Nacht.",
+                    "uttale": "Ta ordet natt. På engelsk heter det nait, på nederlandsk nakt og på tysk naht."
+                },
+                {
+                    "si": "Og på norrønt, vikingenes språk, het det nótt.",
+                    "uttale": "Og på norrønt, vikingenes språk, het det nott."
+                },
+                {
+                    "si": "Vann, water, water, Wasser. Hus, house, huis, Haus.",
+                    "uttale": "Vann, wåter, water, vasser. Hus, haus, høys, haus."
+                },
+                { "si": "Slike ord kalles kognater. Det er ord i ulike språk som har samme opphav." },
+                { "si": "De er ikke lånt fra hverandre. De har vokst fram hver for seg fra det samme urgermanske ordet." },
+                { "si": "Det er som fem søskenbarn som alle ligner litt på bestemor, men på hver sin måte." }
+            ]
+        },
+        {
+            "id": "tall",
+            "visual": { "type": "GermanskOrd", "props": { "modus": "tall" } },
+            "replikker": [
+                {
+                    "si": "Hør på tallene: en, one, to, two, tre, three.",
+                    "uttale": "Hør på tallene: en, wann, to, tu, tre, thri."
+                },
+                {
+                    "si": "Fire, four. Fem, five. Seks, six.",
+                    "uttale": "Fire, får. Fem, faiv. Seks, siks."
+                },
+                {
+                    "si": "Sju, seven, åtte, eight. Ni, nine, ti, ten.",
+                    "uttale": "Sju, sevven, åtte, eit. Ni, nain, ti, tenn."
+                },
+                { "si": "Mange grunnleggende ord for tall, familie, kropp og natur har vært med helt fra starten." }
+            ]
+        },
+        {
+            "id": "norront",
+            "lyd": "hav",
+            "kapittel": "Norrønt",
+            "visual": { "type": "GermanskKart", "props": { "modus": "island" } },
+            "replikker": [
+                { "si": "Alle de nordiske språkene har røttene sine i norrøn tid. Norrønt var språket i Norge fra år 700 til 1350." },
+                { "si": "Norrønt ble først skrevet med runer, og senere med det latinske alfabetet." },
+                { "si": "Mellom 870 og 920 ble Island bosatt. De fleste var nordmenn, eller nordboere som alt bodde i Irland og på Hebridene." },
+                { "si": "De tok norrønt med seg. På fastlandet forandret språket seg mye i middelalderen. Islandsk forandret seg mye mindre." },
+                { "si": "Derfor kan islendinger i dag lese norrøne tekster uten store problemer. Islandsk ligger fortsatt nær norrønt." }
+            ]
+        },
+        {
+            "id": "lever",
+            "lyd": "stille",
+            "visual": { "type": "GermanskOrd", "props": { "modus": "lever" } },
+            "replikker": [
+                { "si": "Men norrønt lever fortsatt i norsk. Hør på ukedagene." },
+                {
+                    "si": "Tirsdag er Tyrs dag, onsdag er Odins dag. Torsdag er Tors dag, og fredag er Frøyas dag.",
+                    "uttale": "Tirsdag er Tyrs dag, onsdag er Odins dag. Torsdag er Tors dag, og fredag er Frøyjas dag."
+                },
+                { "si": "Alle fire er oppkalt etter norrøne guder." },
+                { "si": "Stedsnavn også. Oslo, Bergen og Trondheim er norrøne navn." },
+                {
+                    "si": "Bergen kommer av Bjørgvin. Det betyr engen mellom fjellene.",
+                    "uttale": "Bergen kommer av Bjørgvinn. Det betyr engen mellom fjellene."
+                }
+            ]
+        },
+        {
+            "id": "forskyvning",
+            "kapittel": "Lydforskyvningen",
+            "visual": { "type": "GermanskLyd", "props": { "modus": "forskyvning" } },
+            "replikker": [
+                { "si": "Men hvorfor høres tysk så annerledes ut? Svaret kalles den høytyske lydforskyvningen." },
+                { "si": "Rundt år 600 til 800 endret noen lyder seg i tysk. Ikke tilfeldig, men etter et fast mønster." },
+                {
+                    "si": "P ble til pf eller f. Der vi sier pepper og skip, sier tysk Pfeffer og Schiff.",
+                    "uttale": "P ble til pe-ef eller ef. Der vi sier pepper og skip, sier tysk pfeffer og sjiff."
+                },
+                {
+                    "si": "T ble til ts eller ss. Water ble til Wasser. Og der vi sier tid, sier tysk Zeit.",
+                    "uttale": "T ble til te-ess eller dobbel s. Wåter ble til vasser. Og der vi sier tid, sier tysk tsait."
+                },
+                {
+                    "si": "K ble til ch. På nedertysk, tysk slik de snakket i nord, het det maken. I høytysk ble det machen, som betyr å gjøre.",
+                    "uttale": "K ble til se-hå. På nedertysk, tysk slik de snakket i nord, het det maken. I høytysk ble det mahen, som betyr å gjøre."
+                },
+                { "si": "Og d ble til t. Der vi sier dag og engelsk sier day, sier tysk Tag.", "uttale": "Og d ble til t. Der vi sier dag og engelsk sier dei, sier tysk tag." }
+            ]
+        },
+        {
+            "id": "hoytysk",
+            "visual": { "type": "GermanskKart", "props": { "modus": "hoytysk" } },
+            "replikker": [
+                { "si": "Endringen slo bare gjennom i de sørlige og østlige delene av det tyske språkområdet. Det ble til høytysk." },
+                {
+                    "si": "Lenger nord sa de fortsatt maken. I sør ble det machen.",
+                    "uttale": "Lenger nord sa de fortsatt maken. I sør ble det mahen."
+                },
+                { "si": "Nederlandsk, engelsk og de nordiske språkene var ikke med på lydforskyvningen." },
+                { "si": "Derfor ligner de ofte mer på hverandre enn på tysk." }
+            ]
+        },
+        {
+            "id": "vikingene",
+            "kapittel": "Vikingene og engelsk",
+            "visual": { "type": "GermanskKart", "props": { "modus": "danelagen" } },
+            "replikker": [
+                { "si": "Norsk og engelsk sitter på ulike greiner. Hvorfor ligner de så mye likevel?" },
+                { "si": "Den ene grunnen er det felles opphavet. Den andre grunnen er vikingene." },
+                { "si": "Vikingtiden regnes gjerne fra angrepet på klosteret Lindisfarne i 793 til rundt 1050." },
+                { "si": "En del av England fikk dansk og norsk lov. Den ble kalt Danelagen, og den omfattet Northumbria, East Anglia og deler av Mercia." },
+                { "si": "Her levde folk som snakket norrønt, side om side med folk som snakket engelsk. I generasjoner." }
+            ]
+        },
+        {
+            "id": "laneord",
+            "visual": { "type": "GermanskLyd", "props": { "modus": "laneord" } },
+            "replikker": [
+                {
+                    "si": "Engelsk tok opp en mengde hverdagsord fra dem. Til og med they, them og their.",
+                    "uttale": "Engelsk tok opp en mengde hverdagsord fra dem. Til og med dei, dem og dær."
+                },
+                { "si": "De tok over for de gamle engelske ordene. Det er sjelden at et språk låner så små og viktige ord." },
+                {
+                    "si": "Ting: egg, sister, skirt og window. På norsk: egg, søster, skjørt og vindu.",
+                    "uttale": "Ting: egg, sister, skøøt og windou. På norsk: egg, søster, skjørt og vindu."
+                },
+                {
+                    "si": "Hvordan noe er: ill, odd, rotten og weak. Råtten og veik.",
+                    "uttale": "Hvordan noe er: ill, ådd, råtten og wiik. Råtten og veik."
+                },
+                {
+                    "si": "Ting du gjør: call, cast, lift og take. Kalle, kaste, løfte og ta.",
+                    "uttale": "Ting du gjør: kåll, kast, lift og teik. Kalle, kaste, løfte og ta."
+                },
+                { "si": "Legg merke til hvor hverdagslige de er. Dette er ord du bruker hele tiden." }
+            ]
+        },
+        {
+            "id": "deg",
+            "kapittel": "Hva betyr det for deg?",
+            "visual": { "type": "GermanskTre", "props": { "modus": "deg" } },
+            "replikker": [
+                { "si": "Når du lærer engelsk, har du en hemmelig fordel. Morsmålet ditt er i slekt med engelsk." },
+                { "si": "Mange av de enkleste engelske ordene, de du lærte først, er germanske arveord. De ligner på norsk." },
+                { "si": "Det er de lange, vanskelige ordene som oftere er lånt fra fransk og latin." },
+                { "si": "Hver gang du sier natt eller vann, bruker du ord som knytter deg til mennesker over hele Europa." },
+                { "si": "Helt tilbake til urgermansk tid." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Natt, night, Nacht.", "fraBeat": 0 },
+                        { "tekst": "Ikke lånt, men arvet.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Samme stamfar, ulike greiner.", "fraBeat": 1 },
+                        { "tekst": "Vandring, kontakt og forandring.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Norsk er ikke bare norsk.", "fraBeat": 2 },
+                        { "tekst": "Det er tusenvis av år med historie.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Natt, night og Nacht er ikke lånt fra hverandre. De er arvet fra det samme ordet.",
+                    "uttale": "Natt, nait og naht er ikke lånt fra hverandre. De er arvet fra det samme ordet."
+                },
+                { "si": "Språkene har samme stamfar. Vandring, kontakt og forandring gjorde dem til det de er i dag." },
+                { "si": "Norsk er ikke bare norsk. Det er et levende resultat av tusenvis av år med historie." }
+            ]
+        }
+    ]
+}
