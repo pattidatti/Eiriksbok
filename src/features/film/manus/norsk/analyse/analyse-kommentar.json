@@ -1,0 +1,199 @@
+{
+    "id": "analyse-kommentar",
+    "tittel": "Slik analyserer du: Kommentar",
+    "kilde": "/norsk/analyse/analyse-kommentar",
+    "bilde": "/images/lessons/norsk/analyse/analyse-kommentar-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-18", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "avisa",
+            "kapittel": "To tekster",
+            "visual": { "type": "KommentarAvis", "props": { "modus": "avis" } },
+            "replikker": [
+                { "si": "Tenk deg at du blar i en avis. På samme side står to tekster om den samme saken." },
+                { "si": "Den ene er en nyhetsartikkel. Den skal fortelle deg rolig hva som har skjedd. Den siterer kilder, altså folk som har uttalt seg." },
+                { "si": "Journalisten holder sin egen mening utenfor." },
+                { "si": "Den andre teksten er en kommentar. Her er det helt motsatt. Den som skriver, tar stilling og mener noe sterkt." },
+                { "si": "Skribenten vil ofte provosere deg, få deg til å le, eller aller helst: få deg til å mene det samme som hen." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Kommentaren",
+                    "undertittel": "Slik avslører du triksene i teksten",
+                    "bilde": "/images/lessons/norsk/analyse/analyse-kommentar-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan prøver teksten å flytte meningen din?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "En kommentar er altså en tekst som er skrevet for å mene noe." },
+                { "si": "Å analysere den er som å skru fra hverandre en maskin. Du løfter ut del for del og ser hva hver del gjør." },
+                { "si": "Målet er å avsløre de språklige triksene skribenten bruker for å flytte meningene dine." }
+            ]
+        },
+        {
+            "id": "verktoy",
+            "kapittel": "Verktøykassen",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Verktøykassen",
+                    "punkter": [
+                        { "ikon": "bombe", "tittel": "Språklig ammunisjon", "tekst": "spissere, morsommere, flere bilder", "fraBeat": 0 },
+                        { "ikon": "lampe", "tittel": "Metafor", "tekst": "noe omtales som noe annet", "fraBeat": 1 },
+                        { "ikon": "snakk", "tittel": "Ironi", "tekst": "å si det motsatte av det du mener", "fraBeat": 2 },
+                        { "ikon": "stjerne", "tittel": "Verdiladde ord", "tekst": "ord med en skjult vurdering inni seg", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Kommentatorer kjemper om oppmerksomheten din. Derfor er språket deres spissere, morsommere og fullere av bilder enn i andre tekster." },
+                { "si": "Det første verktøyet du må kjenne, er metaforen. Da omtaler du noe som om det var noe annet." },
+                { "si": "Det neste er ironi. Da sier du det motsatte av det du mener, ofte for å gjøre narr av noen." },
+                { "si": "Og så har vi verdiladde ord. Det er ord som har en skjult vurdering gjemt inni seg." }
+            ]
+        },
+        {
+            "id": "sirkus",
+            "visual": { "type": "KommentarBro", "props": { "modus": "sirkus" } },
+            "replikker": [
+                { "si": "Først metaforen. Tenk deg at noen skriver at budsjettforhandlingene er et sirkus." },
+                { "si": "Budsjettforhandlingene er når politikerne skal bli enige om hva pengene skal brukes til." },
+                { "si": "Og hva tenker du på når du hører ordet sirkus? Kaos og tull." },
+                { "si": "Metaforen låner egenskapene fra sirkuset og flytter dem over på forhandlingene." },
+                { "si": "Skribenten har sagt at forhandlingene er kaos og tull, uten å bruke de ordene." }
+            ]
+        },
+        {
+            "id": "ladning",
+            "kapittel": "Ord med ladning",
+            "visual": { "type": "KommentarLadning", "props": { "modus": "par" } },
+            "replikker": [
+                { "si": "Så de verdiladde ordene. Tenk på dem som batterier. De har en ladning, pluss eller minus." },
+                { "si": "Hjem og bolig kan være det samme huset. Men hjem får deg til å tenke på trygghet, varme og familie." },
+                { "si": "Bolig høres kaldt og teknisk ut, nesten som en vare." },
+                { "si": "Frihet gir tanker om muligheter og glede. Lisens gir tanker om begrensninger, plikt og tvang." },
+                { "si": "Plussord gjør at saken føles god. Minusord gjør at saken føles som et problem. Slik kan skribenten male et bilde som føles sant, selv om det bare viser én side." }
+            ]
+        },
+        {
+            "id": "utdrag",
+            "kapittel": "En ekte kommentar",
+            "visual": { "type": "KommentarAvis", "props": { "modus": "utdrag" } },
+            "replikker": [
+                { "si": "Nå tester vi verktøyene på en ekte kommentar. Den heter KI er Botox for hjernen, og den sto på NRK Ytring." },
+                { "si": "Skribenten advarer mot å la KI skrive for deg uten å tenke over det." },
+                { "si": "Han skriver at du ender med en pen og glatt tekst, like død som en Botox-panne." },
+                { "si": "Teksten blir kanskje helt riktig, men likevel fullstendig feil. For det er variasjonene og de små feilene som gjør den menneskelig." }
+            ]
+        },
+        {
+            "id": "panna",
+            "kapittel": "Metaforen",
+            "visual": { "type": "KommentarPanne", "props": { "modus": "glatt" } },
+            "replikker": [
+                { "si": "Hele kommentaren hviler på én kobling: KI er Botox." },
+                { "si": "Botox er en behandling som sletter rynkene i ansiktet. Rynkene står for feilene i teksten." },
+                { "si": "Men Botox fjerner også noe annet: evnen til å vise følelser med ansiktet." },
+                { "si": "Igjen står en glatt panne som ikke lenger viser hva du føler." }
+            ]
+        },
+        {
+            "id": "overforing",
+            "visual": { "type": "KommentarBro", "props": { "modus": "botox" } },
+            "replikker": [
+                { "si": "Hvorfor valgte skribenten akkurat dette bildet? Han kunne ha sammenlignet KI med en kalkulator eller en assistent." },
+                { "si": "Men han valgte en rynkebehandling. Botox får oss til å tenke på noe kunstig, jålete, altså altfor opptatt av utseendet, og i verste fall giftig." },
+                { "si": "Nå flytter metaforen disse egenskapene over på tekster som maskiner har skrevet. De ser kanskje pene ut på overflaten, uten grammatikkfeil." },
+                { "si": "Men skribenten sier altså at de er døde inni. At de mangler menneskelig sjel og varme." }
+            ]
+        },
+        {
+            "id": "patos",
+            "visual": { "type": "KommentarBro", "props": { "modus": "patos" } },
+            "replikker": [
+                { "si": "Metaforen er et patos-grep. Patos betyr at du prøver å overbevise ved å spille på følelsene til den som leser." },
+                { "si": "Bildet vekker skepsis hos deg, altså at du blir mistenksom." },
+                { "si": "Og legg merke til det smarte: Skribenten trenger ikke å bevise noe vitenskapelig. Følelsen gjør jobben." }
+            ]
+        },
+        {
+            "id": "ordjakt",
+            "kapittel": "Jakten på følelser",
+            "visual": { "type": "KommentarLadning", "props": { "modus": "botox" } },
+            "replikker": [
+                { "si": "Nå jakter vi på pluss og minus i Botox-teksten." },
+                { "si": "Om KI bruker skribenten ordene død, glatt, juks og stiv. Alle er minusord. De gir en følelse av noe uekte." },
+                { "si": "Om det å skrive selv bruker han helt andre ord: tilfredsstillende, menneskelig og å nå fram." },
+                { "si": "Han vil at du skal føle deg stolt når du gjør jobben selv, og føle avsky for snarveier med teknologi." },
+                { "si": "Legg merke til at han aldri diskuterer om KI faktisk kan være nyttig. Det har han allerede bestemt med ordene han velger." }
+            ]
+        },
+        {
+            "id": "skriv",
+            "visual": { "type": "KommentarAvis", "props": { "modus": "skriv" } },
+            "replikker": [
+                { "si": "Når du skriver analysen, holder det ikke å peke på virkemidlet. Du må forklare hva det gjør." },
+                { "si": "En svak setning: Forfatteren bruker ordet Botox, som er en metafor for KI." },
+                { "si": "En sterk setning: Metaforen flytter tanker om noe kunstig og uten sjel over på KI. Det er et patos-grep." },
+                { "si": "Bruk fagordene, som metafor og patos, til å forklare hva virkemidlet gjør med leseren." }
+            ]
+        },
+        {
+            "id": "paradoks",
+            "kapittel": "Paradokset",
+            "visual": { "type": "KommentarPanne", "props": { "modus": "paradoks" } },
+            "replikker": [
+                { "si": "Les denne setningen en gang til: Teksten blir kanskje helt riktig, men likevel fullstendig feil." },
+                { "si": "Dette er et paradoks. Et paradoks er en påstand som virker selvmotsigende, men som likevel er sann." },
+                { "si": "Vanligvis lærer vi at riktig er målet for all skriving." },
+                { "si": "Men her snur skribenten på det. Det perfekte er feil, fordi det uperfekte er det som er menneskelig." }
+            ]
+        },
+        {
+            "id": "ironi",
+            "visual": { "type": "KommentarPanne", "props": { "modus": "pall" } },
+            "replikker": [
+                { "si": "Skribenten bruker også ironi. Ironi er å si noe du ikke mener, eller det motsatte av det du mener, for å håne eller for å tulle." },
+                { "si": "Vanligvis står den perfekte teksten øverst på pallen." },
+                { "si": "Skribenten snur rekkefølgen. Med ironien viser han hvor meningsløst det er å jage det perfekte hvis du mister personligheten på veien." },
+                { "si": "Et slikt tankekors, altså noe som får deg til å lure, tvinger deg til å stoppe opp og tenke over hva du selv mener er best." }
+            ]
+        },
+        {
+            "id": "sy",
+            "kapittel": "Sy det sammen",
+            "visual": { "type": "KommentarAvis", "props": { "modus": "modell" } },
+            "replikker": [
+                { "si": "Til slutt syr du funnene sammen. Vis hvordan virkemidlene jobber sammen for det skribenten mener." },
+                { "si": "Start med hovedsynet: Skribenten mener at KI gjør tekstene sjelløse." },
+                { "si": "Så kommer metaforen, som bærer hele teksten. Så pluss- og minusordene, som styrer følelsene." },
+                { "si": "Så paradokset, som får leseren til å tenke over hva kvalitet egentlig er." },
+                { "si": "Til slutt: Skribenten bruker ikke tall eller logiske bevis, det som kalles logos. Han bygger saken på sterke bilder og følelser." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Neste kommentar",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En kommentar vil flytte deg.", "fraBeat": 0 },
+                        { "tekst": "Finn bildene. Finn pluss og minus.", "fraBeat": 1 },
+                        { "tekst": "Hva prøver ordet å få meg til å føle?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "En kommentar er ikke skrevet bare for å informere deg. Den er skrevet for å flytte deg." },
+                { "si": "Neste gang du leser en, se etter bildene, og se etter pluss- og minusordene." },
+                { "si": "Og spør deg selv: Hva prøver dette ordet å få meg til å føle?" }
+            ]
+        }
+    ]
+}
