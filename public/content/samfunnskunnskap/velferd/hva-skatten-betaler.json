@@ -1,0 +1,287 @@
+{
+  "id": "hva-skatten-betaler",
+  "title": "Hva skatten betaler for",
+  "layout": "rich",
+  "year": "2025",
+  "category": "Velferd",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "I 2025 brukte det offentlige 2 685 milliarder kroner. Pensjon og sosiale ytelser er den største posten.",
+    "Fra du blir født til du går ut av ungdomsskolen, betaler fellesskapet millioner av kroner for deg.",
+    "Universelle ordninger gis til alle. Behovsprøvde ordninger gis bare til dem som har lite penger."
+  ],
+  "externalUrl": "https://www.ssb.no/offentlig-sektor/faktaside/slik-brukes-skattepengene",
+  "factChecked": "2026-11-18",
+  "tags": [
+    "velferd",
+    "velferdsstaten",
+    "skatt",
+    "økonomi",
+    "fellesskap"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg at du får en regning i posten for alt samfunnet har betalt for deg siden du ble født. Barnehageplassen. Ti år på skolen. Pengene foreldrene dine har fått hver måned fordi du finnes. Legebesøkene. Regningen ville vært på flere millioner kroner. Likevel har familien din aldri fått den. Hvem har betalt?"
+    },
+    {
+      "type": "text",
+      "content": "Svaret er alle sammen. Pengene kommer fra skatten som folk og bedrifter betaler. I artikkelen om [skatt](/samfunnskunnskap/okonomi/skatt) kan du lese hvordan staten henter inn pengene. Her skal vi se på den andre siden: hva pengene faktisk blir brukt til, og hvorfor nesten alle får de samme godene, enten de er rike eller fattige."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Barn som leker i en norsk barnehage om høsten",
+      "caption": "Det meste av det en barnehageplass koster, betaler kommunen. Foreldrene betaler bare en liten del."
+    },
+    {
+      "type": "header",
+      "text": "Hva er en velferdsstat?"
+    },
+    {
+      "type": "text",
+      "content": "Norge er en velferdsstat. Det betyr en stat som i stor grad sørger for at folk får hjelp når de blir syke, mister jobben eller blir gamle, og som gir alle rett til utdanning (Christensen & Berg, 2025). Velferd betyr rett og slett at folk har det trygt og godt."
+    },
+    {
+      "type": "text",
+      "content": "Hjelpen kommer i to former. Den ene er tjenester: noe staten eller kommunen gjør for deg, som skole, barnehage, sykehus og eldreomsorg. Den andre er overføringer: penger som blir satt inn på kontoen din, som barnetrygd, pensjon og dagpenger når du mister jobben (Christensen & Berg, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Velferdsstaten vokste fram over mange år. Mye av den ble bygget etter andre verdenskrig, og på 1960-tallet ble mange ordninger samlet i folketrygden (Christensen & Berg, 2025). Den historien kan du lese om i artikkelen om [velferdsstaten](/historie/norge-i-moderne-tid/velferdsstaten). Her ser vi på hvordan den virker i dag."
+    },
+    {
+      "type": "header",
+      "text": "Hvor går pengene?"
+    },
+    {
+      "type": "text",
+      "content": "I 2025 brukte det offentlige i Norge, altså staten, fylkene og kommunene til sammen, 2 685 milliarder kroner (Statistisk sentralbyrå [SSB], 2026a). Det er et tall som er nesten umulig å se for seg. Del det på alle som bor i landet, og det blir lettere. Norge hadde 5 627 400 innbyggere 1. januar 2026 (SSB, 2026b). Da blir det nesten en halv million kroner per person i året."
+    },
+    {
+      "type": "text",
+      "content": "Men pengene fordeles ikke likt på alle formål. Slik så de største postene ut i 2025 (SSB, 2026a):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Pensjon og sosiale ytelser: 1 049 milliarder kroner. Her ligger alderspensjon, sykepenger, uføretrygd, dagpenger og barnetrygd.",
+        "Helse: 392 milliarder kroner. Sykehus, fastleger, medisiner og helsesykepleier.",
+        "Utdanning: 255 milliarder kroner. Fra grunnskole til universitet.",
+        "Forsvar: 172 milliarder kroner.",
+        "Offentlig orden og trygghet: 59 milliarder kroner. Blant annet politi, domstoler og fengsler.",
+        "Fritid, kultur og religion: 79 milliarder kroner. Blant annet idrettshaller, bibliotek og kirker."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Legg merke til hvor stor den første posten er. Nesten fire av ti kroner går til pensjon og andre penger som blir betalt ut direkte til folk (SSB, 2026a). Den største delen av dette er pensjon til eldre. Det er altså ikke veier eller fly til Forsvaret som koster mest, men at folk skal ha noe å leve av når de ikke kan jobbe."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "content": "Velferdsstat: en stat som sørger for at folk får hjelp når de trenger det, og som gir alle rett til utdanning. Tjeneste: noe det offentlige gjør for deg, som skole eller sykehus. Overføring: penger du får utbetalt, som barnetrygd eller pensjon. Universell ordning: noe alle får, uansett hvor mye penger de har. Behovsprøvd ordning: noe bare de som har lite penger, får. Det offentlige: staten, fylkene og kommunene til sammen."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hva koster du?"
+    },
+    {
+      "type": "text",
+      "content": "La oss gjøre regningen konkret. Tallene under er snitt for hele landet. Noen kommuner bruker mer, andre mindre."
+    },
+    {
+      "type": "text",
+      "content": "Barnetrygd: Alle barn i Norge gir foreldrene rett til barnetrygd fram til de fyller 18 år. Fra februar 2026 er den 2 012 kroner i måneden per barn (NAV, 2026). Det er et fast beløp. Det betyr at familien får like mye, enten foreldrene er rike eller fattige."
+    },
+    {
+      "type": "text",
+      "content": "Barnehage: En plass i en kommunal barnehage kostet i snitt 296 000 kroner per barn i 2023 (Haraldsrud & Tuhus, 2024). Foreldrene betaler bare en liten del av dette. Fra august 2025 kan en barnehage ta høyst 1 200 kroner i måneden, og i kommunene der det bor færrest folk og avstandene er lengst, høyst 700 kroner (Hauge, 2026). Resten betaler kommunen."
+    },
+    {
+      "type": "text",
+      "content": "Grunnskole: I 2023 gikk 637 000 elever i grunnskolen. Kommunene brukte 105,5 milliarder kroner på de kommunale skolene sine det året (Haraldsrud & Tuhus, 2024). Grovt regnet blir det over 160 000 kroner per elev hvert år. Nesten åtte av ti kroner går til lønn til lærere og andre som jobber på skolen (Haraldsrud & Tuhus, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv: Spol fram livet ditt fra du ble født til du går ut av ungdomsskolen, og se hvordan regningen vokser."
+    },
+    {
+      "type": "component",
+      "name": "RegningenDin",
+      "props": {
+        "sluttAlder": 16
+      }
+    },
+    {
+      "type": "text",
+      "content": "Når du er 16 år, har fellesskapet altså betalt over 3,5 millioner kroner for deg, bare for barnetrygd, barnehage og skole. Da har vi ikke regnet med legebesøk, vaksiner, tannlege, busser, bibliotek og idrettshaller. Familien din har betalt en liten bit av dette selv."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Klasserom med elever og lærer i en norsk ungdomsskole",
+      "caption": "Lønn til lærere og andre ansatte er den største utgiften i skolen."
+    },
+    {
+      "type": "header",
+      "text": "Alle får - også de rike"
+    },
+    {
+      "type": "text",
+      "content": "Mange av ordningene i Norge er universelle. Det betyr at alle har like stor rett til dem, uansett hvor mye penger de har (Hansen & Vabo, 2022). Sønnen til en direktør og datteren til en butikkansatt går på den samme skolen og får den samme barnetrygden. Det motsatte er behovsprøvde ordninger. Der får bare de som har lite penger, hjelp. I USA er mange av ordningene behovsprøvde og ganske små (Christensen & Berg, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Ikke alt i Norge er universelt. Når du får penger utbetalt, for eksempel fordi du er syk eller har mistet jobben, avhenger beløpet ofte av hva du tjente før. Barnetrygden er et av få unntak, for den er lik for alle (Christensen & Berg, 2025). Tjenestene, som skole og sykehus, er derimot universelle. Målet er at de skal være så gode at også de som tjener mye, ikke føler at de må kjøpe private løsninger i stedet."
+    },
+    {
+      "type": "text",
+      "content": "Det er viktig å vite at det ikke er det du selv har betalt inn, som bestemmer hva du får. Pengene kommer fra skatten til alle, og du får hjelp når du trenger den (Hansen & Vabo, 2022). Et barn har ikke betalt én krone i inntektsskatt, men får likevel gå på skolen. En som har jobbet i 40 år og aldri blitt syk, har betalt mye mer enn hun har fått tilbake. Slik flyttes penger fra dem som tjener mye, til dem som trenger det. Det er en viktig grunn til at forskjellene mellom rik og fattig er mindre i Norge enn i mange andre land (Christensen & Berg, 2025)."
+    },
+    {
+      "type": "header",
+      "text": "Er det rettferdig?"
+    },
+    {
+      "type": "text",
+      "content": "Her blir det politikk. Er det for eksempel rettferdig at en familie med millioninntekt får like mye barnetrygd som en familie som sliter med å betale husleia? Svaret avhenger av hva du mener er viktigst."
+    },
+    {
+      "type": "text",
+      "content": "De som vil gjøre flere ordninger behovsprøvde, sier at pengene da kan gå til dem som trenger dem mest. Hvis rike familier ikke fikk barnetrygd, kunne staten gitt mer til de fattige uten å bruke flere penger. Det er en rimelig tanke: hvorfor gi penger til folk som ikke trenger dem?"
+    },
+    {
+      "type": "text",
+      "content": "De som vil beholde universelle ordninger, sier at de skaper et samfunn der alle er med. Når alle får, er det ingen skam å få. Ingen må bevise at de er fattige for å få hjelp. Og når de som tjener mye, også bruker den offentlige skolen og sykehuset, vil de være med på å betale for at tilbudet er godt. Universelle ordninger bidrar også til å jevne ut forskjeller (Hansen & Vabo, 2022). Ulempen er at de koster mer."
+    },
+    {
+      "type": "text",
+      "content": "Det finnes ikke ett riktig svar. Partiene på Stortinget er uenige, og spørsmålet kommer opp hver høst når regjeringen legger fram statsbudsjettet. Det er også grunnen til at det er så viktig for Norge hva som skjer med [oljefondet](/samfunnskunnskap/okonomi/oljefondet): Hvert år tar staten penger fra fondet for å betale en del av velferden."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Eldre mann på benk og ung familie med barnevogn i en park",
+      "caption": "Pengene flytter seg mellom generasjoner: de som jobber i dag, betaler for barna og de eldre."
+    },
+    {
+      "type": "header",
+      "text": "Du betaler allerede"
+    },
+    {
+      "type": "text",
+      "content": "Kanskje tenker du at velferdsstaten handler om voksne. Men du er med i regnestykket allerede nå. Hver gang du kjøper noe, betaler du moms, en skatt som er bakt inn i prisen. Og når du får din første sommerjobb, blir det trukket skatt av lønnen din. Da blir du en av dem som betaler for at neste generasjon kan gå i barnehage og på skole."
+    },
+    {
+      "type": "text",
+      "content": "Velferdsstaten er en avtale mellom generasjonene. Når du er liten, betaler de voksne for deg. Når du blir voksen, betaler du for barna og de eldre. Og når du blir gammel, betaler de som er unge da, for deg. Det fungerer bare så lenge nok folk jobber og betaler skatt. Hvis du vil lære mer om hvordan du selv holder styr på pengene, kan du lese om [budsjett](/samfunnskunnskap/personlig-okonomi/budsjett)."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Christensen, J. & Berg, O. T. (2025). *Velferdsstat*. Store norske leksikon. Hentet 18.11.2026 fra [snl.no](https://snl.no/velferdsstat)",
+          "Hansen, T. & Vabo, S. I. (2022). *Universelle velferdsrettigheter*. Store norske leksikon. Hentet 18.11.2026 fra [snl.no](https://snl.no/universelle_velferdsrettigheter)",
+          "Haraldsrud, E. & Tuhus, P. T. (2024). *Kommuners bruk av midler på barnehage og grunnskole 2023* (Rapporter 2024/47). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/utdanning/grunnskoler/artikler/kommuners-bruk-av-midler-pa-barnehage-og-grunnskole-2023)",
+          "Hauge, S. S. (2026). *Foreldrebetaling i barnehager, januar 2026* (Rapporter 2026/12). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/utdanning/barnehager/artikler/foreldrebetaling-i-barnehager-januar-2026)",
+          "NAV. (2026). *Barnetrygd*. Hentet 18.11.2026 fra [nav.no](https://www.nav.no/barnetrygd)",
+          "Statistisk sentralbyrå. (2026a). *Slik brukes skattepengene*. Hentet 18.11.2026 fra [ssb.no](https://www.ssb.no/offentlig-sektor/faktaside/slik-brukes-skattepengene)",
+          "Statistisk sentralbyrå. (2026b). *Befolkning*. Hentet 18.11.2026 fra [ssb.no](https://www.ssb.no/befolkning/folketall/statistikk/befolkning)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er forskjellen på en tjeneste og en overføring? Gi ett eksempel på hver.",
+          "Hvilken post brukte det offentlige mest penger på i 2025, og hva ligger i den?",
+          "Hvor mye betaler foreldre høyst for en barnehageplass, og hvor mye koster plassen for kommunen i snitt?",
+          "Hva er forskjellen på en universell og en behovsprøvd ordning?"
+        ],
+        "reflekter": [
+          "Forklar hvorfor universelle ordninger flytter penger fra dem som tjener mye, til dem som tjener lite, selv om alle får det samme.",
+          "Hvorfor er barnetrygden et unntak blant pengene som blir utbetalt i Norge?",
+          "Hva mener de som vil beholde universelle ordninger, med at «når alle får, er det ingen skam å få»?",
+          "Velferdsstaten blir kalt en avtale mellom generasjonene. Forklar hva det betyr med egne ord."
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Bør familier med svært høy inntekt få barnetrygd? Finn ett argument for og ett mot før du bestemmer deg.",
+          "Velg én ting fra din egen hverdag som det offentlige betaler for (for eksempel skolebussen, biblioteket eller helsesykepleieren). Finn ut omtrent hva det koster, og skriv et kort avsnitt om hvem som betaler.",
+          "Hvis staten må spare 10 milliarder kroner, hvor ville du kuttet? Bruk listen over de største postene og begrunn valget ditt."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva brukte det offentlige i Norge mest penger på i 2025?",
+            "options": [
+              "Forsvar",
+              "Utdanning",
+              "Pensjon og sosiale ytelser",
+              "Helse"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Pensjon og sosiale ytelser kostet 1 049 milliarder kroner, nesten fire av ti kroner."
+          },
+          {
+            "question": "Hva er en universell ordning?",
+            "options": [
+              "Noe bare fattige får",
+              "Noe alle har like stor rett til, uansett hvor mye penger de har",
+              "Noe du må betale for selv",
+              "Noe bare de som jobber, får"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Universelle ordninger gis til alle, uten at de sjekker hvor mye penger du har."
+          },
+          {
+            "question": "Hvor mye koster en plass i en kommunal barnehage i snitt per år?",
+            "options": [
+              "Rundt 14 000 kroner",
+              "Rundt 60 000 kroner",
+              "Rundt 300 000 kroner",
+              "Rundt 1 million kroner"
+            ],
+            "correctAnswer": 2,
+            "explanation": "I 2023 var snittet 296 000 kroner per barn. Foreldrene betaler høyst 1 200 kroner i måneden."
+          },
+          {
+            "question": "Hvorfor er barnetrygden spesiell?",
+            "options": [
+              "Den er lik for alle barn, uansett hva foreldrene tjener",
+              "Den gis bare til fattige familier",
+              "Den betales av foreldrene selv",
+              "Den gis bare til barn under seks år"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Barnetrygden er et fast beløp per barn. De fleste andre utbetalinger avhenger av inntekt."
+          },
+          {
+            "question": "Hvor kommer pengene til velferdsstaten hovedsakelig fra?",
+            "options": [
+              "Fra det hver enkelt har betalt inn til sin egen konto",
+              "Fra skatt som alle betaler",
+              "Fra bøter",
+              "Fra salg av frimerker"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Velferden betales med skatt fra alle. Du får hjelp når du trenger den, ikke etter hva du selv har betalt inn."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
