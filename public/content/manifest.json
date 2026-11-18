@@ -2756,6 +2756,28 @@
           ]
         },
         {
+          "id": "velferd",
+          "title": "Velferdsstaten i dag",
+          "description": "Hvordan velferdsstaten virker i dag: hva skatten betaler for, NAV, pensjon og om ordningen kan vare.",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "hva-skatten-betaler",
+              "title": "Hva skatten betaler for",
+              "description": "Hva fellesskapet betaler for deg fra du blir født, hvor skattepengene går, og hvorfor nesten alle får de samme godene.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "velferd",
+                "velferdsstaten",
+                "skatt",
+                "økonomi",
+                "fellesskap"
+              ],
+              "createdDate": "2026-11-18T00:00:00Z"
+            }
+          ]
+        },
+        {
           "id": "eksamen",
           "title": "Eksamen",
           "description": "Alt du trenger for å mestre muntlig eksamen i samfunnsfag etter 10. trinn.",
