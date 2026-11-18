@@ -18,20 +18,24 @@ function Kort({ x, tekst, i, kryss }: { x: number; tekst: string; i: number; kry
             transition={{ delay: 0.2 + i * 0.3 }}
         >
             <rect x={x - 140} y={420} width={280} height={130} rx={22} fill="#fff" stroke="#e2e8f0" strokeWidth={4} />
-            <text x={x} y={500} textAnchor="middle" fontSize={42} fontWeight={900} fill={BLEKK}>
+            <text x={x - 12} y={500} textAnchor="middle" fontSize={40} fontWeight={900} fill={BLEKK}>
                 {tekst}
             </text>
+            {/* Rødt kryss ved siden av teksten, ikke strek over den (lesbart på projektor) */}
             {kryss && (
-                <motion.path
-                    d={`M ${x - 115} 486 L ${x + 115} 486`}
-                    stroke={ROD}
-                    strokeOpacity={0.85}
-                    strokeWidth={9}
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ delay: 0.9 + i * 0.5, duration: 0.5 }}
-                />
+                <motion.g
+                    initial={{ opacity: 0, scale: 0.4 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.9 + i * 0.5, duration: 0.4 }}
+                    style={{ transformOrigin: `${x + 112}px 446px` }}
+                >
+                    <path
+                        d={`M ${x + 98} 432 L ${x + 126} 460 M ${x + 126} 432 L ${x + 98} 460`}
+                        stroke={ROD}
+                        strokeWidth={9}
+                        strokeLinecap="round"
+                    />
+                </motion.g>
             )}
         </motion.g>
     );
@@ -140,7 +144,7 @@ export function EmbetsmannsUeland({ beat }: VisualProps) {
                                         </motion.g>
                                     ))}
                                     <text x={950} y={720} textAnchor="middle" fontSize={34} fontWeight={800} fill="#475569">
-                                        statens utgifter: ned, ned, ned
+                                        Uelands mål: minst mulig utgifter
                                     </text>
                                 </motion.g>
                             )}

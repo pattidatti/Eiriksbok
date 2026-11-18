@@ -187,9 +187,9 @@ export function EmbetsmannsMakt({ beat }: VisualProps) {
                             </motion.g>
                         ))}
                         <motion.g initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1.4 }}>
-                            <rect x={120} y={790} width={600} height={80} rx={40} fill={EMBETSMANN} />
-                            <text x={420} y={843} textAnchor="middle" fontSize={34} fontWeight={900} fill="#fff">
-                                Bare embetsmenn, til 1884
+                            <rect x={80} y={790} width={700} height={80} rx={40} fill={EMBETSMANN} />
+                            <text x={430} y={842} textAnchor="middle" fontSize={30} fontWeight={900} fill="#fff">
+                                Regjeringen: bare embetsmenn, til 1884
                             </text>
                         </motion.g>
                     </>

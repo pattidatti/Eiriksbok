@@ -4,6 +4,7 @@
     "kilde": "/historie/norge-i-moderne-tid/embetsmannsstaten",
     "bilde": "/images/norge-i-moderne-tid/embetsmannsstaten-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-18", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "salen",
@@ -57,7 +58,7 @@
                     "si": "Eller en sorenskriver, som var dommer ute i distriktene. Eller en amtmann, omtrent som en statsforvalter i dag."
                 },
                 {
-                    "si": "De var ikke mange. I 1825 var de rundt 1900, og i 1875 rundt 2300. De hadde studert jus, teologi, som er læren om kristendommen, eller gått på krigsskolen."
+                    "si": "De var ikke mange. I 1825 var det rundt 1900 embetsmenn i Norge, og i 1875 rundt 2300. De hadde studert jus, teologi, som er læren om kristendommen, eller gått på krigsskolen."
                 },
                 {
                     "si": "Før 1814 styrte de landet for kongen i København. Folk måtte adlyde dem, fordi de var kongens folk."
@@ -80,7 +81,7 @@
                     "si": "Igjen sto embetsmennene. De hadde ledet an i 1814, og de var vant til å styre."
                 },
                 {
-                    "si": "De kalte seg selv landets beste menn. De hadde kunnskap, og de mente at de ikke gikk i noens lomme."
+                    "si": "De mente selv at de var landets beste menn. De hadde kunnskap, og de mente at de ikke gikk i noens lomme."
                 }
             ]
         },
@@ -88,8 +89,8 @@
             "id": "makt",
             "visual": { "type": "EmbetsmannsMakt", "props": { "modus": "grunnlov" } },
             "replikker": [
-                { "si": "Grunnloven delte makta i to. På den ene siden sto Stortinget. På den andre sto kongen." },
-                { "si": "Stortinget bestemte over lovene og over pengene." },
+                { "si": "Etter Grunnloven hadde Stortinget og kongen hver sin del av makta." },
+                { "si": "Stortinget hadde makt over lovene og over pengene." },
                 {
                     "si": "Men det var kongen som valgte regjeringen, de som styrte landet fra dag til dag."
                 },
@@ -119,8 +120,8 @@
                 "props": {
                     "tittel": "Slik holdt de på makta",
                     "punkter": [
-                        { "ikon": "avtale", "tittel": "Valgloven, 1828", "tekst": "ingen valgkamp, ingen stemmesedler", "fraBeat": 1 },
-                        { "ikon": "snakk", "tittel": "Narr av allmuen", "tekst": "å organisere seg var nesten skittent", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Valgloven, 1828", "tekst": "skulle stoppe valgkamp og stemmesedler", "fraBeat": 1 },
+                        { "ikon": "snakk", "tittel": "Narr av allmuen", "tekst": "å organisere seg ble sett på som nesten skittent", "fraBeat": 2 },
                         { "ikon": "haer", "tittel": "Thranebevegelsen", "tekst": "slått ned i 1851", "fraBeat": 3 }
                     ]
                 }
@@ -172,9 +173,10 @@
                             "farget": 9,
                             "farge": "#1e3a8a",
                             "restFarge": "#94a3b8",
-                            "tittel": "Men de stemte på presten og fogden",
-                            "fargeEtikett": "stemte som før",
-                            "restEtikett": "i byen"
+                            "tittel": "Men de stemte ofte på presten eller fogden",
+                            "fargeEtikett": "på landet: mange stemte som før",
+                            "restEtikett": "i byen",
+                            "visTall": false
                         }
                     ]
                 }
@@ -213,7 +215,7 @@
             "visual": { "type": "EmbetsmannSalen", "props": { "modus": "regjering" } },
             "replikker": [
                 {
-                    "si": "Men ved valget i 1833 kom Neergaard inn, sammen med mange andre bønder. Salen var deres."
+                    "si": "Men ved valget som ga Bondestortinget i 1833, kom Neergaard inn, sammen med mange andre bønder. Salen var deres."
                 },
                 { "si": "Se nå bort på regjeringen." },
                 {
@@ -228,19 +230,10 @@
             "id": "seire",
             "lyd": "stille",
             "kapittel": "Hva fikk bøndene til?",
-            "visual": {
-                "type": "Punktkort",
-                "props": {
-                    "tittel": "To store seire, 1836 til 1837",
-                    "punkter": [
-                        { "ikon": "penger", "tittel": "Skatten på jord fjernet", "tekst": "i by og på land", "fraBeat": 1 },
-                        { "ikon": "hus", "tittel": "Lokalt selvstyre", "tekst": "formannskapslovene, januar 1837", "fraBeat": 2 }
-                    ]
-                }
-            },
+            "visual": { "type": "EmbetsmannsSeire" },
             "replikker": [
                 {
-                    "si": "Bøndene fikk ikke gjennom sakene sine med en gang. Men på Stortinget i 1836 og 1837 kom to store seire."
+                    "si": "Bøndene fikk ikke gjennom sakene sine med en gang. Men på Stortinget i 1836 til 1837 kom to store seire."
                 },
                 { "si": "Skatten på jord og eiendom ble fjernet, både i byene og på landet." },
                 {
@@ -275,10 +268,10 @@
                 { "si": "Var embetsmennene skurker? Historikerne er ikke enige." },
                 { "si": "Seip mente at de holdt motstanderne nede for å beholde makta." },
                 {
-                    "si": "Francis Sejersted mente at Norge var en rettsstat. Der må de som styrer, følge lover og regler. Han mente embetsmennene prøvde å være rettferdige."
+                    "si": "Francis Sejersted mente at Norge heller var en borgerlig rettsstat. Der må de som styrer, følge lover og regler. Han mente embetsmennene prøvde å være rettferdige."
                 },
                 {
-                    "si": "Samtidig vet vi at mange embetsmenn jukset med penger fram til 1850-årene. Noen tok penger som tilhørte staten."
+                    "si": "Samtidig viser forskning at mange embetsmenn jukset med penger fram til 1850-årene. Noen tok penger som tilhørte staten."
                 },
                 {
                     "si": "Kanskje ligger sannheten midt imellom. De styrte stort sett ordentlig, men de passet godt på sin egen makt."
@@ -292,13 +285,13 @@
             "visual": { "type": "EmbetsmannSalen", "props": { "modus": "slutt" } },
             "replikker": [
                 {
-                    "si": "Fra rundt 1870 vokste en ny og bredere opposisjon fram. Nå var det ikke bare bønder, men også kristne lekfolk og liberale folk i byene."
+                    "si": "Fra rundt 1870 vokste en ny og bredere opposisjon fram. Nå var det ikke bare bønder, men også vanlige kristne som ikke var prester, og liberale folk i byene."
                 },
                 {
                     "si": "Lederen var Johan Sverdrup. Han samlet alle som var lei av at embetsmennene bestemte."
                 },
                 {
-                    "si": "Kampen endte med riksretten i 1884. Statsrådene i regjeringen ble dømt."
+                    "si": "Kampen endte med riksretten i 1884. Riksretten er en domstol som kan dømme statsrådene, altså ministrene i regjeringen. Og nå ble de dømt."
                 },
                 {
                     "si": "Samme år dannet Sverdrup en regjering som hadde flertallet på Stortinget med seg. Det var starten på parlamentarismen: Regjeringen må ha støtte fra Stortinget."
@@ -315,7 +308,7 @@
                 },
                 { "si": "Se hele veien. I 1814 fikk Norge Grunnloven. I 1833 vant bøndene Stortinget." },
                 {
-                    "si": "I 1837 fikk bygdene styre seg selv. Og i 1884 måtte regjeringen ha Stortinget med seg."
+                    "si": "I 1837 fikk bygder og byer styre seg selv. Og i 1884 fikk Norge for første gang en regjering med flertallet på Stortinget bak seg."
                 },
                 { "si": "I 1898 fikk alle menn stemmerett. Og i 1913 fikk alle kvinner det samme." }
             ]
@@ -330,7 +323,7 @@
                         { "tekst": "Demokratiet kom ikke", "fraBeat": 0 },
                         { "tekst": "ferdig i én pakke i 1814.", "fraBeat": 0, "uthevet": true },
                         { "tekst": "Bøndene vant Stortinget i 1833.", "fraBeat": 1 },
-                        { "tekst": "Det tok over 50 år til å vinne regjeringen.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Det tok over 50 år til før Stortinget også bestemte hvem som skulle styre.", "fraBeat": 1, "uthevet": true },
                         { "tekst": "Å vinne et valg er ikke det samme", "fraBeat": 2 },
                         { "tekst": "som å styre landet.", "fraBeat": 2, "uthevet": true }
                     ]
