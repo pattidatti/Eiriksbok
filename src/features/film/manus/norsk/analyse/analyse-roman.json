@@ -1,0 +1,317 @@
+{
+    "id": "analyse-roman",
+    "tittel": "Slik analyserer du et romanutdrag",
+    "kilde": "/norsk/analyse/analyse-roman",
+    "bilde": "/images/lessons/norsk/analyse/analyse-roman-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-18", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "gangen",
+            "lyd": "rom",
+            "kapittel": "God aften!",
+            "visual": { "type": "SultRommet", "props": { "modus": "motet" } },
+            "replikker": [
+                { "si": "En mann møter en kvinne en kveld. Hun sier: God aften!" },
+                { "si": "Han glemmer å smile. Han hilser ikke engang med hatten med en gang." },
+                { "si": "Litt senere, ute i gangen, tar hun hånden hans." },
+                {
+                    "si": "Hva tenker han nå? Og kan vi stole på det han forteller oss? Det er det denne filmen handler om."
+                }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Romanutdraget",
+                    "undertittel": "Slik analyserer du det. Eksempel: Sult av Knut Hamsun, 1890",
+                    "sporsmal": { "tekst": "Hvem forteller, og kan vi stole på ham?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Mannen er hovedpersonen i romanen Sult av Knut Hamsun. Den kom ut i 1890."
+                },
+                {
+                    "si": "Når du leser et utdrag fra en roman, er det viktigste spørsmålet ofte ikke hva som skjer utenpå, i handlingen."
+                },
+                {
+                    "si": "Det viktigste er hvem som forteller historien til deg. Og om du kan stole på det han sier."
+                }
+            ]
+        },
+        {
+            "id": "filteret",
+            "kapittel": "Fortelleren",
+            "visual": { "type": "SultTanker", "props": { "modus": "filter" } },
+            "replikker": [
+                {
+                    "si": "Fortelleren er et filter. Alt du får vite, må gjennom fortelleren før det når deg som leser."
+                },
+                {
+                    "si": "En pålitelig forteller er som et klart glass. Vi får oversikt over det som skjer, og vi kan tro på det vi hører."
+                },
+                {
+                    "si": "En upålitelig forteller er som et farget glass. Alt han forteller, er farget av hans egne følelser og hans egen skam."
+                },
+                {
+                    "si": "Da må vi lese mellom linjene for å finne ut hva som egentlig skjer. Det gir nærhet, men også usikkerhet og spenning."
+                }
+            ]
+        },
+        {
+            "id": "kamera",
+            "visual": { "type": "SultRommet", "props": { "modus": "kamera" } },
+            "replikker": [
+                {
+                    "si": "Synsvinkel er stedet fortelleren eller en av personene ser handlingen fra."
+                },
+                {
+                    "si": "En forteller kan se alt utenfra, som et kamera som bare filmer det som skjer."
+                },
+                {
+                    "si": "Eller vi kan se alt innenfra, gjennom øynene til én person. Det kalles personal synsvinkel."
+                },
+                {
+                    "si": "Da får vi vite hans innerste tanker. Men vi er fanget i hodet hans. Hva hun tenker, får vi ikke vite."
+                }
+            ]
+        },
+        {
+            "id": "begreper",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Tre ord du trenger",
+                    "punkter": [
+                        {
+                            "ikon": "lampe",
+                            "tittel": "Personal synsvinkel",
+                            "tekst": "vi ser alt gjennom øynene til én person",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "snakk",
+                            "tittel": "Indre monolog",
+                            "tekst": "tankene slik de dukker opp, rotete og hoppende",
+                            "fraBeat": 2
+                        },
+                        {
+                            "ikon": "skjold",
+                            "tittel": "Upålitelig forteller",
+                            "tekst": "lyver for å beskytte sin egen verdighet",
+                            "fraBeat": 3
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "For å analysere en roman trenger du tre ord." },
+                { "si": "Det første er personal synsvinkel. Vi ser alt gjennom øynene til én person." },
+                {
+                    "si": "Det andre er indre monolog. Forfatteren skriver tankene akkurat slik de dukker opp, ofte rotete og hoppende."
+                },
+                {
+                    "si": "Det tredje er upålitelig forteller. Det er en forteller som lyver for seg selv eller for oss, for å beskytte sin egen verdighet."
+                }
+            ]
+        },
+        {
+            "id": "kvisten",
+            "lyd": "rom",
+            "kapittel": "Sult",
+            "visual": { "type": "SultRommet", "props": { "modus": "kvisten" } },
+            "replikker": [
+                {
+                    "si": "Nå tilbake til Sult. Hovedpersonen har ikke noe navn. Han forteller selv, som en jeg-forteller."
+                },
+                {
+                    "si": "Han bor i Kristiania, som i dag heter Oslo. Han prøver å tjene penger som skribent, altså på å skrive."
+                },
+                { "si": "Men det går dårlig. Han sulter, og han er lutfattig." },
+                {
+                    "si": "Likevel bærer han på en enorm stolthet. Og så møter han kvinnen han kaller Ylajali."
+                }
+            ]
+        },
+        {
+            "id": "strommen",
+            "lyd": "stille",
+            "kapittel": "Kaos i hodet",
+            "visual": { "type": "SultTanker", "props": { "modus": "strom" } },
+            "replikker": [
+                {
+                    "si": "Hør hvordan han forteller om det hun sier: Hvert av hennes ord beruset meg, traff meg i hjertet som vindråper. Det betyr dråper av vin."
+                },
+                {
+                    "si": "Hamsun ville skildre de hemmelige bevegelsene i sjelen. Han rydder ikke i tankene for å gjøre dem logiske."
+                },
+                {
+                    "si": "Tankene hopper fram og tilbake, uten filter for hva som er riktig eller passer seg."
+                },
+                { "si": "Det er indre monolog. Vi er med inne i kaoset, akkurat når det skjer." }
+            ]
+        },
+        {
+            "id": "humoret",
+            "visual": { "type": "SultTanker", "props": { "modus": "humor" } },
+            "replikker": [
+                { "si": "Se hvor fort humøret hans svinger." },
+                {
+                    "si": "Først er han stille og underdanig. Det betyr at han gjør seg liten. Jeg glemmer å smile, sier han."
+                },
+                {
+                    "si": "Så blir han forelsket, helt eksplosivt. Mitt hjerte slo høyt, forteller han."
+                },
+                {
+                    "si": "Og plutselig vil han snakke om hvor fattig han er. Han ødelegger øyeblikket selv."
+                },
+                {
+                    "si": "Han er et menneske i ubalanse. Han styres mer av nervøse lyster enn av fornuften."
+                }
+            ]
+        },
+        {
+            "id": "stolen",
+            "lyd": "rom",
+            "kapittel": "Kan vi stole på ham?",
+            "visual": { "type": "SultRommet", "props": { "modus": "stolen" } },
+            "replikker": [
+                {
+                    "si": "Så inviterer Ylajali ham nærmere. Nå kunne De for eksempel gjerne holde Deres hånd på min stolrygg, sier hun."
+                },
+                {
+                    "si": "Som lesere heier vi på ham. Nå får han endelig sjansen."
+                },
+                { "si": "Men han får panikk." },
+                {
+                    "si": "Han sier at hun visst tror at han kan kle seg og leve akkurat som han ønsker. Men det kan han ikke. Jeg er meget, meget fattig, sier han."
+                }
+            ]
+        },
+        {
+            "id": "ordene",
+            "lyd": "stille",
+            "visual": { "type": "SultVekta", "props": { "modus": "ord" } },
+            "replikker": [
+                {
+                    "si": "Hvis du bare hører på ordene, virker det som om han endelig er ærlig."
+                },
+                {
+                    "si": "Men spør som en som analyserer teksten: Hvorfor akkurat nå? Han har løyet om hvor han står i samfunnet i hele romanen."
+                },
+                {
+                    "si": "Nå, i det mest sårbare øyeblikket, bruker han sannheten som et våpen. Den skal holde henne unna."
+                },
+                {
+                    "si": "Han er en upålitelig forteller overfor seg selv. Han sier han vil ha henne, men han får panikk og støter henne bort. Ofte ser vi sannheten i det han gjør, ikke i det han sier."
+                }
+            ]
+        },
+        {
+            "id": "vekta",
+            "visual": { "type": "SultVekta", "props": { "modus": "vekt" } },
+            "replikker": [
+                { "si": "Han sier at han vil ha henne. På den ene siden ligger lysten på kjærlighet." },
+                {
+                    "si": "På den andre siden ligger frykten for å bli sett ned på. Den frykten kalles skam."
+                },
+                { "si": "Og skammen er sterkere enn lysten." },
+                {
+                    "si": "Han støter henne bort for å beskytte det siste han har igjen: den stolte verdigheten sin. Han ødelegger sin egen lykke."
+                }
+            ]
+        },
+        {
+            "id": "debatt",
+            "kapittel": "Nyromantikken",
+            "visual": { "type": "SultVekta", "props": { "modus": "debatt" } },
+            "replikker": [
+                {
+                    "si": "På 1870- og 1880-tallet skrev realister som Ibsen og Bjørnson. Den tiden kaller vi realismen.",
+                    "uttale": "På attensytti- og attenåttitallet skrev realister som Ibsen og Bjørnson. Den tiden kaller vi realismen."
+                },
+                {
+                    "si": "De ville sette problemer under debatt. Det slagordet kom fra den danske kritikeren Georg Brandes i 1871."
+                },
+                {
+                    "si": "Tidlig på 1890-tallet vokste noe nytt fram, som en bevisst motstand mot realismen. Det kalles nyromantikken.",
+                    "uttale": "Tidlig på attennittitallet vokste noe nytt fram, som en bevisst motstand mot realismen. Det kalles nyromantikken."
+                },
+                {
+                    "si": "Sult er et typisk eksempel. Hamsun ville ikke sette problemer under debatt. Han ville sette menneskesinnet under lupen. Det betyr å se nøye på det, som med et forstørrelsesglass."
+                }
+            ]
+        },
+        {
+            "id": "lupen",
+            "visual": { "type": "SultVekta", "props": { "modus": "lupe" } },
+            "replikker": [
+                {
+                    "si": "Derfor skjer ikke dramaet i et rettslokale, der en sak blir avgjort, eller i et ordentlig hjem hos folk med god råd."
+                },
+                { "si": "Det skjer i de mørke krokene i hodet til én mann." },
+                {
+                    "si": "Hamsun viser ikke nøden som et samfunnsproblem, men som noe som skjer inne i et menneske."
+                },
+                {
+                    "si": "Han er det moderne mennesket: rotløs, fremmed, og uten et sted der han passer inn. Med Sult blir den moderne, psykologiske romanen født."
+                }
+            ]
+        },
+        {
+            "id": "analysen",
+            "kapittel": "Slik skriver du",
+            "visual": { "type": "SultTanker", "props": { "modus": "kobling" } },
+            "replikker": [
+                {
+                    "si": "Når du skriver analysen, holder det ikke å finne virkemidlene. Du må koble dem til hva de gjør med oss."
+                },
+                {
+                    "si": "Den personale synsvinkelen gir oss full tilgang til kaoset i hodet hans. Men vi vet ikke hva Ylajali egentlig vil. Det gir usikkerhet."
+                },
+                {
+                    "si": "De raske skiftene i humøret viser et menneske i ubalanse."
+                },
+                {
+                    "si": "Og når han plutselig snakker om fattigdommen, er det ikke en ærlig tilståelse. Det er et forsvar."
+                }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Spør ikke bare hva som skjer.", "fraBeat": 0 },
+                        { "tekst": "Spør hvem som forteller.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ordene sier én ting.", "fraBeat": 1 },
+                        {
+                            "tekst": "Handlingene viser ofte sannheten.",
+                            "fraBeat": 1,
+                            "uthevet": true
+                        },
+                        { "tekst": "Hamsun flyttet dramaet", "fraBeat": 2 },
+                        { "tekst": "inn i hodet.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                {
+                    "si": "Når du leser et romanutdrag, spør ikke bare hva som skjer. Spør hvem som forteller, og om du kan stole på ham."
+                },
+                {
+                    "si": "Ordene til en upålitelig forteller sier én ting. Det han gjør, viser ofte sannheten."
+                },
+                {
+                    "si": "Og Hamsun viste at dramaet kan skje inne i hodet til ett menneske."
+                }
+            ]
+        }
+    ]
+}
