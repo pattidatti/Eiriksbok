@@ -1,0 +1,259 @@
+{
+    "id": "hva-skatten-betaler",
+    "tittel": "Hva skatten betaler for",
+    "kilde": "/samfunnskunnskap/velferd/hva-skatten-betaler",
+    "bilde": "/images/velferd/hva-skatten-betaler-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-18", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "regningen",
+            "lyd": "rom",
+            "kapittel": "Regningen",
+            "visual": { "type": "VelferdRegning", "props": { "modus": "post" } },
+            "replikker": [
+                { "si": "Tenk deg at det ligger en konvolutt i postkassa. Det er en regning, og den er til deg." },
+                { "si": "Den gjelder alt samfunnet har betalt for deg siden du ble født. Barnehageplassen. Ti år på skolen." },
+                { "si": "Pengene foreldrene dine har fått hver måned fordi du finnes. Og alle legebesøkene." },
+                { "si": "Regningen ville vært på flere millioner kroner." },
+                { "si": "Likevel har familien din aldri fått den. Hvem har betalt?" }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Hva skatten betaler for",
+                    "undertittel": "Velferdsstaten og deg",
+                    "bilde": "/images/velferd/hva-skatten-betaler-hero.webp",
+                    "sporsmal": { "tekst": "Hvorfor får alle det samme?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Svaret er alle sammen. Pengene kommer fra skatten som folk og bedrifter betaler." },
+                { "si": "Her ser vi på den andre siden: hva pengene blir brukt til." },
+                { "si": "Og hvorfor nesten alle får de samme godene, enten de er rike eller fattige." }
+            ]
+        },
+        {
+            "id": "velferdsstat",
+            "lyd": "vind",
+            "kapittel": "Velferdsstaten",
+            "visual": { "type": "VelferdLivet", "props": { "modus": "livet" } },
+            "replikker": [
+                { "si": "Norge er en velferdsstat. Velferd betyr rett og slett at folk har det trygt og godt." },
+                { "si": "En velferdsstat sørger i stor grad for at du får hjelp når du blir syk." },
+                { "si": "Den hjelper deg når du mister jobben, og når du blir gammel." },
+                { "si": "Og den gir alle rett til utdanning." }
+            ]
+        },
+        {
+            "id": "to-former",
+            "visual": { "type": "VelferdLivet", "props": { "modus": "former" } },
+            "replikker": [
+                { "si": "Hjelpen kommer i to former." },
+                { "si": "Den ene er tjenester. Det er noe staten eller kommunen gjør for deg, som skole, barnehage, sykehus og eldreomsorg." },
+                { "si": "Den andre er overføringer. Det er penger som blir satt inn på kontoen din." },
+                { "si": "Barnetrygd, pensjon og dagpenger når du mister jobben, er overføringer." }
+            ]
+        },
+        {
+            "id": "totalen",
+            "lyd": "stille",
+            "kapittel": "Hvor går pengene?",
+            "visual": { "type": "VelferdLivet", "props": { "modus": "total" } },
+            "replikker": [
+                { "si": "I 2025 brukte det offentlige i Norge 2685 milliarder kroner. Det offentlige er staten, fylkene og kommunene til sammen." },
+                { "si": "Det tallet er nesten umulig å se for seg." },
+                {
+                    "si": "Så la oss dele det på alle som bor i landet. Norge hadde 5 627 400 innbyggere 1. januar 2026.",
+                    "uttale": "Så la oss dele det på alle som bor i landet. Norge hadde fem millioner seks hundre og tjuesju tusen fire hundre innbyggere første januar 2026."
+                },
+                { "si": "Da blir det nesten en halv million kroner per person i året." }
+            ]
+        },
+        {
+            "id": "postene",
+            "visual": { "type": "VelferdLivet", "props": { "modus": "poster" } },
+            "replikker": [
+                { "si": "Men pengene blir ikke delt likt. Her er de største postene i 2025." },
+                { "si": "Pensjon og sosiale ytelser: 1049 milliarder kroner. Her ligger alderspensjon, sykepenger, uføretrygd, dagpenger og barnetrygd." },
+                { "si": "Helse: 392 milliarder. Det er sykehus, fastleger, medisiner og helsesykepleier." },
+                { "si": "Utdanning, fra grunnskole til universitet: 255 milliarder. Forsvar: 172 milliarder." },
+                { "si": "Fritid, kultur og religion: 79 milliarder. Offentlig orden og trygghet, blant annet politi og domstoler: 59 milliarder." }
+            ]
+        },
+        {
+            "id": "fire-av-ti",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 2685,
+                            "farget": 2685,
+                            "farge": "#64748b",
+                            "tittel": "2685 milliarder kroner",
+                            "fargeEtikett": "én prikk = én milliard",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 2685,
+                            "farget": 172,
+                            "farge": "#4d7c0f",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Forsvar: 172 milliarder",
+                            "fargeEtikett": "forsvar",
+                            "restEtikett": "alt annet",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 2685,
+                            "farget": 1049,
+                            "farge": "#d97706",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "Pensjon og penger til folk: noe å leve av",
+                            "fargeEtikett": "penger betalt ut til folk",
+                            "restEtikett": "alt annet",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Her er alle pengene som prikker. Hver prikk er én milliard kroner." },
+                { "si": "Hva koster mest? Det er ikke veier eller fly til Forsvaret." },
+                { "si": "Nesten fire av ti kroner går til pensjon og andre penger som blir betalt ut direkte til folk, mest pensjon til eldre. Det som koster mest, er altså at folk skal ha noe å leve av når de ikke kan jobbe." }
+            ]
+        },
+        {
+            "id": "barnetrygd",
+            "lyd": "rom",
+            "kapittel": "Hva koster du?",
+            "visual": { "type": "VelferdRegning", "props": { "modus": "barnetrygd" } },
+            "replikker": [
+                { "si": "La oss gjøre regningen din konkret. Tallene er snitt for hele landet." },
+                { "si": "Først barnetrygden. Alle barn i Norge gir foreldrene rett til barnetrygd fram til de fyller 18 år." },
+                {
+                    "si": "Fra februar 2026 er den 2012 kroner i måneden per barn.",
+                    "uttale": "Fra februar 2026 er den to tusen og tolv kroner i måneden per barn."
+                },
+                { "si": "Det er et fast beløp. Familien får like mye, enten foreldrene er rike eller fattige." }
+            ]
+        },
+        {
+            "id": "barnehage",
+            "visual": { "type": "VelferdRegning", "props": { "modus": "barnehage" } },
+            "replikker": [
+                { "si": "Så barnehagen. En plass i en kommunal barnehage kostet i snitt 296 000 kroner per barn i 2023." },
+                { "si": "Foreldrene betaler bare en liten del av dette." },
+                { "si": "Fra august 2025 kan en barnehage ta høyst 1200 kroner i måneden." },
+                { "si": "I kommunene der det bor færrest folk og avstandene er lengst, er det høyst 700 kroner. Resten betaler kommunen." }
+            ]
+        },
+        {
+            "id": "skolen",
+            "visual": { "type": "VelferdRegning", "props": { "modus": "skole" } },
+            "replikker": [
+                { "si": "Og så skolen. I 2023 gikk 637 000 elever i grunnskolen." },
+                { "si": "Kommunene brukte 105,5 milliarder kroner på de kommunale skolene sine det året. Grovt regnet blir det over 160 000 kroner per elev hvert år." },
+                { "si": "Nesten åtte av ti kroner går til lønn til lærere og andre som jobber på skolen." },
+                { "si": "Når du er 16 år, har fellesskapet betalt rundt 3,5 millioner kroner for deg, bare for barnetrygd, barnehage og skole." },
+                { "si": "Da har vi ikke regnet med legebesøk, vaksiner, tannlege, busser, bibliotek og idrettshaller." }
+            ]
+        },
+        {
+            "id": "universell",
+            "lyd": "stille",
+            "kapittel": "Alle får, også de rike",
+            "visual": { "type": "VelferdAlle", "props": { "modus": "universell" } },
+            "replikker": [
+                { "si": "Mange av ordningene i Norge er universelle. Det betyr at alle har like stor rett til dem, uansett hvor mye penger de har." },
+                { "si": "Sønnen til en direktør og datteren til en butikkansatt går på den samme skolen og får den samme barnetrygden." },
+                { "si": "Det motsatte er behovsprøvde ordninger. Der får bare de som har lite penger, hjelp." },
+                { "si": "I USA er mange av ordningene behovsprøvde og ganske små." }
+            ]
+        },
+        {
+            "id": "unntak",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Lik for alle?",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Sykepenger og dagpenger", "tekst": "beløpet avhenger ofte av hva du tjente før", "fraBeat": 0 },
+                        { "ikon": "stjerne", "tittel": "Barnetrygd", "tekst": "et av få unntak: lik for alle", "fraBeat": 1 },
+                        { "ikon": "hus", "tittel": "Skole og sykehus", "tekst": "tjenestene er universelle", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Men ikke alt er universelt. Får du penger fordi du er syk eller har mistet jobben, avhenger beløpet ofte av hva du tjente før." },
+                { "si": "Barnetrygden er et av få unntak. Den er lik for alle." },
+                { "si": "Tjenestene, som skole og sykehus, er derimot universelle. Målet er at de skal være så gode at også de som tjener mye, ikke føler at de må kjøpe private løsninger." }
+            ]
+        },
+        {
+            "id": "flytter",
+            "visual": { "type": "VelferdAlle", "props": { "modus": "flytt" } },
+            "replikker": [
+                { "si": "Det er ikke det du selv har betalt inn, som bestemmer hva du får. Pengene kommer fra skatten til alle, og du får hjelp når du trenger den." },
+                { "si": "Et barn har ikke betalt én krone i inntektsskatt, men får likevel gå på skolen." },
+                { "si": "En som har jobbet i 40 år og aldri blitt syk, har betalt mye mer enn hun har fått tilbake." },
+                { "si": "Slik flyttes penger fra dem som tjener mye, til dem som trenger det. Det er en viktig grunn til at forskjellene mellom rik og fattig er mindre i Norge enn i mange andre land." }
+            ]
+        },
+        {
+            "id": "debatten",
+            "kapittel": "Er det rettferdig?",
+            "visual": { "type": "VelferdAlle", "props": { "modus": "debatt" } },
+            "replikker": [
+                { "si": "Her blir det politikk. Er det rettferdig at en familie med millioninntekt får like mye barnetrygd som en familie som sliter med å betale husleia?" },
+                { "si": "De som vil gjøre flere ordninger behovsprøvde, sier at pengene da kan gå til dem som trenger dem mest." },
+                { "si": "Hvis rike familier ikke fikk barnetrygd, kunne staten gitt mer til de fattige uten å bruke flere penger." },
+                { "si": "De som vil beholde universelle ordninger, sier at når alle får, er det ingen skam å få. Ingen må bevise at de er fattige." },
+                { "si": "Og når også de som tjener mye, bruker den offentlige skolen og sykehuset, vil de betale for at tilbudet er godt. Ulempen er at det koster mer." },
+                { "si": "Partiene på Stortinget er uenige, og spørsmålet kommer opp hver høst, når regjeringen legger fram statsbudsjettet." }
+            ]
+        },
+        {
+            "id": "generasjoner",
+            "kapittel": "Du betaler allerede",
+            "visual": { "type": "VelferdAlle", "props": { "modus": "generasjoner" } },
+            "replikker": [
+                { "si": "Velferdsstaten handler ikke bare om voksne. Du er med i regnestykket allerede nå." },
+                { "si": "Hver gang du kjøper noe, betaler du moms, en skatt som er bakt inn i prisen. Og når du får din første sommerjobb, blir det trukket skatt av lønnen din." },
+                { "si": "Velferdsstaten er en avtale mellom generasjonene. Når du er liten, betaler de voksne for deg." },
+                { "si": "Når du blir voksen, betaler du for barna og de eldre. Og når du blir gammel, betaler de som er unge da, for deg." },
+                { "si": "Det fungerer bare så lenge nok folk jobber og betaler skatt." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En regning på millioner.", "fraBeat": 0 },
+                        { "tekst": "Fellesskapet har betalt nesten alt.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Hjelp når du trenger den,", "fraBeat": 1 },
+                        { "tekst": "ikke etter hva du har betalt inn.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "De voksne betaler for deg.", "fraBeat": 2 },
+                        { "tekst": "Så er det din tur.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Regningen for oppveksten din er på millioner. Familien din har betalt en liten bit. Resten betaler fellesskapet, mest med skatt." },
+                { "si": "Du får hjelp når du trenger den, ikke etter hva du selv har betalt inn." },
+                { "si": "Og når du blir voksen, er det din tur å betale for dem som kommer etter deg." }
+            ]
+        }
+    ]
+}
