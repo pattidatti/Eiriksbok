@@ -126,10 +126,10 @@ export function EmbetsmannsOlaboka({ beat }: VisualProps) {
                                 initial={{ opacity: 0, scale: 2, rotate: -14 }}
                                 animate={{ opacity: 1, scale: 1, rotate: -14 }}
                                 transition={{ delay: 1.6, type: 'spring', stiffness: 220, damping: 14 }}
-                                style={{ transformOrigin: '1180px 590px' }}
+                                style={{ transformOrigin: '1180px 640px' }}
                             >
-                                <rect x={940} y={540} width={480} height={100} rx={12} fill="none" stroke={ROD} strokeWidth={9} />
-                                <text x={1180} y={610} textAnchor="middle" fontSize={54} fontWeight={900} fill={ROD} letterSpacing={4}>
+                                <rect x={940} y={590} width={480} height={100} rx={12} fill="none" stroke={ROD} strokeWidth={9} />
+                                <text x={1180} y={660} textAnchor="middle" fontSize={54} fontWeight={900} fill={ROD} letterSpacing={4}>
                                     IKKE KALT INN
                                 </text>
                             </motion.g>

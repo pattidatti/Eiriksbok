@@ -13,8 +13,8 @@ const aarTilX = (aar: number) => X0 + ((aar - FRA) / (TIL - FRA)) * (X1 - X0);
 const MERKER: { aar: number; tekst: string; fraBeat: number; over: boolean }[] = [
     { aar: 1814, tekst: 'Grunnloven', fraBeat: 1, over: false },
     { aar: 1833, tekst: 'Bøndene vinner\nStortinget', fraBeat: 1, over: true },
-    { aar: 1837, tekst: 'Bygdene styrer\nseg selv', fraBeat: 2, over: false },
-    { aar: 1884, tekst: 'Regjeringen må ha\nStortinget med seg', fraBeat: 2, over: true },
+    { aar: 1837, tekst: 'Bygder og byer\nstyrer seg selv', fraBeat: 2, over: false },
+    { aar: 1884, tekst: 'Regjering med\nflertallet bak seg', fraBeat: 2, over: true },
     { aar: 1898, tekst: 'Alle menn\nfår stemme', fraBeat: 3, over: false },
     { aar: 1913, tekst: 'Alle kvinner\nfår stemme', fraBeat: 3, over: true },
 ];

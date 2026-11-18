@@ -410,7 +410,7 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
 }
 
 const LAPPER: Record<Modus, string[]> = {
-    valg: ['Stortinget i Christiania, 1833', 'Tre år før: valget i 1830', 'Valget i 1833', 'Bøndene er flest'],
+    valg: ['Stortinget i Christiania, 1833', 'Tre år før: Stortinget 1830', 'Stortinget 1833', 'Bøndene er flest'],
     regjering: [
         'Bøndene vinner salen',
         'Regjeringsbenken',
@@ -421,7 +421,7 @@ const LAPPER: Record<Modus, string[]> = {
         'En ny, bredere opposisjon',
         'Johan Sverdrup samler alle',
         'Riksretten 1884: statsrådene dømt',
-        'Regjeringen må ha Stortinget med seg',
+        'Starten på parlamentarismen',
     ],
 };
 
@@ -452,7 +452,7 @@ function Tavle({ modus, beat }: { modus: Modus; beat: number }) {
         return (
             <>
                 <Brikke farge={BONDE} tall={45} tekst="bønder i salen" />
-                <Brikke farge={EMBETSMANN} tekst="regjeringen: bare embetsmenn" />
+                {beat >= 1 && <Brikke farge={EMBETSMANN} tekst="regjeringen: bare embetsmenn" />}
             </>
         );
     }
