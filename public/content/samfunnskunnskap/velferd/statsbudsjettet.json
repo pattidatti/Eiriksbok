@@ -1,0 +1,296 @@
+{
+  "id": "statsbudsjettet",
+  "title": "Statsbudsjettet: Slik fordeles pengene",
+  "layout": "rich",
+  "year": "2026",
+  "category": "Velferd",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Statsbudsjettet er planen for statens inntekter og utgifter neste år. Regjeringen foreslår, Stortinget bestemmer.",
+    "Folketrygden er den største posten. Omtrent en firedel av inntektene kommer fra oljefondet.",
+    "Når rammene er vedtatt, betyr mer penger til én ting alltid mindre til noe annet."
+  ],
+  "externalUrl": "https://snl.no/Statsbudsjettet_i_Norge",
+  "factChecked": "2026-11-19",
+  "tags": [
+    "velferd",
+    "statsbudsjett",
+    "stortinget",
+    "økonomi",
+    "politikk"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Onsdag 7. oktober 2026, klokka litt over ti, gikk finansminister Jens Stoltenberg opp på talerstolen i Stortinget. Han skulle legge fram regjeringens forslag til statsbudsjett for 2027. Midt i talen sa han noe som er viktig for å forstå hele budsjettet: «Selv om vi har oljepenger i Norge, har vi ikke ubegrenset med penger. Når noen formål skal få mer, må noe annet få mindre …» (Stortinget, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Statsbudsjettet bestemmer hvor mye penger skolen i kommunen din får, hvor lang tid det tar å få time på sykehuset, og hvor mye barnetrygd foreldrene dine får. I artikkelen om [hva skatten betaler for](/samfunnskunnskap/velferd/hva-skatten-betaler) så vi hva pengene går til. Her skal vi se på hvem som bestemmer fordelingen, og hvorfor det blir så mye krangel om den hver høst."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Finansministeren holder tale fra talerstolen i Stortinget",
+      "caption": "Hver høst legger finansministeren fram regjeringens forslag til statsbudsjett i Stortinget. Talen kalles finanstalen."
+    },
+    {
+      "type": "header",
+      "text": "Hva er et statsbudsjett?"
+    },
+    {
+      "type": "text",
+      "content": "Et statsbudsjett er en plan for hvor mye penger staten skal få inn, og hvor mye den skal bruke, det neste året (Vabo mfl., 2026). Det ligner på et budsjett du kan lage for dine egne penger, bare mye større. Du kan lese om hvordan du lager ditt eget i artikkelen om [budsjett](/samfunnskunnskap/personlig-okonomi/budsjett)."
+    },
+    {
+      "type": "text",
+      "content": "Regjeringen skriver forslaget, men det er Stortinget som bestemmer. Grunnloven § 75 sier at det er Stortinget som har makt til å kreve inn skatt og avgifter, og til å bevilge pengene staten trenger (Stortinget, 2025). Å bevilge betyr å gi lov til å bruke en bestemt sum til et bestemt formål. Regjeringen må altså få flertall i Stortinget for budsjettet sitt."
+    },
+    {
+      "type": "text",
+      "content": "Forslaget fra regjeringen kalles «gul bok», fordi heftet har gul forside. Når Stortinget har forhandlet ferdig og vedtatt budsjettet, kalles det endelige budsjettet «blå bok» (Vabo mfl., 2026). Statsbudsjettet skal gå i null. Det betyr at det som kommer inn, skal være like mye som det som går ut."
+    },
+    {
+      "type": "header",
+      "text": "Hvor kommer pengene fra?"
+    },
+    {
+      "type": "text",
+      "content": "Det meste av pengene kommer fra skatter og avgifter. Skatt på inntekt og formue, arbeidsgiveravgift, trygdeavgift og moms utgjør nesten tre firedeler av inntektene (Vabo mfl., 2026). Hvordan det fungerer, kan du lese om i artikkelen om [skatt](/samfunnskunnskap/okonomi/skatt)."
+    },
+    {
+      "type": "text",
+      "content": "Men skattene er ikke nok til å betale alt staten bruker. Omtrent en firedel av inntektene kommer fra [oljefondet](/samfunnskunnskap/okonomi/oljefondet) (Vabo mfl., 2026). Hvor mye som kan tas ut, styres av handlingsregelen. Det er en regel fra 2001 for hvor mye av fondet staten kan bruke. I dag er grensen satt til tre prosent av fondet (Vabo mfl., 2026)."
+    },
+    {
+      "type": "text",
+      "content": "I forslaget for 2027 vil regjeringen bruke 608,4 milliarder kroner fra fondet. Det er 2,7 prosent av fondet, altså under grensen (NTB, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Hvor går pengene?"
+    },
+    {
+      "type": "text",
+      "content": "Slik så de største utgiftene i statsbudsjettet for 2026 ut, i milliarder kroner (Vabo mfl., 2026):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Folketrygden: 744. Alderspensjon, uføretrygd, sykepenger og andre penger som blir betalt ut til folk.",
+        "Kommuner og fylker: 259. Pengene går blant annet til skoler, barnehager og sykehjem.",
+        "Sykehusene: 237.",
+        "Forsvaret: 180.",
+        "Veier og jernbane: 98.",
+        "Universiteter, høyskoler og forskning: 65.",
+        "Bistand til andre land: 54.",
+        "Politiet: 32.",
+        "Barnetrygd og kontantstøtte: 30.",
+        "Alt annet: 466."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Legger du sammen tallene, blir det over 2 100 milliarder kroner. Den aller største posten er folketrygden, som er omtrent en tredel av hele budsjettet. Omtrent halvparten av pengene i folketrygden går til alderspensjon (Vabo mfl., 2026). Det er altså pensjonen til de eldre som koster mest av alt."
+    },
+    {
+      "type": "text",
+      "content": "Utgiftene til forsvaret har økt mye etter 2022. Det skyldes både militær støtte til Ukraina og at Norge bygger opp sitt eget forsvar (Vabo mfl., 2026). I forslaget for 2027 vil regjeringen bruke 192 milliarder kroner til forsvaret, medregnet støtten til Ukraina (Stortinget, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "content": "Statsbudsjett: planen for statens inntekter og utgifter neste år. Bevilge: å gi lov til å bruke en sum penger til et bestemt formål. Gul bok: regjeringens forslag. Blå bok: budsjettet Stortinget har vedtatt. Finanstalen: talen der finansministeren legger fram budsjettet. Ramme: den største summen et område kan få. Mindretallsregjering: en regjering som ikke har flertall i Stortinget alene. Revidert budsjett: endringene i budsjettet som kommer i mai."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Et helt år med arbeid"
+    },
+    {
+      "type": "text",
+      "content": "Arbeidet med et statsbudsjett begynner omtrent et år før det blir lagt fram (Stortinget, 2025). Alle departementene, som Helsedepartementet og Kunnskapsdepartementet, vil ha penger til sine områder. Finansdepartementet holder styr på helheten. Slik går året (Vabo mfl., 2026):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Mars: Regjeringen møtes på marskonferansen og bestemmer hvor mye hvert departement omtrent skal få.",
+        "August: På augustkonferansen ser regjeringen på forslagene og fordeler penger til nye saker.",
+        "Oktober: Finansministeren legger fram forslaget og holder finanstalen. Det må skje senest seks dager etter at Stortinget åpner om høsten.",
+        "November: Partiene forhandler. Innen 30. november må de bli enige om rammene.",
+        "Desember: Stortinget stemmer over hele budsjettet.",
+        "1. januar: Budsjettet gjelder fra årets første dag."
+      ]
+    },
+    {
+      "type": "header",
+      "text": "Kampen på Stortinget"
+    },
+    {
+      "type": "text",
+      "content": "Når forslaget er lagt fram, starter den travleste tiden på Stortinget. I to og en halv måned blir budsjettet behandlet i komiteene, det blir holdt høringer, og partiene forhandler (Stortinget, 2025). En komité er en gruppe stortingsrepresentanter som jobber med ett område, for eksempel helse eller utdanning. Hele budsjettet blir delt opp mellom Stortingets 12 fagkomiteer. Du kan lese mer om hvordan [Stortinget](/samfunnskunnskap/styringsformer/stortinget) jobber i en egen artikkel."
+    },
+    {
+      "type": "text",
+      "content": "Partiene som ikke sitter i regjering, lager sine egne alternative budsjetter. Der viser de hva de selv ville prioritert, altså hva de mener er viktigst (Thomassen, 2022). Et parti kan for eksempel ville bruke mer på skolen og mindre på veier, eller kutte skatten og spare penger andre steder."
+    },
+    {
+      "type": "text",
+      "content": "Hvis regjeringen ikke har flertall i Stortinget alene, må den forhandle med andre partier. Det kalles en mindretallsregjering. Da blir de alternative budsjettene til støttepartiene utgangspunktet for forhandlingene (Thomassen, 2022). I finanstalen i 2026 nevnte Stoltenberg SV, Senterpartiet, Rødt og Miljøpartiet De Grønne som regjeringens budsjettpartnere, og sa at han var trygg på at de igjen ville bli enige (Stortinget, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Innen 30. november skal finanskomiteen levere finansinnstillingen. Der står rammene, altså hvor mye hvert område skal få til sammen (Stortinget, 2025). Etter at Stortinget har vedtatt rammene, kan de andre komiteene bare flytte penger innenfor sin egen ramme. Vil de bruke mer på én ting, må de bruke mindre på noe annet innenfor det samme området (Stortinget, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv å være finansminister. Du har lovet velgerne noe, men rammen er fast. Hvor henter du pengene?"
+    },
+    {
+      "type": "component",
+      "name": "BudsjettKabalen",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor krangle om små summer?"
+    },
+    {
+      "type": "text",
+      "content": "Budsjettet er på over 2 000 milliarder kroner. Likevel kan partiene krangle i ukevis om noen hundre millioner. Det kan virke rart, men det henger sammen med det du nettopp prøvde. Når rammen er bestemt, betyr mer penger til én ting alltid mindre til noe annet. Og noen merker alltid kuttet."
+    },
+    {
+      "type": "text",
+      "content": "En milliard er dessuten ikke like mye overalt. For folketrygden er én milliard en bitteliten del. For politiet, som fikk 32 milliarder i 2026, er det ganske mye (Vabo mfl., 2026). En liten sum i det store budsjettet kan bety mange flere politifolk eller studieplasser."
+    },
+    {
+      "type": "text",
+      "content": "Budsjettet er også et av de tydeligste svarene på hva et parti egentlig mener. Det er lett å si at skolen er viktig. Det er vanskeligere å vise det med penger, når pengene må tas fra noe annet. Budsjettet er den viktigste beslutningen Stortinget tar hvert år (Vabo mfl., 2026). Et lite parti som er med i forhandlingene, vil gjerne kunne vise velgerne at det fikk gjennom noe som var viktig for dem."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Stortingssalen full av representanter under en avstemning",
+      "caption": "I desember stemmer Stortinget over budsjettet. Først da er pengene fordelt."
+    },
+    {
+      "type": "header",
+      "text": "Budsjettet lever videre"
+    },
+    {
+      "type": "text",
+      "content": "Når Stortinget har vedtatt budsjettet, må regjeringen følge det (Vabo mfl., 2026). Hver statlig etat, for eksempel politiet eller et universitet, får sin del og må holde seg innenfor den. Men verden står ikke stille. Prisene kan stige, eller noe uventet kan skje, som en krig eller en pandemi."
+    },
+    {
+      "type": "text",
+      "content": "Derfor blir budsjettet endret underveis. De største endringene kommer i mai, i det som kalles revidert nasjonalbudsjett. I desember blir det justert en siste gang, når året snart er over (Stortinget, 2025). Etterpå lager Finansdepartementet et regnskap som viser hva pengene faktisk ble brukt til."
+    },
+    {
+      "type": "text",
+      "content": "Neste gang du hører på nyhetene om at partiene «krangler om budsjettet», vet du hva det handler om. Det er ikke bare tall. Det er en kamp om hvem som skal få mer, hvem som skal få mindre, og hva slags samfunn vi skal ha."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "NTB. (2026, 7. oktober). *Vil bruke 608,4 milliarder oljekroner neste år*. Teknisk Ukeblad. [tu.no](https://www.tu.no/energi/vil-bruke-6084-mrd-oljekroner-neste-ar/7144202)",
+          "Stortinget. (2025). *Budsjettarbeidet*. Hentet 19.11.2026 fra [stortinget.no](https://www.stortinget.no/no/Stortinget-og-demokratiet/Arbeidet/Budsjettarbeidet/)",
+          "Stortinget. (2026). *Referat fra Stortingets møte onsdag 7. oktober 2026: Finanstalen*. [stortinget.no](https://stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Referater/Stortinget/2026-2027/refs-202627-10-07/?m=1)",
+          "Thomassen, E. (2022). *Alternative statsbudsjetter*. Store norske leksikon. Hentet 19.11.2026 fra [snl.no](https://snl.no/alternative_statsbudsjetter)",
+          "Vabo, S. I., Stoltz, G. & Thomassen, E. (2026). *Statsbudsjettet i Norge*. Store norske leksikon. Hentet 19.11.2026 fra [snl.no](https://snl.no/Statsbudsjettet_i_Norge)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er et statsbudsjett, og hvem bestemmer det til slutt?",
+          "Hva er forskjellen på «gul bok» og «blå bok»?",
+          "Hvor kommer pengene i statsbudsjettet fra? Nevn to kilder.",
+          "Hvilken post er den største i statsbudsjettet, og hva går mest av pengene der til?"
+        ],
+        "reflekter": [
+          "Forklar hvorfor en mindretallsregjering må forhandle med andre partier om budsjettet.",
+          "Hva skjer når Stortinget har vedtatt rammene? Hvorfor gjør det at mer til én ting betyr mindre til noe annet?",
+          "Hvorfor kan én milliard være lite for én post og mye for en annen? Bruk et eksempel fra artikkelen.",
+          "Forklar hvorfor mange sier at budsjettet viser hva et parti egentlig mener."
+        ],
+        "gaaVidere": [
+          "Lag ditt eget løfte til velgerne som koster 5 milliarder kroner. Skriv et kort avsnitt om hvor du ville hentet pengene, og hvem som ville merket det.",
+          "Følg med på nyhetene de neste ukene. Finn én sak om budsjettforhandlingene, og forklar hva partiene er uenige om.",
+          "Diskuter i klassen: Bør staten bruke mer av oljefondet når det trengs penger, eller bør handlingsregelen holdes strengt? Finn ett argument for hvert syn."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hvem vedtar statsbudsjettet i Norge?",
+            "options": [
+              "Kongen",
+              "Regjeringen",
+              "Stortinget",
+              "Finansdepartementet"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Regjeringen lager forslaget, men Grunnloven § 75 gir Stortinget makten til å bevilge pengene."
+          },
+          {
+            "question": "Hva er den største utgiftsposten i statsbudsjettet?",
+            "options": [
+              "Forsvaret",
+              "Folketrygden",
+              "Veier og jernbane",
+              "Sykehusene"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Folketrygden er omtrent en tredel av budsjettet. Halvparten går til alderspensjon."
+          },
+          {
+            "question": "Hvor stor del av statens inntekter kommer omtrent fra oljefondet?",
+            "options": [
+              "En tidel",
+              "En firedel",
+              "Halvparten",
+              "Tre firedeler"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Omtrent en firedel kommer fra oljefondet. Resten kommer i hovedsak fra skatter og avgifter."
+          },
+          {
+            "question": "Når legger finansministeren fram budsjettforslaget?",
+            "options": [
+              "I januar",
+              "I mai",
+              "I begynnelsen av oktober",
+              "I desember"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Forslaget legges fram senest seks dager etter at Stortinget åpner i oktober. Talen kalles finanstalen."
+          },
+          {
+            "question": "Hva er et alternativt budsjett?",
+            "options": [
+              "Et budsjett for kommunene",
+              "Et budsjett som et parti utenfor regjeringen lager for å vise sine prioriteringer",
+              "Et budsjett som brukes hvis det blir krig",
+              "Det endelige budsjettet Stortinget vedtar"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Partiene i opposisjon lager alternative budsjetter. De viser hva partiet mener er viktigst."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
