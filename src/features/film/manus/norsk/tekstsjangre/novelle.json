@@ -1,0 +1,199 @@
+{
+    "id": "novelle",
+    "tittel": "Novelle: Den korte fortellingen",
+    "kilde": "/norsk/tekstsjangre/novelle",
+    "bilde": "/images/norsk/tekstsjangre/novelle-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-19", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "doren",
+            "lyd": "regn",
+            "kapittel": "Midt i",
+            "visual": { "type": "NovelleRommet", "props": { "modus": "start" } },
+            "replikker": [
+                { "si": "Tenk deg at du åpner en bok, og den første setningen er denne: Døra smeller igjen." },
+                { "si": "Hvem smalt med døra, og hvorfor? Du vet ingenting ennå. Du er kastet rett inn i handlingen." },
+                { "si": "En person står ved bordet og knytter nevene. Ingen har skrevet at personen er sint." },
+                { "si": "Men du skjønner det likevel. Mange noveller starter slik, midt i handlingen. Det kalles in medias res, som betyr midt inn i begivenhetene." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NOVELLE",
+                    "undertittel": "Den korte fortellingen",
+                    "bilde": "/images/norsk/tekstsjangre/novelle-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kan så lite si så mye?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "En novelle er en kort fortelling som forfatteren har diktet opp." },
+                { "si": "Den handler gjerne om få personer, over kort tid." },
+                { "si": "I denne filmen skal vi se hvorfor novellen er så kort, og hvordan den likevel kan si så mye." }
+            ]
+        },
+        {
+            "id": "nyhet",
+            "lyd": "stille",
+            "kapittel": "Et gammelt ord",
+            "visual": { "type": "NovelleKart", "props": { "modus": "italia" } },
+            "replikker": [
+                { "si": "Ordet novelle er gammelt. Det kommer fra ordet novella, som betyr nyhet." },
+                { "si": "I Italia på 1200- og 1300-tallet brukte folk ordet om korte fortellinger i prosa." },
+                { "si": "Prosa er vanlig tekst, slik du leser i en avis eller en bok. Det er ikke vers, som i et dikt." },
+                { "si": "Og det er akkurat den betydningen vi bruker i dag." }
+            ]
+        },
+        {
+            "id": "dekameron",
+            "visual": { "type": "NovelleKart", "props": { "modus": "dekameron" } },
+            "replikker": [
+                { "si": "Rundt år 1353 kom boka Dekameronen, skrevet av Giovanni Boccaccio. Den regnes som den første novellesamlingen." },
+                { "si": "I boka herjer pesten. Sju kvinner og tre menn flykter ut av byen." },
+                { "si": "Der forteller de historier til hverandre. Til sammen blir det 100 historier." },
+                { "si": "Flukten fra pesten er en ramme rundt alle historiene. Derfor kaller vi det en rammefortelling." }
+            ]
+        },
+        {
+            "id": "kielland",
+            "kapittel": "Til Norge",
+            "visual": { "type": "NovelleKart", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "I Norge kom gjennombruddet på slutten av 1800-tallet." },
+                { "si": "I 1879 ga Alexander Kielland ut boka Novelletter." },
+                { "si": "Så kom to samlinger til: Nye Novelletter og To Novelletter." },
+                { "si": "De tre samlingene regnes som høydepunkter i norsk novellekunst på 1800-tallet." }
+            ]
+        },
+        {
+            "id": "lyset",
+            "visual": { "type": "NovelleForm", "props": { "modus": "lys" } },
+            "replikker": [
+                { "si": "Kielland fant en ny form. Han startet med én liten ting." },
+                { "si": "Det kunne være én hendelse, et tilfeldig møte, eller en tanke som bare farer forbi." },
+                { "si": "Fra den lille tingen kastet han lys over et problem i samfunnet." },
+                { "si": "En novelle kan altså starte smått, men vise noe stort." }
+            ]
+        },
+        {
+            "id": "hylla",
+            "lyd": "rom",
+            "visual": { "type": "NovelleRommet", "props": { "modus": "hylle" } },
+            "replikker": [
+                { "si": "Etter Kielland har mange skrevet noveller i Norge." },
+                { "si": "Cora Sandel og Tarjei Vesaas var med på å fornye sjangeren." },
+                { "si": "Kjell Askildsen regnes som Norges mest kjente novelleforfatter i moderne tid." },
+                { "si": "Og i nyere tid har Frode Grytten og Gunnhild Øyehaug ført novellen videre." }
+            ]
+        },
+        {
+            "id": "saksa",
+            "lyd": "stille",
+            "kapittel": "Kort og tett",
+            "visual": { "type": "NovelleForm", "props": { "modus": "saks" } },
+            "replikker": [
+                { "si": "Hva skiller en novelle fra en roman? En roman kan bre seg ut over hundrevis av sider." },
+                { "si": "En novelle er konsentrert. Det betyr at forfatteren tar bort alt som ikke trengs." },
+                { "si": "Det som blir igjen, er bare det viktigste. Hvert ord blir veid nøye." },
+                { "si": "Forfatteren Edgar Allan Poe mente at en novelle skulle være så kort at du kan lese den uten å ta pause." },
+                { "si": "Derfor må du være oppmerksom. Mye av meningen ligger mellom linjene, og du må selv tenke deg til den." }
+            ]
+        },
+        {
+            "id": "rammer",
+            "visual": { "type": "NovelleForm", "props": { "modus": "rammer" } },
+            "replikker": [
+                { "si": "En roman kan følge mange personer gjennom et langt liv. I en novelle er det sjelden plass til så mange." },
+                { "si": "Ofte møter vi bare hovedpersonen, og kanskje én eller to til." },
+                { "si": "Tiden er kort. Handlingen varer gjerne noen timer, en dag eller noen få dager." },
+                { "si": "Og det er sjelden sidehistorier. Alt som skjer, bygger opp under hovedkonflikten." }
+            ]
+        },
+        {
+            "id": "kurven",
+            "visual": { "type": "NovelleForm", "props": { "modus": "kurve" } },
+            "replikker": [
+                { "si": "Handlingen bygger seg ofte opp mot en topp." },
+                { "si": "Der kommer et vendepunkt. Noe avgjørende skjer, og det endrer situasjonen eller det personen forstår." },
+                { "si": "Mange noveller slutter brått etterpå, gjerne med en overraskende vri." },
+                { "si": "Andre har en åpen slutt. Da må du som leser selv tenke deg hva som skjer videre." }
+            ]
+        },
+        {
+            "id": "vis",
+            "lyd": "rom",
+            "kapittel": "Vis, ikke fortell",
+            "visual": { "type": "NovelleRommet", "props": { "modus": "dor" } },
+            "replikker": [
+                { "si": "Tilbake til rommet fra starten av filmen." },
+                { "si": "Forfatteren kunne ha skrevet: Personen var sint. Men det står ingen steder." },
+                { "si": "I stedet ser vi det: Døra smeller, og personen knytter nevene." },
+                { "si": "Dette grepet heter show, don't tell. Det er engelsk og betyr: vis, ikke fortell.",
+                  "uttale": "Dette grepet heter sjåo, dont tell. Det er engelsk og betyr: vis, ikke fortell." },
+                { "si": "Handlinger og replikker viser oss hvordan personene har det." }
+            ]
+        },
+        {
+            "id": "symbol",
+            "lyd": "storm",
+            "visual": { "type": "NovelleRommet", "props": { "modus": "symbol" } },
+            "replikker": [
+                { "si": "Se på blomsten i vasen. Den visner." },
+                { "si": "I en novelle kan en helt vanlig ting bety noe mye større. Da kaller vi tingen et symbol." },
+                { "si": "En visnet blomst kan stå for kjærlighet som er tapt." },
+                { "si": "Og stormen utenfor vinduet kan speile kaoset inne i personen." }
+            ]
+        },
+        {
+            "id": "verktoy",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "To verktøy til",
+                    "punkter": [
+                        { "ikon": "lampe", "tittel": "Språklige bilder", "tekst": "Metaforer og sammenligninger gir et tydelig bilde på liten plass", "fraBeat": 0 },
+                        { "ikon": "haer", "tittel": "Synsvinkel", "tekst": "«Jeg» eller «han/hun»: avgjør hva leseren får vite", "fraBeat": 1 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Forfatteren bruker også språklige bilder, som metaforer og sammenligninger. De gir et tydelig bilde i hodet ditt, på liten plass." },
+                { "si": "Og så er det synsvinkelen. Forteller en jeg-person, eller en som sier han eller hun? Det valget er avgjørende, for det bestemmer hva du som leser får vite." }
+            ]
+        },
+        {
+            "id": "lupen",
+            "kapittel": "Slik leser du en novelle",
+            "visual": { "type": "NovelleLupe" },
+            "replikker": [
+                { "si": "Når du skal analysere en novelle, leter du etter to ting." },
+                { "si": "Det første er motivet. Det er det konkrete som skjer i teksten." },
+                { "si": "Det andre er temaet. Det er det teksten egentlig handler om, på et dypere plan." },
+                { "si": "Spør deg selv: Hva er konflikten? Og hvordan utvikler hovedpersonen seg?" },
+                { "si": "Hva prøver forfatteren å si om det å være menneske? Se også på tittelen. Den gir ofte et hint om temaet." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "En novelle er kort, men den kan si mye.", "fraBeat": 0 },
+                        { "tekst": "Den starter ofte midt i, og viser i stedet for å forklare.", "fraBeat": 1 },
+                        { "tekst": "Mye av meningen ligger mellom linjene. Der kommer du inn.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "En novelle er kort, men den kan si mye." },
+                { "si": "Den starter ofte midt i handlingen, og den viser i stedet for å forklare." },
+                { "si": "Mye av meningen ligger mellom linjene. Og det er der du som leser kommer inn." }
+            ]
+        }
+    ]
+}
