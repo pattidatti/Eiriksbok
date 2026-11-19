@@ -1,0 +1,211 @@
+{
+    "id": "statsbudsjettet",
+    "tittel": "Statsbudsjettet: Slik fordeles pengene",
+    "kilde": "/samfunnskunnskap/velferd/statsbudsjettet",
+    "bilde": "/images/velferd/statsbudsjettet-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-19", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "talen",
+            "lyd": "rom",
+            "kapittel": "Finanstalen",
+            "visual": { "type": "StatsbudsjettSalen", "props": { "modus": "talen" } },
+            "replikker": [
+                { "si": "Onsdag 7. oktober 2026, klokka litt over ti. Vi er i Stortinget.", "uttale": "Onsdag sjuende oktober 2026, klokka litt over ti. Vi er i Stortinget." },
+                { "si": "Finansminister Jens Stoltenberg går opp på talerstolen." },
+                { "si": "Han skal legge fram regjeringens forslag til statsbudsjett for 2027." },
+                { "si": "Midt i talen sier han: Selv om vi har oljepenger i Norge, har vi ikke ubegrenset med penger." },
+                { "si": "Når noen formål skal få mer, må noe annet få mindre." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Statsbudsjettet",
+                    "undertittel": "Slik fordeles pengene",
+                    "bilde": "/images/velferd/statsbudsjettet-hero.webp",
+                    "tall": [{ "verdi": 2100, "etikett": "milliarder kroner i 2026", "fraBeat": 2, "omtrent": false, "prefiks": "over" }],
+                    "sporsmal": { "tekst": "Hvem bestemmer, og hvorfor krangler de?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Statsbudsjettet bestemmer hvor mye penger skolen i kommunen din får." },
+                { "si": "Det bestemmer hvor lang tid det tar å få time på sykehuset, og hvor mye barnetrygd foreldrene dine får." },
+                { "si": "Budsjettet for 2026 var på over 2100 milliarder kroner." },
+                { "si": "Hvem bestemmer hvordan pengene skal deles? Og hvorfor blir det så mye krangel om det hver høst?" }
+            ]
+        },
+        {
+            "id": "makt",
+            "kapittel": "Hvem bestemmer?",
+            "visual": { "type": "StatsbudsjettSalen", "props": { "modus": "makt" } },
+            "replikker": [
+                { "si": "Et statsbudsjett er en plan for hvor mye penger staten skal få inn, og hvor mye den skal bruke, det neste året." },
+                { "si": "Regjeringen skriver forslaget. Men det er Stortinget som bestemmer." },
+                { "si": "Det står i Grunnloven, paragraf 75. Det er Stortinget som kan kreve inn skatt og bevilge penger. Å bevilge betyr å gi lov til å bruke en sum til et bestemt formål." },
+                { "si": "Forslaget fra regjeringen kalles gul bok, fordi heftet har gul forside." },
+                { "si": "Når Stortinget har forhandlet ferdig og vedtatt budsjettet, kalles det blå bok." }
+            ]
+        },
+        {
+            "id": "inntekter",
+            "lyd": "stille",
+            "kapittel": "Hvor kommer pengene fra?",
+            "visual": { "type": "StatsbudsjettPenger", "props": { "modus": "inntekter" } },
+            "replikker": [
+                { "si": "Hvor kommer pengene fra? Det meste kommer fra skatter og avgifter." },
+                { "si": "Skatt på inntekt og formue, arbeidsgiveravgift, trygdeavgift og moms. Til sammen er det nesten tre firedeler av inntektene." },
+                { "si": "Men skattene er ikke nok til å betale alt staten bruker." },
+                { "si": "Omtrent en firedel av inntektene kommer fra oljefondet." },
+                { "si": "Og budsjettet skal gå i null. Det som kommer inn, skal være like mye som det som går ut." }
+            ]
+        },
+        {
+            "id": "handlingsregelen",
+            "visual": { "type": "StatsbudsjettPenger", "props": { "modus": "maaler" } },
+            "replikker": [
+                { "si": "Hvor mye som kan tas ut av fondet, styres av handlingsregelen. Det er en regel fra 2001." },
+                { "si": "I dag er grensen satt til tre prosent av fondet." },
+                { "si": "I forslaget for 2027 vil regjeringen bruke 608,4 milliarder kroner fra fondet.", "uttale": "I forslaget for 2027 vil regjeringen bruke seks hundre og åtte komma fire milliarder kroner fra fondet." },
+                { "si": "Det er 2,7 prosent av fondet. Altså under grensen.", "uttale": "Det er to komma sju prosent av fondet. Altså under grensen." }
+            ]
+        },
+        {
+            "id": "poster",
+            "kapittel": "Hvor går pengene?",
+            "visual": { "type": "StatsbudsjettPenger", "props": { "modus": "poster" } },
+            "replikker": [
+                { "si": "Hvor går så pengene? Her er de største utgiftene i budsjettet for 2026, i milliarder kroner." },
+                { "si": "Kommuner og fylker får 259. Pengene går blant annet til skoler, barnehager og sykehjem." },
+                { "si": "Sykehusene får 237. Forsvaret får 180. Utgiftene til forsvaret har økt mye etter 2022, blant annet på grunn av støtten til Ukraina." },
+                { "si": "Veier og jernbane får 98. Universiteter og forskning 65. Bistand til andre land 54." },
+                { "si": "Politiet får 32, og barnetrygd og kontantstøtte 30. Alt annet blir til sammen 466." },
+                { "si": "Men ser du det store, tomme feltet? Den største posten mangler ennå." }
+            ]
+        },
+        {
+            "id": "folketrygden",
+            "visual": { "type": "StatsbudsjettPenger", "props": { "modus": "folketrygd" } },
+            "replikker": [
+                { "si": "Det er folketrygden: 744 milliarder kroner." },
+                { "si": "Folketrygden er alderspensjon, uføretrygd, sykepenger og andre penger som blir betalt ut til folk. Den er omtrent en tredel av hele budsjettet." },
+                { "si": "Omtrent halvparten av pengene i folketrygden går til alderspensjon. Det er altså pensjonen til de eldre som koster mest av alt." }
+            ]
+        },
+        {
+            "id": "aaret",
+            "kapittel": "Et helt år",
+            "visual": { "type": "StatsbudsjettRamme", "props": { "modus": "aaret" } },
+            "replikker": [
+                { "si": "Et budsjett blir ikke laget på en dag. Arbeidet begynner omtrent et år før det blir lagt fram." },
+                { "si": "Alle departementene, som Helsedepartementet og Kunnskapsdepartementet, vil ha penger til sine områder. Finansdepartementet holder styr på helheten." },
+                { "si": "I mars møtes regjeringen og bestemmer omtrent hvor mye hvert departement skal få." },
+                { "si": "I august ser regjeringen på forslagene og fordeler penger til nye saker." },
+                { "si": "I oktober legger finansministeren fram forslaget. Det må skje senest seks dager etter at Stortinget åpner om høsten." },
+                { "si": "I november forhandler partiene. I desember stemmer Stortinget, og 1. januar begynner budsjettet å gjelde.", "uttale": "I november forhandler partiene. I desember stemmer Stortinget, og første januar begynner budsjettet å gjelde." }
+            ]
+        },
+        {
+            "id": "komiteene",
+            "lyd": "rom",
+            "kapittel": "Kampen på Stortinget",
+            "visual": { "type": "StatsbudsjettSalen", "props": { "modus": "komiteer" } },
+            "replikker": [
+                { "si": "Når forslaget er lagt fram, starter den travleste tiden på Stortinget. Den varer i to og en halv måned." },
+                { "si": "Budsjettet blir delt opp mellom Stortingets 12 fagkomiteer. En komité er en gruppe stortingsrepresentanter som jobber med ett område, for eksempel helse eller utdanning." },
+                { "si": "Partiene som ikke sitter i regjering, lager sine egne alternative budsjetter. Der viser de hva de mener er viktigst." },
+                { "si": "Et parti kan for eksempel ville bruke mer på skolen og mindre på veier." }
+            ]
+        },
+        {
+            "id": "flertall",
+            "visual": { "type": "StatsbudsjettSalen", "props": { "modus": "flertall" } },
+            "replikker": [
+                { "si": "Hvis regjeringen ikke har flertall i Stortinget alene, kalles den en mindretallsregjering." },
+                { "si": "Da må den forhandle med andre partier for å få budsjettet sitt vedtatt." },
+                { "si": "De alternative budsjettene til støttepartiene blir utgangspunktet for forhandlingene." },
+                { "si": "I finanstalen i 2026 nevnte Stoltenberg SV, Senterpartiet, Rødt og Miljøpartiet De Grønne som budsjettpartnere." },
+                { "si": "Han sa at han var trygg på at de igjen ville bli enige." }
+            ]
+        },
+        {
+            "id": "rammen",
+            "lyd": "stille",
+            "kapittel": "Rammen",
+            "visual": { "type": "StatsbudsjettRamme", "props": { "modus": "ramme" } },
+            "replikker": [
+                { "si": "Innen 30. november skal finanskomiteen på Stortinget levere rammene. En ramme er hvor mye hvert område skal få til sammen.", "uttale": "Innen trettiende november skal finanskomiteen på Stortinget levere rammene. En ramme er hvor mye hvert område skal få til sammen." },
+                { "si": "Når Stortinget har vedtatt rammene, kan komiteene bare flytte penger innenfor sin egen ramme." },
+                { "si": "Vil de bruke mer på én ting, må de bruke mindre på noe annet innenfor det samme området." },
+                { "si": "Tenk deg at du er finansminister. Du har lovet velgerne noe, men rammen er fast. Hvor henter du pengene?" }
+            ]
+        },
+        {
+            "id": "milliarden",
+            "kapittel": "Hvorfor krangle?",
+            "visual": { "type": "StatsbudsjettRamme", "props": { "modus": "milliard" } },
+            "replikker": [
+                { "si": "Budsjettet er på over 2000 milliarder kroner. Likevel kan partiene krangle i ukevis om noen hundre millioner." },
+                { "si": "Når rammen er bestemt, betyr mer penger til én ting alltid mindre til noe annet. Og noen merker alltid kuttet." },
+                { "si": "En milliard er dessuten ikke like mye overalt. For folketrygden er én milliard en bitteliten del." },
+                { "si": "For politiet, som fikk 32 milliarder i 2026, er det ganske mye. Det kan bety mange flere politifolk." }
+            ]
+        },
+        {
+            "id": "mener",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Budsjettet viser hva partiene mener",
+                    "punkter": [
+                        { "ikon": "snakk", "tittel": "Lett å si", "tekst": "«skolen er viktig»", "fraBeat": 1 },
+                        { "ikon": "penger", "tittel": "Vanskelig å vise", "tekst": "pengene må tas fra noe annet", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "Viktigste vedtaket", "tekst": "som Stortinget gjør hvert år", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Små partier", "tekst": "vil vise velgerne hva de fikk gjennom", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Budsjettet er også et av de tydeligste svarene på hva et parti egentlig mener." },
+                { "si": "Det er lett å si at skolen er viktig. Det er vanskeligere å vise det med penger, når pengene må tas fra noe annet." },
+                { "si": "Budsjettet er den viktigste beslutningen Stortinget tar hvert år." },
+                { "si": "Et lite parti som er med i forhandlingene, vil gjerne vise velgerne at det fikk gjennom noe som var viktig for dem." }
+            ]
+        },
+        {
+            "id": "lever-videre",
+            "kapittel": "Budsjettet lever videre",
+            "visual": { "type": "StatsbudsjettRamme", "props": { "modus": "revidert" } },
+            "replikker": [
+                { "si": "Når budsjettet er vedtatt, må regjeringen følge det. Politiet eller et universitet får sin del og må holde seg innenfor den." },
+                { "si": "Men verden står ikke stille. Prisene kan stige, eller noe uventet kan skje, som en krig eller en pandemi." },
+                { "si": "Derfor blir budsjettet endret underveis. De største endringene kommer i mai, i det som kalles revidert nasjonalbudsjett." },
+                { "si": "I desember blir det justert en siste gang. Etterpå lager Finansdepartementet et regnskap som viser hva pengene faktisk ble brukt til." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Partiene krangler om budsjettet.", "fraBeat": 0 },
+                        { "tekst": "Nå vet du hva det handler om.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Det er ikke bare tall.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Hvem skal få mer? Hvem skal få mindre?", "fraBeat": 2 },
+                        { "tekst": "Hva slags samfunn skal vi ha?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Neste gang du hører på nyhetene at partiene krangler om budsjettet, vet du hva det handler om." },
+                { "si": "Det er ikke bare tall." },
+                { "si": "Det er en kamp om hvem som skal få mer, hvem som skal få mindre, og hva slags samfunn vi skal ha." }
+            ]
+        }
+    ]
+}
