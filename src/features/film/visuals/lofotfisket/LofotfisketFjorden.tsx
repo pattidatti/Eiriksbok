@@ -10,11 +10,11 @@ import type { VisualProps } from '../../types';
  * - Trollfjorden: en trang fjord mellom bratte fjell, med munningen mot +x. Modus «slaget»
  *   (noten, dampskipene og båtene som bryter gjennom), «dampskip» (ny teknologi og
  *   Kaarbøs plan) og «is» (fjorden fryser, gammelt mot nytt).
- * - Et fiskevær: rorbuer på påler, hjeller med fisk og nordlandsbåter. Modus «hjell» og «rorbu».
+ * - Et fiskevær: rorbuer på påler og hjeller med fisk. Modus «hjell».
  * Filmen viser aldri at noen blir skadet. Vannet fra slangene er bare hvite buer.
  */
 
-type Modus = 'slaget' | 'hjell' | 'rorbu' | 'dampskip' | 'is';
+type Modus = 'slaget' | 'hjell' | 'dampskip' | 'is';
 
 function damp(a: number, b: number, lambda: number, dt: number) {
     return THREE.MathUtils.lerp(a, b, 1 - Math.exp(-lambda * dt));
@@ -60,15 +60,6 @@ function kameraFor(modus: Modus, beat: number, t: number): Kamera {
                 { pos: v(-25 + t * 0.3, 3.6, -7), se: v(-16, 3, -18) },
                 { pos: v(-11, 3.3, -10.2), se: v(-11.6, 3, -14) },
             ][Math.min(beat, 3)];
-        case 'rorbu':
-            return [
-                { pos: v(8, 14, 44), se: v(22, 0, 14) },
-                { pos: v(23, 3.6, 2.6), se: v(20, 1.7, -2.5) },
-                { pos: v(20, 9, -4), se: v(40, 2, 80) },
-                { pos: v(31 - t * 0.4, 6, 15), se: v(29, 3.5, -6) },
-                { pos: v(28, 3.5, 28), se: v(20, 1.6, 20) },
-                { pos: v(34, 20, 52), se: v(26, 0, 4) },
-            ][Math.min(beat, 5)];
     }
 }
 
@@ -676,41 +667,6 @@ function Fiskehaug({ synlig }: { synlig: boolean }) {
     );
 }
 
-function Lofotkiste() {
-    return (
-        <group position={[20, 1.75, -2.5]}>
-            <mesh material={mat.tre}>
-                <boxGeometry args={[1.6, 0.8, 0.9]} />
-            </mesh>
-            <mesh material={mat.mork} position={[0, 0.45, 0]}>
-                <boxGeometry args={[1.66, 0.14, 0.96]} />
-            </mesh>
-            {[-0.5, 0.5].map((x) => (
-                <mesh key={x} material={mat.svart} position={[x, 0, 0]}>
-                    <boxGeometry args={[0.08, 0.84, 0.94]} />
-                </mesh>
-            ))}
-        </group>
-    );
-}
-
-const N_VAER = 20;
-function vaerPlass(i: number, beat: number, t: number): Plassering {
-    const kol = i % 10;
-    const rad = Math.floor(i / 10);
-    const fortoyd = { x: 10 + kol * 4.2 + rad * 1.5, z: 8 + rad * 5 };
-    if (i === 0) return { x: 20, z: 20, rot: 0.15, synlig: true };
-    const fra = { x: 40 + kol * 7, z: 70 + rad * 16 + (i % 3) * 6 };
-    const a = beat === 0 ? Math.min(1, t / 9) : 1;
-    const e = 1 - Math.pow(1 - a, 2);
-    return {
-        x: THREE.MathUtils.lerp(fra.x, fortoyd.x, e),
-        z: THREE.MathUtils.lerp(fra.z, fortoyd.z, e),
-        rot: e < 0.95 ? 2.2 : 0.15,
-        synlig: true,
-    };
-}
-
 /* ---------------- Scenen ---------------- */
 
 function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: boolean }) {
@@ -904,17 +860,6 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
                     ))}
                     <HengendeFisk synlig={modus === 'hjell' && beat === 0 ? 0 : 1} torr={torr} />
                     <Fiskehaug synlig={modus === 'hjell' && beat === 0} />
-                    {modus === 'rorbu' && (
-                        <>
-                            <Lofotkiste />
-                            <Flate
-                                antall={N_VAER}
-                                plass={vaerPlass}
-                                beat={beat}
-                                beatTid={beatTid}
-                            />
-                        </>
-                    )}
                 </>
             )}
         </>
@@ -934,14 +879,6 @@ const MERKER: Record<Modus, (string | null)[]> = {
         'Hjeller: stativ av tre',
         'Vind og kulde',
         'Torsk = tørrfisk',
-    ],
-    rorbu: [
-        'Etter jul: mot Lofoten',
-        'Lofotkista',
-        'Hjemme: gård, dyr, barn og de gamle',
-        'Rorbuer',
-        'Nordlandsbåten',
-        '85-90 % av all torsk',
     ],
     dampskip: [
         'Dampskip og not',

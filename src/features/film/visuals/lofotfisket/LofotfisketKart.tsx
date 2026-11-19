@@ -101,7 +101,7 @@ const OVERSKRIFT: Record<Modus, string[]> = {
     handel: [
         'Tørrfisk tåler lange reiser',
         '1300-tallet: over 80 % av alt Norge solgte',
-        'All handel gjennom Bergen',
+        'Handelen fra Nord-Norge: via Bergen',
         'Jektene',
         'Over 200 jekter',
         'Hanseatene, fram til 1754',
@@ -518,7 +518,7 @@ export function LofotfisketKart({ beat, playing, props }: VisualProps<{ modus: M
                                     strokeWidth={8}
                                     paintOrder="stroke"
                                 >
-                                    Torsken blir borte
+                                    Overfisket
                                 </text>
                             </motion.g>
                         )}
@@ -542,7 +542,7 @@ export function LofotfisketKart({ beat, playing, props }: VisualProps<{ modus: M
     );
 }
 
-/** Ti varer Norge solgte: åtte av dem blir tørrfisk på beat 1. */
+/** Alt Norge solgte til utlandet, delt i ti: over åtte deler blir tørrfisk på beat 1. */
 function Eksport({ beat }: { beat: number }) {
     return (
         <motion.g
@@ -552,7 +552,7 @@ function Eksport({ beat }: { beat: number }) {
         >
             <rect x={80} y={520} width={520} height={330} rx={24} fill="#ffffff" opacity={0.95} />
             <text x={340} y={580} textAnchor="middle" fontSize={32} fontWeight={800} fill="#0f172a">
-                Ti varer Norge solgte
+                Norges salg til utlandet
             </text>
             {Array.from({ length: 10 }, (_, i) => {
                 const x = 120 + (i % 5) * 92;
@@ -580,7 +580,7 @@ function Eksport({ beat }: { beat: number }) {
                 fontWeight={800}
                 fill={beat >= 1 ? '#b45309' : '#64748b'}
             >
-                {beat >= 1 ? 'Åtte av ti: tørrfisk' : 'Hvor mange var fisk?'}
+                {beat >= 1 ? 'Over 80 %: tørrfisk' : 'Hvor stor del var fisk?'}
             </text>
         </motion.g>
     );
