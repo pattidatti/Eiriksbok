@@ -1,0 +1,217 @@
+{
+    "id": "daoisme",
+    "tittel": "Daoisme: veien som ikke lar seg tvinge",
+    "kilde": "/krle/livssyn/daoisme",
+    "bilde": "/images/livssyn/daoisme-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-19", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "bekk",
+            "lyd": "vind",
+            "kapittel": "Vannet og steinen",
+            "visual": { "type": "DaoismeBekken", "props": { "modus": "stein" } },
+            "replikker": [
+                { "si": "Tenk deg en bekk. Midt i bekken ligger en stein." },
+                { "si": "Vannet stopper ikke. Det stiger litt, finner en kant, og renner rundt." },
+                { "si": "Steinen er hard, og vannet er mykt. Hvem vinner?" },
+                { "si": "Kom tilbake om hundre år. Da er steinen slipt ned, og bekken renner fortsatt." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DAOISME",
+                    "undertittel": "Veien som ikke lar seg tvinge",
+                    "bilde": "/images/livssyn/daoisme-hero.webp",
+                    "tall": [{ "verdi": 2500, "etikett": "år siden", "fraBeat": 0 }],
+                    "sporsmal": { "tekst": "Hva om det å presse på er selve problemet?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "For rundt 2500 år siden så noen i Kina på vann på akkurat denne måten." },
+                { "si": "De mente at her lå svaret på hvordan vi bør leve. De kalte det dao, som betyr veien. Læren kaller vi daoisme." },
+                { "si": "Den stiller et spørsmål: Hva om det å presse på er selve problemet?" }
+            ]
+        },
+        {
+            "id": "kina",
+            "kapittel": "Kina da alt raknet",
+            "visual": { "type": "DaoismeKart", "props": { "modus": "riker" } },
+            "replikker": [
+                { "si": "Kina var ikke ett land den gangen. Det var mange små riker." },
+                { "si": "Rikene slåss om makt og jord, og krigene varte i flere hundre år." },
+                { "si": "Hvordan får vi orden på et samfunn som faller fra hverandre?" }
+            ]
+        },
+        {
+            "id": "tosvar",
+            "visual": { "type": "DaoismeTavle", "props": { "modus": "tosvar" } },
+            "replikker": [
+                { "si": "To lærer svarte, og svarene var stikk motsatte." },
+                { "si": "Konfucius ville ha mer form og mer øving. Lær folk de riktige skikkene, så henger samfunnet sammen." },
+                { "si": "Daoistene mente at det var nettopp reglene og jakten på makt og ære som hadde ødelagt alt." },
+                { "si": "Jo mer fyrstene grep inn, jo verre ble det." },
+                { "si": "Konfucius ville reparere samfunnet. Daoistene ville løsne grepet om det." }
+            ]
+        },
+        {
+            "id": "laozi",
+            "visual": { "type": "DaoismeFortelling", "props": { "modus": "laozi" } },
+            "replikker": [
+                { "si": "Læren blir ført tilbake til en mann som kalles Laozi. Navnet betyr den gamle mesteren." },
+                { "si": "Fortellingen sier at han jobbet i arkivet til kongehuset og ble lei av at alt forfalt." },
+                { "si": "Så red han vestover for å forlate landet." },
+                { "si": "Ved grensa ba en vakt ham skrive ned det han hadde forstått. Slik ble boka Daodejing til, sier fortellingen." },
+                { "si": "Men vi vet nesten ingenting sikkert om ham. Boka ble trolig skrevet ned 200 til 300 år etter at han skal ha levd." }
+            ]
+        },
+        {
+            "id": "dao",
+            "lyd": "vind",
+            "kapittel": "Dao: veien",
+            "visual": { "type": "DaoismeBekken", "props": { "modus": "dao" } },
+            "replikker": [
+                { "si": "Dao betyr vei. Men det er noe mye større enn en sti i terrenget." },
+                { "si": "Dao er den skjulte kraften bak alt som finnes. Den får ting til å skje av seg selv." },
+                { "si": "Et frø spirer uten at noen forteller det hvordan." },
+                { "si": "Vann renner nedover uten å bli bedt om det. Det er dao i arbeid." }
+            ]
+        },
+        {
+            "id": "boka",
+            "lyd": "stille",
+            "visual": { "type": "DaoismeTavle", "props": { "modus": "boka" } },
+            "replikker": [
+                { "si": "Daodejing har 81 korte vers, mange nesten som dikt." },
+                { "si": "Den åpner med et paradoks, noe som ser ut til å motsi seg selv: Veien som kan forklares med ord, er ikke den virkelige veien." },
+                { "si": "Så bruker boka 81 vers på å prøve likevel." },
+                { "si": "Filosofen Chad Hansen sier at dao er mer som et kart enn som en lov." },
+                { "si": "Et kart viser veiene som finnes, men roper ikke ordrer. Du må selv se hvor terrenget gir etter." }
+            ]
+        },
+        {
+            "id": "wuwei",
+            "kapittel": "Wu wei",
+            "visual": { "type": "DaoismeWuwei", "props": { "modus": "ballen" } },
+            "replikker": [
+                { "si": "Det viktigste ordet i daoismen er wu wei, ofte oversatt med ikke-handling." },
+                { "si": "Men wu wei betyr ikke å ligge på sofaen." },
+                { "si": "Det betyr å slutte å jage det du vil ha for deg selv, og heller gjøre lite, enkelt og rolig." },
+                { "si": "Tenk på en god fotballspiller. Hun løper ikke etter ballen hele kampen." },
+                { "si": "Hun står der ballen kommer til å havne. Hun har sluttet å presse og begynt å lese spillet." }
+            ]
+        },
+        {
+            "id": "hagen",
+            "visual": { "type": "DaoismeWuwei", "props": { "modus": "hagen" } },
+            "replikker": [
+                { "si": "Daodejing sier det samme om den som styrer et land." },
+                { "si": "Den beste lederen gjør så lite at folk knapt merker ham. Etterpå sier de at de klarte det selv." },
+                { "si": "Til wu wei hører ordet ziran. Det betyr av seg selv, slik det er naturlig." },
+                { "si": "En gartner som river opp planten for å se om røttene vokser, jobber mot ziran." }
+            ]
+        },
+        {
+            "id": "yinyang",
+            "lyd": "vind",
+            "kapittel": "Yin og yang",
+            "visual": { "type": "DaoismeFjellet" },
+            "replikker": [
+                { "si": "Du kjenner kanskje symbolet yin og yang. Ordene kommer fra noe helt hverdagslig." },
+                { "si": "Yin var skyggesiden av et fjell, den som vender mot nord. Yang var solsiden, som vender mot sør." },
+                { "si": "Siden ble ordene brukt om alle par: mørkt og lyst, kaldt og varmt, stille og aktivt." },
+                { "si": "Men se her. Den samme fjellsiden er skyggeside om morgenen, og solside om kvelden." },
+                { "si": "Ingen av sidene er god eller ond, og ingen av dem kan finnes alene." },
+                { "si": "Selve symbolet er mye yngre. Det blir gjerne knyttet til Zhou Dunyi, som levde fra 1017 til 1073. Formen vi kjenner, kom trolig enda seinere." }
+            ]
+        },
+        {
+            "id": "zhuangzi",
+            "lyd": "stille",
+            "kapittel": "Zhuangzi",
+            "visual": { "type": "DaoismeFortelling", "props": { "modus": "sommerfugl" } },
+            "replikker": [
+                { "si": "Den andre store boka heter Zhuangzi, etter mannen som skrev den. Han levde fra 369 til 286 før vår tidsregning." },
+                { "si": "Boka er full av historier som snur ting på hodet." },
+                { "si": "Zhuangzi drømte at han var en sommerfugl." },
+                { "si": "Da han våknet, visste han ikke lenger: Var han en mann som hadde drømt om en sommerfugl? Eller en sommerfugl som nå drømte at den var Zhuangzi?" },
+                { "si": "Historien peker på at grensene vi er så sikre på, er noe vi selv har tegnet." }
+            ]
+        },
+        {
+            "id": "kokken",
+            "visual": { "type": "DaoismeFortelling", "props": { "modus": "kniven" } },
+            "replikker": [
+                { "si": "En annen historie handler om kokken Ding, som deler opp en okse." },
+                { "si": "Han leter aldri etter beinet med kniven." },
+                { "si": "Etter mange år følger han bare åpningene som allerede er der. Kniven blir aldri sløv." },
+                { "si": "Det er wu wei gjort håndfast. Den som virkelig kan noe, har sluttet å hugge." }
+            ]
+        },
+        {
+            "id": "religion",
+            "lyd": "rom",
+            "kapittel": "Fra filosofi til religion",
+            "visual": { "type": "DaoismeTid" },
+            "replikker": [
+                { "si": "Fra omtrent 100 år før vår tidsregning drømte store folkelige bevegelser om den store freden, tai ping. Da skulle urett og nød ta slutt." },
+                { "si": "Noen gjorde opprør mot keiseren. Ut av dette vokste en religion med templer, prester og egne ritualer. Målet for mange var å leve evig." },
+                { "si": "De prøvde med meditasjon, strenge regler for mat, pusteøvelser og alkymi, altså å lage en medisin for evig liv." },
+                { "si": "I det første hundreåret etter vår tidsregning kom buddhismen fra India. De to påvirket hverandre kraftig." },
+                { "si": "De hellige skriftene ble samlet i Daozang. Utgaven vi bruker i dag, er fra 1445 og fyller 1120 hefter." }
+            ]
+        },
+        {
+            "id": "idag",
+            "lyd": "stille",
+            "kapittel": "Daoismen i dag",
+            "visual": { "type": "DaoismeKart", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "Daoismen har overlevd, selv om den ble slått hardt ned på i Kina i deler av 1900-tallet." },
+                { "si": "Etter at reglene ble mykere på 1980-tallet, er den tilbake. Særlig sterkt står den på Taiwan." },
+                { "si": "Mange i Kina blander folketro, daoisme, buddhisme og konfusianisme, uten å velge én. Staten passer på hva som regnes som vanlig religion." },
+                { "si": "Du møter spor av daoismen her også: tai chi, feng shui og ideen om å gå med strømmen." }
+            ]
+        },
+        {
+            "id": "kritikk",
+            "kapittel": "Kritikken",
+            "visual": { "type": "DaoismeTavle", "props": { "modus": "kritikk" } },
+            "replikker": [
+                { "si": "Daoismen har fått kritikk i over to tusen år. Den vanligste er at wu wei kan bli en unnskyldning. Hvis svaret på urett er å ikke presse, hvem stopper da uretten?" },
+                { "si": "Konfusianerne mente at daoistene trakk seg unna ansvaret for fellesskapet." },
+                { "si": "Zhuangzi går lenger. All kunnskap, all moral og alle ordninger i samfunnet både har grenser og setter grenser for oss, mener han. Men det er vanskelig å bygge en skole, en domstol eller et sykehus på den tanken." },
+                { "si": "Noen mener at daoismen er best som en motvekt: Ikke alt blir bedre av at vi tar hardere i." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Religion eller livssyn?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Religion eller livssyn?", "fraBeat": 0 },
+                        { "tekst": "Begge deler.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Som filosofi: ingen skapergud, bare dao.", "fraBeat": 1 },
+                        { "tekst": "Som religion: templer, guder, prester og bønn.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Hva om det å presse på", "fraBeat": 2 },
+                        { "tekst": "er selve problemet?", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Vannet vinner ikke ved å være sterkest.", "fraBeat": 3 },
+                        { "tekst": "Det vinner ved å ikke slutte.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Er daoismen en religion eller et livssyn? Svaret er begge deler." },
+                { "si": "Som filosofi har den ingen skapergud, bare dao. Som folkelig religion har den templer, guder, prester og bønn." },
+                { "si": "Og spørsmålet står igjen: Hva om det å presse på er selve problemet?" },
+                { "si": "Tenk på vannet rundt steinen. Det vinner ikke ved å være sterkest. Det vinner ved å ikke slutte." }
+            ]
+        }
+    ]
+}
