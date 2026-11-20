@@ -334,7 +334,7 @@ const LAPPER: Record<Modus, string[]> = {
         'Møblene selges eller knuses',
         'Mannen gir opp troen. Videre til neste hus.',
     ],
-    virket: ['Poitou, 1681', '1685: hele landsbyer gir seg', 'Tre av fire ga opp troen'],
+    virket: ['Poitou, 1681', '1685: hele landsbyer gir seg', 'Ifølge et museum: tre av fire ga opp'],
 };
 
 export function HugenotteneGate({ beat, props }: VisualProps<{ modus?: Modus }>) {
@@ -379,7 +379,7 @@ export function HugenotteneGate({ beat, props }: VisualProps<{ modus?: Modus }>)
             )}
             {modus === 'virket' && beat === 0 && (
                 <div className="absolute right-[2%] top-[30%] w-[24%]">
-                    <Teller verdi={38000} etikett="nye katolikker i Poitou, på noen få måneder" />
+                    <Teller verdi={38000} etikett="nye katolikker i Poitou, på noen måneder" />
                 </div>
             )}
             {modus === 'virket' && beat >= 2 && (

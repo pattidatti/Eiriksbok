@@ -428,7 +428,7 @@ const KORT: Record<Modus, Kort[][]> = {
             { tekst: 'Midlertidig', stor: true },
             { tekst: 'For å sikre freden', farge: GULL },
         ],
-        [{ tekst: 'Friheten henger i kronen', farge: GULL }],
+        [{ tekst: 'Friheten hviler på kongen', farge: GULL }],
         [
             { tekst: '1610', stor: true },
             { tekst: 'Hva gjør neste konge?', farge: ROD },
@@ -450,7 +450,7 @@ const KORT: Record<Modus, Kort[][]> = {
         [{ tekst: 'Troen holdes skjult', stor: true }],
         [
             { tekst: '1787: toleranseedikt', stor: true },
-            { tekst: 'Lov å gifte seg', farge: PROTESTANT },
+            { tekst: 'Lov å gifte seg uten den katolske kirken', farge: PROTESTANT },
         ],
         [
             { tekst: 'Ikke gudstjeneste åpent', farge: ROD },

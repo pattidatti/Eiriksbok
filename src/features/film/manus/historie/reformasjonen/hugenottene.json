@@ -4,6 +4,7 @@
     "kilde": "/historie/reformasjonen/hugenottene",
     "bilde": "/images/reformasjonen/hugenottene-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-20", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
     "scener": [
         {
             "id": "bryllup",
@@ -16,7 +17,7 @@
             },
             "replikker": [
                 {
-                    "si": "Paris, august 1572. Byen er full av gjester, og gatene er pyntet til fest."
+                    "si": "Paris, august 1572. Byen er full av gjester."
                 },
                 {
                     "si": "Prinsesse Margrete, søsteren til kongen, skal gifte seg med Henrik av Navarra. Hun er katolikk. Han er protestant."
@@ -72,7 +73,7 @@
                     "si": "De fleste franske protestantene fulgte læren til Jean Calvin, som selv var fransk."
                 },
                 {
-                    "si": "Motstanderne kalte dem hugenotter. Navnet betyr trolig forbundsfelle, altså en som har sluttet seg til en gruppe."
+                    "si": "Motstanderne kalte dem hugenotter. Navnet kommer trolig av et ord som betyr forbundsfelle, altså en som har sluttet seg til en gruppe."
                 },
                 {
                     "si": "Hugenottene var aldri flertallet. Men de sto sterkt blant handelsfolk og håndverkere i byene, og noen adelsfolk ble også hugenotter."
@@ -84,12 +85,10 @@
         },
         {
             "id": "hoffet",
+            "lyd": "rom",
             "kapittel": "Bartolomeusnatten",
             "visual": {
-                "type": "HugenotteneKart",
-                "props": {
-                    "modus": "hoffet"
-                }
+                "type": "HugenotteneHoffet"
             },
             "replikker": [
                 {
@@ -111,6 +110,7 @@
         },
         {
             "id": "natten",
+            "lyd": "stille",
             "visual": {
                 "type": "HugenotteneKart",
                 "props": {
@@ -149,13 +149,13 @@
                     "si": "Han reddet livet sitt ved å gå over til den katolske troen. I 1576 flyktet han fra hoffet og ble leder for hugenottene igjen."
                 },
                 {
-                    "si": "I 1589 døde kong Henrik 3., og Henrik av Navarra ble kong Henrik 4. Men han fikk ikke styre hele landet med en gang."
+                    "si": "I 1589 døde kong Henrik 3., og Henrik av Navarra ble kong Henrik 4. Men han fikk ikke styre hele landet med en gang. Det var strid om makten i Paris."
                 },
                 {
                     "si": "I 1593 gikk Henrik over til den katolske troen en gang til. Han skal ha sagt: Paris er vel en messe verd."
                 },
                 {
-                    "si": "En messe er den katolske gudstjenesten. Det var verdt å bytte tro for å få makten. I 1595 hadde han full kontroll over Frankrike."
+                    "si": "En messe er den katolske gudstjenesten. Poenget var at det var verdt å bytte tro for å få makten. I 1595 hadde han full kontroll over Frankrike."
                 }
             ]
         },
@@ -170,7 +170,7 @@
             },
             "replikker": [
                 {
-                    "si": "Et edikt er en lov som kongen bestemmer helt alene."
+                    "si": "Et edikt er en lov som kongen bestemmer alene."
                 },
                 {
                     "si": "I 1598 skrev Henrik 4. under ediktet i Nantes. Det skulle gi fred etter mer enn 30 år med religionskriger."
@@ -179,12 +179,13 @@
                     "si": "Ingen kunne tvinge hugenottene til å bytte tro. De fikk holde gudstjenester på bestemte steder, og staten betalte prestene deres."
                 },
                 {
-                    "si": "For å være sikre på at kongen holdt ord, fikk de beholde rundt 100 byer med murer og soldater."
+                    "si": "Som en garanti, altså en sikkerhet, fikk de beholde rundt 100 byer med murer og soldater."
                 }
             ]
         },
         {
             "id": "murbyer",
+            "lyd": "hav",
             "visual": {
                 "type": "HugenotteneBy",
                 "props": {
@@ -193,15 +194,16 @@
             },
             "replikker": [
                 {
-                    "si": "En av dem var havnebyen La Rochelle, ute ved Atlanterhavet."
+                    "si": "En av dem var havnebyen La Rochelle."
                 },
                 {
-                    "si": "Med murer og egne soldater kunne hugenottene forsvare seg selv, om kongen skulle snu."
+                    "si": "Med murer og egne soldater kunne hugenottene forsvare seg selv."
                 }
             ]
         },
         {
             "id": "svakhet",
+            "lyd": "stille",
             "visual": {
                 "type": "HugenotteneEdikt",
                 "props": {
@@ -231,7 +233,7 @@
             },
             "replikker": [
                 {
-                    "si": "I 1629 tok kardinal Richelieu, kongens mektige minister, byene med murer fra hugenottene."
+                    "si": "I 1629 tok kardinal Richelieu, en høy leder i kirken og kongens mektige minister, byene med murer fra hugenottene."
                 },
                 {
                     "si": "Nå kunne de ikke lenger stå imot kongen."
@@ -277,13 +279,13 @@
             },
             "replikker": [
                 {
-                    "si": "Metoden virket. I området Poitou ble 38 000 nye katolikker registrert på noen få måneder i 1681."
+                    "si": "Metoden virket. I Poitou registrerte prestene 38 000 nye katolikker på noen måneder i 1681."
                 },
                 {
                     "si": "I 1685 meldte hele landsbyer seg som katolikker bare fordi de hørte at soldatene var på vei."
                 },
                 {
-                    "si": "Tre av fire hugenotter ga opp troen sin på grunn av dragonadene."
+                    "si": "Ifølge et protestantisk museum i Frankrike ga tre av fire hugenotter opp troen sin på grunn av dragonadene."
                 }
             ]
         },
@@ -298,7 +300,7 @@
             },
             "replikker": [
                 {
-                    "si": "I 1685 tok Ludvig 14. det siste steget. Han opphevet ediktet i Nantes."
+                    "si": "I 1685 opphevet Ludvig 14. ediktet i Nantes."
                 },
                 {
                     "si": "Å oppheve betyr at loven ikke gjelder lenger. Nå var all protestantisk gudstjeneste forbudt."
@@ -320,7 +322,7 @@
                     "punkter": [
                         {
                             "ikon": "hus",
-                            "tittel": "Ingen fikk reise ut",
+                            "tittel": "Vanlige folk fikk ikke reise",
                             "tekst": "det var forbudt å forlate landet",
                             "fraBeat": 0
                         },
@@ -380,7 +382,7 @@
                     "si": "De fra nord og vest reiste helst til England og Nederland."
                 },
                 {
-                    "si": "De fra sør flyktet til Genève i Sveits. I 1687 kom det opptil 350 flyktninger dit hver eneste dag."
+                    "si": "De fra sør flyktet til Genève i Sveits. I 1687 kom opptil 350 flyktninger dit hver dag."
                 },
                 {
                     "si": "Mange reiste videre til Tyskland. I Brandenburg ble de tatt svært godt imot."
@@ -463,7 +465,7 @@
                             "uthevet": true
                         },
                         {
-                            "tekst": "Å bli tålt kan tas fra deg.",
+                            "tekst": "Det som bare blir tålt, kan tas fra deg.",
                             "fraBeat": 2
                         },
                         {
