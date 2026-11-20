@@ -31,7 +31,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/rettsstaten/hva-er-en-rettsstat-01.webp",
       "alt": "Tom fengselscelle med lys fra et lite vindu",
       "caption": "I et land uten rettsstat kan du bli satt i fengsel uten å vite hvorfor."
     },
@@ -120,7 +120,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/rettsstaten/hva-er-en-rettsstat-02.webp",
       "alt": "Rettssal med dommer, advokater og tomme tilhørerbenker",
       "caption": "I en rettsstat må staten bevise at du er skyldig, ikke omvendt."
     },
@@ -162,7 +162,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/rettsstaten/hva-er-en-rettsstat-03.webp",
       "alt": "Stortinget i Oslo en klar morgen",
       "caption": "Stortinget lager lovene, men må også selv følge Grunnloven."
     },
