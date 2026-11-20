@@ -1,0 +1,255 @@
+{
+    "id": "miljoetikk",
+    "tittel": "Miljøetikk: Er naturen verdt noe uten oss?",
+    "kilde": "/krle/etikk/miljoetikk",
+    "bilde": "/images/etikk/miljoetikk-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-20", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "aksjon",
+            "lyd": "vind",
+            "kapittel": "Mardøla, 1970",
+            "visual": {
+                "type": "MiljoetikkLandskap",
+                "props": { "modus": "aksjon" }
+            },
+            "replikker": [
+                { "si": "Sommeren 1970. Vi er i Eikesdalen i Møre og Romsdal, ved elva Mardøla." },
+                { "si": "Vannet i Mardøla skal flyttes over til et kraftverk. Maskinene står klare i anleggsveien." },
+                { "si": "Men en gruppe mennesker setter seg ned i veien, rett foran maskinene." },
+                { "si": "Fra 25. juli til 6. august står arbeidet helt stille." },
+                { "si": "Til slutt tapte de. Kraftverket sto ferdig i 1975." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "MILJØETIKK",
+                    "undertittel": "Er naturen verdt noe uten oss?",
+                    "bilde": "/images/etikk/miljoetikk-hero.webp",
+                    "tall": [
+                        { "verdi": 58, "etikett": "år gammel sluttet Næss som professor", "fraBeat": 1, "omtrent": false }
+                    ],
+                    "sporsmal": { "tekst": "Har en foss verdi bare fordi vi kan lage strøm av den?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Men det var første gang noen i Norge brøt loven med vilje for å redde et stykke natur." },
+                { "si": "En av dem som var med, var filosofen Arne Næss. Samme år sluttet han som professor, 58 år gammel." },
+                { "si": "Han spurte: Har en foss verdi bare fordi vi kan lage strøm av den? Eller har den verdi helt av seg selv?" }
+            ]
+        },
+        {
+            "id": "avstand",
+            "kapittel": "Hva er rett?",
+            "visual": {
+                "type": "MiljoetikkSirkler",
+                "props": { "modus": "avstand" }
+            },
+            "replikker": [
+                { "si": "Etikk handler om hva som er rett og galt å gjøre. Miljøetikk spør hva som er rett når naturen står på spill." },
+                { "si": "Tre ting gjør slike valg vanskelige. Først avstand i rom: Den som blir rammet, bor ofte langt fra den som bestemmer." },
+                { "si": "Så avstand i tid: Virkningen kommer kanskje om femti år." },
+                { "si": "Og avstand i art: Den som taper, kan være en fugleart, en elv eller en skog." },
+                { "si": "Den som betaler prisen, er ikke her, er ikke født ennå, eller kan ikke si fra. Da er det lett å glemme dem." }
+            ]
+        },
+        {
+            "id": "verdi",
+            "kapittel": "To slags verdi",
+            "visual": {
+                "type": "MiljoetikkSirkler",
+                "props": { "modus": "verdi" }
+            },
+            "replikker": [
+                { "si": "Tenk på en bussbillett. Den er verdifull fordi den får deg dit du skal." },
+                { "si": "Slutter bussen å gå, er billetten verdiløs. Det kalles nytteverdi: verdi fordi noe er nyttig." },
+                { "si": "Tenk så på en venn. Vennen din er verdifull i seg selv, ikke fordi hen er nyttig. Det kalles egenverdi." },
+                { "si": "Nesten alle er enige om at naturen har nytteverdi. Vi trenger rent vann, ren luft, mat og medisiner." },
+                { "si": "Uenigheten begynner ved neste spørsmål. Har naturen også egenverdi?" }
+            ]
+        },
+        {
+            "id": "skog",
+            "lyd": "vind",
+            "visual": {
+                "type": "MiljoetikkLandskap",
+                "props": { "modus": "skog" }
+            },
+            "replikker": [
+                { "si": "Ta en skog. Den gir tømmer og turer, og den lagrer karbon som ellers ville havnet i lufta." },
+                { "si": "Alt dette er nytteverdi. Men ville det vært et tap om skogen forsvant, selv om ingen trengte den? Da har den egenverdi." },
+                { "si": "Den samme skogen kan ha begge deler. Spørsmålet er om den også har den siste." }
+            ]
+        },
+        {
+            "id": "sirkler",
+            "lyd": "stille",
+            "kapittel": "Hvem teller?",
+            "visual": {
+                "type": "MiljoetikkSirkler",
+                "props": { "modus": "sirkler" }
+            },
+            "replikker": [
+                { "si": "Hvem og hva har egenverdi? Her finnes tre vanlige svar. De trenger ikke være uenige om fakta, bare om hvem som teller." },
+                { "si": "Det første er antroposentrisk, av det greske ordet for menneske. Da har bare mennesker egenverdi." },
+                { "si": "Naturen skal likevel tas vare på, men fordi vi trenger den." },
+                { "si": "Det andre er biosentrisk. Bios er gresk for liv. Da har også hvert dyr og hvert tre egenverdi." },
+                { "si": "Det tredje er økosentrisk. Da har også helhetene egenverdi: hele arter, hele skoger, hele elvesystemer." },
+                { "si": "Da teller ikke den enkelte fisken mest, men at elva fortsatt har laks." }
+            ]
+        },
+        {
+            "id": "siste",
+            "lyd": "vind",
+            "kapittel": "Det siste mennesket",
+            "visual": {
+                "type": "MiljoetikkLandskap",
+                "props": { "modus": "siste" }
+            },
+            "replikker": [
+                { "si": "I 1973 laget filosofen Richard Routley et tankeeksperiment, en tenkt situasjon." },
+                { "si": "Du er det aller siste mennesket på jorda. Alle andre er døde, og du skal selv dø om noen timer." },
+                { "si": "Før du dør, ødelegger du med vilje alt liv som er igjen. Hver skog, hvert dyr, hver plante." },
+                { "si": "Har du gjort noe galt? Ingen mennesker blir skadet, for det finnes ingen igjen." },
+                { "si": "Likevel svarer de aller fleste med én gang: Ja, dette er galt." },
+                { "si": "Routley mente at den reaksjonen avslører noe. Vi tror i praksis at naturen har en verdi som ikke kommer fra oss." }
+            ]
+        },
+        {
+            "id": "framtid",
+            "lyd": "stille",
+            "kapittel": "De som ikke er født",
+            "visual": {
+                "type": "MiljoetikkFramtid",
+                "props": { "modus": "framtid" }
+            },
+            "replikker": [
+                { "si": "Du trenger ikke mene at en stein har egenverdi for å bry deg om miljøet." },
+                { "si": "Mye av miljøetikken handler om oss som lever nå, mot dem som kommer etter oss." },
+                { "si": "De som ikke er født ennå, kan ikke stemme, klage til kommunen eller gå i tog." },
+                { "si": "Men de arver alt vi bestemmer. Et barn som blir født i 2075, får en verden der noen valg allerede er tatt for hen." }
+            ]
+        },
+        {
+            "id": "angre",
+            "visual": {
+                "type": "MiljoetikkFramtid",
+                "props": { "modus": "angre" }
+            },
+            "replikker": [
+                { "si": "Derfor betyr det mye om et valg kan gjøres om." },
+                { "si": "Et hyttefelt kan rives." },
+                { "si": "En vindturbin kan tas ned." },
+                { "si": "Men en art som er utryddet, kommer aldri tilbake, uansett hvor mye penger vi bruker." }
+            ]
+        },
+        {
+            "id": "loven",
+            "kapittel": "Hva sier loven?",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Miljøet i norsk lov",
+                    "punkter": [
+                        { "ikon": "las", "tittel": "Miljøparagrafen, 1992", "tekst": "i dag Grunnloven § 112", "fraBeat": 0 },
+                        { "ikon": "vann", "tittel": "Alle har rett til et sunt miljø", "tekst": "og en natur der mangfoldet tas vare på", "fraBeat": 1 },
+                        { "ikon": "kvinne", "tittel": "Alle = alle mennesker", "tekst": "naturen vernes mest for vår skyld", "fraBeat": 2 },
+                        { "ikon": "skjold", "tittel": "Naturmangfoldloven, 2009", "tekst": "bruk og vern, nå og i framtiden, også for samisk kultur", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Norge har skrevet miljøet inn i Grunnloven. Miljøparagrafen kom inn i 1992. I dag er det paragraf 112." },
+                { "si": "Den sier at alle har rett til et sunt miljø, og til en natur der mangfoldet blir tatt vare på." },
+                { "si": "Men retten går til alle, altså mennesker. Naturen vernes først og fremst for vår skyld. Det er ganske antroposentrisk." },
+                { "si": "Naturmangfoldloven fra 2009 går lenger. Naturen skal tas vare på gjennom bærekraftig bruk og vern, nå og i framtiden, også som grunnlag for samisk kultur." }
+            ]
+        },
+        {
+            "id": "forevar",
+            "visual": {
+                "type": "MiljoetikkFramtid",
+                "props": { "modus": "forevar" }
+            },
+            "replikker": [
+                { "si": "Den samme loven har en regel som heter føre-var-prinsippet." },
+                { "si": "Den gjelder når naturen kan få alvorlig skade, eller skade som aldri kan repareres." },
+                { "si": "Da kan ikke mangel på kunnskap brukes som grunn til å la være å gjøre noe." },
+                { "si": "Sagt enkelt: Du kan ikke vente og se når det du risikerer, ikke lar seg reparere." }
+            ]
+        },
+        {
+            "id": "fosen",
+            "lyd": "vind",
+            "kapittel": "Godt mot godt",
+            "visual": {
+                "type": "MiljoetikkFosen",
+                "props": { "modus": "turbiner" }
+            },
+            "replikker": [
+                { "si": "De vanskeligste sakene er sjelden natur mot penger. Ofte er det godt mot godt." },
+                { "si": "I 2010 ga norske myndigheter tillatelse til to store vindkraftverk på Fosen i Trøndelag." },
+                { "si": "Roan kom i drift i 2019 med 71 turbiner. Storheia kom året etter, med 80." },
+                { "si": "Vindkraft gir strøm uten klimagasser, og klimaendringene rammer både mennesker og natur." },
+                { "si": "Men fjellene var vinterbeite for reinen til sørsamiske reindriftsfamilier. Der finner reinen mat om vinteren." }
+            ]
+        },
+        {
+            "id": "dom",
+            "visual": {
+                "type": "MiljoetikkFosen",
+                "props": { "modus": "dom" }
+            },
+            "replikker": [
+                { "si": "I oktober 2021 slo Høyesterett, Norges øverste domstol, enstemmig fast at tillatelsene var ugyldige." },
+                { "si": "Utbyggingen ville skade reindriftssamenes mulighet til å leve ut sin egen kultur. Det bryter med artikkel 27 i en FN-avtale om menneskerettigheter." },
+                { "si": "Men turbinene ble stående. Da sperret demonstranter inngangene til flere departementer." },
+                { "si": "Først mot slutten av 2023 og i mars 2024 kom det avtaler om erstatning og nye beiteområder." },
+                { "si": "Her sto ikke gode mot onde. Her sto klimaet mot en levemåte som har levd av det samme landskapet i hundrevis av år." }
+            ]
+        },
+        {
+            "id": "naess",
+            "lyd": "vind",
+            "kapittel": "Arne Næss",
+            "visual": {
+                "type": "MiljoetikkLandskap",
+                "props": { "modus": "naess" }
+            },
+            "replikker": [
+                { "si": "Arne Næss levde fra 1912 til 2009. Ingen norsk filosof har betydd mer for miljøetikken ute i verden." },
+                { "si": "I 1973 skilte han mellom to slags miljøvern. Det grunne er opptatt av forurensning og ressurser, fordi det går ut over helsa og velstanden vår." },
+                { "si": "Det dype mener at alt levende har verdi i seg selv. Næss regnes som grunnleggeren av dette, dypøkologien." },
+                { "si": "Han mente at tanken om at alt levende hører til samme helhet, ikke kan bevises. Det er en følelse som melder seg når du står i naturen." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hvor står du?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Vindkraft. Ulv. Motorvei.", "fraBeat": 0 },
+                        { "tekst": "Hva er de egentlig uenige om?", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ofte ikke tallene.", "fraBeat": 1 },
+                        { "tekst": "Men hvem de teller med.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Fossen i Mardøla:", "fraBeat": 2 },
+                        { "tekst": "Har den verdi helt av seg selv?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Neste gang voksne krangler om vindkraft, ulv eller motorvei, lytt etter hva de egentlig er uenige om." },
+                { "si": "Ofte er det ikke tallene. Det er hvem de teller med." },
+                { "si": "Og fossen i Mardøla? Har den verdi helt av seg selv? Det spørsmålet må du svare på selv." }
+            ]
+        }
+    ]
+}
