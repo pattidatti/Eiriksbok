@@ -2788,6 +2788,20 @@
                 "politikk"
               ],
               "createdDate": "2026-11-19T00:00:00Z"
+            },
+            {
+              "id": "nav-og-folketrygden",
+              "title": "Nav og folketrygden: Sikkerhetsnettet",
+              "description": "Hva folketrygden er, hva Nav gjør, og hvorfor det krangles om hvor stramt sikkerhetsnettet skal være.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "velferd",
+                "nav",
+                "folketrygden",
+                "trygd",
+                "arbeidslinja"
+              ],
+              "createdDate": "2026-11-20T00:00:00Z"
             }
           ]
         },
