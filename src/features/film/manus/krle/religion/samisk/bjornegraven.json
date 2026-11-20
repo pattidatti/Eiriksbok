@@ -1,0 +1,199 @@
+{
+  "id": "bjornegraven",
+  "tittel": "Bjørnegraven: dyret som skulle bli født på nytt",
+  "kilde": "/krle/religion/samisk/bjornegraven",
+  "bilde": "/images/samisk/bjornegraven-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-20", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "ura",
+      "lyd": "vind",
+      "kapittel": "Skallen i ura",
+      "visual": { "type": "BjornegravenUra", "props": { "modus": "ura" } },
+      "replikker": [
+        { "si": "Tenk deg en steinur på Senja. Store, grå steiner ligger hulter til bulter i lia, med sprekker og huler mellom seg." },
+        { "si": "Tidlig på 1800-tallet blir en bjørn felt på Senja. Men beina havner ikke på en søppelhaug utenfor gården." },
+        { "si": "De havner inne i en steinur, i et lite hulrom mellom steinene." },
+        { "si": "I dag ligger skallen på en hylle i et magasin i Tromsø. På den henger en liten lapp: Fundet i en ur. 1911, Rasmus Enoksen.", "uttale": "I dag ligger skallen på en hylle i et magasin i Tromsø. På den henger en liten lapp: Funnet i en ur. Nitten elleve, Rasmus Enoksen." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Bjørnegraven",
+          "undertittel": "Dyret som skulle bli født på nytt",
+          "bilde": "/images/samisk/bjornegraven-hero.webp",
+          "sporsmal": { "tekst": "Hvorfor la folk bjørnen i ura?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Lappen sier nesten ingenting. Men det er akkurat der historien ligger." },
+        { "si": "For samene var ikke en bjørnejakt ferdig når bjørnen var død. Da begynte den viktigste delen. Hvorfor la folk bjørnen i ura?" }
+      ]
+    },
+    {
+      "id": "ord",
+      "kapittel": "Et dyr som forsto deg",
+      "visual": { "type": "BjornegravenOrd", "props": { "modus": "ord" } },
+      "replikker": [
+        { "si": "I samisk religion var bjørnen et hellig dyr. Den var ikke et vanlig byttedyr." },
+        { "si": "Folk trodde bjørnen var så klok at den forsto vanlig menneskeprat. Sa jegerne guovža, det vanlige ordet for bjørn, skjønte den at de kom." },
+        { "si": "Men én ting forsto den ikke: omskrivninger. Det vil si når du beskriver noe i stedet for å si navnet." },
+        { "si": "Derfor har samisk rundt tjue navn på bjørn som beskriver den. Man regner med at de først skulle lure bjørnen under jakten. De kalles noaord, altså erstatningsord." },
+        { "si": "Ett av dem er áddjá. Det betyr rett og slett bestefar.", "uttale": "Ett av dem er addja. Det betyr rett og slett bestefar." }
+      ]
+    },
+    {
+      "id": "lov",
+      "kapittel": "Før jakten",
+      "visual": { "type": "BjornegravenOrd", "props": { "modus": "lov" } },
+      "replikker": [
+        { "si": "Jakten begynte ikke med et våpen. Den begynte med en gave." },
+        { "si": "Jegerne ofret til jaktguden Leaibolmmái. Bjørnen var under gudens beskyttelse, og offeret skulle ta den beskyttelsen bort.", "uttale": "Jegerne ofret til jaktguden Leibolmai. Bjørnen var under gudens beskyttelse, og offeret skulle ta den beskyttelsen bort." },
+        { "si": "Ellers kunne jaktlaget bli drept. Noaiden, den religiøse eksperten i det samiske samfunnet, var med på seremoniene." },
+        { "si": "Jegerne ba ofte bjørnen om unnskyldning for at de drepte den. Da ville den være villig til å bli jaktet på igjen i neste liv." },
+        { "si": "Bjørnen var altså ikke en ting man tok. Den var noen man møtte, og som man skyldte noe etterpå." }
+      ]
+    },
+    {
+      "id": "farlig",
+      "lyd": "stille",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "prikk",
+          "steg": [
+            { "fraBeat": 0, "total": 3000, "farget": 3000, "farge": "#7c4a1e", "tittel": "Bjørner i hele Norge rundt 1850: ca. 3000", "fargeEtikett": "brunbjørner", "visTall": false },
+            { "fraBeat": 1, "total": 3000, "farget": 60, "farge": "#dc2626", "restFarge": "#c8b49a", "tittel": "Skutt i 1850: ca. 60", "fargeEtikett": "skutt det året", "restEtikett": "resten av bjørnene", "visTall": false }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Men hvorfor jaktet de på et hellig dyr? Bjørnen var farlig for folk som levde av fe og fisk. Rundt 1850 regner man med at det fantes omtrent 3000 brunbjørner i Norge." },
+        { "si": "I 1850 ble rundt 60 av dem skutt. Myndighetene mente bjørnejakt var nødvendig for å beskytte folk som både fisket og hadde dyr." }
+      ]
+    },
+    {
+      "id": "maltid",
+      "kapittel": "Måltidet og grava",
+      "visual": { "type": "BjornegravenOrd", "props": { "modus": "maltid" } },
+      "replikker": [
+        { "si": "Etter jakten kom nye seremonier, både for huden og for kjøttet." },
+        { "si": "Bjørnen ble spist under et rituelt måltid. Det er et måltid med faste regler." },
+        { "si": "Først etterpå ble beina lagt til side. De skulle ikke kastes. De skulle tilbake til ura." }
+      ]
+    },
+    {
+      "id": "lag",
+      "lyd": "vind",
+      "visual": { "type": "BjornegravenUra", "props": { "modus": "lag" } },
+      "replikker": [
+        { "si": "Grava var som regel ikke gravd. Den var et hulrom som fantes fra før, i en sprekk i ura eller under en stor steinblokk." },
+        { "si": "Nederst la folk en seng av bjørkeris." },
+        { "si": "Oppå sengen kom beina, i omtrent samme orden som i den levende bjørnen. Beina lå luftig og tørt." },
+        { "si": "Noen bjørner fikk også gaver med seg, som en ring eller et kjede av messing." },
+        { "si": "Over beina la folk et dekke av never, altså bjørkebark." },
+        { "si": "Så kom kløvde planker, stein og torv. Bjørnen var lagt tilbake." }
+      ]
+    },
+    {
+      "id": "sjel",
+      "visual": { "type": "BjornegravenUra", "props": { "modus": "sjel" } },
+      "replikker": [
+        { "si": "Poenget var ikke å skjule bjørnen. Det var å gi den tilbake." },
+        { "si": "Beina var det bjørnen trengte når den skulle bli født på nytt. Derfor ble de begravd." },
+        { "si": "Arkeologen Ingvild Larsen sier at seremoniene kan ses som en måte å forsone seg med bjørnen på. Å forsone seg betyr å gjøre opp for noe man har gjort." },
+        { "si": "Ifølge Larsen ga folk på den måten bjørnen sjelen dens tilbake." }
+      ]
+    },
+    {
+      "id": "steder",
+      "lyd": "stille",
+      "kapittel": "Den lengste tradisjonen",
+      "visual": { "type": "BjornegravenKart", "props": { "modus": "steder" } },
+      "replikker": [
+        { "si": "Hvor finnes slike graver? Nord for Rana har man registrert 30 steder med bein etter brunbjørn og spor av en rituell begravelse." },
+        { "si": "Nesten alle ligger langs kysten og i fjordene. Bare én er funnet i innlandet." },
+        { "si": "Prikkene på kartet viser ikke de ekte stedene. Mange av dem holdes skjult." },
+        { "si": "Til sammen har Norges arktiske universitetsmuseum i Tromsø bein fra 44 bjørner fra disse stedene." }
+      ]
+    },
+    {
+      "id": "sevgu",
+      "visual": { "type": "BjornegravenKart", "props": { "modus": "sevgu" } },
+      "replikker": [
+        { "si": "Det største funnet er fra holmen Sevgu, også kalt Seines, i Narvik kommune.", "uttale": "Det største funnet er fra holmen Sevgu, også kalt Seines, i Narvik kommune." },
+        { "si": "Der har man funnet bein fra åtte bjørner. Sju voksne og en unge." },
+        { "si": "Fem av dem er datert, altså at forskerne har funnet ut hvor gamle beina er. Alle fem er fra mellom 1100-tallet og 1300-tallet." },
+        { "si": "På holmen står en stor steinblokk. Den blir tolket som en offerstein, en sieidi. Holmen må ha vært et hellig sted i flere hundre år." }
+      ]
+    },
+    {
+      "id": "tid",
+      "visual": { "type": "BjornegravenKart", "props": { "modus": "tid" } },
+      "replikker": [
+        { "si": "Den eldste sikre samiske bjørnegrava i Skandinavia ligger på Tjeldøya i Lødingen. Den er fra rundt år 300." },
+        { "si": "De fleste gravene er fra middelalderen. Da var bjørnejakten og troen på bjørnen trolig på sitt sterkeste." },
+        { "si": "Og dateringene går helt fram til 1800-tallet." },
+        { "si": "Det gjør bjørnegravene til den lengste gravtradisjonen vi kjenner i Nord-Europa." }
+      ]
+    },
+    {
+      "id": "misjon",
+      "kapittel": "Da misjonen kom",
+      "visual": { "type": "BjornegravenKart", "props": { "modus": "misjon" } },
+      "replikker": [
+        { "si": "Fra 1600-tallet ble arbeidet med å gjøre samene kristne kraftig trappet opp." },
+        { "si": "I samme tid blir det færre bjørnegraver. Men de forsvinner ikke." },
+        { "si": "En ungbjørn fra Kjengsnes i Gullesfjorden, datert til 1500-tallet, ble lagt i ura etter gammel skikk, midt i et område med sterk misjon." },
+        { "si": "Både jakten og gravskikken fortsatte også etter at kristendommen for alvor var innført, mot slutten av 1700-tallet." }
+      ]
+    },
+    {
+      "id": "spildra",
+      "lyd": "hav",
+      "kapittel": "Hemmelige steder",
+      "visual": { "type": "BjornegravenUra", "props": { "modus": "spildra" } },
+      "replikker": [
+        { "si": "Sju av gravstedene i Norge har fortsatt bein liggende urørt, akkurat der de ble lagt." },
+        { "si": "De er fredet ved lov, og de er skjult på kart." },
+        { "si": "Bare på øya Spildra i Nord-Troms står det skilt for dem som vil besøke gravene. Der ligger tre bjørner urørt, fra tidlig middelalder." },
+        { "si": "Mange av gravene var kjent i familier og lokalsamfunn, men folk holdt dem hemmelige. Ofte kom de fram først når en vei, et hus eller en kraftlinje truet stedet." }
+      ]
+    },
+    {
+      "id": "gjeld",
+      "lyd": "stille",
+      "kapittel": "Hva grava sier",
+      "visual": { "type": "BjornegravenOrd", "props": { "modus": "gjeld" } },
+      "replikker": [
+        { "si": "Hva sier bjørnegravene om menneskene? Å ta et liv skapte en gjeld, noe man skyldte." },
+        { "si": "Gjelden ble betalt med ord man valgte med omhu, og med en unnskyldning." },
+        { "si": "Så med et måltid som fulgte regler." },
+        { "si": "Og til slutt med å legge kroppen tilbake i fjellet, i riktig orden. Da skulle bjørnen kunne komme igjen." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "I samisk religion lå det hellige", "fraBeat": 0 },
+            { "tekst": "i selve landskapet.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "En steinur er ikke bare stein.", "fraBeat": 1 },
+            { "tekst": "Den er et sted der noen ble lagt tilbake,", "fraBeat": 1 },
+            { "tekst": "for å komme igjen.", "fraBeat": 1, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "I mange religioner er det et skarpt skille mellom det hellige og det vanlige. I samisk religion lå det hellige i selve landskapet." },
+        { "si": "Da er ikke en steinur bare en haug med stein. Den er et sted der noen ble lagt tilbake, med håp om at de skulle komme igjen." }
+      ]
+    }
+  ]
+}
