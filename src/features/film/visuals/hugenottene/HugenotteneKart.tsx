@@ -11,13 +11,12 @@ import { Teller } from '../shared';
  * Kartet står til venstre, forklaringene til høyre.
  */
 
-type Modus = 'hvem' | 'hoffet' | 'natten' | 'flukt' | 'gave';
+type Modus = 'hvem' | 'natten' | 'flukt' | 'gave';
 type LngLat = [number, number];
 
 const B = 1600;
 const H = 900;
 const PROTESTANT = '#0f766e';
-const KATOLSK = '#7e22ce';
 const ROD = '#b91c1c';
 const LAND = '#f5efe0';
 
@@ -61,7 +60,7 @@ interface Kort {
 const KORT: Record<Modus, Kort[][]> = {
     hvem: [
         [{ tekst: 'Reformasjonen' }, { tekst: 'Fra Tyskland til Frankrike', farge: PROTESTANT }],
-        [{ tekst: 'Jean Calvin' }, { tekst: 'Franskmann og reformator', farge: PROTESTANT }],
+        [{ tekst: 'Jean Calvin' }, { tekst: 'Selv fransk', farge: PROTESTANT }],
         [{ tekst: 'Hugenotter' }, { tekst: 'trolig: forbundsfeller', farge: PROTESTANT }],
         [
             { tekst: 'Aldri flertallet' },
@@ -73,17 +72,6 @@ const KORT: Record<Modus, Kort[][]> = {
             { tekst: 'Kunnskap', farge: PROTESTANT },
             { tekst: 'Våpen', farge: ROD },
         ],
-    ],
-    hoffet: [
-        [{ tekst: 'Fra 1562' }, { tekst: 'Religionskriger', farge: ROD }],
-        [{ tekst: 'Katarina av Medici' }, { tekst: 'Kongens mor', farge: KATOLSK }],
-        [
-            { tekst: 'Gaspard de Coligny' },
-            { tekst: 'Hugenottleder', farge: PROTESTANT },
-            { tekst: 'Nær kong Karl 9.', farge: KATOLSK },
-        ],
-        [{ tekst: 'Første forsøk' }, { tekst: 'Coligny blir bare lettere såret', farge: ROD }],
-        [{ tekst: '«De planlegger opprør»' }, { tekst: 'Kongen gir ordre', farge: ROD }],
     ],
     natten: [
         [{ tekst: '24. august 1572' }, { tekst: 'Bartolomeusdagen', farge: ROD }],
@@ -97,7 +85,7 @@ const KORT: Record<Modus, Kort[][]> = {
         [],
         [{ tekst: 'Fra nord og vest' }, { tekst: 'England og Nederland', farge: PROTESTANT }],
         [{ tekst: 'Fra sør' }, { tekst: 'Genève i Sveits', farge: PROTESTANT }],
-        [{ tekst: 'Videre' }, { tekst: 'Brandenburg i Tyskland', farge: PROTESTANT }],
+        [{ tekst: 'Videre' }, { tekst: 'Brandenburg, senere Preussen', farge: PROTESTANT }],
         [
             { tekst: 'Enda lenger' },
             { tekst: 'Nord-Amerika', farge: PROTESTANT },
@@ -109,7 +97,7 @@ const KORT: Record<Modus, Kort[][]> = {
         [{ tekst: 'En gave' }, { tekst: 'Håndverkere, særlig tekstil', farge: PROTESTANT }],
         [
             { tekst: 'Leger, lærere, soldater', farge: PROTESTANT },
-            { tekst: 'Bygger opp Tyskland etter trettiårskrigen', farge: PROTESTANT },
+            { tekst: 'Hjelper til å bygge opp industrien i Tyskland', farge: PROTESTANT },
         ],
         [{ tekst: 'Frankrike taper' }, { tekst: 'Henter møbelsnekkere fra Tyskland', farge: ROD }],
     ],
@@ -140,7 +128,6 @@ const RUTER: Record<Modus, Rute[]> = {
             bue: -60,
         },
     ],
-    hoffet: [],
     natten: [
         { fra: PARIS, til: LYON, fraBeat: 2, farge: ROD, bue: 40 },
         { fra: PARIS, til: BOURGES, fraBeat: 2, farge: ROD, bue: -20 },
@@ -174,7 +161,7 @@ const RUTER: Record<Modus, Rute[]> = {
             bue: -30,
         },
         {
-            fra: AMSTERDAM,
+            fra: [6.8, 53.6],
             til: [13.2, 55.2],
             fraBeat: 5,
             tekst: 'Sverige',
@@ -200,7 +187,7 @@ function landfarge(modus: Modus, beat: number, id: string): string {
         if (id === TYSKLAND && beat === 0) return '#99f6e4';
         if (id === FRANKRIKE) return beat >= 1 ? '#e9d5ff' : LAND;
     }
-    if (modus === 'hoffet' || modus === 'natten') {
+    if (modus === 'natten') {
         if (id === FRANKRIKE) return '#ede4f7';
     }
     if (modus === 'flukt') {
@@ -220,7 +207,7 @@ function landfarge(modus: Modus, beat: number, id: string): string {
 export function HugenotteneKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const modus = props.modus ?? 'hvem';
     const { geographies } = useFilmVerden();
-    const nærme = modus === 'hoffet' || modus === 'natten';
+    const nærme = modus === 'natten';
 
     const projeksjon = useMemo(
         () =>
@@ -250,7 +237,7 @@ export function HugenotteneKart({ beat, props }: VisualProps<{ modus: Modus }>) 
     const ruter = RUTER[modus].filter((r) => beat >= r.fraBeat && beat <= (r.tilBeat ?? Infinity));
     const kort = KORT[modus][Math.min(beat, KORT[modus].length - 1)];
     const visByer = modus === 'hvem' && beat >= 3;
-    const parisRod = modus === 'natten' || (modus === 'hoffet' && beat >= 4);
+    const parisRod = modus === 'natten';
     const andreByer = modus === 'natten' && beat >= 2;
 
     return (
@@ -297,7 +284,7 @@ export function HugenotteneKart({ beat, props }: VisualProps<{ modus: Modus }>) 
                     <RuteTegning key={`${modus}-${i}`} r={r} fra={p(r.fra)} til={p(r.til)} />
                 ))}
 
-                {(modus === 'hoffet' || modus === 'natten') && (
+                {modus === 'natten' && (
                     <By
                         pos={p(PARIS)}
                         tekst="Paris"
@@ -305,7 +292,6 @@ export function HugenotteneKart({ beat, props }: VisualProps<{ modus: Modus }>) 
                         puls={parisRod}
                     />
                 )}
-                {modus === 'hoffet' && beat >= 1 && <Hoffet beat={beat} />}
                 {andreByer &&
                     [
                         { ll: LYON, tekst: 'Lyon' },
@@ -314,9 +300,6 @@ export function HugenotteneKart({ beat, props }: VisualProps<{ modus: Modus }>) 
                     ].map((b) => (
                         <By key={b.tekst} pos={p(b.ll)} tekst={b.tekst} farge={ROD} puls={false} />
                     ))}
-                {modus === 'gave' && (
-                    <By pos={p(PARIS)} tekst="Paris" farge={KATOLSK} puls={false} />
-                )}
             </svg>
 
             <div className="absolute right-[3%] top-0 bottom-0 w-[36%] flex flex-col justify-center gap-4">
@@ -576,102 +559,6 @@ function RuteTegning({ r, fra, til }: { r: Rute; fra: [number, number]; til: [nu
                     </text>
                 )}
             </motion.g>
-        </g>
-    );
-}
-
-/** Hoffet i Paris: Katarina, kongen og Coligny, og hvem som drar i hvem. */
-function Hoffet({ beat }: { beat: number }) {
-    const KONGEN: [number, number] = [470, 600];
-    const KATARINA: [number, number] = [220, 600];
-    const COLIGNY: [number, number] = [720, 600];
-    const figur = (
-        pos: [number, number],
-        farge: string,
-        navn: string,
-        krone: boolean,
-        saaret = false
-    ) => (
-        <motion.g
-            initial={{ opacity: 0, scale: 0.4 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 16 }}
-            style={{ transformOrigin: `${pos[0]}px ${pos[1]}px` }}
-        >
-            <circle cx={pos[0]} cy={pos[1]} r={64} fill={farge} stroke="#ffffff" strokeWidth={6} />
-            <circle cx={pos[0]} cy={pos[1] - 16} r={22} fill="#f5e1c8" />
-            <path
-                d={`M ${pos[0] - 36} ${pos[1] + 40} Q ${pos[0]} ${pos[1] + 2} ${pos[0] + 36} ${pos[1] + 40} Z`}
-                fill="#f5e1c8"
-            />
-            {krone && (
-                <path
-                    d={`M ${pos[0] - 26} ${pos[1] - 64} L ${pos[0] - 26} ${pos[1] - 92} L ${pos[0] - 13} ${pos[1] - 78} L ${pos[0]} ${pos[1] - 98} L ${pos[0] + 13} ${pos[1] - 78} L ${pos[0] + 26} ${pos[1] - 92} L ${pos[0] + 26} ${pos[1] - 64} Z`}
-                    fill="#d4a017"
-                    stroke="#7a5a00"
-                    strokeWidth={3}
-                />
-            )}
-            {saaret && (
-                <motion.circle
-                    cx={pos[0]}
-                    cy={pos[1]}
-                    r={74}
-                    fill="none"
-                    stroke={ROD}
-                    strokeWidth={8}
-                    strokeDasharray="14 10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                />
-            )}
-            <text
-                x={pos[0]}
-                y={pos[1] + 108}
-                textAnchor="middle"
-                fontSize={30}
-                fontWeight={900}
-                fill="#0f172a"
-                stroke="#ffffff"
-                strokeWidth={7}
-                paintOrder="stroke"
-            >
-                {navn}
-            </text>
-        </motion.g>
-    );
-    return (
-        <g>
-            <rect x={80} y={430} width={780} height={340} rx={30} fill="#ffffff" opacity={0.85} />
-            {/* Coligny har kongens øre: en tykk linje mellom dem */}
-            {beat >= 2 && (
-                <motion.line
-                    x1={KONGEN[0] + 64}
-                    y1={KONGEN[1]}
-                    x2={COLIGNY[0] - 64}
-                    y2={COLIGNY[1]}
-                    stroke={PROTESTANT}
-                    strokeWidth={beat >= 4 ? 3 : 14}
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1 }}
-                />
-            )}
-            {beat >= 4 && (
-                <motion.path
-                    d={`M ${KATARINA[0] + 64} ${KATARINA[1] - 20} Q 345 520 ${KONGEN[0] - 70} ${KONGEN[1] - 20}`}
-                    fill="none"
-                    stroke={ROD}
-                    strokeWidth={10}
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.4 }}
-                />
-            )}
-            {figur(KATARINA, KATOLSK, 'Katarina', false)}
-            {beat >= 2 && figur(KONGEN, beat >= 4 ? ROD : KATOLSK, 'Karl 9.', true)}
-            {beat >= 2 && figur(COLIGNY, PROTESTANT, 'Coligny', false, beat >= 3)}
         </g>
     );
 }

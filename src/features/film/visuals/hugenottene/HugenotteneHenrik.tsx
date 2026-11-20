@@ -190,8 +190,9 @@ export function HugenotteneHenrik({ beat }: VisualProps) {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ delay: 0.4, duration: 0.7 }}
-                        className="absolute left-1/2 -translate-x-1/2 top-[3%] px-8 py-3 rounded-3xl bg-slate-900/90 text-amber-100 font-black text-4xl md:text-5xl shadow-2xl whitespace-nowrap"
+                        className="absolute inset-x-0 mx-auto w-fit top-[3%] px-8 py-3 rounded-3xl bg-slate-900/90 text-amber-100 font-black text-3xl md:text-4xl shadow-2xl whitespace-nowrap"
                     >
+                        <span className="font-bold text-amber-200/90">Han skal ha sagt: </span>
                         «Paris er vel en messe verd»
                     </motion.div>
                 )}
@@ -201,7 +202,7 @@ export function HugenotteneHenrik({ beat }: VisualProps) {
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0 }}
-                        className="absolute left-1/2 -translate-x-1/2 top-[3%] px-6 py-3 rounded-2xl bg-white/95 text-slate-900 font-bold text-2xl md:text-3xl shadow-xl border-l-[10px] whitespace-nowrap"
+                        className="absolute inset-x-0 mx-auto w-fit top-[3%] px-6 py-3 rounded-2xl bg-white/95 text-slate-900 font-bold text-2xl md:text-3xl shadow-xl border-l-[10px] whitespace-nowrap"
                         style={{ borderColor: KATOLSK }}
                     >
                         Messe = katolsk gudstjeneste

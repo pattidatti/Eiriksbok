@@ -527,7 +527,7 @@ const LAPPER: Record<Modus, Lapp[][]> = {
     ],
     richelieu: [
         [{ tekst: '1629' }, { tekst: 'Richelieu tar byene', farge: KONGE }],
-        [{ tekst: 'Byene er kongens nå', farge: KONGE }],
+        [{ tekst: 'Hugenottene mister byene', farge: KONGE }],
         [{ tekst: 'Troen er lov. Men de kan ikke forsvare seg.', farge: PROTESTANT }],
     ],
 };
