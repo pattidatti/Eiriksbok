@@ -1,0 +1,238 @@
+{
+    "id": "nav-og-folketrygden",
+    "tittel": "Nav og folketrygden: Sikkerhetsnettet",
+    "kilde": "/samfunnskunnskap/velferd/nav-og-folketrygden",
+    "bilde": "/images/velferd/nav-og-folketrygden-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 100, "begrunnelse": "Målestokk i prikkfeltet: hver prikk er 100 ansatte." },
+        { "tall": 220, "begrunnelse": "Regnet ut fra artikkelen: 22 000 ansatte delt på 100 per prikk." },
+        { "tall": 155, "begrunnelse": "Regnet ut fra artikkelen: 15 500 i staten delt på 100 per prikk." }
+    ],
+    "vurdering": { "dato": "2026-11-20", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "ko",
+            "kapittel": "Mandag morgen",
+            "lyd": "rom",
+            "visual": { "type": "NavKontoret", "props": { "modus": "ko" } },
+            "replikker": [
+                { "si": "Klokka er ni en mandag morgen på Nav-kontoret. Tre mennesker trekker kølapp." },
+                { "si": "En mann i femtiårene har mistet jobben. Fabrikken hans er lagt ned." },
+                { "si": "En ung mor skal snart føde. Hvor mye penger får hun mens hun er hjemme med babyen?" },
+                { "si": "En gutt på 22 har ikke penger til husleia neste måned." },
+                { "si": "Tre ulike liv og tre ulike problemer. Likevel står de i samme kø." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "NAV OG FOLKETRYGDEN",
+                    "undertittel": "Sikkerhetsnettet",
+                    "bilde": "/images/velferd/nav-og-folketrygden-hero.webp",
+                    "sporsmal": { "tekst": "Hvor mye skal folk få?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Det de tre har til felles, er folketrygden. Og du er også med i den." },
+                { "si": "Folketrygden er den største utgiften staten har, og Nav betaler pengene ut." },
+                { "si": "Hva går pengene til? Og hvorfor krangles det så mye om hvor mye folk skal få?" }
+            ]
+        },
+        {
+            "id": "forsikring",
+            "kapittel": "En forsikring for alle",
+            "lyd": "stille",
+            "visual": { "type": "NavPotten", "props": { "modus": "forsikring" } },
+            "replikker": [
+                { "si": "Stortinget vedtok folketrygden i 1966, og den gjaldt fra 1. januar 1967. Den samlet mange eldre trygder i én ordning." },
+                { "si": "Alle som bor i Norge, må være med, også de som ikke er norske statsborgere. Du kan ikke melde deg ut." },
+                { "si": "Tenk på den som en stor forsikring. Mange betaler litt hver, så de få som blir rammet, kan få hjelp." },
+                { "si": "Du får penger når du er syk, får barn eller mister jobben, når du blir gammel eller ikke kan jobbe, og når noen i familien dør." },
+                { "si": "Den betaler også en del av behandlingen hos lege og på sykehus." }
+            ]
+        },
+        {
+            "id": "pengene",
+            "kapittel": "Hvem betaler?",
+            "visual": { "type": "NavPotten", "props": { "modus": "inn" } },
+            "replikker": [
+                { "si": "Men hvor kommer pengene fra? Fra tre steder." },
+                { "si": "Du betaler trygdeavgift, som blir trukket av lønna di. Arbeidsgiveren betaler arbeidsgiveravgift for hver ansatt." },
+                { "si": "Resten betaler staten." },
+                { "si": "I 2018 brukte folketrygden 470 milliarder kroner. Det var 35 prosent av hele statsbudsjettet." },
+                { "si": "Omtrent to tredeler kom fra medlemmene og arbeidsgiverne. Det er folk som jobber, som betaler mesteparten." }
+            ]
+        },
+        {
+            "id": "nav",
+            "kapittel": "Hva er Nav?",
+            "lyd": "rom",
+            "visual": { "type": "NavKontoret", "props": { "modus": "kontor" } },
+            "replikker": [
+                { "si": "Nav er etaten som betaler ut folketrygden. En etat er en del av staten med en bestemt jobb." },
+                { "si": "Nav kom 1. juli 2006. Da ble Aetat, som hjalp arbeidsledige med å finne jobb, slått sammen med trygdeetaten, som betalte ut trygd." },
+                { "si": "Samtidig tok Nav-kontorene over ansvaret for sosialhjelp fra kommunene." },
+                { "si": "Tanken var at folk skulle slippe å gå fra kontor til kontor. Jobb, trygd og sosialhjelp på ett sted." }
+            ]
+        },
+        {
+            "id": "ansatte",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        { "fraBeat": 0, "total": 220, "farget": 220, "farge": "#64748b", "tittel": "Rundt 22 000 ansatte i Nav", "fargeEtikett": "hver figur: 100 ansatte", "visTall": false },
+                        { "fraBeat": 1, "total": 220, "farget": 155, "farge": "#2563eb", "restFarge": "#ea580c", "tittel": "Omtrent 15 500 jobber for staten", "fargeEtikett": "staten", "restEtikett": "kommunene", "visTall": false },
+                        { "fraBeat": 2, "total": 220, "farget": 155, "farge": "#2563eb", "restFarge": "#ea580c", "tittel": "Hvert Nav-kontor: stat og kommune sammen", "fargeEtikett": "staten", "restEtikett": "kommunene", "visTall": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Nav har rundt 22 000 ansatte. Hver figur her er hundre av dem." },
+                { "si": "Omtrent 15 500 jobber for staten. Resten jobber for kommunene." },
+                { "si": "Hvert Nav-kontor er et samarbeid mellom staten og kommunen der det ligger." }
+            ]
+        },
+        {
+            "id": "ut",
+            "visual": { "type": "NavPotten", "props": { "modus": "ut" } },
+            "replikker": [
+                { "si": "Nav styrer over en tredel av statsbudsjettet." },
+                { "si": "I 2023 betalte Nav ut 640 milliarder kroner." },
+                { "si": "Mest gikk til alderspensjon og uføretrygd." }
+            ]
+        },
+        {
+            "id": "g",
+            "kapittel": "Grunnbeløpet",
+            "visual": { "type": "NavRegning", "props": { "modus": "g" } },
+            "replikker": [
+                { "si": "Når du leser om trygd, dukker G ofte opp. G står for grunnbeløpet." },
+                { "si": "Nav bruker det til å regne ut mange av utbetalingene. Fra 1. mai 2026 er G 136 549 kroner." },
+                { "si": "Reglene sier for eksempel at du må ha tjent minst 1,5 G." },
+                { "si": "G blir justert hvert år, så trygdene følger med når lønninger og priser stiger." },
+                { "si": "Da slipper Stortinget å endre loven hvert år. Det holder å endre G." }
+            ]
+        },
+        {
+            "id": "luker",
+            "kapittel": "Ulike problemer",
+            "lyd": "rom",
+            "visual": { "type": "NavKontoret", "props": { "modus": "luker" } },
+            "replikker": [
+                { "si": "Folketrygden er ikke én pengepott, men mange ordninger for ulike situasjoner." },
+                { "si": "Mannen som mistet jobben, kan søke om dagpenger." },
+                { "si": "Den unge moren kan få foreldrepenger." },
+                { "si": "Den som har jobb, men er for syk til å jobbe, får sykepenger." },
+                { "si": "Uføretrygd er for den som har mistet minst halvparten av evnen til å tjene penger, på grunn av sykdom eller skade, og ikke blir bedre." },
+                { "si": "Men først må du ha prøvd behandling og tiltak som kan hjelpe deg tilbake i jobb." }
+            ]
+        },
+        {
+            "id": "dagpenger",
+            "lyd": "stille",
+            "visual": { "type": "NavRegning", "props": { "modus": "dagpenger" } },
+            "replikker": [
+                { "si": "Først dagpengene. De er for deg som har mistet jobben." },
+                { "si": "Du får 62,4 prosent av den gamle inntekten din." },
+                { "si": "For å få dagpenger må du ha tjent minst 1,5 G det siste året." },
+                { "si": "Du må være registrert som arbeidssøker og sende Nav et meldekort, et skjema, hver 14. dag." }
+            ]
+        },
+        {
+            "id": "tid",
+            "visual": { "type": "NavRegning", "props": { "modus": "tid" } },
+            "replikker": [
+                { "si": "Så sykepengene, for deg som er for syk til å jobbe." },
+                { "si": "Arbeidsgiveren betaler de første 16 dagene. Så tar Nav over." },
+                { "si": "Du kan få sykepenger i opptil 52 uker. Du må ha jobbet minst fire uker før du ble syk, og ha sykmelding fra lege." },
+                { "si": "Når du får barn, kan foreldrene til sammen få 49 uker med full lønn. 15 av ukene er satt av til mor, og 15 til far eller medmor." },
+                { "si": "For å få foreldrepenger må du ha hatt inntekt i minst seks av de ti siste månedene." }
+            ]
+        },
+        {
+            "id": "nettet",
+            "kapittel": "Det siste nettet",
+            "visual": { "type": "NavNettet", "props": { "modus": "nett" } },
+            "replikker": [
+                { "si": "Legg merke til at nesten alle disse ordningene krever at du har jobbet." },
+                { "si": "Dagpenger, sykepenger og foreldrepenger regnes ut fra hvor mye du tjente. Har du ikke hatt inntekt, får du lite eller ingenting." },
+                { "si": "Og gutten på 22? Han har aldri hatt fast jobb, så han har ikke tjent opp rett til dagpenger." },
+                { "si": "For ham finnes økonomisk sosialhjelp: midlertidig støtte for den som ikke klarer å betale mat og bolig selv." },
+                { "si": "Men bare når alt annet er prøvd, som jobb, egne penger eller andre ytelser fra Nav." }
+            ]
+        },
+        {
+            "id": "sats",
+            "visual": { "type": "NavRegning", "props": { "modus": "sosialhjelp" } },
+            "replikker": [
+                { "si": "Sosialhjelpen hører til kommunen, ikke folketrygden. Du søker på Nav-kontoret der du bor." },
+                { "si": "Staten har et forslag til hvor mye du bør få. Fra 2026 er det 8 300 kroner i måneden for en som bor alene." },
+                { "si": "Men kommunene kan ha sine egne satser." },
+                { "si": "Er du under 30 år, må du være med på en aktivitet. Målet er at du skal komme i jobb eller utdanning og klare deg selv." }
+            ]
+        },
+        {
+            "id": "arbeidslinja",
+            "kapittel": "Arbeidslinja",
+            "visual": { "type": "NavNettet", "props": { "modus": "trampoline" } },
+            "replikker": [
+                { "si": "Så til det store spørsmålet politikerne krangler om: Hvor mye penger skal folk få fra Nav?" },
+                { "si": "Gir vi for lite, kan folk ende opp fattige, uten råd til mat og bolig." },
+                { "si": "Gir vi for mye, kan noen tenke at det ikke lønner seg å jobbe. Og jobber færre, betaler færre skatt." },
+                { "si": "Norge har valgt arbeidslinja. Det betyr at stønadene fra Nav er knyttet til at du gjør noe for å komme i jobb." },
+                { "si": "Ordningene skal være en trampoline som spretter deg tilbake i jobb, ikke en hengekøye du blir liggende i." }
+            ]
+        },
+        {
+            "id": "meninger",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Arbeidslinja: for og mot",
+                    "punkter": [
+                        { "ikon": "fabrikk", "tittel": "Tilhengerne: flere i jobb", "tekst": "bedre kontroll på hva trygdene koster, og lavere skatt", "fraBeat": 0 },
+                        { "ikon": "snakk", "tittel": "Mange mener: jobb gir mer enn penger", "tekst": "venner, rutiner og å være til nytte", "fraBeat": 1 },
+                        { "ikon": "las", "tittel": "Øverbye: forholdsvis svake rettigheter", "tekst": "saksbehandleren kan bli en portvakt", "fraBeat": 2 },
+                        { "ikon": "skjold", "tittel": "Øverbye: kravene kan slite folk ut", "tekst": "noen gir opp å søke hjelp", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Tilhengerne mener arbeidslinja gir flere i arbeid, bedre kontroll over hva trygdene koster, og lavere skatt." },
+                { "si": "Mange mener også at en jobb gir mer enn penger: venner, rutiner og følelsen av å være til nytte." },
+                { "si": "Professor Einar Øverbye ved OsloMet er kritisk. Han mener rettighetene blir forholdsvis svake, og at saksbehandleren kan bli en portvakt som holder folk ute." },
+                { "si": "Han mener også at kravene kan slite folk ut, så noen gir opp å søke hjelp." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Du er allerede med",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ikke ett riktig svar.", "fraBeat": 0 },
+                        { "tekst": "Et spørsmål om verdier.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Du har aldri vært på Nav?", "fraBeat": 1 },
+                        { "tekst": "Du er med likevel.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Din første jobb:", "fraBeat": 2 },
+                        { "tekst": "da holder du nettet oppe.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Hvor stramt skal nettet være?", "fraBeat": 3 },
+                        { "tekst": "Og hvem skal falle gjennom?", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Det finnes ikke ett riktig svar. Det handler om verdier, og partiene svarer ulikt." },
+                { "si": "Du har kanskje aldri vært på et Nav-kontor. Likevel har du vært med i folketrygden hele livet." },
+                { "si": "Når du får din første jobb, begynner du å betale inn. Da holder du nettet oppe for dem som står i køen i dag." },
+                { "si": "Neste gang politikere krangler om Nav, vet du hva det gjelder: hvor stramt nettet skal være, og hvem som skal falle gjennom." }
+            ]
+        }
+    ]
+}
