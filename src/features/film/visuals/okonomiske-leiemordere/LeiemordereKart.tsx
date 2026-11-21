@@ -67,7 +67,7 @@ function lagProjeksjon(modus: Modus): GeoProjection {
                 ]
               : [
                     [-125, -40],
-                    [140, 58],
+                    [152, 58],
                 ];
     return geoNaturalEarth1().fitExtent(
         [
@@ -102,7 +102,7 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
 const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     iran: [
         { tekst: 'Iran: oljen eies av et britisk selskap' },
-        { tekst: '1951: «Oljen er vår»' },
+        { tekst: '1951: Oljen skal tilhøre Iran' },
         { tekst: '1953: CIA lager en plan' },
         { tekst: 'Mossadeq blir arrestert', rod: true },
         { tekst: 'Sjakalene i arbeid', rod: true },
@@ -118,7 +118,7 @@ const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Guatemala, 1954' },
         { tekst: 'Kongo, 1961' },
         { tekst: 'Her jobbet Perkins selv' },
-        { tekst: 'Kommunisme, eller ressurser?' },
+        { tekst: 'Bare kommunisme?' },
     ],
 };
 
@@ -163,7 +163,7 @@ export function LeiemordereKart({ beat, props }: VisualProps<{ modus?: Modus }>)
                 {modus === 'chile' && (
                     <>
                         <Etikett pos={p([-62, -38])} tekst="Chile" farge="#14532d" stor />
-                        {beat <= 2 && <Kobber pos={p([-58, -10])} />}
+                        {beat <= 2 && <Kobber pos={p([-69, -19])} />}
                         {beat === 1 && (
                             <Pil fra={p([-58, -5])} til={p([-58, 6])} farge="#14532d" bue={0} />
                         )}
@@ -215,7 +215,7 @@ export function LeiemordereKart({ beat, props }: VisualProps<{ modus?: Modus }>)
                         key="mossadeq"
                         navn="Mohammad Mossadeq"
                         linje="Statsminister fra april 1951"
-                        ekstra={beat >= 3 ? '15. august 1953: arrestert' : undefined}
+                        ekstra={beat >= 3 ? 'Arrestert i august 1953' : undefined}
                         side="midt"
                     />
                 )}
