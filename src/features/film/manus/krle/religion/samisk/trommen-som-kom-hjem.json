@@ -1,0 +1,233 @@
+{
+    "id": "trommen-som-kom-hjem",
+    "tittel": "Trommen som kom hjem",
+    "kilde": "/krle/religion/samisk/trommen-som-kom-hjem",
+    "bilde": "/images/samisk/trommen-som-kom-hjem-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-21", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "monteren",
+            "lyd": "rom",
+            "kapittel": "Bak glass",
+            "visual": { "type": "TrommenGievrie", "props": { "modus": "monter" } },
+            "replikker": [
+                { "si": "Tenk deg et lite museum i en tysk småby. I en glassmonter ligger en tromme." },
+                { "si": "Ved siden av står et skilt. Det forteller hva trommen er laget av, og hvor gammel den er." },
+                { "si": "Men skiltet sier ingenting om at noen en gang eide den. Og ingenting om at den ble tatt fra dem." },
+                { "si": "Det står heller ikke at det fortsatt finnes mennesker som vil ha den tilbake." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "TROMMEN",
+                    "undertittel": "som kom hjem. Freavnantjahke gievrie, 1723 til 2023",
+                    "bilde": "/images/samisk/trommen-som-kom-hjem-hero.webp",
+                    "tall": [
+                        { "verdi": 300, "etikett": "år borte", "fraBeat": 1, "omtrent": false }
+                    ],
+                    "sporsmal": { "tekst": "Hvem eier en hellig gjenstand?", "fraBeat": 3 }
+                }
+            },
+            "replikker": [
+                { "si": "Trommen heter Freavnantjahke gievrie." },
+                { "si": "Høsten 2023 kom den hjem til Norge. Da hadde den vært borte i 300 år." },
+                { "si": "Historien om den er egentlig to historier." },
+                { "si": "Den ene handler om hvordan en hellig ting blir til en museumsgjenstand. Den andre handler om hvordan den kan bli hellig igjen." }
+            ]
+        },
+        {
+            "id": "skinnet",
+            "lyd": "vind",
+            "kapittel": "Et redskap",
+            "visual": { "type": "TrommenGievrie", "props": { "modus": "skinn" } },
+            "replikker": [
+                { "si": "En gievrie heter runebomme på norsk. Den er en ramme eller en skål av treverk, med skinn spent over." },
+                { "si": "Som regel er det skinn fra rein. På skinnet er det malt figurer: rein med sele, ski, hvaler og mennesker." },
+                { "si": "Noen ganger er det også malt en liten båt med årer. Det ser ut som pynt. Men det er det ikke." },
+                { "si": "Trommen ble brukt til to ting. Den første var å spå, altså å finne svar på det man ikke kan vite." },
+                { "si": "Noaiden, den åndelige lederen, la en ring av metall eller en liten figur av bein på skinnet." },
+                { "si": "Så slo han på trommen med en hammer av reinhorn. Han leste svaret av hvor ringen beveget seg." }
+            ]
+        },
+        {
+            "id": "reisen",
+            "visual": { "type": "TrommenGievrie", "props": { "modus": "transe" } },
+            "replikker": [
+                { "si": "Den andre bruken var reisen. Noaiden slo seg inn i transe, en slags dyp drøm." },
+                { "si": "Da kunne sjelen hans dra til de andre verdenene for å hente svar." },
+                { "si": "Trommen var altså ikke noe du eide, slik du eier en stol." },
+                { "si": "Den var et verktøy for å komme i kontakt med noe større. Den hørte til én person og ett fellesskap." },
+                { "si": "Uten dem var trommen ubrukelig." }
+            ]
+        },
+        {
+            "id": "misjonen",
+            "lyd": "stille",
+            "kapittel": "Trommene tas",
+            "visual": { "type": "TrommenKart", "props": { "modus": "misjon" } },
+            "replikker": [
+                { "si": "På 1600- og 1700-tallet sendte den dansk-norske kongen og kirken misjonærer til de samiske områdene." },
+                { "si": "Misjonærene skulle gjøre samene til kristne. Da måtte den gamle troen bort." },
+                { "si": "Og skulle den gamle troen bort, måtte trommene bort." },
+                { "si": "Også noaidene ble jaktet på. Noaiden Anders Poulsen fikk trommen sin tatt i 1691, og han ble stilt for retten." }
+            ]
+        },
+        {
+            "id": "brannen",
+            "lyd": "ild",
+            "visual": { "type": "TrommenKart", "props": { "modus": "brann" } },
+            "replikker": [
+                { "si": "Flere hundre trommer ble samlet inn eller ødelagt." },
+                { "si": "Rundt hundre av dem lå i København. Der brant de opp i en bybrann i 1728." },
+                { "si": "I dag finnes det bare omtrent hundre samiske trommer igjen i hele verden." },
+                { "si": "De fleste av dem ligger i museer utenfor Sápmi, de samiske områdene." }
+            ]
+        },
+        {
+            "id": "westen",
+            "lyd": "stille",
+            "visual": { "type": "TrommenKart", "props": { "modus": "reise" } },
+            "replikker": [
+                { "si": "Vår tromme ble tatt i 1723, i Namdalen. Det var misjonæren Thomas von Westen som tok den fra eierne." },
+                { "si": "Etter en lang omvei havnet trommen i Tyskland." },
+                { "si": "I 1837 kom den til Meininger museum, i byen Meiningen." },
+                { "si": "Der ble den liggende i nesten to hundre år." }
+            ]
+        },
+        {
+            "id": "nummeret",
+            "lyd": "rom",
+            "kapittel": "Et nummer",
+            "visual": { "type": "TrommenSamling", "props": { "modus": "kort" } },
+            "replikker": [
+                { "si": "Da trommene først lå i en samling, skjedde det noe med dem." },
+                { "si": "De fikk et nummer. De ble målt i centimeter." },
+                { "si": "De ble beskrevet av folk som aldri hadde sett dem i bruk." },
+                { "si": "For museet var trommen en godt bevart gjenstand fra et fjernt folk. Interessant for forskere, og trygg bak glass." },
+                { "si": "For dem som eide den, var den borte. De fleste visste ikke engang hvor den var." }
+            ]
+        },
+        {
+            "id": "innsamlingen",
+            "visual": { "type": "TrommenSamling", "props": { "modus": "innsamling" } },
+            "replikker": [
+                { "si": "Og det stoppet ikke med trommene." },
+                { "si": "På 1800-tallet reiste forskere rundt i samiske områder. De samlet inn klær, verktøy, kjøreredskaper og ting fra hverdagen." },
+                { "si": "Norsk Folkemuseum alene endte opp med rundt 4300 samiske gjenstander." },
+                { "si": "Samtidig drev Norge fornorskingen. Det var en politikk som skulle bytte ut samisk språk og kultur med norsk." },
+                { "si": "Kulturen ble altså motarbeidet ute i samfunnet. Og samtidig ble den samlet inn og satt bak glass." }
+            ]
+        },
+        {
+            "id": "baastede",
+            "lyd": "stille",
+            "kapittel": "Bååstede",
+            "visual": { "type": "TrommenSamling", "props": { "modus": "baastede" } },
+            "replikker": [
+                { "si": "Når et museum gir en ting tilbake til dem den egentlig hører til, kalles det repatriering." },
+                { "si": "Det gjelder særlig når tingen havnet i samlingen på en urimelig måte, og når den betyr mye for kulturen eller troen." },
+                { "si": "19. juni 2012 skrev Norsk Folkemuseum, Kulturhistorisk museum og Sametinget under på en avtale." },
+                { "si": "Samiske gjenstander skulle tilbake til museer som Sametinget har ansvar for. Prosjektet fikk navnet Bååstede. Det betyr hjemkomst på sørsamisk." },
+                { "si": "Det tok tid. Først i 2019, sju år senere, var over 1600 gjenstander fordelt til seks samiske museer." },
+                { "si": "Det er en av de største tilbakeføringene som er gjort i Norge." }
+            ]
+        },
+        {
+            "id": "hjemreisen",
+            "kapittel": "Hjem",
+            "visual": { "type": "TrommenKart", "props": { "modus": "hjem" } },
+            "replikker": [
+                { "si": "Men Freavnantjahke gievrie lå fortsatt i Tyskland." },
+                { "si": "I 2021 skrev Saemien Sijte, det sørsamiske museet i Snåsa, til museet i Meiningen. De ba om å få trommen tilbake." },
+                { "si": "I juni 2023 sa styret ved det tyske museet ja." },
+                { "si": "Den tredje november 2023 var trommen hjemme igjen, i Saepmie." },
+                { "si": "Det var den første samiske trommen som er ført tilbake fra et tysk museum. Flere ligger fortsatt i tyske samlinger." }
+            ]
+        },
+        {
+            "id": "stemmene",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Dette sa de om trommen",
+                    "punkter": [
+                        {
+                            "ikon": "kvinne",
+                            "tittel": "Birgitta Fossum, Saemien Sijte:",
+                            "tekst": "stor betydning for kultur, identitet og verdighet",
+                            "fraBeat": 0
+                        },
+                        {
+                            "ikon": "kvinne",
+                            "tittel": "Silje Karine Muotka, Sametinget:",
+                            "tekst": "samisk kulturarv bør eies av et samisk museum, på vegne av det samiske folk",
+                            "fraBeat": 1
+                        },
+                        {
+                            "ikon": "kvinne",
+                            "tittel": "Lubna Jaffery, statsråd:",
+                            "tekst": "håpet hjemkomsten kunne hele noen sår",
+                            "fraBeat": 2
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Birgitta Fossum leder Saemien Sijte. Hun sa at hjemkomsten har stor betydning for kultur, identitet og verdighet." },
+                { "si": "Sametingspresident Silje Karine Muotka mente at samisk kulturarv bør eies og vises fram av et samisk museum, på vegne av det samiske folket." },
+                { "si": "Kultur- og likestillingsminister Lubna Jaffery håpet at hjemkomsten kunne hjelpe til å hele noen av sårene samene har fått." }
+            ]
+        },
+        {
+            "id": "hvem-eier",
+            "kapittel": "Hvem eier den?",
+            "visual": { "type": "TrommenSamling", "props": { "modus": "sider" } },
+            "replikker": [
+                { "si": "Hvem eier en hellig gjenstand? Det er ikke et lett spørsmål, og det er ikke løst." },
+                { "si": "Museene har gode grunner til å ville beholde ting. De har utstyr og fagfolk som kan ta vare på skjøre gjenstander." },
+                { "si": "De viser fram tingene til forskere og publikum fra hele verden." },
+                { "si": "Men den andre siden veier tungt. Gjenstandene ble som regel ikke solgt eller gitt bort. De ble tatt, ofte av den som hadde all makt." },
+                { "si": "For et folk som har fått språket og troen sin motarbeidet, betyr det mye å få tingene tilbake. Da får de også tilbake retten til å fortelle sin egen historie." }
+            ]
+        },
+        {
+            "id": "hjemme",
+            "lyd": "rom",
+            "kapittel": "Hjemme",
+            "visual": { "type": "TrommenGievrie", "props": { "modus": "hjemme" } },
+            "replikker": [
+                { "si": "I dag står trommen hos Saemien Sijte i Snåsa. Den står fortsatt bak glass." },
+                { "si": "Ingen noaide bruker den, og det kommer neppe noen til å gjøre igjen. Så har noe egentlig endret seg?" },
+                { "si": "Ja. Nå er det samer som bestemmer hvordan trommen skal vises, og hva som skal stå på skiltet." },
+                { "si": "Den er ikke lenger et eksempel på en fremmed kultur, sett utenfra. Den er et minne som et folk tar vare på selv." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Først et redskap.", "fraBeat": 0 },
+                        { "tekst": "Så et nummer bak glass.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Samme tromme, fortsatt bak glass.", "fraBeat": 1 },
+                        { "tekst": "Men nå forteller samene historien.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ett av mange spor som var borte.", "fraBeat": 2 },
+                        { "tekst": "Og som nå er funnet igjen.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Trommen var først et redskap for én noaide og ett fellesskap. Så ble den et nummer bak glass, langt hjemmefra." },
+                { "si": "Nå står den bak glass igjen. Men nå er det samene selv som forteller historien om den." },
+                { "si": "Freavnantjahke gievrie er ett av mange spor som har vært borte, og som nå er funnet igjen." }
+            ]
+        }
+    ]
+}
