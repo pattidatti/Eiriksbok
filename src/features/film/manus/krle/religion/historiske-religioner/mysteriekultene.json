@@ -1,0 +1,209 @@
+{
+    "id": "mysteriekultene",
+    "tittel": "Mysteriekultene: Religionen bak lukkede dører",
+    "kilde": "/krle/religion/historiske-religioner/mysteriekultene",
+    "bilde": "/images/historiske-religioner/mysteriekultene-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-21", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "trappa",
+            "lyd": "rom",
+            "kapittel": "Under gata",
+            "visual": { "type": "MysterieMitreum", "props": { "modus": "ned" } },
+            "replikker": [
+                { "si": "Vi står i en travel gate i Roma. Her går det en trapp ned i bakken." },
+                { "si": "Vi følger trappa ned. Nederst ligger et rom uten vinduer. Det er ikke stort." },
+                { "si": "Langs begge veggene står en lang steinbenk. Mellom dem går en smal midtgang." },
+                { "si": "På endeveggen henger et bilde av en ung mann som dreper en okse." },
+                { "si": "Noen titalls menn spiser sammen her i fakkellys. Ingen av dem får fortelle hva som skjer i rommet." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Mysteriekultene",
+                    "undertittel": "Religionen bak lukkede dører",
+                    "bilde": "/images/historiske-religioner/mysteriekultene-hero.webp",
+                    "tall": [
+                        { "verdi": 100, "etikett": "slike rom funnet i Roma", "fraBeat": 1, "omtrent": false, "prefiks": "over" }
+                    ],
+                    "sporsmal": { "tekst": "Hvorfor gikk folk ned dit?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Et slikt rom kalles et mitreum. De fantes over hele Romerriket." },
+                { "si": "Bare i Roma er det funnet over hundre. Noen ligger under kirker som ble bygget senere." },
+                { "si": "Rommene var laget for små grupper. Hvorfor gikk folk ned dit, når byen over bakken hadde sin egen religion?" }
+            ]
+        },
+        {
+            "id": "staten",
+            "kapittel": "Religionen på torget",
+            "visual": { "type": "MysterieDorer", "props": { "modus": "staten" } },
+            "replikker": [
+                { "si": "Over bakken lå statens religion. Den handlet om riket, ikke om deg." },
+                { "si": "Romerne mente at de måtte ha et godt forhold til gudene. Da ville det gå bra med Roma." },
+                { "si": "Derfor ofret de. De ga gudene noe, og ba om noe tilbake. På latin het det do ut des: jeg gir for at du skal gi.", "uttale": "Derfor ofret de. De ga gudene noe, og ba om noe tilbake. På latin het det do ut dess: jeg gir for at du skal gi." },
+                { "si": "Når en hærfører kom hjem med seier, ofret han til guden Jupiter. Det var en ofring til gudene og et maktshow på én gang." },
+                { "si": "Men legg merke til hva denne religionen ikke gjorde. Den sa nesten ingenting om hva som skjedde med deg etter at du døde." }
+            ]
+        },
+        {
+            "id": "doren",
+            "kapittel": "Den andre døra",
+            "visual": { "type": "MysterieDorer", "props": { "modus": "mysteriet" } },
+            "replikker": [
+                { "si": "Romerne tålte stort sett fremmede religioner, så lenge de ikke truet staten. Det åpnet døra for noe annet." },
+                { "si": "En mysteriekult var en hemmelig gruppe. Den ga hver enkelt en religiøs opplevelse som statens religion ikke ga." },
+                { "si": "Ordet kommer fra gresk, myein, som betyr å lukke. Du lukket munnen om det du hadde sett.", "uttale": "Ordet kommer fra gresk, my-ein, som betyr å lukke. Du lukket munnen om det du hadde sett." },
+                { "si": "For å komme inn måtte du bli innviet. Det vil si å gå gjennom en seremoni som slipper deg inn i gruppa." },
+                { "si": "Etterpå fikk du vite ting de andre ikke visste. Ofte handlet det om håp: at det ventet noe bedre etter døden." }
+            ]
+        },
+        {
+            "id": "eleusis-kart",
+            "lyd": "vind",
+            "kapittel": "Eleusis",
+            "visual": { "type": "MysterieKart", "props": { "modus": "eleusis" } },
+            "replikker": [
+                { "si": "De mest kjente mysteriene ble feiret i Eleusis, en liten by utenfor Athen i Hellas." },
+                { "si": "Der dyrket man Demeter, gudinnen for korn og vekst." },
+                { "si": "Festen varte i ni dager, i august eller september." }
+            ]
+        },
+        {
+            "id": "eleusis-hvem",
+            "lyd": "stille",
+            "visual": { "type": "MysterieDorer", "props": { "modus": "eleusis" } },
+            "replikker": [
+                { "si": "Hvem slapp inn? Alle grekere kunne delta. Også kvinner, og også slaver." },
+                { "si": "Kravene var to. Du måtte kunne snakke gresk." },
+                { "si": "Og du kunne ikke ha blod på hendene. Du kunne altså ikke ha drept noen." },
+                { "si": "Kvinner og slaver sto utenfor det meste i samfunnet. Men her slapp de inn." },
+                { "si": "De innvidde hadde taushetsplikt. Brøt du den, kunne straffen være døden." },
+                { "si": "Den romerske forfatteren Cicero skrev at innvielsen lærte deg å leve et lykkelig liv, og å møte døden med større håp." }
+            ]
+        },
+        {
+            "id": "mithras-kart",
+            "kapittel": "Mithras",
+            "visual": { "type": "MysterieKart", "props": { "modus": "mithras" } },
+            "replikker": [
+                { "si": "Guden i rommet under gata het Mithras. Han var opprinnelig ikke romersk." },
+                { "si": "Han dukker opp for over tre tusen år siden, hos folk som senere bosatte seg i India og Iran." },
+                { "si": "Der passet han på at sannheten holdt, at loven gjaldt, og at folk holdt løftene sine." },
+                { "si": "I Romerriket ble han noe nytt: hovedpersonen i en hemmelig kult. Den spredte seg fra rundt år 100 til år 400." }
+            ]
+        },
+        {
+            "id": "grader",
+            "lyd": "rom",
+            "visual": { "type": "MysterieTrapp", "props": { "modus": "grader" } },
+            "replikker": [
+                { "si": "Mithras-kulten var bare åpen for menn." },
+                { "si": "Den var populær blant soldater, slaver og frigitte, altså tidligere slaver." },
+                { "si": "Etter hvert kom også rike romere med." },
+                { "si": "Inne i kulten kunne man stige gjennom sju grader, som trinn i en trapp. Nederst sto Corax, som betyr ravnen.", "uttale": "Inne i kulten kunne man stige gjennom sju grader, som trinn i en trapp. Nederst sto Korax, som betyr ravnen." },
+                { "si": "Øverst sto Pater, som betyr faren. Mange forskere mener at de øverste gradene var for lederne i gruppa." }
+            ]
+        },
+        {
+            "id": "rommet",
+            "visual": { "type": "MysterieMitreum", "props": { "modus": "rom" } },
+            "replikker": [
+                { "si": "Rommene lå i en hule under jorden, eller nederst i en annen bygning, slik at det føltes som en hule." },
+                { "si": "Inne var det to lange benker, og midtgangen førte fram til et slags alter." },
+                { "si": "Arkeologene har funnet matrester som viser at de spiste sammen der nede." },
+                { "si": "På endeveggen hang bildet av oksedrapet. Blodet fra oksen skulle bidra til at verden og alt levende ble fornyet." },
+                { "si": "Forskere mener i dag at dette var et bilde fra en fortelling. Det var ikke noe medlemmene faktisk gjorde." }
+            ]
+        },
+        {
+            "id": "gudinner",
+            "lyd": "stille",
+            "kapittel": "Gudinnene utenfra",
+            "visual": { "type": "MysterieKart", "props": { "modus": "gudinner" } },
+            "replikker": [
+                { "si": "Gudinnen Isis kom fra Egypt, der hun hadde vært dyrket i tusenvis av år." },
+                { "si": "På 300-tallet før vår tid spredte dyrkelsen av henne seg rundt Middelhavet. Hun fikk et tempel i havnebyen Pireus.", "uttale": "På tre hundre-tallet før vår tid spredte dyrkelsen av henne seg rundt Middelhavet. Hun fikk et tempel i havnebyen Pireus." },
+                { "si": "Keiserne Augustus og Tiberius prøvde å stoppe Isis-kulten. De mente at det som foregikk der, var upassende." },
+                { "si": "Det hjalp ikke. Snart fantes det Isis-templer over hele riket." },
+                { "si": "Isis-kulten ble så populær at den kanskje var kristendommens viktigste konkurrent." }
+            ]
+        },
+        {
+            "id": "kybele",
+            "visual": { "type": "MysterieTrapp", "props": { "modus": "roma" } },
+            "replikker": [
+                { "si": "Gudinnen Kybele kom til selve Roma allerede i 204 før vår tid. Roma var midt i krigen mot Hannibal." },
+                { "si": "Romerne søkte råd i gamle spådomsbøker. Svaret ble tolket slik at byen manglet Moren." },
+                { "si": "Kybele fikk sitt eget tempel i Roma i 191 før vår tid. Prestene hennes kom fra andre land og snakket gresk." },
+                { "si": "Mange romere syntes kulten var umoralsk, og myndighetene motarbeidet den lenge." },
+                { "si": "Først under keiser Claudius, fra år 41 til 54, ble den en del av statens religion." },
+                { "si": "Slik gjorde Roma ofte. Først kjempet de mot det fremmede, så lot de det være. Til slutt gjorde de det til sitt eget." }
+            ]
+        },
+        {
+            "id": "kildene",
+            "kapittel": "Hvorfor vet vi så lite?",
+            "visual": { "type": "MysterieDorer", "props": { "modus": "kilder" } },
+            "replikker": [
+                { "si": "Her møter vi et problem for historikere. Hemmeligholdet virket." },
+                { "si": "Vi vet lite om hva som skjedde der inne." },
+                { "si": "Det meste vi vet, kommer fra forfattere fra antikken, som Platon, og fra kristne forfattere som ville ta kultene ned." },
+                { "si": "Den kristne forfatteren Tertullian mente at Mithras-mysteriene var djevelske etterlikninger av kristne ritualer." },
+                { "si": "Men en kilde som vil ramme det den skriver om, er ikke et nøytralt vitne. Setningen sier mye om Tertullian, og lite om rommet." },
+                { "si": "Moderne forskere mener at Mithras-kulten og kristendommen må ha påvirket hverandre lite." }
+            ]
+        },
+        {
+            "id": "slutten",
+            "kapittel": "Dørene lukkes",
+            "visual": { "type": "MysterieKart", "props": { "modus": "slutt" } },
+            "replikker": [
+                { "si": "På 300-tallet endret alt seg. Kristendommen gikk fra å være forfulgt til å bli rikets religion.", "uttale": "På tre hundre-tallet endret alt seg. Kristendommen gikk fra å være forfulgt til å bli rikets religion." },
+                { "si": "I år 392 forbød keiser Theodosius den første alle nattlige mysteriefester." },
+                { "si": "Tre år senere ble tempelet i Eleusis ødelagt av gotere." },
+                { "si": "Etter nesten to tusen år var mysteriene i Eleusis over." }
+            ]
+        },
+        {
+            "id": "tomt",
+            "lyd": "rom",
+            "visual": { "type": "MysterieMitreum", "props": { "modus": "tomt" } },
+            "replikker": [
+                { "si": "Rommene under jorden ble stående tomme. Mange lå urørt til arkeologer fant dem igjen." },
+                { "si": "Kultene forsvant. Men behovet de svarte på, forsvant ikke." },
+                { "si": "Kristendommen tilbød mye av det samme: et fellesskap å høre til i, en seremoni som slapp deg inn, og et løfte om noe etter døden." },
+                { "si": "Forskjellen var at kristendommen bar budskapet sitt ut i det åpne. Mysteriekultene holdt sitt bak lukkede dører." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Statens religion tok seg av riket.", "fraBeat": 0 },
+                        { "tekst": "Men den svarte ikke på døden.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Der svaret manglet,", "fraBeat": 1 },
+                        { "tekst": "vokste små, hemmelige fellesskap fram.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "En kirke, en moské og et tempel er bygget for å slippe folk inn.", "fraBeat": 2 },
+                        { "tekst": "Et mitreum var bygget for å holde folk ute.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Statens religion i Roma tok seg av det store og felles. Men den svarte ikke på hva som skjer med deg når du dør." },
+                { "si": "Der det svaret manglet, vokste noe annet fram: små grupper der du ble innviet, og der de andre kjente navnet ditt." },
+                { "si": "En kirke, en moské eller et tempel i dag er bygget for å slippe folk inn. Et mitreum var det motsatte: et rom bygget for å holde folk ute." }
+            ]
+        }
+    ]
+}
