@@ -1,0 +1,282 @@
+{
+  "id": "pensjon",
+  "title": "Pensjon: Hvorfor du bør bry deg nå",
+  "layout": "rich",
+  "year": "2011",
+  "category": "Velferd",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Pensjonen består av tre deler: folketrygden, tjenestepensjon fra arbeidsgiveren og egen sparing.",
+    "Du tjener opp pensjon i folketrygden fra året du fyller 13: 18,1 prosent av inntekten hvert år.",
+    "Pensjonsreformen fra 2011 innførte levealdersjustering og fritt uttak mellom 62 og 75 år."
+  ],
+  "externalUrl": "https://snl.no/alderspensjon",
+  "factChecked": "2026-11-21",
+  "tags": [
+    "velferd",
+    "pensjon",
+    "folketrygden",
+    "pensjonsreformen",
+    "levealdersjustering",
+    "tjenestepensjon"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Sommeren du er 13 år, får du din første ordentlige jobb. Du bærer ut aviser hver morgen i fire uker og tjener 10 000 kroner. Pengene går til en ny sykkel. Men noe annet skjer også, uten at du merker det. Inne hos Nav blir det lagt 1 810 kroner på en konto med navnet ditt på. Den kontoen skal du ikke røre før du er over 60 år."
+    },
+    {
+      "type": "text",
+      "content": "Kontoen er pensjonen din. Pensjon er penger du får hver måned når du har sluttet å jobbe fordi du har blitt gammel. Det høres langt unna ut, og det er det. Men pensjonen din begynner å bygge seg opp nå. I denne artikkelen skal vi se på hvor pengene kommer fra, hvorfor reglene ble endret i 2011, og hvorfor det du gjør de neste 50 årene, bestemmer hvor mye du får."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom på sykkel som leverer aviser tidlig om morgenen",
+      "caption": "Den første lønna du tjener, gir også den første pensjonen. Fra du er 13 år, teller hver krone."
+    },
+    {
+      "type": "header",
+      "text": "Tre kraner inn i samme bøtte"
+    },
+    {
+      "type": "text",
+      "content": "Tenk på pensjonen som en bøtte. Så lenge du jobber, renner det penger inn i den fra tre kraner. Når du blir gammel, begynner du å tappe av bøtta litt hver måned. Ifølge Nav består pensjonen nettopp av tre deler: alderspensjon fra folketrygden, pensjon fra arbeidsgiveren og eventuelt egen sparing (Nav, 2026a)."
+    },
+    {
+      "type": "list",
+      "items": [
+        "Kran 1, folketrygden: Dette er den største kranen. Alle som har bodd eller jobbet i Norge, tjener opp alderspensjon her. Du kan lese mer om folketrygden i artikkelen om [Nav og folketrygden](/samfunnskunnskap/velferd/nav-og-folketrygden).",
+        "Kran 2, tjenestepensjon: Dette er pensjon som arbeidsgiveren din betaler inn for deg. Den kommer i tillegg til folketrygden.",
+        "Kran 3, egen sparing: Dette er penger du selv velger å sette av til du blir gammel. Ingen tvinger deg, men det kan gjøre bøtta fullere."
+      ]
+    },
+    {
+      "type": "header",
+      "text": "Kran 1: Folketrygden fyller fra du er 13"
+    },
+    {
+      "type": "text",
+      "content": "For alle som er født i 1963 eller senere, virker folketrygden slik: Hvert år legger Nav 18,1 prosent av inntekten din inn på en egen pensjonskonto. Den kalles pensjonsbeholdningen (Pedersen, 2026). Tjener du 100 000 kroner et år, blir det altså lagt 18 100 kroner i bøtta det året. Det er en grense for hvor mye inntekt som teller. Den ligger på 7,1 G, der G er grunnbeløpet som Nav bruker til å regne ut trygder."
+    },
+    {
+      "type": "text",
+      "content": "Du trenger ikke å gjøre noe selv for at dette skal skje. Opptjeningen starter fra første krone du tjener (Nav, 2026a). Fra 2010 kan du tjene opp pensjon fra det året du fyller 13 år, og du kan fortsette til og med det året du fyller 75 (Nav, 2026a). Selv førstegangstjenesten i Forsvaret gir pensjon. Ett års tjeneste gir like mye som om du hadde tjent 2,5 G (Nav, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Pengene ligger ikke stille. Hvert år blir beholdningen justert slik at den følger lønnsveksten i samfunnet (Pedersen, 2026). Det betyr at 1 810 kroner du tjente opp som 13-åring, ikke blir verdiløse før du blir gammel."
+    },
+    {
+      "type": "header",
+      "text": "Kran 2 og 3: Arbeidsgiveren og deg selv"
+    },
+    {
+      "type": "text",
+      "content": "Den andre kranen er tjenestepensjon. Ansatte i staten får den fra Statens pensjonskasse, og de som jobber i kommunene, har egne ordninger (Pedersen, 2026). Lenge var det frivillig for private bedrifter å gi de ansatte tjenestepensjon. Det endret seg 1. januar 2006. Da kom obligatorisk tjenestepensjon, som betyr at det er påbudt. Nå må arbeidsgiveren betale inn minst 2 prosent av årslønna di (Hatland, 2024). Mange bedrifter betaler mer, så når du søker jobb, kan det lønne seg å spørre."
+    },
+    {
+      "type": "text",
+      "content": "Den tredje kranen styrer du selv. Du kan spare til pensjon gjennom egne avtaler, og staten gir skattefordeler for noe av slik sparing (Pedersen, 2026). Jo tidligere du begynner, jo mer kan pengene vokse. Hvorfor det er slik, kan du lese om i artikkelen om [sparing og rentes rente](/samfunnskunnskap/personlig-okonomi/sparing-og-rentes-rente)."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Skru kranene av og på, og velg når du vil begynne å tappe av bøtta. Hva skjer med beløpet du får hver måned?"
+    },
+    {
+      "type": "component",
+      "name": "PensjonsBotta",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor kom pensjonsreformen?"
+    },
+    {
+      "type": "text",
+      "content": "Pensjonen i Norge har en lang historie. Den første alderstrygden kom i 1936, men den var bare for de fattigste. I 1966 kom loven om folketrygden, som ga alle en pensjon som henger sammen med hvor mye de har jobbet (Pedersen, 2026). Dette kan du lese mer om i artikkelen om [velferdsstaten](/historie/norge-i-moderne-tid/velferdsstaten)."
+    },
+    {
+      "type": "text",
+      "content": "Utover 2000-tallet ble det klart at systemet ville bli svært dyrt. Folk lever lenger enn før, og det blir stadig flere eldre. Det kalles [eldrebølgen](/samfunnskunnskap/demografi/eldrebolgen). Ved utgangen av 2025 fikk 1 084 600 personer alderspensjon fra folketrygden (Nav, 2026b). Hvis hver av dem skal få pensjon i flere år enn før, må noen betale mer."
+    },
+    {
+      "type": "text",
+      "content": "Stortinget vedtok derfor en stor pensjonsreform i 2009. En reform er en stor endring av reglene. De viktigste endringene gjaldt fra 1. januar 2011 (Pedersen, 2026). Målet var å gjøre statens økonomi sterkere på lang sikt, først og fremst ved å få folk til å jobbe lenger (Fredriksen mfl., 2015)."
+    },
+    {
+      "type": "header",
+      "text": "Levealdersjustering: samme bøtte, flere år"
+    },
+    {
+      "type": "text",
+      "content": "Den viktigste endringen har et langt navn: levealdersjustering. Ordet høres vanskelig ut, men tanken er enkel. Når du begynner å ta ut pensjon, deler Nav bøtta di på antall år folk på din alder ventes å leve. Lever folk i ditt årskull lenger, må bøtta deles på flere år. Da blir hver utbetaling mindre (Pedersen & Loen, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Ordningen gjelder alle som er født i 1944 eller senere. Tanken er at det er pensjonistene selv, ikke skattebetalerne, som skal bære kostnaden når folk lever lenger (Pedersen & Loen, 2025). Leksikonet kaller levealdersjusteringen «klart viktigste innstrammingstiltaket i reformen». Et innstrammingstiltak er noe som gjør at staten bruker mindre penger. Yngre folk må derfor enten nøye seg med litt mindre pensjon i året, eller jobbe litt lenger for å få like mye som besteforeldrene sine (Pedersen & Loen, 2025)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Eldre person som sitter på en benk i en park",
+      "caption": "Folk lever lenger enn før. Det er gode nyheter, men det betyr at pensjonen må vare i flere år."
+    },
+    {
+      "type": "header",
+      "text": "Du velger selv når du vil tappe"
+    },
+    {
+      "type": "text",
+      "content": "Reformen ga også en ny frihet. Du kan velge å begynne å ta ut pensjon når som helst mellom 62 og 75 år (Pedersen, 2026). Vanligvis kan du ta den ut fra du fyller 67. Vil du starte allerede som 62-åring, må du ha tjent opp nok, og da blir beløpet du får hver måned lavere (Nav, 2026a)."
+    },
+    {
+      "type": "text",
+      "content": "Det er bøtta igjen. Tar du ut pensjonen tidlig, har du fylt bøtta i færre år, og den skal deles på flere år. Venter du, får du mer hver måned. Systemet er laget slik at du i snitt skal få omtrent like mye til sammen over hele livet, uansett når du starter (Pedersen, 2026). Du kan også jobbe så mye du vil mens du tar ut pensjon, uten at pensjonen blir mindre (Nav, 2026a)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "content": "Pensjon: penger du får hver måned når du har sluttet å jobbe fordi du er gammel. Pensjonsbeholdning: kontoen hos Nav der pensjonen fra folketrygden samles opp. Tjenestepensjon: pensjon som arbeidsgiveren betaler inn for deg. Pensjonsreformen: de nye pensjonsreglene som gjaldt fra 2011. Levealdersjustering: pensjonen deles på hvor lenge folk i ditt årskull ventes å leve. Garantipensjon: en minstepensjon for dem som har tjent opp lite."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hva om bøtta er nesten tom?"
+    },
+    {
+      "type": "text",
+      "content": "Noen har jobbet lite gjennom livet, kanskje fordi de har vært syke, eller fordi de har bodd i Norge i kort tid. For dem finnes garantipensjonen. Den er en minstepensjon som sikrer at alle får noe å leve av (Pedersen, 2026). I desember 2025 var 11 prosent av alle alderspensjonister minstepensjonister (Nav, 2026b)."
+    },
+    {
+      "type": "text",
+      "content": "De fleste får mer enn minstenivået. I 2025 fikk en alderspensjonist i snitt 310 700 kroner i året fra folketrygden, før skatt (Nav, 2026b). Pensjonen fra arbeidsgiveren og egen sparing kommer i tillegg."
+    },
+    {
+      "type": "header",
+      "text": "Vil det være penger igjen til deg?"
+    },
+    {
+      "type": "text",
+      "content": "Mange unge lurer på om det vil være penger igjen når de blir gamle. Svaret er at reformen har gjort systemet sterkere, men ikke sterkt nok alene. Forskere i Statistisk sentralbyrå (SSB) regnet ut at reformen vil gi flere folk i jobb og bedre statsøkonomi. Samtidig skrev de at staten trolig likevel må stramme inn i årene som kommer (Fredriksen mfl., 2015)."
+    },
+    {
+      "type": "text",
+      "content": "Derfor diskuterer politikerne pensjon i nesten hver valgkamp. Noen mener pensjonistene har fått for lite, og i 2021 endret Stortinget hvordan pensjonene blir justert hvert år, slik at pensjonistene kommer bedre ut i år da lønningene vokser lite (Pedersen, 2026). Andre mener vi må jobbe lenger for at regnestykket skal gå opp. Det finnes ikke ett riktig svar. Det handler om hva vi mener er rettferdig mellom unge og gamle."
+    },
+    {
+      "type": "text",
+      "content": "Det du kan gjøre selv, er å vite hvordan bøtta virker. Hver gang du får lønn, fylles den litt. Sjekk [lønnsslippen](/samfunnskunnskap/personlig-okonomi/lonnsslippen) din, og når du blir eldre, kan du logge inn på Nav og se hvor mye som allerede ligger der. Den første avissommeren er bare begynnelsen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung person ser på en pensjonsoversikt på mobilen",
+      "caption": "På Nav kan du selv se hvor mye pensjon du har tjent opp så langt."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Fredriksen, D., Holmøy, E., Strøm, B. & Stølen, N. M. (2015). *Pensjonsreformen styrker de offentlige finansene, men ikke nok*. Statistisk sentralbyrå. Hentet 21.11.2026 fra [ssb.no](https://www.ssb.no/forskning/offentlig-okonomi/offentlige-finanser-paa-lang-sikt/pensjonsreformen-styrker-de-offentlige-finansene-men-ikke-nok)",
+          "Hatland, A. (2024). *Obligatorisk tjenestepensjon*. Store norske leksikon. Hentet 21.11.2026 fra [snl.no/obligatorisk_tjenestepensjon](https://snl.no/obligatorisk_tjenestepensjon)",
+          "Nav. (2026a). *Alderspensjon*. Hentet 21.11.2026 fra [nav.no/alderspensjon](https://www.nav.no/alderspensjon)",
+          "Nav. (2026b). *Alderspensjon. Statistikk desember 2025*. Hentet 21.11.2026 fra [nav.no](https://www.nav.no/no/nav-og-samfunn/statistikk/pensjon-statistikk/relatert-informasjon/arkiv.alderspensjon.desember-2025)",
+          "Pedersen, A. W. (2026). *Alderspensjon*. Store norske leksikon. Hentet 21.11.2026 fra [snl.no/alderspensjon](https://snl.no/alderspensjon)",
+          "Pedersen, A. W. & Loen, R. (2025). *Levealdersjustering*. Store norske leksikon. Hentet 21.11.2026 fra [snl.no/levealdersjustering](https://snl.no/levealdersjustering)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilke tre deler består pensjonen av?",
+          "Hvor mange prosent av inntekten din blir lagt inn i pensjonsbeholdningen hos Nav hvert år, og fra hvilken alder kan du tjene opp pensjon?",
+          "Hva er obligatorisk tjenestepensjon, og når ble det innført?",
+          "Hvilke aldre kan du velge mellom når du skal begynne å ta ut pensjon?"
+        ],
+        "reflekter": [
+          "Forklar med dine egne ord hva levealdersjustering er. Bruk bildet av bøtta.",
+          "Hvorfor får du mer i måneden hvis du venter med å ta ut pensjonen? Bruk det du fant ut i pensjonsbøtta.",
+          "Hvorfor mente politikerne at det var nødvendig med en pensjonsreform? Bruk tall fra artikkelen.",
+          "Leksikonet skriver at pensjonistene, ikke skattebetalerne, skal bære kostnaden når folk lever lenger. Er det rettferdig? Begrunn svaret."
+        ],
+        "gaaVidere": [
+          "Diskuter i grupper: Bør alle få velge selv når de vil gå av med pensjon, eller bør det være én fast alder for alle?",
+          "Spør en voksen du kjenner om de vet hvor mye pensjon de har tjent opp, og om jobben deres har tjenestepensjon. Skriv et kort referat.",
+          "Skriv et innlegg til en avis med tittelen «Unge må bry seg om pensjon». Bruk minst to fakta fra artikkelen."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Fra hvilket år i livet kan du begynne å tjene opp alderspensjon i folketrygden?",
+            "options": [
+              "Fra du fyller 13",
+              "Fra du fyller 18",
+              "Fra du fyller 22",
+              "Fra du fyller 30"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Fra 2010 kan du tjene opp pensjon fra det året du fyller 13, og opptjeningen starter fra første krone."
+          },
+          {
+            "question": "Hvor mye av inntekten din blir lagt inn i pensjonsbeholdningen hvert år?",
+            "options": [
+              "2 prosent",
+              "10 prosent",
+              "18,1 prosent",
+              "50 prosent"
+            ],
+            "correctAnswer": 2,
+            "explanation": "For alle født i 1963 eller senere blir 18,1 prosent av inntekten lagt inn, opp til en grense på 7,1 G."
+          },
+          {
+            "question": "Hva betyr levealdersjustering?",
+            "options": [
+              "At alle får like mye pensjon",
+              "At pensjonen deles på hvor lenge folk i ditt årskull ventes å leve",
+              "At pensjonen øker jo eldre du blir",
+              "At du må slutte å jobbe når du er 67"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Lever folk lenger, må bøtta deles på flere år, og hver utbetaling blir mindre."
+          },
+          {
+            "question": "Hva skjer hvis du venter med å ta ut pensjonen fra 62 til 70 år?",
+            "options": [
+              "Du får mindre hver måned",
+              "Du får like mye hver måned",
+              "Du får mer hver måned",
+              "Du mister retten til pensjon"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Du har fylt bøtta i flere år, og den skal deles på færre år. Da blir hver utbetaling større."
+          },
+          {
+            "question": "Hvor mye må en privat arbeidsgiver minst betale inn i tjenestepensjon?",
+            "options": [
+              "Ingenting, det er frivillig",
+              "Minst 2 prosent av årslønna",
+              "Minst 18,1 prosent av årslønna",
+              "Et fast beløp på 1 000 kroner"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Siden 2006 har private arbeidsgivere måttet betale inn minst 2 prosent av årslønna."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}

@@ -117,6 +117,7 @@ const Meklingsmotet = lazy(() => import('./content/interactive/Meklingsmotet').t
 const RegningenDin = lazy(() => import('./content/interactive/RegningenDin').then(m => ({ default: m.RegningenDin })));
 const BudsjettKabalen = lazy(() => import('./content/interactive/BudsjettKabalen').then(m => ({ default: m.BudsjettKabalen })));
 const NavKoen = lazy(() => import('./content/interactive/NavKoen').then(m => ({ default: m.NavKoen })));
+const PensjonsBotta = lazy(() => import('./content/interactive/PensjonsBotta').then(m => ({ default: m.PensjonsBotta })));
 const UngdomsVeivalg = lazy(() => import('./content/interactive/UngdomsVeivalg').then(m => ({ default: m.UngdomsVeivalg })));
 const KlageFristen = lazy(() => import('./content/interactive/KlageFristen').then(m => ({ default: m.KlageFristen })));
 const TskjortePrisen = lazy(() => import('./content/interactive/TskjortePrisen').then(m => ({ default: m.TskjortePrisen })));
@@ -1114,6 +1115,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RegningenDin,
     BudsjettKabalen,
     NavKoen,
+    PensjonsBotta,
     UngdomsVeivalg,
     KlageFristen,
     TskjortePrisen,
