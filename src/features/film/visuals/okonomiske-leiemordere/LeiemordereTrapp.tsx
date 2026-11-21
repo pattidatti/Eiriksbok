@@ -116,7 +116,8 @@ export function LeiemordereTrapp({ beat, props }: VisualProps<{ fra?: number }>)
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="absolute left-[6%] top-[17%] w-[34rem] p-5 rounded-3xl bg-white shadow-2xl space-y-3"
+                        className="absolute p-5 rounded-3xl bg-white shadow-2xl space-y-3"
+                        style={{ left: '5%', top: '14%', width: '27rem' }}
                     >
                         <div className="text-3xl font-black text-red-800">Sjakalene</div>
                         <div className="text-2xl font-semibold text-slate-700">
@@ -128,7 +129,7 @@ export function LeiemordereTrapp({ beat, props }: VisualProps<{ fra?: number }>)
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.5 }}
-                                    className="px-4 py-2 rounded-xl bg-red-700 text-2xl font-black text-white"
+                                    className="px-4 py-2 rounded-xl bg-red-700 text-xl font-black text-white"
                                 >
                                     Siste utvei: militær invasjon
                                 </motion.div>

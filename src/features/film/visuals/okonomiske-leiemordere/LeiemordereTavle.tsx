@@ -95,7 +95,7 @@ function Rapport({ beat }: { beat: number }) {
                             transition={{ delay: 1.2, type: 'spring', stiffness: 260, damping: 15 }}
                             className="absolute right-8 top-[38%] px-4 py-2 border-[6px] border-red-700 rounded-xl text-red-700 font-black text-3xl bg-white/90"
                         >
-                            BLÅST OPP
+                            BLÅST OPP, SIER HAN
                         </motion.div>
                     )}
                 </AnimatePresence>
@@ -165,7 +165,7 @@ function Renter({ beat }: { beat: number }) {
                                 <motion.div
                                     key={i}
                                     initial={{ opacity: 0, y: -30 }}
-                                    animate={beat >= 1 ? { opacity: 1, y: 0 } : { opacity: i < 5 ? 0.18 : 0, y: 0 }}
+                                    animate={beat >= 1 ? { opacity: 1, y: 0 } : { opacity: i < 5 ? 0.5 : 0, y: 0 }}
                                     transition={{ delay: beat >= 1 ? 0.4 + i * 0.15 : 0 }}
                                     className="w-[8rem] h-[1.6rem] rounded-full border-4"
                                     style={{ background: '#facc15', borderColor: '#a16207' }}
@@ -202,7 +202,7 @@ function Renter({ beat }: { beat: number }) {
                 transition={fjær}
                 className="absolute right-[5%] top-[22%] w-[40%] p-5 rounded-3xl bg-white shadow-2xl"
             >
-                <div className="text-2xl font-black text-slate-900 mb-3">Igjen i budsjettet</div>
+                <div className="text-2xl font-black text-slate-900 mb-3">Budsjettene henger etter</div>
                 {budsjett.map(({ Ikon, tekst }, i) => (
                     <div key={tekst} className="flex items-center gap-3 mb-3">
                         <Ikon className="w-8 h-8 text-teal-700 shrink-0" />
@@ -229,7 +229,7 @@ function Renter({ beat }: { beat: number }) {
                         className="absolute right-[5%] bottom-[8%] w-[40%] p-5 rounded-3xl bg-slate-900 text-white shadow-2xl"
                     >
                         <div className="text-2xl font-bold text-amber-300">
-                            Også Kina: lån til Afrika og Asia
+                            Mange mener: også Kina bruker lån
                         </div>
                         <div className="mt-2 font-display font-black text-3xl">
                             Den som eier gjelden, har makten

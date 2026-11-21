@@ -4,10 +4,12 @@
     "kilde": "/historie/dekolonisering/okonomiske-leiemordere",
     "bilde": "/images/historie/dekolonisering/okonomiske-leiemordere_hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-21", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 5, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "landet",
             "kapittel": "Mannen med kofferten",
+            "lyd": "hav",
             "visual": {
                 "type": "LeiemordereLandet",
                 "props": {
@@ -48,12 +50,13 @@
                     "si": "En leiemorder dreper for penger. En økonomisk leiemorder dreper ikke mennesker direkte."
                 },
                 {
-                    "si": "I stedet bruker han lån, lureri og store tall. Målet er å fange fattige land i en felle de aldri kommer ut av."
+                    "si": "I stedet bruker han lån, lureri og store tall til å fange fattige land i en felle. Målet er å styre ressursene deres."
                 }
             ]
         },
         {
             "id": "rapporten",
+            "lyd": "stille",
             "visual": {
                 "type": "LeiemordereTavle",
                 "props": {
@@ -62,16 +65,16 @@
             },
             "replikker": [
                 {
-                    "si": "På 1970-tallet fikk Perkins jobb i et stort amerikansk konsulentselskap. Tittelen hans var sjeføkonom."
+                    "si": "På 1970-tallet fikk Perkins jobb i et stort amerikansk selskap som ga råd mot betaling. Han var sjeføkonom, den som regner på pengene."
                 },
                 {
                     "si": "Han skulle reise til fattige land og regne ut hvor mye de ville tjene på å bygge veier, kraftverk og havner."
                 },
                 {
-                    "si": "Men Perkins forteller at jobben egentlig var noe annet. Tallene i rapportene hans var blåst opp med vilje."
+                    "si": "Men Perkins forteller at jobben egentlig var noe annet. Han sier at tallene i rapportene var blåst opp med vilje."
                 },
                 {
-                    "si": "Da tok landene opp lån de umulig kunne betale tilbake. I 2004 fortalte han alt i en bok som ble en bestselger."
+                    "si": "Slik skulle landene ta opp lån de umulig kunne betale tilbake. I 2004 fortalte han alt i en bok som ble en bestselger."
                 }
             ]
         },
@@ -101,6 +104,7 @@
         },
         {
             "id": "lanet",
+            "lyd": "hav",
             "visual": {
                 "type": "LeiemordereLandet",
                 "props": {
@@ -132,7 +136,7 @@
             },
             "replikker": [
                 {
-                    "si": "Trinn fem: vent. Den lovede veksten kommer aldri, og gjelden vokser og vokser."
+                    "si": "Trinn fem: vent. Gjelden blir liggende, og landet klarer ikke å betale ned."
                 },
                 {
                     "si": "Til slutt kan ikke Petrolia betale."
@@ -147,6 +151,7 @@
         },
         {
             "id": "trapp-2",
+            "lyd": "stille",
             "visual": {
                 "type": "LeiemordereTrapp",
                 "props": {
@@ -182,14 +187,14 @@
                     "si": "Et av de tydeligste eksemplene skjedde i Iran. Landet hadde mye olje, men et britisk selskap kontrollerte den."
                 },
                 {
-                    "si": "I april 1951 ble Mohammad Mossadeq statsminister. Han ville at oljen skulle tilhøre Iran selv. Det kalles å nasjonalisere."
+                    "si": "I april 1951 ble Mohammad Mossadeq statsminister. Han fikk flertall i parlamentet for at oljen skulle tilhøre Iran selv. Det kalles å nasjonalisere."
                 },
                 {
                     "si": "Vesten ble rasende. Fra april 1953 laget CIA, den hemmelige tjenesten til USA, en plan for å fjerne ham."
                 },
                 {
-                    "si": "Den 15. august krevde sjahen, kongen i Iran, at Mossadeq skulle gå av. Han ble arrestert.",
-                    "uttale": "Den femtende august krevde sjahen, kongen i Iran, at Mossadeq skulle gå av. Han ble arrestert."
+                    "si": "Den 15. august krevde sjahen, kongen i Iran, at Mossadeq skulle gå av. Kort tid etter ble han arrestert.",
+                    "uttale": "Den femtende august krevde sjahen, kongen i Iran, at Mossadeq skulle gå av. Kort tid etter ble han arrestert."
                 },
                 {
                     "si": "Dette var sjakalene i arbeid, lenge før Perkins fikk jobben sin."
@@ -212,7 +217,7 @@
                     "si": "Han ville at de store kobbergruvene skulle gi penger til vanlige chilenere, ikke til amerikanske selskaper."
                 },
                 {
-                    "si": "USAs president Nixon ga CIA ordre om å hindre ham. I notatene fra det møtet står det: Få økonomien til å skrike."
+                    "si": "Før Allende var innsatt, ga USAs president Nixon CIA ordre om å hindre ham. I notatene til CIA-sjefen fra møtet står det: Få økonomien til å skrike."
                 },
                 {
                     "si": "Den 11. september 1973 ble Allende styrtet i et militærkupp. Generalen Augusto Pinochet tok makten.",
@@ -234,7 +239,8 @@
                             "farge": "#475569",
                             "restFarge": "#cbd5e1",
                             "tittel": "Pinochet styrer Chile fram til 1990",
-                            "restEtikett": "politiske motstandere"
+                            "restEtikett": "politiske motstandere",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 1,
@@ -242,7 +248,17 @@
                             "farget": 3000,
                             "farge": "#475569",
                             "tittel": "Om lag 3000 politiske motstandere",
-                            "fargeEtikett": "drept eller forsvant"
+                            "fargeEtikett": "drept eller forsvant",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 2,
+                            "total": 3000,
+                            "farget": 3000,
+                            "farge": "#475569",
+                            "tittel": "Samme mønster: lederen ble fjernet",
+                            "fargeEtikett": "drept eller forsvant",
+                            "visTall": false
                         }
                     ]
                 }
@@ -273,7 +289,7 @@
                     "si": "Iran og Chile er ikke de eneste. Det samme mønsteret går igjen i mange land etter andre verdenskrig."
                 },
                 {
-                    "si": "I Guatemala tok presidenten nesten 90 000 hektar jord fra et amerikansk fruktselskap. I 1954 ble han styrtet."
+                    "si": "I Guatemala tok presidenten nesten 90 000 hektar jord fra et amerikansk fruktselskap. Selskapet hadde makt over amerikanske politikere, og i 1954 ble han styrtet."
                 },
                 {
                     "si": "I Kongo ble statsminister Patrice Lumumba drept i januar 1961. Belgia, og trolig også USA, var med på drapet."
@@ -288,6 +304,7 @@
         },
         {
             "id": "eliten",
+            "lyd": "hav",
             "visual": {
                 "type": "LeiemordereLandet",
                 "props": {
@@ -312,6 +329,7 @@
         {
             "id": "renter",
             "kapittel": "I dag",
+            "lyd": "stille",
             "visual": {
                 "type": "LeiemordereTavle",
                 "props": {
@@ -323,13 +341,13 @@
                     "si": "Skjer dette fortsatt? Selve gjeldsfellen finnes i hvert fall fortsatt."
                 },
                 {
-                    "si": "Renter er prisen du betaler for å låne. Land i det globale sør betaler i snitt omtrent dobbelt så mye i renter som de rike landene."
+                    "si": "Renter er prisen du betaler for å låne. Land i det globale sør, altså fattigere land, betaler i snitt omtrent dobbelt så mye i renter som de rike landene."
                 },
                 {
-                    "si": "Da blir det for lite igjen til helse, skole og utvikling. Budsjettene klarer ikke å holde tritt."
+                    "si": "Budsjettene til helse, skole og utvikling klarer ikke å holde tritt."
                 },
                 {
-                    "si": "Mange mener at også Kina bruker lån til store prosjekter i Afrika og Asia for å få makt. Den som eier gjelden, har makten."
+                    "si": "Mange snakker om at også Kina bruker lån til store prosjekter i Afrika og Asia for å få makt. Den som eier gjelden, har makten."
                 }
             ]
         },
@@ -347,13 +365,13 @@
                     "si": "Men kan vi tro på alt Perkins forteller? Her må vi være kritiske."
                 },
                 {
-                    "si": "Det han forteller om Iran og Chile, er godt dokumentert. Historikere og hemmelige amerikanske papirer som er blitt offentlige, viser det samme."
+                    "si": "Mye av det han forteller om Iran og Chile, er godt dokumentert. Historikere og hemmelige amerikanske papirer som er blitt offentlige, viser det samme."
                 },
                 {
                     "si": "Men boken er hans egen fortelling om sitt eget liv. Flere av historiene har vi bare hans ord for."
                 },
                 {
-                    "si": "Noen mener han overdriver og gjør verden enklere enn den er. En god historiker tror ikke blindt på én kilde, men sammenligner flere."
+                    "si": "Noen mener han overdriver. En god historiker sammenligner flere kilder. Da ligger sannheten et sted mellom hans historier og arkivene."
                 }
             ]
         },
@@ -364,16 +382,16 @@
                 "props": {
                     "setninger": [
                         {
-                            "tekst": "Koloniene ble frie.",
+                            "tekst": "Koloniene ble formelt frie.",
                             "fraBeat": 0
                         },
                         {
-                            "tekst": "Men penger, lån og makt styrte dem fortsatt.",
+                            "tekst": "Men penger, lån og makt ble ofte brukt til å styre dem.",
                             "fraBeat": 0,
                             "uthevet": true
                         },
                         {
-                            "tekst": "Kolonimakt uten kolonier:",
+                            "tekst": "Kontroll uten kolonier:",
                             "fraBeat": 1
                         },
                         {
@@ -395,10 +413,10 @@
             },
             "replikker": [
                 {
-                    "si": "Likevel peker boken på noe sant. Rike land og store selskaper har brukt penger, lån og makt til å styre fattigere land, lenge etter at koloniene ble frie."
+                    "si": "Likevel peker boken på noe sant. Rike land og store selskaper har ofte brukt penger, lån og makt til å styre fattigere land, lenge etter at koloniene formelt ble frie."
                 },
                 {
-                    "si": "Det kalles nykolonialisme. Det er kolonimakt uten kolonier."
+                    "si": "Det kalles nykolonialisme: de gamle kolonimaktene beholdt kontrollen over sine tidligere kolonier."
                 },
                 {
                     "si": "Et lån kan bygge veier, kraftverk og havner. Men neste gang du hører om et stort lån til et fattig land, kan du spørre: Hvem eier gjelden?"
