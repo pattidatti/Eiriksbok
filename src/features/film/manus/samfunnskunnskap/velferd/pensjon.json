@@ -1,0 +1,181 @@
+{
+  "id": "pensjon",
+  "tittel": "Pensjon: Hvorfor du bør bry deg nå",
+  "kilde": "/samfunnskunnskap/velferd/pensjon",
+  "bilde": "/images/velferd/pensjon-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-21", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "avis",
+      "kapittel": "Den første lønna",
+      "lyd": "vind",
+      "visual": { "type": "PensjonBotta", "props": { "modus": "avis" } },
+      "replikker": [
+        { "si": "Det er sommer, og du er 13 år. Hver morgen bærer du ut aviser." },
+        { "si": "Etter fire uker har du tjent 10 000 kroner. Pengene går til en ny sykkel." },
+        { "si": "Men noe annet skjer også, uten at du merker det. Hos Nav blir det lagt 1 810 kroner på en konto med navnet ditt." },
+        { "si": "Den kontoen skal du ikke røre før du er over 60 år." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "PENSJON",
+          "undertittel": "Hvorfor du bør bry deg nå",
+          "bilde": "/images/velferd/pensjon-hero.webp",
+          "sporsmal": { "tekst": "Hvor kommer pengene fra?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Kontoen er pensjonen din." },
+        { "si": "Pensjon er penger du får hver måned når du har sluttet å jobbe fordi du har blitt gammel." },
+        { "si": "Det høres langt unna ut. Men pensjonen din begynner å bygge seg opp nå. Så hvor kommer pengene fra?" }
+      ]
+    },
+    {
+      "id": "kraner",
+      "kapittel": "Tre kraner",
+      "lyd": "stille",
+      "visual": { "type": "PensjonBotta", "props": { "modus": "kraner" } },
+      "replikker": [
+        { "si": "Tenk på pensjonen som en bøtte. Så lenge du jobber, renner det penger inn i den fra tre kraner." },
+        { "si": "Kran én er folketrygden. Den er størst. Alle som har bodd eller jobbet i Norge, tjener opp pensjon her." },
+        { "si": "Kran to er tjenestepensjon. Det er pensjon som arbeidsgiveren din betaler inn for deg." },
+        { "si": "Kran tre er egen sparing. Ingen tvinger deg, men den kan gjøre bøtta fullere." },
+        { "si": "Når du blir gammel, begynner du å tappe av bøtta, litt hver måned." }
+      ]
+    },
+    {
+      "id": "andel",
+      "kapittel": "Kran én: Folketrygden",
+      "visual": { "type": "PensjonLonn", "props": { "modus": "andel" } },
+      "replikker": [
+        { "si": "Slik virker folketrygden for alle som er født i 1963 eller senere." },
+        { "si": "Hvert år legger Nav 18,1 prosent av inntekten din på en egen konto. Den kalles pensjonsbeholdningen.",
+          "uttale": "Hvert år legger Nav atten komma en prosent av inntekten din på en egen konto. Den kalles pensjonsbeholdningen." },
+        { "si": "Tjener du 100 000 kroner et år, går 18 100 kroner i bøtta det året." },
+        { "si": "Men det er en grense for hvor mye inntekt som teller. Grensen er 7,1 G. G er grunnbeløpet, et tall Nav bruker når de regner ut trygder.",
+          "uttale": "Men det er en grense for hvor mye inntekt som teller. Grensen er sju komma en G. G er grunnbeløpet, et tall Nav bruker når de regner ut trygder." }
+      ]
+    },
+    {
+      "id": "livslinje",
+      "visual": { "type": "PensjonLonn", "props": { "modus": "livslinje" } },
+      "replikker": [
+        { "si": "Du trenger ikke gjøre noe selv. Opptjeningen starter fra første krone du tjener." },
+        { "si": "Siden 2010 kan du tjene opp pensjon fra det året du fyller 13. Det gjelder helt til og med det året du fyller 75." },
+        { "si": "Selv førstegangstjenesten i Forsvaret gir pensjon. Ett år der teller like mye som om du hadde tjent 2,5 G.",
+          "uttale": "Selv førstegangstjenesten i Forsvaret gir pensjon. Ett år der teller like mye som om du hadde tjent to komma fem G." },
+        { "si": "Og pengene ligger ikke stille. Hvert år blir beholdningen justert, så den følger lønnsveksten i samfunnet." },
+        { "si": "Derfor blir ikke de 1 810 kronene fra avissommeren verdiløse før du blir gammel." }
+      ]
+    },
+    {
+      "id": "arbeidsgiver",
+      "kapittel": "Kran to og tre",
+      "visual": { "type": "PensjonBotta", "props": { "modus": "arbeidsgiver" } },
+      "replikker": [
+        { "si": "Kran to, tjenestepensjonen, kommer fra jobben. Staten og kommunene har egne ordninger for sine ansatte." },
+        { "si": "Lenge var det frivillig for private bedrifter å gi tjenestepensjon. Men fra 1. januar 2006 ble det påbudt.",
+          "uttale": "Lenge var det frivillig for private bedrifter å gi tjenestepensjon. Men fra første januar 2006 ble det påbudt." },
+        { "si": "Nå må arbeidsgiveren betale inn minst 2 prosent av årslønna di. Mange betaler mer, så spør når du søker jobb." },
+        { "si": "Kran tre styrer du selv. Staten gir skattefordeler for noe av denne sparingen. Da betaler du litt mindre skatt." },
+        { "si": "Og jo tidligere du begynner å spare, jo mer kan pengene vokse." }
+      ]
+    },
+    {
+      "id": "historie",
+      "kapittel": "Hvorfor kom reformen?",
+      "visual": { "type": "PensjonHistorie" },
+      "replikker": [
+        { "si": "Pensjonen i Norge har en lang historie. Den første alderstrygden kom i 1936, men den var bare for de fattigste." },
+        { "si": "I 1966 kom folketrygden. Nå fikk alle en pensjon som henger sammen med hvor mye de har jobbet." },
+        { "si": "Utover 2000-tallet ble det klart at systemet ville bli svært dyrt. Folk lever lenger, og det blir stadig flere eldre.",
+          "uttale": "Utover totusentallet ble det klart at systemet ville bli svært dyrt. Folk lever lenger, og det blir stadig flere eldre." },
+        { "si": "Ved utgangen av 2025 fikk 1 084 600 personer alderspensjon fra folketrygden." },
+        { "si": "Derfor vedtok Stortinget en stor pensjonsreform i 2009. En reform er en stor endring av reglene." },
+        { "si": "De viktigste endringene gjaldt fra 2011. Målet var en sterkere statsøkonomi, først og fremst ved at folk jobber lenger." }
+      ]
+    },
+    {
+      "id": "levealder",
+      "kapittel": "Samme bøtte, flere år",
+      "visual": { "type": "PensjonLonn", "props": { "modus": "deling" } },
+      "replikker": [
+        { "si": "Den viktigste endringen har et langt navn: levealdersjustering. Ordet er vanskelig, men tanken er enkel." },
+        { "si": "Når du begynner å ta ut pensjon, deler Nav bøtta di på hvor mange år folk på din alder ventes å leve." },
+        { "si": "Lever folk i ditt årskull lenger, må bøtta deles på flere år. Da blir hver utbetaling mindre." },
+        { "si": "Det gjelder alle som er født i 1944 eller senere. Når folk lever lenger, er tanken at pensjonistene selv skal betale for det. Ikke skattebetalerne." },
+        { "si": "Yngre folk må derfor nøye seg med litt mindre pensjon i året, eller jobbe litt lenger for å få like mye som besteforeldrene." }
+      ]
+    },
+    {
+      "id": "uttak",
+      "kapittel": "Du velger selv",
+      "visual": { "type": "PensjonLonn", "props": { "modus": "uttak" } },
+      "replikker": [
+        { "si": "Reformen ga også en ny frihet. Du kan begynne å ta ut pensjon når som helst mellom 62 og 75 år." },
+        { "si": "Vanligvis kan du ta den ut fra du fyller 67." },
+        { "si": "Vil du starte allerede som 62-åring, må du ha tjent opp nok. Og da blir beløpet hver måned lavere." },
+        { "si": "Venter du, har du fylt bøtta i flere år, og den skal deles på færre år. Da får du mer hver måned." },
+        { "si": "Systemet er laget slik at du i snitt får omtrent like mye til sammen over hele livet, uansett når du starter." },
+        { "si": "Og du kan jobbe så mye du vil mens du tar ut pensjon, uten at pensjonen blir mindre." }
+      ]
+    },
+    {
+      "id": "tom",
+      "kapittel": "Nesten tom bøtte?",
+      "visual": { "type": "PensjonBotta", "props": { "modus": "tom" } },
+      "replikker": [
+        { "si": "Noen har jobbet lite gjennom livet. Kanskje har de vært syke, eller bodd i Norge i kort tid." },
+        { "si": "For dem finnes garantipensjonen. Det er en minstepensjon som sikrer at alle får noe å leve av." },
+        { "si": "I desember 2025 var 11 prosent av alle alderspensjonister minstepensjonister." },
+        { "si": "De fleste får mer. I 2025 fikk en alderspensjonist i snitt 310 700 kroner i året fra folketrygden, før skatt." },
+        { "si": "Pensjonen fra arbeidsgiveren og egen sparing kommer i tillegg." }
+      ]
+    },
+    {
+      "id": "debatt",
+      "kapittel": "Penger igjen til deg?",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Vil det være penger igjen?",
+          "punkter": [
+            { "ikon": "fabrikk", "tittel": "SSB-forskerne: flere i jobb", "tekst": "Staten får bedre råd.", "fraBeat": 0 },
+            { "ikon": "penger", "tittel": "SSB-forskerne: staten må trolig stramme inn", "tekst": "Selv med reformen.", "fraBeat": 1 },
+            { "ikon": "snakk", "tittel": "Noen mener: pensjonistene har fått for lite", "tekst": "2021: ny regel for hvordan pensjonen justeres hvert år.", "fraBeat": 2 },
+            { "ikon": "avtale", "tittel": "Andre mener: vi må jobbe lenger", "tekst": "Hva er rettferdig mellom unge og gamle?", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Mange unge lurer på om det vil være penger igjen. Forskere i Statistisk sentralbyrå regnet ut at reformen gir flere i jobb. Og at staten får bedre råd." },
+        { "si": "Men de skrev også at staten trolig likevel må stramme inn i årene som kommer. Det betyr at staten må bruke mindre penger." },
+        { "si": "Noen mener pensjonistene har fått for lite. I 2021 endret Stortinget hvordan pensjonene justeres hvert år, så pensjonistene kommer bedre ut når lønningene vokser lite." },
+        { "si": "Andre mener vi må jobbe lenger. Det finnes ikke ett riktig svar. Det handler om hva som er rettferdig mellom unge og gamle." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Hver lønn fyller bøtta litt.", "fraBeat": 0 },
+            { "tekst": "Sjekk lønnsslippen. Se kontoen din hos Nav.", "fraBeat": 1 },
+            { "tekst": "Den første avissommeren er bare begynnelsen.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Det du kan gjøre selv, er å vite hvordan bøtta virker. Hver gang du får lønn, fylles den litt." },
+        { "si": "Sjekk lønnsslippen din. Og når du blir eldre, kan du logge inn hos Nav og se hvor mye som allerede ligger der." },
+        { "si": "Den første avissommeren er bare begynnelsen." }
+      ]
+    }
+  ]
+}
