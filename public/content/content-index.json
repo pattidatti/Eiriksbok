@@ -1,5 +1,5 @@
 {
-  "buildId": 158563266053817,
+  "buildId": 255941321680770,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4990,6 +4990,9 @@
     "nav-og-folketrygden": [
       "content/samfunnskunnskap/velferd/nav-og-folketrygden.json"
     ],
+    "pensjon": [
+      "content/samfunnskunnskap/velferd/pensjon.json"
+    ],
     "statsbudsjettet": [
       "content/samfunnskunnskap/velferd/statsbudsjettet.json"
     ],
@@ -6687,6 +6690,7 @@
     "samfunnskunnskap/styringsformer/utforsk": "content/samfunnskunnskap/styringsformer/utforsk.json",
     "samfunnskunnskap/velferd/hva-skatten-betaler": "content/samfunnskunnskap/velferd/hva-skatten-betaler.json",
     "samfunnskunnskap/velferd/nav-og-folketrygden": "content/samfunnskunnskap/velferd/nav-og-folketrygden.json",
+    "samfunnskunnskap/velferd/pensjon": "content/samfunnskunnskap/velferd/pensjon.json",
     "samfunnskunnskap/velferd/statsbudsjettet": "content/samfunnskunnskap/velferd/statsbudsjettet.json",
     "scenarios/kald-krig.json/kald-krig": "content/scenarios/kald-krig.json",
     "scenarios/medieval-baron.json/medieval-baron": "content/scenarios/medieval-baron.json",

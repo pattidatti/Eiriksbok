@@ -2559,7 +2559,7 @@
                 "arbeidsliv"
               ],
               "createdDate": "2026-11-05T04:32:41+01:00",
-              "lastUpdated": "2026-11-16T07:39:03+01:00"
+              "lastUpdated": "2026-11-19T07:39:08+01:00"
             },
             {
               "id": "budsjett",
@@ -2622,7 +2622,7 @@
                 "bsu"
               ],
               "createdDate": "2026-11-09T01:12:31.828Z",
-              "lastUpdated": "2026-11-09T07:45:04+01:00"
+              "lastUpdated": "2026-11-19T07:39:08+01:00"
             },
             {
               "id": "svindel",
@@ -2637,7 +2637,7 @@
                 "nettvett"
               ],
               "createdDate": "2026-11-10T02:19:49+01:00",
-              "lastUpdated": "2026-11-10T07:32:36+01:00"
+              "lastUpdated": "2026-11-20T07:39:15+01:00"
             },
             {
               "id": "forbrukerrettigheter",
@@ -2676,7 +2676,7 @@
                 "demokrati"
               ],
               "createdDate": "2026-11-12T02:14:21+01:00",
-              "lastUpdated": "2026-11-12T07:42:00+01:00"
+              "lastUpdated": "2026-11-20T07:39:15+01:00"
             },
             {
               "id": "politiet",
@@ -2706,7 +2706,7 @@
                 "demokrati"
               ],
               "createdDate": "2026-11-14T02:17:35+01:00",
-              "lastUpdated": "2026-11-14T07:43:16+01:00"
+              "lastUpdated": "2026-11-20T07:39:15+01:00"
             },
             {
               "id": "hva-er-straff-godt-for",
@@ -2721,7 +2721,7 @@
                 "etikk"
               ],
               "createdDate": "2026-11-15T02:18:00+01:00",
-              "lastUpdated": "2026-11-15T07:42:03+01:00"
+              "lastUpdated": "2026-11-20T07:39:15+01:00"
             },
             {
               "id": "ungdom-og-kriminalitet",
@@ -2736,7 +2736,7 @@
                 "rettigheter"
               ],
               "createdDate": "2026-11-16T01:10:22.764Z",
-              "lastUpdated": "2026-11-16T02:19:07+01:00"
+              "lastUpdated": "2026-11-17T07:33:54+01:00"
             },
             {
               "id": "konfliktradet",
@@ -2751,7 +2751,7 @@
                 "rettferdighet"
               ],
               "createdDate": "2026-11-17T01:11:18.192Z",
-              "lastUpdated": "2026-11-17T01:12:09.983Z"
+              "lastUpdated": "2026-11-17T07:33:54+01:00"
             }
           ]
         },
@@ -2773,7 +2773,8 @@
                 "økonomi",
                 "fellesskap"
               ],
-              "createdDate": "2026-11-18T00:00:00Z"
+              "createdDate": "2026-11-18T02:23:29+01:00",
+              "lastUpdated": "2026-11-18T07:33:46+01:00"
             },
             {
               "id": "statsbudsjettet",
@@ -2787,7 +2788,8 @@
                 "økonomi",
                 "politikk"
               ],
-              "createdDate": "2026-11-19T00:00:00Z"
+              "createdDate": "2026-11-19T02:20:28+01:00",
+              "lastUpdated": "2026-11-19T07:39:08+01:00"
             },
             {
               "id": "nav-og-folketrygden",
@@ -2801,7 +2803,23 @@
                 "trygd",
                 "arbeidslinja"
               ],
-              "createdDate": "2026-11-20T00:00:00Z"
+              "createdDate": "2026-11-20T02:16:38+01:00",
+              "lastUpdated": "2026-11-20T07:39:15+01:00"
+            },
+            {
+              "id": "pensjon",
+              "title": "Pensjon: Hvorfor du bør bry deg nå",
+              "description": "Pensjonen din fylles fra tre kraner fra du er 13 år. Slik virker den, og derfor ble reglene endret i 2011.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "velferd",
+                "pensjon",
+                "folketrygden",
+                "pensjonsreformen",
+                "levealdersjustering"
+              ],
+              "createdDate": "2026-11-21T01:09:17.567Z",
+              "lastUpdated": "2026-11-21T01:09:31.138Z"
             }
           ]
         },
