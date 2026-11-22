@@ -4,6 +4,7 @@
     "kilde": "/historie/den-kalde-krigen/chile-1973",
     "bilde": "/images/historie/den-kalde-krigen/chile-1973_hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-22", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "gruva",
@@ -63,7 +64,7 @@
                     "undertittel": "Kuppet i Chile, 1973",
                     "bilde": "/images/historie/den-kalde-krigen/chile-1973_hero.webp",
                     "sporsmal": {
-                        "tekst": "Kan man velte et land uten å skyte?",
+                        "tekst": "Kan man velte en regjering uten å skyte?",
                         "fraBeat": 2
                     }
                 }
@@ -123,7 +124,7 @@
                     "si": "Han bygde boliger, og han hevet lønningene."
                 },
                 {
-                    "si": "For mange fattige chilenere var det første gang noen i regjeringen brydde seg om dem. Det var en tid full av håp."
+                    "si": "For mange fattige chilenere var det første gang noen i regjeringen så ut til å bry seg om dem. Det var en tid full av håp."
                 }
             ]
         },
@@ -156,8 +157,8 @@
             "visual": {
                 "type": "Tittelkort",
                 "props": {
-                    "tittel": "«Få økonomien til å skrike.»",
-                    "undertittel": "Richard Nixon, om Chile, 1970",
+                    "tittel": "Ordren",
+                    "undertittel": "«Få økonomien til å skrike.» Richard Nixon, om Chile, 1970",
                     "sporsmal": {
                         "tekst": "Hva betyr det?",
                         "fraBeat": 2
@@ -189,10 +190,10 @@
                     "si": "USA ville ikke sende soldater. I stedet startet de en lydløs krig mot Chiles økonomi."
                 },
                 {
-                    "si": "Først stanset de alle lån. Da fikk ikke landet kjøpt deler og varer."
+                    "si": "De stanset alle lån. Da fikk ikke landet kjøpt deler og varer."
                 },
                 {
-                    "si": "Så betalte de i hemmelighet lastebilsjåfører for å streike. Maten nådde ikke fram til butikkene."
+                    "si": "De betalte også i hemmelighet lastebilsjåfører for å streike. Maten nådde ikke fram til butikkene."
                 },
                 {
                     "si": "De presset ned prisen på kobber, den største rikdommen landet hadde."
@@ -243,7 +244,7 @@
                     "si": "Hæren omringet presidentpalasset."
                 },
                 {
-                    "si": "Så bombet de palasset. President Allende nektet å overgi seg, og han døde inne i palasset."
+                    "si": "Så ble palasset bombet. President Allende nektet å overgi seg, og han døde inne i palasset."
                 },
                 {
                     "si": "General Augusto Pinochet tok makten. Han styrte Chile som diktator i 17 år. En diktator styrer alene, uten frie valg."
@@ -271,25 +272,17 @@
             "id": "forsvunne",
             "lyd": "stille",
             "visual": {
-                "type": "Prikkfelt",
+                "type": "Tittelkort",
                 "props": {
-                    "figur": "prikk",
-                    "steg": [
+                    "tittel": "Årene etter kuppet",
+                    "undertittel": "De kalles fortsatt «de forsvunne»",
+                    "tall": [
                         {
+                            "verdi": 3000,
+                            "prefiks": "over",
+                            "etikett": "drept eller forsvant sporløst",
                             "fraBeat": 0,
-                            "total": 3000,
-                            "farget": 3000,
-                            "farge": "#7f1d1d",
-                            "tittel": "Over 3000 drept eller forsvunnet",
-                            "fargeEtikett": "drept eller forsvant sporløst"
-                        },
-                        {
-                            "fraBeat": 1,
-                            "total": 3000,
-                            "farget": 3000,
-                            "farge": "#334155",
-                            "tittel": "«De forsvunne»",
-                            "fargeEtikett": "drept eller forsvant sporløst"
+                            "tone": "rod"
                         }
                     ]
                 }
@@ -314,7 +307,7 @@
             },
             "replikker": [
                 {
-                    "si": "USA hadde fått det de ville: en leder som ikke truet dem, og en åpen dør for amerikanske selskaper."
+                    "si": "USA hadde fått det de ville: en leder som ikke truet interessene deres, og en åpen dør for amerikanske selskaper."
                 },
                 {
                     "si": "Under Pinochet ble Chile et levende laboratorium, et sted der man prøvde ut en ny måte å styre økonomien på."
@@ -323,7 +316,7 @@
                     "si": "En gruppe chilenske økonomer utdannet i USA, kalt Chicago-guttene, fikk fritt spillerom."
                 },
                 {
-                    "si": "Kobberet ble for en stor del privat igjen. Det betyr at selskaper, ikke staten, eide det."
+                    "si": "Planen var å privatisere og kutte. Privatisere betyr at selskaper, ikke staten, skal eie og drive noe."
                 },
                 {
                     "si": "Store deler av samfunnet ble solgt til private selskaper. Helt ned til skoler, vann og pensjoner."

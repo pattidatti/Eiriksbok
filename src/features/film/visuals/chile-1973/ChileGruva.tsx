@@ -12,7 +12,8 @@ import { damp, lerretTekstur, tegnChile, tegnUsa, useKamera, v } from './felles3
  * «gruve»: amerikansk flagg, kasser til skipet som seiler til USA.
  * «deling»: flagget byttes til Chiles, kassene går til byen, skole og sykehus reiser seg.
  * «stille»: alt stopper opp. Grå himmel, ingen lastebiler i bevegelse, ingen skip.
- * «privat»: skipet kommer tilbake, flagget blir amerikansk igjen, og byen får SOLGT-skilt.
+ * «privat»: skipet kommer tilbake, og byen får SOLGT-skilt. Gruva får ikke skilt: de
+ * store gruvene ble værende statlige.
  */
 
 type Modus = 'gruve' | 'deling' | 'stille' | 'privat';
@@ -597,9 +598,6 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
             ))}
             <group position={[21, 0, -6]}>
                 <Flagg usa={usaFlagg(modus, beat)} playing={playing} />
-                <group position={[0, 3.2, 1]}>
-                    <Solgt vis={modus === 'privat' && beat >= 3} playing={playing} høyde={0} />
-                </group>
             </group>
             <Kasser retning={flyt(modus, beat)} playing={playing} />
             <Skip inne={skipInne(modus, beat)} playing={playing} />
@@ -629,15 +627,15 @@ const TEKST: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     stille: [
         { tekst: 'Lav kobberpris, ingen deler', rod: true },
         { tekst: 'To år med kaos', rod: true },
-        { tekst: 'Ingen hær trengs' },
+        { tekst: 'Ingen invasjon trengs' },
         { tekst: 'Noen andre tar det siste steget', rod: true },
     ],
     privat: [
         { tekst: 'Døra er åpen igjen' },
         { tekst: 'Chile blir et laboratorium' },
         { tekst: 'Chicago-guttene får styre' },
-        { tekst: 'Kobberet blir privat igjen' },
-        { tekst: 'Skoler, vann og pensjoner: solgt', rod: true },
+        { tekst: 'Planen: privatisere og kutte' },
+        { tekst: 'Selv skoler, vann og pensjoner blir private', rod: true },
     ],
 };
 
