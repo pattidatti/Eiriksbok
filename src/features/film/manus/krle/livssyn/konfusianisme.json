@@ -1,0 +1,218 @@
+{
+  "id": "konfusianisme",
+  "tittel": "Konfusianisme: plikten som går begge veier",
+  "kilde": "/krle/livssyn/konfusianisme",
+  "bilde": "/images/krle/livssyn/konfusianisme-hero.webp",
+  "utenforArtikkel": [
+    { "tall": 2000, "begrunnelse": "Artikkelen skriver det med ord: ideene hans styrte verdens største rike «i over to tusen år»." },
+    { "tall": 50, "begrunnelse": "Halvparten av 100 figurer. Artikkelen: læren «holdt halvparten av befolkningen nede». Figurene er en skala, ikke et antall mennesker." }
+  ],
+  "vurdering": { "dato": "2026-11-22", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "veien",
+      "kapittel": "Veien",
+      "lyd": "vind",
+      "visual": { "type": "KonfusianismeVeien", "props": { "modus": "vei" } },
+      "replikker": [
+        { "si": "For rundt to tusen fem hundre år siden går en mann langs en støvete vei i Kina." },
+        { "si": "Han skal til en fyrste, en hersker over et lite rike. Han har et svar på hvordan et land i krig kan bli fredelig." },
+        { "si": "Han legger fram planen. Fyrsten tar den ikke i bruk." },
+        { "si": "Han går videre til neste fyrste. Og den neste. Ingen vil prøve læren hans." },
+        { "si": "Mannen dør uten å ha fått gjennomslag. Men historien hans er ikke slutt." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "KONFUSIANISME",
+          "undertittel": "Plikten som går begge veier",
+          "bilde": "/images/krle/livssyn/konfusianisme-hero.webp",
+          "tall": [
+            { "verdi": 2000, "etikett": "år med ideene hans i Kinas styre", "fraBeat": 1, "prefiks": "over" }
+          ],
+          "sporsmal": { "tekst": "Hva skylder vi hverandre?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Mannen het Kong Qiu. Vi kaller ham Konfucius, og læren hans heter konfusianisme." },
+        { "si": "Etter at han døde, kom ideene hans til å styre verdens største rike i over to tusen år." },
+        { "si": "Han stilte spørsmål vi fortsatt stiller: Hva skylder vi hverandre?" }
+      ]
+    },
+    {
+      "id": "livet",
+      "lyd": "stille",
+      "visual": { "type": "KonfusianismeRull", "props": { "modus": "liv" } },
+      "replikker": [
+        { "si": "Konfucius levde fra 551 til 479 før vår tid. Han vokste opp i riket Lu, i dagens Kina." },
+        { "si": "Faren døde da gutten var tre år, og moren oppdro ham alene." },
+        { "si": "Han ble tidlig opptatt av seremoniene: de faste formene folk fulgte når de møttes, giftet seg eller ofret til de døde." },
+        { "si": "Kina var mange små riker som slåss mot hverandre. Konfucius mente det var fordi fyrstene hadde glemt de gamle skikkene." },
+        { "si": "Løsningen var ikke flere soldater eller strengere straffer. Hvert menneske skulle gjøre sin del overfor dem rundt seg." },
+        { "si": "Elevene hans skrev ned samtalene med ham. Den samlingen heter Samtalene." }
+      ]
+    },
+    {
+      "id": "hallen",
+      "kapittel": "Uten gud?",
+      "lyd": "rom",
+      "visual": { "type": "KonfusianismeVeien", "props": { "modus": "hall" } },
+      "replikker": [
+        { "si": "Konfusianismen står ofte sammen med livssyn uten religion. Hvorfor det?" },
+        { "si": "Ingen skapergud står i sentrum. Og det finnes ingen hellig bok som skal være sendt fra himmelen." },
+        { "si": "Likevel svarer den på de store spørsmålene religionene stiller. Hva er et godt menneske?" },
+        { "si": "Men familien ofrer til de døde i slekta og takker dem. Det kalles forfedredyrkelse, og det har en klart religiøs side." },
+        { "si": "Forskerne svarer ikke likt. De fleste kaller den en filosofi som også har fått religiøse trekk." }
+      ]
+    },
+    {
+      "id": "dyder",
+      "kapittel": "Det edle mennesket",
+      "lyd": "stille",
+      "visual": { "type": "KonfusianismeRull", "props": { "modus": "dyder" } },
+      "replikker": [
+        { "si": "Konfucius var mest opptatt av hva slags menneske du blir, ikke av regler." },
+        { "si": "Målet var junzi, det edle mennesket: en som gjør det rette fordi han har øvd på det, ikke fordi noen passer på." },
+        { "si": "Veien dit går gjennom dyder: gode egenskaper du øver opp, som en ferdighet." },
+        { "si": "Den viktigste er ren, godhet mot andre mennesker. En annen er li, respekt for tradisjoner og de faste formene." },
+        { "si": "Yi er å gjøre det riktige, også når det koster. Zhi er visdom." },
+        { "si": "Og shu er medfølelse: å kjenne etter hvordan noe oppleves for den andre." }
+      ]
+    },
+    {
+      "id": "regelen",
+      "visual": { "type": "KonfusianismeRull", "props": { "modus": "regel" } },
+      "replikker": [
+        { "si": "Shu regnes som en tidlig utgave av den gylne regel, som du finner i mange religioner og livssyn." },
+        { "si": "Men hos ham er den snudd i forhold til kristendommen. Konfucius sier ikke først og fremst hva du skal gjøre, men hva du skal la være." },
+        { "si": "Gjør ikke mot andre det du ikke vil at de skal gjøre mot deg." }
+      ]
+    },
+    {
+      "id": "aristoteles",
+      "visual": { "type": "KonfusianismeKart", "props": { "modus": "aristoteles" } },
+      "replikker": [
+        { "si": "Å bygge moral på gode egenskaper, i stedet for på regler, kalles dygdsetikk." },
+        { "si": "Den finner du også hos den greske filosofen Aristoteles. De to levde i hver sin ende av verden og visste ingenting om hverandre." },
+        { "si": "Men de stilte det samme spørsmålet: Hva slags menneske bør jeg bli?" }
+      ]
+    },
+    {
+      "id": "baandene",
+      "kapittel": "De fem båndene",
+      "lyd": "vind",
+      "visual": { "type": "KonfusianismeVeien", "props": { "modus": "band" } },
+      "replikker": [
+        { "si": "Det mest kjente er de fem båndene. Konfucius mente at hele samfunnet henger sammen i slike bånd mellom mennesker." },
+        { "si": "Mellom barn og foreldre. Og mellom yngre og eldre søsken." },
+        { "si": "Mellom undersått og fyrste. Undersåtten er den som står under fyrsten." },
+        { "si": "Mellom kone og ektemann. Og mellom venner." },
+        { "si": "Mange tror at dette bare handler om å lyde den som står over deg. Men i hvert bånd går plikten begge veier." },
+        { "si": "Fyrsten skal styre rettferdig og gi folket det de trenger. Først da skylder undersåtten ham troskap. Det hindrer at makt blir misbruk, mente Konfucius." }
+      ]
+    },
+    {
+      "id": "bukket",
+      "lyd": "rom",
+      "visual": { "type": "KonfusianismeVeien", "props": { "modus": "bukk" } },
+      "replikker": [
+        { "si": "Hvorfor skal det bety noe hvordan du bøyer deg, eller hvem som snakker først? Det er li, de faste formene." },
+        { "si": "For Konfucius var dette ikke pynt. Små endringer i vanene dine former hvem du blir." },
+        { "si": "Ved å øve på riktig oppførsel kan et menneske endre både følelsene og tankene sine." },
+        { "si": "Derfor mente han også at en hersker hadde plikt til å gi folket opplæring." }
+      ]
+    },
+    {
+      "id": "eksamen",
+      "kapittel": "Makt og kunnskap",
+      "lyd": "stille",
+      "visual": { "type": "KonfusianismeRull", "props": { "modus": "eksamen" } },
+      "replikker": [
+        { "si": "Etter at Konfucius døde, tok staten etter hvert læren i bruk. Det gjorde Han-dynastiet, en rekke keisere fra samme slekt." },
+        { "si": "I år 125 før vår tid ble de konfusianske bøkene grunnlaget for statens eksamener. Uten eksamen fikk du ingen jobb i staten." },
+        { "si": "I mange samfunn på denne tiden arvet du plassen din. I Kina måtte du lese deg til den." },
+        { "si": "Du måtte kunne fem gamle klassikere, om sanger, historie, forandring, årbøker og ritualer. Pluss Samtalene og boka til Mengzi." },
+        { "si": "Rettferdig slik vi mener det i dag var det ikke, for bare rike familier hadde råd til årene med studier. Men makt ble knyttet til kunnskap, ikke til fødsel." },
+        { "si": "Og slik holdt systemet seg i nesten to tusen år." }
+      ]
+    },
+    {
+      "id": "uenighet",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Uenige om mennesket og om læren",
+          "punkter": [
+            { "ikon": "stjerne", "tittel": "Mengzi: født godt", "tekst": "ta vare på det gode", "fraBeat": 1 },
+            { "ikon": "las", "tittel": "Xun Zi: født egoistisk", "tekst": "må formes utenfra", "fraBeat": 2 },
+            { "ikon": "avtale", "tittel": "Mozi: bry deg om alle", "tekst": "ikke bare om familien", "fraBeat": 3 },
+            { "ikon": "vann", "tittel": "Laozi: wu-wei", "tekst": "la verden gå sin naturlige gang", "fraBeat": 4 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Etter Konfucius kranglet elevene: Er mennesket godt, eller egoistisk, altså mest opptatt av seg selv?" },
+        { "si": "Mengzi mente at mennesket er født godt. Oppdragelsen skal ta vare på det gode som er der." },
+        { "si": "Xun Zi mente det motsatte: Mennesket er egoistisk av natur og må formes utenfra. Begge ville ha opplæring, men av ulik grunn." },
+        { "si": "Andre tenkere kritiserte hele læren. Mozi, som levde rundt 470 til 390 før vår tid, mente at Konfucius bandt moralen for tett til familien." },
+        { "si": "Laozi, som daoismen føres tilbake til, mente vi skal la verden gå sin naturlige gang. Det kalles wu-wei." }
+      ]
+    },
+    {
+      "id": "kritikk",
+      "kapittel": "Kritikk og i dag",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "person",
+          "steg": [
+            { "fraBeat": 0, "total": 100, "farget": 100, "farge": "#64748b", "tittel": "Alle har sin faste plass", "fargeEtikett": "noen står over andre", "visTall": false },
+            { "fraBeat": 1, "total": 100, "farget": 100, "farge": "#1e3a8a", "tittel": "Lite rom til å velge selv", "fargeEtikett": "gjør det som er ventet", "visTall": false },
+            { "fraBeat": 2, "total": 100, "farget": 50, "farge": "#dc2626", "restFarge": "#64748b", "tittel": "Kona skulle føye seg etter mannen", "fargeEtikett": "kvinnene", "restEtikett": "mennene", "visTall": false },
+            { "fraBeat": 3, "total": 100, "farget": 50, "farge": "#dc2626", "restFarge": "#0d9488", "tittel": "Stabilitet, men halvparten holdt nede", "fargeEtikett": "holdt nede", "restEtikett": "resten", "visTall": false }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Kritikken mot læren er ikke urimelig. Den legger stor vekt på hierarki, altså at noen står over andre." },
+        { "si": "Da blir det lite rom til å tenke og velge annerledes enn ventet." },
+        { "si": "Aller tydeligst er det mellom kone og ektemann, der kona skulle føye seg. Kvinnens underordning er det som blir kritisert hardest." },
+        { "si": "Læren ga Kina stabilitet i to tusen år. Men den holdt halvparten av befolkningen nede mens den gjorde det." }
+      ]
+    },
+    {
+      "id": "idag",
+      "visual": { "type": "KonfusianismeKart", "props": { "modus": "idag" } },
+      "replikker": [
+        { "si": "Under Song-dynastiet, fra 960 til 1279, kom en fornyelse: nykonfusianismen. Den spurte også hva verden består av." },
+        { "si": "I dag lever den videre i Kina, men sjelden alene. Folk blander folketro, daoisme, buddhisme og konfusianisme, uten at det føles feil." },
+        { "si": "Samtidig holder staten kontroll. Myndighetene bestemmer selv hva som skal regnes som vanlig religion." },
+        { "si": "Tankegangen merker du overalt i Øst-Asia: Du skylder familien din noe, og utdanning betyr alt. Og den som har mest makt, har mest ansvar." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Store spørsmål,", "fraBeat": 0 },
+            { "tekst": "svart uten en gud.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Et livssyn kan bli til", "fraBeat": 1 },
+            { "tekst": "eksamener, skikker og stat.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Når noen krever lydighet:", "fraBeat": 2 },
+            { "tekst": "Hva går tilbake den andre veien?", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Konfusianismen viser at mennesker kan svare på de store spørsmålene uten å bruke en gud til det." },
+        { "si": "Et livssyn er ikke bare tanker i hodet. Det kan bli til eksamener, familieskikker og måten en stat blir styrt på." },
+        { "si": "Og den gir deg en test. Når noen krever lydighet fordi de står over deg, kan du spørre: Hva går tilbake den andre veien?" }
+      ]
+    }
+  ]
+}
