@@ -1,0 +1,230 @@
+{
+    "id": "den-nordiske-modellen",
+    "tittel": "Den nordiske modellen: Hvem tar regningen?",
+    "kilde": "/samfunnskunnskap/velferd/den-nordiske-modellen",
+    "bilde": "/images/velferd/den-nordiske-modellen-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-22", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "isen",
+            "lyd": "vind",
+            "kapittel": "To beinbrudd",
+            "visual": { "type": "NordiskModellToLand", "props": { "modus": "isen" } },
+            "replikker": [
+                { "si": "Tenk deg to 16-åringer på skøyteisen. Den ene bor i Trondheim, den andre i Texas i USA." },
+                { "si": "Samme dag faller begge stygt. Begge brekker beinet." },
+                { "si": "Begge må til lege for å få gips. Smerten er den samme." },
+                { "si": "Men når de kommer hjem, venter to helt ulike opplevelser." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DEN NORDISKE MODELLEN",
+                    "undertittel": "To måter å ordne et samfunn på",
+                    "bilde": "/images/velferd/den-nordiske-modellen-hero.webp",
+                    "sporsmal": { "tekst": "Hvem tar regningen?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Forskjellen er ikke at legene i USA er dårligere." },
+                { "si": "Den handler om to måter å ordne et samfunn på. Den norske kalles ofte den nordiske modellen." },
+                { "si": "Hva er den, og hvem tar regningen når noe skjer?" }
+            ]
+        },
+        {
+            "id": "regning",
+            "lyd": "stille",
+            "visual": { "type": "NordiskModellToLand", "props": { "modus": "regning" } },
+            "replikker": [
+                { "si": "Først Trondheim. Der betaler 16-åringen ingenting." },
+                { "si": "Fra 1. august 2026 slipper alle under 18 år å betale egenandel hos legen.", "uttale": "Fra første august 2026 slipper alle under 18 år å betale egenandel hos legen." },
+                { "si": "En egenandel er den delen av regningen du betaler selv. Voksne betaler aldri mer enn 3278 kroner i året for slike tjenester." },
+                { "si": "Så Texas. Der kommer regningen an på om familien har helseforsikring, og hvilken." }
+            ]
+        },
+        {
+            "id": "norden",
+            "kapittel": "Hva er modellen?",
+            "visual": { "type": "NordiskModellKart", "props": { "modus": "norden" } },
+            "replikker": [
+                { "si": "Norden er fem land: Norge, Sverige, Danmark, Finland og Island." },
+                { "si": "Landene er ikke like i alt, men forskere snakker om én modell." },
+                { "si": "De siste 70 årene har landene klart både trygghet for folk flest og et fritt marked." },
+                { "si": "Landene er små og handler mye med andre land." },
+                { "si": "Samtidig vokser økonomien like godt som i andre rike land, og forskjellene mellom folk er små." }
+            ]
+        },
+        {
+            "id": "soyler",
+            "kapittel": "Tre søyler",
+            "visual": { "type": "NordiskModellKrakk", "props": { "modus": "bygg" } },
+            "replikker": [
+                { "si": "Forskerne ved Fafo sier at modellen står på tre søyler." },
+                { "si": "Den første er velferd for alle. Skatten betaler helse, skole, og penger når du er syk, uten jobb eller gammel." },
+                { "si": "Den andre er et organisert arbeidsliv. Fagforeninger og arbeidsgivere forhandler om lønn og regler." },
+                { "si": "Den tredje er en stabil økonomi, der landene handler fritt med utlandet." },
+                { "si": "Det er samspillet mellom de tre som får det hele til å fungere." }
+            ]
+        },
+        {
+            "id": "krakk",
+            "visual": { "type": "NordiskModellKrakk", "props": { "modus": "sag" } },
+            "replikker": [
+                { "si": "Tenk på en krakk med tre bein." },
+                { "si": "Sager du av ett bein, velter den. Slik er det med modellen også." },
+                { "si": "Velferden gjør det tryggere å bytte jobb." },
+                { "si": "Samarbeidet i arbeidslivet holder lønningene på et nivå bedriftene tåler." },
+                { "si": "Og en stabil økonomi gir nok skattepenger til velferden." }
+            ]
+        },
+        {
+            "id": "felles",
+            "kapittel": "Velferd for alle",
+            "visual": { "type": "NordiskModellKassa", "props": { "modus": "felles" } },
+            "replikker": [
+                { "si": "Det viktigste med velferden i Norden er at den gjelder alle. Alle har samme rett til helse og utdanning, uansett inntekt." },
+                { "si": "Det kalles universelle ordninger. Det motsatte er behovsprøvde ordninger: hjelp bare hvis inntekten din er lav nok." },
+                { "si": "Ordningene skal være så gode at også de rike bruker dem. Og når nesten alle bruker dem, vil nesten alle være med og betale." },
+                { "si": "Regningen betales mest med skatt: på inntekt, på det vi kjøper, og på formue, altså det du eier." },
+                { "si": "De som tjener mest, betaler mest i skatt. Men alle får omtrent de samme tjenestene." },
+                { "si": "Slik flytter systemet penger fra dem som har mye, til dem som har lite. Det er en viktig grunn til at forskjellene i inntekt er mindre i Norge enn i mange andre land." }
+            ]
+        },
+        {
+            "id": "bord",
+            "lyd": "rom",
+            "kapittel": "Arbeidslivet",
+            "visual": { "type": "NordiskModellKrakk", "props": { "modus": "bord" } },
+            "replikker": [
+                { "si": "Den andre søylen er arbeidslivet. Mellom de to verdenskrigene var det mye konflikt i Norden." },
+                { "si": "I 1930-årene kom det forskerne kaller det store kompromisset. Arbeidsgiverne og arbeiderne ble enige om faste regler for å forhandle og løse uenighet." },
+                { "si": "De var fortsatt uenige om mye, men de trengte hverandre." },
+                { "si": "I Norge heter dette trepartssamarbeidet. Partene er arbeidstakerne med LO, arbeidsgiverne med NHO, og staten." },
+                { "si": "I 1962 fikk partene et fast møtested med regjeringen, Kontaktutvalget." },
+                { "si": "I 1967 kom et utvalg som regner ut tallene før lønnsoppgjørene. Da blir det mindre krangel om hva som er sant." }
+            ]
+        },
+        {
+            "id": "frontfag",
+            "lyd": "stille",
+            "visual": { "type": "NordiskModellKrakk", "props": { "modus": "frontfag" } },
+            "replikker": [
+                { "si": "Lønningene blir ikke bestemt bedrift for bedrift." },
+                { "si": "Industrien som selger varer til utlandet, forhandler først." },
+                { "si": "Resten av arbeidslivet følger etter. Det kalles frontfagmodellen." },
+                { "si": "Lønningene skal ikke stige så mye at norske varer blir for dyre å selge i utlandet." }
+            ]
+        },
+        {
+            "id": "omstilling",
+            "kapittel": "Stabil økonomi",
+            "visual": { "type": "NordiskModellKassa", "props": { "modus": "omstilling" } },
+            "replikker": [
+                { "si": "Den tredje søylen er økonomien. Landene satser på frihandel, stabil politikk og flest mulig i jobb." },
+                { "si": "Her henger søylene sammen. Når lønnsforskjellene er små, blir det dyrt å drive gammeldags arbeid som lønner seg dårlig." },
+                { "si": "Noen slike bedrifter legges ned, mens de som er gode, vokser." },
+                { "si": "For den som mister jobben, gjør velferden og hjelpen til å finne ny jobb det lettere å komme seg videre." },
+                { "si": "Velferden gjør det altså mindre farlig å endre seg." }
+            ]
+        },
+        {
+            "id": "modeller",
+            "kapittel": "Og i USA?",
+            "visual": { "type": "NordiskModellKart", "props": { "modus": "modeller" } },
+            "replikker": [
+                { "si": "Forskere deler ofte rike land inn i tre typer velferdsstater." },
+                { "si": "Norden har den sosialdemokratiske eller skandinaviske modellen." },
+                { "si": "I Tyskland og Frankrike henger det du får, tett sammen med jobben din." },
+                { "si": "USA har den liberale modellen. Der gjør staten mindre, og folk skal i større grad klare seg selv." },
+                { "si": "USA har ingen offentlig helseforsikring for alle. Staten hjelper eldre, funksjonshemmede og de fattigste." },
+                { "si": "Resten må ordne forsikring selv, gjerne gjennom jobben." }
+            ]
+        },
+        {
+            "id": "forsikring",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        { "fraBeat": 0, "total": 100, "farget": 100, "farge": "#94a3b8", "tittel": "Tenk deg USA som 100 mennesker", "fargeEtikett": "amerikanere" },
+                        { "fraBeat": 1, "total": 100, "farget": 92, "farge": "#0d9488", "restFarge": "#cbd5e1", "tittel": "2024: 92 av 100 hadde helseforsikring", "fargeEtikett": "hadde forsikring hele eller deler av året", "restEtikett": "resten", "visTall": false },
+                        { "fraBeat": 2, "total": 100, "farget": 92, "farge": "#0d9488", "restFarge": "#dc2626", "tittel": "Rundt 8 av 100 helt uten", "fargeEtikett": "hadde forsikring hele eller deler av året", "restEtikett": "helt uten forsikring", "visTall": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Tenk deg at USA var 100 mennesker." },
+                { "si": "I 2024 hadde 92 av dem helseforsikring hele eller deler av året." },
+                { "si": "Det betyr at rundt 8 av 100 sto helt uten." }
+            ]
+        },
+        {
+            "id": "foreldre",
+            "kapittel": "Hvem tar regningen?",
+            "visual": { "type": "NordiskModellToLand", "props": { "modus": "foreldre" } },
+            "replikker": [
+                { "si": "Det samme mønsteret ser du når folk får barn." },
+                { "si": "I Norge kan foreldrene til sammen få foreldrepenger fra Nav i 49 uker, med full lønn." },
+                { "si": "I USA gir loven rett til inntil 12 uker fri med et nytt barn. Men uten lønn." },
+                { "si": "Og retten gjelder bare dem som har jobbet minst et år for arbeidsgiveren. I private bedrifter må det være minst 50 ansatte." },
+                { "si": "Mister du jobben i Norge, får du dagpenger fra Nav på 62,4 prosent av den gamle inntekten, i opptil to år hvis du har tjent nok." },
+                { "si": "I USA har hver delstat sitt eget system for trygd når du er uten jobb." }
+            ]
+        },
+        {
+            "id": "pris",
+            "kapittel": "Hva gir du opp?",
+            "visual": { "type": "NordiskModellToLand", "props": { "modus": "pris" } },
+            "replikker": [
+                { "si": "Ingen modell er gratis. Den nordiske modellen koster mye, og den betales med skatt." },
+                { "si": "Du betaler inn til fellesskapet hele livet, også de årene du er frisk og har jobb." },
+                { "si": "Noen synes det er rettferdig, fordi alle kan bli syke eller miste jobben." },
+                { "si": "Andre mener at folk selv burde bestemme mer over pengene sine, og at staten blander seg inn i for mye." },
+                { "si": "Det er en uenighet om verdier, både i Norge og i USA." }
+            ]
+        },
+        {
+            "id": "sirkel",
+            "visual": { "type": "NordiskModellKassa", "props": { "modus": "sirkel" } },
+            "replikker": [
+                { "si": "Modellen har en svakhet. Den virker bare så lenge nok folk jobber og betaler skatt." },
+                { "si": "Fafo-forskerne advarer mot det de kaller onde sirkler." },
+                { "si": "Krangler politikerne, og samarbeidet i arbeidslivet blir svakere, kan det bli flere uten jobb, større forskjeller og mer press på velferden." },
+                { "si": "Forskerne har regnet ut at folketallet i Norden vil vokse med minst 3 millioner fram mot 2030, til nesten 30 millioner." },
+                { "si": "Det blir særlig flere eldre. Og flere eldre betyr flere som trenger pensjon og pleie." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "To måter",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Begge modellene har sterke og svake sider.", "fraBeat": 0 },
+                        { "tekst": "Norden: stor trygghet, små forskjeller.", "fraBeat": 1 },
+                        { "tekst": "Men høy skatt, og folk må stole på hverandre og staten.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "USA: du beholder mer av pengene.", "fraBeat": 2 },
+                        { "tekst": "Men mer av risikoen ligger på deg.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Forskerne: Modellene i Norden er politiske valg.", "fraBeat": 3 },
+                        { "tekst": "De kan endres.", "fraBeat": 3, "uthevet": true },
+                        { "tekst": "Hvem avgjør hvordan modellen skal se ut?", "fraBeat": 4 },
+                        { "tekst": "Folk som deg, når du kan stemme.", "fraBeat": 4, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Begge modellene har sterke og svake sider." },
+                { "si": "Den nordiske gir stor trygghet og små forskjeller. Men den krever høy skatt, og at folk stoler på hverandre og på staten." },
+                { "si": "Den amerikanske lar folk beholde mer av pengene. Men mer av risikoen ligger på hver enkelt." },
+                { "si": "Forskerne minner om at de nordiske modellene er politiske valg. De ble ikke til av seg selv, og de kan endres." },
+                { "si": "Og det er folk som deg, når du kan stemme, som avgjør hvordan den skal se ut." }
+            ]
+        }
+    ]
+}
