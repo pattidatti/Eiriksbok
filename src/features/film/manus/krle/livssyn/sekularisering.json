@@ -1,0 +1,228 @@
+{
+    "id": "sekularisering",
+    "tittel": "Sekularisering: da staten sluttet å bestemme hva du skulle tro",
+    "kilde": "/krle/livssyn/sekularisering",
+    "bilde": "/images/krle/livssyn/sekularisering-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 100, "begrunnelse": "Målestokk i prikkfeltet: 100 figurer står for hele befolkningen, så andelen kan vises som figurer." },
+        { "tall": 61, "begrunnelse": "60,9 prosent rundet til hele figurer i prikkfeltet (61 av 100). Stemmen og tittelen sier 60,9." }
+    ],
+    "vurdering": { "dato": "2026-11-22", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "stua",
+            "lyd": "vind",
+            "kapittel": "Høsten 1804",
+            "visual": { "type": "SekulariseringBygda", "props": { "modus": "natt" } },
+            "replikker": [
+                { "si": "Det er høsten 1804. Inne i en mørk stue sitter naboene rundt et lys." },
+                { "si": "De synger og leser fra Bibelen. Det er ingen prest der." },
+                { "si": "Mannen som har samlet dem, heter Hans Nielsen Hauge. Han er en bondesønn fra Østfold, og han har reist rundt i landet." },
+                { "si": "Hauge blir arrestert og ført til Christiania. Han har ikke stjålet noe, og han har ikke skadet noen." },
+                { "si": "Likevel sitter han i fengsel nesten hele tiden fra 1804 til 1814. Alt han gjorde, var å samle folk for å tro sammen." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "SEKULARISERING",
+                    "undertittel": "Da staten sluttet å bestemme hva du skulle tro",
+                    "bilde": "/images/krle/livssyn/sekularisering-hero.webp",
+                    "sporsmal": { "tekst": "Hva skjedde mellom Hauges celle og din stue?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "I dag kan du samle vennene dine hjemme og snakke om hva du vil tro på. Ingen kommer og banker på." },
+                { "si": "Mellom Hauges celle og din stue ligger en lang endring. Den har et navn: sekularisering." },
+                { "si": "Hva er det, og hvordan skjedde det?" }
+            ]
+        },
+        {
+            "id": "ordet",
+            "kapittel": "Hva ordet betyr",
+            "visual": { "type": "SekulariseringNivaer", "props": { "modus": "ord" } },
+            "replikker": [
+                { "si": "Sekularisering er når religion mister makt over mennesker, kultur og samfunn." },
+                { "si": "Legg merke til hva som ikke står der. Det står ikke at religionen forsvinner. Det står ikke at folk slutter å tro." },
+                { "si": "Det står bare at religionen mister makt. Det er hele poenget." }
+            ]
+        },
+        {
+            "id": "nivaer",
+            "visual": { "type": "SekulariseringNivaer", "props": { "modus": "tre" } },
+            "replikker": [
+                { "si": "Forskerne deler sekularisering opp i tre nivåer." },
+                { "si": "Det første er samfunnet. Lovene løsner fra kirken. Det er staten, ikke presten, som bestemmer." },
+                { "si": "Det andre er organisasjonene. Skoler, hjelpeorganisasjoner og idrettslag blir mindre religiøse." },
+                { "si": "Det tredje er hver enkelt av oss. Færre tror, færre går i kirken, og færre er medlem." },
+                { "si": "De tre går i ulikt tempo. En lov kan endre hele landet på én dag. At folk endrer hva de tror på, tar generasjoner." }
+            ]
+        },
+        {
+            "id": "reformasjon",
+            "lyd": "vind",
+            "kapittel": "Loven slipper taket",
+            "visual": { "type": "SekulariseringBygda", "props": { "modus": "baand" } },
+            "replikker": [
+                { "si": "Vi begynner med lovene. Reformasjonen kom til Norge i 1537, og da ble kirken lagt under staten." },
+                { "si": "Kongen var sjefen over kirken." },
+                { "si": "Og alle som bodde i landet, skulle være lutherske." },
+                { "si": "Det var ikke noe du valgte. Det var noe du var, på samme måte som du var undersått av kongen." }
+            ]
+        },
+        {
+            "id": "plakaten",
+            "lyd": "stille",
+            "visual": { "type": "SekulariseringTidslinje", "props": { "modus": "plakat" } },
+            "replikker": [
+                { "si": "Staten passet også på at ingen samlet folk om troen på egen hånd." },
+                { "si": "I 1741 kom Konventikkelplakaten. Den forbød vanlige folk å holde religiøse møter uten at presten var med. Den forbød også predikanter som reiste rundt." },
+                { "si": "Et konventikkel er nettopp et slikt møte: naboer som samles hjemme i stua for å be og lese, uten prest." },
+                { "si": "Det var dette Hauge gjorde. I 1814 ble han dømt for å ha brutt plakaten." }
+            ]
+        },
+        {
+            "id": "dorene",
+            "visual": { "type": "SekulariseringTidslinje", "props": { "modus": "aapning" } },
+            "replikker": [
+                { "si": "I 1842 ble Konventikkelplakaten opphevet." },
+                { "si": "Tre år senere, i 1845, kom dissenterloven. Den ga andre kristne rett til å samles og lage egne menigheter, med egne prester." },
+                { "si": "Men det var langt fra full frihet. Jøder fikk ikke komme inn i landet før Grunnloven ble endret i 1851." },
+                { "si": "Og i 1853 slo Høyesterett fast at mormonerne ikke var kristne. Da falt de utenfor loven." },
+                { "si": "Likevel var dette et brudd. For første gang siden 1537 kunne du i praksis tilhøre noe annet enn statskirken uten å bli straffet." }
+            ]
+        },
+        {
+            "id": "skillet",
+            "lyd": "vind",
+            "visual": { "type": "SekulariseringBygda", "props": { "modus": "skillet" } },
+            "replikker": [
+                { "si": "Grunnloven fra 1814 sa i paragraf 2 at lutherdommen var statens religion." },
+                { "si": "Kongen i statsråd utnevnte biskopene, og Stortinget vedtok kirkelovene. Slik var det i nesten to hundre år." },
+                { "si": "I 2012 ble Grunnloven endret. Statskirkeordningen ble oppløst, og staten hadde ikke lenger en egen religion." },
+                { "si": "Fra 2017 ble Den norske kirke en egen organisasjon, ikke en del av staten." },
+                { "si": "Men skillet er ikke helt. Grunnloven kaller fortsatt Den norske kirke Norges folkekirke, og staten skal støtte den. Det er en skilsmisse der de to fortsatt bor i samme hus." }
+            ]
+        },
+        {
+            "id": "skolen",
+            "lyd": "stille",
+            "kapittel": "Organisasjonene",
+            "visual": { "type": "SekulariseringNivaer", "props": { "modus": "skole" } },
+            "replikker": [
+                { "si": "Samtidig skjedde noe stillere. Oppgaver som kirken en gang hadde, gled over til andre." },
+                { "si": "Tenk på skoledagen din. Den begynner ikke med bønn." },
+                { "si": "I KRLE lærer du om flere religioner og livssyn ved siden av hverandre, i stedet for å lære deg én tro." },
+                { "si": "Det er ikke fordi noen bestemte at religion er dumt. Skolen har bare fått en annen oppgave enn den hadde i 1850." }
+            ]
+        },
+        {
+            "id": "medlemmer",
+            "kapittel": "Menneskene",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 100,
+                            "farget": 85,
+                            "farge": "#b45309",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "1994: 85 prosent var medlem",
+                            "fargeEtikett": "medlem i Den norske kirke",
+                            "restEtikett": "ikke medlem",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 100,
+                            "farget": 61,
+                            "farge": "#b45309",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "2025: 60,9 prosent var medlem",
+                            "fargeEtikett": "medlem i Den norske kirke",
+                            "restEtikett": "ikke medlem",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Det tredje nivået går tregest, men det er lettest å måle. I 1994 var 85 prosent av alle i Norge medlem i Den norske kirke." },
+                { "si": "I 2025 var tallet 60,9 prosent. Det er 3 427 657 mennesker.", "uttale": "I 2025 var tallet sekstien komma ni prosent. Det er tre millioner fire hundre og tjuesju tusen seks hundre og femtisju mennesker." }
+            ]
+        },
+        {
+            "id": "livet",
+            "visual": { "type": "SekulariseringLivet", "props": { "modus": "fire" } },
+            "replikker": [
+                { "si": "Men medlemstallet er bare ett tall. Se hva som skjer når vi deler livet opp i det som markeres i kirken. Gjett først!" },
+                { "si": "I 2025 ble 51,7 prosent av alle nyfødte døpt.", "uttale": "I 2025 ble femtien komma sju prosent av alle nyfødte døpt." },
+                { "si": "48,8 prosent av femtenåringene ble konfirmert.", "uttale": "Førtiåtte komma åtte prosent av femtenåringene ble konfirmert." },
+                { "si": "Men 80,1 prosent av alle som døde, fikk gravferd i Den norske kirke. Det er høyere enn medlemstallet.", "uttale": "Men åtti komma en prosent av alle som døde, fikk gravferd i Den norske kirke. Det er høyere enn medlemstallet." },
+                { "si": "Hvordan kan det henge sammen? De som dør i dag, ble født da nesten alle var medlemmer. Og mange familier velger kirken når noen dør, selv om de ellers ikke bruker den." },
+                { "si": "Sekulariseringen har altså ikke truffet hele livet likt. Den har tømt begynnelsen av livet raskere enn slutten." }
+            ]
+        },
+        {
+            "id": "fort",
+            "visual": { "type": "SekulariseringLivet", "props": { "modus": "fort" } },
+            "replikker": [
+                { "si": "Og endringen går fort." },
+                { "si": "I 2001 ble 80 prosent av barna døpt. I 2020 var det under 50 prosent." },
+                { "si": "I 2005 var det 6,7 millioner besøk på gudstjenester. I 2019 var det 5,2 millioner.", "uttale": "I 2005 var det seks komma sju millioner besøk på gudstjenester. I 2019 var det fem komma to millioner." }
+            ]
+        },
+        {
+            "id": "ikkeborte",
+            "lyd": "vind",
+            "kapittel": "Forsvinner religionen?",
+            "visual": { "type": "SekulariseringBygda", "props": { "modus": "folk" } },
+            "replikker": [
+                { "si": "Betyr det at religionen forsvinner? Nei. Den norske kirke er fortsatt det klart største trossamfunnet, med 3,4 millioner medlemmer." },
+                { "si": "Og noe annet har vokst. I 2006 var 384 000 mennesker med i et tros- eller livssynssamfunn utenfor Den norske kirke. I 2020 var de 697 000." },
+                { "si": "Noe av veksten kommer fra innvandring. Islam, buddhisme og ortodoks kristendom er blitt vanlige religioner i Norge." },
+                { "si": "Noe kommer fra at flere melder seg inn i livssynssamfunn uten gudstro." },
+                { "si": "Det som virkelig er borte, er ikke troen. Det er tvangen. Spørsmålet om hva du skal tro, er nå ditt eget." }
+            ]
+        },
+        {
+            "id": "krangel",
+            "lyd": "stille",
+            "kapittel": "Hvilket nivå?",
+            "visual": { "type": "SekulariseringNivaer", "props": { "modus": "krangel" } },
+            "replikker": [
+                { "si": "Noen sier at Norge er et kristent land. Den personen tenker ofte på lovene og historien." },
+                { "si": "Andre sier at Norge er blitt et gudløst land. Den personen tenker ofte på hva folk faktisk tror." },
+                { "si": "Begge kan ha rett samtidig, fordi de måler ulike ting." },
+                { "si": "Så neste gang du hører en påstand om religion i Norge, kan du spørre: Hvilket nivå snakker du om?" }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "I 1804 kunne du havne i fengsel for å samle naboene til bønn uten prest.", "fraBeat": 0 },
+                        { "tekst": "I dag er spørsmålet ditt eget.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Religionen har ikke forsvunnet.", "fraBeat": 1 },
+                        { "tekst": "Den har mistet makt.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Loven, organisasjonene, menneskene:", "fraBeat": 2 },
+                        { "tekst": "Spør alltid hvilket nivå det gjelder.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "I 1804 kunne du havne i fengsel for å samle naboene til bønn uten prest. I dag er spørsmålet ditt eget." },
+                { "si": "Religionen har ikke forsvunnet fra Norge. Den har mistet makt, og folk velger selv." },
+                { "si": "Da blir en krangel om religion til en samtale. Du må bare spørre hvilket nivå det gjelder." }
+            ]
+        }
+    ]
+}
