@@ -2691,7 +2691,7 @@
                 "demokrati"
               ],
               "createdDate": "2026-11-13T02:16:07+01:00",
-              "lastUpdated": "2026-11-13T07:44:37+01:00"
+              "lastUpdated": "2026-11-21T07:39:58+01:00"
             },
             {
               "id": "domstolene",
@@ -2721,7 +2721,7 @@
                 "etikk"
               ],
               "createdDate": "2026-11-15T02:18:00+01:00",
-              "lastUpdated": "2026-11-20T07:39:15+01:00"
+              "lastUpdated": "2026-11-21T07:39:58+01:00"
             },
             {
               "id": "ungdom-og-kriminalitet",
@@ -2736,7 +2736,7 @@
                 "rettigheter"
               ],
               "createdDate": "2026-11-16T01:10:22.764Z",
-              "lastUpdated": "2026-11-17T07:33:54+01:00"
+              "lastUpdated": "2026-11-21T07:39:58+01:00"
             },
             {
               "id": "konfliktradet",
@@ -2751,7 +2751,7 @@
                 "rettferdighet"
               ],
               "createdDate": "2026-11-17T01:11:18.192Z",
-              "lastUpdated": "2026-11-17T07:33:54+01:00"
+              "lastUpdated": "2026-11-21T07:39:58+01:00"
             }
           ]
         },
@@ -2819,7 +2819,22 @@
                 "levealdersjustering"
               ],
               "createdDate": "2026-11-21T01:09:17.567Z",
-              "lastUpdated": "2026-11-21T01:09:31.138Z"
+              "lastUpdated": "2026-11-21T07:39:58+01:00"
+            },
+            {
+              "id": "den-nordiske-modellen",
+              "title": "Den nordiske modellen",
+              "description": "Hva som er spesielt med Norden: velferd for alle, et organisert arbeidsliv og høy skatt, og hvordan det er annerledes i USA.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "velferd",
+                "den nordiske modellen",
+                "velferdsstaten",
+                "trepartssamarbeid",
+                "usa"
+              ],
+              "createdDate": "2026-11-22T01:11:48.469Z",
+              "lastUpdated": "2026-11-22T01:20:19.903Z"
             }
           ]
         },

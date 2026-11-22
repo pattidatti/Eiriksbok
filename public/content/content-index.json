@@ -1,5 +1,5 @@
 {
-  "buildId": 255941321680770,
+  "buildId": 79808567214916,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4984,6 +4984,9 @@
     "utforsk": [
       "content/samfunnskunnskap/styringsformer/utforsk.json"
     ],
+    "den-nordiske-modellen": [
+      "content/samfunnskunnskap/velferd/den-nordiske-modellen.json"
+    ],
     "hva-skatten-betaler": [
       "content/samfunnskunnskap/velferd/hva-skatten-betaler.json"
     ],
@@ -6688,6 +6691,7 @@
     "samfunnskunnskap/styringsformer/teokrati-teknokrati": "content/samfunnskunnskap/styringsformer/teokrati-teknokrati.json",
     "samfunnskunnskap/styringsformer/uten-hersker": "content/samfunnskunnskap/styringsformer/uten-hersker.json",
     "samfunnskunnskap/styringsformer/utforsk": "content/samfunnskunnskap/styringsformer/utforsk.json",
+    "samfunnskunnskap/velferd/den-nordiske-modellen": "content/samfunnskunnskap/velferd/den-nordiske-modellen.json",
     "samfunnskunnskap/velferd/hva-skatten-betaler": "content/samfunnskunnskap/velferd/hva-skatten-betaler.json",
     "samfunnskunnskap/velferd/nav-og-folketrygden": "content/samfunnskunnskap/velferd/nav-og-folketrygden.json",
     "samfunnskunnskap/velferd/pensjon": "content/samfunnskunnskap/velferd/pensjon.json",

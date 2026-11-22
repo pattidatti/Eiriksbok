@@ -1,0 +1,295 @@
+{
+  "id": "den-nordiske-modellen",
+  "title": "Den nordiske modellen",
+  "layout": "rich",
+  "year": "1930-2026",
+  "category": "Velferd",
+  "readTime": "10 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Den nordiske modellen står på tre søyler: velferd for alle, et organisert arbeidsliv og en stabil økonomi.",
+    "Velferden i Norden er universell: alle har samme rett til helse og utdanning, og den betales mest med skatt.",
+    "USA har en liberal modell, der mer av risikoen ligger på hver enkelt, jobben og forsikringen."
+  ],
+  "externalUrl": "https://snl.no/velferdsstat",
+  "factChecked": "2026-11-22",
+  "tags": [
+    "velferd",
+    "den nordiske modellen",
+    "velferdsstaten",
+    "trepartssamarbeid",
+    "usa",
+    "skatt"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg to 16-åringer som faller stygt på skøyteisen samme dag. Den ene bor i Trondheim, den andre i Texas. Begge har brukket beinet, og begge må til lege for å få det undersøkt og gipset. Smerten er den samme. Men for familiene er det to helt ulike opplevelser når de kommer hjem."
+    },
+    {
+      "type": "text",
+      "content": "I Norge betaler 16-åringen ingenting. Fra 1. august 2026 slipper alle under 18 år å betale egenandel hos fastlegen, på legevakten og hos spesialister (Helsedirektoratet, 2026a). En egenandel er den delen av regningen du betaler selv. Voksne betaler egenandel, men aldri mer enn 3 278 kroner i året for slike tjenester (Helsedirektoratet, 2026b). I USA kommer regningen an på om familien har helseforsikring, og hva slags forsikring det er. Forskjellen handler ikke om at amerikanske leger er dårligere. Den handler om to ulike måter å ordne et samfunn på. Den norske måten kalles ofte den nordiske modellen."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdom med gipset bein på et legekontor",
+      "caption": "Det samme beinbruddet kan gi to helt ulike regninger, alt etter hvilket land du bor i."
+    },
+    {
+      "type": "header",
+      "text": "Hva er den nordiske modellen?"
+    },
+    {
+      "type": "text",
+      "content": "Norden er Norge, Sverige, Danmark, Finland og Island. Landene er ikke like på alle måter, men de har så mye til felles at forskere snakker om én modell (Dølvik et al., 2014). Forskere ved Universitetet i Oslo beskriver det slik: De siste 70 årene har de nordiske landene klart å kombinere trygghet for folk flest med et fritt marked der bedrifter konkurrerer og tjener penger (ESOP, u.å.)."
+    },
+    {
+      "type": "text",
+      "content": "Det er ikke en selvfølge. Fafo-forskerne stiller nettopp spørsmålet om hvordan landene har klart å kombinere vekst og likhet så godt (Dølvik et al., 2014). De nordiske landene har små, åpne økonomier med like god økonomisk vekst som andre rike land, og samtidig små forskjeller mellom folk (ESOP, u.å.)."
+    },
+    {
+      "type": "header",
+      "text": "Tre søyler som holder hverandre oppe"
+    },
+    {
+      "type": "text",
+      "content": "Forskerne ved forskningsstiftelsen Fafo sammenligner modellen med en trekant. Den står på tre søyler, og det er samspillet mellom dem som får det hele til å fungere (Dølvik et al., 2014):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Velferd for alle: Skatten betaler for helse, skole, utdanning og penger å leve av når du er syk, uten jobb eller gammel.",
+        "Et organisert arbeidsliv: Sterke fagforeninger og arbeidsgiverforeninger forhandler om lønn og regler, og de løser uenighet etter faste spilleregler.",
+        "Ryddig styring av økonomien: Staten fører en stabil politikk, landene handler fritt med utlandet, og lønningene blir avtalt samlet for hele landet."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Tenk på en krakk med tre bein. Sager du av ett, velter den. Slik er det med modellen også. Velferden gjør det tryggere å bytte jobb. Samarbeidet i arbeidslivet holder lønningene på et nivå bedriftene tåler. Og en stabil økonomi gir nok skattepenger til velferden."
+    },
+    {
+      "type": "header",
+      "text": "Søyle 1: Velferd som gjelder alle"
+    },
+    {
+      "type": "text",
+      "content": "Det viktigste kjennetegnet ved velferden i Norden er at den gjelder alle. Ifølge Store norske leksikon har alle samme rett til helsetjenester og utdanning, uansett hvor mye de tjener (Christensen & Berg, 2025). Det kalles universelle ordninger. Det motsatte er behovsprøvde ordninger, der du bare får hjelp hvis inntekten din er lav nok."
+    },
+    {
+      "type": "text",
+      "content": "Ordningene skal også være så gode at folk med mye penger ikke føler at de må kjøpe private tjenester i stedet. Når nesten alle bruker den samme skolen og det samme sykehuset, vil også nesten alle være med og betale for dem (Christensen & Berg, 2025). Du kan lese mer om hvor pengene går i artikkelen om [hva skatten betaler for](/samfunnskunnskap/velferd/hva-skatten-betaler)."
+    },
+    {
+      "type": "text",
+      "content": "Regningen betales mest med skatt på inntekt, på det vi kjøper, og på formue. De som tjener mest, betaler mest i skatt, men alle får omtrent de samme tjenestene. Derfor flytter systemet penger fra dem som har mye, til dem som har lite. Leksikonet kaller dette en av de viktigste grunnene til at forskjellene i inntekt er mye mindre i Norge enn i mange andre land (Christensen & Berg, 2025). Hvordan dette sikkerhetsnettet ble bygget etter krigen, kan du lese om i artikkelen om [velferdsstaten](/historie/norge-i-moderne-tid/velferdsstaten)."
+    },
+    {
+      "type": "header",
+      "text": "Søyle 2: Partene i arbeidslivet samarbeider"
+    },
+    {
+      "type": "text",
+      "content": "Den andre søylen handler om arbeidslivet. Mellom de to verdenskrigene var det mye konflikt, klassekamp og harde kriser i Norden. I 1930-årene kom det forskerne kaller «det store kompromisset»: Arbeidsgiverne og arbeiderne ble enige om faste regler for hvordan de skulle forhandle og løse uenighet (Dølvik et al., 2014). De var fortsatt uenige om mye, men de anerkjente at de trengte hverandre. Hvordan arbeiderne organiserte seg, kan du lese om i artikkelen om [fagforeninger](/samfunnskunnskap/arbeidsliv/fagforeninger)."
+    },
+    {
+      "type": "text",
+      "content": "I Norge kalles dette samarbeidet trepartssamarbeidet. De tre partene er arbeidstakerne, med LO som den største organisasjonen, arbeidsgiverne, med NHO, og staten (Thomassen, 2026). Etter krigen ble samarbeidet tettere. I 1962 fikk partene et fast møtested med regjeringen, Kontaktutvalget, og i 1967 kom et eget utvalg som regner ut tallene før lønnsoppgjørene (Thomassen, 2026). Når alle parter stoler på de samme tallene, blir det mindre krangel om hva som er sant, og mer tid til å forhandle om hva som er rettferdig."
+    },
+    {
+      "type": "text",
+      "content": "Et viktig grep er at lønningene ikke blir bestemt bedrift for bedrift. Industrien som selger varer til utlandet, forhandler først, og resten av arbeidslivet følger etter (ESOP, u.å.). Det kalles [frontfagmodellen](/samfunnskunnskap/arbeidsliv/frontfagmodellen). Tanken er at lønningene ikke skal stige så mye at norske varer blir for dyre å selge i utlandet."
+    },
+    {
+      "type": "header",
+      "text": "Søyle 3: En økonomi som holdes stabil"
+    },
+    {
+      "type": "text",
+      "content": "Den tredje søylen er hvordan staten styrer økonomien. De nordiske landene er små og lever av å handle med andre land. Derfor har de satset på frihandel, på en stabil politikk og på å holde flest mulig i jobb (Dølvik et al., 2014). Målet etter krigen var både jevn vekst og en rettferdig fordeling."
+    },
+    {
+      "type": "text",
+      "content": "Her henger søylene sammen igjen. Når lønnsforskjellene er små, blir det dyrt for bedriftene å drive med gammeldags og lite lønnsomt arbeid. Noen slike bedrifter legges ned, mens de som er gode, vokser. For den som mister jobben, gjør velferdsordningene og hjelpen til å finne ny jobb det lettere å komme seg videre (Dølvik et al., 2014). Velferden gjør det altså mindre farlig å endre seg."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Arbeidere og ledere rundt et forhandlingsbord",
+      "caption": "I Norden møtes arbeidsgivere, fagforeninger og staten for å forhandle. De er ofte uenige, men de følger faste spilleregler."
+    },
+    {
+      "type": "header",
+      "text": "Hvem tar regningen?"
+    },
+    {
+      "type": "text",
+      "content": "Hvordan merker du modellen i ditt eget liv? Den blir tydeligst når noe skjer: Du blir syk, du får barn, eller du mister jobben. Prøv selv. Velg en hendelse, og se hvem som tar regningen i Norge og i USA."
+    },
+    {
+      "type": "component",
+      "name": "SammeLivToLand",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Hvordan gjør de det i USA?"
+    },
+    {
+      "type": "text",
+      "content": "Forskere deler ofte rike land inn i tre typer velferdsstater. Norden har det som kalles den sosialdemokratiske eller skandinaviske modellen. Tyskland og Frankrike har en modell der det du får, henger tett sammen med jobben din. USA har det som kalles den liberale modellen (Christensen & Berg, 2025). Liberal betyr her at staten gjør mindre, og at folk i større grad skal klare seg selv."
+    },
+    {
+      "type": "text",
+      "content": "I den liberale modellen henger hjelpen du får, mest sammen med hva du selv har betalt inn. Det staten betaler med skattepenger, er ganske lite, og det går mest til de fattigste (Christensen & Berg, 2025). USA har ingen offentlig helseforsikring som dekker hele befolkningen. Staten hjelper eldre, funksjonshemmede og de fattigste. Resten må ordne forsikring selv, gjerne gjennom jobben (Christensen & Berg, 2025). I 2024 hadde 92 prosent av amerikanerne helseforsikring i hele eller deler av året (Bunch & Ketema, 2025). Det betyr at rundt 8 av 100 sto helt uten."
+    },
+    {
+      "type": "text",
+      "content": "Det samme mønsteret finner du når folk får barn. I Norge kan foreldrene til sammen få foreldrepenger fra Nav i 49 uker med full lønn (Nav, 2026b). I USA gir den nasjonale loven rett til inntil 12 uker fri for å ta vare på et nytt barn, men uten lønn. Retten gjelder bare dem som har jobbet minst et år for arbeidsgiveren, og i private bedrifter bare der det er minst 50 ansatte (U.S. Department of Labor, u.å.-a). Mister du jobben, har hver amerikansk delstat sitt eget system for arbeidsledighetstrygd (U.S. Department of Labor, u.å.-b). I Norge får du dagpenger fra Nav på 62,4 prosent av den gamle inntekten, i opptil to år hvis du har tjent nok (Nav, 2026a)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "content": "Den nordiske modellen: måten Norge, Sverige, Danmark, Finland og Island har ordnet samfunnet på, med velferd for alle, et organisert arbeidsliv og en stabil økonomi. Universell ordning: noe alle har rett til, uansett inntekt. Behovsprøvd ordning: hjelp du bare får hvis inntekten din er lav nok. Trepartssamarbeid: samarbeidet mellom arbeidstakere, arbeidsgivere og staten. Egenandel: den delen av en regning du betaler selv."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hva gir du opp?"
+    },
+    {
+      "type": "text",
+      "content": "Ingen modell er gratis. Den nordiske modellen koster mye, og regningen betales med skatt. Du betaler inn til fellesskapet hele livet, også de årene du er frisk og har jobb. Noen synes det er rettferdig, fordi alle kan bli syke eller miste jobben. Andre mener at folk selv burde få bestemme mer over pengene de tjener, og at staten blander seg inn i for mye. Det er en uenighet om verdier, og den finnes både i Norge og i USA. I artikkelen om [økonomiske skoler](/samfunnskunnskap/okonomi/okonomiske-skoler) kan du lese mer om hvordan økonomer ser ulikt på hvor mye staten skal styre."
+    },
+    {
+      "type": "text",
+      "content": "Modellen har også en svakhet: Den virker bare så lenge nok folk jobber og betaler skatt. Fafo-forskerne advarer mot det de kaller «onde sirkler». Hvis politikerne krangler og samarbeidet i arbeidslivet blir svakere, kan resultatet bli flere uten jobb, større forskjeller og mer press på velferden (Dølvik et al., 2014). Samtidig blir det stadig flere eldre i Norden. Forskerne regnet ut at folketallet i Norden vil vokse med minst 3 millioner fram mot 2030, til nesten 30 millioner, og at det blir særlig flere eldre (Dølvik et al., 2014). Flere eldre betyr flere som trenger pensjon og pleie. Les mer om dette i artikkelen om [Nav og folketrygden](/samfunnskunnskap/velferd/nav-og-folketrygden)."
+    },
+    {
+      "type": "header",
+      "text": "To måter å ordne et samfunn på"
+    },
+    {
+      "type": "text",
+      "content": "Begge modellene har sterke og svake sider. Den nordiske modellen gir stor trygghet og små forskjeller, men den krever høy skatt og at folk stoler på hverandre og på staten. Den amerikanske modellen lar folk beholde mer av pengene sine, men mer av risikoen ligger på hver enkelt."
+    },
+    {
+      "type": "text",
+      "content": "Forskerne bak NordMod-rapporten minner om at de nordiske modellene er politiske valg (Dølvik et al., 2014). De ble ikke til av seg selv, og de kan endres. Det betyr at det er folk som deg, når du blir gammel nok til å stemme, som avgjør hvordan modellen skal se ut i framtiden."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdommer i et klasserom diskuterer foran en tavle",
+      "caption": "Hvor mye skal fellesskapet gjøre, og hvor mye skal du klare selv? Det er et av de store spørsmålene i politikken."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Bunch, L. N. & Ketema, H. (2025). *Health insurance coverage in the United States: 2024* (Current Population Reports P60-288). U.S. Census Bureau. [census.gov](https://www.census.gov/library/publications/2025/demo/p60-288.html)",
+          "Christensen, J. & Berg, O. T. (2025). *Velferdsstat*. Store norske leksikon. Hentet 22.11.2026 fra [snl.no/velferdsstat](https://snl.no/velferdsstat)",
+          "Dølvik, J. E., Fløtten, T., Hippe, J. M. & Jordfald, B. (2014). *Den nordiske modellen mot 2030: Et nytt kapittel?* (Fafo-rapport 2014:46). Fafo. [fafo.no](https://www.fafo.no/images/pub/2014/20393.pdf)",
+          "ESOP. (u.å.). *Den nordiske modellen*. Senter for studier av likhet, sosial organisering og økonomisk utvikling, Universitetet i Oslo. Hentet 22.11.2026 fra [sv.uio.no](https://www.sv.uio.no/esop/den-nordiske-modellen/)",
+          "Helsedirektoratet. (2026a). *16- og 17-åringar skal ikkje lenger betale eigendel for helsetenester*. Hentet 22.11.2026 fra [helsedirektoratet.no](https://www.helsedirektoratet.no/nyheter/16-og-17-aringar-skal-ikkje-lenger-betale-eigendel-for-helsetenester)",
+          "Helsedirektoratet. (2026b). *Egenandelstaket og rammene for frikortordningen* (Rundskriv til folketrygdloven § 5-3). Hentet 22.11.2026 fra [helsedirektoratet.no](https://www.helsedirektoratet.no/rundskriv/folketrygdloven-kap-5/rundskriv-til-folketrygdloven--5-3--egenandelstak/egenandelstaket-og-rammene-for-frikortordningen)",
+          "Nav. (2026a). *Dagpenger*. Hentet 22.11.2026 fra [nav.no/dagpenger](https://www.nav.no/dagpenger)",
+          "Nav. (2026b). *Foreldrepenger*. Hentet 22.11.2026 fra [nav.no/foreldrepenger](https://www.nav.no/foreldrepenger)",
+          "Thomassen, E. (2026). *Trepartssamarbeid*. Store norske leksikon. Hentet 22.11.2026 fra [snl.no/trepartssamarbeid](https://snl.no/trepartssamarbeid)",
+          "U.S. Department of Labor. (u.å.-a). *Family and Medical Leave Act*. Hentet 22.11.2026 fra [dol.gov](https://www.dol.gov/agencies/whd/fmla)",
+          "U.S. Department of Labor. (u.å.-b). *Unemployment insurance*. Hentet 22.11.2026 fra [dol.gov](https://www.dol.gov/general/topic/unemployment-insurance)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hvilke fem land regnes som Norden?",
+          "Hva er de tre søylene i den nordiske modellen?",
+          "Hvem er de tre partene i trepartssamarbeidet?",
+          "Hva er forskjellen på en universell og en behovsprøvd ordning?"
+        ],
+        "reflekter": [
+          "Artikkelen sammenligner modellen med en krakk med tre bein. Forklar med egne ord hvorfor det går galt hvis ett av beina blir borte.",
+          "Hvorfor er det viktig for den nordiske modellen at også folk med mye penger bruker den offentlige skolen og helsetjenesten?",
+          "Bruk det du fant ut i «Samme liv, to land». Hvilket mønster ser du i hvem som tar regningen i Norge og i USA?",
+          "Hvorfor blir modellen sårbar hvis det blir flere eldre og færre som jobber?"
+        ],
+        "gaaVidere": [
+          "Diskuter i klassen: Er det rettferdig at de som tjener mest, betaler mest i skatt, når alle får omtrent de samme tjenestene? Finn argumenter for og mot.",
+          "Skriv et kort innlegg der du forklarer den nordiske modellen for en jevnaldrende i USA. Hva tror du hen ville synes var bra, og hva ville hen stusset over?",
+          "Finn en nyhetssak om skatt, Nav eller lønnsoppgjøret. Hvilken av de tre søylene handler saken om?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er de tre søylene i den nordiske modellen?",
+            "options": [
+              "Kongen, kirken og Stortinget",
+              "Velferd for alle, et organisert arbeidsliv og en stabil økonomi",
+              "Olje, fisk og skog",
+              "Lav skatt, private skoler og fri konkurranse"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Fafo-forskerne beskriver modellen som en trekant med tre søyler: offentlig velferd, et organisert arbeidsliv og ryddig styring av økonomien."
+          },
+          {
+            "question": "Hva betyr det at en velferdsordning er universell?",
+            "options": [
+              "At den bare gjelder de fattigste",
+              "At den gjelder hele verden",
+              "At alle har rett til den, uansett inntekt",
+              "At du må betale for den selv"
+            ],
+            "correctAnswer": 2,
+            "explanation": "En universell ordning gjelder alle. En behovsprøvd ordning gjelder bare dem som tjener lite nok."
+          },
+          {
+            "question": "Hvem er de tre partene i trepartssamarbeidet?",
+            "options": [
+              "Arbeidstakerne, arbeidsgiverne og staten",
+              "Norge, Sverige og Danmark",
+              "Elevene, lærerne og rektor",
+              "Bankene, butikkene og bøndene"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Trepartssamarbeidet er samarbeidet mellom arbeidstakerne (for eksempel LO), arbeidsgiverne (for eksempel NHO) og staten."
+          },
+          {
+            "question": "Hva slags velferdsmodell har USA ifølge Store norske leksikon?",
+            "options": [
+              "Den sosialdemokratiske modellen",
+              "Den liberale modellen",
+              "Den nordiske modellen",
+              "Ingen modell i det hele tatt"
+            ],
+            "correctAnswer": 1,
+            "explanation": "USA har den liberale modellen. Der henger hjelpen mest sammen med hva du selv har betalt inn, og skattepengene går mest til de fattigste."
+          },
+          {
+            "question": "Hvorfor blir modellen sårbar hvis det blir flere eldre og færre i jobb?",
+            "options": [
+              "Fordi eldre ikke får stemme",
+              "Fordi modellen betales med skatt fra dem som jobber, og flere eldre trenger pensjon og pleie",
+              "Fordi eldre ikke bruker helsetjenester",
+              "Fordi USA bestemmer det"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Modellen virker bare så lenge nok folk jobber og betaler skatt. Flere eldre betyr flere som trenger pensjon og pleie."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
