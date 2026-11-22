@@ -93,12 +93,12 @@ function fargeFor(modus: Modus, beat: number, id: number): string {
 const BRIKKER: Record<Modus, { tekst: string; rod?: boolean }[]> = {
     land: [
         { tekst: 'Chile: langt og smalt' },
-        { tekst: 'USA: den store naboen i nord' },
+        { tekst: 'USA: langt mot nord' },
         { tekst: 'Kobberpengene går nordover', rod: true },
     ],
     frykt: [
         { tekst: 'President Nixon er rasende', rod: true },
-        { tekst: '«Et nytt Cuba?»' },
+        { tekst: 'Et nytt Cuba?' },
         { tekst: 'Frykten: at flere følger etter' },
         { tekst: 'Latin-Amerika kan få samme idé' },
     ],

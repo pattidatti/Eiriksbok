@@ -23,7 +23,7 @@ const TEKST: Record<Modus, { tekst: string; rod?: boolean }[]> = {
         { tekst: 'Var det bra for Chile?' },
         { tekst: 'Noen: rikere på sikt' },
         { tekst: 'Andre: større forskjeller' },
-        { tekst: 'Folket fikk aldri stemme', rod: true },
+        { tekst: 'Andre: folket fikk aldri stemme', rod: true },
     ],
     arkiv: [
         { tekst: 'USA nekter i lang tid' },
@@ -175,19 +175,21 @@ function Vekt({ beat }: { beat: number }) {
                 vis={beat >= 2}
             />
             {beat === 0 && (
-                <motion.text
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                    x={cx}
-                    y={topp + 150}
-                    textAnchor="middle"
-                    fontSize={120}
-                    fontWeight={900}
-                    fill="#78716c"
-                >
-                    ?
-                </motion.text>
+                <g>
+                    <motion.text
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.6 }}
+                        x={cx}
+                        y={topp + 150}
+                        textAnchor="middle"
+                        fontSize={120}
+                        fontWeight={900}
+                        fill="#78716c"
+                    >
+                        ?
+                    </motion.text>
+                </g>
             )}
             <AnimatePresence>
                 {beat >= 3 && (
@@ -330,9 +332,18 @@ function Dokument({ beat }: { beat: number }) {
                     const ly = y + 220 + i * 110;
                     return (
                         <g key={l}>
-                            <text x={x + 50} y={ly} fontSize={34} fontWeight={700} fill="#0f172a">
-                                {l}
-                            </text>
+                            {/* Teksten finnes ikke før sladden er borte (beat 2). */}
+                            {åpen && (
+                                <text
+                                    x={x + 50}
+                                    y={ly}
+                                    fontSize={34}
+                                    fontWeight={700}
+                                    fill="#0f172a"
+                                >
+                                    {l}
+                                </text>
+                            )}
                             <motion.rect
                                 x={x + 40}
                                 y={ly - 42}
