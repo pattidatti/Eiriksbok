@@ -5,7 +5,7 @@
   "year": "1930-2026",
   "category": "Velferd",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/velferd/den-nordiske-modellen-hero.webp",
   "details": [
     "Den nordiske modellen står på tre søyler: velferd for alle, et organisert arbeidsliv og en stabil økonomi.",
     "Velferden i Norden er universell: alle har samme rett til helse og utdanning, og den betales mest med skatt.",
@@ -32,7 +32,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/velferd/den-nordiske-modellen-01.webp",
       "alt": "Ungdom med gipset bein på et legekontor",
       "caption": "Det samme beinbruddet kan gi to helt ulike regninger, alt etter hvilket land du bor i."
     },
@@ -114,7 +114,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/velferd/den-nordiske-modellen-02.webp",
       "alt": "Arbeidere og ledere rundt et forhandlingsbord",
       "caption": "I Norden møtes arbeidsgivere, fagforeninger og staten for å forhandle. De er ofte uenige, men de følger faste spilleregler."
     },
@@ -181,7 +181,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/velferd/den-nordiske-modellen-03.webp",
       "alt": "Ungdommer i et klasserom diskuterer foran en tavle",
       "caption": "Hvor mye skal fellesskapet gjøre, og hvor mye skal du klare selv? Det er et av de store spørsmålene i politikken."
     },
