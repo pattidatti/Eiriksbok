@@ -1,5 +1,5 @@
 {
-  "buildId": 79808567214916,
+  "buildId": 1655024736614,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4990,6 +4990,9 @@
     "hva-skatten-betaler": [
       "content/samfunnskunnskap/velferd/hva-skatten-betaler.json"
     ],
+    "kan-velferdsstaten-vare": [
+      "content/samfunnskunnskap/velferd/kan-velferdsstaten-vare.json"
+    ],
     "nav-og-folketrygden": [
       "content/samfunnskunnskap/velferd/nav-og-folketrygden.json"
     ],
@@ -6693,6 +6696,7 @@
     "samfunnskunnskap/styringsformer/utforsk": "content/samfunnskunnskap/styringsformer/utforsk.json",
     "samfunnskunnskap/velferd/den-nordiske-modellen": "content/samfunnskunnskap/velferd/den-nordiske-modellen.json",
     "samfunnskunnskap/velferd/hva-skatten-betaler": "content/samfunnskunnskap/velferd/hva-skatten-betaler.json",
+    "samfunnskunnskap/velferd/kan-velferdsstaten-vare": "content/samfunnskunnskap/velferd/kan-velferdsstaten-vare.json",
     "samfunnskunnskap/velferd/nav-og-folketrygden": "content/samfunnskunnskap/velferd/nav-og-folketrygden.json",
     "samfunnskunnskap/velferd/pensjon": "content/samfunnskunnskap/velferd/pensjon.json",
     "samfunnskunnskap/velferd/statsbudsjettet": "content/samfunnskunnskap/velferd/statsbudsjettet.json",

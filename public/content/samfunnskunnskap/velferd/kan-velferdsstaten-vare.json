@@ -1,0 +1,287 @@
+{
+  "id": "kan-velferdsstaten-vare",
+  "title": "Kan velferdsstaten vare?",
+  "layout": "rich",
+  "year": "2024-2060",
+  "category": "Velferd",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Perspektivmeldingen viser at utgiftene til velferd vokser raskere enn inntektene fram mot 2060.",
+    "Gapet kalles inndekningsbehovet og er beregnet til 6,2 prosent av økonomien utenom olje og gass i 2060.",
+    "Det kan tettes med høyere skatt, mindre velferd, flere i jobb eller et smartere offentlig. Hver løsning har en pris."
+  ],
+  "externalUrl": "https://snl.no/velferdsstat",
+  "factChecked": "2026-11-23",
+  "tags": [
+    "velferd",
+    "velferdsstaten",
+    "perspektivmeldingen",
+    "eldrebølgen",
+    "økonomi",
+    "politikk"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Tenk deg en familie som setter opp budsjettet for de neste 35 årene. De vet at bestemor og bestefar trenger mer hjelp etter hvert. De vet at en av inntektene deres kommer til å krympe. Når de regner på det, ser de at pengene ikke strekker til. Det er ikke krise i dag, men det blir et hull i regnestykket om noen år."
+    },
+    {
+      "type": "text",
+      "content": "Slik ser det ut for velferdsstaten Norge. Velferdsstaten er ordningen der fellesskapet betaler for skole, sykehus, pensjon og hjelp når du blir syk eller mister jobben. Store norske leksikon forklarer at Norge betaler for det meste av dette med skatt, og at de fleste tjenestene er gratis eller nesten gratis (Christensen & Berg, 2025). Spørsmålet i denne artikkelen er enkelt å stille, men vanskelig å svare på: Har vi råd til dette i framtiden?"
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ung og gammel person ved kjøkkenbord med regninger",
+      "caption": "Velferdsstaten er et felles budsjett for hele landet. Det må gå opp både i dag og om 35 år."
+    },
+    {
+      "type": "header",
+      "text": "Perspektivmeldingen: en værmelding for økonomien"
+    },
+    {
+      "type": "text",
+      "content": "Omtrent hvert fjerde år lager Finansdepartementet en stor rapport som heter perspektivmeldingen. Den ser ikke på neste år, men helt fram mot 2060 (Stortingets utredningsseksjon, 2024). Du kan tenke på den som en langtids værmelding for økonomien. Den sier ikke hva politikerne skal gjøre. Den viser hvor det bærer hvis ingen gjør noe."
+    },
+    {
+      "type": "text",
+      "content": "Den siste kom i 2024. Stortingets finanskomité gikk gjennom den og skrev at utgiftene til det offentlige vil vokse mye raskere enn inntektene. Fram mot 2060 vil utgiftene øke med 5,7 prosentpoeng, målt som en del av alt som blir produsert i Norge utenom olje og gass (Finanskomiteen, 2025). Det høres kanskje lite ut. Men det er enorme summer, fordi det gjelder hele økonomien hvert eneste år."
+    },
+    {
+      "type": "header",
+      "text": "Hva er inndekningsbehovet?"
+    },
+    {
+      "type": "text",
+      "content": "Hullet i regnestykket har et eget navn: inndekningsbehovet. Det betyr rett og slett hvor mye penger som mangler for at utgiftene og inntektene skal gå opp. I 2060 regner man med at gapet blir på 6,2 prosent av økonomien utenom olje og gass (Finanskomiteen, 2025)."
+    },
+    {
+      "type": "text",
+      "content": "Et inndekningsbehov er ikke en regning som kommer i posten en bestemt dag. Det er et gap som vokser sakte, år for år. Men jo lenger politikerne venter, jo større grep må de ta senere. Derfor har alle perspektivmeldingene siden 2004 advart om det samme (Stortingets utredningsseksjon, 2024)."
+    },
+    {
+      "type": "header",
+      "text": "Hvorfor går ikke regnestykket opp?"
+    },
+    {
+      "type": "text",
+      "content": "Finanskomiteen peker på tre grunner som henger sammen (Finanskomiteen, 2025):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Vi lever lenger. Det er en god nyhet, men det betyr flere år med pensjon og mer behov for pleie.",
+        "Det blir flere eldre for hver person som jobber. Det er de som jobber som betaler mest skatt.",
+        "Inntektene fra olje og gass blir mindre. Olje og gass har gjort Norge rikt, men den tiden går sakte mot slutten."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Den andre grunnen er den viktigste. I 2004 var det 4,8 voksne i arbeidsfør alder, altså i alderen da folk vanligvis jobber, for hver pensjonist. I 2021 var tallet sunket til 4,0. I 2060 blir det bare rundt 2 (Stortingets utredningsseksjon, 2024). Før delte nesten fem personer på å betale for hver pensjonist. I 2060 må to personer dele på det samme."
+    },
+    {
+      "type": "text",
+      "content": "SSB ser samme utvikling i sine beregninger. I starten av 2030-årene blir det flere personer over 65 år enn barn og unge under 20 år. Antallet som er 80 år eller eldre vil mer enn dobles innen 2050 (Tømmerås mfl., 2026). Du kan lese mer om dette i artikkelen om [eldrebølgen](/samfunnskunnskap/demografi/eldrebolgen)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Oljefondet og handlingsregelen",
+        "content": "Oljefondet har passert 20 000 milliarder kroner (Finanskomiteen, 2025). Men staten kan ikke bruke av fondet som den vil. Handlingsregelen sier at staten hvert år kan bruke rundt tre prosent av verdien. Regelen kom i 2001. Først var grensen fire prosent, men i 2017 ble den satt ned til tre (Thomassen & Garvik, 2025). Fondet hjelper mye, men det kan ikke betale for alt."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hvem skal gjøre jobben?"
+    },
+    {
+      "type": "text",
+      "content": "Det handler ikke bare om penger. Det handler også om folk. Flere eldre trenger flere sykepleiere, helsefagarbeidere og leger. Ifølge beregningene kan helse og omsorg trenge rundt 180 000 flere ansatte fram mot 2060 (Finanskomiteen, 2025). Selv om staten hadde nok penger, er det ikke sikkert det finnes nok folk å ansette."
+    },
+    {
+      "type": "text",
+      "content": "Det er derfor mange mener at det viktigste ikke er skatten, men hvor mange som er i jobb. Regjeringen satte i 2024 som mål at flere voksne mellom 20 og 64 år skal jobbe. Andelen skal opp fra 80,5 prosent i 2023 til 82 prosent i 2030 og 83 prosent i 2035 (Finanskomiteen, 2025). Hver ekstra person i jobb betaler skatt i stedet for å trenge støtte."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Helsefagarbeider hjelper eldre mann på sykehjem",
+      "caption": "Flere eldre betyr at det trengs mange flere hender i helse og omsorg."
+    },
+    {
+      "type": "header",
+      "text": "Fire måter å tette gapet på"
+    },
+    {
+      "type": "text",
+      "content": "Store norske leksikon beskriver de vanligste løsningene: å kutte i det staten gir, å øke skatten eller å få folk til å jobbe lenger (Christensen & Berg, 2025). I debatten snakker mange også om en fjerde vei: at det offentlige gjør jobben smartere, for eksempel med ny teknologi. Ingen av løsningene er gratis. Hver av dem sender regningen til en bestemt gruppe."
+    },
+    {
+      "type": "text",
+      "content": "Prøv selv. Gapet under består av seks blokker, omtrent én for hvert prosentpoeng. Velg hvordan du vil tette det, og se hvem som merker valget ditt."
+    },
+    {
+      "type": "component",
+      "name": "TettVelferdsgapet",
+      "props": {
+        "title": "Tett gapet i 2060",
+        "gapBlokker": 6
+      }
+    },
+    {
+      "type": "header",
+      "text": "Hva mener partiene?"
+    },
+    {
+      "type": "text",
+      "content": "Alle partiene på Stortinget er enige om at gapet finnes. De fleste er også opptatt av at flere skal komme i jobb. Men de er uenige om resten. Da Stortinget behandlet perspektivmeldingen i 2025, la partiene fram sine forslag (Finanskomiteen, 2025):"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Arbeiderpartiet vil få flere i jobb og holde folk i jobb, og løse oppgavene smartere.",
+        "Høyre, Venstre og KrF vil ha en skattereform som gjør det lettere for bedrifter å konkurrere, og en reform som får flere inn i arbeidslivet.",
+        "Fremskrittspartiet vil senke skatten og kreve at det offentlige sparer litt hvert år ved å jobbe mer effektivt.",
+        "SV vil øke skatten, særlig for de rikeste, og advarer mot at velferden blir mer privat.",
+        "Rødt og MDG vil også at de som har mest, skal betale mer i skatt.",
+        "Senterpartiet vil ha mer kontroll på arbeidsinnvandring fra Europa og styrke distriktene."
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Ser du mønsteret? Partiene som vil ha lavere skatt, legger mest vekt på å spare og jobbe smartere. Partiene som vil ha mer skatt for de rike, vil heller beskytte velferden. Begge sider har argumenter. Den ene siden sier at lav skatt gir flere bedrifter og flere jobber, som igjen gir mer skatt. Den andre siden sier at velferd er det som holder samfunnet sammen, og at de som har mest, tåler å betale mer."
+    },
+    {
+      "type": "header",
+      "text": "Andre ting som gjør det vanskelig"
+    },
+    {
+      "type": "text",
+      "content": "Det finnes også utfordringer som ingen partier kan bestemme over alene. Penger flytter fritt mellom land. Store selskaper kan flytte overskuddet sitt til land med lavere skatt. Samtidig forventer folk stadig bedre tjenester når landet blir rikere (Christensen & Berg, 2025). Hvis alle vil ha mer, men færre er med på å betale, blir gapet enda større."
+    },
+    {
+      "type": "text",
+      "content": "Norge har allerede gjort noe med én del av problemet. Pensjonsreformen gjør at pensjonen henger sammen med hvor lenge folk lever, og at det lønner seg å jobbe lenger. Det kan du lese mer om i artikkelen om [pensjon](/samfunnskunnskap/velferd/pensjon)."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Politikere debatterer i Stortingets sal",
+      "caption": "Alle er enige om at gapet finnes. Uenigheten handler om hvem som skal betale."
+    },
+    {
+      "type": "header",
+      "text": "Så kan velferdsstaten vare?"
+    },
+    {
+      "type": "text",
+      "content": "Svaret er verken et klart ja eller et klart nei. Velferdsstaten er ikke på vei til å kollapse. Norge er et rikt land med et stort oljefond. Men den kan ikke vare helt uten endringer. Perspektivmeldingene gir ingen ferdige forslag til hva som skal gjøres. De viser bare hvor det bærer (Stortingets utredningsseksjon, 2024)."
+    },
+    {
+      "type": "text",
+      "content": "Valget ligger hos politikerne, og til slutt hos velgerne. Du som er 14 år i dag, er 49 år i 2060. Det er din generasjon som skal jobbe, betale skatt og bruke velferdsordningene da. Vil du ha det samme sikkerhetsnettet som foreldrene dine hadde, må noen betale for det. Spørsmålet er hvem. Du kan lese om hvordan det hele startet i artikkelen om [velferdsstatens historie](/historie/norge-i-moderne-tid/velferdsstaten), og om hvordan pengene fordeles hvert år i artikkelen om [statsbudsjettet](/samfunnskunnskap/velferd/statsbudsjettet)."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Christensen, J. & Berg, O. T. (2025). *Velferdsstat*. Store norske leksikon. Hentet 23.11.2026 fra [snl.no](https://snl.no/velferdsstat)",
+          "Finanskomiteen. (2025). *Innstilling fra finanskomiteen om Perspektivmeldingen 2024 (Innst. 180 S (2024–2025))*. Stortinget. [stortinget.no](https://stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Innstillinger/Stortinget/2024-2025/inns-202425-180s/?all=true)",
+          "Stortingets utredningsseksjon. (2024). *20 år med perspektivmeldinger* (Utredningsnotat 2024083). Stortinget. [stortinget.no](https://www.stortinget.no/globalassets/pdf/utredningsseksjonen/utredningsnotater/2024/20-ar-med-perspektivmeldinger-2024083.pdf)",
+          "Thomassen, E. & Garvik, O. (2025). *Handlingsregelen*. Store norske leksikon. Hentet 23.11.2026 fra [snl.no](https://snl.no/handlingsregelen)",
+          "Tømmerås, A. M., Thomas, M. J., Skjerpen, T. & Pham, D. Q. (2026). *Nasjonale befolkningsframskrivinger 2026* (Rapporter 2026/21). Statistisk sentralbyrå. [ssb.no](https://www.ssb.no/befolkning/befolkningsframskrivinger/artikler/nasjonale-befolkningsframskrivinger-2026)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er en perspektivmelding, og hvor langt fram i tid ser den?",
+          "Hva betyr ordet inndekningsbehov? Forklar med dine egne ord.",
+          "Nevn de tre grunnene til at regnestykket for velferdsstaten ikke går opp.",
+          "Hvor mange voksne i arbeidsfør alder var det per pensjonist i 2004, og hvor mange blir det i 2060?"
+        ],
+        "reflekter": [
+          "Forklar hvorfor det er viktigere for velferdsstaten at mange er i jobb, enn at oljefondet er stort.",
+          "Velg to av de fire måtene å tette gapet på. Hvem merker hver av dem, og hvorfor?",
+          "Hvorfor kan det bli et problem selv om staten har nok penger til helse og omsorg?",
+          "Partiene er enige om at gapet finnes, men uenige om løsningen. Forklar hvorfor."
+        ],
+        "gaaVidere": [
+          "Skriv et kort innlegg (150–200 ord) der du foreslår hvordan gapet bør tettes. Bruk minst ett argument fra hver side.",
+          "Intervju en voksen du kjenner om hva de synes er viktigst av skole, helse, pensjon og lav skatt. Sammenlign svaret med det du selv mener.",
+          "Diskuter i klassen: Er det rettferdig at din generasjon må ta mye av regningen for eldrebølgen?"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er inndekningsbehovet?",
+            "options": [
+              "Pengene i oljefondet",
+              "Gapet mellom hva det offentlige bruker og hva det får inn",
+              "Skatten hver person betaler",
+              "Antall nye sykepleiere som trengs"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Inndekningsbehovet er hullet i regnestykket: hvor mye som mangler for at utgifter og inntekter skal gå opp."
+          },
+          {
+            "question": "Hvor stort regner man med at inndekningsbehovet er i 2060?",
+            "options": [
+              "0,5 prosent av økonomien",
+              "2 prosent av økonomien",
+              "6,2 prosent av økonomien utenom olje og gass",
+              "25 prosent av økonomien"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Finanskomiteen viser til at gapet blir på 6,2 prosent av økonomien utenom olje og gass i 2060."
+          },
+          {
+            "question": "Hvor mange voksne i arbeidsfør alder blir det per pensjonist i 2060?",
+            "options": [
+              "Rundt 2",
+              "Rundt 4",
+              "Rundt 5",
+              "Rundt 8"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Tallet sank fra 4,8 i 2004 til 4,0 i 2021, og ventes å bli rundt 2 i 2060."
+          },
+          {
+            "question": "Hva sier handlingsregelen?",
+            "options": [
+              "At alle må jobbe til de er 70",
+              "At staten hvert år kan bruke rundt tre prosent av oljefondet",
+              "At skatten aldri kan økes",
+              "At kommunene må spare én prosent hvert år"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Handlingsregelen kom i 2001 og setter en grense for hvor mye av oljefondet staten kan bruke hvert år. I dag er grensen tre prosent."
+          },
+          {
+            "question": "Hvilken løsning er nesten alle partiene enige om?",
+            "options": [
+              "Å kutte i pensjonen",
+              "Å øke skatten for alle",
+              "At det er bra om flere kommer i jobb",
+              "Å legge ned fylkeskommunen"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Partiene er uenige om skatt og kutt, men de fleste vil at flere skal komme i jobb, fordi det både gir mer skatt og færre som trenger støtte."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
