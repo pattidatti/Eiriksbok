@@ -2835,6 +2835,20 @@
               ],
               "createdDate": "2026-11-22T01:11:48.469Z",
               "lastUpdated": "2026-11-22T01:20:19.903Z"
+            },
+            {
+              "id": "kan-velferdsstaten-vare",
+              "title": "Kan velferdsstaten vare?",
+              "description": "Hvorfor regnestykket for velferden ikke går opp fram mot 2060, og hvilke valg politikerne har for å tette gapet.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "velferd",
+                "velferdsstaten",
+                "perspektivmeldingen",
+                "eldrebølgen",
+                "økonomi"
+              ],
+              "createdDate": "2026-11-23T00:00:00Z"
             }
           ]
         },
