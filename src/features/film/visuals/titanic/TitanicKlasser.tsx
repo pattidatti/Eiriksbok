@@ -29,7 +29,7 @@ const SONER: Sone[] = [
 const FARGE = { 1: '#ca8a04', 2: '#2563eb', 3: '#b45309' } as const;
 const NAVN = { 1: '1. klasse', 2: '2. klasse', 3: '3. klasse' } as const;
 const BESKRIVELSE = {
-    1: 'De rikeste. Store lugarer, høyt oppe.',
+    1: 'De rikeste. Store, flotte lugarer.',
     2: 'Vanlige, gode inntekter.',
     3: 'Minst penger. Mange utvandrere.',
 } as const;
