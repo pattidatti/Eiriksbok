@@ -7,6 +7,7 @@
     { "tall": 2469, "begrunnelse": "Galdhøpiggens høyde i meter, brukt som sammenligning for dybden. Kartverket." },
     { "tall": "tusen", "begrunnelse": "Regnet ut fra artikkelen: vraket ligger på 3800 meter og Galdhøpiggen er 2469 meter, så toppen ville vært 1331 meter under vannet." }
   ],
+  "vurdering": { "dato": "2026-11-23", "viser": 4, "lesbart": 4, "variasjon": 5, "forstaelig": 4, "tro": 4, "sum": 21 },
     "scener": [
         {
             "id": "natt",
@@ -17,7 +18,7 @@
             "replikker": [
                 { "si": "Det er natt, den fjortende april 1912. Vi er midt ute på Atlanterhavet." },
                 {
-                    "si": "Havet ligger helt blankt, og lufta er iskald. Her seiler det største skipet verden har sett."
+                    "si": "Havet ligger helt blankt, og lufta er iskald. Her seiler et enormt, nytt skip på sin første tur."
                 },
                 {
                     "si": "Klokka 23.40 roper utkikken i masta: Isfjell rett forut!",
@@ -79,40 +80,17 @@
                     "si": "Om bord var skipet delt i tre klasser, nesten som tre etasjer i samfunnet."
                 },
                 {
-                    "si": "I første klasse reiste noen av de rikeste menneskene i verden. De bodde i store, flotte lugarer høyt oppe i skipet."
+                    "si": "I første klasse reiste noen av de rikeste menneskene i verden. De bodde i store, flotte lugarer."
                 },
                 { "si": "I andre klasse reiste folk med vanlige, gode inntekter." },
                 {
-                    "si": "Langt nede i skipet reiste tredje klasse. Det var de som hadde minst penger. Mange var utvandrere på vei til et nytt liv i Amerika."
+                    "si": "I tredje klasse reiste de som hadde minst penger. Mange var utvandrere på vei til et nytt liv i Amerika."
                 }
             ]
         },
         {
             "id": "nordmenn",
-            "visual": {
-                "type": "Prikkfelt",
-                "props": {
-                    "figur": "person",
-                    "steg": [
-                        {
-                            "fraBeat": 0,
-                            "total": 31,
-                            "farget": 31,
-                            "farge": "#2563eb",
-                            "tittel": "31 norskfødte passasjerer",
-                            "fargeEtikett": "født i Norge"
-                        },
-                        {
-                            "fraBeat": 1,
-                            "total": 31,
-                            "farget": 31,
-                            "farge": "#b45309",
-                            "tittel": "De fleste reiste på tredje klasse",
-                            "fargeEtikett": "på vei til Amerika"
-                        }
-                    ]
-                }
-            },
+            "visual": { "type": "TitanicNordmenn" },
             "replikker": [
                 { "si": "Også nordmenn var med. 31 av passasjerene var født i Norge." },
                 {
@@ -130,14 +108,14 @@
                 },
                 { "si": "Skroget var delt inn i 16 rom, med vanntette vegger mellom." },
                 {
-                    "si": "Verftet regnet med at fire av rommene kunne fylles med vann uten at skipet sank."
+                    "si": "Verftet, de som bygde skipet, regnet med at fire av rommene kunne fylles med vann uten at skipet sank."
                 },
                 {
                     "si": "Men det var en svakhet. Veggene mellom rommene gikk ikke helt opp til taket."
                 },
-                { "si": "Isfjellet hadde laget hull i seks rom. Det var flere enn skipet tålte." },
+                { "si": "Isfjellet hadde laget hull i flere rom enn skipet tålte." },
                 {
-                    "si": "Baugen sank dypere. Da rant vannet over veggene, akkurat som i en isbitform du vipper på. Rom etter rom ble fylt."
+                    "si": "Baugen, den fremste delen av skipet, sank dypere. Da rant vannet over veggene, akkurat som i en isbitform du vipper på. Rom etter rom ble fylt."
                 }
             ]
         },
@@ -149,7 +127,7 @@
                 "props": {
                     "figur": "prikk",
                     "steg": [
-                        { "fraBeat": 0, "total": 0, "farget": 0, "tittel": "Livbåtene" },
+                        { "fraBeat": 0, "total": 1178, "farget": 0, "restFarge": "#cbd5e1", "tittel": "Livbåtene: hvor mange plasser?", "restEtikett": "plasser i livbåtene", "visTall": false },
                         {
                             "fraBeat": 1,
                             "total": 1178,
@@ -166,7 +144,8 @@
                             "restFarge": "#94a3b8",
                             "tittel": "Rundt 2200 mennesker om bord",
                             "fargeEtikett": "plass i livbåt",
-                            "restEtikett": "om bord"
+                            "restEtikett": "om bord uten plass",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 3,
@@ -174,9 +153,10 @@
                             "farget": 1178,
                             "farge": "#0d9488",
                             "restFarge": "#dc2626",
-                            "tittel": "Over 1000 uten plass",
+                            "tittel": "Nesten halvparten uten plass",
                             "fargeEtikett": "plass i livbåt",
-                            "restEtikett": "uten plass"
+                            "restEtikett": "uten plass",
+                            "visTall": false
                         }
                     ]
                 }
@@ -226,7 +206,7 @@
                     "si": "Da folk forsto at skipet faktisk sank, var mange av båtene allerede borte."
                 },
                 {
-                    "si": "Telegrafistene sendte ut nødsignaler med radio. Radio var helt ny teknologi i 1912."
+                    "si": "Telegrafistene, de som sendte meldinger, ropte om hjelp med radio. Radio var ny teknologi i 1912."
                 },
                 {
                     "si": "Klokka 02.20, to timer og førti minutter etter smellet, forsvant Titanic under overflaten.",
@@ -346,7 +326,7 @@
                 }
             },
             "replikker": [
-                { "si": "Og de norske passasjerene? Av de 31 overlevde 10. 21 omkom." },
+                { "si": "Og de norske passasjerene? Av de 31 norskfødte overlevde 10, mens 21 omkom." },
                 {
                     "si": "Hvor du sov på skipet, og hvor mye billetten din kostet, hadde altså mye å si for om du levde neste morgen."
                 }
@@ -381,7 +361,7 @@
                         {
                             "ikon": "avtale",
                             "tittel": "SOLAS, 1914",
-                            "tekst": "sikkerhet for liv til sjøs, gjelder fortsatt",
+                            "tekst": "sikkerhet til sjøs, gjelder i nyere utgave",
                             "fraBeat": 4
                         }
                     ]
@@ -395,7 +375,7 @@
                 },
                 { "si": "En egen ispatrulje skulle holde øye med isfjell i Atlanterhavet." },
                 {
-                    "si": "I 1914 ble land enige om en avtale om sikkerhet til sjøs. Den heter SOLAS, og den gjelder fortsatt i dag."
+                    "si": "I 1914 ble land enige om en avtale om sikkerhet til sjøs. Den heter SOLAS, og en nyere utgave av den gjelder fortsatt i dag."
                 },
                 {
                     "si": "Så hver gang du tar en ferje, er det plass til deg i en livbåt. Delvis på grunn av Titanic."
@@ -430,7 +410,7 @@
                 "type": "Sluttkort",
                 "props": {
                     "setninger": [
-                        { "tekst": "Det mest moderne skipet i verden.", "fraBeat": 0 },
+                        { "tekst": "Noe av det mest moderne folk hadde bygd.", "fraBeat": 0 },
                         {
                             "tekst": "Men ikke livbåtplass til alle.",
                             "fraBeat": 0,

@@ -71,7 +71,7 @@ export function TitanicSkott({ beat }: VisualProps) {
                 : beat === 3
                   ? 'Veggene gikk ikke helt opp'
                   : beat === 4
-                    ? 'Hull i 6 rom'
+                    ? 'Hull i flere rom enn skipet tålte'
                     : 'Vannet renner over, rom etter rom';
     const farge =
         beat === 2
@@ -206,24 +206,6 @@ export function TitanicSkott({ beat }: VisualProps) {
                             animate={{ opacity: visVegger ? 0.5 : 0 }}
                         />
                     </g>
-                    {/* Romnummer */}
-                    {visVegger &&
-                        Array.from({ length: ROM }, (_, i) => (
-                            <motion.text
-                                key={i}
-                                x={romX(i + 1) + BREDDE_ROM / 2}
-                                y={205}
-                                textAnchor="middle"
-                                fontSize={24}
-                                fontWeight={800}
-                                fill={t.fyll(i + 1) > 0 ? '#ffffff' : '#475569'}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.2 + i * 0.08 }}
-                            >
-                                {i + 1}
-                            </motion.text>
-                        ))}
                     {/* Glippen over veggene */}
                     {beat >= 3 &&
                         Array.from({ length: ROM - 1 }, (_, i) => (
@@ -286,7 +268,34 @@ export function TitanicSkott({ beat }: VisualProps) {
                 <rect x={0} y={HAV_Y} width={1600} height={900 - HAV_Y} fill="url(#skott-hav)" />
                 <line x1={0} x2={1600} y1={HAV_Y} y2={HAV_Y} stroke="#0b3557" strokeWidth={3} />
 
-                {/* Isbitform-sammenligningen */}
+                {/* Romnumrene ligger over havet, i en gruppe som flytter seg likt med skroget */}
+                <motion.g
+                    initial={false}
+                    animate={{ y: HAV_Y - VANNLINJE + t.synk, rotate: t.vinkel }}
+                    transition={{ duration: beat === 5 ? 9 : 2.5, ease: 'easeInOut' }}
+                    style={{ originX: '300px', originY: '150px' }}
+                >
+                    {/* Romnummer */}
+                    {visVegger &&
+                        Array.from({ length: ROM }, (_, i) => (
+                            <motion.text
+                                key={i}
+                                x={romX(i + 1) + BREDDE_ROM / 2}
+                                y={205}
+                                textAnchor="middle"
+                                fontSize={24}
+                                fontWeight={800}
+                                fill={t.fyll(i + 1) > 0 ? '#ffffff' : '#475569'}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.2 + i * 0.08 }}
+                            >
+                                {i + 1}
+                            </motion.text>
+                        ))}
+                </motion.g>
+
+                {/* Isbitform-sammenligningen: oppe til venstre, der skipet ikke er */}
                 {beat === 5 && (
                     <motion.g
                         initial={{ opacity: 0 }}
@@ -294,50 +303,46 @@ export function TitanicSkott({ beat }: VisualProps) {
                         transition={{ delay: 1 }}
                     >
                         <rect
-                            x={1180}
-                            y={720}
-                            width={340}
-                            height={130}
+                            x={100}
+                            y={180}
+                            width={440}
+                            height={150}
                             rx={16}
                             fill="#ffffff"
-                            opacity={0.92}
+                            opacity={0.95}
                         />
                         <text
-                            x={1350}
-                            y={752}
+                            x={320}
+                            y={220}
                             textAnchor="middle"
-                            fontSize={22}
+                            fontSize={30}
                             fontWeight={800}
                             fill="#334155"
                         >
                             Som en isbitform du vipper
                         </text>
-                        <motion.g
-                            animate={{ rotate: [0, 10, 10] }}
-                            transition={{ duration: 3, repeat: Infinity, repeatDelay: 0.6 }}
-                            style={{ originX: '1240px', originY: '810px' }}
-                        >
+                        <g transform="rotate(10 320 280)">
                             {Array.from({ length: 5 }, (_, i) => (
                                 <g key={i}>
                                     <rect
-                                        x={1240 + i * 46}
-                                        y={780}
-                                        width={42}
+                                        x={212 + i * 44}
+                                        y={252}
+                                        width={40}
                                         height={40}
                                         fill="none"
                                         stroke="#475569"
                                         strokeWidth={3}
                                     />
                                     <rect
-                                        x={1242 + i * 46}
-                                        y={800}
-                                        width={38}
-                                        height={18}
+                                        x={214 + i * 44}
+                                        y={i >= 3 ? 256 : 272}
+                                        width={36}
+                                        height={i >= 3 ? 34 : 18}
                                         fill="#60a5fa"
                                     />
                                 </g>
                             ))}
-                        </motion.g>
+                        </g>
                     </motion.g>
                 )}
             </svg>

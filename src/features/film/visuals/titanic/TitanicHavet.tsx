@@ -471,7 +471,7 @@ export function TitanicHavet({ beat, playing, props }: VisualProps<Props>) {
                     <Merkelapp key="damp" tekst="Kull → damp → fart" />
                 )}
                 {modus === 'synker' && beat === 1 && (
-                    <Merkelapp key="sos" tekst="Nødsignal: CQD … SOS" />
+                    <Merkelapp key="sos" tekst="Nødsignal med radio" />
                 )}
             </AnimatePresence>
         </div>
