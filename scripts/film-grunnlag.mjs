@@ -25,7 +25,9 @@ const manus = JSON.parse(fs.readFileSync(path.join(ROT, 'src/features/film/manus
 const artikkel = JSON.parse(fs.readFileSync(path.join(ROT, 'public/content', `${sti}.json`), 'utf8'));
 
 // Styreverdier, ikke tekst eleven ser. Faktasjekkeren meldte `tone: "rod"` som en merkelapp.
-const STYRE_PROPS = ['fraBeat', 'src', 'image', 'bilde', 'icon', 'ikon', 'type', 'name', 'id', 'link', 'url', 'color', 'modus', 'farge', 'restFarge', 'tone', 'figur', 'omtrent', 'visTall', 'uthevet', 'lyd', 'side', 'variant'];
+// `name` er ikke med: i komponent-props er det ofte fagordet selv (ShotTypeExplorer: «Totalbilde»),
+// og uten det trodde faktasjekkeren at artikkelens fagord var nye.
+const STYRE_PROPS = ['fraBeat', 'src', 'image', 'bilde', 'icon', 'ikon', 'type', 'id', 'link', 'url', 'color', 'modus', 'farge', 'restFarge', 'tone', 'figur', 'omtrent', 'visTall', 'uthevet', 'lyd', 'side', 'variant'];
 const FARGE = /^(#[0-9a-f]{3,8}|rgba?\(.*\)|hsla?\(.*\))$/i;
 
 /** Tekst ut av en innholdsblokk, også fra komponent-props (faktabokser, tidslinjer). */
@@ -113,18 +115,20 @@ function blokker(liste) {
         else if (blokk.type === 'image') {
             if (blokk.caption) linjer.push(`(Bildetekst: ${blokk.caption})`, '');
         } else if (blokk.type === 'component') {
+            // Eldre artikler har komponentnavnet i `component`, ikke `name` (ga «[undefined]»).
+            const navn = blokk.name ?? blokk.component;
             // Quiz, oppgaver og kilder er ikke fakta filmen skal bygge på.
-            if (['Quiz', 'Oppgaver', 'Kildeliste'].includes(blokk.name)) continue;
+            if (['Quiz', 'Oppgaver', 'Kildeliste'].includes(navn)) continue;
             const t = tekstFra(blokk.props).filter((s) => s.trim().length > 2);
-            if (t.length) linjer.push(`[${blokk.name}] ${t.join(' | ')}`, '');
+            if (t.length) linjer.push(`[${navn}] ${t.join(' | ')}`, '');
             // Komponenter som har innholdet i koden (valgene i RubiconChoice). Generelle
             // komponenter som tar alt fra props, har bare litt knappetekst; den hoppes over.
-            const fil = komponentFil(blokk.name);
+            const fil = navn ? komponentFil(navn) : null;
             const kt = fil ? tekstIKode(fil).filter((x) => !t.includes(x)) : [];
             if (kt.length >= 8 && kt.length <= 150) {
-                linjer.push(`[${blokk.name}, tekst fra komponentens kode] ${kt.join(' | ')}`, '');
+                linjer.push(`[${navn}, tekst fra komponentens kode] ${kt.join(' | ')}`, '');
                 const tk = tallIKode(fil);
-                if (tk.length && tk.length <= 80) linjer.push(`[${blokk.name}, tall fra komponentens kode] ${tk.join(' | ')}`, '');
+                if (tk.length && tk.length <= 80) linjer.push(`[${navn}, tall fra komponentens kode] ${tk.join(' | ')}`, '');
             }
         } else if (Array.isArray(blokk.content)) {
             // expandable og andre blokker med egne underblokker.

@@ -189,6 +189,13 @@ function sjekk(fil, visualer, streng) {
                 if (like)
                     regel.push(`${hvor}: alle Prikkfelt-stegene har samme total og farget - bildet står stille. Bruk Prikkfelt bare når tallet endrer seg, og vis ellers det som skjer`);
             }
+            // 3000 av 3000 i hvert steg: ingenting å sammenligne med, og vurdereren leser bare en grå
+            // flate (og en fargeendring som en ny gruppe). Er tallet ikke en andel, vis det som et stort tall.
+            if (type === 'Prikkfelt' && (p.steg ?? []).length > 0 && p.steg.every((st) => st.farget === st.total)) {
+                const like = p.steg.every((st) => st.total === p.steg[0].total);
+                if (!like || p.steg.length === 1)
+                    regel.push(`${hvor}: Prikkfelt der alle prikkene er farget i hvert steg - det er ingen andel å se. Vis tallet i Tittelkort eller som en tidslinje i stedet`);
+            }
             if (type === 'Prikkfelt' && (p.steg ?? []).length > 1) {
                 const totaler = p.steg.map((st) => st.total).filter((t) => t > 0);
                 const [min, maks] = [Math.min(...totaler), Math.max(...totaler)];

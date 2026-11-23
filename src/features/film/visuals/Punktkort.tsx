@@ -10,7 +10,7 @@ import {
     Lamp,
     House,
     LifeBuoy,
-    MessageCircleX,
+    MessageCircle,
     Radio,
     ScrollText,
     Shield,
@@ -37,7 +37,8 @@ const IKONER: Record<string, LucideIcon> = {
     haer: Users,
     stjerne: Star,
     hus: House,
-    snakk: MessageCircleX,
+    // Vanlig snakkeboble. MessageCircleX (med kryss) ble lest som «ikke snakk».
+    snakk: MessageCircle,
     bombe: Bomb,
     fabrikk: Factory,
     hval: Fish,
@@ -72,7 +73,9 @@ export function Punktkort({ beat, props }: VisualProps<Props>) {
                             key={p.tittel}
                             initial={{ opacity: 0, y: 30, rotate: -2 }}
                             animate={{
-                                opacity: vis ? (fokus ? 1 : 0.7) : 0,
+                                // Kort som alt er vist, dempes bare litt: 0.7 ga lys grå tekst
+                                // som ikke kunne leses på projektor.
+                                opacity: vis ? (fokus ? 1 : 0.92) : 0,
                                 y: vis ? 0 : 30,
                                 rotate: vis ? 0 : -2,
                                 scale: fokus ? 1.04 : 1,
@@ -88,7 +91,7 @@ export function Punktkort({ beat, props }: VisualProps<Props>) {
                                     {p.tittel}
                                 </div>
                                 {p.tekst && (
-                                    <div className="text-base md:text-xl font-semibold text-slate-500">
+                                    <div className="text-base md:text-xl font-semibold text-slate-600">
                                         {p.tekst}
                                     </div>
                                 )}
