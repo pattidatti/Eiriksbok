@@ -5,7 +5,7 @@
   "year": "2024-2060",
   "category": "Velferd",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/velferd/kan-velferdsstaten-vare-hero.webp",
   "details": [
     "Perspektivmeldingen viser at utgiftene til velferd vokser raskere enn inntektene fram mot 2060.",
     "Gapet kalles inndekningsbehovet og er beregnet til 6,2 prosent av økonomien utenom olje og gass i 2060.",
@@ -32,7 +32,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/velferd/kan-velferdsstaten-vare-01.webp",
       "alt": "Ung og gammel person ved kjøkkenbord med regninger",
       "caption": "Velferdsstaten er et felles budsjett for hele landet. Det må gå opp både i dag og om 35 år."
     },
@@ -106,7 +106,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/velferd/kan-velferdsstaten-vare-02.webp",
       "alt": "Helsefagarbeider hjelper eldre mann på sykehjem",
       "caption": "Flere eldre betyr at det trengs mange flere hender i helse og omsorg."
     },
@@ -167,7 +167,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/velferd/kan-velferdsstaten-vare-03.webp",
       "alt": "Politikere debatterer i Stortingets sal",
       "caption": "Alle er enige om at gapet finnes. Uenigheten handler om hvem som skal betale."
     },
