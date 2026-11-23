@@ -1,0 +1,227 @@
+{
+    "id": "ateisme-og-agnostisme",
+    "tittel": "Ateisme og agnostisme: å ikke tro, og å ikke vite",
+    "kilde": "/krle/livssyn/ateisme-og-agnostisme",
+    "bilde": "/images/krle/livssyn/ateisme-og-agnostisme-hero.webp",
+    "utenforArtikkel": [
+        { "tall": "tusen", "begrunnelse": "Målestokk i prikkfeltet: hver prikk er 1000 mennesker, så 800 prikker er 800 000 og 159 prikker er 159 000." },
+        { "tall": 1000, "begrunnelse": "Målestokken i prikkfeltet (1 prikk = 1000 medlemmer)." },
+        { "tall": 800, "begrunnelse": "Antall prikker for over 800 000 medlemmer (artikkelen), med 1000 per prikk." },
+        { "tall": 159, "begrunnelse": "Antall prikker for rundt 159 000 i livssynssamfunn (artikkelen), med 1000 per prikk." }
+    ],
+    "vurdering": { "dato": "2026-11-23", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "athen",
+            "kapittel": "Athen",
+            "lyd": "vind",
+            "visual": { "type": "AteismeTaake", "props": { "modus": "athen" } },
+            "replikker": [
+                { "si": "Året er 399 før vår tidsregning. Vi står i byen Athen." },
+                { "si": "En gammel mann står foran en domstol. Han heter Sokrates." },
+                { "si": "Han er anklaget for ikke å godta gudene byen tror på. Han nekter for det selv, men blir dømt til døden likevel." },
+                { "si": "Å la være å tro var ikke en privat mening den gangen. Det var en forbrytelse." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "ATEISME OG AGNOSTISME",
+                    "undertittel": "Å ikke tro, og å ikke vite",
+                    "bilde": "/images/krle/livssyn/ateisme-og-agnostisme-hero.webp",
+                    "sporsmal": { "tekst": "Betyr de to ordene det samme?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "I dag kan du si i klasserommet at du ikke tror på noen gud, uten at det skjer deg noe." },
+                { "si": "Men to ord blir stadig blandet sammen: ateisme og agnostisme. Mange tror de betyr omtrent det samme." },
+                { "si": "Det gjør de ikke. De svarer på hvert sitt spørsmål." }
+            ]
+        },
+        {
+            "id": "ordene",
+            "kapittel": "To spørsmål",
+            "visual": { "type": "AteismeAkser", "props": { "modus": "ord" } },
+            "replikker": [
+                { "si": "Det første spørsmålet er: tror du at det finnes en gud?" },
+                { "si": "En ateist svarer nei. Ateisme betyr at du ikke tror på noen gud, fordi du antar at guder ikke finnes." },
+                { "si": "Det andre spørsmålet er et helt annet: kan vi vite om det finnes en gud?" },
+                { "si": "En agnostiker svarer nei på det. Det som ligger utenfor det vi kan erfare, kan vi ikke vite noe sikkert om." },
+                { "si": "Den som tror at det finnes en gud eller flere guder, er teist. Troen kalles teisme." }
+            ]
+        },
+        {
+            "id": "akser",
+            "kapittel": "To akser",
+            "visual": { "type": "AteismeAkser", "props": { "modus": "akser" } },
+            "replikker": [
+                { "si": "Mange tror disse ordene er punkter på én og samme linje. Kanskje med agnostikeren et sted midt imellom." },
+                { "si": "Men det blir feil. Det er to ulike spørsmål, og du svarer på dem hver for seg." },
+                { "si": "Derfor trenger vi to akser. Den ene handler om hva du tror. Den andre handler om hva mennesker kan vite." },
+                { "si": "Du kan tro på Gud, og samtidig mene at ingen kan vite det sikkert." },
+                { "si": "Og du kan la være å tro, og samtidig mene at ingen kan vite det sikkert. Da er du både ateist og agnostiker på én gang." }
+            ]
+        },
+        {
+            "id": "russell",
+            "visual": { "type": "AteismeAkser", "props": { "modus": "russell" } },
+            "replikker": [
+                { "si": "Ruten nederst til høyre er kanskje den mest interessante." },
+                { "si": "Her finner du kjente ateister som Bertrand Russell og Richard Dawkins." },
+                { "si": "De godtar at det ikke går an å bevise at Gud finnes. Og det går heller ikke an å bevise at Gud ikke finnes." },
+                { "si": "Likevel mener de at sjansen for at en gud finnes, er forsvinnende liten. Derfor er det rimelig å leve som om ingen guder finnes." },
+                { "si": "Strengt tatt er de altså agnostiske ateister." }
+            ]
+        },
+        {
+            "id": "grense",
+            "kapittel": "Hvor går grensa?",
+            "lyd": "vind",
+            "visual": { "type": "AteismeTaake", "props": { "modus": "grense" } },
+            "replikker": [
+                { "si": "Agnostismen bygger på en eldre tanke. Filosofen Immanuel Kant mente at de aller største spørsmålene ligger utenfor det fornuften kan avgjøre." },
+                { "si": "Tenk deg et platå der vi kan måle ting. Her kan mange spørsmål avgjøres." },
+                { "si": "Hvor langt er det til månen? Hvor gammel er en stein? Hvor mange bor i Norge?" },
+                { "si": "Vi måler, og alle som måler riktig, får samme svar." }
+            ]
+        },
+        {
+            "id": "taaka",
+            "visual": { "type": "AteismeTaake", "props": { "modus": "taake" } },
+            "replikker": [
+                { "si": "Men bak kanten ligger tåka. Der finnes ingen måling som kan avgjøre spørsmålene." },
+                { "si": "Finnes det en gud? Hva skjer etter døden? Er det galt å lyve?" },
+                { "si": "Legg merke til det siste spørsmålet. Også spørsmålet om hva som er rett og galt, havner i tåka." },
+                { "si": "At noe ikke kan måles, betyr ikke at det er uviktig eller tullete. Det betyr bare at målebåndet ikke rekker dit." },
+                { "si": "En agnostiker sier ikke at spørsmålet om Gud er dumt. En agnostiker sier at det ligger utenfor rekkevidde." }
+            ]
+        },
+        {
+            "id": "antikken",
+            "kapittel": "Hvordan ideene vokste fram",
+            "lyd": "stille",
+            "visual": { "type": "AteismeTidslinje", "props": { "modus": "antikken" } },
+            "replikker": [
+                { "si": "Tanken om at verden kan forklares uten guder, er svært gammel." },
+                { "si": "Naturfilosofen Anaxagoras prøvde å forklare naturen, og han avviste de religiøse mytene. Han levde fra år 500 til 428 før vår tidsregning." },
+                { "si": "Senere lærte Epikur at sjelen løses opp når vi dør." },
+                { "si": "I middelalderen så folk stort sett på ateisme som ufornuftig, mer enn som kjetteri. Kjetteri er å lære noe annet enn det kirken har slått fast som sant." }
+            ]
+        },
+        {
+            "id": "darwin",
+            "visual": { "type": "AteismeTidslinje", "props": { "modus": "darwin" } },
+            "replikker": [
+                { "si": "På 1600-tallet begynte Galileo Galilei og Isaac Newton å rokke ved kirkens bilde av verdensrommet." },
+                { "si": "I 1859 ga Charles Darwin ut boka Om artenes opprinnelse." },
+                { "si": "For første gang fikk folk et vitenskapelig grunnlag for å forstå livet uten en skaper." },
+                { "si": "I årene etter trengte den britiske naturforskeren Thomas Henry Huxley et nytt ord. Han laget ordet agnostiker." },
+                { "si": "Huxley var en av dem som kjempet hardest for Darwins utviklingslære, altså læren om at artene utvikler seg. Han ble kalt Darwins bulldog." }
+            ]
+        },
+        {
+            "id": "livssyn",
+            "kapittel": "Er ateisme et livssyn?",
+            "visual": { "type": "AteismeAkser", "props": { "modus": "sporsmal" } },
+            "replikker": [
+                { "si": "Er ateisme et livssyn? Her går mange i en felle." },
+                { "si": "Et livssyn er en sammenhengende oppfatning av hva menneskelivet er, hva det er verdt, og hvordan det bør leves. Det svarer på mange spørsmål samtidig." },
+                { "si": "Ateisme svarer bare på ett av dem: finnes det guder? Svaret er nei." },
+                { "si": "Ateismen sier ingenting om hva som er rett og galt, hva som gir livet mening, eller hvordan du markerer at et barn blir født." },
+                { "si": "Vil du ha svar på alt dette uten en gud, trenger du et helt livssyn. Livssynshumanismen er et slikt livssyn." }
+            ]
+        },
+        {
+            "id": "norge",
+            "kapittel": "Norge i dag",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        {
+                            "fraBeat": 0,
+                            "total": 800,
+                            "farget": 800,
+                            "farge": "#64748b",
+                            "tittel": "Over 800 000 utenfor Den norske kirke",
+                            "fargeEtikett": "1 prikk = 1000 medlemmer",
+                            "visTall": false
+                        },
+                        {
+                            "fraBeat": 1,
+                            "total": 800,
+                            "farget": 159,
+                            "farge": "#0d9488",
+                            "restFarge": "#cbd5e1",
+                            "tittel": "159 000 i livssynssamfunn: vokste 8,5 prosent",
+                            "fargeEtikett": "i livssynssamfunn",
+                            "restEtikett": "i trossamfunn utenfor Den norske kirke",
+                            "visTall": false
+                        }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Over 800 000 mennesker i Norge er medlem i et tros- eller livssynssamfunn utenfor Den norske kirke. I bildet er hver prikk tusen mennesker." },
+                { "si": "Rundt 159 000 av dem hører til livssynssamfunn, altså samfunn uten religiøs tro. Den gruppa vokste med 8,5 prosent på bare ett år." }
+            ]
+        },
+        {
+            "id": "sekularisering",
+            "visual": { "type": "AteismeTidslinje", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Samtidig endrer samfunnet seg. Sekularisering betyr at religion mister innflytelse over enkeltmennesker, kultur og samfunn." },
+                { "si": "Det skjer på flere nivåer på én gang: i lovverket, i organisasjoner og hos den enkelte." },
+                { "si": "I 2017 ble Den norske kirke formelt skilt fra staten." },
+                { "si": "I en spørreundersøkelse fra 2018 svarte 26 prosent av de spurte at de ikke trodde på Gud." }
+            ]
+        },
+        {
+            "id": "frihet",
+            "visual": { "type": "AteismeTidslinje", "props": { "modus": "frihet" } },
+            "replikker": [
+                { "si": "I Skandinavia er det fullt akseptert å være ateist, så lenge det følges av humanistiske og demokratiske verdier." },
+                { "si": "I mange land utenfor Vesten er det fortsatt strengt forbudt å være ateist." },
+                { "si": "Tenk tilbake på Athen, der det å la være å tro var en forbrytelse. Friheten du har til å svare hva du vil på de to spørsmålene, er ikke selvsagt." }
+            ]
+        },
+        {
+            "id": "samtale",
+            "kapittel": "Når dere er uenige",
+            "lyd": "vind",
+            "visual": { "type": "AteismeTaake", "props": { "modus": "samtale" } },
+            "replikker": [
+                { "si": "Når du snakker om tro med noen som tror annerledes enn deg, er det lett å kjøre seg fast." },
+                { "si": "Du kan ikke bevise at Gud finnes. Du kan ikke bevise at han ikke finnes. Der stopper samtalen." },
+                { "si": "Skill de to spørsmålene. Spør først: hva tror du? Spør så: er dette noe man kan vite, eller noe du velger å tro?" },
+                { "si": "Svært mange, både troende og ikke-troende, svarer det samme på det siste spørsmålet. Der har de et felles utgangspunkt." },
+                { "si": "Å sammenligne gudsbilder i ulike religioner er noe vi kan undersøke. Om Gud finnes, ligger i tåka." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Ateisme svarer på hva du tror.", "fraBeat": 0 },
+                        { "tekst": "Agnostisme svarer på hva vi kan vite.", "fraBeat": 1 },
+                        { "tekst": "Derfor kan du være begge deler på én gang.", "fraBeat": 2 },
+                        { "tekst": "To spørsmål, ikke ett.", "fraBeat": 3, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Ateisme er svaret på hva du tror." },
+                { "si": "Agnostisme er svaret på hva mennesker kan vite." },
+                { "si": "Fordi de svarer på hvert sitt spørsmål, kan du være ateist og agnostiker på én gang." },
+                { "si": "Så neste gang noen snakker om tro: husk at det er to spørsmål, ikke ett." }
+            ]
+        }
+    ]
+}
