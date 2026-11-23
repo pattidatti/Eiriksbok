@@ -1,0 +1,232 @@
+{
+  "id": "kan-velferdsstaten-vare",
+  "tittel": "Kan velferdsstaten vare?",
+  "kilde": "/samfunnskunnskap/velferd/kan-velferdsstaten-vare",
+  "bilde": "/images/velferd/kan-velferdsstaten-vare-hero.webp",
+  "utenforArtikkel": [
+    { "tall": "hundre", "begrunnelse": "Målestokk: oljefondet vist som 100 like store hauger, så tre og fire prosent blir tre og fire hauger." }
+  ],
+  "vurdering": { "dato": "2026-11-23", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "familie",
+      "lyd": "rom",
+      "kapittel": "Et hull i budsjettet",
+      "visual": { "type": "VelferdsgapScene", "props": { "modus": "familie" } },
+      "replikker": [
+        { "si": "Tenk deg en familie som setter opp budsjettet for de neste 35 årene." },
+        { "si": "De vet at bestemor og bestefar trenger mer hjelp etter hvert. Da blir utgiftene større." },
+        { "si": "De vet også at en av inntektene deres kommer til å krympe." },
+        { "si": "Det er ikke krise i dag. Men om noen år blir det et hull i regnestykket." }
+      ]
+    },
+    {
+      "id": "velferd",
+      "lyd": "vind",
+      "visual": { "type": "VelferdsgapScene", "props": { "modus": "velferd" } },
+      "replikker": [
+        { "si": "Slik ser det ut for velferdsstaten Norge." },
+        { "si": "Velferdsstaten er ordningen der fellesskapet betaler for skole, sykehus og pensjon." },
+        { "si": "Den betaler også for hjelp når du blir syk eller mister jobben." },
+        { "si": "Norge betaler det meste med skatt, og de fleste tjenestene er gratis eller nesten gratis." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Kan velferdsstaten vare?",
+          "undertittel": "Regnestykket fram mot 2060",
+          "bilde": "/images/velferd/kan-velferdsstaten-vare-hero.webp",
+          "sporsmal": { "tekst": "Har vi råd til dette i framtiden?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Spørsmålet i denne filmen er enkelt å stille, men vanskelig å svare på." },
+        { "si": "Har vi råd til velferdsstaten i framtiden?" }
+      ]
+    },
+    {
+      "id": "varsel",
+      "kapittel": "Værmeldingen",
+      "visual": { "type": "VelferdsgapGraf", "props": { "modus": "varsel" } },
+      "replikker": [
+        { "si": "Omtrent hvert fjerde år lager Finansdepartementet en stor rapport. Den heter perspektivmeldingen." },
+        { "si": "Den ser ikke på neste år, men helt fram mot 2060." },
+        { "si": "Du kan tenke på den som en langtids værmelding for økonomien." },
+        { "si": "Den sier ikke hva politikerne skal gjøre. Den viser hvor det bærer hvis ingen gjør noe." }
+      ]
+    },
+    {
+      "id": "gapet",
+      "visual": { "type": "VelferdsgapScene", "props": { "modus": "gap" } },
+      "replikker": [
+        { "si": "Den siste perspektivmeldingen kom i 2024. Her er to søyler: det det offentlige får inn, og det det bruker." },
+        { "si": "Stortingets finanskomité skrev at utgiftene vil vokse mye raskere enn inntektene." },
+        { "si": "Fram mot 2060 regner man med at utgiftene øker med 5,7 prosentpoeng. Det er målt som en del av alt Norge produserer utenom olje og gass." },
+        { "si": "Hullet har et eget navn: inndekningsbehovet. Det betyr hvor mye penger som mangler for at regnestykket skal gå opp." },
+        { "si": "I 2060 regner man med at gapet blir 6,2 prosent av økonomien utenom olje og gass. Her er det omtrent én blokk for hvert prosentpoeng." },
+        { "si": "Det er ingen regning som kommer i posten en dag. Gapet vokser sakte, og alle perspektivmeldingene siden 2004 har advart om det." }
+      ]
+    },
+    {
+      "id": "grunner",
+      "kapittel": "Hvorfor går det ikke opp?",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Tre grunner som henger sammen",
+          "punkter": [
+            { "ikon": "stjerne", "tittel": "Vi lever lenger", "tekst": "flere år med pensjon og mer pleie", "fraBeat": 1 },
+            { "ikon": "haer", "tittel": "Flere eldre for hver som jobber", "tekst": "de som jobber, betaler mest skatt", "fraBeat": 2 },
+            { "ikon": "vann", "tittel": "Mindre fra olje og gass", "tekst": "den tiden går sakte mot slutten", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Hvorfor går ikke regnestykket opp? Finanskomiteen peker på tre grunner som henger sammen." },
+        { "si": "Vi lever lenger. Det er en god nyhet. Men det betyr flere år med pensjon og mer behov for pleie." },
+        { "si": "Det blir flere eldre for hver person som jobber. Og det er de som jobber, som betaler mest skatt." },
+        { "si": "Og inntektene fra olje og gass blir mindre." }
+      ]
+    },
+    {
+      "id": "baerere",
+      "visual": { "type": "VelferdsgapGraf", "props": { "modus": "baerere" } },
+      "replikker": [
+        { "si": "Den andre grunnen er den viktigste. Hvor mange voksne i arbeidsfør alder er det for hver pensjonist?" },
+        { "si": "Arbeidsfør alder er alderen da folk vanligvis jobber. I 2004 var det 4,8 slike voksne for hver pensjonist." },
+        { "si": "I 2021 var tallet sunket til 4,0." },
+        { "si": "I 2060 blir det bare rundt 2." },
+        { "si": "Før delte nesten fem personer på å betale for hver pensjonist. I 2060 må to personer dele på det samme." }
+      ]
+    },
+    {
+      "id": "olje",
+      "visual": { "type": "VelferdsgapKart", "props": { "modus": "olje" } },
+      "replikker": [
+        { "si": "Så den tredje grunnen: olje og gass. Det har gjort Norge rikt." },
+        { "si": "Men den tiden går sakte mot slutten, og inntektene blir mindre." },
+        { "si": "Norge har også et oljefond. Det har passert 20 000 milliarder kroner.", "uttale": "Norge har også et oljefond. Det har passert tjue tusen milliarder kroner." }
+      ]
+    },
+    {
+      "id": "fondet",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "prikk",
+          "steg": [
+            { "fraBeat": 0, "total": 100, "farget": 0, "restFarge": "#94a3b8", "tittel": "Oljefondet som hundre like hauger", "restEtikett": "blir i fondet", "visTall": false },
+            { "fraBeat": 1, "total": 100, "farget": 4, "farge": "#d97706", "restFarge": "#94a3b8", "tittel": "Handlingsregelen i 2001: fire prosent", "fargeEtikett": "kan brukes hvert år", "restEtikett": "blir i fondet", "visTall": false },
+            { "fraBeat": 2, "total": 100, "farget": 3, "farge": "#d97706", "restFarge": "#94a3b8", "tittel": "Fra 2017: tre prosent", "fargeEtikett": "kan brukes hvert år", "restEtikett": "blir i fondet", "visTall": false },
+            { "fraBeat": 3, "total": 100, "farget": 3, "farge": "#d97706", "restFarge": "#94a3b8", "tittel": "Fondet hjelper, men betaler ikke alt", "fargeEtikett": "kan brukes hvert år", "restEtikett": "blir i fondet", "visTall": false }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Men staten kan ikke bruke av fondet som den vil. Tenk deg fondet delt i hundre like store hauger." },
+        { "si": "Handlingsregelen sier hvor mye staten kan bruke hvert år. Da regelen kom i 2001, var grensen fire prosent." },
+        { "si": "I 2017 ble grensen satt ned til tre prosent. Det er omtrent tre hauger av hundre." },
+        { "si": "Fondet hjelper mye. Men det kan ikke betale for alt." }
+      ]
+    },
+    {
+      "id": "hender",
+      "kapittel": "Hvem skal gjøre jobben?",
+      "visual": { "type": "VelferdsgapGraf", "props": { "modus": "hender" } },
+      "replikker": [
+        { "si": "Det handler ikke bare om penger. Det handler også om folk." },
+        { "si": "Flere eldre trenger flere sykepleiere, helsefagarbeidere og leger." },
+        { "si": "Ifølge beregningene kan helse og omsorg trenge rundt 180 000 flere ansatte fram mot 2060.", "uttale": "Ifølge beregningene kan helse og omsorg trenge rundt hundre og åtti tusen flere ansatte fram mot 2060." },
+        { "si": "Selv om staten hadde nok penger, er det ikke sikkert det finnes nok folk å ansette." }
+      ]
+    },
+    {
+      "id": "maalet",
+      "visual": { "type": "VelferdsgapGraf", "props": { "modus": "mal" } },
+      "replikker": [
+        { "si": "Derfor mener mange at det viktigste ikke er skatten, men hvor mange som er i jobb." },
+        { "si": "I 2024 satte regjeringen et mål for voksne mellom 20 og 64 år." },
+        { "si": "I 2023 var 80,5 prosent av dem i jobb." },
+        { "si": "Målet er 82 prosent i 2030 og 83 prosent i 2035." },
+        { "si": "Hver ekstra person i jobb betaler skatt i stedet for å trenge støtte." }
+      ]
+    },
+    {
+      "id": "tette",
+      "kapittel": "Fire veier",
+      "visual": { "type": "VelferdsgapScene", "props": { "modus": "tette" } },
+      "replikker": [
+        { "si": "Hvordan kan gapet tettes? Store norske leksikon nevner tre veier. Mange snakker også om en fjerde." },
+        { "si": "Den første er høyere skatt. Da merker folk i jobb og de med mest penger det." },
+        { "si": "Den andre er mindre velferd. Da merker syke og uføre det, og ved store kutt også eldre." },
+        { "si": "Den tredje er at flere jobber, og at folk står lenger i jobb før de går av med pensjon. Da merker folk i jobb det, og de som står utenfor arbeidslivet." },
+        { "si": "Den fjerde er at det offentlige gjør jobben smartere, for eksempel med ny teknologi. Da merker de som jobber i det offentlige det." },
+        { "si": "Ingen av veiene er gratis. Hver av dem sender regningen til en bestemt gruppe." }
+      ]
+    },
+    {
+      "id": "partiene",
+      "kapittel": "Hva mener partiene?",
+      "visual": { "type": "VelferdsgapPartier", "props": { "modus": "partier" } },
+      "replikker": [
+        { "si": "Alle partiene på Stortinget er enige om at gapet finnes. De fleste vil også at flere skal komme i jobb." },
+        { "si": "Arbeiderpartiet vil få flere i jobb, holde folk i jobb og løse oppgavene smartere." },
+        { "si": "Høyre, Venstre og KrF vil ha en skattereform som gjør det lettere for bedrifter å konkurrere, og en reform som får flere i jobb." },
+        { "si": "Fremskrittspartiet vil senke skatten. Partiet vil også kreve at det offentlige sparer litt hvert år ved å jobbe mer effektivt." },
+        { "si": "SV vil øke skatten, særlig for de rikeste. Rødt og MDG vil også at de som har mest, skal betale mer." },
+        { "si": "Senterpartiet vil ha mer kontroll på arbeidsinnvandring fra Europa, og styrke distriktene." }
+      ]
+    },
+    {
+      "id": "sidene",
+      "visual": { "type": "VelferdsgapPartier", "props": { "modus": "sider" } },
+      "replikker": [
+        { "si": "Ser du mønsteret?" },
+        { "si": "Partiene som vil ha lavere skatt, legger mest vekt på å spare og jobbe smartere." },
+        { "si": "Partiene som vil ha mer skatt for de rike, vil heller beskytte velferden." },
+        { "si": "Den ene siden sier at lav skatt gir flere bedrifter og flere jobber. Det gir igjen mer skatt." },
+        { "si": "Den andre siden sier at velferd er det som holder samfunnet sammen, og at de som har mest, tåler å betale mer." }
+      ]
+    },
+    {
+      "id": "andre",
+      "kapittel": "Kan den vare?",
+      "visual": { "type": "VelferdsgapKart", "props": { "modus": "penger" } },
+      "replikker": [
+        { "si": "Noen problemer kan ingen partier bestemme over alene. Penger flytter fritt mellom land." },
+        { "si": "Store selskaper kan flytte overskuddet sitt til land med lavere skatt." },
+        { "si": "Samtidig forventer folk stadig bedre tjenester når landet blir rikere." },
+        { "si": "Hvis alle vil ha mer, men færre er med på å betale, blir gapet enda større." },
+        { "si": "Én del av problemet har Norge allerede gjort noe med. Pensjonsreformen gjør at det lønner seg å jobbe lenger." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Velferdsstaten er ikke på vei til å kollapse.", "fraBeat": 0 },
+            { "tekst": "Men den kan ikke vare helt uten endringer.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Perspektivmeldingen viser hvor det bærer.", "fraBeat": 1 },
+            { "tekst": "Valget ligger hos politikerne og velgerne.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Er du 14 år i dag, er du 49 år i 2060.", "fraBeat": 2 },
+            { "tekst": "Da er det din generasjon som skal jobbe og betale.", "fraBeat": 2, "uthevet": true },
+            { "tekst": "Noen må betale for sikkerhetsnettet.", "fraBeat": 3 },
+            { "tekst": "Spørsmålet er hvem.", "fraBeat": 3, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Så kan velferdsstaten vare? Den er ikke på vei til å kollapse, for Norge er rikt og har et stort oljefond. Men den kan ikke vare helt uten endringer." },
+        { "si": "Perspektivmeldingene gir ingen ferdige forslag. De viser hvor det bærer. Valget ligger hos politikerne, og til slutt hos velgerne." },
+        { "si": "Du som er 14 år i dag, er 49 år i 2060. Det er din generasjon som skal jobbe, betale skatt og bruke velferdsordningene da." },
+        { "si": "Vil du ha det samme sikkerhetsnettet som foreldrene dine hadde, må noen betale for det. Spørsmålet er hvem." }
+      ]
+    }
+  ]
+}
