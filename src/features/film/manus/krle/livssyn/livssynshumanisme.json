@@ -1,0 +1,223 @@
+{
+    "id": "livssynshumanisme",
+    "tittel": "Livssynshumanisme: mennesket som målestokk",
+    "kilde": "/krle/livssyn/livssynshumanisme",
+    "bilde": "/images/krle/livssyn/livssynshumanisme-hero.webp",
+    "utenforArtikkel": [
+        { "tall": 100, "begrunnelse": "Målestokk i prikkfeltet: 100 prikker for alle 15-åringer, så litt over 21 prosent blir 21 prikker. Regnet ut fra artikkelen." }
+    ],
+    "vurdering": { "dato": "2026-11-23", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "aula",
+            "lyd": "rom",
+            "kapittel": "Oslo, 1951",
+            "visual": { "type": "LivssynAula", "props": { "modus": "aula" } },
+            "replikker": [
+                { "si": "Det er den sjette mai 1951. Vi er i Universitetets aula i Oslo." },
+                { "si": "34 ungdommer sitter på rad foran oss. De skal konfirmeres." },
+                { "si": "Men se fremst i salen. Det står ingen prest der. Ingen ber en bønn, og ingen leser fra Bibelen." },
+                { "si": "De aller fleste jevnaldrende satt i kirken den våren. Disse 34 gjorde noe helt nytt i Norge." },
+                { "si": "De markerte at de gikk fra barn til ungdom, uten å blande inn noen gud." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "LIVSSYNSHUMANISME",
+                    "undertittel": "Mennesket som målestokk",
+                    "bilde": "/images/krle/livssyn/livssynshumanisme-hero.webp",
+                    "tall": [
+                        { "verdi": 13000, "etikett": "ungdommer hvert år", "fraBeat": 1, "omtrent": false, "prefiks": "over" }
+                    ],
+                    "sporsmal": { "tekst": "Hvor kommer svarene fra, uten en gud?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Livssynshumanisme." },
+                { "si": "I dag gjør over 13 000 norske ungdommer det samme som de 34, hvert eneste år." },
+                { "si": "Bak seremonien ligger et helt livssyn. I denne filmen skal vi se hvor det livssynet henter svarene sine fra." }
+            ]
+        },
+        {
+            "id": "sporsmal",
+            "kapittel": "Hva er et livssyn?",
+            "visual": { "type": "LivssynSporsmal", "props": { "modus": "sporsmal" } },
+            "replikker": [
+                { "si": "Først: Hva er egentlig et livssyn? Det er et samlet svar på de store spørsmålene i livet." },
+                { "si": "Hva finnes egentlig? Og hvordan kan vi vite noe sikkert?" },
+                { "si": "Hva er rett, og hva er galt? Og hva gjør vi når noen dør?" },
+                { "si": "Alle mennesker svarer på disse spørsmålene, enten de tenker over det eller ikke." }
+            ]
+        },
+        {
+            "id": "verdslig",
+            "visual": { "type": "LivssynSporsmal", "props": { "modus": "verdslig" } },
+            "replikker": [
+                { "si": "Religionene er livssyn. Mange av dem svarer med en gud, eller med noe overnaturlig." },
+                { "si": "Men et livssyn trenger ikke å ha en gud i seg." },
+                { "si": "Livssynshumanismen er et verdslig livssyn. Verdslig betyr at det bare regner med denne verden, og ikke med noe overnaturlig." },
+                { "si": "Så livssynshumanismen er ikke bare et nei til gud. Den har egne svar på de samme spørsmålene." }
+            ]
+        },
+        {
+            "id": "tidslinje",
+            "kapittel": "Mennesket er målestokken",
+            "visual": { "type": "LivssynTidslinje", "props": { "modus": "ideer" } },
+            "replikker": [
+                { "si": "Kjernen i livssynshumanismen er at mennesket står i sentrum. Ikke fordi mennesket er fullkomment, men fordi vi må finne ut av ting selv." },
+                { "si": "Tanken er gammel. For over 2400 år siden sa den greske tenkeren Protagoras at mennesket er alle tings målestokk." },
+                { "si": "På 1300- og 1400-tallet kom renessansehumanismen. Men pass på, det er noe annet. Det var lærde som gravde fram gamle tekster, og de fleste var kristne." },
+                { "si": "Livssynshumanismen henter mye fra opplysningstiden på 1700-tallet." },
+                { "si": "Og fra naturvitenskapen på 1800-tallet. Da mente stadig flere at verden kunne forklares uten noe overnaturlig." }
+            ]
+        },
+        {
+            "id": "tre-ting",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Mennesket i sentrum",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Mennesket har verdi i seg selv", "tekst": "aldri bare et redskap for andre", "fraBeat": 1 },
+                        { "ikon": "lampe", "tittel": "Kunnskap fra fornuft og forskning", "tekst": "ikke fra hellige tekster", "fraBeat": 2 },
+                        { "ikon": "snakk", "tittel": "Reglene finner vi ut sammen", "tekst": "mennesker seg imellom", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Fra denne tanken følger tre ting som henger sammen." },
+                { "si": "Mennesket har en verdi i seg selv. Det skal aldri behandles bare som et redskap for andre." },
+                { "si": "Kunnskap kommer fra fornuft, forskning og fri tenkning. Ikke fra hellige tekster." },
+                { "si": "Og reglene for hvordan vi skal leve, må mennesker finne ut av sammen. Vi har ingen fasit å slå opp i." }
+            ]
+        },
+        {
+            "id": "moral",
+            "kapittel": "Hvor kommer reglene fra?",
+            "visual": { "type": "LivssynSporsmal", "props": { "modus": "moral" } },
+            "replikker": [
+                { "si": "Dette spørsmålet får livssynshumanister oftest: Hvis ingen gud har bestemt hva som er rett, hvorfor skal du la være å lyve eller slå?" },
+                { "si": "Svaret er at moralen kommer fra oss selv. Du vet hva det vil si å ha vondt." },
+                { "si": "Og du vet hva det vil si å ha det godt. Det gjør alle andre også." },
+                { "si": "Når du skjønner at den andre kan kjenne akkurat det samme som deg, har du grunnlaget for en regel." },
+                { "si": "Ikke gjør mot andre det du ikke vil at de skal gjøre mot deg. Til det trengs fornuft og medfølelse, men ingen befaling ovenfra." }
+            ]
+        },
+        {
+            "id": "amsterdam",
+            "visual": { "type": "LivssynTidslinje", "props": { "modus": "amsterdam" } },
+            "replikker": [
+                { "si": "Humanister over hele verden har samlet dette i én tekst. Den heter Amsterdam-erklæringen." },
+                { "si": "Den ble vedtatt på den første verdenskongressen for humanister, i 1952." },
+                { "si": "Senere ble den skrevet om, i 2002 og igjen i 2022." },
+                { "si": "I den nyeste utgaven, fra 2022, står det at moralen hører mennesket til. Den bygger på at levende vesener kan lide og ha det godt, og den trenger ingen kilde utenfor menneskeheten." }
+            ]
+        },
+        {
+            "id": "svar",
+            "visual": { "type": "LivssynSporsmal", "props": { "modus": "svar" } },
+            "replikker": [
+                { "si": "Nå kan vi fylle inn livssynshumanismens svar på de fire spørsmålene." },
+                { "si": "Hva finnes? Bare den verden vi kan undersøke. Ikke noe overnaturlig bak den." },
+                { "si": "Hvordan kan vi vite noe? Gjennom fornuft, forskning og fri tenkning. Alt kan prøves på nytt." },
+                { "si": "Hva er rett? Det finner mennesker ut selv, ut fra at vi kan lide og ha det godt." },
+                { "si": "Og livets store øyeblikk? De markerer livssynshumanister med egne seremonier, uten noen gud." }
+            ]
+        },
+        {
+            "id": "seremonier",
+            "lyd": "rom",
+            "kapittel": "De fire seremoniene",
+            "visual": { "type": "LivssynAula", "props": { "modus": "fodsel" } },
+            "replikker": [
+                { "si": "Livet har noen få øyeblikk som nesten alle kulturer stopper opp ved." },
+                { "si": "Livssynshumanismen dropper ikke disse øyeblikkene. Human-Etisk Forbund holder fire seremonier, uten noe religiøst innhold." },
+                { "si": "Når et barn blir født, holder de navnefest. Barnet ønskes velkommen, og navnet blir feiret." },
+                { "si": "Når et barn blir ungdom, er det humanistisk konfirmasjon. Først et kurs på rundt 20 timer om etikk, livssyn og samfunn, så en høytidelig seremoni." }
+            ]
+        },
+        {
+            "id": "vigsel",
+            "visual": { "type": "LivssynAula", "props": { "modus": "vigsel" } },
+            "replikker": [
+                { "si": "Når to bestemmer seg for å dele livet, kan de ha en humanistisk vigsel. Det er et bryllup uten religiøst innhold." },
+                { "si": "I denne vigselen er rommet med vilje uten religiøse symboler." },
+                { "si": "Og når noen dør, er det humanistisk gravferd. Avskjeden handler om livet den døde levde." }
+            ]
+        },
+        {
+            "id": "andel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        { "fraBeat": 0, "total": 100, "farget": 0, "restFarge": "#94a3b8", "tittel": "Kurset: tenke kritisk, ta gode valg", "restEtikett": "15-åringer", "visTall": false },
+                        { "fraBeat": 1, "total": 100, "farget": 0, "restFarge": "#64748b", "tittel": "Rød tråd: menneskerettighetene", "restEtikett": "15-åringer", "visTall": false },
+                        { "fraBeat": 2, "total": 100, "farget": 21, "farge": "#0d9488", "restFarge": "#cbd5e1", "tittel": "2022: litt over 21 prosent", "fargeEtikett": "humanistisk konfirmert", "restEtikett": "andre 15-åringer", "visTall": false },
+                        { "fraBeat": 3, "total": 100, "farget": 21, "farge": "#0d9488", "restFarge": "#cbd5e1", "tittel": "Omtrent én av fem 15-åringer", "fargeEtikett": "humanistisk konfirmert", "restEtikett": "andre 15-åringer", "visTall": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Konfirmasjonen er den mest kjente av de fire. Kurset handler om å tenke kritisk, ta gode valg og tenke over hva som er rett og galt." },
+                { "si": "Menneskerettighetene går som en rød tråd gjennom hele kurset." },
+                { "si": "I 2022 ble nesten 13 800 ungdommer konfirmert humanistisk. Det er litt over 21 prosent av alle norske 15-åringer." },
+                { "si": "I hele landet går altså omtrent hver femte 15-åring gjennom et livssynskurs uten gud." }
+            ]
+        },
+        {
+            "id": "forbund",
+            "kapittel": "Human-Etisk Forbund",
+            "visual": { "type": "LivssynTidslinje", "props": { "modus": "forbund" } },
+            "replikker": [
+                { "si": "Fem år etter den første konfirmasjonen, i 1956, samlet biologen Kristian Horn rundt 400 mennesker til et stiftelsesmøte." },
+                { "si": "Der ble Human-Etisk Forbund stiftet." },
+                { "si": "I 2026 har forbundet omtrent 180 000 medlemmer. Det er den klart største organisasjonen for livssynshumanister i Norge." },
+                { "si": "Forbundet gjør to ting. Det holder de fire seremoniene over hele landet." },
+                { "si": "Og det arbeider politisk for at staten skal behandle alle livssyn likt, enten de har en gud i seg eller ikke." }
+            ]
+        },
+        {
+            "id": "grunnmur",
+            "lyd": "vind",
+            "kapittel": "Ikke imot religion",
+            "visual": { "type": "LivssynAula", "props": { "modus": "grunnmur" } },
+            "replikker": [
+                { "si": "Her er det lett å ta feil. Livssynshumanisme betyr ikke å bruke tiden på å angripe religion. Det er et livssyn man lever etter." },
+                { "si": "Store norske leksikon skiller mellom to slags humanisme. Sekulær humanisme regner ikke med noe overnaturlig." },
+                { "si": "Religiøs humanisme betyr at du tror på Gud, og samtidig holder fast på de humanistiske verdiene. Mange kristne, muslimer og jøder kaller seg humanister på den måten." },
+                { "si": "Grunnloven sier at verdiene i Norge bygger på både den kristne og den humanistiske arven." },
+                { "si": "De to står altså side om side i selve grunnmuren for landet." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva lærer vi?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Å ikke tro på en gud", "fraBeat": 0 },
+                        { "tekst": "betyr ikke at man mangler et livssyn.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "De samme fire spørsmålene.", "fraBeat": 1 },
+                        { "tekst": "De samme fire øyeblikkene i livet.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Forskjellen er hvor svarene kommer fra.", "fraBeat": 2 },
+                        { "tekst": "Livssynshumanismen henter dem fra mennesker.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Det er fristende å sette religionene i én bunke, og alle som ikke tror i en annen. Men det siste er ingen bunke." },
+                { "si": "Livssynshumanismen svarer på de samme fire spørsmålene som religionene. Den markerer de samme fire øyeblikkene i livet." },
+                { "si": "Forskjellen ligger ikke i hvilke spørsmål som stilles, men i hvor svarene hentes fra. Livssynshumanismen henter dem fra mennesker." }
+            ]
+        }
+    ]
+}
