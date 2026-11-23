@@ -144,7 +144,8 @@ variasjonsreglene mest først), så filmer under 22/25. For den filmen:
    replikker bare når faktasjekken krever det. Hver endret replikk lager stemmen på nytt.
    Unntak: gjør faktarettelsene at filmen går over 1100 ord og `validate-film` stopper den,
    kort fyllord og gjentakelser i andre replikker til den er under igjen. Aldri presiseringene
-   faktasjekken ba om (guiden §3c punkt 20).
+   faktasjekken ba om (guiden §3c punkt 20). Ligger filmen alt over ca. 1080 ord, kort 10-20
+   ord fyllord først («tok det siste steget», «hver eneste dag»), og legg rettelsene inn etterpå.
 
 5. Bytter du ut moduser av en egen visual med andre visualer, slett den døde modus-koden i
    samme PR. Ellers blir den liggende og ser i bruk ut.

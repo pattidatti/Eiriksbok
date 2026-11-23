@@ -18,7 +18,9 @@
 // Hvert bilde sjekkes også for tekst som overlapper annen tekst, er kuttet i bildekanten,
 // står kloss inntil en annen SVG-merkelapp, stikker ut av SVG-kortet sitt (en `rect` rett før
 // teksten i samme gruppe), har en fylt SVG-figur tegnet oppå seg, eller ligger under en
-// HTML-boks (målt i DOM, også merkelapper over 3D-lerretet). Funnene står i overlapp.txt og
+// HTML-boks (målt i DOM, også merkelapper over 3D-lerretet). Den melder også en pil (`marker-end`)
+// som går gjennom SVG-tekst, og to kort (SVG-`rect` med tekst, eller HTML-bokser med bakgrunn)
+// som ligger oppå hverandre. Funnene står i overlapp.txt og
 // stopper skriptet. Tekst tegnet inne i WebGL ser sjekken ikke.
 //
 // 3D-scener venter til kameraet har glidd fram (se ventTilRo). Mangler sharp, lages
@@ -201,6 +203,100 @@ function finnOverlapp() {
         if (!kort) continue;
         const ut = Math.max(kort.left - b.left, b.right - kort.right);
         if (ut > 3) funn.push(`«${tekst.slice(0, 50)}» stikker ${Math.round(ut)} px ut av kortet sitt`);
+    }
+    /** Opaciteten elementet faktisk vises med (0 når det eller en forelder er skjult). */
+    const synlighet = (el) => {
+        let o = 1;
+        for (let e = el; e && e !== rot.parentElement; e = e.parentElement) {
+            const ce = getComputedStyle(e);
+            if (ce.display === 'none' || ce.visibility === 'hidden') return 0;
+            o *= parseFloat(ce.opacity || '1');
+        }
+        return o;
+    };
+    const dekkende = (farge) => {
+        if (!farge || farge === 'none' || farge === 'transparent') return false;
+        const alfa = farge.match(/[\d.]+/g)?.[3];
+        return alfa === undefined || parseFloat(alfa) > 0.5;
+    };
+    const kortTekst = (e) => (e.textContent ?? '').replace(/\s+/g, ' ').trim().slice(0, 30);
+    // En pil (SVG-linje med `marker-end`) som går gjennom en SVG-merkelapp («Staten krever mer»
+    // ble kuttet av pila). Linja prøves med punkter langs hele lengden.
+    // Dempede bakgrunnsnavn (et stort «KINA» under rutene på kartet) skal rutene gå over.
+    const svgTekst = bokser.filter(({ node }) => node.parentElement?.closest('text') && synlighet(node.parentElement) >= 0.7);
+    for (const pil of rot.querySelectorAll('svg [marker-end]')) {
+        if (!(pil instanceof SVGGeometryElement) || getComputedStyle(pil).stroke === 'none' || synlighet(pil) < 0.5) continue;
+        const ctm = pil.getScreenCTM();
+        let lengde = 0;
+        try {
+            lengde = pil.getTotalLength();
+        } catch {
+            continue;
+        }
+        if (!ctm || !(lengde > 0)) continue;
+        const truffet = new Set();
+        for (let l = 0; l <= lengde; l += Math.max(2, lengde / 120)) {
+            const pt = pil.getPointAtLength(l).matrixTransform(ctm);
+            for (const { tekst, node, b } of svgTekst) {
+                if (truffet.has(tekst) || pil.contains(node)) continue;
+                const inn = b.height * 0.2;
+                if (!(pt.x > b.left + 2 && pt.x < b.right - 2 && pt.y > b.top + inn && pt.y < b.bottom - inn)) continue;
+                // Pila må synes der: ingenting fylt mellom pila og teksten. En pil som ender under
+                // kortet teksten står på, er dekket av kortet.
+                const stabel = document.elementsFromPoint(pt.x, pt.y);
+                const iPil = stabel.indexOf(pil);
+                const iTekst = stabel.findIndex((e) => e.contains(node));
+                if (iPil < 0 || iTekst < 0) continue;
+                if (iPil < iTekst || stabel.slice(iTekst + 1, iPil).every((e) => !(e instanceof SVGGeometryElement) || getComputedStyle(e).fill === 'none'))
+                    truffet.add(tekst);
+            }
+        }
+        for (const t of truffet) funn.push(`en pil går gjennom «${t.slice(0, 50)}»`);
+    }
+    // To SVG-kort som ligger oppå hverandre («Revidert nasjonalbudsjett» over «Vedtatt» i en
+    // tidslinje). Et kort er en fylt `rect` med en tekst etter seg i samme gruppe som står inni den.
+    const svgKort = [];
+    for (const r of rot.querySelectorAll('svg rect')) {
+        if (!dekkende(getComputedStyle(r).fill) || synlighet(r) < 0.5) continue;
+        const rr = r.getBoundingClientRect();
+        if (rr.width < 8 || rr.height < 8 || (rr.width > R.width * 0.8 && rr.height > R.height * 0.8)) continue;
+        let tekst = null;
+        let tekstFlate = 0;
+        for (let e = r.nextElementSibling; e; e = e.nextElementSibling) {
+            if (e.tagName.toLowerCase() !== 'text' || !kortTekst(e)) continue;
+            const tb = e.getBoundingClientRect();
+            const [x, y] = [(tb.left + tb.right) / 2, (tb.top + tb.bottom) / 2];
+            if (!(x > rr.left && x < rr.right && y > rr.top && y < rr.bottom)) continue;
+            tekst ??= kortTekst(e);
+            tekstFlate += tb.width * tb.height;
+        }
+        // Et bånd eller felt med en liten etikett («Hungersnød» over en periode) er ikke et kort.
+        if (tekst && rr.width * rr.height <= tekstFlate * 12) svgKort.push({ r, rr, tekst });
+    }
+    // HTML-bokser med bakgrunn og tekst som ligger oppå hverandre (et lite merke i hjørnet over
+    // en lang overskrift). Tekst mot tekst ser det ikke når bare boksene møtes.
+    const domKort = [];
+    for (const e of rot.querySelectorAll('div, span, p, h1, h2, h3, h4')) {
+        if (e.closest('svg') || !kortTekst(e)) continue;
+        if (!dekkende(getComputedStyle(e).backgroundColor) || synlighet(e) < 0.5) continue;
+        const rr = e.getBoundingClientRect();
+        if (rr.width < 8 || rr.height < 8 || rr.width > R.width * 0.8) continue;
+        domKort.push({ r: e, rr, tekst: kortTekst(e) });
+    }
+    for (const [liste, andel] of [[svgKort, 0.1], [domKort, 0]]) {
+        for (let i = 0; i < liste.length; i++) {
+            for (let j = i + 1; j < liste.length; j++) {
+                const a = liste[i];
+                const c = liste[j];
+                if (a.r.contains(c.r) || c.r.contains(a.r) || a.tekst === c.tekst) continue;
+                const w = Math.min(a.rr.right, c.rr.right) - Math.max(a.rr.left, c.rr.left);
+                const h = Math.min(a.rr.bottom, c.rr.bottom) - Math.max(a.rr.top, c.rr.top);
+                // SVG-kort som så vidt går inn i hverandre (lapper hengt opp i en bunke) er med vilje.
+                // En HTML-brikke som bare så vidt dekker en overskrift, er det ikke.
+                const minste = Math.min(a.rr.width * a.rr.height, c.rr.width * c.rr.height);
+                if (w > 4 && h > 4 && (w * h) / minste > andel) funn.push(`kortet «${a.tekst}» ligger oppå kortet «${c.tekst}»`);
+            }
+        }
     }
     return [...new Set(funn)];
 }
