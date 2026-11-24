@@ -1,0 +1,210 @@
+{
+  "id": "hva-er-geopolitikk",
+  "tittel": "Hva er geopolitikk?",
+  "kilde": "/samfunnskunnskap/geopolitikk/hva-er-geopolitikk",
+  "bilde": "/images/geopolitikk/hva-er-geopolitikk-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-24", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 3, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "stredet",
+      "lyd": "hav",
+      "kapittel": "Stredet",
+      "visual": { "type": "GeopolitikkStredet", "props": { "modus": "stredet" } },
+      "replikker": [
+        { "si": "Se på dette smale sundet mellom to land. Det heter Hormuzstredet, og ligger ved Persiabukta." },
+        { "si": "Hver dag i 2024 gikk det rundt 20 millioner fat olje gjennom her." },
+        { "si": "Det er omtrent en femtedel av all olje som blir brukt i verden." },
+        { "si": "Kanskje har noe av bensinen i bilen hjemme passert akkurat her." },
+        { "si": "Blir det uro her, kan bensinprisen stige helt oppe i Norge." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Geopolitikk",
+          "undertittel": "Hvordan kartet og makten henger sammen",
+          "bilde": "/images/geopolitikk/hva-er-geopolitikk-hero.webp",
+          "sporsmal": { "tekst": "Hva ser du med geopolitiske briller?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Hvordan kan et sund langt borte påvirke hva du betaler?" },
+        { "si": "Svaret handler om hvordan kartet og makten henger sammen. Det kalles geopolitikk." },
+        { "si": "I denne filmen tar vi på oss geopolitiske briller." }
+      ]
+    },
+    {
+      "id": "ordet",
+      "lyd": "stille",
+      "kapittel": "Kart og makt",
+      "visual": { "type": "GeopolitikkBriller", "props": { "modus": "hus" } },
+      "replikker": [
+        { "si": "Store norske leksikon forklarer geopolitikk som læren om hvordan politikk og makt henger sammen med geografien." },
+        { "si": "Geografi er alt som har med jordas overflate å gjøre: fjell, elver, hav, klima og det som finnes i bakken." },
+        { "si": "Ordet ble funnet opp av den svenske forskeren Rudolf Kjellén. Han så på staten nesten som et levende vesen, som vokser og trenger plass." },
+        { "si": "Tenk på deg selv. Bor du ved en stor vei, i en skog eller ved sjøen, påvirker det hverdagen din." },
+        { "si": "Slik er det for land også. Hvor landet ligger og hvem naboen er, påvirker hva det er redd for og hva det vil ha." }
+      ]
+    },
+    {
+      "id": "tre",
+      "visual": { "type": "GeopolitikkBriller", "props": { "modus": "tre" } },
+      "replikker": [
+        { "si": "Med geopolitiske briller ser forskere ofte etter tre ting." },
+        { "si": "Naboene. Hvem bor landet ved siden av, og er de venner eller fiender?" },
+        { "si": "Havet. Har landet havner som er åpne hele året, og kontrollerer det viktige sund eller kanaler?" },
+        { "si": "Ressursene. Har landet olje, gass, mineraler eller fisk som andre trenger?" }
+      ]
+    },
+    {
+      "id": "havet",
+      "lyd": "hav",
+      "visual": { "type": "GeopolitikkStredet", "props": { "modus": "havn" } },
+      "replikker": [
+        { "si": "I 1890 skrev den amerikanske admiralen Alfred T. Mahan en bok om krig til sjøs." },
+        { "si": "Han la vekt på hvor viktig det er å kontrollere havområder." },
+        { "si": "Et land som kan sende skip ut når det vil, kan handle med andre." },
+        { "si": "Det kan også frakte soldater og beskytte seg selv." },
+        { "si": "Men hva skjer hvis havna fryser til om vinteren?" }
+      ]
+    },
+    {
+      "id": "murmansk",
+      "lyd": "stille",
+      "visual": { "type": "GeopolitikkKart", "props": { "modus": "murmansk" } },
+      "replikker": [
+        { "si": "Se på Russland. Landet er enormt, men mange av havnene fryser om vinteren." },
+        { "si": "Murmansk er et unntak. Det varme vannet fra Golfstrømmen gjør at havna er åpen hele året." },
+        { "si": "Murmansk er Russlands største isfrie havn. Like ved ligger hovedkvarteret til Nordflåten, den russiske marinen i nord." },
+        { "si": "Og byen ligger bare rundt 200 kilometer fra grensen til Norge." }
+      ]
+    },
+    {
+      "id": "kjopere",
+      "visual": { "type": "GeopolitikkKart", "props": { "modus": "hormuz" } },
+      "replikker": [
+        { "si": "Ressurser kan gjøre et land viktig for land langt unna. Tilbake til Hormuzstredet." },
+        { "si": "Saudi-Arabia sender mer olje gjennom stredet enn noe annet land." },
+        { "si": "Kina, India, Japan og Sør-Korea kjøpte til sammen 69 prosent av oljen gjennom stredet i 2024." },
+        { "si": "Derfor følger de nøye med på hva som skjer der." }
+      ]
+    },
+    {
+      "id": "makter",
+      "kapittel": "Store og små",
+      "visual": { "type": "GeopolitikkKart", "props": { "modus": "makter" } },
+      "replikker": [
+        { "si": "Land har ulik makt. En stormakt har så mye makt at den spiller en stor rolle i verden." },
+        { "si": "I begynnelsen av 2000-tallet regnet man USA, Kina og Russland som stormakter." },
+        { "si": "Før i tiden var Romerriket, Det osmanske riket og Storbritannia på 1800-tallet stormakter." },
+        { "si": "En supermakt er enda større: en stormakt med så mange atomvåpen at den kan dominere hele verdenspolitikken." },
+        { "si": "Under den kalde krigen, fra 1945 til 1991, var det to supermakter: USA og Sovjetunionen." },
+        { "si": "Da Sovjetunionen gikk i oppløsning i 1991, var USA en kort tid den eneste supermakten." }
+      ]
+    },
+    {
+      "id": "sfaere",
+      "visual": { "type": "GeopolitikkKart", "props": { "modus": "sfaere" } },
+      "replikker": [
+        { "si": "Store land prøver ofte å ha ekstra mye å si i områdene rundt seg. Et slikt område kalles en interessesfære." },
+        { "si": "Landet styrer ikke området selv, men mener det har rett til å bestemme mer enn andre der." },
+        { "si": "USA så på Latin-Amerika slik på 1800- og 1900-tallet." },
+        { "si": "Sovjetunionen gjorde det samme med Øst-Europa. Etter 1991 har Russland sett slik på de tidligere sovjetlandene." },
+        { "si": "En interessesfære står ikke i noen lov. Den finnes bare så lenge andre land godtar den og ikke gjør motstand." }
+      ]
+    },
+    {
+      "id": "galt",
+      "lyd": "rom",
+      "kapittel": "Når det gikk galt",
+      "visual": { "type": "GeopolitikkTidslinje" },
+      "replikker": [
+        { "si": "Geopolitikk har også en mørk historie." },
+        { "si": "I 1904 skrev den britiske geografen Halford Mackinder at den som kontrollerer Øst-Europa, kan dominere hele verden." },
+        { "si": "Slike ideer var med på å skape et kappløp om å bygge krigsskip mellom Tyskland og Storbritannia, før første verdenskrig." },
+        { "si": "I Tyskland startet professoren og generalen Karl Haushofer en egen skole for geopolitikk. Han ga ut et tidsskrift om faget fra 1924 til 1944." },
+        { "si": "Han mente Tyskland trengte et stort område som kunne gi landet alt det trengte. Det kalte han Lebensraum, livsrom." },
+        { "si": "Tanken påvirket hvordan Hitler og nazistene så på andre land." }
+      ]
+    },
+    {
+      "id": "valg",
+      "visual": { "type": "GeopolitikkBriller", "props": { "modus": "valg" } },
+      "replikker": [
+        { "si": "Problemet med den gamle geopolitikken var at den sa at geografien bestemmer alt." },
+        { "si": "Da kan krig og erobring se naturlig ut, som noe man ikke kan unngå." },
+        { "si": "Etter nazistene fikk geopolitikk et dårlig rykte. Men rester av tenkemåten finnes ennå, blant annet i Russland og i noe av sikkerhetstenkningen i USA." },
+        { "si": "Lærdommen er at geografien forklarer mye, men ikke alt." },
+        { "si": "Det er mennesker som tar valgene. To land kan ha samme type naboer og velge helt ulike veier." }
+      ]
+    },
+    {
+      "id": "norge",
+      "lyd": "stille",
+      "kapittel": "Norge",
+      "visual": { "type": "GeopolitikkNorge" },
+      "replikker": [
+        { "si": "Hvordan ser Norge ut med geopolitiske briller? Norge blir ofte regnet som en småstat." },
+        { "si": "En småstat er et selvstendig land som er lite sammenlignet med andre, i folketall, økonomi eller militær makt." },
+        { "si": "Samtidig er Norge det åttende største landet i Europa i areal, med lang kyst, mye hav og store ressurser av olje og gass." },
+        { "si": "Norge har grense mot tre land. Mot Sverige er grensen 1630 kilometer, og mot Finland 736 kilometer." },
+        { "si": "Grensen mot Russland er bare 198 kilometer lang. Den er kortest, men får mest oppmerksomhet." },
+        { "si": "Det er fordi Russland er en stormakt, og fordi Murmansk og Nordflåten ligger så nær." }
+      ]
+    },
+    {
+      "id": "smastat",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Hva gjør en småstat ved siden av en stormakt?",
+          "punkter": [
+            { "ikon": "avtale", "tittel": "Allianser", "tekst": "Avtaler om å hjelpe hverandre", "fraBeat": 0 },
+            { "ikon": "skjold", "tittel": "Felles regler", "tekst": "Samarbeid i organisasjoner som FN", "fraBeat": 1 },
+            { "ikon": "stjerne", "tittel": "Folkeretten", "tekst": "Alle stater like mye verdt, men stormaktene har mer å si, for eksempel med vetorett i FNs sikkerhetsråd", "fraBeat": 2 },
+            { "ikon": "las", "tittel": "Prisen", "tekst": "Tett samarbeid kan gi mindre frihet", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Hva gjør så et lite land ved siden av en stormakt? Mange småstater søker trygghet gjennom allianser, altså avtaler om å hjelpe hverandre." },
+        { "si": "De samarbeider også i organisasjoner som FN. Felles regler gjør det vanskeligere for de sterke å bruke makt mot de svake." },
+        { "si": "Etter folkeretten, reglene mellom land, er alle selvstendige stater like mye verdt. Men stormaktene har mer å si, for eksempel med vetoretten i FNs sikkerhetsråd. Veto betyr retten til å si nei." },
+        { "si": "Men samarbeid har en pris. En småstat som knytter seg tett til andre, kan bli avhengig og få mindre frihet til å bestemme selv." }
+      ]
+    },
+    {
+      "id": "idag",
+      "kapittel": "Brillene på",
+      "visual": { "type": "GeopolitikkBriller", "props": { "modus": "fire" } },
+      "replikker": [
+        { "si": "I dag bruker noen ordet geopolitikk løst, om all politikk mellom land." },
+        { "si": "Forskere bruker det mer presist, om geografi og makt. De ser blant annet på kampen mellom USA og Kina i Asia." },
+        { "si": "Mange forskere ser også på klimaendringene. Når naturen endrer seg, kan maktforholdene mellom land endre seg." },
+        { "si": "Ser du nyheter om en konflikt, et sund eller en grense, ta på deg brillene. Spør: Hvem er naboene? Hva skjer med havet?" },
+        { "si": "Hvilke ressurser handler det om? Og er landene store eller små?" }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Naboer, hav og ressurser påvirker makten og valgene til et land.", "fraBeat": 0 },
+            { "tekst": "Stormakter og småstater har ulik makt, men etter folkeretten er de like mye verdt.", "fraBeat": 1 },
+            { "tekst": "Geografien forklarer mye. Men det er mennesker som tar valgene.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Naboer, hav og ressurser påvirker makten og valgene til et land." },
+        { "si": "Stormakter og småstater har ulik makt. Men etter folkeretten er de like mye verdt." },
+        { "si": "Geografien forklarer mye, men den bestemmer ikke alt. Det er mennesker som tar valgene." }
+      ]
+    }
+  ]
+}
