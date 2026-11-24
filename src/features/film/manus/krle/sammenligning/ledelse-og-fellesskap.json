@@ -1,0 +1,223 @@
+{
+    "id": "ledelse-og-fellesskap",
+    "tittel": "Ledelse: Hvem bestemmer?",
+    "kilde": "/krle/sammenligning/ledelse-og-fellesskap",
+    "bilde": "/images/sammenligning/ledelse-og-fellesskap-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-24", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 3, "tro": 4, "sum": 19 },
+    "scener": [
+        {
+            "id": "konklave",
+            "kapittel": "Konklavet",
+            "lyd": "rom",
+            "visual": { "type": "LedelseKonklave" },
+            "replikker": [
+                { "si": "Tenk deg at kardinalene i Den katolske kirke samles for å velge en ny pave." },
+                { "si": "Dørene lukkes. Kardinalene holdes atskilt fra resten av verden. Det kalles et konklave." },
+                { "si": "De stemmer fire ganger om dagen. Først når én kandidat har to tredeler av stemmene, er valget avgjort." },
+                { "si": "I 2025 ble Leo 14 valgt til pave. Kirken hans hadde rundt 1,36 milliarder medlemmer i 2020.", "uttale": "I 2025 ble Leo den fjortende valgt til pave. Kirken hans hadde rundt 1,36 milliarder medlemmer i 2020." },
+                { "si": "Og avgjørelsene hans kan ikke ankes. Det finnes ingen å klage dem inn for." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Hvem bestemmer?",
+                    "undertittel": "Ledelse og fellesskap i religionene",
+                    "bilde": "/images/sammenligning/ledelse-og-fellesskap-hero.webp",
+                    "sporsmal": { "tekst": "Hvem avgjør når det ikke finnes en sjef?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Men sunniislam har ingen slik person. Ingen pave, ingen sjef, ikke noe hovedkontor." },
+                { "si": "Likevel blir det bestemt hva som er riktig der også." },
+                { "si": "Hvordan går det til? Det ser vi på i denne filmen." }
+            ]
+        },
+        {
+            "id": "problemet",
+            "kapittel": "Samme problem",
+            "visual": { "type": "LedelseRad", "props": { "modus": "uenig" } },
+            "replikker": [
+                { "si": "Så snart flere deler en tro, dukker spørsmålet opp: hvem har rett når to er uenige?" },
+                { "si": "Kan en kvinne lede bønnen? Hva svarer vi når medisinen stiller et helt nytt spørsmål?" },
+                { "si": "Enten må noen avgjøre. Eller så må det finnes en måte å avgjøre på uten en sjef." },
+                { "si": "Religionene har landet svært ulikt: en topp, et valgt råd, eller et nettverk av lærde uten topp." }
+            ]
+        },
+        {
+            "id": "pyramide",
+            "kapittel": "Pyramiden",
+            "visual": { "type": "LedelseFormer", "props": { "modus": "katolsk" } },
+            "replikker": [
+                { "si": "Den katolske kirke er det tydeligste hierarkiet, en rangstige der hvert trinn står over det neste." },
+                { "si": "Paven velges på livstid, men han kan gå av." },
+                { "si": "Han har den øverste læremyndigheten, altså siste ord om hva kirken lærer." },
+                { "si": "Bare i helt spesielle tilfeller regnes ordene hans som ufeilbarlige, altså uten feil. Det har skjedd to ganger, i 1854 og i 1950." },
+                { "si": "Paven utnevner også biskopene. Makten går ovenfra og ned." }
+            ]
+        },
+        {
+            "id": "norsk",
+            "visual": { "type": "LedelseFormer", "props": { "modus": "norsk" } },
+            "replikker": [
+                { "si": "Protestantiske kirker har brutt opp pyramiden på ulike måter. Ta Den norske kirke." },
+                { "si": "I 2024 hadde den 3,4 millioner medlemmer. Det er 62 prosent av befolkningen." },
+                { "si": "Den styres på to måter: av valgte råd, og av prester og biskoper." },
+                { "si": "Øverst står Kirkemøtet, med medlemmer fra alle bispedømmerådene. Fra 2017 er kirken skilt fra staten." },
+                { "si": "Baptistene går enda lenger. Der velger og ansetter hver menighet sin egen pastor." }
+            ]
+        },
+        {
+            "id": "rad",
+            "kapittel": "Ingen sjef",
+            "visual": { "type": "LedelseRad", "props": { "modus": "rad" } },
+            "replikker": [
+                { "si": "Sunniislam ser helt annerledes ut. Der finnes verken et organisert presteskap eller noen med siste ord om læren." },
+                { "si": "I stedet finnes ulama, de som har religiøs kunnskap. Det er lærde med lang skolering i islamsk tradisjon og rett." },
+                { "si": "Noen av dem gir juridiske råd, som kalles fatwa. Da kalles de mufti." },
+                { "si": "Andre er dommere. En dommer kalles qadi." },
+                { "si": "Og et råd er ikke en dom. Det er dommeren som avgjør." }
+            ]
+        },
+        {
+            "id": "ijma",
+            "visual": { "type": "LedelseRad", "props": { "modus": "ijma" } },
+            "replikker": [
+                { "si": "Uten en sjef blir enigheten selv det som har siste ord. Enighet heter ijma." },
+                { "si": "Ijma er den tredje av de fire røttene som retten i sunniislam bygger på." },
+                { "si": "Juristen al-Shafi'i, som døde i 820, mente at alle troende måtte være enige. Derfor kunne ijma bare gjelde det mest grunnleggende.", "uttale": "Juristen al-Sjafi-i, som døde i 820, mente at alle troende måtte være enige. Derfor kunne ijma bare gjelde det mest grunnleggende." },
+                { "si": "Senere lærde begrenset ijma til juristenes enighet, altså de som kan loven." },
+                { "si": "Sjiaislam løste det annerledes. I tolversjiaismen skal hver troende ha en marja, et forbilde å følge." }
+            ]
+        },
+        {
+            "id": "jodedom",
+            "kapittel": "En samtale",
+            "visual": { "type": "LedelseLinje", "props": { "modus": "jodedom" } },
+            "replikker": [
+                { "si": "Jødedommen har heller ingen sentral ledelse." },
+                { "si": "Etter at tempelet ble ødelagt i år 70, ble de lærde ledere. De kalles rabbinere, av rabbi, som betyr min lærer." },
+                { "si": "De har utviklet halakha, den jødiske loven, i nesten to tusen år. Mishna ble redigert rundt år 200, og Talmud mellom år 400 og 500." },
+                { "si": "Arbeidet fortsetter i dag, og rabbinere fra ulike retninger kommer ofte til ulike svar." },
+                { "si": "Jødedommen har ingen læresetninger som alle må slutte seg til. Åpen uenighet er en del av tradisjonen." }
+            ]
+        },
+        {
+            "id": "hindu",
+            "kapittel": "Læreren",
+            "visual": { "type": "LedelseLinje", "props": { "modus": "hindu" } },
+            "replikker": [
+                { "si": "Hinduismen har ingen grunnlegger, ingen felles trosbekjennelse og ingen organisasjon på toppen." },
+                { "si": "Store templer har egne prester. Og det finnes mange retninger, kalt sampradaya, med egne grunnleggere og tekster." },
+                { "si": "Å ha en guru, en lærer, regnes som viktig, i noen retninger som nødvendig for å bli frelst." },
+                { "si": "Men mange hinduer er skeptiske, fordi indiske aviser stadig melder om misbruk." }
+            ]
+        },
+        {
+            "id": "sangha",
+            "visual": { "type": "LedelseLinje", "props": { "modus": "sangha" } },
+            "replikker": [
+                { "si": "I buddhismen heter fellesskapet av munker og nonner sangha." },
+                { "si": "Sanghaen avgjør sine egne saker demokratisk. Men et vedtak i et lokalt fellesskap må være enstemmig." },
+                { "si": "Rangen følger hvor lenge du har vært munk eller nonne. Og munker går foran nonner." },
+                { "si": "Ved siden av står linjen fra lærer til elev, der eleven kan bli den neste læreren." },
+                { "si": "Dalai Lama er den høyeste tittelen i den største tibetanske retningen. En ny Dalai Lama blir ikke valgt, men funnet." },
+                { "si": "Ifølge tradisjonen er han født på nytt som et barn, som må kjenne igjen eiendelene til forgjengeren sin." }
+            ]
+        },
+        {
+            "id": "sikh",
+            "kapittel": "En bok i midten",
+            "visual": { "type": "LedelseLinje", "props": { "modus": "sikh" } },
+            "replikker": [
+                { "si": "Sikhismen gjorde noe helt eget. Ti guruer fulgte etter hverandre, fra Guru Nanak til Guru Gobind Singh." },
+                { "si": "Før Gobind Singh døde i 1708, sa han at han var den siste menneskelige guruen." },
+                { "si": "Heretter skulle sikhene se på boka som sin høyeste veileder." },
+                { "si": "Derfor æres boka, Guru Granth Sahib, som den levende guruen. Der andre har en person, har sikhene en bok." }
+            ]
+        },
+        {
+            "id": "bahai",
+            "kapittel": "Et valgt råd",
+            "visual": { "type": "LedelseFormer", "props": { "modus": "bahai" } },
+            "replikker": [
+                { "si": "Bahá'í har ingen egne prester. Bevegelsen styres av et råd på ni medlemmer, Det universelle rettferdighetens hus.", "uttale": "Baha-i har ingen egne prester. Bevegelsen styres av et råd på ni medlemmer, Det universelle rettferdighetens hus." },
+                { "si": "Rådet har hovedsenteret sitt i Haifa i Israel." },
+                { "si": "Det velges hvert femte år av medlemmene i de nasjonale rådene. Det finnes ingen leder over rådet." },
+                { "si": "Se på pilene. Paven utnevner biskopene. Rådet i bahá'í blir valgt av dem det skal lede.", "uttale": "Se på pilene. Paven utnevner biskopene. Rådet i baha-i blir valgt av dem det skal lede." }
+            ]
+        },
+        {
+            "id": "storrelse",
+            "kapittel": "Lik form",
+            "visual": { "type": "LedelseStorrelse" },
+            "replikker": [
+                { "si": "I Jesu Kristi Kirke av Siste Dagers Hellige står en president øverst, med to rådgivere." },
+                { "si": "Presidenten regnes som profet. Ifølge kirken får mennene i presidentskapet og De tolv apostlene åpenbaringer direkte fra Gud." },
+                { "si": "Jehovas vitner styres av Det styrende råd, som har hatt fra sju til atten medlemmer. Bare menn som blir invitert, kan bli med." },
+                { "si": "Jehovas vitner og Den katolske kirke kan begge tegnes som en pyramide. Men et titalls menn styrte rundt 8,6 millioner forkynnere i 2019, og én pave står over 1,36 milliarder katolikker." },
+                { "si": "Formen er lik. Størrelsen er det ikke." }
+            ]
+        },
+        {
+            "id": "utenfor",
+            "kapittel": "Ingen over meg",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Uten en leder som avgjør",
+                    "punkter": [
+                        { "ikon": "kirke", "tittel": "Utenfor trossamfunnene", "tekst": "fra 1980-tallet: solgt som en vare", "fraBeat": 0 },
+                        { "ikon": "stjerne", "tittel": "Du velger selv", "tekst": "nyreligiøse nettverk: yoga, meditasjon, healing", "fraBeat": 1 },
+                        { "ikon": "snakk", "tittel": "Ingen over deg selv", "tekst": "i flere av disse miljøene er det et poeng", "fraBeat": 2 },
+                        { "ikon": "avtale", "tittel": "Og de som ikke tror?", "tekst": "humanismen: erklæringer skrevet i fellesskap", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Ikke all religion skjer i et trossamfunn. Fra 1980-tallet ble mye nyreligiøsitet solgt som en vare." },
+                { "si": "Mange setter sammen sitt eget livssyn og avgjør selv hva som virker: yoga, meditasjon eller healing." },
+                { "si": "I flere av disse miljøene er det et poeng at ingen står over deg selv. Her mangler ikke ledelsen. Det er poenget." },
+                { "si": "Og de som ikke tror? Livssynshumanismen har ingen egne prester. I Norge er den organisert i Human-Etisk Forbund, og bygger på erklæringer skrevet i fellesskap." }
+            ]
+        },
+        {
+            "id": "monster",
+            "kapittel": "Mønsteret",
+            "visual": { "type": "LedelseFormer", "props": { "modus": "fire" } },
+            "replikker": [
+                { "si": "Setter vi alt ved siden av hverandre, går fire former igjen." },
+                { "si": "Én person på toppen, som paven. Et valgt råd, som i bahá'í.", "uttale": "Én person på toppen, som paven. Et valgt råd, som i baha-i." },
+                { "si": "Et nettverk uten topp, som i sunniislam. Og en linje fra lærer til elev, som i buddhismen." },
+                { "si": "Uten en sjef avgjøres det likevel: med enighet, med tolkning eller med en bok." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Hvem har rett når to er uenige?", "fraBeat": 0 },
+                        { "tekst": "Alle fellesskap må svare.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ikke hvem som har den beste ordningen,", "fraBeat": 1 },
+                        { "tekst": "men hvilken form spørsmålet har fått.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Hvem som får bestemme,", "fraBeat": 2 },
+                        { "tekst": "henger sammen med hvem som får være med.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Flere steder: øverste verv bare for menn.", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Spørsmålet er det samme overalt: hvem har rett når to er uenige?" },
+                { "si": "Det handler ikke om hvem som har den beste ordningen, men om hvilken form spørsmålet har fått." },
+                { "si": "Og hvem som får bestemme, henger sammen med hvem som får være med. Flere steder er de øverste vervene bare for menn." }
+            ]
+        }
+    ]
+}
