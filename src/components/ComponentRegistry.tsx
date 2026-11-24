@@ -117,6 +117,7 @@ const Meklingsmotet = lazy(() => import('./content/interactive/Meklingsmotet').t
 const RegningenDin = lazy(() => import('./content/interactive/RegningenDin').then(m => ({ default: m.RegningenDin })));
 const BudsjettKabalen = lazy(() => import('./content/interactive/BudsjettKabalen').then(m => ({ default: m.BudsjettKabalen })));
 const TettVelferdsgapet = lazy(() => import('./content/interactive/TettVelferdsgapet').then(m => ({ default: m.TettVelferdsgapet })));
+const GeopolitiskeBriller = lazy(() => import('./content/interactive/GeopolitiskeBriller').then(m => ({ default: m.GeopolitiskeBriller })));
 const NavKoen = lazy(() => import('./content/interactive/NavKoen').then(m => ({ default: m.NavKoen })));
 const PensjonsBotta = lazy(() => import('./content/interactive/PensjonsBotta').then(m => ({ default: m.PensjonsBotta })));
 const SammeLivToLand = lazy(() => import('./content/interactive/SammeLivToLand').then(m => ({ default: m.SammeLivToLand })));
@@ -1117,6 +1118,7 @@ export const componentRegistry: Record<string, React.ComponentType<any>> = {
     RegningenDin,
     BudsjettKabalen,
     TettVelferdsgapet,
+    GeopolitiskeBriller,
     NavKoen,
     PensjonsBotta,
     SammeLivToLand,

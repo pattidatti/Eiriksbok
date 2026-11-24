@@ -1,5 +1,5 @@
 {
-  "buildId": 1655024736614,
+  "buildId": 217561067829555,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4726,6 +4726,9 @@
     "km-16-dagsaktuelle-tema": [
       "content/samfunnskunnskap/eksamen/km-16-dagsaktuelle-tema.json"
     ],
+    "hva-er-geopolitikk": [
+      "content/samfunnskunnskap/geopolitikk/hva-er-geopolitikk.json"
+    ],
     "energi-og-rorledninger": [
       "content/samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger.json"
     ],
@@ -6608,6 +6611,7 @@
     "samfunnskunnskap/eksamen/km-16-dagsaktuelle-tema": "content/samfunnskunnskap/eksamen/km-16-dagsaktuelle-tema.json",
     "samfunnskunnskap/eksamen/muntlig-modell": "content/samfunnskunnskap/eksamen/muntlig-modell.json",
     "samfunnskunnskap/eksamen/muntlig": "content/samfunnskunnskap/eksamen/muntlig.json",
+    "samfunnskunnskap/geopolitikk/hva-er-geopolitikk": "content/samfunnskunnskap/geopolitikk/hva-er-geopolitikk.json",
     "samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger": "content/samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger.json",
     "samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt": "content/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt.json",
     "samfunnskunnskap/handel-og-infrastruktur/handel-og-infrastruktur-sti": "content/samfunnskunnskap/handel-og-infrastruktur/handel-og-infrastruktur-sti.json",
