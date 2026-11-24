@@ -2736,7 +2736,7 @@
                 "rettigheter"
               ],
               "createdDate": "2026-11-16T01:10:22.764Z",
-              "lastUpdated": "2026-11-21T07:39:58+01:00"
+              "lastUpdated": "2026-11-22T07:39:00+01:00"
             },
             {
               "id": "konfliktradet",
@@ -2774,7 +2774,7 @@
                 "fellesskap"
               ],
               "createdDate": "2026-11-18T02:23:29+01:00",
-              "lastUpdated": "2026-11-18T07:33:46+01:00"
+              "lastUpdated": "2026-11-22T07:39:00+01:00"
             },
             {
               "id": "statsbudsjettet",
@@ -2789,7 +2789,7 @@
                 "politikk"
               ],
               "createdDate": "2026-11-19T02:20:28+01:00",
-              "lastUpdated": "2026-11-19T07:39:08+01:00"
+              "lastUpdated": "2026-11-23T07:39:45+01:00"
             },
             {
               "id": "nav-og-folketrygden",
@@ -2804,7 +2804,7 @@
                 "arbeidslinja"
               ],
               "createdDate": "2026-11-20T02:16:38+01:00",
-              "lastUpdated": "2026-11-20T07:39:15+01:00"
+              "lastUpdated": "2026-11-23T07:39:45+01:00"
             },
             {
               "id": "pensjon",
@@ -2819,7 +2819,7 @@
                 "levealdersjustering"
               ],
               "createdDate": "2026-11-21T01:09:17.567Z",
-              "lastUpdated": "2026-11-21T07:39:58+01:00"
+              "lastUpdated": "2026-11-23T07:39:45+01:00"
             },
             {
               "id": "den-nordiske-modellen",
@@ -2834,7 +2834,7 @@
                 "usa"
               ],
               "createdDate": "2026-11-22T01:11:48.469Z",
-              "lastUpdated": "2026-11-22T01:20:19.903Z"
+              "lastUpdated": "2026-11-22T07:39:00+01:00"
             },
             {
               "id": "kan-velferdsstaten-vare",
@@ -2848,7 +2848,31 @@
                 "eldrebølgen",
                 "økonomi"
               ],
-              "createdDate": "2026-11-23T00:00:00Z"
+              "createdDate": "2026-11-23T02:17:06+01:00",
+              "lastUpdated": "2026-11-23T07:39:45+01:00"
+            }
+          ]
+        },
+        {
+          "id": "geopolitikk",
+          "title": "Sikkerhet og geopolitikk",
+          "description": "Hvordan geografi former makt, og hvordan et lite land som Norge prøver å være trygt i en urolig verden.",
+          "image": "/images/placeholder.webp",
+          "lessons": [
+            {
+              "id": "hva-er-geopolitikk",
+              "title": "Hva er geopolitikk?",
+              "description": "Hvordan naboer, hav og ressurser påvirker hva land gjør, og forskjellen på stormakter og småstater.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "geopolitikk",
+                "stormakt",
+                "småstat",
+                "interessesfære",
+                "sikkerhet"
+              ],
+              "createdDate": "2026-11-24T01:08:47.492Z",
+              "lastUpdated": "2026-11-24T01:09:30.080Z"
             }
           ]
         },
