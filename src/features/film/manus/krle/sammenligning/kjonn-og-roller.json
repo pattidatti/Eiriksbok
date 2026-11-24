@@ -1,0 +1,225 @@
+{
+    "id": "kjonn-og-roller",
+    "tittel": "Kjønn og roller: Prinsipp mot praksis",
+    "kilde": "/krle/sammenligning/kjonn-og-roller",
+    "bilde": "/images/sammenligning/kjonn-og-roller-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-24", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "prekestol",
+            "kapittel": "Den tomme prekestolen",
+            "lyd": "rom",
+            "visual": { "type": "KjonnRommet", "props": { "modus": "kirke" } },
+            "replikker": [
+                { "si": "Vi står i en norsk kirke i 1938. Prekestolen er tom." },
+                { "si": "Dette året får kvinner lov til å bli prester i Den norske kirke." },
+                { "si": "Men i tjuetre år står ingen kvinne på prekestolen." },
+                { "si": "I 1961 blir den første kvinnen ordinert, altså innsatt som prest: Ingrid Bjerkås." },
+                { "si": "Da hun står der, sier seks av landets biskoper at prester og vanlige kirkemedlemmer burde kunne boikotte henne, altså holde seg borte i protest." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Kjønn og roller",
+                    "undertittel": "Prinsipp mot praksis",
+                    "bilde": "/images/sammenligning/kjonn-og-roller-hero.webp",
+                    "sporsmal": { "tekst": "Hvem får lede, lese og bestemme?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Regelen kom lenge før virkeligheten. Det er temaet i denne filmen." },
+                { "si": "Alle religioner må svare på de samme spørsmålene. Hvem kan lede en gudstjeneste? Hvem får lese høyt fra den hellige teksten?" },
+                { "si": "Hvem arver, og hvem bestemmer hjemme? Svarene er ulike, men spørsmålene er de samme." }
+            ]
+        },
+        {
+            "id": "tospor",
+            "kapittel": "To spor",
+            "visual": { "type": "KjonnSpor", "props": { "modus": "forklaring" } },
+            "replikker": [
+                { "si": "Vi trenger to ord. Prinsippet er hva læren sier." },
+                { "si": "Praksis er hva som faktisk skjer." },
+                { "si": "Noen ganger ligger praksis hundrevis av år bak prinsippet." },
+                { "si": "Noen ganger går det motsatt vei, og praksis kommer først." },
+                { "si": "Og noen ganger er en tradisjon uenig med seg selv. To jøder kan være uenige om hvem som kan bli rabbiner, altså lærer i jødisk lov." },
+                { "si": "Uenigheten er ikke unntaket. Den er regelen." }
+            ]
+        },
+        {
+            "id": "norge",
+            "kapittel": "Den norske kirke",
+            "visual": { "type": "KjonnSpor", "props": { "modus": "kirke" } },
+            "replikker": [
+                { "si": "I Den norske kirke kom regelen i 1938, men med et forbehold: hver menighet kunne si nei til en kvinnelig prest." },
+                { "si": "En annen kirke kom først. I 1954 ble Agnes Nilsen Howard prest i Metodistkirken i Norge." },
+                { "si": "I 1956 tok Stortinget bort menighetenes rett til å si nei." },
+                { "si": "I 1961 ordinerte biskop Kristian Schjelderup Ingrid Bjerkås i Vang kirke." },
+                { "si": "Og i 1993 ble Rosemarie Köhn den første kvinnelige biskopen." }
+            ]
+        },
+        {
+            "id": "senja",
+            "visual": { "type": "KjonnKart", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Her ligger Vang kirke. Men motstanden mot henne var hard." },
+                { "si": "På Senja nektet 96 medlemmer å godta henne som prest." },
+                { "si": "I 1963 ville hun bli med i presteforeningen. Da truet motstandere med å melde seg ut." }
+            ]
+        },
+        {
+            "id": "biskoper",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "person",
+                    "steg": [
+                        { "fraBeat": 0, "total": 12, "farget": 0, "restFarge": "#94a3b8", "tittel": "Biskopene i Den norske kirke, 2024", "restEtikett": "biskoper", "visTall": false },
+                        { "fraBeat": 1, "total": 12, "farget": 6, "farge": "#d97706", "restFarge": "#0f766e", "tittel": "Biskopene i Den norske kirke, 2024", "fargeEtikett": "kvinner", "restEtikett": "menn" }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Spol fram til 2024. Se på biskopene." },
+                { "si": "Seks av dem er kvinner, og seks er menn. Fra ingen kvinnelige prester til halvparten av biskopene." }
+            ]
+        },
+        {
+            "id": "synagoge",
+            "kapittel": "Samme bok, ulike lesninger",
+            "lyd": "rom",
+            "visual": { "type": "KjonnRommet", "props": { "modus": "synagoge" } },
+            "replikker": [
+                { "si": "I jødedommen satt kvinner tradisjonelt ofte på et galleri, en slags balkong, eller bak et forheng i synagogen." },
+                { "si": "Tradisjonelt var kvinner fritatt fra plikter som er bundet til bestemte tidspunkt, som de faste bønnene." },
+                { "si": "Men de hadde tre plikter av sitt eget. De tente sabbatslysene fredag kveld, fulgte renhetsreglene og tok ut prestenes del når de bakte." },
+                { "si": "I ortodoks tradisjon må fortsatt minst ti voksne jødiske menn være til stede før en gudstjeneste er gyldig. Det kalles minjan." }
+            ]
+        },
+        {
+            "id": "reform",
+            "lyd": "stille",
+            "visual": { "type": "KjonnKart", "props": { "modus": "verden" } },
+            "replikker": [
+                { "si": "Reformjødedommen gikk en annen vei. Den vokste fram i Tyskland tidlig på 1800-tallet, og familier fikk sitte sammen i synagogen." },
+                { "si": "I 1935 ble Regina Jonas ordinert i Berlin, som den første kvinnelige rabbineren. Men hun fikk ikke preke fra prekestolen i synagogen." },
+                { "si": "I 1972 ble Sally Priesand den første kvinnelige reformrabbineren i USA." },
+                { "si": "I dag er kvinner rabbinere og kantorer, altså forsangere, i alle retningene som ikke er ortodokse." }
+            ]
+        },
+        {
+            "id": "islam",
+            "visual": { "type": "KjonnSpor", "props": { "modus": "islam" } },
+            "replikker": [
+                { "si": "Muslimer leser den samme boka på ulike måter." },
+                { "si": "Koranen sier at den som gjør det gode, mann eller kvinne, kommer til paradiset. Når det gjelder frelse, stiller kvinner og menn likt." },
+                { "si": "Men et annet vers sier at menn har bestyrerrett over kvinner. De to versene er lest på svært ulike måter." },
+                { "si": "Loven som ble bygd på tekstene, gir kvinner halvparten så mye arv som menn. Men den gir dem også full rett over sin egen formue." },
+                { "si": "I 2005 ledet Amina Wadud fredagsbønnen for menn og kvinner i en moské i New York." },
+                { "si": "I sunni-islam kan kvinner lede bønnen for andre kvinner, men ikke når menn også er med. Men ikke alle muslimske kvinner godtar den grensen." }
+            ]
+        },
+        {
+            "id": "india",
+            "kapittel": "Indiske tradisjoner",
+            "visual": { "type": "KjonnKart", "props": { "modus": "india" } },
+            "replikker": [
+                { "si": "Nå til India. Hinduismen har verken felles ledelse eller én felles bok." },
+                { "si": "En gammel hymne forteller at prestene oppsto fra munnen til urmennesket, og tjenerne fra føttene. Slik ble kastene forklart, gruppene folk fødes inn i." },
+                { "si": "Brahminene, den øverste kasten, utfører fortsatt tempeltjenesten. Men bhakti, veien som legger vekt på kjærlighet til guden, har alltid henvendt seg til alle, menn og kvinner." },
+                { "si": "Enkebrenning, sati, fantes særlig blant høykaster i Bengal og Rajasthan, men ble aldri vanlig. Den ble forbudt i Bengal i 1829, og i årene etter i hele India." }
+            ]
+        },
+        {
+            "id": "kloster",
+            "lyd": "rom",
+            "visual": { "type": "KjonnRommet", "props": { "modus": "kloster" } },
+            "replikker": [
+                { "si": "I buddhismen er sanghaen, fellesskapet av munker og nonner, selve kjernen. I prinsippet har den vært åpen for nesten alle, uansett stand og kjønn, men med visse begrensninger." },
+                { "si": "Men i praksis står munker alltid over nonner." },
+                { "si": "I theravada, en av retningene i buddhismen, døde nonneordenen sannsynligvis ut alt på 1200-tallet." },
+                { "si": "I tibetansk tradisjon ble den sannsynligvis aldri startet." },
+                { "si": "Om kvinner kan ordineres på nytt, er buddhister uenige om i dag." }
+            ]
+        },
+        {
+            "id": "gurdwara",
+            "visual": { "type": "KjonnRommet", "props": { "modus": "gurdwara" } },
+            "replikker": [
+                { "si": "Sikhismen har ingen prester. I gurdwaraen, sikhenes forsamlingshus, deltar menn og kvinner sammen i gudstjenesten." },
+                { "si": "Ifølge sikhenes egen framstilling tok Guru Nanak kvinner inn i forsamlingen uten forbehold." },
+                { "si": "Den tiende guruen, Guru Gobind Singh, ga menn i khalsa, fellesskapet av innviede sikher, navnet Singh, som betyr løve. Kvinner fikk navnet Kaur, prinsesse." },
+                { "si": "Målet var å viske ut skillene mellom kastene. Men merk hvem som er kilden: dette er i stor grad sikhenes egen framstilling." }
+            ]
+        },
+        {
+            "id": "nyere",
+            "kapittel": "Nyere bevegelser",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvem kan lede?",
+                    "punkter": [
+                        { "ikon": "stjerne", "tittel": "Bahá'í", "tekst": "ingen prester, valgte råd styrer", "fraBeat": 1 },
+                        { "ikon": "kirke", "tittel": "Mormonerne", "tekst": "prestedømmet bare for menn, kvinnene har Hjelpeforeningen", "fraBeat": 2 },
+                        { "ikon": "snakk", "tittel": "Jehovas vitner", "tekst": "bare menn som eldste og i Det styrende råd", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Så til tre nyere bevegelser. Bahá'í kom fra sjia-islam, mormonismen og Jehovas vitner fra kristendommen." },
+                { "si": "Bahá'í regner full likestilling mellom kjønnene som en grunnsetning. Den har ingen prester, og valgte råd styrer." },
+                { "si": "Hos mormonerne er prestedømmet, myndigheten til å handle på Guds vegne, bare for menn. Kvinnene har sin egen organisasjon, Hjelpeforeningen. Kirken sier selv at rollene er ulike, men like mye verdt." },
+                { "si": "Hos Jehovas vitner kan bare menn være eldste i menigheten, eller sitte i Det styrende råd, som avgjør hva som er rett lære." }
+            ]
+        },
+        {
+            "id": "storrelse",
+            "kapittel": "Mønsteret",
+            "visual": { "type": "KjonnStorrelse" },
+            "replikker": [
+                { "si": "Bahá'í har rundt seks millioner medlemmer. Jehovas vitner hadde 8,6 millioner aktive forkynnere i 2019, og mormonkirken oppga selv 15,5 millioner medlemmer i 2015." },
+                { "si": "Men en avgjørelse i Den katolske kirke gjelder rundt 1,36 milliarder døpte katolikker." },
+                { "si": "Og i det største kirkesamfunnet i verden er kvinnelige prester fortsatt ikke tillatt." },
+                { "si": "En avgjørelse i et lite trossamfunn gjelder færre, men betyr like mye for dem det gjelder." }
+            ]
+        },
+        {
+            "id": "monster",
+            "visual": { "type": "KjonnSpor", "props": { "modus": "monster" } },
+            "replikker": [
+                { "si": "Se på mønsteret. Prinsippet og praksis henger sjelden helt sammen." },
+                { "si": "Men gapet er ikke det samme som løgn. Det er tid. Som regel kommer prinsippet først, og praksis følger etter." },
+                { "si": "Uenigheten går like ofte innad i en tradisjon som mellom tradisjonene." },
+                { "si": "Der det ikke finnes prester, som hos sikhene og i bahá'í, handler striden om andre roller." },
+                { "si": "Og ingen er ferdige. Om buddhistiske nonner kan ordineres, og hvor mye islamsk lov som skal stå i landets lov, er det strid nå." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Livssynshumanister har ingen hellig tekst å tolke.", "fraBeat": 0 },
+                        { "tekst": "For dem bygger likestilling på et menneskeverd alle har.", "fraBeat": 0 },
+                        { "tekst": "Men også der er folk uenige", "fraBeat": 1 },
+                        { "tekst": "om hvordan prinsippene skal brukes i praksis.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Prinsipp eller praksis?", "fraBeat": 2 },
+                        { "tekst": "Og hvilken retning snakker vi om?", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Og de som ikke tror? Livssynshumanister har ingen hellig tekst å tolke. For dem handler likestilling om et menneskeverd alle har." },
+                { "si": "Men også blant dem er folk uenige om hvordan prinsippene skal brukes i praksis." },
+                { "si": "Så neste gang noen sier hva en religion mener om kjønn, spør: Prinsipp eller praksis? Og hvilken retning?" }
+            ]
+        }
+    ]
+}
