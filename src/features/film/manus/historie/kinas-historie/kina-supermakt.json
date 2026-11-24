@@ -4,6 +4,7 @@
     "kilde": "/historie/kinas-historie/kina-supermakt",
     "bilde": "/images/kinas-historie/kina-supermakt-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-24", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
     "scener": [
         {
             "id": "havn",
@@ -15,7 +16,7 @@
                     "si": "Tenk deg en havn i Kina. Kranene løfter container etter container om bord i et gigantisk skip."
                 },
                 {
-                    "si": "I containerne ligger mobiltelefoner, klær og møbler. Alt skal ut til butikker over hele verden."
+                    "si": "I containerne ligger alt fra mobiltelefoner til møbler. Alt skal ut til butikker over hele verden."
                 },
                 { "si": "Omtrent en tredjedel av alle varene verden lager, kommer fra Kina." },
                 {
@@ -33,10 +34,11 @@
                     "undertittel": "Fra verdens fabrikk til rival til USA",
                     "bilde": "/images/kinas-historie/kina-supermakt-hero.webp",
                     "tall": [
-                        { "verdi": 200, "etikett": "ganger så mange som i Norge", "fraBeat": 0 },
+                        { "verdi": 200, "etikett": "ganger så mange som i Norge", "fraBeat": 0, "prefiks": "nesten" },
                         {
                             "verdi": 400,
                             "etikett": "millioner ut av fattigdom",
+                            "prefiks": "over",
                             "fraBeat": 1,
                             "tone": "gronn"
                         }
@@ -63,13 +65,13 @@
                     "si": "Alt endret seg i desember 2001. Da ble Kina med i Verdens handelsorganisasjon, WTO."
                 },
                 {
-                    "si": "WTO er en klubb av land som skal gjøre handel lettere. Nå fikk kinesiske varer mye lettere vei ut i verden."
+                    "si": "WTO er en klubb av land som skal gjøre handel lettere. Det fikk store følger for handelen i hele verden."
                 },
                 {
                     "si": "Utenlandske selskaper strømmet til Kina for å bygge fabrikker. Lønningene var lave, og arbeiderne var mange."
                 },
                 {
-                    "si": "Snart ble Kina kalt verdens fabrikk. Stedet der alt fra mobiltelefoner til møbler blir laget."
+                    "si": "På bare noen tiår ble Kina kalt verdens fabrikk. Stedet der alt fra mobiltelefoner til møbler blir laget."
                 }
             ]
         },
@@ -78,7 +80,7 @@
             "visual": { "type": "SupermaktHavn", "props": { "modus": "by" } },
             "replikker": [
                 {
-                    "si": "Fabrikkene trengte arbeidere. Hundrevis av millioner kinesere flyttet fra landsbygda til byene."
+                    "si": "Hundrevis av millioner kinesere flyttet fra landsbygda til byene."
                 },
                 {
                     "si": "I 1990 bodde 75 prosent av folket på landet. Det er tre av fire."
@@ -102,7 +104,7 @@
                 },
                 { "si": "Kina er også størst på vindkraft og solkraft." },
                 {
-                    "si": "Rundt 30 prosent av all vannkraft, vindkraft og solkraft i verden lages i Kina."
+                    "si": "Rundt 30 prosent av all vannkraft i verden lages i Kina. Det samme gjelder vindkraft og solkraft, hver for seg."
                 }
             ]
         },
@@ -138,8 +140,8 @@
                     "uttale": "Før kunne en president bare sitte i to perioder. Den regelen hadde Deng Siaoping, en tidligere leder i Kina, innført."
                 },
                 {
-                    "si": "I 2018 ble grensen fjernet. Nå kan Xi i praksis sitte resten av livet.",
-                    "uttale": "I 2018 ble grensen fjernet. Nå kan Sji i praksis sitte resten av livet."
+                    "si": "I 2018 godkjente partiet Xis forslag om å fjerne grensen. Nå kan Xi i praksis sitte resten av livet.",
+                    "uttale": "I 2018 godkjente partiet Sjis forslag om å fjerne grensen. Nå kan Sji i praksis sitte resten av livet."
                 },
                 {
                     "si": "Det gjør ham til den mektigste lederen siden Mao, som styrte Kina fra 1949 til han døde i 1976."
@@ -152,17 +154,17 @@
             "visual": { "type": "SupermaktKart", "props": { "modus": "silkevei" } },
             "replikker": [
                 {
-                    "si": "I 2013 startet Xi et enormt prosjekt. Det heter Belte og vei, og blir ofte kalt den nye silkeveien.",
-                    "uttale": "I 2013 startet Sji et enormt prosjekt. Det heter Belte og vei, og blir ofte kalt den nye silkeveien."
+                    "si": "I 2013 startet Xi et enormt prosjekt. Det heter Belte og vei, og blir av noen kalt den nye silkeveien.",
+                    "uttale": "I 2013 startet Sji et enormt prosjekt. Det heter Belte og vei, og blir av noen kalt den nye silkeveien."
                 },
                 {
-                    "si": "Kina bygger havner, jernbaner, veier, broer og kraftverk i andre land."
+                    "si": "Tanken er at Kina skal bygge havner, jernbaner, veier, broer og kraftverk i andre land."
                 },
                 {
                     "si": "Det skjer i Asia, Afrika og Latin-Amerika, og helt inn i Europa. Over 140 land er med."
                 },
                 {
-                    "si": "Kina låner ut penger og sender ingeniører. Til gjengjeld får kinesiske selskaper jobbene, og Kina får makt."
+                    "si": "Kina låner ut penger og sender ingeniører. Til gjengjeld får kinesiske selskaper kontraktene, og Kina får innflytelse."
                 }
             ]
         },
@@ -221,7 +223,7 @@
                     "si": "Ett land, to systemer, kalte de det. Hong Kong skulle ha sin egen økonomi og sine egne domstoler."
                 },
                 {
-                    "si": "I 2019 gikk store mengder folk ut i gatene. De protesterte mot en ny lov om utlevering, altså å sende mistenkte ut av Hong Kong."
+                    "si": "I 2019 gikk store mengder folk ut i gatene. De protesterte mot en foreslått lov om utlevering, altså å sende mistenkte ut av Hong Kong."
                 },
                 {
                     "si": "I 2020 vedtok Kina en sikkerhetslov. Mange frykter at frihetene i Hong Kong smuldrer bort."
@@ -260,7 +262,7 @@
                     "si": "Derfor har USA forbudt å selge de mest avanserte brikkene til Kina."
                 },
                 {
-                    "si": "Kina svarer med å bruke enorme summer på å lage sine egne. Den som vinner, kan få mest makt i mange år framover."
+                    "si": "Kina svarer med å bruke enorme summer på å lage sine egne. Den som vinner, kan avgjøre hvem som har mest makt i tiår framover."
                 }
             ]
         },
@@ -297,7 +299,7 @@
                         { "tekst": "Ikke lenger.", "fraBeat": 0, "uthevet": true },
                         { "tekst": "To giganter:", "fraBeat": 1 },
                         { "tekst": "USA og Kina.", "fraBeat": 1, "uthevet": true },
-                        { "tekst": "Partner i klimakampen.", "fraBeat": 2 },
+                        { "tekst": "Trengs som partner i klimakampen.", "fraBeat": 2 },
                         {
                             "tekst": "Rival om teknologi og makt.",
                             "fraBeat": 2,
@@ -314,7 +316,7 @@
                 },
                 { "si": "To giganter, USA og Kina, konkurrerer om å forme framtiden." },
                 {
-                    "si": "Kina er en partner når verden skal kjempe mot klimaendringene. Og en konkurrent om teknologi og makt."
+                    "si": "Verden trenger Kina som partner i kampen mot klimaendringene. Men Kina er også en konkurrent om teknologi og makt."
                 },
                 {
                     "si": "Hvem som vinner, og på hvilke vilkår, vil påvirke alle land på jorda. Også Norge."

@@ -491,7 +491,7 @@ function HongKong({ beat }: { beat: number }) {
                 transition={{ duration: 1.4, delay: beat === 1 ? 0.6 : 0 }}
             />
             <Tekst x={(x(1997) + x(slutt)) / 2} y={450} str={34} vekt={800} farge="#0f766e" synlig={beat >= 1} forsinkelse={1.6}>
-                løftet: 50 år med selvstyre
+                løftet: 50 år med mye selvstyre
             </Tekst>
             <Tekst x={x(1997)} y={610} str={36} farge="#0f766e" synlig={beat >= 1}>
                 1997
@@ -647,7 +647,7 @@ function Historie({ beat }: { beat: number }) {
                             {m.t}
                         </text>
                         {m.u && (
-                            <text x={m.x + 26} y={m.y + 30} fontSize={32} fontWeight={700} fill="#475569">
+                            <text x={m.x + 26} y={m.y - 54} fontSize={32} fontWeight={700} fill="#475569">
                                 {m.u}
                             </text>
                         )}
