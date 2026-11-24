@@ -41,7 +41,7 @@ export function SupermaktBrikke({ beat, props }: VisualProps<{ modus?: Modus }>)
                   'Halvledere: bittesmå brikker',
                   'Brikkene bak de kraftigste maskinene',
                   'USA: ingen avanserte brikker til Kina',
-                  'Kina lager sine egne',
+                  'Kina satser på egne',
               ];
     const tittel = titler[Math.min(beat, 3)];
     return (
@@ -325,10 +325,10 @@ function Brikker({ beat }: { beat: number }) {
                             exit={{ opacity: 0 }}
                             transition={{ delay: 0.8 + i * 0.9 }}
                         >
-                            <path d={`M 680 470 C 820 470 820 ${y} 940 ${y}`} fill="none" stroke="#facc15" strokeWidth={8} />
-                            <rect x={940} y={y - 80} width={520} height={160} rx={28} fill="#1e293b" stroke="#facc15" strokeWidth={4} />
-                            <I x={970} y={y - 50} width={100} height={100} color="#facc15" />
-                            <text x={1090} y={y + 16} fontSize={44} fontWeight={900} fill="#fff">
+                            <path d={`M 680 470 C 810 470 810 ${y} 920 ${y}`} fill="none" stroke="#facc15" strokeWidth={8} />
+                            <rect x={920} y={y - 80} width={620} height={160} rx={28} fill="#1e293b" stroke="#facc15" strokeWidth={4} />
+                            <I x={950} y={y - 50} width={100} height={100} color="#facc15" />
+                            <text x={1070} y={y + 16} fontSize={44} fontWeight={900} fill="#fff">
                                 {t}
                             </text>
                         </motion.g>

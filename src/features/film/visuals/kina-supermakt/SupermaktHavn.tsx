@@ -600,7 +600,7 @@ function HavnTekst({ beat }: { beat: number }) {
                 exit={{ opacity: 0 }}
                 className="absolute top-[6%] left-1/2 -translate-x-1/2 flex gap-3"
             >
-                {['mobiltelefoner', 'klær', 'møbler'].map((t, i) => (
+                {['mobiltelefoner', 'møbler'].map((t, i) => (
                     <motion.div
                         key={t}
                         initial={{ opacity: 0, y: -14 }}
@@ -655,7 +655,7 @@ function Tredjedel() {
                 />
             </svg>
             <div>
-                <div className="font-display font-black text-5xl text-red-700">1/3</div>
+                <div className="font-display font-black text-5xl text-red-700">ca. 1/3</div>
                 <div className="text-2xl font-semibold text-slate-600 max-w-[15rem]">
                     av alle varer i verden lages i Kina
                 </div>

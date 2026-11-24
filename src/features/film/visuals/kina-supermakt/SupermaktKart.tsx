@@ -52,15 +52,15 @@ const UTSNITT: Record<Modus, [LngLat, LngLat]> = {
 const OVERSKRIFT: Record<Modus, string[]> = {
     verden: [
         'Desember 2001: Kina blir med i WTO',
-        'Kinesiske varer ut i verden',
+        'Store følger for handelen',
         'Fabrikkene flytter til Kina',
         'Verdens fabrikk',
     ],
     silkevei: [
         '2013: Belte og vei',
-        'Kina bygger i andre land',
+        'Planen: Kina bygger i andre land',
         'Over 140 land er med',
-        'Lån og ingeniører, kontrakter og makt',
+        'Lån og ingeniører, kontrakter og innflytelse',
     ],
     srilanka: [
         'Tilhengerne: hjelp til fattige land',
@@ -81,7 +81,7 @@ const MÅL_VERDEN: { navn: string; ll: LngLat }[] = [
     { navn: 'Europa', ll: [12, 50] },
     { navn: 'USA', ll: [-96, 39] },
     { navn: 'Afrika', ll: [20, 2] },
-    { navn: 'Sør-Amerika', ll: [-58, -14] },
+    { navn: 'Latin-Amerika', ll: [-58, -14] },
 ];
 
 /** Rutene i Belte og vei, grovt tegnet. */
@@ -252,12 +252,12 @@ export function SupermaktKart({ beat, props }: VisualProps<{ modus?: Modus }>) {
                     </Kort>
                 )}
                 {modus === 'silkevei' && beat === 2 && (
-                    <Kort key="land" side="venstre">
+                    <Kort key="land" side="venstre" hoyt>
                         <Teller verdi={140} etikett="land er med" prefiks="over " />
                     </Kort>
                 )}
                 {modus === 'silkevei' && beat >= 3 && (
-                    <Kort key="bytte" side="venstre">
+                    <Kort key="bytte" side="venstre" hoyt>
                         <Bytte />
                     </Kort>
                 )}
@@ -361,14 +361,22 @@ const Land = memo(function Land({
     );
 });
 
-function Kort({ children, side }: { children: React.ReactNode; side: 'venstre' | 'hoyre' }) {
+function Kort({
+    children,
+    side,
+    hoyt = false,
+}: {
+    children: React.ReactNode;
+    side: 'venstre' | 'hoyre';
+    hoyt?: boolean;
+}) {
     return (
         <motion.div
             initial={{ opacity: 0, x: side === 'venstre' ? -40 : 40 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0 }}
             transition={{ delay: 0.4, type: 'spring', stiffness: 160, damping: 20 }}
-            className={`absolute bottom-[7%] ${side === 'venstre' ? 'left-[4%]' : 'right-[4%]'}`}
+            className={`absolute ${hoyt ? 'top-[26%]' : 'bottom-[7%]'} ${side === 'venstre' ? 'left-[3%]' : 'right-[4%]'}`}
         >
             {children}
         </motion.div>
@@ -396,16 +404,16 @@ function Stemme({
 
 function Bytte() {
     return (
-        <div className="flex items-stretch gap-3">
+        <div className="flex flex-col items-start gap-2">
             <div className="px-5 py-3 rounded-2xl bg-red-700 text-white shadow-xl">
                 <div className="text-xl font-semibold text-red-100">Kina gir</div>
                 <div className="font-display font-black text-2xl">lån og ingeniører</div>
             </div>
-            <div className="self-center text-4xl font-black text-slate-700">⇄</div>
+            <div className="pl-6 text-4xl font-black text-slate-700">⇅</div>
             <div className="px-5 py-3 rounded-2xl bg-white/95 shadow-xl">
                 <div className="text-xl font-semibold text-slate-500">Kina får</div>
                 <div className="font-display font-black text-2xl text-slate-900">
-                    kontrakter og makt
+                    kontrakter og innflytelse
                 </div>
             </div>
         </div>
@@ -504,8 +512,8 @@ function Verden({ beat, p }: { beat: number; p: Proj }) {
                     <g key={m.navn}>
                         <Pil d={bue(kyst, mål, 0.22)} farge="rod" synlig={beat >= 1} forsinkelse={i * 0.4} />
                         <Etikett
-                            x={mål[0]}
-                            y={mål[1] + 50}
+                            x={mål[0] + (m.navn === 'Europa' ? -80 : 0)}
+                            y={mål[1] + (m.navn === 'Europa' ? 42 : 50)}
                             tekst={m.navn}
                             synlig={beat >= 1}
                             forsinkelse={0.4 + i * 0.4}
@@ -550,7 +558,8 @@ function Verden({ beat, p }: { beat: number; p: Proj }) {
                         />
                     </motion.g>
                 ))}
-            <Etikett x={kina[0]} y={kina[1] - 60} tekst="KINA" farge="#991b1b" str={44} />
+            {/* Øst for kysten: alle pilene går vestover, så her krysser ingen av dem navnet. */}
+            <Etikett x={kyst[0] + 100} y={kyst[1] + 14} tekst="KINA" farge="#991b1b" str={44} />
             <motion.g
                 initial={{ opacity: 0, scale: 1.6 }}
                 animate={{ opacity: beat >= 3 ? 1 : 0, scale: beat >= 3 ? 1 : 1.6 }}
@@ -707,7 +716,7 @@ function SriLanka({ beat, p }: { beat: number; p: Proj }) {
     return (
         <>
             <Etikett x={india[0]} y={india[1]} tekst="India" farge="#475569" str={40} />
-            <Etikett x={sl[0] + 150} y={sl[1] + 10} tekst="Sri Lanka" str={44} />
+            <Etikett x={sl[0] - 160} y={sl[1] + 10} tekst="Sri Lanka" str={44} />
             {/* Vei og havn som tilhengerne peker på */}
             <motion.g
                 initial={{ opacity: 0 }}
@@ -781,7 +790,7 @@ function Taiwan({ beat, p }: { beat: number; p: Proj }) {
             <Etikett x={fast[0]} y={fast[1]} tekst="KINA" farge="#991b1b" str={52} />
             <Etikett x={tx + 120} y={ty - 40} tekst="Taiwan" farge="#0f766e" str={46} />
             <circle cx={hkx} cy={hky} r={9} fill="#0f172a" />
-            <Etikett x={hkx - 10} y={hky + 46} tekst="Hong Kong" str={30} farge="#334155" />
+            <Etikett x={hkx - 10} y={hky - 24} tekst="Hong Kong" str={30} farge="#334155" />
             {/* Kinas krav */}
             <Pil
                 d={bue([fast[0] + 90, fast[1] + 20], [tx - 50, ty - 10], 0.2)}
@@ -798,8 +807,8 @@ function Taiwan({ beat, p }: { beat: number; p: Proj }) {
                 forsinkelse={0.8}
             />
             <Etikett
-                x={tx + 150}
-                y={ty + 40}
+                x={tx + 140}
+                y={ty + 6}
                 tekst="«et eget land»"
                 farge="#0f766e"
                 str={32}
@@ -807,7 +816,7 @@ function Taiwan({ beat, p }: { beat: number; p: Proj }) {
                 forsinkelse={1.6}
             />
             {/* USA */}
-            <Pil d={bue([øst[0] + 140, øst[1] + 80], [tx + 50, ty + 30], -0.15)} farge="bla" synlig={beat >= 3} />
+            <Pil d={bue([øst[0] + 140, øst[1] + 80], [tx + 45, ty + 60], -0.15)} farge="bla" synlig={beat >= 3} />
             <Etikett
                 x={øst[0] + 60}
                 y={øst[1] + 170}
