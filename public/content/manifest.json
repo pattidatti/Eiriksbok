@@ -706,6 +706,20 @@
               ],
               "createdDate": "2026-05-19T10:09:39+02:00",
               "lastUpdated": "2026-08-09T19:56:01+02:00"
+            },
+            {
+              "id": "lanord",
+              "title": "Lånord: Ordene norsk har lånt",
+              "description": "Fra kirkeord og hansaens nedertysk til engelsk i dag: slik har norsk lånt ord i bølger gjennom historien.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "språkhistorie",
+                "lånord",
+                "engelsk",
+                "nedertysk",
+                "avløserord"
+              ],
+              "createdDate": "2026-11-25T00:00:00Z"
             }
           ]
         },

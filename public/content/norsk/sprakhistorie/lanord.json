@@ -1,0 +1,288 @@
+{
+  "id": "lanord",
+  "title": "Lånord: Ordene norsk har lånt",
+  "layout": "rich",
+  "year": "1000-2026",
+  "category": "Språk",
+  "readTime": "9 min lesning",
+  "heroImage": "/images/placeholder.webp",
+  "details": [
+    "Lånord er ord som et språk har hentet fra et annet språk.",
+    "Norsk har lånt i bølger: fra latin og gresk med kirken, fra nedertysk med hansaen, fra tysk gjennom dansk og fra engelsk i dag.",
+    "Språkrådet foreslår norske avløserord, som emneknagg for hashtag og e-post for e-mail."
+  ],
+  "externalUrl": "https://snl.no/lånord",
+  "tags": [
+    "språkhistorie",
+    "lånord",
+    "engelsk",
+    "nedertysk",
+    "dansk",
+    "avløserord",
+    "språkendring"
+  ],
+  "content": [
+    {
+      "type": "text",
+      "content": "Les denne setningen: «Den kloke snekkeren tok på seg trøya og begynte å skrive til biskopen.» Den høres helt norsk ut, ikke sant? Men seks av ordene i setningen er lånt fra andre språk. Noen kom for tusen år siden med prestene, noen med tyske handelsmenn i middelalderen og noen gjennom dansk. I dag kommer nye ord nesten hver uke, og de fleste fra engelsk."
+    },
+    {
+      "type": "text",
+      "content": "Ord som er hentet fra et annet språk, kaller vi lånord. I denne artikkelen skal du bli språkarkeolog. Du skal grave deg ned gjennom lagene i norsk og finne ut hvor ordene dine kommer fra, og hva de forteller om hvem nordmenn har hatt kontakt med opp gjennom historien."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Gammel ordbok på pult med ord i flere språk",
+      "caption": "Bak mange helt vanlige norske ord skjuler det seg en lang reise fra et annet språk."
+    },
+    {
+      "type": "header",
+      "text": "Hva er et lånord?"
+    },
+    {
+      "type": "text",
+      "content": "Et lånord er et ord som et språk har tatt over fra et annet språk på et bestemt tidspunkt. Det er altså ikke arvet fra den eldste formen av språket (Nordbø, 2026). Lånord kommer gjerne inn sammen med den tingen eller ideen de beskriver. Når folk møter noe nytt, tar de ofte med seg ordet også. Lånord kan også komme fordi et annet språk har høy status, slik at det virker fint eller moderne å bruke ordene derfra."
+    },
+    {
+      "type": "text",
+      "content": "Noen lånord ser fremmede ut, som «deadline» eller «backstage». Slike ord kalles ofte fremmedord. Men de fleste lånordene har vi brukt så lenge at de har fått norsk uttale, bøying og skrivemåte. Dem kjenner vi ikke igjen som lånte. Bare språkforskere kan avsløre dem, ved å følge ordene bakover i tid (Nordbø, 2026)."
+    },
+    {
+      "type": "component",
+      "name": "FactBox",
+      "props": {
+        "title": "Ord du trenger",
+        "content": "Lånord: et ord som er hentet fra et annet språk. Arveord: et ord som har vært i språket helt fra den eldste formen vi kjenner. Fremmedord: et lånord som fortsatt ser fremmed ut. Nedertysk: språket i Nord-Tyskland, også kalt plattysk. Avløserord: et norsk ord som kan brukes i stedet for et engelsk ord."
+      }
+    },
+    {
+      "type": "header",
+      "text": "Lag 1: Ordene som kom med kirken"
+    },
+    {
+      "type": "text",
+      "content": "Det eldste laget vi skal se på, kom med kristendommen. Da [Norge ble kristnet](/historie/vikingtiden/kristningen-av-norge), fikk språket mange ord fra gammelengelsk og fra latin og gresk (Nordbø, 2026). Prestene og misjonærene hadde med seg bøker, gudstjenester og en helt ny tro. Det trengtes nye ord for alt dette."
+    },
+    {
+      "type": "text",
+      "content": "To eksempler er «skrive» og «biskop». Begge kom inn i [norrønt](/norsk/sprakhistorie/norront), språket i vikingtiden og middelalderen, via latin og gresk (Nordbø & Thorvaldsen, 2026). En biskop er en leder i kirken. At ordet «skrive» er lånt, sier noe viktig: Det var kirken som gjorde det vanlig å skrive bøker i Norge."
+    },
+    {
+      "type": "header",
+      "text": "Lag 2: Hansaen og de tyske handelsmennene"
+    },
+    {
+      "type": "text",
+      "content": "I middelalderen drev [hanseatene](/historie/middelalderen/hanseatene), de tyske kjøpmennene i Hansaforbundet, en stor del av handelen i Nord-Europa. Språket deres het middelnedertysk, og det var et slags fellesspråk for handel i store deler av Nord-Europa. Språket hadde særlig stor framgang etter 1350 (Theodorsen, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Handelsmennene satte dype spor i norsk. Ifølge Store norske leksikon kommer rundt 30 prosent av norske dagligord fra nedertysk (Theodorsen, 2026). Det betyr at nesten hvert tredje ord du bruker i hverdagen, kan ha kommet med tyske kjøpmenn. Ordene «snekker» og «trøye» er to eksempler på ord norsk fikk fra nedertysk i denne tiden (Nordbø & Thorvaldsen, 2026)."
+    },
+    {
+      "type": "header",
+      "text": "Lag 3: Tysk gjennom dansk"
+    },
+    {
+      "type": "text",
+      "content": "Så kom en ny bølge. Med [reformasjonen](/historie/reformasjonen/reformasjonen-i-norge) fikk norsk mange tyske lånord (Nordbø, 2026). I de første hundreårene av moderne norsk var dansk skriftspråket i Norge (Nordbø & Thorvaldsen, 2026). Du kan lese mer om hvordan nordmenn senere laget sine egne skriftspråk i artikkelen om [bokmål og nynorsk](/norsk/sprakhistorie/bokmal-og-nynorsk)."
+    },
+    {
+      "type": "text",
+      "content": "Mange av de aller vanligste norske ordene kom denne veien. Herre, frue, skute, klok, bruke, begynne og betale er alle lånt fra tysk gjennom dansk (Nordbø, 2026). Tenk på hvor ofte du sier «begynne» eller «bruke» i løpet av en dag. Ingen tenker på dem som lånord, men det er de. På 1700-tallet kom det også mange franske ord inn i norsk (Nordbø, 2026). Husk det du leste om status: Når et språk virker fint og moderne, blir det fristende å låne ord fra det."
+    },
+    {
+      "type": "text",
+      "content": "Nå er det din tur. Prøv å grave fram lagene i to vanlige setninger. Klikk på et understreket ord, og velg hvilket tidslag du tror det kom fra."
+    },
+    {
+      "type": "component",
+      "name": "Ordarkeologen",
+      "props": {}
+    },
+    {
+      "type": "header",
+      "text": "Lag 4: Engelsk i dag"
+    },
+    {
+      "type": "text",
+      "content": "Det nyeste laget er det du kjenner best. I nyere tid har engelsk hatt svært stor påvirkning på norsk, særlig gjennom importord som «backstage», «server» og «tanks» (Nordbø & Thorvaldsen, 2026). Et importord er et nyere lånord som ofte fortsatt har engelsk skrivemåte. Norsk har også fått en del svenske ord i nyere tid (Nordbø, 2026)."
+    },
+    {
+      "type": "text",
+      "content": "Hvorfor kommer så mange engelske ord nå? Svaret er det samme som før: Ordene følger med tingene og med kontakten mellom folk. Datamaskiner, internett, musikk, filmer, spill og sosiale medier kommer ofte fra engelskspråklige land. Når vi tar i bruk noe nytt, tar vi gjerne ordet med på kjøpet."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Ungdommer med mobiltelefoner og engelske ord rundt seg",
+      "caption": "Mange av de nyeste ordene i norsk handler om teknologi og sosiale medier."
+    },
+    {
+      "type": "header",
+      "text": "Tre veier for et engelsk ord"
+    },
+    {
+      "type": "text",
+      "content": "Hva skal vi gjøre med alle de nye engelske ordene? Språkforskeren Gisle Andersen beskriver tre måter norsk kan møte dem på (Andersen, 2006). Den første er å beholde ordet slik det er. Det passer ofte for ord om musikk og kultur, som «house» og «dance». Den andre måten er å gi ordet norsk skrivemåte, slik at det skrives slik det uttales. Da blir «guide» til «gaid» og «service» til «sørvis». Den tredje måten er å bytte ut det engelske ordet med et norsk ord."
+    },
+    {
+      "type": "text",
+      "content": "Et norsk ord som kan brukes i stedet for et engelsk ord, kalles et avløserord. Språkrådet, som gir råd om norsk språk, har en egen liste med slike ord (Språkrådet, u.å.). Her er noen eksempler fra lista:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "e-mail blir e-post",
+        "hashtag blir emneknagg",
+        "streaming blir strømming",
+        "influencer blir påvirker",
+        "deadline blir frist",
+        "selfie blir selvknips"
+      ]
+    },
+    {
+      "type": "text",
+      "content": "Noen avløserord kjenner du sikkert allerede, som «e-post» og «lenke». Andre, som «selvknips», har ikke blitt like populære. Lista er bare forslag, og ingen er pålagt å bruke ordene (Språkrådet, u.å.). Andersen peker også på at et norsk ord ikke alltid betyr helt det samme som det engelske. Et ord som «deit» har for eksempel ikke et norsk ord som dekker nøyaktig samme betydning (Andersen, 2006)."
+    },
+    {
+      "type": "header",
+      "text": "Lån som er oversatt"
+    },
+    {
+      "type": "text",
+      "content": "Det finnes også en mer skjult type lån. Noen ganger låner vi ikke selve ordet, men vi oversetter det bit for bit. Dette kalles et oversettelseslån. Ordet «samvittighet» er et slikt lån. Det kom gjennom dansk som en oversettelse av det latinske ordet conscientia, som selv var en oversettelse av et gresk ord (Nordbø, 2026). Et nyere eksempel er «bjørnemarked», som er oversatt fra engelsk «bear market». Det betyr en tid da prisene på aksjer faller."
+    },
+    {
+      "type": "header",
+      "text": "Språk som sier nei takk"
+    },
+    {
+      "type": "text",
+      "content": "Ikke alle språk låner like mye. Noen land har bestemt at de heller vil lage nye ord av sine egne ord. Dette kalles purisme, eller språkrensing. Islandsk, finsk og ungarsk er språk som har ganske få lånord av denne grunnen (Nordbø, 2026). Men også disse språkene har mange oversettelseslån."
+    },
+    {
+      "type": "text",
+      "content": "Norsk har gått en annen vei. Vi har lånt mye og ofte, og det har gjort språket rikt på ord. Samtidig finnes det en debatt om hvor mange engelske ord norsk tåler. Noen mener at for mange engelske ord kan gjøre norsk fattigere, særlig på områder der vi slutter å bruke norske ord helt. Andre mener at lån alltid har vært en del av språket, og at norsk har overlevd både nedertysk og dansk."
+    },
+    {
+      "type": "image",
+      "src": "/images/placeholder.webp",
+      "alt": "Jordlag i et utgravningsfelt med gamle gjenstander",
+      "caption": "Som jordlagene i en utgravning forteller ordlagene i norsk om ulike tider."
+    },
+    {
+      "type": "header",
+      "text": "Språket er en historiebok"
+    },
+    {
+      "type": "text",
+      "content": "Når du ser på lånordene i norsk, ser du egentlig Norges historie. Kirkeordene forteller om kristningen. De nedertyske ordene forteller om handel med hanseatene. De danske og tyske ordene forteller om tiden da dansk var skriftspråket i Norge. Og de engelske ordene forteller om verden vi lever i nå, med internett og global kultur. Hvert ord du sier, har en reise bak seg."
+    },
+    {
+      "type": "text",
+      "content": "Neste gang du sier «Jeg må begynne på leksene før fristen», kan du tenke på at du bruker ord fra flere hundre år med kontakt mellom folk. Språket har aldri stått stille. Det kommer heller ikke til å gjøre det."
+    },
+    {
+      "type": "component",
+      "name": "Kildeliste",
+      "props": {
+        "sources": [
+          "Andersen, G. (2006). Engelske importord i norsk. *Språknytt*, (3). Språkrådet. Hentet 25.11.2026 fra [sprakradet.no](https://sprakradet.no/arkiv/engelske-importord-i-norsk/)",
+          "Nordbø, B. (2026). *Lånord*. Store norske leksikon. Hentet 25.11.2026 fra [snl.no](https://snl.no/lånord)",
+          "Nordbø, B. & Thorvaldsen, B. Ø. (2026). *Norsk språkhistorie*. Store norske leksikon. Hentet 25.11.2026 fra [snl.no](https://snl.no/norsk_språkhistorie)",
+          "Språkrådet. (u.å.). *På godt norsk – norske avløserord for engelske ord*. Hentet 25.11.2026 fra [sprakradet.no](https://sprakradet.no/godt-og-korrekt-sprak/ordlister-og-ordboker/pa-godt-norsk-avloserord/)",
+          "Theodorsen, C. (2026). *Nedertysk*. Store norske leksikon. Hentet 25.11.2026 fra [snl.no](https://snl.no/nedertysk)"
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Oppgaver",
+      "props": {
+        "forstaa": [
+          "Hva er et lånord? Forklar med dine egne ord.",
+          "Hvilke to språk fikk norsk mange ord fra da kristendommen kom?",
+          "Hvor stor del av norske dagligord kommer fra nedertysk, ifølge Store norske leksikon?",
+          "Hva er et avløserord? Gi to eksempler fra artikkelen."
+        ],
+        "reflekter": [
+          "Forklar hvorfor lånord ofte kommer inn i et språk sammen med nye ting eller ideer. Bruk et eksempel fra artikkelen.",
+          "Hvorfor tror du så mange av de nedertyske ordene handler om hverdagslivet?",
+          "Hva er forskjellen på et vanlig lånord og et oversettelseslån?",
+          "Noen avløserord, som «e-post», har slått gjennom, mens andre, som «selvknips», ikke har det. Hva tror du avgjør om et nytt norsk ord blir populært?"
+        ],
+        "gaaVidere": [
+          "Skriv ned ti engelske ord du selv bruker i løpet av en dag. Sjekk Språkrådets liste «På godt norsk» og se om det finnes avløserord. Ville du brukt dem? Hvorfor eller hvorfor ikke?",
+          "Diskuter i gruppe: Er det et problem at norsk tar inn mange engelske ord, eller er det bare en ny runde av noe som alltid har skjedd?",
+          "Lag ditt eget avløserord for et engelsk ord som ikke står på Språkrådets liste. Forklar hvordan du tenkte."
+        ]
+      }
+    },
+    {
+      "type": "component",
+      "name": "Quiz",
+      "props": {
+        "questions": [
+          {
+            "question": "Hva er et lånord?",
+            "options": [
+              "Et ord som er hentet fra et annet språk",
+              "Et ord som bare brukes i en dialekt",
+              "Et ord som er funnet opp av Språkrådet",
+              "Et ord som ikke lenger brukes"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Et lånord er et ord som et språk har tatt over fra et annet språk på et bestemt tidspunkt."
+          },
+          {
+            "question": "Hvilket språk snakket de tyske handelsmennene i hansaen?",
+            "options": [
+              "Latin",
+              "Middelnedertysk",
+              "Fransk",
+              "Engelsk"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Hanseatene snakket middelnedertysk, som ble et fellesspråk for handel i Nord-Europa."
+          },
+          {
+            "question": "Hvordan kom ord som «begynne», «betale» og «herre» inn i norsk?",
+            "options": [
+              "Fra engelsk gjennom internett",
+              "Fra latin gjennom kirken",
+              "Fra tysk gjennom dansk",
+              "Fra islandsk"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Store norske leksikon skriver at disse ordene er lånt fra tysk gjennom dansk."
+          },
+          {
+            "question": "Hva er avløserordet for «hashtag» på Språkrådets liste?",
+            "options": [
+              "Nettlapp",
+              "Emneknagg",
+              "Ordmerke",
+              "Tagg"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Språkrådet foreslår «emneknagg» i stedet for «hashtag»."
+          },
+          {
+            "question": "Hva kalles det når et språk heller lager egne ord enn å låne?",
+            "options": [
+              "Purisme",
+              "Dialekt",
+              "Norvagisering",
+              "Oversettelse"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Purisme betyr språkrensing. Islandsk, finsk og ungarsk har få lånord av denne grunnen."
+          }
+        ]
+      }
+    }
+  ],
+  "timeline": []
+}
