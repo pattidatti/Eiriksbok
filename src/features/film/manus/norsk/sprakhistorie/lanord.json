@@ -1,0 +1,231 @@
+{
+    "id": "lanord",
+    "tittel": "Lånord: Ordene norsk har lånt",
+    "kilde": "/norsk/sprakhistorie/lanord",
+    "bilde": "/images/placeholder.webp",
+    "utenforArtikkel": [
+        { "tall": 100, "begrunnelse": "Målestokk i prikkfeltet: 100 prikker for vanlige dagligord, slik at rundt 30 prosent blir 30 prikker." }
+    ],
+    "vurdering": { "dato": "2026-11-25", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "setning",
+            "kapittel": "En vanlig setning",
+            "visual": { "type": "LanordSetning", "props": { "modus": "setning" } },
+            "replikker": [
+                { "si": "Les denne setningen: Den kloke snekkeren tok på seg trøya og begynte å skrive til biskopen." },
+                { "si": "Den høres helt norsk ut, ikke sant?" },
+                { "si": "Men seks av ordene i setningen er lånt fra andre språk." },
+                { "si": "Noen kom for tusen år siden med prestene. Noen kom med tyske handelsmenn i middelalderen, og noen kom gjennom dansk." },
+                { "si": "I dag kommer det nye ord nesten hver uke, de fleste fra engelsk." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "LÅNORD",
+                    "undertittel": "Ordene norsk har lånt",
+                    "sporsmal": { "tekst": "Hvor kommer ordene dine fra?", "fraBeat": 1 }
+                }
+            },
+            "replikker": [
+                { "si": "Ord som er hentet fra et annet språk, kaller vi lånord." },
+                { "si": "I denne filmen skal vi finne ut hvor ordene dine kommer fra." }
+            ]
+        },
+        {
+            "id": "graving",
+            "kapittel": "Språkarkeologen",
+            "lyd": "vind",
+            "visual": { "type": "LanordGraving", "props": { "modus": "oversikt" } },
+            "replikker": [
+                { "si": "Tenk deg at du er språkarkeolog. Du graver deg ned gjennom norsk, lag for lag." },
+                { "si": "Øverst ligger det nyeste laget. Jo dypere du graver, jo eldre er ordene." },
+                { "si": "Hvert lag forteller hvem nordmenn har hatt kontakt med opp gjennom historien." }
+            ]
+        },
+        {
+            "id": "hva",
+            "kapittel": "Hva er et lånord?",
+            "lyd": "stille",
+            "visual": { "type": "LanordSetning", "props": { "modus": "begreper" } },
+            "replikker": [
+                { "si": "Et lånord er tatt over fra et annet språk på et bestemt tidspunkt. Et arveord har vært i språket helt fra den eldste formen vi kjenner." },
+                { "si": "Lånord kommer gjerne sammen med tingen eller ideen de beskriver. Når folk møter noe nytt, tar de ofte med seg ordet også." },
+                { "si": "Noen ganger låner vi fordi et annet språk har høy status. Da virker det fint eller moderne å bruke ordene derfra." },
+                { "si": "Noen lånord ser fremmede ut, som deadline og backstage. Slike ord kalles ofte fremmedord." },
+                { "si": "Men de fleste har vi brukt så lenge at de har fått norsk uttale, bøying og skrivemåte. Bare språkforskere kan avsløre dem." }
+            ]
+        },
+        {
+            "id": "kirken",
+            "kapittel": "Lag 1: Kirken",
+            "lyd": "rom",
+            "visual": { "type": "LanordGraving", "props": { "modus": "kirke" } },
+            "replikker": [
+                { "si": "Vi graver ned til det eldste laget vi skal se på. Det kom med kristendommen." },
+                { "si": "Da Norge ble kristnet, kom prester og misjonærer med bøker, gudstjenester og en helt ny tro. Det trengtes nye ord for alt dette." },
+                { "si": "Språket fikk mange ord fra gammelengelsk, og fra latin og gresk." },
+                { "si": "To eksempler er skrive og biskop. Begge kom inn i norrønt, språket i vikingtiden og middelalderen, via latin og gresk." },
+                { "si": "En biskop er en leder i kirken. Og at skrive er lånt, sier noe viktig: Det var kirken som gjorde det vanlig å skrive bøker i Norge." }
+            ]
+        },
+        {
+            "id": "hansa",
+            "kapittel": "Lag 2: Hansaen",
+            "lyd": "hav",
+            "visual": { "type": "LanordKart", "props": { "modus": "hansa" } },
+            "replikker": [
+                { "si": "Neste lag er fra middelalderen. Da drev hanseatene, tyske kjøpmenn i Hansaforbundet, en stor del av handelen i Nord-Europa." },
+                { "si": "Språket deres het middelnedertysk. Nedertysk er språket i Nord-Tyskland, også kalt plattysk." },
+                { "si": "Det var et slags fellesspråk for handel i store deler av Nord-Europa. Språket hadde særlig stor framgang etter 1350." },
+                { "si": "Ordene snekker og trøye er to av ordene norsk fikk fra nedertysk i denne tiden." }
+            ]
+        },
+        {
+            "id": "prosent",
+            "lyd": "stille",
+            "visual": {
+                "type": "Prikkfelt",
+                "props": {
+                    "figur": "prikk",
+                    "steg": [
+                        { "fraBeat": 0, "total": 100, "farget": 0, "restFarge": "#cbd5e1", "tittel": "Vanlige dagligord på norsk", "restEtikett": "dagligord", "visTall": false },
+                        { "fraBeat": 1, "total": 100, "farget": 30, "farge": "#ea580c", "restFarge": "#cbd5e1", "tittel": "Rundt 30 prosent: fra nedertysk", "fargeEtikett": "fra nedertysk", "restEtikett": "andre dagligord", "visTall": false },
+                        { "fraBeat": 2, "total": 100, "farget": 30, "farge": "#ea580c", "restFarge": "#94a3b8", "tittel": "Nesten hvert tredje dagligord kan komme fra nedertysk", "fargeEtikett": "fra nedertysk", "restEtikett": "andre dagligord", "visTall": false }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Handelsmennene satte dype spor i norsk." },
+                { "si": "Ifølge Store norske leksikon kommer rundt 30 prosent av norske dagligord fra nedertysk." },
+                { "si": "Det betyr at nesten hvert tredje ord du bruker i hverdagen, kan ha kommet med tyske kjøpmenn." }
+            ]
+        },
+        {
+            "id": "dansk",
+            "kapittel": "Lag 3: Tysk gjennom dansk",
+            "lyd": "rom",
+            "visual": { "type": "LanordGraving", "props": { "modus": "dansk" } },
+            "replikker": [
+                { "si": "Så kom en ny bølge. Med reformasjonen fikk norsk mange tyske lånord." },
+                { "si": "I de første hundreårene av moderne norsk var dansk skriftspråket i Norge." },
+                { "si": "Herre, frue, skute, klok, bruke, begynne og betale er alle lånt fra tysk gjennom dansk." },
+                { "si": "Tenk på hvor ofte du sier begynne eller bruke. Ingen tenker på dem som lånord, men det er de." },
+                { "si": "På 1700-tallet kom det også mange franske ord inn i norsk. Husk: Et språk som virker fint og moderne, er fristende å låne fra.", "uttale": "På syttenhundretallet kom det også mange franske ord inn i norsk. Husk: Et språk som virker fint og moderne, er fristende å låne fra." }
+            ]
+        },
+        {
+            "id": "engelsk",
+            "kapittel": "Lag 4: Engelsk",
+            "lyd": "stille",
+            "visual": { "type": "LanordVeier", "props": { "modus": "flom" } },
+            "replikker": [
+                { "si": "Det øverste laget er det du kjenner best. I nyere tid har engelsk påvirket norsk svært mye." },
+                { "si": "Det gjelder særlig importord som backstage, server og tanks. Et importord er et nyere lånord som ofte fortsatt har engelsk skrivemåte." },
+                { "si": "Hvorfor kommer så mange engelske ord nå? Svaret er det samme som før: Ordene følger med tingene." },
+                { "si": "Datamaskiner, internett, musikk, filmer, spill og sosiale medier kommer ofte fra engelskspråklige land. Da tar vi gjerne ordet med på kjøpet." },
+                { "si": "Norsk har også fått en del svenske ord i nyere tid." }
+            ]
+        },
+        {
+            "id": "veier",
+            "kapittel": "Tre veier",
+            "visual": { "type": "LanordVeier", "props": { "modus": "veier" } },
+            "replikker": [
+                { "si": "Hva skal vi gjøre med alle de nye engelske ordene? Språkforskeren Gisle Andersen beskriver tre måter norsk kan møte dem på." },
+                { "si": "Den første er å beholde ordet slik det er. Det passer ofte for ord om musikk og kultur, som house og dance." },
+                { "si": "Den andre er å gi ordet norsk skrivemåte, slik at det skrives slik det uttales. Da blir guide til gaid, og service til sørvis." },
+                { "si": "Den tredje er å bytte ut det engelske ordet med et norsk ord." }
+            ]
+        },
+        {
+            "id": "avloser",
+            "visual": { "type": "LanordVeier", "props": { "modus": "avloser" } },
+            "replikker": [
+                { "si": "Et norsk ord som kan brukes i stedet for et engelsk ord, kalles et avløserord. Språkrådet, som gir råd om norsk språk, har en egen liste med slike ord." },
+                { "si": "E-mail blir e-post. Hashtag blir emneknagg. Streaming blir strømming.", "uttale": "I-meil blir e-post. Hæsjtægg blir emneknagg. Strímming blir strømming." },
+                { "si": "Influencer blir påvirker, deadline blir frist, og selfie blir selvknips." },
+                { "si": "Noen avløserord, som e-post og lenke, kjenner du sikkert allerede. Andre, som selvknips, har ikke blitt like populære." },
+                { "si": "Lista er bare forslag, og ingen er pålagt å bruke ordene. Andersen peker også på at et norsk ord ikke alltid betyr helt det samme som det engelske." }
+            ]
+        },
+        {
+            "id": "oversatt",
+            "kapittel": "Lån som er oversatt",
+            "visual": { "type": "LanordVeier", "props": { "modus": "oversatt" } },
+            "replikker": [
+                { "si": "Det finnes også en mer skjult type lån. Noen ganger låner vi ikke selve ordet, men oversetter det bit for bit. Det kalles et oversettelseslån." },
+                { "si": "Samvittighet er et slikt lån. Det kom gjennom dansk, som en oversettelse av det latinske ordet conscientia." },
+                { "si": "Og conscientia var selv en oversettelse av et gresk ord." },
+                { "si": "Et nyere eksempel er bjørnemarked, oversatt fra engelsk bear market. Det betyr en tid da prisene på aksjer faller." }
+            ]
+        },
+        {
+            "id": "purisme",
+            "kapittel": "Språk som sier nei takk",
+            "visual": { "type": "LanordKart", "props": { "modus": "purisme" } },
+            "replikker": [
+                { "si": "Ikke alle språk låner like mye. Noen land har bestemt at de heller vil lage nye ord av sine egne ord." },
+                { "si": "Det kalles purisme, eller språkrensing." },
+                { "si": "Islandsk, finsk og ungarsk har ganske få lånord av denne grunnen. Men også disse språkene har mange oversettelseslån." },
+                { "si": "Norsk har gått en annen vei. Vi har lånt mye og ofte, og det har gjort språket rikt på ord." }
+            ]
+        },
+        {
+            "id": "debatt",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Hvor mange engelske ord tåler norsk?",
+                    "punkter": [
+                        { "ikon": "snakk", "tittel": "Noen mener:", "tekst": "for mange engelske ord kan gjøre norsk fattigere", "fraBeat": 1 },
+                        { "ikon": "skjold", "tittel": "Andre mener:", "tekst": "lån har alltid vært en del av språket", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Samtidig finnes det en debatt om hvor mange engelske ord norsk tåler." },
+                { "si": "Noen mener at for mange engelske ord kan gjøre norsk fattigere, særlig på områder der vi slutter å bruke norske ord helt." },
+                { "si": "Andre mener at lån alltid har vært en del av språket, og at norsk har overlevd både nedertysk og dansk." }
+            ]
+        },
+        {
+            "id": "historiebok",
+            "kapittel": "Språket er en historiebok",
+            "lyd": "vind",
+            "visual": { "type": "LanordGraving", "props": { "modus": "historiebok" } },
+            "replikker": [
+                { "si": "Når du ser på lånordene i norsk, ser du egentlig Norges historie." },
+                { "si": "Kirkeordene forteller om kristningen. De nedertyske ordene forteller om handel med hanseatene." },
+                { "si": "De danske og tyske ordene forteller om tiden da dansk var skriftspråket i Norge." },
+                { "si": "Og de engelske ordene forteller om verden vi lever i nå, med internett og global kultur." },
+                { "si": "Neste gang du sier: Jeg må begynne på leksene før fristen, kan du tenke på at du bruker ord fra flere hundre år med kontakt mellom folk." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Kirken, handelen, dansk og engelsk.", "fraBeat": 0 },
+                        { "tekst": "Hvert ord har en reise bak seg.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ordene følger med tingene", "fraBeat": 1 },
+                        { "tekst": "og med kontakten mellom folk.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Språket har aldri stått stille.", "fraBeat": 2 },
+                        { "tekst": "Det kommer heller ikke til å gjøre det.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Kirken, handelen, dansk og engelsk. Hvert ord du sier, har en reise bak seg." },
+                { "si": "Ordene følger med tingene og med kontakten mellom folk." },
+                { "si": "Språket har aldri stått stille. Det kommer heller ikke til å gjøre det." }
+            ]
+        }
+    ]
+}
