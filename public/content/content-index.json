@@ -1,5 +1,5 @@
 {
-  "buildId": 217561067829555,
+  "buildId": 277951692281918,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -3952,6 +3952,9 @@
     "germanske-sprak": [
       "content/norsk/sprakhistorie/germanske-sprak.json"
     ],
+    "lanord": [
+      "content/norsk/sprakhistorie/lanord.json"
+    ],
     "norront": [
       "content/norsk/sprakhistorie/norront.json"
     ],
@@ -6346,6 +6349,7 @@
     "norsk/skrivehjelp/skriv-bedre-historier": "content/norsk/skrivehjelp/skriv-bedre-historier.json",
     "norsk/sprakhistorie/bokmal-og-nynorsk": "content/norsk/sprakhistorie/bokmal-og-nynorsk.json",
     "norsk/sprakhistorie/germanske-sprak": "content/norsk/sprakhistorie/germanske-sprak.json",
+    "norsk/sprakhistorie/lanord": "content/norsk/sprakhistorie/lanord.json",
     "norsk/sprakhistorie/norront": "content/norsk/sprakhistorie/norront.json",
     "norsk/tekstsjangre/tekstsjangre": "content/norsk/tekstsjangre/artikkel.json",
     "norsk/tekstsjangre/debattinnlegg": "content/norsk/tekstsjangre/debattinnlegg.json",
