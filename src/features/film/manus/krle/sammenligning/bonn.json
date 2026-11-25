@@ -1,0 +1,279 @@
+{
+  "id": "bonn",
+  "tittel": "Bønn: Å snakke med det hellige",
+  "kilde": "/krle/sammenligning/bonn",
+  "bilde": "/images/sammenligning/bonn-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-25", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "morgen",
+      "kapittel": "To mennesker",
+      "lyd": "vind",
+      "visual": { "type": "BonnHimmel", "props": { "modus": "aapning" } },
+      "replikker": [
+        { "si": "Tenk deg at det er tidlig morgen, og at sola så vidt er på vei opp." },
+        { "si": "Fem ganger i døgnet snur muslimer over hele verden seg mot det samme punktet på jorda." },
+        { "si": "Punktet er Kaba, i byen Mekka." },
+        { "si": "Men en buddhist som setter seg ned for å meditere, snur seg ikke mot noe." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Bønn",
+          "undertittel": "Å snakke med det hellige",
+          "bilde": "/images/sammenligning/bonn-hero.webp",
+          "sporsmal": { "tekst": "Ber alle på samme måte?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Bønn er et fellesnavn på alle måtene mennesker snakker med høyere makter på." },
+        { "si": "Folk ber i nesten alle kulturer. Utenfra ser det ganske likt ut: noen blir stille, lukker øynene og sier noe." },
+        { "si": "Men ber alle på samme måte? Nei. Nesten ingen gjør det likt." }
+      ]
+    },
+    {
+      "id": "ringer",
+      "kapittel": "Fire spørsmål",
+      "visual": { "type": "BonnRinger", "props": { "modus": "intro" } },
+      "replikker": [
+        { "si": "Fire spørsmål viser forskjellene." },
+        { "si": "Retning: Hvilken vei vender du deg når du ber?" },
+        { "si": "Tid: Når på døgnet skjer det?" },
+        { "si": "Kropp: Hva gjør kroppen imens?" },
+        { "si": "Ord: Hvem sine ord blir sagt? Dine egne, eller faste ord som alle sier likt?" },
+        { "si": "Spørsmålene handler ikke om hva folk tror, men om hva de gjør. Vi stiller dem til ni tradisjoner." }
+      ]
+    },
+    {
+      "id": "sol",
+      "kapittel": "Retning og klokke",
+      "lyd": "vind",
+      "visual": { "type": "BonnHimmel", "props": { "modus": "sol" } },
+      "replikker": [
+        { "si": "Først jødedom, kristendom og islam. Alle tre regner Abraham som stamfar og ber til én Gud." },
+        { "si": "Islam har de strengeste reglene. Bønnen heter salah, og den bes fem ganger i døgnet." },
+        { "si": "Tidene står ikke i en timeplan, men på himmelen." },
+        { "si": "Daggry, midt på dagen, ettermiddag, solnedgang og natt." },
+        { "si": "Derfor flytter tidene seg gjennom året. De følger sola, ikke klokka." }
+      ]
+    },
+    {
+      "id": "kropp",
+      "visual": { "type": "BonnHimmel", "props": { "modus": "kropp" } },
+      "replikker": [
+        { "si": "Før bønnen vasker du deg. Det kalles wudu." },
+        { "si": "Så står du, bøyer deg og kneler med pannen mot bakken." },
+        { "si": "Ordene er faste vers fra Koranen, på arabisk. I tillegg kan du be fritt med egne ord. Det kalles dua." },
+        { "si": "Alle vender seg mot Kaba. Retningen heter qibla, og den brukes også når døde blir gravlagt." }
+      ]
+    },
+    {
+      "id": "jerusalem",
+      "lyd": "stille",
+      "visual": { "type": "BonnKart", "props": { "modus": "abraham" } },
+      "replikker": [
+        { "si": "Jødedommen har tre faste bønner: morgen, ettermiddag og kveld." },
+        { "si": "Du står, med hodet dekket, og vender ansiktet mot Jerusalem." },
+        { "si": "Fra Norge ligger Jerusalem og Mekka nesten samme vei: mot sørøst." },
+        { "si": "Men stedene ligger langt fra hverandre, og de betyr helt ulike ting." }
+      ]
+    },
+    {
+      "id": "minjan",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "person",
+          "steg": [
+            {
+              "fraBeat": 0,
+              "total": 10,
+              "farget": 1,
+              "farge": "#2563eb",
+              "restFarge": "#cbd5e1",
+              "tittel": "Én som ber alene",
+              "fargeEtikett": "ber alene",
+              "restEtikett": "plasser tomme"
+            },
+            {
+              "fraBeat": 1,
+              "total": 10,
+              "farget": 10,
+              "farge": "#2563eb",
+              "tittel": "Gudstjeneste: ti voksne",
+              "fargeEtikett": "voksne, etter tradisjonen ti menn"
+            },
+            {
+              "fraBeat": 2,
+              "total": 10,
+              "farget": 9,
+              "farge": "#1d4ed8",
+              "restFarge": "#cbd5e1",
+              "tittel": "Minjan: ni er ikke nok",
+              "fargeEtikett": "voksne",
+              "restEtikett": "plass tom"
+            },
+            {
+              "fraBeat": 3,
+              "total": 10,
+              "farget": 10,
+              "farge": "#7c3aed",
+              "tittel": "Hvem teller med? Jøder er uenige",
+              "fargeEtikett": "voksne, men hvem?",
+              "visTall": false
+            }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Men jødedommen har en regel ingen av de andre har." },
+        { "si": "Skal en samling telle som ordentlig gudstjeneste, må ti voksne være til stede. Etter tradisjonen ti menn." },
+        { "si": "De ti kalles en minjan. Du kan altså be alene, men du kan ikke være mange alene." },
+        { "si": "Hvem som får telle med, er jøder uenige om. I reformjødiske menigheter teller kvinner like mye som menn. Konservative menigheter bestemmer selv." }
+      ]
+    },
+    {
+      "id": "kristendom",
+      "visual": { "type": "BonnKlokke", "props": { "modus": "tider" } },
+      "replikker": [
+        { "si": "Kristendommen har de løseste reglene: ingen retning å vende seg mot, og ingen tider som gjelder alle." },
+        { "si": "Fadervår er den ene bønnen alle kristne kirker har felles. Ellers ber folk med sine egne ord." },
+        { "si": "Men noen steder finnes faste tider. Den katolske kirken har åtte tidebønner i døgnet, altså bønner til bestemte tider." },
+        { "si": "Prester, munker og nonner må be dem hver dag." },
+        { "si": "Muslimer gjør det heller ikke likt overalt. Sjiamuslimer ber like mange bønner, men samler dem på tre tidspunkter." }
+      ]
+    },
+    {
+      "id": "puja",
+      "kapittel": "Hender, sang og den som ber",
+      "lyd": "rom",
+      "visual": { "type": "BonnAlter", "props": { "modus": "puja" } },
+      "replikker": [
+        { "si": "I hinduismen ber du med hendene. Det kalles puja, og det betyr å dyrke en gud." },
+        { "si": "Du gir mat og drikke, lys og røkelse. Du synger, vasker gudebildet, smører det med olje og pynter det." },
+        { "si": "Tanken er at guden kommer på besøk og skal behandles som en æresgjest." },
+        { "si": "De fleste hinduer har et lite alter hjemme. Der gjør familien dette selv, uten prest og uten fast klokkeslett." },
+        { "si": "Hellige ord som skal gjentas, kalt mantraer, hører også med. Men ordene kommer sammen med handlingene, ikke i stedet for dem." }
+      ]
+    },
+    {
+      "id": "sikh",
+      "visual": { "type": "BonnKlokke", "props": { "modus": "sikh" } },
+      "replikker": [
+        { "si": "Sikhene legger vekten et helt tredje sted. Det viktigste er nam simran: å gjenta og huske Guds navn." },
+        { "si": "Dagen rammes inn av tre faste bønner. En før daggry, en ved solnedgang og en rett før leggetid." },
+        { "si": "I forsamlingshuset, som heter gurdwara, synger musikere tekstene i stedet for å lese dem opp." },
+        { "si": "Det er fordi den hellige boka Guru Granth Sahib er ordnet etter melodier, ikke etter tema. Alle sitter på det samme gulvet, med noe på hodet." }
+      ]
+    },
+    {
+      "id": "buddhisme",
+      "lyd": "vind",
+      "visual": { "type": "BonnAlter", "props": { "modus": "flagg" } },
+      "replikker": [
+        { "si": "Buddhismen snur hele greia på hodet. Her finnes ingen gud som har skapt verden." },
+        { "si": "Det du gjør, virker først og fremst på deg selv, og blir ikke sendt til noen. Forskere sier det er vanskelig å se hvor bønn slutter og meditasjon begynner." },
+        { "si": "Samtidig finnes det noen å be til. Noen buddhister roper på buddhaen Amitabha. Mange ber om hjelp fra bodhisattvaer, skikkelser som har lovet å hjelpe andre videre." },
+        { "si": "Ordene kan gjentas utrolig mange ganger. Tibetanske bønnekjeder holder styr på tellingen, helt opp i flere hundre tusen." },
+        { "si": "Og når flagg med bønnetekster blafrer i vinden, regnes bønnene som sagt fram." }
+      ]
+    },
+    {
+      "id": "bahai",
+      "kapittel": "Hvem bestemmer formen?",
+      "lyd": "stille",
+      "visual": { "type": "BonnKart", "props": { "modus": "bahai" } },
+      "replikker": [
+        {
+          "si": "Til slutt tre nyere bevegelser: bahá'í, mormonismen og Jehovas vitner.",
+          "uttale": "Til slutt tre nyere bevegelser: baha-i, mormonismen og Jehovas vitner."
+        },
+        {
+          "si": "De kommer fra hvert sitt sted. Bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen.",
+          "uttale": "De kommer fra hvert sitt sted. Baha-i vokste fram fra sjia-islam, de to andre fra kristendommen."
+        },
+        {
+          "si": "Bahá'í har ingen prester. Grunnleggeren Bahá'u'lláh gav tre faste bønner. Hver dag må du be én av dem, og du velger selv hvilken.",
+          "uttale": "Baha-i har ingen prester. Grunnleggeren Baha-ulla gav tre faste bønner. Hver dag må du be én av dem, og du velger selv hvilken."
+        },
+        {
+          "si": "Først vasker du hender og ansikt. Så vender du deg mot graven hans ved Bahjí, nær byen Akko.",
+          "uttale": "Først vasker du hender og ansikt. Så vender du deg mot graven hans ved Bahdsji, nær byen Akko."
+        },
+        { "si": "Fra Norge peker også den veien mot sørøst, nesten som Mekka og Jerusalem." }
+      ]
+    },
+    {
+      "id": "nyere",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Hvem bestemmer formen?",
+          "punkter": [
+            { "ikon": "las", "tittel": "Bahá'í: ordene", "tekst": "faste ord, de faste bønnene bes alene", "fraBeat": 0 },
+            { "ikon": "snakk", "tittel": "Mormonismen: rekkefølgen", "tekst": "fire faste deler, ordene er dine egne", "fraBeat": 1 },
+            { "ikon": "stjerne", "tittel": "Jehovas vitner: hvem", "tekst": "bare til Gud, Jehova, i Jesu navn", "fraBeat": 2 },
+            { "ikon": "vind", "tittel": "Alle tre: fri bønn i tillegg", "tekst": "egne ord ved siden av det du må", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        {
+          "si": "Hos bahá'í er det ordene som ligger fast. De faste bønnene ber du alene, bortsett fra bønnen for de døde.",
+          "uttale": "Hos baha-i er det ordene som ligger fast. De faste bønnene ber du alene, bortsett fra bønnen for de døde."
+        },
+        { "si": "Mormonismen bestemmer rekkefølgen. Du snakker til din himmelske Fader, takker, ber om det du trenger og avslutter i Jesu Kristi navn. Ordene velger du selv." },
+        { "si": "Jehovas vitner styrer hvem bønnen sendes til. Den går til Gud, som de kaller Jehova, i Jesu navn. Aldri til Jesus selv, til Maria eller til helgener." },
+        { "si": "Kroppen har Jehovas vitner ingen regler for. Og i alle tre kan du be fritt i tillegg til det du må." }
+      ]
+    },
+    {
+      "id": "monster",
+      "kapittel": "Mønsteret",
+      "visual": { "type": "BonnRinger", "props": { "modus": "alle" } },
+      "replikker": [
+        { "si": "Sett ringene for alle ni side om side. Da ser du et mønster." },
+        { "si": "Ingen religion har bare strenge regler, og ingen har bare frie." },
+        { "si": "Ringene kan strammes hver for seg. De fleste strammer noen og slipper andre løs." },
+        { "si": "Retning binder deg til et sted. Tid binder deg til de andre. Fem, tre eller én fast bønn i døgnet betyr at mange gjør det samme samtidig." },
+        { "si": "Kroppen gjør troen synlig. Faste ord kan alle si sammen. Egne ord kan bare du si." }
+      ]
+    },
+    {
+      "id": "innover",
+      "kapittel": "Nåla som mangler",
+      "lyd": "vind",
+      "visual": { "type": "BonnHimmel", "props": { "modus": "innover" } },
+      "replikker": [
+        { "si": "Tenk deg de to fra starten igjen." },
+        { "si": "Hos den ene peker nåla mot Mekka. Fra Norge er det mot sørøst." },
+        { "si": "Hos buddhisten mangler nåla helt. Det er ikke fordi vi vet for lite." },
+        { "si": "Det er fordi handlingen virker innover i den som ber. Da finnes det ingen vei å vende seg mot." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "lyd": "stille",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Retning, tid, kropp og ord.", "fraBeat": 0 },
+            { "tekst": "Strenge og frie regler finnes side om side i alle ni.", "fraBeat": 1 },
+            { "tekst": "Ingen av delene gjør en bønn bedre eller mer ekte enn en annen.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Retning, tid, kropp og ord. Hver tradisjon stiller inn ringene på sin egen måte." },
+        { "si": "Strenge og frie regler finnes side om side i hver eneste av de ni." },
+        { "si": "Ingen av delene gjør en bønn bedre eller mer ekte enn en annen. Uansett hvor mange regler formen har, er det et menneske som ber." }
+      ]
+    }
+  ]
+}
