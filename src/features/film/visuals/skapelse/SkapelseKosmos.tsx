@@ -266,6 +266,7 @@ function Ring({ beat, tid }: { beat: number; tid: React.RefObject<number> }) {
     const verdener = useRef<THREE.Group>(null);
     const linje = useRef<THREE.Group>(null);
     const sjel = useRef<THREE.Mesh>(null);
+    const spor = useRef<THREE.Mesh>(null);
     const vinkel = useRef(0);
     useFrame((_, rawDt) => {
         const dt = Math.max(rawDt, 0.001);
@@ -293,6 +294,14 @@ function Ring({ beat, tid }: { beat: number; tid: React.RefObject<number> }) {
         if (sj) {
             sj.visible = beat >= 4;
             sj.position.set(8, 0.6 + Math.min(t, 6) * 1.3, 0);
+        }
+        // Sporet viser veien ut: fra ringen og opp til lyset.
+        const sp = spor.current;
+        if (sp) {
+            const h = Math.max(0.01, Math.min(t, 6) * 1.3);
+            sp.visible = beat >= 4;
+            sp.scale.set(1, h, 1);
+            sp.position.set(8, 0.6 + h / 2, 0);
         }
     });
     return (
@@ -350,6 +359,15 @@ function Ring({ beat, tid }: { beat: number; tid: React.RefObject<number> }) {
                     <Etikett tekst="start" farge="#2563eb" />
                 </Html>
             </group>
+            {beat === 3 && (
+                <Html position={[0, -1.8, 10]} center>
+                    <Etikett tekst="hvor er starten? ingen" farge="#dc2626" />
+                </Html>
+            )}
+            <mesh ref={spor} position={[8, 0.6, 0]}>
+                <cylinderGeometry args={[0.12, 0.12, 1, 8]} />
+                <meshBasicMaterial color="#fde68a" fog={false} toneMapped={false} />
+            </mesh>
             <mesh ref={sjel}>
                 <sphereGeometry args={[0.8, 16, 12]} />
                 <meshBasicMaterial color="#fde68a" fog={false} toneMapped={false} />
@@ -504,7 +522,7 @@ const TEKSTER: Record<Modus, (string | null)[]> = {
         'Big Bang: startet tett og varmt',
         'Georges Lemaître: fysiker og prest',
         'Forteller hvordan, ikke hvorfor',
-        'Mennesket må lage mening selv',
+        'Humanister: mennesket lager mening selv',
     ],
 };
 
@@ -517,7 +535,8 @@ export function SkapelseKosmos({ beat, playing, props }: VisualProps<{ modus?: M
     const tekst = TEKSTER[modus][Math.min(beat, TEKSTER[modus].length - 1)];
     return (
         <div className="absolute inset-0">
-            <Canvas resize={{ offsetSize: true }}
+            <Canvas
+                resize={{ offsetSize: true }}
                 dpr={dpr}
                 camera={{ fov: 45, near: 0.3, far: 600, position: [0, 4, 26] }}
                 gl={{ antialias: true }}
@@ -571,7 +590,7 @@ export function SkapelseKosmos({ beat, playing, props }: VisualProps<{ modus?: M
                         exit={{ opacity: 0 }}
                         className="absolute bottom-[10%] left-1/2 -translate-x-1/2"
                     >
-                        <Brikke tekst="Mening: lages av oss selv" farge="#4f46e5" />
+                        <Brikke tekst="Humanister: mening lages av oss" farge="#4f46e5" />
                     </motion.div>
                 )}
             </AnimatePresence>

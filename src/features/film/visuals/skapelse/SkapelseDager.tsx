@@ -44,16 +44,21 @@ const FARGER = ['#f59e0b', '#38bdf8', '#22c55e'];
 export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | 'islam' }>) {
     const islam = props.modus === 'islam';
     const visDager = islam || beat >= 1;
-    const visPar = islam || beat >= 2;
+    // Mønsteret med tre par står bare i Bibelen. Islam-scenen viser seks vanlige dager.
+    const visPar = !islam && beat >= 2;
     const visSju = islam || beat >= 3;
-    const hellig = !islam && beat >= 4;
+    const hellig = !islam && beat === 4;
     const strøket = islam && beat >= 3;
+    // På beaten om mennesket viker rutene for kortet, så kortet ikke dekker dagene.
+    const menneske = (!islam && beat >= 5) || (islam && beat >= 4);
+    const sitat = islam && beat === 2;
+    const skjulRuter = menneske || sitat;
 
     const tekst = islam
         ? [
               'Islam: også seks dager',
               'Bibelen: Gud hviler. Koranen: nei.',
-              '«ingen tretthet rørte Oss» (Koranen 50,38)',
+              'Koranen 50,38',
               'Ingen hviledag',
               'Adam formet av leire: Guds forvalter',
           ][Math.min(beat, 4)]
@@ -143,6 +148,7 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                     </motion.g>
                 )}
                 {visDager &&
+                    !skjulRuter &&
                     [1, 2, 3, 4, 5, 6].map((d) => {
                         const p = dagPos(d);
                         const par = (d - 1) % 3;
@@ -160,8 +166,8 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                                     height={BH}
                                     rx={24}
                                     fill="white"
-                                    stroke={visPar ? FARGER[par] : '#94a3b8'}
-                                    strokeWidth={visPar ? 8 : 4}
+                                    stroke={visPar ? FARGER[par] : islam ? '#10b981' : '#94a3b8'}
+                                    strokeWidth={visPar || islam ? 8 : 4}
                                     strokeDasharray={visPar && d <= 3 ? '18 12' : undefined}
                                 />
                                 <text
@@ -192,6 +198,7 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                         );
                     })}
                 {visPar &&
+                    !menneske &&
                     [0, 1, 2].map((k) => {
                         const x = X0 + k * (BX + 50) + BX / 2;
                         return (
@@ -206,7 +213,7 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                             />
                         );
                     })}
-                {visPar && (
+                {visPar && !menneske && (
                     <motion.text
                         x={X0 + 465}
                         y={Y2 + BH + 70}
@@ -218,6 +225,21 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                         animate={{ opacity: 1 }}
                     >
                         dag 4-6 fyller rommene fra dag 1-3
+                    </motion.text>
+                )}
+                {/* Islam: de seks dagene er bare seks dager, uten par og uten tomme rom */}
+                {visDager && islam && !skjulRuter && (
+                    <motion.text
+                        x={X0 + 465}
+                        y={Y2 + BH + 70}
+                        textAnchor="middle"
+                        fontSize={34}
+                        fontWeight={800}
+                        fill="#047857"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                    >
+                        seks dager: himlene og jorden
                     </motion.text>
                 )}
                 {visSju && (
@@ -244,7 +266,7 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                         </text>
                         <text
                             x={1300}
-                            y={Y1 + 300}
+                            y={Y1 + (strøket ? 220 : 300)}
                             textAnchor="middle"
                             fontSize={44}
                             fontWeight={800}
@@ -255,7 +277,7 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                         {strøket && (
                             <text
                                 x={1300}
-                                y={Y1 + 460}
+                                y={Y1 + 480}
                                 textAnchor="middle"
                                 fontSize={36}
                                 fontWeight={900}
@@ -274,12 +296,14 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                                 animate={{ r: 60 }}
                             />
                         )}
+                        {/* Rødt kryss under ordet, ikke strek over det (lesbart på projektor) */}
                         {strøket && (
                             <motion.path
-                                d={`M 1190 ${Y1 + 330} L 1410 ${Y1 + 250}`}
+                                d={`M 1255 ${Y1 + 290} L 1345 ${Y1 + 380} M 1345 ${Y1 + 290} L 1255 ${Y1 + 380}`}
                                 stroke="#dc2626"
                                 strokeWidth={18}
                                 strokeLinecap="round"
+                                fill="none"
                                 initial={{ pathLength: 0 }}
                                 animate={{ pathLength: 1 }}
                                 transition={{ duration: 0.6 }}
@@ -289,24 +313,57 @@ export function SkapelseDager({ beat, props }: VisualProps<{ modus?: 'bibel' | '
                 )}
             </svg>
             {/* Mennesket: Guds bilde (kristendom) eller formet av leire (islam) */}
-            <AnimatePresence>
-                {((!islam && beat >= 5) || (islam && beat >= 4)) && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0 }}
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-8 py-6 rounded-3xl bg-white shadow-2xl text-center"
-                    >
-                        <div className="text-6xl">{islam ? '🏺' : '🌍'}</div>
-                        <div className="font-display font-black text-3xl md:text-5xl text-slate-900 mt-2">
-                            {islam ? 'Adam av leire' : 'Skapt i Guds bilde'}
-                        </div>
-                        <div className="font-bold text-xl md:text-3xl text-slate-500 mt-1">
-                            {islam ? 'Guds forvalter på jorda' : 'ansvar for jorda'}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            {/* Kortet står der rutene var: venstre del av bildet, Dag 7 blir stående til høyre */}
+            <div
+                className="absolute inset-y-0 left-0 flex items-center justify-center pointer-events-none"
+                style={{ width: '69%', paddingTop: '6%' }}
+            >
+                <AnimatePresence>
+                    {sitat && (
+                        <motion.div
+                            key="sitat"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="px-10 py-8 rounded-3xl bg-white shadow-2xl text-center"
+                            style={{ maxWidth: '88%' }}
+                        >
+                            <div className="font-display font-black text-3xl md:text-5xl text-emerald-800 leading-tight">
+                                «og ingen tretthet rørte Oss»
+                            </div>
+                            <div className="font-bold text-xl md:text-3xl text-slate-500 mt-3">
+                                Koranen om de seks dagene
+                            </div>
+                        </motion.div>
+                    )}
+                    {menneske && (
+                        <motion.div
+                            key="menneske"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0 }}
+                            className="px-10 py-8 rounded-3xl bg-white shadow-2xl text-center"
+                        >
+                            <div
+                                className="mx-auto flex items-center justify-center rounded-full text-7xl"
+                                style={{
+                                    width: 120,
+                                    height: 120,
+                                    background: islam ? '#d6a46a' : '#e0e7ff',
+                                }}
+                            >
+                                🧍
+                            </div>
+                            <div className="font-display font-black text-3xl md:text-5xl text-slate-900 mt-2">
+                                {islam ? 'Adam av leire' : 'Skapt i Guds bilde'}
+                            </div>
+                            <div className="font-bold text-xl md:text-3xl text-slate-500 mt-1">
+                                {islam ? 'Guds forvalter på jorda' : 'ansvar for jorda'}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
             <AnimatePresence mode="wait">
                 <motion.div
                     key={tekst}
