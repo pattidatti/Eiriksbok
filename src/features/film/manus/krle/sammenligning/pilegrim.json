@@ -1,0 +1,213 @@
+{
+    "id": "pilegrim",
+    "tittel": "Pilegrim: Reisen til det hellige",
+    "kilde": "/krle/sammenligning/pilegrim",
+    "bilde": "/images/sammenligning/pilegrim-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-25", "viser": 4, "lesbart": 4, "variasjon": 5, "forstaelig": 4, "tro": 4, "sum": 21 },
+    "scener": [
+        {
+            "id": "mekka",
+            "lyd": "vind",
+            "kapittel": "To reiser",
+            "visual": { "type": "PilegrimMekka", "props": { "modus": "aapning" } },
+            "replikker": [
+                { "si": "Tenk deg at du står i Mekka, i pilegrimsmåneden." },
+                { "si": "Rundt deg er det rundt to millioner mennesker." },
+                { "si": "Alle går rundt den samme firkantede steinbygningen." },
+                { "si": "For dem som er i stand til det, er denne reisen en plikt." }
+            ]
+        },
+        {
+            "id": "leden",
+            "visual": { "type": "PilegrimLeden", "props": { "modus": "intro" } },
+            "replikker": [
+                { "si": "Den samme sommeren går andre mennesker gjennom Gudbrandsdalen, på vei mot Trondheim." },
+                { "si": "De går rundt tjue kilometer om dagen, i opptil en måned." },
+                { "si": "Men ingen har bedt dem om å gjøre det." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "lyd": "stille",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "Pilegrim",
+                    "undertittel": "Reisen til det hellige",
+                    "bilde": "/images/sammenligning/pilegrim-hero.webp",
+                    "sporsmal": { "tekst": "Må du reise? Og hvor går reisen?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Begge er pilegrimer." },
+                { "si": "En pilegrim er et menneske som reiser til et sted som regnes som hellig, av religiøse grunner. Reisen kalles også en valfart." },
+                { "si": "I denne filmen stiller vi ni tradisjoner de samme spørsmålene. Må du reise? Og hvor går reisen?" }
+            ]
+        },
+        {
+            "id": "trinn",
+            "kapittel": "Hvorfor reise?",
+            "visual": { "type": "PilegrimSteder", "props": { "modus": "trinn" } },
+            "replikker": [
+                { "si": "Hvorfor drar folk? Noen vil takke eller har gitt et løfte. Andre vil få del i velsignelsen stedet regnes for å ha." },
+                { "si": "Religionsforskere deler reisen inn i tre trinn. Først bryter du opp fra hverdagen." },
+                { "si": "Så er du underveis. Da regnes du for å være i noe hellig." },
+                { "si": "Til slutt kommer du hjem til hverdagen igjen." },
+                { "si": "Spørsmålet er altså ikke bare hvor målet ligger, men hva reisen gjør med den som drar." }
+            ]
+        },
+        {
+            "id": "kart",
+            "visual": { "type": "PilegrimKart", "props": { "modus": "alle" } },
+            "replikker": [
+                { "si": "Målene ligger spredt fra kysten av Atlanterhavet til elva Ganges i India." },
+                { "si": "Noen ligger i Europa, som Santiago, Roma og Nidaros." },
+                { "si": "Noen ligger i Midtøsten, som Mekka, Jerusalem og Haifa." },
+                { "si": "Og noen ligger i India, som Varanasi, Bodh Gaya og Amritsar." },
+                { "si": "Folk reiser til steder der de mener det er kortere avstand til det hellige." }
+            ]
+        },
+        {
+            "id": "hajj",
+            "lyd": "vind",
+            "kapittel": "Plikten",
+            "visual": { "type": "PilegrimMekka", "props": { "modus": "hajj" } },
+            "replikker": [
+                { "si": "I islam er reisen til Mekka en plikt. Den heter hajj, og den er en av islams fem søyler." },
+                { "si": "Alle voksne muslimer som har mulighet og råd til det, skal reise minst én gang i livet." },
+                { "si": "Midt i Mekka står Kaba. Den er en steinbygning, tolv meter lang, ti meter bred og femten meter høy, dekket av et svart teppe." },
+                { "si": "Pilegrimene går sju runder rundt Kaba. Det heter tawaf." },
+                { "si": "Så går de strekningen mellom to små hauger, al-Safa og al-Marwa. Den er 385 meter lang." }
+            ]
+        },
+        {
+            "id": "arafat",
+            "visual": { "type": "PilegrimMekka", "props": { "modus": "arafat" } },
+            "replikker": [
+                { "si": "Men den viktigste delen av hajj er noe helt annet." },
+                { "si": "På den niende dagen står alle sammen på Arafat-sletten, fra middag til solnedgang." },
+                { "si": "Etterpå kaster de stein mot tre søyler ved Mina, og det ofres et dyr." },
+                { "si": "Den lille pilegrimsferden heter umra. Den kan gjøres når som helst på året, og den er ikke en av de fem søylene." },
+                { "si": "Siden midten av 600-tallet har bare muslimer fått komme inn i Mekka." }
+            ]
+        },
+        {
+            "id": "tempelet",
+            "lyd": "stille",
+            "kapittel": "Tempelet og gravene",
+            "visual": { "type": "PilegrimSteder", "props": { "modus": "tempel" } },
+            "replikker": [
+                { "si": "I jødedommen gikk reisen til ett bestemt bygg: tempelet i Jerusalem." },
+                { "si": "På høytider som sukkot dro menn opp til tempelet for å ofre." },
+                { "si": "I år 70 stormet romerne tempelet. Det brant, og valfarten dit tok slutt." },
+                { "si": "Igjen står Vestmuren, en del av muren rundt tempelplassen. I dag er den jødedommens helligste sted å be." },
+                { "si": "I dag reiser jøder blant annet til Jerusalem og til gravene til lærde i Galilea. Ved én av dem, i Meron, har over 100 000 samlet seg hvert år siden 1500-tallet." }
+            ]
+        },
+        {
+            "id": "europa",
+            "visual": { "type": "PilegrimKart", "props": { "modus": "europa" } },
+            "replikker": [
+                { "si": "Kristendommen har aldri hatt noen pilegrimsplikt." },
+                { "si": "Likevel var Europa i middelalderen fullt av pilegrimsveier. Folk dro til Jerusalem og Betlehem, og til Peters grav i Roma." },
+                { "si": "De dro til Jakobs grav i Santiago, og til Thomas Beckets grav i Canterbury." },
+                { "si": "Nordboere dro særlig til Olav den helliges grav i Nidaros, til Røldal stavkirke og til Odense." },
+                { "si": "Senere kom stedene knyttet til jomfru Maria: Lourdes i 1858, Fátima i 1917 og Medjugorje i 1981." }
+            ]
+        },
+        {
+            "id": "nidaros",
+            "kapittel": "Å gå",
+            "visual": { "type": "PilegrimLeden", "props": { "modus": "nidaros" } },
+            "replikker": [
+                { "si": "Så kom reformasjonen, den store endringen i kirken. Den satte en stopper for valfarten til helgenene her hjemme." },
+                { "si": "I Nidarosdomen var det 28 altere fra middelalderen. 26 av dem ble fjernet." },
+                { "si": "Men i dag går mange igjen. Gudbrandsdalsleden fra Oslo til Trondheim er 643 kilometer." },
+                { "si": "Det kan ta opptil 32 dager å gå hele veien." },
+                { "si": "Her er det gåingen som er poenget. Rundt Kaba er det motsatt: Der er det handlingene på selve stedet som er hajj." }
+            ]
+        },
+        {
+            "id": "ganges",
+            "lyd": "vind",
+            "kapittel": "Elva, treet og dammen",
+            "visual": { "type": "PilegrimSteder", "props": { "modus": "ganges" } },
+            "replikker": [
+                { "si": "I hinduismen kan målet være en elv, et fjell, et stort tempel eller en hel by." },
+                { "si": "Mest kjent er Varanasi ved elva Ganges. Langs elva går det trapper ned i vannet, i over åtte kilometer. De kalles ghater." },
+                { "si": "Gamle tekster fra byen lærte at den som døde her, slapp ut av gjenfødslene. Det kalles moksha." },
+                { "si": "Verdens største folkesamling er også hinduistisk. Kumbh Mela er en badefest som går på omgang mellom fire byer i India." },
+                { "si": "I 2025 var det byen Prayagrajs tur. Flere hundre millioner mennesker kom for å dukke seg tre ganger i elva." }
+            ]
+        },
+        {
+            "id": "india",
+            "lyd": "stille",
+            "visual": { "type": "PilegrimKart", "props": { "modus": "india" } },
+            "replikker": [
+                { "si": "Buddhistene reiser dit Buddha levde. Han ble født i Lumbini." },
+                { "si": "Han fikk klar innsikt under et tre i Bodh Gaya. Det er det viktigste av stedene." },
+                { "si": "Han holdt sin første tale i Sarnath, og døde i Kushinagar." },
+                { "si": "Sikhenes hellige by er Amritsar. Byen ble bygd rundt en dam, og navnet betyr nektardammen." },
+                { "si": "Kjøkkenet i Det gylne tempel gir gratis mat til over 100 000 mennesker hver dag. Men å reise dit er ingen plikt." }
+            ]
+        },
+        {
+            "id": "nyere",
+            "kapittel": "Nyere bevegelser",
+            "visual": { "type": "PilegrimTavla", "props": { "modus": "nyere" } },
+            "replikker": [
+                { "si": "Tre nyere bevegelser svarer helt ulikt. De er også mye mindre enn kristendom og islam, som teller milliarder." },
+                { "si": "Bahá'í-læren har en pilegrimsplikt for dem som er i stand til det. Målet er verdenssenteret i Haifa i Israel. Kvinner er fritatt.", "uttale": "Baha-i-læren har en pilegrimsplikt for dem som er i stand til det. Målet er verdenssenteret i Haifa i Israel. Kvinner er fritatt." },
+                { "si": "Mormonkirken har ingen slik plikt. Men noen ritualer skjer bare i templene. For medlemmer i Norge ligger de nærmeste i Stockholm og København." },
+                { "si": "Jehovas vitner har ingen pilegrimsreise. De regner ingen bygning som hellig i seg selv, og da er det heller ikke noe å reise til." }
+            ]
+        },
+        {
+            "id": "monster",
+            "kapittel": "Mønsteret",
+            "visual": { "type": "PilegrimTavla", "props": { "modus": "alle" } },
+            "replikker": [
+                { "si": "Legg de ni ved siden av hverandre. Det er ikke målene som skiller dem mest. Det er reglene rundt reisen." },
+                { "si": "Bare islam og bahá'í-læren gjør reisen til en plikt. Og begge har unntak.", "uttale": "Bare islam og baha-i-læren gjør reisen til en plikt. Og begge har unntak." },
+                { "si": "Et hellig sted kan være et bygg, en grav, en elv, et tre eller en dam." },
+                { "si": "En tradisjon kan miste målet sitt, slik jødedommen mistet tempelet." },
+                { "si": "Og noen har ingen reise i det hele tatt." }
+            ]
+        },
+        {
+            "id": "idag",
+            "kapittel": "Og de som ikke tror?",
+            "visual": { "type": "PilegrimLeden", "props": { "modus": "idag" } },
+            "replikker": [
+                { "si": "De norske pilegrimsledene er en satsing fra staten. De skal ha røtter i kirken, men være åpne for alle, uansett tro." },
+                { "si": "I 2025 kom 1793 pilegrimer fram til pilegrimsmottaket i Trondheim. Det var 13 prosent flere enn året før." },
+                { "si": "De siste årene har folk fra nesten 40 land gått pilegrimsleder i Norge." },
+                { "si": "Noen er turfolk. Noen er interessert i kultur. Og noen søker en indre reise." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Et bygg, en grav, en elv, et tre, en dam.", "fraBeat": 0 },
+                        { "tekst": "Mange mål. Samme bevegelse.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "For noen en plikt, for andre et fritt valg.", "fraBeat": 1 },
+                        { "tekst": "Noen steder teller målet, andre steder gåingen.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Formen er tusen år gammel.", "fraBeat": 2 },
+                        { "tekst": "Innholdet fyller hver enkelt inn selv.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Et bygg, en grav, en elv, et tre, en dam. Målene er mange, men bevegelsen er den samme." },
+                { "si": "For noen er reisen en plikt, for andre et fritt valg. Noen steder er det å komme fram som teller, andre steder er det selve gåingen." },
+                { "si": "På pilegrimsledene i Norge er formen tusen år gammel. Innholdet fyller hver enkelt inn selv." }
+            ]
+        }
+    ]
+}
