@@ -163,7 +163,7 @@ export function SkapelseSkille({ beat }: VisualProps) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                     >
-                        Det største skillet: linje eller ring
+                        Det største skillet: en start eller ingen start
                     </motion.text>
                 )}
             </svg>

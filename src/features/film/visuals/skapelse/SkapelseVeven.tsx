@@ -76,8 +76,8 @@ const RADER: Rad[] = [
     },
 ];
 
-const X0 = 330;
-const KB = 300;
+const X0 = 300;
+const KB = 318;
 const Y0 = 175;
 const RH = 72;
 
@@ -105,7 +105,7 @@ export function SkapelseVeven({ beat }: VisualProps) {
                         x={X0 + k * KB + KB / 2}
                         y={Y0 - 18}
                         textAnchor="middle"
-                        fontSize={28}
+                        fontSize={30}
                         fontWeight={800}
                         fill="#334155"
                     >
@@ -118,14 +118,14 @@ export function SkapelseVeven({ beat }: VisualProps) {
                     const nyss = beat === r.fraBeat && beat >= 2;
                     const dempet = beat >= 2 && !nyss && vist;
                     return (
-                        <g key={r.navn} opacity={dempet ? 0.8 : 1}>
+                        <g key={r.navn} opacity={dempet ? 0.9 : 1}>
                             <text
                                 x={X0 - 20}
                                 y={y + RH / 2 + 10}
                                 textAnchor="end"
                                 fontSize={32}
                                 fontWeight={800}
-                                fill={vist ? r.farge : '#94a3b8'}
+                                fill={vist ? r.farge : '#475569'}
                             >
                                 {r.navn}
                             </text>
@@ -158,7 +158,7 @@ export function SkapelseVeven({ beat }: VisualProps) {
                                                 x={x + KB / 2}
                                                 y={y + RH / 2 + 9}
                                                 textAnchor="middle"
-                                                fontSize={29}
+                                                fontSize={31}
                                                 fontWeight={700}
                                                 fill="#ffffff"
                                                 initial={{ opacity: 0 }}
@@ -173,7 +173,7 @@ export function SkapelseVeven({ beat }: VisualProps) {
                                                 x={x + KB / 2}
                                                 y={y + RH / 2 + 9}
                                                 textAnchor="middle"
-                                                fontSize={29}
+                                                fontSize={31}
                                                 fontWeight={800}
                                                 fill="#dc2626"
                                                 initial={{ opacity: 0 }}

@@ -37,7 +37,7 @@ export function SkapelsePila({ beat }: VisualProps) {
         '«Har verden vart evig?»',
         'Lignelsen om pila',
         'Mannen vil vite hvem som skjøt',
-        'Det som hjelper: få ut pila',
+        'Buddhister: svaret hjelper ikke',
     ][Math.min(beat, 4)];
     return (
         <div
@@ -171,7 +171,7 @@ export function SkapelsePila({ beat }: VisualProps) {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
-                        className="absolute left-[22%] top-[30%] px-6 py-4 rounded-3xl bg-white shadow-2xl font-display font-black text-3xl md:text-5xl text-slate-800"
+                        className="absolute left-[8%] top-[17%] px-6 py-3 rounded-3xl bg-white shadow-2xl font-display font-black text-3xl md:text-4xl text-slate-800"
                     >
                         Hvem skjøt?
                     </motion.div>
@@ -193,7 +193,7 @@ export function SkapelsePila({ beat }: VisualProps) {
                         key="maal"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="absolute left-1/2 bottom-[6%] -translate-x-1/2 px-6 py-3 rounded-2xl bg-teal-700 text-white font-display font-black text-2xl md:text-4xl shadow-xl whitespace-nowrap"
+                        className="absolute left-1/2 top-[18%] -translate-x-1/2 px-6 py-3 rounded-2xl bg-teal-700 text-white font-display font-black text-2xl md:text-4xl shadow-xl whitespace-nowrap"
                     >
                         Målet: slutt på lidelsen
                     </motion.div>

@@ -4,6 +4,7 @@
     "kilde": "/krle/sammenligning/skapelse",
     "bilde": "/images/sammenligning/skapelse-hero.webp",
     "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-25", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
     "scener": [
         {
             "id": "natt",
@@ -43,7 +44,7 @@
                 { "si": "Forskerne deler skapelsesfortellingene i tre typer." },
                 { "si": "Den første: Gud skaper av ingenting. Det lå ikke noe der fra før." },
                 { "si": "Den andre: Gud skaper av et rot eller et stoff som allerede lå der." },
-                { "si": "Den tredje: Et urvesen, et kjempevesen fra tidenes begynnelse, blir delt opp i biter. Bitene blir til verden." },
+                { "si": "Den tredje: Et urvesen, et gigantisk vesen, blir delt opp i biter. Bitene blir til verden." },
                 { "si": "Du skal møte alle tre i denne filmen." }
             ]
         },
@@ -54,7 +55,7 @@
             "visual": { "type": "SkapelseKosmos", "props": { "modus": "ord" } },
             "replikker": [
                 { "si": "Vi begynner med jødedommen, kristendommen og islam. Sammen kalles de de abrahamittiske religionene, oppkalt etter Abraham, som alle tre ser tilbake på." },
-                { "si": "I begynnelsen er det bare mørke over dypet. Men Gud er der før alt annet." },
+                { "si": "I den jødiske teksten er det bare mørke over dypet. Men Gud er der før alt annet." },
                 { "si": "Gud sier noe, og det blir til. I den jødiske teksten står uttrykket Gud sa hele ti ganger." },
                 { "si": "Alle tre mener at Gud skapte av ingenting, bare ved å si det, tenke det eller ville det." },
                 { "si": "Fagordet er ex nihilo. Det er latin og betyr av ingenting. Gud hadde ikke noe materiale å bygge med." }
@@ -126,7 +127,7 @@
             "visual": { "type": "SkapelseKosmos", "props": { "modus": "ring" } },
             "replikker": [
                 { "si": "Nå reiser vi til India. Her er det formen på tiden som er det store." },
-                { "si": "I de abrahamittiske religionene går tiden som en linje, med en start. I hinduismen går tiden i ring." },
+                { "si": "I de abrahamittiske religionene har verden en start. I hinduismen går tiden i ring." },
                 { "si": "Verden blir til, består og går under. Og så begynner det på nytt." },
                 { "si": "Det finnes ingen første gang. Spør du en hindu hva som skjedde helt i starten, er svaret at det ikke fantes noen start." },
                 { "si": "Målet for mennesket er å slippe ut av kretsløpet. Et kretsløp er noe som går rundt og rundt." }
@@ -151,7 +152,7 @@
                 { "si": "Ifølge tekstene nektet Buddha å svare på om verden har vart evig." },
                 { "si": "Han sammenlignet det med en mann som er truffet av en pil." },
                 { "si": "Mannen krever å få vite hvem som skjøt, før han lar legen ta ut pila." },
-                { "si": "Svaret hjelper ham ikke. Det som hjelper, er å få ut pila. For buddhister er målet å få slutt på lidelsen." }
+                { "si": "Buddhister mener at svaret på det spørsmålet ikke hjelper. Målet er å få slutt på lidelsen." }
             ]
         },
         {
@@ -210,11 +211,11 @@
                 "props": {
                     "setninger": [
                         { "tekst": "Seks dager, ingen dager,", "fraBeat": 0 },
-                        { "tekst": "eller ingen fortelling i det hele tatt.", "fraBeat": 0, "uthevet": true },
-                        { "tekst": "En linje med en start, eller en ring.", "fraBeat": 1 },
+                        { "tekst": "eller spørsmålet står åpent.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "En verden med en start, eller uten.", "fraBeat": 1 },
                         { "tekst": "Det avgjør hva mennesket er til for.", "fraBeat": 1, "uthevet": true },
-                        { "tekst": "Et oppdrag fra noen,", "fraBeat": 2 },
-                        { "tekst": "eller en mening du må finne selv.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Med en skaper: et oppdrag fra noen.", "fraBeat": 2 },
+                        { "tekst": "Uten: en mening du må finne selv.", "fraBeat": 2, "uthevet": true },
                         { "tekst": "Hva svarer du?", "fraBeat": 3, "uthevet": true }
                     ]
                 }
@@ -222,7 +223,7 @@
             "replikker": [
                 { "si": "Noen bruker seks dager. Noen bruker ingen dager. Og noen lar spørsmålet stå helt åpent." },
                 { "si": "Men det store skillet er om verden har en begynnelse. Det avgjør hva mennesket er til for." },
-                { "si": "Enten har vi fått et oppdrag fra noen. Eller så må vi finne meningen selv." },
+                { "si": "Finnes det en skaper, har vi fått et oppdrag fra noen. Finnes det ingen, må vi finne meningen selv." },
                 { "si": "Det er det samme spørsmålet, stilt av mennesker over hele verden. Hva svarer du?" }
             ]
         }
