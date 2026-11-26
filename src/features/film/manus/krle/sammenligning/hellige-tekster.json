@@ -1,0 +1,213 @@
+{
+  "id": "hellige-tekster",
+  "tittel": "Hellige tekster: Bøkene som styrer liv",
+  "kilde": "/krle/sammenligning/hellige-tekster",
+  "bilde": "/images/sammenligning/hellige-tekster-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-26", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "kveld",
+      "kapittel": "En bok i seng",
+      "lyd": "rom",
+      "visual": { "type": "HelligeTeksterRom", "props": { "modus": "kveld" } },
+      "replikker": [
+        { "si": "Kveld i et forsamlingshus. Midt i rommet ligger en stor bok." },
+        { "si": "Nå blir boka lukket. Noen løfter den opp og bærer den på hodet." },
+        { "si": "Boka blir båret inn i sitt eget rom og lagt i en seng. Neste morgen hentes den ut igjen." },
+        { "si": "Noen kilometer unna ligger en bibel i en ryggsekk, full av gule tusjstreker." },
+        { "si": "Begge er hellige tekster. Men de blir ikke behandlet likt." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Hellige tekster",
+          "undertittel": "Bøkene som styrer liv",
+          "bilde": "/images/sammenligning/hellige-tekster-hero.webp",
+          "sporsmal": { "tekst": "Hva gjør en tekst hellig?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Ni religioner. Alle har tekster de regner som hellige." },
+        { "si": "Men de bruker dem ikke likt. Så hva gjør en tekst hellig?" }
+      ]
+    },
+    {
+      "id": "reisen",
+      "kapittel": "Tekstens reise",
+      "visual": { "type": "HelligeTeksterReise", "props": { "modus": "intro" } },
+      "replikker": [
+        { "si": "Fire spørsmål skiller religionene. Sammen blir de en reise." },
+        { "si": "Første stopp: Hvor lenge gikk teksten bare fra munn til munn?" },
+        { "si": "Andre stopp: Når ble den skrevet ned?" },
+        { "si": "Tredje stopp: Når bestemte noen hvilke tekster som hører med? Da er lista lukket." },
+        { "si": "Fjerde stopp: Kan teksten oversettes uten å slutte å være seg selv?" },
+        { "si": "Ikke alle reiser hele ruta. Noen starter ikke muntlig, og noen blir aldri ferdige med lista." }
+      ]
+    },
+    {
+      "id": "talmud",
+      "kapittel": "Jødedom, kristendom, islam",
+      "visual": { "type": "HelligeTeksterSide", "props": { "modus": "talmud" } },
+      "replikker": [
+        { "si": "Jødedommens eldste samling heter Tanakh, etter forbokstavene i de tre delene: Toraen, Neviim og Ketuvim." },
+        { "si": "Ved siden av finnes en muntlig Tora: alle forklaringene man trenger når tidene forandrer seg." },
+        { "si": "Rundt år 200 ble den muntlige Toraen skrevet ned. Den samlingen heter Mishna." },
+        { "si": "Diskusjonene om Mishna ble til Talmud. En talmudside har en kort tekst midt på, og rundt den kommentarer fra flere hundre år." },
+        { "si": "Uenigheten blir stående på siden. Siden sier ikke hvem som hadde rett." }
+      ]
+    },
+    {
+      "id": "bibelen",
+      "visual": { "type": "HelligeTeksterTid", "props": { "modus": "bibelen" } },
+      "replikker": [
+        { "si": "Bibelen ble satt sammen av mange bøker. Jesus ble korsfestet omkring år 30, og fortellingene om ham gikk først fra munn til munn." },
+        { "si": "Det nye testamentet ble skrevet på gresk, fra omkring år 50 til begynnelsen av 100-tallet." },
+        { "si": "Hvem bestemte hva som skulle med? Ingen enkeltperson, og ikke noe kirkemøte. Tekstene ble godtatt litt etter litt." },
+        { "si": "Først i et påskebrev fra år 367 listet biskopen Athanasius opp nøyaktig de skriftene Det nye testamentet har i dag." },
+        { "si": "Og katolske og ortodokse bibler har fortsatt flere bøker enn de fleste protestantiske." }
+      ]
+    },
+    {
+      "id": "islam",
+      "visual": { "type": "HelligeTeksterTid", "props": { "modus": "islam" } },
+      "replikker": [
+        { "si": "Islam svarer helt annerledes. Slik muslimene forteller det, fikk Muhammad beskjedene fra Gud muntlig, gjennom drøyt tjue år." },
+        { "si": "Ifølge tradisjonen begynte folk å skrive ned mens han levde. Kildene er enige om at teksten var ferdig før år 656." },
+        { "si": "Lista ble lukket med det samme. Muhammad regnes som den siste profeten, så det kan aldri komme mer." },
+        { "si": "For Det nye testamentet gikk det omtrent 260 år fra de siste tekstene ble skrevet, til noen skrev ned hele lista." }
+      ]
+    },
+    {
+      "id": "koranen",
+      "visual": { "type": "HelligeTeksterSide", "props": { "modus": "koran" } },
+      "replikker": [
+        { "si": "For muslimer er de arabiske ordene ikke bare innpakning. Ordene er selve budskapet fra Gud." },
+        { "si": "På 800-tallet fant de en løsning som fortsatt gjelder. Teksten kan gjengis på andre språk, men da regnes den som én persons forståelse av originalen." },
+        { "si": "En norsk koran er altså ikke Koranen. Den første hele norske utgaven kom i 1980." },
+        { "si": "Og i sunniislam finnes det verken prester eller noe hovedkontor som kan avgjøre hva teksten betyr." }
+      ]
+    },
+    {
+      "id": "hylla",
+      "kapittel": "Hinduisme, buddhisme, sikhisme",
+      "visual": { "type": "HelligeTeksterSide", "props": { "modus": "hylla" } },
+      "replikker": [
+        { "si": "Så til de indiske religionene. Hinduismen har ingen sjef på toppen som avgjør hva som gjelder." },
+        { "si": "Tekstene deles i to grupper. Shruti betyr det som er hørt: tekster som ifølge tradisjonen ingen mennesker har skrevet, og som alltid har vært til." },
+        { "si": "Vedaene er shruti. De er ført videre uten brudd lenger enn noen annen religiøs tradisjon i verden. Det er lyden som holder dem uforandret, ikke boka." },
+        { "si": "Smriti betyr det som er husket. Der vet man hvem som skrev." },
+        { "si": "Likevel er det en smriti-tekst, Bhagavadgita, som er den hinduistiske teksten som er oversatt flest ganger." }
+      ]
+    },
+    {
+      "id": "buddhisme",
+      "lyd": "vind",
+      "visual": { "type": "HelligeTeksterKart", "props": {} },
+      "replikker": [
+        { "si": "Buddhismen har ingen felles hellig bok. Den eldste samlingen heter Tripitaka, de tre kurvene." },
+        { "si": "Én kurv har reglene for klosterlivet, én har talene man mener Buddha holdt, og én forklarer læren." },
+        { "si": "Flere hundre år etter at Buddha døde, ble Tripitaka trolig skrevet ned, på Sri Lanka." },
+        { "si": "I India ble nye tekster skrevet i tusen år til. En tekst ble viktig når noen sa at Buddha sto bak den." },
+        { "si": "Her er det helt vanlig å oversette. Det meste av de indiske buddhistiske tekstene finnes i dag bare på kinesisk og tibetansk." }
+      ]
+    },
+    {
+      "id": "guru",
+      "lyd": "rom",
+      "visual": { "type": "HelligeTeksterRom", "props": { "modus": "guru" } },
+      "replikker": [
+        { "si": "Sikhismen har en bok som blir behandlet som en person." },
+        { "si": "Guru Arjan samlet tekstene i 1604. Mange av dem var salmer som folk sang." },
+        { "si": "I 1708 sa Guru Gobind Singh at han var den siste guruen av kjøtt og blod. Etter ham skulle boka lede sikhene." },
+        { "si": "Boka heter Guru Granth Sahib. Den er ikke en bok om guruen. Mange sikher vil si at boka er guruen." },
+        { "si": "Det er den som blir båret til sengs hver kveld. Ingen levende person kan overkjøre det som står i den." }
+      ]
+    },
+    {
+      "id": "nyere",
+      "kapittel": "De nyere",
+      "lyd": "stille",
+      "visual": { "type": "HelligeTeksterReise", "props": { "modus": "nyere" } },
+      "replikker": [
+        {
+          "si": "Bahá'í, mormonismen og Jehovas vitner er mye mindre religioner. Reisen deres er kort, for alt skjedde i moderne tid.",
+          "uttale": "Bahai, mormonismen og Jehovas vitner er mye mindre religioner. Reisen deres er kort, for alt skjedde i moderne tid."
+        },
+        {
+          "si": "Bahá'u'lláh, som levde fra 1817 til 1892, skrev tekstene selv. Her finnes det ingen muntlig start i det hele tatt.",
+          "uttale": "Baha-ullah, som levde fra 1817 til 1892, skrev tekstene selv. Her finnes det ingen muntlig start i det hele tatt."
+        },
+        { "si": "Lovboka skrev han på arabisk rundt 1873, mens han satt i fengsel. Den første godkjente engelske utgaven kom først i 1992." },
+        { "si": "I mormonismen er lista ikke ferdig." },
+        { "si": "Ifølge kirken må en ny tekst gjennom tre trinn. Kirkens president må få beskjeden fra Gud, apostlene må si seg enige, og medlemmene må stemme over det." }
+      ]
+    },
+    {
+      "id": "jehova",
+      "visual": { "type": "HelligeTeksterSide", "props": { "modus": "jhvh" } },
+      "replikker": [
+        { "si": "Jehovas vitner har bare Bibelen. Det spesielle er hvordan de oversetter." },
+        {
+          "si": "I den gamle hebraiske teksten står Guds navn som fire bokstaver: JHVH.",
+          "uttale": "I den gamle hebraiske teksten står Guds navn som fire bokstaver: J, H, V, H."
+        },
+        { "si": "Der de fleste norske biblene skriver Herren, skriver Ny verden-oversettelsen Jehova." },
+        { "si": "Kritikere mener at oversettelsen noen steder er farget av det bevegelsen selv tror. Bare ett sted kan avgjøre hva teksten betyr: Det styrende råd." }
+      ]
+    },
+    {
+      "id": "monster",
+      "kapittel": "Mønsteret",
+      "visual": { "type": "HelligeTeksterReise", "props": { "modus": "alle" } },
+      "replikker": [
+        { "si": "Sett de ni reisene side om side. Det som skiller dem, er ikke hvor gammel teksten er." },
+        { "si": "Er det budskapet som er hellig, eller selve ordene? Svaret avgjør om teksten kan oversettes." },
+        { "si": "Er lista over tekster ferdig? Svaret avgjør om det kan komme noe nytt." },
+        { "si": "Hvem bestemmer hva teksten betyr? Noen har ett sted som avgjør. Andre har ingen." },
+        { "si": "Og ingen av de ni er enige med seg selv. Overalt finnes ulike syn på hvordan teksten skal leses." }
+      ]
+    },
+    {
+      "id": "durkheim",
+      "kapittel": "Hva gjør en tekst hellig?",
+      "lyd": "rom",
+      "visual": { "type": "HelligeTeksterRom", "props": { "modus": "regler" } },
+      "replikker": [
+        {
+          "si": "Den forklaringen forskerne bruker mest i dag, kommer fra franskmannen Émile Durkheim.",
+          "uttale": "Den forklaringen forskerne bruker mest i dag, kommer fra franskmannen Emil Dyrkæm."
+        },
+        { "si": "Du kjenner det hellige igjen på hvordan folk behandler det, sa han. Det blir satt til side, med regler for hva du ikke får gjøre med det." },
+        { "si": "Se på reglene. Koranen løftet opp på et stativ." },
+        { "si": "Torarullene i et skap på veggen mot Jerusalem." },
+        { "si": "Boka som får sitt eget soverom. Du ser hvor hellig en tekst er uten å lese et ord i den." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "lyd": "stille",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Samme setning. Samme bok.", "fraBeat": 0 },
+            { "tekst": "Men ikke samme tekst.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Durkheims forklaring:", "fraBeat": 1 },
+            { "tekst": "Et fellesskap setter teksten til side", "fraBeat": 2 },
+            { "tekst": "og omgir den med regler.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "To personer kan lese samme setning i samme bok, og likevel ikke ha samme tekst i hendene." },
+        { "si": "Forskerne bruker mest forklaringen til Durkheim." },
+        { "si": "Med hans blikk blir en tekst hellig fordi et fellesskap setter den til side og omgir den med regler." }
+      ]
+    }
+  ]
+}
