@@ -1,0 +1,235 @@
+{
+  "id": "nato-og-norge",
+  "tittel": "NATO og Norge: Trygg ved siden av en stormakt",
+  "kilde": "/samfunnskunnskap/geopolitikk/nato-og-norge",
+  "bilde": "/images/geopolitikk/nato-og-norge-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-26", "viser": 3, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "mai2022",
+      "kapittel": "Våren 2022",
+      "lyd": "stille",
+      "visual": { "type": "NatoKart", "props": { "modus": "soknad" } },
+      "replikker": [
+        { "si": "Det er våren 2022. Her ligger Finland, nabolandet vårt i øst. I flere tiår har Finland holdt seg utenfor militære allianser." },
+        { "si": "Finland samarbeider med NATO, men vil ikke bli medlem. Og Sverige har holdt seg nøytralt i over 200 år." },
+        { "si": "Så, i februar 2022, angriper Russland Ukraina." },
+        { "si": "Under tre måneder senere, den 18. mai, sender Finland og Sverige søknad om å bli med i NATO." },
+        { "si": "Hvorfor skifter to land mening så fort? Og hvorfor har Norge vært med i NATO helt fra starten?" }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "hav",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "NATO OG NORGE",
+          "undertittel": "Et lite land ved siden av en stormakt",
+          "bilde": "/images/geopolitikk/nato-og-norge-hero.webp",
+          "sporsmal": { "tekst": "Hvordan holder et lite land seg trygt?", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Denne filmen handler om NATO og Norges sikkerhet." },
+        { "si": "Norge er et lite land, og naboen i øst er en stormakt." },
+        { "si": "Hvordan holder et lite land seg trygt ved siden av en så stor nabo?" }
+      ]
+    },
+    {
+      "id": "allianse",
+      "kapittel": "Hva er NATO?",
+      "lyd": "stille",
+      "visual": { "type": "NatoRing", "props": { "modus": "vekst" } },
+      "replikker": [
+        { "si": "NATO er en militær allianse. En allianse er en avtale mellom land om å hjelpe hverandre." },
+        { "si": "Den 4. april 1949 skrev tolv land under på en avtale som heter Atlanterhavspakten." },
+        { "si": "Norge var ett av de tolv." },
+        { "si": "Siden har alliansen vokst. I dag er 32 land med." },
+        { "si": "Hovedkvarteret ligger i Brussel i Belgia." },
+        { "si": "Fra 2014 til 2024 var nordmannen Jens Stoltenberg NATOs generalsekretær, altså den øverste lederen." }
+      ]
+    },
+    {
+      "id": "artikkel5",
+      "kapittel": "Artikkel 5",
+      "visual": { "type": "NatoRing", "props": { "modus": "artikkel5" } },
+      "replikker": [
+        { "si": "Kjernen i NATO er artikkel 5 i avtalen." },
+        { "si": "Tenk deg at ett av landene blir angrepet." },
+        { "si": "Artikkel 5 sier at et væpnet angrep på ett medlemsland skal regnes som et angrep på alle." },
+        { "si": "Hvert land bestemmer selv hvordan det vil hjelpe. Det kan også bety å sende soldater." }
+      ]
+    },
+    {
+      "id": "avskrekking",
+      "visual": { "type": "NatoRing", "props": { "modus": "avskrekking" } },
+      "replikker": [
+        { "si": "Tenk på det som en gjeng venner som har lovet å stå sammen." },
+        { "si": "Hvis noen tar én av dem, må de regne med å møte hele gjengen." },
+        { "si": "Da blir det mye mindre fristende å prøve seg." },
+        { "si": "Dette kalles avskrekking. Du gjør det så risikabelt å angripe deg at ingen tør." }
+      ]
+    },
+    {
+      "id": "krigen",
+      "kapittel": "Hvorfor ble Norge med?",
+      "visual": { "type": "NatoKart", "props": { "modus": "etterkrig" } },
+      "replikker": [
+        { "si": "Før andre verdenskrig var Norge nøytralt. Likevel ble landet angrepet av Tyskland i 1940." },
+        { "si": "Etter krigen ville mange nordmenn være sikre på å få hjelp fra andre, hvis noe lignende skjedde igjen." },
+        { "si": "Samtidig ble mange redde for Sovjetunionen, den store naboen i øst." },
+        { "si": "Kommunistene tok makten i Tsjekkoslovakia ved et kupp, altså med makt og uten valg." },
+        { "si": "Og Sovjetunionen la press på Finland." },
+        { "si": "Historikeren Even Lange skriver at det var en ekte fare for at Sovjetunionen kunne tvinge Norge inn i en avtale lik den Finland måtte godta." }
+      ]
+    },
+    {
+      "id": "forbund",
+      "visual": { "type": "NatoKart", "props": { "modus": "forbund" } },
+      "replikker": [
+        { "si": "Først prøvde Norge å lage et forsvarsforbund med Sverige og Danmark." },
+        { "si": "Vinteren 1949 ble det ingenting av planen. Sverige ville være nøytralt, og landene var uenige om hvor tett de skulle knytte seg til Vesten." },
+        { "si": "USA gjorde det også klart at bare land i Atlanterhavspakten ville få amerikanske våpen." },
+        { "si": "Det var en av grunnene til at Norge og Danmark valgte NATO." }
+      ]
+    },
+    {
+      "id": "mening",
+      "visual": { "type": "NatoMening", "props": { "modus": "1949" } },
+      "replikker": [
+        { "si": "Beslutningen var ikke enkel. Det var tydelig motstand, både i Arbeiderpartiet og på høyresiden i politikken." },
+        { "si": "Likevel sa godt over halvparten av folket sommeren 1949 at medlemskapet gjorde faren for krig mindre." },
+        { "si": "Bare tolv prosent mente det motsatte." }
+      ]
+    },
+    {
+      "id": "baser",
+      "kapittel": "Avskrekking og beroligelse",
+      "visual": { "type": "NatoNorge", "props": { "modus": "erklaering" } },
+      "replikker": [
+        { "si": "Norge har grense mot Russland. Under den kalde krigen var naboen der Sovjetunionen." },
+        { "si": "Derfor valgte Norge en egen linje i NATO. Før Norge ble med, lovet regjeringen at fremmede soldater ikke skulle få baser på norsk jord." },
+        { "si": "Løftet gjaldt så lenge Norge ikke var angrepet eller truet med angrep. Det kalles baseerklæringen." },
+        { "si": "Målet var å dempe spenningen i nord. Norge ville vise styrke, og samtidig berolige naboen: vise at Norge ikke planla noe angrep." },
+        { "si": "Tenk på det som å ha en sterk vakthund, men holde den i bånd når naboen går forbi." }
+      ]
+    },
+    {
+      "id": "avtale",
+      "visual": { "type": "NatoNorge", "props": { "modus": "avtale" } },
+      "replikker": [
+        { "si": "Den balansen har endret seg de siste årene." },
+        { "si": "I 2021 skrev Norge under på en forsvarsavtale med USA. Den ga amerikanske styrker tilgang til fire områder i Norge." },
+        { "si": "I 2024 ble avtalen utvidet med åtte områder til, blant annet Andøya, Bardufoss og Ørland." },
+        { "si": "Regjeringen mener det er misvisende å kalle dette en baseavtale. Andre kaller den likevel en baseavtale." }
+      ]
+    },
+    {
+      "id": "norden",
+      "kapittel": "Finland og Sverige velger nytt",
+      "visual": { "type": "NatoKart", "props": { "modus": "norden" } },
+      "replikker": [
+        { "si": "Tilbake til Finland og Sverige. Et land som holder seg utenfor militære allianser i fredstid, kalles alliansefritt." },
+        { "si": "Et nøytralt land prøver å holde seg utenfor kriger som skjer i nærheten. Sverige var et slikt land i over 200 år." },
+        { "si": "NATO kaller Russlands angrep på Ukraina den største sikkerhetskrisen i Europa siden andre verdenskrig." },
+        { "si": "Finland ble medlem i april 2023, og Sverige i mars 2024." },
+        { "si": "For første gang er alle de fem nordiske landene med i NATO. Hele Norden er på samme lag." }
+      ]
+    },
+    {
+      "id": "totalforsvar",
+      "kapittel": "Norge forsvarer seg også selv",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Totalforsvaret",
+          "punkter": [
+            { "ikon": "skjold", "tittel": "Det militære forsvaret", "tekst": "Norges eget forsvar", "fraBeat": 0 },
+            { "ikon": "hus", "tittel": "Den sivile beredskapen", "tekst": "hvordan resten av samfunnet er forberedt på kriser", "fraBeat": 1 },
+            { "ikon": "avtale", "tittel": "Bygges opp igjen", "tekst": "regjeringen bestemte det i 2016", "fraBeat": 2 },
+            { "ikon": "lampe", "tittel": "Skal tåle en krise", "tekst": "strøm, mat, vann, mobilnett og transport", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "NATO er ikke hele Norges sikkerhet. Norge har også et eget forsvar." },
+        { "si": "Og så har Norge totalforsvaret: det militære forsvaret og den sivile beredskapen sammen. Beredskap er hvordan resten av samfunnet er forberedt på kriser." },
+        { "si": "Etter den kalde krigen ble totalforsvaret nesten borte. I 2016 bestemte regjeringen at det skulle bygges opp igjen." },
+        { "si": "Nå handler det særlig om at viktige ting i samfunnet skal tåle en krise: strøm, mat, vann, mobilnett og transport." }
+      ]
+    },
+    {
+      "id": "verneplikt",
+      "lyd": "vind",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "VERNEPLIKT",
+          "undertittel": "Både jenter og gutter kan bli kalt inn",
+          "bilde": "/images/geopolitikk/nato-og-norge-02.webp",
+          "tall": [
+            { "verdi": 19, "etikett": "år: plikten starter som regel", "fraBeat": 2, "omtrent": false },
+            { "verdi": 44, "etikett": "år: plikten slutter", "fraBeat": 2, "omtrent": false },
+            { "verdi": 8000, "etikett": "kalles inn hvert år (rundt)", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Verneplikten er en annen del av forsvaret." },
+        { "si": "Siden 2015 har Norge hatt allmenn verneplikt, og for kvinner gjelder den fra 2016. Både jenter og gutter kan bli kalt inn til Forsvaret." },
+        { "si": "Plikten starter vanligvis det året du fyller 19 år, og varer til du er 44." },
+        { "si": "Rundt 8000 personer blir kalt inn hvert år. Det er omtrent en tredjedel av alle i et årskull som er skikket til tjeneste." }
+      ]
+    },
+    {
+      "id": "debatt",
+      "kapittel": "Tryggere, eller trukket inn?",
+      "lyd": "stille",
+      "visual": { "type": "NatoRing", "props": { "modus": "beggeveier" } },
+      "replikker": [
+        { "si": "Det finnes ulike syn på NATO-medlemskapet." },
+        { "si": "De som støtter det, peker på at små land sjelden kan forsvare seg alene mot en stormakt. Med artikkel 5 står ikke Norge alene." },
+        { "si": "Andre er mer kritiske. De mener at tett samarbeid kan gjøre et lite land mer avhengig av andre, og gi det mindre frihet til å bestemme selv." },
+        { "si": "Artikkel 5 er dessuten et løfte begge veier. Norge har også lovet å hjelpe de andre." },
+        { "si": "Den eneste gangen artikkel 5 er brukt, var etter terrorangrepene mot USA 11. september 2001. Da var det USA som var angrepet, ikke et land i Europa." }
+      ]
+    },
+    {
+      "id": "stotte",
+      "visual": { "type": "NatoMening", "props": { "modus": "stotte" } },
+      "replikker": [
+        { "si": "Etter 1949 lå støtten til NATO blant folk i Norge på nær to tredjedeler i flere tiår." },
+        { "si": "Men motstanden har også vært sterk. På venstresiden ble den så viktig at Arbeiderpartiet splittet seg i 1961." },
+        { "si": "Noen var også skeptiske til at USA fikk for mye å si i Norge." },
+        { "si": "Det finnes ikke ett fasitsvar. Hvordan Norge best holder seg trygt, er et av de viktigste spørsmålene i norsk politikk." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "kapittel": "Hva betyr det?",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Et lite land ved siden av en stormakt.", "fraBeat": 0 },
+            { "tekst": "NATO er Norges svar.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Et angrep på én er et angrep på alle.", "fraBeat": 1 },
+            { "tekst": "Og løftet går begge veier.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Etter angrepet på Ukraina valgte også Finland og Sverige NATO.", "fraBeat": 2 },
+            { "tekst": "Nå er hele Norden på samme lag.", "fraBeat": 2, "uthevet": true },
+            { "tekst": "Tryggere, eller trukket inn i andres kriger?", "fraBeat": 3 },
+            { "tekst": "Hva synes du?", "fraBeat": 3, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "NATO er Norges svar på hvordan et lite land kan leve trygt ved siden av en stormakt." },
+        { "si": "Et angrep på ett land regnes som et angrep på alle. Og det løftet går begge veier." },
+        { "si": "Etter Russlands angrep på Ukraina valgte også Finland og Sverige NATO. Nå er hele Norden på samme lag." },
+        { "si": "Gjør NATO Norge tryggere, eller kan medlemskapet trekke Norge inn i andres kriger? Hva synes du?" }
+      ]
+    }
+  ]
+}
