@@ -1,0 +1,207 @@
+{
+    "id": "doden",
+    "tittel": "Døden: Hva skjer når vi dør?",
+    "kilde": "/krle/sammenligning/doden",
+    "bilde": "/images/sammenligning/doden-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-26", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 5, "sum": 21 },
+    "scener": [
+        {
+            "id": "to-kropper",
+            "kapittel": "To kropper",
+            "lyd": "vind",
+            "visual": { "type": "DodenVeiene", "props": { "modus": "start" } },
+            "replikker": [
+                { "si": "Tenk deg to familier, i hver sin del av verden. Begge har nettopp mistet noen." },
+                { "si": "Den første familien er muslimsk. Den døde vaskes, svøpes i hvitt og begraves vendt mot Mekka, helst innen ett døgn." },
+                { "si": "Den andre er hinduistisk. Her brennes kroppen, helst samme dag, og asken legges i rennende vann." },
+                { "si": "Begge har det travelt, men av stikk motsatte grunner." },
+                { "si": "For muslimen skal kroppen ligge klar til dommens dag. For hinduen var den bare et sted sjelen bodde en stund." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "DØDEN",
+                    "undertittel": "Hva skjer når vi dør?",
+                    "bilde": "/images/sammenligning/doden-hero.webp",
+                    "sporsmal": { "tekst": "En linje eller en ring?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Ingen religion kommer utenom døden. Fagordet for svarene er eskatologi." },
+                { "si": "Det betyr læren om det som skjer helt til slutt, med verden og med hvert menneske." },
+                { "si": "Vi ser på ni tradisjoner og en gjestestemme. Ingen av svarene kan bevises eller motbevises, så vi forteller hva hver av dem mener." }
+            ]
+        },
+        {
+            "id": "to-former",
+            "visual": { "type": "DodenVeiene", "props": { "modus": "former" } },
+            "replikker": [
+                { "si": "Det folk tror om døden, henger sammen med hvordan de tenker om tiden." },
+                { "si": "Noen tenker at tiden går i en rett linje. Da ender livet i et oppgjør, og så kommer noe som varer for alltid." },
+                { "si": "Andre tenker at tiden går i ring. Da tar ingenting slutt av seg selv." },
+                { "si": "På linja spør du: Hvor havner jeg? I ringen spør du: Hvordan kommer jeg meg ut?" }
+            ]
+        },
+        {
+            "id": "abraham",
+            "kapittel": "Linja",
+            "lyd": "stille",
+            "visual": { "type": "DodenKart", "props": { "modus": "iran" } },
+            "replikker": [
+                { "si": "Først linja. Jødedom, kristendom og islam regner alle Abraham som stamfar." },
+                { "si": "De tenker likt: Du lever ett liv, og så kommer et oppgjør." },
+                { "si": "Tanken om at Gud skal dømme mellom gode og onde, møter vi først i den iranske religionen zoroastrismen." },
+                { "si": "Siden finner vi den i jødedommen, kristendommen og islam." }
+            ]
+        },
+        {
+            "id": "linja",
+            "lyd": "vind",
+            "visual": { "type": "DodenVeiene", "props": { "modus": "linje" } },
+            "replikker": [
+                { "si": "Linja er som en vei med fire stopp. Først kommer døden: Livet slutter én gang." },
+                { "si": "Så kommer en ventetid. Hvor lang den er, svarer tradisjonene ulikt på." },
+                { "si": "Så kommer dommen, der Gud dømmer mellom gode og onde. I kristendommen er det Jesus som skal dømme alle." },
+                { "si": "Til slutt kommer noe som aldri tar slutt. Alle tre bruker ordet paradis, men de beskriver det ulikt." }
+            ]
+        },
+        {
+            "id": "jorda",
+            "lyd": "stille",
+            "visual": { "type": "DodenSnitt", "props": { "modus": "jord" } },
+            "replikker": [
+                { "si": "Det folk gjør ved graven, sier mye om hva de tror." },
+                { "si": "I jødedommen skjer begravelsen helst innen ett døgn, i en enkel trekiste. Sjelen lever videre. Døden er bare en overgang til neste verden." },
+                { "si": "Men jødedommen har ingen fast lære om hva som skjer helt til slutt. Flere syn får stå side om side." },
+                { "si": "I kristendommen sier presten ved graven: Av jord er du kommet, til jord skal du bli, av jord skal du igjen oppstå." },
+                { "si": "At de døde skal stå opp igjen, er helt sentralt i kristendommen. Hele religionen bygger på at Jesus selv stod opp." },
+                { "si": "Islam venter det samme: Gud setter kroppene sammen igjen på dommens dag. Derfor skal kroppen ikke brennes." }
+            ]
+        },
+        {
+            "id": "ringen",
+            "kapittel": "Ringen",
+            "lyd": "vind",
+            "visual": { "type": "DodenVeiene", "props": { "modus": "ring" } },
+            "replikker": [
+                { "si": "Så ringen. I hinduismen, buddhismen og sikhismen er døden ingen dør ut av livet, men en dør inn i det neste." },
+                { "si": "Fagordet er samsara: kretsløpet der du blir født, dør og blir født på nytt, om og om igjen." },
+                { "si": "Det som driver ringen rundt, heter karma. Ordet betyr handling. Det du gjør, får følger." },
+                { "si": "Gode handlinger gir en bedre neste fødsel, dårlige gir en verre. Men ingen av delene varer for alltid." },
+                { "si": "Legg merke til: Ingen dommer går gjennom livet ditt. Karma virker helt av seg selv." },
+                { "si": "I buddhismen teller det du mente med handlingen, ikke bare det du gjorde." }
+            ]
+        },
+        {
+            "id": "utgangen",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Utgangen fra ringen",
+                    "punkter": [
+                        { "ikon": "lampe", "tittel": "Moksha", "tekst": "hinduismen: fri fra kroppen og tiden", "fraBeat": 1 },
+                        { "ikon": "stjerne", "tittel": "Nirvana", "tekst": "buddhismen: all lidelse tar slutt", "fraBeat": 2 },
+                        { "ikon": "hus", "tittel": "Mukti", "tekst": "sikhene: nås i livet, siste steg gir Gud", "fraBeat": 3 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Målet er ikke et bedre sted, men å komme helt ut av ringen." },
+                { "si": "I hinduismen heter utgangen moksha. Du slutter å være et eget jeg, blir fri fra kroppen og tiden, og blir ikke født på nytt." },
+                { "si": "I buddhismen heter utgangen nirvana. Der tar all lidelse slutt. Nirvana er verken et paradis eller ingenting." },
+                { "si": "Sikhene kaller utgangen mukti. De mener du kan nå den mens du lever, men det siste steget må Gud gi deg." }
+            ]
+        },
+        {
+            "id": "uenige",
+            "visual": { "type": "DodenKart", "props": { "modus": "india" } },
+            "replikker": [
+                { "si": "Om detaljene er de uenige seg imellom." },
+                { "si": "Mange hinduer mener sjelen først blir en ånd på vei mot forfedrenes verden. Andre mener den går rett til en ny fødsel." },
+                { "si": "Buddhistene er uenige om det finnes en mellomstopp. I Tibet mener de at den varer 49 dager, og den heter bardo." },
+                { "si": "Theravada-buddhister mener at det nye livet begynner med en gang.", "uttale": "Teravada-buddhister mener at det nye livet begynner med en gang." }
+            ]
+        },
+        {
+            "id": "vitner",
+            "kapittel": "Nye svar",
+            "visual": { "type": "DodenSnitt", "props": { "modus": "vitner" } },
+            "replikker": [
+                { "si": "Bahá'í, mormonismen og Jehovas vitner kalles ofte nyere bevegelser. Kristendom og islam teller milliarder, disse tre noen millioner.", "uttale": "Baha-i, mormonismen og Jehovas vitner kalles ofte nyere bevegelser. Kristendom og islam teller milliarder, disse tre noen millioner." },
+                { "si": "Men å slå dem sammen er litt for enkelt. Bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen.", "uttale": "Men å slå dem sammen er litt for enkelt. Baha-i vokste fram fra sjia-islam, de to andre fra kristendommen." },
+                { "si": "Jehovas vitner mener at de døde ikke merker noe som helst. De sover, som de sier selv." },
+                { "si": "Derfor sitter de ikke våke ved den døde, og markerer ikke dagen noen døde." },
+                { "si": "Håpet er at nesten alle får livet tilbake på en jord gjort om til et paradis. 144 000 skal styre med Jesus i himmelen." }
+            ]
+        },
+        {
+            "id": "mormon-bahai",
+            "visual": { "type": "DodenSnitt", "props": { "modus": "bahai" } },
+            "replikker": [
+                { "si": "Mormonismen legger vekten et annet sted. De fleste kristne gifter seg til døden skiller dem." },
+                { "si": "Hos mormonene blir ektepar bundet sammen for alltid, i en seremoni i et tempel." },
+                { "si": "Bahá'í fyller den samme linja med noe annet. Her er verken paradis eller helvete steder du kan reise til.", "uttale": "Baha-i fyller den samme linja med noe annet. Her er verken paradis eller helvete steder du kan reise til." },
+                { "si": "Reglene for begravelsen er strenge. Kroppen skal ikke brennes, og ikke fraktes lenger enn én times reise fra byen der personen døde." },
+                { "si": "De som var 15 år eller eldre, får en ring på fingeren. Innskriften begynner slik: Jeg kom fra Gud og vender tilbake til ham." }
+            ]
+        },
+        {
+            "id": "regnskapet",
+            "kapittel": "Mønsteret",
+            "visual": { "type": "DodenSnitt", "props": { "modus": "regnskap" } },
+            "replikker": [
+                { "si": "Legg linja og ringen side om side. Hvem fører regnskapet?" },
+                { "si": "På linja er det noen utenfor deg som dømmer." },
+                { "si": "I ringen er det handlingene dine som fører regnskapet." },
+                { "si": "Linja gjør døden til en grense. Ringen gjør døden til en dør." },
+                { "si": "Og seremoniene? Venter du at kroppen skal stå opp igjen, legger du den i jorda. Venter du et nytt liv, brenner du den." }
+            ]
+        },
+        {
+            "id": "samisk",
+            "kapittel": "Gjestestemmer",
+            "lyd": "vind",
+            "visual": { "type": "DodenKart", "props": { "modus": "sapmi" } },
+            "replikker": [
+                { "si": "Så en gjestestemme: samisk religion. Den regnet med flere verdener ved siden av vår egen." },
+                { "si": "Man regnet med et rike for de døde, Jábmiid áibmu, og et paradis som het Sáivu. I tillegg et dyrerike, et himmelrike og en underverden.", "uttale": "Man regnet med et rike for de døde, Jaab-miid aaib-mu, og et paradis som het Saaivu. I tillegg et dyrerike, et himmelrike og en underverden." },
+                { "si": "Noaiden, altså sjamanen, kunne reise dit med sjelen, mens kroppen ble liggende igjen." },
+                { "si": "De dødes rike lå ikke langt borte, men i landskapet der de levende bodde. Samene trodde at fjell, steiner og sjøer hadde en egen åndelig kraft." },
+                { "si": "I dag er kristendommen mest utbredt i Sápmi. Men siden 1970-tallet har flere fått interesse for den gamle religionen.", "uttale": "I dag er kristendommen mest utbredt i Sapmi. Men siden nittensytti-tallet har flere fått interesse for den gamle religionen." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "lyd": "stille",
+            "kapittel": "Hva betyr det?",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Skal urett få det siste ordet?", "fraBeat": 0 },
+                        { "tekst": "Linja: Nei, oppgjøret kommer.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Ringen: Nei, det er i gang,", "fraBeat": 1 },
+                        { "tekst": "i hvert eneste liv.", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Livssynshumanister: ikke noe liv etter døden.", "fraBeat": 2 },
+                        { "tekst": "Du lever videre bare i det du gav til andre.", "fraBeat": 2, "uthevet": true },
+                        { "tekst": "Humanister: Da kan urett få det siste ordet.", "fraBeat": 3 },
+                        { "tekst": "Derfor teller dette livet, sier mange av dem.", "fraBeat": 3, "uthevet": true },
+                        { "tekst": "Hva tror du?", "fraBeat": 4, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Skal urettferdighet få det siste ordet? Linja svarer nei: Oppgjøret kommer, det tar bare litt tid." },
+                { "si": "Ringen svarer nei: Oppgjøret er allerede i gang, i hvert eneste liv. Begge svarene trøster på samme måte." },
+                { "si": "Mange tror ikke på noe liv etter døden. Livssynshumanister mener du lever videre bare i det du gav til andre." },
+                { "si": "Da kan urettferdighet få det siste ordet. Derfor, sier mange humanister, teller dette livet, og uretten må rettes opp her." },
+                { "si": "Det er et spørsmål hvert menneske må stille seg selv." }
+            ]
+        }
+    ]
+}
