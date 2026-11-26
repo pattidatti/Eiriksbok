@@ -297,9 +297,12 @@ const LAPPER: Record<Modus, Lapp[]> = {
     ],
     idene: [
         { tekst: '15. mars 44 fvt.', under: 'Idene mars' },
-        { tekst: 'Advart på forhånd', under: 'men Cæsar trodde ikke på spådommer' },
-        { tekst: 'Rundt seksti menn med dolker', under: 'ledet av Cassius og Brutus' },
-        { tekst: '«Også du, Brutus?»', under: 'Brutus, Cæsars venn' },
+        { tekst: 'Advart på forhånd', under: 'ifølge senere romerske forfattere' },
+        {
+            tekst: 'Rundt seksti sammensvorne',
+            under: 'skal det ha vært, ledet av Cassius og Brutus',
+        },
+        { tekst: '«Også du, Brutus?»', under: 'skal Cæsar ha sagt til vennen sin' },
         { tekst: 'Den tomme stolen' },
     ],
 };
@@ -385,7 +388,12 @@ export function CaesarSenatet({ beat, playing, props }: VisualProps<{ modus: Mod
             {modus === 'idene' && beat >= 4 && (
                 <div className="absolute bottom-[8%] left-0 right-0 flex justify-center gap-5">
                     <Tall verdi={23} etikett="stikk, anslagsvis" farge="text-slate-900" />
-                    <Tall verdi={1} etikett="var dødelig" farge="text-red-600" forsinkelse={1.2} />
+                    <Tall
+                        verdi={1}
+                        etikett="dødelig, ifølge legerapporten"
+                        farge="text-red-600"
+                        forsinkelse={1.2}
+                    />
                 </div>
             )}
         </div>

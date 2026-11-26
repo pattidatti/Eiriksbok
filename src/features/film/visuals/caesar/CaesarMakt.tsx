@@ -403,11 +403,11 @@ function Mynter({ x, aktiv }: { x: number; aktiv: boolean }) {
 function Folk({ x, aktiv }: { x: number; aktiv: boolean }) {
     return (
         <g>
-            {Array.from({ length: 20 }, (_, i) => {
+            {Array.from({ length: 15 }, (_, i) => {
                 const kol = i % 5;
                 const rad = Math.floor(i / 5);
                 const fx = x - 140 + kol * 70;
-                const fy = 380 + rad * 85;
+                const fy = 390 + rad * 110;
                 return (
                     <motion.g
                         key={i}
@@ -507,7 +507,7 @@ function Etterpa({ beat }: { beat: number }) {
     const tilstand: 0 | 1 | 2 = beat <= 1 ? 0 : beat === 2 ? 1 : 2;
     const tittel = [
         { tekst: 'Etter drapet', under: 'morderne trodde de hadde reddet republikken' },
-        { tekst: 'Folket raser', under: 'mot senatorene som drepte Cæsar' },
+        { tekst: 'Folket hater', under: 'senatorene som drepte Cæsar' },
         { tekst: 'En ny borgerkrig', under: 'enda verre enn den forrige' },
         { tekst: 'Republikken er borte', under: 'Roma får en keiser' },
     ][Math.min(beat, 3)];
@@ -573,7 +573,7 @@ function Etterpa({ beat }: { beat: number }) {
                         transition={{ duration: 0.8, delay: 0.5 + i * 0.15 }}
                     />
                 ))}
-            {/* Folket som raser, i to grupper på hver side av tempelet */}
+            {/* Folket som hater senatorene, i to grupper på hver side av tempelet */}
             {Array.from({ length: 36 }, (_, i) => {
                 const side = i < 18 ? 0 : 1;
                 const k = i % 18;
@@ -587,7 +587,7 @@ function Etterpa({ beat }: { beat: number }) {
                         transition={{ duration: 0.5, delay: beat === 1 ? frø(i + 3) * 0.8 : 0 }}
                     >
                         <circle cx={fx} cy={fy} r={13} fill="#e8c39e" />
-                        <rect x={fx - 15} y={fy + 15} width={30} height={42} rx={11} fill={ROD} />
+                        <rect x={fx - 15} y={fy + 15} width={30} height={42} rx={11} fill={LILLA} />
                     </motion.g>
                 );
             })}

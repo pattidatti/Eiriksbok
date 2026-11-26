@@ -79,7 +79,7 @@ function Maneder({ beat }: { beat: number }) {
         beat === 0
             ? { tekst: 'Den julianske kalenderen', under: 'innført av Cæsar i år 46 fvt.' }
             : beat === 3
-              ? { tekst: 'Måneden Cæsar ble født i', under: 'fikk navnet hans' }
+              ? { tekst: 'Måneden Cæsar ble født i', under: 'ble senere oppkalt etter ham' }
               : { tekst: 'To måneder', under: 'bærer fortsatt navnene deres' };
     return (
         <g>
@@ -144,12 +144,28 @@ function Maneder({ beat }: { beat: number }) {
                                 x={90}
                                 y={140}
                                 textAnchor="middle"
-                                fontSize={34}
+                                fontSize={i === 6 ? 30 : 34}
                                 fontWeight={800}
-                                fill="#1c1917"
+                                fill={i === 6 ? '#78716c' : '#1c1917'}
                             >
-                                {m}
+                                {/* Før omdøpingen: juli het quintilis, og august får navnet sitt først i beat 4 */}
+                                {i === 6 ? 'quintilis' : i === 7 && beat < 4 ? '' : m}
                             </text>
+                        )}
+                        {juli && (
+                            <motion.text
+                                x={90}
+                                y={190}
+                                textAnchor="middle"
+                                fontSize={30}
+                                fontWeight={700}
+                                fill={LILLA}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 3.6 }}
+                            >
+                                Julius
+                            </motion.text>
                         )}
                         {august && (
                             <text
@@ -323,7 +339,7 @@ function Tid() {
                     <text
                         x={m.x}
                         y={m.x === 1400 ? 680 : 600}
-                        textAnchor={m.x === 1400 ? 'end' : m.x === 200 ? 'start' : 'middle'}
+                        textAnchor={m.x === 200 ? 'start' : 'middle'}
                         fontSize={32}
                         fontWeight={800}
                         fill="#44403c"
