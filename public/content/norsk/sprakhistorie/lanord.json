@@ -5,7 +5,7 @@
   "year": "1000-2026",
   "category": "Språk",
   "readTime": "9 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/sprakhistorie/lanord-hero.webp",
   "details": [
     "Lånord er ord som et språk har hentet fra et annet språk.",
     "Norsk har lånt i bølger: fra latin og gresk med kirken, fra nedertysk med hansaen, fra tysk gjennom dansk og fra engelsk i dag.",
@@ -32,7 +32,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/sprakhistorie/lanord-01.webp",
       "alt": "Gammel ordbok på pult med ord i flere språk",
       "caption": "Bak mange helt vanlige norske ord skjuler det seg en lang reise fra et annet språk."
     },
@@ -115,7 +115,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/sprakhistorie/lanord-02.webp",
       "alt": "Ungdommer med mobiltelefoner og engelske ord rundt seg",
       "caption": "Mange av de nyeste ordene i norsk handler om teknologi og sosiale medier."
     },
@@ -168,7 +168,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/sprakhistorie/lanord-03.webp",
       "alt": "Jordlag i et utgravningsfelt med gamle gjenstander",
       "caption": "Som jordlagene i en utgravning forteller ordlagene i norsk om ulike tider."
     },

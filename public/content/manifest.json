@@ -711,7 +711,7 @@
               "id": "lanord",
               "title": "Lånord: Ordene norsk har lånt",
               "description": "Fra kirkeord og hansaens nedertysk til engelsk i dag: slik har norsk lånt ord i bølger gjennom historien.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/sprakhistorie/lanord-hero.webp",
               "tags": [
                 "språkhistorie",
                 "lånord",
@@ -2892,7 +2892,7 @@
               "id": "nato-og-norge",
               "title": "NATO og Norges sikkerhet",
               "description": "Hva NATO og artikkel 5 er, hvorfor Norge ble med i 1949, og hvorfor Finland og Sverige ble med etter 2022.",
-              "image": "/images/placeholder.webp",
+              "image": "/images/geopolitikk/nato-og-norge-hero.webp",
               "tags": [
                 "nato",
                 "sikkerhet",
