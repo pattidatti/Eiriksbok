@@ -351,7 +351,7 @@ const LAPPER: Record<Modus, Lapp[]> = {
         { tekst: 'Cæsar og soldatene hans' },
         { tekst: 'Roma', under: 'rik, berømt og hatet' },
         { tekst: 'Et umulig valg' },
-        { tekst: 'RUBICON', under: 'grensa ingen general fikk krysse med hæren' },
+        { tekst: 'RUBICON', under: 'elva ingen general fikk krysse med hæren' },
     ],
     valg: [
         { tekst: 'Loven', under: 'krysse Rubicon med hæren = høyforræderi' },
@@ -486,7 +486,8 @@ export function CaesarRubicon({ beat, playing, props }: VisualProps<{ modus: Mod
                                         initial={{ scale: 2, opacity: 0 }}
                                         animate={{ scale: 1, opacity: 1 }}
                                         transition={{ delay: 0.3 + i * 0.4 }}
-                                        className="absolute -top-5 -right-3 w-12 h-12 rounded-full bg-red-700 text-white text-3xl font-black flex items-center justify-center shadow-lg"
+                                        className="absolute w-12 h-12 rounded-full bg-red-700 text-white text-3xl font-black flex items-center justify-center shadow-lg"
+                                        style={{ top: '-4rem', left: 'calc(50% - 1.5rem)' }}
                                     >
                                         ✕
                                     </motion.div>

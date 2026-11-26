@@ -88,7 +88,10 @@ const KORT: Record<Modus, Kort[][]> = {
         [{ tekst: 'Virkeligheten' }, { tekst: 'Brente landsbyer, utsultede byer', farge: ROD }],
         [
             { tekst: 'Til slutt' },
-            { tekst: 'Svært mange gallere drept eller gjort til slaver', farge: ROD },
+            {
+                tekst: 'Svært mange gallere i stridsdyktig alder drept eller gjort til slaver',
+                farge: ROD,
+            },
         ],
     ],
     borgerkrig: [
@@ -177,8 +180,12 @@ export function CaesarKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                         />
                     ))}
 
-                {modus === 'gallia' && beat >= 1 && <Navn ll={GALLIA_MIDT} tekst="GALLIA" p={p} />}
-                {modus === 'virkelighet' && <Navn ll={[2, 46.5]} tekst="GALLIA" p={p} />}
+                {modus === 'gallia' && beat >= 1 && (
+                    <Navn ll={GALLIA_MIDT} tekst="GALLIA" under="omtrentlig" p={p} />
+                )}
+                {modus === 'virkelighet' && (
+                    <Navn ll={[2, 46.5]} tekst="GALLIA" under="omtrentlig" p={p} />
+                )}
 
                 {/* Hæren marsjerer nord til Gallia */}
                 {modus === 'gallia' && beat >= 1 && (
@@ -266,6 +273,8 @@ export function CaesarKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                     </>
                 )}
 
+                {modus === 'navnet' && <Navnebilde beat={beat} />}
+
                 {modus !== 'virkelighet' && (
                     <Merke
                         pos={p(ROMA)}
@@ -307,6 +316,116 @@ export function CaesarKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     );
 }
 
+/**
+ * Navnescenen nederst til venstre: livet mot navnet som stolper (beat 0),
+ * C-en som uttales K (beat 1), og ordene som kommer fra Caesar (beat 3).
+ */
+function Navnebilde({ beat }: { beat: number }) {
+    const X0 = 70;
+    const MAKS = 860;
+    if (beat === 0) {
+        const stolper = [
+            { etikett: 'Livet: 56 år', ar: 56, farge: '#475569', y: 800 },
+            { etikett: 'Navnet: 2000 år', ar: 2000, farge: GULL, y: 862 },
+        ];
+        return (
+            <g>
+                <rect
+                    x={X0 - 20}
+                    y={748}
+                    width={MAKS + 40}
+                    height={144}
+                    rx={18}
+                    fill="#ffffff"
+                    opacity={0.92}
+                />
+                {stolper.map((s, i) => (
+                    <g key={s.etikett}>
+                        <text x={X0} y={s.y - 12} fontSize={30} fontWeight={800} fill="#0f172a">
+                            {s.etikett}
+                        </text>
+                        <motion.rect
+                            x={X0}
+                            y={s.y}
+                            height={26}
+                            rx={6}
+                            fill={s.farge}
+                            initial={{ width: 0 }}
+                            animate={{ width: Math.max(8, (s.ar / 2000) * MAKS) }}
+                            transition={{ duration: 1.6, delay: 0.4 + i * 1.2 }}
+                        />
+                    </g>
+                ))}
+            </g>
+        );
+    }
+    if (beat === 1) {
+        return (
+            <g>
+                <rect
+                    x={X0 - 20}
+                    y={752}
+                    width={720}
+                    height={136}
+                    rx={18}
+                    fill="#ffffff"
+                    opacity={0.92}
+                />
+                <text
+                    x={X0}
+                    y={826}
+                    fontSize={72}
+                    fontWeight={900}
+                    fill="#0f172a"
+                    letterSpacing={6}
+                >
+                    <tspan fill="#b91c1c">C</tspan>AESAR
+                </text>
+                <motion.text
+                    x={X0 + 380}
+                    y={826}
+                    fontSize={40}
+                    fontWeight={800}
+                    fill="#b91c1c"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1 }}
+                >
+                    = «KAISAR»
+                </motion.text>
+                <text x={X0} y={870} fontSize={28} fontWeight={700} fill="#475569">
+                    C-en ble uttalt som en K
+                </text>
+            </g>
+        );
+    }
+    if (beat >= 3) {
+        return (
+            <g>
+                <rect
+                    x={X0 - 20}
+                    y={762}
+                    width={860}
+                    height={116}
+                    rx={18}
+                    fill="#ffffff"
+                    opacity={0.92}
+                />
+                <text x={X0} y={838} fontSize={54} fontWeight={900} fill="#b91c1c">
+                    Kaiser
+                </text>
+                <text x={X0 + 205} y={838} fontSize={54} fontWeight={900} fill="#0f172a">
+                    ← CAESAR →
+                </text>
+                <text x={X0 + 640} y={838} fontSize={54} fontWeight={900} fill="#b91c1c">
+                    Tsar
+                </text>
+            </g>
+        );
+    }
+    return null;
+}
+
 const Land = memo(function Land({ geographies, sti }: { geographies: unknown[]; sti: GeoPath }) {
     return (
         <>
@@ -326,28 +445,46 @@ const Land = memo(function Land({ geographies, sti }: { geographies: unknown[]; 
 function Navn({
     ll,
     tekst,
+    under,
     p,
 }: {
     ll: LngLat;
     tekst: string;
+    under?: string;
     p: (ll: LngLat) => [number, number];
 }) {
     const [x, y] = p(ll);
     return (
-        <motion.text
-            x={x}
-            y={y}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.85 }}
-            transition={{ duration: 1 }}
-            textAnchor="middle"
-            fontSize={44}
-            fontWeight={900}
-            letterSpacing={8}
-            fill="#7f1d1d"
-        >
-            {tekst}
-        </motion.text>
+        <>
+            {under && (
+                <text
+                    x={x}
+                    y={y + 40}
+                    textAnchor="middle"
+                    fontSize={28}
+                    fontWeight={700}
+                    fontStyle="italic"
+                    fill="#7f1d1d"
+                    opacity={0.8}
+                >
+                    {under}
+                </text>
+            )}
+            <motion.text
+                x={x}
+                y={y}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.85 }}
+                transition={{ duration: 1 }}
+                textAnchor="middle"
+                fontSize={44}
+                fontWeight={900}
+                letterSpacing={8}
+                fill="#7f1d1d"
+            >
+                {tekst}
+            </motion.text>
+        </>
     );
 }
 

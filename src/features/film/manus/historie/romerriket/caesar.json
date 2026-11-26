@@ -5,13 +5,13 @@
     "bilde": "/images/romerriket/caesar-hero.webp",
     "utenforArtikkel": [],
     "vurdering": {
-        "dato": "2026-10-30",
-        "viser": 3,
+        "dato": "2026-11-26",
+        "viser": 4,
         "lesbart": 4,
         "variasjon": 4,
         "forstaelig": 4,
-        "tro": 3,
-        "sum": 18
+        "tro": 4,
+        "sum": 20
     },
     "scener": [
         {
@@ -291,7 +291,7 @@
                         {
                             "ikon": "avtale",
                             "tittel": "Romersk borgerskap",
-                            "tekst": "til folk i provinsene",
+                            "tekst": "til mange i provinsene",
                             "fraBeat": 1
                         },
                         {
@@ -313,7 +313,7 @@
                     "si": "Cæsar brukte makta si. Soldatene hans fikk jord."
                 },
                 {
-                    "si": "Folk i provinsene, områdene Roma hadde erobret, fikk bli romerske borgere."
+                    "si": "Mange folk i provinsene, områdene Roma hadde erobret, fikk bli romerske borgere."
                 },
                 {
                     "si": "Han startet store byggeprosjekter, så de fattige fikk arbeid."
@@ -340,7 +340,7 @@
                     "uttale": "I femten åttito justerte pave Gregor kalenderen litt. Det var drøyt seksten hundre år senere. Og det er den justerte kalenderen vi bruker i dag."
                 },
                 {
-                    "si": "Og måneden Cæsar ble født i, fikk navnet hans: Julius. På norsk heter den juli."
+                    "si": "Og måneden Cæsar ble født i, ble senere oppkalt etter ham: Julius. På norsk heter den juli."
                 },
                 {
                     "si": "Augustus, som du snart skal møte, fikk august oppkalt etter seg. To måneder bærer fortsatt navnene deres."
