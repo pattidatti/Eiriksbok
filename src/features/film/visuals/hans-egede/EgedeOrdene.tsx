@@ -121,9 +121,9 @@ function Brod({ beat }: { beat: number }) {
     return (
         <>
             {beat <= 1 && <Inuitter x={1240} antall={2} />}
-            {beat <= 1 && <Boble x={300} y={270} b={330} tekst="Finnes Gud?" farge={PREST} />}
+            {beat <= 1 && <Boble x={300} y={270} b={330} tekst="Ja til Gud?" farge={PREST} />}
             {beat <= 1 && (
-                <Boble x={1240} y={270} b={300} tekst={beat === 0 ? '«...»' : 'Jeg vet ikke'} farge={beat === 0 ? '#64748b' : GULL} key={beat} />
+                <Boble x={1240} y={270} b={340} tekst={beat === 0 ? '«...»' : 'Jeg vet ikke'} farge={beat === 0 ? '#64748b' : GULL} key={beat} />
             )}
             {beat <= 1 && (
                 <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
@@ -136,7 +136,7 @@ function Brod({ beat }: { beat: number }) {
                     </text>
                     {beat === 1 && (
                         <motion.path
-                            d="M 690 340 L 910 430"
+                            d="M 600 360 L 650 410 M 650 360 L 600 410"
                             stroke={ROD}
                             strokeWidth={12}
                             strokeLinecap="round"
@@ -172,7 +172,7 @@ function Brod({ beat }: { beat: number }) {
                         <text x={900} y={370} textAnchor="middle" fontSize={52} fontWeight={900} fill="#a8a29e">
                             brød
                         </text>
-                        <motion.path d="M 840 355 L 960 355" stroke={ROD} strokeWidth={8} initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8 }} />
+                        <motion.path d="M 785 330 L 815 360 M 815 330 L 785 360" stroke={ROD} strokeWidth={8} strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8 }} />
                         <motion.text x={1100} y={372} textAnchor="middle" fontSize={64} fontWeight={900} fill={INUIT} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}>
                             sel
                         </motion.text>

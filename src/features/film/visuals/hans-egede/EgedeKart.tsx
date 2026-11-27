@@ -63,13 +63,13 @@ const KORT: Record<Modus, Kort[][]> = {
     ],
     nordboerne: [
         [{ tekst: 'Vikingtiden' }, { tekst: 'Hvem bodde på Grønland?', farge: NORR }],
-        [{ tekst: '982' }, { tekst: 'Eirik Raude kommer', farge: NORR }, { tekst: '985: en flåte på 25 skip', farge: NORR }],
+        [{ tekst: '982' }, { tekst: 'Eirik Raude kommer', farge: NORR }, { tekst: 'Rundt 985: en flåte på 25 skip', farge: NORR }],
         [{ tekst: 'To bygder' }, { tekst: 'Austerbygd', farge: NORR }, { tekst: 'Vesterbygd', farge: NORR }],
         [{ tekst: 'Over 290 gårder' }, { tekst: 'Kanskje 4000 mennesker', farge: GULL }],
         [{ tekst: '1261' }, { tekst: 'Del av Norgesveldet', farge: ROD }, { tekst: 'riket til den norske kongen', farge: ROD }],
     ],
     thule: [
-        [{ tekst: 'Etter svartedauden' }, { tekst: 'Handelsreisene fra Norge slutter', farge: ROD }],
+        [{ tekst: 'Etter svartedauden' }, { tekst: 'De faste handelsreisene fra Norge slutter', farge: ROD }],
         [{ tekst: 'Rundt 1450' }, { tekst: 'De yngste sporene i Austerbygd', farge: NORR }, { tekst: 'Hvorfor forsvant de?', farge: GULL }],
         [{ tekst: '1200-tallet' }, { tekst: 'Thule-folket kommer', farge: INUIT }],
         [{ tekst: 'Fangstfolk' }, { tekst: 'Sel og hval', farge: INUIT }, { tekst: 'Kajakk og hundeslede', farge: INUIT }],
@@ -149,7 +149,7 @@ export function EgedeKart({ beat, props }: VisualProps<{ modus: Modus }>) {
     const kort = KORT[modus][Math.min(beat, KORT[modus].length - 1)] ?? [];
 
     // Grønlands farge i Kiel-modusen: koloni (rød), del av Danmark, hjemmestyre, selvstyre (blå).
-    const gronlandFarge = beat <= 2 ? ROD : beat === 3 ? '#9333ea' : INUIT;
+    const gronlandFarge = beat <= 3 ? ROD : INUIT;
 
     return (
         <div className="absolute inset-0 bg-[#cfe3ef] overflow-hidden">
@@ -180,9 +180,9 @@ export function EgedeKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                         {beat === 3 && (
                             <>
                                 <Pil d={linje([STED.vagan, [11.5, 64.6], [9.4, 59.4], STED.kobenhavn])} farge={GULL} varighet={2} />
-                                <Brev ll={[-3, 64.6]} p={p} forsinkelse={0.4} />
-                                <Brev ll={[-1, 59.8]} p={p} forsinkelse={1.2} />
-                                <Krone ll={[3, 55.6]} p={p} />
+                                <Brev ll={[9, 64.8]} p={p} forsinkelse={0.4} />
+                                <Brev ll={[8, 61]} p={p} forsinkelse={1.2} />
+                                <Krone ll={[8.2, 56.2]} p={p} />
                             </>
                         )}
                         {beat === 4 && <Kryss ll={STED.vagan} p={p} />}
@@ -269,9 +269,9 @@ export function EgedeKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                 {modus === 'kiel' && (
                     <>
                         <Felt d={land(ID.danmark)} farge={ROD} opasitet={0.45} />
-                        <Felt d={land(ID.gronland)} farge={gronlandFarge} opasitet={beat >= 3 ? 0.35 : 0.3} />
+                        <Felt d={land(ID.gronland)} farge={gronlandFarge} opasitet={beat === 3 ? 0.45 : beat >= 3 ? 0.35 : 0.3} />
                         <Felt d={land(ID.norge)} farge={beat >= 1 ? GULL : ROD} opasitet={0.3} />
-                        {beat >= 1 && <Felt d={land(ID.island)} farge={ROD} opasitet={0.3} />}
+                        {(beat === 1 || beat === 2) && <Felt d={land(ID.island)} farge={ROD} opasitet={0.3} />}
                         <Navn ll={[-42, 73]} tekst="GRØNLAND" p={p} />
                         <Navn ll={[13, 64.4]} tekst="NORGE" p={p} />
                         <Merke ll={STED.kobenhavn} tekst="København" p={p} farge={ROD} hoyre />
@@ -283,8 +283,7 @@ export function EgedeKart({ beat, props }: VisualProps<{ modus: Modus }>) {
                                 <Merke ll={STED.faroyene} tekst="Færøyene" p={p} farge={ROD} under />
                             </>
                         )}
-                        {beat === 2 && <Boble ll={[8, 62]} p={p} tekst="Sinte!" farge={GULL} dx={-170} dy={-30} />}
-                        {beat >= 3 && <Merke ll={STED.nuuk} tekst="Nuuk" p={p} farge={gronlandFarge} hoyre stor={beat >= 4} />}
+                                                {beat >= 3 && <Merke ll={STED.nuuk} tekst="Nuuk" p={p} farge={gronlandFarge} hoyre stor={beat >= 4} />}
                         {beat >= 3 && (
                             <Navn
                                 key={beat}
@@ -559,8 +558,8 @@ function Mynter({ ll, p }: { ll: LngLat; p: P }) {
 function Flate({ p }: { p: P }) {
     const skip = Array.from({ length: 25 }, (_, i) => {
         const t = i / 24;
-        const lng = -27 - t * 15 + (i % 3) * 0.6;
-        const lat = 64.6 - t * 3.2 + ((i % 5) - 2) * 0.32;
+        const lng = -27 - t * 15 + (i % 3) * 1.2;
+        const lat = 64.6 - t * 3.2 + ((i % 5) - 2) * 0.7;
         return p([lng, lat]);
     });
     return (
