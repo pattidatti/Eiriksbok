@@ -1,0 +1,210 @@
+{
+  "id": "grunnleggere",
+  "tittel": "Grunnleggere: Menneskene bak",
+  "kilde": "/krle/sammenligning/grunnleggere",
+  "bilde": "/images/sammenligning/grunnleggere-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-27", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "salen",
+      "lyd": "rom",
+      "kapittel": "Fire svar",
+      "visual": { "type": "GrunnleggereSalen", "props": { "modus": "aapning" } },
+      "replikker": [
+        { "si": "Tenk deg en stor, stille sal. Fire sokler står på rad, én for hver religion." },
+        { "si": "Kristne setter Jesus øverst av alle. De tilber ham som Gud." },
+        { "si": "Muslimer sier at Muhammad var et menneske. De nekter å tilbe ham." },
+        { "si": "Buddhister forteller om en mann som våknet ved egen kraft, uten hjelp fra noen gud." },
+        { "si": "Og hinduismen? Her står sokkelen tom. Ingen grunnlegger, ingen startdato." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "GRUNNLEGGERE",
+          "undertittel": "Menneskene bak religionene",
+          "bilde": "/images/sammenligning/grunnleggere-hero.webp",
+          "sporsmal": { "tekst": "Hvor høyt står grunnleggeren?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Samme spørsmål, fire helt ulike svar. Denne filmen handler om menneskene bak religionene." },
+        { "si": "Vi skal se hvor høyt hver religion plasserer grunnleggeren sin, og hvem som tok over da han døde." }
+      ]
+    },
+    {
+      "id": "antall",
+      "lyd": "stille",
+      "kapittel": "Hvem startet det?",
+      "visual": { "type": "GrunnleggereSkala", "props": { "modus": "antall" } },
+      "replikker": [
+        { "si": "Vi er vant til at ting har en oppfinner. En bedrift har en gründer, en app har en utvikler." },
+        { "si": "Derfor spør vi ofte en religion: Hvem startet deg? Noen har én grunnlegger, som buddhismen." },
+        { "si": "Bahá'í har to.", "uttale": "Bahai har to." },
+        { "si": "Sikhismen hadde ti guruer, altså lærere." },
+        { "si": "Og noen, som hinduismen, har ingen." }
+      ]
+    },
+    {
+      "id": "trapp",
+      "visual": { "type": "GrunnleggereSkala", "props": { "modus": "trapp" } },
+      "replikker": [
+        { "si": "Men det som skiller mest, er hvor høyt grunnleggeren ble plassert etterpå." },
+        { "si": "Tenk på det som en trapp. Øverst står Gud. Så kommer utsending, en som Gud har sendt, så profet og lærer." },
+        { "si": "Nederst står de som ikke har noen grunnlegger." },
+        { "si": "Plassen på trappa avgjør hvordan religionen er bygd opp. Er grunnleggeren Gud, kan du be til ham." },
+        { "si": "Er han lærer, kan du bare gjøre som han sa." }
+      ]
+    },
+    {
+      "id": "abraham",
+      "lyd": "rom",
+      "kapittel": "Abrahams barn",
+      "visual": { "type": "GrunnleggereSalen", "props": { "modus": "abrahamittisk" } },
+      "replikker": [
+        { "si": "Jødedom, kristendom og islam regner alle Abraham som stamfar, den de stammer fra. Men svært få bibelforskere tror i dag at han faktisk levde." },
+        { "si": "Alle tre har samme stamfar. Likevel plasserer de grunnleggeren på tre helt ulike steder." },
+        { "si": "Jødedommen har egentlig ingen grunnlegger. Det viktigste er pakten, en høytidelig avtale mellom Gud og folket." },
+        { "si": "Moses blir kalt Moses vår lærer, ikke Moses vår frelser. Han blir hedret, men ikke tilbedt." }
+      ]
+    },
+    {
+      "id": "jesus",
+      "lyd": "stille",
+      "visual": { "type": "GrunnleggereTid", "props": { "modus": "jesus" } },
+      "replikker": [
+        { "si": "Kristendommen plasserer sin mann høyest. Men Jesus grunnla faktisk ikke kristendommen." },
+        { "si": "Han var jøde. Historikere regner det som sikkert at han levde, og at han ble korsfestet rundt år 30." },
+        { "si": "At han sto opp igjen, kan ingen forsker bekrefte. Det er noe kristne tror." },
+        { "si": "Religionen ble til etter at han døde, blant folk som var sikre på at han hadde stått opp." },
+        { "si": "Så gikk det nesten 300 år. I år 325 slo kirkemøtet i Nikea fast at Kristus er ekte Gud." }
+      ]
+    },
+    {
+      "id": "kirkemoter",
+      "visual": { "type": "GrunnleggereKart", "props": { "modus": "kirkemoter" } },
+      "replikker": [
+        { "si": "Et kirkemøte er et stort møte der kirkens ledere bestemte hva kristne skulle tro. Her ligger Nikea." },
+        { "si": "I år 451 kom det neste store møtet, i Kalkedon." },
+        { "si": "Det møtet bestemte hvordan det guddommelige og det menneskelige henger sammen i Jesus." },
+        { "si": "Men ikke alle kristne var enige. Kirkene i Egypt, Syria og Armenia sa nei." }
+      ]
+    },
+    {
+      "id": "streken",
+      "visual": { "type": "GrunnleggereSitater", "props": { "modus": "streken" } },
+      "replikker": [
+        { "si": "Islam trekker en strek som ikke kan diskuteres. Over streken er Gud, under er menneskene." },
+        { "si": "Muslimer regner Muhammad som Guds største og siste profet." },
+        { "si": "Men å tilbe ham er strengt forbudt. Koranen ber ham til og med si: Jeg er bare et vanlig menneske som dere." },
+        { "si": "Han står i selve trosbekjennelsen, setningen som sier hva muslimer tror, men på menneskesiden av streken." }
+      ]
+    },
+    {
+      "id": "indus",
+      "kapittel": "Fra India",
+      "visual": { "type": "GrunnleggereKart", "props": { "modus": "indus" } },
+      "replikker": [
+        { "si": "Hinduismen, buddhismen og sikhismen ligger nær hverandre på kartet." },
+        { "si": "Hinduismen som helhet har ingen grunnlegger, selv om noen retninger inne i den har det. Den startet ikke på ett bestemt tidspunkt eller ett bestemt sted." },
+        { "si": "Den har ingen liste over hva du må tro, og ingen sjef på toppen." },
+        { "si": "Selv navnet kom utenfra. Hindu var gammelpersisk for folk ved elva Indus." },
+        { "si": "I stedet for én person i midten går læren videre fra lærer til elev, i lange rekker. Læreren kalles guru." }
+      ]
+    },
+    {
+      "id": "buddha",
+      "lyd": "rom",
+      "visual": { "type": "GrunnleggereSalen", "props": { "modus": "indisk" } },
+      "replikker": [
+        { "si": "Buddhismen har en grunnlegger, men ingen gud. Forskere er enige om at Buddha fantes, men vet ikke sikkert når han levde." },
+        { "si": "Buddha er ikke et navn. Det er en æretittel, et hedersnavn, som betyr den som har våknet." },
+        { "si": "De eldste tekstene ser på ham som en lærer for både guder og mennesker, ikke som en gud." },
+        { "si": "Men buddhistene er uenige. I mahayana, en av retningene, ble Buddha etter hvert noe evig og guddommelig. Theravada, en annen retning, holdt stort sett fast på den eldste læren." },
+        { "si": "Da han døde, pekte han ikke ut noen arvtaker. Han pekte på læren selv." }
+      ]
+    },
+    {
+      "id": "guruer",
+      "lyd": "stille",
+      "visual": { "type": "GrunnleggereTid", "props": { "modus": "guruer" } },
+      "replikker": [
+        { "si": "Sikhismen løste det på en tredje måte. Guru Nanak levde fra 1469 til 1539." },
+        { "si": "Etter ham kom ni guruer til." },
+        { "si": "I 1708 sa den tiende, Guru Gobind Singh, at han var den siste guruen av kjøtt og blod." },
+        { "si": "Boka Guru Granth Sahib skulle overta jobben. Rekken ble ikke brutt, den ble flyttet til en bok." },
+        { "si": "Derfor godtar ikke sikhene noen levende guru i dag. Ingen kan si at Gud har gitt dem en ny beskjed som går foran boka." }
+      ]
+    },
+    {
+      "id": "nyere",
+      "kapittel": "Nye bevegelser",
+      "visual": { "type": "GrunnleggereTid", "props": { "modus": "nyere" } },
+      "replikker": [
+        { "si": "Bahá'í, mormonismen og Jehovas vitner blir ofte kalt nyere bevegelser. Grunnleggerne deres levde i en tid med aviser, folketellinger og trykkerier.", "uttale": "Bahai, mormonismen og Jehovas vitner blir ofte kalt nyere bevegelser. Grunnleggerne deres levde i en tid med aviser, folketellinger og trykkerier." },
+        { "si": "Derfor vet vi mye mer om dem. I 1844 sto Báb fram. Han sa at han var porten, og at en enda større utsending skulle komme etter ham.", "uttale": "Derfor vet vi mye mer om dem. I 1844 sto Bab fram. Han sa at han var porten, og at en enda større utsending skulle komme etter ham." },
+        { "si": "I 1863 sa Bahá'u'lláh at han var den Báb hadde snakket om. Derfor har bahá'í to grunnleggere.", "uttale": "I 1863 sa Baha-ulla at han var den Bab hadde snakket om. Derfor har bahai to grunnleggere." },
+        { "si": "Mormonismen har Joseph Smith, som levde fra 1805 til 1844. Da han døde, delte bevegelsen seg i flere trossamfunn." },
+        { "si": "Historikere sier at Jehovas vitner oppsto i USA på 1870-tallet, da Charles Taze Russell startet grupper som studerte Bibelen sammen." }
+      ]
+    },
+    {
+      "id": "nyere-roller",
+      "lyd": "rom",
+      "visual": { "type": "GrunnleggereSalen", "props": { "modus": "nyere" } },
+      "replikker": [
+        { "si": "Bahá'í vokste fram fra sjia-islam, en retning i islam. De to andre fra kristendommen. Alle tre er mye mindre enn de store religionene.", "uttale": "Bahai vokste fram fra sjia-islam, en retning i islam. De to andre fra kristendommen. Alle tre er mye mindre enn de store religionene." },
+        { "si": "I bahá'í regnes begge grunnleggerne som budbringere fra Gud, ikke som Gud selv.", "uttale": "I bahai regnes begge grunnleggerne som budbringere fra Gud, ikke som Gud selv." },
+        { "si": "Joseph Smith regnes som profet, ikke som gud. Første punkt i trosbekjennelsen nevner Gud Faderen, Jesus Kristus og Den hellige ånd, ikke Smith." },
+        { "si": "Jehovas vitner vil ikke svare på spørsmålet. De sier at Russell ikke startet noen ny religion, og peker på Jesus." }
+      ]
+    },
+    {
+      "id": "arv",
+      "lyd": "stille",
+      "kapittel": "Mønsteret",
+      "visual": { "type": "GrunnleggereSkala", "props": { "modus": "arv" } },
+      "replikker": [
+        { "si": "Still svarene ved siden av hverandre. Det første spørsmålet er hvor høyt personen ble plassert." },
+        { "si": "Det andre er hvem som tok over da han døde." },
+        { "si": "Hos mormonene ble det en stilling. Presidenten i kirken regnes i dag som Guds profet på jorden." },
+        { "si": "I jødedommen bestemmer rabbinerne, og de kristne fikk kirkemøtene. Sikhene fikk en bok, og buddhistene selve læren." },
+        { "si": "Det andre spørsmålet avgjør hvem som bestemmer i dag. Og inne i hver tradisjon er folk uenige om det." }
+      ]
+    },
+    {
+      "id": "ordene",
+      "visual": { "type": "GrunnleggereSitater", "props": { "modus": "like" } },
+      "replikker": [
+        { "si": "Legg sitatene ved siden av hverandre." },
+        { "si": "Gjør mot andre det du vil at de skal gjøre mot deg. Elsk din neste som deg selv." },
+        { "si": "Sett deg i den andres sted, og ikke drep. Gjør godt mot alle mennesker. Jorden er ett land." },
+        { "si": "Fem tradisjoner fra ulike tider, og nesten den samme setningen." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Rådene om hvordan vi behandler hverandre,", "fraBeat": 0 },
+            { "tekst": "ligner hverandre mye.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Gud, profet, lærer eller ingen:", "fraBeat": 1 },
+            { "tekst": "Det er rollen som skiller.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "For de fleste av dem:", "fraBeat": 2 },
+            { "tekst": "Ordene overlevde menneskene.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Rådene om hvordan vi skal behandle hverandre, ligner langt mer enn rollene." },
+        { "si": "Det som skiller, er rollen grunnleggeren fikk: Gud, profet, lærer, eller ingen." },
+        { "si": "Og ordene overlevde menneskene. Det er det de fleste av disse fortellingene har til felles." }
+      ]
+    }
+  ]
+}
