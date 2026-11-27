@@ -5,7 +5,7 @@
   "year": "2022",
   "category": "Sikkerhet og geopolitikk",
   "readTime": "11 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/geopolitikk/krigen-i-ukraina-hero.webp",
   "details": [
     "Russland gikk til fullskala invasjon av Ukraina 24. februar 2022, men konflikten startet med annekteringen av Krim i 2014.",
     "Folkeretten forbyr et land å angripe et annet land eller ta deler av det. 141 land i FN fordømte angrepet.",
@@ -36,7 +36,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/geopolitikk/krigen-i-ukraina-01.webp",
       "alt": "Folk med kofferter på en overfylt togstasjon om vinteren",
       "caption": "De første ukene flyktet over én million mennesker ut av Ukraina."
     },
@@ -186,7 +186,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/geopolitikk/krigen-i-ukraina-02.webp",
       "alt": "Ødelagt boligblokk med knuste vinduer i en ukrainsk by",
       "caption": "Russiske bomber og droner har rammet boliger, sykehus og skoler langt fra fronten."
     },
@@ -252,7 +252,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/geopolitikk/krigen-i-ukraina-03.webp",
       "alt": "Blå og gule ukrainske flagg i vinden foran et regjeringsbygg",
       "caption": "Hvem skal eie landområdene Russland har tatt? Det er det vanskeligste spørsmålet i fredssamtalene."
     },
