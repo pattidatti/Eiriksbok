@@ -1,0 +1,242 @@
+{
+  "id": "etikk-og-leveregler",
+  "tittel": "Etikk og leveregler: Hva er et godt liv?",
+  "kilde": "/krle/sammenligning/etikk-og-leveregler",
+  "bilde": "/images/sammenligning/etikk-og-leveregler-hero.webp",
+  "utenforArtikkel": [
+    { "tall": 40, "begrunnelse": "Regnet ut fra artikkelen: 2,5 prosent er én av hver 40 kroner. Vist som 40 mynter i prikkfeltet." },
+    { "tall": "førti", "begrunnelse": "Samme utregning som over, sagt med ord: 2,5 prosent er én krone av hver førti." },
+    { "tall": 39, "begrunnelse": "Regnet ut fra artikkelen: av 40 mynter gis én bort, 39 beholder du." }
+  ],
+  "vurdering": { "dato": "2026-11-27", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+  "scener": [
+    {
+      "id": "beinet",
+      "lyd": "rom",
+      "kapittel": "På ett bein",
+      "visual": { "type": "EtikkToFormer", "props": { "modus": "beinet" } },
+      "replikker": [
+        { "si": "En mann står på ett bein foran en kjent jødisk lærer, rabbi Hillel. Det forteller Talmud, en gammel jødisk bok." },
+        { "si": "Han vil ha hele Toraen, jødenes hellige lov, forklart mens han står der." },
+        { "si": "Hillel svarer med én setning: Det du ikke vil at andre skal gjøre mot deg, skal du heller ikke gjøre mot andre." },
+        { "si": "Resten er forklaring, sier Hillel. Gå og lær." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "DEN GYLNE REGEL",
+          "undertittel": "Etikk og leveregler: hva er et godt liv?",
+          "bilde": "/images/sammenligning/etikk-og-leveregler-hero.webp",
+          "sporsmal": { "tekst": "Hvordan skal jeg behandle andre?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Setningen kalles den gylne regel. Denne filmen handler om etikk, altså tanker om rett og galt." },
+        { "si": "Alle religioner kommer før eller siden til spørsmålet: Hvordan skal jeg behandle menneskene rundt meg?" },
+        { "si": "Svarene spriker. Men én setning dukker opp igjen og igjen, hos folk som aldri hadde hørt om hverandre." }
+      ]
+    },
+    {
+      "id": "snudd",
+      "kapittel": "To former",
+      "visual": { "type": "EtikkToFormer", "props": { "modus": "snudd" } },
+      "replikker": [
+        { "si": "En generasjon eller to senere står nesten den samme setningen i Matteusevangeliet. Men nå er den snudd." },
+        { "si": "Jesus sier: Alt dere vil at andre skal gjøre mot dere, skal dere gjøre mot dem." },
+        { "si": "Hillel sier: ikke gjør. Jesus sier: gjør. Det er de to formene av den gylne regel." }
+      ]
+    },
+    {
+      "id": "former",
+      "visual": { "type": "EtikkToFormer", "props": { "modus": "former" } },
+      "replikker": [
+        { "si": "Forskjellen er større enn den ser ut." },
+        { "si": "Den første formen kan du følge ved å sitte helt stille." },
+        { "si": "Den andre er først oppfylt når du faktisk har gjort noe for en annen." },
+        { "si": "Hvilken av dem er best? Det er de lærde uenige om." },
+        { "si": "Den som krever handling, ber om mer av deg. Men den som bare sier la være, tvinger ikke dine egne ønsker på andre." }
+      ]
+    },
+    {
+      "id": "veven",
+      "lyd": "stille",
+      "kapittel": "Ni setninger",
+      "visual": { "type": "EtikkVeven", "props": { "modus": "traader" } },
+      "replikker": [
+        { "si": "Tenk deg ni setninger fra ni tradisjoner, som ni tråder i en vev." },
+        { "si": "Tre tråder har abrahamittiske røtter: jødedom, kristendom og islam. Alle tre regner Abraham som stamfar." },
+        { "si": "Tre kommer fra India: hinduisme, buddhisme og sikhisme." },
+        { "si": "Og tre er nyere bevegelser: bahá'í, mormonismen og Jehovas vitner." }
+      ]
+    },
+    {
+      "id": "atte",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "person",
+          "steg": [
+            { "fraBeat": 0, "total": 9, "farget": 0, "restFarge": "#94a3b8", "tittel": "Ni setninger side om side", "restEtikett": "setninger", "visTall": false },
+            { "fraBeat": 1, "total": 9, "farget": 8, "farge": "#b45309", "restFarge": "#cbd5e1", "tittel": "Deg selv som målestokk", "fargeEtikett": "bruker deg selv som målestokk", "restEtikett": "en annen vei" },
+            { "fraBeat": 2, "total": 9, "farget": 8, "farge": "#b45309", "restFarge": "#059669", "tittel": "Den niende: del det du har", "fargeEtikett": "bruker deg selv som målestokk", "restEtikett": "handler om å dele (sikhismen)" }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Legg setningene side om side. Hva har de felles?" },
+        { "si": "Åtte av de ni bruker deg selv som målestokk. Det du selv vil ha, eller ikke vil ha, skal styre hva du gjør mot andre." },
+        { "si": "Den niende kommer fra sikhismen. Den peker samme vei, men handler om å dele." }
+      ]
+    },
+    {
+      "id": "bud",
+      "lyd": "rom",
+      "kapittel": "Bud fra Gud",
+      "visual": { "type": "EtikkVeven", "props": { "modus": "bud" } },
+      "replikker": [
+        { "si": "I jødedom, kristendom og islam kommer levereglene fra Gud. De er bud som kommer utenfra." },
+        { "si": "De ti bud står to steder i Den hebraiske bibelen. Der står også budet om å elske din neste som deg selv." },
+        { "si": "Mange jøder leser Hillels setning som et kort sammendrag av budene, ikke som en ny regel på toppen." },
+        { "si": "I kristendommen er nestekjærlighet den viktigste regelen. I fortellingen om den barmhjertige samaritanen viser Jesus at nesten er hvem som helst du møter." },
+        { "si": "I islam kalles levereglene sharia. Det er ingen ferdig lovbok, men noe muslimske lærde har bygget opp gjennom flere hundre år." }
+      ]
+    },
+    {
+      "id": "zakat",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "prikk",
+          "steg": [
+            { "fraBeat": 0, "total": 40, "farget": 0, "restFarge": "#d6a64a", "tittel": "Zakat: en av de fem søylene i islam", "restEtikett": "det du har til overs i et år", "visTall": false },
+            { "fraBeat": 1, "total": 40, "farget": 1, "farge": "#059669", "restFarge": "#d6a64a", "tittel": "Zakat: 2,5 prosent", "fargeEtikett": "gis bort", "restEtikett": "beholder du", "visTall": false },
+            { "fraBeat": 2, "total": 40, "farget": 1, "farge": "#059669", "restFarge": "#d6a64a", "tittel": "Én av hver 40 mynter", "fargeEtikett": "gis bort", "restEtikett": "beholder du" },
+            { "fraBeat": 3, "total": 40, "farget": 1, "farge": "#059669", "restFarge": "#e7e5e4", "tittel": "Koranen: gi bort noe du er glad i", "fargeEtikett": "gis bort", "restEtikett": "beholder du" }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Reglene bygger på Koranen og på hadith, altså fortellinger om hva Muhammad sa og gjorde. En av de fem søylene i islam er zakat." },
+        { "si": "Da gir du 2,5 prosent av det du har til overs i året, til dem som er fattige eller har havnet i gjeld." },
+        { "si": "Det er én krone av hver førti." },
+        { "si": "Koranen sier det rett ut: det handler ikke om hvilken vei du snur ansiktet, men om at du gir bort noe du selv er glad i." }
+      ]
+    },
+    {
+      "id": "karma",
+      "lyd": "stille",
+      "kapittel": "Karma",
+      "visual": { "type": "EtikkKart", "props": { "modus": "india" } },
+      "replikker": [
+        { "si": "I hinduisme, buddhisme og sikhisme er grunnen til å være god en helt annen." },
+        { "si": "Her står karma i sentrum. Det du gjør mot andre, får følger for deg selv, enten i dette livet eller i et senere." },
+        { "si": "Da trenger ingen å befale deg noe. Følgene kommer uansett." },
+        { "si": "Mange hinduer knytter dette til dharma, altså det som er riktig å gjøre. Dharma er ikke likt for alle." },
+        { "si": "Et annet viktig ideal er ahimsa, å ikke skade noe levende. Derfor er mange hinduer vegetarianere." }
+      ]
+    },
+    {
+      "id": "fem",
+      "visual": { "type": "EtikkToFormer", "props": { "modus": "fem" } },
+      "replikker": [
+        { "si": "Buddhismen har fem leveregler. Hold deg unna drap, tyveri, løgn, rus og seksuell utnytting." },
+        { "si": "Men i buddhismen er det du mente med handlingen som teller. Skader du noen helt uten å ville det, gir det ingen dårlig karma." },
+        { "si": "Den hellige teksten Dhammapada nevner ingen gud. Den sier: Alle skjelver for vold, alle er redde for å dø. Så sett deg i den andres sted." }
+      ]
+    },
+    {
+      "id": "sikh",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Sikhismen bygger på tre ting",
+          "punkter": [
+            { "ikon": "fabrikk", "tittel": "Arbeid ærlig", "fraBeat": 0 },
+            { "ikon": "penger", "tittel": "Del det du tjener", "fraBeat": 1 },
+            { "ikon": "avtale", "tittel": "Gjør noe for andre", "fraBeat": 2 },
+            { "ikon": "hus", "tittel": "Langar: alle spiser sammen", "tekst": "på gulvet i gurdwaraen, menn og kvinner side om side", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Sikhismen skiller seg ut: vi fant ingen sikhisk gylne regel med dekning i kildene. Sikhene bygger levereglene på tre ting. Den første: arbeid ærlig." },
+        { "si": "Den andre er: del det du tjener." },
+        { "si": "Og den tredje: gjør noe for andre." },
+        { "si": "Sikhene kastet kastesystemet, som delte folk inn i lag, på dør. I gurdwaraen, sikhenes gudshus, spiser alle fellesmåltidet langar sammen på gulvet, menn og kvinner side om side." }
+      ]
+    },
+    {
+      "id": "storrelse",
+      "lyd": "stille",
+      "kapittel": "Nye bevegelser",
+      "visual": { "type": "EtikkStorrelse" },
+      "replikker": [
+        { "si": "Så til de tre nyere bevegelsene: mormonismen, Jehovas vitner og bahá'í." },
+        { "si": "De kommer fra hvert sitt sted. Bahá'í vokste fram fra sjia-islam, de to andre fra kristendommen." },
+        { "si": "Kristendom og islam har over en milliard tilhengere hver." },
+        { "si": "De nyere bevegelsene er mye mindre, med mellom seks og femten millioner medlemmer hver." }
+      ]
+    },
+    {
+      "id": "nyere",
+      "visual": { "type": "EtikkVeven", "props": { "modus": "nyere" } },
+      "replikker": [
+        { "si": "Når en ny bevegelse bryter ut, tar den den gylne regel med seg. Det som blir nytt, er reglene rundt." },
+        { "si": "Bahá'í sier at du ikke skal legge noe på et annet menneske som du ikke ville hatt lagt på deg selv. Kvinner og menn skal være likeverdige." },
+        { "si": "Mormonismen har regelen ordrett i Mormons bok. Visdomsordet betyr i dag at man dropper alkohol, tobakk, kaffe og te, og man gir en tiendedel av inntekten til kirken." },
+        { "si": "Jehovas vitner holder seg utenfor politikk, sier nei til blodoverføring og feirer verken bursdager eller jul." },
+        { "si": "Hvor strengt hver enkelt følger reglene, varierer." }
+      ]
+    },
+    {
+      "id": "kryss",
+      "kapittel": "Mønsteret",
+      "visual": { "type": "EtikkVeven", "props": { "modus": "kryss" } },
+      "replikker": [
+        { "si": "Se på mønsteret. Ordene varierer, men kjernen er den samme." },
+        { "si": "Og de to formene krysser gruppene. Jødedommen, hinduismen, buddhismen og bahá'í sier: ikke gjør." },
+        { "si": "Kristendommen, islam, mormonismen og Jehovas vitner sier: gjør." },
+        { "si": "Det som skiller mest, er hvorfor regelen gjelder. I de abrahamittiske religionene kommer den fra Gud. I de indiske virker handlingen tilbake på deg selv." },
+        { "si": "Regelen har også en svakhet. Det du liker, er ikke alltid det den andre liker. Derfor kan du ikke bruke den blindt." }
+      ]
+    },
+    {
+      "id": "samisk",
+      "lyd": "vind",
+      "kapittel": "Gjestestemme",
+      "visual": { "type": "EtikkKart", "props": { "modus": "sapmi" } },
+      "replikker": [
+        { "si": "Til slutt en gjestestemme: samisk religion. Den har ingen hellig bok. Levereglene ble ført videre gjennom fortellinger og det folk gjorde." },
+        { "si": "Grunntanken er at naturen lever. Fjell, steiner og trær har sin egen kraft. Et sted er ikke et lager, men noen du står i et forhold til." },
+        { "si": "Til vanlig ofret folk selv, hjemme eller ute i naturen: tran, fiskerester, kjøtt, blod, metall eller mynter. Du gir noe tilbake til stedet du har tatt fra." },
+        { "si": "Mange samer fører dette videre i språk, joik og stedsnavn, selv om misjonærene samlet inn og brente runebommene, de hellige trommene." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "lyd": "stille",
+      "kapittel": "Uten tro?",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Den gylne regel krever ingen tro.", "fraBeat": 0 },
+            { "tekst": "Humanister bruker den uten en gud.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Mennesker klarer å sette seg inn", "fraBeat": 1 },
+            { "tekst": "i hvordan andre har det.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Ingen hellig bok trengs.", "fraBeat": 2 },
+            { "tekst": "Bare evnen til å sette deg i den andres sted.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Og de som ikke tror? Den gylne regel krever ingen tro. Humanister bruker den uten en gud." },
+        { "si": "Begrunnelsen deres er enkel: mennesker klarer å sette seg inn i hvordan andre har det." },
+        { "si": "Kanskje er det derfor regelen finnes nesten overalt. Du trenger ingen hellig bok, bare evnen til å kjenne hvordan noe er for en annen." }
+      ]
+    }
+  ]
+}
