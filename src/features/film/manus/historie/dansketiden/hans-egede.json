@@ -10,12 +10,12 @@
         }
     ],
     "vurdering": {
-        "dato": "2026-10-18",
+        "dato": "2026-11-27",
         "viser": 4,
-        "lesbart": 3,
+        "lesbart": 4,
         "variasjon": 4,
         "forstaelig": 4,
-        "tro": 4,
+        "tro": 3,
         "sum": 19
     },
     "scener": [
@@ -57,7 +57,7 @@
                     "bilde": "/images/dansketiden/hans-egede-hero.webp",
                     "sporsmal": {
                         "tekst": "Apostel eller kolonist?",
-                        "fraBeat": 3
+                        "fraBeat": 2
                     }
                 }
             },
@@ -261,17 +261,26 @@
                             "farget": 100,
                             "farge": "#ea580c",
                             "tittel": "Smitten sprer seg over hele området",
-                            "fargeEtikett": "folket i området"
+                            "fargeEtikett": "smitten når hele området der Egede arbeidet",
+                            "visTall": false
                         },
                         {
                             "fraBeat": 2,
                             "total": 100,
                             "farget": 50,
-                            "farge": "#64748b",
-                            "restFarge": "#dc2626",
+                            "farge": "#475569",
+                            "restFarge": "#e2e8f0",
                             "tittel": "1733 og 1734: kanskje halvert",
                             "fargeEtikett": "igjen",
                             "restEtikett": "borte"
+                        },
+                        {
+                            "fraBeat": 3,
+                            "total": 50,
+                            "farget": 50,
+                            "farge": "#475569",
+                            "tittel": "Kanskje bare halvparten igjen",
+                            "fargeEtikett": "igjen av hundre"
                         }
                     ]
                 }
@@ -380,7 +389,7 @@
                     "si": "Egede reiste hjem, men kolonien ble værende. Grønland ble styrt fra København."
                 },
                 {
-                    "si": "Ved Kielfreden i 1814 ble Norge tatt fra Danmark. Men Danmark beholdt de gamle norske skattlandene: Island, Færøyene og Grønland."
+                    "si": "Ved Kielfreden i 1814 ble Norge tatt fra Danmark. Men Danmark beholdt Island, Færøyene og Grønland, som før hadde hørt til Norge."
                 },
                 {
                     "si": "Det gjorde mange nordmenn sinte."

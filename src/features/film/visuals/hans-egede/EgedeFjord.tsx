@@ -479,9 +479,9 @@ function Scene({ modus, beat, playing }: { modus: Modus; beat: number; playing: 
 
 const MERKER: Record<Modus, (string | null)[]> = {
     ankomst: ['Sommeren 1721', 'En prest og familien hans', 'Han leter etter nordboerne', 'Luthersk kristendom', 'Borte i nesten 300 år'],
-    ruiner: ['Bergen, mai 1721: tre skip', 'Håbets Havn', 'Ruiner av gamle gårder', 'Ingen mennesker. Østkysten?'],
-    godthab: ['1727: kompaniet går konkurs', '1728: Godthåb, dagens Nuuk', '1730: Christian 6. vil legge ned', 'Kolonien får bli'],
-    avreise: ['Gertrud steller de syke', 'Desember 1735', 'Sommeren 1736: hjem for godt', 'Han kom aldri tilbake'],
+    ruiner: ['Bergen, mai 1721: tre skip', 'Håbets Havn', 'Ruiner av gamle gårder', 'Ingen mennesker. Egede tror: østkysten?'],
+    godthab: ['1727: kompaniet går konkurs', '1728: Godthåb, dagens Nuuk', '1730: Christian 6. vil nesten legge ned', 'Egede ber kongen: kolonien får bli'],
+    avreise: ['Gertrud steller de syke', 'Desember 1735', 'Sommeren 1736: hjem for godt', '1740: biskop. 1758: død i Danmark'],
 };
 
 export function EgedeFjord({ beat, playing, props }: VisualProps<{ modus: Modus }>) {

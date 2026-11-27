@@ -21,8 +21,8 @@ const KORT: Kort[][] = [
     [{ tekst: 'Rødmalt og tagget' }, { tekst: 'avkoloniser: gjøre seg fri fra kolonimakten', farge: ROD }],
     [{ tekst: 'Halshugget' }, { tekst: 'Skal statuen fjernes?', farge: GULL }, { tekst: 'Få stemte. Flertallet: la den stå', farge: BLA }],
     [{ tekst: '1971' }, { tekst: '250 år siden Egede kom', farge: ROD }, { tekst: 'Fest, og dronningen på besøk', farge: ROD }],
-    [{ tekst: '2021' }, { tekst: '300 år siden Egede kom', farge: STEIN }, { tekst: 'Ingen feiring', farge: STEIN }],
-    [{ tekst: 'Synet har endret seg' }, { tekst: 'Før: takknemlige for kristendommen', farge: BLA }, { tekst: 'I dag: hva kostet det?', farge: ROD }],
+    [{ tekst: '2021' }, { tekst: '300 år siden Egede kom', farge: STEIN }, { tekst: 'Grønlands myndigheter feiret ikke', farge: STEIN }],
+    [{ tekst: 'Synet har endret seg' }, { tekst: '1970-tallet: mange takknemlige for kristendommen', farge: BLA }, { tekst: 'I dag: flere spør hva det kostet', farge: ROD }],
 ];
 
 const HUS = ['#b91c1c', '#facc15', '#1d4ed8', '#15803d', '#f97316', '#b91c1c', '#0e7490', '#facc15', '#7c3aed', '#15803d'];
@@ -68,7 +68,7 @@ export function EgedeStatuen({ beat }: VisualProps) {
                             x={SX}
                             y={SY + 92}
                             textAnchor="middle"
-                            fontSize={38}
+                            fontSize={34}
                             fontWeight={900}
                             fill={ROD}
                             transform={`rotate(-6 ${SX} ${SY + 92})`}
@@ -105,13 +105,13 @@ export function EgedeStatuen({ beat }: VisualProps) {
                 <AnimatePresence>
                     {fest && (
                         <motion.g key="fest" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                            {[0, 1].map((rad) => (
+                            {[0].map((rad) => (
                                 <g key={rad}>
-                                    <path d={`M 940 ${110 + rad * 60} Q 1230 ${210 + rad * 60} 1540 ${110 + rad * 60}`} fill="none" stroke="#78716c" strokeWidth={3} />
+                                    <path d={`M 940 ${30 + rad * 60} Q 1230 ${130 + rad * 60} 1540 ${30 + rad * 60}`} fill="none" stroke="#78716c" strokeWidth={3} />
                                     {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => {
                                         const t = (i + 0.5) / 8;
                                         const x = 940 + t * 600;
-                                        const y = 110 + rad * 60 + Math.sin(t * Math.PI) * 50;
+                                        const y = 30 + rad * 60 + Math.sin(t * Math.PI) * 50;
                                         return (
                                             <g key={i} transform={`translate(${x} ${y})`}>
                                                 <rect x={-22} y={0} width={44} height={30} fill="#c8102e" />
