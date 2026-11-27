@@ -719,7 +719,8 @@
                 "nedertysk",
                 "avløserord"
               ],
-              "createdDate": "2026-11-25T00:00:00Z"
+              "createdDate": "2026-11-25T02:17:13+01:00",
+              "lastUpdated": "2026-11-26T07:39:58+01:00"
             }
           ]
         },
@@ -2886,7 +2887,7 @@
                 "sikkerhet"
               ],
               "createdDate": "2026-11-24T01:08:47.492Z",
-              "lastUpdated": "2026-11-24T01:09:30.080Z"
+              "lastUpdated": "2026-11-26T07:39:58+01:00"
             },
             {
               "id": "nato-og-norge",
@@ -2900,7 +2901,23 @@
                 "forsvar",
                 "allianse"
               ],
-              "createdDate": "2026-11-26T00:00:00Z"
+              "createdDate": "2026-11-26T02:22:47+01:00",
+              "lastUpdated": "2026-11-26T07:39:58+01:00"
+            },
+            {
+              "id": "krigen-i-ukraina",
+              "title": "Krigen i Ukraina: Bakgrunn og følger",
+              "description": "Hvorfor Russland angrep Ukraina i 2022, hva folkeretten sier, og hvordan krigen har påvirket Europa, Norge og resten av verden.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "ukraina",
+                "russland",
+                "geopolitikk",
+                "folkerett",
+                "krig"
+              ],
+              "createdDate": "2026-11-27T01:11:03.399Z",
+              "lastUpdated": "2026-11-27T01:12:22.575Z"
             }
           ]
         },
