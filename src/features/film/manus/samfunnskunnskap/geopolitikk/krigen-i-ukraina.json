@@ -1,0 +1,254 @@
+{
+  "id": "krigen-i-ukraina",
+  "tittel": "Krigen i Ukraina: Bakgrunn og følger",
+  "kilde": "/samfunnskunnskap/geopolitikk/krigen-i-ukraina",
+  "bilde": "/images/geopolitikk/krigen-i-ukraina-hero.webp",
+  "utenforArtikkel": [
+    { "tall": 1000000, "begrunnelse": "Artikkelen: «over én million ukrainere» den første uka, her skrevet med sifre i Tittelkort." },
+    { "tall": 6800000, "begrunnelse": "Artikkelen: «om lag 6,8 millioner» hadde flyktet i 2024, her skrevet med sifre i Tittelkort." }
+  ],
+  "vurdering": { "dato": "2026-11-27", "viser": 4, "lesbart": 3, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "natt",
+      "kapittel": "24. februar 2022",
+      "lyd": "vind",
+      "visual": { "type": "UkrainaKart", "props": { "modus": "invasjon" } },
+      "replikker": [
+        { "si": "Det er natt til torsdag 24. februar 2022. Millioner av ukrainere våkner av eksplosjoner." },
+        { "si": "Russiske soldater går inn i Ukraina fra nord." },
+        { "si": "Samtidig kommer de fra øst og fra sør. Fra fire kanter på en gang." },
+        { "si": "Mange hadde fryktet dette lenge. Men Russland hadde nektet for at det planla et angrep." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "KRIGEN I UKRAINA",
+          "undertittel": "Bakgrunn og følger",
+          "bilde": "/images/geopolitikk/krigen-i-ukraina-hero.webp",
+          "sporsmal": { "tekst": "Hvorfor angriper et land naboen sin?", "fraBeat": 1 }
+        }
+      },
+      "replikker": [
+        { "si": "Dette er historien om krigen i Ukraina." },
+        { "si": "Hvorfor angriper et land naboen sin i 2022?" },
+        { "si": "Svaret begynner over 30 år tidligere. Vi skal følge kjeden av hendelser som førte fram til krigen." }
+      ]
+    },
+    {
+      "id": "kjede-1991",
+      "kapittel": "Et nytt land",
+      "visual": { "type": "UkrainaKjede", "props": { "modus": "1991" } },
+      "replikker": [
+        { "si": "Den første lenken i kjeden er 1991. Ukraina og Russland var begge en del av Sovjetunionen." },
+        { "si": "Så gikk Sovjetunionen i oppløsning. Det falt fra hverandre." },
+        { "si": "24. august 1991 erklærte Ukraina seg selvstendig. Ukraina ble et eget land." },
+        { "si": "1. desember samme år holdt Ukraina en folkeavstemning. Det er et valg der folket selv svarer ja eller nei på ett spørsmål." },
+        { "si": "Hele 90 prosent stemte for selvstendighet." }
+      ]
+    },
+    {
+      "id": "retninger",
+      "visual": { "type": "UkrainaKart", "props": { "modus": "retninger" } },
+      "replikker": [
+        { "si": "Men Ukraina var et land med to retninger." },
+        { "si": "Ifølge Lille norske leksikon snakker mange i øst og sør russisk. De ønsker tettere samarbeid med Russland." },
+        { "si": "I vest snakker folk oftest ukrainsk. De ser heller mot EU og NATO." },
+        { "si": "Mange i Russland, blant dem president Vladimir Putin, mener at landene egentlig hører sammen." },
+        { "si": "I 2021 hevdet Putin at russere og ukrainere er ett folk." }
+      ]
+    },
+    {
+      "id": "kjede-1994",
+      "kapittel": "Et løfte",
+      "visual": { "type": "UkrainaKjede", "props": { "modus": "1994" } },
+      "replikker": [
+        { "si": "Neste lenke er 1994. I Ukraina lå det fortsatt atomvåpen fra Sovjetunionen." },
+        { "si": "Ukraina ga dem fra seg. I en avtale som kalles Budapest-memorandumet, lovet Russland til gjengjeld å respektere grensene til Ukraina." },
+        { "si": "Det løftet holdt ikke." }
+      ]
+    },
+    {
+      "id": "kjede-2013",
+      "kapittel": "Veien mot krig",
+      "visual": { "type": "UkrainaKjede", "props": { "modus": "2008" } },
+      "replikker": [
+        { "si": "I april 2008 sa forsvarsalliansen NATO at Ukraina og Georgia kunne bli medlemmer en gang i framtiden. Russland så det som en trussel." },
+        { "si": "I november 2013 skulle Ukrainas president, Viktor Janukovitsj, skrive under på en samarbeidsavtale med EU. Han trakk seg i siste liten." },
+        { "si": "FN-sambandet skriver at det var etter press fra Russland. Store protester fylte gatene i Kyiv." },
+        { "si": "Natt til 22. februar 2014 flyktet presidenten til Russland. Samme dag stemte parlamentet for å fjerne ham." },
+        { "si": "Russland kalte dette et statskupp styrt fra Vesten. Mange ukrainere så det som en seier for demokratiet." }
+      ]
+    },
+    {
+      "id": "krim",
+      "kapittel": "Krim, 2014",
+      "visual": { "type": "UkrainaKart", "props": { "modus": "krim" } },
+      "replikker": [
+        { "si": "Noen uker senere tok russiske soldater kontroll over Krim-halvøya, sør i Ukraina." },
+        { "si": "Det ble holdt en folkeavstemning mens soldatene var der. I mars 2014 annekterte Russland Krim." },
+        { "si": "Å annektere betyr å ta et område fra et annet land og gjøre det til sitt eget. Det er forbudt etter internasjonale regler." },
+        { "si": "Fra april 2014 støttet Russland også væpnede grupper i Donetsk og Luhansk i øst, som ville bryte seg løs." },
+        { "si": "FN regner med at over 14 000 mennesker ble drept i denne krigen mellom 2014 og 2022." }
+      ]
+    },
+    {
+      "id": "grensen",
+      "kapittel": "Den siste lenken",
+      "lyd": "vind",
+      "visual": { "type": "UkrainaKjede", "props": { "modus": "grense" } },
+      "replikker": [
+        { "si": "Så kommer 2021. Russland samlet om lag 130 000 soldater langs grensen til Ukraina." },
+        { "si": "Russland sa at det bare var militærøvelser." },
+        { "si": "I desember 2021 krevde Russland et skriftlig løfte om at Ukraina aldri skulle bli medlem av NATO." },
+        { "si": "Tre dager før invasjonen anerkjente Russland de to områdene i øst som ville bryte seg løs, som egne land." }
+      ]
+    },
+    {
+      "id": "fronten",
+      "kapittel": "Invasjonen",
+      "visual": { "type": "UkrainaKart", "props": { "modus": "front" } },
+      "replikker": [
+        { "si": "Forskerne bak Store norske leksikon mener at målet trolig var å bytte ut ledelsen i Kyiv med en som støttet Russland." },
+        { "si": "Men forsøket på å ta Kyiv raskt mislyktes. I mars 2022 trakk russiske styrker seg tilbake fra området rundt byen." },
+        { "si": "Havnebyen Mariupol ble omringet og bombet i flere måneder. De ukrainske soldatene der ga seg i mai 2022." },
+        { "si": "Høsten 2022 tok Ukraina tilbake store områder rundt Kharkiv og byen Kherson." },
+        { "si": "30. september 2022 erklærte Russland at fire ukrainske regioner nå var en del av Russland. Men russiske styrker kontrollerte ingen av dem helt." },
+        { "si": "Siden 2023 har Russland kontrollert litt under 20 prosent av Ukraina. Fronten flytter seg lite, og partene prøver å slite hverandre ut." }
+      ]
+    },
+    {
+      "id": "prisen",
+      "kapittel": "Prisen",
+      "lyd": "stille",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "PRISEN",
+          "undertittel": "for menneskene i Ukraina",
+          "bilde": "/images/geopolitikk/krigen-i-ukraina-02.webp",
+          "tall": [
+            { "verdi": 15000, "etikett": "sivile drept siden februar 2022 (FN)", "fraBeat": 1, "tone": "rod", "prefiks": "minst" },
+            { "verdi": 1000000, "etikett": "flyktet ut den første uka", "fraBeat": 3, "prefiks": "over" },
+            { "verdi": 6800000, "etikett": "hadde flyktet til sammen innen 2024", "fraBeat": 4, "prefiks": "om lag" }
+          ],
+          "sporsmal": { "tekst": "Falne soldater: ingen av landene oppgir tallet", "fraBeat": 2 }
+        }
+      },
+      "replikker": [
+        { "si": "Prisen for menneskene i Ukraina er enorm. Russiske angrep har truffet militære mål, men også boliger, sykehus og skoler." },
+        { "si": "FN regner med at minst 15 000 sivile er drept siden februar 2022." },
+        { "si": "Ingen av landene oppgir hvor mange soldater som har falt. Men trolig er det mange hundre tusen til sammen." },
+        { "si": "Mange måtte flykte. Den første uka flyktet over én million ukrainere ut av landet." },
+        { "si": "I 2024 hadde om lag 6,8 millioner flyktet.", "uttale": "I 2024 hadde om lag seks komma åtte millioner flyktet." }
+      ]
+    },
+    {
+      "id": "nodhjelp",
+      "visual": {
+        "type": "Prikkfelt",
+        "props": {
+          "figur": "person",
+          "steg": [
+            { "fraBeat": 0, "total": 30, "farget": 0, "restFarge": "#cbd5e1", "tittel": "Menneskene i Ukraina, 2026", "restEtikett": "ukrainere", "visTall": false },
+            { "fraBeat": 1, "total": 30, "farget": 9, "farge": "#dc2626", "restFarge": "#cbd5e1", "tittel": "Nesten hver tredje trengte nødhjelp", "fargeEtikett": "trengte nødhjelp", "restEtikett": "resten", "visTall": false }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "I 2026 trengte over ti millioner mennesker i Ukraina nødhjelp." },
+        { "si": "Det er nesten hver tredje ukrainer." }
+      ]
+    },
+    {
+      "id": "verden",
+      "kapittel": "Langt utenfor Ukraina",
+      "visual": {
+        "type": "Punktkort",
+        "props": {
+          "tittel": "Følger utenfor Ukraina",
+          "punkter": [
+            { "ikon": "las", "tittel": "Sanksjoner mot Russland", "tekst": "EU, USA og flere andre land", "fraBeat": 0 },
+            { "ikon": "penger", "tittel": "Dyrere mat og energi", "tekst": "over hele verden", "fraBeat": 1 },
+            { "ikon": "fabrikk", "tittel": "Norsk gass enda viktigere", "tekst": "EU kjøpte mye mindre gass fra Russland", "fraBeat": 2 },
+            { "ikon": "skjold", "tittel": "Finland og Sverige i NATO", "tekst": "Finland i 2023, Sverige i 2024", "fraBeat": 3 }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "EU, USA og flere andre land innførte sanksjoner mot Russland. Sanksjoner er straffetiltak, som å stoppe handel eller fryse penger." },
+        { "si": "Prisene på energi og mat steg kraftig over hele verden." },
+        { "si": "EU kjøpte mye mindre gass fra Russland, særlig fra sommeren 2022. Det gjorde Norge til en enda viktigere gassleverandør for Europa." },
+        { "si": "Krigen endret også alliansene. Finland ble med i NATO i april 2023, og Sverige i mars 2024." }
+      ]
+    },
+    {
+      "id": "fn",
+      "kapittel": "Hva sier folkeretten?",
+      "lyd": "rom",
+      "visual": { "type": "UkrainaSalen" },
+      "replikker": [
+        { "si": "Folkeretten er reglene som gjelder mellom land. Etter disse reglene er det forbudt å ta en del av et annet lands område." },
+        { "si": "2. mars 2022 stemte FNs generalforsamling over en uttalelse som fordømte angrepet, altså sa tydelig fra om at det var galt." },
+        { "si": "141 land stemte for." },
+        { "si": "Bare fem stemte mot: Russland, Belarus, Nord-Korea, Syria og Eritrea. 35 land avsto fra å stemme." },
+        { "si": "Likevel kan ikke FN stoppe krigen. Russland har vetorett i Sikkerhetsrådet. Det betyr at Russland alene kan stanse alle vedtak om straff der." },
+        { "si": "I mars 2023 utstedte Den internasjonale straffedomstolen en arrestordre mot Putin, fordi ukrainske barn ble ført ulovlig til Russland." }
+      ]
+    },
+    {
+      "id": "ord",
+      "kapittel": "To fortellinger",
+      "lyd": "stille",
+      "visual": { "type": "UkrainaOrd", "props": { "modus": "ord" } },
+      "replikker": [
+        { "si": "En krig kjempes ikke bare med våpen, men også med ord." },
+        { "si": "Russiske myndigheter kaller ikke krigen en krig. De kaller den en spesiell militær operasjon." },
+        { "si": "Samme dag som invasjonen startet, fikk russiske medier nye regler. Å kalle det et angrep, en invasjon eller en krig ble regnet som falsk informasjon." },
+        { "si": "Russland forklarer krigen som forsvar mot NATO, som Russland mener har kommet for nær grensen." },
+        { "si": "Ukraina og de aller fleste land i verden ser det som et ulovlig angrep på et selvstendig land." },
+        { "si": "Når du leser om krigen, spør deg selv: Hvem forteller dette, og hva vil de at jeg skal tro?" }
+      ]
+    },
+    {
+      "id": "fred",
+      "kapittel": "Kan det bli fred?",
+      "visual": { "type": "UkrainaOrd", "props": { "modus": "fred" } },
+      "replikker": [
+        { "si": "Våren 2022 prøvde partene å forhandle." },
+        { "si": "Men forhandlingene stoppet etter at det ble kjent at russiske soldater hadde drept sivile i byene Butsja og Irpin." },
+        { "si": "I 2025 og 2026 har USA prøvd å mekle, altså hjelpe partene å bli enige." },
+        { "si": "Det vanskeligste spørsmålet er hvem som skal eie landområdene Russland har tatt. Det andre er hvilken rolle NATO skal ha." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "kapittel": "Hva betyr det?",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Krigen startet ikke en natt i 2022.", "fraBeat": 0 },
+            { "tekst": "Den har en lang kjede av årsaker.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Geografi, historie og makt", "fraBeat": 1 },
+            { "tekst": "henger sammen.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "En krig har nesten aldri", "fraBeat": 2 },
+            { "tekst": "én enkel årsak.", "fraBeat": 2, "uthevet": true },
+            { "tekst": "Krigen endrer seg hele tiden.", "fraBeat": 3 },
+            { "tekst": "Følg med på nyhetene, og spør hvem som forteller.", "fraBeat": 3, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Krigen startet ikke en natt i februar 2022. Den har en lang kjede av årsaker." },
+        { "si": "Den viser hvordan geografi, historie og makt henger sammen." },
+        { "si": "Og den viser at en krig nesten aldri har én enkel årsak." },
+        { "si": "Krigen endrer seg hele tiden. Følg med på nyhetene, og spør hvem som forteller." }
+      ]
+    }
+  ]
+}
