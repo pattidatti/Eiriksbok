@@ -2918,6 +2918,20 @@
               ],
               "createdDate": "2026-11-27T01:11:03.399Z",
               "lastUpdated": "2026-11-27T01:12:22.575Z"
+            },
+            {
+              "id": "usa-og-kina",
+              "title": "USA og Kina: Kampen om å være størst",
+              "description": "Hvorfor verdens to mektigste land både trenger hverandre og slåss om toll, databrikker og sjeldne jordarter, og hva det betyr for Norge.",
+              "image": "/images/placeholder.webp",
+              "tags": [
+                "usa",
+                "kina",
+                "geopolitikk",
+                "handel",
+                "toll"
+              ],
+              "createdDate": "2026-11-28T00:00:00Z"
             }
           ]
         },
