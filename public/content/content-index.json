@@ -1,5 +1,5 @@
 {
-  "buildId": 119750587514037,
+  "buildId": 232609648307693,
   "contentMap": {
     "concept-abdul-baha": [
       "content/concepts/abdul-baha.json"
@@ -4738,6 +4738,9 @@
     "nato-og-norge": [
       "content/samfunnskunnskap/geopolitikk/nato-og-norge.json"
     ],
+    "usa-og-kina": [
+      "content/samfunnskunnskap/geopolitikk/usa-og-kina.json"
+    ],
     "energi-og-rorledninger": [
       "content/samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger.json"
     ],
@@ -6624,6 +6627,7 @@
     "samfunnskunnskap/geopolitikk/hva-er-geopolitikk": "content/samfunnskunnskap/geopolitikk/hva-er-geopolitikk.json",
     "samfunnskunnskap/geopolitikk/krigen-i-ukraina": "content/samfunnskunnskap/geopolitikk/krigen-i-ukraina.json",
     "samfunnskunnskap/geopolitikk/nato-og-norge": "content/samfunnskunnskap/geopolitikk/nato-og-norge.json",
+    "samfunnskunnskap/geopolitikk/usa-og-kina": "content/samfunnskunnskap/geopolitikk/usa-og-kina.json",
     "samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger": "content/samfunnskunnskap/handel-og-infrastruktur/energi-og-rorledninger.json",
     "samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt": "content/samfunnskunnskap/handel-og-infrastruktur/global-handel-oversikt.json",
     "samfunnskunnskap/handel-og-infrastruktur/handel-og-infrastruktur-sti": "content/samfunnskunnskap/handel-og-infrastruktur/handel-og-infrastruktur-sti.json",
