@@ -1,0 +1,233 @@
+{
+    "id": "usa-og-kina",
+    "tittel": "USA og Kina: Kampen om å være størst",
+    "kilde": "/samfunnskunnskap/geopolitikk/usa-og-kina",
+    "bilde": "/images/geopolitikk/usa-og-kina-hero.webp",
+    "utenforArtikkel": [],
+    "vurdering": { "dato": "2026-11-28", "viser": 4, "lesbart": 4, "variasjon": 4, "forstaelig": 4, "tro": 4, "sum": 20 },
+    "scener": [
+        {
+            "id": "mobil",
+            "kapittel": "Mobilen i lomma",
+            "visual": { "type": "UsaKinaMobil", "props": { "modus": "deler" } },
+            "replikker": [
+                { "si": "Ta fram mobilen din. Hvor kommer den egentlig fra?" },
+                { "si": "Selskapet som tegnet den, ligger kanskje i USA." },
+                { "si": "De mest avanserte databrikkene i mange mobiler blir laget av ett selskap på Taiwan." },
+                { "si": "Inni ligger små, sterke magneter av metaller som kalles sjeldne jordarter. Kina står for nesten 90 prosent av verdens produksjon av dem." },
+                { "si": "Til slutt blir mange mobiler satt sammen på fabrikker i Kina." },
+                { "si": "Mobilen din er altså et samarbeid mellom mange land, særlig USA og Kina." }
+            ]
+        },
+        {
+            "id": "tittel",
+            "visual": {
+                "type": "Tittelkort",
+                "props": {
+                    "tittel": "USA OG KINA",
+                    "undertittel": "Kampen om å være størst",
+                    "bilde": "/images/geopolitikk/usa-og-kina-hero.webp",
+                    "sporsmal": { "tekst": "Hvordan kan to land som trenger hverandre, også være fiender?", "fraBeat": 2 }
+                }
+            },
+            "replikker": [
+                { "si": "Samtidig er nettopp disse to landene de største rivalene i verden i dag." },
+                { "si": "De kjemper om makt, fabrikker og den smarteste teknologien." },
+                { "si": "Hvordan kan to land som trenger hverandre så mye, også være fiender?" }
+            ]
+        },
+        {
+            "id": "handel",
+            "kapittel": "To kjemper som trenger hverandre",
+            "lyd": "hav",
+            "visual": { "type": "UsaKinaKart", "props": { "modus": "handel" } },
+            "replikker": [
+                { "si": "I flere tiår har de to landene handlet enormt mye med hverandre." },
+                { "si": "I 2018 kjøpte USA varer fra Kina for 539,6 milliarder dollar." },
+                { "si": "Samme år solgte USA varer til Kina for bare 120,1 milliarder dollar." },
+                { "si": "Når et land kjøper mye mer fra et annet land enn det selger dit, kaller vi det et handelsunderskudd. USA hadde et underskudd på over 400 milliarder dollar med Kina det året." },
+                { "si": "Det ser ut som et tap. Men amerikanerne fikk billige klær, leker og mobiler. Kina fikk jobber og penger til å bygge opp landet." }
+            ]
+        },
+        {
+            "id": "urettferdig",
+            "lyd": "stille",
+            "visual": {
+                "type": "Punktkort",
+                "props": {
+                    "tittel": "Misnøye i USA",
+                    "punkter": [
+                        { "ikon": "penger", "tittel": "Mange mente: urettferdig handel", "tekst": "den kinesiske staten ga penger til egne bedrifter", "fraBeat": 1 },
+                        { "ikon": "skjold", "tittel": "Andre var redde for et sterkt Kina", "tekst": "som kunne utfordre USA som mektigste land", "fraBeat": 2 }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Mange i USA mente likevel at handelen var urettferdig." },
+                { "si": "De sa at den kinesiske staten ga penger til egne bedrifter. Da ble kinesiske varer kunstig billige." },
+                { "si": "Andre var redde for at Kina kunne utfordre USA som verdens mektigste land." }
+            ]
+        },
+        {
+            "id": "toll",
+            "kapittel": "Handelskrigen",
+            "visual": { "type": "UsaKinaTall", "props": { "modus": "sykkel" } },
+            "replikker": [
+                { "si": "Snart var landene i en handelskrig. Det er ikke en krig med soldater." },
+                { "si": "Våpnene er toll, boikott og penger fra staten til egne bedrifter." },
+                { "si": "Toll er en ekstra avgift et land legger på varer som kommer fra utlandet." },
+                { "si": "Tenk deg en kinesisk sykkel til 1000 dollar. USA legger på 25 prosent toll." },
+                { "si": "Da må den som henter sykkelen inn i USA, betale 250 dollar ekstra til staten." }
+            ]
+        },
+        {
+            "id": "aar-2018",
+            "visual": { "type": "UsaKinaStige", "props": { "modus": "2018" } },
+            "replikker": [
+                { "si": "I 2018 satte president Donald Trump opp tollen på mange varer fra Kina." },
+                { "si": "Målet var å beskytte amerikanske bedrifter og skape jobber." },
+                { "si": "Kina svarte med å sette opp tollen på varer fra USA." },
+                { "si": "Da Joe Biden ble president, beholdt han tollen." },
+                { "si": "Han stoppet også salget av de mest avanserte databrikkene til Kina." }
+            ]
+        },
+        {
+            "id": "aar-2025",
+            "kapittel": "Toll på 145 prosent",
+            "visual": { "type": "UsaKinaStige", "props": { "modus": "2025" } },
+            "replikker": [
+                { "si": "Da Trump kom tilbake som president i 2025, ble handelskrigen mye hardere." },
+                {
+                    "si": "I februar og mars satte han opp tollen på kinesiske varer to ganger. 2. april la han på enda mer.",
+                    "uttale": "I februar og mars satte han opp tollen på kinesiske varer to ganger. Andre april la han på enda mer."
+                },
+                { "si": "Kina svarte med toll på 34 prosent på amerikanske varer. Så slo de tilbake mot hverandre igjen og igjen." },
+                { "si": "Etter noen dager var USAs toll på kinesiske varer kommet opp i 145 prosent. Kinas toll på amerikanske varer var 125 prosent." },
+                { "si": "Med så høy toll er det nesten umulig å handle. En vare til 100 kroner ville kostet 245 kroner på grunn av tollen." },
+                { "si": "Men mobiler, nettbrett og annen elektronikk laget i Kina for amerikanske selskaper, slapp unna den høyeste tollen." }
+            ]
+        },
+        {
+            "id": "pause",
+            "visual": { "type": "UsaKinaKart", "props": { "modus": "pause" } },
+            "replikker": [
+                { "si": "I mai 2025 møttes de to landene i Genève i Sveits." },
+                { "si": "De ble enige om å senke tollen kraftig. USAs toll gikk ned til 30 prosent, Kinas til 10 prosent." },
+                { "si": "Men i oktober krevde Kina at bedrifter måtte søke om lov for å selge varer av sjeldne jordarter til utlandet." },
+                { "si": "Trump svarte med å true med 100 prosent toll." },
+                {
+                    "si": "30. oktober møttes Trump og Kinas leder Xi Jinping i Sør-Korea. De ble enige om en pause: USA droppet den nye tollen, Kina ventet ett år med reglene.",
+                    "uttale": "Trettiende oktober møttes Trump og Kinas leder Xi Jinping i Sør-Korea. De ble enige om en pause: USA droppet den nye tollen, Kina ventet ett år med reglene."
+                }
+            ]
+        },
+        {
+            "id": "regning",
+            "kapittel": "Hvem betaler?",
+            "visual": { "type": "UsaKinaTall", "props": { "modus": "regning" } },
+            "replikker": [
+                { "si": "Høres tollen ut som en straff for Kina? Husk hvem som betaler." },
+                { "si": "Det er bedriften i USA som henter varen inn i landet." },
+                { "si": "Ofte sender bedriften regningen videre til kundene sine ved å sette opp prisen." },
+                { "si": "Tre økonomer undersøkte prisene etter tollen i 2018. Hele tollen havnet på prisene i USA." },
+                { "si": "Ved slutten av 2018 tapte amerikanerne til sammen om lag 1,4 milliarder dollar i måneden på grunn av tollen." },
+                { "si": "Det samme skjedde i landene som svarte med toll: Også der ble folk fattigere." }
+            ]
+        },
+        {
+            "id": "brikke",
+            "kapittel": "Kampen om databrikkene",
+            "lyd": "rom",
+            "visual": { "type": "UsaKinaMobil", "props": { "modus": "brikke" } },
+            "replikker": [
+                { "si": "Toll er ikke det eneste våpenet. Den viktigste kampen handler kanskje om databrikker." },
+                { "si": "En databrikke er en liten plate full av bittesmå elektriske brytere. Den er hjernen i mobiler, biler og datamaskiner som trener kunstig intelligens." },
+                { "si": "Brikkene er så viktige at noen kaller dem den nye oljen." },
+                { "si": "USA mener brikkene også er viktige for forsvaret. I oktober 2022 stoppet USA salget av de mest avanserte brikkene til Kina, og av maskinene som lager dem." },
+                { "si": "Det amerikanske selskapet Nvidia svarte med å lage svakere brikker, som de fikk lov å selge til Kina." },
+                { "si": "I august 2025 ga USA lov til å selge noen slike brikker, mot at staten skulle få 15 prosent av inntektene." }
+            ]
+        },
+        {
+            "id": "magnet",
+            "visual": { "type": "UsaKinaMobil", "props": { "modus": "magnet" } },
+            "replikker": [
+                { "si": "Kina slo tilbake med sitt eget våpen: råvarer." },
+                { "si": "Kina har begrenset salget av metallene gallium og germanium, og av magneter laget av sjeldne jordarter." },
+                {
+                    "si": "USA ser på dette som svært alvorlig. Blant annet kampflyet F-35 trenger slike magneter.",
+                    "uttale": "USA ser på dette som svært alvorlig. Blant annet kampflyet F trettifem trenger slike magneter."
+                }
+            ]
+        },
+        {
+            "id": "taiwan",
+            "lyd": "stille",
+            "visual": { "type": "UsaKinaKart", "props": { "modus": "taiwan" } },
+            "replikker": [
+                { "si": "Midt i kampen ligger øya Taiwan." },
+                {
+                    "si": "Selskapet TSMC på Taiwan lager over 90 prosent av verdens mest avanserte databrikker.",
+                    "uttale": "Selskapet T S M C på Taiwan lager over 90 prosent av verdens mest avanserte databrikker."
+                },
+                { "si": "Kina mener at Taiwan er en del av Kina, og har truet øya i mange år." },
+                { "si": "USA selger våpen til Taiwan." },
+                { "si": "Blir det krig om Taiwan, kan hele verden få mangel på de beste brikkene." }
+            ]
+        },
+        {
+            "id": "europa",
+            "kapittel": "Norge og Europa midt imellom",
+            "visual": { "type": "UsaKinaKart", "props": { "modus": "europa" } },
+            "replikker": [
+                { "si": "Hva gjør så Norge og Europa når de to største økonomiene i verden slåss?" },
+                { "si": "Europa handler mye med begge. Ifølge et dansk leksikon har EU nå gått forbi USA som den største kunden for kinesiske varer." },
+                { "si": "EU-kommisjonens leder Ursula von der Leyen sa i 2023 at det verken er mulig eller lurt å kutte all handel med Kina." },
+                { "si": "I stedet vil EU redusere risikoen: handle med flere land, så Europa ikke blir for avhengig av ett." }
+            ]
+        },
+        {
+            "id": "norge",
+            "visual": { "type": "UsaKinaTall", "props": { "modus": "norge" } },
+            "replikker": [
+                { "si": "Norge står i samme klemme. Vi samarbeider tett med USA om forsvar gjennom NATO." },
+                { "si": "Men Kina er landet Norge kjøper mest varer fra. I 2025 kjøpte vi varer fra Kina for 133 milliarder kroner." },
+                { "si": "Fra USA kjøpte vi for 79 milliarder kroner." },
+                { "si": "Særlig bilene har endret seg. I 2019 kom bare om lag 1 prosent av bilene vi kjøpte fra utlandet, fra Kina." },
+                { "si": "I 2025 var det rundt 20 prosent." }
+            ]
+        },
+        {
+            "id": "fortsatt",
+            "kapittel": "En pause, ikke fred",
+            "visual": { "type": "UsaKinaStige", "props": { "modus": "pause" } },
+            "replikker": [
+                { "si": "Avtalen i Sør-Korea stoppet kranglingen fra å bli enda verre." },
+                { "si": "Men en pause er ikke det samme som fred." },
+                { "si": "Grunnene er der fortsatt. Begge landene vil være størst, og begge vil ha den beste teknologien." },
+                { "si": "Og begge er redde for å bli for avhengige av den andre. Nye trusler om toll kommer og går." }
+            ]
+        },
+        {
+            "id": "slutt",
+            "visual": {
+                "type": "Sluttkort",
+                "props": {
+                    "setninger": [
+                        { "tekst": "Rivaler,", "fraBeat": 0 },
+                        { "tekst": "fordi de er så tett knyttet sammen.", "fraBeat": 0, "uthevet": true },
+                        { "tekst": "Nyheter om toll og databrikker?", "fraBeat": 1 },
+                        { "tekst": "Spør: Hvem betaler egentlig?", "fraBeat": 1, "uthevet": true },
+                        { "tekst": "Ofte vanlige folk, på begge sider.", "fraBeat": 2 },
+                        { "tekst": "Og kanskje også deg.", "fraBeat": 2, "uthevet": true }
+                    ]
+                }
+            },
+            "replikker": [
+                { "si": "Det mest overraskende er kanskje dette: De to landene er rivaler fordi de er så tett knyttet sammen." },
+                { "si": "Ser du nyheter om toll eller databrikker, kan du spørre: Hvem betaler egentlig?" },
+                { "si": "Svaret er ofte vanlige folk, på begge sider. Og kanskje også deg." }
+            ]
+        }
+    ]
+}
