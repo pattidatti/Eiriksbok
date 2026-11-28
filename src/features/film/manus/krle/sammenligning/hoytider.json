@@ -1,0 +1,205 @@
+{
+  "id": "hoytider",
+  "tittel": "Høytider: Den hellige kalenderen",
+  "kilde": "/krle/sammenligning/hoytider",
+  "bilde": "/images/sammenligning/hoytider-hero.webp",
+  "utenforArtikkel": [],
+  "vurdering": { "dato": "2026-11-28", "viser": 4, "lesbart": 4, "variasjon": 3, "forstaelig": 4, "tro": 4, "sum": 19 },
+  "scener": [
+    {
+      "id": "kveld",
+      "kapittel": "To klokker",
+      "lyd": "vind",
+      "visual": { "type": "HoytiderHimmel", "props": { "modus": "horisont" } },
+      "replikker": [
+        { "si": "Tenk deg en kald vinterkveld. Sola går ned, lavt over horisonten." },
+        { "si": "Litt over den står en tynn, ny måne. To klokker på samme himmel." },
+        { "si": "Ramadan, den muslimske fastemåneden, flytter seg. Den som fastet i augustvarmen som barn, faster i februarmørket som voksen." },
+        { "si": "Julaften har derimot ligget på 24. desember hele livet ditt, og den kommer til å gjøre det livet ut." },
+        { "si": "Begge kalenderne gjør akkurat det de er laget for. De teller bare på hver sin klokke." }
+      ]
+    },
+    {
+      "id": "tittel",
+      "visual": {
+        "type": "Tittelkort",
+        "props": {
+          "tittel": "Høytider",
+          "undertittel": "Den hellige kalenderen",
+          "bilde": "/images/sammenligning/hoytider-hero.webp",
+          "tall": [
+            { "verdi": 9, "etikett": "religioner", "fraBeat": 1, "omtrent": false },
+            { "verdi": 3, "etikett": "måter å måle året på", "fraBeat": 2, "omtrent": false }
+          ],
+          "sporsmal": { "tekst": "Hvorfor havner høytidene der de havner?", "fraBeat": 3 }
+        }
+      },
+      "replikker": [
+        { "si": "Denne filmen handler om høytider, de store festdagene i religionene." },
+        { "si": "Vi skal se på ni religioner." },
+        { "si": "Og vi skal se at de bruker tre ulike måter å måle året på." },
+        { "si": "Spørsmålet er ikke hva de tror, men: Hvorfor havner høytidene der de havner?" }
+      ]
+    },
+    {
+      "id": "bane",
+      "lyd": "stille",
+      "visual": { "type": "HoytiderHimmel", "props": { "modus": "bane" } },
+      "replikker": [
+        { "si": "Alle samfunn har måttet svare på det samme: Hvordan deler vi tiden i biter alle er enige om?" },
+        { "si": "Månen er lettest å lese. Alle kan se om den vokser eller minker. Fra nymåne til nymåne går det én måned." },
+        { "si": "Sola gir oss årstidene. Jorda bruker litt under 365 døgn og seks timer på én runde rundt sola." },
+        { "si": "Men tolv måneder etter månen blir bare 354 dager og åtte timer." },
+        { "si": "De to klokkene går altså ikke i takt. Månen kommer elleve dager for tidlig, hvert eneste år." }
+      ]
+    },
+    {
+      "id": "gap",
+      "visual": { "type": "HoytiderHimmel", "props": { "modus": "gap" } },
+      "replikker": [
+        { "si": "Elleve dager høres ikke mye ut. Men de hoper seg opp." },
+        { "si": "Etter tre år mangler det en hel måned." },
+        { "si": "Etter ni år mangler det en hel årstid." },
+        { "si": "Lar du månen telle alene, kan en fest som lå i juli, ende opp i desember." }
+      ]
+    },
+    {
+      "id": "tre",
+      "visual": { "type": "HoytiderHjul", "props": { "modus": "tre" } },
+      "replikker": [
+        { "si": "Derfor finnes det bare tre løsninger." },
+        { "si": "Du kan la månen bestemme alene. Da flytter høytidene seg gjennom hele året." },
+        { "si": "Du kan la sola bestemme alene. Da står datoene fast, men månedene mister kontakten med månen." },
+        { "si": "Eller du kan bruke begge, og legge inn en ekstra måned innimellom. Det kalles en måne-og-sol-kalender." }
+      ]
+    },
+    {
+      "id": "islam",
+      "kapittel": "Bare månen",
+      "visual": { "type": "HoytiderKart", "props": { "modus": "medina" } },
+      "replikker": [
+        { "si": "Islam bruker bare månen. Året har tolv måneder, fra nymåne til nymåne." },
+        { "si": "Kalenderen teller fra år 622. Det året flyttet profeten Muhammad fra Mekka til Medina." },
+        { "si": "Derfor er 622 år 1 i den islamske kalenderen." },
+        { "si": "Ingenting rettes opp etter sola, så hele året skyves ti eller elleve dager bakover hvert år." }
+      ]
+    },
+    {
+      "id": "ramadan",
+      "visual": { "type": "HoytiderHjul", "props": { "modus": "ramadan" } },
+      "replikker": [
+        { "si": "Ramadan er den niende måneden. Da faster muslimer fra daggry til solnedgang." },
+        { "si": "Se hva som skjer når måneden vandrer bakover, år etter år." },
+        { "si": "Om vinteren blir fastedagen kort og mørk. Om sommeren blir den svært lang." },
+        { "si": "Det tar rundt 33 år før ramadan har vært innom hele året." },
+        { "si": "Fasten slutter med festen id al-fitr. Datoen er ikke lik overalt: noen ser etter månen, andre regner den ut på forhånd." }
+      ]
+    },
+    {
+      "id": "jodedom",
+      "kapittel": "Begge klokkene",
+      "visual": { "type": "HoytiderDrift", "props": { "modus": "pesach" } },
+      "replikker": [
+        { "si": "Jødedommen valgte midtveien. Også her har året 354 dager." },
+        { "si": "Men sju ganger i løpet av nitten år legges det inn en hel ekstra måned om våren." },
+        { "si": "Den kalles adar sheni, den andre adar. Det er en skuddmåned, en ekstra måned som lar kalenderen ta igjen sola." },
+        { "si": "Rabbi Hillel 2. satte systemet i fast form i år 358.", "uttale": "Rabbi Hillel den andre satte systemet i fast form i år tre hundre og femtiåtte." },
+        { "si": "Datoen sklir litt, og retter seg opp igjen. Pesach blir liggende om våren, og hanukka i november eller desember. Aldri i juli." }
+      ]
+    },
+    {
+      "id": "kristendom",
+      "kapittel": "Sola, nesten",
+      "visual": { "type": "HoytiderHjul", "props": { "modus": "kristendom" } },
+      "replikker": [
+        { "si": "Kristendommen gikk lengst mot sola. Julen ligger fast på 25. desember." },
+        { "si": "Ingen vet når Jesus faktisk ble født. Datoen falt sammen med romerske fester rundt årets korteste dag." },
+        { "si": "Påsken er en helt annen historie. Den er første søndag etter første fullmåne etter 21. mars." },
+        { "si": "Regelen ble vedtatt på kirkemøtet i Nikea i år 325. Med den regelen kan påsken hoppe fram og tilbake over fem uker." },
+        { "si": "De ortodokse kirkene bruker en eldre kalender, den julianske. Julen deres havner på det som hos oss er 7. januar." }
+      ]
+    },
+    {
+      "id": "india",
+      "kapittel": "De indiske",
+      "lyd": "stille",
+      "visual": { "type": "HoytiderKart", "props": { "modus": "india" } },
+      "replikker": [
+        { "si": "Mange hinduer følger kalendere der månen bestemmer dagen, og sola holder årstiden på plass." },
+        { "si": "Det gir samme mønster som i jødedommen. Datoen skifter, men årstiden gjør det ikke." },
+        { "si": "Holi feires om våren i Nord-India, med farget pulver og vann." },
+        { "si": "Divali, lysfesten, kommer i oktober eller november. Sikher markerer den også, som bandi chor divas." },
+        { "si": "Men feiringene er svært ulike fra sted til sted i India. Det er vanskelig å si noe som gjelder alle." }
+      ]
+    },
+    {
+      "id": "indisk",
+      "visual": { "type": "HoytiderDrift", "props": { "modus": "indisk" } },
+      "replikker": [
+        { "si": "Buddhismen lar fullmånen bestemme. Vesak faller på fullmånedagen i måneden vaishakha, altså april eller mai." },
+        { "si": "I theravada, en retning i buddhismen, markeres Buddhas fødsel, oppvåkning og død sammen. De regnes som tre ting som skjedde på samme dato." },
+        { "si": "Sikhismen bruker begge klokkene. Den viktigste dagen, vaisakhi, er som regel 13. april, en fast dato etter sola." },
+        { "si": "Da feirer sikhene at Guru Gobind Singh opprettet fellesskapet khalsa i 1699." },
+        { "si": "Minnedagene for guruene flytter seg derimot. Guru Nanaks fødselsdag ligger som regel i november." }
+      ]
+    },
+    {
+      "id": "nyere",
+      "kapittel": "Nyere bevegelser",
+      "visual": { "type": "HoytiderHjul", "props": { "modus": "nyere" } },
+      "replikker": [
+        { "si": "Tre nyere bevegelser må velge det de eldre religionene valgte for lenge siden: lage sin egen kalender, eller låne en?" },
+        { "si": "Bahá'í laget sin egen solkalender. Året har nitten måneder, med nitten dager hver.", "uttale": "Baha-i laget sin egen solkalender. Året har nitten måneder, med nitten dager hver." },
+        { "si": "Nitten ganger nitten blir 361. Det er fire dager for lite, så de legger inn noen ekstra dager. Så kommer fasten, og den slutter med nyttårsfesten Naw-Rúz.", "uttale": "Nitten ganger nitten blir tre hundre og sekstien. Det er fire dager for lite, så de legger inn noen ekstra dager. Så kommer fasten, og den slutter med nyttårsfesten Nauruz." },
+        { "si": "Mormonene lagde ingen egen kalender. Det store fellesmøtet deres holdes første helg i april og første helg i oktober." },
+        { "si": "Jehovas vitner feirer verken jul eller bursdager. Men de har én dag i året: minnehøytiden, et måltid til minne om at Jesus døde." },
+        { "si": "Den holdes 14. nisan, i en vårmåned i den jødiske kalenderen, en eldgammel måne-og-sol-kalender." }
+      ]
+    },
+    {
+      "id": "monster",
+      "kapittel": "Mønsteret",
+      "visual": { "type": "HoytiderDrift", "props": { "modus": "alle" } },
+      "replikker": [
+        { "si": "Sett religionene side om side. Det er ikke troen som skiller dem her, men regnestykket: Hva gjør du med de elleve dagene?" },
+        { "si": "Lar du månen bestemme alene, vandrer høytiden gjennom hele året. Derfor kan ramadan falle både i juli og i desember." },
+        { "si": "Lar du sola bestemme alene, står datoen helt fast. Slik er det med julen." },
+        { "si": "Bruker du begge, flytter datoen seg fram og tilbake, men aldri ut av årstiden. Slik er det med pesach og vesak." },
+        { "si": "En høytid som flytter seg, er ikke mer unøyaktig enn en som står fast. Den er laget for å følge månen, og gjør nøyaktig det." }
+      ]
+    },
+    {
+      "id": "sapmi",
+      "lyd": "vind",
+      "visual": { "type": "HoytiderKart", "props": { "modus": "sapmi" } },
+      "replikker": [
+        { "si": "Helt i nord finnes en fjerde måte å dele året på. Den teller verken måner eller soldøgn." },
+        { "si": "Året i reindrifta deles i åtte årstider. Samene ble fra gammelt av kalt de åtte årstiders folk, fordi de flyttet med reinen." },
+        { "si": "Året er ikke et tall, men en rekke arbeidsoppgaver: kalvingen, sommerbeitet, paringstiden, den mørke vinteren." },
+        { "si": "De åtte årstidene er ikke fortid. Mange samer bruker dem fortsatt." }
+      ]
+    },
+    {
+      "id": "slutt",
+      "lyd": "stille",
+      "visual": {
+        "type": "Sluttkort",
+        "props": {
+          "setninger": [
+            { "tekst": "Bare måne. Bare sol. Eller begge.", "fraBeat": 0 },
+            { "tekst": "Tre svar på samme regnestykke.", "fraBeat": 0, "uthevet": true },
+            { "tekst": "Ingen holder seg helt til ett system.", "fraBeat": 1 },
+            { "tekst": "Kristendommen: sola, men månen styrer påsken.", "fraBeat": 1, "uthevet": true },
+            { "tekst": "Når en høytid flytter seg,", "fraBeat": 2 },
+            { "tekst": "er det månen som bestemmer.", "fraBeat": 2, "uthevet": true }
+          ]
+        }
+      },
+      "replikker": [
+        { "si": "Ni religioner, tre måter å måle året på: bare måne, bare sol, eller begge deler." },
+        { "si": "Ingen holder seg helt til ett system. Kristendommen er en solkalender som fortsatt spør månen om påsken." },
+        { "si": "Så neste gang ramadan flytter seg, vet du hvorfor: månen og sola går ikke i takt." }
+      ]
+    }
+  ]
+}
