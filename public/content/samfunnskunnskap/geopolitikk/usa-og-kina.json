@@ -5,7 +5,7 @@
   "year": "2018",
   "category": "Sikkerhet og geopolitikk",
   "readTime": "10 min lesning",
-  "heroImage": "/images/placeholder.webp",
+  "heroImage": "/images/geopolitikk/usa-og-kina-hero.webp",
   "details": [
     "USA og Kina handler enormt mye med hverandre, men er også de største rivalene.",
     "Handelskrigen startet i 2018. I april 2025 var tollen kommet opp i 145 prosent den ene veien og 125 prosent den andre.",
@@ -36,7 +36,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/geopolitikk/usa-og-kina-01.webp",
       "alt": "Containerskip lastes i en stor havn om kvelden",
       "caption": "Hver dag går skip fulle av varer mellom Kina og USA."
     },
@@ -244,7 +244,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/geopolitikk/usa-og-kina-02.webp",
       "alt": "Arbeidere i hvite drakter i en ren brikkefabrikk",
       "caption": "Slik kan det se ut inne i en fabrikk som lager databrikker."
     },
@@ -282,7 +282,7 @@
     },
     {
       "type": "image",
-      "src": "/images/placeholder.webp",
+      "src": "/images/geopolitikk/usa-og-kina-03.webp",
       "alt": "Ungdom ser på mobilen sin i en butikk med elektronikk",
       "caption": "Når toll og handelskrig gjør varer dyrere, merker vanlige kunder det."
     },
